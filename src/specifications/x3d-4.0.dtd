@@ -2911,7 +2911,7 @@ rib10_midspine|sellion|skull_tip|substernale|supramenton|suprasternale|waist_pre
 	weight			%SFString;	#IMPLIED
 -->
 <![%HAnimComponent;[
-<!ELEMENT HAnimJoint (IS?, (%MetadataNodes;)?, ( HAnimDisplacer|HAnimJoint|HAnimSegment|Anchor|Billboard|Collision|Group|Inline|LOD|StaticGroup|Switch|Transform|%ShapeNodes;|Inline|%WildcardNodes;)* ) >
+<!ELEMENT HAnimJoint (IS?, (%MetadataNodes;)?, ( HAnimDisplacer|HAnimJoint|HAnimSegment|HAnimSite|Anchor|Billboard|Collision|Group|Inline|LOD|StaticGroup|Switch|Transform|%ShapeNodes;|Inline|%WildcardNodes;)* ) >
 <!ATTLIST HAnimJoint
 	name			NMTOKEN		#IMPLIED
 	description     %SFString; #IMPLIED
@@ -2988,9 +2988,9 @@ rib10_midspine|sellion|skull_tip|substernale|supramenton|suprasternale|waist_pre
 	USE			IDREF		#IMPLIED>
 
 <!ELEMENT HAnimSite (IS?, (%MetadataNodes;)?, (
-	((HAnimSite|%ShapeNodes;|Inline|Anchor|Billboard|Collision|Group|Inline|LOD|StaticGroup|Switch|Transform|Viewpoint|OrthoViewpoint|ViewpointGroup|%WildcardNodes;)*, (((Coordinate|CoordinateDouble), HAnimDisplacer*)|(HAnimDisplacer+, (Coordinate|CoordinateDouble)?))? ) |
-	((Coordinate|CoordinateDouble), (((HAnimSite|%ShapeNodes;|Inline|Anchor|Billboard|Collision|Group|Inline|LOD|StaticGroup|Switch|Transform)*, HAnimDisplacer*)|(HAnimDisplacer+, (HAnimSite|%ShapeNodes;|Inline|Anchor|Billboard|Collision|Group|Inline|LOD|StaticGroup|Switch|Transform|Viewpoint|OrthoViewpoint|ViewpointGroup|%WildcardNodes;)*))? ) |
-	(HAnimDisplacer+, (((Coordinate|CoordinateDouble), (HAnimSite|%ShapeNodes;|Inline|Anchor|Billboard|Collision|Group|Inline|LOD|StaticGroup|Switch|Transform|Viewpoint|OrthoViewpoint|ViewpointGroup|%WildcardNodes;)*)|((HAnimSite|%ShapeNodes;|Inline|Anchor|Billboard|Collision|Group|Inline|LOD|StaticGroup|Switch|Transform|Viewpoint|ViewpointGroup|%WildcardNodes;)*, (Coordinate|CoordinateDouble)?))? )?
+	((HAnimDisplacer|%ShapeNodes;|Inline|Anchor|Billboard|Collision|Group|Inline|LOD|StaticGroup|Switch|Transform|Viewpoint|OrthoViewpoint|ViewpointGroup|%WildcardNodes;)*, (((Coordinate|CoordinateDouble), HAnimDisplacer*)|(HAnimDisplacer+, (Coordinate|CoordinateDouble)?))? ) |
+	((Coordinate|CoordinateDouble), (((HAnimDisplacer|%ShapeNodes;|Inline|Anchor|Billboard|Collision|Group|Inline|LOD|StaticGroup|Switch|Transform)*, HAnimDisplacer*)|(HAnimDisplacer+, (HAnimDisplacer|%ShapeNodes;|Inline|Anchor|Billboard|Collision|Group|Inline|LOD|StaticGroup|Switch|Transform|Viewpoint|OrthoViewpoint|ViewpointGroup|%WildcardNodes;)*))? ) |
+	(HAnimDisplacer+, (((Coordinate|CoordinateDouble), (HAnimDisplacer|%ShapeNodes;|Inline|Anchor|Billboard|Collision|Group|Inline|LOD|StaticGroup|Switch|Transform|Viewpoint|OrthoViewpoint|ViewpointGroup|%WildcardNodes;)*)|((HAnimDisplacer|%ShapeNodes;|Inline|Anchor|Billboard|Collision|Group|Inline|LOD|StaticGroup|Switch|Transform|Viewpoint|ViewpointGroup|%WildcardNodes;)*, (Coordinate|CoordinateDouble)?))? )?
 ) ) >
 <!ATTLIST HAnimSite
 	name			NMTOKEN 	#IMPLIED

@@ -6,7 +6,8 @@
   <xs:include schemaLocation="x3d-4.0-Web3dExtensionsPublic.xsd"/>
   <xs:include schemaLocation="x3d-4.0-Web3dExtensionsPrivate.xsd"/>
   <!-- https://stackoverflow.com/questions/2120562/what-is-this-xsd-import-namespace-for -->
-  <xs:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="xmldsig-core-schema.xsd"/>
+  <!-- https://www.w3.org/TR/xmldsig-core1/ -->
+  <xs:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="http://www.w3.org/TR/xmldsig-core/xmldsig-core-schema.xsd"/>
   <!-- <xs:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="http://www.w3.org/TR/2002/REC-xmldsig-core-20020212/xmldsig-core-schema.xsd"/> -->
   <!--======================================================================-->
   <xs:annotation>
@@ -2384,7 +2385,7 @@ Open-source license:
   </xs:simpleType>
   <xs:simpleType name="containerFieldChoicesAudioGraph">
     <xs:annotation>
-      <xs:appinfo>containerFieldChoicesAudioClip lists the allowed containerField enumeration values for AudioClip node: 
+      <xs:appinfo>containerFieldChoicesAudioGraph lists the allowed containerField enumeration values for audio graph nodes: 
         default "children" if parent is part of audio graph, "source" if parent node is Sound node, 
         otherwise "outputs" signal is provided to this node by parent ChannelSplitter node.</xs:appinfo>
       <xs:documentation source="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerField"/>
@@ -2495,7 +2496,7 @@ Open-source license:
       </xs:enumeration>
       <xs:enumeration value="joints">
         <xs:annotation>
-          <xs:appinfo>parent node is HAnimHumanoid, typically as a USE node</xs:appinfo>
+          <xs:appinfo>parent node is HAnimHumanoid, typically as a USE node (deprecated X3D 4.1)</xs:appinfo>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="skeleton">
@@ -2536,7 +2537,7 @@ Open-source license:
       </xs:enumeration>
       <xs:enumeration value="segments">
         <xs:annotation>
-          <xs:appinfo>parent node is HAnimHumanoid, typically as a USE node</xs:appinfo>
+          <xs:appinfo>parent node is HAnimHumanoid, typically as a USE node (deprecated X3D 4.1)</xs:appinfo>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
@@ -2554,7 +2555,7 @@ Open-source license:
       </xs:enumeration>
       <xs:enumeration value="sites">
         <xs:annotation>
-          <xs:appinfo>parent node is HAnimHumanoid, typically as a USE node</xs:appinfo>
+          <xs:appinfo>parent node is HAnimHumanoid, typically as a USE node (deprecated X3D 4.1)</xs:appinfo>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="skeleton">
@@ -20232,9 +20233,6 @@ Open-source license:
     <xs:annotation>
       <xs:appinfo>
         <xs:attribute name="name" type="hanimJointNameValues"/>
-        <xs:element name="addChildren" type="MFNode" fixed="inputOnlyField" default="HAnimJoint|HAnimSegment|Shape|Inline|Anchor|Billboard|Collision|Group|Inline|LOD|StaticGroup|Switch|Transform"/>
-        <xs:element name="removeChildren" type="MFNode" fixed="inputOnlyField" default="HAnimJoint|HAnimSegment|Shape|Inline|Anchor|Billboard|Collision|Group|Inline|LOD|StaticGroup|Switch|Transform"/>
-        <xs:element name="children" type="MFNode" fixed="inputOutputField" default="HAnimJoint|HAnimSegment|Shape|Inline|Anchor|Billboard|Collision|Group|Inline|LOD|StaticGroup|Switch|Transform"/>
         <xs:element name="displacers" type="MFNode" fixed="inputOutputField" default="HAnimDisplacer"/>
         <xs:attribute name="additionalInterface" type="xs:string" default="X3DBoundedObject"/>
         <xs:attribute name="componentName" type="componentNameChoices" fixed="HAnim"/>
@@ -20405,9 +20403,6 @@ Open-source license:
     <xs:annotation>
       <xs:appinfo>
         <xs:attribute name="name" type="hanimSegmentNameValues"/>
-        <xs:element name="addChildren" type="MFNode" fixed="inputOnlyField" default="Shape|Inline|Anchor|Billboard|Collision|Group|Inline|LOD|StaticGroup|Switch|Transform"/>
-        <xs:element name="removeChildren" type="MFNode" fixed="inputOnlyField" default="Shape|Inline|Anchor|Billboard|Collision|Group|Inline|LOD|StaticGroup|Switch|Transform"/>
-        <xs:element name="children" type="MFNode" fixed="inputOutputField" default="Shape|Inline|Anchor|Billboard|Collision|Group|Inline|LOD|StaticGroup|Switch|Transform"/>
         <xs:element name="coord" type="SFNode" fixed="inputOutputField" default="Coordinate|CoordinateDouble"/>
         <xs:element name="displacers" type="MFNode" fixed="inputOutputField" default="HAnimDisplacer"/>
         <xs:attribute name="componentName" type="componentNameChoices" fixed="HAnim"/>
@@ -20483,10 +20478,8 @@ Open-source license:
             <xs:documentation source="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NameTyping"/>
           </xs:annotation>
         </xs:attribute>
-        <xs:element name="addChildren" type="MFNode" fixed="inputOnlyField" default="Shape|Inline|Anchor|Billboard|Collision|Group|Inline|LOD|StaticGroup|Switch|Transform|Viewpoint|ViewpointGroup"/>
-        <xs:element name="removeChildren" type="MFNode" fixed="inputOnlyField" default="Shape|Inline|Anchor|Billboard|Collision|Group|Inline|LOD|StaticGroup|Switch|Transform|Viewpoint|ViewpointGroup"/>
-        <xs:element name="children" type="MFNode" fixed="inputOutputField" default="Shape|Inline|Anchor|Billboard|Collision|Group|Inline|LOD|StaticGroup|Switch|Transform|Viewpoint|ViewpointGroup"/>
         <xs:element name="coord" type="SFNode" fixed="inputOutputField" default="X3DCoordinateNode"/>
+		<xs:element name="displacers" type="MFNode" fixed="inputOutputField" default="HAnimDisplacer"/>
         <xs:attribute name="componentName" type="componentNameChoices" fixed="HAnim"/>
         <xs:attribute name="componentLevel" type="xs:positiveInteger" fixed="1"/>
       </xs:appinfo>

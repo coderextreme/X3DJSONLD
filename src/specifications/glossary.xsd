@@ -1,0 +1,965 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:x3d="http://www.web3d.org/specifications/x3d-4.0.xsd" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xenc="http://www.w3.org/2001/04/xmlenc#" elementFormDefault="qualified" attributeFormDefault="unqualified" version="4.0">
+
+    <xs:simpleType name="glossary">
+        <xs:annotation>
+            <xs:appinfo>Glossary terms are defined in X3D Architecture: Extensible 3D (X3D), ISO/IEC 19775-1:2023, 3 Definitions, acronyms, and abbreviations.</xs:appinfo>
+            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html"/>
+        </xs:annotation>
+<!--
+    <p class='Params'>For the purposes of this document , the following definitions apply.</p>
+    <p>
+ISO and IEC maintain terminology databases for use in standardization at the following addresses:</p>
+<ul>
+    <li>    ISO Online browsing platform: available at <span class='code'><a href='https://www.iso.org/obp' target='_blank'>www.iso.org/obp</a></span></li>
+    <li>    IEC Electropedia: available at <span class='code'><a href='https://www.electropedia.org' target='_blank'>www.electropedia.org</a></span></li>
+</ul>
+-->
+        <xs:restriction base="xs:NMTOKEN">
+            <!-- # hash tags seem appropriate to handle internal cross-link references -->            
+            <xs:enumeration value="activate">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#Activate"/>
+                            cause a #sensorNode to generate an isActive #event
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="ancestor">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#Ancestor"/>
+                            #node which is an antecedent of another node in the #transformationHierarchy
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="AudioGraph">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#AudioGraph"/>
+                            <xs:attribute name="alias" type="xs:string" default="audio graph"/>
+                            structured collection of nodes that process audio inputs and outputs
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="author">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#Author"/>
+                            person or agent that creates an #X3DFile
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="AuthoringTool">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#AuthoringTool"/>
+                            <xs:attribute name="alias" type="xs:string" default="authoring tool"/>
+                            see #generator
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="avatar">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#Avatar"/>
+                            abstract representation of the #user in an X3D #world
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="bearing">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#Bearing"/>
+                            straight line passing through the #pointer location in the direction of the pointer
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="BindableNode">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#BindableNode"/>
+                            <xs:attribute name="alias" type="xs:string" default="bindable node"/>
+                            #node that may have many #instances in a #sceneGraph but only one instance may be active at any instant of #time
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="browser">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#Browser"/>
+                            computer program that interprets 3X3DFiles, presents their content to a user on a #displayDevice, and allows the user to interact with #worlds defined by X3D files by means of a user interface
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="BrowserExtension">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#BrowserExtension"/>
+                            <xs:attribute name="alias" type="xs:string" default="browser extension"/>
+                            #nodes defined using the prototyping mechanism that are understood only by certain #browsers
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="BuiltInNode">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#Built-InNode"/>
+                            <xs:attribute name="alias" type="xs:string" default="built-in node"/>
+                            #node of a #type explicitly defined in this document
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="callback">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#Callback"/>
+                            function defined in a #scriptingLanguage to which #events are passed
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="child">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#Child"/>
+                            instance of a #ChildrenNode
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="ChildrenNode">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#ChildrenNode"/>
+                            <xs:attribute name="alias" type="xs:string" default="children node"/>
+                            one of a set of #nodeTypes, instances of which can be collected in a group to share specific properties dependent on the type of the #GroupingNode
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="ClientSystem">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#ClientSystem"/>
+                            <xs:attribute name="alias" type="xs:string" default="client system"/>
+                            computer system, attached to a #network, that relies on another computer (the server) for essential processing functions
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="CollisionProxy">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#CollisionProxy"/>
+                            <xs:attribute name="alias" type="xs:string" default="collision proxy"/>
+                            #node used as a substitute for all of a Collision node's children during collision detection
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="ColourModel">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#ColourModel"/>
+                            <xs:attribute name="alias" type="xs:string" default="colour model"/>
+                            <xs:attribute name="alias" type="xs:string" default="color model"/>
+                            characterization of a colour space in terms of explicit parameters
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="culling">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#Culling"/>
+                            process of identifying #objects or parts of objects which do not need to be processed further by the #browser in order to produce the desired view of a #world
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="descendant">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#Descendant"/>
+                            #node which descends from another node in the #transformationHierarchy (a #ChildrenNode)
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="DisplayDevice">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#DisplayDevice"/>
+                            <xs:attribute name="alias" type="xs:string" default="display device"/>
+                            graphics device on which X3D #worlds may be rendered
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="DragSensor">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#DragSensor"/>
+                            <xs:attribute name="alias" type="xs:string" default="drag sensor"/>
+                            #pointingDeviceSensor that causes #events to be generated in response to sensor-dependent pointer motions
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="EnvironmentalSensor">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#EnvironmentalSensor"/>
+                            <xs:attribute name="alias" type="xs:string" default="environmental sensor"/>
+                            sensor #node that generates #events based on the location of the viewpoint in the #world or in relation to #objects in the world
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="event">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#Event"/>
+                            message sent from one #node to another as defined by a #ROUTE
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="EventCascade">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#EventCascade"/>
+                            <xs:attribute name="alias" type="xs:string" default="event cascade"/>
+                            sequence of @events initiated by a script or sensor event and propagated from #node to node along one or more #routes all of which are considered to have occurred simultaneously
+                            <!-- (see Concepts, 4.4.8.3 Execution model) -->
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="ExecutionModel">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#ExecutionModel"/>
+                            <xs:attribute name="alias" type="xs:string" default="execution model"/>
+                            rules governing how #events are processed by #browsers and scripts
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="ExternaPrototype">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#ExternaPrototype"/>
+                            <xs:attribute name="alias" type="xs:string" default="external prototype"/>
+                            #prototype defined in an external file and referenced by a #URL
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="field">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#Field"/>
+                            property or attribute of a #node
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="FieldName">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#FieldName"/>
+                            <xs:attribute name="alias" type="xs:string" default="field name"/>
+                            identifier of a #field
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="frame">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#Frame"/>
+                            single rendering of a #world on a #displayDevice or a single time-step in a simulation
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="generator">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#Generator"/>
+                            computer program which creates #X3DFiles
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="GeometricPropertyNode">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#GeometricPropertyNode"/>
+                            <xs:attribute name="alias" type="xs:string" default="geometric property node"/>
+                            #node defining the properties of a specific geometry node
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="GeometryNode">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#GeometryNode"/>
+                            <xs:attribute name="alias" type="xs:string" default="geometry node"/>
+                            #node containing mathematical descriptions of points, lines, surfaces, text strings and solids
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="grab">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#Grab"/>
+                            receive #events from activated #pointingDevices
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="GroupingNode">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#GroupingNode"/>
+                            <xs:attribute name="alias" type="xs:string" default="grouping node"/>
+                            one of a set of #nodeTypes which include a list of nodes, referred to as its #ChildrenNodes
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="HostApplication">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#HostApplication"/>
+                            <xs:attribute name="alias" type="xs:string" default="host application"/>
+                            client application with which the #browser communicates using the SAI
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="image">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#Image"/>
+                            two-dimensional (2D) rectangular array of pixel values
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="immersive">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#Immersive"/>
+                            creating the illusion of being inside a computer-generated scene
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="Inlining">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#In-lining"/>
+                            <xs:attribute name="alias" type="xs:string" default="in-lining"/>
+                            mechanism by which one #X3DFile is hierarchically included in another
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="instance">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#Instance"/>
+                            the #node created by an #instantiation
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="instantiation">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#Instantiation"/>
+                           the creation of a #node based on its #nodeType
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="InterpolatorNode">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#InterpolatorNode"/>
+                            <xs:attribute name="alias" type="xs:string" default="interpolator node"/>
+                            #node that defines a piece-wise or smoothly continuous interpolation
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="intranet">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#Intranet"/>
+                            private #network that uses the same protocols and standards as the Internet
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="LevelOfDetail">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#LevelOfDetail"/>
+                            <xs:attribute name="alias" type="xs:string" default="level of detail"/>
+                            amount of detail or complexity which is displayed at any particular #time for any particular #object
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="LineTerminator">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#LineTerminator"/>
+                            <xs:attribute name="alias" type="xs:string" default="line terminator"/>
+                            linefeed character (0x0A) and/or carriage return character (0x0D)
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="loop">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#Loop"/>
+                            sequence of #events which would result in a specific event generator sending more than one event with the same #timestamp
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="multimedia">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#Multimedia"/>
+                            integrated presentation, typically on a computer, of content of various types, such as computer graphics, audio, and videon
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="network">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#Network"/>
+                            set of interconnected computers
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="node">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#Node"/>
+                            <xs:attribute name="synonym" type="xs:string" default="object"/>
+                            fundamental component of a #sceneGraph that defines model information, such as graph structure, geometry, animation, interaction, object metadata, rendering, or display
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="nodeType">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#NodeType"/>
+                            <xs:attribute name="alias" type="xs:string" default="node type"/>
+                            characteristic of each node that describes, in general, its particular semantics
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="object">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#Object"/>
+                            <xs:attribute name="synonym" type="xs:string" default="node"/>
+                            collection of data and procedures, packaged according to the rules and syntax defined in this document.
+                            NOTE  This term is usually synonymous with #node.
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="orderOfPreference">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#OrderOfPreference"/>
+                            <xs:attribute name="alias" type="xs:string" default="order of preference"/>
+                            order (specified by the user) in which a list of #field values is processed by the #browser
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="panorama">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#Panorama"/>
+                            background texture that is placed behind all geometry in the scene and in front of the ground and sky
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="parent">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#Parent"/>
+                            #node which is an instance of a #GroupingNode
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="pixel">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#Pixel"/>
+                            one element of an #image specified as a matrix of colour elements
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="pointer">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#Pointer"/>
+                            location and direction in the #virtualWorld defined by the #pointingDevice with which the #user is currently interacting with the virtual world
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="pointingDevice">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#PointingDevice"/>
+                            <xs:attribute name="alias" type="xs:string" default="pointing device"/>
+                            hardware device connected to the #user's computer by which the user directly controls the location and direction of the #pointer
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="pointingDeviceSensor">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#PointingDeviceSensor"/>
+                            <xs:attribute name="alias" type="xs:string" default="pointing device sensor"/>
+                            sensor #node that generates #events based on #user actions, such as #pointingDevice motions or button activations
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="polyline">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#Polyline"/>
+                            piecewise linear curve
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="profile">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#Profile"/>
+                            named collection of criteria for functionality and conformance that defines an implementable subset of a standard
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="prototype">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#Prototype"/>
+                            definition of a new #nodeType in terms of the nodes defined in this document
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="prototyping">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#Prototyping"/>
+                            mechanism for extending the set of #nodeTypes from within a #X3DFile
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="ROUTE">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#ROUTE"/>
+                            connection between a #node generating an #event and a node receiving the event
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="sceneGraph">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#SceneGraph"/>
+                            <xs:attribute name="alias" type="xs:string" default="scene graph"/>
+                            ordered set of #nodes and #statements
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="script">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#Script"/>
+                            set of procedural functions normally executed as part of an #eventCascade
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="scripting">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#Scripting"/>
+                            process of creating or referring to a #script
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="sensorNode">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#SensorNode"/>
+                            <xs:attribute name="alias" type="xs:string" default="sensor node"/>
+                            #node that enables the #user to interact with the #world in the scene graph hierarchy
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="separatorCharacter">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#SeparatorCharacter"/>
+                            <xs:attribute name="alias" type="xs:string" default="separator character"/>
+                            #UTF-8 character used to separate syntactical entities in an #X3DFile
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="sibling">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#Sibling"/>
+                            #node which shares a #parent with other nodes
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="simulationTick">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#SimulationTick"/>
+                            <xs:attribute name="alias" type="xs:string" default="simulation tick"/>
+                            smallest time unit capable of being identified in a digital simulation of analog time
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="slerp">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#slerp"/>
+                            spherical linear interpolation for animating 3D rotation values
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="specialGroupNode">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#SpecialGroupNode"/>
+                            <xs:attribute name="alias" type="xs:string" default="special group node"/>
+                            grouping node that exhibits special behaviour ( e.g., Switch or LOD)
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="statement">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#Statement"/>
+                            A statement specifies fundamental scene-related information
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="texel">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#Texel"/>
+                            #pixel in an #image used as a #texture
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="texture">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#Texture"/>
+                            image used to create visual appearance effects when applied to geometry nodes
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="textureCoordinates">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#TextureCoordinates"/>
+                            <xs:attribute name="alias" type="xs:string" default="texture coordinates"/>
+                            set of coordinates used to map a #texture to geometry
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="time">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#Time"/>
+                            monotonically increasing value generated by a node
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="timestamp">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#Timestamp"/>
+                            that part of an #event that describes the #time the event occurred and that caused the message to be sent
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="transformationHierarchy">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#TransformationHierarchy"/>
+                            <xs:attribute name="alias" type="xs:string" default="transformation hierarchy"/>
+                            subset of the #sceneGraph consisting of #nodes that have well-defined coordinate systems
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="transparencyChunk">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#TransparencyChunk"/>
+                            <xs:attribute name="alias" type="xs:string" default="transparency chunk"/>
+                            section of a PNG file containing transparency information (derived from ISO/IEC 15948)
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="traverse">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#Traverse"/>
+                            process the nodes in a scene graph in the correct order
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="user">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#User"/>
+                            person or agent who uses and interacts with #X3DFiles by means of a #browser
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="viewer">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#Viewer"/>
+                            location, direction, and viewing angle in a #virtualWorld that determines the portion of the virtual world presented by the #browser to the #user
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="virtualWorld">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#VirtualWorld"/>
+                            <xs:attribute name="alias" type="xs:string" default="virtual world"/>
+                            <xs:attribute name="alias" type="xs:string" default="world"/>
+                            See #world.
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="whiteSpace">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#WhiteSpace"/>
+                            <xs:attribute name="alias" type="xs:string" default="white space"/>
+                            one or more consecutive occurrences of a #separatorCharacter
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="world">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#World"/>
+                            collection of one or more #X3DFiles (potentially including other multimedia content) that is interpreted by an X3D #browser to present an interactive experience to the #user that is consistent with the intent of the #author
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="worldCoordinateSpace">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#WorldCoordinateSpace"/>
+                            <xs:attribute name="alias" type="xs:string" default="world coordinate space"/>
+                            coordinate system in which each X3D #world is defined
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="X3DBrowser">
+                <!-- TODO omit this definition as redundant? -->
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#X3DBrowser"/>
+                            <xs:attribute name="alias" type="xs:string" default="X3D browser"/>
+                            <xs:attribute name="alias" type="xs:string" default="browser"/>
+                            see #browser
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="X3DDocumentServer">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#X3DDocumentServer"/>
+                            computer program that locates and transmits #X3DFiles and supporting files in response to requests from #browsers
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="X3DFile">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#X3DFile"/>
+                            <xs:attribute name="alias" type="xs:string" default="X3D file"/>
+                            set of X3D nodes and statements as defined in this document
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="XYPlane">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#XYPlane"/>
+                            <xs:attribute name="alias" type="xs:string" default="XY plane"/>
+                            plane perpendicular to the Z-axis that passes through the point Z = 0.0
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="YZPlane">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#YZPlane"/>
+                            <xs:attribute name="alias" type="xs:string" default="YZ plane"/>
+                            plane perpendicular to the X-axis that passes through the point X = 0.0
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="ZXPlane">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#ZXPlane"/>
+                            <xs:attribute name="alias" type="xs:string" default="ZX plane"/>
+                            plane perpendicular to the Y-axis that passes through the point Y = 0.0
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="acronyms">
+        <xs:annotation>
+            <xs:appinfo>Acronyms and abbreviated terms are defined in X3D Architecture: Extensible 3D (X3D), ISO/IEC 19775-1:2023, 3 Definitions, acronyms, and abbreviations.</xs:appinfo>
+            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html"/>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="CAD">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#CAD"/>
+                            Computer-Assisted Design
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="HSV">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#HSV"/>
+                            Hue, Saturation, and Value colour model
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="JPEG">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#JPEG"/>
+                            Joint Photographic Experts Group
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="MIDI">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#MIDI"/>
+                            Musical Instrument Digital Interface. A standard for digital music representation.
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="MIME">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#MIME"/>
+                            Multipurpose Internet Mail Extension
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="MF">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#MF"/>
+                            Multiple-valued field
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="MPEG">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#MPEG"/>
+                            Moving Picture Experts Group
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="PNG">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#PNG"/>
+                            Portable Network Graphics. A specification for representing two-dimensional images in files.
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="RGB">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#RGB"/>
+                            Red, Green, and Blue colour model
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="RURL">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#RURL"/>
+                            Relative Uniform Resource Locator
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="SAI">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#SAI"/>
+                            Scene Access Interface
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="SF">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#SF"/>
+                            Single-valued field
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="UCS">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#UCS"/>
+                            Universal multiple-octet coded Character Set
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="URI">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#URI"/>
+                            Universal Resource Identifier
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="URL">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#URL"/>
+                            Uniform Resource Locator
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="URN">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#URN"/>
+                            Universal Resource Name
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="UTF-8">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#UTF-8"/>
+                            variable-length 8-bit Universal multiple-octet coded character set Transformation Format
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            <!-- template
+            <xs:enumeration value="enumerationToken">
+                <xs:annotation>
+                        <xs:appinfo>
+                            <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#EnumerationToken"/>
+                            <xs:attribute name="alias" type="xs:string" default="enumerationStringIfDifferent"/>
+                            description
+                        </xs:appinfo>
+                </xs:annotation>
+            </xs:enumeration>
+            -->
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>    
