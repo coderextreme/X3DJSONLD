@@ -1,11 +1,16 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsi:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd">
   <head>
+    <component name='Shape' level='2'/>
     <component name="Layering" level="1" />
     <component name="HAnim" level="1"/>
     <meta name="title" content="HAnimGimbalJointController18.x3d"/>
     <meta name="description" content="Humanoid with unique selectable material per joint, depth-first and hierarchy traversal, and gimbal controller aligned to HAnim Hierarchy.txt."/>
+    <meta name='identifier' content='https://github.com/coderextreme/X3DJSONLD/gltf/HAnimGimbalJointController.x3d'/>
+    <meta name='generator' content='Claude.ai https://claude.ai/'/>
+    <meta name='generator' content='ChatGPT https://chatgpt.com/'/>
+    <meta name='generator' content='Gemini Flash https://ai.dev/'/>
   </head>
   <Scene>
     <NavigationInfo type="&quot;EXAMINE&quot;" headlight="true"/>
@@ -3988,7 +3993,7 @@ function exportNow() {
   var NL = String.fromCharCode(10), DQ = String.fromCharCode(34);
   var doc = '&lt;?xml version=~1.0~ encoding=~UTF-8~?&gt;' + NL
     + '&lt;!DOCTYPE X3D PUBLIC ~ISO//Web3D//DTD X3D 4.0//EN~ ~https://www.web3d.org/specifications/x3d-4.0.dtd~&gt;' + NL
-    + '&lt;X3D profile=~Immersive~ version=~4.0~ xmlns:xsi=~http://www.w3.org/2001/XMLSchema-instance~ xsi:noNamespaceSchemaLocation=~https://www.web3d.org/specifications/x3d-4.0.xsd~&gt;' + NL
+    + '&lt;X3D profile=~Immersive~ version=~4.0~ xmlns:xsd=~http://www.w3.org/2001/XMLSchema-instance~ xsd:noNamespaceSchemaLocation=~https://www.web3d.org/specifications/x3d-4.0.xsd~&gt;' + NL
     + '  &lt;head&gt;' + NL
     + '    &lt;component name=~HAnim~ level=~1~/&gt;' + NL
     + '    &lt;meta name=~title~ content=~HAnimHumanoid.x3d~/&gt;' + NL

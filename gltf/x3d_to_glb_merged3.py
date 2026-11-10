@@ -3816,6 +3816,6 @@ if __name__ == "__main__":
         out_f = args[1] if len(args) > 1 else os.path.splitext(in_f)[0] + ".glb"
         convert_x3d_to_glb(in_f, out_f, bone_mode=override)
     else:
-        for f in ["JinFacsAu27MouthStretchMorpher.x3d", "CleanedYouClocks.x3d", "HumanoidComplete.x3d", "pelvis.x3d"]:
+        for f in ["HAnimGimbalJointController18.x3d", "JinFacsAu27MouthStretchMorpher.x3d", "CleanedYouClocks.x3d", "HumanoidComplete.x3d", "pelvis.x3d"]:
             if os.path.exists(f):
                 convert_x3d_to_glb(f, os.path.splitext(f)[0] + ".glb", bone_mode=override)
