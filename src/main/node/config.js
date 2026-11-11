@@ -1,13 +1,13 @@
 var config = {};
 
 function examples() {
-	return "C:/Users/jcarl/www.web3d.org/x3d/content/examples/";
+	return "/home/yottzumm/www.web3d.org/x3d/content/examples/";
 }
 
 config.examples = examples;
 
 function x3dcode() {
-	return "C:/Users/jcarl/";
+	return "/home/yottzumm/";
 }
 config.x3dcode = x3dcode;
 
