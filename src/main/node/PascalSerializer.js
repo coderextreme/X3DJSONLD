@@ -120,6 +120,13 @@ PascalSerializer.prototype = {
 				MFLead =  "([";
 				MFTrail = "])";
 			}
+		} else if ( attrType === "SFImage") {
+			MFLead = "MakeRGBAImage(";
+			valules = [values[0], values[1], values.slice(2)];
+			MFTrail = ")";
+		} else if ( attrType === "SFMatrix4f") {
+			MFLead = "MakeMatrix4([";
+			MFTrail = "])";
 		}
                 if (type === "int") {
                         for (var v in values) {
@@ -225,6 +232,20 @@ PascalSerializer.prototype = {
 			addpre = "Add";
 		}
 		*/
+		if ((element.nodeName === 'MultiTextureTransform' &&
+			  method.slice(3) === "TextureTransform") ||
+		    (element.nodeName === 'MultiTexture' &&
+			  method.slice(3) === "Texture") ||
+		    (element.nodeName === 'MultiTextureCoordinate' &&
+			  method.slice(3) === "TexCoord")) {
+			method = method.slice(3)+".Add"
+			addpre = "fd";
+		}
+		if (element.nodeName === 'MetadataSet') {
+			method = method+".Add"
+			addpre = "fd";
+			console.log(element && element.nodeName, "****************"+addpre+method);
+		}
 		addpre = addpre.charAt(0).toUpperCase() + addpre.slice(1);
 		method = method.charAt(0).toUpperCase() + method.slice(1);
 		return prepre+addpre+method;
@@ -614,6 +635,39 @@ PascalSerializer.prototype = {
 						) {
 						str += element.nodeName+stack[0];
 						str += '.Set'+method+strval+";\n";
+					} else	if ( attr === "bboxSize") {
+						str += element.nodeName+stack[0];
+						str += ".FdBBoxSize.Value := ("+strval+");\n";
+					} else	if ( attr === "bboxCenter") {
+						str += element.nodeName+stack[0];
+						str += ".FdBBoxCenter.Value := ("+strval+");\n";
+					} else	if (
+						attr === "image" && attrType === "SFImage"
+						) {
+						str += element.nodeName+stack[0];
+						str += ".FdImage.Value := "+strval+";\n";
+					} else	if (
+						attr === "alphaMode" && attrType === "SFString"
+						) {
+						str += element.nodeName+stack[0];
+						strval = strval.replaceAll("'", "");
+						strval = strval.charAt(0).toUpperCase()+strval.slice(1).toLowerCase();
+						str += ".AlphaMode := am"+strval+";\n";
+
+					} else	if (
+						attr === "minificationFilter" &&
+						    attrType === "SFString"
+						) {
+						str += element.nodeName+stack[0];
+						str += ".FdMinificationFilter.Value := "+strval+";\n";
+
+					} else	if (
+						attr === "magnificationFilter" &&
+						    attrType === "SFString"
+						) {
+						str += element.nodeName+stack[0];
+						str += ".FdMagnificationFilter.Value := "+strval+";\n";
+
 					} else	if (
 						attr === "color" && attrType === "MFColor"
 						) {
@@ -634,7 +688,7 @@ PascalSerializer.prototype = {
 		}
 		if (element.nodeName === "meta") {
 			str += "X3D0";
-			str += ".Meta["+MetaName+"] := "+MetaContent+";\n";
+			str += ".Meta["+MetaName+"] := '"+MetaContent.replaceAll("'", "")+"';\n";
 		}
 		if (element.nodeName === "component") {
 			str += "X3D0";
@@ -657,6 +711,10 @@ PascalSerializer.prototype = {
 						isNode = "";
 						node.nodeName = "X3D"+node.nodeName.charAt(0) + node.nodeName.slice(1).toLowerCase();
 					}
+					if (node.nodeName === "field") {
+						isNode = "";
+						node.nodeName = "X3D"+node.nodeName.charAt(0).toUpperCase() + node.nodeName.slice(1).toLowerCase();
+					}
 					/*
 					if (node.nodeName === "Color") {
 						isNode = "";
@@ -673,7 +731,9 @@ PascalSerializer.prototype = {
 						// params = "(nil)";
 					}
 					if ( node.nodeName !== "X3DRoute") {
-						ch += node.nodeName+stack[0]+" := T"+isCastle+node.nodeName+isNode+".Create"+params+";\n";
+						if (!node.hasAttribute("USE")) {
+							ch += node.nodeName+stack[0]+" := T"+isCastle+node.nodeName+isNode+".Create"+params+";\n";
+						}
 						this.code.push(node.nodeName+stack[0]+": T"+isCastle+node.nodeName+isNode+";");
 					}
 				}
@@ -712,6 +772,8 @@ PascalSerializer.prototype = {
 						} else if (
 							method === ".SetSkinCoord"
 						) {
+							ch += element.nodeName+stack[1]+method+"("+node.nodeName+stack[0]+");\n";
+						} else if ( method.startsWith(".Fd")) {
 							ch += element.nodeName+stack[1]+method+"("+node.nodeName+stack[0]+");\n";
 						} else {
 							ch += element.nodeName+stack[1]+"."+method.slice(4)+" := "+node.nodeName+stack[0]+";\n";
