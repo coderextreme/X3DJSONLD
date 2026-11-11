@@ -3,7 +3,7 @@
 IFS=$'\n\t'
 
 # finish what's not completed
-find /c/x3d-code/www.web3d.org/x3d/content/examples -name '*.x3d' | wc
+find ~/www.web3d.org/x3d/content/examples -name '*.x3d' | wc
 echo convert
 bash convert.sh
 echo those not converted

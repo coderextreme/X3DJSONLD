@@ -6,5 +6,5 @@ IFS=$'\n\t'
 
 . ../shell/classpath
 
-find /c/x3d-code/www.web3d.org/x3d/content/examples/ -name '*.x3d' | xargs -P $PROCESSORS ./donjson.sh
+find ~/www.web3d.org/x3d/content/examples/ -name '*.x3d' | xargs -P $PROCESSORS ./donjson.sh
 

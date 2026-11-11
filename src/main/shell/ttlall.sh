@@ -4,4 +4,4 @@
 
 . ./classpath
 
-find /c/x3d-code/www.web3d.org/x3d/content/examples/ -name '*.x3d' -print0 | xargs -0 -P $PROCESSORS ./tottl.sh
+find ~/www.web3d.org/x3d/content/examples/ -name '*.x3d' -print0 | xargs -0 -P $PROCESSORS ./tottl.sh
