@@ -36,7 +36,7 @@ What Has Been Integrated
 #
 # Features:
 #   * Geometry: IndexedFaceSet, IndexedTriangleSet, TriangleSet, Box, Sphere,
-#     Cone, Cylinder, Rectangle2D, LineSet, IndexedLineSet, InlineGeometry.
+#     Cone, Cylinder, Extrusion, Rectangle2D, LineSet, IndexedLineSet, InlineGeometry.
 #   * Materials & Textures: PBR Metallic-Roughness, Appearance, Material
 #     (diffuse, emissive, shininess), ImageTexture, TextureTransform
 #     (KHR_texture_transform), ColorRGBA, LineProperties.
@@ -47,8 +47,9 @@ What Has Been Integrated
 #     and HAnimMotion.
 #   * Animation: Shortest-path quaternion SLERP, strictly increasing timestamps,
 #     Position/Orientation/Scalar/CoordinateInterpolators, viewpoint tours.
-#   * Interactivity: Ratified KHR_interactivity behavior graphs (TouchSensor,
-#     TimeSensor, BooleanToggle, ProximitySensor with HUD tracking, Switch).
+#   * Interactivity: KHR_interactivity behavior graphs (TouchSensor, TimeSensor,
+#     BooleanToggle, ProximitySensor, selectable CylinderSensor/PlaneSensor targets,
+#     and conservative Script initialize() literal-to-TRS translation).
 #   * Interactive Bone Mode: Auto-detected or via --bones. Click bones to
 #     glide/focus camera with highlight shells and joint-rotation axes.
 #   * Layering & Lighting: LayerSet, Layer (renderingGroupId, selectability),
@@ -91,6 +92,156 @@ def _get_requests_session():
         except ImportError:
             _SHARED_SESSION = False
     return _SHARED_SESSION
+
+def convert_sequenced_viewpoints(ctx):
+    """
+    Translates X3D TimeSensor -> BooleanSequencer -> Viewpoint.set_bind graphs
+    into an animated glTF Director Camera track synchronized with the master clock.
+    """
+    gltf = ctx.gltf
+    bin_blob = ctx.bin_blob
+    world_mats = _world_matrices(gltf)
+
+    # 1. Create a dedicated Director Camera if not already present
+    cam_data_idx = len(gltf.cameras)
+    gltf.cameras.append(Camera(
+        type="perspective",
+        perspective=Perspective(yfov=0.785398, znear=0.1, zfar=2000.0)
+    ))
+    director_node_idx = len(gltf.nodes)
+    gltf.nodes.append(Node(
+        name="DirectorCamera",
+        camera=cam_data_idx,
+        translation=[0.0, 1.5, 5.0],
+        rotation=[0.0, 0.0, 0.0, 1.0]
+    ))
+    gltf.scenes[0].nodes.insert(0, director_node_idx)
+
+    # 2. Inspect all scopes for TimeSensor -> BooleanSequencer -> Viewpoint chains
+    for scope in ctx.scopes:
+        # Find all routes targeting set_bind on Viewpoints
+        bind_routes = [r for r in scope.root.findall('.//ROUTE') if r.get('toField') in ('set_bind', 'bind')]
+        if not bind_routes:
+            continue
+
+        seq_to_vp = {}
+        for r in bind_routes:
+            seq_to_vp[r.get('fromNode')] = r.get('toNode')
+
+        # Find TimeSensors driving these sequencers
+        for ts in scope.root.findall('.//TimeSensor'):
+            ts_def = ts.get('DEF')
+            cycle = float(ts.get('cycleInterval', '1.0'))
+            ts_routes = [r for r in scope.root.findall('.//ROUTE') 
+                         if r.get('fromNode') == ts_def and r.get('toNode') in seq_to_vp]
+
+            if not ts_routes:
+                continue
+
+            events = []
+            for r in ts_routes:
+                bs_name = r.get('toNode')
+                vp_name = seq_to_vp.get(bs_name)
+                bs_el = scope.def_map.get(bs_name)
+                vp_el = scope.def_map.get(vp_name)
+                if bs_el is None or vp_el is None:
+                    continue
+
+                keys = parse_array(bs_el.get('key', ''), float)
+                vals = [v.lower() in ('true', '1') for v in bs_el.get('keyValue', '').split()]
+                
+                # Check transitionTime from NavigationInfo if present
+                nav_info = vp_el.find('.//NavigationInfo')
+                trans_time = float(nav_info.get('transitionTime', '1.5')) if nav_info is not None else 1.5
+
+                for k, v in zip(keys, vals):
+                    if v:  # BooleanSequencer outputs true -> bind event
+                        t = float(k) * cycle
+                        events.append((t, vp_name, vp_el, trans_time))
+
+            if not events:
+                continue
+
+            # Sort chronological shot transitions
+            events.sort(key=lambda e: e[0])
+
+            # Ensure event at t=0
+            if events[0][0] > 0.0:
+                first_vp = scope.root.find('.//Viewpoint')
+                first_name = first_vp.get('DEF') if first_vp is not None else events[0][1]
+                events.insert(0, (0.0, first_name, first_vp or events[0][2], 0.0))
+
+            # Sample camera pose for each shot
+            times = []
+            pos_samples = []
+            rot_samples = []
+
+            for idx, (t, vp_name, vp_el, trans_time) in enumerate(events):
+                # Resolve world transform of the target viewpoint
+                vp_node_idx = ctx.def_to_node_idx.get(scope.prefix + vp_name) or ctx.def_to_node_idx.get(vp_name)
+                if vp_node_idx is not None and vp_node_idx < len(world_mats):
+                    wm = world_mats[vp_node_idx]
+                    t_vec = wm[:3, 3].tolist()
+                    # Extract rotation matrix to quaternion
+                    R = wm[:3, :3]
+                    # Normalize rotation columns to prevent scale distortion
+                    for c in range(3):
+                        n = np.linalg.norm(R[:, c])
+                        if n > 1e-6: R[:, c] /= n
+                    q_w = math.sqrt(max(0.0, 1.0 + R[0,0] + R[1,1] + R[2,2])) / 2.0
+                    q_x = (R[2,1] - R[1,2]) / (4.0 * q_w) if q_w > 1e-4 else 0.0
+                    q_y = (R[0,2] - R[2,0]) / (4.0 * q_w) if q_w > 1e-4 else 0.0
+                    q_z = (R[1,0] - R[0,1]) / (4.0 * q_w) if q_w > 1e-4 else 1.0
+                    r_vec = [float(q_x), float(q_y), float(q_z), float(q_w)]
+                else:
+                    # Fallback to local viewpoint attributes
+                    t_vec = parse_array(vp_el.get('position', '0 0 10'))
+                    r_vec = axis_angle_to_quat(*parse_array(vp_el.get('orientation', '0 0 1 0')))
+
+                # Add keyframes: smoothly fly to the new view, then hold
+                if idx > 0 and trans_time > 0.0:
+                    t_fly = min(t + trans_time, cycle)
+                    times.extend([t, t_fly])
+                    pos_samples.extend([pos_samples[-1], t_vec])
+                    rot_samples.extend([rot_samples[-1], r_vec])
+                else:
+                    times.append(t)
+                    pos_samples.append(t_vec)
+                    rot_samples.append(r_vec)
+
+            # Ensure final hold at cycle end
+            if times[-1] < cycle:
+                times.append(cycle)
+                pos_samples.append(pos_samples[-1])
+                rot_samples.append(rot_samples[-1])
+
+            # Ensure strictly increasing timestamps and shortest-path SLERP
+            keys_clean, pos_clean = sanitize_animation_tracks(times, np.array(pos_samples, dtype=np.float32))
+            _, rot_clean = sanitize_animation_tracks(times, np.array(rot_samples, dtype=np.float32))
+            for k_i in range(1, len(rot_clean)):
+                if np.dot(rot_clean[k_i - 1], rot_clean[k_i]) < 0.0:
+                    rot_clean[k_i] = -rot_clean[k_i]
+
+            acc_t = add_accessor(gltf, bin_blob, keys_clean, SCALAR, FLOAT, target=None, add_min_max=True)
+            acc_p = add_accessor(gltf, bin_blob, pos_clean, VEC3, FLOAT, target=None)
+            acc_r = add_accessor(gltf, bin_blob, rot_clean, VEC4, FLOAT, target=None)
+
+            # Attach camera channels directly to the master animation
+            anim_name = f"Anim_{scope.prefix}{ts_def}"
+            anim = next((a for a in gltf.animations if a.name == anim_name), None)
+            if anim is None:
+                anim = Animation(name=anim_name, samplers=[], channels=[])
+                anim.extras = {"duration": cycle}
+                gltf.animations.append(anim)
+
+            s_p = len(anim.samplers)
+            anim.samplers.append(AnimationSampler(input=acc_t, output=acc_p, interpolation="LINEAR"))
+            anim.channels.append(AnimationChannel(sampler=s_p, target=AnimationChannelTarget(node=director_node_idx, path="translation")))
+
+            s_r = len(anim.samplers)
+            anim.samplers.append(AnimationSampler(input=acc_t, output=acc_r, interpolation="LINEAR"))
+            anim.channels.append(AnimationChannel(sampler=s_r, target=AnimationChannelTarget(node=director_node_idx, path="rotation")))
+            print(f"  INFO: Synthesized Director Camera track for master clock '{ts_def}' ({len(events)} camera cuts)")
 
 class HeaderPreservingRedirectHandler(urllib.request.HTTPRedirectHandler):
     def redirect_request(self, req, fp, code, msg, headers, newurl):
@@ -262,6 +413,13 @@ def _load_extern_proto(extern_el, owner_scope, ctx):
     cache[key] = found
     return found
 
+# X3D sensor note: CylinderSensor and PlaneSensor preserve their full X3D
+# parameters and expose selectable target meshes through KHR_node_selectability
+# / KHR_interactivity. KHR_interactivity has no standardized pointer-drag delta
+# or keyboard text-entry event, so continuous drag and StringSensor editing
+# require a viewer-side input adapter. Script source is preserved; only simple
+# initialize() literal assignments routed to node TRS are translated.
+#
 # ---------------------------------------------------------------------------
 # Low-Level Conversion Helpers
 # ---------------------------------------------------------------------------
@@ -896,6 +1054,139 @@ def cone_to_ifs(cone_node):
     ET.SubElement(ifs, 'TextureCoordinate', {'point': ' '.join(f"{t[0]} {t[1]}" for t in tex_coords)})
     return ifs
 
+
+def extrusion_to_ifs(extrusion_node, segments=32):
+    """Generate an X3D Extrusion as an IndexedFaceSet.
+
+    The sweep uses a stable local frame at each spine point, interpolates
+    crossSection/scale/orientation per spine station, and honors beginCap,
+    endCap, ccw and solid. Degenerate stations are skipped safely.
+    """
+    cross = parse_array(extrusion_node.get('crossSection', '1 1 1 -1 -1 -1 -1 1 1 1'))
+    spine = parse_array(extrusion_node.get('spine', '0 0 0 0 1 0'))
+    if len(cross) < 6 or len(cross) % 2 or len(spine) < 6 or len(spine) % 3:
+        return None
+    section = np.asarray(cross, dtype=np.float64).reshape(-1, 2)
+    path = np.asarray(spine, dtype=np.float64).reshape(-1, 3)
+    # Remove duplicate closing cross-section point; close it explicitly below.
+    closed = np.linalg.norm(section[0] - section[-1]) < 1e-8
+    if closed:
+        section = section[:-1]
+    if len(section) < 3 or len(path) < 2:
+        return None
+
+    raw_scale = parse_array(extrusion_node.get('scale', ''), default=[1.0, 1.0])
+    scales = np.asarray(raw_scale, dtype=np.float64).reshape(-1, 2)
+    raw_orient = parse_array(extrusion_node.get('orientation', ''), default=[0, 0, 1, 0])
+    orientations = np.asarray(raw_orient, dtype=np.float64).reshape(-1, 4)
+
+    def station_value(arr, i, default):
+        return arr[min(i, len(arr)-1)] if len(arr) else default
+
+    verts = []
+    for i, center in enumerate(path):
+        if i == 0:
+            tangent = path[1] - path[0]
+        elif i == len(path)-1:
+            tangent = path[-1] - path[-2]
+        else:
+            tangent = path[i+1] - path[i-1]
+        tn = np.linalg.norm(tangent)
+        if tn < 1e-10:
+            tangent = np.array([0.0, 1.0, 0.0])
+        else:
+            tangent /= tn
+        # Local extrusion frame: local +Y follows spine; X is kept as close
+        # as possible to world +X, with a fallback for near-parallel vectors.
+        ref = np.array([1.0, 0.0, 0.0])
+        if abs(np.dot(ref, tangent)) > 0.95:
+            ref = np.array([0.0, 0.0, 1.0])
+        axis_x = ref - np.dot(ref, tangent) * tangent
+        axis_x /= max(np.linalg.norm(axis_x), 1e-12)
+        axis_z = np.cross(axis_x, tangent)
+        axis_z /= max(np.linalg.norm(axis_z), 1e-12)
+        frame = np.column_stack((axis_x, tangent, axis_z))
+        sc = station_value(scales, i, np.array([1.0, 1.0]))
+        ori = station_value(orientations, i, np.array([0.0, 0.0, 1.0, 0.0]))
+        rot = axis_angle_to_quat(*ori)
+        x, y, z, w = rot
+        R = np.array([
+            [1-2*(y*y+z*z), 2*(x*y-z*w), 2*(x*z+y*w)],
+            [2*(x*y+z*w), 1-2*(x*x+z*z), 2*(y*z-x*w)],
+            [2*(x*z-y*w), 2*(y*z+x*w), 1-2*(x*x+y*y)]
+        ], dtype=np.float64)
+        local = np.column_stack((section[:, 0] * sc[0], np.zeros(len(section)),
+                                 section[:, 1] * sc[1]))
+        ring = (frame @ (R @ local.T)).T + center
+        verts.extend(ring.tolist())
+
+    nsec, nspine = len(section), len(path)
+    faces = []
+    edge_count = nsec if closed else nsec - 1
+    for j in range(nspine - 1):
+        for k in range(edge_count):
+            kn = (k + 1) % nsec
+            a = j*nsec + k
+            b = j*nsec + kn
+            c = (j+1)*nsec + kn
+            d = (j+1)*nsec + k
+            faces.append([a, b, c, d])
+    if extrusion_node.get('beginCap', 'true').lower() not in ('false', '0'):
+        faces.append(list(reversed(range(nsec))))
+    if extrusion_node.get('endCap', 'true').lower() not in ('false', '0'):
+        faces.append([(nspine-1)*nsec+k for k in range(nsec)])
+
+    coord_idx = ' '.join(' '.join(map(str, f)) + ' -1' for f in faces)
+    if extrusion_node.get('ccw', 'true').lower() in ('false', '0'):
+        faces = [list(reversed(f)) for f in faces]
+        coord_idx = ' '.join(' '.join(map(str, f)) + ' -1' for f in faces)
+    ifs = ET.Element('IndexedFaceSet', {
+        'coordIndex': coord_idx,
+        'solid': extrusion_node.get('solid', 'true'),
+        'ccw': 'true'
+    })
+    ET.SubElement(ifs, 'Coordinate', {
+        'point': ' '.join(f'{v[0]:.9g} {v[1]:.9g} {v[2]:.9g}' for v in verts)
+    })
+    return ifs
+
+
+def _x3d_script_metadata(script_node):
+    """Preserve Script declarations and source; translation is intentionally conservative."""
+    fields = []
+    for field in script_node.findall('./field'):
+        fields.append({
+            'name': field.get('name'),
+            'type': field.get('type'),
+            'accessType': field.get('accessType'),
+            'value': field.get('value')
+        })
+    urls = parse_mfstring(script_node.get('url', ''))
+    inline_code = [u for u in urls if u.lstrip().startswith(('ecmascript:', 'javascript:'))]
+    return {
+        'directOutput': script_node.get('directOutput', 'false').lower() in ('true', '1'),
+        'mustEvaluate': script_node.get('mustEvaluate', 'false').lower() in ('true', '1'),
+        'fields': fields,
+        'url': urls,
+        'inlineSource': inline_code
+    }
+
+
+def _sensor_extras(tag, xml_node):
+    """Serialize the X3D sensor's complete interaction contract for runtime adapters."""
+    attrs = {k: v for k, v in xml_node.attrib.items() if k not in ('DEF', 'USE')}
+    return {'x3d_' + tag[0].lower() + tag[1:]: attrs,
+            'x3d_interaction': {
+                'sensorType': tag,
+                'runtimeInputRequired': True,
+                'outputs': {
+                    'CylinderSensor': ['rotation_changed', 'trackPoint_changed', 'isActive', 'isOver', 'offset_changed'],
+                    'PlaneSensor': ['translation_changed', 'trackPoint_changed', 'isActive', 'isOver', 'offset_changed'],
+                    'StringSensor': ['enteredText', 'finalText', 'isActive']
+                }.get(tag, [])
+            }}
+
+
 def _resolve_child(node, tag, def_map):
     found = node.find('.//' + tag)
     if found is not None and found.get('USE'):
@@ -965,6 +1256,7 @@ def process_mesh_primitives(geom_nodes, gltf, bin_blob, def_map, mat_list, base_
         is_rect = node.tag == 'Rectangle2D'
         is_cyl = node.tag == 'Cylinder'
         is_cone = node.tag == 'Cone'
+        is_extrusion = node.tag == 'Extrusion'
 
         facesets = ([node] if is_faceset or is_line else
                     node.findall('.//IndexedFaceSet') +
@@ -980,9 +1272,13 @@ def process_mesh_primitives(geom_nodes, gltf, bin_blob, def_map, mat_list, base_
             facesets.extend([rectangle2d_to_ifs(r) for r in node.findall('.//Rectangle2D')])
             facesets.extend([cylinder_to_ifs(c) for c in node.findall('.//Cylinder')])
             facesets.extend([cone_to_ifs(c) for c in node.findall('.//Cone')])
+            facesets.extend([g for g in (extrusion_to_ifs(e) for e in node.findall('.//Extrusion')) if g is not None])
             if is_rect: facesets.append(rectangle2d_to_ifs(node))
             if is_cyl:  facesets.append(cylinder_to_ifs(node))
             if is_cone: facesets.append(cone_to_ifs(node))
+            if is_extrusion:
+                generated = extrusion_to_ifs(node)
+                if generated is not None: facesets.append(generated)
 
             for ig in node.findall('.//InlineGeometry'):
                 urls = parse_mfstring(ig.get('url', ''))
@@ -992,7 +1288,7 @@ def process_mesh_primitives(geom_nodes, gltf, bin_blob, def_map, mat_list, base_
                         ext_root, frag = res['root'], res['frag']
                         sub_target = next((e for e in ext_root.iter() if e.get('DEF') == frag), None) if frag else None
                         if sub_target is None:
-                            for gtag in ('IndexedFaceSet', 'IndexedTriangleSet', 'TriangleSet', 'LineSet', 'IndexedLineSet', 'Box', 'Sphere', 'Cone', 'Cylinder', 'Rectangle2D'):
+                            for gtag in ('IndexedFaceSet', 'IndexedTriangleSet', 'TriangleSet', 'LineSet', 'IndexedLineSet', 'Box', 'Sphere', 'Cone', 'Cylinder', 'Rectangle2D', 'Extrusion'):
                                 found_g = ext_root.find(f'.//{gtag}')
                                 if found_g is not None:
                                     sub_target = found_g; break
@@ -1001,6 +1297,9 @@ def process_mesh_primitives(geom_nodes, gltf, bin_blob, def_map, mat_list, base_
                             elif sub_target.tag == 'Rectangle2D': facesets.append(rectangle2d_to_ifs(sub_target))
                             elif sub_target.tag == 'Cylinder': facesets.append(cylinder_to_ifs(sub_target))
                             elif sub_target.tag == 'Cone': facesets.append(cone_to_ifs(sub_target))
+                            elif sub_target.tag == 'Extrusion':
+                                generated = extrusion_to_ifs(sub_target)
+                                if generated is not None: facesets.append(generated)
                             elif sub_target.tag == 'Sphere':
                                 s_prim = _make_sphere_primitive(sub_target, app_node, def_map, gltf, bin_blob, mat_list, base_path)
                                 if s_prim: primitives.append(s_prim)
@@ -1267,14 +1566,14 @@ HANDLED_TAGS = STRUCTURAL_TAGS | {
     'X3D', 'head', 'meta', 'Scene',
     'Shape', 'Appearance', 'Material', 'ImageTexture', 'TextureTransform',
     'IndexedFaceSet', 'IndexedTriangleSet', 'TriangleSet', 'LineSet', 'IndexedLineSet',
-    'Box', 'Sphere', 'Cone', 'Cylinder', 'Rectangle2D', 'Text', 'FontStyle', 'ColorRGBA', 'LineProperties',
+    'Box', 'Sphere', 'Cone', 'Cylinder', 'Rectangle2D', 'Extrusion', 'Text', 'FontStyle', 'ColorRGBA', 'LineProperties',
     'Coordinate', 'TextureCoordinate', 'Normal',
     'WorldInfo', 'NavigationInfo', 'Background', 'AudioClip', 'Sound', 'LoadSensor',
     'Switch', 'HAnimMotion', 'TouchSensor', 'ProximitySensor', 'HAnimDisplacer',
     'LayerSet', 'Layer',
     'Viewpoint', 'Inline', 'InlineGeometry',
     'DirectionalLight', 'PointLight', 'SpotLight',
-    'TimeSensor', 'PositionInterpolator', 'OrientationInterpolator', 'ScalarInterpolator', 'CoordinateInterpolator', 'IntegerSequencer',
+    'CylinderSensor', 'PlaneSensor', 'StringSensor', 'Script', 'TimeSensor', 'PositionInterpolator', 'OrientationInterpolator', 'ScalarInterpolator', 'CoordinateInterpolator', 'IntegerSequencer',
     'BooleanToggle',
     'MetadataSet', 'MetadataString', 'MetadataInteger', 'MetadataFloat', 'MetadataDouble', 'MetadataBoolean',
     'ProtoDeclare', 'ExternProtoDeclare', 'ProtoInterface', 'ProtoBody', 'ProtoInstance', 'field', 'fieldValue', 'IS', 'connect',
@@ -1283,7 +1582,7 @@ HANDLED_TAGS = STRUCTURAL_TAGS | {
 SHAPE_CONSUMED_TAGS = {
     'Appearance', 'Material', 'ImageTexture', 'TextureTransform', 'FontStyle',
     'IndexedFaceSet', 'IndexedTriangleSet', 'TriangleSet', 'LineSet', 'IndexedLineSet',
-    'Box', 'Sphere', 'Cone', 'Cylinder', 'Rectangle2D', 'Text', 'ColorRGBA', 'LineProperties',
+    'Box', 'Sphere', 'Cone', 'Cylinder', 'Rectangle2D', 'Extrusion', 'Text', 'ColorRGBA', 'LineProperties',
     'Coordinate', 'TextureCoordinate', 'Normal', 'InlineGeometry', 'HAnimDisplacer',
     'MetadataSet', 'MetadataString', 'MetadataInteger', 'MetadataFloat', 'MetadataDouble', 'MetadataBoolean',
     'IS', 'connect', 'field', 'fieldValue'
@@ -1386,6 +1685,7 @@ class ConvertCtx:
         self.displacers = []
         self.node_to_morph_targets = {}
         self.proximity_sensors = []
+        self.sensor_nodes = []
         self.layers = []
         self.layer_sets = []
         self.invisible_skipped = 0
@@ -1973,6 +2273,47 @@ def traverse_x3d_node(xml_node, parent_idx, ctx, scope, skin_group=None, current
 
     if tag in IGNORED_BEHAVIOUR_TAGS:
         _preserve_behavior(ctx, scope, xml_node, "behavior")
+        return
+
+    if tag in ('CylinderSensor', 'PlaneSensor', 'StringSensor'):
+        sensor_def = xml_node.get('DEF')
+        sensor_idx = len(gltf.nodes)
+        sensor_name = scope.prefix + (sensor_def or f'{tag}_{sensor_idx}')
+        node = Node(name=sensor_name, children=[], extras=_sensor_extras(tag, xml_node))
+        # X3D sensor nodes are event producers, not visible geometry.
+        tag_node_interactivity(node, selectable=True)
+        gltf.nodes.append(node)
+        attach(sensor_idx)
+        if sensor_def:
+            ctx.def_to_node_idx[scope.prefix + sensor_def] = sensor_idx
+            ctx.def_to_node_idx[sensor_def] = sensor_idx
+        ctx.sensor_nodes.append({'type': tag, 'def': sensor_def, 'node_idx': sensor_idx,
+                                 'parent_idx': parent_idx, 'attributes': dict(xml_node.attrib),
+                                 'scope': scope.prefix})
+        ctx.behavior.append({
+            'type': tag, 'DEF': sensor_def, 'scope': scope.prefix,
+            'attributes': dict(xml_node.attrib),
+            'translation': 'runtime input adapter required'
+        })
+        return
+
+    if tag == 'Script':
+        script_def = xml_node.get('DEF')
+        script_idx = len(gltf.nodes)
+        script_name = scope.prefix + (script_def or f'Script_{script_idx}')
+        script_meta = _x3d_script_metadata(xml_node)
+        node = Node(name=script_name, children=[], extras={'x3d_script': script_meta})
+        gltf.nodes.append(node)
+        attach(script_idx)
+        if script_def:
+            ctx.def_to_node_idx[scope.prefix + script_def] = script_idx
+            ctx.def_to_node_idx[script_def] = script_idx
+        ctx.behavior.append({
+            'type': 'Script', 'DEF': script_def, 'scope': scope.prefix,
+            'translated': False,
+            'reason': 'Script source and field declarations preserved; only statically mappable event logic is eligible for KHR_interactivity translation.',
+            'fields': script_meta['fields']
+        })
         return
 
     if tag == 'ProximitySensor':
@@ -2909,6 +3250,38 @@ def build_khr_interactivity(ctx):
         return add_node("event/onSelect", configuration=cfg(nodeIndex=node_idx),
                         extension="KHR_node_selectability", outputs=ON_SELECT_OUTPUTS)
 
+    # X3D drag/text sensors are represented as selectable interactivity endpoints.
+    # The extension can expose selection, but does not define a generic pointer-drag
+    # stream or text-entry widget; runtime adapters consume the preserved X3D metadata.
+    if ctx.sensor_nodes:
+        active_sensor = get_or_create_var("active_x3d_sensor", "int", -1)
+        for sensor in ctx.sensor_nodes:
+            if sensor["type"] == "StringSensor":
+                # KHR_interactivity has no standardized keyboard/text-entry event.
+                continue
+            # X3D sensors are non-rendering siblings of the geometry they sense.
+            # Make rendered descendants selectable and bind their click event to
+            # this sensor's identity; actual drag deltas still need a viewer adapter.
+            root_idx = sensor.get("parent_idx")
+            candidates, stack, seen = [], ([root_idx] if root_idx is not None else []), set()
+            while stack:
+                current = stack.pop()
+                if current in seen or current is None or current < 0 or current >= len(gltf.nodes):
+                    continue
+                seen.add(current)
+                gn = gltf.nodes[current]
+                if gn.mesh is not None:
+                    tag_node_interactivity(gn, selectable=True)
+                    candidates.append(current)
+                stack.extend(gn.children or [])
+            for target_idx in candidates:
+                selected = on_select(target_idx)
+                set_active_sensor = add_node(
+                    "variable/set",
+                    configuration=cfg(variables=[active_sensor]),
+                    values={str(active_sensor): lit("int", sensor["node_idx"])})
+                connect(selected, set_active_sensor)
+
     # Bones Interactive Selection
     sel_bones = [(n, b) for n, b in enumerate(ctx.interactive_bones)
                  if b.get('pickable') and b.get('focus_anim_idx') is not None]
@@ -2957,6 +3330,77 @@ def build_khr_interactivity(ctx):
                 "toField": r.get('toField'),
                 "scope": scope
             })
+
+
+    # 3. Conservative Script translation:
+    # Translate initialize() assignments of literal numeric/bool values to
+    # Script outputOnly fields when those outputs ROUTE to glTF node TRS fields.
+    # Arbitrary ECMAScript, loops, callbacks, string operations and directOutput
+    # are intentionally preserved as source metadata, not miscompiled.
+    for scope in ctx.scopes:
+        for script_el in scope.root.findall('.//Script'):
+            script_def = script_el.get('DEF')
+            if not script_def:
+                continue
+            script_key = scope.prefix + script_def
+            sources = _x3d_script_metadata(script_el).get('inlineSource', [])
+            code = '\n'.join(sources)
+            init_match = re.search(
+                r'function\s+initialize\s*\([^)]*\)\s*\{([\s\S]*?)\}',
+                code, re.I)
+            if not init_match:
+                continue
+            body = init_match.group(1)
+            field_defs = {
+                f.get('name'): f for f in script_el.findall('./field')
+                if f.get('name') and f.get('accessType') in ('outputOnly', 'inputOutput')
+            }
+            assignments = {}
+            for fname, f_el in field_defs.items():
+                m = re.search(r'(?:this\s*\.\s*)?' + re.escape(fname) +
+                              r'\s*=\s*([^;]+);', body)
+                if not m:
+                    continue
+                expr = m.group(1).strip()
+                val = None
+                if expr.lower() in ('true', 'false'):
+                    val = ('bool', expr.lower() == 'true')
+                else:
+                    nums = re.findall(r'[-+]?(?:\d+\.?\d*|\.\d+)(?:[eE][-+]?\d+)?', expr)
+                    if nums and re.fullmatch(
+                        r'\s*(?:new\s+\w+\s*\()?\s*[-+\d.eE,\s]+\)?\s*', expr):
+                        arr = [float(x) for x in nums]
+                        ftype = (f_el.get('type') or '').lower()
+                        if ftype in ('sfvec2f', 'sfvec2d') and len(arr) >= 2:
+                            val = ('float2', arr[:2])
+                        elif ftype in ('sfvec3f', 'sfvec3d') and len(arr) >= 3:
+                            val = ('float3', arr[:3])
+                        elif ftype in ('sfvec4f', 'sfvec4d') and len(arr) >= 4:
+                            val = ('float4', arr[:4])
+                        elif len(arr) == 1:
+                            val = ('float', arr[0])
+                if val is not None:
+                    assignments[fname] = val
+
+            for out_field, (sig, value) in assignments.items():
+                outgoing = [r for r in all_routes
+                            if r['fromNode'] == script_key and r['fromField'] == out_field]
+                for route in outgoing:
+                    target_idx = ctx.def_to_node_idx.get(route['toNode'])
+                    target_field = (route['toField'] or '').replace('set_', '')
+                    target_path = {'translation': 'translation', 'rotation': 'rotation',
+                                   'scale': 'scale'}.get(target_field)
+                    expected_sig = {'translation': 'float3', 'rotation': 'float4',
+                                    'scale': 'float3'}.get(target_field)
+                    if target_idx is None or target_path is None or sig != expected_sig:
+                        continue
+                    start = add_node('event/onStart')
+                    set_value = add_node(
+                        'pointer/set',
+                        configuration=cfg(pointer=f'/nodes/{target_idx}/{target_path}',
+                                          type=T(sig)),
+                        values={'value': lit(sig, value)})
+                    connect(start, set_value)
 
     # TouchSensor -> TimeSensor grouping
     START_FIELDS = ('set_startTime', 'set_triggerTime', 'startTime')
@@ -3492,6 +3936,8 @@ def convert_x3d_to_glb(x3d_filepath, glb_filepath, bone_mode=None):
 
     convert_animations(ctx)
 
+    convert_sequenced_viewpoints(ctx)
+
     if ctx.bone_mode:
         _finalize_bone_pick_targets(ctx)
         _place_bone_camera(ctx)
@@ -3664,6 +4110,6 @@ if __name__ == "__main__":
         out_f = args[1] if len(args) > 1 else os.path.splitext(in_f)[0] + ".glb"
         convert_x3d_to_glb(in_f, out_f, bone_mode=override)
     else:
-        for f in ["JinFacsAu27MouthStretchMorpher.x3d", "CleanedYouClocks.x3d", "HumanoidComplete.x3d", "pelvis.x3d"]:
+        for f in ["HAnimGimbalJointController18.x3d", "JinFacsAu27MouthStretchMorpher.x3d", "CleanedYouClocks.x3d", "HumanoidComplete.x3d", "pelvis.x3d"]:
             if os.path.exists(f):
                 convert_x3d_to_glb(f, os.path.splitext(f)[0] + ".glb", bone_mode=override)

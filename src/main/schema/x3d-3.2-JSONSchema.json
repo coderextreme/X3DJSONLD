@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://www.web3d.org/specifications/x3d-3.2-JSONSchema.json",
-  "title": "X3D V3.2 JSON Schema, generated 2026/11/09 04:28:01",
+  "title": "X3D V3.2 JSON Schema, generated 2026/11/11 07:34:15",
   "description": "Experimental JSON Schema for X3D V3.2.  License: Web3D Consortium License: https://www.web3d.org/license",
   "type": "object",
   "properties": {
@@ -334,7 +334,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "format": "uri-reference",
+                "format": "iri-reference",
                 "type": "string"
               }
             },
@@ -588,7 +588,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "format": "uri-reference",
+                "format": "iri-reference",
                 "type": "string"
               }
             },
@@ -625,7 +625,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "format": "uri-reference",
+                "format": "iri-reference",
                 "type": "string"
               }
             },
@@ -634,7 +634,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "format": "uri-reference",
+                "format": "iri-reference",
                 "type": "string"
               }
             },
@@ -643,7 +643,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "format": "uri-reference",
+                "format": "iri-reference",
                 "type": "string"
               }
             },
@@ -674,7 +674,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "format": "uri-reference",
+                "format": "iri-reference",
                 "type": "string"
               }
             },
@@ -686,7 +686,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "format": "uri-reference",
+                "format": "iri-reference",
                 "type": "string"
               }
             },
@@ -715,7 +715,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "format": "uri-reference",
+                "format": "iri-reference",
                 "type": "string"
               }
             },
@@ -3666,7 +3666,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "format": "uri-reference",
+                "format": "iri-reference",
                 "type": "string"
               }
             },
@@ -4619,7 +4619,7 @@
           "type": "array",
           "minItems": 1,
           "items": {
-            "format": "uri-reference",
+            "format": "iri-reference",
             "type": "string"
           }
         }
@@ -5570,7 +5570,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "format": "uri-reference",
+                "format": "iri-reference",
                 "type": "string"
               }
             },
@@ -5579,7 +5579,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "format": "uri-reference",
+                "format": "iri-reference",
                 "type": "string"
               }
             },
@@ -5588,7 +5588,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "format": "uri-reference",
+                "format": "iri-reference",
                 "type": "string"
               }
             },
@@ -5597,7 +5597,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "format": "uri-reference",
+                "format": "iri-reference",
                 "type": "string"
               }
             },
@@ -5630,7 +5630,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "format": "uri-reference",
+                "format": "iri-reference",
                 "type": "string"
               }
             },
@@ -5683,7 +5683,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "format": "uri-reference",
+                "format": "iri-reference",
                 "type": "string"
               }
             },
@@ -7362,7 +7362,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "format": "uri-reference",
+                "format": "iri-reference",
                 "type": "string"
               }
             },
@@ -7418,7 +7418,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "format": "uri-reference",
+                "format": "iri-reference",
                 "type": "string"
               }
             },
@@ -7479,7 +7479,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "format": "uri-reference",
+                "format": "iri-reference",
                 "type": "string"
               }
             },
@@ -8084,7 +8084,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "format": "uri-reference",
+                "format": "iri-reference",
                 "type": "string"
               }
             },
@@ -8371,9 +8371,9 @@
               "prefixItems": [
                 {
                   "enum": [
-                    "LEFT",
+                    "CENTER",
                     "RIGHT",
-                    "CENTER"
+                    "LEFT"
                   ],
                   "default": "CENTER",
                   "type": "string"
@@ -8381,8 +8381,8 @@
                 {
                   "enum": [
                     "TOP",
-                    "BOTTOM",
-                    "CENTER"
+                    "CENTER",
+                    "BOTTOM"
                   ],
                   "default": "CENTER",
                   "type": "string"
@@ -8412,18 +8412,18 @@
               "prefixItems": [
                 {
                   "enum": [
-                    "WORLD",
+                    "PIXEL",
                     "FRACTION",
-                    "PIXEL"
+                    "WORLD"
                   ],
                   "default": "WORLD",
                   "type": "string"
                 },
                 {
                   "enum": [
-                    "WORLD",
+                    "PIXEL",
                     "FRACTION",
-                    "PIXEL"
+                    "WORLD"
                   ],
                   "default": "WORLD",
                   "type": "string"
@@ -8439,20 +8439,20 @@
               "prefixItems": [
                 {
                   "enum": [
+                    "STRETCH",
                     "NONE",
                     "FRACTION",
-                    "PIXEL",
-                    "STRETCH"
+                    "PIXEL"
                   ],
                   "default": "NONE",
                   "type": "string"
                 },
                 {
                   "enum": [
+                    "STRETCH",
                     "NONE",
                     "FRACTION",
-                    "PIXEL",
-                    "STRETCH"
+                    "PIXEL"
                   ],
                   "default": "NONE",
                   "type": "string"
@@ -8476,18 +8476,18 @@
               "prefixItems": [
                 {
                   "enum": [
-                    "WORLD",
+                    "PIXEL",
                     "FRACTION",
-                    "PIXEL"
+                    "WORLD"
                   ],
                   "default": "WORLD",
                   "type": "string"
                 },
                 {
                   "enum": [
-                    "WORLD",
+                    "PIXEL",
                     "FRACTION",
-                    "PIXEL"
+                    "WORLD"
                   ],
                   "default": "WORLD",
                   "type": "string"
@@ -9868,7 +9868,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "format": "uri-reference",
+                "format": "iri-reference",
                 "type": "string"
               }
             },
@@ -11473,7 +11473,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "format": "uri-reference",
+                "format": "iri-reference",
                 "type": "string"
               }
             },
@@ -14202,7 +14202,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "format": "uri-reference",
+                "format": "iri-reference",
                 "type": "string"
               }
             },
@@ -14269,7 +14269,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "format": "uri-reference",
+                "format": "iri-reference",
                 "type": "string"
               }
             },
@@ -14339,7 +14339,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "format": "uri-reference",
+                "format": "iri-reference",
                 "type": "string"
               }
             },
@@ -18393,7 +18393,7 @@
       "properties": {
         "@xsd:noNamespaceSchemaLocation": {
           "type": "string",
-          "format": "uri"
+          "format": "iri"
         },
         "JSON schema": {
           "type": "string"

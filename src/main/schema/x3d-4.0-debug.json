@@ -1,7 +1,7 @@
 {
         "$schema": "https://json-schema.org/draft/2020-12/schema",
         "$id": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
-        "title": "X3D V4.0 JSON Schema, generated 2026/11/09 04:28:02",
+        "title": "X3D V4.0 JSON Schema, generated 2026/11/11 07:34:16",
         "description": "Experimental JSON Schema for X3D V4.0.  License: Web3D Consortium License: https://www.web3d.org/license",
         "type": "object",
         "properties": {
@@ -486,7 +486,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@visible" : {
@@ -829,7 +829,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@DEF" : {
@@ -962,7 +962,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@bottomUrl" : {
@@ -972,7 +972,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@frontUrl" : {
@@ -982,7 +982,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@groundAngle" : {
@@ -1016,7 +1016,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"-metadata" : {
@@ -1029,7 +1029,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@skyAngle" : {
@@ -1061,7 +1061,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@transparency" : {
@@ -2013,7 +2013,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@DEF" : {
@@ -5804,7 +5804,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@DEF" : {
@@ -8163,7 +8163,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@child2Url" : {
@@ -8173,7 +8173,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@child3Url" : {
@@ -8183,7 +8183,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@child4Url" : {
@@ -8193,7 +8193,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"-children" : {
@@ -8227,7 +8227,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@visible" : {
@@ -8316,7 +8316,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@DEF" : {
@@ -10622,7 +10622,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@DEF" : {
@@ -10708,7 +10708,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@DEF" : {
@@ -10799,7 +10799,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@DEF" : {
@@ -11461,7 +11461,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@visible" : {
@@ -11911,9 +11911,9 @@
 						"prefixItems": [
 							{
 								"enum": [
+									"LEFT",
 									"RIGHT",
-									"CENTER",
-									"LEFT"
+									"CENTER"
 								],
 								"default":"CENTER",
 								"type":"string"
@@ -11921,8 +11921,8 @@
 							,
 							{
 								"enum": [
-									"BOTTOM",
 									"TOP",
+									"BOTTOM",
 									"CENTER"
 								],
 								"default":"CENTER",
@@ -11954,9 +11954,9 @@
 						"prefixItems": [
 							{
 								"enum": [
-									"WORLD",
 									"PIXEL",
-									"FRACTION"
+									"FRACTION",
+									"WORLD"
 								],
 								"default":"WORLD",
 								"type":"string"
@@ -11964,9 +11964,9 @@
 							,
 							{
 								"enum": [
-									"WORLD",
 									"PIXEL",
-									"FRACTION"
+									"FRACTION",
+									"WORLD"
 								],
 								"default":"WORLD",
 								"type":"string"
@@ -11982,9 +11982,9 @@
 						"prefixItems": [
 							{
 								"enum": [
-									"NONE",
-									"STRETCH",
 									"PIXEL",
+									"STRETCH",
+									"NONE",
 									"FRACTION"
 								],
 								"default":"NONE",
@@ -11993,9 +11993,9 @@
 							,
 							{
 								"enum": [
-									"NONE",
-									"STRETCH",
 									"PIXEL",
+									"STRETCH",
+									"NONE",
 									"FRACTION"
 								],
 								"default":"NONE",
@@ -12021,9 +12021,9 @@
 						"prefixItems": [
 							{
 								"enum": [
-									"WORLD",
 									"PIXEL",
-									"FRACTION"
+									"FRACTION",
+									"WORLD"
 								],
 								"default":"WORLD",
 								"type":"string"
@@ -12031,9 +12031,9 @@
 							,
 							{
 								"enum": [
-									"WORLD",
 									"PIXEL",
-									"FRACTION"
+									"FRACTION",
+									"WORLD"
 								],
 								"default":"WORLD",
 								"type":"string"
@@ -13921,7 +13921,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@DEF" : {
@@ -15933,7 +15933,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@DEF" : {
@@ -19479,7 +19479,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@DEF" : {
@@ -19754,7 +19754,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@DEF" : {
@@ -19858,7 +19858,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					},
 					"@DEF" : {
@@ -26180,7 +26180,7 @@
 						"type":"array",
 						"minItems" : 1,
 						"items": {
-						"format":"uri-reference",
+						"format":"iri-reference",
 						"type":"string"
 						}					}
 				},
@@ -26820,7 +26820,7 @@
                                  "properties": {
                                 "@xsd:noNamespaceSchemaLocation": {
                                         "type": "string",
-                                        "format": "uri"
+                                        "format": "iri"
                                 },
                                 "JSON schema": {
                                         "type": "string"
