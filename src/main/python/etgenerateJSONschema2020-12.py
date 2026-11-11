@@ -43,10 +43,14 @@ class ClassPrinter:
             self.name = node.get("name")
             self.node = node
             nodeInterface = self.node.find(".//InterfaceDefinition")
-            if nodeInterface is not None:
-                self.appinfo = nodeInterface.get("appinfo").replace('"', r'\"')
-            else:
+            try:
+                if nodeInterface is not None:
+                    self.appinfo = nodeInterface.get("appinfo").replace('"', r'\"')
+                else:
+                    self.appinfo = "This node, "+self.name+", has no InterfaceDefinition.appinfo."
+            except:
                 self.appinfo = "This node, "+self.name+", has no InterfaceDefinition.appinfo."
+
             self.statementContentModel = self.node.findall(".//StatementContentModel")
             self.nodeContentModel = self.node.findall(".//NodeContentModel")
             self.groupContentModel = self.node.findall(".//GroupContentModel")
