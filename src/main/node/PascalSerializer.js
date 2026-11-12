@@ -121,12 +121,23 @@ PascalSerializer.prototype = {
 				MFTrail = "])";
 			}
 		} else if ( attrType === "SFImage") {
+                        for (var v in values) {
+				if (values[v] > 0x7fffffff) {
+				    values[v] = values[v] - 4294967296
+				}
+                        }
 			MFLead = "MakeRGBAImage(";
-			valules = [values[0], values[1], values.slice(2)];
+			values = [ values[0], values[1], "["+ values.slice(2).join(j)+ "]" ];
 			MFTrail = ")";
-		} else if ( attrType === "SFMatrix4f") {
+		} else if (attrType === "SFMatrix4f") {
 			MFLead = "MakeMatrix4([";
 			MFTrail = "])";
+		} else if (attrType.startsWith("SFVec3")) {
+			MFLead = "(";
+			MFTrail = ")";
+		} else if (attrType.startsWith("SFVec2")) {
+			MFLead = "(";
+			MFTrail = ")";
 		}
                 if (type === "int") {
                         for (var v in values) {
@@ -244,7 +255,6 @@ PascalSerializer.prototype = {
 		if (element.nodeName === 'MetadataSet') {
 			method = method+".Add"
 			addpre = "fd";
-			console.log(element && element.nodeName, "****************"+addpre+method);
 		}
 		addpre = addpre.charAt(0).toUpperCase() + addpre.slice(1);
 		method = method.charAt(0).toUpperCase() + method.slice(1);
@@ -329,7 +339,7 @@ PascalSerializer.prototype = {
 		} else if (
 			attrType === "SFVec2f") {
 			strval = this.printSubArray(attrType, "float", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, FLOAT_SUFFIX+',', '', FLOAT_SUFFIX, 1, attr);
-			strval  =  "Vector2"+strval;
+			strval  =  "Vector2Single"+strval;
 		} else if (
 			attrType === "MFVec2f") {
 			strval = this.printSubArray(attrType, "float", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, FLOAT_SUFFIX+',', '', FLOAT_SUFFIX, 2, attr);
@@ -360,6 +370,20 @@ PascalSerializer.prototype = {
 			attrType === "MFVec4d"||
 			attrType === "MFDouble") {
 			strval = this.printSubArray(attrType, "double", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, DOUBLE_SUFFIX+',', '', DOUBLE_SUFFIX, 1, attr);
+			switch (attrType) {
+				case "SFVec2d":
+					strval  =  "Vector2Double"+strval;
+					break;
+				case "SFVec3d":
+					strval  =  "Vector3Double"+strval;
+					break;
+				case "SFVec4d":
+					strval  =  "Vector4Double"+strval;
+					break;
+				case "MFDouble":
+					strval  =  strval.substr(1,strval.length-2);
+					break;
+			}
 		} else if (
 			attrType === "SFMatrix3d"||
 			attrType === "MFMatrix3d") {
@@ -616,7 +640,12 @@ PascalSerializer.prototype = {
 							// console.log("Found USE with value:", strval);
 						}
 						str += ' := '+this.DEFs[strval]+";\n";
-					} else	if (typeof attrType !== 'undefined' && attrType.startsWith("MF") && attr !== "justify" && attr !== "family" 
+					} else	if (typeof
+						attrType !== 'undefined' &&
+						attrType.startsWith("MF") &&
+						attr !== "justify" &&
+						attr !== "family" &&
+						attr !== "height"
 						/*
 						attr === "info" ||
 						attr === "string" ||
@@ -673,6 +702,11 @@ PascalSerializer.prototype = {
 						) {
 						str += element.nodeName+stack[0];
 						str += '.Set'+method+"("+strval+");\n";
+					} else	if (
+						attr === "height" && attrType === "MFDouble"
+						) {
+						str += element.nodeName+stack[0];
+						str += '.Set'+method+"(["+strval+"]);\n";
 					} else	if (typeof attrType !== 'undefined' && attrType.startsWith("MFString") && attr === "justify") {
 						str += element.nodeName+stack[0];
 						str += '.'+method+" := "+(strval.replace(/, (.*)/, ";\n"+element.nodeName+stack[0]+"."+method+"Minor := $1"))+";\n";
@@ -759,7 +793,10 @@ PascalSerializer.prototype = {
 						if ( method === ".AddDisplacers" ) {
 							method = ".SetDisplacers";
 						}
-						if (
+						if ( method === ".AddRootNode" ) {
+							method = ".SetRootNode";
+							ch += element.nodeName+stack[1]+method+"(["+node.nodeName+stack[0]+"]);\n";
+						} else if (
 							method === ".AddChildren" ||
 							method === ".SetDisplacers" ||
 							method === ".AddDisplacements" ||
