@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://www.web3d.org/specifications/x3d-3.0-JSONSchema.json",
-  "title": "X3D V3.0 JSON Schema, generated 2026/11/11 07:43:42",
+  "title": "X3D V3.0 JSON Schema, generated 2026/11/11 08:45:32",
   "description": "Experimental JSON Schema for X3D V3.0.  License: Web3D Consortium License: https://www.web3d.org/license",
   "type": "object",
   "properties": {
