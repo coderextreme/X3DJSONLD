@@ -3,7 +3,7 @@
 <head>
     <title>X_ITE Content</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <script defer="true" src="https://cdn.jsdelivr.net/npm/x_ite@latest/dist/x_ite.min.js"></script>
+    <script defer="true" src="https://cdn.jsdelivr.net/npm/x_ite@latest/dist/x_ite.js"></script>
     <style>
         body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; }
         x3d-canvas { width: 100%; height: 100%; border: none; }
@@ -77,8 +77,8 @@
          * Loads XML content into the X_ITE scene using browser API.
          * @param {string} xmlString - The XML content string to load.
          */
-        async function loadContentInXite(xmlString) { // Simplified: this iframe function now only expects XML string
-            console.log(`X_ITE Iframe: loadContentInXite called.`);
+        async function loadContentInXite(xmlString, xmlUrl) { // Simplified: this iframe function now only expects XML string
+            console.log(`X_ITE Iframe: loadContentInXite called.`, xmlUrl);
             const browser = await getXiteBrowser();
             if (!browser) {
                 console.error("X_ITE Iframe: Browser not available for loadContent. Load aborted.");
@@ -103,7 +103,13 @@
                 let sceneToLoad;
                 if (xmlString && xmlString.trim() !== "") {
                     console.log("X_ITE Iframe: Creating X3D from XML string.");
-                    sceneToLoad = await browser.createX3DFromString(xmlString);
+	            if (xmlUrl) {
+			    const MFUrl = new X3D.MFString(new X3D.SFString(xmlUrl));
+			    console.error("Is this X3D.MFString?", xmlUrl);
+			    sceneToLoad = await browser.createX3DFromURL(MFUrl);
+		    } else {
+                    	sceneToLoad = await browser.createX3DFromString(xmlString);
+		    }
                 } else {
                     console.log("X_ITE Iframe: Received empty XML string, creating minimal empty scene.");
                     sceneToLoad = await browser.createX3DFromString('<X3D profile="Immersive" version="4.0"><Scene></Scene></X3D>');
@@ -119,7 +125,7 @@
             } catch (e) {
                 console.error(`X_ITE Iframe: Error during XML content loading or world replacement:`, e);
                 try {
-                    const errorXml = `<X3D profile="Immersive" version="4.0"><Scene><Transform translation="0 0 -5"><Shape><Text string='"X_ITE Error: ${String(e.message).replace(/"/g, "'")}"'/><Appearance><Material diffuseColor="1 0 0"/></Appearance></Shape></Transform></Scene></X3D>`;
+			const errorXml = `<X3D profile="Immersive" version="4.0"><Scene><Transform translation="0 0 -5"><Shape><Text string='&quot;X_ITE Error: ${String(e.message).replace(/"/g, "&quot;")}&quot; &quot;${String(xmlUrl).replace(/"/g, "&quot;")}&quot;'><FontStyle size="0.1" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/></Text><Appearance><Material diffuseColor="1 0 0"/></Appearance></Shape></Transform></Scene></X3D>`;
                     const errorScene = await browser.createX3DFromString(errorXml);
                     if (errorScene) await browser.replaceWorld(errorScene);
                 } catch (e2) { console.error("X_ITE Iframe: Failed to display error scene.", e2); }

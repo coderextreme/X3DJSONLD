@@ -852,7 +852,7 @@ PascalSerializer.prototype = {
 					if (node.nodeName === "ProtoDeclare") {
 						isNode = "";
 						this.setProto(node);
-						node.nodeName = "X3DPrototypeBase";
+						node.nodeName = "X3DPrototype";
 					}
 					if (node.nodeName === "ProtoInstance") {
 						node.nodeName = "X3DPrototype";

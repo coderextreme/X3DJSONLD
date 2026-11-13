@@ -19,7 +19,7 @@ set -uo pipefail
 # ------------------------------------------------------------------------------
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PYTHON_BIN="${PYTHON_BIN:-python3}"
-CONVERTER="${CONVERTER:-${SCRIPT_DIR}/x3d_to_glb_merged3.py}"
+CONVERTER="${CONVERTER:-${SCRIPT_DIR}/x3d_to_glb_merged9.1.py}"
 
 JOBS="$(nproc 2>/dev/null || sysctl -n hw.ncpu 2>/dev/null || echo 4)"
 TIMEOUT_SEC=180

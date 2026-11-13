@@ -609,7 +609,9 @@ POSSIBILITY OF SUCH DAMAGE.
                             ($fieldName = 'controlPoint')       or ($fieldName = 'controlPoints')      or ($fieldName = 'crossSectionCurve')  or
                             ($fieldName = 'emitter')            or ($fieldName = 'fillProperties')     or
                             ($fieldName = 'fogCoord')           or ($fieldName = 'fontStyle')          or ($fieldName = 'geoOrigin')          or
-                            ($fieldName = 'geometry')           or ($fieldName = 'geometry1')          or ($fieldName = 'geometry2')          or
+			(($fieldName = 'geometry') and not($parentName='RigidBody'))
+		       or ($fieldName = 'geometry1')          or ($fieldName = 'geometry2')          or
+
                             ($fieldName = 'gradients')          or ($fieldName = 'layout')             or ($fieldName = 'lineProperties')     or
                             ($fieldName = 'massDensityModel')   or ($fieldName = 'material')           or
                             ($fieldName = 'metadata')           or ($fieldName = 'normal')             or ($fieldName = 'tangent')             or 
@@ -4463,6 +4465,7 @@ POSSIBILITY OF SUCH DAMAGE.
                     ($attributeName='fillProperties') or ($attributeName='lineProperties')  or ($attributeName='pointProperties'))) or
                     ($parentElementName='PhysicalMaterial'      and (($attributeName='baseTexture')    or ($attributeName='emissiveTexture') or ($attributeName='metallicRoughnessTexture') or ($attributeName='normalTexture') or ($attributeName='occlusionTexture'))) or
                     ($parentElementName='UnlitMaterial'         and (($attributeName='baseTexture')    or ($attributeName='emissiveTexture')                                                or ($attributeName='normalTexture'))) or
+                    (starts-with($parentElementName,'Layout')    and  $attributeName='viewport') or
                     (contains($parentElementName,'Viewpoint')    and  $attributeName='navigationInfo')">
 			  <xsl:text>SFNode</xsl:text>
 		  </xsl:when>
@@ -4473,6 +4476,7 @@ POSSIBILITY OF SUCH DAMAGE.
                     ($parentElementName='DISEntityManager' and ($attributeName='addedEntities' or $attributeName='removedEntities')) or
                     ($attributeName='bodies') or ($attributeName='collidables') or ($attributeName='contacts') or
                     (($parentElementName='RigidBodyCollection') and  $attributeName='joints') or
+                    (($parentElementName='RigidBody')           and  $attributeName='geometry') or
                     ($parentElementName='MetadataSet' and $attributeName='metadata') or
                     ($parentElementName='Appearance'  and $attributeName='shaders')">
 			  <xsl:text>MFNode</xsl:text>

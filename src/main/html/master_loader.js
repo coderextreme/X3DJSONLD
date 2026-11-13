@@ -210,7 +210,7 @@ async function displayInIframes(urlForX3dom, xmlContentForXite) {
 
     const xitePromise = (async () => {
         if (xiteRuntimeFullyReady && xiteIframe?.contentWindow?.loadContentInXite) {
-            await xiteIframe.contentWindow.loadContentInXite(xmlContentForXite || '');
+            await xiteIframe.contentWindow.loadContentInXite(xmlContentForXite || '', currentX3domUrl);
         } else {
             xiteLoadQueue = xmlContentForXite || '';
         }
@@ -236,6 +236,7 @@ export async function loadX3DFile(filePath) {
     globalXmlForJsonConversion = null;
 
     try {
+	console.log("Loading", filePath, "in master_loader.js");
         const response = await fetch(filePath);
         if (!response.ok) throw new Error(`HTTP error ${response.status}`);
         const fileExtension = filePath.split('.').pop().toLowerCase();

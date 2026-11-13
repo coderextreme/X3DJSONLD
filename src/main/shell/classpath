@@ -11,11 +11,11 @@ if uname | grep -q "Linux"; then
   export PYTHONSAI=${HOMESFOLDER}/$USERNAME/pythonSAI
   export GRAALPY=${DOWNLOADS}/graalpy-community-jvm-25.0.2-linux-amd64/bin/graalpy
 
-  export CLASSPATH="${X3DJSONLD}/saxon-he-12.9.jar:${X3DJSONLD}/X3DJSAIL.4.0.full.jar:.:../../..:../java"
+  export CLASSPATH="${X3DJSONLD}/saxon-HE-13.1.jar:${X3DJSONLD}/xmlresolver-6.1.1.jar:${X3DJSONLD}/X3DJSAIL.4.0.full.jar:.:../../..:../java"
   export JRUBY=jruby
   export TRUFFLERUBY=${DOWNLOADS}/truffleruby-community-jvm-40.0.0-linux-amd64/bin/truffleruby
   # GRAAL DOES NOT TAKE C:  You need colon separators on Linux, commas on Windows
-  export GRAAL_CLASSPATH=".:${GRAALX3DJSONLD}/saxon-he-12.9.jar:${GRAALX3DJSONLD}/target/X3DJSONLD-1.0-SNAPSHOT.jar:${GRAALX3DJSONLD}/src/main/graaljs:../java:${HOMESFOLDER}/$USERNAME/X3DJSONLD/X3DJSAIL.4.0.full.jar:${PYTHONSAI}/xmlresolver-5.1.1.jar:${PYTHONSAI}/xmlresolver-5.1.1-data.jar"
+  export GRAAL_CLASSPATH=".:${GRAALX3DJSONLD}/saxon-HE-13.1.jar:${GRAALX3DJSONLD}/target/X3DJSONLD-1.0-SNAPSHOT.jar:${GRAALX3DJSONLD}/src/main/graaljs:../java:${HOMESFOLDER}/$USERNAME/X3DJSONLD/X3DJSAIL.4.0.full.jar:${PYTHONSAI}/xmlresolver-5.1.1.jar:${PYTHONSAI}/xmlresolver-5.1.1-data.jar"
   export CLOJURE="clojure"
   source ${X3DJSONLD}/src/main/python/venv/bin/activate
 else
@@ -31,9 +31,9 @@ else
 # export JRUBY=/c/jruby-11.0.0.1/bin/jruby
   export JRUBY=/c/jruby-10.0.2.0/bin/jruby
   export TRUFFLERUBY=truffleruby
-  export GRAAL_CLASSPATH=".;${GRAALX3DJSONLD}/saxon-he-12.9.jar;${GRAALX3DJSONLD}/target/X3DJSONLD-1.0-SNAPSHOT.jar;${GRAALX3DJSONLD}/src/main/graaljs;../java;${X3DJSONLD}/X3DJSAIL.4.0.full.jar;${PYTHONSAI}/xmlresolver-5.1.1.jar;${HOMESFOLDER}/$USERNAME/${PYTHONSAI}/xmlresolver-5.1.1-data.jar"
-  # export CLASSPATH="${X3DJSONLD}/X3DJSAIL.4.0.full.jar;${X3DJSONLD}/saxon-he-12.9.jar;.;../java;${X3DJSONLD}/src/main/java;${X3DJSONLD}/target/X3DJSONLD-1.0-SNAPSHOT.jar;${X3DJSONLD}/target/classes;${X3DJSONLD}/src/main/java;${PYTHONSAI}/xmlresolver-5.1.1.jar;${PYTHONSAI}/xmlresolver-5.1.1-data.jar"
-  export CLASSPATH="${X3DJSONLD}/X3DJSAIL.4.0.full.jar;${X3DJSONLD}/saxon-he-12.9.jar;.;../../..;../java"
+  export GRAAL_CLASSPATH=".;${GRAALX3DJSONLD}/saxon-HE-13.1.jar;${GRAALX3DJSONLD}/target/X3DJSONLD-1.0-SNAPSHOT.jar;${GRAALX3DJSONLD}/src/main/graaljs;../java;${X3DJSONLD}/X3DJSAIL.4.0.full.jar;${PYTHONSAI}/xmlresolver-5.1.1.jar;${HOMESFOLDER}/$USERNAME/${PYTHONSAI}/xmlresolver-5.1.1-data.jar"
+  # export CLASSPATH="${X3DJSONLD}/X3DJSAIL.4.0.full.jar;${X3DJSONLD}/saxon-HE-13.1.jar;.;../java;${X3DJSONLD}/src/main/java;${X3DJSONLD}/target/X3DJSONLD-1.0-SNAPSHOT.jar;${X3DJSONLD}/target/classes;${X3DJSONLD}/src/main/java;${PYTHONSAI}/xmlresolver-5.1.1.jar;${PYTHONSAI}/xmlresolver-5.1.1-data.jar"
+  export CLASSPATH="${X3DJSONLD}/X3DJSAIL.4.0.full.jar;${X3DJSONLD}/saxon-HE-13.1.jar;.;../../..;../java"
   export CLOJURE=clj
   source ${X3DJSONLD}/src/main/python/venv/Scripts/activate
 fi

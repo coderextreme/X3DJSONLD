@@ -30,17 +30,18 @@ var app = express();
 app.use(express.static('/'));
 app.use(express.static('dist'));
 app.use(express.static('src/main/data'));
-app.use(express.static('src/main/personal'));
-app.use(express.static('src/main/node'));
-app.use(express.static('src/main/orig'));
-app.use(express.static('src/main/out'));
-app.use(express.static('src/main/schema'));
-app.use(express.static('src/main/resources'));
-app.use(express.static('src/main/shaders'));
-app.use(express.static('src/main/nashorn'));
-app.use(express.static('src/main/lib'));
+// app.use(express.static('src/main/personal'));
+// app.use(express.static('src/main/node'));
+// app.use(express.static('src/main/orig'));
+// app.use(express.static('src/main/out'));
+// app.use(express.static('src/main/schema'));
+// app.use(express.static('src/main/resources'));
+// app.use(express.static('src/main/shaders'));
+// app.use(express.static('src/main/nashorn'));
+// app.use(express.static('src/main/lib'));
 app.use(express.static('src/main/html'));
-app.use(express.static('src/main'));
+// app.use(express.static('src/main'));
+// app.use(express.static('www.web3d.org/x3d/content/examples'));
 
 async function convertX3dToJson(res, infile, outfile, next) {
 	try {
@@ -203,6 +204,7 @@ function magic(path, type) {
 			url = url.substr(1);
 		}
 		console.log(req.ip+":  Requested", url);
+		/*
 		var wind = url.indexOf("www.web3d.org");
 		if (wind >= 0) {
 			url = url.substring(wind);
@@ -211,6 +213,7 @@ function magic(path, type) {
 		} else {
 			url = __dirname+"/"+ url;
 		}
+		*/
 		if (fs.existsSync(url)) {
 			console.log("Reading", url);
 			var data = await fs.promises.readFile(url);
