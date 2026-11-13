@@ -25,12 +25,30 @@
 		position="0 0 12"
 		description="Tour Views" />
 	<Background
-		topUrl='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"'
-		backUrl='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"'
-		leftUrl='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"'
-		frontUrl='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"'
-		rightUrl='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"'
-		bottomUrl='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"' />
+		topUrl='
+		"../resources/images/all_probes/stpeters_cross/stpeters_top.png"
+		"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"
+		'
+		backUrl='
+		"../resources/images/all_probes/stpeters_cross/stpeters_back.png"
+		"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"
+		'
+		leftUrl='
+		"../resources/images/all_probes/stpeters_cross/stpeters_left.png"
+		"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"
+		'
+		frontUrl='
+		"../resources/images/all_probes/stpeters_cross/stpeters_front.png"
+		"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"
+		'
+		rightUrl='
+		"../resources/images/all_probes/stpeters_cross/stpeters_right.png"
+		"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"
+		'
+		bottomUrl='
+		"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"
+		"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"
+		' />
 	<Transform>
 		<Shape>
 			<Sphere />
@@ -43,21 +61,39 @@
 					<field accessType="initializeOnly" type="SFVec3f" name="chromaticDispertion" value="0.980000019073486 1 1.03299999237061" />
 					<field accessType="initializeOnly" type="SFNode" name="cube">
 					<ComposedCubeMapTexture>
-						<ImageTexture containerField="backTexture" url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"' />
-						<ImageTexture containerField="bottomTexture" url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"' />
-						<ImageTexture containerField="frontTexture" url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"' />
-						<ImageTexture containerField="leftTexture" url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"' />
-						<ImageTexture containerField="rightTexture" url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"' />
-						<ImageTexture containerField="topTexture" url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"' />
+						<ImageTexture containerField="backTexture" url='
+							"../resources/images/all_probes/stpeters_cross/stpeters_back.png"
+							"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"
+							' />
+						<ImageTexture containerField="bottomTexture" url='
+							"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"
+							"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"
+							' />
+						<ImageTexture containerField="frontTexture" url='
+							"../resources/images/all_probes/stpeters_cross/stpeters_front.png"
+							"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"
+							' />
+						<ImageTexture containerField="leftTexture" url='
+							"../resources/images/all_probes/stpeters_cross/stpeters_left.png"
+							"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"
+							' />
+						<ImageTexture containerField="rightTexture" url='
+							"../resources/images/all_probes/stpeters_cross/stpeters_right.png"
+							"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"
+							' />
+						<ImageTexture containerField="topTexture" url='
+							"../resources/images/all_probes/stpeters_cross/stpeters_top.png"
+							"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"
+							' />
 					</ComposedCubeMapTexture>
 					</field>
 					<field accessType="initializeOnly" type="SFFloat" name="bias" value="0.5" />
 					<field accessType="initializeOnly" type="SFFloat" name="scale" value="0.5" />
 					<field accessType="initializeOnly" type="SFFloat" name="power" value="2" />
 					<ShaderPart
-						url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/shaders/castle.vs"' />
+						url='"../shaders/castle.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs"'/>
 					<ShaderPart DEF="commonfs"
-						url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/shaders/castle.fs"'
+						url='"../shaders/castle.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.fs"'
 						type="FRAGMENT" />
 				</ComposedShader>
 			</Appearance>
