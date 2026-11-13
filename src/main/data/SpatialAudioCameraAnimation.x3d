@@ -49,7 +49,7 @@
               <Material ambientIntensity='0.0933' diffuseColor='1 1 1' shininess='0.51' specularColor='0.46 0.46 0.46'/>
             </Appearance>
             <Text string='"Violin"'>
-              <FontStyle DEF='ModelFontStyle' family='"Times" "SERIF"' style='BOLD'/>
+              <FontStyle DEF='ModelFontStyle' family='"SERIF"' style='BOLD'/>
             </Text>
           </Shape>
         </Transform>

@@ -90,7 +90,7 @@
           },
           {
             "@name":"translated",
-            "@content":"10 November 2026"
+            "@content":"12 November 2026"
           },
           {
             "@name":"generator",
@@ -196,7 +196,7 @@
                   {
                     "@name":"Human",
                     "@DEF":"Joe_Human",
-                    "@version":"1.0",
+                    "@version":"2.0",
                     "-skeleton":[
                       { "HAnimJoint":
                         {

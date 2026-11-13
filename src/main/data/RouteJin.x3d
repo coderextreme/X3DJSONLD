@@ -3,6 +3,7 @@
 <X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
 <head>
 <component name="HAnim" level="3" />
+<meta name="creator" content="Composite, John Carlson (Menu)" />
 <meta name="title" content="JinMultiAnimationExample.x3d" />
 <meta name="identifier" content="https://github.com/coderextreme/ci2had/blob/main/resources/RouteJin.x3d" />
 <meta name="description" content="X3D scene with alternate facial animations controlled by a menu" />

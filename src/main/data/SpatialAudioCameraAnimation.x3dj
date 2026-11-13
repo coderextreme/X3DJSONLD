@@ -56,7 +56,7 @@
           },
           {
             "@name":"translated",
-            "@content":"10 November 2026"
+            "@content":"12 November 2026"
           },
           {
             "@name":"generator",
@@ -241,7 +241,6 @@
                                         { "FontStyle":
                                           {
                                             "@DEF":"ModelFontStyle",
-                                            "@family":["Times","SERIF"],
                                             "@style":"BOLD"
                                           }
                                         }

@@ -44,7 +44,7 @@
             <Material ambientIntensity='0.0933' diffuseColor='0.345 0.345 0.882' shininess='0.51' specularColor='0.46 0.46 0.46'/>
           </Appearance>
           <Text string='"Right Channel Volume"'>
-            <FontStyle DEF='VolumeFontStyle' family='"Times" "SERIF"' style='BOLD'/>
+            <FontStyle DEF='VolumeFontStyle' family='"SERIF"' style='BOLD'/>
           </Text>
         </Shape>
       </Transform>

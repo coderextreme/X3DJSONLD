@@ -4,6 +4,7 @@
 <head>
 <component name="HAnim" level="3" />
 <meta name="title" content="SingleMenuJin.x3d" />
+<meta name="created" content="Composite, John Carlson (Menu)" />
 <meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/SingleMenuJin.x3d" />
 <meta name="description" content="X3D scene with alternate facial animations controlled by a menu" />
 </head>

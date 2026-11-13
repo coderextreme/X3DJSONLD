@@ -3,6 +3,7 @@
 <X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <meta content="Menu.x3d" name="title"/>
+    <meta content="John Carlson" name="creator"/>
     <meta content="X3D scene with a Switch of Inlines controlled by a menu" name="description"/>
   </head>
   <Scene>

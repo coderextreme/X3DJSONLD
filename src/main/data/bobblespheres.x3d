@@ -4,7 +4,7 @@
   <head>
     <meta name='title' content='Bobble Spheres Full Animation (Final Working)'/>
     <meta name='description' content='Full scene with corrected Script nodes that use the initialize() function to safely reference nodes and prevent race conditions.'/>
-    <meta name='creator' content='Generated from Python script'/>
+    <meta name='creator' content='Generated from Python script by John Carlson'/>
     <component name='X_ITE' level='1'/>
   </head>
   <Scene>

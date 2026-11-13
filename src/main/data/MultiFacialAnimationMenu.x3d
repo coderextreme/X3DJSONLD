@@ -8,7 +8,7 @@
 <meta name="description" content="X3D scene with multiple facial animations controlled by a multi-selection menu" />
 <meta name="created" content="12 December 2024" />
 <meta name="modified" content="13 December 2024" />
-<meta name="creator" content="John Carlson, Joe Williams, Gyu Ri Cho, Hyun Ho Chu, Min Joo Lee, Yujin Jung" />
+<meta name="creator" content="John Carlson (Menu), Joe Williams, Gyu Ri Cho, Hyun Ho Chu, Min Joo Lee, Yujin Jung" />
 </head>
 <Scene>
 <ScalarInterpolator DEF="AnimationAdapter_JinBlink" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />

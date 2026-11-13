@@ -4,6 +4,7 @@
   <head>
     <component level='3' name='HAnim'/>
     <meta content='blenderSkeleton.x3d' name='title'/>
+    <meta content='John Carlson' name='creator'/>
     <meta content='2023' name='copyright'/>
     <meta content='http://www.web3D.org' name='reference'/>
     <meta content='Blender 4.0.1' name='generator'/>
