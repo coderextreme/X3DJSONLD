@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml'>
+	<head>
+<meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge" />
+    <link rel="stylesheet" type="text/css" href="https://www.x3dom.org/download/dev/x3dom.css"></link>
+    <script type="text/javascript" src="https://www.x3dom.org/download/dev/x3dom-full.debug.js"></script>
+    <script defer="true" src="https://cdn.jsdelivr.net/npm/x_ite@latest/dist/x_ite.min.js"></script>
+		<style>
+		    iframe { width:800px; height: 250px; }
+		    X3D { width:800px; height: 250px; }
+		    x3d-canvas { width: 800px; height:250px;
+		    }
+		</style>
+	</head>
+	<body>
+	<h1 style="width:100%; text-align:center;">Flowers</h1>
+	<div style="display:table">
+	<div style="display:table-row">
+	<div style="display:table-cell">
+		 <h2>X3DOM</h2>
+	</div>
+	<div style="display:table-cell">
+	<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-4.0.xsd" showStat='false' showLog='false' width='800px' height='250px' backend='webgl' url='"../data/allflowers.x3dj"'>
+	    <Scene>
+	    </Scene>
+	</X3D>
+	</div>
+	</div>
+	<div style="display:table-row">
+	<div style="display:table-cell">
+		 <h2>X_ITE</h2>
+	</div>
+	<div style="display:table-cell">
+	<x3d-canvas id="sphereflowers" cache="false" url='"../data/allflowers.x3dj"'>
+	    <Scene>
+	    </Scene>
+	</x3d-canvas>
+	</div>
+	</div>
+	<div style="display:table-row">
+	<div style="display:table-cell">
+		 <h2>Play Canvas</h2>
+	</div>
+	<div style="display:table-cell">
+		<iframe src="https://playcanv.as/p/wQgQBgkE/"></iframe>
+	</div>
+	</div>
+
+	<div style="display:table-row">
+	<div style="display:table-cell">
+		 <h2>Naylib/Three.JS</h2>
+	</div>
+	<div style="display:table-cell">
+		<iframe src="/assetmanager"></iframe>
+	</div>
+	</div>
+	</div>
+	</body>
+	<script type="text/javascript" src="../node/params.js"></script>
+</html>
