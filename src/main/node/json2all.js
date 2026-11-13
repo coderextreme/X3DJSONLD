@@ -118,7 +118,7 @@ convertJSON([
 	{ 
 	serializer : 'PascalSerializer',
 	folder : "../pascal/net/coderextreme/",
-	extension : ".inc",
+	extension : ".pas",
 	codeOutput : "../"
 	},
 	{ 

@@ -25,9 +25,17 @@ PascalSerializer.prototype = {
 
 		stack.unshift(this.preno);
 		this.preno++;
+		clazz = clazz.replace(/.*\//, '');
 		var bodystr = "";
+
+		bodystr += "unit "+clazz+";\n\n";
+		bodystr += "interface\n\n";
+		bodystr += "uses X3DNodes;\n\n";
+		bodystr += "function Create"+clazz+": TX3DRootNode;\n\n";
+		bodystr += "implementation\n\n";
+		bodystr += "uses CastleVectors;\n\n";
         
-		bodystr += "function "+clazz.replace(/.*\//, '')+": T"+element.nodeName+"RootNode;\n";
+		bodystr += "function Create"+clazz+": T"+element.nodeName+"RootNode;\n";
 		bodystr += "var\n";
 		var tailstr = "";
 		let rootNodeName =element.nodeName+stack[0];
@@ -37,7 +45,9 @@ PascalSerializer.prototype = {
 		// tailstr += "Result := TX3DRootNode.Create('', Reader.BaseUrl);\n";
 		tailstr += this.subSerializeToString(element, mapToMethod, fieldTypes, 3, stack, "");
 		tailstr += "Result := "+rootNodeName+";\n";
-		tailstr += "end;\n";
+		tailstr += "end;\n\n";
+		tailstr += "begin\n";
+		tailstr += "end.\n";
 
 		str += bodystr;
 		str += this.code.join("\n");
