@@ -22,7 +22,7 @@
         <field accessType='inputOutput' type='MFString' name='fragment' value='"../shaders/x_ite.fs", "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"'/>
       </ProtoInterface>
       <ProtoBody>
-        <Transform DEF='transform'>
+        <Transform DEF='xform'>
           <Shape>
             <Appearance>
               <Material
@@ -222,7 +222,7 @@ ecmascript:
               loop='true'/>
         </Transform>
         <ROUTE fromNode='TourTime' fromField='fraction_changed' toNode='Animate' toField='set_fraction'/>
-        <ROUTE fromNode='Animate' fromField='translation_changed' toNode='transform' toField='set_translation'/>
+        <ROUTE fromNode='Animate' fromField='translation_changed' toNode='xform' toField='set_translation'/>
         <ROUTE fromNode='Animate' fromField='a' toNode='shader' toField='a'/>
         <ROUTE fromNode='Animate' fromField='b' toNode='shader' toField='b'/>
         <ROUTE fromNode='Animate' fromField='c' toNode='shader' toField='c'/>
@@ -230,7 +230,7 @@ ecmascript:
         <ROUTE fromNode='Animate' fromField='tdelta' toNode='shader' toField='tdelta'/>
         <ROUTE fromNode='Animate' fromField='pdelta' toNode='shader' toField='pdelta'/>
         <ROUTE fromNode='TourTime' fromField='fraction_changed' toNode='AnimateCastle' toField='set_fraction'/>
-        <ROUTE fromNode='AnimateCastle' fromField='translation_changed' toNode='transform' toField='set_translation'/>
+        <ROUTE fromNode='AnimateCastle' fromField='translation_changed' toNode='xform' toField='set_translation'/>
         <ROUTE fromNode='AnimateCastle' fromField='a' toNode='shader' toField='a'/>
         <ROUTE fromNode='AnimateCastle' fromField='b' toNode='shader' toField='b'/>
         <ROUTE fromNode='AnimateCastle' fromField='c' toNode='shader' toField='c'/>
