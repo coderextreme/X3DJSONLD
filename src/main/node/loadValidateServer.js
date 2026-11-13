@@ -43,7 +43,7 @@ error += " instancePath: " + instancePath+ "\n";
 
 function doSuppressCheck(err, file, version, json) {
 	let error = "";
-	let suppress = true;
+	const suppress = true;
 	if ('params' in err && 'type' in err.params && err.params.type === 'array' && err.instancePath.indexOf('NavigationInfo') >= 0 && err.instancePath.indexOf('@type') >= 0) {
 		if (suppress) {
 			console.log("Suppressing NavigationInfo.type as array.  Use $ npx x3dvalidate --fullreport "+file+" ... to reveal possibly confusing errors");

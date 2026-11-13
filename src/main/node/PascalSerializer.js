@@ -8,6 +8,7 @@ this.code = [];
 this.codeno = 0;
 this.preno = 0;
 this.DEFs = {};
+this.protos = {};
 }
 
 
@@ -17,6 +18,7 @@ PascalSerializer.prototype = {
 		this.codeno = 0;
 		this.preno = 0;
 		this.DEFs = {};
+		this.protos = {};
 		var stack = [];
 
 		var str = "";
@@ -256,14 +258,15 @@ PascalSerializer.prototype = {
 			method = method+".Add"
 			addpre = "fd";
 		}
+		if ( attr === "ChannelSelection") {
+		}
 		addpre = addpre.charAt(0).toUpperCase() + addpre.slice(1);
 		method = method.charAt(0).toUpperCase() + method.slice(1);
 		return prepre+addpre+method;
 	},
-	stringValue : function(attrsa, attr, attrType, element) {
+	stringValue : function(fieldValue, attr, attrType) {
 		var strval = "";
-		var nodeValue = attrsa.nodeValue;
-		// console.log("Got", element.nodeName, attrType, attr, strval)
+		var nodeValue = fieldValue;// attrsa.nodeValue;
 		if (nodeValue === 'NULL') {
 			strval = "";
 		} else if (attrType === "SFString") {
@@ -301,6 +304,8 @@ PascalSerializer.prototype = {
 					var y = x.
 					       replace(/(\\\\+)/g, '$1$1').
 					       replace(/\\\\"/g, '\\\"').
+					       replace(/\\"/g, '"').
+					       replace(/'/g, "''").
 					       replace(/""/g, '\\"\\"').
 					       replace(/&quot;&quot;/g, '\\"\\"').
 					       // replace(/&/g, "&amp;").
@@ -318,24 +323,24 @@ PascalSerializer.prototype = {
 		} else if (
 			attrType === "MFColor") {
 			strval = this.printSubArray(attrType, "float", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, FLOAT_SUFFIX+',', '', FLOAT_SUFFIX, 3, attr);
-			// console.log("Got", element.nodeName, attrType, attr, strval)
 		} else if (
 			attrType === "MFColorRGBA") {
 			strval = this.printSubArray(attrType, "float", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, FLOAT_SUFFIX+',', '', FLOAT_SUFFIX, 4, attr);
-			// console.log("Got", element.nodeName, attrType, attr, strval)
 		} else if (
 			attrType === "SFVec3f"||
 			attrType === "SFColor") {
-			strval = this.printSubArray(attrType, "float", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, FLOAT_SUFFIX+',', '', FLOAT_SUFFIX, 1, attr);
+			if (nodeValue === null || typeof nodeValue === 'undefined') {
+				strval = "(0, 0, 0); { "+nodeValue+" }";
+			} else {
+				strval = this.printSubArray(attrType, "float", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, FLOAT_SUFFIX+',', '', FLOAT_SUFFIX, 1, attr);
+			}
 			strval  =  "Vector3"+strval;
-			// console.log("Got", element.nodeName, attrType, attr, strval)
 		} else if (
 			attrType === "SFVec4f"||
 			attrType === "SFRotation"||
 			attrType === "SFColorRGBA") {
 			strval = this.printSubArray(attrType, "float", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, FLOAT_SUFFIX+',', '', FLOAT_SUFFIX, 1, attr);
 			strval  =  "Vector4"+strval;
-			// console.log("Got", element.nodeName, attrType, attr, strval)
 		} else if (
 			attrType === "SFVec2f") {
 			strval = this.printSubArray(attrType, "float", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, FLOAT_SUFFIX+',', '', FLOAT_SUFFIX, 1, attr);
@@ -484,6 +489,58 @@ PascalSerializer.prototype = {
 		return value;
 		*/
 	},
+	setProto : function(protoStatement) {
+		for (let cn in protoStatement.childNodes) {
+			let protoName = protoStatement.getAttribute('name');
+			let proto = this.protos[protoName];
+			if (typeof proto === 'undefined') {
+				proto = {};
+				this.protos[protoName] = proto;
+				// console.log("=============INFO, ProtoInstance name", protoName);
+			}	
+			// looking for ProtoInterface and ProtoBody
+			var node = protoStatement.childNodes[cn];
+			if (protoStatement.nodeName === "ProtoDeclare" && node.nodeName === 'ProtoInterface') {
+				this.setInterface(node, protoName);
+			}
+		}
+		if (protoStatement.nodeName === "ExternProtoDeclare") {
+			this.setInterface(protoStatement, protoStatement.getAttribute("name"));
+		}
+	},
+	setInterface : function(interfaceStatement, protoName) {
+		for (let fieldStatement in interfaceStatement.childNodes) {
+			let field = interfaceStatement.childNodes[fieldStatement]
+			if (field.nodeType == 1) {
+				const allAttributesString = Array.from(field.attributes)
+					  .map(attr => `${attr.name}="${attr.value}"`)
+					  .join(" ");
+				// console.log("=============INFO 2, ProtoInstance name", protoName);
+				// console.log(allAttributesString)
+				if (protoName === null) {
+					console.error("=============WARNING 1, protoName null", protoName);
+				} else if (typeof protoName === 'undefined') {
+					console.error("=============WARNING 2, protoName undefined", protoName);
+				} else if (typeof this.protos === 'undefined') {
+					console.error("=============WARNING 3, this.protos undefined", this.protos);
+				} else if (typeof this.protos[protoName] == 'undefined') {
+					console.error("=============WARNING 4, this.protos[protoName] undefined", protoName, this.protos[protoName]);
+				} else if (typeof field.getAttribute !== 'function') {
+					console.error("=============WARNING 5, field.getAttribute not a function", field.getAttribute);
+				} else {
+					let name = field.getAttribute('name');
+					let type = field.getAttribute('type');
+					let valu = field.getAttribute('value');
+					let acce = field.getAttribute('accessType');
+					this.protos[protoName][name] = {};
+					this.protos[protoName][name]["name"] = name;
+					this.protos[protoName][name]["type"] = type;
+					this.protos[protoName][name]["default_value"] = valu;
+					this.protos[protoName][name]["accessType"] = acce;
+				}
+			}
+		}
+	},
 	subSerializeToString : function(element, mapToMethod, fieldTypes, n, stack, parent_name) {
 		let str = "";
 		let attrType = "";
@@ -533,12 +590,9 @@ PascalSerializer.prototype = {
 					} else if (element.nodeName === "CastleColorRGBPersistent") {
 						attrType = "MFColor";
 					}
-					var strval = this.stringValue(attrsa, attr, attrType, element);
+					var strval = this.stringValue(attrsa.nodeValue, attr, attrType);
 					var method = attr;
 					method = method.charAt(0).toUpperCase() + method.slice(1);
-					if (attr === "class") {
-						method = "CssClass";
-					}
 					if (attr === "id") {
 						method = "HtmlId";
 					}
@@ -568,14 +622,12 @@ PascalSerializer.prototype = {
 							ComponentLevel = strval;
 						}
 					} else if (element.nodeName === 'X3DRoute') {
-						// console.log("Setting", attr, "to", strval);
 						if (attr === "fromNode") {
 							FromNode = strval;
 							let DEF = this.DEFs[FromNode];
 							if (typeof DEF === 'undefined') {
 								console.error("Route: no DEF for:", FromNode);
 							} else {
-								// console.log("Routing from DEF with value:", strval);
 								FromNode = DEF;
 							}
 						} else	if (attr === "fromField") {
@@ -591,7 +643,6 @@ PascalSerializer.prototype = {
 							if (typeof DEF === 'undefined') {
 								console.error("Route: no DEF for:", ToNode);
 							} else {
-								// console.log("Routing to DEF with value:", strval);
 								ToNode = DEF;
 							}
 						} else	if (attr === "toField") {
@@ -625,8 +676,6 @@ PascalSerializer.prototype = {
 						let DEF = this.DEFs[strval];
 						if (typeof DEF !== 'undefined') {
 							console.error("Multiple DEFs with same value:", strval);
-						} else {
-							// console.log("Setting DEF with value:", strval);
 						}
 						this.DEFs[strval] = element.nodeName+stack[0];
 						// DO NOT PRINT OUT
@@ -636,8 +685,6 @@ PascalSerializer.prototype = {
 						if (typeof USE === 'undefined') {
 							console.error("USE without DEF:", strval, "DEFfing it");
 							this.DEFs[strval] = element.nodeName+stack[0];
-						} else {
-							// console.log("Found USE with value:", strval);
 						}
 						str += ' := '+this.DEFs[strval]+";\n";
 					} else	if (typeof
@@ -682,7 +729,18 @@ PascalSerializer.prototype = {
 						strval = strval.replaceAll("'", "");
 						strval = strval.charAt(0).toUpperCase()+strval.slice(1).toLowerCase();
 						str += ".AlphaMode := am"+strval+";\n";
-
+					} else	if (
+						attr === "style" && element.nodeName === "FontStyle"
+						) {
+						str += element.nodeName+stack[0];
+						strval = strval.replaceAll("'", "");
+						strval = strval.charAt(0).toUpperCase()+strval.slice(1).toLowerCase();
+						str += ".Style := fs"+strval+";\n";
+					} else	if (attr === "style") {
+						/* TODO
+						str += element.nodeName+stack[0];
+						str += ".Style := "+strval+";\n";
+						*/
 					} else	if (
 						attr === "minificationFilter" &&
 						    attrType === "SFString"
@@ -690,6 +748,7 @@ PascalSerializer.prototype = {
 						str += element.nodeName+stack[0];
 						str += ".FdMinificationFilter.Value := "+strval+";\n";
 
+						str += '.Set'+method+"("+strval+");\n";
 					} else	if (
 						attr === "magnificationFilter" &&
 						    attrType === "SFString"
@@ -710,6 +769,12 @@ PascalSerializer.prototype = {
 					} else	if (typeof attrType !== 'undefined' && attrType.startsWith("MFString") && attr === "justify") {
 						str += element.nodeName+stack[0];
 						str += '.'+method+" := "+(strval.replace(/, (.*)/, ";\n"+element.nodeName+stack[0]+"."+method+"Minor := $1"))+";\n";
+					} else if (attr === "class") {
+						/* TODO
+						str += element.nodeName+stack[0];
+						str += ".classList.add(";
+						str += strval+");\n";
+						*/
 					} else {
 						str += element.nodeName+stack[0];
 						str += '.'+method+" := "+strval+";\n";
@@ -747,7 +812,27 @@ PascalSerializer.prototype = {
 					}
 					if (node.nodeName === "field") {
 						isNode = "";
-						node.nodeName = "X3D"+node.nodeName.charAt(0).toUpperCase() + node.nodeName.slice(1).toLowerCase();
+						node.nodeName = "X3D"+(node.nodeName.charAt(0).toUpperCase()) + node.nodeName.slice(1).toLowerCase();
+					}
+					if (node.nodeName === "fieldValue") {
+						isNode = "";
+						let fieldName = node.getAttribute('name');
+						// get the type of the node from the interface
+						let instanceName = element.getAttribute('name');
+						if (typeof this.protos !== 'undefined' &&
+							typeof this.protos[instanceName] !== 'undefined' &&
+							typeof this.protos[instanceName][fieldName] !== 'undefined' &&
+							typeof this.protos[instanceName][fieldName]['type'] !== 'undefined') {
+							let fieldType = this.protos[instanceName][fieldName]["type"];
+							let instanceIndex = this.protos[instanceName]["id"];
+							node.nodeName = fieldType;
+							// MFNode and SFNode are children, not handled here
+							if (!fieldType.endsWith("Node")) {
+								let fieldValue = node.getAttribute('value') || this.protos[instanceName][fieldName]['default_value'];
+								let strval = this.stringValue(fieldValue, fieldName, fieldType);
+								params = "("+instanceName+instanceIndex+", false, '"+fieldName+"', "+strval+")";
+							}
+						}
 					}
 					/*
 					if (node.nodeName === "Color") {
@@ -763,6 +848,52 @@ PascalSerializer.prototype = {
 						// isNode = "";
 						// isCastle = "Castle";
 						// params = "(nil)";
+					}
+					if (node.nodeName === "ProtoDeclare") {
+						isNode = "";
+						this.setProto(node);
+						node.nodeName = "X3DPrototypeBase";
+					}
+					if (node.nodeName === "ProtoInstance") {
+						node.nodeName = "X3DPrototype";
+						const allAttributesString = Array.from(node.attributes)
+						  .map(attr => `${attr.name}="${attr.value}"`)
+						  .join(" ");
+						if (typeof node.getAttribute !== 'function') {
+							console.error("=============WARNING 9, field.getAttribute not a function", node.getAttribute);
+						}
+						let instanceName = node.getAttribute('name');
+						if (typeof this.protos === 'undefined') {
+							console.error("=============WARNING 6, this.protos undefined", this.protos);
+						} else if (typeof instanceName === 'undefined') {
+							console.error("=============WARNING 7, instanceName undefined", instanceName);
+						} else if (typeof this.protos[instanceName] === 'undefined') {
+							console.error("=============WARNING 8, this.protos[instanceName] undefined", instanceName, this.protos[instanceName]);
+							console.error(allAttributesString)
+						} else {
+
+							this.protos[instanceName]["id"] = Object.keys(this.protos).length;
+						}
+					}
+					if (node.nodeName === "ProtoBody") {
+						isNode = "";
+						node.nodeName = "X3DPrototype";
+					}
+					if (node.nodeName === "IS") {
+						isNode = "";
+					}
+					if (node.nodeName === "connect") {
+						isNode = "";
+					}
+					if (node.nodeName === "ProtoInterface") {
+						isNode = "";
+						params = "(nil)";
+						node.nodeName = "X3DInterfaceDeclaration";
+					}
+					if (node.nodeName === "ExternProtoDeclare") {
+						isNode = "";
+						this.setProto(node);
+						node.nodeName = "X3DExternalPrototype";
 					}
 					if ( node.nodeName !== "X3DRoute") {
 						if (!node.hasAttribute("USE")) {
