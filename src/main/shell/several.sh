@@ -166,28 +166,30 @@ do
 	fi
 done
 
-echo compile java programs
-ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.java/' -e 's/^\/c/../' -e "$EXTOJAVA" -e "$DATATOJAVA" -e "$ROOTTOJAVA" -e "$PERSONALTOJAVA"| sed -e 's/\(.*\)/'"\1"'/' -e 's/ /$/g'| tr '\n' '\0' | while read -d $'\0' -r i
-do
+#echo compile java programs
+#ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.java/' -e 's/^\/c/../' -e "$EXTOJAVA" -e "$DATATOJAVA" -e "$ROOTTOJAVA" -e "$PERSONALTOJAVA"| sed -e 's/\(.*\)/'"\1"'/' -e 's/ /$/g'| tr '\n' '\0' | while read -d $'\0' -r i
+#do
 	# echo JAVAC "$i"
-	pushd `mydirname "$i"` 2> /dev/null
-	FILE=`mybasename "$i" | sed -e s/-/_/g`
-	echo javac -proc:full -J-Xss1g -J-Xmx4g 
-	if [ -e "$FILE" ]
-	then
-		javac -proc:full -J-Xss1g -J-Xmx4g "$FILE"
-	fi
-	popd 2> /dev/null
-done
+	#pushd `mydirname "$i"` 2> /dev/null
+	#FILE=`mybasename "$i" | sed -e s/-/_/g`
+	#echo "javac -proc:full -J-Xss1g -J-Xmx4g $FILE"
+	#if [ -e "$FILE" ]
+	#then
+		#javac -proc:full -J-Xss1g -J-Xmx4g "$FILE"
+	#fi
+	#popd 2> /dev/null
+#done
 
 echo run java programs
 ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.class/' -e 's/^\/c/../' -e "$EXTOJAVA" -e "$DATATOJAVA" -e "$ROOTTOJAVA" -e "$PERSONALTOJAVA" | sed -e 's/\.class$//' -e 's/^\.\.\/java\///' | sed -e 's/\(.*\)/'"\1"'/' -e 's/ /$/g' | sed -e s/-/_/g | tr '\n' '\0' | while read -d $'\0' -r i
 do
 	pushd ../java
-	if [ -e "$i" ]
+	if [ -e "$i".java ]
 	then
 		echo java -Xss1g -Xmx4g "$i"
-		java -Xss1g -Xmx4g "$i" # sh runToError.sh || echo "Failed"
+		java -Xss1g -Xmx4g "$i".java # sh runToError.sh || echo "Failed"
+	else
+		echo "$i" does not exist.
 	fi
 	popd
 done

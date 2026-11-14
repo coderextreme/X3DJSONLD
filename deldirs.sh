@@ -8,11 +8,14 @@ rm ./src/main/graaljs/net/remove/data/*
 rm ./src/main/graalpy/net/coderextreme/data/*
 rm ./src/main/gura/net/coderextreme/data/*
 rm ./src/main/java/net/coderextreme/data/*
+rm ./src/main/java/net/x3djsonld/data/*
 rm ./src/main/jruby/net/coderextreme/data/*
 rm ./src/main/node/net/coderextreme/data/*
 rm ./src/main/node/net/ecma/data/*
+rm ./src/main/node/net/x3djsonld/data/*
 rm ./src/main/pascal/net/coderextreme/data/*
 rm ./src/main/python/net/coderextreme/data/*
+rm ./src/main/python/net/x3djsonld/data/*
 rm ./src/main/quarter/net/coderextreme/data/*
 rm ./src/main/truffleruby/net/coderextreme/data/*
 rm ./src/main/vrml/net/coderextreme/data/*

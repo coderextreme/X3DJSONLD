@@ -4561,12 +4561,12 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 	public static final String FILE_EXTENSION_JAVASCRIPT = ".js";
 
 	/**
-	 * File extension for JavaScript Object Notation (JSON) source data, with dot prepended: <i>.json</i>
+	 * File extension for JavaScript Object Notation (JSON) source data, with dot prepended: <i>.x3dj</i>
 	 * @see FILE_EXTENSION_X3DJ
 	 * @see <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JavaScript Object Notation (JSON)</a>
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#JSON" target="_blank">X3D Scene Authoring Hints: JSON</a>
 	 */
-	public static final String FILE_EXTENSION_JSON = ".json";
+	public static final String FILE_EXTENSION_JSON = ".x3dj";
 
 	/**
 	 * File extension alternative to <i>.json</i> for JavaScript Object Notation (JSON) source data, with dot prepended: <i>.x3dj</i>
@@ -4574,7 +4574,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 	 * @see <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JavaScript Object Notation (JSON)</a>
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#JSON" target="_blank">X3D Scene Authoring Hints: JSON</a>
 	 */
-	public static final String FILE_EXTENSION_X3DJ = ".x3dj";
+	public static final String FILE_EXTENSION_X3DJ = ".json";
 
 	/**
 	 * File extension for Python programming-language source code, with dot prepended: <i>.py</i>
@@ -5433,7 +5433,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	 */
 	public String toStringJSON()
 	{
-		String temporaryFileName = "temporaryJsonOutputFile.json";
+		String temporaryFileName = "temporaryJsonOutputFile.x3dj";
 
 		try
 		{
@@ -34665,7 +34665,7 @@ import javax.script.ScriptException;</xsl:text>
         "-toXML                            # output in .xml (X3D) format" + "\n" +
         "-toClassicVrml                    # output in .x3dv (ClassicVrml) X3D format" + "\n" +
         "-toJava                           # output in .java source code using X3DJSAIL" + "\n" +
-        "-toJSON                           # output in .json (JavaScript Object Notation) format" + "\n" +
+        "-toJSON                           # output in .x3dj (JavaScript Object Notation) format" + "\n" +
         "-toPython                         # output in .py Python source code" + "\n" +
         "-toVRML97                         # output in .wrl  (VRML97) format" + "\n" +
         "-toHTML                           # output in .html  pretty-print documentation" + "\n" +
