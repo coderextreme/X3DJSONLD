@@ -361,4 +361,7 @@ server.listen(port, '127.0.0.1', function () {
   console.log("Go to http://127.0.0.1:"+port+"/src/main/html/jinphysics.html");
   console.log("Go to http://127.0.0.1:"+port+"/src/main/html/allflowers.xhtml");
   console.log("Go to http://127.0.0.1:"+port+"/src/main/html/flowers.xhtml");
+  console.log("Go to https://coderextreme.net/X3DJSONLD/src/main/html/main_viewer.html");
+  console.log("Go to https://coderextreme.net/X3DJSONLD/src/main/html/allflowers.xhtml");
+  console.log("Go to https://coderextreme.net/X3DJSONLD/src/main/html/flowers.xhtml");
 });
