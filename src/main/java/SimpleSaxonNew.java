@@ -3,7 +3,7 @@ package net.coderextreme;
 import java.io.*;
 import java.net.*;
 
-class SimpleSaxon {
+class SimpleSaxonNew {
 	public static void main(String args[]) throws URISyntaxException, MalformedURLException, IOException {
 		net.sf.saxon.Transform.main(new String[] {
 					"-warnings:recover",

@@ -5,10 +5,10 @@ import java.util.List;
 import java.util.Arrays;
 import java.util.Collections;
 
-public class NoModDoubleArray {
+public class DoubleArrayWorks {
 	private static final double[] DOUBLE_ARRAY_FIELDOFVIEW_DEFAULT_VALUE = new double [] {-1f,-1f,1f,1f};
 	public static final List<Double> NOMOD_FIELDOFVIEW_DEFAULT_VALUE = Collections.unmodifiableList(Arrays.asList(Arrays.stream(DOUBLE_ARRAY_FIELDOFVIEW_DEFAULT_VALUE).boxed().toArray(Double[]::new)));
-	public NoModDoubleArray() {
+	public DoubleArrayWorks() {
 		List<Double> MOD_FIELDOFVIEW = Arrays.asList(Arrays.stream(DOUBLE_ARRAY_FIELDOFVIEW_DEFAULT_VALUE).boxed().toArray(Double[]::new));
 		System.out.println("Immutable Array "+NOMOD_FIELDOFVIEW_DEFAULT_VALUE);
 		System.out.println("Mutable Array "+MOD_FIELDOFVIEW);
@@ -36,8 +36,8 @@ public class NoModDoubleArray {
 		System.out.println("Compare mutable to immutable "+MOD_FIELDOFVIEW.equals(NOMOD_FIELDOFVIEW_DEFAULT_VALUE));
 	}
 	public static void main(String[] args) {
-		new NoModDoubleArray();
+		new DoubleArrayWorks();
 		System.out.println("---------------------------------------------");
-		new NoModDoubleArray();
+		new DoubleArrayWorks();
 	}
 }
