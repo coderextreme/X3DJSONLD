@@ -52,7 +52,7 @@ dependencies {
 group = 'net.coderextreme'
 version = '14.0-SNAPSHOT'
 description = 'X3DJSONLD'
-java.sourceCompatibility = JavaVersion.VERSION_25
+java.sourceCompatibility = JavaVersion.VERSION_23
 
 publishing {
     publications {
