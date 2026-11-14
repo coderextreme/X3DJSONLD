@@ -43,6 +43,7 @@ dependencies {
     implementation gradleApi()
     implementation 'net.sf.saxon:Saxon-HE:13.1'
     implementation 'org.xmlresolver:xmlresolver:6.1.1'
+    implementation 'org.xmlresolver:xmlresolver:6.1.1:data'
     implementation 'org.json:json:20240303'
     implementation 'org.glassfish:javax.json:1.0.4'
     implementation "org.web3d.x3d:X3DJSAIL:4.0.classes"
