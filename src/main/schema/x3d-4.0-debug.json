@@ -1,7 +1,7 @@
 {
         "$schema": "https://json-schema.org/draft/2020-12/schema",
         "$id": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
-        "title": "X3D V4.0 JSON Schema, generated 2026/11/13 23:43:20",
+        "title": "X3D V4.0 JSON Schema, generated 2026/11/14 00:12:56",
         "description": "Experimental JSON Schema for X3D V4.0.  License: Web3D Consortium License: https://www.web3d.org/license",
         "type": "object",
         "properties": {
@@ -11954,8 +11954,8 @@
 						"prefixItems": [
 							{
 								"enum": [
-									"FRACTION",
 									"WORLD",
+									"FRACTION",
 									"PIXEL"
 								],
 								"default":"WORLD",
@@ -11964,8 +11964,8 @@
 							,
 							{
 								"enum": [
-									"FRACTION",
 									"WORLD",
+									"FRACTION",
 									"PIXEL"
 								],
 								"default":"WORLD",
@@ -11982,9 +11982,9 @@
 						"prefixItems": [
 							{
 								"enum": [
+									"FRACTION",
 									"STRETCH",
 									"NONE",
-									"FRACTION",
 									"PIXEL"
 								],
 								"default":"NONE",
@@ -11993,9 +11993,9 @@
 							,
 							{
 								"enum": [
+									"FRACTION",
 									"STRETCH",
 									"NONE",
-									"FRACTION",
 									"PIXEL"
 								],
 								"default":"NONE",
@@ -12021,8 +12021,8 @@
 						"prefixItems": [
 							{
 								"enum": [
-									"FRACTION",
 									"WORLD",
+									"FRACTION",
 									"PIXEL"
 								],
 								"default":"WORLD",
@@ -12031,8 +12031,8 @@
 							,
 							{
 								"enum": [
-									"FRACTION",
 									"WORLD",
+									"FRACTION",
 									"PIXEL"
 								],
 								"default":"WORLD",
