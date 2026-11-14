@@ -359,4 +359,5 @@ server.listen(port, '127.0.0.1', function () {
   console.log("Go to http://127.0.0.1:"+port+"/src/main/html/responsive.html");
   console.log("Go to http://127.0.0.1:"+port+"/src/main/html/sliders.html");
   console.log("Go to http://127.0.0.1:"+port+"/src/main/html/jinphysics.html");
+  console.log("Go to http://127.0.0.1:"+port+"/src/main/html/allflowers.html");
 });
