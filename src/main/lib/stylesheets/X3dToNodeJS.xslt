@@ -3488,6 +3488,7 @@ POSSIBILITY OF SUCH DAMAGE.
                     ($attributeName='fillProperties') or ($attributeName='lineProperties')  or ($attributeName='pointProperties'))) or
                     ($parentElementName='PhysicalMaterial'      and (($attributeName='baseTexture')    or ($attributeName='emissiveTexture') or ($attributeName='metallicRoughnessTexture') or ($attributeName='normalTexture') or ($attributeName='occlusionTexture'))) or
                     ($parentElementName='UnlitMaterial'         and (($attributeName='baseTexture')    or ($attributeName='emissiveTexture')                                                or ($attributeName='normalTexture'))) or
+                    (starts-with($parentElementName,'Layout')    and  $attributeName='viewport') or
                     (contains($parentElementName,'Viewpoint')    and  $attributeName='navigationInfo')">
 			  <xsl:text>SFNode</xsl:text>
 		  </xsl:when>

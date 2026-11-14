@@ -157,7 +157,7 @@ Recommended tools:
     <xsl:variable name="identifier" select="//meta[@name = 'identifier']/@content"/>
     <xsl:variable name="publishedInX3dModelArchives" 
                 select="(string-length($identifier) > 0) and ends-with($identifier,'.x3d') and
-                         contains($identifier,'www.web3d.org/x3d/content/examples/')"/>
+                         contains(lower-case($identifier),'www.web3d.org/x3d/content/examples/')"/>
 
     <!-- start - - - - - - - - - - - - - - - - - - - - - - - -->
     <xsl:template match="/">
@@ -1207,10 +1207,12 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                                 </xsl:choose>
                                             </xsl:variable>
                                             <!-- debug diagnostic
-                                            <xsl:message>
-                                                <xsl:text>*** isInlineImport=</xsl:text>
-                                                <xsl:value-of select="$isInlineImport"/>
-                                            </xsl:message> -->
+                                            <xsl:if test="(local-name()='Inline') and (string-length(@DEF) > 0)">
+                                                <xsl:message>
+                                                    <xsl:text>*** isInlineImport=</xsl:text>
+                                                    <xsl:value-of select="$isInlineImport"/>
+                                                </xsl:message>
+                                            </xsl:if> -->
                                             <xsl:choose>
                                                 <xsl:when test="(local-name() = 'TouchSensor') and (string-length(@description) > 0)">
                                                     <xsl:text>This TouchSensor node is an author-provided hover hint for peer geometry.</xsl:text>
@@ -2028,9 +2030,9 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
 			<xsl:value-of select="$identifierUrl"/>
 		</xsl:message> -->
                 <xsl:if test="(string-length($identifierUrl) > 0) and
-                               (starts-with($identifierUrl,'https://www.web3d.org/x3d/content/examples/') or
-                                starts-with($identifierUrl,'https://savage.nps.edu/Savage/') or
-                                starts-with($identifierUrl,'https://SavageDefense.nps.edu/SavageDefense/'))">
+                               (starts-with(lower-case($identifierUrl),'https://www.web3d.org/x3d/content/examples/') or
+                                starts-with(lower-case($identifierUrl),'https://savage.nps.edu/savage/') or
+                                starts-with(lower-case($identifierUrl),'https://savagedefense.nps.edu/savagedefense/'))">
                   
                     <div style="text-align:center; background-color:white">
                         <!-- add shortcut link to online page -->
@@ -2086,7 +2088,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                 <xsl:text>../</xsl:text>
                             </xsl:variable>
                             <a href="{$versionControlUrl}" target="_blank" style="vertical-align: middle; float: left;">
-                                <img src="{$iconRelativePath}images/sf-logo-small.png" height="30" border="0" title="SourceForge version control" alt="SourceForge version control"/>
+                                <img src="https://www.web3d.org/x3d/content/examples/images/sf-logo-small.png" height="30" border="0" title="SourceForge version control" alt="SourceForge version control"/>
                             </a>
                             <xsl:text> Version control at </xsl:text>
                             <xsl:text disable-output-escaping="yes">&amp;#160;&amp;#160;&amp;#160;</xsl:text> <!-- &nbsp; -->
@@ -4521,6 +4523,43 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     </xsl:message>
                     -->
                 </xsl:if>
+                <xsl:if test="(((@name='identifier') or (@name='reference')) and
+                              (string-length(@content) > 0) and
+                           (starts-with(lower-case(@content),'https://www.web3d.org/x3d/content/examples/') or
+                            starts-with(lower-case(@content),'https://savage.nps.edu/savage/') or
+                            starts-with(lower-case(@content),'https://savagedefense.nps.edu/savagedefense/')))">
+                    <!-- debug -->
+                        <xsl:message>
+                            <xsl:text>*** found &lt;meta name='</xsl:text>
+                            <xsl:value-of select="(@name)"/>
+                            <xsl:text>' @content='</xsl:text>
+                            <xsl:value-of select="(@content)"/>
+                            <xsl:text>'/&gt;</xsl:text>
+                        </xsl:message>
+                    <xsl:variable name="inlineModelName">
+                        <xsl:value-of select="normalize-space(translate(concat(substring-before(@content,'.x3d'),'.x3d'),'&quot;',''))"/>
+                    </xsl:variable>
+                    <span style="position: relative; float: right; margin-right: 10px; font-size: smaller">
+                        <xsl:element name="a">
+                            <xsl:attribute name="href">
+                                <xsl:value-of select="substring-before(@content,'.x3d')"/>
+                                <xsl:text>Index.html</xsl:text>
+                            </xsl:attribute>
+                            <xsl:attribute name="target">
+                                <xsl:text>_blank</xsl:text>
+                            </xsl:attribute>
+                            <xsl:attribute name="title">
+                                <xsl:text>go to online X3D Example Archives model page </xsl:text>
+                                <!--  for
+                                <xsl:value-of select="$inlineModelName"/> -->
+                            </xsl:attribute>
+                            <!-- using firefox for conversion: Inspector > Copy > Image-Data-URL -->
+                            <!-- https://stackoverflow.com/questions/10942312/how-to-generate-a-data-uri -->
+                            <!-- X3DtextIcon16.png -->
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABpUlEQVQ4T2NsuZD///f/XwzkAsbM9aH/f/75Rq5+Bsb/QEC2bqBGyg34uHf3fz4nF7gj3sybxSCSlMaw5upisFiIdiyY3rvvMsO58/fBbCNDRQZnJ10wm/Ghtep/scU7GDgUlRgeh3oysFs6MCy3/M1w8MYmiGIle4Ya+24GL992hocPXjHIK4gxXLlwn8EnwIxh2uQUBsbXc2f+/75mIQN/SSPDh+YiBrn9lxhaDpaCNYGAzwx9hi0ZF8EGODpoM5QW+4HFRThjGd58XwwJA5DN/5/eYhBbuhvsEhB4/Okhw9QTbQxff35imOy7HMMAmIFgA54VZDD8ObWbQe7YXXhYHH9yiGHOiS4wf27IFtwGfL939/+rWA8GNudghr+P7zNIz1uBEqu4vKCtW8hQWOjDwPjI0+o/Z0g8OOQfOeoxCNT2MSQ8rGIode1hsJSxwxoG9++/ZDDVKoGEAcgA2W1HwbZ+2rcHHJCnppQyLDjcAxaz0HSDx8KpPdfgruuYmsCQkuRMhYREcVIuzNnw/8f33ygBRwqHccHcU/9//fpLih4UtQCM2snm2Klv7gAAAABJRU5ErkJggg==" alt="go to online X3D Example Archives model page"/>
+                        </xsl:element>
+                    </span>
+                </xsl:if>
             </xsl:when>
             <xsl:when test="local-name()='ROUTE'">
                 <!-- TODO identify type mismatches -->
@@ -5821,12 +5860,12 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                             <!-- note formatting is to avoid HTML space within linked quoted reference -->
                             <xsl:text>='</xsl:text><xsl:element name="a">
                             <xsl:attribute name="href">
-                                <xsl:text>https://www.w3.org/2001/XMLSchema-instance</xsl:text>
+                                <xsl:text>http://www.w3.org/2001/XMLSchema-instance</xsl:text>
                             </xsl:attribute>
                             <xsl:attribute name="target">
                                 <xsl:text>_blank</xsl:text>
                             </xsl:attribute>
-                            <xsl:text>https://www.w3.org/2001/XMLSchema-instance</xsl:text></xsl:element><xsl:text>'&#10;</xsl:text>
+                            <xsl:text>http://www.w3.org/2001/XMLSchema-instance</xsl:text></xsl:element><xsl:text>'&#10;</xsl:text>
                         </xsl:if>
                     </span>
                     <!-- debug
@@ -10283,6 +10322,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     ($attributeName='fillProperties') or ($attributeName='lineProperties')  or ($attributeName='pointProperties'))) or
                     ($parentElementName='PhysicalMaterial'      and (($attributeName='baseTexture')    or ($attributeName='emissiveTexture') or ($attributeName='metallicRoughnessTexture') or ($attributeName='normalTexture') or ($attributeName='occlusionTexture'))) or
                     ($parentElementName='UnlitMaterial'         and (($attributeName='baseTexture')    or ($attributeName='emissiveTexture')                                                or ($attributeName='normalTexture'))) or
+                    (starts-with($parentElementName,'Layout')    and  $attributeName='viewport') or
                     (contains($parentElementName,'Viewpoint')    and  $attributeName='navigationInfo')">
 			  <xsl:text>SFNode</xsl:text>
 		  </xsl:when>

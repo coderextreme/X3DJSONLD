@@ -1,7 +1,7 @@
 {
         "$schema": "https://json-schema.org/draft/2020-12/schema",
         "$id": "https://www.web3d.org/specifications/x3d-4.1-JSONSchema.json",
-        "title": "X3D V4.1 JSON Schema, generated 2026/11/11 08:45:33",
+        "title": "X3D V4.1 JSON Schema, generated 2026/11/13 23:43:21",
         "description": "Experimental JSON Schema for X3D V4.1.  License: Web3D Consortium License: https://www.web3d.org/license",
         "type": "object",
         "properties": {
@@ -12756,8 +12756,8 @@
 							{
 								"enum": [
 									"CENTER",
-									"LEFT",
-									"RIGHT"
+									"RIGHT",
+									"LEFT"
 								],
 								"default":"CENTER",
 								"type":"string"
@@ -12765,9 +12765,9 @@
 							,
 							{
 								"enum": [
-									"BOTTOM",
+									"CENTER",
 									"TOP",
-									"CENTER"
+									"BOTTOM"
 								],
 								"default":"CENTER",
 								"type":"string"
@@ -12798,9 +12798,9 @@
 						"prefixItems": [
 							{
 								"enum": [
-									"WORLD",
+									"FRACTION",
 									"PIXEL",
-									"FRACTION"
+									"WORLD"
 								],
 								"default":"WORLD",
 								"type":"string"
@@ -12808,9 +12808,9 @@
 							,
 							{
 								"enum": [
-									"WORLD",
+									"FRACTION",
 									"PIXEL",
-									"FRACTION"
+									"WORLD"
 								],
 								"default":"WORLD",
 								"type":"string"
@@ -12826,10 +12826,10 @@
 						"prefixItems": [
 							{
 								"enum": [
-									"STRETCH",
+									"FRACTION",
 									"PIXEL",
-									"NONE",
-									"FRACTION"
+									"STRETCH",
+									"NONE"
 								],
 								"default":"NONE",
 								"type":"string"
@@ -12837,10 +12837,10 @@
 							,
 							{
 								"enum": [
-									"STRETCH",
+									"FRACTION",
 									"PIXEL",
-									"NONE",
-									"FRACTION"
+									"STRETCH",
+									"NONE"
 								],
 								"default":"NONE",
 								"type":"string"
@@ -12865,9 +12865,9 @@
 						"prefixItems": [
 							{
 								"enum": [
-									"WORLD",
+									"FRACTION",
 									"PIXEL",
-									"FRACTION"
+									"WORLD"
 								],
 								"default":"WORLD",
 								"type":"string"
@@ -12875,9 +12875,9 @@
 							,
 							{
 								"enum": [
-									"WORLD",
+									"FRACTION",
 									"PIXEL",
-									"FRACTION"
+									"WORLD"
 								],
 								"default":"WORLD",
 								"type":"string"

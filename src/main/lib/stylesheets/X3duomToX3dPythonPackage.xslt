@@ -808,7 +808,7 @@ def isX3DNode(value):
 # TODO how to introspect the version number at run time from the object. Specifically,
 # get the magic dictionary __dict__ and then perform standard dictionary lookups on that version key.
 
-print("x3d.py package 4.0.65.6 loaded, have fun with X3D Graphics!", flush=True)
+print("x3d.py package 4.0.65.8 loaded, have fun with X3D Graphics!", flush=True)
 
 ###############################################
 </xsl:text>
@@ -3340,12 +3340,12 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
     XML_DOCTYPE_X3D_3_3 = '<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">'
     XML_DOCTYPE_X3D_4_0 = '<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">'
     XML_DOCTYPE_X3D_4_1 = '<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">'
-    X3D_XML_SCHEMA_ATTRIBUTES_3_0 = "xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.0.xsd'"
-    X3D_XML_SCHEMA_ATTRIBUTES_3_1 = "xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.1.xsd'"
-    X3D_XML_SCHEMA_ATTRIBUTES_3_2 = "xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.2.xsd'"
-    X3D_XML_SCHEMA_ATTRIBUTES_3_3 = "xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'"
-    X3D_XML_SCHEMA_ATTRIBUTES_4_0 = "xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'"
-    X3D_XML_SCHEMA_ATTRIBUTES_4_1 = "xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'"
+    X3D_XML_SCHEMA_ATTRIBUTES_3_0 = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.0.xsd'"
+    X3D_XML_SCHEMA_ATTRIBUTES_3_1 = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.1.xsd'"
+    X3D_XML_SCHEMA_ATTRIBUTES_3_2 = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.2.xsd'"
+    X3D_XML_SCHEMA_ATTRIBUTES_3_3 = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'"
+    X3D_XML_SCHEMA_ATTRIBUTES_4_0 = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'"
+    X3D_XML_SCHEMA_ATTRIBUTES_4_1 = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'"
     VRML97_HEADER = '#VRML V2.0 utf8'
     CLASSIC_VRML_HEADER_PREFIX = '#VRML V' # followed by X3D version number
     CLASSIC_VRML_HEADER_SUFFIX = ' utf8'

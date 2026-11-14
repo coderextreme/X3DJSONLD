@@ -2430,46 +2430,46 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 
 	/**
 	 * XML Schema attributes for X3D element.
-	 * <br> <i>xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.0.xsd'</i>
+	 * <br> <i>xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.0.xsd'</i>
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation" target="_blank">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a>
 	 * @see <a href="https://www.w3.org/TR/xmlschema-1/#xsi_schemaLocation">W3C Recommendation, XML Schema Part 1, Structures Second Edition, Section 2.6.3 xsi:schemaLocation, xsi:noNamespaceSchemaLocation</a>
 	 * @see <a href="https://www.w3.org/TR/xmlschema-0">W3C Recommendation, XML Schema Part 0: Primer Second Edition</a> */
-	public static final String X3D_XML_SCHEMA_3_0_ATTRIBUTES = "xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.0.xsd'";
+	public static final String X3D_XML_SCHEMA_3_0_ATTRIBUTES = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.0.xsd'";
 	/**
 	 * XML Schema attributes for X3D element.
-	 * <br> <i>xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.1.xsd'</i>
+	 * <br> <i>xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.1.xsd'</i>
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation" target="_blank">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a>
 	 * @see <a href="https://www.w3.org/TR/xmlschema-1/#xsi_schemaLocation">W3C Recommendation, XML Schema Part 1, Structures Second Edition, Section 2.6.3 xsi:schemaLocation, xsi:noNamespaceSchemaLocation</a>
 	 * @see <a href="https://www.w3.org/TR/xmlschema-0">W3C Recommendation, XML Schema Part 0: Primer Second Edition</a> */
-	public static final String X3D_XML_SCHEMA_3_1_ATTRIBUTES = "xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.1.xsd'";
+	public static final String X3D_XML_SCHEMA_3_1_ATTRIBUTES = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.1.xsd'";
 	/**
 	 * XML Schema attributes for X3D element.
-	 * <br> <i>xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.2.xsd'</i>
+	 * <br> <i>xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.2.xsd'</i>
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation" target="_blank">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a>
 	 * @see <a href="https://www.w3.org/TR/xmlschema-1/#xsi_schemaLocation">W3C Recommendation, XML Schema Part 1, Structures Second Edition, Section 2.6.3 xsi:schemaLocation, xsi:noNamespaceSchemaLocation</a>
 	 * @see <a href="https://www.w3.org/TR/xmlschema-0">W3C Recommendation, XML Schema Part 0: Primer Second Edition</a> */
-	public static final String X3D_XML_SCHEMA_3_2_ATTRIBUTES = "xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.2.xsd'";
+	public static final String X3D_XML_SCHEMA_3_2_ATTRIBUTES = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.2.xsd'";
 	/**
 	 * XML Schema attributes for X3D element.
-	 * <br> <i>xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'</i>
+	 * <br> <i>xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'</i>
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation" target="_blank">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a>
 	 * @see <a href="https://www.w3.org/TR/xmlschema-1/#xsi_schemaLocation">W3C Recommendation, XML Schema Part 1, Structures Second Edition, Section 2.6.3 xsi:schemaLocation, xsi:noNamespaceSchemaLocation</a>
 	 * @see <a href="https://www.w3.org/TR/xmlschema-0">W3C Recommendation, XML Schema Part 0: Primer Second Edition</a> */
-	public static final String X3D_XML_SCHEMA_3_3_ATTRIBUTES = "xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'";
+	public static final String X3D_XML_SCHEMA_3_3_ATTRIBUTES = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'";
 	/**
 	 * XML Schema attributes for X3D element.
-	 * <br> <i>xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'</i>
+	 * <br> <i>xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'</i>
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation" target="_blank">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a>
 	 * @see <a href="https://www.w3.org/TR/xmlschema-1/#xsi_schemaLocation">W3C Recommendation, XML Schema Part 1, Structures Second Edition, Section 2.6.3 xsi:schemaLocation, xsi:noNamespaceSchemaLocation</a>
 	 * @see <a href="https://www.w3.org/TR/xmlschema-0">W3C Recommendation, XML Schema Part 0: Primer Second Edition</a> */
-	public static final String X3D_XML_SCHEMA_4_0_ATTRIBUTES = "xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'";
+	public static final String X3D_XML_SCHEMA_4_0_ATTRIBUTES = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'";
 	/**
 	 * XML Schema attributes for X3D element.
-	 * <br> <i>xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'</i>
+	 * <br> <i>xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'</i>
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation" target="_blank">X3D Scene Authoring Hints: Validation of X3D Scenes using DTD and XML Schema</a>
 	 * @see <a href="https://www.w3.org/TR/xmlschema-1/#xsi_schemaLocation">W3C Recommendation, XML Schema Part 1, Structures Second Edition, Section 2.6.3 xsi:schemaLocation, xsi:noNamespaceSchemaLocation</a>
 	 * @see <a href="https://www.w3.org/TR/xmlschema-0">W3C Recommendation, XML Schema Part 0: Primer Second Edition</a> */
-	public static final String X3D_XML_SCHEMA_4_1_ATTRIBUTES = "xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'";
+	public static final String X3D_XML_SCHEMA_4_1_ATTRIBUTES = "xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'";
 ]]></xsl:text>
 
 									<xsl:text disable-output-escaping="yes"><![CDATA[
@@ -6901,7 +6901,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 //                options = GrammarOptions.STRICT_OPTIONS;
                     // Strict not going to work: org.openexi.sax.TransmogrifierException:
                     // Attribute "noNamespaceSchemaLocation" of namespace
-                    // "https://www.w3.org/2001/XMLSchema-instance" with value
+                    // "http://www.w3.org/2001/XMLSchema-instance" with value
                     // "https://www.web3d.org/specifications/x3d-3.3.xsd" is not expected.
 
                     // Therefore, set default
@@ -17407,7 +17407,8 @@ setAttribute method invocations).
          X3DConcreteElement parent = getParent();
          if (hasParent())
          {
-            if (!parent.getElementName().equals(HAnimJoint.NAME) && !parent.getElementName().equals(HAnimSegment.NAME) &&
+            if (!parent.getElementName().equals(HAnimJoint.NAME)    && !parent.getElementName().equals(HAnimSegment.NAME) &&
+                !parent.getElementName().equals(HAnimHumanoid.NAME) && !parent.getElementName().equals(HAnimSite.NAME) &&
                 !parent.getElementName().equals(ProtoBody.NAME) && !parent.getElementName().equals(field.NAME) && !parent.getElementName().equals(fieldValue.NAME))
             {
                 String errorNotice = ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE +
@@ -17428,6 +17429,7 @@ setAttribute method invocations).
          if (hasParent())
          {
             if (!parent.getElementName().equals(HAnimHumanoid.NAME) && !parent.getElementName().equals(HAnimJoint.NAME) &&
+                !parent.getElementName().equals(HAnimPose.NAME) &&
                 !parent.getElementName().equals(ProtoBody.NAME) && !parent.getElementName().equals(field.NAME) && !parent.getElementName().equals(fieldValue.NAME))
             {
                 String errorNotice = ConfigurationProperties.ERROR_UNKNOWN_FIELD_TYPE +
@@ -39263,6 +39265,10 @@ import org.web3d.x3d.sai.X3DException;
 									((HAnimHumanoid)elementObject).addViewpoints((HAnimSite) childX3dElement);
 							else if (nodeName.equals("HAnimHumanoid") && (protoInstanceNodeType.equals("HAnimSite") || protoInstanceNodeType.equals("ExternProtoDeclare")) && containerField.equals("viewpoints"))
 									((HAnimHumanoid)elementObject).addViewpoints((ProtoInstance) childX3dElement);
+							else if (nodeName.equals("HAnimHumanoid") && childElementName.equals(HAnimDisplacer.NAME)) // && containerField.equals("displacers"))
+									((HAnimHumanoid)elementObject).addDisplacers((HAnimDisplacer) childX3dElement);
+							else if (nodeName.equals("HAnimHumanoid") && childElementName.equals(HAnimMotion.NAME)) // && containerField.equals("motions"))
+									((HAnimHumanoid)elementObject).addMotions((HAnimMotion) childX3dElement);
 							else if (nodeName.equals("HAnimHumanoid") && childElementName.equals(HAnimPose.NAME)) // && containerField.equals("children"))
 									((HAnimHumanoid)elementObject).addChild((HAnimPose) childX3dElement);
 							else if ((childElementName.equals(HAnimPose.NAME)) && containerField.equals("children"))
@@ -39286,6 +39292,8 @@ import org.web3d.x3d.sai.X3DException;
 							else if (nodeName.equals("HAnimJoint") && (protoInstanceNodeType.equals("HAnimDisplacer") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("displacers") || containerField.isEmpty()))
 									((HAnimJoint)elementObject).addDisplacers((ProtoInstance) childX3dElement);
 
+							else if (nodeName.equals("HAnimSegment") && childElementName.equals(HAnimSite.NAME)) // && containerField.equals("children"))
+									((HAnimSegment)elementObject).addChild((HAnimSite) childX3dElement);
 							else if (nodeName.equals("HAnimSegment") && childElementName.equals("HAnimDisplacer") && (containerField.equals("displacers") || containerField.isEmpty()))
 									((HAnimSegment)elementObject).addDisplacers((HAnimDisplacer) childX3dElement);
 							else if (nodeName.equals("HAnimSegment") && (protoInstanceNodeType.equals("HAnimDisplacer") || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("displacers") || containerField.isEmpty()))
@@ -39295,6 +39303,11 @@ import org.web3d.x3d.sai.X3DException;
 							else if (nodeName.equals("HAnimSegment") && ((protoInstanceNodeType.equals("Coordinate") || protoInstanceNodeType.equals("CoordinateDouble")) || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("coord") || containerField.isEmpty()))
 									((HAnimSegment)elementObject).setCoord ((ProtoInstance) childX3dElement);
 
+							else if (nodeName.equals("HAnimSite") && (containerField.equals("displacers") || containerField.isEmpty()))
+									((HAnimSite)elementObject).addChildren(new org.web3d.x3d.sai.Core.X3DNode[] { (X3DNode) childX3dElement } );
+							else if (nodeName.equals("HAnimSite") && childElementName.equals("HAnimDisplacer") && (containerField.equals("displacers") || containerField.isEmpty()))
+									((HAnimSite)elementObject).addDisplacers((HAnimDisplacer) childX3dElement);
+                                        
 							else if (nodeName.equals("IndexedLineSet") && (childElementName.equals("Coordinate") || childElementName.equals("CoordinateDouble") || childElementName.equals("GeoCoordinate")) && (containerField.equals("coord") || containerField.isEmpty()))
 									((IndexedLineSet)elementObject).setCoord ((X3DCoordinateNode) childX3dElement);
 							else if (nodeName.equals("IndexedLineSet") && ((protoInstanceNodeType.equals("Coordinate") || protoInstanceNodeType.equals("CoordinateDouble") || protoInstanceNodeType.equals("GeoCoordinate")) || protoInstanceNodeType.equals("ExternProtoDeclare")) && (containerField.equals("coord") || containerField.isEmpty()))
