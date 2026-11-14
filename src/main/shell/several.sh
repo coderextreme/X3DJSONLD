@@ -186,7 +186,7 @@ do
 	pushd ../java
 	if [ -e "$i".java ]
 	then
-		echo java -Xss1g -Xmx4g "$i"
+		echo "java -Xss1g -Xmx4g ${i}.java"
 		java -Xss1g -Xmx4g "$i".java # sh runToError.sh || echo "Failed"
 	else
 		echo "$i" does not exist.
