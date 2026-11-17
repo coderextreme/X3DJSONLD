@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Ant port of several.sh (X3D test suite), driven mostly by <apply> + <mapper>.
+
+  Requires: Ant 1.10+ and ant-contrib (only used for <if>, <for>, <propertyregex>
+  in the json/clojure stages and a couple of property helpers).
+
+  Usage:
+     . ./classpath      # provides CLASSPATH, NODE, PYTHON, GRAALPY, TRUFFLERUBY, JRUBY, JSONEXT
+     ant -Dx3d.dir=../x3d-code/www.web3d.org -Dx3d.includes="**/HelloWorld.x3d" all
+     ant java python
+-->
+<project name="several" default="all" basedir=".">
+  <taskdef resource="net/sf/antcontrib/antlib.xml"/>
+
+  <!-- ===== configuration ===== -->
+  <property environment="env"/>
+  <property name="node"         value="node"/>
+  <property name="python"       value="python"/>
+  <property name="HOME"       value="/home/yottzumm"/>
+  <property name="X3DJSONLD"       value="${HOME}/X3DJSONLD"/>
+  <property name="JSONEXT"       value=".x3dj"/>
+  <property name="graalpy"      value="${HOME}/Downloads/graalpy-community-jvm-25.0.2-linux-amd64/bin/graalpy"/>
+  <property name="truffleruby"  value="${HOME}/Downloads/truffleruby-community-jvm-40.0.0-linux-amd64/bin/truffleruby"/>
+  <property name="jruby"        value="jruby"/>
+  <property name="classpath"    value="${X3DJSONLD}/saxon-HE-13.1.jar:${X3DJSONLD}/xmlresolver-6.1.1.jar:${X3DJSONLD}/X3DJSAIL.4.0.full.jar:.:../../..:../java"/>
+  <property name="node.options" value="--max-old-space-size=24576"/>
+  <property name="stylesheetdir" value="../lib/stylesheets"/>
+  <property name="overwrite"     value="---overwrite"/>
+  <if><isset property="${JSONEXT}"/><then><property name="jsonext" value="${JSONEXT}"/></then></if>
+  <property name="jsonext" value="json"/>
+
+  <!-- replaces "$@" -->
+  <property name="x3d.dir"      value=".."/>
+  <property name="x3d.includes" value="**/*.x3d"/>
+  <property name="x3d.excludes" value="**/*intermediate*,**/*.new*"/>
+  <property name="x3d.abs" location="${x3d.dir}"/>
+  <propertyregex property="x3d.jsonincludes" input="${x3d.includes}" regexp="\.x3d" replace=".${jsonext}" global="true" defaultValue="${x3d.includes}"/>
+
+  <condition property="is.linux"><os name="Linux"/></condition>
+  <condition property="is.notlinux"><not><os name="Linux"/></not></condition>
+  <fileset id="x3d.files" dir="${x3d.dir}" includes="${x3d.includes}" excludes="${x3d.excludes}"/>
+  <pathconvert property="x3d.list" pathsep="|" refid="x3d.files">
+    <map from="${x3d.abs}" to="${x3d.dir}"/>
+  </pathconvert>
+
+  <!-- ================= macros ================= -->
+
+  <!--
+    Run a tool once per X3D file against the generated program for a language:
+       foo.x3d  ->  <lang>/net/coderextreme/{data|personal|Library|x3d_code/www_web3d_org}/foo<ext>
+    Only files whose target exists are run (<present>). The target path is appended
+    to the command line (<targetfile/>).
+  -->
+  <macrodef name="langrun">
+    <attribute name="tag"/>
+    <attribute name="lang"/>
+    <attribute name="ext"/>
+    <attribute name="exec"/>
+    <attribute name="dir" default="${basedir}"/>
+    <element name="args" optional="true"/>
+    <sequential>
+      <mapper id="map.@{tag}">
+        <chainedmapper>
+          <regexpmapper from="^(.*)$$" to="${x3d.dir}/\1" handledirsep="true"/>
+          <compositemapper>
+            <regexpmapper from="^(.*)/data/(.*)\.x3d$$"     to="\1/@{lang}/net/coderextreme/data/\2@{ext}" handledirsep="true"/>
+            <regexpmapper from="^(.*)/personal/(.*)\.x3d$$" to="\1/@{lang}/net/coderextreme/personal/\2@{ext}" handledirsep="true"/>
+            <regexpmapper from="^(.*)/Library/(.*)\.x3d$$"  to="\1/@{lang}/net/coderextreme/Library/\2@{ext}" handledirsep="true"/>
+            <regexpmapper from="^(.*)/x3d_code/www\.web3d\.org/(.*)\.x3d$$"
+                          to="\1/@{lang}/net/coderextreme/x3d_code/www_web3d_org/\2@{ext}" handledirsep="true"/>
+          </compositemapper>
+        </chainedmapper>
+      </mapper>
+      <apply executable="@{exec}" dir="@{dir}" dest="${basedir}" force="true"
+             addsourcefile="false" failonerror="false" skipemptyfilesets="true">
+        <args/>
+        <targetfile/>
+        <fileset dir="${x3d.dir}" includes="${x3d.includes}" excludes="${x3d.excludes}">
+          <present present="both" targetdir="${basedir}"><mapper refid="map.@{tag}"/></present>
+        </fileset>
+        <mapper refid="map.@{tag}"/>
+      </apply>
+    </sequential>
+  </macrodef>
+
+  <!--
+    Diff an original file against a generated one with ../node/<tool>:
+       foo.x3d -> foo<newsuffix>   (www.web3d.org -> www_web3d_org, like ROOTTOLOCAL)
+    Runs node (with trace-warnings) on ../node/TOOL ORIG NEW, only when both files exist.
+  -->
+  <macrodef name="diffrun">
+    <attribute name="tag"/>
+    <attribute name="tool"/>
+    <attribute name="newsuffix"/>
+    <attribute name="srcext" default="x3d"/>
+    <attribute name="includes" default="${x3d.includes}"/>
+    <sequential>
+      <mapper id="map.@{tag}">
+        <chainedmapper>
+          <regexpmapper from="^(.*)$$" to="${x3d.dir}/\1" handledirsep="true"/>
+          <compositemapper>
+            <regexpmapper from="^(.*)www\.web3d\.org(.*)\.@{srcext}$$" to="\1www_web3d_org\2@{newsuffix}" handledirsep="true"/>
+            <regexpmapper from="^((?!.*www\.web3d\.org).*)\.@{srcext}$$" to="\1@{newsuffix}" handledirsep="true"/>
+          </compositemapper>
+        </chainedmapper>
+      </mapper>
+      <apply executable="${node}" dest="${basedir}" force="true" failonerror="false" skipemptyfilesets="true">
+        <env key="NODE_OPTIONS" value="${node.options}"/>
+        <arg value="--trace-warnings"/>
+        <arg value="../node/@{tool}"/>
+        <srcfile/>
+        <targetfile/>
+        <fileset dir="${x3d.dir}" includes="@{includes}" excludes="${x3d.excludes}">
+          <present present="both" targetdir="${basedir}"><mapper refid="map.@{tag}"/></present>
+        </fileset>
+        <mapper refid="map.@{tag}"/>
+      </apply>
+    </sequential>
+  </macrodef>
+
+  <!-- foo.x3d -> foo<ext> plus language path rewrites; only used by the Clojure stage -->
+  <macrodef name="derive">
+    <attribute name="file"/>
+    <attribute name="ext"/>
+    <attribute name="lang"/>
+    <attribute name="property"/>
+    <sequential>
+      <propertyregex property="@{property}" input="@{file}" regexp="\.x3d$" replace="@{ext}" override="true" defaultValue="@{file}"/>
+      <propertyregex property="@{property}" input="${@{property}}" regexp="/Library/" replace="/@{lang}/net/coderextreme/Library/" override="true" defaultValue="${@{property}}"/>
+      <propertyregex property="@{property}" input="${@{property}}" regexp="/data/" replace="/@{lang}/net/coderextreme/data/" override="true" defaultValue="${@{property}}"/>
+      <propertyregex property="@{property}" input="${@{property}}" regexp="/personal/" replace="/@{lang}/net/coderextreme/personal/" override="true" defaultValue="${@{property}}"/>
+      <propertyregex property="@{property}" input="${@{property}}" regexp="/x3d_code/www\.web3d\.org/" replace="/@{lang}/net/coderextreme/x3d_code/www_web3d_org/" override="true" defaultValue="${@{property}}"/>
+    </sequential>
+  </macrodef>
+
+  <!-- ================= stages ================= -->
+
+  <target name="compile">
+    <javac srcdir="../java" destdir="../java" includeantruntime="false" fork="true">
+      <include name="net/coderextreme/RunSaxon.java"/>
+      <include name="net/coderextreme/X3DRoots.java"/>
+      <classpath><pathelement path="${classpath}"/></classpath>
+      <compilerarg value="-proc:full"/>
+    </javac>
+  </target>
+
+  <!-- RunSaxon prints the files it created; those names are then fed to json2all.js -->
+  <target name="json" depends="compile">
+    <apply executable="java" parallel="true" outputproperty="saxon.out" failonerror="false" skipemptyfilesets="true">
+      <arg value="-cp"/><arg value="${classpath}"/>
+      <arg value="net.coderextreme.RunSaxon"/>
+      <arg value="---"/><arg value="${overwrite}"/>
+      <arg value="--${stylesheetdir}/X3dToJson.xslt"/>
+      <arg value="-${jsonext}"/>
+      <fileset refid="x3d.files"/>
+    </apply>
+    <for list="${saxon.out}" delimiter="${line.separator}" param="j" trim="true">
+      <sequential>
+        <if>
+          <not><equals arg1="@{j}" arg2=""/></not>
+          <then>
+            <exec executable="${node}" failonerror="false">
+              <env key="NODE_OPTIONS" value="${node.options}"/>
+              <arg value="../node/json2all.js"/><arg value="@{j}"/>
+            </exec>
+          </then>
+        </if>
+      </sequential>
+    </for>
+  </target>
+
+  <!-- lein needs several steps per model, so this stage keeps a loop -->
+  <target name="clojure" if="is.linux">
+    <echo>Running Clojure</echo>
+    <property name="clj.apps" value="../clojure/net/coderextreme/data"/>
+    <for list="${x3d.list}" delimiter="|" param="f">
+      <sequential>
+        <derive file="@{f}" ext=".clj" lang="clojure" property="clj.path"/>
+        <propertyregex property="clj.path" input="${clj.path}" regexp="(data)/(.*)\.clj" replace="\1/\2/\1/\2.clj" override="true" defaultValue="${clj.path}"/>
+        <if>
+          <available file="${clj.path}"/>
+          <then>
+            <basename file="${clj.path}" property="clj.model" suffix=".clj"/>
+            <exec executable="lein" dir="${clj.apps}">
+              <env key="CLASSPATH" value=""/>
+              <arg line="new app ${clj.model} --force"/>
+            </exec>
+            <copy file="../resources/project.clj.template" tofile="${clj.apps}/${clj.model}/project.clj" overwrite="true">
+              <filterchain><replacestring from="{{MODEL}}" to="${clj.model}"/></filterchain>
+            </copy>
+            <copy file="${clj.path}" tofile="${clj.apps}/${clj.model}/src/${clj.model}/${clj.model}.clj" overwrite="true"/>
+            <exec executable="lein" dir="${clj.apps}/${clj.model}">
+              <env key="CLASSPATH" value=""/>
+              <arg value="run"/>
+            </exec>
+            <var name="clj.model" unset="true"/>
+          </then>
+        </if>
+      </sequential>
+    </for>
+    <echo>comparing Clojure created json</echo>
+    <diffrun tag="clj.json" tool="jsondiff.js" srcext="${jsonext}" includes="${x3d.jsonincludes}"
+             newsuffix=".new.clojure.${jsonext}"/>
+  </target>
+
+  <target name="truffleruby" if="is.linux">
+    <echo>Running TruffleRuby</echo>
+    <langrun tag="truffleruby" lang="truffleruby" ext=".rb" exec="${truffleruby}" dir="../truffleruby">
+      <args><arg value="--jvm"/><arg value="--vm.classpath=${classpath}"/></args>
+    </langrun>
+  </target>
+
+  <target name="jruby" if="is.notlinux">
+    <echo>Running JRuby</echo>
+    <langrun tag="jruby" lang="jruby" ext=".rb" exec="${jruby}" dir="../jruby">
+      <args><arg value="-J-Xss1g"/><arg value="-J-Xmx19g"/></args>
+    </langrun>
+  </target>
+
+  <target name="xml-roundtrip">
+    <echo>test JSON to XML convertion .${jsonext} to .x3d.new (temp xml)</echo>
+    <diffrun tag="roundtrip" tool="xmldiff.js" newsuffix=".x3d.new"/>
+  </target>
+
+  <target name="java" depends="compile">
+    <echo>run java programs</echo>
+    <langrun tag="java" lang="java" ext=".java" exec="java" dir="../java">
+      <args><arg value="-Xss1g"/><arg value="-Xmx4g"/></args>
+    </langrun>
+    <echo>comparing java created json</echo>
+    <diffrun tag="java.json" tool="jsondiff.js" srcext="${jsonext}" includes="${x3d.jsonincludes}"
+             newsuffix=".new.java.${jsonext}"/>
+    <echo>Comparing old xml and pretty printed intermediate xml</echo>
+    <diffrun tag="java.pp" tool="xmldiff.js" newsuffix=".new.javaPrettyPrint.intermediate.x3d"/>
+  </target>
+
+  <target name="graaljs">
+    <echo>Running Graal JavaScript</echo>
+    <langrun tag="graaljs" lang="graaljs" ext=".js" exec="../shell/jjs.sh" dir="../graaljs"/>
+    <echo>Diffing .new.graaljs.x3d from graalvm with original x3d</echo>
+    <diffrun tag="graaljs.diff" tool="xmldiff.js" newsuffix=".new.graaljs.x3d"/>
+  </target>
+
+  <target name="graalpy">
+    <echo file="errors.txt"></echo>
+    <echo>Running graalpy code</echo>
+    <!-- original: 2>&1 | grep -A 4 ERROR >> errors.txt  (here: matching lines only) -->
+    <langrun tag="graalpy" lang="graalpy" ext=".py" exec="${graalpy}">
+      <args>
+        <arg value="--jvm"/><arg value="--vm.cp=${classpath}"/>
+        <redirector output="errors.txt" error="errors.txt" append="true" alwayslog="false">
+          <outputfilterchain><linecontains><contains value="ERROR"/></linecontains></outputfilterchain>
+          <errorfilterchain><linecontains><contains value="ERROR"/></linecontains></errorfilterchain>
+        </redirector>
+      </args>
+    </langrun>
+    <echo>Diffing .new.graalpy.x3d .py with original x3d</echo>
+    <diffrun tag="graalpy.diff" tool="xmldiff.js" newsuffix=".new.graalpy.x3d"/>
+  </target>
+
+  <target name="python">
+    <echo>Running python code</echo>
+    <langrun tag="python" lang="python" ext=".py" exec="${python}"/>
+    <echo>Diffing .new.python.x3d .py with original x3d</echo>
+    <diffrun tag="python.diff" tool="xmldiff.js" newsuffix=".new.python.x3d"/>
+  </target>
+
+  <target name="all" depends="json,clojure,truffleruby,jruby,xml-roundtrip,java,graaljs,graalpy,python"
+          description="Run the whole test suite"/>
+</project>
