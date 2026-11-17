@@ -100,7 +100,7 @@ class ClassPrinter:
                     #elif acceptableType in ("X3DComposableVolumeRenderStyleNode", "X3DNBodyCollidableNode", "X3DSingleTextureCoordinateNode", "X3DSingleTextureNode", "X3DTexture2DNode", "X3DVolumeRenderStyleNode"):
                     elif acceptableType in ("MFNode") and self.node.get('name') == "Scene":
                         acceptableType = "ArrayList<X3DNode>"
-                    elif acceptableType in ("X3DChildNode", "MFNode", "X3DShaderNode", "CADFace", "Contact", "Contour2D", "DISEntityTypeMapping", "HAnimDisplacer", "HAnimJoint", "HAnimMotion", "HAnimSegment", "HAnimSite", "ShaderPart", "ShaderProgram", "X3DComposableVolumeRenderStyleNode", "X3DLayerNode", "X3DNBodyCollidableNode", "X3DParametricGeometryNode", "X3DParticlePhysicsModelNode", "X3DRigidJointNode", "X3DSingleTextureCoordinateNode", "X3DSingleTextureNode", "X3DSingleTextureTransformNode", "X3DTexture2DNode", "X3DUrlObject", "X3DVertexAttributeNode", "X3DVolumeRenderStyleNode"):
+                    elif acceptableType in ("X3DChildNode", "MFNode", "X3DShaderNode", "CADFace", "Contact", "Contour2D", "DISEntityTypeMapping", "HAnimDisplacer", "HAnimJoint", "HAnimMotion", "HAnimSegment", "HAnimSite", "HAnimPose", "ShaderPart", "ShaderProgram", "X3DComposableVolumeRenderStyleNode", "X3DLayerNode", "X3DNBodyCollidableNode", "X3DParametricGeometryNode", "X3DParticlePhysicsModelNode", "X3DRigidJointNode", "X3DSingleTextureCoordinateNode", "X3DSingleTextureNode", "X3DSingleTextureTransformNode", "X3DTexture2DNode", "X3DUrlObject", "X3DVertexAttributeNode", "X3DVolumeRenderStyleNode"):
                         if  field.get("name") == "proxy":
                             pass
                         else:
@@ -187,9 +187,9 @@ class ClassPrinter:
             astr += "\t}\n"
             jstr += astr
             jstr += "}\n"
-            java = open("/home/yottzumm/jaminate/Jaminate/app/src/main/java/net/coderextreme/remove/New"+self.node.get("name")+".java", "w")
-            java.write(jstr)
-            java.close()
+            #java = open("/home/yottzumm/jaminate/Jaminate/app/src/main/java/net/coderextreme/remove/New"+self.node.get("name")+".java", "w")
+            #java.write(jstr)
+            #java.close()
             java = open("/home/yottzumm/X3DJSONLD/src/main/java/net/coderextreme/remove/New"+self.node.get("name")+".java", "w")
             java.write(jstr)
             java.close()
@@ -262,9 +262,9 @@ code += '''
 '''
 code += "}\n"
 
-f = open("/home/yottzumm/jaminate/Jaminate/app/src/main/java/net/coderextreme/remove/Remove.java", "w")
-f.write(code)
-f.close()
+#f = open("/home/yottzumm/jaminate/Jaminate/app/src/main/java/net/coderextreme/remove/Remove.java", "w")
+#f.write(code)
+#f.close()
 f = open("/home/yottzumm/X3DJSONLD/src/main/java/net/coderextreme/remove/Remove.java", "w")
 f.write(code)
 f.close()
