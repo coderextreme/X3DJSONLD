@@ -22,7 +22,7 @@
           },
           {
             "@name":"translated",
-            "@content":"10 November 2026"
+            "@content":"14 November 2026"
           },
           {
             "@name":"generator",
@@ -990,6 +990,7 @@
               "-children":[
                 { "HAnimHumanoid":
                   {
+                    "@name":"Human",
                     "@version":"2.0",
                     "@DEF":"JoeHuman",
                     "-joints":[

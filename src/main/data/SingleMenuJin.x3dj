@@ -17,6 +17,10 @@
             "@content":"SingleMenuJin.x3d"
           },
           {
+            "@name":"created",
+            "@content":"Composite, John Carlson (Menu)"
+          },
+          {
             "@name":"identifier",
             "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/SingleMenuJin.x3d"
           },
@@ -26,7 +30,7 @@
           },
           {
             "@name":"translated",
-            "@content":"10 November 2026"
+            "@content":"14 November 2026"
           },
           {
             "@name":"generator",

@@ -70,7 +70,7 @@
           },
           {
             "@name":"translated",
-            "@content":"26 October 2026"
+            "@content":"14 November 2026"
           },
           {
             "@name":"generator",
@@ -142,8 +142,8 @@
                       { "HAnimHumanoid":
                         {
                           "@name":"Tufani_WS",
-                          "@DEF":"Tufani",
                           "@version":"2.0",
+                          "@DEF":"Tufani",
                           "-skeleton":[
                             { "HAnimJoint":
                               {

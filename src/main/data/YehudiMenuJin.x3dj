@@ -26,7 +26,7 @@
           },
           {
             "@name":"translated",
-            "@content":"26 October 2026"
+            "@content":"14 November 2026"
           },
           {
             "@name":"generator",
@@ -477,6 +477,7 @@
                       { "HAnimHumanoid":
                         {
                           "@name":"humanoid",
+                          "@version":"2.0",
                           "@DEF":"hanim0_humanoid",
                           "-skeleton":[
                             { "HAnimJoint":
@@ -3333,6 +3334,7 @@
                       { "HAnimHumanoid":
                         {
                           "@name":"humanoid",
+                          "@version":"2.0",
                           "@DEF":"hanim1_humanoid",
                           "-skeleton":[
                             { "HAnimJoint":
@@ -6205,6 +6207,7 @@
                       { "HAnimHumanoid":
                         {
                           "@name":"humanoid",
+                          "@version":"2.0",
                           "@DEF":"hanim2_humanoid",
                           "-skeleton":[
                             { "HAnimJoint":
@@ -9091,6 +9094,7 @@
                       { "HAnimHumanoid":
                         {
                           "@name":"humanoid",
+                          "@version":"2.0",
                           "@DEF":"hanim3_humanoid",
                           "-skeleton":[
                             { "HAnimJoint":
@@ -11955,6 +11959,7 @@
                       { "HAnimHumanoid":
                         {
                           "@name":"humanoid",
+                          "@version":"2.0",
                           "@DEF":"hanim4_humanoid",
                           "-skeleton":[
                             { "HAnimJoint":
@@ -14839,6 +14844,7 @@
                       { "HAnimHumanoid":
                         {
                           "@name":"humanoid",
+                          "@version":"2.0",
                           "@DEF":"hanim5_humanoid",
                           "-skeleton":[
                             { "HAnimJoint":
@@ -17717,6 +17723,7 @@
                       { "HAnimHumanoid":
                         {
                           "@name":"humanoid",
+                          "@version":"2.0",
                           "@DEF":"hanim6_humanoid",
                           "-skeleton":[
                             { "HAnimJoint":
@@ -20573,6 +20580,7 @@
                       { "HAnimHumanoid":
                         {
                           "@name":"humanoid",
+                          "@version":"2.0",
                           "@DEF":"hanim7_humanoid",
                           "-skeleton":[
                             { "HAnimJoint":
@@ -23437,6 +23445,7 @@
                       { "HAnimHumanoid":
                         {
                           "@name":"humanoid",
+                          "@version":"2.0",
                           "@DEF":"hanim8_humanoid",
                           "-skeleton":[
                             { "HAnimJoint":
@@ -26301,6 +26310,7 @@
                       { "HAnimHumanoid":
                         {
                           "@name":"humanoid",
+                          "@version":"2.0",
                           "@DEF":"hanim9_humanoid",
                           "-skeleton":[
                             { "HAnimJoint":
@@ -29157,6 +29167,7 @@
                       { "HAnimHumanoid":
                         {
                           "@name":"humanoid",
+                          "@version":"2.0",
                           "@DEF":"hanim10_humanoid",
                           "-skeleton":[
                             { "HAnimJoint":
@@ -32019,6 +32030,7 @@
                       { "HAnimHumanoid":
                         {
                           "@name":"humanoid",
+                          "@version":"2.0",
                           "@DEF":"hanim11_humanoid",
                           "-skeleton":[
                             { "HAnimJoint":
@@ -34897,6 +34909,7 @@
                       { "HAnimHumanoid":
                         {
                           "@name":"humanoid",
+                          "@version":"2.0",
                           "@DEF":"hanim12_humanoid",
                           "-skeleton":[
                             { "HAnimJoint":
@@ -37821,6 +37834,7 @@
                       { "HAnimHumanoid":
                         {
                           "@name":"humanoid",
+                          "@version":"2.0",
                           "@DEF":"hanim13_humanoid",
                           "-skeleton":[
                             { "HAnimJoint":
@@ -40697,6 +40711,7 @@
                       { "HAnimHumanoid":
                         {
                           "@name":"humanoid",
+                          "@version":"2.0",
                           "@DEF":"hanim14_humanoid",
                           "-skeleton":[
                             { "HAnimJoint":
@@ -43551,6 +43566,7 @@
                       { "HAnimHumanoid":
                         {
                           "@name":"humanoid",
+                          "@version":"2.0",
                           "@DEF":"hanim15_humanoid",
                           "-skeleton":[
                             { "HAnimJoint":
@@ -46431,6 +46447,7 @@
                       { "HAnimHumanoid":
                         {
                           "@name":"humanoid",
+                          "@version":"2.0",
                           "@DEF":"hanim16_humanoid",
                           "-skeleton":[
                             { "HAnimJoint":
@@ -49291,6 +49308,7 @@
                       { "HAnimHumanoid":
                         {
                           "@name":"humanoid",
+                          "@version":"2.0",
                           "@DEF":"hanim17_humanoid",
                           "-skeleton":[
                             { "HAnimJoint":
@@ -52159,6 +52177,7 @@
                       { "HAnimHumanoid":
                         {
                           "@name":"humanoid",
+                          "@version":"2.0",
                           "@DEF":"hanim18_humanoid",
                           "-skeleton":[
                             { "HAnimJoint":
@@ -55035,6 +55054,7 @@
                       { "HAnimHumanoid":
                         {
                           "@name":"humanoid",
+                          "@version":"2.0",
                           "@DEF":"hanim19_humanoid",
                           "-skeleton":[
                             { "HAnimJoint":
@@ -57911,6 +57931,7 @@
                       { "HAnimHumanoid":
                         {
                           "@name":"humanoid",
+                          "@version":"2.0",
                           "@DEF":"hanim20_humanoid",
                           "-skeleton":[
                             { "HAnimJoint":
@@ -60769,6 +60790,7 @@
                       { "HAnimHumanoid":
                         {
                           "@name":"humanoid",
+                          "@version":"2.0",
                           "@DEF":"hanim21_humanoid",
                           "-skeleton":[
                             { "HAnimJoint":
@@ -63649,6 +63671,7 @@
                       { "HAnimHumanoid":
                         {
                           "@name":"humanoid",
+                          "@version":"2.0",
                           "@DEF":"hanim22_humanoid",
                           "-skeleton":[
                             { "HAnimJoint":
@@ -66501,6 +66524,7 @@
                       { "HAnimHumanoid":
                         {
                           "@name":"humanoid",
+                          "@version":"2.0",
                           "@DEF":"hanim23_humanoid",
                           "-skeleton":[
                             { "HAnimJoint":
@@ -69369,6 +69393,7 @@
                       { "HAnimHumanoid":
                         {
                           "@name":"humanoid",
+                          "@version":"2.0",
                           "@DEF":"hanim24_humanoid",
                           "-skeleton":[
                             { "HAnimJoint":
@@ -72225,6 +72250,7 @@
                       { "HAnimHumanoid":
                         {
                           "@name":"humanoid",
+                          "@version":"2.0",
                           "@DEF":"hanim25_humanoid",
                           "-skeleton":[
                             { "HAnimJoint":
@@ -75077,6 +75103,7 @@
                       { "HAnimHumanoid":
                         {
                           "@name":"humanoid",
+                          "@version":"2.0",
                           "@DEF":"hanim26_humanoid",
                           "-skeleton":[
                             { "HAnimJoint":
@@ -77939,6 +77966,7 @@
                       { "HAnimHumanoid":
                         {
                           "@name":"humanoid",
+                          "@version":"2.0",
                           "@DEF":"hanim27_humanoid",
                           "-skeleton":[
                             { "HAnimJoint":
@@ -80805,6 +80833,7 @@
                       { "HAnimHumanoid":
                         {
                           "@name":"humanoid",
+                          "@version":"2.0",
                           "@DEF":"hanim28_humanoid",
                           "-skeleton":[
                             { "HAnimJoint":
@@ -83679,6 +83708,7 @@
                       { "HAnimHumanoid":
                         {
                           "@name":"humanoid",
+                          "@version":"2.0",
                           "@DEF":"hanim29_humanoid",
                           "-skeleton":[
                             { "HAnimJoint":

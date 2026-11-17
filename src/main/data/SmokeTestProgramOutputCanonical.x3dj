@@ -129,7 +129,7 @@
           },
           {
             "@name":"translated",
-            "@content":"10 November 2026"
+            "@content":"14 November 2026"
           },
           {
             "@name":"generator",
@@ -712,7 +712,6 @@
                     "-material":
                       { "ProtoInstance":
                         {
-                          "@name":"ArtDeco02Material",
                           "@USE":"ArtDeco02MaterialDEF"
                         }
                       }

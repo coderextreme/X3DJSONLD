@@ -22,11 +22,11 @@
           },
           {
             "@name":"creator",
-            "@content":"Generated from Python script"
+            "@content":"Generated from Python script by John Carlson"
           },
           {
             "@name":"translated",
-            "@content":"10 November 2026"
+            "@content":"14 November 2026"
           },
           {
             "@name":"generator",
