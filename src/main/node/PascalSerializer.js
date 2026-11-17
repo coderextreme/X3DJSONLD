@@ -242,10 +242,6 @@ PascalSerializer.prototype = {
 			method = "IS";
 			addpre = "Set";
 		}
-		if (addpre+method === "SetJoints") {
-			method = "Joints"
-			addpre = "Add";
-		}
 		if (element.nodeName === 'Scene' && addpre+method === "SetMetadata") {
 			method = "Metadata"
 			addpre = "Add";
@@ -255,6 +251,14 @@ PascalSerializer.prototype = {
 			addpre = "Add";
 		}
 		*/
+		if (addpre+method === "SetJoints") {
+			method = "Joints"
+			addpre = "Add";
+		}
+		if (addpre+method === "SetSegments") {
+			method = "Segments"
+			addpre = "Add";
+		}
 		if ((element.nodeName === 'MultiTextureTransform' &&
 			  method.slice(3) === "TextureTransform") ||
 		    (element.nodeName === 'MultiTexture' &&
@@ -268,10 +272,25 @@ PascalSerializer.prototype = {
 			method = method+".Add"
 			addpre = "fd";
 		}
+		if (element.nodeName === 'HAnimHumanoid' &&
+			  (method === "Joints" ||
+			   method === "Segments")
+		) {
+			method = method+".Add"
+			addpre = "fd";
+		}
+		if (element.nodeName === 'HAnimHumanoid' &&
+			  method === "SkinCoord") {
+			console.log("Method1", method)
+			method = method+".Set"
+			console.log("Method2", method)
+			addpre = "fd";
+		}
 		if ( attr === "ChannelSelection") {
 		}
 		addpre = addpre.charAt(0).toUpperCase() + addpre.slice(1);
 		method = method.charAt(0).toUpperCase() + method.slice(1);
+		console.log("preview", prepre+addpre+method);
 		return prepre+addpre+method;
 	},
 	stringValue : function(fieldValue, attr, attrType) {
@@ -941,6 +960,8 @@ PascalSerializer.prototype = {
 							method === ".AddChildren" ||
 							method === ".SetDisplacers" ||
 							method === ".AddDisplacements" ||
+							method === ".AddJoints" ||
+							method === ".AddSegments" ||
 							method === ".AddSkin" ||
 							method === ".SetSkeleton" ||
 							method === ".SetSkin"
