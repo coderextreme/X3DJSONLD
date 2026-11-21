@@ -8,50 +8,135 @@ this.code = [];
 this.codeno = 0;
 this.preno = 0;
 this.DEFs = {};
+this.DEFnumbers = {};
 this.protos = {};
+// Limits for each generated Init procedure. Lower them if FPC still runs out of
+// registers / memory; raise them for fewer, larger procedures.
+this.maxStatementsPerProc = 40;
+this.maxCharsPerProc = 12000;
+}
+
+const stackname = function (element, override) {
+	if (typeof override !== 'undefined') {
+		// console.log("stack name was", stackname(element));
+		element.stacknumber = override;
+		// console.log("stack name becomes", stackname(element));
+	}
+	return element.nodeName+element.stacknumber;
 }
 
 
 PascalSerializer.prototype = {
+	// Split generated Pascal statements into chunks, each ending on a complete
+	// top level statement.  Understands Pascal strings, { }, (* *) and // comments
+	// and bracket nesting, so it never cuts inside an array literal or a string.
+	splitStatements : function(body, maxStatements, maxChars) {
+		const chunks = [];
+		const n = body.length;
+		let start = 0, count = 0, depth = 0, i = 0;
+		while (i < n) {
+			const c = body[i];
+			const c2 = body[i+1];
+			if (c === "'") {
+				i++;
+				while (i < n && body[i] !== "'" && body[i] !== "\n") {
+					i++;
+				}
+				i++;
+			} else if (c === "{") {
+				i = body.indexOf("}", i);
+				if (i < 0) break;
+				i++;
+			} else if (c === "(" && c2 === "*") {
+				i = body.indexOf("*)", i+2);
+				if (i < 0) break;
+				i += 2;
+			} else if (c === "/" && c2 === "/") {
+				i = body.indexOf("\n", i);
+				if (i < 0) break;
+			} else if (c === "(" || c === "[") {
+				depth++;
+				i++;
+			} else if (c === ")" || c === "]") {
+				if (depth > 0) depth--;
+				i++;
+			} else if (c === ";" && depth === 0) {
+				i++;
+				count++;
+				if (count >= maxStatements || (i - start) >= maxChars) {
+					chunks.push(body.slice(start, i));
+					start = i;
+					count = 0;
+				}
+			} else {
+				i++;
+			}
+		}
+		if (body.slice(start).trim().length > 0) {
+			chunks.push(body.slice(start));
+		}
+		return chunks;
+	},
 	serializeToString : function(json, element, clazz, mapToMethod, fieldTypes) {
 		this.code = [];
 		this.codeno = 0;
 		this.preno = 0;
 		this.DEFs = {};
+		this.DEFnumbers = {};
 		this.protos = {};
 		var stack = [];
-
-		var str = "";
 
 		stack.unshift(this.preno);
 		this.preno++;
 		clazz = clazz.replace(/.*\//, '');
-		var bodystr = "";
 
-		bodystr += "unit "+clazz+";\n\n";
-		bodystr += "interface\n\n";
-		bodystr += "uses X3DNodes;\n\n";
-		bodystr += "function Create"+clazz+": TX3DRootNode;\n\n";
-		bodystr += "implementation\n\n";
-		bodystr += "uses CastleVectors;\n\n";
-        
-		bodystr += "function Create"+clazz+": T"+element.nodeName+"RootNode;\n";
-		bodystr += "var\n";
-		var tailstr = "";
-		let rootNodeName =element.nodeName+stack[0];
-		this.code.push(rootNodeName+": T" + element.nodeName+"RootNode;");
-		tailstr += "\nbegin\n";
-		tailstr += rootNodeName+" := T"+element.nodeName+"RootNode.Create;\n";
-		// tailstr += "Result := TX3DRootNode.Create('', Reader.BaseUrl);\n";
-		tailstr += this.subSerializeToString(element, mapToMethod, fieldTypes, 3, stack, "");
-		tailstr += "Result := "+rootNodeName+";\n";
-		tailstr += "end;\n\n";
-		tailstr += "begin\n";
-		tailstr += "end.\n";
+		const rootType = "T"+element.nodeName+"RootNode";
+		element.stacknumber = stack[0];
+		const rootNodeName = stackname(element);
+		this.code.push(rootNodeName+": "+rootType+";");
 
-		str += bodystr;
-		str += this.code.join("\n");
-		str += tailstr;
+		// All statements, in order.  Walking the tree also fills this.code with
+		// the node variable declarations, so this must run before the header is built.
+		let body = rootNodeName+" := "+rootType+".Create;\n";
+		body += this.subSerializeToString(element, mapToMethod, fieldTypes, 3, stack, "");
+
+		const chunks = this.splitStatements(body, this.maxStatementsPerProc, this.maxCharsPerProc);
+		const procName = function(k) { return "Init"+clazz+"Part"+k; };
+
+		let str = "";
+		str += "unit "+clazz+";\n\n";
+		str += "interface\n\n";
+		str += "uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;\n\n";
+		str += "function Create"+clazz+": TX3DRootNode;\n\n";
+		str += "implementation\n\n";
+		str += "uses CastleVectors;\n\n";
+
+		// Node variables are unit level (global) rather than locals of one huge
+		// function, so they take no stack slots or registers and every Init
+		// procedure below can see them.
+		str += "var\n";
+		str += this.code.join("\n")+"\n\n";
+
+		for (let k = 0; k < chunks.length; k++) {
+			str += "procedure "+procName(k)+";\n";
+			str += "begin\n";
+			str += chunks[k];
+			if (!chunks[k].endsWith("\n")) {
+				str += "\n";
+			}
+			str += "end;\n\n";
+		}
+
+		str += "function Create"+clazz+": "+rootType+";\n";
+		str += "begin\n";
+		for (let k = 0; k < chunks.length; k++) {
+			str += procName(k)+";\n";
+		}
+		str += "Result := "+rootNodeName+";\n";
+		str += "end;\n\n";
+		str += "begin\n";
+		str += "end.\n";
+
 		stack.shift();
 		return str;
 	},
@@ -128,6 +213,9 @@ PascalSerializer.prototype = {
 				trail = "";
 				MFLead =  "";
 				MFTrail = "";
+			} else if (attr === "type") {
+				MFLead =  "([";
+				MFTrail = "])";
 			} else {
 				MFLead =  "([";
 				MFTrail = "])";
@@ -206,35 +294,24 @@ PascalSerializer.prototype = {
 		} else {
 			method = method.charAt(0).toUpperCase() + method.slice(1);
 		}
-		for (var a in node.attributes) {
-			var attrs = node.attributes;
-			try {
-				parseInt(a);
-				var attrsa = attrs[a];
-				var attr = attrsa.nodeName;
-				if (attrs.hasOwnProperty(a) && attrsa.nodeType == 2) {
-					if (attr === "containerField") {
-						method = attrsa.nodeValue.charAt(0).toUpperCase() + attrsa.nodeValue.slice(1);
-						if (method === "Shaders") {
-							addpre = "Add";
-							method = "Child";
-						} else {
-							if (attrsa.nodeValue === "joints" 
-								|| attrsa.nodeValue === "sites" 
-								|| attrsa.nodeValue === "skeleton" 
-								|| attrsa.nodeValue === "segments" 
-							) {
-								method = attrsa.nodeValue.charAt(0).toUpperCase() + attrsa.nodeValue.slice(1);
-								addpre = "Add";
-							} else {
-								method = attrsa.nodeValue.charAt(0).toUpperCase() + attrsa.nodeValue.slice(1);
-								addpre = "Set";
-							}
-						}
-					}
+		let containerField = node.getAttribute("containerField");
+		if (containerField !== null) {
+			method = containerField.charAt(0).toUpperCase() + containerField.slice(1);
+			if (method === "Shaders") {
+				addpre = "Add";
+				method = "Child";
+			} else {
+				if (containerField === "joints" 
+					|| containerField === "sites" 
+					|| containerField === "skeleton" 
+					|| containerField === "segments" 
+				) {
+					method = containerField.charAt(0).toUpperCase() + containerField.slice(1);
+					addpre = "Add";
+				} else {
+					method = containerField.charAt(0).toUpperCase() + containerField.slice(1);
+					addpre = "Set";
 				}
-			} catch (e) {
-				console.error(e);
 			}
 		}
 		/*
@@ -246,11 +323,19 @@ PascalSerializer.prototype = {
 			method = "Metadata"
 			addpre = "Add";
 		}
-		if (node.nodeName === 'LayerSet' && addpre+method === "AddChild") {
-			method = "LayerSet"
-			addpre = "Add";
-		}
 		*/
+		if (element.nodeName === 'LayerSet' && addpre+method === "addLayers") {
+			// console.log(element.nodeName, "0method", addpre, method);
+			method = method.slice(3)+".Add"
+			addpre = "fd";
+			// console.log(element.nodeName, "1method", addpre, method);
+		}
+		if (element.nodeName === 'Layer' && addpre+method === "addChildren") {
+			// console.log("element", element.nodeName, "2method", addpre, method);
+			method = method.slice(3)+".Add"
+			addpre = "fd";
+			// console.log("element", element.nodeName, "3method", addpre, method);
+		}
 		if (addpre+method === "SetJoints") {
 			method = "Joints"
 			addpre = "Add";
@@ -272,6 +357,23 @@ PascalSerializer.prototype = {
 			method = method+".Add"
 			addpre = "fd";
 		}
+		if (element.nodeName.endsWith('Script')) {
+			// console.log("element=", element ? element.nodeName : null, "addpre", addpre, "method", method, "node", node ? node.name : null);
+			method = ".AddCustomField"
+			addpre = "fd";
+		}
+		if ((element.nodeName === 'field' ||
+			element.nodeName === 'MFNode') &&
+			  (method === "Joints" ||
+			   method === "Material" ||
+			   method === "Coordinate" ||
+			   method === "Transform" ||
+			   method === "CylinderSensor" ||
+			   method === "Segments")
+		) {
+			method = ".Add"
+			addpre = "fd"; // stripped
+		}
 		if (element.nodeName === 'HAnimHumanoid' &&
 			  (method === "Joints" ||
 			   method === "Segments")
@@ -281,16 +383,11 @@ PascalSerializer.prototype = {
 		}
 		if (element.nodeName === 'HAnimHumanoid' &&
 			  method === "SkinCoord") {
-			console.log("Method1", method)
 			method = method+".Set"
-			console.log("Method2", method)
 			addpre = "fd";
-		}
-		if ( attr === "ChannelSelection") {
 		}
 		addpre = addpre.charAt(0).toUpperCase() + addpre.slice(1);
 		method = method.charAt(0).toUpperCase() + method.slice(1);
-		console.log("preview", prepre+addpre+method);
 		return prepre+addpre+method;
 	},
 	stringValue : function(fieldValue, attr, attrType) {
@@ -373,7 +470,7 @@ PascalSerializer.prototype = {
 		} else if (
 			attrType === "SFVec2f") {
 			strval = this.printSubArray(attrType, "float", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, FLOAT_SUFFIX+',', '', FLOAT_SUFFIX, 1, attr);
-			strval  =  "Vector2Single"+strval;
+			strval  =  "Vector2"+strval;
 		} else if (
 			attrType === "MFVec2f") {
 			strval = this.printSubArray(attrType, "float", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, FLOAT_SUFFIX+',', '', FLOAT_SUFFIX, 2, attr);
@@ -520,12 +617,12 @@ PascalSerializer.prototype = {
 	},
 	setProto : function(protoStatement) {
 		for (let cn in protoStatement.childNodes) {
-			let protoName = protoStatement.getAttribute('name');
+			let protoName = protoStatement.getAttribute("DEF") || protoStatement.getAttribute('name');
 			let proto = this.protos[protoName];
 			if (typeof proto === 'undefined') {
 				proto = {};
 				this.protos[protoName] = proto;
-				// console.log("=============INFO, ProtoInstance name", protoName);
+				console.log("=============INFO, ProtoInstance name", protoName);
 			}	
 			// looking for ProtoInterface and ProtoBody
 			var node = protoStatement.childNodes[cn];
@@ -536,8 +633,14 @@ PascalSerializer.prototype = {
 		if (protoStatement.nodeName === "ExternProtoDeclare") {
 			this.setInterface(protoStatement, protoStatement.getAttribute("name"));
 		}
+		if (protoStatement.nodeName.endsWith("Script")) {
+			let scriptName = protoStatement.getAttribute("DEF") || protoStatement.getAttribute("name");
+			this.protos[scriptName]["id"] = Object.keys(this.protos).length;
+			this.setInterface(protoStatement, scriptName)
+		}
 	},
 	setInterface : function(interfaceStatement, protoName) {
+		console.log("HEY", interfaceStatement.nodeName, protoName);
 		for (let fieldStatement in interfaceStatement.childNodes) {
 			let field = interfaceStatement.childNodes[fieldStatement]
 			if (field.nodeType == 1) {
@@ -564,8 +667,13 @@ PascalSerializer.prototype = {
 					this.protos[protoName][name] = {};
 					this.protos[protoName][name]["name"] = name;
 					this.protos[protoName][name]["type"] = type;
-					this.protos[protoName][name]["default_value"] = valu;
 					this.protos[protoName][name]["accessType"] = acce;
+					if (!type.endsWith("Node")) {
+						this.protos[protoName][name]["default_value"] = valu;
+					} else {
+						this.protos[protoName][name]["children"] = field.childNodes;
+						console.log("Setting children of", protoName, name);
+					}
 				}
 			}
 		}
@@ -699,23 +807,29 @@ PascalSerializer.prototype = {
 						}
 					} else	if (attr === "DEF") {
 						/*
-						str += element.nodeName+stack[0];
+						str += stackname(element);
 						str += '.Set'+method+"("+strval+");\n";
 						*/
 						let DEF = this.DEFs[strval];
 						if (typeof DEF !== 'undefined') {
 							console.error("Multiple DEFs with same value:", strval);
 						}
-						this.DEFs[strval] = element.nodeName+stack[0];
-						// DO NOT PRINT OUT
+						this.DEFs[strval] = stackname(element);
+						this.DEFnumbers[strval] = element.stacknumber;
+						str += stackname(element);
+						str += '.X3DName := '+strval+";\n";
 					} else	if (attr === "USE") {
-						str += element.nodeName+stack[0];
-						let USE = this.DEFs[strval];
-						if (typeof USE === 'undefined') {
+						let DEF = this.DEFs[strval];
+						if (typeof DEF === 'undefined') {
 							console.error("USE without DEF:", strval, "DEFfing it");
-							this.DEFs[strval] = element.nodeName+stack[0];
+							this.DEFs[strval] = stackname(element);
+							this.DEFnumbers[strval] = element.stacknumber;
+							str += stackname(element);
+							str += ' := '+this.DEFs[strval]+";\n";
+						} else {
+							// the USE node stack number becomes same as DEF
+							stackname(element, this.DEFnumbers[strval]);
 						}
-						str += ' := '+this.DEFs[strval]+";\n";
 					} else	if (typeof
 						attrType !== 'undefined' &&
 						attrType.startsWith("MF") &&
@@ -738,43 +852,48 @@ PascalSerializer.prototype = {
 						attr === "skinCoordWeight"
 						*/
 						) {
-						str += element.nodeName+stack[0];
+						str += stackname(element);
 						str += '.Set'+method+strval+";\n";
 					} else	if ( attr === "bboxSize") {
-						str += element.nodeName+stack[0];
+						str += stackname(element);
 						str += ".FdBBoxSize.Value := ("+strval+");\n";
+						/*
+					} else	if ( attr === "type") {
+						str += stackname(element);
+						str += ".FdType.Value := "+strval+";\n";
+						*/
 					} else	if ( attr === "bboxCenter") {
-						str += element.nodeName+stack[0];
+						str += stackname(element);
 						str += ".FdBBoxCenter.Value := ("+strval+");\n";
 					} else	if (
 						attr === "image" && attrType === "SFImage"
 						) {
-						str += element.nodeName+stack[0];
+						str += stackname(element);
 						str += ".FdImage.Value := "+strval+";\n";
 					} else	if (
 						attr === "alphaMode" && attrType === "SFString"
 						) {
-						str += element.nodeName+stack[0];
+						str += stackname(element);
 						strval = strval.replaceAll("'", "");
 						strval = strval.charAt(0).toUpperCase()+strval.slice(1).toLowerCase();
 						str += ".AlphaMode := am"+strval+";\n";
 					} else	if (
 						attr === "style" && element.nodeName === "FontStyle"
 						) {
-						str += element.nodeName+stack[0];
+						str += stackname(element);
 						strval = strval.replaceAll("'", "");
 						strval = strval.charAt(0).toUpperCase()+strval.slice(1).toLowerCase();
 						str += ".Style := fs"+strval+";\n";
 					} else	if (attr === "style") {
 						/* TODO
-						str += element.nodeName+stack[0];
+						str += stackname(element);
 						str += ".Style := "+strval+";\n";
 						*/
 					} else	if (
 						attr === "minificationFilter" &&
 						    attrType === "SFString"
 						) {
-						str += element.nodeName+stack[0];
+						str += stackname(element);
 						str += ".FdMinificationFilter.Value := "+strval+";\n";
 
 						str += '.Set'+method+"("+strval+");\n";
@@ -782,30 +901,37 @@ PascalSerializer.prototype = {
 						attr === "magnificationFilter" &&
 						    attrType === "SFString"
 						) {
-						str += element.nodeName+stack[0];
+						str += stackname(element);
 						str += ".FdMagnificationFilter.Value := "+strval+";\n";
 
 					} else	if (
 						attr === "color" && attrType === "MFColor"
 						) {
-						str += element.nodeName+stack[0];
+						str += stackname(element);
 						str += '.Set'+method+"("+strval+");\n";
 					} else	if (
 						attr === "height" && attrType === "MFDouble"
 						) {
-						str += element.nodeName+stack[0];
+						str += stackname(element);
 						str += '.Set'+method+"(["+strval+"]);\n";
 					} else	if (typeof attrType !== 'undefined' && attrType.startsWith("MFString") && attr === "justify") {
-						str += element.nodeName+stack[0];
-						str += '.'+method+" := "+(strval.replace(/, (.*)/, ";\n"+element.nodeName+stack[0]+"."+method+"Minor := $1"))+";\n";
+						str += stackname(element);
+						str += '.'+method+" := "+(strval.replace(/, (.*)/, ";\n"+stackname(element)+"."+method+"Minor := $1"))+";\n";
 					} else if (attr === "class") {
 						/* TODO
-						str += element.nodeName+stack[0];
+						str += stackname(element);
 						str += ".classList.add(";
 						str += strval+");\n";
 						*/
+					} else if (method === "AccessType") {
+						// console.log("method=", method, "strval", strval)
+					} else if (method === "NameField") {
+						// console.log("method=", method, "strval", strval)
+					} else if (method === "Type") {
+						// console.log("method=", method, "strval", strval)
 					} else {
-						str += element.nodeName+stack[0];
+						// console.log("element", element.nodeName, "method=", method, "strval", strval, "attr", attr, "attrType", attrType);
+						str += stackname(element);
 						str += '.'+method+" := "+strval+";\n";
 					}
 				}
@@ -829,6 +955,7 @@ PascalSerializer.prototype = {
 			var node = element.childNodes[cn];
 			if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 1) {
 				stack.unshift(this.preno);
+				node.stacknumber = stack[0];
 				this.preno++;
 				var ch = "";
 				if (node.nodeName !== "meta" && node.nodeName != "component" && node.nodeName != "head") {
@@ -839,15 +966,43 @@ PascalSerializer.prototype = {
 						isNode = "";
 						node.nodeName = "X3D"+node.nodeName.charAt(0) + node.nodeName.slice(1).toLowerCase();
 					}
+					/*
 					if (node.nodeName === "field") {
 						isNode = "";
-						node.nodeName = "X3D"+(node.nodeName.charAt(0).toUpperCase()) + node.nodeName.slice(1).toLowerCase();
+						let aTYPE = node.getAttribute("type")
+						if (aTYPE !== "") {
+							node.nodeName = aTYPE;
+						} else {
+							node.nodeName = (node.nodeName.charAt(0).toUpperCase()) + node.nodeName.slice(1).toLowerCase();
+							console.log("No type, using nodeName", node.nodeName);
+						}
+						let instanceName = element.nodeName;
+						let instanceIndex = stack[1];
+						let fieldName = node.getAttribute('name');
+						let fieldValue = node.getAttribute('value');
+						let fieldType = node.getAttribute('type');
+						console.log("let strval = this.stringValue(", fieldValue, fieldName, fieldType,")");
+						let strval = "nil"
+						if (fieldValue !== null) {
+							strval = this.stringValue(fieldValue, fieldName, fieldType);
+							params = "("+instanceName+instanceIndex+", false, '"+fieldName+"', "+strval+")";
+						}
 					}
-					if (node.nodeName === "fieldValue") {
+					*/
+					if (node.nodeName === "fieldValue" ||
+					    node.nodeName === "field") {
 						isNode = "";
+						let instanceName = element.getAttribute('DEF') || element.getAttribute('name');
+						let aTYPE = node.getAttribute("type")
+						if (aTYPE !== "") {
+							node.nodeName = aTYPE;
+						} else {
+							node.nodeName = (node.nodeName.charAt(0).toUpperCase()) + node.nodeName.slice(1).toLowerCase();
+							console.log("No type, using nodeName", node.nodeName);
+						}
 						let fieldName = node.getAttribute('name');
 						// get the type of the node from the interface
-						let instanceName = element.getAttribute('name');
+						console.log("field", fieldName, node.nodeName, instanceName, fieldName);
 						if (typeof this.protos !== 'undefined' &&
 							typeof this.protos[instanceName] !== 'undefined' &&
 							typeof this.protos[instanceName][fieldName] !== 'undefined' &&
@@ -855,12 +1010,29 @@ PascalSerializer.prototype = {
 							let fieldType = this.protos[instanceName][fieldName]["type"];
 							let instanceIndex = this.protos[instanceName]["id"];
 							node.nodeName = fieldType;
-							// MFNode and SFNode are children, not handled here
-							if (!fieldType.endsWith("Node")) {
+							let strval = "nil";
+							if (fieldType.endsWith("Node")) {
+								console.log("Getting children of", instanceName, fieldName);
+								let nodeList = [];
+								for (const child of this.protos[instanceName][fieldName]['children']) {
+									if (child.nodeName.toString() !== '#text') {
+stackname(child, this.DEFnumbers["'"+child.getAttribute("USE")+"'"] || this.DEFnumbers["'"+child.getAttribute("DEF")+"'"]);
+// console.log("Child", child.stacknumber, child.getAttribute("USE"), child.getAttribute("DEF"));
+nodeList.push(stackname(child));
+									}
+								}
+								strval = nodeList.join(", ");
+								strval = "(["+strval+"])";
+							} else {
 								let fieldValue = node.getAttribute('value') || this.protos[instanceName][fieldName]['default_value'];
-								let strval = this.stringValue(fieldValue, fieldName, fieldType);
-								params = "("+instanceName+instanceIndex+", false, '"+fieldName+"', "+strval+")";
+								if (fieldValue !== null) {
+									strval = this.stringValue(fieldValue, fieldName, fieldType);
+								} else {
+									strval = "nil";
+								}
 							}
+							params = "("+instanceName+instanceIndex+", false, '"+fieldName+"', "+strval+")";
+							console.log("params", params);
 						}
 					}
 					/*
@@ -891,7 +1063,7 @@ PascalSerializer.prototype = {
 						if (typeof node.getAttribute !== 'function') {
 							console.error("=============WARNING 9, field.getAttribute not a function", node.getAttribute);
 						}
-						let instanceName = node.getAttribute('name');
+						let instanceName = node.getAttribute('DEF') || node.getAttribute('name');
 						if (typeof this.protos === 'undefined') {
 							console.error("=============WARNING 6, this.protos undefined", this.protos);
 						} else if (typeof instanceName === 'undefined') {
@@ -924,14 +1096,17 @@ PascalSerializer.prototype = {
 						this.setProto(node);
 						node.nodeName = "X3DExternalPrototype";
 					}
+					if (node.nodeName === "Script") {
+						this.setProto(node); // it's similar to ProtoInterface
+					}
 					if ( node.nodeName !== "X3DRoute") {
 						if (!node.hasAttribute("USE")) {
-							ch += node.nodeName+stack[0]+" := T"+isCastle+node.nodeName+isNode+".Create"+params+";\n";
+							ch += stackname(node)+" := T"+isCastle+node.nodeName+isNode+".Create"+params+";\n";
 						}
-						this.code.push(node.nodeName+stack[0]+": T"+isCastle+node.nodeName+isNode+";");
+						this.code.push(stackname(node)+": T"+isCastle+node.nodeName+isNode+";");
 					}
 				}
-				var bodystr = this.subSerializeToString(node, mapToMethod, fieldTypes, n+1, stack, element.nodeName+stack[1]);
+				var bodystr = this.subSerializeToString(node, mapToMethod, fieldTypes, n+1, stack, stackname(element));
 				ch += bodystr;
 				method = this.printParentChild(element, node, cn, mapToMethod, n);
 				if (node.nodeName !== "Scene" && node.nodeName !== "meta" && node.nodeName != "component" && node.nodeName != "head") {
@@ -955,7 +1130,11 @@ PascalSerializer.prototype = {
 						}
 						if ( method === ".AddRootNode" ) {
 							method = ".SetRootNode";
-							ch += element.nodeName+stack[1]+method+"(["+node.nodeName+stack[0]+"]);\n";
+							ch += stackname(element)+method+"(["+stackname(node)+"]);\n";
+						} else if ( method.startsWith(".Fd.AddCustomField")) {
+							ch += stackname(element)+method.slice(3)+"("+stackname(node)+");\n";
+						} else if ( method === ".Fd.Add") {
+							ch += stackname(element)+(method.slice(3))+"("+stackname(node)+");\n";
 						} else if (
 							method === ".AddChildren" ||
 							method === ".SetDisplacers" ||
@@ -966,16 +1145,18 @@ PascalSerializer.prototype = {
 							method === ".SetSkeleton" ||
 							method === ".SetSkin"
 						) {
-							ch += element.nodeName+stack[1]+method+"(["+node.nodeName+stack[0]+"]);\n";
+							ch += stackname(element)+method+"(["+stackname(node)+"]);\n";
+						} else if ( method === ".FdChildren.Add") {
+							ch += stackname(element)+method+"("+stackname(node)+");\n";
 
 						} else if (
 							method === ".SetSkinCoord"
 						) {
-							ch += element.nodeName+stack[1]+method+"("+node.nodeName+stack[0]+");\n";
+							ch += stackname(element)+method+"("+stackname(node)+");\n";
 						} else if ( method.startsWith(".Fd")) {
-							ch += element.nodeName+stack[1]+method+"("+node.nodeName+stack[0]+");\n";
+							ch += stackname(element)+method+"("+stackname(node)+");\n";
 						} else {
-							ch += element.nodeName+stack[1]+"."+method.slice(4)+" := "+node.nodeName+stack[0]+";\n";
+							ch += stackname(element)+"."+method.slice(4)+" := "+stackname(node)+";\n";
 						}
 					}
 				}
@@ -987,10 +1168,10 @@ PascalSerializer.prototype = {
 				} else if (node.nodeValue.indexOf("*)") < 0) {
 					str += "(* "+node.nodeValue+" *)\n";
 				} else {
-					str += "# "+(node.nodeValue.replace(/[\r\n]+/, " "))+"\n";
+					str += "// "+(node.nodeValue.replace(/[\r\n]+/g, " "))+"\n";
 				}
 			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 4) {
-				str += "\n"+element.nodeName+stack[0];
+				str += "\n"+stackname(element);
 				str += ".SetSourceCode('''"+node.nodeValue.split(/\r?\n/).map(function(x) {
 					return x.
 					        replace(/\\/g, '\\\\').
