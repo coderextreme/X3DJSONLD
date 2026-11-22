@@ -90,11 +90,11 @@ Script16.SetSourceCode('''ecmascript:\n"+
 Group10.FdChildren.Add(Script16);
 { Original "TourTime.EventCycleTime TO MoveCylinder.EventSet_cycle }
 { Sample TourTime.EventCycleTime TO MoveCylinder.EventSet_cycle}
-Group10.AddRoute(TimeSensor15.EventCycleTime, Script16.set_EventSet_cycle);
+Group10.AddRoute(TimeSensor15.EventCycleTime, Script16.EventSet_cycle);
 { METHOD .AddX3DROUTE }
 { Original "MoveCylinder.EventSpine_changed TO myextrusion.EventSet_spine }
 { Sample MoveCylinder.EventSpine_changed TO myextrusion.EventSet_spine}
-Group10.AddRoute(Script16.EventSpine_changed, Extrusion12.set_EventSet_spine);
+Group10.AddRoute(Script16.EventSpine_changed, Extrusion12.EventSet_spine);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group9.FdChildren.Add(Group10);

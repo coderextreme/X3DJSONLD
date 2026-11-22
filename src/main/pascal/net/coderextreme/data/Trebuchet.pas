@@ -1818,107 +1818,107 @@ PositionInterpolator357.SetKeyValue([Vector3(1,1,1),Vector3(0.01,0.01,0.01),Vect
 Group17.FdChildren.Add(PositionInterpolator357);
 { Original "clock.EventFraction_changed TO invisiable.EventSet_fraction }
 { Sample clock.EventFraction_changed TO invisiable.EventSet_fraction}
-Group17.AddRoute(TimeSensor352.EventFraction_changed, PositionInterpolator357.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor352.EventFraction_changed, PositionInterpolator357.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "invisiable.EventValue_changed TO projectiletransform.scale }
 { Sample invisiable.EventValue_changed TO projectiletransform.scale}
-Group17.AddRoute(PositionInterpolator357.EventValue_changed, Transform208.set_scale);
+Group17.AddRoute(PositionInterpolator357.EventValue_changed, Transform208.scale);
 { METHOD .AddX3DROUTE }
 { Original "WeightScript.CounterWeight TO Mover.EventSet_MassCounterWeight }
 { Sample WeightScript.CounterWeight TO Mover.EventSet_MassCounterWeight}
-Group17.AddRoute(WeightScript.[object Object], Script344.set_EventSet_MassCounterWeight);
+Group17.AddRoute(WeightScript.[object Object], Script344.EventSet_MassCounterWeight);
 { METHOD .AddX3DROUTE }
 { Original "LauncheeScript.ProjectileWeight TO Mover.EventSet_MassProjectileWeight }
 { Sample LauncheeScript.ProjectileWeight TO Mover.EventSet_MassProjectileWeight}
-Group17.AddRoute(LauncheeScript.[object Object], Script344.set_EventSet_MassProjectileWeight);
+Group17.AddRoute(LauncheeScript.[object Object], Script344.EventSet_MassProjectileWeight);
 { METHOD .AddX3DROUTE }
 { Original "clock.EventFraction_changed TO Mover.EventSet_fraction }
 { Sample clock.EventFraction_changed TO Mover.EventSet_fraction}
-Group17.AddRoute(TimeSensor352.EventFraction_changed, Script344.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor352.EventFraction_changed, Script344.EventSet_fraction);
 { METHOD .AddX3DROUTE }
-{ Original "Mover.EventValue_changed TO ProjectileTransform.EventSet_translation }
-{ Sample Mover.EventValue_changed TO ProjectileTransform.EventSet_translation}
-Group17.AddRoute(Script344.EventValue_changed, Transform323.set_EventSet_translation);
+{ Original "Mover.EventValue_changed TO ProjectileTransform.FdTranslation.EventIn }
+{ Sample Mover.EventValue_changed TO ProjectileTransform.FdTranslation.EventIn}
+Group17.AddRoute(Script344.EventValue_changed, Transform323.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
 { Original "Mover.transparent TO ProjectileTransform.scale }
 { Sample Mover.transparent TO ProjectileTransform.scale}
-Group17.AddRoute(Mover.[object Object], Transform323.set_scale);
+Group17.AddRoute(Mover.[object Object], Transform323.scale);
 { METHOD .AddX3DROUTE }
-{ Original "Launch.EventTouchTime TO clock.startTime }
-{ Sample Launch.EventTouchTime TO clock.startTime}
-Group17.AddRoute(TouchSensor76.EventTouchTime, TimeSensor352.set_startTime);
+{ Original "Launch.EventTouchTime TO clock.FdStartTime.EventIn }
+{ Sample Launch.EventTouchTime TO clock.FdStartTime.EventIn}
+Group17.AddRoute(TouchSensor76.EventTouchTime, TimeSensor352.FdStartTime.EventIn);
 { METHOD .AddX3DROUTE }
 { Original "Launch.EventIsActive TO PigdogMonkScript.EventSet_boolean }
 { Sample Launch.EventIsActive TO PigdogMonkScript.EventSet_boolean}
-Group17.AddRoute(TouchSensor76.EventIsActive, Script341.set_EventSet_boolean);
+Group17.AddRoute(TouchSensor76.EventIsActive, Script341.EventSet_boolean);
 { METHOD .AddX3DROUTE }
-{ Original "Launch.EventTouchTime TO PigDogSound.startTime }
-{ Sample Launch.EventTouchTime TO PigDogSound.startTime}
-Group17.AddRoute(TouchSensor76.EventTouchTime, AudioClip72.set_startTime);
+{ Original "Launch.EventTouchTime TO PigDogSound.FdStartTime.EventIn }
+{ Sample Launch.EventTouchTime TO PigDogSound.FdStartTime.EventIn}
+Group17.AddRoute(TouchSensor76.EventTouchTime, AudioClip72.FdStartTime.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Launch.EventTouchTime TO MonkSound.startTime }
-{ Sample Launch.EventTouchTime TO MonkSound.startTime}
-Group17.AddRoute(TouchSensor76.EventTouchTime, AudioClip75.set_startTime);
+{ Original "Launch.EventTouchTime TO MonkSound.FdStartTime.EventIn }
+{ Sample Launch.EventTouchTime TO MonkSound.FdStartTime.EventIn}
+Group17.AddRoute(TouchSensor76.EventTouchTime, AudioClip75.FdStartTime.EventIn);
 { METHOD .AddX3DROUTE }
 { Original "PigdogMonkScript.whichchoice TO PigdogMonk.whichChoice }
 { Sample PigdogMonkScript.whichchoice TO PigdogMonk.whichChoice}
-Group17.AddRoute(PigdogMonkScript.[object Object], Switch69.set_whichChoice);
+Group17.AddRoute(PigdogMonkScript.[object Object], Switch69.whichChoice);
 { METHOD .AddX3DROUTE }
-{ Original "LauncheeChoice.EventTouchTime TO HolyHandGrenadeSound.startTime }
-{ Sample LauncheeChoice.EventTouchTime TO HolyHandGrenadeSound.startTime}
-Group17.AddRoute(TouchSensor207.EventTouchTime, AudioClip85.set_startTime);
+{ Original "LauncheeChoice.EventTouchTime TO HolyHandGrenadeSound.FdStartTime.EventIn }
+{ Sample LauncheeChoice.EventTouchTime TO HolyHandGrenadeSound.FdStartTime.EventIn}
+Group17.AddRoute(TouchSensor207.EventTouchTime, AudioClip85.FdStartTime.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "LauncheeChoice.EventTouchTime TO CowSound.startTime }
-{ Sample LauncheeChoice.EventTouchTime TO CowSound.startTime}
-Group17.AddRoute(TouchSensor207.EventTouchTime, AudioClip92.set_startTime);
+{ Original "LauncheeChoice.EventTouchTime TO CowSound.FdStartTime.EventIn }
+{ Sample LauncheeChoice.EventTouchTime TO CowSound.FdStartTime.EventIn}
+Group17.AddRoute(TouchSensor207.EventTouchTime, AudioClip92.FdStartTime.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "LauncheeChoice.EventTouchTime TO HamsterSound.startTime }
-{ Sample LauncheeChoice.EventTouchTime TO HamsterSound.startTime}
-Group17.AddRoute(TouchSensor207.EventTouchTime, AudioClip99.set_startTime);
+{ Original "LauncheeChoice.EventTouchTime TO HamsterSound.FdStartTime.EventIn }
+{ Sample LauncheeChoice.EventTouchTime TO HamsterSound.FdStartTime.EventIn}
+Group17.AddRoute(TouchSensor207.EventTouchTime, AudioClip99.FdStartTime.EventIn);
 { METHOD .AddX3DROUTE }
 { Original "LauncheeChoice.EventIsActive TO LauncheeScript.EventSet_boolean }
 { Sample LauncheeChoice.EventIsActive TO LauncheeScript.EventSet_boolean}
-Group17.AddRoute(TouchSensor207.EventIsActive, Script337.set_EventSet_boolean);
+Group17.AddRoute(TouchSensor207.EventIsActive, Script337.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "LauncheeScript.whichchoice TO projectile.whichChoice }
 { Sample LauncheeScript.whichchoice TO projectile.whichChoice}
-Group17.AddRoute(LauncheeScript.[object Object], Switch209.set_whichChoice);
+Group17.AddRoute(LauncheeScript.[object Object], Switch209.whichChoice);
 { METHOD .AddX3DROUTE }
 { Original "LauncheeScript.whichchoice TO projectilename.whichChoice }
 { Sample LauncheeScript.whichchoice TO projectilename.whichChoice}
-Group17.AddRoute(LauncheeScript.[object Object], Switch78.set_whichChoice);
+Group17.AddRoute(LauncheeScript.[object Object], Switch78.whichChoice);
 { METHOD .AddX3DROUTE }
 { Original "weightselector.EventIsActive TO WeightScript.EventSet_boolean }
 { Sample weightselector.EventIsActive TO WeightScript.EventSet_boolean}
-Group17.AddRoute(TouchSensor50.EventIsActive, Script333.set_EventSet_boolean);
+Group17.AddRoute(TouchSensor50.EventIsActive, Script333.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "WeightScript.whichchoice TO Weight.whichChoice }
 { Sample WeightScript.whichchoice TO Weight.whichChoice}
-Group17.AddRoute(WeightScript.[object Object], Switch33.set_whichChoice);
+Group17.AddRoute(WeightScript.[object Object], Switch33.whichChoice);
 { METHOD .AddX3DROUTE }
 { Original "clock.EventFraction_changed TO flingerangles.EventSet_fraction }
 { Sample clock.EventFraction_changed TO flingerangles.EventSet_fraction}
-Group17.AddRoute(TimeSensor352.EventFraction_changed, OrientationInterpolator354.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor352.EventFraction_changed, OrientationInterpolator354.EventSet_fraction);
 { METHOD .AddX3DROUTE }
-{ Original "flingerangles.EventValue_changed TO flinger.EventSet_rotation }
-{ Sample flingerangles.EventValue_changed TO flinger.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator354.EventValue_changed, Transform129.set_EventSet_rotation);
+{ Original "flingerangles.EventValue_changed TO flinger.FdRotation.EventIn }
+{ Sample flingerangles.EventValue_changed TO flinger.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator354.EventValue_changed, Transform129.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
 { Original "clock.EventFraction_changed TO verticalweightpath.EventSet_fraction }
 { Sample clock.EventFraction_changed TO verticalweightpath.EventSet_fraction}
-Group17.AddRoute(TimeSensor352.EventFraction_changed, PositionInterpolator353.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor352.EventFraction_changed, PositionInterpolator353.EventSet_fraction);
 { METHOD .AddX3DROUTE }
-{ Original "verticalweightpath.EventValue_changed TO verticalweight.EventSet_translation }
-{ Sample verticalweightpath.EventValue_changed TO verticalweight.EventSet_translation}
-Group17.AddRoute(PositionInterpolator353.EventValue_changed, Transform227.set_EventSet_translation);
+{ Original "verticalweightpath.EventValue_changed TO verticalweight.FdTranslation.EventIn }
+{ Sample verticalweightpath.EventValue_changed TO verticalweight.FdTranslation.EventIn}
+Group17.AddRoute(PositionInterpolator353.EventValue_changed, Transform227.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
 { Original "clock.EventFraction_changed TO pinpath.EventSet_fraction }
 { Sample clock.EventFraction_changed TO pinpath.EventSet_fraction}
-Group17.AddRoute(TimeSensor352.EventFraction_changed, PositionInterpolator355.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor352.EventFraction_changed, PositionInterpolator355.EventSet_fraction);
 { METHOD .AddX3DROUTE }
-{ Original "pinpath.EventValue_changed TO Pin.EventSet_translation }
-{ Sample pinpath.EventValue_changed TO Pin.EventSet_translation}
-Group17.AddRoute(PositionInterpolator355.EventValue_changed, Transform256.set_EventSet_translation);
+{ Original "pinpath.EventValue_changed TO Pin.FdTranslation.EventIn }
+{ Sample pinpath.EventValue_changed TO Pin.FdTranslation.EventIn}
+Group17.AddRoute(PositionInterpolator355.EventValue_changed, Transform256.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
 { METHOD .AddGroup }
 X3D0.AddChildren([Group17]);

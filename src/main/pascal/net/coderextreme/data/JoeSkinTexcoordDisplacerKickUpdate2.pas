@@ -1560,23 +1560,23 @@ Group15.FdChildren.Add(Group140);
 { TimeSensor to Interpolators }
 { Original "KickTimer.EventFraction_changed TO HumanoidRootRotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO HumanoidRootRotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator142.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator142.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO HumanoidRootTransInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO HumanoidRootTransInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, PositionInterpolator143.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, PositionInterpolator143.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO sacroiliacRotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO sacroiliacRotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator144.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator144.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO l_hipRotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO l_hipRotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator145.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator145.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO l_kneeRotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO l_kneeRotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator146.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator146.EventSet_fraction);
 end;
 
 procedure InitJoeSkinTexcoordDisplacerKickUpdate2Part24;
@@ -1585,163 +1585,163 @@ begin
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO l_ankleRotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO l_ankleRotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator147.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator147.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO l_subtalarRotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO l_subtalarRotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator148.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator148.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO l_midtarsalRotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO l_midtarsalRotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator149.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator149.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO l_metatarsalRotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO l_metatarsalRotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator150.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator150.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO r_hipRotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO r_hipRotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator151.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator151.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO r_kneeRotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO r_kneeRotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator152.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator152.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO r_ankleRotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO r_ankleRotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator153.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator153.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO r_subtalarRotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO r_subtalarRotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator154.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator154.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO r_midtarsalRotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO r_midtarsalRotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator155.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator155.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO r_metatarsalRotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO r_metatarsalRotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator156.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator156.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO vl5RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO vl5RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator157.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator157.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO vl4RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO vl4RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator158.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator158.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO vl3RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO vl3RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator159.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator159.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO vl2RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO vl2RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator160.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator160.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO vl1RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO vl1RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator161.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator161.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO vt12RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO vt12RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator162.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator162.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO vt11RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO vt11RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator163.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator163.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO vt10RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO vt10RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator164.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator164.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO vt9RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO vt9RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator165.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator165.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO vt8RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO vt8RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator166.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator166.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO vt7RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO vt7RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator167.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator167.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO vt6RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO vt6RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator168.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator168.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO vt5RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO vt5RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator169.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator169.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO vt4RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO vt4RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator170.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator170.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO vt3RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO vt3RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator171.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator171.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO vt2RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO vt2RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator172.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator172.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO vt1RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO vt1RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator173.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator173.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO vc7RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO vc7RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator174.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator174.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO vc6RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO vc6RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator175.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator175.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO vc5RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO vc5RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator176.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator176.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO vc4RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO vc4RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator177.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator177.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO vc3RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO vc3RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator178.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator178.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO vc2RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO vc2RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator179.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator179.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO vc1RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO vc1RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator180.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator180.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO skullbaseRotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO skullbaseRotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator181.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator181.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO l_eyelid_jointRotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO l_eyelid_jointRotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator182.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator182.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO l_eyeball_jointRotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO l_eyeball_jointRotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator183.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator183.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO l_eyebrow_jointRotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO l_eyebrow_jointRotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator184.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator184.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO r_eyelid_jointRotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO r_eyelid_jointRotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator185.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator185.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO r_eyeball_jointRotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO r_eyeball_jointRotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator186.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator186.EventSet_fraction);
 end;
 
 procedure InitJoeSkinTexcoordDisplacerKickUpdate2Part25;
@@ -1750,163 +1750,163 @@ begin
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO r_eyebrow_jointRotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO r_eyebrow_jointRotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator187.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator187.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO temporomandibularRotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO temporomandibularRotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator188.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator188.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO l_sternoclavicularRotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO l_sternoclavicularRotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator189.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator189.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO l_acromioclavicularRotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO l_acromioclavicularRotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator190.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator190.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO l_shoulderRotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO l_shoulderRotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator191.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator191.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO l_elbowRotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO l_elbowRotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator192.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator192.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO l_wristRotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO l_wristRotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator193.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator193.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO l_thumb1RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO l_thumb1RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator194.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator194.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO l_thumb2RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO l_thumb2RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator195.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator195.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO l_thumb3RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO l_thumb3RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator196.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator196.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO l_index0RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO l_index0RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator197.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator197.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO l_index1RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO l_index1RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator198.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator198.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO l_index2RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO l_index2RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator199.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator199.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO l_index3RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO l_index3RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator200.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator200.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO l_middle0RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO l_middle0RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator201.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator201.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO l_middle1RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO l_middle1RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator202.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator202.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO l_middle2RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO l_middle2RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator203.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator203.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO l_middle3RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO l_middle3RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator204.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator204.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO l_ring0RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO l_ring0RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator205.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator205.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO l_ring1RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO l_ring1RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator206.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator206.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO l_ring2RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO l_ring2RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator207.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator207.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO l_ring3RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO l_ring3RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator208.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator208.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO l_pinky0RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO l_pinky0RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator209.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator209.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO l_pinky1RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO l_pinky1RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator210.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator210.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO l_pinky2RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO l_pinky2RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator211.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator211.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO l_pinky3RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO l_pinky3RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator212.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator212.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO r_sternoclavicularRotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO r_sternoclavicularRotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator213.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator213.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO r_acromioclavicularRotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO r_acromioclavicularRotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator214.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator214.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO r_shoulderRotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO r_shoulderRotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator215.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator215.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO r_elbowRotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO r_elbowRotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator216.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator216.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO r_wristRotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO r_wristRotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator217.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator217.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO r_thumb1RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO r_thumb1RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator218.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator218.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO r_thumb2RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO r_thumb2RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator219.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator219.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO r_thumb3RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO r_thumb3RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator220.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator220.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO r_index0RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO r_index0RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator221.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator221.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO r_index1RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO r_index1RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator222.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator222.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO r_index2RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO r_index2RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator223.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator223.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO r_index3RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO r_index3RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator224.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator224.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO r_middle0RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO r_middle0RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator225.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator225.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO r_middle1RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO r_middle1RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator226.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator226.EventSet_fraction);
 end;
 
 procedure InitJoeSkinTexcoordDisplacerKickUpdate2Part26;
@@ -1915,434 +1915,434 @@ begin
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO r_middle2RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO r_middle2RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator227.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator227.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO r_middle3RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO r_middle3RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator228.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator228.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO r_ring0RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO r_ring0RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator229.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator229.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO r_ring1RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO r_ring1RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator230.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator230.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO r_ring2RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO r_ring2RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator231.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator231.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO r_ring3RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO r_ring3RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator232.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator232.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO r_pinky0RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO r_pinky0RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator233.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator233.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO r_pinky1RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO r_pinky1RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator234.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator234.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO r_pinky2RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO r_pinky2RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator235.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator235.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO r_pinky3RotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO r_pinky3RotInterp.EventSet_fraction}
-Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator236.set_EventSet_fraction);
+Group15.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator236.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Routes from Interpolators to Joe_ model Joints }
-{ Original "HumanoidRootRotInterp.EventValue_changed TO Joe_HumanoidRoot.EventSet_rotation }
-{ Sample HumanoidRootRotInterp.EventValue_changed TO Joe_HumanoidRoot.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator142.EventValue_changed, HAnimJoint28.set_EventSet_rotation);
+{ Original "HumanoidRootRotInterp.EventValue_changed TO Joe_HumanoidRoot.FdRotation.EventIn }
+{ Sample HumanoidRootRotInterp.EventValue_changed TO Joe_HumanoidRoot.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator142.EventValue_changed, HAnimJoint28.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "HumanoidRootTransInterp.EventValue_changed TO Joe_HumanoidRoot.EventSet_translation }
-{ Sample HumanoidRootTransInterp.EventValue_changed TO Joe_HumanoidRoot.EventSet_translation}
-Group15.AddRoute(PositionInterpolator143.EventValue_changed, HAnimJoint28.set_EventSet_translation);
+{ Original "HumanoidRootTransInterp.EventValue_changed TO Joe_HumanoidRoot.FdTranslation.EventIn }
+{ Sample HumanoidRootTransInterp.EventValue_changed TO Joe_HumanoidRoot.FdTranslation.EventIn}
+Group15.AddRoute(PositionInterpolator143.EventValue_changed, HAnimJoint28.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "sacroiliacRotInterp.EventValue_changed TO Joe_sacroiliac.EventSet_rotation }
-{ Sample sacroiliacRotInterp.EventValue_changed TO Joe_sacroiliac.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator144.EventValue_changed, HAnimJoint37.set_EventSet_rotation);
+{ Original "sacroiliacRotInterp.EventValue_changed TO Joe_sacroiliac.FdRotation.EventIn }
+{ Sample sacroiliacRotInterp.EventValue_changed TO Joe_sacroiliac.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator144.EventValue_changed, HAnimJoint37.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "l_hipRotInterp.EventValue_changed TO Joe_l_hip.EventSet_rotation }
-{ Sample l_hipRotInterp.EventValue_changed TO Joe_l_hip.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator145.EventValue_changed, HAnimJoint38.set_EventSet_rotation);
+{ Original "l_hipRotInterp.EventValue_changed TO Joe_l_hip.FdRotation.EventIn }
+{ Sample l_hipRotInterp.EventValue_changed TO Joe_l_hip.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator145.EventValue_changed, HAnimJoint38.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "l_kneeRotInterp.EventValue_changed TO Joe_l_knee.EventSet_rotation }
-{ Sample l_kneeRotInterp.EventValue_changed TO Joe_l_knee.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator146.EventValue_changed, HAnimJoint39.set_EventSet_rotation);
+{ Original "l_kneeRotInterp.EventValue_changed TO Joe_l_knee.FdRotation.EventIn }
+{ Sample l_kneeRotInterp.EventValue_changed TO Joe_l_knee.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator146.EventValue_changed, HAnimJoint39.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "l_ankleRotInterp.EventValue_changed TO Joe_l_ankle.EventSet_rotation }
-{ Sample l_ankleRotInterp.EventValue_changed TO Joe_l_ankle.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator147.EventValue_changed, HAnimJoint40.set_EventSet_rotation);
+{ Original "l_ankleRotInterp.EventValue_changed TO Joe_l_ankle.FdRotation.EventIn }
+{ Sample l_ankleRotInterp.EventValue_changed TO Joe_l_ankle.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator147.EventValue_changed, HAnimJoint40.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "l_subtalarRotInterp.EventValue_changed TO Joe_l_subtalar.EventSet_rotation }
-{ Sample l_subtalarRotInterp.EventValue_changed TO Joe_l_subtalar.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator148.EventValue_changed, HAnimJoint41.set_EventSet_rotation);
+{ Original "l_subtalarRotInterp.EventValue_changed TO Joe_l_subtalar.FdRotation.EventIn }
+{ Sample l_subtalarRotInterp.EventValue_changed TO Joe_l_subtalar.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator148.EventValue_changed, HAnimJoint41.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "l_midtarsalRotInterp.EventValue_changed TO Joe_l_midtarsal.EventSet_rotation }
-{ Sample l_midtarsalRotInterp.EventValue_changed TO Joe_l_midtarsal.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator149.EventValue_changed, HAnimJoint42.set_EventSet_rotation);
+{ Original "l_midtarsalRotInterp.EventValue_changed TO Joe_l_midtarsal.FdRotation.EventIn }
+{ Sample l_midtarsalRotInterp.EventValue_changed TO Joe_l_midtarsal.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator149.EventValue_changed, HAnimJoint42.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "l_metatarsalRotInterp.EventValue_changed TO Joe_l_metatarsal.EventSet_rotation }
-{ Sample l_metatarsalRotInterp.EventValue_changed TO Joe_l_metatarsal.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator150.EventValue_changed, HAnimJoint43.set_EventSet_rotation);
+{ Original "l_metatarsalRotInterp.EventValue_changed TO Joe_l_metatarsal.FdRotation.EventIn }
+{ Sample l_metatarsalRotInterp.EventValue_changed TO Joe_l_metatarsal.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator150.EventValue_changed, HAnimJoint43.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_hipRotInterp.EventValue_changed TO Joe_r_hip.EventSet_rotation }
-{ Sample r_hipRotInterp.EventValue_changed TO Joe_r_hip.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator151.EventValue_changed, HAnimJoint44.set_EventSet_rotation);
+{ Original "r_hipRotInterp.EventValue_changed TO Joe_r_hip.FdRotation.EventIn }
+{ Sample r_hipRotInterp.EventValue_changed TO Joe_r_hip.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator151.EventValue_changed, HAnimJoint44.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_kneeRotInterp.EventValue_changed TO Joe_r_knee.EventSet_rotation }
-{ Sample r_kneeRotInterp.EventValue_changed TO Joe_r_knee.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator152.EventValue_changed, HAnimJoint45.set_EventSet_rotation);
+{ Original "r_kneeRotInterp.EventValue_changed TO Joe_r_knee.FdRotation.EventIn }
+{ Sample r_kneeRotInterp.EventValue_changed TO Joe_r_knee.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator152.EventValue_changed, HAnimJoint45.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_ankleRotInterp.EventValue_changed TO Joe_r_ankle.EventSet_rotation }
-{ Sample r_ankleRotInterp.EventValue_changed TO Joe_r_ankle.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator153.EventValue_changed, HAnimJoint46.set_EventSet_rotation);
+{ Original "r_ankleRotInterp.EventValue_changed TO Joe_r_ankle.FdRotation.EventIn }
+{ Sample r_ankleRotInterp.EventValue_changed TO Joe_r_ankle.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator153.EventValue_changed, HAnimJoint46.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_subtalarRotInterp.EventValue_changed TO Joe_r_subtalar.EventSet_rotation }
-{ Sample r_subtalarRotInterp.EventValue_changed TO Joe_r_subtalar.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator154.EventValue_changed, HAnimJoint47.set_EventSet_rotation);
+{ Original "r_subtalarRotInterp.EventValue_changed TO Joe_r_subtalar.FdRotation.EventIn }
+{ Sample r_subtalarRotInterp.EventValue_changed TO Joe_r_subtalar.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator154.EventValue_changed, HAnimJoint47.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_midtarsalRotInterp.EventValue_changed TO Joe_r_midtarsal.EventSet_rotation }
-{ Sample r_midtarsalRotInterp.EventValue_changed TO Joe_r_midtarsal.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator155.EventValue_changed, HAnimJoint48.set_EventSet_rotation);
+{ Original "r_midtarsalRotInterp.EventValue_changed TO Joe_r_midtarsal.FdRotation.EventIn }
+{ Sample r_midtarsalRotInterp.EventValue_changed TO Joe_r_midtarsal.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator155.EventValue_changed, HAnimJoint48.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_metatarsalRotInterp.EventValue_changed TO Joe_r_metatarsal.EventSet_rotation }
-{ Sample r_metatarsalRotInterp.EventValue_changed TO Joe_r_metatarsal.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator156.EventValue_changed, HAnimJoint49.set_EventSet_rotation);
+{ Original "r_metatarsalRotInterp.EventValue_changed TO Joe_r_metatarsal.FdRotation.EventIn }
+{ Sample r_metatarsalRotInterp.EventValue_changed TO Joe_r_metatarsal.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator156.EventValue_changed, HAnimJoint49.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "vl5RotInterp.EventValue_changed TO Joe_vl5.EventSet_rotation }
-{ Sample vl5RotInterp.EventValue_changed TO Joe_vl5.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator157.EventValue_changed, HAnimJoint50.set_EventSet_rotation);
+{ Original "vl5RotInterp.EventValue_changed TO Joe_vl5.FdRotation.EventIn }
+{ Sample vl5RotInterp.EventValue_changed TO Joe_vl5.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator157.EventValue_changed, HAnimJoint50.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "vl4RotInterp.EventValue_changed TO Joe_vl4.EventSet_rotation }
-{ Sample vl4RotInterp.EventValue_changed TO Joe_vl4.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator158.EventValue_changed, HAnimJoint51.set_EventSet_rotation);
+{ Original "vl4RotInterp.EventValue_changed TO Joe_vl4.FdRotation.EventIn }
+{ Sample vl4RotInterp.EventValue_changed TO Joe_vl4.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator158.EventValue_changed, HAnimJoint51.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "vl3RotInterp.EventValue_changed TO Joe_vl3.EventSet_rotation }
-{ Sample vl3RotInterp.EventValue_changed TO Joe_vl3.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator159.EventValue_changed, HAnimJoint52.set_EventSet_rotation);
+{ Original "vl3RotInterp.EventValue_changed TO Joe_vl3.FdRotation.EventIn }
+{ Sample vl3RotInterp.EventValue_changed TO Joe_vl3.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator159.EventValue_changed, HAnimJoint52.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "vl2RotInterp.EventValue_changed TO Joe_vl2.EventSet_rotation }
-{ Sample vl2RotInterp.EventValue_changed TO Joe_vl2.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator160.EventValue_changed, HAnimJoint53.set_EventSet_rotation);
+{ Original "vl2RotInterp.EventValue_changed TO Joe_vl2.FdRotation.EventIn }
+{ Sample vl2RotInterp.EventValue_changed TO Joe_vl2.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator160.EventValue_changed, HAnimJoint53.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "vl1RotInterp.EventValue_changed TO Joe_vl1.EventSet_rotation }
-{ Sample vl1RotInterp.EventValue_changed TO Joe_vl1.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator161.EventValue_changed, HAnimJoint54.set_EventSet_rotation);
+{ Original "vl1RotInterp.EventValue_changed TO Joe_vl1.FdRotation.EventIn }
+{ Sample vl1RotInterp.EventValue_changed TO Joe_vl1.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator161.EventValue_changed, HAnimJoint54.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "vt12RotInterp.EventValue_changed TO Joe_vt12.EventSet_rotation }
-{ Sample vt12RotInterp.EventValue_changed TO Joe_vt12.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator162.EventValue_changed, HAnimJoint55.set_EventSet_rotation);
+{ Original "vt12RotInterp.EventValue_changed TO Joe_vt12.FdRotation.EventIn }
+{ Sample vt12RotInterp.EventValue_changed TO Joe_vt12.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator162.EventValue_changed, HAnimJoint55.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "vt11RotInterp.EventValue_changed TO Joe_vt11.EventSet_rotation }
-{ Sample vt11RotInterp.EventValue_changed TO Joe_vt11.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator163.EventValue_changed, HAnimJoint56.set_EventSet_rotation);
+{ Original "vt11RotInterp.EventValue_changed TO Joe_vt11.FdRotation.EventIn }
+{ Sample vt11RotInterp.EventValue_changed TO Joe_vt11.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator163.EventValue_changed, HAnimJoint56.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "vt10RotInterp.EventValue_changed TO Joe_vt10.EventSet_rotation }
-{ Sample vt10RotInterp.EventValue_changed TO Joe_vt10.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator164.EventValue_changed, HAnimJoint57.set_EventSet_rotation);
+{ Original "vt10RotInterp.EventValue_changed TO Joe_vt10.FdRotation.EventIn }
+{ Sample vt10RotInterp.EventValue_changed TO Joe_vt10.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator164.EventValue_changed, HAnimJoint57.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "vt9RotInterp.EventValue_changed TO Joe_vt9.EventSet_rotation }
-{ Sample vt9RotInterp.EventValue_changed TO Joe_vt9.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator165.EventValue_changed, HAnimJoint58.set_EventSet_rotation);
+{ Original "vt9RotInterp.EventValue_changed TO Joe_vt9.FdRotation.EventIn }
+{ Sample vt9RotInterp.EventValue_changed TO Joe_vt9.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator165.EventValue_changed, HAnimJoint58.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "vt8RotInterp.EventValue_changed TO Joe_vt8.EventSet_rotation }
-{ Sample vt8RotInterp.EventValue_changed TO Joe_vt8.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator166.EventValue_changed, HAnimJoint59.set_EventSet_rotation);
+{ Original "vt8RotInterp.EventValue_changed TO Joe_vt8.FdRotation.EventIn }
+{ Sample vt8RotInterp.EventValue_changed TO Joe_vt8.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator166.EventValue_changed, HAnimJoint59.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "vt7RotInterp.EventValue_changed TO Joe_vt7.EventSet_rotation }
-{ Sample vt7RotInterp.EventValue_changed TO Joe_vt7.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator167.EventValue_changed, HAnimJoint60.set_EventSet_rotation);
+{ Original "vt7RotInterp.EventValue_changed TO Joe_vt7.FdRotation.EventIn }
+{ Sample vt7RotInterp.EventValue_changed TO Joe_vt7.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator167.EventValue_changed, HAnimJoint60.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "vt6RotInterp.EventValue_changed TO Joe_vt6.EventSet_rotation }
-{ Sample vt6RotInterp.EventValue_changed TO Joe_vt6.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator168.EventValue_changed, HAnimJoint61.set_EventSet_rotation);
+{ Original "vt6RotInterp.EventValue_changed TO Joe_vt6.FdRotation.EventIn }
+{ Sample vt6RotInterp.EventValue_changed TO Joe_vt6.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator168.EventValue_changed, HAnimJoint61.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "vt5RotInterp.EventValue_changed TO Joe_vt5.EventSet_rotation }
-{ Sample vt5RotInterp.EventValue_changed TO Joe_vt5.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator169.EventValue_changed, HAnimJoint62.set_EventSet_rotation);
+{ Original "vt5RotInterp.EventValue_changed TO Joe_vt5.FdRotation.EventIn }
+{ Sample vt5RotInterp.EventValue_changed TO Joe_vt5.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator169.EventValue_changed, HAnimJoint62.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "vt4RotInterp.EventValue_changed TO Joe_vt4.EventSet_rotation }
-{ Sample vt4RotInterp.EventValue_changed TO Joe_vt4.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator170.EventValue_changed, HAnimJoint63.set_EventSet_rotation);
+{ Original "vt4RotInterp.EventValue_changed TO Joe_vt4.FdRotation.EventIn }
+{ Sample vt4RotInterp.EventValue_changed TO Joe_vt4.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator170.EventValue_changed, HAnimJoint63.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "vt3RotInterp.EventValue_changed TO Joe_vt3.EventSet_rotation }
-{ Sample vt3RotInterp.EventValue_changed TO Joe_vt3.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator171.EventValue_changed, HAnimJoint64.set_EventSet_rotation);
+{ Original "vt3RotInterp.EventValue_changed TO Joe_vt3.FdRotation.EventIn }
+{ Sample vt3RotInterp.EventValue_changed TO Joe_vt3.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator171.EventValue_changed, HAnimJoint64.FdRotation.EventIn);
 end;
 
 procedure InitJoeSkinTexcoordDisplacerKickUpdate2Part27;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "vt2RotInterp.EventValue_changed TO Joe_vt2.EventSet_rotation }
-{ Sample vt2RotInterp.EventValue_changed TO Joe_vt2.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator172.EventValue_changed, HAnimJoint65.set_EventSet_rotation);
+{ Original "vt2RotInterp.EventValue_changed TO Joe_vt2.FdRotation.EventIn }
+{ Sample vt2RotInterp.EventValue_changed TO Joe_vt2.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator172.EventValue_changed, HAnimJoint65.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "vt1RotInterp.EventValue_changed TO Joe_vt1.EventSet_rotation }
-{ Sample vt1RotInterp.EventValue_changed TO Joe_vt1.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator173.EventValue_changed, HAnimJoint66.set_EventSet_rotation);
+{ Original "vt1RotInterp.EventValue_changed TO Joe_vt1.FdRotation.EventIn }
+{ Sample vt1RotInterp.EventValue_changed TO Joe_vt1.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator173.EventValue_changed, HAnimJoint66.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "vc7RotInterp.EventValue_changed TO Joe_vc7.EventSet_rotation }
-{ Sample vc7RotInterp.EventValue_changed TO Joe_vc7.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator174.EventValue_changed, HAnimJoint67.set_EventSet_rotation);
+{ Original "vc7RotInterp.EventValue_changed TO Joe_vc7.FdRotation.EventIn }
+{ Sample vc7RotInterp.EventValue_changed TO Joe_vc7.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator174.EventValue_changed, HAnimJoint67.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "vc6RotInterp.EventValue_changed TO Joe_vc6.EventSet_rotation }
-{ Sample vc6RotInterp.EventValue_changed TO Joe_vc6.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator175.EventValue_changed, HAnimJoint68.set_EventSet_rotation);
+{ Original "vc6RotInterp.EventValue_changed TO Joe_vc6.FdRotation.EventIn }
+{ Sample vc6RotInterp.EventValue_changed TO Joe_vc6.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator175.EventValue_changed, HAnimJoint68.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "vc5RotInterp.EventValue_changed TO Joe_vc5.EventSet_rotation }
-{ Sample vc5RotInterp.EventValue_changed TO Joe_vc5.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator176.EventValue_changed, HAnimJoint69.set_EventSet_rotation);
+{ Original "vc5RotInterp.EventValue_changed TO Joe_vc5.FdRotation.EventIn }
+{ Sample vc5RotInterp.EventValue_changed TO Joe_vc5.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator176.EventValue_changed, HAnimJoint69.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "vc4RotInterp.EventValue_changed TO Joe_vc4.EventSet_rotation }
-{ Sample vc4RotInterp.EventValue_changed TO Joe_vc4.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator177.EventValue_changed, HAnimJoint70.set_EventSet_rotation);
+{ Original "vc4RotInterp.EventValue_changed TO Joe_vc4.FdRotation.EventIn }
+{ Sample vc4RotInterp.EventValue_changed TO Joe_vc4.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator177.EventValue_changed, HAnimJoint70.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "vc3RotInterp.EventValue_changed TO Joe_vc3.EventSet_rotation }
-{ Sample vc3RotInterp.EventValue_changed TO Joe_vc3.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator178.EventValue_changed, HAnimJoint71.set_EventSet_rotation);
+{ Original "vc3RotInterp.EventValue_changed TO Joe_vc3.FdRotation.EventIn }
+{ Sample vc3RotInterp.EventValue_changed TO Joe_vc3.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator178.EventValue_changed, HAnimJoint71.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "vc2RotInterp.EventValue_changed TO Joe_vc2.EventSet_rotation }
-{ Sample vc2RotInterp.EventValue_changed TO Joe_vc2.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator179.EventValue_changed, HAnimJoint72.set_EventSet_rotation);
+{ Original "vc2RotInterp.EventValue_changed TO Joe_vc2.FdRotation.EventIn }
+{ Sample vc2RotInterp.EventValue_changed TO Joe_vc2.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator179.EventValue_changed, HAnimJoint72.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "vc1RotInterp.EventValue_changed TO Joe_vc1.EventSet_rotation }
-{ Sample vc1RotInterp.EventValue_changed TO Joe_vc1.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator180.EventValue_changed, HAnimJoint73.set_EventSet_rotation);
+{ Original "vc1RotInterp.EventValue_changed TO Joe_vc1.FdRotation.EventIn }
+{ Sample vc1RotInterp.EventValue_changed TO Joe_vc1.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator180.EventValue_changed, HAnimJoint73.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "skullbaseRotInterp.EventValue_changed TO Joe_skullbase.EventSet_rotation }
-{ Sample skullbaseRotInterp.EventValue_changed TO Joe_skullbase.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator181.EventValue_changed, HAnimJoint74.set_EventSet_rotation);
+{ Original "skullbaseRotInterp.EventValue_changed TO Joe_skullbase.FdRotation.EventIn }
+{ Sample skullbaseRotInterp.EventValue_changed TO Joe_skullbase.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator181.EventValue_changed, HAnimJoint74.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "l_eyelid_jointRotInterp.EventValue_changed TO Joe_l_eyelid_joint.EventSet_rotation }
-{ Sample l_eyelid_jointRotInterp.EventValue_changed TO Joe_l_eyelid_joint.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator182.EventValue_changed, HAnimJoint76.set_EventSet_rotation);
+{ Original "l_eyelid_jointRotInterp.EventValue_changed TO Joe_l_eyelid_joint.FdRotation.EventIn }
+{ Sample l_eyelid_jointRotInterp.EventValue_changed TO Joe_l_eyelid_joint.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator182.EventValue_changed, HAnimJoint76.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "l_eyeball_jointRotInterp.EventValue_changed TO Joe_l_eyeball_joint.EventSet_rotation }
-{ Sample l_eyeball_jointRotInterp.EventValue_changed TO Joe_l_eyeball_joint.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator183.EventValue_changed, HAnimJoint77.set_EventSet_rotation);
+{ Original "l_eyeball_jointRotInterp.EventValue_changed TO Joe_l_eyeball_joint.FdRotation.EventIn }
+{ Sample l_eyeball_jointRotInterp.EventValue_changed TO Joe_l_eyeball_joint.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator183.EventValue_changed, HAnimJoint77.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "l_eyebrow_jointRotInterp.EventValue_changed TO Joe_l_eyebrow_joint.EventSet_rotation }
-{ Sample l_eyebrow_jointRotInterp.EventValue_changed TO Joe_l_eyebrow_joint.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator184.EventValue_changed, HAnimJoint78.set_EventSet_rotation);
+{ Original "l_eyebrow_jointRotInterp.EventValue_changed TO Joe_l_eyebrow_joint.FdRotation.EventIn }
+{ Sample l_eyebrow_jointRotInterp.EventValue_changed TO Joe_l_eyebrow_joint.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator184.EventValue_changed, HAnimJoint78.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_eyelid_jointRotInterp.EventValue_changed TO Joe_r_eyelid_joint.EventSet_rotation }
-{ Sample r_eyelid_jointRotInterp.EventValue_changed TO Joe_r_eyelid_joint.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator185.EventValue_changed, HAnimJoint79.set_EventSet_rotation);
+{ Original "r_eyelid_jointRotInterp.EventValue_changed TO Joe_r_eyelid_joint.FdRotation.EventIn }
+{ Sample r_eyelid_jointRotInterp.EventValue_changed TO Joe_r_eyelid_joint.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator185.EventValue_changed, HAnimJoint79.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_eyeball_jointRotInterp.EventValue_changed TO Joe_r_eyeball_joint.EventSet_rotation }
-{ Sample r_eyeball_jointRotInterp.EventValue_changed TO Joe_r_eyeball_joint.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator186.EventValue_changed, HAnimJoint80.set_EventSet_rotation);
+{ Original "r_eyeball_jointRotInterp.EventValue_changed TO Joe_r_eyeball_joint.FdRotation.EventIn }
+{ Sample r_eyeball_jointRotInterp.EventValue_changed TO Joe_r_eyeball_joint.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator186.EventValue_changed, HAnimJoint80.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_eyebrow_jointRotInterp.EventValue_changed TO Joe_r_eyebrow_joint.EventSet_rotation }
-{ Sample r_eyebrow_jointRotInterp.EventValue_changed TO Joe_r_eyebrow_joint.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator187.EventValue_changed, HAnimJoint81.set_EventSet_rotation);
+{ Original "r_eyebrow_jointRotInterp.EventValue_changed TO Joe_r_eyebrow_joint.FdRotation.EventIn }
+{ Sample r_eyebrow_jointRotInterp.EventValue_changed TO Joe_r_eyebrow_joint.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator187.EventValue_changed, HAnimJoint81.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "temporomandibularRotInterp.EventValue_changed TO Joe_temporomandibular.EventSet_rotation }
-{ Sample temporomandibularRotInterp.EventValue_changed TO Joe_temporomandibular.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator188.EventValue_changed, HAnimJoint82.set_EventSet_rotation);
+{ Original "temporomandibularRotInterp.EventValue_changed TO Joe_temporomandibular.FdRotation.EventIn }
+{ Sample temporomandibularRotInterp.EventValue_changed TO Joe_temporomandibular.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator188.EventValue_changed, HAnimJoint82.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "l_sternoclavicularRotInterp.EventValue_changed TO Joe_l_sternoclavicular.EventSet_rotation }
-{ Sample l_sternoclavicularRotInterp.EventValue_changed TO Joe_l_sternoclavicular.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator189.EventValue_changed, HAnimJoint83.set_EventSet_rotation);
+{ Original "l_sternoclavicularRotInterp.EventValue_changed TO Joe_l_sternoclavicular.FdRotation.EventIn }
+{ Sample l_sternoclavicularRotInterp.EventValue_changed TO Joe_l_sternoclavicular.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator189.EventValue_changed, HAnimJoint83.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "l_acromioclavicularRotInterp.EventValue_changed TO Joe_l_acromioclavicular.EventSet_rotation }
-{ Sample l_acromioclavicularRotInterp.EventValue_changed TO Joe_l_acromioclavicular.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator190.EventValue_changed, HAnimJoint84.set_EventSet_rotation);
+{ Original "l_acromioclavicularRotInterp.EventValue_changed TO Joe_l_acromioclavicular.FdRotation.EventIn }
+{ Sample l_acromioclavicularRotInterp.EventValue_changed TO Joe_l_acromioclavicular.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator190.EventValue_changed, HAnimJoint84.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "l_shoulderRotInterp.EventValue_changed TO Joe_l_shoulder.EventSet_rotation }
-{ Sample l_shoulderRotInterp.EventValue_changed TO Joe_l_shoulder.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator191.EventValue_changed, HAnimJoint85.set_EventSet_rotation);
+{ Original "l_shoulderRotInterp.EventValue_changed TO Joe_l_shoulder.FdRotation.EventIn }
+{ Sample l_shoulderRotInterp.EventValue_changed TO Joe_l_shoulder.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator191.EventValue_changed, HAnimJoint85.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "l_elbowRotInterp.EventValue_changed TO Joe_l_elbow.EventSet_rotation }
-{ Sample l_elbowRotInterp.EventValue_changed TO Joe_l_elbow.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator192.EventValue_changed, HAnimJoint86.set_EventSet_rotation);
+{ Original "l_elbowRotInterp.EventValue_changed TO Joe_l_elbow.FdRotation.EventIn }
+{ Sample l_elbowRotInterp.EventValue_changed TO Joe_l_elbow.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator192.EventValue_changed, HAnimJoint86.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "l_wristRotInterp.EventValue_changed TO Joe_l_wrist.EventSet_rotation }
-{ Sample l_wristRotInterp.EventValue_changed TO Joe_l_wrist.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator193.EventValue_changed, HAnimJoint87.set_EventSet_rotation);
+{ Original "l_wristRotInterp.EventValue_changed TO Joe_l_wrist.FdRotation.EventIn }
+{ Sample l_wristRotInterp.EventValue_changed TO Joe_l_wrist.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator193.EventValue_changed, HAnimJoint87.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "l_thumb1RotInterp.EventValue_changed TO Joe_l_thumb1.EventSet_rotation }
-{ Sample l_thumb1RotInterp.EventValue_changed TO Joe_l_thumb1.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator194.EventValue_changed, HAnimJoint88.set_EventSet_rotation);
+{ Original "l_thumb1RotInterp.EventValue_changed TO Joe_l_thumb1.FdRotation.EventIn }
+{ Sample l_thumb1RotInterp.EventValue_changed TO Joe_l_thumb1.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator194.EventValue_changed, HAnimJoint88.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "l_thumb2RotInterp.EventValue_changed TO Joe_l_thumb2.EventSet_rotation }
-{ Sample l_thumb2RotInterp.EventValue_changed TO Joe_l_thumb2.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator195.EventValue_changed, HAnimJoint89.set_EventSet_rotation);
+{ Original "l_thumb2RotInterp.EventValue_changed TO Joe_l_thumb2.FdRotation.EventIn }
+{ Sample l_thumb2RotInterp.EventValue_changed TO Joe_l_thumb2.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator195.EventValue_changed, HAnimJoint89.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "l_thumb3RotInterp.EventValue_changed TO Joe_l_thumb3.EventSet_rotation }
-{ Sample l_thumb3RotInterp.EventValue_changed TO Joe_l_thumb3.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator196.EventValue_changed, HAnimJoint90.set_EventSet_rotation);
+{ Original "l_thumb3RotInterp.EventValue_changed TO Joe_l_thumb3.FdRotation.EventIn }
+{ Sample l_thumb3RotInterp.EventValue_changed TO Joe_l_thumb3.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator196.EventValue_changed, HAnimJoint90.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "l_index0RotInterp.EventValue_changed TO Joe_l_index0.EventSet_rotation }
-{ Sample l_index0RotInterp.EventValue_changed TO Joe_l_index0.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator197.EventValue_changed, HAnimJoint91.set_EventSet_rotation);
+{ Original "l_index0RotInterp.EventValue_changed TO Joe_l_index0.FdRotation.EventIn }
+{ Sample l_index0RotInterp.EventValue_changed TO Joe_l_index0.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator197.EventValue_changed, HAnimJoint91.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "l_index1RotInterp.EventValue_changed TO Joe_l_index1.EventSet_rotation }
-{ Sample l_index1RotInterp.EventValue_changed TO Joe_l_index1.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator198.EventValue_changed, HAnimJoint92.set_EventSet_rotation);
+{ Original "l_index1RotInterp.EventValue_changed TO Joe_l_index1.FdRotation.EventIn }
+{ Sample l_index1RotInterp.EventValue_changed TO Joe_l_index1.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator198.EventValue_changed, HAnimJoint92.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "l_index2RotInterp.EventValue_changed TO Joe_l_index2.EventSet_rotation }
-{ Sample l_index2RotInterp.EventValue_changed TO Joe_l_index2.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator199.EventValue_changed, HAnimJoint93.set_EventSet_rotation);
+{ Original "l_index2RotInterp.EventValue_changed TO Joe_l_index2.FdRotation.EventIn }
+{ Sample l_index2RotInterp.EventValue_changed TO Joe_l_index2.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator199.EventValue_changed, HAnimJoint93.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "l_index3RotInterp.EventValue_changed TO Joe_l_index3.EventSet_rotation }
-{ Sample l_index3RotInterp.EventValue_changed TO Joe_l_index3.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator200.EventValue_changed, HAnimJoint94.set_EventSet_rotation);
+{ Original "l_index3RotInterp.EventValue_changed TO Joe_l_index3.FdRotation.EventIn }
+{ Sample l_index3RotInterp.EventValue_changed TO Joe_l_index3.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator200.EventValue_changed, HAnimJoint94.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "l_middle0RotInterp.EventValue_changed TO Joe_l_middle0.EventSet_rotation }
-{ Sample l_middle0RotInterp.EventValue_changed TO Joe_l_middle0.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator201.EventValue_changed, HAnimJoint95.set_EventSet_rotation);
+{ Original "l_middle0RotInterp.EventValue_changed TO Joe_l_middle0.FdRotation.EventIn }
+{ Sample l_middle0RotInterp.EventValue_changed TO Joe_l_middle0.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator201.EventValue_changed, HAnimJoint95.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "l_middle1RotInterp.EventValue_changed TO Joe_l_middle1.EventSet_rotation }
-{ Sample l_middle1RotInterp.EventValue_changed TO Joe_l_middle1.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator202.EventValue_changed, HAnimJoint96.set_EventSet_rotation);
+{ Original "l_middle1RotInterp.EventValue_changed TO Joe_l_middle1.FdRotation.EventIn }
+{ Sample l_middle1RotInterp.EventValue_changed TO Joe_l_middle1.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator202.EventValue_changed, HAnimJoint96.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "l_middle2RotInterp.EventValue_changed TO Joe_l_middle2.EventSet_rotation }
-{ Sample l_middle2RotInterp.EventValue_changed TO Joe_l_middle2.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator203.EventValue_changed, HAnimJoint97.set_EventSet_rotation);
+{ Original "l_middle2RotInterp.EventValue_changed TO Joe_l_middle2.FdRotation.EventIn }
+{ Sample l_middle2RotInterp.EventValue_changed TO Joe_l_middle2.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator203.EventValue_changed, HAnimJoint97.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "l_middle3RotInterp.EventValue_changed TO Joe_l_middle3.EventSet_rotation }
-{ Sample l_middle3RotInterp.EventValue_changed TO Joe_l_middle3.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator204.EventValue_changed, HAnimJoint98.set_EventSet_rotation);
+{ Original "l_middle3RotInterp.EventValue_changed TO Joe_l_middle3.FdRotation.EventIn }
+{ Sample l_middle3RotInterp.EventValue_changed TO Joe_l_middle3.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator204.EventValue_changed, HAnimJoint98.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "l_ring0RotInterp.EventValue_changed TO Joe_l_ring0.EventSet_rotation }
-{ Sample l_ring0RotInterp.EventValue_changed TO Joe_l_ring0.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator205.EventValue_changed, HAnimJoint99.set_EventSet_rotation);
+{ Original "l_ring0RotInterp.EventValue_changed TO Joe_l_ring0.FdRotation.EventIn }
+{ Sample l_ring0RotInterp.EventValue_changed TO Joe_l_ring0.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator205.EventValue_changed, HAnimJoint99.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "l_ring1RotInterp.EventValue_changed TO Joe_l_ring1.EventSet_rotation }
-{ Sample l_ring1RotInterp.EventValue_changed TO Joe_l_ring1.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator206.EventValue_changed, HAnimJoint100.set_EventSet_rotation);
+{ Original "l_ring1RotInterp.EventValue_changed TO Joe_l_ring1.FdRotation.EventIn }
+{ Sample l_ring1RotInterp.EventValue_changed TO Joe_l_ring1.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator206.EventValue_changed, HAnimJoint100.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "l_ring2RotInterp.EventValue_changed TO Joe_l_ring2.EventSet_rotation }
-{ Sample l_ring2RotInterp.EventValue_changed TO Joe_l_ring2.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator207.EventValue_changed, HAnimJoint101.set_EventSet_rotation);
+{ Original "l_ring2RotInterp.EventValue_changed TO Joe_l_ring2.FdRotation.EventIn }
+{ Sample l_ring2RotInterp.EventValue_changed TO Joe_l_ring2.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator207.EventValue_changed, HAnimJoint101.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "l_ring3RotInterp.EventValue_changed TO Joe_l_ring3.EventSet_rotation }
-{ Sample l_ring3RotInterp.EventValue_changed TO Joe_l_ring3.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator208.EventValue_changed, HAnimJoint102.set_EventSet_rotation);
+{ Original "l_ring3RotInterp.EventValue_changed TO Joe_l_ring3.FdRotation.EventIn }
+{ Sample l_ring3RotInterp.EventValue_changed TO Joe_l_ring3.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator208.EventValue_changed, HAnimJoint102.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "l_pinky0RotInterp.EventValue_changed TO Joe_l_pinky0.EventSet_rotation }
-{ Sample l_pinky0RotInterp.EventValue_changed TO Joe_l_pinky0.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator209.EventValue_changed, HAnimJoint103.set_EventSet_rotation);
+{ Original "l_pinky0RotInterp.EventValue_changed TO Joe_l_pinky0.FdRotation.EventIn }
+{ Sample l_pinky0RotInterp.EventValue_changed TO Joe_l_pinky0.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator209.EventValue_changed, HAnimJoint103.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "l_pinky1RotInterp.EventValue_changed TO Joe_l_pinky1.EventSet_rotation }
-{ Sample l_pinky1RotInterp.EventValue_changed TO Joe_l_pinky1.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator210.EventValue_changed, HAnimJoint104.set_EventSet_rotation);
+{ Original "l_pinky1RotInterp.EventValue_changed TO Joe_l_pinky1.FdRotation.EventIn }
+{ Sample l_pinky1RotInterp.EventValue_changed TO Joe_l_pinky1.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator210.EventValue_changed, HAnimJoint104.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "l_pinky2RotInterp.EventValue_changed TO Joe_l_pinky2.EventSet_rotation }
-{ Sample l_pinky2RotInterp.EventValue_changed TO Joe_l_pinky2.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator211.EventValue_changed, HAnimJoint105.set_EventSet_rotation);
+{ Original "l_pinky2RotInterp.EventValue_changed TO Joe_l_pinky2.FdRotation.EventIn }
+{ Sample l_pinky2RotInterp.EventValue_changed TO Joe_l_pinky2.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator211.EventValue_changed, HAnimJoint105.FdRotation.EventIn);
 end;
 
 procedure InitJoeSkinTexcoordDisplacerKickUpdate2Part28;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "l_pinky3RotInterp.EventValue_changed TO Joe_l_pinky3.EventSet_rotation }
-{ Sample l_pinky3RotInterp.EventValue_changed TO Joe_l_pinky3.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator212.EventValue_changed, HAnimJoint106.set_EventSet_rotation);
+{ Original "l_pinky3RotInterp.EventValue_changed TO Joe_l_pinky3.FdRotation.EventIn }
+{ Sample l_pinky3RotInterp.EventValue_changed TO Joe_l_pinky3.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator212.EventValue_changed, HAnimJoint106.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_sternoclavicularRotInterp.EventValue_changed TO Joe_r_sternoclavicular.EventSet_rotation }
-{ Sample r_sternoclavicularRotInterp.EventValue_changed TO Joe_r_sternoclavicular.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator213.EventValue_changed, HAnimJoint107.set_EventSet_rotation);
+{ Original "r_sternoclavicularRotInterp.EventValue_changed TO Joe_r_sternoclavicular.FdRotation.EventIn }
+{ Sample r_sternoclavicularRotInterp.EventValue_changed TO Joe_r_sternoclavicular.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator213.EventValue_changed, HAnimJoint107.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_acromioclavicularRotInterp.EventValue_changed TO Joe_r_acromioclavicular.EventSet_rotation }
-{ Sample r_acromioclavicularRotInterp.EventValue_changed TO Joe_r_acromioclavicular.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator214.EventValue_changed, HAnimJoint108.set_EventSet_rotation);
+{ Original "r_acromioclavicularRotInterp.EventValue_changed TO Joe_r_acromioclavicular.FdRotation.EventIn }
+{ Sample r_acromioclavicularRotInterp.EventValue_changed TO Joe_r_acromioclavicular.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator214.EventValue_changed, HAnimJoint108.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_shoulderRotInterp.EventValue_changed TO Joe_r_shoulder.EventSet_rotation }
-{ Sample r_shoulderRotInterp.EventValue_changed TO Joe_r_shoulder.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator215.EventValue_changed, HAnimJoint109.set_EventSet_rotation);
+{ Original "r_shoulderRotInterp.EventValue_changed TO Joe_r_shoulder.FdRotation.EventIn }
+{ Sample r_shoulderRotInterp.EventValue_changed TO Joe_r_shoulder.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator215.EventValue_changed, HAnimJoint109.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_elbowRotInterp.EventValue_changed TO Joe_r_elbow.EventSet_rotation }
-{ Sample r_elbowRotInterp.EventValue_changed TO Joe_r_elbow.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator216.EventValue_changed, HAnimJoint110.set_EventSet_rotation);
+{ Original "r_elbowRotInterp.EventValue_changed TO Joe_r_elbow.FdRotation.EventIn }
+{ Sample r_elbowRotInterp.EventValue_changed TO Joe_r_elbow.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator216.EventValue_changed, HAnimJoint110.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_wristRotInterp.EventValue_changed TO Joe_r_wrist.EventSet_rotation }
-{ Sample r_wristRotInterp.EventValue_changed TO Joe_r_wrist.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator217.EventValue_changed, HAnimJoint111.set_EventSet_rotation);
+{ Original "r_wristRotInterp.EventValue_changed TO Joe_r_wrist.FdRotation.EventIn }
+{ Sample r_wristRotInterp.EventValue_changed TO Joe_r_wrist.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator217.EventValue_changed, HAnimJoint111.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_thumb1RotInterp.EventValue_changed TO Joe_r_thumb1.EventSet_rotation }
-{ Sample r_thumb1RotInterp.EventValue_changed TO Joe_r_thumb1.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator218.EventValue_changed, HAnimJoint112.set_EventSet_rotation);
+{ Original "r_thumb1RotInterp.EventValue_changed TO Joe_r_thumb1.FdRotation.EventIn }
+{ Sample r_thumb1RotInterp.EventValue_changed TO Joe_r_thumb1.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator218.EventValue_changed, HAnimJoint112.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_thumb2RotInterp.EventValue_changed TO Joe_r_thumb2.EventSet_rotation }
-{ Sample r_thumb2RotInterp.EventValue_changed TO Joe_r_thumb2.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator219.EventValue_changed, HAnimJoint113.set_EventSet_rotation);
+{ Original "r_thumb2RotInterp.EventValue_changed TO Joe_r_thumb2.FdRotation.EventIn }
+{ Sample r_thumb2RotInterp.EventValue_changed TO Joe_r_thumb2.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator219.EventValue_changed, HAnimJoint113.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_thumb3RotInterp.EventValue_changed TO Joe_r_thumb3.EventSet_rotation }
-{ Sample r_thumb3RotInterp.EventValue_changed TO Joe_r_thumb3.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator220.EventValue_changed, HAnimJoint114.set_EventSet_rotation);
+{ Original "r_thumb3RotInterp.EventValue_changed TO Joe_r_thumb3.FdRotation.EventIn }
+{ Sample r_thumb3RotInterp.EventValue_changed TO Joe_r_thumb3.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator220.EventValue_changed, HAnimJoint114.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_index0RotInterp.EventValue_changed TO Joe_r_index0.EventSet_rotation }
-{ Sample r_index0RotInterp.EventValue_changed TO Joe_r_index0.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator221.EventValue_changed, HAnimJoint115.set_EventSet_rotation);
+{ Original "r_index0RotInterp.EventValue_changed TO Joe_r_index0.FdRotation.EventIn }
+{ Sample r_index0RotInterp.EventValue_changed TO Joe_r_index0.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator221.EventValue_changed, HAnimJoint115.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_index1RotInterp.EventValue_changed TO Joe_r_index1.EventSet_rotation }
-{ Sample r_index1RotInterp.EventValue_changed TO Joe_r_index1.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator222.EventValue_changed, HAnimJoint116.set_EventSet_rotation);
+{ Original "r_index1RotInterp.EventValue_changed TO Joe_r_index1.FdRotation.EventIn }
+{ Sample r_index1RotInterp.EventValue_changed TO Joe_r_index1.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator222.EventValue_changed, HAnimJoint116.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_index2RotInterp.EventValue_changed TO Joe_r_index2.EventSet_rotation }
-{ Sample r_index2RotInterp.EventValue_changed TO Joe_r_index2.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator223.EventValue_changed, HAnimJoint117.set_EventSet_rotation);
+{ Original "r_index2RotInterp.EventValue_changed TO Joe_r_index2.FdRotation.EventIn }
+{ Sample r_index2RotInterp.EventValue_changed TO Joe_r_index2.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator223.EventValue_changed, HAnimJoint117.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_index3RotInterp.EventValue_changed TO Joe_r_index3.EventSet_rotation }
-{ Sample r_index3RotInterp.EventValue_changed TO Joe_r_index3.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator224.EventValue_changed, HAnimJoint118.set_EventSet_rotation);
+{ Original "r_index3RotInterp.EventValue_changed TO Joe_r_index3.FdRotation.EventIn }
+{ Sample r_index3RotInterp.EventValue_changed TO Joe_r_index3.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator224.EventValue_changed, HAnimJoint118.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_middle0RotInterp.EventValue_changed TO Joe_r_middle0.EventSet_rotation }
-{ Sample r_middle0RotInterp.EventValue_changed TO Joe_r_middle0.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator225.EventValue_changed, HAnimJoint119.set_EventSet_rotation);
+{ Original "r_middle0RotInterp.EventValue_changed TO Joe_r_middle0.FdRotation.EventIn }
+{ Sample r_middle0RotInterp.EventValue_changed TO Joe_r_middle0.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator225.EventValue_changed, HAnimJoint119.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_middle1RotInterp.EventValue_changed TO Joe_r_middle1.EventSet_rotation }
-{ Sample r_middle1RotInterp.EventValue_changed TO Joe_r_middle1.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator226.EventValue_changed, HAnimJoint120.set_EventSet_rotation);
+{ Original "r_middle1RotInterp.EventValue_changed TO Joe_r_middle1.FdRotation.EventIn }
+{ Sample r_middle1RotInterp.EventValue_changed TO Joe_r_middle1.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator226.EventValue_changed, HAnimJoint120.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_middle2RotInterp.EventValue_changed TO Joe_r_middle2.EventSet_rotation }
-{ Sample r_middle2RotInterp.EventValue_changed TO Joe_r_middle2.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator227.EventValue_changed, HAnimJoint121.set_EventSet_rotation);
+{ Original "r_middle2RotInterp.EventValue_changed TO Joe_r_middle2.FdRotation.EventIn }
+{ Sample r_middle2RotInterp.EventValue_changed TO Joe_r_middle2.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator227.EventValue_changed, HAnimJoint121.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_middle3RotInterp.EventValue_changed TO Joe_r_middle3.EventSet_rotation }
-{ Sample r_middle3RotInterp.EventValue_changed TO Joe_r_middle3.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator228.EventValue_changed, HAnimJoint122.set_EventSet_rotation);
+{ Original "r_middle3RotInterp.EventValue_changed TO Joe_r_middle3.FdRotation.EventIn }
+{ Sample r_middle3RotInterp.EventValue_changed TO Joe_r_middle3.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator228.EventValue_changed, HAnimJoint122.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_ring0RotInterp.EventValue_changed TO Joe_r_ring0.EventSet_rotation }
-{ Sample r_ring0RotInterp.EventValue_changed TO Joe_r_ring0.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator229.EventValue_changed, HAnimJoint123.set_EventSet_rotation);
+{ Original "r_ring0RotInterp.EventValue_changed TO Joe_r_ring0.FdRotation.EventIn }
+{ Sample r_ring0RotInterp.EventValue_changed TO Joe_r_ring0.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator229.EventValue_changed, HAnimJoint123.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_ring1RotInterp.EventValue_changed TO Joe_r_ring1.EventSet_rotation }
-{ Sample r_ring1RotInterp.EventValue_changed TO Joe_r_ring1.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator230.EventValue_changed, HAnimJoint124.set_EventSet_rotation);
+{ Original "r_ring1RotInterp.EventValue_changed TO Joe_r_ring1.FdRotation.EventIn }
+{ Sample r_ring1RotInterp.EventValue_changed TO Joe_r_ring1.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator230.EventValue_changed, HAnimJoint124.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_ring2RotInterp.EventValue_changed TO Joe_r_ring2.EventSet_rotation }
-{ Sample r_ring2RotInterp.EventValue_changed TO Joe_r_ring2.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator231.EventValue_changed, HAnimJoint125.set_EventSet_rotation);
+{ Original "r_ring2RotInterp.EventValue_changed TO Joe_r_ring2.FdRotation.EventIn }
+{ Sample r_ring2RotInterp.EventValue_changed TO Joe_r_ring2.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator231.EventValue_changed, HAnimJoint125.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_ring3RotInterp.EventValue_changed TO Joe_r_ring3.EventSet_rotation }
-{ Sample r_ring3RotInterp.EventValue_changed TO Joe_r_ring3.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator232.EventValue_changed, HAnimJoint126.set_EventSet_rotation);
+{ Original "r_ring3RotInterp.EventValue_changed TO Joe_r_ring3.FdRotation.EventIn }
+{ Sample r_ring3RotInterp.EventValue_changed TO Joe_r_ring3.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator232.EventValue_changed, HAnimJoint126.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_pinky0RotInterp.EventValue_changed TO Joe_r_pinky0.EventSet_rotation }
-{ Sample r_pinky0RotInterp.EventValue_changed TO Joe_r_pinky0.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator233.EventValue_changed, HAnimJoint127.set_EventSet_rotation);
+{ Original "r_pinky0RotInterp.EventValue_changed TO Joe_r_pinky0.FdRotation.EventIn }
+{ Sample r_pinky0RotInterp.EventValue_changed TO Joe_r_pinky0.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator233.EventValue_changed, HAnimJoint127.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_pinky1RotInterp.EventValue_changed TO Joe_r_pinky1.EventSet_rotation }
-{ Sample r_pinky1RotInterp.EventValue_changed TO Joe_r_pinky1.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator234.EventValue_changed, HAnimJoint128.set_EventSet_rotation);
+{ Original "r_pinky1RotInterp.EventValue_changed TO Joe_r_pinky1.FdRotation.EventIn }
+{ Sample r_pinky1RotInterp.EventValue_changed TO Joe_r_pinky1.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator234.EventValue_changed, HAnimJoint128.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_pinky2RotInterp.EventValue_changed TO Joe_r_pinky2.EventSet_rotation }
-{ Sample r_pinky2RotInterp.EventValue_changed TO Joe_r_pinky2.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator235.EventValue_changed, HAnimJoint129.set_EventSet_rotation);
+{ Original "r_pinky2RotInterp.EventValue_changed TO Joe_r_pinky2.FdRotation.EventIn }
+{ Sample r_pinky2RotInterp.EventValue_changed TO Joe_r_pinky2.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator235.EventValue_changed, HAnimJoint129.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_pinky3RotInterp.EventValue_changed TO Joe_r_pinky3.EventSet_rotation }
-{ Sample r_pinky3RotInterp.EventValue_changed TO Joe_r_pinky3.EventSet_rotation}
-Group15.AddRoute(OrientationInterpolator236.EventValue_changed, HAnimJoint130.set_EventSet_rotation);
+{ Original "r_pinky3RotInterp.EventValue_changed TO Joe_r_pinky3.FdRotation.EventIn }
+{ Sample r_pinky3RotInterp.EventValue_changed TO Joe_r_pinky3.FdRotation.EventIn}
+Group15.AddRoute(OrientationInterpolator236.EventValue_changed, HAnimJoint130.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
 Group427 := TGroupNode.Create;
 { TimeSensor DEF='skull_tipTestTimer' cycleInterval='5.73' loop='true' enabled='true'></TimeSensor }
@@ -2353,11 +2353,11 @@ ScalarInterpolator428.SetKeyValue([0,0,0,0,0.2,0.4,1,0,1,0.4,0]);
 Group427.FdChildren.Add(ScalarInterpolator428);
 { Original "KickTimer.EventFraction_changed TO skull_tipTest.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO skull_tipTest.EventSet_fraction}
-Group427.AddRoute(TimeSensor141.EventFraction_changed, ScalarInterpolator428.set_EventSet_fraction);
+Group427.AddRoute(TimeSensor141.EventFraction_changed, ScalarInterpolator428.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "skull_tipTest.EventValue_changed TO Joe_skull_tipTest.FWeight }
 { Sample skull_tipTest.EventValue_changed TO Joe_skull_tipTest.FWeight}
-Group427.AddRoute(ScalarInterpolator428.EventValue_changed, HAnimDisplacer75.set_FWeight);
+Group427.AddRoute(ScalarInterpolator428.EventValue_changed, HAnimDisplacer75.FWeight);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group15.FdChildren.Add(Group427);
@@ -2369,11 +2369,11 @@ ScalarInterpolator432.SetKeyValue([0,0,0,0,0,1,2,0]);
 Group431.FdChildren.Add(ScalarInterpolator432);
 { Original "KickTimer.EventFraction_changed TO skinTexTransTest.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO skinTexTransTest.EventSet_fraction}
-Group431.AddRoute(TimeSensor141.EventFraction_changed, ScalarInterpolator432.set_EventSet_fraction);
+Group431.AddRoute(TimeSensor141.EventFraction_changed, ScalarInterpolator432.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "skinTexTransTest.EventValue_changed TO kicktextrans.rotation }
 { Sample skinTexTransTest.EventValue_changed TO kicktextrans.rotation}
-Group431.AddRoute(ScalarInterpolator432.EventValue_changed, TextureTransform135.set_rotation);
+Group431.AddRoute(ScalarInterpolator432.EventValue_changed, TextureTransform135.rotation);
 end;
 
 procedure InitJoeSkinTexcoordDisplacerKickUpdate2Part29;
@@ -2428,19 +2428,19 @@ Group435.FdChildren.Add(OrientationInterpolator445);
 { Ball Animation Routes }
 { Original "KickTimer.EventFraction_changed TO ballTransInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO ballTransInterp.EventSet_fraction}
-Group435.AddRoute(TimeSensor141.EventFraction_changed, PositionInterpolator444.set_EventSet_fraction);
+Group435.AddRoute(TimeSensor141.EventFraction_changed, PositionInterpolator444.EventSet_fraction);
 { METHOD .AddX3DROUTE }
-{ Original "ballTransInterp.EventValue_changed TO SBall.EventSet_translation }
-{ Sample ballTransInterp.EventValue_changed TO SBall.EventSet_translation}
-Group435.AddRoute(PositionInterpolator444.EventValue_changed, Transform436.set_EventSet_translation);
+{ Original "ballTransInterp.EventValue_changed TO SBall.FdTranslation.EventIn }
+{ Sample ballTransInterp.EventValue_changed TO SBall.FdTranslation.EventIn}
+Group435.AddRoute(PositionInterpolator444.EventValue_changed, Transform436.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
 { Original "KickTimer.EventFraction_changed TO ballRotInterp.EventSet_fraction }
 { Sample KickTimer.EventFraction_changed TO ballRotInterp.EventSet_fraction}
-Group435.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator445.set_EventSet_fraction);
+Group435.AddRoute(TimeSensor141.EventFraction_changed, OrientationInterpolator445.EventSet_fraction);
 { METHOD .AddX3DROUTE }
-{ Original "ballRotInterp.EventValue_changed TO SBall.EventSet_rotation }
-{ Sample ballRotInterp.EventValue_changed TO SBall.EventSet_rotation}
-Group435.AddRoute(OrientationInterpolator445.EventValue_changed, Transform436.set_EventSet_rotation);
+{ Original "ballRotInterp.EventValue_changed TO SBall.FdRotation.EventIn }
+{ Sample ballRotInterp.EventValue_changed TO SBall.FdRotation.EventIn}
+Group435.AddRoute(OrientationInterpolator445.EventValue_changed, Transform436.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group15.FdChildren.Add(Group435);

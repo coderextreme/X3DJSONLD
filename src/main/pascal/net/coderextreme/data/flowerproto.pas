@@ -354,35 +354,35 @@ TimeSensor63.Loop := True;
 Transform22.FdChildren.Add(TimeSensor63);
 { Original "TourTime.EventFraction_changed TO Animate.EventSet_fraction }
 { Sample TourTime.EventFraction_changed TO Animate.EventSet_fraction}
-Transform22.AddRoute(TimeSensor63.EventFraction_changed, Script53.set_EventSet_fraction);
+Transform22.AddRoute(TimeSensor63.EventFraction_changed, Script53.EventSet_fraction);
 { METHOD .AddX3DROUTE }
-{ Original "Animate.EventTranslation_changed TO transform.EventSet_translation }
-{ Sample Animate.EventTranslation_changed TO transform.EventSet_translation}
-Transform22.AddRoute(Script53.EventTranslation_changed, Transform22.set_EventSet_translation);
+{ Original "Animate.EventTranslation_changed TO transform.FdTranslation.EventIn }
+{ Sample Animate.EventTranslation_changed TO transform.FdTranslation.EventIn}
+Transform22.AddRoute(Script53.EventTranslation_changed, Transform22.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
 { Original "Animate.a TO shader.a }
 { Sample Animate.a TO shader.a}
-Transform22.AddRoute(Animate.[object Object], ComposedShader33.set_a);
+Transform22.AddRoute(Animate.[object Object], ComposedShader33.a);
 { METHOD .AddX3DROUTE }
 { Original "Animate.b TO shader.b }
 { Sample Animate.b TO shader.b}
-Transform22.AddRoute(Animate.[object Object], ComposedShader33.set_b);
+Transform22.AddRoute(Animate.[object Object], ComposedShader33.b);
 { METHOD .AddX3DROUTE }
 { Original "Animate.c TO shader.c }
 { Sample Animate.c TO shader.c}
-Transform22.AddRoute(Animate.[object Object], ComposedShader33.set_c);
+Transform22.AddRoute(Animate.[object Object], ComposedShader33.c);
 { METHOD .AddX3DROUTE }
 { Original "Animate.d TO shader.d }
 { Sample Animate.d TO shader.d}
-Transform22.AddRoute(Animate.[object Object], ComposedShader33.set_d);
+Transform22.AddRoute(Animate.[object Object], ComposedShader33.d);
 { METHOD .AddX3DROUTE }
 { Original "Animate.tdelta TO shader.tdelta }
 { Sample Animate.tdelta TO shader.tdelta}
-Transform22.AddRoute(Animate.[object Object], ComposedShader33.set_tdelta);
+Transform22.AddRoute(Animate.[object Object], ComposedShader33.tdelta);
 { METHOD .AddX3DROUTE }
 { Original "Animate.pdelta TO shader.pdelta }
 { Sample Animate.pdelta TO shader.pdelta}
-Transform22.AddRoute(Animate.[object Object], ComposedShader33.set_pdelta);
+Transform22.AddRoute(Animate.[object Object], ComposedShader33.pdelta);
 { METHOD .AddX3DROUTE }
 { METHOD .AddTransform }
 X3DPrototype21.AddTransform([Transform22]);

@@ -1145,7 +1145,7 @@ TouchSensor218.Description := 'select to move shoulders to \"T\" pose, leave oth
 Transform209.FdChildren.Add(TouchSensor218);
 { Original "T_PoseTouchSensor.EventIsActive TO T_Pose.commencePose }
 { Sample T_PoseTouchSensor.EventIsActive TO T_Pose.commencePose}
-Transform209.AddRoute(TouchSensor218.EventIsActive, X3DPrototype115.set_commencePose);
+Transform209.AddRoute(TouchSensor218.EventIsActive, X3DPrototype115.commencePose);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group202.FdChildren.Add(Transform209);
@@ -1178,7 +1178,7 @@ TouchSensor228.Description := 'select to move shoulders to \"A\" pose, leave oth
 Transform220.FdChildren.Add(TouchSensor228);
 { Original "A_PoseTouchSensor.EventIsActive TO A_Pose.commencePose }
 { Sample A_PoseTouchSensor.EventIsActive TO A_Pose.commencePose}
-Transform220.AddRoute(TouchSensor228.EventIsActive, X3DPrototype126.set_commencePose);
+Transform220.AddRoute(TouchSensor228.EventIsActive, X3DPrototype126.commencePose);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group202.FdChildren.Add(Transform220);
@@ -1216,7 +1216,7 @@ TouchSensor238.Description := 'select to transition all joints to TouchDown pose
 Transform230.FdChildren.Add(TouchSensor238);
 { Original "TouchDown_PoseTouchSensor.EventIsActive TO TouchDown_Pose.commencePose }
 { Sample TouchDown_PoseTouchSensor.EventIsActive TO TouchDown_Pose.commencePose}
-Transform230.AddRoute(TouchSensor238.EventIsActive, X3DPrototype138.set_commencePose);
+Transform230.AddRoute(TouchSensor238.EventIsActive, X3DPrototype138.commencePose);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group202.FdChildren.Add(Transform230);
@@ -1249,7 +1249,7 @@ TouchSensor248.Description := 'select to transition all joints to \"I\" pose';
 Transform240.FdChildren.Add(TouchSensor248);
 { Original "I_PoseTouchSensor.EventIsActive TO I_Pose.commencePose }
 { Sample I_PoseTouchSensor.EventIsActive TO I_Pose.commencePose}
-Transform240.AddRoute(TouchSensor248.EventIsActive, X3DPrototype164.set_commencePose);
+Transform240.AddRoute(TouchSensor248.EventIsActive, X3DPrototype164.commencePose);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group202.FdChildren.Add(Transform240);
@@ -1286,7 +1286,7 @@ TouchSensor258.Description := 'select to rotate body and Face Left, leave other 
 Transform250.FdChildren.Add(TouchSensor258);
 { Original "FaceLeftTouchSensor.EventIsActive TO FaceLeft_Pose.commencePose }
 { Sample FaceLeftTouchSensor.EventIsActive TO FaceLeft_Pose.commencePose}
-Transform250.AddRoute(TouchSensor258.EventIsActive, X3DPrototype180.set_commencePose);
+Transform250.AddRoute(TouchSensor258.EventIsActive, X3DPrototype180.commencePose);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group202.FdChildren.Add(Transform250);
@@ -1319,7 +1319,7 @@ TouchSensor268.Description := 'select to rotate body and Face Right, leave other
 Transform260.FdChildren.Add(TouchSensor268);
 { Original "FaceRightTouchSensor.EventIsActive TO FaceRight_Pose.commencePose }
 { Sample FaceRightTouchSensor.EventIsActive TO FaceRight_Pose.commencePose}
-Transform260.AddRoute(TouchSensor268.EventIsActive, X3DPrototype191.set_commencePose);
+Transform260.AddRoute(TouchSensor268.EventIsActive, X3DPrototype191.commencePose);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group202.FdChildren.Add(Transform260);
@@ -1373,15 +1373,15 @@ ScalarInterpolator281.SetKeyValue([0,0,1,1,0,0]);
 Transform270.FdChildren.Add(ScalarInterpolator281);
 { Original "AnimatePosesTouchSensor.EventTouchTime TO AnimatePosesClock.startTime }
 { Sample AnimatePosesTouchSensor.EventTouchTime TO AnimatePosesClock.startTime}
-Transform270.AddRoute(TouchSensor279.EventTouchTime, TimeSensor280.set_startTime);
+Transform270.AddRoute(TouchSensor279.EventTouchTime, TimeSensor280.startTime);
 { METHOD .AddX3DROUTE }
 { Original "AnimatePosesClock.EventFraction_changed TO AnimatePosesLoopInterpolator.EventSet_fraction }
 { Sample AnimatePosesClock.EventFraction_changed TO AnimatePosesLoopInterpolator.EventSet_fraction}
-Transform270.AddRoute(TimeSensor280.EventFraction_changed, ScalarInterpolator281.set_EventSet_fraction);
+Transform270.AddRoute(TimeSensor280.EventFraction_changed, ScalarInterpolator281.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "AnimatePosesLoopInterpolator.EventValue_changed TO I_Pose.EventSet_fraction }
 { Sample AnimatePosesLoopInterpolator.EventValue_changed TO I_Pose.EventSet_fraction}
-Transform270.AddRoute(ScalarInterpolator281.EventValue_changed, X3DPrototype164.set_EventSet_fraction);
+Transform270.AddRoute(ScalarInterpolator281.EventValue_changed, X3DPrototype164.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group202.FdChildren.Add(Transform270);
@@ -1419,7 +1419,7 @@ TouchSensor293.Description := 'select to immediately Rezero All Joints (to defau
 Transform285.FdChildren.Add(TouchSensor293);
 { Original "ResetPoseTouchSensor.EventIsActive TO FaceLeft_Pose.resetAllJoints }
 { Sample ResetPoseTouchSensor.EventIsActive TO FaceLeft_Pose.resetAllJoints}
-Transform285.AddRoute(TouchSensor293.EventIsActive, X3DPrototype180.set_resetAllJoints);
+Transform285.AddRoute(TouchSensor293.EventIsActive, X3DPrototype180.resetAllJoints);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group202.FdChildren.Add(Transform285);
@@ -1428,31 +1428,31 @@ Group42.FdChildren.Add(Group202);
 Group295 := TGroupNode.Create;
 { Original "HumanoidInlineLoadSensor.EventIsLoaded TO A_Pose.isLoaded }
 { Sample HumanoidInlineLoadSensor.EventIsLoaded TO A_Pose.isLoaded}
-Group295.AddRoute(LoadSensor49.EventIsLoaded, X3DPrototype126.set_isLoaded);
+Group295.AddRoute(LoadSensor49.EventIsLoaded, X3DPrototype126.isLoaded);
 { METHOD .AddX3DROUTE }
 { Original "HumanoidInlineLoadSensor.EventIsLoaded TO H_Pose.isLoaded }
 { Sample HumanoidInlineLoadSensor.EventIsLoaded TO H_Pose.isLoaded}
-Group295.AddRoute(LoadSensor49.EventIsLoaded, X3DPrototype174.set_isLoaded);
+Group295.AddRoute(LoadSensor49.EventIsLoaded, X3DPrototype174.isLoaded);
 { METHOD .AddX3DROUTE }
 { Original "HumanoidInlineLoadSensor.EventIsLoaded TO I_Pose.isLoaded }
 { Sample HumanoidInlineLoadSensor.EventIsLoaded TO I_Pose.isLoaded}
-Group295.AddRoute(LoadSensor49.EventIsLoaded, X3DPrototype164.set_isLoaded);
+Group295.AddRoute(LoadSensor49.EventIsLoaded, X3DPrototype164.isLoaded);
 { METHOD .AddX3DROUTE }
 { Original "HumanoidInlineLoadSensor.EventIsLoaded TO T_Pose.isLoaded }
 { Sample HumanoidInlineLoadSensor.EventIsLoaded TO T_Pose.isLoaded}
-Group295.AddRoute(LoadSensor49.EventIsLoaded, X3DPrototype115.set_isLoaded);
+Group295.AddRoute(LoadSensor49.EventIsLoaded, X3DPrototype115.isLoaded);
 { METHOD .AddX3DROUTE }
 { Original "HumanoidInlineLoadSensor.EventIsLoaded TO FaceLeft_Pose.isLoaded }
 { Sample HumanoidInlineLoadSensor.EventIsLoaded TO FaceLeft_Pose.isLoaded}
-Group295.AddRoute(LoadSensor49.EventIsLoaded, X3DPrototype180.set_isLoaded);
+Group295.AddRoute(LoadSensor49.EventIsLoaded, X3DPrototype180.isLoaded);
 { METHOD .AddX3DROUTE }
 { Original "HumanoidInlineLoadSensor.EventIsLoaded TO FaceRight_Pose.isLoaded }
 { Sample HumanoidInlineLoadSensor.EventIsLoaded TO FaceRight_Pose.isLoaded}
-Group295.AddRoute(LoadSensor49.EventIsLoaded, X3DPrototype191.set_isLoaded);
+Group295.AddRoute(LoadSensor49.EventIsLoaded, X3DPrototype191.isLoaded);
 { METHOD .AddX3DROUTE }
 { Original "HumanoidInlineLoadSensor.EventIsLoaded TO TouchDown_Pose.isLoaded }
 { Sample HumanoidInlineLoadSensor.EventIsLoaded TO TouchDown_Pose.isLoaded}
-Group295.AddRoute(LoadSensor49.EventIsLoaded, X3DPrototype138.set_isLoaded);
+Group295.AddRoute(LoadSensor49.EventIsLoaded, X3DPrototype138.isLoaded);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group42.FdChildren.Add(Group295);

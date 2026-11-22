@@ -134,19 +134,19 @@ OrientationInterpolator21.SetKeyValue([Vector4(1,0,0,-0.523599),Vector4(0.99999,
 Group14.FdChildren.Add(OrientationInterpolator21);
 { Original "TIMER.EventFraction_changed TO Camera001-POS-INTERP.EventSet_fraction }
 { Sample TIMER.EventFraction_changed TO Camera001-POS-INTERP.EventSet_fraction}
-Group14.AddRoute(TimeSensor19.EventFraction_changed, PositionInterpolator20.set_EventSet_fraction);
+Group14.AddRoute(TimeSensor19.EventFraction_changed, PositionInterpolator20.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Camera001-POS-INTERP.EventValue_changed TO Camera001.EventSet_position }
 { Sample Camera001-POS-INTERP.EventValue_changed TO Camera001.EventSet_position}
-Group14.AddRoute(PositionInterpolator20.EventValue_changed, Viewpoint18.set_EventSet_position);
+Group14.AddRoute(PositionInterpolator20.EventValue_changed, Viewpoint18.EventSet_position);
 { METHOD .AddX3DROUTE }
 { Original "TIMER.EventFraction_changed TO Camera001-ROT-INTERP.EventSet_fraction }
 { Sample TIMER.EventFraction_changed TO Camera001-ROT-INTERP.EventSet_fraction}
-Group14.AddRoute(TimeSensor19.EventFraction_changed, OrientationInterpolator21.set_EventSet_fraction);
+Group14.AddRoute(TimeSensor19.EventFraction_changed, OrientationInterpolator21.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Camera001-ROT-INTERP.EventValue_changed TO Camera001.EventSet_orientation }
 { Sample Camera001-ROT-INTERP.EventValue_changed TO Camera001.EventSet_orientation}
-Group14.AddRoute(OrientationInterpolator21.EventValue_changed, Viewpoint18.set_EventSet_orientation);
+Group14.AddRoute(OrientationInterpolator21.EventValue_changed, Viewpoint18.EventSet_orientation);
 { METHOD .AddX3DROUTE }
 Transform26 := TTransformNode.Create;
 Transform26.Translation := Vector3(1.241,0,0.358);

@@ -190,17 +190,17 @@ TimeSensor22.CycleInterval := 10;
 TimeSensor22.Loop := True;
 { METHOD .FdChildren.Add }
 Transform11.FdChildren.Add(TimeSensor22);
-{ Original "DECLBubble_bubbleA_bounce.EventTranslation_changed TO DECLBubble_transformA.EventSet_translation }
-{ Sample DECLBubble_bubbleA_bounce.EventTranslation_changed TO DECLBubble_transformA.EventSet_translation}
-Transform11.AddRoute(Script16.EventTranslation_changed, Transform11.set_EventSet_translation);
+{ Original "DECLBubble_bubbleA_bounce.EventTranslation_changed TO DECLBubble_transformA.FdTranslation.EventIn }
+{ Sample DECLBubble_bubbleA_bounce.EventTranslation_changed TO DECLBubble_transformA.FdTranslation.EventIn}
+Transform11.AddRoute(Script16.EventTranslation_changed, Transform11.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
 { Original "DECLBubble_bubbleA_bounce.EventScale_changed TO DECLBubble_transformA.scale }
 { Sample DECLBubble_bubbleA_bounce.EventScale_changed TO DECLBubble_transformA.scale}
-Transform11.AddRoute(Script16.EventScale_changed, Transform11.set_scale);
+Transform11.AddRoute(Script16.EventScale_changed, Transform11.scale);
 { METHOD .AddX3DROUTE }
 { Original "DECLBubble_bubbleA_bubbleClock.EventFraction_changed TO DECLBubble_bubbleA_bounce.EventSet_fraction }
 { Sample DECLBubble_bubbleA_bubbleClock.EventFraction_changed TO DECLBubble_bubbleA_bounce.EventSet_fraction}
-Transform11.AddRoute(TimeSensor22.EventFraction_changed, Script16.set_EventSet_fraction);
+Transform11.AddRoute(TimeSensor22.EventFraction_changed, Script16.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group7.FdChildren.Add(Transform11);
@@ -287,17 +287,17 @@ TimeSensor37.CycleInterval := 10;
 TimeSensor37.Loop := True;
 { METHOD .FdChildren.Add }
 Transform26.FdChildren.Add(TimeSensor37);
-{ Original "DECLBubble_bubbleB_bounce.EventTranslation_changed TO DECLBubble_transformB.EventSet_translation }
-{ Sample DECLBubble_bubbleB_bounce.EventTranslation_changed TO DECLBubble_transformB.EventSet_translation}
-Transform26.AddRoute(Script31.EventTranslation_changed, Transform26.set_EventSet_translation);
+{ Original "DECLBubble_bubbleB_bounce.EventTranslation_changed TO DECLBubble_transformB.FdTranslation.EventIn }
+{ Sample DECLBubble_bubbleB_bounce.EventTranslation_changed TO DECLBubble_transformB.FdTranslation.EventIn}
+Transform26.AddRoute(Script31.EventTranslation_changed, Transform26.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
 { Original "DECLBubble_bubbleB_bounce.EventScale_changed TO DECLBubble_transformB.scale }
 { Sample DECLBubble_bubbleB_bounce.EventScale_changed TO DECLBubble_transformB.scale}
-Transform26.AddRoute(Script31.EventScale_changed, Transform26.set_scale);
+Transform26.AddRoute(Script31.EventScale_changed, Transform26.scale);
 { METHOD .AddX3DROUTE }
 { Original "DECLBubble_bubbleB_bubbleClock.EventFraction_changed TO DECLBubble_bubbleB_bounce.EventSet_fraction }
 { Sample DECLBubble_bubbleB_bubbleClock.EventFraction_changed TO DECLBubble_bubbleB_bounce.EventSet_fraction}
-Transform26.AddRoute(TimeSensor37.EventFraction_changed, Script31.set_EventSet_fraction);
+Transform26.AddRoute(TimeSensor37.EventFraction_changed, Script31.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group7.FdChildren.Add(Transform26);
@@ -384,17 +384,17 @@ TimeSensor52.CycleInterval := 10;
 TimeSensor52.Loop := True;
 { METHOD .FdChildren.Add }
 Transform41.FdChildren.Add(TimeSensor52);
-{ Original "DECLBubble_bubbleC_bounce.EventTranslation_changed TO DECLBubble_transformC.EventSet_translation }
-{ Sample DECLBubble_bubbleC_bounce.EventTranslation_changed TO DECLBubble_transformC.EventSet_translation}
-Transform41.AddRoute(Script46.EventTranslation_changed, Transform41.set_EventSet_translation);
+{ Original "DECLBubble_bubbleC_bounce.EventTranslation_changed TO DECLBubble_transformC.FdTranslation.EventIn }
+{ Sample DECLBubble_bubbleC_bounce.EventTranslation_changed TO DECLBubble_transformC.FdTranslation.EventIn}
+Transform41.AddRoute(Script46.EventTranslation_changed, Transform41.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
 { Original "DECLBubble_bubbleC_bounce.EventScale_changed TO DECLBubble_transformC.scale }
 { Sample DECLBubble_bubbleC_bounce.EventScale_changed TO DECLBubble_transformC.scale}
-Transform41.AddRoute(Script46.EventScale_changed, Transform41.set_scale);
+Transform41.AddRoute(Script46.EventScale_changed, Transform41.scale);
 { METHOD .AddX3DROUTE }
 { Original "DECLBubble_bubbleC_bubbleClock.EventFraction_changed TO DECLBubble_bubbleC_bounce.EventSet_fraction }
 { Sample DECLBubble_bubbleC_bubbleClock.EventFraction_changed TO DECLBubble_bubbleC_bounce.EventSet_fraction}
-Transform41.AddRoute(TimeSensor52.EventFraction_changed, Script46.set_EventSet_fraction);
+Transform41.AddRoute(TimeSensor52.EventFraction_changed, Script46.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group7.FdChildren.Add(Transform41);
@@ -481,17 +481,17 @@ TimeSensor67.CycleInterval := 10;
 TimeSensor67.Loop := True;
 { METHOD .FdChildren.Add }
 Transform56.FdChildren.Add(TimeSensor67);
-{ Original "DECLBubble_bubbleD_bounce.EventTranslation_changed TO DECLBubble_transformD.EventSet_translation }
-{ Sample DECLBubble_bubbleD_bounce.EventTranslation_changed TO DECLBubble_transformD.EventSet_translation}
-Transform56.AddRoute(Script61.EventTranslation_changed, Transform56.set_EventSet_translation);
+{ Original "DECLBubble_bubbleD_bounce.EventTranslation_changed TO DECLBubble_transformD.FdTranslation.EventIn }
+{ Sample DECLBubble_bubbleD_bounce.EventTranslation_changed TO DECLBubble_transformD.FdTranslation.EventIn}
+Transform56.AddRoute(Script61.EventTranslation_changed, Transform56.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
 { Original "DECLBubble_bubbleD_bounce.EventScale_changed TO DECLBubble_transformD.scale }
 { Sample DECLBubble_bubbleD_bounce.EventScale_changed TO DECLBubble_transformD.scale}
-Transform56.AddRoute(Script61.EventScale_changed, Transform56.set_scale);
+Transform56.AddRoute(Script61.EventScale_changed, Transform56.scale);
 { METHOD .AddX3DROUTE }
 { Original "DECLBubble_bubbleD_bubbleClock.EventFraction_changed TO DECLBubble_bubbleD_bounce.EventSet_fraction }
 { Sample DECLBubble_bubbleD_bubbleClock.EventFraction_changed TO DECLBubble_bubbleD_bounce.EventSet_fraction}
-Transform56.AddRoute(TimeSensor67.EventFraction_changed, Script61.set_EventSet_fraction);
+Transform56.AddRoute(TimeSensor67.EventFraction_changed, Script61.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group7.FdChildren.Add(Transform56);

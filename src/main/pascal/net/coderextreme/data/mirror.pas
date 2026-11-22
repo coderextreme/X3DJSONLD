@@ -343,55 +343,55 @@ TimeSensor67.Loop := True;
 Transform24.FdChildren.Add(TimeSensor67);
 { Original "Clock.EventFraction_changed TO UrlSelector.EventSet_fraction }
 { Sample Clock.EventFraction_changed TO UrlSelector.EventSet_fraction}
-Transform24.AddRoute(TimeSensor67.EventFraction_changed, Script52.set_EventSet_fraction);
+Transform24.AddRoute(TimeSensor67.EventFraction_changed, Script52.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "UrlSelector.EventFront_changed TO frontBackgroundTexture.url }
 { Sample UrlSelector.EventFront_changed TO frontBackgroundTexture.url}
-Transform24.AddRoute(Script52.EventFront_changed, ImageTexture20.set_url);
+Transform24.AddRoute(Script52.EventFront_changed, ImageTexture20.url);
 { METHOD .AddX3DROUTE }
 { Original "UrlSelector.EventBack_changed TO backBackgroundTexture.url }
 { Sample UrlSelector.EventBack_changed TO backBackgroundTexture.url}
-Transform24.AddRoute(Script52.EventBack_changed, ImageTexture21.set_url);
+Transform24.AddRoute(Script52.EventBack_changed, ImageTexture21.url);
 { METHOD .AddX3DROUTE }
 { Original "UrlSelector.EventLeft_changed TO leftBackgroundTexture.url }
 { Sample UrlSelector.EventLeft_changed TO leftBackgroundTexture.url}
-Transform24.AddRoute(Script52.EventLeft_changed, ImageTexture18.set_url);
+Transform24.AddRoute(Script52.EventLeft_changed, ImageTexture18.url);
 { METHOD .AddX3DROUTE }
 { Original "UrlSelector.EventRight_changed TO rightBackgroundTexture.url }
 { Sample UrlSelector.EventRight_changed TO rightBackgroundTexture.url}
-Transform24.AddRoute(Script52.EventRight_changed, ImageTexture19.set_url);
+Transform24.AddRoute(Script52.EventRight_changed, ImageTexture19.url);
 { METHOD .AddX3DROUTE }
 { Original "UrlSelector.EventTop_changed TO topBackgroundTexture.url }
 { Sample UrlSelector.EventTop_changed TO topBackgroundTexture.url}
-Transform24.AddRoute(Script52.EventTop_changed, ImageTexture22.set_url);
+Transform24.AddRoute(Script52.EventTop_changed, ImageTexture22.url);
 { METHOD .AddX3DROUTE }
 { Original "UrlSelector.EventBottom_changed TO bottomBackgroundTexture.url }
 { Sample UrlSelector.EventBottom_changed TO bottomBackgroundTexture.url}
-Transform24.AddRoute(Script52.EventBottom_changed, ImageTexture23.set_url);
+Transform24.AddRoute(Script52.EventBottom_changed, ImageTexture23.url);
 { METHOD .AddX3DROUTE }
 { Original "UrlSelector.EventFront_changed TO frontShader.url }
 { Sample UrlSelector.EventFront_changed TO frontShader.url}
-Transform24.AddRoute(Script52.EventFront_changed, ImageTexture31.set_url);
+Transform24.AddRoute(Script52.EventFront_changed, ImageTexture31.url);
 { METHOD .AddX3DROUTE }
 { Original "UrlSelector.EventBack_changed TO backShader.url }
 { Sample UrlSelector.EventBack_changed TO backShader.url}
-Transform24.AddRoute(Script52.EventBack_changed, ImageTexture29.set_url);
+Transform24.AddRoute(Script52.EventBack_changed, ImageTexture29.url);
 { METHOD .AddX3DROUTE }
 { Original "UrlSelector.EventLeft_changed TO leftShader.url }
 { Sample UrlSelector.EventLeft_changed TO leftShader.url}
-Transform24.AddRoute(Script52.EventLeft_changed, ImageTexture32.set_url);
+Transform24.AddRoute(Script52.EventLeft_changed, ImageTexture32.url);
 { METHOD .AddX3DROUTE }
 { Original "UrlSelector.EventRight_changed TO rightShader.url }
 { Sample UrlSelector.EventRight_changed TO rightShader.url}
-Transform24.AddRoute(Script52.EventRight_changed, ImageTexture33.set_url);
+Transform24.AddRoute(Script52.EventRight_changed, ImageTexture33.url);
 { METHOD .AddX3DROUTE }
 { Original "UrlSelector.EventTop_changed TO topShader.url }
 { Sample UrlSelector.EventTop_changed TO topShader.url}
-Transform24.AddRoute(Script52.EventTop_changed, ImageTexture34.set_url);
+Transform24.AddRoute(Script52.EventTop_changed, ImageTexture34.url);
 { METHOD .AddX3DROUTE }
 { Original "UrlSelector.EventBottom_changed TO bottomShader.url }
 { Sample UrlSelector.EventBottom_changed TO bottomShader.url}
-Transform24.AddRoute(Script52.EventBottom_changed, ImageTexture30.set_url);
+Transform24.AddRoute(Script52.EventBottom_changed, ImageTexture30.url);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group15.FdChildren.Add(Transform24);

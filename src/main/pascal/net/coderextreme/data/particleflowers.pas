@@ -358,31 +358,31 @@ TimeSensor60.Loop := True;
 Group20.FdChildren.Add(TimeSensor60);
 { Original "TourTime.EventFraction_changed TO Animate.EventSet_fraction }
 { Sample TourTime.EventFraction_changed TO Animate.EventSet_fraction}
-Group20.AddRoute(TimeSensor60.EventFraction_changed, Script50.set_EventSet_fraction);
+Group20.AddRoute(TimeSensor60.EventFraction_changed, Script50.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Animate.a TO x_ite.a }
 { Sample Animate.a TO x_ite.a}
-Group20.AddRoute(Animate.[object Object], ComposedShader34.set_a);
+Group20.AddRoute(Animate.[object Object], ComposedShader34.a);
 { METHOD .AddX3DROUTE }
 { Original "Animate.b TO x_ite.b }
 { Sample Animate.b TO x_ite.b}
-Group20.AddRoute(Animate.[object Object], ComposedShader34.set_b);
+Group20.AddRoute(Animate.[object Object], ComposedShader34.b);
 { METHOD .AddX3DROUTE }
 { Original "Animate.c TO x_ite.c }
 { Sample Animate.c TO x_ite.c}
-Group20.AddRoute(Animate.[object Object], ComposedShader34.set_c);
+Group20.AddRoute(Animate.[object Object], ComposedShader34.c);
 { METHOD .AddX3DROUTE }
 { Original "Animate.d TO x_ite.d }
 { Sample Animate.d TO x_ite.d}
-Group20.AddRoute(Animate.[object Object], ComposedShader34.set_d);
+Group20.AddRoute(Animate.[object Object], ComposedShader34.d);
 { METHOD .AddX3DROUTE }
 { Original "Animate.pdelta TO x_ite.pdelta }
 { Sample Animate.pdelta TO x_ite.pdelta}
-Group20.AddRoute(Animate.[object Object], ComposedShader34.set_pdelta);
+Group20.AddRoute(Animate.[object Object], ComposedShader34.pdelta);
 { METHOD .AddX3DROUTE }
 { Original "Animate.tdelta TO x_ite.tdelta }
 { Sample Animate.tdelta TO x_ite.tdelta}
-Group20.AddRoute(Animate.[object Object], ComposedShader34.set_tdelta);
+Group20.AddRoute(Animate.[object Object], ComposedShader34.tdelta);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group15.FdChildren.Add(Group20);

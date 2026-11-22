@@ -364,39 +364,39 @@ Script66.SetSourceCode('''ecmascript:\n"+
 X3DPrototype12.AddScript([Script66]);
 { Original "CenterSensor.EventEnteredText TO CenterSingleToMultiString.EventSet_centerstring }
 { Sample CenterSensor.EventEnteredText TO CenterSingleToMultiString.EventSet_centerstring}
-X3DPrototype12.AddRoute(StringSensor58.EventEnteredText, Script66.set_EventSet_centerstring);
+X3DPrototype12.AddRoute(StringSensor58.EventEnteredText, Script66.EventSet_centerstring);
 { METHOD .AddX3DROUTE }
 { Original "CenterSingleToMultiString.centerlines TO CenterString.EventSet_string }
 { Sample CenterSingleToMultiString.centerlines TO CenterString.EventSet_string}
-X3DPrototype12.AddRoute(CenterSingleToMultiString.[object Object], Text57.set_EventSet_string);
+X3DPrototype12.AddRoute(CenterSingleToMultiString.[object Object], Text57.EventSet_string);
 { METHOD .AddX3DROUTE }
 { Original "CenterTouch.EventIsOver TO CenterSensor.EventSet_enabled }
 { Sample CenterTouch.EventIsOver TO CenterSensor.EventSet_enabled}
-X3DPrototype12.AddRoute(TouchSensor59.EventIsOver, StringSensor58.set_EventSet_enabled);
+X3DPrototype12.AddRoute(TouchSensor59.EventIsOver, StringSensor58.EventSet_enabled);
 { METHOD .AddX3DROUTE }
 { Original "RightSensor.EventEnteredText TO RightSingleToMultiString.EventSet_rightstring }
 { Sample RightSensor.EventEnteredText TO RightSingleToMultiString.EventSet_rightstring}
-X3DPrototype12.AddRoute(StringSensor29.EventEnteredText, Script60.set_EventSet_rightstring);
+X3DPrototype12.AddRoute(StringSensor29.EventEnteredText, Script60.EventSet_rightstring);
 { METHOD .AddX3DROUTE }
 { Original "RightSingleToMultiString.rightlines TO RightString.EventSet_string }
 { Sample RightSingleToMultiString.rightlines TO RightString.EventSet_string}
-X3DPrototype12.AddRoute(RightSingleToMultiString.[object Object], Text28.set_EventSet_string);
+X3DPrototype12.AddRoute(RightSingleToMultiString.[object Object], Text28.EventSet_string);
 { METHOD .AddX3DROUTE }
 { Original "RightTouch.EventIsOver TO RightSensor.EventSet_enabled }
 { Sample RightTouch.EventIsOver TO RightSensor.EventSet_enabled}
-X3DPrototype12.AddRoute(TouchSensor30.EventIsOver, StringSensor29.set_EventSet_enabled);
+X3DPrototype12.AddRoute(TouchSensor30.EventIsOver, StringSensor29.EventSet_enabled);
 { METHOD .AddX3DROUTE }
 { Original "UpSensor.EventEnteredText TO UpSingleToMultiString.EventSet_upstring }
 { Sample UpSensor.EventEnteredText TO UpSingleToMultiString.EventSet_upstring}
-X3DPrototype12.AddRoute(StringSensor41.EventEnteredText, Script63.set_EventSet_upstring);
+X3DPrototype12.AddRoute(StringSensor41.EventEnteredText, Script63.EventSet_upstring);
 { METHOD .AddX3DROUTE }
 { Original "UpSingleToMultiString.uplines TO UpString.EventSet_string }
 { Sample UpSingleToMultiString.uplines TO UpString.EventSet_string}
-X3DPrototype12.AddRoute(UpSingleToMultiString.[object Object], Text40.set_EventSet_string);
+X3DPrototype12.AddRoute(UpSingleToMultiString.[object Object], Text40.EventSet_string);
 { METHOD .AddX3DROUTE }
 { Original "UpTouch.EventIsOver TO UpSensor.EventSet_enabled }
 { Sample UpTouch.EventIsOver TO UpSensor.EventSet_enabled}
-X3DPrototype12.AddRoute(TouchSensor42.EventIsOver, StringSensor41.set_EventSet_enabled);
+X3DPrototype12.AddRoute(TouchSensor42.EventIsOver, StringSensor41.EventSet_enabled);
 { METHOD .AddX3DROUTE }
 { METHOD .AddX3DPrototype }
 X3DPrototype11.AddX3DPrototype([X3DPrototype12]);

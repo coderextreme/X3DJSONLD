@@ -291,27 +291,27 @@ Script41.SetSourceCode('''ecmascript:\n"+
 Group6.FdChildren.Add(Script41);
 { Original "C_0.EventFraction_changed TO PI_0.EventSet_fraction }
 { Sample C_0.EventFraction_changed TO PI_0.EventSet_fraction}
-Group6.AddRoute(TimeSensor37.EventFraction_changed, PositionInterpolator38.set_EventSet_fraction);
+Group6.AddRoute(TimeSensor37.EventFraction_changed, PositionInterpolator38.EventSet_fraction);
 { METHOD .AddX3DROUTE }
-{ Original "PI_0.EventValue_changed TO T_0.EventSet_translation }
-{ Sample PI_0.EventValue_changed TO T_0.EventSet_translation}
-Group6.AddRoute(PositionInterpolator38.EventValue_changed, Transform32.set_EventSet_translation);
+{ Original "PI_0.EventValue_changed TO T_0.FdTranslation.EventIn }
+{ Sample PI_0.EventValue_changed TO T_0.FdTranslation.EventIn}
+Group6.AddRoute(PositionInterpolator38.EventValue_changed, Transform32.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
 { Original "C_0.EventFraction_changed TO CI_0.EventSet_fraction }
 { Sample C_0.EventFraction_changed TO CI_0.EventSet_fraction}
-Group6.AddRoute(TimeSensor37.EventFraction_changed, ColorInterpolator39.set_EventSet_fraction);
+Group6.AddRoute(TimeSensor37.EventFraction_changed, ColorInterpolator39.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "CI_0.EventValue_changed TO Animator_0.EventSet_color }
 { Sample CI_0.EventValue_changed TO Animator_0.EventSet_color}
-Group6.AddRoute(ColorInterpolator39.EventValue_changed, Script41.set_EventSet_color);
+Group6.AddRoute(ColorInterpolator39.EventValue_changed, Script41.EventSet_color);
 { METHOD .AddX3DROUTE }
 { Original "C_0.EventFraction_changed TO SI_0.EventSet_fraction }
 { Sample C_0.EventFraction_changed TO SI_0.EventSet_fraction}
-Group6.AddRoute(TimeSensor37.EventFraction_changed, ScalarInterpolator40.set_EventSet_fraction);
+Group6.AddRoute(TimeSensor37.EventFraction_changed, ScalarInterpolator40.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "SI_0.EventValue_changed TO Animator_0.EventSet_roughness }
 { Sample SI_0.EventValue_changed TO Animator_0.EventSet_roughness}
-Group6.AddRoute(ScalarInterpolator40.EventValue_changed, Script41.set_EventSet_roughness);
+Group6.AddRoute(ScalarInterpolator40.EventValue_changed, Script41.EventSet_roughness);
 { METHOD .AddX3DROUTE }
 { Example: Metal Sphere with animated roughness (Using initialize()) }
 Transform52 := TTransformNode.Create;
@@ -374,19 +374,19 @@ Script60.SetSourceCode('''ecmascript:\n"+
 Group6.FdChildren.Add(Script60);
 { Original "C_1.EventFraction_changed TO PI_1.EventSet_fraction }
 { Sample C_1.EventFraction_changed TO PI_1.EventSet_fraction}
-Group6.AddRoute(TimeSensor57.EventFraction_changed, PositionInterpolator58.set_EventSet_fraction);
+Group6.AddRoute(TimeSensor57.EventFraction_changed, PositionInterpolator58.EventSet_fraction);
 { METHOD .AddX3DROUTE }
-{ Original "PI_1.EventValue_changed TO T_1.EventSet_translation }
-{ Sample PI_1.EventValue_changed TO T_1.EventSet_translation}
-Group6.AddRoute(PositionInterpolator58.EventValue_changed, Transform52.set_EventSet_translation);
+{ Original "PI_1.EventValue_changed TO T_1.FdTranslation.EventIn }
+{ Sample PI_1.EventValue_changed TO T_1.FdTranslation.EventIn}
+Group6.AddRoute(PositionInterpolator58.EventValue_changed, Transform52.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
 { Original "C_1.EventFraction_changed TO SI_1.EventSet_fraction }
 { Sample C_1.EventFraction_changed TO SI_1.EventSet_fraction}
-Group6.AddRoute(TimeSensor57.EventFraction_changed, ScalarInterpolator59.set_EventSet_fraction);
+Group6.AddRoute(TimeSensor57.EventFraction_changed, ScalarInterpolator59.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "SI_1.EventValue_changed TO Animator_1.EventSet_roughness }
 { Sample SI_1.EventValue_changed TO Animator_1.EventSet_roughness}
-Group6.AddRoute(ScalarInterpolator59.EventValue_changed, Script60.set_EventSet_roughness);
+Group6.AddRoute(ScalarInterpolator59.EventValue_changed, Script60.EventSet_roughness);
 { METHOD .AddX3DROUTE }
 { The extension-based spheres were already correct and need no changes }
 Transform68 := TTransformNode.Create;
@@ -429,19 +429,19 @@ ScalarInterpolator76.SetKeyValue([1.4,1.7,1.4]);
 Group6.FdChildren.Add(ScalarInterpolator76);
 { Original "C_2.EventFraction_changed TO PI_2.EventSet_fraction }
 { Sample C_2.EventFraction_changed TO PI_2.EventSet_fraction}
-Group6.AddRoute(TimeSensor74.EventFraction_changed, PositionInterpolator75.set_EventSet_fraction);
+Group6.AddRoute(TimeSensor74.EventFraction_changed, PositionInterpolator75.EventSet_fraction);
 { METHOD .AddX3DROUTE }
-{ Original "PI_2.EventValue_changed TO T_2.EventSet_translation }
-{ Sample PI_2.EventValue_changed TO T_2.EventSet_translation}
-Group6.AddRoute(PositionInterpolator75.EventValue_changed, Transform68.set_EventSet_translation);
+{ Original "PI_2.EventValue_changed TO T_2.FdTranslation.EventIn }
+{ Sample PI_2.EventValue_changed TO T_2.FdTranslation.EventIn}
+Group6.AddRoute(PositionInterpolator75.EventValue_changed, Transform68.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
 { Original "C_2.EventFraction_changed TO SI_2.EventSet_fraction }
 { Sample C_2.EventFraction_changed TO SI_2.EventSet_fraction}
-Group6.AddRoute(TimeSensor74.EventFraction_changed, ScalarInterpolator76.set_EventSet_fraction);
+Group6.AddRoute(TimeSensor74.EventFraction_changed, ScalarInterpolator76.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "SI_2.EventValue_changed TO IOR_2.EventSet_indexOfRefraction }
 { Sample SI_2.EventValue_changed TO IOR_2.EventSet_indexOfRefraction}
-Group6.AddRoute(ScalarInterpolator76.EventValue_changed, IORMaterialExtension72.set_EventSet_indexOfRefraction);
+Group6.AddRoute(ScalarInterpolator76.EventValue_changed, IORMaterialExtension72.EventSet_indexOfRefraction);
 { METHOD .AddX3DROUTE }
 Transform81 := TTransformNode.Create;
 Transform81.Translation := Vector3(-10.518,0.2,-7.283);
@@ -486,19 +486,19 @@ ScalarInterpolator89.SetKeyValue([100,700,100]);
 Group6.FdChildren.Add(ScalarInterpolator89);
 { Original "C_3.EventFraction_changed TO PI_3.EventSet_fraction }
 { Sample C_3.EventFraction_changed TO PI_3.EventSet_fraction}
-Group6.AddRoute(TimeSensor87.EventFraction_changed, PositionInterpolator88.set_EventSet_fraction);
+Group6.AddRoute(TimeSensor87.EventFraction_changed, PositionInterpolator88.EventSet_fraction);
 { METHOD .AddX3DROUTE }
-{ Original "PI_3.EventValue_changed TO T_3.EventSet_translation }
-{ Sample PI_3.EventValue_changed TO T_3.EventSet_translation}
-Group6.AddRoute(PositionInterpolator88.EventValue_changed, Transform81.set_EventSet_translation);
+{ Original "PI_3.EventValue_changed TO T_3.FdTranslation.EventIn }
+{ Sample PI_3.EventValue_changed TO T_3.FdTranslation.EventIn}
+Group6.AddRoute(PositionInterpolator88.EventValue_changed, Transform81.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
 { Original "C_3.EventFraction_changed TO SI_3.EventSet_fraction }
 { Sample C_3.EventFraction_changed TO SI_3.EventSet_fraction}
-Group6.AddRoute(TimeSensor87.EventFraction_changed, ScalarInterpolator89.set_EventSet_fraction);
+Group6.AddRoute(TimeSensor87.EventFraction_changed, ScalarInterpolator89.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "SI_3.EventValue_changed TO IRI_3.EventSet_iridescenceThicknessMaximum }
 { Sample SI_3.EventValue_changed TO IRI_3.EventSet_iridescenceThicknessMaximum}
-Group6.AddRoute(ScalarInterpolator89.EventValue_changed, IridescenceMaterialExtension85.set_EventSet_iridescenceThicknessMaximum);
+Group6.AddRoute(ScalarInterpolator89.EventValue_changed, IridescenceMaterialExtension85.EventSet_iridescenceThicknessMaximum);
 { METHOD .AddX3DROUTE }
 { METHOD .AddGroup }
 X3D0.AddChildren([Group6]);

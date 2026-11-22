@@ -2781,11 +2781,11 @@ Group50.FdChildren.Add(Transform542);
 Group13.FdChildren.Add(Group50);
 { Original "Close_Time.EventFraction_changed TO Close_Mover.EventSet_fraction }
 { Sample Close_Time.EventFraction_changed TO Close_Mover.EventSet_fraction}
-Group13.AddRoute(TimeSensor58.EventFraction_changed, PositionInterpolator57.set_EventSet_fraction);
+Group13.AddRoute(TimeSensor58.EventFraction_changed, PositionInterpolator57.EventSet_fraction);
 { METHOD .AddX3DROUTE }
-{ Original "Close_Mover.EventValue_changed TO Close_travel.EventSet_translation }
-{ Sample Close_Mover.EventValue_changed TO Close_travel.EventSet_translation}
-Group13.AddRoute(PositionInterpolator57.EventValue_changed, Transform56.set_EventSet_translation);
+{ Original "Close_Mover.EventValue_changed TO Close_travel.FdTranslation.EventIn }
+{ Sample Close_Mover.EventValue_changed TO Close_travel.FdTranslation.EventIn}
+Group13.AddRoute(PositionInterpolator57.EventValue_changed, Transform56.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
 { METHOD .AddGroup }
 X3D0.AddChildren([Group13]);

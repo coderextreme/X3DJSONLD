@@ -1029,9 +1029,9 @@ OrientationInterpolator145.SetKey([0,0.100000001490116,0.200000002980232,0.30000
 OrientationInterpolator145.SetKeyValue([Vector4(0,0,1,0),Vector4(1,0,0,0.800000011920929),Vector4(0,0,1,0),Vector4(1,0,0,2),Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(1,0,0,-0.800000011920929),Vector4(0,0,1,0),Vector4(1,0,0,-2),Vector4(0,0,1,0)]);
 { METHOD .FdChildren.Add }
 Group17.FdChildren.Add(OrientationInterpolator145);
-{ Original "Toddler_Pitch012Interpolator.EventValue_changed TO Toddler_r_carpal_distal_interphalangeal_5.EventSet_rotation }
-{ Sample Toddler_Pitch012Interpolator.EventValue_changed TO Toddler_r_carpal_distal_interphalangeal_5.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator145.EventValue_changed, HAnimJoint82.set_EventSet_rotation);
+{ Original "Toddler_Pitch012Interpolator.EventValue_changed TO Toddler_r_carpal_distal_interphalangeal_5.FdRotation.EventIn }
+{ Sample Toddler_Pitch012Interpolator.EventValue_changed TO Toddler_r_carpal_distal_interphalangeal_5.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator145.EventValue_changed, HAnimJoint82.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
 { METHOD .AddGroup }
 X3D0.AddChildren([Group17]);

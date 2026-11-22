@@ -335,27 +335,27 @@ Script48.AddCustomField(IS65);
 X3DPrototype27.AddScript([Script48]);
 { Original "GeometryComputationScript.EventVisibilitySwitchSelection TO VisibilitySwitch.whichChoice }
 { Sample GeometryComputationScript.EventVisibilitySwitchSelection TO VisibilitySwitch.whichChoice}
-X3DPrototype27.AddRoute(Script48.EventVisibilitySwitchSelection, Switch28.set_whichChoice);
+X3DPrototype27.AddRoute(Script48.EventVisibilitySwitchSelection, Switch28.whichChoice);
 { METHOD .AddX3DROUTE }
 { Original "GeometryComputationScript.EventPosition_changed TO PositionTransform.translation }
 { Sample GeometryComputationScript.EventPosition_changed TO PositionTransform.translation}
-X3DPrototype27.AddRoute(Script48.EventPosition_changed, Transform29.set_translation);
+X3DPrototype27.AddRoute(Script48.EventPosition_changed, Transform29.translation);
 { METHOD .AddX3DROUTE }
 { Original "GeometryComputationScript.EventOrientation_changed TO OrientationTransform.rotation }
 { Sample GeometryComputationScript.EventOrientation_changed TO OrientationTransform.rotation}
-X3DPrototype27.AddRoute(Script48.EventOrientation_changed, Transform30.set_rotation);
+X3DPrototype27.AddRoute(Script48.EventOrientation_changed, Transform30.rotation);
 { METHOD .AddX3DROUTE }
 { Original "GeometryComputationScript.EventSpine_changed TO FrustumExtrusion.EventSet_spine }
 { Sample GeometryComputationScript.EventSpine_changed TO FrustumExtrusion.EventSet_spine}
-X3DPrototype27.AddRoute(Script48.EventSpine_changed, Extrusion39.set_EventSet_spine);
+X3DPrototype27.AddRoute(Script48.EventSpine_changed, Extrusion39.EventSet_spine);
 { METHOD .AddX3DROUTE }
 { Original "GeometryComputationScript.EventScale_changed TO FrustumExtrusion.scale }
 { Sample GeometryComputationScript.EventScale_changed TO FrustumExtrusion.scale}
-X3DPrototype27.AddRoute(Script48.EventScale_changed, Extrusion39.set_scale);
+X3DPrototype27.AddRoute(Script48.EventScale_changed, Extrusion39.scale);
 { METHOD .AddX3DROUTE }
 { Original "GeometryComputationScript.EventPoint_changed TO FrustumCoordinate.point }
 { Sample GeometryComputationScript.EventPoint_changed TO FrustumCoordinate.point}
-X3DPrototype27.AddRoute(Script48.EventPoint_changed, Coordinate33.set_point);
+X3DPrototype27.AddRoute(Script48.EventPoint_changed, Coordinate33.point);
 { METHOD .AddX3DROUTE }
 { METHOD .AddX3DPrototype }
 X3DPrototype17.AddX3DPrototype([X3DPrototype27]);

@@ -135,19 +135,19 @@ Script18.SetSourceCode('''ecmascript:\n"+
 Group8.FdChildren.Add(Script18);
 { Original "TourTime.EventCycleTime TO RandomTourTime.EventSet_cycle }
 { Sample TourTime.EventCycleTime TO RandomTourTime.EventSet_cycle}
-Group8.AddRoute(TimeSensor16.EventCycleTime, Script18.set_EventSet_cycle);
+Group8.AddRoute(TimeSensor16.EventCycleTime, Script18.EventSet_cycle);
 { METHOD .AddX3DROUTE }
 { Original "RandomTourTime.position TO TourPosition.keyValue }
 { Sample RandomTourTime.position TO TourPosition.keyValue}
-Group8.AddRoute(RandomTourTime.[object Object], GeoPositionInterpolator17.set_keyValue);
+Group8.AddRoute(RandomTourTime.[object Object], GeoPositionInterpolator17.keyValue);
 { METHOD .AddX3DROUTE }
 { Original "TourTime.EventFraction_changed TO TourPosition.EventSet_fraction }
 { Sample TourTime.EventFraction_changed TO TourPosition.EventSet_fraction}
-Group8.AddRoute(TimeSensor16.EventFraction_changed, GeoPositionInterpolator17.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor16.EventFraction_changed, GeoPositionInterpolator17.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "TourPosition.EventGeovalue_changed TO Tour.EventSet_position }
 { Sample TourPosition.EventGeovalue_changed TO Tour.EventSet_position}
-Group8.AddRoute(GeoPositionInterpolator17.EventGeovalue_changed, GeoViewpoint9.set_EventSet_position);
+Group8.AddRoute(GeoPositionInterpolator17.EventGeovalue_changed, GeoViewpoint9.EventSet_position);
 { METHOD .AddX3DROUTE }
 { METHOD .AddGroup }
 X3D0.AddChildren([Group8]);

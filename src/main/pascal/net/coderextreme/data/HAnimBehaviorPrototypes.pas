@@ -4092,7 +4092,7 @@ PositionInterpolator622.IS := IS623;
 X3DPrototype603.AddPositionInterpolator([PositionInterpolator622]);
 { Original "BehaviorClock.EventFraction_changed TO HumanoidRootPI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO HumanoidRootPI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, PositionInterpolator622.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, PositionInterpolator622.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator628 := TOrientationInterpolatorNode.Create;
 IS629 := TIS.Create;
@@ -4117,7 +4117,7 @@ OrientationInterpolator628.IS := IS629;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator628]);
 { Original "BehaviorClock.EventFraction_changed TO HumanoidRootOI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO HumanoidRootOI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator628.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator628.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator634 := TOrientationInterpolatorNode.Create;
 IS635 := TIS.Create;
@@ -4147,7 +4147,7 @@ OrientationInterpolator634.IS := IS635;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator634]);
 { Original "BehaviorClock.EventFraction_changed TO c1_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO c1_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator634.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator634.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator640 := TOrientationInterpolatorNode.Create;
 IS641 := TIS.Create;
@@ -4172,7 +4172,7 @@ OrientationInterpolator640.IS := IS641;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator640]);
 { Original "BehaviorClock.EventFraction_changed TO c2_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO c2_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator640.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator640.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator646 := TOrientationInterpolatorNode.Create;
 IS647 := TIS.Create;
@@ -4202,7 +4202,7 @@ OrientationInterpolator646.IS := IS647;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator646]);
 { Original "BehaviorClock.EventFraction_changed TO c3_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO c3_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator646.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator646.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator652 := TOrientationInterpolatorNode.Create;
 IS653 := TIS.Create;
@@ -4227,7 +4227,7 @@ OrientationInterpolator652.IS := IS653;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator652]);
 { Original "BehaviorClock.EventFraction_changed TO c4_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO c4_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator652.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator652.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator658 := TOrientationInterpolatorNode.Create;
 IS659 := TIS.Create;
@@ -4252,7 +4252,7 @@ OrientationInterpolator658.IS := IS659;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator658]);
 { Original "BehaviorClock.EventFraction_changed TO c5_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO c5_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator658.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator658.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator664 := TOrientationInterpolatorNode.Create;
 IS665 := TIS.Create;
@@ -4282,7 +4282,7 @@ OrientationInterpolator664.IS := IS665;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator664]);
 { Original "BehaviorClock.EventFraction_changed TO c6_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO c6_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator664.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator664.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator670 := TOrientationInterpolatorNode.Create;
 IS671 := TIS.Create;
@@ -4307,7 +4307,7 @@ OrientationInterpolator670.IS := IS671;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator670]);
 { Original "BehaviorClock.EventFraction_changed TO c7_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO c7_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator670.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator670.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator676 := TOrientationInterpolatorNode.Create;
 IS677 := TIS.Create;
@@ -4337,7 +4337,7 @@ OrientationInterpolator676.IS := IS677;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator676]);
 { Original "BehaviorClock.EventFraction_changed TO jaw_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO jaw_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator676.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator676.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator682 := TOrientationInterpolatorNode.Create;
 IS683 := TIS.Create;
@@ -4362,7 +4362,7 @@ OrientationInterpolator682.IS := IS683;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator682]);
 { Original "BehaviorClock.EventFraction_changed TO l1_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l1_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator682.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator682.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator688 := TOrientationInterpolatorNode.Create;
 IS689 := TIS.Create;
@@ -4392,7 +4392,7 @@ OrientationInterpolator688.IS := IS689;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator688]);
 { Original "BehaviorClock.EventFraction_changed TO l2_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l2_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator688.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator688.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator694 := TOrientationInterpolatorNode.Create;
 IS695 := TIS.Create;
@@ -4417,7 +4417,7 @@ OrientationInterpolator694.IS := IS695;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator694]);
 { Original "BehaviorClock.EventFraction_changed TO l3_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l3_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator694.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator694.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator700 := TOrientationInterpolatorNode.Create;
 IS701 := TIS.Create;
@@ -4442,7 +4442,7 @@ OrientationInterpolator700.IS := IS701;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator700]);
 { Original "BehaviorClock.EventFraction_changed TO l4_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l4_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator700.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator700.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator706 := TOrientationInterpolatorNode.Create;
 IS707 := TIS.Create;
@@ -4472,7 +4472,7 @@ OrientationInterpolator706.IS := IS707;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator706]);
 { Original "BehaviorClock.EventFraction_changed TO l5_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l5_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator706.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator706.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator712 := TOrientationInterpolatorNode.Create;
 IS713 := TIS.Create;
@@ -4497,7 +4497,7 @@ OrientationInterpolator712.IS := IS713;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator712]);
 { Original "BehaviorClock.EventFraction_changed TO l_acromioclavicular_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_acromioclavicular_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator712.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator712.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator718 := TOrientationInterpolatorNode.Create;
 IS719 := TIS.Create;
@@ -4527,7 +4527,7 @@ OrientationInterpolator718.IS := IS719;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator718]);
 { Original "BehaviorClock.EventFraction_changed TO l_ankle_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_ankle_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator718.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator718.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator724 := TOrientationInterpolatorNode.Create;
 IS725 := TIS.Create;
@@ -4552,7 +4552,7 @@ OrientationInterpolator724.IS := IS725;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator724]);
 { Original "BehaviorClock.EventFraction_changed TO l_calf_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_calf_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator724.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator724.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator730 := TOrientationInterpolatorNode.Create;
 IS731 := TIS.Create;
@@ -4582,7 +4582,7 @@ begin
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator730]);
 { Original "BehaviorClock.EventFraction_changed TO l_clavicle_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_clavicle_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator730.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator730.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator736 := TOrientationInterpolatorNode.Create;
 IS737 := TIS.Create;
@@ -4607,7 +4607,7 @@ OrientationInterpolator736.IS := IS737;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator736]);
 { Original "BehaviorClock.EventFraction_changed TO l_elbow_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_elbow_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator736.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator736.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator742 := TOrientationInterpolatorNode.Create;
 IS743 := TIS.Create;
@@ -4632,7 +4632,7 @@ OrientationInterpolator742.IS := IS743;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator742]);
 { Original "BehaviorClock.EventFraction_changed TO l_eyeball_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_eyeball_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator742.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator742.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator748 := TOrientationInterpolatorNode.Create;
 IS749 := TIS.Create;
@@ -4662,7 +4662,7 @@ OrientationInterpolator748.IS := IS749;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator748]);
 { Original "BehaviorClock.EventFraction_changed TO l_eyeball_joint_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_eyeball_joint_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator748.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator748.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator754 := TOrientationInterpolatorNode.Create;
 IS755 := TIS.Create;
@@ -4687,7 +4687,7 @@ OrientationInterpolator754.IS := IS755;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator754]);
 { Original "BehaviorClock.EventFraction_changed TO l_eyebrow_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_eyebrow_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator754.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator754.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator760 := TOrientationInterpolatorNode.Create;
 IS761 := TIS.Create;
@@ -4717,7 +4717,7 @@ OrientationInterpolator760.IS := IS761;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator760]);
 { Original "BehaviorClock.EventFraction_changed TO l_eyebrow_joint_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_eyebrow_joint_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator760.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator760.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator766 := TOrientationInterpolatorNode.Create;
 IS767 := TIS.Create;
@@ -4742,7 +4742,7 @@ OrientationInterpolator766.IS := IS767;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator766]);
 { Original "BehaviorClock.EventFraction_changed TO l_eyelid_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_eyelid_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator766.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator766.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator772 := TOrientationInterpolatorNode.Create;
 IS773 := TIS.Create;
@@ -4772,7 +4772,7 @@ begin
 
 { Original "BehaviorClock.EventFraction_changed TO l_eyelid_joint_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_eyelid_joint_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator772.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator772.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator778 := TOrientationInterpolatorNode.Create;
 IS779 := TIS.Create;
@@ -4797,7 +4797,7 @@ OrientationInterpolator778.IS := IS779;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator778]);
 { Original "BehaviorClock.EventFraction_changed TO l_forearm_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_forearm_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator778.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator778.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator784 := TOrientationInterpolatorNode.Create;
 IS785 := TIS.Create;
@@ -4822,7 +4822,7 @@ OrientationInterpolator784.IS := IS785;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator784]);
 { Original "BehaviorClock.EventFraction_changed TO l_forefoot_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_forefoot_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator784.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator784.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator790 := TOrientationInterpolatorNode.Create;
 IS791 := TIS.Create;
@@ -4852,7 +4852,7 @@ OrientationInterpolator790.IS := IS791;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator790]);
 { Original "BehaviorClock.EventFraction_changed TO l_hand_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_hand_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator790.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator790.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator796 := TOrientationInterpolatorNode.Create;
 IS797 := TIS.Create;
@@ -4877,7 +4877,7 @@ OrientationInterpolator796.IS := IS797;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator796]);
 { Original "BehaviorClock.EventFraction_changed TO l_hindfoot_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_hindfoot_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator796.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator796.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator802 := TOrientationInterpolatorNode.Create;
 IS803 := TIS.Create;
@@ -4907,7 +4907,7 @@ OrientationInterpolator802.IS := IS803;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator802]);
 { Original "BehaviorClock.EventFraction_changed TO l_hip_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_hip_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator802.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator802.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator808 := TOrientationInterpolatorNode.Create;
 IS809 := TIS.Create;
@@ -4932,7 +4932,7 @@ OrientationInterpolator808.IS := IS809;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator808]);
 { Original "BehaviorClock.EventFraction_changed TO l_index0_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_index0_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator808.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator808.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator814 := TOrientationInterpolatorNode.Create;
 IS815 := TIS.Create;
@@ -4957,7 +4957,7 @@ OrientationInterpolator814.IS := IS815;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator814]);
 { Original "BehaviorClock.EventFraction_changed TO l_index1_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_index1_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator814.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator814.EventSet_fraction);
 end;
 
 procedure InitHAnimBehaviorPrototypesPart46;
@@ -4987,7 +4987,7 @@ OrientationInterpolator820.IS := IS821;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator820]);
 { Original "BehaviorClock.EventFraction_changed TO l_index2_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_index2_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator820.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator820.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator826 := TOrientationInterpolatorNode.Create;
 IS827 := TIS.Create;
@@ -5012,7 +5012,7 @@ OrientationInterpolator826.IS := IS827;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator826]);
 { Original "BehaviorClock.EventFraction_changed TO l_index3_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_index3_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator826.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator826.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator832 := TOrientationInterpolatorNode.Create;
 IS833 := TIS.Create;
@@ -5042,7 +5042,7 @@ OrientationInterpolator832.IS := IS833;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator832]);
 { Original "BehaviorClock.EventFraction_changed TO l_index_distal_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_index_distal_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator832.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator832.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator838 := TOrientationInterpolatorNode.Create;
 IS839 := TIS.Create;
@@ -5067,7 +5067,7 @@ OrientationInterpolator838.IS := IS839;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator838]);
 { Original "BehaviorClock.EventFraction_changed TO l_index_metacarpal_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_index_metacarpal_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator838.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator838.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator844 := TOrientationInterpolatorNode.Create;
 IS845 := TIS.Create;
@@ -5097,7 +5097,7 @@ OrientationInterpolator844.IS := IS845;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator844]);
 { Original "BehaviorClock.EventFraction_changed TO l_index_middle_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_index_middle_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator844.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator844.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator850 := TOrientationInterpolatorNode.Create;
 IS851 := TIS.Create;
@@ -5122,7 +5122,7 @@ OrientationInterpolator850.IS := IS851;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator850]);
 { Original "BehaviorClock.EventFraction_changed TO l_index_proximal_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_index_proximal_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator850.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator850.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator856 := TOrientationInterpolatorNode.Create;
 IS857 := TIS.Create;
@@ -5147,7 +5147,7 @@ OrientationInterpolator856.IS := IS857;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator856]);
 { Original "BehaviorClock.EventFraction_changed TO l_knee_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_knee_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator856.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator856.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator862 := TOrientationInterpolatorNode.Create;
 end;
@@ -5177,7 +5177,7 @@ OrientationInterpolator862.IS := IS863;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator862]);
 { Original "BehaviorClock.EventFraction_changed TO l_metatarsal_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_metatarsal_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator862.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator862.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator868 := TOrientationInterpolatorNode.Create;
 IS869 := TIS.Create;
@@ -5202,7 +5202,7 @@ OrientationInterpolator868.IS := IS869;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator868]);
 { Original "BehaviorClock.EventFraction_changed TO l_middistal_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_middistal_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator868.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator868.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator874 := TOrientationInterpolatorNode.Create;
 IS875 := TIS.Create;
@@ -5232,7 +5232,7 @@ OrientationInterpolator874.IS := IS875;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator874]);
 { Original "BehaviorClock.EventFraction_changed TO l_middle0_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_middle0_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator874.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator874.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator880 := TOrientationInterpolatorNode.Create;
 IS881 := TIS.Create;
@@ -5257,7 +5257,7 @@ OrientationInterpolator880.IS := IS881;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator880]);
 { Original "BehaviorClock.EventFraction_changed TO l_middle1_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_middle1_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator880.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator880.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator886 := TOrientationInterpolatorNode.Create;
 IS887 := TIS.Create;
@@ -5287,7 +5287,7 @@ OrientationInterpolator886.IS := IS887;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator886]);
 { Original "BehaviorClock.EventFraction_changed TO l_middle2_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_middle2_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator886.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator886.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator892 := TOrientationInterpolatorNode.Create;
 IS893 := TIS.Create;
@@ -5312,7 +5312,7 @@ OrientationInterpolator892.IS := IS893;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator892]);
 { Original "BehaviorClock.EventFraction_changed TO l_middle3_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_middle3_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator892.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator892.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator898 := TOrientationInterpolatorNode.Create;
 IS899 := TIS.Create;
@@ -5337,7 +5337,7 @@ OrientationInterpolator898.IS := IS899;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator898]);
 { Original "BehaviorClock.EventFraction_changed TO l_middle_distal_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_middle_distal_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator898.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator898.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator904 := TOrientationInterpolatorNode.Create;
 IS905 := TIS.Create;
@@ -5367,7 +5367,7 @@ OrientationInterpolator904.IS := IS905;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator904]);
 { Original "BehaviorClock.EventFraction_changed TO l_middle_metacarpal_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_middle_metacarpal_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator904.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator904.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator910 := TOrientationInterpolatorNode.Create;
 IS911 := TIS.Create;
@@ -5392,7 +5392,7 @@ OrientationInterpolator910.IS := IS911;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator910]);
 { Original "BehaviorClock.EventFraction_changed TO l_middle_middle_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_middle_middle_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator910.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator910.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator916 := TOrientationInterpolatorNode.Create;
 IS917 := TIS.Create;
@@ -5422,7 +5422,7 @@ OrientationInterpolator916.IS := IS917;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator916]);
 { Original "BehaviorClock.EventFraction_changed TO l_middle_proximal_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_middle_proximal_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator916.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator916.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator922 := TOrientationInterpolatorNode.Create;
 IS923 := TIS.Create;
@@ -5447,7 +5447,7 @@ OrientationInterpolator922.IS := IS923;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator922]);
 { Original "BehaviorClock.EventFraction_changed TO l_midproximal_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_midproximal_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator922.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator922.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator928 := TOrientationInterpolatorNode.Create;
 IS929 := TIS.Create;
@@ -5477,7 +5477,7 @@ OrientationInterpolator928.IS := IS929;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator928]);
 { Original "BehaviorClock.EventFraction_changed TO l_midtarsal_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_midtarsal_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator928.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator928.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator934 := TOrientationInterpolatorNode.Create;
 IS935 := TIS.Create;
@@ -5502,7 +5502,7 @@ OrientationInterpolator934.IS := IS935;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator934]);
 { Original "BehaviorClock.EventFraction_changed TO l_pinky0_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_pinky0_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator934.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator934.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator940 := TOrientationInterpolatorNode.Create;
 IS941 := TIS.Create;
@@ -5527,7 +5527,7 @@ OrientationInterpolator940.IS := IS941;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator940]);
 { Original "BehaviorClock.EventFraction_changed TO l_pinky1_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_pinky1_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator940.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator940.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator946 := TOrientationInterpolatorNode.Create;
 IS947 := TIS.Create;
@@ -5557,7 +5557,7 @@ OrientationInterpolator946.IS := IS947;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator946]);
 { Original "BehaviorClock.EventFraction_changed TO l_pinky2_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_pinky2_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator946.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator946.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator952 := TOrientationInterpolatorNode.Create;
 IS953 := TIS.Create;
@@ -5582,7 +5582,7 @@ OrientationInterpolator952.IS := IS953;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator952]);
 { Original "BehaviorClock.EventFraction_changed TO l_pinky3_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_pinky3_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator952.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator952.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator958 := TOrientationInterpolatorNode.Create;
 IS959 := TIS.Create;
@@ -5612,7 +5612,7 @@ OrientationInterpolator958.IS := IS959;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator958]);
 { Original "BehaviorClock.EventFraction_changed TO l_pinky_distal_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_pinky_distal_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator958.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator958.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator964 := TOrientationInterpolatorNode.Create;
 IS965 := TIS.Create;
@@ -5637,7 +5637,7 @@ OrientationInterpolator964.IS := IS965;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator964]);
 { Original "BehaviorClock.EventFraction_changed TO l_pinky_metacarpal_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_pinky_metacarpal_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator964.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator964.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator970 := TOrientationInterpolatorNode.Create;
 IS971 := TIS.Create;
@@ -5667,7 +5667,7 @@ begin
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator970]);
 { Original "BehaviorClock.EventFraction_changed TO l_pinky_middle_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_pinky_middle_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator970.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator970.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator976 := TOrientationInterpolatorNode.Create;
 IS977 := TIS.Create;
@@ -5692,7 +5692,7 @@ OrientationInterpolator976.IS := IS977;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator976]);
 { Original "BehaviorClock.EventFraction_changed TO l_pinky_proximal_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_pinky_proximal_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator976.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator976.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator982 := TOrientationInterpolatorNode.Create;
 IS983 := TIS.Create;
@@ -5717,7 +5717,7 @@ OrientationInterpolator982.IS := IS983;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator982]);
 { Original "BehaviorClock.EventFraction_changed TO l_ring0_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_ring0_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator982.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator982.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator988 := TOrientationInterpolatorNode.Create;
 IS989 := TIS.Create;
@@ -5747,7 +5747,7 @@ OrientationInterpolator988.IS := IS989;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator988]);
 { Original "BehaviorClock.EventFraction_changed TO l_ring1_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_ring1_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator988.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator988.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator994 := TOrientationInterpolatorNode.Create;
 IS995 := TIS.Create;
@@ -5772,7 +5772,7 @@ OrientationInterpolator994.IS := IS995;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator994]);
 { Original "BehaviorClock.EventFraction_changed TO l_ring2_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_ring2_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator994.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator994.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1000 := TOrientationInterpolatorNode.Create;
 IS1001 := TIS.Create;
@@ -5802,7 +5802,7 @@ OrientationInterpolator1000.IS := IS1001;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1000]);
 { Original "BehaviorClock.EventFraction_changed TO l_ring3_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_ring3_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1000.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1000.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1006 := TOrientationInterpolatorNode.Create;
 IS1007 := TIS.Create;
@@ -5827,7 +5827,7 @@ OrientationInterpolator1006.IS := IS1007;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1006]);
 { Original "BehaviorClock.EventFraction_changed TO l_ring_distal_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_ring_distal_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1006.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1006.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1012 := TOrientationInterpolatorNode.Create;
 IS1013 := TIS.Create;
@@ -5857,7 +5857,7 @@ begin
 
 { Original "BehaviorClock.EventFraction_changed TO l_ring_metacarpal_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_ring_metacarpal_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1012.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1012.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1018 := TOrientationInterpolatorNode.Create;
 IS1019 := TIS.Create;
@@ -5882,7 +5882,7 @@ OrientationInterpolator1018.IS := IS1019;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1018]);
 { Original "BehaviorClock.EventFraction_changed TO l_ring_middle_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_ring_middle_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1018.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1018.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1024 := TOrientationInterpolatorNode.Create;
 IS1025 := TIS.Create;
@@ -5907,7 +5907,7 @@ OrientationInterpolator1024.IS := IS1025;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1024]);
 { Original "BehaviorClock.EventFraction_changed TO l_ring_proximal_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_ring_proximal_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1024.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1024.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1030 := TOrientationInterpolatorNode.Create;
 IS1031 := TIS.Create;
@@ -5937,7 +5937,7 @@ OrientationInterpolator1030.IS := IS1031;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1030]);
 { Original "BehaviorClock.EventFraction_changed TO l_scapula_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_scapula_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1030.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1030.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1036 := TOrientationInterpolatorNode.Create;
 IS1037 := TIS.Create;
@@ -5962,7 +5962,7 @@ OrientationInterpolator1036.IS := IS1037;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1036]);
 { Original "BehaviorClock.EventFraction_changed TO l_shoulder_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_shoulder_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1036.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1036.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1042 := TOrientationInterpolatorNode.Create;
 IS1043 := TIS.Create;
@@ -5992,7 +5992,7 @@ OrientationInterpolator1042.IS := IS1043;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1042]);
 { Original "BehaviorClock.EventFraction_changed TO l_sternoclavicular_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_sternoclavicular_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1042.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1042.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1048 := TOrientationInterpolatorNode.Create;
 IS1049 := TIS.Create;
@@ -6017,7 +6017,7 @@ OrientationInterpolator1048.IS := IS1049;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1048]);
 { Original "BehaviorClock.EventFraction_changed TO l_subtalar_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_subtalar_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1048.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1048.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1054 := TOrientationInterpolatorNode.Create;
 IS1055 := TIS.Create;
@@ -6042,7 +6042,7 @@ OrientationInterpolator1054.IS := IS1055;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1054]);
 { Original "BehaviorClock.EventFraction_changed TO l_thigh_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_thigh_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1054.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1054.EventSet_fraction);
 end;
 
 procedure InitHAnimBehaviorPrototypesPart63;
@@ -6072,7 +6072,7 @@ OrientationInterpolator1060.IS := IS1061;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1060]);
 { Original "BehaviorClock.EventFraction_changed TO l_thumb1_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_thumb1_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1060.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1060.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1066 := TOrientationInterpolatorNode.Create;
 IS1067 := TIS.Create;
@@ -6097,7 +6097,7 @@ OrientationInterpolator1066.IS := IS1067;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1066]);
 { Original "BehaviorClock.EventFraction_changed TO l_thumb2_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_thumb2_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1066.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1066.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1072 := TOrientationInterpolatorNode.Create;
 IS1073 := TIS.Create;
@@ -6127,7 +6127,7 @@ OrientationInterpolator1072.IS := IS1073;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1072]);
 { Original "BehaviorClock.EventFraction_changed TO l_thumb3_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_thumb3_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1072.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1072.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1078 := TOrientationInterpolatorNode.Create;
 IS1079 := TIS.Create;
@@ -6152,7 +6152,7 @@ OrientationInterpolator1078.IS := IS1079;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1078]);
 { Original "BehaviorClock.EventFraction_changed TO l_thumb_distal_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_thumb_distal_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1078.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1078.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1084 := TOrientationInterpolatorNode.Create;
 IS1085 := TIS.Create;
@@ -6182,7 +6182,7 @@ OrientationInterpolator1084.IS := IS1085;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1084]);
 { Original "BehaviorClock.EventFraction_changed TO l_thumb_metacarpal_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_thumb_metacarpal_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1084.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1084.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1090 := TOrientationInterpolatorNode.Create;
 IS1091 := TIS.Create;
@@ -6207,7 +6207,7 @@ OrientationInterpolator1090.IS := IS1091;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1090]);
 { Original "BehaviorClock.EventFraction_changed TO l_thumb_proximal_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_thumb_proximal_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1090.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1090.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1096 := TOrientationInterpolatorNode.Create;
 IS1097 := TIS.Create;
@@ -6232,7 +6232,7 @@ OrientationInterpolator1096.IS := IS1097;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1096]);
 { Original "BehaviorClock.EventFraction_changed TO l_upperarm_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_upperarm_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1096.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1096.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1102 := TOrientationInterpolatorNode.Create;
 end;
@@ -6262,7 +6262,7 @@ OrientationInterpolator1102.IS := IS1103;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1102]);
 { Original "BehaviorClock.EventFraction_changed TO l_wrist_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO l_wrist_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1102.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1102.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1108 := TOrientationInterpolatorNode.Create;
 IS1109 := TIS.Create;
@@ -6287,7 +6287,7 @@ OrientationInterpolator1108.IS := IS1109;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1108]);
 { Original "BehaviorClock.EventFraction_changed TO pelvis_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO pelvis_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1108.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1108.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1114 := TOrientationInterpolatorNode.Create;
 IS1115 := TIS.Create;
@@ -6317,7 +6317,7 @@ OrientationInterpolator1114.IS := IS1115;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1114]);
 { Original "BehaviorClock.EventFraction_changed TO r_acromioclavicular_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_acromioclavicular_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1114.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1114.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1120 := TOrientationInterpolatorNode.Create;
 IS1121 := TIS.Create;
@@ -6342,7 +6342,7 @@ OrientationInterpolator1120.IS := IS1121;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1120]);
 { Original "BehaviorClock.EventFraction_changed TO r_ankle_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_ankle_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1120.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1120.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1126 := TOrientationInterpolatorNode.Create;
 IS1127 := TIS.Create;
@@ -6372,7 +6372,7 @@ OrientationInterpolator1126.IS := IS1127;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1126]);
 { Original "BehaviorClock.EventFraction_changed TO r_calf_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_calf_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1126.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1126.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1132 := TOrientationInterpolatorNode.Create;
 IS1133 := TIS.Create;
@@ -6397,7 +6397,7 @@ OrientationInterpolator1132.IS := IS1133;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1132]);
 { Original "BehaviorClock.EventFraction_changed TO r_clavicle_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_clavicle_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1132.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1132.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1138 := TOrientationInterpolatorNode.Create;
 IS1139 := TIS.Create;
@@ -6422,7 +6422,7 @@ OrientationInterpolator1138.IS := IS1139;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1138]);
 { Original "BehaviorClock.EventFraction_changed TO r_elbow_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_elbow_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1138.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1138.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1144 := TOrientationInterpolatorNode.Create;
 IS1145 := TIS.Create;
@@ -6452,7 +6452,7 @@ OrientationInterpolator1144.IS := IS1145;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1144]);
 { Original "BehaviorClock.EventFraction_changed TO r_eyeball_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_eyeball_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1144.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1144.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1150 := TOrientationInterpolatorNode.Create;
 IS1151 := TIS.Create;
@@ -6477,7 +6477,7 @@ OrientationInterpolator1150.IS := IS1151;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1150]);
 { Original "BehaviorClock.EventFraction_changed TO r_eyeball_joint_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_eyeball_joint_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1150.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1150.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1156 := TOrientationInterpolatorNode.Create;
 IS1157 := TIS.Create;
@@ -6507,7 +6507,7 @@ OrientationInterpolator1156.IS := IS1157;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1156]);
 { Original "BehaviorClock.EventFraction_changed TO r_eyebrow_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_eyebrow_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1156.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1156.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1162 := TOrientationInterpolatorNode.Create;
 IS1163 := TIS.Create;
@@ -6532,7 +6532,7 @@ OrientationInterpolator1162.IS := IS1163;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1162]);
 { Original "BehaviorClock.EventFraction_changed TO r_eyebrow_joint_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_eyebrow_joint_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1162.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1162.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1168 := TOrientationInterpolatorNode.Create;
 IS1169 := TIS.Create;
@@ -6562,7 +6562,7 @@ OrientationInterpolator1168.IS := IS1169;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1168]);
 { Original "BehaviorClock.EventFraction_changed TO r_eyelid_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_eyelid_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1168.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1168.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1174 := TOrientationInterpolatorNode.Create;
 IS1175 := TIS.Create;
@@ -6587,7 +6587,7 @@ OrientationInterpolator1174.IS := IS1175;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1174]);
 { Original "BehaviorClock.EventFraction_changed TO r_eyelid_joint_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_eyelid_joint_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1174.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1174.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1180 := TOrientationInterpolatorNode.Create;
 IS1181 := TIS.Create;
@@ -6612,7 +6612,7 @@ OrientationInterpolator1180.IS := IS1181;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1180]);
 { Original "BehaviorClock.EventFraction_changed TO r_forearm_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_forearm_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1180.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1180.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1186 := TOrientationInterpolatorNode.Create;
 IS1187 := TIS.Create;
@@ -6642,7 +6642,7 @@ OrientationInterpolator1186.IS := IS1187;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1186]);
 { Original "BehaviorClock.EventFraction_changed TO r_forefoot_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_forefoot_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1186.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1186.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1192 := TOrientationInterpolatorNode.Create;
 IS1193 := TIS.Create;
@@ -6667,7 +6667,7 @@ OrientationInterpolator1192.IS := IS1193;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1192]);
 { Original "BehaviorClock.EventFraction_changed TO r_hand_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_hand_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1192.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1192.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1198 := TOrientationInterpolatorNode.Create;
 IS1199 := TIS.Create;
@@ -6697,7 +6697,7 @@ OrientationInterpolator1198.IS := IS1199;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1198]);
 { Original "BehaviorClock.EventFraction_changed TO r_hindfoot_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_hindfoot_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1198.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1198.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1204 := TOrientationInterpolatorNode.Create;
 IS1205 := TIS.Create;
@@ -6722,7 +6722,7 @@ OrientationInterpolator1204.IS := IS1205;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1204]);
 { Original "BehaviorClock.EventFraction_changed TO r_hip_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_hip_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1204.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1204.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1210 := TOrientationInterpolatorNode.Create;
 IS1211 := TIS.Create;
@@ -6752,7 +6752,7 @@ begin
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1210]);
 { Original "BehaviorClock.EventFraction_changed TO r_index0_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_index0_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1210.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1210.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1216 := TOrientationInterpolatorNode.Create;
 IS1217 := TIS.Create;
@@ -6777,7 +6777,7 @@ OrientationInterpolator1216.IS := IS1217;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1216]);
 { Original "BehaviorClock.EventFraction_changed TO r_index1_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_index1_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1216.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1216.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1222 := TOrientationInterpolatorNode.Create;
 IS1223 := TIS.Create;
@@ -6802,7 +6802,7 @@ OrientationInterpolator1222.IS := IS1223;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1222]);
 { Original "BehaviorClock.EventFraction_changed TO r_index2_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_index2_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1222.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1222.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1228 := TOrientationInterpolatorNode.Create;
 IS1229 := TIS.Create;
@@ -6832,7 +6832,7 @@ OrientationInterpolator1228.IS := IS1229;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1228]);
 { Original "BehaviorClock.EventFraction_changed TO r_index3_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_index3_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1228.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1228.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1234 := TOrientationInterpolatorNode.Create;
 IS1235 := TIS.Create;
@@ -6857,7 +6857,7 @@ OrientationInterpolator1234.IS := IS1235;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1234]);
 { Original "BehaviorClock.EventFraction_changed TO r_index_distal_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_index_distal_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1234.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1234.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1240 := TOrientationInterpolatorNode.Create;
 IS1241 := TIS.Create;
@@ -6887,7 +6887,7 @@ OrientationInterpolator1240.IS := IS1241;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1240]);
 { Original "BehaviorClock.EventFraction_changed TO r_index_metacarpal_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_index_metacarpal_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1240.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1240.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1246 := TOrientationInterpolatorNode.Create;
 IS1247 := TIS.Create;
@@ -6912,7 +6912,7 @@ OrientationInterpolator1246.IS := IS1247;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1246]);
 { Original "BehaviorClock.EventFraction_changed TO r_index_middle_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_index_middle_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1246.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1246.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1252 := TOrientationInterpolatorNode.Create;
 IS1253 := TIS.Create;
@@ -6942,7 +6942,7 @@ begin
 
 { Original "BehaviorClock.EventFraction_changed TO r_index_proximal_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_index_proximal_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1252.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1252.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1258 := TOrientationInterpolatorNode.Create;
 IS1259 := TIS.Create;
@@ -6967,7 +6967,7 @@ OrientationInterpolator1258.IS := IS1259;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1258]);
 { Original "BehaviorClock.EventFraction_changed TO r_knee_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_knee_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1258.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1258.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1264 := TOrientationInterpolatorNode.Create;
 IS1265 := TIS.Create;
@@ -6992,7 +6992,7 @@ OrientationInterpolator1264.IS := IS1265;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1264]);
 { Original "BehaviorClock.EventFraction_changed TO r_metatarsal_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_metatarsal_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1264.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1264.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1270 := TOrientationInterpolatorNode.Create;
 IS1271 := TIS.Create;
@@ -7022,7 +7022,7 @@ OrientationInterpolator1270.IS := IS1271;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1270]);
 { Original "BehaviorClock.EventFraction_changed TO r_middistal_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_middistal_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1270.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1270.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1276 := TOrientationInterpolatorNode.Create;
 IS1277 := TIS.Create;
@@ -7047,7 +7047,7 @@ OrientationInterpolator1276.IS := IS1277;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1276]);
 { Original "BehaviorClock.EventFraction_changed TO r_middle0_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_middle0_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1276.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1276.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1282 := TOrientationInterpolatorNode.Create;
 IS1283 := TIS.Create;
@@ -7077,7 +7077,7 @@ OrientationInterpolator1282.IS := IS1283;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1282]);
 { Original "BehaviorClock.EventFraction_changed TO r_middle1_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_middle1_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1282.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1282.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1288 := TOrientationInterpolatorNode.Create;
 IS1289 := TIS.Create;
@@ -7102,7 +7102,7 @@ OrientationInterpolator1288.IS := IS1289;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1288]);
 { Original "BehaviorClock.EventFraction_changed TO r_middle2_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_middle2_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1288.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1288.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1294 := TOrientationInterpolatorNode.Create;
 IS1295 := TIS.Create;
@@ -7127,7 +7127,7 @@ OrientationInterpolator1294.IS := IS1295;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1294]);
 { Original "BehaviorClock.EventFraction_changed TO r_middle3_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_middle3_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1294.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1294.EventSet_fraction);
 end;
 
 procedure InitHAnimBehaviorPrototypesPart80;
@@ -7157,7 +7157,7 @@ OrientationInterpolator1300.IS := IS1301;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1300]);
 { Original "BehaviorClock.EventFraction_changed TO r_middle_distal_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_middle_distal_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1300.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1300.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1306 := TOrientationInterpolatorNode.Create;
 IS1307 := TIS.Create;
@@ -7182,7 +7182,7 @@ OrientationInterpolator1306.IS := IS1307;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1306]);
 { Original "BehaviorClock.EventFraction_changed TO r_middle_metacarpal_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_middle_metacarpal_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1306.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1306.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1312 := TOrientationInterpolatorNode.Create;
 IS1313 := TIS.Create;
@@ -7212,7 +7212,7 @@ OrientationInterpolator1312.IS := IS1313;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1312]);
 { Original "BehaviorClock.EventFraction_changed TO r_middle_middle_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_middle_middle_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1312.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1312.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1318 := TOrientationInterpolatorNode.Create;
 IS1319 := TIS.Create;
@@ -7237,7 +7237,7 @@ OrientationInterpolator1318.IS := IS1319;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1318]);
 { Original "BehaviorClock.EventFraction_changed TO r_middle_proximal_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_middle_proximal_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1318.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1318.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1324 := TOrientationInterpolatorNode.Create;
 IS1325 := TIS.Create;
@@ -7267,7 +7267,7 @@ OrientationInterpolator1324.IS := IS1325;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1324]);
 { Original "BehaviorClock.EventFraction_changed TO r_midproximal_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_midproximal_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1324.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1324.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1330 := TOrientationInterpolatorNode.Create;
 IS1331 := TIS.Create;
@@ -7292,7 +7292,7 @@ OrientationInterpolator1330.IS := IS1331;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1330]);
 { Original "BehaviorClock.EventFraction_changed TO r_midtarsal_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_midtarsal_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1330.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1330.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1336 := TOrientationInterpolatorNode.Create;
 IS1337 := TIS.Create;
@@ -7317,7 +7317,7 @@ OrientationInterpolator1336.IS := IS1337;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1336]);
 { Original "BehaviorClock.EventFraction_changed TO r_pinky0_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_pinky0_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1336.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1336.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1342 := TOrientationInterpolatorNode.Create;
 end;
@@ -7347,7 +7347,7 @@ OrientationInterpolator1342.IS := IS1343;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1342]);
 { Original "BehaviorClock.EventFraction_changed TO r_pinky1_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_pinky1_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1342.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1342.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1348 := TOrientationInterpolatorNode.Create;
 IS1349 := TIS.Create;
@@ -7372,7 +7372,7 @@ OrientationInterpolator1348.IS := IS1349;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1348]);
 { Original "BehaviorClock.EventFraction_changed TO r_pinky2_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_pinky2_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1348.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1348.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1354 := TOrientationInterpolatorNode.Create;
 IS1355 := TIS.Create;
@@ -7402,7 +7402,7 @@ OrientationInterpolator1354.IS := IS1355;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1354]);
 { Original "BehaviorClock.EventFraction_changed TO r_pinky3_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_pinky3_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1354.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1354.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1360 := TOrientationInterpolatorNode.Create;
 IS1361 := TIS.Create;
@@ -7427,7 +7427,7 @@ OrientationInterpolator1360.IS := IS1361;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1360]);
 { Original "BehaviorClock.EventFraction_changed TO r_pinky_distal_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_pinky_distal_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1360.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1360.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1366 := TOrientationInterpolatorNode.Create;
 IS1367 := TIS.Create;
@@ -7457,7 +7457,7 @@ OrientationInterpolator1366.IS := IS1367;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1366]);
 { Original "BehaviorClock.EventFraction_changed TO r_pinky_metacarpal_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_pinky_metacarpal_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1366.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1366.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1372 := TOrientationInterpolatorNode.Create;
 IS1373 := TIS.Create;
@@ -7482,7 +7482,7 @@ OrientationInterpolator1372.IS := IS1373;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1372]);
 { Original "BehaviorClock.EventFraction_changed TO r_pinky_middle_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_pinky_middle_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1372.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1372.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1378 := TOrientationInterpolatorNode.Create;
 IS1379 := TIS.Create;
@@ -7507,7 +7507,7 @@ OrientationInterpolator1378.IS := IS1379;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1378]);
 { Original "BehaviorClock.EventFraction_changed TO r_pinky_proximal_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_pinky_proximal_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1378.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1378.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1384 := TOrientationInterpolatorNode.Create;
 IS1385 := TIS.Create;
@@ -7537,7 +7537,7 @@ OrientationInterpolator1384.IS := IS1385;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1384]);
 { Original "BehaviorClock.EventFraction_changed TO r_ring0_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_ring0_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1384.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1384.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1390 := TOrientationInterpolatorNode.Create;
 IS1391 := TIS.Create;
@@ -7562,7 +7562,7 @@ OrientationInterpolator1390.IS := IS1391;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1390]);
 { Original "BehaviorClock.EventFraction_changed TO r_ring1_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_ring1_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1390.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1390.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1396 := TOrientationInterpolatorNode.Create;
 IS1397 := TIS.Create;
@@ -7592,7 +7592,7 @@ OrientationInterpolator1396.IS := IS1397;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1396]);
 { Original "BehaviorClock.EventFraction_changed TO r_ring2_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_ring2_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1396.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1396.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1402 := TOrientationInterpolatorNode.Create;
 IS1403 := TIS.Create;
@@ -7617,7 +7617,7 @@ OrientationInterpolator1402.IS := IS1403;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1402]);
 { Original "BehaviorClock.EventFraction_changed TO r_ring3_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_ring3_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1402.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1402.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1408 := TOrientationInterpolatorNode.Create;
 IS1409 := TIS.Create;
@@ -7647,7 +7647,7 @@ OrientationInterpolator1408.IS := IS1409;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1408]);
 { Original "BehaviorClock.EventFraction_changed TO r_ring_distal_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_ring_distal_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1408.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1408.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1414 := TOrientationInterpolatorNode.Create;
 IS1415 := TIS.Create;
@@ -7672,7 +7672,7 @@ OrientationInterpolator1414.IS := IS1415;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1414]);
 { Original "BehaviorClock.EventFraction_changed TO r_ring_metacarpal_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_ring_metacarpal_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1414.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1414.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1420 := TOrientationInterpolatorNode.Create;
 IS1421 := TIS.Create;
@@ -7697,7 +7697,7 @@ OrientationInterpolator1420.IS := IS1421;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1420]);
 { Original "BehaviorClock.EventFraction_changed TO r_ring_middle_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_ring_middle_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1420.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1420.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1426 := TOrientationInterpolatorNode.Create;
 IS1427 := TIS.Create;
@@ -7727,7 +7727,7 @@ OrientationInterpolator1426.IS := IS1427;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1426]);
 { Original "BehaviorClock.EventFraction_changed TO r_ring_proximal_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_ring_proximal_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1426.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1426.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1432 := TOrientationInterpolatorNode.Create;
 IS1433 := TIS.Create;
@@ -7752,7 +7752,7 @@ OrientationInterpolator1432.IS := IS1433;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1432]);
 { Original "BehaviorClock.EventFraction_changed TO r_scapula_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_scapula_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1432.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1432.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1438 := TOrientationInterpolatorNode.Create;
 IS1439 := TIS.Create;
@@ -7782,7 +7782,7 @@ OrientationInterpolator1438.IS := IS1439;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1438]);
 { Original "BehaviorClock.EventFraction_changed TO r_shoulder_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_shoulder_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1438.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1438.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1444 := TOrientationInterpolatorNode.Create;
 IS1445 := TIS.Create;
@@ -7807,7 +7807,7 @@ OrientationInterpolator1444.IS := IS1445;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1444]);
 { Original "BehaviorClock.EventFraction_changed TO r_sternoclavicular_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_sternoclavicular_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1444.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1444.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1450 := TOrientationInterpolatorNode.Create;
 IS1451 := TIS.Create;
@@ -7837,7 +7837,7 @@ begin
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1450]);
 { Original "BehaviorClock.EventFraction_changed TO r_subtalar_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_subtalar_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1450.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1450.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1456 := TOrientationInterpolatorNode.Create;
 IS1457 := TIS.Create;
@@ -7862,7 +7862,7 @@ OrientationInterpolator1456.IS := IS1457;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1456]);
 { Original "BehaviorClock.EventFraction_changed TO r_thigh_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_thigh_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1456.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1456.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1462 := TOrientationInterpolatorNode.Create;
 IS1463 := TIS.Create;
@@ -7887,7 +7887,7 @@ OrientationInterpolator1462.IS := IS1463;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1462]);
 { Original "BehaviorClock.EventFraction_changed TO r_thumb1_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_thumb1_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1462.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1462.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1468 := TOrientationInterpolatorNode.Create;
 IS1469 := TIS.Create;
@@ -7917,7 +7917,7 @@ OrientationInterpolator1468.IS := IS1469;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1468]);
 { Original "BehaviorClock.EventFraction_changed TO r_thumb2_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_thumb2_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1468.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1468.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1474 := TOrientationInterpolatorNode.Create;
 IS1475 := TIS.Create;
@@ -7942,7 +7942,7 @@ OrientationInterpolator1474.IS := IS1475;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1474]);
 { Original "BehaviorClock.EventFraction_changed TO r_thumb3_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_thumb3_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1474.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1474.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1480 := TOrientationInterpolatorNode.Create;
 IS1481 := TIS.Create;
@@ -7972,7 +7972,7 @@ OrientationInterpolator1480.IS := IS1481;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1480]);
 { Original "BehaviorClock.EventFraction_changed TO r_thumb_distal_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_thumb_distal_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1480.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1480.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1486 := TOrientationInterpolatorNode.Create;
 IS1487 := TIS.Create;
@@ -7997,7 +7997,7 @@ OrientationInterpolator1486.IS := IS1487;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1486]);
 { Original "BehaviorClock.EventFraction_changed TO r_thumb_metacarpal_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_thumb_metacarpal_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1486.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1486.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1492 := TOrientationInterpolatorNode.Create;
 IS1493 := TIS.Create;
@@ -8027,7 +8027,7 @@ begin
 
 { Original "BehaviorClock.EventFraction_changed TO r_thumb_proximal_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_thumb_proximal_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1492.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1492.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1498 := TOrientationInterpolatorNode.Create;
 IS1499 := TIS.Create;
@@ -8052,7 +8052,7 @@ OrientationInterpolator1498.IS := IS1499;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1498]);
 { Original "BehaviorClock.EventFraction_changed TO r_upperarm_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_upperarm_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1498.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1498.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1504 := TOrientationInterpolatorNode.Create;
 IS1505 := TIS.Create;
@@ -8077,7 +8077,7 @@ OrientationInterpolator1504.IS := IS1505;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1504]);
 { Original "BehaviorClock.EventFraction_changed TO r_wrist_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO r_wrist_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1504.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1504.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1510 := TOrientationInterpolatorNode.Create;
 IS1511 := TIS.Create;
@@ -8107,7 +8107,7 @@ OrientationInterpolator1510.IS := IS1511;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1510]);
 { Original "BehaviorClock.EventFraction_changed TO sacroiliac_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO sacroiliac_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1510.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1510.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1516 := TOrientationInterpolatorNode.Create;
 IS1517 := TIS.Create;
@@ -8132,7 +8132,7 @@ OrientationInterpolator1516.IS := IS1517;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1516]);
 { Original "BehaviorClock.EventFraction_changed TO sacrum_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO sacrum_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1516.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1516.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1522 := TOrientationInterpolatorNode.Create;
 IS1523 := TIS.Create;
@@ -8162,7 +8162,7 @@ OrientationInterpolator1522.IS := IS1523;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1522]);
 { Original "BehaviorClock.EventFraction_changed TO skull_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO skull_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1522.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1522.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1528 := TOrientationInterpolatorNode.Create;
 IS1529 := TIS.Create;
@@ -8187,7 +8187,7 @@ OrientationInterpolator1528.IS := IS1529;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1528]);
 { Original "BehaviorClock.EventFraction_changed TO skullbase_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO skullbase_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1528.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1528.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1534 := TOrientationInterpolatorNode.Create;
 IS1535 := TIS.Create;
@@ -8212,7 +8212,7 @@ OrientationInterpolator1534.IS := IS1535;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1534]);
 { Original "BehaviorClock.EventFraction_changed TO t1_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO t1_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1534.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1534.EventSet_fraction);
 end;
 
 procedure InitHAnimBehaviorPrototypesPart97;
@@ -8242,7 +8242,7 @@ OrientationInterpolator1540.IS := IS1541;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1540]);
 { Original "BehaviorClock.EventFraction_changed TO t2_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO t2_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1540.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1540.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1546 := TOrientationInterpolatorNode.Create;
 IS1547 := TIS.Create;
@@ -8267,7 +8267,7 @@ OrientationInterpolator1546.IS := IS1547;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1546]);
 { Original "BehaviorClock.EventFraction_changed TO t3_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO t3_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1546.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1546.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1552 := TOrientationInterpolatorNode.Create;
 IS1553 := TIS.Create;
@@ -8297,7 +8297,7 @@ OrientationInterpolator1552.IS := IS1553;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1552]);
 { Original "BehaviorClock.EventFraction_changed TO t4_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO t4_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1552.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1552.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1558 := TOrientationInterpolatorNode.Create;
 IS1559 := TIS.Create;
@@ -8322,7 +8322,7 @@ OrientationInterpolator1558.IS := IS1559;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1558]);
 { Original "BehaviorClock.EventFraction_changed TO t5_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO t5_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1558.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1558.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1564 := TOrientationInterpolatorNode.Create;
 IS1565 := TIS.Create;
@@ -8352,7 +8352,7 @@ OrientationInterpolator1564.IS := IS1565;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1564]);
 { Original "BehaviorClock.EventFraction_changed TO t6_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO t6_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1564.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1564.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1570 := TOrientationInterpolatorNode.Create;
 IS1571 := TIS.Create;
@@ -8377,7 +8377,7 @@ OrientationInterpolator1570.IS := IS1571;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1570]);
 { Original "BehaviorClock.EventFraction_changed TO t7_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO t7_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1570.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1570.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1576 := TOrientationInterpolatorNode.Create;
 IS1577 := TIS.Create;
@@ -8402,7 +8402,7 @@ OrientationInterpolator1576.IS := IS1577;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1576]);
 { Original "BehaviorClock.EventFraction_changed TO t8_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO t8_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1576.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1576.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1582 := TOrientationInterpolatorNode.Create;
 end;
@@ -8432,7 +8432,7 @@ OrientationInterpolator1582.IS := IS1583;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1582]);
 { Original "BehaviorClock.EventFraction_changed TO t9_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO t9_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1582.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1582.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1588 := TOrientationInterpolatorNode.Create;
 IS1589 := TIS.Create;
@@ -8457,7 +8457,7 @@ OrientationInterpolator1588.IS := IS1589;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1588]);
 { Original "BehaviorClock.EventFraction_changed TO t10_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO t10_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1588.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1588.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1594 := TOrientationInterpolatorNode.Create;
 IS1595 := TIS.Create;
@@ -8487,7 +8487,7 @@ OrientationInterpolator1594.IS := IS1595;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1594]);
 { Original "BehaviorClock.EventFraction_changed TO t11_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO t11_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1594.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1594.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1600 := TOrientationInterpolatorNode.Create;
 IS1601 := TIS.Create;
@@ -8512,7 +8512,7 @@ OrientationInterpolator1600.IS := IS1601;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1600]);
 { Original "BehaviorClock.EventFraction_changed TO t12_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO t12_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1600.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1600.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1606 := TOrientationInterpolatorNode.Create;
 IS1607 := TIS.Create;
@@ -8542,7 +8542,7 @@ OrientationInterpolator1606.IS := IS1607;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1606]);
 { Original "BehaviorClock.EventFraction_changed TO temporomandibular_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO temporomandibular_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1606.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1606.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1612 := TOrientationInterpolatorNode.Create;
 IS1613 := TIS.Create;
@@ -8567,7 +8567,7 @@ OrientationInterpolator1612.IS := IS1613;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1612]);
 { Original "BehaviorClock.EventFraction_changed TO vc1_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO vc1_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1612.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1612.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1618 := TOrientationInterpolatorNode.Create;
 IS1619 := TIS.Create;
@@ -8592,7 +8592,7 @@ OrientationInterpolator1618.IS := IS1619;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1618]);
 { Original "BehaviorClock.EventFraction_changed TO vc2_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO vc2_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1618.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1618.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1624 := TOrientationInterpolatorNode.Create;
 IS1625 := TIS.Create;
@@ -8622,7 +8622,7 @@ OrientationInterpolator1624.IS := IS1625;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1624]);
 { Original "BehaviorClock.EventFraction_changed TO vc3_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO vc3_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1624.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1624.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1630 := TOrientationInterpolatorNode.Create;
 IS1631 := TIS.Create;
@@ -8647,7 +8647,7 @@ OrientationInterpolator1630.IS := IS1631;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1630]);
 { Original "BehaviorClock.EventFraction_changed TO vc4_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO vc4_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1630.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1630.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1636 := TOrientationInterpolatorNode.Create;
 IS1637 := TIS.Create;
@@ -8677,7 +8677,7 @@ OrientationInterpolator1636.IS := IS1637;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1636]);
 { Original "BehaviorClock.EventFraction_changed TO vc5_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO vc5_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1636.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1636.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1642 := TOrientationInterpolatorNode.Create;
 IS1643 := TIS.Create;
@@ -8702,7 +8702,7 @@ OrientationInterpolator1642.IS := IS1643;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1642]);
 { Original "BehaviorClock.EventFraction_changed TO vc6_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO vc6_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1642.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1642.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1648 := TOrientationInterpolatorNode.Create;
 IS1649 := TIS.Create;
@@ -8732,7 +8732,7 @@ OrientationInterpolator1648.IS := IS1649;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1648]);
 { Original "BehaviorClock.EventFraction_changed TO vc7_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO vc7_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1648.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1648.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1654 := TOrientationInterpolatorNode.Create;
 IS1655 := TIS.Create;
@@ -8757,7 +8757,7 @@ OrientationInterpolator1654.IS := IS1655;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1654]);
 { Original "BehaviorClock.EventFraction_changed TO vl1_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO vl1_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1654.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1654.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1660 := TOrientationInterpolatorNode.Create;
 IS1661 := TIS.Create;
@@ -8782,7 +8782,7 @@ OrientationInterpolator1660.IS := IS1661;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1660]);
 { Original "BehaviorClock.EventFraction_changed TO vl2_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO vl2_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1660.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1660.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1666 := TOrientationInterpolatorNode.Create;
 IS1667 := TIS.Create;
@@ -8812,7 +8812,7 @@ OrientationInterpolator1666.IS := IS1667;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1666]);
 { Original "BehaviorClock.EventFraction_changed TO vl3_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO vl3_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1666.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1666.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1672 := TOrientationInterpolatorNode.Create;
 IS1673 := TIS.Create;
@@ -8837,7 +8837,7 @@ OrientationInterpolator1672.IS := IS1673;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1672]);
 { Original "BehaviorClock.EventFraction_changed TO vl4_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO vl4_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1672.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1672.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1678 := TOrientationInterpolatorNode.Create;
 IS1679 := TIS.Create;
@@ -8867,7 +8867,7 @@ OrientationInterpolator1678.IS := IS1679;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1678]);
 { Original "BehaviorClock.EventFraction_changed TO vl5_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO vl5_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1678.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1678.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1684 := TOrientationInterpolatorNode.Create;
 IS1685 := TIS.Create;
@@ -8892,7 +8892,7 @@ OrientationInterpolator1684.IS := IS1685;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1684]);
 { Original "BehaviorClock.EventFraction_changed TO vt1_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO vt1_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1684.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1684.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1690 := TOrientationInterpolatorNode.Create;
 IS1691 := TIS.Create;
@@ -8922,7 +8922,7 @@ begin
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1690]);
 { Original "BehaviorClock.EventFraction_changed TO vt2_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO vt2_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1690.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1690.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1696 := TOrientationInterpolatorNode.Create;
 IS1697 := TIS.Create;
@@ -8947,7 +8947,7 @@ OrientationInterpolator1696.IS := IS1697;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1696]);
 { Original "BehaviorClock.EventFraction_changed TO vt3_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO vt3_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1696.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1696.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1702 := TOrientationInterpolatorNode.Create;
 IS1703 := TIS.Create;
@@ -8972,7 +8972,7 @@ OrientationInterpolator1702.IS := IS1703;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1702]);
 { Original "BehaviorClock.EventFraction_changed TO vt4_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO vt4_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1702.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1702.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1708 := TOrientationInterpolatorNode.Create;
 IS1709 := TIS.Create;
@@ -9002,7 +9002,7 @@ OrientationInterpolator1708.IS := IS1709;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1708]);
 { Original "BehaviorClock.EventFraction_changed TO vt5_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO vt5_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1708.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1708.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1714 := TOrientationInterpolatorNode.Create;
 IS1715 := TIS.Create;
@@ -9027,7 +9027,7 @@ OrientationInterpolator1714.IS := IS1715;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1714]);
 { Original "BehaviorClock.EventFraction_changed TO vt6_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO vt6_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1714.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1714.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1720 := TOrientationInterpolatorNode.Create;
 IS1721 := TIS.Create;
@@ -9057,7 +9057,7 @@ OrientationInterpolator1720.IS := IS1721;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1720]);
 { Original "BehaviorClock.EventFraction_changed TO vt7_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO vt7_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1720.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1720.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1726 := TOrientationInterpolatorNode.Create;
 IS1727 := TIS.Create;
@@ -9082,7 +9082,7 @@ OrientationInterpolator1726.IS := IS1727;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1726]);
 { Original "BehaviorClock.EventFraction_changed TO vt8_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO vt8_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1726.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1726.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1732 := TOrientationInterpolatorNode.Create;
 IS1733 := TIS.Create;
@@ -9112,7 +9112,7 @@ begin
 
 { Original "BehaviorClock.EventFraction_changed TO vt9_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO vt9_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1732.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1732.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1738 := TOrientationInterpolatorNode.Create;
 IS1739 := TIS.Create;
@@ -9137,7 +9137,7 @@ OrientationInterpolator1738.IS := IS1739;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1738]);
 { Original "BehaviorClock.EventFraction_changed TO vt10_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO vt10_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1738.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1738.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1744 := TOrientationInterpolatorNode.Create;
 IS1745 := TIS.Create;
@@ -9162,7 +9162,7 @@ OrientationInterpolator1744.IS := IS1745;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1744]);
 { Original "BehaviorClock.EventFraction_changed TO vt11_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO vt11_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1744.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1744.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1750 := TOrientationInterpolatorNode.Create;
 IS1751 := TIS.Create;
@@ -9192,7 +9192,7 @@ OrientationInterpolator1750.IS := IS1751;
 X3DPrototype603.AddOrientationInterpolator([OrientationInterpolator1750]);
 { Original "BehaviorClock.EventFraction_changed TO vt12_OI.EventSet_fraction }
 { Sample BehaviorClock.EventFraction_changed TO vt12_OI.EventSet_fraction}
-X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1750.set_EventSet_fraction);
+X3DPrototype603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator1750.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { METHOD .AddX3DPrototype }
 X3DPrototype20.AddX3DPrototype([X3DPrototype603]);

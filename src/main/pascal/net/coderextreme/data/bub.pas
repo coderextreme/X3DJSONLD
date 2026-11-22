@@ -312,11 +312,11 @@ TimeSensor54.Loop := True;
 X3DPrototype20.AddTimeSensor([TimeSensor54]);
 { Original "TourTime.EventCycleTime TO Bounce.EventSet_fraction }
 { Sample TourTime.EventCycleTime TO Bounce.EventSet_fraction}
-X3DPrototype20.AddRoute(TimeSensor54.EventCycleTime, Script50.set_EventSet_fraction);
+X3DPrototype20.AddRoute(TimeSensor54.EventCycleTime, Script50.EventSet_fraction);
 { METHOD .AddX3DROUTE }
-{ Original "Bounce.EventTranslation_changed TO transform.EventSet_translation }
-{ Sample Bounce.EventTranslation_changed TO transform.EventSet_translation}
-X3DPrototype20.AddRoute(Script50.EventTranslation_changed, Transform21.set_EventSet_translation);
+{ Original "Bounce.EventTranslation_changed TO transform.FdTranslation.EventIn }
+{ Sample Bounce.EventTranslation_changed TO transform.FdTranslation.EventIn}
+X3DPrototype20.AddRoute(Script50.EventTranslation_changed, Transform21.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
 { METHOD .AddX3DPrototype }
 X3DPrototype19.AddX3DPrototype([X3DPrototype20]);

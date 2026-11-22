@@ -126,11 +126,11 @@ TimeSensor20.Loop := True;
 Group7.FdChildren.Add(TimeSensor20);
 { Original "TourTime.EventCycleTime TO Bounce2.EventSet_fraction }
 { Sample TourTime.EventCycleTime TO Bounce2.EventSet_fraction}
-Group7.AddRoute(TimeSensor20.EventCycleTime, Script14.set_EventSet_fraction);
+Group7.AddRoute(TimeSensor20.EventCycleTime, Script14.EventSet_fraction);
 { METHOD .AddX3DROUTE }
-{ Original "Bounce2.EventTranslation_changed TO transform.EventSet_translation }
-{ Sample Bounce2.EventTranslation_changed TO transform.EventSet_translation}
-Group7.AddRoute(Script14.EventTranslation_changed, Transform9.set_EventSet_translation);
+{ Original "Bounce2.EventTranslation_changed TO transform.FdTranslation.EventIn }
+{ Sample Bounce2.EventTranslation_changed TO transform.FdTranslation.EventIn}
+Group7.AddRoute(Script14.EventTranslation_changed, Transform9.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
 { METHOD .AddGroup }
 X3D0.AddChildren([Group7]);

@@ -314,55 +314,55 @@ TimeSensor61.Loop := True;
 Transform18.FdChildren.Add(TimeSensor61);
 { Original "Clock.EventFraction_changed TO UrlSelector.EventSet_fraction }
 { Sample Clock.EventFraction_changed TO UrlSelector.EventSet_fraction}
-Transform18.AddRoute(TimeSensor61.EventFraction_changed, Script46.set_EventSet_fraction);
+Transform18.AddRoute(TimeSensor61.EventFraction_changed, Script46.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "UrlSelector.EventFront_changed TO cube.frontUrl }
 { Sample UrlSelector.EventFront_changed TO cube.frontUrl}
-Transform18.AddRoute(Script46.EventFront_changed, Background17.set_frontUrl);
+Transform18.AddRoute(Script46.EventFront_changed, Background17.frontUrl);
 { METHOD .AddX3DROUTE }
 { Original "UrlSelector.EventBack_changed TO cube.backUrl }
 { Sample UrlSelector.EventBack_changed TO cube.backUrl}
-Transform18.AddRoute(Script46.EventBack_changed, Background17.set_backUrl);
+Transform18.AddRoute(Script46.EventBack_changed, Background17.backUrl);
 { METHOD .AddX3DROUTE }
 { Original "UrlSelector.EventLeft_changed TO cube.leftUrl }
 { Sample UrlSelector.EventLeft_changed TO cube.leftUrl}
-Transform18.AddRoute(Script46.EventLeft_changed, Background17.set_leftUrl);
+Transform18.AddRoute(Script46.EventLeft_changed, Background17.leftUrl);
 { METHOD .AddX3DROUTE }
 { Original "UrlSelector.EventRight_changed TO cube.rightUrl }
 { Sample UrlSelector.EventRight_changed TO cube.rightUrl}
-Transform18.AddRoute(Script46.EventRight_changed, Background17.set_rightUrl);
+Transform18.AddRoute(Script46.EventRight_changed, Background17.rightUrl);
 { METHOD .AddX3DROUTE }
 { Original "UrlSelector.EventTop_changed TO cube.topUrl }
 { Sample UrlSelector.EventTop_changed TO cube.topUrl}
-Transform18.AddRoute(Script46.EventTop_changed, Background17.set_topUrl);
+Transform18.AddRoute(Script46.EventTop_changed, Background17.topUrl);
 { METHOD .AddX3DROUTE }
 { Original "UrlSelector.EventBottom_changed TO cube.bottomUrl }
 { Sample UrlSelector.EventBottom_changed TO cube.bottomUrl}
-Transform18.AddRoute(Script46.EventBottom_changed, Background17.set_bottomUrl);
+Transform18.AddRoute(Script46.EventBottom_changed, Background17.bottomUrl);
 { METHOD .AddX3DROUTE }
 { Original "UrlSelector.EventFront_changed TO frontShader.url }
 { Sample UrlSelector.EventFront_changed TO frontShader.url}
-Transform18.AddRoute(Script46.EventFront_changed, ImageTexture25.set_url);
+Transform18.AddRoute(Script46.EventFront_changed, ImageTexture25.url);
 { METHOD .AddX3DROUTE }
 { Original "UrlSelector.EventBack_changed TO backShader.url }
 { Sample UrlSelector.EventBack_changed TO backShader.url}
-Transform18.AddRoute(Script46.EventBack_changed, ImageTexture23.set_url);
+Transform18.AddRoute(Script46.EventBack_changed, ImageTexture23.url);
 { METHOD .AddX3DROUTE }
 { Original "UrlSelector.EventLeft_changed TO leftShader.url }
 { Sample UrlSelector.EventLeft_changed TO leftShader.url}
-Transform18.AddRoute(Script46.EventLeft_changed, ImageTexture26.set_url);
+Transform18.AddRoute(Script46.EventLeft_changed, ImageTexture26.url);
 { METHOD .AddX3DROUTE }
 { Original "UrlSelector.EventRight_changed TO rightShader.url }
 { Sample UrlSelector.EventRight_changed TO rightShader.url}
-Transform18.AddRoute(Script46.EventRight_changed, ImageTexture27.set_url);
+Transform18.AddRoute(Script46.EventRight_changed, ImageTexture27.url);
 { METHOD .AddX3DROUTE }
 { Original "UrlSelector.EventTop_changed TO topShader.url }
 { Sample UrlSelector.EventTop_changed TO topShader.url}
-Transform18.AddRoute(Script46.EventTop_changed, ImageTexture28.set_url);
+Transform18.AddRoute(Script46.EventTop_changed, ImageTexture28.url);
 { METHOD .AddX3DROUTE }
 { Original "UrlSelector.EventBottom_changed TO bottomShader.url }
 { Sample UrlSelector.EventBottom_changed TO bottomShader.url}
-Transform18.AddRoute(Script46.EventBottom_changed, ImageTexture24.set_url);
+Transform18.AddRoute(Script46.EventBottom_changed, ImageTexture24.url);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group15.FdChildren.Add(Transform18);

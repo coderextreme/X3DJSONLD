@@ -6382,11 +6382,11 @@ OrientationInterpolator1461.SetKeyValue([Vector4(0,1,0,0),Vector4(0,1,0,0.7),Vec
 Group33.FdChildren.Add(OrientationInterpolator1461);
 { Original "Time2.EventFraction_changed TO vc6Yaw.EventSet_fraction }
 { Sample Time2.EventFraction_changed TO vc6Yaw.EventSet_fraction}
-Group33.AddRoute(TimeSensor1456.EventFraction_changed, OrientationInterpolator1461.set_EventSet_fraction);
+Group33.AddRoute(TimeSensor1456.EventFraction_changed, OrientationInterpolator1461.EventSet_fraction);
 { METHOD .AddX3DROUTE }
-{ Original "vc6Yaw.EventValue_changed TO Joe_vc6.EventSet_rotation }
-{ Sample vc6Yaw.EventValue_changed TO Joe_vc6.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1461.EventValue_changed, HAnimJoint580.set_EventSet_rotation);
+{ Original "vc6Yaw.EventValue_changed TO Joe_vc6.FdRotation.EventIn }
+{ Sample vc6Yaw.EventValue_changed TO Joe_vc6.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1461.EventValue_changed, HAnimJoint580.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1464 := TOrientationInterpolatorNode.Create;
 end;
@@ -6400,15 +6400,15 @@ OrientationInterpolator1464.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vecto
 Group33.FdChildren.Add(OrientationInterpolator1464);
 { Original "Time3.EventFraction_changed TO EyeballsRotation.EventSet_fraction }
 { Sample Time3.EventFraction_changed TO EyeballsRotation.EventSet_fraction}
-Group33.AddRoute(TimeSensor1457.EventFraction_changed, OrientationInterpolator1464.set_EventSet_fraction);
+Group33.AddRoute(TimeSensor1457.EventFraction_changed, OrientationInterpolator1464.EventSet_fraction);
 { METHOD .AddX3DROUTE }
-{ Original "EyeballsRotation.EventValue_changed TO Joe_r_eyeball_joint.EventSet_rotation }
-{ Sample EyeballsRotation.EventValue_changed TO Joe_r_eyeball_joint.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1464.EventValue_changed, HAnimJoint664.set_EventSet_rotation);
+{ Original "EyeballsRotation.EventValue_changed TO Joe_r_eyeball_joint.FdRotation.EventIn }
+{ Sample EyeballsRotation.EventValue_changed TO Joe_r_eyeball_joint.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1464.EventValue_changed, HAnimJoint664.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "EyeballsRotation.EventValue_changed TO Joe_l_eyeball_joint.EventSet_rotation }
-{ Sample EyeballsRotation.EventValue_changed TO Joe_l_eyeball_joint.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1464.EventValue_changed, HAnimJoint656.set_EventSet_rotation);
+{ Original "EyeballsRotation.EventValue_changed TO Joe_l_eyeball_joint.FdRotation.EventIn }
+{ Sample EyeballsRotation.EventValue_changed TO Joe_l_eyeball_joint.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1464.EventValue_changed, HAnimJoint656.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1468 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator1468.SetKey([0,0.2,0.4,0.6,0.8,1]);
@@ -6505,106 +6505,106 @@ OrientationInterpolator1485.SetKey([0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1]);
 OrientationInterpolator1485.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0.37),Vector4(0,0,1,0.38),Vector4(0,0,1,0.39),Vector4(0,0,1,0.38),Vector4(0,0,1,0.27),Vector4(0,0,1,0.28),Vector4(0,0,1,0.27),Vector4(0,0,1,0.28),Vector4(0,0,1,0)]);
 { METHOD .FdChildren.Add }
 Group33.FdChildren.Add(OrientationInterpolator1485);
-{ Original "r_sternoclavicularRelax.EventValue_changed TO Joe_r_sternoclavicular.EventSet_rotation }
-{ Sample r_sternoclavicularRelax.EventValue_changed TO Joe_r_sternoclavicular.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1468.EventValue_changed, HAnimJoint922.set_EventSet_rotation);
+{ Original "r_sternoclavicularRelax.EventValue_changed TO Joe_r_sternoclavicular.FdRotation.EventIn }
+{ Sample r_sternoclavicularRelax.EventValue_changed TO Joe_r_sternoclavicular.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1468.EventValue_changed, HAnimJoint922.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_acromioclavicularRelax.EventValue_changed TO Joe_r_acromioclavicular.EventSet_rotation }
-{ Sample r_acromioclavicularRelax.EventValue_changed TO Joe_r_acromioclavicular.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1469.EventValue_changed, HAnimJoint932.set_EventSet_rotation);
+{ Original "r_acromioclavicularRelax.EventValue_changed TO Joe_r_acromioclavicular.FdRotation.EventIn }
+{ Sample r_acromioclavicularRelax.EventValue_changed TO Joe_r_acromioclavicular.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1469.EventValue_changed, HAnimJoint932.FdRotation.EventIn);
 end;
 
 procedure InitJoeSkeletonSkinSiteSaluteWalkPart79;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "r_shoulderRelax.EventValue_changed TO Joe_r_shoulder.EventSet_rotation }
-{ Sample r_shoulderRelax.EventValue_changed TO Joe_r_shoulder.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1470.EventValue_changed, HAnimJoint948.set_EventSet_rotation);
+{ Original "r_shoulderRelax.EventValue_changed TO Joe_r_shoulder.FdRotation.EventIn }
+{ Sample r_shoulderRelax.EventValue_changed TO Joe_r_shoulder.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1470.EventValue_changed, HAnimJoint948.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_elbowRelax.EventValue_changed TO Joe_r_elbow.EventSet_rotation }
-{ Sample r_elbowRelax.EventValue_changed TO Joe_r_elbow.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1471.EventValue_changed, HAnimJoint978.set_EventSet_rotation);
+{ Original "r_elbowRelax.EventValue_changed TO Joe_r_elbow.FdRotation.EventIn }
+{ Sample r_elbowRelax.EventValue_changed TO Joe_r_elbow.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1471.EventValue_changed, HAnimJoint978.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_wristRelax.EventValue_changed TO Joe_r_radiocarpal.EventSet_rotation }
-{ Sample r_wristRelax.EventValue_changed TO Joe_r_radiocarpal.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1472.EventValue_changed, HAnimJoint1000.set_EventSet_rotation);
+{ Original "r_wristRelax.EventValue_changed TO Joe_r_radiocarpal.FdRotation.EventIn }
+{ Sample r_wristRelax.EventValue_changed TO Joe_r_radiocarpal.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1472.EventValue_changed, HAnimJoint1000.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_thumb1Relax.EventValue_changed TO Joe_r_carpometacarpal_1.EventSet_rotation }
-{ Sample r_thumb1Relax.EventValue_changed TO Joe_r_carpometacarpal_1.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1481.EventValue_changed, HAnimJoint1010.set_EventSet_rotation);
+{ Original "r_thumb1Relax.EventValue_changed TO Joe_r_carpometacarpal_1.FdRotation.EventIn }
+{ Sample r_thumb1Relax.EventValue_changed TO Joe_r_carpometacarpal_1.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1481.EventValue_changed, HAnimJoint1010.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_thumb2Relax.EventValue_changed TO Joe_r_metacarpophalangeal_1.EventSet_rotation }
-{ Sample r_thumb2Relax.EventValue_changed TO Joe_r_metacarpophalangeal_1.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1482.EventValue_changed, HAnimJoint1018.set_EventSet_rotation);
+{ Original "r_thumb2Relax.EventValue_changed TO Joe_r_metacarpophalangeal_1.FdRotation.EventIn }
+{ Sample r_thumb2Relax.EventValue_changed TO Joe_r_metacarpophalangeal_1.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1482.EventValue_changed, HAnimJoint1018.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_thumb3Relax.EventValue_changed TO Joe_r_carpal_interphalangeal_1.EventSet_rotation }
-{ Sample r_thumb3Relax.EventValue_changed TO Joe_r_carpal_interphalangeal_1.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1483.EventValue_changed, HAnimJoint1026.set_EventSet_rotation);
+{ Original "r_thumb3Relax.EventValue_changed TO Joe_r_carpal_interphalangeal_1.FdRotation.EventIn }
+{ Sample r_thumb3Relax.EventValue_changed TO Joe_r_carpal_interphalangeal_1.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1483.EventValue_changed, HAnimJoint1026.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_index0Relax.EventValue_changed TO Joe_r_carpometacarpal_2.EventSet_rotation }
-{ Sample r_index0Relax.EventValue_changed TO Joe_r_carpometacarpal_2.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1473.EventValue_changed, HAnimJoint1038.set_EventSet_rotation);
+{ Original "r_index0Relax.EventValue_changed TO Joe_r_carpometacarpal_2.FdRotation.EventIn }
+{ Sample r_index0Relax.EventValue_changed TO Joe_r_carpometacarpal_2.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1473.EventValue_changed, HAnimJoint1038.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_index1Relax.EventValue_changed TO Joe_r_metacarpophalangeal_2.EventSet_rotation }
-{ Sample r_index1Relax.EventValue_changed TO Joe_r_metacarpophalangeal_2.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1474.EventValue_changed, HAnimJoint1048.set_EventSet_rotation);
+{ Original "r_index1Relax.EventValue_changed TO Joe_r_metacarpophalangeal_2.FdRotation.EventIn }
+{ Sample r_index1Relax.EventValue_changed TO Joe_r_metacarpophalangeal_2.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1474.EventValue_changed, HAnimJoint1048.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_fingers2Relax.EventValue_changed TO Joe_r_carpal_proximal_interphalangeal_2.EventSet_rotation }
-{ Sample r_fingers2Relax.EventValue_changed TO Joe_r_carpal_proximal_interphalangeal_2.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1484.EventValue_changed, HAnimJoint1056.set_EventSet_rotation);
+{ Original "r_fingers2Relax.EventValue_changed TO Joe_r_carpal_proximal_interphalangeal_2.FdRotation.EventIn }
+{ Sample r_fingers2Relax.EventValue_changed TO Joe_r_carpal_proximal_interphalangeal_2.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1484.EventValue_changed, HAnimJoint1056.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_fingers3Relax.EventValue_changed TO Joe_r_carpal_distal_interphalangeal_2.EventSet_rotation }
-{ Sample r_fingers3Relax.EventValue_changed TO Joe_r_carpal_distal_interphalangeal_2.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1485.EventValue_changed, HAnimJoint1064.set_EventSet_rotation);
+{ Original "r_fingers3Relax.EventValue_changed TO Joe_r_carpal_distal_interphalangeal_2.FdRotation.EventIn }
+{ Sample r_fingers3Relax.EventValue_changed TO Joe_r_carpal_distal_interphalangeal_2.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1485.EventValue_changed, HAnimJoint1064.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_middle0Relax.EventValue_changed TO Joe_r_carpometacarpal_3.EventSet_rotation }
-{ Sample r_middle0Relax.EventValue_changed TO Joe_r_carpometacarpal_3.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1475.EventValue_changed, HAnimJoint1074.set_EventSet_rotation);
+{ Original "r_middle0Relax.EventValue_changed TO Joe_r_carpometacarpal_3.FdRotation.EventIn }
+{ Sample r_middle0Relax.EventValue_changed TO Joe_r_carpometacarpal_3.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1475.EventValue_changed, HAnimJoint1074.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_middle1Relax.EventValue_changed TO Joe_r_metacarpophalangeal_3.EventSet_rotation }
-{ Sample r_middle1Relax.EventValue_changed TO Joe_r_metacarpophalangeal_3.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1476.EventValue_changed, HAnimJoint1082.set_EventSet_rotation);
+{ Original "r_middle1Relax.EventValue_changed TO Joe_r_metacarpophalangeal_3.FdRotation.EventIn }
+{ Sample r_middle1Relax.EventValue_changed TO Joe_r_metacarpophalangeal_3.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1476.EventValue_changed, HAnimJoint1082.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_fingers2Relax.EventValue_changed TO Joe_r_carpal_proximal_interphalangeal_3.EventSet_rotation }
-{ Sample r_fingers2Relax.EventValue_changed TO Joe_r_carpal_proximal_interphalangeal_3.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1484.EventValue_changed, HAnimJoint1090.set_EventSet_rotation);
+{ Original "r_fingers2Relax.EventValue_changed TO Joe_r_carpal_proximal_interphalangeal_3.FdRotation.EventIn }
+{ Sample r_fingers2Relax.EventValue_changed TO Joe_r_carpal_proximal_interphalangeal_3.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1484.EventValue_changed, HAnimJoint1090.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_fingers3Relax.EventValue_changed TO Joe_r_carpal_distal_interphalangeal_3.EventSet_rotation }
-{ Sample r_fingers3Relax.EventValue_changed TO Joe_r_carpal_distal_interphalangeal_3.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1485.EventValue_changed, HAnimJoint1098.set_EventSet_rotation);
+{ Original "r_fingers3Relax.EventValue_changed TO Joe_r_carpal_distal_interphalangeal_3.FdRotation.EventIn }
+{ Sample r_fingers3Relax.EventValue_changed TO Joe_r_carpal_distal_interphalangeal_3.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1485.EventValue_changed, HAnimJoint1098.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_ring0Relax.EventValue_changed TO Joe_r_carpometacarpal_4.EventSet_rotation }
-{ Sample r_ring0Relax.EventValue_changed TO Joe_r_carpometacarpal_4.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1477.EventValue_changed, HAnimJoint1110.set_EventSet_rotation);
+{ Original "r_ring0Relax.EventValue_changed TO Joe_r_carpometacarpal_4.FdRotation.EventIn }
+{ Sample r_ring0Relax.EventValue_changed TO Joe_r_carpometacarpal_4.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1477.EventValue_changed, HAnimJoint1110.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_ring1Relax.EventValue_changed TO Joe_r_metacarpophalangeal_4.EventSet_rotation }
-{ Sample r_ring1Relax.EventValue_changed TO Joe_r_metacarpophalangeal_4.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1478.EventValue_changed, HAnimJoint1118.set_EventSet_rotation);
+{ Original "r_ring1Relax.EventValue_changed TO Joe_r_metacarpophalangeal_4.FdRotation.EventIn }
+{ Sample r_ring1Relax.EventValue_changed TO Joe_r_metacarpophalangeal_4.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1478.EventValue_changed, HAnimJoint1118.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_fingers2Relax.EventValue_changed TO Joe_r_carpal_proximal_interphalangeal_4.EventSet_rotation }
-{ Sample r_fingers2Relax.EventValue_changed TO Joe_r_carpal_proximal_interphalangeal_4.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1484.EventValue_changed, HAnimJoint1126.set_EventSet_rotation);
+{ Original "r_fingers2Relax.EventValue_changed TO Joe_r_carpal_proximal_interphalangeal_4.FdRotation.EventIn }
+{ Sample r_fingers2Relax.EventValue_changed TO Joe_r_carpal_proximal_interphalangeal_4.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1484.EventValue_changed, HAnimJoint1126.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_fingers3Relax.EventValue_changed TO Joe_r_carpal_distal_interphalangeal_4.EventSet_rotation }
-{ Sample r_fingers3Relax.EventValue_changed TO Joe_r_carpal_distal_interphalangeal_4.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1485.EventValue_changed, HAnimJoint1134.set_EventSet_rotation);
+{ Original "r_fingers3Relax.EventValue_changed TO Joe_r_carpal_distal_interphalangeal_4.FdRotation.EventIn }
+{ Sample r_fingers3Relax.EventValue_changed TO Joe_r_carpal_distal_interphalangeal_4.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1485.EventValue_changed, HAnimJoint1134.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_pinky0Relax.EventValue_changed TO Joe_r_carpometacarpal_5.EventSet_rotation }
-{ Sample r_pinky0Relax.EventValue_changed TO Joe_r_carpometacarpal_5.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1479.EventValue_changed, HAnimJoint1144.set_EventSet_rotation);
+{ Original "r_pinky0Relax.EventValue_changed TO Joe_r_carpometacarpal_5.FdRotation.EventIn }
+{ Sample r_pinky0Relax.EventValue_changed TO Joe_r_carpometacarpal_5.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1479.EventValue_changed, HAnimJoint1144.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_pinky1Relax.EventValue_changed TO Joe_r_metacarpophalangeal_5.EventSet_rotation }
-{ Sample r_pinky1Relax.EventValue_changed TO Joe_r_metacarpophalangeal_5.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1480.EventValue_changed, HAnimJoint1154.set_EventSet_rotation);
+{ Original "r_pinky1Relax.EventValue_changed TO Joe_r_metacarpophalangeal_5.FdRotation.EventIn }
+{ Sample r_pinky1Relax.EventValue_changed TO Joe_r_metacarpophalangeal_5.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1480.EventValue_changed, HAnimJoint1154.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_fingers2Relax.EventValue_changed TO Joe_r_carpal_proximal_interphalangeal_5.EventSet_rotation }
-{ Sample r_fingers2Relax.EventValue_changed TO Joe_r_carpal_proximal_interphalangeal_5.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1484.EventValue_changed, HAnimJoint1162.set_EventSet_rotation);
+{ Original "r_fingers2Relax.EventValue_changed TO Joe_r_carpal_proximal_interphalangeal_5.FdRotation.EventIn }
+{ Sample r_fingers2Relax.EventValue_changed TO Joe_r_carpal_proximal_interphalangeal_5.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1484.EventValue_changed, HAnimJoint1162.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_fingers3Relax.EventValue_changed TO Joe_r_carpal_distal_interphalangeal_5.EventSet_rotation }
-{ Sample r_fingers3Relax.EventValue_changed TO Joe_r_carpal_distal_interphalangeal_5.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1485.EventValue_changed, HAnimJoint1170.set_EventSet_rotation);
+{ Original "r_fingers3Relax.EventValue_changed TO Joe_r_carpal_distal_interphalangeal_5.FdRotation.EventIn }
+{ Sample r_fingers3Relax.EventValue_changed TO Joe_r_carpal_distal_interphalangeal_5.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1485.EventValue_changed, HAnimJoint1170.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1510 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator1510.SetKey([0,0.2,0.4,0.5,0.7,0.8,1]);
@@ -6658,140 +6658,140 @@ OrientationInterpolator1518.SetKeyValue([Vector4(0.25,0,1,1.76),Vector4(0,0,1,1.
 Group33.FdChildren.Add(OrientationInterpolator1518);
 { Original "Time2.EventFraction_changed TO r_sternoclavicularRoll.EventSet_fraction }
 { Sample Time2.EventFraction_changed TO r_sternoclavicularRoll.EventSet_fraction}
-Group33.AddRoute(TimeSensor1456.EventFraction_changed, OrientationInterpolator1510.set_EventSet_fraction);
+Group33.AddRoute(TimeSensor1456.EventFraction_changed, OrientationInterpolator1510.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Time2.EventFraction_changed TO r_acromioclavicularRoll.EventSet_fraction }
 { Sample Time2.EventFraction_changed TO r_acromioclavicularRoll.EventSet_fraction}
-Group33.AddRoute(TimeSensor1456.EventFraction_changed, OrientationInterpolator1511.set_EventSet_fraction);
+Group33.AddRoute(TimeSensor1456.EventFraction_changed, OrientationInterpolator1511.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Time2.EventFraction_changed TO r_shoulderRoll.EventSet_fraction }
 { Sample Time2.EventFraction_changed TO r_shoulderRoll.EventSet_fraction}
-Group33.AddRoute(TimeSensor1456.EventFraction_changed, OrientationInterpolator1512.set_EventSet_fraction);
+Group33.AddRoute(TimeSensor1456.EventFraction_changed, OrientationInterpolator1512.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Time2.EventFraction_changed TO r_ForeArmPitch.EventSet_fraction }
 { Sample Time2.EventFraction_changed TO r_ForeArmPitch.EventSet_fraction}
-Group33.AddRoute(TimeSensor1456.EventFraction_changed, OrientationInterpolator1513.set_EventSet_fraction);
+Group33.AddRoute(TimeSensor1456.EventFraction_changed, OrientationInterpolator1513.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Time2.EventFraction_changed TO r_wristRoll.EventSet_fraction }
 { Sample Time2.EventFraction_changed TO r_wristRoll.EventSet_fraction}
-Group33.AddRoute(TimeSensor1456.EventFraction_changed, OrientationInterpolator1514.set_EventSet_fraction);
+Group33.AddRoute(TimeSensor1456.EventFraction_changed, OrientationInterpolator1514.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Time2.EventFraction_changed TO r_handPitch.EventSet_fraction }
 { Sample Time2.EventFraction_changed TO r_handPitch.EventSet_fraction}
-Group33.AddRoute(TimeSensor1456.EventFraction_changed, OrientationInterpolator1515.set_EventSet_fraction);
+Group33.AddRoute(TimeSensor1456.EventFraction_changed, OrientationInterpolator1515.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Time2.EventFraction_changed TO r_thumb1Pitch.EventSet_fraction }
 { Sample Time2.EventFraction_changed TO r_thumb1Pitch.EventSet_fraction}
-Group33.AddRoute(TimeSensor1456.EventFraction_changed, OrientationInterpolator1516.set_EventSet_fraction);
+Group33.AddRoute(TimeSensor1456.EventFraction_changed, OrientationInterpolator1516.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Time2.EventFraction_changed TO r_thumb2Pitch.EventSet_fraction }
 { Sample Time2.EventFraction_changed TO r_thumb2Pitch.EventSet_fraction}
-Group33.AddRoute(TimeSensor1456.EventFraction_changed, OrientationInterpolator1517.set_EventSet_fraction);
+Group33.AddRoute(TimeSensor1456.EventFraction_changed, OrientationInterpolator1517.EventSet_fraction);
 { METHOD .AddX3DROUTE }
-{ Original "r_sternoclavicularRoll.EventValue_changed TO Joe_r_sternoclavicular.EventSet_rotation }
-{ Sample r_sternoclavicularRoll.EventValue_changed TO Joe_r_sternoclavicular.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1510.EventValue_changed, HAnimJoint922.set_EventSet_rotation);
+{ Original "r_sternoclavicularRoll.EventValue_changed TO Joe_r_sternoclavicular.FdRotation.EventIn }
+{ Sample r_sternoclavicularRoll.EventValue_changed TO Joe_r_sternoclavicular.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1510.EventValue_changed, HAnimJoint922.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_acromioclavicularRoll.EventValue_changed TO Joe_r_acromioclavicular.EventSet_rotation }
-{ Sample r_acromioclavicularRoll.EventValue_changed TO Joe_r_acromioclavicular.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1511.EventValue_changed, HAnimJoint932.set_EventSet_rotation);
+{ Original "r_acromioclavicularRoll.EventValue_changed TO Joe_r_acromioclavicular.FdRotation.EventIn }
+{ Sample r_acromioclavicularRoll.EventValue_changed TO Joe_r_acromioclavicular.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1511.EventValue_changed, HAnimJoint932.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_shoulderRoll.EventValue_changed TO Joe_r_shoulder.EventSet_rotation }
-{ Sample r_shoulderRoll.EventValue_changed TO Joe_r_shoulder.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1512.EventValue_changed, HAnimJoint948.set_EventSet_rotation);
+{ Original "r_shoulderRoll.EventValue_changed TO Joe_r_shoulder.FdRotation.EventIn }
+{ Sample r_shoulderRoll.EventValue_changed TO Joe_r_shoulder.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1512.EventValue_changed, HAnimJoint948.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_ForeArmPitch.EventValue_changed TO Joe_r_elbow.EventSet_rotation }
-{ Sample r_ForeArmPitch.EventValue_changed TO Joe_r_elbow.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1513.EventValue_changed, HAnimJoint978.set_EventSet_rotation);
+{ Original "r_ForeArmPitch.EventValue_changed TO Joe_r_elbow.FdRotation.EventIn }
+{ Sample r_ForeArmPitch.EventValue_changed TO Joe_r_elbow.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1513.EventValue_changed, HAnimJoint978.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_wristRoll.EventValue_changed TO Joe_r_radiocarpal.EventSet_rotation }
-{ Sample r_wristRoll.EventValue_changed TO Joe_r_radiocarpal.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1514.EventValue_changed, HAnimJoint1000.set_EventSet_rotation);
+{ Original "r_wristRoll.EventValue_changed TO Joe_r_radiocarpal.FdRotation.EventIn }
+{ Sample r_wristRoll.EventValue_changed TO Joe_r_radiocarpal.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1514.EventValue_changed, HAnimJoint1000.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_handPitch.EventValue_changed TO Joe_r_carpometacarpal_2.EventSet_rotation }
-{ Sample r_handPitch.EventValue_changed TO Joe_r_carpometacarpal_2.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1515.EventValue_changed, HAnimJoint1038.set_EventSet_rotation);
+{ Original "r_handPitch.EventValue_changed TO Joe_r_carpometacarpal_2.FdRotation.EventIn }
+{ Sample r_handPitch.EventValue_changed TO Joe_r_carpometacarpal_2.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1515.EventValue_changed, HAnimJoint1038.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_handPitch.EventValue_changed TO Joe_r_metacarpophalangeal_2.EventSet_rotation }
-{ Sample r_handPitch.EventValue_changed TO Joe_r_metacarpophalangeal_2.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1515.EventValue_changed, HAnimJoint1048.set_EventSet_rotation);
+{ Original "r_handPitch.EventValue_changed TO Joe_r_metacarpophalangeal_2.FdRotation.EventIn }
+{ Sample r_handPitch.EventValue_changed TO Joe_r_metacarpophalangeal_2.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1515.EventValue_changed, HAnimJoint1048.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_handPitch.EventValue_changed TO Joe_r_carpal_proximal_interphalangeal_2.EventSet_rotation }
-{ Sample r_handPitch.EventValue_changed TO Joe_r_carpal_proximal_interphalangeal_2.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1515.EventValue_changed, HAnimJoint1056.set_EventSet_rotation);
+{ Original "r_handPitch.EventValue_changed TO Joe_r_carpal_proximal_interphalangeal_2.FdRotation.EventIn }
+{ Sample r_handPitch.EventValue_changed TO Joe_r_carpal_proximal_interphalangeal_2.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1515.EventValue_changed, HAnimJoint1056.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_handPitch.EventValue_changed TO Joe_r_carpal_distal_interphalangeal_2.EventSet_rotation }
-{ Sample r_handPitch.EventValue_changed TO Joe_r_carpal_distal_interphalangeal_2.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1515.EventValue_changed, HAnimJoint1064.set_EventSet_rotation);
+{ Original "r_handPitch.EventValue_changed TO Joe_r_carpal_distal_interphalangeal_2.FdRotation.EventIn }
+{ Sample r_handPitch.EventValue_changed TO Joe_r_carpal_distal_interphalangeal_2.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1515.EventValue_changed, HAnimJoint1064.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_handPitch.EventValue_changed TO Joe_r_carpometacarpal_3.EventSet_rotation }
-{ Sample r_handPitch.EventValue_changed TO Joe_r_carpometacarpal_3.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1515.EventValue_changed, HAnimJoint1074.set_EventSet_rotation);
+{ Original "r_handPitch.EventValue_changed TO Joe_r_carpometacarpal_3.FdRotation.EventIn }
+{ Sample r_handPitch.EventValue_changed TO Joe_r_carpometacarpal_3.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1515.EventValue_changed, HAnimJoint1074.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_handPitch.EventValue_changed TO Joe_r_metacarpophalangeal_3.EventSet_rotation }
-{ Sample r_handPitch.EventValue_changed TO Joe_r_metacarpophalangeal_3.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1515.EventValue_changed, HAnimJoint1082.set_EventSet_rotation);
+{ Original "r_handPitch.EventValue_changed TO Joe_r_metacarpophalangeal_3.FdRotation.EventIn }
+{ Sample r_handPitch.EventValue_changed TO Joe_r_metacarpophalangeal_3.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1515.EventValue_changed, HAnimJoint1082.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_handPitch.EventValue_changed TO Joe_r_carpal_proximal_interphalangeal_3.EventSet_rotation }
-{ Sample r_handPitch.EventValue_changed TO Joe_r_carpal_proximal_interphalangeal_3.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1515.EventValue_changed, HAnimJoint1090.set_EventSet_rotation);
+{ Original "r_handPitch.EventValue_changed TO Joe_r_carpal_proximal_interphalangeal_3.FdRotation.EventIn }
+{ Sample r_handPitch.EventValue_changed TO Joe_r_carpal_proximal_interphalangeal_3.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1515.EventValue_changed, HAnimJoint1090.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_handPitch.EventValue_changed TO Joe_r_carpal_distal_interphalangeal_3.EventSet_rotation }
-{ Sample r_handPitch.EventValue_changed TO Joe_r_carpal_distal_interphalangeal_3.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1515.EventValue_changed, HAnimJoint1098.set_EventSet_rotation);
+{ Original "r_handPitch.EventValue_changed TO Joe_r_carpal_distal_interphalangeal_3.FdRotation.EventIn }
+{ Sample r_handPitch.EventValue_changed TO Joe_r_carpal_distal_interphalangeal_3.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1515.EventValue_changed, HAnimJoint1098.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_handPitch.EventValue_changed TO Joe_r_carpometacarpal_4.EventSet_rotation }
-{ Sample r_handPitch.EventValue_changed TO Joe_r_carpometacarpal_4.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1515.EventValue_changed, HAnimJoint1110.set_EventSet_rotation);
+{ Original "r_handPitch.EventValue_changed TO Joe_r_carpometacarpal_4.FdRotation.EventIn }
+{ Sample r_handPitch.EventValue_changed TO Joe_r_carpometacarpal_4.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1515.EventValue_changed, HAnimJoint1110.FdRotation.EventIn);
 end;
 
 procedure InitJoeSkeletonSkinSiteSaluteWalkPart81;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "r_handPitch.EventValue_changed TO Joe_r_metacarpophalangeal_4.EventSet_rotation }
-{ Sample r_handPitch.EventValue_changed TO Joe_r_metacarpophalangeal_4.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1515.EventValue_changed, HAnimJoint1118.set_EventSet_rotation);
+{ Original "r_handPitch.EventValue_changed TO Joe_r_metacarpophalangeal_4.FdRotation.EventIn }
+{ Sample r_handPitch.EventValue_changed TO Joe_r_metacarpophalangeal_4.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1515.EventValue_changed, HAnimJoint1118.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_handPitch.EventValue_changed TO Joe_r_carpal_proximal_interphalangeal_4.EventSet_rotation }
-{ Sample r_handPitch.EventValue_changed TO Joe_r_carpal_proximal_interphalangeal_4.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1515.EventValue_changed, HAnimJoint1126.set_EventSet_rotation);
+{ Original "r_handPitch.EventValue_changed TO Joe_r_carpal_proximal_interphalangeal_4.FdRotation.EventIn }
+{ Sample r_handPitch.EventValue_changed TO Joe_r_carpal_proximal_interphalangeal_4.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1515.EventValue_changed, HAnimJoint1126.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_handPitch.EventValue_changed TO Joe_r_carpal_distal_interphalangeal_4.EventSet_rotation }
-{ Sample r_handPitch.EventValue_changed TO Joe_r_carpal_distal_interphalangeal_4.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1515.EventValue_changed, HAnimJoint1134.set_EventSet_rotation);
+{ Original "r_handPitch.EventValue_changed TO Joe_r_carpal_distal_interphalangeal_4.FdRotation.EventIn }
+{ Sample r_handPitch.EventValue_changed TO Joe_r_carpal_distal_interphalangeal_4.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1515.EventValue_changed, HAnimJoint1134.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_handPitch.EventValue_changed TO Joe_r_carpometacarpal_5.EventSet_rotation }
-{ Sample r_handPitch.EventValue_changed TO Joe_r_carpometacarpal_5.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1515.EventValue_changed, HAnimJoint1144.set_EventSet_rotation);
+{ Original "r_handPitch.EventValue_changed TO Joe_r_carpometacarpal_5.FdRotation.EventIn }
+{ Sample r_handPitch.EventValue_changed TO Joe_r_carpometacarpal_5.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1515.EventValue_changed, HAnimJoint1144.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_handPitch.EventValue_changed TO Joe_r_metacarpophalangeal_5.EventSet_rotation }
-{ Sample r_handPitch.EventValue_changed TO Joe_r_metacarpophalangeal_5.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1515.EventValue_changed, HAnimJoint1154.set_EventSet_rotation);
+{ Original "r_handPitch.EventValue_changed TO Joe_r_metacarpophalangeal_5.FdRotation.EventIn }
+{ Sample r_handPitch.EventValue_changed TO Joe_r_metacarpophalangeal_5.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1515.EventValue_changed, HAnimJoint1154.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_handPitch.EventValue_changed TO Joe_r_carpal_proximal_interphalangeal_5.EventSet_rotation }
-{ Sample r_handPitch.EventValue_changed TO Joe_r_carpal_proximal_interphalangeal_5.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1515.EventValue_changed, HAnimJoint1162.set_EventSet_rotation);
+{ Original "r_handPitch.EventValue_changed TO Joe_r_carpal_proximal_interphalangeal_5.FdRotation.EventIn }
+{ Sample r_handPitch.EventValue_changed TO Joe_r_carpal_proximal_interphalangeal_5.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1515.EventValue_changed, HAnimJoint1162.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_handPitch.EventValue_changed TO Joe_r_carpal_distal_interphalangeal_5.EventSet_rotation }
-{ Sample r_handPitch.EventValue_changed TO Joe_r_carpal_distal_interphalangeal_5.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1515.EventValue_changed, HAnimJoint1170.set_EventSet_rotation);
+{ Original "r_handPitch.EventValue_changed TO Joe_r_carpal_distal_interphalangeal_5.FdRotation.EventIn }
+{ Sample r_handPitch.EventValue_changed TO Joe_r_carpal_distal_interphalangeal_5.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1515.EventValue_changed, HAnimJoint1170.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_thumb1Pitch.EventValue_changed TO Joe_r_carpometacarpal_1.EventSet_rotation }
-{ Sample r_thumb1Pitch.EventValue_changed TO Joe_r_carpometacarpal_1.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1516.EventValue_changed, HAnimJoint1010.set_EventSet_rotation);
+{ Original "r_thumb1Pitch.EventValue_changed TO Joe_r_carpometacarpal_1.FdRotation.EventIn }
+{ Sample r_thumb1Pitch.EventValue_changed TO Joe_r_carpometacarpal_1.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1516.EventValue_changed, HAnimJoint1010.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_thumb2Pitch.EventValue_changed TO Joe_r_metacarpophalangeal_1.EventSet_rotation }
-{ Sample r_thumb2Pitch.EventValue_changed TO Joe_r_metacarpophalangeal_1.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1517.EventValue_changed, HAnimJoint1018.set_EventSet_rotation);
+{ Original "r_thumb2Pitch.EventValue_changed TO Joe_r_metacarpophalangeal_1.FdRotation.EventIn }
+{ Sample r_thumb2Pitch.EventValue_changed TO Joe_r_metacarpophalangeal_1.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1517.EventValue_changed, HAnimJoint1018.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_thumb2Pitch.EventValue_changed TO Joe_r_carpal_interphalangeal_1.EventSet_rotation }
-{ Sample r_thumb2Pitch.EventValue_changed TO Joe_r_carpal_interphalangeal_1.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1517.EventValue_changed, HAnimJoint1026.set_EventSet_rotation);
+{ Original "r_thumb2Pitch.EventValue_changed TO Joe_r_carpal_interphalangeal_1.FdRotation.EventIn }
+{ Sample r_thumb2Pitch.EventValue_changed TO Joe_r_carpal_interphalangeal_1.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1517.EventValue_changed, HAnimJoint1026.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "l_shoulderRoll.EventValue_changed TO Joe_l_shoulder.EventSet_rotation }
-{ Sample l_shoulderRoll.EventValue_changed TO Joe_l_shoulder.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1518.EventValue_changed, HAnimJoint698.set_EventSet_rotation);
+{ Original "l_shoulderRoll.EventValue_changed TO Joe_l_shoulder.FdRotation.EventIn }
+{ Sample l_shoulderRoll.EventValue_changed TO Joe_l_shoulder.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1518.EventValue_changed, HAnimJoint698.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
 Group1552 := TGroupNode.Create;
 PositionInterpolator1553 := TPositionInterpolatorNode.Create;
@@ -6918,172 +6918,172 @@ Group1552.FdChildren.Add(OrientationInterpolator1574);
 Group33.FdChildren.Add(Group1552);
 { Original "Time1.EventFraction_changed TO HUMANOIDROOT_POSITION_ANIMATOR.EventSet_fraction }
 { Sample Time1.EventFraction_changed TO HUMANOIDROOT_POSITION_ANIMATOR.EventSet_fraction}
-Group33.AddRoute(TimeSensor1455.EventFraction_changed, PositionInterpolator1553.set_EventSet_fraction);
+Group33.AddRoute(TimeSensor1455.EventFraction_changed, PositionInterpolator1553.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Time1.EventFraction_changed TO HUMANOIDROOT_ANIMATOR.EventSet_fraction }
 { Sample Time1.EventFraction_changed TO HUMANOIDROOT_ANIMATOR.EventSet_fraction}
-Group33.AddRoute(TimeSensor1455.EventFraction_changed, OrientationInterpolator1554.set_EventSet_fraction);
+Group33.AddRoute(TimeSensor1455.EventFraction_changed, OrientationInterpolator1554.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Time1.EventFraction_changed TO L_HIP_ANIMATOR.EventSet_fraction }
 { Sample Time1.EventFraction_changed TO L_HIP_ANIMATOR.EventSet_fraction}
-Group33.AddRoute(TimeSensor1455.EventFraction_changed, OrientationInterpolator1555.set_EventSet_fraction);
+Group33.AddRoute(TimeSensor1455.EventFraction_changed, OrientationInterpolator1555.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Time1.EventFraction_changed TO L_KNEE_ANIMATOR.EventSet_fraction }
 { Sample Time1.EventFraction_changed TO L_KNEE_ANIMATOR.EventSet_fraction}
-Group33.AddRoute(TimeSensor1455.EventFraction_changed, OrientationInterpolator1556.set_EventSet_fraction);
+Group33.AddRoute(TimeSensor1455.EventFraction_changed, OrientationInterpolator1556.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Time1.EventFraction_changed TO L_ANKLE_ANIMATOR.EventSet_fraction }
 { Sample Time1.EventFraction_changed TO L_ANKLE_ANIMATOR.EventSet_fraction}
-Group33.AddRoute(TimeSensor1455.EventFraction_changed, OrientationInterpolator1557.set_EventSet_fraction);
+Group33.AddRoute(TimeSensor1455.EventFraction_changed, OrientationInterpolator1557.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Time1.EventFraction_changed TO L_subtalar_ANIMATOR.EventSet_fraction }
 { Sample Time1.EventFraction_changed TO L_subtalar_ANIMATOR.EventSet_fraction}
-Group33.AddRoute(TimeSensor1455.EventFraction_changed, OrientationInterpolator1559.set_EventSet_fraction);
+Group33.AddRoute(TimeSensor1455.EventFraction_changed, OrientationInterpolator1559.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Time1.EventFraction_changed TO L_MIDTARSAL_ANIMATOR.EventSet_fraction }
 { Sample Time1.EventFraction_changed TO L_MIDTARSAL_ANIMATOR.EventSet_fraction}
-Group33.AddRoute(TimeSensor1455.EventFraction_changed, OrientationInterpolator1560.set_EventSet_fraction);
+Group33.AddRoute(TimeSensor1455.EventFraction_changed, OrientationInterpolator1560.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Time1.EventFraction_changed TO L_metatarsal_ANIMATOR.EventSet_fraction }
 { Sample Time1.EventFraction_changed TO L_metatarsal_ANIMATOR.EventSet_fraction}
-Group33.AddRoute(TimeSensor1455.EventFraction_changed, OrientationInterpolator1561.set_EventSet_fraction);
+Group33.AddRoute(TimeSensor1455.EventFraction_changed, OrientationInterpolator1561.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Time1.EventFraction_changed TO R_HIP_ANIMATOR.EventSet_fraction }
 { Sample Time1.EventFraction_changed TO R_HIP_ANIMATOR.EventSet_fraction}
-Group33.AddRoute(TimeSensor1455.EventFraction_changed, OrientationInterpolator1562.set_EventSet_fraction);
+Group33.AddRoute(TimeSensor1455.EventFraction_changed, OrientationInterpolator1562.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Time1.EventFraction_changed TO R_KNEE_ANIMATOR.EventSet_fraction }
 { Sample Time1.EventFraction_changed TO R_KNEE_ANIMATOR.EventSet_fraction}
-Group33.AddRoute(TimeSensor1455.EventFraction_changed, OrientationInterpolator1563.set_EventSet_fraction);
+Group33.AddRoute(TimeSensor1455.EventFraction_changed, OrientationInterpolator1563.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Time1.EventFraction_changed TO R_ANKLE_ANIMATOR.EventSet_fraction }
 { Sample Time1.EventFraction_changed TO R_ANKLE_ANIMATOR.EventSet_fraction}
-Group33.AddRoute(TimeSensor1455.EventFraction_changed, OrientationInterpolator1558.set_EventSet_fraction);
+Group33.AddRoute(TimeSensor1455.EventFraction_changed, OrientationInterpolator1558.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Time1.EventFraction_changed TO R_subtalar_ANIMATOR.EventSet_fraction }
 { Sample Time1.EventFraction_changed TO R_subtalar_ANIMATOR.EventSet_fraction}
-Group33.AddRoute(TimeSensor1455.EventFraction_changed, OrientationInterpolator1564.set_EventSet_fraction);
+Group33.AddRoute(TimeSensor1455.EventFraction_changed, OrientationInterpolator1564.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Time1.EventFraction_changed TO R_MIDTARSAL_ANIMATOR.EventSet_fraction }
 { Sample Time1.EventFraction_changed TO R_MIDTARSAL_ANIMATOR.EventSet_fraction}
-Group33.AddRoute(TimeSensor1455.EventFraction_changed, OrientationInterpolator1565.set_EventSet_fraction);
+Group33.AddRoute(TimeSensor1455.EventFraction_changed, OrientationInterpolator1565.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Time1.EventFraction_changed TO R_metatarsal_ANIMATOR.EventSet_fraction }
 { Sample Time1.EventFraction_changed TO R_metatarsal_ANIMATOR.EventSet_fraction}
-Group33.AddRoute(TimeSensor1455.EventFraction_changed, OrientationInterpolator1566.set_EventSet_fraction);
+Group33.AddRoute(TimeSensor1455.EventFraction_changed, OrientationInterpolator1566.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Time1.EventFraction_changed TO VL5_ANIMATOR.EventSet_fraction }
 { Sample Time1.EventFraction_changed TO VL5_ANIMATOR.EventSet_fraction}
-Group33.AddRoute(TimeSensor1455.EventFraction_changed, OrientationInterpolator1567.set_EventSet_fraction);
+Group33.AddRoute(TimeSensor1455.EventFraction_changed, OrientationInterpolator1567.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Time1.EventFraction_changed TO SKULLBASE_ANIMATOR.EventSet_fraction }
 { Sample Time1.EventFraction_changed TO SKULLBASE_ANIMATOR.EventSet_fraction}
-Group33.AddRoute(TimeSensor1455.EventFraction_changed, OrientationInterpolator1568.set_EventSet_fraction);
+Group33.AddRoute(TimeSensor1455.EventFraction_changed, OrientationInterpolator1568.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Time1.EventFraction_changed TO L_SHOULDER_ANIMATOR.EventSet_fraction }
 { Sample Time1.EventFraction_changed TO L_SHOULDER_ANIMATOR.EventSet_fraction}
-Group33.AddRoute(TimeSensor1455.EventFraction_changed, OrientationInterpolator1569.set_EventSet_fraction);
+Group33.AddRoute(TimeSensor1455.EventFraction_changed, OrientationInterpolator1569.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Time1.EventFraction_changed TO L_ELBOW_ANIMATOR.EventSet_fraction }
 { Sample Time1.EventFraction_changed TO L_ELBOW_ANIMATOR.EventSet_fraction}
-Group33.AddRoute(TimeSensor1455.EventFraction_changed, OrientationInterpolator1570.set_EventSet_fraction);
+Group33.AddRoute(TimeSensor1455.EventFraction_changed, OrientationInterpolator1570.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Time1.EventFraction_changed TO L_WRIST_ANIMATOR.EventSet_fraction }
 { Sample Time1.EventFraction_changed TO L_WRIST_ANIMATOR.EventSet_fraction}
-Group33.AddRoute(TimeSensor1455.EventFraction_changed, OrientationInterpolator1571.set_EventSet_fraction);
+Group33.AddRoute(TimeSensor1455.EventFraction_changed, OrientationInterpolator1571.EventSet_fraction);
 end;
 
 procedure InitJoeSkeletonSkinSiteSaluteWalkPart84;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "HUMANOIDROOT_POSITION_ANIMATOR.EventValue_changed TO Joe_humanoid_root.EventSet_translation }
-{ Sample HUMANOIDROOT_POSITION_ANIMATOR.EventValue_changed TO Joe_humanoid_root.EventSet_translation}
-Group33.AddRoute(PositionInterpolator1553.EventValue_changed, HAnimJoint81.set_EventSet_translation);
+{ Original "HUMANOIDROOT_POSITION_ANIMATOR.EventValue_changed TO Joe_humanoid_root.FdTranslation.EventIn }
+{ Sample HUMANOIDROOT_POSITION_ANIMATOR.EventValue_changed TO Joe_humanoid_root.FdTranslation.EventIn}
+Group33.AddRoute(PositionInterpolator1553.EventValue_changed, HAnimJoint81.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "HUMANOIDROOT_ANIMATOR.EventValue_changed TO Joe_humanoid_root.EventSet_rotation }
-{ Sample HUMANOIDROOT_ANIMATOR.EventValue_changed TO Joe_humanoid_root.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1554.EventValue_changed, HAnimJoint81.set_EventSet_rotation);
+{ Original "HUMANOIDROOT_ANIMATOR.EventValue_changed TO Joe_humanoid_root.FdRotation.EventIn }
+{ Sample HUMANOIDROOT_ANIMATOR.EventValue_changed TO Joe_humanoid_root.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1554.EventValue_changed, HAnimJoint81.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "L_HIP_ANIMATOR.EventValue_changed TO Joe_l_hip.EventSet_rotation }
-{ Sample L_HIP_ANIMATOR.EventValue_changed TO Joe_l_hip.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1555.EventValue_changed, HAnimJoint123.set_EventSet_rotation);
+{ Original "L_HIP_ANIMATOR.EventValue_changed TO Joe_l_hip.FdRotation.EventIn }
+{ Sample L_HIP_ANIMATOR.EventValue_changed TO Joe_l_hip.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1555.EventValue_changed, HAnimJoint123.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "L_KNEE_ANIMATOR.EventValue_changed TO Joe_l_knee.EventSet_rotation }
-{ Sample L_KNEE_ANIMATOR.EventValue_changed TO Joe_l_knee.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1556.EventValue_changed, HAnimJoint149.set_EventSet_rotation);
+{ Original "L_KNEE_ANIMATOR.EventValue_changed TO Joe_l_knee.FdRotation.EventIn }
+{ Sample L_KNEE_ANIMATOR.EventValue_changed TO Joe_l_knee.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1556.EventValue_changed, HAnimJoint149.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "L_ANKLE_ANIMATOR.EventValue_changed TO Joe_l_talocrural.EventSet_rotation }
-{ Sample L_ANKLE_ANIMATOR.EventValue_changed TO Joe_l_talocrural.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1557.EventValue_changed, HAnimJoint177.set_EventSet_rotation);
+{ Original "L_ANKLE_ANIMATOR.EventValue_changed TO Joe_l_talocrural.FdRotation.EventIn }
+{ Sample L_ANKLE_ANIMATOR.EventValue_changed TO Joe_l_talocrural.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1557.EventValue_changed, HAnimJoint177.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "L_MIDTARSAL_ANIMATOR.EventValue_changed TO Joe_l_metatarsophalangeal_2.EventSet_rotation }
-{ Sample L_MIDTARSAL_ANIMATOR.EventValue_changed TO Joe_l_metatarsophalangeal_2.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1560.EventValue_changed, HAnimJoint211.set_EventSet_rotation);
+{ Original "L_MIDTARSAL_ANIMATOR.EventValue_changed TO Joe_l_metatarsophalangeal_2.FdRotation.EventIn }
+{ Sample L_MIDTARSAL_ANIMATOR.EventValue_changed TO Joe_l_metatarsophalangeal_2.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1560.EventValue_changed, HAnimJoint211.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "L_subtalar_ANIMATOR.EventValue_changed TO Joe_l_tarsometatarsal_2.EventSet_rotation }
-{ Sample L_subtalar_ANIMATOR.EventValue_changed TO Joe_l_tarsometatarsal_2.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1559.EventValue_changed, HAnimJoint197.set_EventSet_rotation);
+{ Original "L_subtalar_ANIMATOR.EventValue_changed TO Joe_l_tarsometatarsal_2.FdRotation.EventIn }
+{ Sample L_subtalar_ANIMATOR.EventValue_changed TO Joe_l_tarsometatarsal_2.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1559.EventValue_changed, HAnimJoint197.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "L_metatarsal_ANIMATOR.EventValue_changed TO Joe_l_metatarsal.EventSet_rotation }
-{ Sample L_metatarsal_ANIMATOR.EventValue_changed TO Joe_l_metatarsal.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1561.EventValue_changed, HAnimJoint229.set_EventSet_rotation);
+{ Original "L_metatarsal_ANIMATOR.EventValue_changed TO Joe_l_metatarsal.FdRotation.EventIn }
+{ Sample L_metatarsal_ANIMATOR.EventValue_changed TO Joe_l_metatarsal.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1561.EventValue_changed, HAnimJoint229.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "R_HIP_ANIMATOR.EventValue_changed TO Joe_r_hip.EventSet_rotation }
-{ Sample R_HIP_ANIMATOR.EventValue_changed TO Joe_r_hip.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1562.EventValue_changed, HAnimJoint259.set_EventSet_rotation);
+{ Original "R_HIP_ANIMATOR.EventValue_changed TO Joe_r_hip.FdRotation.EventIn }
+{ Sample R_HIP_ANIMATOR.EventValue_changed TO Joe_r_hip.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1562.EventValue_changed, HAnimJoint259.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "R_KNEE_ANIMATOR.EventValue_changed TO Joe_r_knee.EventSet_rotation }
-{ Sample R_KNEE_ANIMATOR.EventValue_changed TO Joe_r_knee.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1563.EventValue_changed, HAnimJoint285.set_EventSet_rotation);
+{ Original "R_KNEE_ANIMATOR.EventValue_changed TO Joe_r_knee.FdRotation.EventIn }
+{ Sample R_KNEE_ANIMATOR.EventValue_changed TO Joe_r_knee.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1563.EventValue_changed, HAnimJoint285.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "R_ANKLE_ANIMATOR.EventValue_changed TO Joe_r_talocrural.EventSet_rotation }
-{ Sample R_ANKLE_ANIMATOR.EventValue_changed TO Joe_r_talocrural.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1558.EventValue_changed, HAnimJoint313.set_EventSet_rotation);
+{ Original "R_ANKLE_ANIMATOR.EventValue_changed TO Joe_r_talocrural.FdRotation.EventIn }
+{ Sample R_ANKLE_ANIMATOR.EventValue_changed TO Joe_r_talocrural.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1558.EventValue_changed, HAnimJoint313.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "R_subtalar_ANIMATOR.EventValue_changed TO Joe_r_tarsometatarsal_2.EventSet_rotation }
-{ Sample R_subtalar_ANIMATOR.EventValue_changed TO Joe_r_tarsometatarsal_2.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1564.EventValue_changed, HAnimJoint333.set_EventSet_rotation);
+{ Original "R_subtalar_ANIMATOR.EventValue_changed TO Joe_r_tarsometatarsal_2.FdRotation.EventIn }
+{ Sample R_subtalar_ANIMATOR.EventValue_changed TO Joe_r_tarsometatarsal_2.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1564.EventValue_changed, HAnimJoint333.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "R_MIDTARSAL_ANIMATOR.EventValue_changed TO Joe_r_metatarsophalangeal_2.EventSet_rotation }
-{ Sample R_MIDTARSAL_ANIMATOR.EventValue_changed TO Joe_r_metatarsophalangeal_2.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1565.EventValue_changed, HAnimJoint347.set_EventSet_rotation);
+{ Original "R_MIDTARSAL_ANIMATOR.EventValue_changed TO Joe_r_metatarsophalangeal_2.FdRotation.EventIn }
+{ Sample R_MIDTARSAL_ANIMATOR.EventValue_changed TO Joe_r_metatarsophalangeal_2.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1565.EventValue_changed, HAnimJoint347.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "R_metatarsal_ANIMATOR.EventValue_changed TO Joe_r_tarsal_distal_interphalangeal_2.EventSet_rotation }
-{ Sample R_metatarsal_ANIMATOR.EventValue_changed TO Joe_r_tarsal_distal_interphalangeal_2.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1566.EventValue_changed, HAnimJoint365.set_EventSet_rotation);
+{ Original "R_metatarsal_ANIMATOR.EventValue_changed TO Joe_r_tarsal_distal_interphalangeal_2.FdRotation.EventIn }
+{ Sample R_metatarsal_ANIMATOR.EventValue_changed TO Joe_r_tarsal_distal_interphalangeal_2.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1566.EventValue_changed, HAnimJoint365.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "VL5_ANIMATOR.EventValue_changed TO Joe_vl5.EventSet_rotation }
-{ Sample VL5_ANIMATOR.EventValue_changed TO Joe_vl5.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1567.EventValue_changed, HAnimJoint395.set_EventSet_rotation);
+{ Original "VL5_ANIMATOR.EventValue_changed TO Joe_vl5.FdRotation.EventIn }
+{ Sample VL5_ANIMATOR.EventValue_changed TO Joe_vl5.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1567.EventValue_changed, HAnimJoint395.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "SKULLBASE_ANIMATOR.EventValue_changed TO Joe_skullbase.EventSet_rotation }
-{ Sample SKULLBASE_ANIMATOR.EventValue_changed TO Joe_skullbase.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1568.EventValue_changed, HAnimJoint628.set_EventSet_rotation);
+{ Original "SKULLBASE_ANIMATOR.EventValue_changed TO Joe_skullbase.FdRotation.EventIn }
+{ Sample SKULLBASE_ANIMATOR.EventValue_changed TO Joe_skullbase.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1568.EventValue_changed, HAnimJoint628.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "L_SHOULDER_ANIMATOR.EventValue_changed TO Joe_l_shoulder.EventSet_rotation }
-{ Sample L_SHOULDER_ANIMATOR.EventValue_changed TO Joe_l_shoulder.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1569.EventValue_changed, HAnimJoint698.set_EventSet_rotation);
+{ Original "L_SHOULDER_ANIMATOR.EventValue_changed TO Joe_l_shoulder.FdRotation.EventIn }
+{ Sample L_SHOULDER_ANIMATOR.EventValue_changed TO Joe_l_shoulder.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1569.EventValue_changed, HAnimJoint698.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "L_ELBOW_ANIMATOR.EventValue_changed TO Joe_l_elbow.EventSet_rotation }
-{ Sample L_ELBOW_ANIMATOR.EventValue_changed TO Joe_l_elbow.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1570.EventValue_changed, HAnimJoint722.set_EventSet_rotation);
+{ Original "L_ELBOW_ANIMATOR.EventValue_changed TO Joe_l_elbow.FdRotation.EventIn }
+{ Sample L_ELBOW_ANIMATOR.EventValue_changed TO Joe_l_elbow.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1570.EventValue_changed, HAnimJoint722.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "L_WRIST_ANIMATOR.EventValue_changed TO Joe_l_radiocarpal.EventSet_rotation }
-{ Sample L_WRIST_ANIMATOR.EventValue_changed TO Joe_l_radiocarpal.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1571.EventValue_changed, HAnimJoint744.set_EventSet_rotation);
+{ Original "L_WRIST_ANIMATOR.EventValue_changed TO Joe_l_radiocarpal.FdRotation.EventIn }
+{ Sample L_WRIST_ANIMATOR.EventValue_changed TO Joe_l_radiocarpal.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1571.EventValue_changed, HAnimJoint744.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "R_SHOULDER_ANIMATOR.EventValue_changed TO Joe_r_shoulder.EventSet_rotation }
-{ Sample R_SHOULDER_ANIMATOR.EventValue_changed TO Joe_r_shoulder.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1572.EventValue_changed, HAnimJoint948.set_EventSet_rotation);
+{ Original "R_SHOULDER_ANIMATOR.EventValue_changed TO Joe_r_shoulder.FdRotation.EventIn }
+{ Sample R_SHOULDER_ANIMATOR.EventValue_changed TO Joe_r_shoulder.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1572.EventValue_changed, HAnimJoint948.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "R_ELBOW_ANIMATOR.EventValue_changed TO Joe_r_elbow.EventSet_rotation }
-{ Sample R_ELBOW_ANIMATOR.EventValue_changed TO Joe_r_elbow.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1573.EventValue_changed, HAnimJoint978.set_EventSet_rotation);
+{ Original "R_ELBOW_ANIMATOR.EventValue_changed TO Joe_r_elbow.FdRotation.EventIn }
+{ Sample R_ELBOW_ANIMATOR.EventValue_changed TO Joe_r_elbow.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1573.EventValue_changed, HAnimJoint978.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "R_WRIST_ANIMATOR.EventValue_changed TO Joe_r_radiocarpal.EventSet_rotation }
-{ Sample R_WRIST_ANIMATOR.EventValue_changed TO Joe_r_radiocarpal.EventSet_rotation}
-Group33.AddRoute(OrientationInterpolator1574.EventValue_changed, HAnimJoint1000.set_EventSet_rotation);
+{ Original "R_WRIST_ANIMATOR.EventValue_changed TO Joe_r_radiocarpal.FdRotation.EventIn }
+{ Sample R_WRIST_ANIMATOR.EventValue_changed TO Joe_r_radiocarpal.FdRotation.EventIn}
+Group33.AddRoute(OrientationInterpolator1574.EventValue_changed, HAnimJoint1000.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
 { METHOD .AddGroup }
 X3D0.AddChildren([Group33]);

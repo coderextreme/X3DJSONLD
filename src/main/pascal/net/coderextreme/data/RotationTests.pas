@@ -164,7 +164,7 @@ ScalarInterpolator36.SetKeyValue([0,0,0.0035,0.0035,0.007,0.007,0.0105,0.0105,0.
 Group17.FdChildren.Add(ScalarInterpolator36);
 { Original "ClockStepper.EventFraction_changed TO DiscreteFrameStepper.EventSet_fraction }
 { Sample ClockStepper.EventFraction_changed TO DiscreteFrameStepper.EventSet_fraction}
-Group17.AddRoute(TimeSensor35.EventFraction_changed, ScalarInterpolator36.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor35.EventFraction_changed, ScalarInterpolator36.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { TODO fix OrientationInterpolator euler-angle to SFRotation conversions }
 OrientationInterpolator38 := TOrientationInterpolatorNode.Create;
@@ -207,39 +207,39 @@ Group17.FdChildren.Add(OrientationInterpolator40);
 { Euler angle triplet values: -3.940 -3.766 -3.474, -3.940 -3.766 -3.474, -4.088 -3.824 -3.467, -4.093 -3.949 -3.561, -3.961 -3.867 -3.550, -3.834 -3.739 -3.622, -3.734 -3.667 -3.838, -3.590 -3.601 -4.047, -3.461 -3.476 -4.231, -3.333 -3.351 -4.416, -3.267 -3.290 -4.621, -3.332 -3.232 -4.834, -3.180 -3.091 -5.116, -3.135 -2.879 -5.384, -3.003 -2.710 -5.697, -2.981 -2.594 -6.091, -3.027 -2.662 -6.523, -3.069 -2.731 -6.792, -3.114 -2.800 -6.949, -3.249 -2.986 -7.172, -3.595 -3.162 -7.201, -4.032 -3.447 -7.411, -4.626 -3.726 -7.847, -5.089 -3.984 -8.492, -5.372 -4.291 -8.919, -5.631 -4.444 -9.088, -5.839 -4.620 -9.030, -6.027 -4.960 -8.717, -6.116 -5.149 -8.476, -6.099 -5.421 -8.085, -6.181 -5.613 -7.682, -6.189 -5.748 -7.268, -6.148 -5.755 -6.844, -6.255 -5.851 -6.498, -6.254 -6.034 -6.158, -6.269 -6.180 -5.850, -6.302 -6.361 -5.670, -6.355 -6.514 -5.491, -6.570 -6.518 -5.438, -6.790 -6.514 -5.549, -7.076 -6.527 -5.769, -7.408 -6.390 -6.067, -7.745 -6.324 -6.534, -7.691 -6.045 -7.137, -7.823 -5.770 -7.842, -7.928 -5.537 -8.355, -7.911 -5.437 -8.525, -8.002 -5.374 -8.388, -8.145 -5.328 -8.018, -8.308 -5.339 -7.658, -8.662 -5.579 -7.438, -9.278 -5.737 -7.541, -9.699 -5.925 -7.826, -10.000 -6.089 -7.994, -10.215 -6.238 -8.108, -10.422 -6.398 -8.175, -10.670 -6.292 -8.092, -10.996 -6.028 -7.993, -11.114 -5.740 -7.876, -11.452 -5.385 -7.901, -11.936 -4.985 -7.924, -12.335 -4.491 -7.964, -12.866 -3.907 -8.058, -13.250 -3.298 -7.981, -13.683 -2.509 -7.973, -14.109 -1.700 -7.766, -14.538 -0.891 -7.556, -14.964 -0.161 -7.287, -15.473 0.649 -6.808, -15.991 1.655 -6.126, -16.448 3.030 -5.395, -17.039 4.666 -4.492, -17.731 6.864 -3.312, -18.406 9.473 -2.057, -19.538 12.645 -0.737, -20.874 16.042 0.584, -22.456 19.848 1.638, -24.094 23.916 2.137, -25.613 28.166 2.267, -26.857 32.484 2.245, -27.853 36.589 2.582, -28.685 40.378 3.424, -29.286 43.810 4.877, -29.440 46.733 6.549, -28.858 49.062 7.981, -27.569 50.896 8.985, -25.616 52.113 9.347, -22.960 52.547 8.670, -19.740 52.334 7.111, -16.155 51.356 4.935, -12.590 49.914 2.477, -9.166 47.851 -0.205, -5.830 45.449 -2.822, -2.478 42.722 -5.636, 0.669 39.590 -8.559, 3.421 36.294 -11.095, 5.946 32.939 -13.050, 8.162 29.438 -14.208, 10.127 25.972 -14.641, 11.744 22.531 -14.220, 13.244 19.216 -13.248, 14.416 16.010 -11.968, 15.566 12.928 -10.789, 16.513 10.238 -9.828, 17.149 8.059 -9.070, 17.673 6.668 -8.787, 18.202 6.049 -8.952, 18.523 6.107 -9.189, 18.672 6.336 -9.307, 18.635 6.693 -9.283, 18.458 6.868 -8.970, 18.248 6.905 -8.558, 17.941 6.708 -8.435, 17.531 6.453 -8.702, 16.870 6.540 -8.814, 15.933 6.752 -8.425, 14.836 6.950 -7.922, 13.683 6.902 -7.489, 12.537 6.541 -7.044, 11.513 5.775 -6.945, 10.495 4.933 -6.742, 9.597 4.051 -6.112, 8.770 3.303 -5.375, 8.037 2.672 -4.521, 7.208 2.004 -3.918, 6.522 1.402 -3.372, 5.826 0.782 -3.004, 5.152 0.214 -2.677, 4.782 -0.278 -2.224, 4.315 -0.707 -1.764, 3.841 -1.202 -1.441, 3.258 -1.551 -1.276, 2.643 -1.814 -1.319, 2.071 -2.070 -1.458, 1.434 -2.313 -1.556, 0.751 -2.592 -1.848, 0.070 -2.905 -2.239, -0.780 -3.189 -2.887, -1.746 -3.520 -3.642, -2.699 -3.805 -4.438, -3.567 -4.078 -5.127, -4.718 -4.398 -5.694, -5.781 -4.773 -6.134, -6.787 -5.190 -6.623, -7.787 -5.357 -7.135, -8.788 -5.308 -7.620, -9.602 -5.057 -7.886, -10.417 -4.656 -7.998, -11.416 -3.988 -8.082, -12.382 -2.986 -8.196, -13.528 -1.635 -8.322, -14.570 -0.152 -8.462, -15.578 1.573 -8.443, -16.554 3.637 -8.083, -17.548 6.142 -7.404, -18.659 8.951 -6.481, -19.945 12.187 -5.327, -21.408 15.832 -4.007, -23.360 19.912 -2.585, -25.417 24.049 -1.238, -27.550 28.392 -0.090, -29.533 32.673 0.749, -31.234 36.808 1.644, -32.843 40.795 2.780, -33.995 44.425 4.107, -34.690 47.765 5.626, -34.922 50.579 7.149, -34.554 53.026 8.381, -33.212 54.977 8.937, -30.950 56.289 8.656, -27.634 57.025 7.313, -23.713 57.245 5.484, -18.946 56.898 2.811, -13.843 55.982 -0.208, -8.624 54.444 -3.333, -3.719 52.123 -6.514, 0.892 49.222 -9.641, 4.740 45.741 -12.293, 7.799 41.611 -14.347, 10.127 37.300 -15.948, 12.026 32.583 -17.018, 13.326 27.836 -17.029, 14.228 23.301 -16.364, 15.115 18.917 -15.185, 16.005 14.669 -13.681, 16.887 10.990 -11.939, 17.673 8.128 -10.323, 18.302 6.346 -9.318, 18.836 5.633 -9.026, 19.139 5.603 -8.871, 19.195 5.890 -8.987, 19.010 5.893 -9.175, 18.608 5.844 -9.325, 18.141 6.322 -9.390, 17.422 7.240 -9.111, 16.428 8.470 -8.507, 15.118 9.506 -7.785, 13.686 10.127 -7.237, 12.388 10.058 -6.933, 11.323 9.579 -6.681, 10.188 8.890 -5.912, 9.090 8.266 -4.722, 7.958 7.585 -3.665, 6.981 6.868 -2.832, 6.060 6.226 -2.243, 5.379 5.635 -1.614, 4.651 5.154 -0.532, 3.944 4.524 0.618, 3.332 3.761 1.556, 2.848 2.810 2.031, 2.442 1.651 2.232, 2.003 0.515 2.011, 1.329 -0.615 1.828, 0.744 -1.580 1.556, 0.206 -2.391 1.333, -0.259 -3.184 1.016, -0.816 -3.852 0.850, -1.531 -4.449 0.604, -2.332 -4.628 0.029, -3.171 -4.783 -0.726, -3.923 -4.800 -1.486, -4.809 -4.822 -2.120, -5.830 -4.778 -2.578, -6.771 -4.497 -2.962, -7.535 -4.218 -3.290, -8.358 -3.956 -3.567, -9.235 -3.629 -3.773, -10.034 -3.203 -3.756, -10.818 -2.696 -3.737, -11.534 -2.070 -3.760, -12.347 -1.279 -3.755, -13.215 -0.268 -3.762, -14.002 0.890 -3.847, -14.864 2.240 -4.001, -15.633 3.864 -4.040, -16.352 5.989 -3.904, -17.240 8.374 -3.477, -18.267 11.283 -2.678, -19.287 14.647 -1.460, -20.748 18.572 0.306, -22.488 22.864 2.373, -24.480 27.421 4.603, -26.543 31.844 6.589, -28.492 36.291 8.114, -30.412 40.487 9.438, -31.895 44.405 10.569, -32.738 47.866 11.667, -32.924 50.899 12.463, -32.447 53.444 12.704, -30.887 55.322 12.094, -28.256 56.603 10.648, -24.529 57.081 8.205, -20.146 56.774 5.016, -15.407 55.705 1.346, -10.557 53.978 -2.665, -6.403 51.431 -6.025, -2.564 48.323 -9.106, 0.844 44.728 -11.672, 3.659 40.875 -13.783, 6.260 36.805 -15.509, 8.294 32.930 -16.444, 9.878 29.332 -16.485, 10.979 26.254 -15.620, 11.984 23.630 -14.221, 12.767 21.334 -12.480, 13.454 19.307 -10.872, 13.875 17.620 -9.545, 13.893 16.324 -8.602, 13.863 15.160 -8.137, 13.876 13.910 -8.380, 13.711 12.595 -8.844, 13.426 11.363 -9.244, 13.051 10.518 -9.060, 12.613 9.919 -8.286, 12.202 9.654 -7.035, 11.678 9.532 -5.541, 10.995 9.251 -4.110, 10.349 8.972 -3.320, 9.705 8.236 -2.852, 9.064 7.270 -2.784, 8.576 6.326 -2.600, 7.953 5.469 -2.232, 7.406 4.663 -1.757, 6.864 4.062 -1.194, 6.451 3.574 -0.619, 6.176 3.218 -0.142 }
 { Original "ClockTimer.EventFraction_changed TO Interpolator1.EventSet_fraction }
 { Sample ClockTimer.EventFraction_changed TO Interpolator1.EventSet_fraction}
-Group17.AddRoute(TimeSensor34.EventFraction_changed, OrientationInterpolator38.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor34.EventFraction_changed, OrientationInterpolator38.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "DiscreteFrameStepper.EventValue_changed TO Interpolator1.EventSet_fraction }
 { Sample DiscreteFrameStepper.EventValue_changed TO Interpolator1.EventSet_fraction}
-Group17.AddRoute(ScalarInterpolator36.EventValue_changed, OrientationInterpolator38.set_EventSet_fraction);
+Group17.AddRoute(ScalarInterpolator36.EventValue_changed, OrientationInterpolator38.EventSet_fraction);
 { METHOD .AddX3DROUTE }
-{ Original "Interpolator1.EventValue_changed TO Transform1.EventSet_rotation }
-{ Sample Interpolator1.EventValue_changed TO Transform1.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator38.EventValue_changed, Transform19.set_EventSet_rotation);
+{ Original "Interpolator1.EventValue_changed TO Transform1.FdRotation.EventIn }
+{ Sample Interpolator1.EventValue_changed TO Transform1.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator38.EventValue_changed, Transform19.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
 { Original "ClockTimer.EventFraction_changed TO Interpolator2.EventSet_fraction }
 { Sample ClockTimer.EventFraction_changed TO Interpolator2.EventSet_fraction}
-Group17.AddRoute(TimeSensor34.EventFraction_changed, OrientationInterpolator39.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor34.EventFraction_changed, OrientationInterpolator39.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "DiscreteFrameStepper.EventValue_changed TO Interpolator2.EventSet_fraction }
 { Sample DiscreteFrameStepper.EventValue_changed TO Interpolator2.EventSet_fraction}
-Group17.AddRoute(ScalarInterpolator36.EventValue_changed, OrientationInterpolator39.set_EventSet_fraction);
+Group17.AddRoute(ScalarInterpolator36.EventValue_changed, OrientationInterpolator39.EventSet_fraction);
 { METHOD .AddX3DROUTE }
-{ Original "Interpolator2.EventValue_changed TO Transform2.EventSet_rotation }
-{ Sample Interpolator2.EventValue_changed TO Transform2.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator39.EventValue_changed, Transform28.set_EventSet_rotation);
+{ Original "Interpolator2.EventValue_changed TO Transform2.FdRotation.EventIn }
+{ Sample Interpolator2.EventValue_changed TO Transform2.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator39.EventValue_changed, Transform28.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
 { Original "ClockTimer.EventFraction_changed TO Interpolator3.EventSet_fraction }
 { Sample ClockTimer.EventFraction_changed TO Interpolator3.EventSet_fraction}
-Group17.AddRoute(TimeSensor34.EventFraction_changed, OrientationInterpolator40.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor34.EventFraction_changed, OrientationInterpolator40.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "DiscreteFrameStepper.EventValue_changed TO Interpolator3.EventSet_fraction }
 { Sample DiscreteFrameStepper.EventValue_changed TO Interpolator3.EventSet_fraction}
-Group17.AddRoute(ScalarInterpolator36.EventValue_changed, OrientationInterpolator40.set_EventSet_fraction);
+Group17.AddRoute(ScalarInterpolator36.EventValue_changed, OrientationInterpolator40.EventSet_fraction);
 { METHOD .AddX3DROUTE }
-{ Original "Interpolator3.EventValue_changed TO Transform3.EventSet_rotation }
-{ Sample Interpolator3.EventValue_changed TO Transform3.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator40.EventValue_changed, Transform31.set_EventSet_rotation);
+{ Original "Interpolator3.EventValue_changed TO Transform3.FdRotation.EventIn }
+{ Sample Interpolator3.EventValue_changed TO Transform3.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator40.EventValue_changed, Transform31.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
 { METHOD .AddGroup }
 X3D0.AddChildren([Group17]);

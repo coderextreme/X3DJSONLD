@@ -1922,15 +1922,15 @@ HAnimHumanoid27.FdJoints.Add(HAnimJoint33);
 Group22.FdChildren.Add(HAnimHumanoid27);
 { Original "AnimationAdapter_JinWink.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinWink.FWeight }
 { Sample AnimationAdapter_JinWink.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinWink.FWeight}
-Group22.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer192.set_FWeight);
+Group22.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer192.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinWink.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinWink.FWeight }
 { Sample AnimationAdapter_JinWink.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinWink.FWeight}
-Group22.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer135.set_FWeight);
+Group22.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer135.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "JinWink_Clock.EventFraction_changed TO AnimationAdapter_JinWink.EventSet_fraction }
 { Sample JinWink_Clock.EventFraction_changed TO AnimationAdapter_JinWink.EventSet_fraction}
-Group22.AddRoute(TimeSensor24.EventFraction_changed, ScalarInterpolator26.set_EventSet_fraction);
+Group22.AddRoute(TimeSensor24.EventFraction_changed, ScalarInterpolator26.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { METHOD .AddGroup }
 X3D0.AddChildren([Group22]);

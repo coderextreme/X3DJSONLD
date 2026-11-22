@@ -456,7 +456,7 @@ TouchSensor73.Description := 'select to move shoulders to \"T\" pose, leave othe
 Transform64.FdChildren.Add(TouchSensor73);
 { Original "T_PoseTouchSensor.EventIsActive TO T_Pose.commencePose }
 { Sample T_PoseTouchSensor.EventIsActive TO T_Pose.commencePose}
-Transform64.AddRoute(TouchSensor73.EventIsActive, HAnimPose27.set_commencePose);
+Transform64.AddRoute(TouchSensor73.EventIsActive, HAnimPose27.commencePose);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group57.FdChildren.Add(Transform64);
@@ -489,7 +489,7 @@ TouchSensor83.Description := 'select to move shoulders to \"A\" pose, leave othe
 Transform75.FdChildren.Add(TouchSensor83);
 { Original "A_PoseTouchSensor.EventIsActive TO A_Pose.commencePose }
 { Sample A_PoseTouchSensor.EventIsActive TO A_Pose.commencePose}
-Transform75.AddRoute(TouchSensor83.EventIsActive, HAnimPose31.set_commencePose);
+Transform75.AddRoute(TouchSensor83.EventIsActive, HAnimPose31.commencePose);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group57.FdChildren.Add(Transform75);
@@ -527,7 +527,7 @@ TouchSensor93.Description := 'select to transition all joints to TouchDown pose'
 Transform85.FdChildren.Add(TouchSensor93);
 { Original "TouchDown_PoseTouchSensor.EventIsActive TO TouchDown_Pose.commencePose }
 { Sample TouchDown_PoseTouchSensor.EventIsActive TO TouchDown_Pose.commencePose}
-Transform85.AddRoute(TouchSensor93.EventIsActive, HAnimPose34.set_commencePose);
+Transform85.AddRoute(TouchSensor93.EventIsActive, HAnimPose34.commencePose);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group57.FdChildren.Add(Transform85);
@@ -560,7 +560,7 @@ TouchSensor103.Description := 'select to transition all joints to \"I\" pose';
 Transform95.FdChildren.Add(TouchSensor103);
 { Original "I_PoseTouchSensor.EventIsActive TO I_Pose.commencePose }
 { Sample I_PoseTouchSensor.EventIsActive TO I_Pose.commencePose}
-Transform95.AddRoute(TouchSensor103.EventIsActive, HAnimPose51.set_commencePose);
+Transform95.AddRoute(TouchSensor103.EventIsActive, HAnimPose51.commencePose);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group57.FdChildren.Add(Transform95);
@@ -597,7 +597,7 @@ TouchSensor113.Description := 'select to rotate body and Face Left, leave other 
 Transform105.FdChildren.Add(TouchSensor113);
 { Original "FaceLeftTouchSensor.EventIsActive TO FaceLeft_Pose.commencePose }
 { Sample FaceLeftTouchSensor.EventIsActive TO FaceLeft_Pose.commencePose}
-Transform105.AddRoute(TouchSensor113.EventIsActive, HAnimPose53.set_commencePose);
+Transform105.AddRoute(TouchSensor113.EventIsActive, HAnimPose53.commencePose);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group57.FdChildren.Add(Transform105);
@@ -630,7 +630,7 @@ TouchSensor123.Description := 'select to rotate body and Face Right, leave other
 Transform115.FdChildren.Add(TouchSensor123);
 { Original "FaceRightTouchSensor.EventIsActive TO FaceRight_Pose.commencePose }
 { Sample FaceRightTouchSensor.EventIsActive TO FaceRight_Pose.commencePose}
-Transform115.AddRoute(TouchSensor123.EventIsActive, HAnimPose55.set_commencePose);
+Transform115.AddRoute(TouchSensor123.EventIsActive, HAnimPose55.commencePose);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group57.FdChildren.Add(Transform115);
@@ -684,15 +684,15 @@ ScalarInterpolator136.SetKeyValue([0,0,1,1,0,0]);
 Transform125.FdChildren.Add(ScalarInterpolator136);
 { Original "AnimatePosesTouchSensor.EventTouchTime TO AnimatePosesClock.startTime }
 { Sample AnimatePosesTouchSensor.EventTouchTime TO AnimatePosesClock.startTime}
-Transform125.AddRoute(TouchSensor134.EventTouchTime, TimeSensor135.set_startTime);
+Transform125.AddRoute(TouchSensor134.EventTouchTime, TimeSensor135.startTime);
 { METHOD .AddX3DROUTE }
 { Original "AnimatePosesClock.EventFraction_changed TO AnimatePosesLoopInterpolator.EventSet_fraction }
 { Sample AnimatePosesClock.EventFraction_changed TO AnimatePosesLoopInterpolator.EventSet_fraction}
-Transform125.AddRoute(TimeSensor135.EventFraction_changed, ScalarInterpolator136.set_EventSet_fraction);
+Transform125.AddRoute(TimeSensor135.EventFraction_changed, ScalarInterpolator136.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "AnimatePosesLoopInterpolator.EventValue_changed TO I_Pose.EventSet_fraction }
 { Sample AnimatePosesLoopInterpolator.EventValue_changed TO I_Pose.EventSet_fraction}
-Transform125.AddRoute(ScalarInterpolator136.EventValue_changed, HAnimPose51.set_EventSet_fraction);
+Transform125.AddRoute(ScalarInterpolator136.EventValue_changed, HAnimPose51.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group57.FdChildren.Add(Transform125);
@@ -730,7 +730,7 @@ begin
 
 { Original "ResetPoseTouchSensor.EventIsActive TO FaceLeft_Pose.resetAllJoints }
 { Sample ResetPoseTouchSensor.EventIsActive TO FaceLeft_Pose.resetAllJoints}
-Transform140.AddRoute(TouchSensor148.EventIsActive, HAnimPose53.set_resetAllJoints);
+Transform140.AddRoute(TouchSensor148.EventIsActive, HAnimPose53.resetAllJoints);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group57.FdChildren.Add(Transform140);

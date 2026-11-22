@@ -68,7 +68,7 @@ const getNames = function(node) {
 			ns.push(node.getAttribute("DEF"));
 		}
 	} else {
-		console.log("ERROR: GAN node.getAtttribute is not a function");
+		console.log("ERROR: GAN node.getAtttribute is not a function,", typeof node);
 		if (node.nodeName) {
 			ns.push(node.nodeName);
 		}

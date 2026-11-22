@@ -291,23 +291,23 @@ Script38.SetSourceCode('''ecmascript:\n"+
 Group23.FdChildren.Add(Script38);
 { Original "OrbitScript.coordIndexes TO Orbit.EventSet_coordIndex }
 { Sample OrbitScript.coordIndexes TO Orbit.EventSet_coordIndex}
-Group23.AddRoute(OrbitScript.[object Object], IndexedFaceSet36.set_EventSet_coordIndex);
+Group23.AddRoute(OrbitScript.[object Object], IndexedFaceSet36.EventSet_coordIndex);
 { METHOD .AddX3DROUTE }
 { Original "OrbitScript.coordinates TO OrbitCoordinates.point }
 { Sample OrbitScript.coordinates TO OrbitCoordinates.point}
-Group23.AddRoute(OrbitScript.[object Object], Coordinate37.set_point);
+Group23.AddRoute(OrbitScript.[object Object], Coordinate37.point);
 { METHOD .AddX3DROUTE }
 { Original "Clock.EventFraction_changed TO OrbitScript.EventSet_fraction }
 { Sample Clock.EventFraction_changed TO OrbitScript.EventSet_fraction}
-Group23.AddRoute(TimeSensor24.EventFraction_changed, Script38.set_EventSet_fraction);
+Group23.AddRoute(TimeSensor24.EventFraction_changed, Script38.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "OrbitPath.EventValue_changed TO OrbitTransform.rotation }
 { Sample OrbitPath.EventValue_changed TO OrbitTransform.rotation}
-Group23.AddRoute(OrientationInterpolator25.EventValue_changed, Transform26.set_rotation);
+Group23.AddRoute(OrientationInterpolator25.EventValue_changed, Transform26.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Clock.EventFraction_changed TO OrbitPath.EventSet_fraction }
 { Sample Clock.EventFraction_changed TO OrbitPath.EventSet_fraction}
-Group23.AddRoute(TimeSensor24.EventFraction_changed, OrientationInterpolator25.set_EventSet_fraction);
+Group23.AddRoute(TimeSensor24.EventFraction_changed, OrientationInterpolator25.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { METHOD .AddGroup }
 X3DPrototype22.AddChildren([Group23]);

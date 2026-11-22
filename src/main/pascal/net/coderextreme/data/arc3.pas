@@ -143,19 +143,19 @@ TimeSensor21.Loop := True;
 Transform10.FdChildren.Add(TimeSensor21);
 { Original "DECLpoint_G1_CL1.EventCycleTime TO DECLpoint_G1_MB1.EventSet_location }
 { Sample DECLpoint_G1_CL1.EventCycleTime TO DECLpoint_G1_MB1.EventSet_location}
-Transform10.AddRoute(TimeSensor21.EventCycleTime, Script16.set_EventSet_location);
+Transform10.AddRoute(TimeSensor21.EventCycleTime, Script16.EventSet_location);
 { METHOD .AddX3DROUTE }
 { Original "DECLpoint_G1_CL1.EventFraction_changed TO DECLpoint_G1_PI1.EventSet_fraction }
 { Sample DECLpoint_G1_CL1.EventFraction_changed TO DECLpoint_G1_PI1.EventSet_fraction}
-Transform10.AddRoute(TimeSensor21.EventFraction_changed, PositionInterpolator15.set_EventSet_fraction);
+Transform10.AddRoute(TimeSensor21.EventFraction_changed, PositionInterpolator15.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "DECLpoint_G1_MB1.EventKeyValue TO DECLpoint_G1_PI1.keyValue }
 { Sample DECLpoint_G1_MB1.EventKeyValue TO DECLpoint_G1_PI1.keyValue}
-Transform10.AddRoute(Script16.EventKeyValue, PositionInterpolator15.set_keyValue);
+Transform10.AddRoute(Script16.EventKeyValue, PositionInterpolator15.keyValue);
 { METHOD .AddX3DROUTE }
-{ Original "DECLpoint_G1_PI1.EventValue_changed TO DECLpoint_G1_node.EventSet_translation }
-{ Sample DECLpoint_G1_PI1.EventValue_changed TO DECLpoint_G1_node.EventSet_translation}
-Transform10.AddRoute(PositionInterpolator15.EventValue_changed, Transform10.set_EventSet_translation);
+{ Original "DECLpoint_G1_PI1.EventValue_changed TO DECLpoint_G1_node.FdTranslation.EventIn }
+{ Sample DECLpoint_G1_PI1.EventValue_changed TO DECLpoint_G1_node.FdTranslation.EventIn}
+Transform10.AddRoute(PositionInterpolator15.EventValue_changed, Transform10.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group7.FdChildren.Add(Transform10);
@@ -212,19 +212,19 @@ TimeSensor37.Loop := True;
 Transform26.FdChildren.Add(TimeSensor37);
 { Original "DECLpoint_G2_CL1.EventCycleTime TO DECLpoint_G2_MB1.EventSet_location }
 { Sample DECLpoint_G2_CL1.EventCycleTime TO DECLpoint_G2_MB1.EventSet_location}
-Transform26.AddRoute(TimeSensor37.EventCycleTime, Script32.set_EventSet_location);
+Transform26.AddRoute(TimeSensor37.EventCycleTime, Script32.EventSet_location);
 { METHOD .AddX3DROUTE }
 { Original "DECLpoint_G2_CL1.EventFraction_changed TO DECLpoint_G2_PI1.EventSet_fraction }
 { Sample DECLpoint_G2_CL1.EventFraction_changed TO DECLpoint_G2_PI1.EventSet_fraction}
-Transform26.AddRoute(TimeSensor37.EventFraction_changed, PositionInterpolator31.set_EventSet_fraction);
+Transform26.AddRoute(TimeSensor37.EventFraction_changed, PositionInterpolator31.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "DECLpoint_G2_MB1.EventKeyValue TO DECLpoint_G2_PI1.keyValue }
 { Sample DECLpoint_G2_MB1.EventKeyValue TO DECLpoint_G2_PI1.keyValue}
-Transform26.AddRoute(Script32.EventKeyValue, PositionInterpolator31.set_keyValue);
+Transform26.AddRoute(Script32.EventKeyValue, PositionInterpolator31.keyValue);
 { METHOD .AddX3DROUTE }
-{ Original "DECLpoint_G2_PI1.EventValue_changed TO DECLpoint_G2_node.EventSet_translation }
-{ Sample DECLpoint_G2_PI1.EventValue_changed TO DECLpoint_G2_node.EventSet_translation}
-Transform26.AddRoute(PositionInterpolator31.EventValue_changed, Transform26.set_EventSet_translation);
+{ Original "DECLpoint_G2_PI1.EventValue_changed TO DECLpoint_G2_node.FdTranslation.EventIn }
+{ Sample DECLpoint_G2_PI1.EventValue_changed TO DECLpoint_G2_node.FdTranslation.EventIn}
+Transform26.AddRoute(PositionInterpolator31.EventValue_changed, Transform26.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group7.FdChildren.Add(Transform26);
@@ -316,11 +316,11 @@ Group42.FdChildren.Add(Script49);
 Group7.FdChildren.Add(Group42);
 { Original "DECLpoint_G1_node.EventTranslation TO DECLx3dconnector_connector1_S1.EventSet_startpoint }
 { Sample DECLpoint_G1_node.EventTranslation TO DECLx3dconnector_connector1_S1.EventSet_startpoint}
-Group7.AddRoute(Transform10.EventTranslation, Script49.set_EventSet_startpoint);
+Group7.AddRoute(Transform10.EventTranslation, Script49.EventSet_startpoint);
 { METHOD .AddX3DROUTE }
 { Original "DECLpoint_G2_node.EventTranslation TO DECLx3dconnector_connector1_S1.EventSet_endpoint }
 { Sample DECLpoint_G2_node.EventTranslation TO DECLx3dconnector_connector1_S1.EventSet_endpoint}
-Group7.AddRoute(Transform26.EventTranslation, Script49.set_EventSet_endpoint);
+Group7.AddRoute(Transform26.EventTranslation, Script49.EventSet_endpoint);
 { METHOD .AddX3DROUTE }
 { METHOD .AddGroup }
 X3D0.AddChildren([Group7]);

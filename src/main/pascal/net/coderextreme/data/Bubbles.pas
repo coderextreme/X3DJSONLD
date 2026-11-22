@@ -368,31 +368,31 @@ Transform71.FdChildren.Add(Shape72);
 Transform25.FdChildren.Add(Transform71);
 { Original "BubbleClock.EventFraction_changed TO BubblePath1.EventSet_fraction }
 { Sample BubbleClock.EventFraction_changed TO BubblePath1.EventSet_fraction}
-Transform25.AddRoute(TimeSensor14.EventFraction_changed, PositionInterpolator15.set_EventSet_fraction);
+Transform25.AddRoute(TimeSensor14.EventFraction_changed, PositionInterpolator15.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "BubbleClock.EventFraction_changed TO BubblePath2.EventSet_fraction }
 { Sample BubbleClock.EventFraction_changed TO BubblePath2.EventSet_fraction}
-Transform25.AddRoute(TimeSensor14.EventFraction_changed, PositionInterpolator16.set_EventSet_fraction);
+Transform25.AddRoute(TimeSensor14.EventFraction_changed, PositionInterpolator16.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "BubbleClock.EventFraction_changed TO BubblePath3.EventSet_fraction }
 { Sample BubbleClock.EventFraction_changed TO BubblePath3.EventSet_fraction}
-Transform25.AddRoute(TimeSensor14.EventFraction_changed, PositionInterpolator17.set_EventSet_fraction);
+Transform25.AddRoute(TimeSensor14.EventFraction_changed, PositionInterpolator17.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "BubbleClock.EventFraction_changed TO BubblePath4.EventSet_fraction }
 { Sample BubbleClock.EventFraction_changed TO BubblePath4.EventSet_fraction}
-Transform25.AddRoute(TimeSensor14.EventFraction_changed, PositionInterpolator18.set_EventSet_fraction);
+Transform25.AddRoute(TimeSensor14.EventFraction_changed, PositionInterpolator18.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "BubbleClock.EventFraction_changed TO BubblePath5.EventSet_fraction }
 { Sample BubbleClock.EventFraction_changed TO BubblePath5.EventSet_fraction}
-Transform25.AddRoute(TimeSensor14.EventFraction_changed, PositionInterpolator19.set_EventSet_fraction);
+Transform25.AddRoute(TimeSensor14.EventFraction_changed, PositionInterpolator19.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "BubbleClock.EventFraction_changed TO BubblePath6.EventSet_fraction }
 { Sample BubbleClock.EventFraction_changed TO BubblePath6.EventSet_fraction}
-Transform25.AddRoute(TimeSensor14.EventFraction_changed, PositionInterpolator20.set_EventSet_fraction);
+Transform25.AddRoute(TimeSensor14.EventFraction_changed, PositionInterpolator20.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "BubbleClock.EventFraction_changed TO BubblePath7.EventSet_fraction }
 { Sample BubbleClock.EventFraction_changed TO BubblePath7.EventSet_fraction}
-Transform25.AddRoute(TimeSensor14.EventFraction_changed, PositionInterpolator21.set_EventSet_fraction);
+Transform25.AddRoute(TimeSensor14.EventFraction_changed, PositionInterpolator21.EventSet_fraction);
 end;
 
 procedure InitBubblesPart5;
@@ -401,55 +401,55 @@ begin
 { METHOD .AddX3DROUTE }
 { Original "BubbleClock.EventFraction_changed TO BubblePath8.EventSet_fraction }
 { Sample BubbleClock.EventFraction_changed TO BubblePath8.EventSet_fraction}
-Transform25.AddRoute(TimeSensor14.EventFraction_changed, PositionInterpolator22.set_EventSet_fraction);
+Transform25.AddRoute(TimeSensor14.EventFraction_changed, PositionInterpolator22.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "BubbleClock.EventFraction_changed TO BubblePath9.EventSet_fraction }
 { Sample BubbleClock.EventFraction_changed TO BubblePath9.EventSet_fraction}
-Transform25.AddRoute(TimeSensor14.EventFraction_changed, PositionInterpolator23.set_EventSet_fraction);
+Transform25.AddRoute(TimeSensor14.EventFraction_changed, PositionInterpolator23.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "BubbleClock.EventFraction_changed TO BubblePath10.EventSet_fraction }
 { Sample BubbleClock.EventFraction_changed TO BubblePath10.EventSet_fraction}
-Transform25.AddRoute(TimeSensor14.EventFraction_changed, PositionInterpolator24.set_EventSet_fraction);
+Transform25.AddRoute(TimeSensor14.EventFraction_changed, PositionInterpolator24.EventSet_fraction);
 { METHOD .AddX3DROUTE }
-{ Original "BubblePath1.EventValue_changed TO bubble1.EventSet_translation }
-{ Sample BubblePath1.EventValue_changed TO bubble1.EventSet_translation}
-Transform25.AddRoute(PositionInterpolator15.EventValue_changed, Transform26.set_EventSet_translation);
+{ Original "BubblePath1.EventValue_changed TO bubble1.FdTranslation.EventIn }
+{ Sample BubblePath1.EventValue_changed TO bubble1.FdTranslation.EventIn}
+Transform25.AddRoute(PositionInterpolator15.EventValue_changed, Transform26.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "BubblePath2.EventValue_changed TO bubble2.EventSet_translation }
-{ Sample BubblePath2.EventValue_changed TO bubble2.EventSet_translation}
-Transform25.AddRoute(PositionInterpolator16.EventValue_changed, Transform31.set_EventSet_translation);
+{ Original "BubblePath2.EventValue_changed TO bubble2.FdTranslation.EventIn }
+{ Sample BubblePath2.EventValue_changed TO bubble2.FdTranslation.EventIn}
+Transform25.AddRoute(PositionInterpolator16.EventValue_changed, Transform31.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "BubblePath3.EventValue_changed TO bubble3.EventSet_translation }
-{ Sample BubblePath3.EventValue_changed TO bubble3.EventSet_translation}
-Transform25.AddRoute(PositionInterpolator17.EventValue_changed, Transform36.set_EventSet_translation);
+{ Original "BubblePath3.EventValue_changed TO bubble3.FdTranslation.EventIn }
+{ Sample BubblePath3.EventValue_changed TO bubble3.FdTranslation.EventIn}
+Transform25.AddRoute(PositionInterpolator17.EventValue_changed, Transform36.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "BubblePath4.EventValue_changed TO bubble4.EventSet_translation }
-{ Sample BubblePath4.EventValue_changed TO bubble4.EventSet_translation}
-Transform25.AddRoute(PositionInterpolator18.EventValue_changed, Transform41.set_EventSet_translation);
+{ Original "BubblePath4.EventValue_changed TO bubble4.FdTranslation.EventIn }
+{ Sample BubblePath4.EventValue_changed TO bubble4.FdTranslation.EventIn}
+Transform25.AddRoute(PositionInterpolator18.EventValue_changed, Transform41.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "BubblePath5.EventValue_changed TO bubble5.EventSet_translation }
-{ Sample BubblePath5.EventValue_changed TO bubble5.EventSet_translation}
-Transform25.AddRoute(PositionInterpolator19.EventValue_changed, Transform46.set_EventSet_translation);
+{ Original "BubblePath5.EventValue_changed TO bubble5.FdTranslation.EventIn }
+{ Sample BubblePath5.EventValue_changed TO bubble5.FdTranslation.EventIn}
+Transform25.AddRoute(PositionInterpolator19.EventValue_changed, Transform46.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "BubblePath6.EventValue_changed TO bubble6.EventSet_translation }
-{ Sample BubblePath6.EventValue_changed TO bubble6.EventSet_translation}
-Transform25.AddRoute(PositionInterpolator20.EventValue_changed, Transform51.set_EventSet_translation);
+{ Original "BubblePath6.EventValue_changed TO bubble6.FdTranslation.EventIn }
+{ Sample BubblePath6.EventValue_changed TO bubble6.FdTranslation.EventIn}
+Transform25.AddRoute(PositionInterpolator20.EventValue_changed, Transform51.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "BubblePath7.EventValue_changed TO bubble7.EventSet_translation }
-{ Sample BubblePath7.EventValue_changed TO bubble7.EventSet_translation}
-Transform25.AddRoute(PositionInterpolator21.EventValue_changed, Transform56.set_EventSet_translation);
+{ Original "BubblePath7.EventValue_changed TO bubble7.FdTranslation.EventIn }
+{ Sample BubblePath7.EventValue_changed TO bubble7.FdTranslation.EventIn}
+Transform25.AddRoute(PositionInterpolator21.EventValue_changed, Transform56.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "BubblePath8.EventValue_changed TO bubble8.EventSet_translation }
-{ Sample BubblePath8.EventValue_changed TO bubble8.EventSet_translation}
-Transform25.AddRoute(PositionInterpolator22.EventValue_changed, Transform61.set_EventSet_translation);
+{ Original "BubblePath8.EventValue_changed TO bubble8.FdTranslation.EventIn }
+{ Sample BubblePath8.EventValue_changed TO bubble8.FdTranslation.EventIn}
+Transform25.AddRoute(PositionInterpolator22.EventValue_changed, Transform61.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "BubblePath9.EventValue_changed TO bubble9.EventSet_translation }
-{ Sample BubblePath9.EventValue_changed TO bubble9.EventSet_translation}
-Transform25.AddRoute(PositionInterpolator23.EventValue_changed, Transform66.set_EventSet_translation);
+{ Original "BubblePath9.EventValue_changed TO bubble9.FdTranslation.EventIn }
+{ Sample BubblePath9.EventValue_changed TO bubble9.FdTranslation.EventIn}
+Transform25.AddRoute(PositionInterpolator23.EventValue_changed, Transform66.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "BubblePath10.EventValue_changed TO bubble10.EventSet_translation }
-{ Sample BubblePath10.EventValue_changed TO bubble10.EventSet_translation}
-Transform25.AddRoute(PositionInterpolator24.EventValue_changed, Transform71.set_EventSet_translation);
+{ Original "BubblePath10.EventValue_changed TO bubble10.FdTranslation.EventIn }
+{ Sample BubblePath10.EventValue_changed TO bubble10.FdTranslation.EventIn}
+Transform25.AddRoute(PositionInterpolator24.EventValue_changed, Transform71.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group13.FdChildren.Add(Transform25);

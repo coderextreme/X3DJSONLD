@@ -165,9 +165,9 @@ PlaneSensor19 := TPlaneSensorNode.Create;
 PlaneSensor19.Description := 'Grab to move';
 { METHOD .FdChildren.Add }
 Transform14.FdChildren.Add(PlaneSensor19);
-{ Original "PS1.EventTranslation_changed TO G1.EventSet_translation }
-{ Sample PS1.EventTranslation_changed TO G1.EventSet_translation}
-Transform14.AddRoute(PlaneSensor19.EventTranslation_changed, Transform14.set_EventSet_translation);
+{ Original "PS1.EventTranslation_changed TO G1.FdTranslation.EventIn }
+{ Sample PS1.EventTranslation_changed TO G1.FdTranslation.EventIn}
+Transform14.AddRoute(PlaneSensor19.EventTranslation_changed, Transform14.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group10.FdChildren.Add(Transform14);
@@ -197,9 +197,9 @@ PlaneSensor26.Description := 'Grab to move';
 PlaneSensor26.Offset := Vector3(1,-1,0.01);
 { METHOD .FdChildren.Add }
 Transform21.FdChildren.Add(PlaneSensor26);
-{ Original "PS2.EventTranslation_changed TO G2.EventSet_translation }
-{ Sample PS2.EventTranslation_changed TO G2.EventSet_translation}
-Transform21.AddRoute(PlaneSensor26.EventTranslation_changed, Transform21.set_EventSet_translation);
+{ Original "PS2.EventTranslation_changed TO G2.FdTranslation.EventIn }
+{ Sample PS2.EventTranslation_changed TO G2.FdTranslation.EventIn}
+Transform21.AddRoute(PlaneSensor26.EventTranslation_changed, Transform21.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group10.FdChildren.Add(Transform21);
@@ -224,9 +224,9 @@ PlaneSensor33.Description := 'Grab to move';
 PlaneSensor33.Offset := Vector3(1,1,0.01);
 { METHOD .FdChildren.Add }
 Transform28.FdChildren.Add(PlaneSensor33);
-{ Original "PS3.EventTranslation_changed TO G3.EventSet_translation }
-{ Sample PS3.EventTranslation_changed TO G3.EventSet_translation}
-Transform28.AddRoute(PlaneSensor33.EventTranslation_changed, Transform28.set_EventSet_translation);
+{ Original "PS3.EventTranslation_changed TO G3.FdTranslation.EventIn }
+{ Sample PS3.EventTranslation_changed TO G3.FdTranslation.EventIn}
+Transform28.AddRoute(PlaneSensor33.EventTranslation_changed, Transform28.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group10.FdChildren.Add(Transform28);
@@ -256,9 +256,9 @@ PlaneSensor40.Description := 'Grab to move';
 PlaneSensor40.Offset := Vector3(-1,1,0.01);
 { METHOD .FdChildren.Add }
 Transform35.FdChildren.Add(PlaneSensor40);
-{ Original "PS4.EventTranslation_changed TO G4.EventSet_translation }
-{ Sample PS4.EventTranslation_changed TO G4.EventSet_translation}
-Transform35.AddRoute(PlaneSensor40.EventTranslation_changed, Transform35.set_EventSet_translation);
+{ Original "PS4.EventTranslation_changed TO G4.FdTranslation.EventIn }
+{ Sample PS4.EventTranslation_changed TO G4.FdTranslation.EventIn}
+Transform35.AddRoute(PlaneSensor40.EventTranslation_changed, Transform35.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group10.FdChildren.Add(Transform35);
@@ -522,27 +522,27 @@ X3DPrototype101.AddSFNode([SFNode108]);
 Group10.AddX3DPrototype([X3DPrototype101]);
 { Original "G1.EventTranslation_changed TO connector1.EventSet_startpoint }
 { Sample G1.EventTranslation_changed TO connector1.EventSet_startpoint}
-Group10.AddRoute(Transform14.EventTranslation_changed, X3DPrototype83.set_EventSet_startpoint);
+Group10.AddRoute(Transform14.EventTranslation_changed, X3DPrototype83.EventSet_startpoint);
 { METHOD .AddX3DROUTE }
 { Original "G2.EventTranslation_changed TO connector1.EventSet_endpoint }
 { Sample G2.EventTranslation_changed TO connector1.EventSet_endpoint}
-Group10.AddRoute(Transform21.EventTranslation_changed, X3DPrototype83.set_EventSet_endpoint);
+Group10.AddRoute(Transform21.EventTranslation_changed, X3DPrototype83.EventSet_endpoint);
 { METHOD .AddX3DROUTE }
 { Original "G1.EventTranslation_changed TO connector2.EventSet_startpoint }
 { Sample G1.EventTranslation_changed TO connector2.EventSet_startpoint}
-Group10.AddRoute(Transform14.EventTranslation_changed, X3DPrototype92.set_EventSet_startpoint);
+Group10.AddRoute(Transform14.EventTranslation_changed, X3DPrototype92.EventSet_startpoint);
 { METHOD .AddX3DROUTE }
 { Original "G3.EventTranslation_changed TO connector2.EventSet_endpoint }
 { Sample G3.EventTranslation_changed TO connector2.EventSet_endpoint}
-Group10.AddRoute(Transform28.EventTranslation_changed, X3DPrototype92.set_EventSet_endpoint);
+Group10.AddRoute(Transform28.EventTranslation_changed, X3DPrototype92.EventSet_endpoint);
 { METHOD .AddX3DROUTE }
 { Original "G1.EventTranslation_changed TO connector3.EventSet_startpoint }
 { Sample G1.EventTranslation_changed TO connector3.EventSet_startpoint}
-Group10.AddRoute(Transform14.EventTranslation_changed, X3DPrototype101.set_EventSet_startpoint);
+Group10.AddRoute(Transform14.EventTranslation_changed, X3DPrototype101.EventSet_startpoint);
 { METHOD .AddX3DROUTE }
 { Original "G4.EventTranslation_changed TO connector3.EventSet_endpoint }
 { Sample G4.EventTranslation_changed TO connector3.EventSet_endpoint}
-Group10.AddRoute(Transform35.EventTranslation_changed, X3DPrototype101.set_EventSet_endpoint);
+Group10.AddRoute(Transform35.EventTranslation_changed, X3DPrototype101.EventSet_endpoint);
 { METHOD .AddX3DROUTE }
 { METHOD .AddGroup }
 X3D0.AddChildren([Group10]);

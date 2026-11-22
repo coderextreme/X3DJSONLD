@@ -1209,9 +1209,9 @@ OrientationInterpolator145.SetKey([0,0.100000001490116,0.200000002980232,0.30000
 OrientationInterpolator145.SetKeyValue([Vector4(0,0,1,0),Vector4(1,0,0,0.800000011920929),Vector4(0,0,1,0),Vector4(1,0,0,2),Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(1,0,0,-0.800000011920929),Vector4(0,0,1,0),Vector4(1,0,0,-2),Vector4(0,0,1,0)]);
 { METHOD .FdChildren.Add }
 Group17.FdChildren.Add(OrientationInterpolator145);
-{ Original "Leif_Pitch012Interpolator.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_5.EventSet_rotation }
-{ Sample Leif_Pitch012Interpolator.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_5.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator145.EventValue_changed, HAnimJoint82.set_EventSet_rotation);
+{ Original "Leif_Pitch012Interpolator.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_5.FdRotation.EventIn }
+{ Sample Leif_Pitch012Interpolator.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_5.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator145.EventValue_changed, HAnimJoint82.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
 Group147 := TGroupNode.Create;
 TimeSensor148 := TTimeSensorNode.Create;
@@ -1382,111 +1382,111 @@ OrientationInterpolator177.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0.2000000
 Group147.FdChildren.Add(OrientationInterpolator177);
 { Original "Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_r_talocruralRotInterp.EventSet_fraction }
 { Sample Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_r_talocruralRotInterp.EventSet_fraction}
-Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator150.set_EventSet_fraction);
+Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator150.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_r_kneeRotInterp.EventSet_fraction }
 { Sample Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_r_kneeRotInterp.EventSet_fraction}
-Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator151.set_EventSet_fraction);
+Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator151.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_r_hipRotInterp.EventSet_fraction }
 { Sample Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_r_hipRotInterp.EventSet_fraction}
-Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator152.set_EventSet_fraction);
+Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator152.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_l_talocruralRotInterp.EventSet_fraction }
 { Sample Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_l_talocruralRotInterp.EventSet_fraction}
-Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator153.set_EventSet_fraction);
+Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator153.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_l_kneeRotInterp.EventSet_fraction }
 { Sample Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_l_kneeRotInterp.EventSet_fraction}
-Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator154.set_EventSet_fraction);
+Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator154.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_l_hipRotInterp.EventSet_fraction }
 { Sample Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_l_hipRotInterp.EventSet_fraction}
-Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator155.set_EventSet_fraction);
+Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator155.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_lower_bodyRotInterp.EventSet_fraction }
 { Sample Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_lower_bodyRotInterp.EventSet_fraction}
-Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator164.set_EventSet_fraction);
+Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator164.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_r_radiocarpalRotInterp.EventSet_fraction }
 { Sample Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_r_radiocarpalRotInterp.EventSet_fraction}
-Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator156.set_EventSet_fraction);
+Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator156.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_r_elbowRotInterp.EventSet_fraction }
 { Sample Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_r_elbowRotInterp.EventSet_fraction}
-Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator157.set_EventSet_fraction);
+Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator157.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_r_shoulderRotInterp.EventSet_fraction }
 { Sample Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_r_shoulderRotInterp.EventSet_fraction}
-Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator158.set_EventSet_fraction);
+Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator158.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_l_radiocarpalRotInterp.EventSet_fraction }
 { Sample Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_l_radiocarpalRotInterp.EventSet_fraction}
-Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator159.set_EventSet_fraction);
+Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator159.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_l_elbowRotInterp.EventSet_fraction }
 { Sample Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_l_elbowRotInterp.EventSet_fraction}
-Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator160.set_EventSet_fraction);
+Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator160.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_l_shoulderRotInterp.EventSet_fraction }
 { Sample Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_l_shoulderRotInterp.EventSet_fraction}
-Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator161.set_EventSet_fraction);
+Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator161.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_headRotInterp.EventSet_fraction }
 { Sample Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_headRotInterp.EventSet_fraction}
-Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator162.set_EventSet_fraction);
+Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator162.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_neckRotInterp.EventSet_fraction }
 { Sample Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_neckRotInterp.EventSet_fraction}
-Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator163.set_EventSet_fraction);
+Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator163.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_upper_bodyRotInterp.EventSet_fraction }
 { Sample Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_upper_bodyRotInterp.EventSet_fraction}
-Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator165.set_EventSet_fraction);
+Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator165.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_whole_bodyRotInterp.EventSet_fraction }
 { Sample Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_whole_bodyRotInterp.EventSet_fraction}
-Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator166.set_EventSet_fraction);
+Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator166.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_whole_bodyTransInterp.EventSet_fraction }
 { Sample Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_whole_bodyTransInterp.EventSet_fraction}
-Group147.AddRoute(TimeSensor148.EventFraction_changed, PositionInterpolator167.set_EventSet_fraction);
+Group147.AddRoute(TimeSensor148.EventFraction_changed, PositionInterpolator167.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_l_sternoclavicularRoll.EventSet_fraction }
 { Sample Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_l_sternoclavicularRoll.EventSet_fraction}
-Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator168.set_EventSet_fraction);
+Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator168.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_r_sternoclavicularRoll.EventSet_fraction }
 { Sample Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_r_sternoclavicularRoll.EventSet_fraction}
-Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator169.set_EventSet_fraction);
+Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator169.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_r_metatarsophalangeal_2Pitch.EventSet_fraction }
 { Sample Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_r_metatarsophalangeal_2Pitch.EventSet_fraction}
-Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator149.set_EventSet_fraction);
+Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator149.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_sacroiliacYaw.EventSet_fraction }
 { Sample Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_sacroiliacYaw.EventSet_fraction}
-Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator170.set_EventSet_fraction);
+Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator170.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_vl5Yaw.EventSet_fraction }
 { Sample Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_vl5Yaw.EventSet_fraction}
-Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator171.set_EventSet_fraction);
+Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator171.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_vc6Yaw.EventSet_fraction }
 { Sample Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_vc6Yaw.EventSet_fraction}
-Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator172.set_EventSet_fraction);
+Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator172.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_l_carpometacarpal_1Pitch.EventSet_fraction }
 { Sample Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_l_carpometacarpal_1Pitch.EventSet_fraction}
-Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator173.set_EventSet_fraction);
+Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator173.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_r_carpometacarpal_1Pitch.EventSet_fraction }
 { Sample Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_r_carpometacarpal_1Pitch.EventSet_fraction}
-Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator174.set_EventSet_fraction);
+Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator174.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_r_carpal_proximal_interphalangeal_2Roll.EventSet_fraction }
 { Sample Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_r_carpal_proximal_interphalangeal_2Roll.EventSet_fraction}
-Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator175.set_EventSet_fraction);
+Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator175.EventSet_fraction);
 end;
 
 procedure InitLeif5FinalPart60;
@@ -1495,160 +1495,160 @@ begin
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_r_metacarpophalangeal_2Roll.EventSet_fraction }
 { Sample Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_r_metacarpophalangeal_2Roll.EventSet_fraction}
-Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator176.set_EventSet_fraction);
+Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator176.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_r_carpal_distal_interphalangeal_2Roll.EventSet_fraction }
 { Sample Leif_Stand010Timer.EventFraction_changed TO Leif_Stand010_r_carpal_distal_interphalangeal_2Roll.EventSet_fraction}
-Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator177.set_EventSet_fraction);
+Group147.AddRoute(TimeSensor148.EventFraction_changed, OrientationInterpolator177.EventSet_fraction);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand010_r_talocruralRotInterp.EventValue_changed TO Leif_r_talocrural.EventSet_rotation }
-{ Sample Leif_Stand010_r_talocruralRotInterp.EventValue_changed TO Leif_r_talocrural.EventSet_rotation}
-Group147.AddRoute(OrientationInterpolator150.EventValue_changed, HAnimJoint37.set_EventSet_rotation);
+{ Original "Leif_Stand010_r_talocruralRotInterp.EventValue_changed TO Leif_r_talocrural.FdRotation.EventIn }
+{ Sample Leif_Stand010_r_talocruralRotInterp.EventValue_changed TO Leif_r_talocrural.FdRotation.EventIn}
+Group147.AddRoute(OrientationInterpolator150.EventValue_changed, HAnimJoint37.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand010_r_kneeRotInterp.EventValue_changed TO Leif_r_knee.EventSet_rotation }
-{ Sample Leif_Stand010_r_kneeRotInterp.EventValue_changed TO Leif_r_knee.EventSet_rotation}
-Group147.AddRoute(OrientationInterpolator151.EventValue_changed, HAnimJoint36.set_EventSet_rotation);
+{ Original "Leif_Stand010_r_kneeRotInterp.EventValue_changed TO Leif_r_knee.FdRotation.EventIn }
+{ Sample Leif_Stand010_r_kneeRotInterp.EventValue_changed TO Leif_r_knee.FdRotation.EventIn}
+Group147.AddRoute(OrientationInterpolator151.EventValue_changed, HAnimJoint36.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand010_r_hipRotInterp.EventValue_changed TO Leif_r_hip.EventSet_rotation }
-{ Sample Leif_Stand010_r_hipRotInterp.EventValue_changed TO Leif_r_hip.EventSet_rotation}
-Group147.AddRoute(OrientationInterpolator152.EventValue_changed, HAnimJoint35.set_EventSet_rotation);
+{ Original "Leif_Stand010_r_hipRotInterp.EventValue_changed TO Leif_r_hip.FdRotation.EventIn }
+{ Sample Leif_Stand010_r_hipRotInterp.EventValue_changed TO Leif_r_hip.FdRotation.EventIn}
+Group147.AddRoute(OrientationInterpolator152.EventValue_changed, HAnimJoint35.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand010_l_talocruralRotInterp.EventValue_changed TO Leif_l_talocrural.EventSet_rotation }
-{ Sample Leif_Stand010_l_talocruralRotInterp.EventValue_changed TO Leif_l_talocrural.EventSet_rotation}
-Group147.AddRoute(OrientationInterpolator153.EventValue_changed, HAnimJoint33.set_EventSet_rotation);
+{ Original "Leif_Stand010_l_talocruralRotInterp.EventValue_changed TO Leif_l_talocrural.FdRotation.EventIn }
+{ Sample Leif_Stand010_l_talocruralRotInterp.EventValue_changed TO Leif_l_talocrural.FdRotation.EventIn}
+Group147.AddRoute(OrientationInterpolator153.EventValue_changed, HAnimJoint33.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand010_l_kneeRotInterp.EventValue_changed TO Leif_l_knee.EventSet_rotation }
-{ Sample Leif_Stand010_l_kneeRotInterp.EventValue_changed TO Leif_l_knee.EventSet_rotation}
-Group147.AddRoute(OrientationInterpolator154.EventValue_changed, HAnimJoint32.set_EventSet_rotation);
+{ Original "Leif_Stand010_l_kneeRotInterp.EventValue_changed TO Leif_l_knee.FdRotation.EventIn }
+{ Sample Leif_Stand010_l_kneeRotInterp.EventValue_changed TO Leif_l_knee.FdRotation.EventIn}
+Group147.AddRoute(OrientationInterpolator154.EventValue_changed, HAnimJoint32.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand010_l_hipRotInterp.EventValue_changed TO Leif_l_hip.EventSet_rotation }
-{ Sample Leif_Stand010_l_hipRotInterp.EventValue_changed TO Leif_l_hip.EventSet_rotation}
-Group147.AddRoute(OrientationInterpolator155.EventValue_changed, HAnimJoint31.set_EventSet_rotation);
+{ Original "Leif_Stand010_l_hipRotInterp.EventValue_changed TO Leif_l_hip.FdRotation.EventIn }
+{ Sample Leif_Stand010_l_hipRotInterp.EventValue_changed TO Leif_l_hip.FdRotation.EventIn}
+Group147.AddRoute(OrientationInterpolator155.EventValue_changed, HAnimJoint31.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand010_r_radiocarpalRotInterp.EventValue_changed TO Leif_r_radiocarpal.EventSet_rotation }
-{ Sample Leif_Stand010_r_radiocarpalRotInterp.EventValue_changed TO Leif_r_radiocarpal.EventSet_rotation}
-Group147.AddRoute(OrientationInterpolator156.EventValue_changed, HAnimJoint67.set_EventSet_rotation);
+{ Original "Leif_Stand010_r_radiocarpalRotInterp.EventValue_changed TO Leif_r_radiocarpal.FdRotation.EventIn }
+{ Sample Leif_Stand010_r_radiocarpalRotInterp.EventValue_changed TO Leif_r_radiocarpal.FdRotation.EventIn}
+Group147.AddRoute(OrientationInterpolator156.EventValue_changed, HAnimJoint67.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand010_r_elbowRotInterp.EventValue_changed TO Leif_r_elbow.EventSet_rotation }
-{ Sample Leif_Stand010_r_elbowRotInterp.EventValue_changed TO Leif_r_elbow.EventSet_rotation}
-Group147.AddRoute(OrientationInterpolator157.EventValue_changed, HAnimJoint66.set_EventSet_rotation);
+{ Original "Leif_Stand010_r_elbowRotInterp.EventValue_changed TO Leif_r_elbow.FdRotation.EventIn }
+{ Sample Leif_Stand010_r_elbowRotInterp.EventValue_changed TO Leif_r_elbow.FdRotation.EventIn}
+Group147.AddRoute(OrientationInterpolator157.EventValue_changed, HAnimJoint66.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand010_r_shoulderRotInterp.EventValue_changed TO Leif_r_shoulder.EventSet_rotation }
-{ Sample Leif_Stand010_r_shoulderRotInterp.EventValue_changed TO Leif_r_shoulder.EventSet_rotation}
-Group147.AddRoute(OrientationInterpolator158.EventValue_changed, HAnimJoint65.set_EventSet_rotation);
+{ Original "Leif_Stand010_r_shoulderRotInterp.EventValue_changed TO Leif_r_shoulder.FdRotation.EventIn }
+{ Sample Leif_Stand010_r_shoulderRotInterp.EventValue_changed TO Leif_r_shoulder.FdRotation.EventIn}
+Group147.AddRoute(OrientationInterpolator158.EventValue_changed, HAnimJoint65.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand010_l_radiocarpalRotInterp.EventValue_changed TO Leif_l_radiocarpal.EventSet_rotation }
-{ Sample Leif_Stand010_l_radiocarpalRotInterp.EventValue_changed TO Leif_l_radiocarpal.EventSet_rotation}
-Group147.AddRoute(OrientationInterpolator159.EventValue_changed, HAnimJoint48.set_EventSet_rotation);
+{ Original "Leif_Stand010_l_radiocarpalRotInterp.EventValue_changed TO Leif_l_radiocarpal.FdRotation.EventIn }
+{ Sample Leif_Stand010_l_radiocarpalRotInterp.EventValue_changed TO Leif_l_radiocarpal.FdRotation.EventIn}
+Group147.AddRoute(OrientationInterpolator159.EventValue_changed, HAnimJoint48.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand010_l_elbowRotInterp.EventValue_changed TO Leif_l_elbow.EventSet_rotation }
-{ Sample Leif_Stand010_l_elbowRotInterp.EventValue_changed TO Leif_l_elbow.EventSet_rotation}
-Group147.AddRoute(OrientationInterpolator160.EventValue_changed, HAnimJoint47.set_EventSet_rotation);
+{ Original "Leif_Stand010_l_elbowRotInterp.EventValue_changed TO Leif_l_elbow.FdRotation.EventIn }
+{ Sample Leif_Stand010_l_elbowRotInterp.EventValue_changed TO Leif_l_elbow.FdRotation.EventIn}
+Group147.AddRoute(OrientationInterpolator160.EventValue_changed, HAnimJoint47.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand010_l_shoulderRotInterp.EventValue_changed TO Leif_l_shoulder.EventSet_rotation }
-{ Sample Leif_Stand010_l_shoulderRotInterp.EventValue_changed TO Leif_l_shoulder.EventSet_rotation}
-Group147.AddRoute(OrientationInterpolator161.EventValue_changed, HAnimJoint46.set_EventSet_rotation);
+{ Original "Leif_Stand010_l_shoulderRotInterp.EventValue_changed TO Leif_l_shoulder.FdRotation.EventIn }
+{ Sample Leif_Stand010_l_shoulderRotInterp.EventValue_changed TO Leif_l_shoulder.FdRotation.EventIn}
+Group147.AddRoute(OrientationInterpolator161.EventValue_changed, HAnimJoint46.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand010_headRotInterp.EventValue_changed TO Leif_skullbase.EventSet_rotation }
-{ Sample Leif_Stand010_headRotInterp.EventValue_changed TO Leif_skullbase.EventSet_rotation}
-Group147.AddRoute(OrientationInterpolator162.EventValue_changed, HAnimJoint44.set_EventSet_rotation);
+{ Original "Leif_Stand010_headRotInterp.EventValue_changed TO Leif_skullbase.FdRotation.EventIn }
+{ Sample Leif_Stand010_headRotInterp.EventValue_changed TO Leif_skullbase.FdRotation.EventIn}
+Group147.AddRoute(OrientationInterpolator162.EventValue_changed, HAnimJoint44.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand010_lower_bodyRotInterp.EventValue_changed TO Leif_sacroiliac.EventSet_rotation }
-{ Sample Leif_Stand010_lower_bodyRotInterp.EventValue_changed TO Leif_sacroiliac.EventSet_rotation}
-Group147.AddRoute(OrientationInterpolator164.EventValue_changed, HAnimJoint30.set_EventSet_rotation);
+{ Original "Leif_Stand010_lower_bodyRotInterp.EventValue_changed TO Leif_sacroiliac.FdRotation.EventIn }
+{ Sample Leif_Stand010_lower_bodyRotInterp.EventValue_changed TO Leif_sacroiliac.FdRotation.EventIn}
+Group147.AddRoute(OrientationInterpolator164.EventValue_changed, HAnimJoint30.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand010_whole_bodyRotInterp.EventValue_changed TO Leif_humanoid_root.EventSet_rotation }
-{ Sample Leif_Stand010_whole_bodyRotInterp.EventValue_changed TO Leif_humanoid_root.EventSet_rotation}
-Group147.AddRoute(OrientationInterpolator166.EventValue_changed, HAnimJoint29.set_EventSet_rotation);
+{ Original "Leif_Stand010_whole_bodyRotInterp.EventValue_changed TO Leif_humanoid_root.FdRotation.EventIn }
+{ Sample Leif_Stand010_whole_bodyRotInterp.EventValue_changed TO Leif_humanoid_root.FdRotation.EventIn}
+Group147.AddRoute(OrientationInterpolator166.EventValue_changed, HAnimJoint29.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand010_whole_bodyTransInterp.EventValue_changed TO Leif_humanoid_root.EventSet_translation }
-{ Sample Leif_Stand010_whole_bodyTransInterp.EventValue_changed TO Leif_humanoid_root.EventSet_translation}
-Group147.AddRoute(PositionInterpolator167.EventValue_changed, HAnimJoint29.set_EventSet_translation);
+{ Original "Leif_Stand010_whole_bodyTransInterp.EventValue_changed TO Leif_humanoid_root.FdTranslation.EventIn }
+{ Sample Leif_Stand010_whole_bodyTransInterp.EventValue_changed TO Leif_humanoid_root.FdTranslation.EventIn}
+Group147.AddRoute(PositionInterpolator167.EventValue_changed, HAnimJoint29.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand010_l_sternoclavicularRoll.EventValue_changed TO Leif_l_sternoclavicular.EventSet_rotation }
-{ Sample Leif_Stand010_l_sternoclavicularRoll.EventValue_changed TO Leif_l_sternoclavicular.EventSet_rotation}
-Group147.AddRoute(OrientationInterpolator168.EventValue_changed, HAnimJoint45.set_EventSet_rotation);
+{ Original "Leif_Stand010_l_sternoclavicularRoll.EventValue_changed TO Leif_l_sternoclavicular.FdRotation.EventIn }
+{ Sample Leif_Stand010_l_sternoclavicularRoll.EventValue_changed TO Leif_l_sternoclavicular.FdRotation.EventIn}
+Group147.AddRoute(OrientationInterpolator168.EventValue_changed, HAnimJoint45.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand010_r_sternoclavicularRoll.EventValue_changed TO Leif_r_sternoclavicular.EventSet_rotation }
-{ Sample Leif_Stand010_r_sternoclavicularRoll.EventValue_changed TO Leif_r_sternoclavicular.EventSet_rotation}
-Group147.AddRoute(OrientationInterpolator169.EventValue_changed, HAnimJoint64.set_EventSet_rotation);
+{ Original "Leif_Stand010_r_sternoclavicularRoll.EventValue_changed TO Leif_r_sternoclavicular.FdRotation.EventIn }
+{ Sample Leif_Stand010_r_sternoclavicularRoll.EventValue_changed TO Leif_r_sternoclavicular.FdRotation.EventIn}
+Group147.AddRoute(OrientationInterpolator169.EventValue_changed, HAnimJoint64.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand010_r_metatarsophalangeal_2Pitch.EventValue_changed TO Leif_l_metatarsophalangeal_2.EventSet_rotation }
-{ Sample Leif_Stand010_r_metatarsophalangeal_2Pitch.EventValue_changed TO Leif_l_metatarsophalangeal_2.EventSet_rotation}
-Group147.AddRoute(OrientationInterpolator149.EventValue_changed, HAnimJoint34.set_EventSet_rotation);
+{ Original "Leif_Stand010_r_metatarsophalangeal_2Pitch.EventValue_changed TO Leif_l_metatarsophalangeal_2.FdRotation.EventIn }
+{ Sample Leif_Stand010_r_metatarsophalangeal_2Pitch.EventValue_changed TO Leif_l_metatarsophalangeal_2.FdRotation.EventIn}
+Group147.AddRoute(OrientationInterpolator149.EventValue_changed, HAnimJoint34.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand010_r_metatarsophalangeal_2Pitch.EventValue_changed TO Leif_r_metatarsophalangeal_2.EventSet_rotation }
-{ Sample Leif_Stand010_r_metatarsophalangeal_2Pitch.EventValue_changed TO Leif_r_metatarsophalangeal_2.EventSet_rotation}
-Group147.AddRoute(OrientationInterpolator149.EventValue_changed, HAnimJoint38.set_EventSet_rotation);
+{ Original "Leif_Stand010_r_metatarsophalangeal_2Pitch.EventValue_changed TO Leif_r_metatarsophalangeal_2.FdRotation.EventIn }
+{ Sample Leif_Stand010_r_metatarsophalangeal_2Pitch.EventValue_changed TO Leif_r_metatarsophalangeal_2.FdRotation.EventIn}
+Group147.AddRoute(OrientationInterpolator149.EventValue_changed, HAnimJoint38.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand010_sacroiliacYaw.EventValue_changed TO Leif_sacroiliac.EventSet_rotation }
-{ Sample Leif_Stand010_sacroiliacYaw.EventValue_changed TO Leif_sacroiliac.EventSet_rotation}
-Group147.AddRoute(OrientationInterpolator170.EventValue_changed, HAnimJoint30.set_EventSet_rotation);
+{ Original "Leif_Stand010_sacroiliacYaw.EventValue_changed TO Leif_sacroiliac.FdRotation.EventIn }
+{ Sample Leif_Stand010_sacroiliacYaw.EventValue_changed TO Leif_sacroiliac.FdRotation.EventIn}
+Group147.AddRoute(OrientationInterpolator170.EventValue_changed, HAnimJoint30.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand010_vl5Yaw.EventValue_changed TO Leif_vl5.EventSet_rotation }
-{ Sample Leif_Stand010_vl5Yaw.EventValue_changed TO Leif_vl5.EventSet_rotation}
-Group147.AddRoute(OrientationInterpolator171.EventValue_changed, HAnimJoint39.set_EventSet_rotation);
+{ Original "Leif_Stand010_vl5Yaw.EventValue_changed TO Leif_vl5.FdRotation.EventIn }
+{ Sample Leif_Stand010_vl5Yaw.EventValue_changed TO Leif_vl5.FdRotation.EventIn}
+Group147.AddRoute(OrientationInterpolator171.EventValue_changed, HAnimJoint39.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand010_l_carpometacarpal_1Pitch.EventValue_changed TO Leif_l_carpometacarpal_1.EventSet_rotation }
-{ Sample Leif_Stand010_l_carpometacarpal_1Pitch.EventValue_changed TO Leif_l_carpometacarpal_1.EventSet_rotation}
-Group147.AddRoute(OrientationInterpolator173.EventValue_changed, HAnimJoint49.set_EventSet_rotation);
+{ Original "Leif_Stand010_l_carpometacarpal_1Pitch.EventValue_changed TO Leif_l_carpometacarpal_1.FdRotation.EventIn }
+{ Sample Leif_Stand010_l_carpometacarpal_1Pitch.EventValue_changed TO Leif_l_carpometacarpal_1.FdRotation.EventIn}
+Group147.AddRoute(OrientationInterpolator173.EventValue_changed, HAnimJoint49.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand010_r_carpometacarpal_1Pitch.EventValue_changed TO Leif_r_carpometacarpal_1.EventSet_rotation }
-{ Sample Leif_Stand010_r_carpometacarpal_1Pitch.EventValue_changed TO Leif_r_carpometacarpal_1.EventSet_rotation}
-Group147.AddRoute(OrientationInterpolator174.EventValue_changed, HAnimJoint68.set_EventSet_rotation);
+{ Original "Leif_Stand010_r_carpometacarpal_1Pitch.EventValue_changed TO Leif_r_carpometacarpal_1.FdRotation.EventIn }
+{ Sample Leif_Stand010_r_carpometacarpal_1Pitch.EventValue_changed TO Leif_r_carpometacarpal_1.FdRotation.EventIn}
+Group147.AddRoute(OrientationInterpolator174.EventValue_changed, HAnimJoint68.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand010_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Leif_r_carpal_proximal_interphalangeal_2.EventSet_rotation }
-{ Sample Leif_Stand010_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Leif_r_carpal_proximal_interphalangeal_2.EventSet_rotation}
-Group147.AddRoute(OrientationInterpolator175.EventValue_changed, HAnimJoint71.set_EventSet_rotation);
+{ Original "Leif_Stand010_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Leif_r_carpal_proximal_interphalangeal_2.FdRotation.EventIn }
+{ Sample Leif_Stand010_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Leif_r_carpal_proximal_interphalangeal_2.FdRotation.EventIn}
+Group147.AddRoute(OrientationInterpolator175.EventValue_changed, HAnimJoint71.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_metacarpophalangeal_2.EventSet_rotation }
-{ Sample Leif_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_metacarpophalangeal_2.EventSet_rotation}
-Group147.AddRoute(OrientationInterpolator176.EventValue_changed, HAnimJoint72.set_EventSet_rotation);
+{ Original "Leif_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_metacarpophalangeal_2.FdRotation.EventIn }
+{ Sample Leif_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_metacarpophalangeal_2.FdRotation.EventIn}
+Group147.AddRoute(OrientationInterpolator176.EventValue_changed, HAnimJoint72.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_2.EventSet_rotation }
-{ Sample Leif_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_2.EventSet_rotation}
-Group147.AddRoute(OrientationInterpolator176.EventValue_changed, HAnimJoint73.set_EventSet_rotation);
+{ Original "Leif_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_2.FdRotation.EventIn }
+{ Sample Leif_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_2.FdRotation.EventIn}
+Group147.AddRoute(OrientationInterpolator176.EventValue_changed, HAnimJoint73.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand010_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Leif_r_carpal_proximal_interphalangeal_3.EventSet_rotation }
-{ Sample Leif_Stand010_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Leif_r_carpal_proximal_interphalangeal_3.EventSet_rotation}
-Group147.AddRoute(OrientationInterpolator175.EventValue_changed, HAnimJoint74.set_EventSet_rotation);
+{ Original "Leif_Stand010_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Leif_r_carpal_proximal_interphalangeal_3.FdRotation.EventIn }
+{ Sample Leif_Stand010_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Leif_r_carpal_proximal_interphalangeal_3.FdRotation.EventIn}
+Group147.AddRoute(OrientationInterpolator175.EventValue_changed, HAnimJoint74.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_metacarpophalangeal_3.EventSet_rotation }
-{ Sample Leif_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_metacarpophalangeal_3.EventSet_rotation}
-Group147.AddRoute(OrientationInterpolator176.EventValue_changed, HAnimJoint75.set_EventSet_rotation);
+{ Original "Leif_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_metacarpophalangeal_3.FdRotation.EventIn }
+{ Sample Leif_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_metacarpophalangeal_3.FdRotation.EventIn}
+Group147.AddRoute(OrientationInterpolator176.EventValue_changed, HAnimJoint75.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_3.EventSet_rotation }
-{ Sample Leif_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_3.EventSet_rotation}
-Group147.AddRoute(OrientationInterpolator176.EventValue_changed, HAnimJoint76.set_EventSet_rotation);
+{ Original "Leif_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_3.FdRotation.EventIn }
+{ Sample Leif_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_3.FdRotation.EventIn}
+Group147.AddRoute(OrientationInterpolator176.EventValue_changed, HAnimJoint76.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand010_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Leif_r_carpal_proximal_interphalangeal_4.EventSet_rotation }
-{ Sample Leif_Stand010_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Leif_r_carpal_proximal_interphalangeal_4.EventSet_rotation}
-Group147.AddRoute(OrientationInterpolator175.EventValue_changed, HAnimJoint77.set_EventSet_rotation);
+{ Original "Leif_Stand010_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Leif_r_carpal_proximal_interphalangeal_4.FdRotation.EventIn }
+{ Sample Leif_Stand010_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Leif_r_carpal_proximal_interphalangeal_4.FdRotation.EventIn}
+Group147.AddRoute(OrientationInterpolator175.EventValue_changed, HAnimJoint77.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_metacarpophalangeal_4.EventSet_rotation }
-{ Sample Leif_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_metacarpophalangeal_4.EventSet_rotation}
-Group147.AddRoute(OrientationInterpolator176.EventValue_changed, HAnimJoint78.set_EventSet_rotation);
+{ Original "Leif_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_metacarpophalangeal_4.FdRotation.EventIn }
+{ Sample Leif_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_metacarpophalangeal_4.FdRotation.EventIn}
+Group147.AddRoute(OrientationInterpolator176.EventValue_changed, HAnimJoint78.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_4.EventSet_rotation }
-{ Sample Leif_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_4.EventSet_rotation}
-Group147.AddRoute(OrientationInterpolator176.EventValue_changed, HAnimJoint79.set_EventSet_rotation);
+{ Original "Leif_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_4.FdRotation.EventIn }
+{ Sample Leif_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_4.FdRotation.EventIn}
+Group147.AddRoute(OrientationInterpolator176.EventValue_changed, HAnimJoint79.FdRotation.EventIn);
 end;
 
 procedure InitLeif5FinalPart61;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand010_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Leif_r_carpal_proximal_interphalangeal_5.EventSet_rotation }
-{ Sample Leif_Stand010_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Leif_r_carpal_proximal_interphalangeal_5.EventSet_rotation}
-Group147.AddRoute(OrientationInterpolator175.EventValue_changed, HAnimJoint80.set_EventSet_rotation);
+{ Original "Leif_Stand010_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Leif_r_carpal_proximal_interphalangeal_5.FdRotation.EventIn }
+{ Sample Leif_Stand010_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Leif_r_carpal_proximal_interphalangeal_5.FdRotation.EventIn}
+Group147.AddRoute(OrientationInterpolator175.EventValue_changed, HAnimJoint80.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_metacarpophalangeal_5.EventSet_rotation }
-{ Sample Leif_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_metacarpophalangeal_5.EventSet_rotation}
-Group147.AddRoute(OrientationInterpolator176.EventValue_changed, HAnimJoint81.set_EventSet_rotation);
+{ Original "Leif_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_metacarpophalangeal_5.FdRotation.EventIn }
+{ Sample Leif_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_metacarpophalangeal_5.FdRotation.EventIn}
+Group147.AddRoute(OrientationInterpolator176.EventValue_changed, HAnimJoint81.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_5.EventSet_rotation }
-{ Sample Leif_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_5.EventSet_rotation}
-Group147.AddRoute(OrientationInterpolator176.EventValue_changed, HAnimJoint82.set_EventSet_rotation);
+{ Original "Leif_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_5.FdRotation.EventIn }
+{ Sample Leif_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_5.FdRotation.EventIn}
+Group147.AddRoute(OrientationInterpolator176.EventValue_changed, HAnimJoint82.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group17.FdChildren.Add(Group147);
@@ -1801,27 +1801,27 @@ OrientationInterpolator270.SetKeyValue([Vector4(1,0,0,0),Vector4(1,0,0,-0.25),Ve
 Group243.FdChildren.Add(OrientationInterpolator270);
 { Original "Leif_Run011Timer.EventFraction_changed TO Leif_Run011_r_talocruralRotInterp_Leif_Run011.EventSet_fraction }
 { Sample Leif_Run011Timer.EventFraction_changed TO Leif_Run011_r_talocruralRotInterp_Leif_Run011.EventSet_fraction}
-Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator251.set_EventSet_fraction);
+Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator251.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Run011Timer.EventFraction_changed TO Leif_Run011_r_kneeRotInterp_Leif_Run011.EventSet_fraction }
 { Sample Leif_Run011Timer.EventFraction_changed TO Leif_Run011_r_kneeRotInterp_Leif_Run011.EventSet_fraction}
-Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator250.set_EventSet_fraction);
+Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator250.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Run011Timer.EventFraction_changed TO Leif_Run011_r_hipRotInterp_Leif_Run011.EventSet_fraction }
 { Sample Leif_Run011Timer.EventFraction_changed TO Leif_Run011_r_hipRotInterp_Leif_Run011.EventSet_fraction}
-Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator249.set_EventSet_fraction);
+Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator249.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Run011Timer.EventFraction_changed TO Leif_Run011_l_talocruralRotInterp_Leif_Run011.EventSet_fraction }
 { Sample Leif_Run011Timer.EventFraction_changed TO Leif_Run011_l_talocruralRotInterp_Leif_Run011.EventSet_fraction}
-Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator248.set_EventSet_fraction);
+Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator248.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Run011Timer.EventFraction_changed TO Leif_Run011_l_kneeRotInterp_Leif_Run011.EventSet_fraction }
 { Sample Leif_Run011Timer.EventFraction_changed TO Leif_Run011_l_kneeRotInterp_Leif_Run011.EventSet_fraction}
-Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator247.set_EventSet_fraction);
+Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator247.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Run011Timer.EventFraction_changed TO Leif_Run011_l_hipRotInterp_Leif_Run011.EventSet_fraction }
 { Sample Leif_Run011Timer.EventFraction_changed TO Leif_Run011_l_hipRotInterp_Leif_Run011.EventSet_fraction}
-Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator246.set_EventSet_fraction);
+Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator246.EventSet_fraction);
 end;
 
 procedure InitLeif5FinalPart64;
@@ -1830,188 +1830,188 @@ begin
 { METHOD .AddX3DROUTE }
 { Original "Leif_Run011Timer.EventFraction_changed TO Leif_Run011_lower_bodyRotInterp_Leif_Run011.EventSet_fraction }
 { Sample Leif_Run011Timer.EventFraction_changed TO Leif_Run011_lower_bodyRotInterp_Leif_Run011.EventSet_fraction}
-Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator258.set_EventSet_fraction);
+Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator258.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Run011Timer.EventFraction_changed TO Leif_Run011_r_radiocarpalRotInterp_Leif_Run011.EventSet_fraction }
 { Sample Leif_Run011Timer.EventFraction_changed TO Leif_Run011_r_radiocarpalRotInterp_Leif_Run011.EventSet_fraction}
-Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator257.set_EventSet_fraction);
+Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator257.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Run011Timer.EventFraction_changed TO Leif_Run011_r_elbowRotInterp_Leif_Run011.EventSet_fraction }
 { Sample Leif_Run011Timer.EventFraction_changed TO Leif_Run011_r_elbowRotInterp_Leif_Run011.EventSet_fraction}
-Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator256.set_EventSet_fraction);
+Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator256.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Run011Timer.EventFraction_changed TO Leif_Run011_r_shoulderRotInterp_Leif_Run011.EventSet_fraction }
 { Sample Leif_Run011Timer.EventFraction_changed TO Leif_Run011_r_shoulderRotInterp_Leif_Run011.EventSet_fraction}
-Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator255.set_EventSet_fraction);
+Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator255.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Run011Timer.EventFraction_changed TO Leif_Run011_l_radiocarpalRotInterp_Leif_Run011.EventSet_fraction }
 { Sample Leif_Run011Timer.EventFraction_changed TO Leif_Run011_l_radiocarpalRotInterp_Leif_Run011.EventSet_fraction}
-Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator254.set_EventSet_fraction);
+Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator254.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Run011Timer.EventFraction_changed TO Leif_Run011_l_elbowRotInterp_Leif_Run011.EventSet_fraction }
 { Sample Leif_Run011Timer.EventFraction_changed TO Leif_Run011_l_elbowRotInterp_Leif_Run011.EventSet_fraction}
-Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator253.set_EventSet_fraction);
+Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator253.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Run011Timer.EventFraction_changed TO Leif_Run011_l_shoulderRotInterp_Leif_Run011.EventSet_fraction }
 { Sample Leif_Run011Timer.EventFraction_changed TO Leif_Run011_l_shoulderRotInterp_Leif_Run011.EventSet_fraction}
-Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator252.set_EventSet_fraction);
+Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator252.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Run011Timer.EventFraction_changed TO Leif_Run011_headRotInterp_Leif_Run011.EventSet_fraction }
 { Sample Leif_Run011Timer.EventFraction_changed TO Leif_Run011_headRotInterp_Leif_Run011.EventSet_fraction}
-Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator259.set_EventSet_fraction);
+Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator259.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Run011Timer.EventFraction_changed TO Leif_Run011_neckRotInterp_Leif_Run011.EventSet_fraction }
 { Sample Leif_Run011Timer.EventFraction_changed TO Leif_Run011_neckRotInterp_Leif_Run011.EventSet_fraction}
-Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator260.set_EventSet_fraction);
+Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator260.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Run011Timer.EventFraction_changed TO Leif_Run011_upper_bodyRotInterp_Leif_Run011.EventSet_fraction }
 { Sample Leif_Run011Timer.EventFraction_changed TO Leif_Run011_upper_bodyRotInterp_Leif_Run011.EventSet_fraction}
-Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator261.set_EventSet_fraction);
+Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator261.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Run011Timer.EventFraction_changed TO Leif_Run011_whole_bodyRotInterp_Leif_Run011.EventSet_fraction }
 { Sample Leif_Run011Timer.EventFraction_changed TO Leif_Run011_whole_bodyRotInterp_Leif_Run011.EventSet_fraction}
-Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator262.set_EventSet_fraction);
+Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator262.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Run011Timer.EventFraction_changed TO Leif_Run011_whole_bodyTranInterp_Leif_Run011.EventSet_fraction }
 { Sample Leif_Run011Timer.EventFraction_changed TO Leif_Run011_whole_bodyTranInterp_Leif_Run011.EventSet_fraction}
-Group243.AddRoute(TimeSensor244.EventFraction_changed, PositionInterpolator263.set_EventSet_fraction);
+Group243.AddRoute(TimeSensor244.EventFraction_changed, PositionInterpolator263.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Run011Timer.EventFraction_changed TO Leif_Run011_l_sternoclavicularRoll.EventSet_fraction }
 { Sample Leif_Run011Timer.EventFraction_changed TO Leif_Run011_l_sternoclavicularRoll.EventSet_fraction}
-Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator264.set_EventSet_fraction);
+Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator264.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Run011Timer.EventFraction_changed TO Leif_Run011_r_sternoclavicularRoll.EventSet_fraction }
 { Sample Leif_Run011Timer.EventFraction_changed TO Leif_Run011_r_sternoclavicularRoll.EventSet_fraction}
-Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator265.set_EventSet_fraction);
+Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator265.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Run011Timer.EventFraction_changed TO Leif_Run011_r_metatarsophalangeal_2Pitch.EventSet_fraction }
 { Sample Leif_Run011Timer.EventFraction_changed TO Leif_Run011_r_metatarsophalangeal_2Pitch.EventSet_fraction}
-Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator245.set_EventSet_fraction);
+Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator245.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Run011Timer.EventFraction_changed TO Leif_Run011_sacroiliacYaw.EventSet_fraction }
 { Sample Leif_Run011Timer.EventFraction_changed TO Leif_Run011_sacroiliacYaw.EventSet_fraction}
-Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator266.set_EventSet_fraction);
+Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator266.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Run011Timer.EventFraction_changed TO Leif_Run011_vl5Yaw.EventSet_fraction }
 { Sample Leif_Run011Timer.EventFraction_changed TO Leif_Run011_vl5Yaw.EventSet_fraction}
-Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator267.set_EventSet_fraction);
+Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator267.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Run011Timer.EventFraction_changed TO Leif_Run011_vc6Yaw.EventSet_fraction }
 { Sample Leif_Run011Timer.EventFraction_changed TO Leif_Run011_vc6Yaw.EventSet_fraction}
-Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator268.set_EventSet_fraction);
+Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator268.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Run011Timer.EventFraction_changed TO Leif_Run011_l_carpometacarpal_1Pitch.EventSet_fraction }
 { Sample Leif_Run011Timer.EventFraction_changed TO Leif_Run011_l_carpometacarpal_1Pitch.EventSet_fraction}
-Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator269.set_EventSet_fraction);
+Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator269.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Run011Timer.EventFraction_changed TO Leif_Run011_r_carpometacarpal_1Pitch.EventSet_fraction }
 { Sample Leif_Run011Timer.EventFraction_changed TO Leif_Run011_r_carpometacarpal_1Pitch.EventSet_fraction}
-Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator270.set_EventSet_fraction);
+Group243.AddRoute(TimeSensor244.EventFraction_changed, OrientationInterpolator270.EventSet_fraction);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Run011_r_talocruralRotInterp_Leif_Run011.EventValue_changed TO Leif_r_talocrural.EventSet_rotation }
-{ Sample Leif_Run011_r_talocruralRotInterp_Leif_Run011.EventValue_changed TO Leif_r_talocrural.EventSet_rotation}
-Group243.AddRoute(OrientationInterpolator251.EventValue_changed, HAnimJoint37.set_EventSet_rotation);
+{ Original "Leif_Run011_r_talocruralRotInterp_Leif_Run011.EventValue_changed TO Leif_r_talocrural.FdRotation.EventIn }
+{ Sample Leif_Run011_r_talocruralRotInterp_Leif_Run011.EventValue_changed TO Leif_r_talocrural.FdRotation.EventIn}
+Group243.AddRoute(OrientationInterpolator251.EventValue_changed, HAnimJoint37.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Run011_r_kneeRotInterp_Leif_Run011.EventValue_changed TO Leif_r_knee.EventSet_rotation }
-{ Sample Leif_Run011_r_kneeRotInterp_Leif_Run011.EventValue_changed TO Leif_r_knee.EventSet_rotation}
-Group243.AddRoute(OrientationInterpolator250.EventValue_changed, HAnimJoint36.set_EventSet_rotation);
+{ Original "Leif_Run011_r_kneeRotInterp_Leif_Run011.EventValue_changed TO Leif_r_knee.FdRotation.EventIn }
+{ Sample Leif_Run011_r_kneeRotInterp_Leif_Run011.EventValue_changed TO Leif_r_knee.FdRotation.EventIn}
+Group243.AddRoute(OrientationInterpolator250.EventValue_changed, HAnimJoint36.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Run011_r_hipRotInterp_Leif_Run011.EventValue_changed TO Leif_r_hip.EventSet_rotation }
-{ Sample Leif_Run011_r_hipRotInterp_Leif_Run011.EventValue_changed TO Leif_r_hip.EventSet_rotation}
-Group243.AddRoute(OrientationInterpolator249.EventValue_changed, HAnimJoint35.set_EventSet_rotation);
+{ Original "Leif_Run011_r_hipRotInterp_Leif_Run011.EventValue_changed TO Leif_r_hip.FdRotation.EventIn }
+{ Sample Leif_Run011_r_hipRotInterp_Leif_Run011.EventValue_changed TO Leif_r_hip.FdRotation.EventIn}
+Group243.AddRoute(OrientationInterpolator249.EventValue_changed, HAnimJoint35.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Run011_l_talocruralRotInterp_Leif_Run011.EventValue_changed TO Leif_l_talocrural.EventSet_rotation }
-{ Sample Leif_Run011_l_talocruralRotInterp_Leif_Run011.EventValue_changed TO Leif_l_talocrural.EventSet_rotation}
-Group243.AddRoute(OrientationInterpolator248.EventValue_changed, HAnimJoint33.set_EventSet_rotation);
+{ Original "Leif_Run011_l_talocruralRotInterp_Leif_Run011.EventValue_changed TO Leif_l_talocrural.FdRotation.EventIn }
+{ Sample Leif_Run011_l_talocruralRotInterp_Leif_Run011.EventValue_changed TO Leif_l_talocrural.FdRotation.EventIn}
+Group243.AddRoute(OrientationInterpolator248.EventValue_changed, HAnimJoint33.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Run011_l_kneeRotInterp_Leif_Run011.EventValue_changed TO Leif_l_knee.EventSet_rotation }
-{ Sample Leif_Run011_l_kneeRotInterp_Leif_Run011.EventValue_changed TO Leif_l_knee.EventSet_rotation}
-Group243.AddRoute(OrientationInterpolator247.EventValue_changed, HAnimJoint32.set_EventSet_rotation);
+{ Original "Leif_Run011_l_kneeRotInterp_Leif_Run011.EventValue_changed TO Leif_l_knee.FdRotation.EventIn }
+{ Sample Leif_Run011_l_kneeRotInterp_Leif_Run011.EventValue_changed TO Leif_l_knee.FdRotation.EventIn}
+Group243.AddRoute(OrientationInterpolator247.EventValue_changed, HAnimJoint32.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Run011_l_hipRotInterp_Leif_Run011.EventValue_changed TO Leif_l_hip.EventSet_rotation }
-{ Sample Leif_Run011_l_hipRotInterp_Leif_Run011.EventValue_changed TO Leif_l_hip.EventSet_rotation}
-Group243.AddRoute(OrientationInterpolator246.EventValue_changed, HAnimJoint31.set_EventSet_rotation);
+{ Original "Leif_Run011_l_hipRotInterp_Leif_Run011.EventValue_changed TO Leif_l_hip.FdRotation.EventIn }
+{ Sample Leif_Run011_l_hipRotInterp_Leif_Run011.EventValue_changed TO Leif_l_hip.FdRotation.EventIn}
+Group243.AddRoute(OrientationInterpolator246.EventValue_changed, HAnimJoint31.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Run011_r_radiocarpalRotInterp_Leif_Run011.EventValue_changed TO Leif_r_radiocarpal.EventSet_rotation }
-{ Sample Leif_Run011_r_radiocarpalRotInterp_Leif_Run011.EventValue_changed TO Leif_r_radiocarpal.EventSet_rotation}
-Group243.AddRoute(OrientationInterpolator257.EventValue_changed, HAnimJoint67.set_EventSet_rotation);
+{ Original "Leif_Run011_r_radiocarpalRotInterp_Leif_Run011.EventValue_changed TO Leif_r_radiocarpal.FdRotation.EventIn }
+{ Sample Leif_Run011_r_radiocarpalRotInterp_Leif_Run011.EventValue_changed TO Leif_r_radiocarpal.FdRotation.EventIn}
+Group243.AddRoute(OrientationInterpolator257.EventValue_changed, HAnimJoint67.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Run011_r_elbowRotInterp_Leif_Run011.EventValue_changed TO Leif_r_elbow.EventSet_rotation }
-{ Sample Leif_Run011_r_elbowRotInterp_Leif_Run011.EventValue_changed TO Leif_r_elbow.EventSet_rotation}
-Group243.AddRoute(OrientationInterpolator256.EventValue_changed, HAnimJoint66.set_EventSet_rotation);
+{ Original "Leif_Run011_r_elbowRotInterp_Leif_Run011.EventValue_changed TO Leif_r_elbow.FdRotation.EventIn }
+{ Sample Leif_Run011_r_elbowRotInterp_Leif_Run011.EventValue_changed TO Leif_r_elbow.FdRotation.EventIn}
+Group243.AddRoute(OrientationInterpolator256.EventValue_changed, HAnimJoint66.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Run011_r_shoulderRotInterp_Leif_Run011.EventValue_changed TO Leif_r_shoulder.EventSet_rotation }
-{ Sample Leif_Run011_r_shoulderRotInterp_Leif_Run011.EventValue_changed TO Leif_r_shoulder.EventSet_rotation}
-Group243.AddRoute(OrientationInterpolator255.EventValue_changed, HAnimJoint65.set_EventSet_rotation);
+{ Original "Leif_Run011_r_shoulderRotInterp_Leif_Run011.EventValue_changed TO Leif_r_shoulder.FdRotation.EventIn }
+{ Sample Leif_Run011_r_shoulderRotInterp_Leif_Run011.EventValue_changed TO Leif_r_shoulder.FdRotation.EventIn}
+Group243.AddRoute(OrientationInterpolator255.EventValue_changed, HAnimJoint65.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Run011_l_radiocarpalRotInterp_Leif_Run011.EventValue_changed TO Leif_l_radiocarpal.EventSet_rotation }
-{ Sample Leif_Run011_l_radiocarpalRotInterp_Leif_Run011.EventValue_changed TO Leif_l_radiocarpal.EventSet_rotation}
-Group243.AddRoute(OrientationInterpolator254.EventValue_changed, HAnimJoint48.set_EventSet_rotation);
+{ Original "Leif_Run011_l_radiocarpalRotInterp_Leif_Run011.EventValue_changed TO Leif_l_radiocarpal.FdRotation.EventIn }
+{ Sample Leif_Run011_l_radiocarpalRotInterp_Leif_Run011.EventValue_changed TO Leif_l_radiocarpal.FdRotation.EventIn}
+Group243.AddRoute(OrientationInterpolator254.EventValue_changed, HAnimJoint48.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Run011_l_elbowRotInterp_Leif_Run011.EventValue_changed TO Leif_l_elbow.EventSet_rotation }
-{ Sample Leif_Run011_l_elbowRotInterp_Leif_Run011.EventValue_changed TO Leif_l_elbow.EventSet_rotation}
-Group243.AddRoute(OrientationInterpolator253.EventValue_changed, HAnimJoint47.set_EventSet_rotation);
+{ Original "Leif_Run011_l_elbowRotInterp_Leif_Run011.EventValue_changed TO Leif_l_elbow.FdRotation.EventIn }
+{ Sample Leif_Run011_l_elbowRotInterp_Leif_Run011.EventValue_changed TO Leif_l_elbow.FdRotation.EventIn}
+Group243.AddRoute(OrientationInterpolator253.EventValue_changed, HAnimJoint47.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Run011_l_shoulderRotInterp_Leif_Run011.EventValue_changed TO Leif_l_shoulder.EventSet_rotation }
-{ Sample Leif_Run011_l_shoulderRotInterp_Leif_Run011.EventValue_changed TO Leif_l_shoulder.EventSet_rotation}
-Group243.AddRoute(OrientationInterpolator252.EventValue_changed, HAnimJoint46.set_EventSet_rotation);
+{ Original "Leif_Run011_l_shoulderRotInterp_Leif_Run011.EventValue_changed TO Leif_l_shoulder.FdRotation.EventIn }
+{ Sample Leif_Run011_l_shoulderRotInterp_Leif_Run011.EventValue_changed TO Leif_l_shoulder.FdRotation.EventIn}
+Group243.AddRoute(OrientationInterpolator252.EventValue_changed, HAnimJoint46.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Run011_lower_bodyRotInterp_Leif_Run011.EventValue_changed TO Leif_sacroiliac.EventSet_rotation }
-{ Sample Leif_Run011_lower_bodyRotInterp_Leif_Run011.EventValue_changed TO Leif_sacroiliac.EventSet_rotation}
-Group243.AddRoute(OrientationInterpolator258.EventValue_changed, HAnimJoint30.set_EventSet_rotation);
+{ Original "Leif_Run011_lower_bodyRotInterp_Leif_Run011.EventValue_changed TO Leif_sacroiliac.FdRotation.EventIn }
+{ Sample Leif_Run011_lower_bodyRotInterp_Leif_Run011.EventValue_changed TO Leif_sacroiliac.FdRotation.EventIn}
+Group243.AddRoute(OrientationInterpolator258.EventValue_changed, HAnimJoint30.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Run011_headRotInterp_Leif_Run011.EventValue_changed TO Leif_skullbase.EventSet_rotation }
-{ Sample Leif_Run011_headRotInterp_Leif_Run011.EventValue_changed TO Leif_skullbase.EventSet_rotation}
-Group243.AddRoute(OrientationInterpolator259.EventValue_changed, HAnimJoint44.set_EventSet_rotation);
+{ Original "Leif_Run011_headRotInterp_Leif_Run011.EventValue_changed TO Leif_skullbase.FdRotation.EventIn }
+{ Sample Leif_Run011_headRotInterp_Leif_Run011.EventValue_changed TO Leif_skullbase.FdRotation.EventIn}
+Group243.AddRoute(OrientationInterpolator259.EventValue_changed, HAnimJoint44.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Run011_neckRotInterp_Leif_Run011.EventValue_changed TO Leif_vc4.EventSet_rotation }
-{ Sample Leif_Run011_neckRotInterp_Leif_Run011.EventValue_changed TO Leif_vc4.EventSet_rotation}
-Group243.AddRoute(OrientationInterpolator260.EventValue_changed, HAnimJoint43.set_EventSet_rotation);
+{ Original "Leif_Run011_neckRotInterp_Leif_Run011.EventValue_changed TO Leif_vc4.FdRotation.EventIn }
+{ Sample Leif_Run011_neckRotInterp_Leif_Run011.EventValue_changed TO Leif_vc4.FdRotation.EventIn}
+Group243.AddRoute(OrientationInterpolator260.EventValue_changed, HAnimJoint43.FdRotation.EventIn);
 end;
 
 procedure InitLeif5FinalPart65;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Run011_whole_bodyRotInterp_Leif_Run011.EventValue_changed TO Leif_humanoid_root.EventSet_rotation }
-{ Sample Leif_Run011_whole_bodyRotInterp_Leif_Run011.EventValue_changed TO Leif_humanoid_root.EventSet_rotation}
-Group243.AddRoute(OrientationInterpolator262.EventValue_changed, HAnimJoint29.set_EventSet_rotation);
+{ Original "Leif_Run011_whole_bodyRotInterp_Leif_Run011.EventValue_changed TO Leif_humanoid_root.FdRotation.EventIn }
+{ Sample Leif_Run011_whole_bodyRotInterp_Leif_Run011.EventValue_changed TO Leif_humanoid_root.FdRotation.EventIn}
+Group243.AddRoute(OrientationInterpolator262.EventValue_changed, HAnimJoint29.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Run011_whole_bodyTranInterp_Leif_Run011.EventValue_changed TO Leif_humanoid_root.EventSet_translation }
-{ Sample Leif_Run011_whole_bodyTranInterp_Leif_Run011.EventValue_changed TO Leif_humanoid_root.EventSet_translation}
-Group243.AddRoute(PositionInterpolator263.EventValue_changed, HAnimJoint29.set_EventSet_translation);
+{ Original "Leif_Run011_whole_bodyTranInterp_Leif_Run011.EventValue_changed TO Leif_humanoid_root.FdTranslation.EventIn }
+{ Sample Leif_Run011_whole_bodyTranInterp_Leif_Run011.EventValue_changed TO Leif_humanoid_root.FdTranslation.EventIn}
+Group243.AddRoute(PositionInterpolator263.EventValue_changed, HAnimJoint29.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Run011_l_sternoclavicularRoll.EventValue_changed TO Leif_l_sternoclavicular.EventSet_rotation }
-{ Sample Leif_Run011_l_sternoclavicularRoll.EventValue_changed TO Leif_l_sternoclavicular.EventSet_rotation}
-Group243.AddRoute(OrientationInterpolator264.EventValue_changed, HAnimJoint45.set_EventSet_rotation);
+{ Original "Leif_Run011_l_sternoclavicularRoll.EventValue_changed TO Leif_l_sternoclavicular.FdRotation.EventIn }
+{ Sample Leif_Run011_l_sternoclavicularRoll.EventValue_changed TO Leif_l_sternoclavicular.FdRotation.EventIn}
+Group243.AddRoute(OrientationInterpolator264.EventValue_changed, HAnimJoint45.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Run011_r_sternoclavicularRoll.EventValue_changed TO Leif_r_sternoclavicular.EventSet_rotation }
-{ Sample Leif_Run011_r_sternoclavicularRoll.EventValue_changed TO Leif_r_sternoclavicular.EventSet_rotation}
-Group243.AddRoute(OrientationInterpolator265.EventValue_changed, HAnimJoint64.set_EventSet_rotation);
+{ Original "Leif_Run011_r_sternoclavicularRoll.EventValue_changed TO Leif_r_sternoclavicular.FdRotation.EventIn }
+{ Sample Leif_Run011_r_sternoclavicularRoll.EventValue_changed TO Leif_r_sternoclavicular.FdRotation.EventIn}
+Group243.AddRoute(OrientationInterpolator265.EventValue_changed, HAnimJoint64.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Run011_r_metatarsophalangeal_2Pitch.EventValue_changed TO Leif_l_metatarsophalangeal_2.EventSet_rotation }
-{ Sample Leif_Run011_r_metatarsophalangeal_2Pitch.EventValue_changed TO Leif_l_metatarsophalangeal_2.EventSet_rotation}
-Group243.AddRoute(OrientationInterpolator245.EventValue_changed, HAnimJoint34.set_EventSet_rotation);
+{ Original "Leif_Run011_r_metatarsophalangeal_2Pitch.EventValue_changed TO Leif_l_metatarsophalangeal_2.FdRotation.EventIn }
+{ Sample Leif_Run011_r_metatarsophalangeal_2Pitch.EventValue_changed TO Leif_l_metatarsophalangeal_2.FdRotation.EventIn}
+Group243.AddRoute(OrientationInterpolator245.EventValue_changed, HAnimJoint34.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Run011_r_metatarsophalangeal_2Pitch.EventValue_changed TO Leif_r_metatarsophalangeal_2.EventSet_rotation }
-{ Sample Leif_Run011_r_metatarsophalangeal_2Pitch.EventValue_changed TO Leif_r_metatarsophalangeal_2.EventSet_rotation}
-Group243.AddRoute(OrientationInterpolator245.EventValue_changed, HAnimJoint38.set_EventSet_rotation);
+{ Original "Leif_Run011_r_metatarsophalangeal_2Pitch.EventValue_changed TO Leif_r_metatarsophalangeal_2.FdRotation.EventIn }
+{ Sample Leif_Run011_r_metatarsophalangeal_2Pitch.EventValue_changed TO Leif_r_metatarsophalangeal_2.FdRotation.EventIn}
+Group243.AddRoute(OrientationInterpolator245.EventValue_changed, HAnimJoint38.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Run011_sacroiliacYaw.EventValue_changed TO Leif_sacroiliac.EventSet_rotation }
-{ Sample Leif_Run011_sacroiliacYaw.EventValue_changed TO Leif_sacroiliac.EventSet_rotation}
-Group243.AddRoute(OrientationInterpolator266.EventValue_changed, HAnimJoint30.set_EventSet_rotation);
+{ Original "Leif_Run011_sacroiliacYaw.EventValue_changed TO Leif_sacroiliac.FdRotation.EventIn }
+{ Sample Leif_Run011_sacroiliacYaw.EventValue_changed TO Leif_sacroiliac.FdRotation.EventIn}
+Group243.AddRoute(OrientationInterpolator266.EventValue_changed, HAnimJoint30.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Run011_vl5Yaw.EventValue_changed TO Leif_vl5.EventSet_rotation }
-{ Sample Leif_Run011_vl5Yaw.EventValue_changed TO Leif_vl5.EventSet_rotation}
-Group243.AddRoute(OrientationInterpolator267.EventValue_changed, HAnimJoint39.set_EventSet_rotation);
+{ Original "Leif_Run011_vl5Yaw.EventValue_changed TO Leif_vl5.FdRotation.EventIn }
+{ Sample Leif_Run011_vl5Yaw.EventValue_changed TO Leif_vl5.FdRotation.EventIn}
+Group243.AddRoute(OrientationInterpolator267.EventValue_changed, HAnimJoint39.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Run011_l_carpometacarpal_1Pitch.EventValue_changed TO Leif_l_carpometacarpal_1.EventSet_rotation }
-{ Sample Leif_Run011_l_carpometacarpal_1Pitch.EventValue_changed TO Leif_l_carpometacarpal_1.EventSet_rotation}
-Group243.AddRoute(OrientationInterpolator269.EventValue_changed, HAnimJoint49.set_EventSet_rotation);
+{ Original "Leif_Run011_l_carpometacarpal_1Pitch.EventValue_changed TO Leif_l_carpometacarpal_1.FdRotation.EventIn }
+{ Sample Leif_Run011_l_carpometacarpal_1Pitch.EventValue_changed TO Leif_l_carpometacarpal_1.FdRotation.EventIn}
+Group243.AddRoute(OrientationInterpolator269.EventValue_changed, HAnimJoint49.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Run011_r_carpometacarpal_1Pitch.EventValue_changed TO Leif_r_carpometacarpal_1.EventSet_rotation }
-{ Sample Leif_Run011_r_carpometacarpal_1Pitch.EventValue_changed TO Leif_r_carpometacarpal_1.EventSet_rotation}
-Group243.AddRoute(OrientationInterpolator270.EventValue_changed, HAnimJoint68.set_EventSet_rotation);
+{ Original "Leif_Run011_r_carpometacarpal_1Pitch.EventValue_changed TO Leif_r_carpometacarpal_1.FdRotation.EventIn }
+{ Sample Leif_Run011_r_carpometacarpal_1Pitch.EventValue_changed TO Leif_r_carpometacarpal_1.FdRotation.EventIn}
+Group243.AddRoute(OrientationInterpolator270.EventValue_changed, HAnimJoint68.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group17.FdChildren.Add(Group243);
@@ -2171,212 +2171,212 @@ Group322.FdChildren.Add(OrientationInterpolator349);
 Group17.FdChildren.Add(Group322);
 { Original "Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012s_r_talocruralRotInterp.EventSet_fraction }
 { Sample Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012s_r_talocruralRotInterp.EventSet_fraction}
-Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator325.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator325.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012s_r_kneeRotInterp.EventSet_fraction }
 { Sample Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012s_r_kneeRotInterp.EventSet_fraction}
-Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator326.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator326.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012s_r_hipRotInterp.EventSet_fraction }
 { Sample Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012s_r_hipRotInterp.EventSet_fraction}
-Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator327.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator327.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012s_l_talocruralRotInterp.EventSet_fraction }
 { Sample Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012s_l_talocruralRotInterp.EventSet_fraction}
-Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator328.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator328.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012s_l_kneeRotInterp.EventSet_fraction }
 { Sample Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012s_l_kneeRotInterp.EventSet_fraction}
-Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator329.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator329.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012s_l_hipRotInterp.EventSet_fraction }
 { Sample Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012s_l_hipRotInterp.EventSet_fraction}
-Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator330.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator330.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012s_lower_bodyRotInterp.EventSet_fraction }
 { Sample Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012s_lower_bodyRotInterp.EventSet_fraction}
-Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator340.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator340.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012s_r_radiocarpalRotInterp.EventSet_fraction }
 { Sample Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012s_r_radiocarpalRotInterp.EventSet_fraction}
-Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator331.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator331.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012s_r_elbowRotInterp.EventSet_fraction }
 { Sample Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012s_r_elbowRotInterp.EventSet_fraction}
-Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator332.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator332.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012s_r_shoulderRotInterp.EventSet_fraction }
 { Sample Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012s_r_shoulderRotInterp.EventSet_fraction}
-Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator333.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator333.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012s_l_radiocarpalRotInterp.EventSet_fraction }
 { Sample Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012s_l_radiocarpalRotInterp.EventSet_fraction}
-Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator334.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator334.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012s_l_elbowRotInterp.EventSet_fraction }
 { Sample Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012s_l_elbowRotInterp.EventSet_fraction}
-Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator335.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator335.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012s_l_shoulderRotInterp.EventSet_fraction }
 { Sample Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012s_l_shoulderRotInterp.EventSet_fraction}
-Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator336.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator336.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012s_headRotInterp.EventSet_fraction }
 { Sample Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012s_headRotInterp.EventSet_fraction}
-Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator337.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator337.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012s_neckRotInterp.EventSet_fraction }
 { Sample Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012s_neckRotInterp.EventSet_fraction}
-Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator338.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator338.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012s_upper_bodyRotInterp.EventSet_fraction }
 { Sample Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012s_upper_bodyRotInterp.EventSet_fraction}
-Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator339.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator339.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012s_whole_bodyRotInterp.EventSet_fraction }
 { Sample Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012s_whole_bodyRotInterp.EventSet_fraction}
-Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator341.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator341.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012s_whole_bodyTransInterp.EventSet_fraction }
 { Sample Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012s_whole_bodyTransInterp.EventSet_fraction}
-Group17.AddRoute(TimeSensor323.EventFraction_changed, PositionInterpolator342.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor323.EventFraction_changed, PositionInterpolator342.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012_l_sternoclavicularRoll.EventSet_fraction }
 { Sample Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012_l_sternoclavicularRoll.EventSet_fraction}
-Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator343.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator343.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012_r_sternoclavicularRoll.EventSet_fraction }
 { Sample Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012_r_sternoclavicularRoll.EventSet_fraction}
-Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator344.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator344.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012_r_metatarsophalangeal_2Pitch.EventSet_fraction }
 { Sample Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012_r_metatarsophalangeal_2Pitch.EventSet_fraction}
-Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator324.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator324.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012_sacroiliacLeif_Turn012.EventSet_fraction }
 { Sample Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012_sacroiliacLeif_Turn012.EventSet_fraction}
-Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator345.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator345.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012_vl5Leif_Turn012.EventSet_fraction }
 { Sample Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012_vl5Leif_Turn012.EventSet_fraction}
-Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator346.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator346.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012_vc6Leif_Turn012.EventSet_fraction }
 { Sample Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012_vc6Leif_Turn012.EventSet_fraction}
-Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator347.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator347.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012_l_carpometacarpal_1Pitch.EventSet_fraction }
 { Sample Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012_l_carpometacarpal_1Pitch.EventSet_fraction}
-Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator348.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator348.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012_r_carpometacarpal_1Pitch.EventSet_fraction }
 { Sample Leif_Turn012Timer.EventFraction_changed TO Leif_Turn012_r_carpometacarpal_1Pitch.EventSet_fraction}
-Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator349.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor323.EventFraction_changed, OrientationInterpolator349.EventSet_fraction);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Turn012s_r_talocruralRotInterp.EventValue_changed TO Leif_r_talocrural.EventSet_rotation }
-{ Sample Leif_Turn012s_r_talocruralRotInterp.EventValue_changed TO Leif_r_talocrural.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator325.EventValue_changed, HAnimJoint37.set_EventSet_rotation);
+{ Original "Leif_Turn012s_r_talocruralRotInterp.EventValue_changed TO Leif_r_talocrural.FdRotation.EventIn }
+{ Sample Leif_Turn012s_r_talocruralRotInterp.EventValue_changed TO Leif_r_talocrural.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator325.EventValue_changed, HAnimJoint37.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Turn012s_r_kneeRotInterp.EventValue_changed TO Leif_r_knee.EventSet_rotation }
-{ Sample Leif_Turn012s_r_kneeRotInterp.EventValue_changed TO Leif_r_knee.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator326.EventValue_changed, HAnimJoint36.set_EventSet_rotation);
+{ Original "Leif_Turn012s_r_kneeRotInterp.EventValue_changed TO Leif_r_knee.FdRotation.EventIn }
+{ Sample Leif_Turn012s_r_kneeRotInterp.EventValue_changed TO Leif_r_knee.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator326.EventValue_changed, HAnimJoint36.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Turn012s_r_hipRotInterp.EventValue_changed TO Leif_r_hip.EventSet_rotation }
-{ Sample Leif_Turn012s_r_hipRotInterp.EventValue_changed TO Leif_r_hip.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator327.EventValue_changed, HAnimJoint35.set_EventSet_rotation);
+{ Original "Leif_Turn012s_r_hipRotInterp.EventValue_changed TO Leif_r_hip.FdRotation.EventIn }
+{ Sample Leif_Turn012s_r_hipRotInterp.EventValue_changed TO Leif_r_hip.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator327.EventValue_changed, HAnimJoint35.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Turn012s_l_talocruralRotInterp.EventValue_changed TO Leif_l_talocrural.EventSet_rotation }
-{ Sample Leif_Turn012s_l_talocruralRotInterp.EventValue_changed TO Leif_l_talocrural.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator328.EventValue_changed, HAnimJoint33.set_EventSet_rotation);
+{ Original "Leif_Turn012s_l_talocruralRotInterp.EventValue_changed TO Leif_l_talocrural.FdRotation.EventIn }
+{ Sample Leif_Turn012s_l_talocruralRotInterp.EventValue_changed TO Leif_l_talocrural.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator328.EventValue_changed, HAnimJoint33.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Turn012s_l_kneeRotInterp.EventValue_changed TO Leif_l_knee.EventSet_rotation }
-{ Sample Leif_Turn012s_l_kneeRotInterp.EventValue_changed TO Leif_l_knee.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator329.EventValue_changed, HAnimJoint32.set_EventSet_rotation);
+{ Original "Leif_Turn012s_l_kneeRotInterp.EventValue_changed TO Leif_l_knee.FdRotation.EventIn }
+{ Sample Leif_Turn012s_l_kneeRotInterp.EventValue_changed TO Leif_l_knee.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator329.EventValue_changed, HAnimJoint32.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Turn012s_l_hipRotInterp.EventValue_changed TO Leif_l_hip.EventSet_rotation }
-{ Sample Leif_Turn012s_l_hipRotInterp.EventValue_changed TO Leif_l_hip.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator330.EventValue_changed, HAnimJoint31.set_EventSet_rotation);
+{ Original "Leif_Turn012s_l_hipRotInterp.EventValue_changed TO Leif_l_hip.FdRotation.EventIn }
+{ Sample Leif_Turn012s_l_hipRotInterp.EventValue_changed TO Leif_l_hip.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator330.EventValue_changed, HAnimJoint31.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Turn012s_lower_bodyRotInterp.EventValue_changed TO Leif_sacroiliac.EventSet_rotation }
-{ Sample Leif_Turn012s_lower_bodyRotInterp.EventValue_changed TO Leif_sacroiliac.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator340.EventValue_changed, HAnimJoint30.set_EventSet_rotation);
+{ Original "Leif_Turn012s_lower_bodyRotInterp.EventValue_changed TO Leif_sacroiliac.FdRotation.EventIn }
+{ Sample Leif_Turn012s_lower_bodyRotInterp.EventValue_changed TO Leif_sacroiliac.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator340.EventValue_changed, HAnimJoint30.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Turn012s_r_radiocarpalRotInterp.EventValue_changed TO Leif_r_radiocarpal.EventSet_rotation }
-{ Sample Leif_Turn012s_r_radiocarpalRotInterp.EventValue_changed TO Leif_r_radiocarpal.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator331.EventValue_changed, HAnimJoint67.set_EventSet_rotation);
+{ Original "Leif_Turn012s_r_radiocarpalRotInterp.EventValue_changed TO Leif_r_radiocarpal.FdRotation.EventIn }
+{ Sample Leif_Turn012s_r_radiocarpalRotInterp.EventValue_changed TO Leif_r_radiocarpal.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator331.EventValue_changed, HAnimJoint67.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Turn012s_r_elbowRotInterp.EventValue_changed TO Leif_r_elbow.EventSet_rotation }
-{ Sample Leif_Turn012s_r_elbowRotInterp.EventValue_changed TO Leif_r_elbow.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator332.EventValue_changed, HAnimJoint66.set_EventSet_rotation);
+{ Original "Leif_Turn012s_r_elbowRotInterp.EventValue_changed TO Leif_r_elbow.FdRotation.EventIn }
+{ Sample Leif_Turn012s_r_elbowRotInterp.EventValue_changed TO Leif_r_elbow.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator332.EventValue_changed, HAnimJoint66.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Turn012s_r_shoulderRotInterp.EventValue_changed TO Leif_r_shoulder.EventSet_rotation }
-{ Sample Leif_Turn012s_r_shoulderRotInterp.EventValue_changed TO Leif_r_shoulder.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator333.EventValue_changed, HAnimJoint65.set_EventSet_rotation);
+{ Original "Leif_Turn012s_r_shoulderRotInterp.EventValue_changed TO Leif_r_shoulder.FdRotation.EventIn }
+{ Sample Leif_Turn012s_r_shoulderRotInterp.EventValue_changed TO Leif_r_shoulder.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator333.EventValue_changed, HAnimJoint65.FdRotation.EventIn);
 end;
 
 procedure InitLeif5FinalPart69;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Turn012s_l_radiocarpalRotInterp.EventValue_changed TO Leif_l_radiocarpal.EventSet_rotation }
-{ Sample Leif_Turn012s_l_radiocarpalRotInterp.EventValue_changed TO Leif_l_radiocarpal.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator334.EventValue_changed, HAnimJoint48.set_EventSet_rotation);
+{ Original "Leif_Turn012s_l_radiocarpalRotInterp.EventValue_changed TO Leif_l_radiocarpal.FdRotation.EventIn }
+{ Sample Leif_Turn012s_l_radiocarpalRotInterp.EventValue_changed TO Leif_l_radiocarpal.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator334.EventValue_changed, HAnimJoint48.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Turn012s_l_elbowRotInterp.EventValue_changed TO Leif_l_elbow.EventSet_rotation }
-{ Sample Leif_Turn012s_l_elbowRotInterp.EventValue_changed TO Leif_l_elbow.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator335.EventValue_changed, HAnimJoint47.set_EventSet_rotation);
+{ Original "Leif_Turn012s_l_elbowRotInterp.EventValue_changed TO Leif_l_elbow.FdRotation.EventIn }
+{ Sample Leif_Turn012s_l_elbowRotInterp.EventValue_changed TO Leif_l_elbow.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator335.EventValue_changed, HAnimJoint47.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Turn012s_l_shoulderRotInterp.EventValue_changed TO Leif_l_shoulder.EventSet_rotation }
-{ Sample Leif_Turn012s_l_shoulderRotInterp.EventValue_changed TO Leif_l_shoulder.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator336.EventValue_changed, HAnimJoint46.set_EventSet_rotation);
+{ Original "Leif_Turn012s_l_shoulderRotInterp.EventValue_changed TO Leif_l_shoulder.FdRotation.EventIn }
+{ Sample Leif_Turn012s_l_shoulderRotInterp.EventValue_changed TO Leif_l_shoulder.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator336.EventValue_changed, HAnimJoint46.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Turn012s_headRotInterp.EventValue_changed TO Leif_skullbase.EventSet_rotation }
-{ Sample Leif_Turn012s_headRotInterp.EventValue_changed TO Leif_skullbase.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator337.EventValue_changed, HAnimJoint44.set_EventSet_rotation);
+{ Original "Leif_Turn012s_headRotInterp.EventValue_changed TO Leif_skullbase.FdRotation.EventIn }
+{ Sample Leif_Turn012s_headRotInterp.EventValue_changed TO Leif_skullbase.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator337.EventValue_changed, HAnimJoint44.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Turn012s_neckRotInterp.EventValue_changed TO Leif_vc4.EventSet_rotation }
-{ Sample Leif_Turn012s_neckRotInterp.EventValue_changed TO Leif_vc4.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator338.EventValue_changed, HAnimJoint43.set_EventSet_rotation);
+{ Original "Leif_Turn012s_neckRotInterp.EventValue_changed TO Leif_vc4.FdRotation.EventIn }
+{ Sample Leif_Turn012s_neckRotInterp.EventValue_changed TO Leif_vc4.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator338.EventValue_changed, HAnimJoint43.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Turn012s_whole_bodyRotInterp.EventValue_changed TO Leif_humanoid_root.EventSet_rotation }
-{ Sample Leif_Turn012s_whole_bodyRotInterp.EventValue_changed TO Leif_humanoid_root.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator341.EventValue_changed, HAnimJoint29.set_EventSet_rotation);
+{ Original "Leif_Turn012s_whole_bodyRotInterp.EventValue_changed TO Leif_humanoid_root.FdRotation.EventIn }
+{ Sample Leif_Turn012s_whole_bodyRotInterp.EventValue_changed TO Leif_humanoid_root.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator341.EventValue_changed, HAnimJoint29.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Turn012s_whole_bodyTransInterp.EventValue_changed TO Leif_humanoid_root.EventSet_translation }
-{ Sample Leif_Turn012s_whole_bodyTransInterp.EventValue_changed TO Leif_humanoid_root.EventSet_translation}
-Group17.AddRoute(PositionInterpolator342.EventValue_changed, HAnimJoint29.set_EventSet_translation);
+{ Original "Leif_Turn012s_whole_bodyTransInterp.EventValue_changed TO Leif_humanoid_root.FdTranslation.EventIn }
+{ Sample Leif_Turn012s_whole_bodyTransInterp.EventValue_changed TO Leif_humanoid_root.FdTranslation.EventIn}
+Group17.AddRoute(PositionInterpolator342.EventValue_changed, HAnimJoint29.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Turn012_l_sternoclavicularRoll.EventValue_changed TO Leif_l_sternoclavicular.EventSet_rotation }
-{ Sample Leif_Turn012_l_sternoclavicularRoll.EventValue_changed TO Leif_l_sternoclavicular.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator343.EventValue_changed, HAnimJoint45.set_EventSet_rotation);
+{ Original "Leif_Turn012_l_sternoclavicularRoll.EventValue_changed TO Leif_l_sternoclavicular.FdRotation.EventIn }
+{ Sample Leif_Turn012_l_sternoclavicularRoll.EventValue_changed TO Leif_l_sternoclavicular.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator343.EventValue_changed, HAnimJoint45.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Turn012_r_sternoclavicularRoll.EventValue_changed TO Leif_r_sternoclavicular.EventSet_rotation }
-{ Sample Leif_Turn012_r_sternoclavicularRoll.EventValue_changed TO Leif_r_sternoclavicular.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator344.EventValue_changed, HAnimJoint64.set_EventSet_rotation);
+{ Original "Leif_Turn012_r_sternoclavicularRoll.EventValue_changed TO Leif_r_sternoclavicular.FdRotation.EventIn }
+{ Sample Leif_Turn012_r_sternoclavicularRoll.EventValue_changed TO Leif_r_sternoclavicular.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator344.EventValue_changed, HAnimJoint64.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Turn012_r_metatarsophalangeal_2Pitch.EventValue_changed TO Leif_l_metatarsophalangeal_2.EventSet_rotation }
-{ Sample Leif_Turn012_r_metatarsophalangeal_2Pitch.EventValue_changed TO Leif_l_metatarsophalangeal_2.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator324.EventValue_changed, HAnimJoint34.set_EventSet_rotation);
+{ Original "Leif_Turn012_r_metatarsophalangeal_2Pitch.EventValue_changed TO Leif_l_metatarsophalangeal_2.FdRotation.EventIn }
+{ Sample Leif_Turn012_r_metatarsophalangeal_2Pitch.EventValue_changed TO Leif_l_metatarsophalangeal_2.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator324.EventValue_changed, HAnimJoint34.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Turn012_r_metatarsophalangeal_2Pitch.EventValue_changed TO Leif_r_metatarsophalangeal_2.EventSet_rotation }
-{ Sample Leif_Turn012_r_metatarsophalangeal_2Pitch.EventValue_changed TO Leif_r_metatarsophalangeal_2.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator324.EventValue_changed, HAnimJoint38.set_EventSet_rotation);
+{ Original "Leif_Turn012_r_metatarsophalangeal_2Pitch.EventValue_changed TO Leif_r_metatarsophalangeal_2.FdRotation.EventIn }
+{ Sample Leif_Turn012_r_metatarsophalangeal_2Pitch.EventValue_changed TO Leif_r_metatarsophalangeal_2.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator324.EventValue_changed, HAnimJoint38.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Turn012_sacroiliacLeif_Turn012.EventValue_changed TO Leif_sacroiliac.EventSet_rotation }
-{ Sample Leif_Turn012_sacroiliacLeif_Turn012.EventValue_changed TO Leif_sacroiliac.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator345.EventValue_changed, HAnimJoint30.set_EventSet_rotation);
+{ Original "Leif_Turn012_sacroiliacLeif_Turn012.EventValue_changed TO Leif_sacroiliac.FdRotation.EventIn }
+{ Sample Leif_Turn012_sacroiliacLeif_Turn012.EventValue_changed TO Leif_sacroiliac.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator345.EventValue_changed, HAnimJoint30.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Turn012_vl5Leif_Turn012.EventValue_changed TO Leif_vl5.EventSet_rotation }
-{ Sample Leif_Turn012_vl5Leif_Turn012.EventValue_changed TO Leif_vl5.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator346.EventValue_changed, HAnimJoint39.set_EventSet_rotation);
+{ Original "Leif_Turn012_vl5Leif_Turn012.EventValue_changed TO Leif_vl5.FdRotation.EventIn }
+{ Sample Leif_Turn012_vl5Leif_Turn012.EventValue_changed TO Leif_vl5.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator346.EventValue_changed, HAnimJoint39.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Turn012_l_carpometacarpal_1Pitch.EventValue_changed TO Leif_l_carpometacarpal_1.EventSet_rotation }
-{ Sample Leif_Turn012_l_carpometacarpal_1Pitch.EventValue_changed TO Leif_l_carpometacarpal_1.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator348.EventValue_changed, HAnimJoint49.set_EventSet_rotation);
+{ Original "Leif_Turn012_l_carpometacarpal_1Pitch.EventValue_changed TO Leif_l_carpometacarpal_1.FdRotation.EventIn }
+{ Sample Leif_Turn012_l_carpometacarpal_1Pitch.EventValue_changed TO Leif_l_carpometacarpal_1.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator348.EventValue_changed, HAnimJoint49.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Turn012_r_carpometacarpal_1Pitch.EventValue_changed TO Leif_r_carpometacarpal_1.EventSet_rotation }
-{ Sample Leif_Turn012_r_carpometacarpal_1Pitch.EventValue_changed TO Leif_r_carpometacarpal_1.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator349.EventValue_changed, HAnimJoint68.set_EventSet_rotation);
+{ Original "Leif_Turn012_r_carpometacarpal_1Pitch.EventValue_changed TO Leif_r_carpometacarpal_1.FdRotation.EventIn }
+{ Sample Leif_Turn012_r_carpometacarpal_1Pitch.EventValue_changed TO Leif_r_carpometacarpal_1.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator349.EventValue_changed, HAnimJoint68.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
 Group401 := TGroupNode.Create;
 TimeSensor402 := TTimeSensorNode.Create;
@@ -2544,107 +2544,107 @@ Group401.FdChildren.Add(OrientationInterpolator430);
 Group17.FdChildren.Add(Group401);
 { Original "Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_r_ankleRotInterp.EventSet_fraction }
 { Sample Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_r_ankleRotInterp.EventSet_fraction}
-Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator404.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator404.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_r_kneeRotInterp.EventSet_fraction }
 { Sample Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_r_kneeRotInterp.EventSet_fraction}
-Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator405.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator405.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_r_hipRotInterp.EventSet_fraction }
 { Sample Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_r_hipRotInterp.EventSet_fraction}
-Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator406.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator406.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_l_ankleRotInterp.EventSet_fraction }
 { Sample Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_l_ankleRotInterp.EventSet_fraction}
-Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator407.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator407.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_l_kneeRotInterp.EventSet_fraction }
 { Sample Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_l_kneeRotInterp.EventSet_fraction}
-Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator408.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator408.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_l_hipRotInterp.EventSet_fraction }
 { Sample Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_l_hipRotInterp.EventSet_fraction}
-Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator409.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator409.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_lower_bodyRotInterp.EventSet_fraction }
 { Sample Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_lower_bodyRotInterp.EventSet_fraction}
-Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator410.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator410.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_r_wristRotInterp.EventSet_fraction }
 { Sample Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_r_wristRotInterp.EventSet_fraction}
-Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator411.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator411.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_r_elbowRotInterp.EventSet_fraction }
 { Sample Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_r_elbowRotInterp.EventSet_fraction}
-Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator412.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator412.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_r_shoulderRotInterp.EventSet_fraction }
 { Sample Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_r_shoulderRotInterp.EventSet_fraction}
-Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator413.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator413.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_l_wristRotInterp.EventSet_fraction }
 { Sample Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_l_wristRotInterp.EventSet_fraction}
-Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator414.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator414.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_l_elbowRotInterp.EventSet_fraction }
 { Sample Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_l_elbowRotInterp.EventSet_fraction}
-Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator415.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator415.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_l_shoulderRotInterp.EventSet_fraction }
 { Sample Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_l_shoulderRotInterp.EventSet_fraction}
-Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator416.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator416.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_headRotInterp.EventSet_fraction }
 { Sample Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_headRotInterp.EventSet_fraction}
-Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator417.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator417.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_neckRotInterp.EventSet_fraction }
 { Sample Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_neckRotInterp.EventSet_fraction}
-Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator418.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator418.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_upper_bodyRotInterp.EventSet_fraction }
 { Sample Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_upper_bodyRotInterp.EventSet_fraction}
-Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator419.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator419.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_whole_bodyRotInterp.EventSet_fraction }
 { Sample Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_whole_bodyRotInterp.EventSet_fraction}
-Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator420.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator420.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_whole_bodyTranInterp.EventSet_fraction }
 { Sample Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_whole_bodyTranInterp.EventSet_fraction}
-Group17.AddRoute(TimeSensor402.EventFraction_changed, PositionInterpolator421.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor402.EventFraction_changed, PositionInterpolator421.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_l_sternoclavicularRoll.EventSet_fraction }
 { Sample Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_l_sternoclavicularRoll.EventSet_fraction}
-Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator422.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator422.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_l_acromioclavicularRoll.EventSet_fraction }
 { Sample Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_l_acromioclavicularRoll.EventSet_fraction}
-Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator423.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator423.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_r_sternoclavicularRoll.EventSet_fraction }
 { Sample Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_r_sternoclavicularRoll.EventSet_fraction}
-Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator424.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator424.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_r_acromioclavicularRoll.EventSet_fraction }
 { Sample Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_r_acromioclavicularRoll.EventSet_fraction}
-Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator425.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator425.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_r_metatarsalPitch.EventSet_fraction }
 { Sample Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_r_metatarsalPitch.EventSet_fraction}
-Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator403.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator403.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_sacroiliacYaw.EventSet_fraction }
 { Sample Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_sacroiliacYaw.EventSet_fraction}
-Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator426.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator426.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_vl5Yaw.EventSet_fraction }
 { Sample Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_vl5Yaw.EventSet_fraction}
-Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator427.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator427.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_vc6Yaw.EventSet_fraction }
 { Sample Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_vc6Yaw.EventSet_fraction}
-Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator428.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator428.EventSet_fraction);
 end;
 
 procedure InitLeif5FinalPart73;
@@ -2653,115 +2653,115 @@ begin
 { METHOD .AddX3DROUTE }
 { Original "Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_l_thumb1Pitch.EventSet_fraction }
 { Sample Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_l_thumb1Pitch.EventSet_fraction}
-Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator429.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator429.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_r_thumb1Pitch.EventSet_fraction }
 { Sample Leif_Walk013Timer.EventFraction_changed TO Leif_Walk013_r_thumb1Pitch.EventSet_fraction}
-Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator430.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor402.EventFraction_changed, OrientationInterpolator430.EventSet_fraction);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Walk013_r_ankleRotInterp.EventValue_changed TO Leif_r_talocrural.EventSet_rotation }
-{ Sample Leif_Walk013_r_ankleRotInterp.EventValue_changed TO Leif_r_talocrural.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator404.EventValue_changed, HAnimJoint37.set_EventSet_rotation);
+{ Original "Leif_Walk013_r_ankleRotInterp.EventValue_changed TO Leif_r_talocrural.FdRotation.EventIn }
+{ Sample Leif_Walk013_r_ankleRotInterp.EventValue_changed TO Leif_r_talocrural.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator404.EventValue_changed, HAnimJoint37.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Walk013_r_kneeRotInterp.EventValue_changed TO Leif_r_knee.EventSet_rotation }
-{ Sample Leif_Walk013_r_kneeRotInterp.EventValue_changed TO Leif_r_knee.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator405.EventValue_changed, HAnimJoint36.set_EventSet_rotation);
+{ Original "Leif_Walk013_r_kneeRotInterp.EventValue_changed TO Leif_r_knee.FdRotation.EventIn }
+{ Sample Leif_Walk013_r_kneeRotInterp.EventValue_changed TO Leif_r_knee.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator405.EventValue_changed, HAnimJoint36.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Walk013_r_hipRotInterp.EventValue_changed TO Leif_r_hip.EventSet_rotation }
-{ Sample Leif_Walk013_r_hipRotInterp.EventValue_changed TO Leif_r_hip.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator406.EventValue_changed, HAnimJoint35.set_EventSet_rotation);
+{ Original "Leif_Walk013_r_hipRotInterp.EventValue_changed TO Leif_r_hip.FdRotation.EventIn }
+{ Sample Leif_Walk013_r_hipRotInterp.EventValue_changed TO Leif_r_hip.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator406.EventValue_changed, HAnimJoint35.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Walk013_l_ankleRotInterp.EventValue_changed TO Leif_l_talocrural.EventSet_rotation }
-{ Sample Leif_Walk013_l_ankleRotInterp.EventValue_changed TO Leif_l_talocrural.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator407.EventValue_changed, HAnimJoint33.set_EventSet_rotation);
+{ Original "Leif_Walk013_l_ankleRotInterp.EventValue_changed TO Leif_l_talocrural.FdRotation.EventIn }
+{ Sample Leif_Walk013_l_ankleRotInterp.EventValue_changed TO Leif_l_talocrural.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator407.EventValue_changed, HAnimJoint33.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Walk013_l_kneeRotInterp.EventValue_changed TO Leif_l_knee.EventSet_rotation }
-{ Sample Leif_Walk013_l_kneeRotInterp.EventValue_changed TO Leif_l_knee.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator408.EventValue_changed, HAnimJoint32.set_EventSet_rotation);
+{ Original "Leif_Walk013_l_kneeRotInterp.EventValue_changed TO Leif_l_knee.FdRotation.EventIn }
+{ Sample Leif_Walk013_l_kneeRotInterp.EventValue_changed TO Leif_l_knee.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator408.EventValue_changed, HAnimJoint32.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Walk013_l_hipRotInterp.EventValue_changed TO Leif_l_hip.EventSet_rotation }
-{ Sample Leif_Walk013_l_hipRotInterp.EventValue_changed TO Leif_l_hip.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator409.EventValue_changed, HAnimJoint31.set_EventSet_rotation);
+{ Original "Leif_Walk013_l_hipRotInterp.EventValue_changed TO Leif_l_hip.FdRotation.EventIn }
+{ Sample Leif_Walk013_l_hipRotInterp.EventValue_changed TO Leif_l_hip.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator409.EventValue_changed, HAnimJoint31.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Walk013_lower_bodyRotInterp.EventValue_changed TO Leif_sacroiliac.EventSet_rotation }
-{ Sample Leif_Walk013_lower_bodyRotInterp.EventValue_changed TO Leif_sacroiliac.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator410.EventValue_changed, HAnimJoint30.set_EventSet_rotation);
+{ Original "Leif_Walk013_lower_bodyRotInterp.EventValue_changed TO Leif_sacroiliac.FdRotation.EventIn }
+{ Sample Leif_Walk013_lower_bodyRotInterp.EventValue_changed TO Leif_sacroiliac.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator410.EventValue_changed, HAnimJoint30.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Walk013_r_wristRotInterp.EventValue_changed TO Leif_r_radiocarpal.EventSet_rotation }
-{ Sample Leif_Walk013_r_wristRotInterp.EventValue_changed TO Leif_r_radiocarpal.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator411.EventValue_changed, HAnimJoint67.set_EventSet_rotation);
+{ Original "Leif_Walk013_r_wristRotInterp.EventValue_changed TO Leif_r_radiocarpal.FdRotation.EventIn }
+{ Sample Leif_Walk013_r_wristRotInterp.EventValue_changed TO Leif_r_radiocarpal.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator411.EventValue_changed, HAnimJoint67.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Walk013_r_elbowRotInterp.EventValue_changed TO Leif_r_elbow.EventSet_rotation }
-{ Sample Leif_Walk013_r_elbowRotInterp.EventValue_changed TO Leif_r_elbow.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator412.EventValue_changed, HAnimJoint66.set_EventSet_rotation);
+{ Original "Leif_Walk013_r_elbowRotInterp.EventValue_changed TO Leif_r_elbow.FdRotation.EventIn }
+{ Sample Leif_Walk013_r_elbowRotInterp.EventValue_changed TO Leif_r_elbow.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator412.EventValue_changed, HAnimJoint66.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Walk013_r_shoulderRotInterp.EventValue_changed TO Leif_r_shoulder.EventSet_rotation }
-{ Sample Leif_Walk013_r_shoulderRotInterp.EventValue_changed TO Leif_r_shoulder.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator413.EventValue_changed, HAnimJoint65.set_EventSet_rotation);
+{ Original "Leif_Walk013_r_shoulderRotInterp.EventValue_changed TO Leif_r_shoulder.FdRotation.EventIn }
+{ Sample Leif_Walk013_r_shoulderRotInterp.EventValue_changed TO Leif_r_shoulder.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator413.EventValue_changed, HAnimJoint65.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Walk013_l_wristRotInterp.EventValue_changed TO Leif_l_radiocarpal.EventSet_rotation }
-{ Sample Leif_Walk013_l_wristRotInterp.EventValue_changed TO Leif_l_radiocarpal.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator414.EventValue_changed, HAnimJoint48.set_EventSet_rotation);
+{ Original "Leif_Walk013_l_wristRotInterp.EventValue_changed TO Leif_l_radiocarpal.FdRotation.EventIn }
+{ Sample Leif_Walk013_l_wristRotInterp.EventValue_changed TO Leif_l_radiocarpal.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator414.EventValue_changed, HAnimJoint48.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Walk013_l_elbowRotInterp.EventValue_changed TO Leif_l_elbow.EventSet_rotation }
-{ Sample Leif_Walk013_l_elbowRotInterp.EventValue_changed TO Leif_l_elbow.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator415.EventValue_changed, HAnimJoint47.set_EventSet_rotation);
+{ Original "Leif_Walk013_l_elbowRotInterp.EventValue_changed TO Leif_l_elbow.FdRotation.EventIn }
+{ Sample Leif_Walk013_l_elbowRotInterp.EventValue_changed TO Leif_l_elbow.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator415.EventValue_changed, HAnimJoint47.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Walk013_l_shoulderRotInterp.EventValue_changed TO Leif_l_shoulder.EventSet_rotation }
-{ Sample Leif_Walk013_l_shoulderRotInterp.EventValue_changed TO Leif_l_shoulder.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator416.EventValue_changed, HAnimJoint46.set_EventSet_rotation);
+{ Original "Leif_Walk013_l_shoulderRotInterp.EventValue_changed TO Leif_l_shoulder.FdRotation.EventIn }
+{ Sample Leif_Walk013_l_shoulderRotInterp.EventValue_changed TO Leif_l_shoulder.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator416.EventValue_changed, HAnimJoint46.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Walk013_headRotInterp.EventValue_changed TO Leif_skullbase.EventSet_rotation }
-{ Sample Leif_Walk013_headRotInterp.EventValue_changed TO Leif_skullbase.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator417.EventValue_changed, HAnimJoint44.set_EventSet_rotation);
+{ Original "Leif_Walk013_headRotInterp.EventValue_changed TO Leif_skullbase.FdRotation.EventIn }
+{ Sample Leif_Walk013_headRotInterp.EventValue_changed TO Leif_skullbase.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator417.EventValue_changed, HAnimJoint44.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Walk013_neckRotInterp.EventValue_changed TO Leif_vc4.EventSet_rotation }
-{ Sample Leif_Walk013_neckRotInterp.EventValue_changed TO Leif_vc4.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator418.EventValue_changed, HAnimJoint43.set_EventSet_rotation);
+{ Original "Leif_Walk013_neckRotInterp.EventValue_changed TO Leif_vc4.FdRotation.EventIn }
+{ Sample Leif_Walk013_neckRotInterp.EventValue_changed TO Leif_vc4.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator418.EventValue_changed, HAnimJoint43.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Walk013_upper_bodyRotInterp.EventValue_changed TO Leif_vl2.EventSet_rotation }
-{ Sample Leif_Walk013_upper_bodyRotInterp.EventValue_changed TO Leif_vl2.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator419.EventValue_changed, HAnimJoint40.set_EventSet_rotation);
+{ Original "Leif_Walk013_upper_bodyRotInterp.EventValue_changed TO Leif_vl2.FdRotation.EventIn }
+{ Sample Leif_Walk013_upper_bodyRotInterp.EventValue_changed TO Leif_vl2.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator419.EventValue_changed, HAnimJoint40.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Walk013_whole_bodyRotInterp.EventValue_changed TO Leif_humanoid_root.EventSet_rotation }
-{ Sample Leif_Walk013_whole_bodyRotInterp.EventValue_changed TO Leif_humanoid_root.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator420.EventValue_changed, HAnimJoint29.set_EventSet_rotation);
+{ Original "Leif_Walk013_whole_bodyRotInterp.EventValue_changed TO Leif_humanoid_root.FdRotation.EventIn }
+{ Sample Leif_Walk013_whole_bodyRotInterp.EventValue_changed TO Leif_humanoid_root.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator420.EventValue_changed, HAnimJoint29.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Walk013_whole_bodyTranInterp.EventValue_changed TO Leif_humanoid_root.EventSet_translation }
-{ Sample Leif_Walk013_whole_bodyTranInterp.EventValue_changed TO Leif_humanoid_root.EventSet_translation}
-Group17.AddRoute(PositionInterpolator421.EventValue_changed, HAnimJoint29.set_EventSet_translation);
+{ Original "Leif_Walk013_whole_bodyTranInterp.EventValue_changed TO Leif_humanoid_root.FdTranslation.EventIn }
+{ Sample Leif_Walk013_whole_bodyTranInterp.EventValue_changed TO Leif_humanoid_root.FdTranslation.EventIn}
+Group17.AddRoute(PositionInterpolator421.EventValue_changed, HAnimJoint29.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Walk013_l_sternoclavicularRoll.EventValue_changed TO Leif_l_sternoclavicular.EventSet_rotation }
-{ Sample Leif_Walk013_l_sternoclavicularRoll.EventValue_changed TO Leif_l_sternoclavicular.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator422.EventValue_changed, HAnimJoint45.set_EventSet_rotation);
+{ Original "Leif_Walk013_l_sternoclavicularRoll.EventValue_changed TO Leif_l_sternoclavicular.FdRotation.EventIn }
+{ Sample Leif_Walk013_l_sternoclavicularRoll.EventValue_changed TO Leif_l_sternoclavicular.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator422.EventValue_changed, HAnimJoint45.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Walk013_r_sternoclavicularRoll.EventValue_changed TO Leif_r_sternoclavicular.EventSet_rotation }
-{ Sample Leif_Walk013_r_sternoclavicularRoll.EventValue_changed TO Leif_r_sternoclavicular.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator424.EventValue_changed, HAnimJoint64.set_EventSet_rotation);
+{ Original "Leif_Walk013_r_sternoclavicularRoll.EventValue_changed TO Leif_r_sternoclavicular.FdRotation.EventIn }
+{ Sample Leif_Walk013_r_sternoclavicularRoll.EventValue_changed TO Leif_r_sternoclavicular.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator424.EventValue_changed, HAnimJoint64.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Walk013_r_metatarsalPitch.EventValue_changed TO Leif_l_metatarsophalangeal_2.EventSet_rotation }
-{ Sample Leif_Walk013_r_metatarsalPitch.EventValue_changed TO Leif_l_metatarsophalangeal_2.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator403.EventValue_changed, HAnimJoint34.set_EventSet_rotation);
+{ Original "Leif_Walk013_r_metatarsalPitch.EventValue_changed TO Leif_l_metatarsophalangeal_2.FdRotation.EventIn }
+{ Sample Leif_Walk013_r_metatarsalPitch.EventValue_changed TO Leif_l_metatarsophalangeal_2.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator403.EventValue_changed, HAnimJoint34.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Walk013_r_metatarsalPitch.EventValue_changed TO Leif_r_metatarsophalangeal_2.EventSet_rotation }
-{ Sample Leif_Walk013_r_metatarsalPitch.EventValue_changed TO Leif_r_metatarsophalangeal_2.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator403.EventValue_changed, HAnimJoint38.set_EventSet_rotation);
+{ Original "Leif_Walk013_r_metatarsalPitch.EventValue_changed TO Leif_r_metatarsophalangeal_2.FdRotation.EventIn }
+{ Sample Leif_Walk013_r_metatarsalPitch.EventValue_changed TO Leif_r_metatarsophalangeal_2.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator403.EventValue_changed, HAnimJoint38.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Walk013_sacroiliacYaw.EventValue_changed TO Leif_sacroiliac.EventSet_rotation }
-{ Sample Leif_Walk013_sacroiliacYaw.EventValue_changed TO Leif_sacroiliac.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator426.EventValue_changed, HAnimJoint30.set_EventSet_rotation);
+{ Original "Leif_Walk013_sacroiliacYaw.EventValue_changed TO Leif_sacroiliac.FdRotation.EventIn }
+{ Sample Leif_Walk013_sacroiliacYaw.EventValue_changed TO Leif_sacroiliac.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator426.EventValue_changed, HAnimJoint30.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Walk013_vl5Yaw.EventValue_changed TO Leif_vl5.EventSet_rotation }
-{ Sample Leif_Walk013_vl5Yaw.EventValue_changed TO Leif_vl5.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator427.EventValue_changed, HAnimJoint39.set_EventSet_rotation);
+{ Original "Leif_Walk013_vl5Yaw.EventValue_changed TO Leif_vl5.FdRotation.EventIn }
+{ Sample Leif_Walk013_vl5Yaw.EventValue_changed TO Leif_vl5.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator427.EventValue_changed, HAnimJoint39.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Walk013_l_thumb1Pitch.EventValue_changed TO Leif_l_carpometacarpal_1.EventSet_rotation }
-{ Sample Leif_Walk013_l_thumb1Pitch.EventValue_changed TO Leif_l_carpometacarpal_1.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator429.EventValue_changed, HAnimJoint49.set_EventSet_rotation);
+{ Original "Leif_Walk013_l_thumb1Pitch.EventValue_changed TO Leif_l_carpometacarpal_1.FdRotation.EventIn }
+{ Sample Leif_Walk013_l_thumb1Pitch.EventValue_changed TO Leif_l_carpometacarpal_1.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator429.EventValue_changed, HAnimJoint49.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Walk013_r_thumb1Pitch.EventValue_changed TO Leif_r_carpometacarpal_1.EventSet_rotation }
-{ Sample Leif_Walk013_r_thumb1Pitch.EventValue_changed TO Leif_r_carpometacarpal_1.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator430.EventValue_changed, HAnimJoint68.set_EventSet_rotation);
+{ Original "Leif_Walk013_r_thumb1Pitch.EventValue_changed TO Leif_r_carpometacarpal_1.FdRotation.EventIn }
+{ Sample Leif_Walk013_r_thumb1Pitch.EventValue_changed TO Leif_r_carpometacarpal_1.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator430.EventValue_changed, HAnimJoint68.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
 Group485 := TGroupNode.Create;
 TimeSensor486 := TTimeSensorNode.Create;
@@ -2824,80 +2824,80 @@ Group485.FdChildren.Add(OrientationInterpolator495);
 Group17.FdChildren.Add(Group485);
 { Original "Leif_Skip014Timer.EventFraction_changed TO Leif_Skip014_r_kneeRotInterp.EventSet_fraction }
 { Sample Leif_Skip014Timer.EventFraction_changed TO Leif_Skip014_r_kneeRotInterp.EventSet_fraction}
-Group17.AddRoute(TimeSensor486.EventFraction_changed, OrientationInterpolator487.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor486.EventFraction_changed, OrientationInterpolator487.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Skip014Timer.EventFraction_changed TO Leif_Skip014_r_hipRotInterp.EventSet_fraction }
 { Sample Leif_Skip014Timer.EventFraction_changed TO Leif_Skip014_r_hipRotInterp.EventSet_fraction}
-Group17.AddRoute(TimeSensor486.EventFraction_changed, OrientationInterpolator488.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor486.EventFraction_changed, OrientationInterpolator488.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Skip014Timer.EventFraction_changed TO Leif_Skip014_l_kneeRotInterp.EventSet_fraction }
 { Sample Leif_Skip014Timer.EventFraction_changed TO Leif_Skip014_l_kneeRotInterp.EventSet_fraction}
-Group17.AddRoute(TimeSensor486.EventFraction_changed, OrientationInterpolator489.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor486.EventFraction_changed, OrientationInterpolator489.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Skip014Timer.EventFraction_changed TO Leif_Skip014_l_hipRotInterp.EventSet_fraction }
 { Sample Leif_Skip014Timer.EventFraction_changed TO Leif_Skip014_l_hipRotInterp.EventSet_fraction}
-Group17.AddRoute(TimeSensor486.EventFraction_changed, OrientationInterpolator490.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor486.EventFraction_changed, OrientationInterpolator490.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Skip014Timer.EventFraction_changed TO Leif_Skip014_whole_bodyTranInterp.EventSet_fraction }
 { Sample Leif_Skip014Timer.EventFraction_changed TO Leif_Skip014_whole_bodyTranInterp.EventSet_fraction}
-Group17.AddRoute(TimeSensor486.EventFraction_changed, PositionInterpolator491.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor486.EventFraction_changed, PositionInterpolator491.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Skip014Timer.EventFraction_changed TO Leif_Skip014_l_shoulderPitch.EventSet_fraction }
 { Sample Leif_Skip014Timer.EventFraction_changed TO Leif_Skip014_l_shoulderPitch.EventSet_fraction}
-Group17.AddRoute(TimeSensor486.EventFraction_changed, OrientationInterpolator493.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor486.EventFraction_changed, OrientationInterpolator493.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Skip014Timer.EventFraction_changed TO Leif_Skip014_r_shoulderPitch.EventSet_fraction }
 { Sample Leif_Skip014Timer.EventFraction_changed TO Leif_Skip014_r_shoulderPitch.EventSet_fraction}
-Group17.AddRoute(TimeSensor486.EventFraction_changed, OrientationInterpolator492.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor486.EventFraction_changed, OrientationInterpolator492.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Skip014Timer.EventFraction_changed TO Leif_Skip014_l_elbowPitch.EventSet_fraction }
 { Sample Leif_Skip014Timer.EventFraction_changed TO Leif_Skip014_l_elbowPitch.EventSet_fraction}
-Group17.AddRoute(TimeSensor486.EventFraction_changed, OrientationInterpolator495.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor486.EventFraction_changed, OrientationInterpolator495.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Skip014Timer.EventFraction_changed TO Leif_Skip014_r_elbowPitch.EventSet_fraction }
 { Sample Leif_Skip014Timer.EventFraction_changed TO Leif_Skip014_r_elbowPitch.EventSet_fraction}
-Group17.AddRoute(TimeSensor486.EventFraction_changed, OrientationInterpolator494.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor486.EventFraction_changed, OrientationInterpolator494.EventSet_fraction);
 end;
 
 procedure InitLeif5FinalPart75;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Skip014_r_kneeRotInterp.EventValue_changed TO Leif_r_knee.EventSet_rotation }
-{ Sample Leif_Skip014_r_kneeRotInterp.EventValue_changed TO Leif_r_knee.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator487.EventValue_changed, HAnimJoint36.set_EventSet_rotation);
+{ Original "Leif_Skip014_r_kneeRotInterp.EventValue_changed TO Leif_r_knee.FdRotation.EventIn }
+{ Sample Leif_Skip014_r_kneeRotInterp.EventValue_changed TO Leif_r_knee.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator487.EventValue_changed, HAnimJoint36.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Skip014_r_hipRotInterp.EventValue_changed TO Leif_r_hip.EventSet_rotation }
-{ Sample Leif_Skip014_r_hipRotInterp.EventValue_changed TO Leif_r_hip.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator488.EventValue_changed, HAnimJoint35.set_EventSet_rotation);
+{ Original "Leif_Skip014_r_hipRotInterp.EventValue_changed TO Leif_r_hip.FdRotation.EventIn }
+{ Sample Leif_Skip014_r_hipRotInterp.EventValue_changed TO Leif_r_hip.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator488.EventValue_changed, HAnimJoint35.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Skip014_l_kneeRotInterp.EventValue_changed TO Leif_l_knee.EventSet_rotation }
-{ Sample Leif_Skip014_l_kneeRotInterp.EventValue_changed TO Leif_l_knee.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator489.EventValue_changed, HAnimJoint32.set_EventSet_rotation);
+{ Original "Leif_Skip014_l_kneeRotInterp.EventValue_changed TO Leif_l_knee.FdRotation.EventIn }
+{ Sample Leif_Skip014_l_kneeRotInterp.EventValue_changed TO Leif_l_knee.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator489.EventValue_changed, HAnimJoint32.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Skip014_l_hipRotInterp.EventValue_changed TO Leif_l_hip.EventSet_rotation }
-{ Sample Leif_Skip014_l_hipRotInterp.EventValue_changed TO Leif_l_hip.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator490.EventValue_changed, HAnimJoint31.set_EventSet_rotation);
+{ Original "Leif_Skip014_l_hipRotInterp.EventValue_changed TO Leif_l_hip.FdRotation.EventIn }
+{ Sample Leif_Skip014_l_hipRotInterp.EventValue_changed TO Leif_l_hip.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator490.EventValue_changed, HAnimJoint31.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Skip014_whole_bodyTranInterp.EventValue_changed TO Leif_humanoid_root.EventSet_translation }
-{ Sample Leif_Skip014_whole_bodyTranInterp.EventValue_changed TO Leif_humanoid_root.EventSet_translation}
-Group17.AddRoute(PositionInterpolator491.EventValue_changed, HAnimJoint29.set_EventSet_translation);
+{ Original "Leif_Skip014_whole_bodyTranInterp.EventValue_changed TO Leif_humanoid_root.FdTranslation.EventIn }
+{ Sample Leif_Skip014_whole_bodyTranInterp.EventValue_changed TO Leif_humanoid_root.FdTranslation.EventIn}
+Group17.AddRoute(PositionInterpolator491.EventValue_changed, HAnimJoint29.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Skip014_r_shoulderPitch.EventValue_changed TO Leif_r_shoulder.EventSet_rotation }
-{ Sample Leif_Skip014_r_shoulderPitch.EventValue_changed TO Leif_r_shoulder.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator492.EventValue_changed, HAnimJoint65.set_EventSet_rotation);
+{ Original "Leif_Skip014_r_shoulderPitch.EventValue_changed TO Leif_r_shoulder.FdRotation.EventIn }
+{ Sample Leif_Skip014_r_shoulderPitch.EventValue_changed TO Leif_r_shoulder.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator492.EventValue_changed, HAnimJoint65.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Skip014_l_shoulderPitch.EventValue_changed TO Leif_l_shoulder.EventSet_rotation }
-{ Sample Leif_Skip014_l_shoulderPitch.EventValue_changed TO Leif_l_shoulder.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator493.EventValue_changed, HAnimJoint46.set_EventSet_rotation);
+{ Original "Leif_Skip014_l_shoulderPitch.EventValue_changed TO Leif_l_shoulder.FdRotation.EventIn }
+{ Sample Leif_Skip014_l_shoulderPitch.EventValue_changed TO Leif_l_shoulder.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator493.EventValue_changed, HAnimJoint46.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Skip014_r_elbowPitch.EventValue_changed TO Leif_r_elbow.EventSet_rotation }
-{ Sample Leif_Skip014_r_elbowPitch.EventValue_changed TO Leif_r_elbow.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator494.EventValue_changed, HAnimJoint66.set_EventSet_rotation);
+{ Original "Leif_Skip014_r_elbowPitch.EventValue_changed TO Leif_r_elbow.FdRotation.EventIn }
+{ Sample Leif_Skip014_r_elbowPitch.EventValue_changed TO Leif_r_elbow.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator494.EventValue_changed, HAnimJoint66.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Skip014_l_elbowPitch.EventValue_changed TO Leif_l_elbow.EventSet_rotation }
-{ Sample Leif_Skip014_l_elbowPitch.EventValue_changed TO Leif_l_elbow.EventSet_rotation}
-Group17.AddRoute(OrientationInterpolator495.EventValue_changed, HAnimJoint47.set_EventSet_rotation);
+{ Original "Leif_Skip014_l_elbowPitch.EventValue_changed TO Leif_l_elbow.FdRotation.EventIn }
+{ Sample Leif_Skip014_l_elbowPitch.EventValue_changed TO Leif_l_elbow.FdRotation.EventIn}
+Group17.AddRoute(OrientationInterpolator495.EventValue_changed, HAnimJoint47.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
 Group514 := TGroupNode.Create;
 TimeSensor515 := TTimeSensorNode.Create;
@@ -3068,273 +3068,273 @@ OrientationInterpolator544.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0.2000000
 Group514.FdChildren.Add(OrientationInterpolator544);
 { Original "Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_r_talocruralRotInterp.EventSet_fraction }
 { Sample Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_r_talocruralRotInterp.EventSet_fraction}
-Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator517.set_EventSet_fraction);
+Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator517.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_r_kneeRotInterp.EventSet_fraction }
 { Sample Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_r_kneeRotInterp.EventSet_fraction}
-Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator518.set_EventSet_fraction);
+Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator518.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_r_hipRotInterp.EventSet_fraction }
 { Sample Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_r_hipRotInterp.EventSet_fraction}
-Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator519.set_EventSet_fraction);
+Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator519.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_l_talocruralRotInterp.EventSet_fraction }
 { Sample Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_l_talocruralRotInterp.EventSet_fraction}
-Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator520.set_EventSet_fraction);
+Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator520.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_l_kneeRotInterp.EventSet_fraction }
 { Sample Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_l_kneeRotInterp.EventSet_fraction}
-Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator521.set_EventSet_fraction);
+Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator521.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_l_hipRotInterp.EventSet_fraction }
 { Sample Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_l_hipRotInterp.EventSet_fraction}
-Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator522.set_EventSet_fraction);
+Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator522.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_lower_bodyRotInterp.EventSet_fraction }
 { Sample Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_lower_bodyRotInterp.EventSet_fraction}
-Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator531.set_EventSet_fraction);
+Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator531.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_r_radiocarpalRotInterp.EventSet_fraction }
 { Sample Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_r_radiocarpalRotInterp.EventSet_fraction}
-Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator523.set_EventSet_fraction);
+Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator523.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_r_elbowRotInterp.EventSet_fraction }
 { Sample Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_r_elbowRotInterp.EventSet_fraction}
-Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator524.set_EventSet_fraction);
+Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator524.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_r_shoulderRotInterp.EventSet_fraction }
 { Sample Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_r_shoulderRotInterp.EventSet_fraction}
-Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator525.set_EventSet_fraction);
+Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator525.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_l_radiocarpalRotInterp.EventSet_fraction }
 { Sample Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_l_radiocarpalRotInterp.EventSet_fraction}
-Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator526.set_EventSet_fraction);
+Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator526.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_l_elbowRotInterp.EventSet_fraction }
 { Sample Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_l_elbowRotInterp.EventSet_fraction}
-Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator527.set_EventSet_fraction);
+Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator527.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_l_shoulderRotInterp.EventSet_fraction }
 { Sample Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_l_shoulderRotInterp.EventSet_fraction}
-Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator528.set_EventSet_fraction);
+Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator528.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_headRotInterp.EventSet_fraction }
 { Sample Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_headRotInterp.EventSet_fraction}
-Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator529.set_EventSet_fraction);
+Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator529.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_neckRotInterp.EventSet_fraction }
 { Sample Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_neckRotInterp.EventSet_fraction}
-Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator530.set_EventSet_fraction);
+Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator530.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_upper_bodyRotInterp.EventSet_fraction }
 { Sample Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_upper_bodyRotInterp.EventSet_fraction}
-Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator532.set_EventSet_fraction);
+Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator532.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_whole_bodyRotInterp.EventSet_fraction }
 { Sample Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_whole_bodyRotInterp.EventSet_fraction}
-Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator533.set_EventSet_fraction);
+Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator533.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_whole_bodyTransInterp.EventSet_fraction }
 { Sample Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_whole_bodyTransInterp.EventSet_fraction}
-Group514.AddRoute(TimeSensor515.EventFraction_changed, PositionInterpolator534.set_EventSet_fraction);
+Group514.AddRoute(TimeSensor515.EventFraction_changed, PositionInterpolator534.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_l_sternoclavicularRoll.EventSet_fraction }
 { Sample Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_l_sternoclavicularRoll.EventSet_fraction}
-Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator535.set_EventSet_fraction);
+Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator535.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_r_sternoclavicularRoll.EventSet_fraction }
 { Sample Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_r_sternoclavicularRoll.EventSet_fraction}
-Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator536.set_EventSet_fraction);
+Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator536.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_r_metatarsophalangeal_2Pitch.EventSet_fraction }
 { Sample Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_r_metatarsophalangeal_2Pitch.EventSet_fraction}
-Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator516.set_EventSet_fraction);
+Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator516.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_sacroiliacYaw.EventSet_fraction }
 { Sample Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_sacroiliacYaw.EventSet_fraction}
-Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator537.set_EventSet_fraction);
+Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator537.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_vl5Yaw.EventSet_fraction }
 { Sample Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_vl5Yaw.EventSet_fraction}
-Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator538.set_EventSet_fraction);
+Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator538.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_vc6Yaw.EventSet_fraction }
 { Sample Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_vc6Yaw.EventSet_fraction}
-Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator539.set_EventSet_fraction);
+Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator539.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_l_carpometacarpal_1Pitch.EventSet_fraction }
 { Sample Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_l_carpometacarpal_1Pitch.EventSet_fraction}
-Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator540.set_EventSet_fraction);
+Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator540.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_r_carpometacarpal_1Pitch.EventSet_fraction }
 { Sample Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_r_carpometacarpal_1Pitch.EventSet_fraction}
-Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator541.set_EventSet_fraction);
+Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator541.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_r_carpal_proximal_interphalangeal_2Roll.EventSet_fraction }
 { Sample Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_r_carpal_proximal_interphalangeal_2Roll.EventSet_fraction}
-Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator542.set_EventSet_fraction);
+Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator542.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_r_metacarpophalangeal_2Roll.EventSet_fraction }
 { Sample Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_r_metacarpophalangeal_2Roll.EventSet_fraction}
-Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator543.set_EventSet_fraction);
+Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator543.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_r_carpal_distal_interphalangeal_2Roll.EventSet_fraction }
 { Sample Leif_Stand015Timer.EventFraction_changed TO Leif_Stand015_r_carpal_distal_interphalangeal_2Roll.EventSet_fraction}
-Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator544.set_EventSet_fraction);
+Group514.AddRoute(TimeSensor515.EventFraction_changed, OrientationInterpolator544.EventSet_fraction);
 end;
 
 procedure InitLeif5FinalPart79;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand015_r_talocruralRotInterp.EventValue_changed TO Leif_r_talocrural.EventSet_rotation }
-{ Sample Leif_Stand015_r_talocruralRotInterp.EventValue_changed TO Leif_r_talocrural.EventSet_rotation}
-Group514.AddRoute(OrientationInterpolator517.EventValue_changed, HAnimJoint37.set_EventSet_rotation);
+{ Original "Leif_Stand015_r_talocruralRotInterp.EventValue_changed TO Leif_r_talocrural.FdRotation.EventIn }
+{ Sample Leif_Stand015_r_talocruralRotInterp.EventValue_changed TO Leif_r_talocrural.FdRotation.EventIn}
+Group514.AddRoute(OrientationInterpolator517.EventValue_changed, HAnimJoint37.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand015_r_kneeRotInterp.EventValue_changed TO Leif_r_knee.EventSet_rotation }
-{ Sample Leif_Stand015_r_kneeRotInterp.EventValue_changed TO Leif_r_knee.EventSet_rotation}
-Group514.AddRoute(OrientationInterpolator518.EventValue_changed, HAnimJoint36.set_EventSet_rotation);
+{ Original "Leif_Stand015_r_kneeRotInterp.EventValue_changed TO Leif_r_knee.FdRotation.EventIn }
+{ Sample Leif_Stand015_r_kneeRotInterp.EventValue_changed TO Leif_r_knee.FdRotation.EventIn}
+Group514.AddRoute(OrientationInterpolator518.EventValue_changed, HAnimJoint36.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand015_r_hipRotInterp.EventValue_changed TO Leif_r_hip.EventSet_rotation }
-{ Sample Leif_Stand015_r_hipRotInterp.EventValue_changed TO Leif_r_hip.EventSet_rotation}
-Group514.AddRoute(OrientationInterpolator519.EventValue_changed, HAnimJoint35.set_EventSet_rotation);
+{ Original "Leif_Stand015_r_hipRotInterp.EventValue_changed TO Leif_r_hip.FdRotation.EventIn }
+{ Sample Leif_Stand015_r_hipRotInterp.EventValue_changed TO Leif_r_hip.FdRotation.EventIn}
+Group514.AddRoute(OrientationInterpolator519.EventValue_changed, HAnimJoint35.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand015_l_talocruralRotInterp.EventValue_changed TO Leif_l_talocrural.EventSet_rotation }
-{ Sample Leif_Stand015_l_talocruralRotInterp.EventValue_changed TO Leif_l_talocrural.EventSet_rotation}
-Group514.AddRoute(OrientationInterpolator520.EventValue_changed, HAnimJoint33.set_EventSet_rotation);
+{ Original "Leif_Stand015_l_talocruralRotInterp.EventValue_changed TO Leif_l_talocrural.FdRotation.EventIn }
+{ Sample Leif_Stand015_l_talocruralRotInterp.EventValue_changed TO Leif_l_talocrural.FdRotation.EventIn}
+Group514.AddRoute(OrientationInterpolator520.EventValue_changed, HAnimJoint33.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand015_l_kneeRotInterp.EventValue_changed TO Leif_l_knee.EventSet_rotation }
-{ Sample Leif_Stand015_l_kneeRotInterp.EventValue_changed TO Leif_l_knee.EventSet_rotation}
-Group514.AddRoute(OrientationInterpolator521.EventValue_changed, HAnimJoint32.set_EventSet_rotation);
+{ Original "Leif_Stand015_l_kneeRotInterp.EventValue_changed TO Leif_l_knee.FdRotation.EventIn }
+{ Sample Leif_Stand015_l_kneeRotInterp.EventValue_changed TO Leif_l_knee.FdRotation.EventIn}
+Group514.AddRoute(OrientationInterpolator521.EventValue_changed, HAnimJoint32.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand015_l_hipRotInterp.EventValue_changed TO Leif_l_hip.EventSet_rotation }
-{ Sample Leif_Stand015_l_hipRotInterp.EventValue_changed TO Leif_l_hip.EventSet_rotation}
-Group514.AddRoute(OrientationInterpolator522.EventValue_changed, HAnimJoint31.set_EventSet_rotation);
+{ Original "Leif_Stand015_l_hipRotInterp.EventValue_changed TO Leif_l_hip.FdRotation.EventIn }
+{ Sample Leif_Stand015_l_hipRotInterp.EventValue_changed TO Leif_l_hip.FdRotation.EventIn}
+Group514.AddRoute(OrientationInterpolator522.EventValue_changed, HAnimJoint31.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand015_r_radiocarpalRotInterp.EventValue_changed TO Leif_r_radiocarpal.EventSet_rotation }
-{ Sample Leif_Stand015_r_radiocarpalRotInterp.EventValue_changed TO Leif_r_radiocarpal.EventSet_rotation}
-Group514.AddRoute(OrientationInterpolator523.EventValue_changed, HAnimJoint67.set_EventSet_rotation);
+{ Original "Leif_Stand015_r_radiocarpalRotInterp.EventValue_changed TO Leif_r_radiocarpal.FdRotation.EventIn }
+{ Sample Leif_Stand015_r_radiocarpalRotInterp.EventValue_changed TO Leif_r_radiocarpal.FdRotation.EventIn}
+Group514.AddRoute(OrientationInterpolator523.EventValue_changed, HAnimJoint67.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand015_r_elbowRotInterp.EventValue_changed TO Leif_r_elbow.EventSet_rotation }
-{ Sample Leif_Stand015_r_elbowRotInterp.EventValue_changed TO Leif_r_elbow.EventSet_rotation}
-Group514.AddRoute(OrientationInterpolator524.EventValue_changed, HAnimJoint66.set_EventSet_rotation);
+{ Original "Leif_Stand015_r_elbowRotInterp.EventValue_changed TO Leif_r_elbow.FdRotation.EventIn }
+{ Sample Leif_Stand015_r_elbowRotInterp.EventValue_changed TO Leif_r_elbow.FdRotation.EventIn}
+Group514.AddRoute(OrientationInterpolator524.EventValue_changed, HAnimJoint66.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand015_r_shoulderRotInterp.EventValue_changed TO Leif_r_shoulder.EventSet_rotation }
-{ Sample Leif_Stand015_r_shoulderRotInterp.EventValue_changed TO Leif_r_shoulder.EventSet_rotation}
-Group514.AddRoute(OrientationInterpolator525.EventValue_changed, HAnimJoint65.set_EventSet_rotation);
+{ Original "Leif_Stand015_r_shoulderRotInterp.EventValue_changed TO Leif_r_shoulder.FdRotation.EventIn }
+{ Sample Leif_Stand015_r_shoulderRotInterp.EventValue_changed TO Leif_r_shoulder.FdRotation.EventIn}
+Group514.AddRoute(OrientationInterpolator525.EventValue_changed, HAnimJoint65.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand015_l_radiocarpalRotInterp.EventValue_changed TO Leif_l_radiocarpal.EventSet_rotation }
-{ Sample Leif_Stand015_l_radiocarpalRotInterp.EventValue_changed TO Leif_l_radiocarpal.EventSet_rotation}
-Group514.AddRoute(OrientationInterpolator526.EventValue_changed, HAnimJoint48.set_EventSet_rotation);
+{ Original "Leif_Stand015_l_radiocarpalRotInterp.EventValue_changed TO Leif_l_radiocarpal.FdRotation.EventIn }
+{ Sample Leif_Stand015_l_radiocarpalRotInterp.EventValue_changed TO Leif_l_radiocarpal.FdRotation.EventIn}
+Group514.AddRoute(OrientationInterpolator526.EventValue_changed, HAnimJoint48.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand015_l_elbowRotInterp.EventValue_changed TO Leif_l_elbow.EventSet_rotation }
-{ Sample Leif_Stand015_l_elbowRotInterp.EventValue_changed TO Leif_l_elbow.EventSet_rotation}
-Group514.AddRoute(OrientationInterpolator527.EventValue_changed, HAnimJoint47.set_EventSet_rotation);
+{ Original "Leif_Stand015_l_elbowRotInterp.EventValue_changed TO Leif_l_elbow.FdRotation.EventIn }
+{ Sample Leif_Stand015_l_elbowRotInterp.EventValue_changed TO Leif_l_elbow.FdRotation.EventIn}
+Group514.AddRoute(OrientationInterpolator527.EventValue_changed, HAnimJoint47.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand015_l_shoulderRotInterp.EventValue_changed TO Leif_l_shoulder.EventSet_rotation }
-{ Sample Leif_Stand015_l_shoulderRotInterp.EventValue_changed TO Leif_l_shoulder.EventSet_rotation}
-Group514.AddRoute(OrientationInterpolator528.EventValue_changed, HAnimJoint46.set_EventSet_rotation);
+{ Original "Leif_Stand015_l_shoulderRotInterp.EventValue_changed TO Leif_l_shoulder.FdRotation.EventIn }
+{ Sample Leif_Stand015_l_shoulderRotInterp.EventValue_changed TO Leif_l_shoulder.FdRotation.EventIn}
+Group514.AddRoute(OrientationInterpolator528.EventValue_changed, HAnimJoint46.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand015_headRotInterp.EventValue_changed TO Leif_skullbase.EventSet_rotation }
-{ Sample Leif_Stand015_headRotInterp.EventValue_changed TO Leif_skullbase.EventSet_rotation}
-Group514.AddRoute(OrientationInterpolator529.EventValue_changed, HAnimJoint44.set_EventSet_rotation);
+{ Original "Leif_Stand015_headRotInterp.EventValue_changed TO Leif_skullbase.FdRotation.EventIn }
+{ Sample Leif_Stand015_headRotInterp.EventValue_changed TO Leif_skullbase.FdRotation.EventIn}
+Group514.AddRoute(OrientationInterpolator529.EventValue_changed, HAnimJoint44.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand015_lower_bodyRotInterp.EventValue_changed TO Leif_sacroiliac.EventSet_rotation }
-{ Sample Leif_Stand015_lower_bodyRotInterp.EventValue_changed TO Leif_sacroiliac.EventSet_rotation}
-Group514.AddRoute(OrientationInterpolator531.EventValue_changed, HAnimJoint30.set_EventSet_rotation);
+{ Original "Leif_Stand015_lower_bodyRotInterp.EventValue_changed TO Leif_sacroiliac.FdRotation.EventIn }
+{ Sample Leif_Stand015_lower_bodyRotInterp.EventValue_changed TO Leif_sacroiliac.FdRotation.EventIn}
+Group514.AddRoute(OrientationInterpolator531.EventValue_changed, HAnimJoint30.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand015_whole_bodyRotInterp.EventValue_changed TO Leif_humanoid_root.EventSet_rotation }
-{ Sample Leif_Stand015_whole_bodyRotInterp.EventValue_changed TO Leif_humanoid_root.EventSet_rotation}
-Group514.AddRoute(OrientationInterpolator533.EventValue_changed, HAnimJoint29.set_EventSet_rotation);
+{ Original "Leif_Stand015_whole_bodyRotInterp.EventValue_changed TO Leif_humanoid_root.FdRotation.EventIn }
+{ Sample Leif_Stand015_whole_bodyRotInterp.EventValue_changed TO Leif_humanoid_root.FdRotation.EventIn}
+Group514.AddRoute(OrientationInterpolator533.EventValue_changed, HAnimJoint29.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand015_whole_bodyTransInterp.EventValue_changed TO Leif_humanoid_root.EventSet_translation }
-{ Sample Leif_Stand015_whole_bodyTransInterp.EventValue_changed TO Leif_humanoid_root.EventSet_translation}
-Group514.AddRoute(PositionInterpolator534.EventValue_changed, HAnimJoint29.set_EventSet_translation);
+{ Original "Leif_Stand015_whole_bodyTransInterp.EventValue_changed TO Leif_humanoid_root.FdTranslation.EventIn }
+{ Sample Leif_Stand015_whole_bodyTransInterp.EventValue_changed TO Leif_humanoid_root.FdTranslation.EventIn}
+Group514.AddRoute(PositionInterpolator534.EventValue_changed, HAnimJoint29.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand015_l_sternoclavicularRoll.EventValue_changed TO Leif_l_sternoclavicular.EventSet_rotation }
-{ Sample Leif_Stand015_l_sternoclavicularRoll.EventValue_changed TO Leif_l_sternoclavicular.EventSet_rotation}
-Group514.AddRoute(OrientationInterpolator535.EventValue_changed, HAnimJoint45.set_EventSet_rotation);
+{ Original "Leif_Stand015_l_sternoclavicularRoll.EventValue_changed TO Leif_l_sternoclavicular.FdRotation.EventIn }
+{ Sample Leif_Stand015_l_sternoclavicularRoll.EventValue_changed TO Leif_l_sternoclavicular.FdRotation.EventIn}
+Group514.AddRoute(OrientationInterpolator535.EventValue_changed, HAnimJoint45.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand015_r_sternoclavicularRoll.EventValue_changed TO Leif_r_sternoclavicular.EventSet_rotation }
-{ Sample Leif_Stand015_r_sternoclavicularRoll.EventValue_changed TO Leif_r_sternoclavicular.EventSet_rotation}
-Group514.AddRoute(OrientationInterpolator536.EventValue_changed, HAnimJoint64.set_EventSet_rotation);
+{ Original "Leif_Stand015_r_sternoclavicularRoll.EventValue_changed TO Leif_r_sternoclavicular.FdRotation.EventIn }
+{ Sample Leif_Stand015_r_sternoclavicularRoll.EventValue_changed TO Leif_r_sternoclavicular.FdRotation.EventIn}
+Group514.AddRoute(OrientationInterpolator536.EventValue_changed, HAnimJoint64.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand015_r_metatarsophalangeal_2Pitch.EventValue_changed TO Leif_l_metatarsophalangeal_2.EventSet_rotation }
-{ Sample Leif_Stand015_r_metatarsophalangeal_2Pitch.EventValue_changed TO Leif_l_metatarsophalangeal_2.EventSet_rotation}
-Group514.AddRoute(OrientationInterpolator516.EventValue_changed, HAnimJoint34.set_EventSet_rotation);
+{ Original "Leif_Stand015_r_metatarsophalangeal_2Pitch.EventValue_changed TO Leif_l_metatarsophalangeal_2.FdRotation.EventIn }
+{ Sample Leif_Stand015_r_metatarsophalangeal_2Pitch.EventValue_changed TO Leif_l_metatarsophalangeal_2.FdRotation.EventIn}
+Group514.AddRoute(OrientationInterpolator516.EventValue_changed, HAnimJoint34.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand015_r_metatarsophalangeal_2Pitch.EventValue_changed TO Leif_r_metatarsophalangeal_2.EventSet_rotation }
-{ Sample Leif_Stand015_r_metatarsophalangeal_2Pitch.EventValue_changed TO Leif_r_metatarsophalangeal_2.EventSet_rotation}
-Group514.AddRoute(OrientationInterpolator516.EventValue_changed, HAnimJoint38.set_EventSet_rotation);
+{ Original "Leif_Stand015_r_metatarsophalangeal_2Pitch.EventValue_changed TO Leif_r_metatarsophalangeal_2.FdRotation.EventIn }
+{ Sample Leif_Stand015_r_metatarsophalangeal_2Pitch.EventValue_changed TO Leif_r_metatarsophalangeal_2.FdRotation.EventIn}
+Group514.AddRoute(OrientationInterpolator516.EventValue_changed, HAnimJoint38.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand015_sacroiliacYaw.EventValue_changed TO Leif_sacroiliac.EventSet_rotation }
-{ Sample Leif_Stand015_sacroiliacYaw.EventValue_changed TO Leif_sacroiliac.EventSet_rotation}
-Group514.AddRoute(OrientationInterpolator537.EventValue_changed, HAnimJoint30.set_EventSet_rotation);
+{ Original "Leif_Stand015_sacroiliacYaw.EventValue_changed TO Leif_sacroiliac.FdRotation.EventIn }
+{ Sample Leif_Stand015_sacroiliacYaw.EventValue_changed TO Leif_sacroiliac.FdRotation.EventIn}
+Group514.AddRoute(OrientationInterpolator537.EventValue_changed, HAnimJoint30.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand015_vl5Yaw.EventValue_changed TO Leif_vl5.EventSet_rotation }
-{ Sample Leif_Stand015_vl5Yaw.EventValue_changed TO Leif_vl5.EventSet_rotation}
-Group514.AddRoute(OrientationInterpolator538.EventValue_changed, HAnimJoint39.set_EventSet_rotation);
+{ Original "Leif_Stand015_vl5Yaw.EventValue_changed TO Leif_vl5.FdRotation.EventIn }
+{ Sample Leif_Stand015_vl5Yaw.EventValue_changed TO Leif_vl5.FdRotation.EventIn}
+Group514.AddRoute(OrientationInterpolator538.EventValue_changed, HAnimJoint39.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand015_l_carpometacarpal_1Pitch.EventValue_changed TO Leif_l_carpometacarpal_1.EventSet_rotation }
-{ Sample Leif_Stand015_l_carpometacarpal_1Pitch.EventValue_changed TO Leif_l_carpometacarpal_1.EventSet_rotation}
-Group514.AddRoute(OrientationInterpolator540.EventValue_changed, HAnimJoint49.set_EventSet_rotation);
+{ Original "Leif_Stand015_l_carpometacarpal_1Pitch.EventValue_changed TO Leif_l_carpometacarpal_1.FdRotation.EventIn }
+{ Sample Leif_Stand015_l_carpometacarpal_1Pitch.EventValue_changed TO Leif_l_carpometacarpal_1.FdRotation.EventIn}
+Group514.AddRoute(OrientationInterpolator540.EventValue_changed, HAnimJoint49.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand015_r_carpometacarpal_1Pitch.EventValue_changed TO Leif_r_carpometacarpal_1.EventSet_rotation }
-{ Sample Leif_Stand015_r_carpometacarpal_1Pitch.EventValue_changed TO Leif_r_carpometacarpal_1.EventSet_rotation}
-Group514.AddRoute(OrientationInterpolator541.EventValue_changed, HAnimJoint68.set_EventSet_rotation);
+{ Original "Leif_Stand015_r_carpometacarpal_1Pitch.EventValue_changed TO Leif_r_carpometacarpal_1.FdRotation.EventIn }
+{ Sample Leif_Stand015_r_carpometacarpal_1Pitch.EventValue_changed TO Leif_r_carpometacarpal_1.FdRotation.EventIn}
+Group514.AddRoute(OrientationInterpolator541.EventValue_changed, HAnimJoint68.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand015_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Leif_r_carpal_proximal_interphalangeal_2.EventSet_rotation }
-{ Sample Leif_Stand015_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Leif_r_carpal_proximal_interphalangeal_2.EventSet_rotation}
-Group514.AddRoute(OrientationInterpolator542.EventValue_changed, HAnimJoint71.set_EventSet_rotation);
+{ Original "Leif_Stand015_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Leif_r_carpal_proximal_interphalangeal_2.FdRotation.EventIn }
+{ Sample Leif_Stand015_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Leif_r_carpal_proximal_interphalangeal_2.FdRotation.EventIn}
+Group514.AddRoute(OrientationInterpolator542.EventValue_changed, HAnimJoint71.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_metacarpophalangeal_2.EventSet_rotation }
-{ Sample Leif_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_metacarpophalangeal_2.EventSet_rotation}
-Group514.AddRoute(OrientationInterpolator543.EventValue_changed, HAnimJoint72.set_EventSet_rotation);
+{ Original "Leif_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_metacarpophalangeal_2.FdRotation.EventIn }
+{ Sample Leif_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_metacarpophalangeal_2.FdRotation.EventIn}
+Group514.AddRoute(OrientationInterpolator543.EventValue_changed, HAnimJoint72.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_2.EventSet_rotation }
-{ Sample Leif_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_2.EventSet_rotation}
-Group514.AddRoute(OrientationInterpolator543.EventValue_changed, HAnimJoint73.set_EventSet_rotation);
+{ Original "Leif_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_2.FdRotation.EventIn }
+{ Sample Leif_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_2.FdRotation.EventIn}
+Group514.AddRoute(OrientationInterpolator543.EventValue_changed, HAnimJoint73.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand015_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Leif_r_carpal_proximal_interphalangeal_3.EventSet_rotation }
-{ Sample Leif_Stand015_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Leif_r_carpal_proximal_interphalangeal_3.EventSet_rotation}
-Group514.AddRoute(OrientationInterpolator542.EventValue_changed, HAnimJoint74.set_EventSet_rotation);
+{ Original "Leif_Stand015_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Leif_r_carpal_proximal_interphalangeal_3.FdRotation.EventIn }
+{ Sample Leif_Stand015_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Leif_r_carpal_proximal_interphalangeal_3.FdRotation.EventIn}
+Group514.AddRoute(OrientationInterpolator542.EventValue_changed, HAnimJoint74.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_metacarpophalangeal_3.EventSet_rotation }
-{ Sample Leif_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_metacarpophalangeal_3.EventSet_rotation}
-Group514.AddRoute(OrientationInterpolator543.EventValue_changed, HAnimJoint75.set_EventSet_rotation);
+{ Original "Leif_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_metacarpophalangeal_3.FdRotation.EventIn }
+{ Sample Leif_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_metacarpophalangeal_3.FdRotation.EventIn}
+Group514.AddRoute(OrientationInterpolator543.EventValue_changed, HAnimJoint75.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_3.EventSet_rotation }
-{ Sample Leif_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_3.EventSet_rotation}
-Group514.AddRoute(OrientationInterpolator543.EventValue_changed, HAnimJoint76.set_EventSet_rotation);
+{ Original "Leif_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_3.FdRotation.EventIn }
+{ Sample Leif_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_3.FdRotation.EventIn}
+Group514.AddRoute(OrientationInterpolator543.EventValue_changed, HAnimJoint76.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand015_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Leif_r_carpal_proximal_interphalangeal_4.EventSet_rotation }
-{ Sample Leif_Stand015_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Leif_r_carpal_proximal_interphalangeal_4.EventSet_rotation}
-Group514.AddRoute(OrientationInterpolator542.EventValue_changed, HAnimJoint77.set_EventSet_rotation);
+{ Original "Leif_Stand015_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Leif_r_carpal_proximal_interphalangeal_4.FdRotation.EventIn }
+{ Sample Leif_Stand015_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Leif_r_carpal_proximal_interphalangeal_4.FdRotation.EventIn}
+Group514.AddRoute(OrientationInterpolator542.EventValue_changed, HAnimJoint77.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_metacarpophalangeal_4.EventSet_rotation }
-{ Sample Leif_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_metacarpophalangeal_4.EventSet_rotation}
-Group514.AddRoute(OrientationInterpolator543.EventValue_changed, HAnimJoint78.set_EventSet_rotation);
+{ Original "Leif_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_metacarpophalangeal_4.FdRotation.EventIn }
+{ Sample Leif_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_metacarpophalangeal_4.FdRotation.EventIn}
+Group514.AddRoute(OrientationInterpolator543.EventValue_changed, HAnimJoint78.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_4.EventSet_rotation }
-{ Sample Leif_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_4.EventSet_rotation}
-Group514.AddRoute(OrientationInterpolator543.EventValue_changed, HAnimJoint79.set_EventSet_rotation);
+{ Original "Leif_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_4.FdRotation.EventIn }
+{ Sample Leif_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_4.FdRotation.EventIn}
+Group514.AddRoute(OrientationInterpolator543.EventValue_changed, HAnimJoint79.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand015_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Leif_r_carpal_proximal_interphalangeal_5.EventSet_rotation }
-{ Sample Leif_Stand015_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Leif_r_carpal_proximal_interphalangeal_5.EventSet_rotation}
-Group514.AddRoute(OrientationInterpolator542.EventValue_changed, HAnimJoint80.set_EventSet_rotation);
+{ Original "Leif_Stand015_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Leif_r_carpal_proximal_interphalangeal_5.FdRotation.EventIn }
+{ Sample Leif_Stand015_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Leif_r_carpal_proximal_interphalangeal_5.FdRotation.EventIn}
+Group514.AddRoute(OrientationInterpolator542.EventValue_changed, HAnimJoint80.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_metacarpophalangeal_5.EventSet_rotation }
-{ Sample Leif_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_metacarpophalangeal_5.EventSet_rotation}
-Group514.AddRoute(OrientationInterpolator543.EventValue_changed, HAnimJoint81.set_EventSet_rotation);
+{ Original "Leif_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_metacarpophalangeal_5.FdRotation.EventIn }
+{ Sample Leif_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_metacarpophalangeal_5.FdRotation.EventIn}
+Group514.AddRoute(OrientationInterpolator543.EventValue_changed, HAnimJoint81.FdRotation.EventIn);
 end;
 
 procedure InitLeif5FinalPart80;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_5.EventSet_rotation }
-{ Sample Leif_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_5.EventSet_rotation}
-Group514.AddRoute(OrientationInterpolator543.EventValue_changed, HAnimJoint82.set_EventSet_rotation);
+{ Original "Leif_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_5.FdRotation.EventIn }
+{ Sample Leif_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_5.FdRotation.EventIn}
+Group514.AddRoute(OrientationInterpolator543.EventValue_changed, HAnimJoint82.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group17.FdChildren.Add(Group514);
@@ -3507,268 +3507,268 @@ OrientationInterpolator640.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0.2000000
 Group610.FdChildren.Add(OrientationInterpolator640);
 { Original "Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_r_talocruralRotInterp.EventSet_fraction }
 { Sample Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_r_talocruralRotInterp.EventSet_fraction}
-Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator613.set_EventSet_fraction);
+Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator613.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_r_kneeRotInterp.EventSet_fraction }
 { Sample Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_r_kneeRotInterp.EventSet_fraction}
-Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator614.set_EventSet_fraction);
+Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator614.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_r_hipRotInterp.EventSet_fraction }
 { Sample Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_r_hipRotInterp.EventSet_fraction}
-Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator615.set_EventSet_fraction);
+Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator615.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_l_talocruralRotInterp.EventSet_fraction }
 { Sample Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_l_talocruralRotInterp.EventSet_fraction}
-Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator616.set_EventSet_fraction);
+Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator616.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_l_kneeRotInterp.EventSet_fraction }
 { Sample Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_l_kneeRotInterp.EventSet_fraction}
-Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator617.set_EventSet_fraction);
+Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator617.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_l_hipRotInterp.EventSet_fraction }
 { Sample Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_l_hipRotInterp.EventSet_fraction}
-Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator618.set_EventSet_fraction);
+Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator618.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_lower_bodyRotInterp.EventSet_fraction }
 { Sample Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_lower_bodyRotInterp.EventSet_fraction}
-Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator627.set_EventSet_fraction);
+Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator627.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_r_radiocarpalRotInterp.EventSet_fraction }
 { Sample Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_r_radiocarpalRotInterp.EventSet_fraction}
-Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator619.set_EventSet_fraction);
+Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator619.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_r_elbowRotInterp.EventSet_fraction }
 { Sample Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_r_elbowRotInterp.EventSet_fraction}
-Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator620.set_EventSet_fraction);
+Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator620.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_r_shoulderRotInterp.EventSet_fraction }
 { Sample Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_r_shoulderRotInterp.EventSet_fraction}
-Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator621.set_EventSet_fraction);
+Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator621.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_l_radiocarpalRotInterp.EventSet_fraction }
 { Sample Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_l_radiocarpalRotInterp.EventSet_fraction}
-Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator622.set_EventSet_fraction);
+Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator622.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_l_elbowRotInterp.EventSet_fraction }
 { Sample Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_l_elbowRotInterp.EventSet_fraction}
-Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator623.set_EventSet_fraction);
+Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator623.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_l_shoulderRotInterp.EventSet_fraction }
 { Sample Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_l_shoulderRotInterp.EventSet_fraction}
-Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator624.set_EventSet_fraction);
+Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator624.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_headRotInterp.EventSet_fraction }
 { Sample Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_headRotInterp.EventSet_fraction}
-Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator625.set_EventSet_fraction);
+Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator625.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_neckRotInterp.EventSet_fraction }
 { Sample Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_neckRotInterp.EventSet_fraction}
-Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator626.set_EventSet_fraction);
+Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator626.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_upper_bodyRotInterp.EventSet_fraction }
 { Sample Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_upper_bodyRotInterp.EventSet_fraction}
-Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator628.set_EventSet_fraction);
+Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator628.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_whole_bodyRotInterp.EventSet_fraction }
 { Sample Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_whole_bodyRotInterp.EventSet_fraction}
-Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator629.set_EventSet_fraction);
+Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator629.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_whole_bodyTransInterp.EventSet_fraction }
 { Sample Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_whole_bodyTransInterp.EventSet_fraction}
-Group610.AddRoute(TimeSensor611.EventFraction_changed, PositionInterpolator630.set_EventSet_fraction);
+Group610.AddRoute(TimeSensor611.EventFraction_changed, PositionInterpolator630.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_l_sternoclavicularRoll.EventSet_fraction }
 { Sample Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_l_sternoclavicularRoll.EventSet_fraction}
-Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator631.set_EventSet_fraction);
+Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator631.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_r_sternoclavicularRoll.EventSet_fraction }
 { Sample Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_r_sternoclavicularRoll.EventSet_fraction}
-Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator632.set_EventSet_fraction);
+Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator632.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_r_metatarsophalangeal_2Pitch.EventSet_fraction }
 { Sample Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_r_metatarsophalangeal_2Pitch.EventSet_fraction}
-Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator612.set_EventSet_fraction);
+Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator612.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_sacroiliacYaw.EventSet_fraction }
 { Sample Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_sacroiliacYaw.EventSet_fraction}
-Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator633.set_EventSet_fraction);
+Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator633.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_vl5Yaw.EventSet_fraction }
 { Sample Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_vl5Yaw.EventSet_fraction}
-Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator634.set_EventSet_fraction);
+Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator634.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_vc6Yaw.EventSet_fraction }
 { Sample Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_vc6Yaw.EventSet_fraction}
-Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator635.set_EventSet_fraction);
+Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator635.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_l_carpometacarpal_1Pitch.EventSet_fraction }
 { Sample Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_l_carpometacarpal_1Pitch.EventSet_fraction}
-Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator636.set_EventSet_fraction);
+Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator636.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_r_carpometacarpal_1Pitch.EventSet_fraction }
 { Sample Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_r_carpometacarpal_1Pitch.EventSet_fraction}
-Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator637.set_EventSet_fraction);
+Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator637.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_r_carpal_proximal_interphalangeal_2Roll.EventSet_fraction }
 { Sample Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_r_carpal_proximal_interphalangeal_2Roll.EventSet_fraction}
-Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator638.set_EventSet_fraction);
+Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator638.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_r_metacarpophalangeal_2Roll.EventSet_fraction }
 { Sample Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_r_metacarpophalangeal_2Roll.EventSet_fraction}
-Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator639.set_EventSet_fraction);
+Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator639.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_r_carpal_distal_interphalangeal_2Roll.EventSet_fraction }
 { Sample Leif_Stand016Timer.EventFraction_changed TO Leif_Stand016_r_carpal_distal_interphalangeal_2Roll.EventSet_fraction}
-Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator640.set_EventSet_fraction);
+Group610.AddRoute(TimeSensor611.EventFraction_changed, OrientationInterpolator640.EventSet_fraction);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand016_r_talocruralRotInterp.EventValue_changed TO Leif_r_talocrural.EventSet_rotation }
-{ Sample Leif_Stand016_r_talocruralRotInterp.EventValue_changed TO Leif_r_talocrural.EventSet_rotation}
-Group610.AddRoute(OrientationInterpolator613.EventValue_changed, HAnimJoint37.set_EventSet_rotation);
+{ Original "Leif_Stand016_r_talocruralRotInterp.EventValue_changed TO Leif_r_talocrural.FdRotation.EventIn }
+{ Sample Leif_Stand016_r_talocruralRotInterp.EventValue_changed TO Leif_r_talocrural.FdRotation.EventIn}
+Group610.AddRoute(OrientationInterpolator613.EventValue_changed, HAnimJoint37.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand016_r_kneeRotInterp.EventValue_changed TO Leif_r_knee.EventSet_rotation }
-{ Sample Leif_Stand016_r_kneeRotInterp.EventValue_changed TO Leif_r_knee.EventSet_rotation}
-Group610.AddRoute(OrientationInterpolator614.EventValue_changed, HAnimJoint36.set_EventSet_rotation);
+{ Original "Leif_Stand016_r_kneeRotInterp.EventValue_changed TO Leif_r_knee.FdRotation.EventIn }
+{ Sample Leif_Stand016_r_kneeRotInterp.EventValue_changed TO Leif_r_knee.FdRotation.EventIn}
+Group610.AddRoute(OrientationInterpolator614.EventValue_changed, HAnimJoint36.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand016_r_hipRotInterp.EventValue_changed TO Leif_r_hip.EventSet_rotation }
-{ Sample Leif_Stand016_r_hipRotInterp.EventValue_changed TO Leif_r_hip.EventSet_rotation}
-Group610.AddRoute(OrientationInterpolator615.EventValue_changed, HAnimJoint35.set_EventSet_rotation);
+{ Original "Leif_Stand016_r_hipRotInterp.EventValue_changed TO Leif_r_hip.FdRotation.EventIn }
+{ Sample Leif_Stand016_r_hipRotInterp.EventValue_changed TO Leif_r_hip.FdRotation.EventIn}
+Group610.AddRoute(OrientationInterpolator615.EventValue_changed, HAnimJoint35.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand016_l_talocruralRotInterp.EventValue_changed TO Leif_l_talocrural.EventSet_rotation }
-{ Sample Leif_Stand016_l_talocruralRotInterp.EventValue_changed TO Leif_l_talocrural.EventSet_rotation}
-Group610.AddRoute(OrientationInterpolator616.EventValue_changed, HAnimJoint33.set_EventSet_rotation);
+{ Original "Leif_Stand016_l_talocruralRotInterp.EventValue_changed TO Leif_l_talocrural.FdRotation.EventIn }
+{ Sample Leif_Stand016_l_talocruralRotInterp.EventValue_changed TO Leif_l_talocrural.FdRotation.EventIn}
+Group610.AddRoute(OrientationInterpolator616.EventValue_changed, HAnimJoint33.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand016_l_kneeRotInterp.EventValue_changed TO Leif_l_knee.EventSet_rotation }
-{ Sample Leif_Stand016_l_kneeRotInterp.EventValue_changed TO Leif_l_knee.EventSet_rotation}
-Group610.AddRoute(OrientationInterpolator617.EventValue_changed, HAnimJoint32.set_EventSet_rotation);
+{ Original "Leif_Stand016_l_kneeRotInterp.EventValue_changed TO Leif_l_knee.FdRotation.EventIn }
+{ Sample Leif_Stand016_l_kneeRotInterp.EventValue_changed TO Leif_l_knee.FdRotation.EventIn}
+Group610.AddRoute(OrientationInterpolator617.EventValue_changed, HAnimJoint32.FdRotation.EventIn);
+{ METHOD .AddX3DROUTE }
+{ Original "Leif_Stand016_l_hipRotInterp.EventValue_changed TO Leif_l_hip.FdRotation.EventIn }
+{ Sample Leif_Stand016_l_hipRotInterp.EventValue_changed TO Leif_l_hip.FdRotation.EventIn}
+Group610.AddRoute(OrientationInterpolator618.EventValue_changed, HAnimJoint31.FdRotation.EventIn);
 end;
 
 procedure InitLeif5FinalPart84;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand016_l_hipRotInterp.EventValue_changed TO Leif_l_hip.EventSet_rotation }
-{ Sample Leif_Stand016_l_hipRotInterp.EventValue_changed TO Leif_l_hip.EventSet_rotation}
-Group610.AddRoute(OrientationInterpolator618.EventValue_changed, HAnimJoint31.set_EventSet_rotation);
+{ Original "Leif_Stand016_r_radiocarpalRotInterp.EventValue_changed TO Leif_r_radiocarpal.FdRotation.EventIn }
+{ Sample Leif_Stand016_r_radiocarpalRotInterp.EventValue_changed TO Leif_r_radiocarpal.FdRotation.EventIn}
+Group610.AddRoute(OrientationInterpolator619.EventValue_changed, HAnimJoint67.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand016_r_radiocarpalRotInterp.EventValue_changed TO Leif_r_radiocarpal.EventSet_rotation }
-{ Sample Leif_Stand016_r_radiocarpalRotInterp.EventValue_changed TO Leif_r_radiocarpal.EventSet_rotation}
-Group610.AddRoute(OrientationInterpolator619.EventValue_changed, HAnimJoint67.set_EventSet_rotation);
+{ Original "Leif_Stand016_r_elbowRotInterp.EventValue_changed TO Leif_r_elbow.FdRotation.EventIn }
+{ Sample Leif_Stand016_r_elbowRotInterp.EventValue_changed TO Leif_r_elbow.FdRotation.EventIn}
+Group610.AddRoute(OrientationInterpolator620.EventValue_changed, HAnimJoint66.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand016_r_elbowRotInterp.EventValue_changed TO Leif_r_elbow.EventSet_rotation }
-{ Sample Leif_Stand016_r_elbowRotInterp.EventValue_changed TO Leif_r_elbow.EventSet_rotation}
-Group610.AddRoute(OrientationInterpolator620.EventValue_changed, HAnimJoint66.set_EventSet_rotation);
+{ Original "Leif_Stand016_r_shoulderRotInterp.EventValue_changed TO Leif_r_shoulder.FdRotation.EventIn }
+{ Sample Leif_Stand016_r_shoulderRotInterp.EventValue_changed TO Leif_r_shoulder.FdRotation.EventIn}
+Group610.AddRoute(OrientationInterpolator621.EventValue_changed, HAnimJoint65.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand016_r_shoulderRotInterp.EventValue_changed TO Leif_r_shoulder.EventSet_rotation }
-{ Sample Leif_Stand016_r_shoulderRotInterp.EventValue_changed TO Leif_r_shoulder.EventSet_rotation}
-Group610.AddRoute(OrientationInterpolator621.EventValue_changed, HAnimJoint65.set_EventSet_rotation);
+{ Original "Leif_Stand016_l_radiocarpalRotInterp.EventValue_changed TO Leif_l_radiocarpal.FdRotation.EventIn }
+{ Sample Leif_Stand016_l_radiocarpalRotInterp.EventValue_changed TO Leif_l_radiocarpal.FdRotation.EventIn}
+Group610.AddRoute(OrientationInterpolator622.EventValue_changed, HAnimJoint48.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand016_l_radiocarpalRotInterp.EventValue_changed TO Leif_l_radiocarpal.EventSet_rotation }
-{ Sample Leif_Stand016_l_radiocarpalRotInterp.EventValue_changed TO Leif_l_radiocarpal.EventSet_rotation}
-Group610.AddRoute(OrientationInterpolator622.EventValue_changed, HAnimJoint48.set_EventSet_rotation);
+{ Original "Leif_Stand016_l_elbowRotInterp.EventValue_changed TO Leif_l_elbow.FdRotation.EventIn }
+{ Sample Leif_Stand016_l_elbowRotInterp.EventValue_changed TO Leif_l_elbow.FdRotation.EventIn}
+Group610.AddRoute(OrientationInterpolator623.EventValue_changed, HAnimJoint47.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand016_l_elbowRotInterp.EventValue_changed TO Leif_l_elbow.EventSet_rotation }
-{ Sample Leif_Stand016_l_elbowRotInterp.EventValue_changed TO Leif_l_elbow.EventSet_rotation}
-Group610.AddRoute(OrientationInterpolator623.EventValue_changed, HAnimJoint47.set_EventSet_rotation);
+{ Original "Leif_Stand016_l_shoulderRotInterp.EventValue_changed TO Leif_l_shoulder.FdRotation.EventIn }
+{ Sample Leif_Stand016_l_shoulderRotInterp.EventValue_changed TO Leif_l_shoulder.FdRotation.EventIn}
+Group610.AddRoute(OrientationInterpolator624.EventValue_changed, HAnimJoint46.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand016_l_shoulderRotInterp.EventValue_changed TO Leif_l_shoulder.EventSet_rotation }
-{ Sample Leif_Stand016_l_shoulderRotInterp.EventValue_changed TO Leif_l_shoulder.EventSet_rotation}
-Group610.AddRoute(OrientationInterpolator624.EventValue_changed, HAnimJoint46.set_EventSet_rotation);
+{ Original "Leif_Stand016_headRotInterp.EventValue_changed TO Leif_skullbase.FdRotation.EventIn }
+{ Sample Leif_Stand016_headRotInterp.EventValue_changed TO Leif_skullbase.FdRotation.EventIn}
+Group610.AddRoute(OrientationInterpolator625.EventValue_changed, HAnimJoint44.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand016_headRotInterp.EventValue_changed TO Leif_skullbase.EventSet_rotation }
-{ Sample Leif_Stand016_headRotInterp.EventValue_changed TO Leif_skullbase.EventSet_rotation}
-Group610.AddRoute(OrientationInterpolator625.EventValue_changed, HAnimJoint44.set_EventSet_rotation);
+{ Original "Leif_Stand016_lower_bodyRotInterp.EventValue_changed TO Leif_sacroiliac.FdRotation.EventIn }
+{ Sample Leif_Stand016_lower_bodyRotInterp.EventValue_changed TO Leif_sacroiliac.FdRotation.EventIn}
+Group610.AddRoute(OrientationInterpolator627.EventValue_changed, HAnimJoint30.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand016_lower_bodyRotInterp.EventValue_changed TO Leif_sacroiliac.EventSet_rotation }
-{ Sample Leif_Stand016_lower_bodyRotInterp.EventValue_changed TO Leif_sacroiliac.EventSet_rotation}
-Group610.AddRoute(OrientationInterpolator627.EventValue_changed, HAnimJoint30.set_EventSet_rotation);
+{ Original "Leif_Stand016_whole_bodyRotInterp.EventValue_changed TO Leif_humanoid_root.FdRotation.EventIn }
+{ Sample Leif_Stand016_whole_bodyRotInterp.EventValue_changed TO Leif_humanoid_root.FdRotation.EventIn}
+Group610.AddRoute(OrientationInterpolator629.EventValue_changed, HAnimJoint29.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand016_whole_bodyRotInterp.EventValue_changed TO Leif_humanoid_root.EventSet_rotation }
-{ Sample Leif_Stand016_whole_bodyRotInterp.EventValue_changed TO Leif_humanoid_root.EventSet_rotation}
-Group610.AddRoute(OrientationInterpolator629.EventValue_changed, HAnimJoint29.set_EventSet_rotation);
+{ Original "Leif_Stand016_whole_bodyTransInterp.EventValue_changed TO Leif_humanoid_root.FdTranslation.EventIn }
+{ Sample Leif_Stand016_whole_bodyTransInterp.EventValue_changed TO Leif_humanoid_root.FdTranslation.EventIn}
+Group610.AddRoute(PositionInterpolator630.EventValue_changed, HAnimJoint29.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand016_whole_bodyTransInterp.EventValue_changed TO Leif_humanoid_root.EventSet_translation }
-{ Sample Leif_Stand016_whole_bodyTransInterp.EventValue_changed TO Leif_humanoid_root.EventSet_translation}
-Group610.AddRoute(PositionInterpolator630.EventValue_changed, HAnimJoint29.set_EventSet_translation);
+{ Original "Leif_Stand016_l_sternoclavicularRoll.EventValue_changed TO Leif_l_sternoclavicular.FdRotation.EventIn }
+{ Sample Leif_Stand016_l_sternoclavicularRoll.EventValue_changed TO Leif_l_sternoclavicular.FdRotation.EventIn}
+Group610.AddRoute(OrientationInterpolator631.EventValue_changed, HAnimJoint45.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand016_l_sternoclavicularRoll.EventValue_changed TO Leif_l_sternoclavicular.EventSet_rotation }
-{ Sample Leif_Stand016_l_sternoclavicularRoll.EventValue_changed TO Leif_l_sternoclavicular.EventSet_rotation}
-Group610.AddRoute(OrientationInterpolator631.EventValue_changed, HAnimJoint45.set_EventSet_rotation);
+{ Original "Leif_Stand016_r_sternoclavicularRoll.EventValue_changed TO Leif_r_sternoclavicular.FdRotation.EventIn }
+{ Sample Leif_Stand016_r_sternoclavicularRoll.EventValue_changed TO Leif_r_sternoclavicular.FdRotation.EventIn}
+Group610.AddRoute(OrientationInterpolator632.EventValue_changed, HAnimJoint64.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand016_r_sternoclavicularRoll.EventValue_changed TO Leif_r_sternoclavicular.EventSet_rotation }
-{ Sample Leif_Stand016_r_sternoclavicularRoll.EventValue_changed TO Leif_r_sternoclavicular.EventSet_rotation}
-Group610.AddRoute(OrientationInterpolator632.EventValue_changed, HAnimJoint64.set_EventSet_rotation);
+{ Original "Leif_Stand016_r_metatarsophalangeal_2Pitch.EventValue_changed TO Leif_l_metatarsophalangeal_2.FdRotation.EventIn }
+{ Sample Leif_Stand016_r_metatarsophalangeal_2Pitch.EventValue_changed TO Leif_l_metatarsophalangeal_2.FdRotation.EventIn}
+Group610.AddRoute(OrientationInterpolator612.EventValue_changed, HAnimJoint34.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand016_r_metatarsophalangeal_2Pitch.EventValue_changed TO Leif_l_metatarsophalangeal_2.EventSet_rotation }
-{ Sample Leif_Stand016_r_metatarsophalangeal_2Pitch.EventValue_changed TO Leif_l_metatarsophalangeal_2.EventSet_rotation}
-Group610.AddRoute(OrientationInterpolator612.EventValue_changed, HAnimJoint34.set_EventSet_rotation);
+{ Original "Leif_Stand016_r_metatarsophalangeal_2Pitch.EventValue_changed TO Leif_r_metatarsophalangeal_2.FdRotation.EventIn }
+{ Sample Leif_Stand016_r_metatarsophalangeal_2Pitch.EventValue_changed TO Leif_r_metatarsophalangeal_2.FdRotation.EventIn}
+Group610.AddRoute(OrientationInterpolator612.EventValue_changed, HAnimJoint38.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand016_r_metatarsophalangeal_2Pitch.EventValue_changed TO Leif_r_metatarsophalangeal_2.EventSet_rotation }
-{ Sample Leif_Stand016_r_metatarsophalangeal_2Pitch.EventValue_changed TO Leif_r_metatarsophalangeal_2.EventSet_rotation}
-Group610.AddRoute(OrientationInterpolator612.EventValue_changed, HAnimJoint38.set_EventSet_rotation);
+{ Original "Leif_Stand016_sacroiliacYaw.EventValue_changed TO Leif_sacroiliac.FdRotation.EventIn }
+{ Sample Leif_Stand016_sacroiliacYaw.EventValue_changed TO Leif_sacroiliac.FdRotation.EventIn}
+Group610.AddRoute(OrientationInterpolator633.EventValue_changed, HAnimJoint30.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand016_sacroiliacYaw.EventValue_changed TO Leif_sacroiliac.EventSet_rotation }
-{ Sample Leif_Stand016_sacroiliacYaw.EventValue_changed TO Leif_sacroiliac.EventSet_rotation}
-Group610.AddRoute(OrientationInterpolator633.EventValue_changed, HAnimJoint30.set_EventSet_rotation);
+{ Original "Leif_Stand016_vl5Yaw.EventValue_changed TO Leif_vl5.FdRotation.EventIn }
+{ Sample Leif_Stand016_vl5Yaw.EventValue_changed TO Leif_vl5.FdRotation.EventIn}
+Group610.AddRoute(OrientationInterpolator634.EventValue_changed, HAnimJoint39.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand016_vl5Yaw.EventValue_changed TO Leif_vl5.EventSet_rotation }
-{ Sample Leif_Stand016_vl5Yaw.EventValue_changed TO Leif_vl5.EventSet_rotation}
-Group610.AddRoute(OrientationInterpolator634.EventValue_changed, HAnimJoint39.set_EventSet_rotation);
+{ Original "Leif_Stand016_l_carpometacarpal_1Pitch.EventValue_changed TO Leif_l_carpometacarpal_1.FdRotation.EventIn }
+{ Sample Leif_Stand016_l_carpometacarpal_1Pitch.EventValue_changed TO Leif_l_carpometacarpal_1.FdRotation.EventIn}
+Group610.AddRoute(OrientationInterpolator636.EventValue_changed, HAnimJoint49.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand016_l_carpometacarpal_1Pitch.EventValue_changed TO Leif_l_carpometacarpal_1.EventSet_rotation }
-{ Sample Leif_Stand016_l_carpometacarpal_1Pitch.EventValue_changed TO Leif_l_carpometacarpal_1.EventSet_rotation}
-Group610.AddRoute(OrientationInterpolator636.EventValue_changed, HAnimJoint49.set_EventSet_rotation);
+{ Original "Leif_Stand016_r_carpometacarpal_1Pitch.EventValue_changed TO Leif_r_carpometacarpal_1.FdRotation.EventIn }
+{ Sample Leif_Stand016_r_carpometacarpal_1Pitch.EventValue_changed TO Leif_r_carpometacarpal_1.FdRotation.EventIn}
+Group610.AddRoute(OrientationInterpolator637.EventValue_changed, HAnimJoint68.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand016_r_carpometacarpal_1Pitch.EventValue_changed TO Leif_r_carpometacarpal_1.EventSet_rotation }
-{ Sample Leif_Stand016_r_carpometacarpal_1Pitch.EventValue_changed TO Leif_r_carpometacarpal_1.EventSet_rotation}
-Group610.AddRoute(OrientationInterpolator637.EventValue_changed, HAnimJoint68.set_EventSet_rotation);
+{ Original "Leif_Stand016_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Leif_r_carpal_proximal_interphalangeal_2.FdRotation.EventIn }
+{ Sample Leif_Stand016_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Leif_r_carpal_proximal_interphalangeal_2.FdRotation.EventIn}
+Group610.AddRoute(OrientationInterpolator638.EventValue_changed, HAnimJoint71.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand016_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Leif_r_carpal_proximal_interphalangeal_2.EventSet_rotation }
-{ Sample Leif_Stand016_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Leif_r_carpal_proximal_interphalangeal_2.EventSet_rotation}
-Group610.AddRoute(OrientationInterpolator638.EventValue_changed, HAnimJoint71.set_EventSet_rotation);
+{ Original "Leif_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_metacarpophalangeal_2.FdRotation.EventIn }
+{ Sample Leif_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_metacarpophalangeal_2.FdRotation.EventIn}
+Group610.AddRoute(OrientationInterpolator639.EventValue_changed, HAnimJoint72.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_metacarpophalangeal_2.EventSet_rotation }
-{ Sample Leif_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_metacarpophalangeal_2.EventSet_rotation}
-Group610.AddRoute(OrientationInterpolator639.EventValue_changed, HAnimJoint72.set_EventSet_rotation);
+{ Original "Leif_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_2.FdRotation.EventIn }
+{ Sample Leif_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_2.FdRotation.EventIn}
+Group610.AddRoute(OrientationInterpolator639.EventValue_changed, HAnimJoint73.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_2.EventSet_rotation }
-{ Sample Leif_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_2.EventSet_rotation}
-Group610.AddRoute(OrientationInterpolator639.EventValue_changed, HAnimJoint73.set_EventSet_rotation);
+{ Original "Leif_Stand016_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Leif_r_carpal_proximal_interphalangeal_3.FdRotation.EventIn }
+{ Sample Leif_Stand016_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Leif_r_carpal_proximal_interphalangeal_3.FdRotation.EventIn}
+Group610.AddRoute(OrientationInterpolator638.EventValue_changed, HAnimJoint74.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand016_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Leif_r_carpal_proximal_interphalangeal_3.EventSet_rotation }
-{ Sample Leif_Stand016_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Leif_r_carpal_proximal_interphalangeal_3.EventSet_rotation}
-Group610.AddRoute(OrientationInterpolator638.EventValue_changed, HAnimJoint74.set_EventSet_rotation);
+{ Original "Leif_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_metacarpophalangeal_3.FdRotation.EventIn }
+{ Sample Leif_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_metacarpophalangeal_3.FdRotation.EventIn}
+Group610.AddRoute(OrientationInterpolator639.EventValue_changed, HAnimJoint75.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_metacarpophalangeal_3.EventSet_rotation }
-{ Sample Leif_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_metacarpophalangeal_3.EventSet_rotation}
-Group610.AddRoute(OrientationInterpolator639.EventValue_changed, HAnimJoint75.set_EventSet_rotation);
+{ Original "Leif_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_3.FdRotation.EventIn }
+{ Sample Leif_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_3.FdRotation.EventIn}
+Group610.AddRoute(OrientationInterpolator639.EventValue_changed, HAnimJoint76.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_3.EventSet_rotation }
-{ Sample Leif_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_3.EventSet_rotation}
-Group610.AddRoute(OrientationInterpolator639.EventValue_changed, HAnimJoint76.set_EventSet_rotation);
+{ Original "Leif_Stand016_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Leif_r_carpal_proximal_interphalangeal_4.FdRotation.EventIn }
+{ Sample Leif_Stand016_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Leif_r_carpal_proximal_interphalangeal_4.FdRotation.EventIn}
+Group610.AddRoute(OrientationInterpolator638.EventValue_changed, HAnimJoint77.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand016_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Leif_r_carpal_proximal_interphalangeal_4.EventSet_rotation }
-{ Sample Leif_Stand016_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Leif_r_carpal_proximal_interphalangeal_4.EventSet_rotation}
-Group610.AddRoute(OrientationInterpolator638.EventValue_changed, HAnimJoint77.set_EventSet_rotation);
+{ Original "Leif_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_metacarpophalangeal_4.FdRotation.EventIn }
+{ Sample Leif_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_metacarpophalangeal_4.FdRotation.EventIn}
+Group610.AddRoute(OrientationInterpolator639.EventValue_changed, HAnimJoint78.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_metacarpophalangeal_4.EventSet_rotation }
-{ Sample Leif_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_metacarpophalangeal_4.EventSet_rotation}
-Group610.AddRoute(OrientationInterpolator639.EventValue_changed, HAnimJoint78.set_EventSet_rotation);
+{ Original "Leif_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_4.FdRotation.EventIn }
+{ Sample Leif_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_4.FdRotation.EventIn}
+Group610.AddRoute(OrientationInterpolator639.EventValue_changed, HAnimJoint79.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_4.EventSet_rotation }
-{ Sample Leif_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_4.EventSet_rotation}
-Group610.AddRoute(OrientationInterpolator639.EventValue_changed, HAnimJoint79.set_EventSet_rotation);
+{ Original "Leif_Stand016_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Leif_r_carpal_proximal_interphalangeal_5.FdRotation.EventIn }
+{ Sample Leif_Stand016_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Leif_r_carpal_proximal_interphalangeal_5.FdRotation.EventIn}
+Group610.AddRoute(OrientationInterpolator638.EventValue_changed, HAnimJoint80.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand016_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Leif_r_carpal_proximal_interphalangeal_5.EventSet_rotation }
-{ Sample Leif_Stand016_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Leif_r_carpal_proximal_interphalangeal_5.EventSet_rotation}
-Group610.AddRoute(OrientationInterpolator638.EventValue_changed, HAnimJoint80.set_EventSet_rotation);
+{ Original "Leif_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_metacarpophalangeal_5.FdRotation.EventIn }
+{ Sample Leif_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_metacarpophalangeal_5.FdRotation.EventIn}
+Group610.AddRoute(OrientationInterpolator639.EventValue_changed, HAnimJoint81.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_metacarpophalangeal_5.EventSet_rotation }
-{ Sample Leif_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_metacarpophalangeal_5.EventSet_rotation}
-Group610.AddRoute(OrientationInterpolator639.EventValue_changed, HAnimJoint81.set_EventSet_rotation);
-{ METHOD .AddX3DROUTE }
-{ Original "Leif_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_5.EventSet_rotation }
-{ Sample Leif_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_5.EventSet_rotation}
-Group610.AddRoute(OrientationInterpolator639.EventValue_changed, HAnimJoint82.set_EventSet_rotation);
+{ Original "Leif_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_5.FdRotation.EventIn }
+{ Sample Leif_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Leif_r_carpal_distal_interphalangeal_5.FdRotation.EventIn}
+Group610.AddRoute(OrientationInterpolator639.EventValue_changed, HAnimJoint82.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group17.FdChildren.Add(Group610);
@@ -3781,27 +3781,27 @@ ProximitySensor707 := TProximitySensorNode.Create;
 ProximitySensor707.Size := Vector3(1000000,1000000,1000000);
 { METHOD .FdChildren.Add }
 Group17.FdChildren.Add(ProximitySensor707);
-{ Original "Leif_ActivateSensor.EventEnterTime TO Leif_z100sTimer.startTime }
-{ Sample Leif_ActivateSensor.EventEnterTime TO Leif_z100sTimer.startTime}
-Group17.AddRoute(ProximitySensor707.EventEnterTime, TimeSensor706.set_startTime);
+{ Original "Leif_ActivateSensor.EventEnterTime TO Leif_z100sTimer.FdStartTime.EventIn }
+{ Sample Leif_ActivateSensor.EventEnterTime TO Leif_z100sTimer.FdStartTime.EventIn}
+Group17.AddRoute(ProximitySensor707.EventEnterTime, TimeSensor706.FdStartTime.EventIn);
+{ METHOD .AddX3DROUTE }
+OrientationInterpolator709 := TOrientationInterpolatorNode.Create;
 end;
 
 procedure InitLeif5FinalPart85;
 begin
 
-{ METHOD .AddX3DROUTE }
-OrientationInterpolator709 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator709.SetKey([0,0.100000001490116,0.159999996423721,0.25,0.330000013113022,0.379999995231628,0.46000000834465,0.600000023841858,0.689999997615814,0.769999980926514,0.839999973773956,0.899999976158142,1]);
 OrientationInterpolator709.SetKeyValue([Vector4(0,0,1,0),Vector4(1,0,0,0.800000011920929),Vector4(0,0,1,0),Vector4(1,0,0,2),Vector4(0,0,1,0),Vector4(1,0,0,0.800000011920929),Vector4(0,0,1,0),Vector4(1,0,0,-0.800000011920929),Vector4(0,0,1,0),Vector4(1,0,0,-2),Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { METHOD .FdChildren.Add }
 Group17.FdChildren.Add(OrientationInterpolator709);
 { Original "Leif_z100sTimer.EventFraction_changed TO Leif_Pitch012Interpolator.EventSet_fraction }
 { Sample Leif_z100sTimer.EventFraction_changed TO Leif_Pitch012Interpolator.EventSet_fraction}
-Group17.AddRoute(TimeSensor706.EventFraction_changed, OrientationInterpolator145.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor706.EventFraction_changed, OrientationInterpolator145.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_z100sTimer.EventFraction_changed TO Leif_Pitch2Interpolator.EventSet_fraction }
 { Sample Leif_z100sTimer.EventFraction_changed TO Leif_Pitch2Interpolator.EventSet_fraction}
-Group17.AddRoute(TimeSensor706.EventFraction_changed, OrientationInterpolator709.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor706.EventFraction_changed, OrientationInterpolator709.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator712 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator712.SetKey([0,0.230000004172325,0.540000021457672,0.75,1]);
@@ -3815,7 +3815,7 @@ OrientationInterpolator713.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,0.100000001
 Group17.FdChildren.Add(OrientationInterpolator713);
 { Original "Leif_z100sTimer.EventFraction_changed TO Leif_RollLeftFingers2.EventSet_fraction }
 { Sample Leif_z100sTimer.EventFraction_changed TO Leif_RollLeftFingers2.EventSet_fraction}
-Group17.AddRoute(TimeSensor706.EventFraction_changed, OrientationInterpolator713.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor706.EventFraction_changed, OrientationInterpolator713.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator715 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator715.SetKey([0,0.100000001490116,0.200000002980232,0.300000011920929,0.400000005960464,0.5,0.600000023841858,0.699999988079071,0.800000011920929,0.899999976158142,1]);
@@ -3824,7 +3824,7 @@ OrientationInterpolator715.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,0.100000001
 Group17.FdChildren.Add(OrientationInterpolator715);
 { Original "Leif_z100sTimer.EventFraction_changed TO Leif_RollRightFingers2.EventSet_fraction }
 { Sample Leif_z100sTimer.EventFraction_changed TO Leif_RollRightFingers2.EventSet_fraction}
-Group17.AddRoute(TimeSensor706.EventFraction_changed, OrientationInterpolator715.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor706.EventFraction_changed, OrientationInterpolator715.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 BooleanSequencer717 := TBooleanSequencerNode.Create;
 BooleanSequencer717.SetKey([0,0.223000004887581,0.43299999833107,0.629999995231628,0.730000019073486,0.860000014305115,1]);
@@ -3848,44 +3848,44 @@ TimeTrigger722 := TTimeTriggerNode.Create;
 Group17.FdChildren.Add(TimeTrigger722);
 { Original "Leif_z100sTimer.EventIsActive TO Leif_Stand010SPLITTERBooleanFilter.EventSet_boolean }
 { Sample Leif_z100sTimer.EventIsActive TO Leif_Stand010SPLITTERBooleanFilter.EventSet_boolean}
-Group17.AddRoute(TimeSensor706.EventIsActive, BooleanFilter718.set_EventSet_boolean);
+Group17.AddRoute(TimeSensor706.EventIsActive, BooleanFilter718.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Leif_z100sTimer.EventFraction_changed TO Leif_Stand010BooleanSequencer.EventSet_fraction }
 { Sample Leif_z100sTimer.EventFraction_changed TO Leif_Stand010BooleanSequencer.EventSet_fraction}
-Group17.AddRoute(TimeSensor706.EventFraction_changed, BooleanSequencer717.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor706.EventFraction_changed, BooleanSequencer717.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand010BooleanSequencer.EventValue_changed TO Leif_Stand010SPLITTERBooleanFilter.EventSet_boolean }
 { Sample Leif_Stand010BooleanSequencer.EventValue_changed TO Leif_Stand010SPLITTERBooleanFilter.EventSet_boolean}
-Group17.AddRoute(BooleanSequencer717.EventValue_changed, BooleanFilter718.set_EventSet_boolean);
+Group17.AddRoute(BooleanSequencer717.EventValue_changed, BooleanFilter718.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand010SPLITTERBooleanFilter.EventInputTrue TO Leif_Stand010OnTimeTrigger.EventSet_boolean }
 { Sample Leif_Stand010SPLITTERBooleanFilter.EventInputTrue TO Leif_Stand010OnTimeTrigger.EventSet_boolean}
-Group17.AddRoute(BooleanFilter718.EventInputTrue, TimeTrigger722.set_EventSet_boolean);
+Group17.AddRoute(BooleanFilter718.EventInputTrue, TimeTrigger722.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand010SPLITTERBooleanFilter.EventInputFalse TO Leif_Stand010OffTimeTrigger.EventSet_boolean }
 { Sample Leif_Stand010SPLITTERBooleanFilter.EventInputFalse TO Leif_Stand010OffTimeTrigger.EventSet_boolean}
-Group17.AddRoute(BooleanFilter718.EventInputFalse, TimeTrigger721.set_EventSet_boolean);
+Group17.AddRoute(BooleanFilter718.EventInputFalse, TimeTrigger721.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand010SPLITTERBooleanFilter.EventInputTrue TO Leif_Stand010Timer.EventSet_enabled }
 { Sample Leif_Stand010SPLITTERBooleanFilter.EventInputTrue TO Leif_Stand010Timer.EventSet_enabled}
-Group17.AddRoute(BooleanFilter718.EventInputTrue, TimeSensor148.set_EventSet_enabled);
+Group17.AddRoute(BooleanFilter718.EventInputTrue, TimeSensor148.EventSet_enabled);
+{ METHOD .AddX3DROUTE }
+{ Original "Leif_Stand010SPLITTERBooleanFilter.EventInputFalse TO Leif_Stand010Timer.EventSet_enabled }
+{ Sample Leif_Stand010SPLITTERBooleanFilter.EventInputFalse TO Leif_Stand010Timer.EventSet_enabled}
+Group17.AddRoute(BooleanFilter718.EventInputFalse, TimeSensor148.EventSet_enabled);
 end;
 
 procedure InitLeif5FinalPart86;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand010SPLITTERBooleanFilter.EventInputFalse TO Leif_Stand010Timer.EventSet_enabled }
-{ Sample Leif_Stand010SPLITTERBooleanFilter.EventInputFalse TO Leif_Stand010Timer.EventSet_enabled}
-Group17.AddRoute(BooleanFilter718.EventInputFalse, TimeSensor148.set_EventSet_enabled);
+{ Original "Leif_Stand010OffTimeTrigger.EventTriggerTime TO Leif_Stand010Timer.FdStopTime.EventIn }
+{ Sample Leif_Stand010OffTimeTrigger.EventTriggerTime TO Leif_Stand010Timer.FdStopTime.EventIn}
+Group17.AddRoute(TimeTrigger721.EventTriggerTime, TimeSensor148.FdStopTime.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand010OffTimeTrigger.EventTriggerTime TO Leif_Stand010Timer.stopTime }
-{ Sample Leif_Stand010OffTimeTrigger.EventTriggerTime TO Leif_Stand010Timer.stopTime}
-Group17.AddRoute(TimeTrigger721.EventTriggerTime, TimeSensor148.set_stopTime);
-{ METHOD .AddX3DROUTE }
-{ Original "Leif_Stand010OnTimeTrigger.EventTriggerTime TO Leif_Stand010Timer.startTime }
-{ Sample Leif_Stand010OnTimeTrigger.EventTriggerTime TO Leif_Stand010Timer.startTime}
-Group17.AddRoute(TimeTrigger722.EventTriggerTime, TimeSensor148.set_startTime);
+{ Original "Leif_Stand010OnTimeTrigger.EventTriggerTime TO Leif_Stand010Timer.FdStartTime.EventIn }
+{ Sample Leif_Stand010OnTimeTrigger.EventTriggerTime TO Leif_Stand010Timer.FdStartTime.EventIn}
+Group17.AddRoute(TimeTrigger722.EventTriggerTime, TimeSensor148.FdStartTime.EventIn);
 { METHOD .AddX3DROUTE }
 BooleanSequencer732 := TBooleanSequencerNode.Create;
 BooleanSequencer732.SetKey([0,0.223000004887581,0.43299999833107,0.629999995231628,0.730000019073486,0.860000014305115,1]);
@@ -3909,35 +3909,35 @@ TimeTrigger737 := TTimeTriggerNode.Create;
 Group17.FdChildren.Add(TimeTrigger737);
 { Original "Leif_z100sTimer.EventFraction_changed TO Leif_Run011BooleanSequencer.EventSet_fraction }
 { Sample Leif_z100sTimer.EventFraction_changed TO Leif_Run011BooleanSequencer.EventSet_fraction}
-Group17.AddRoute(TimeSensor706.EventFraction_changed, BooleanSequencer732.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor706.EventFraction_changed, BooleanSequencer732.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Run011BooleanSequencer.EventValue_changed TO Leif_Run011SPLITTERBooleanFilter.EventSet_boolean }
 { Sample Leif_Run011BooleanSequencer.EventValue_changed TO Leif_Run011SPLITTERBooleanFilter.EventSet_boolean}
-Group17.AddRoute(BooleanSequencer732.EventValue_changed, BooleanFilter733.set_EventSet_boolean);
+Group17.AddRoute(BooleanSequencer732.EventValue_changed, BooleanFilter733.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Run011SPLITTERBooleanFilter.EventInputTrue TO Leif_Run011OnTimeTrigger.EventSet_boolean }
 { Sample Leif_Run011SPLITTERBooleanFilter.EventInputTrue TO Leif_Run011OnTimeTrigger.EventSet_boolean}
-Group17.AddRoute(BooleanFilter733.EventInputTrue, TimeTrigger737.set_EventSet_boolean);
+Group17.AddRoute(BooleanFilter733.EventInputTrue, TimeTrigger737.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Run011SPLITTERBooleanFilter.EventInputFalse TO Leif_Run011OffTimeTrigger.EventSet_boolean }
 { Sample Leif_Run011SPLITTERBooleanFilter.EventInputFalse TO Leif_Run011OffTimeTrigger.EventSet_boolean}
-Group17.AddRoute(BooleanFilter733.EventInputFalse, TimeTrigger736.set_EventSet_boolean);
+Group17.AddRoute(BooleanFilter733.EventInputFalse, TimeTrigger736.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Run011SPLITTERBooleanFilter.EventInputTrue TO Leif_Run011Timer.EventSet_enabled }
 { Sample Leif_Run011SPLITTERBooleanFilter.EventInputTrue TO Leif_Run011Timer.EventSet_enabled}
-Group17.AddRoute(BooleanFilter733.EventInputTrue, TimeSensor244.set_EventSet_enabled);
+Group17.AddRoute(BooleanFilter733.EventInputTrue, TimeSensor244.EventSet_enabled);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Run011SPLITTERBooleanFilter.EventInputFalse TO Leif_Run011Timer.EventSet_enabled }
 { Sample Leif_Run011SPLITTERBooleanFilter.EventInputFalse TO Leif_Run011Timer.EventSet_enabled}
-Group17.AddRoute(BooleanFilter733.EventInputFalse, TimeSensor244.set_EventSet_enabled);
+Group17.AddRoute(BooleanFilter733.EventInputFalse, TimeSensor244.EventSet_enabled);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Run011OffTimeTrigger.EventTriggerTime TO Leif_Run011Timer.stopTime }
-{ Sample Leif_Run011OffTimeTrigger.EventTriggerTime TO Leif_Run011Timer.stopTime}
-Group17.AddRoute(TimeTrigger736.EventTriggerTime, TimeSensor244.set_stopTime);
+{ Original "Leif_Run011OffTimeTrigger.EventTriggerTime TO Leif_Run011Timer.FdStopTime.EventIn }
+{ Sample Leif_Run011OffTimeTrigger.EventTriggerTime TO Leif_Run011Timer.FdStopTime.EventIn}
+Group17.AddRoute(TimeTrigger736.EventTriggerTime, TimeSensor244.FdStopTime.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Run011OnTimeTrigger.EventTriggerTime TO Leif_Run011Timer.startTime }
-{ Sample Leif_Run011OnTimeTrigger.EventTriggerTime TO Leif_Run011Timer.startTime}
-Group17.AddRoute(TimeTrigger737.EventTriggerTime, TimeSensor244.set_startTime);
+{ Original "Leif_Run011OnTimeTrigger.EventTriggerTime TO Leif_Run011Timer.FdStartTime.EventIn }
+{ Sample Leif_Run011OnTimeTrigger.EventTriggerTime TO Leif_Run011Timer.FdStartTime.EventIn}
+Group17.AddRoute(TimeTrigger737.EventTriggerTime, TimeSensor244.FdStartTime.EventIn);
 { METHOD .AddX3DROUTE }
 BooleanSequencer746 := TBooleanSequencerNode.Create;
 BooleanSequencer746.SetKey([0,0.223000004887581,0.43299999833107,0.629999995231628,0.730000019073486,0.860000014305115,1]);
@@ -3961,40 +3961,40 @@ TimeTrigger751 := TTimeTriggerNode.Create;
 Group17.FdChildren.Add(TimeTrigger751);
 { Original "Leif_z100sTimer.EventFraction_changed TO Leif_Turn012BooleanSequencer.EventSet_fraction }
 { Sample Leif_z100sTimer.EventFraction_changed TO Leif_Turn012BooleanSequencer.EventSet_fraction}
-Group17.AddRoute(TimeSensor706.EventFraction_changed, BooleanSequencer746.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor706.EventFraction_changed, BooleanSequencer746.EventSet_fraction);
+{ METHOD .AddX3DROUTE }
+{ Original "Leif_Turn012BooleanSequencer.EventValue_changed TO Leif_Turn012SPLITTERBooleanFilter.EventSet_boolean }
+{ Sample Leif_Turn012BooleanSequencer.EventValue_changed TO Leif_Turn012SPLITTERBooleanFilter.EventSet_boolean}
+Group17.AddRoute(BooleanSequencer746.EventValue_changed, BooleanFilter747.EventSet_boolean);
 end;
 
 procedure InitLeif5FinalPart87;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Turn012BooleanSequencer.EventValue_changed TO Leif_Turn012SPLITTERBooleanFilter.EventSet_boolean }
-{ Sample Leif_Turn012BooleanSequencer.EventValue_changed TO Leif_Turn012SPLITTERBooleanFilter.EventSet_boolean}
-Group17.AddRoute(BooleanSequencer746.EventValue_changed, BooleanFilter747.set_EventSet_boolean);
-{ METHOD .AddX3DROUTE }
 { Original "Leif_Turn012SPLITTERBooleanFilter.EventInputTrue TO Leif_Turn012OnTimeTrigger.EventSet_boolean }
 { Sample Leif_Turn012SPLITTERBooleanFilter.EventInputTrue TO Leif_Turn012OnTimeTrigger.EventSet_boolean}
-Group17.AddRoute(BooleanFilter747.EventInputTrue, TimeTrigger751.set_EventSet_boolean);
+Group17.AddRoute(BooleanFilter747.EventInputTrue, TimeTrigger751.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Turn012SPLITTERBooleanFilter.EventInputFalse TO Leif_Turn012OffTimeTrigger.EventSet_boolean }
 { Sample Leif_Turn012SPLITTERBooleanFilter.EventInputFalse TO Leif_Turn012OffTimeTrigger.EventSet_boolean}
-Group17.AddRoute(BooleanFilter747.EventInputFalse, TimeTrigger750.set_EventSet_boolean);
+Group17.AddRoute(BooleanFilter747.EventInputFalse, TimeTrigger750.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Turn012SPLITTERBooleanFilter.EventInputTrue TO Leif_Turn012Timer.EventSet_enabled }
 { Sample Leif_Turn012SPLITTERBooleanFilter.EventInputTrue TO Leif_Turn012Timer.EventSet_enabled}
-Group17.AddRoute(BooleanFilter747.EventInputTrue, TimeSensor323.set_EventSet_enabled);
+Group17.AddRoute(BooleanFilter747.EventInputTrue, TimeSensor323.EventSet_enabled);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Turn012SPLITTERBooleanFilter.EventInputFalse TO Leif_Turn012Timer.EventSet_enabled }
 { Sample Leif_Turn012SPLITTERBooleanFilter.EventInputFalse TO Leif_Turn012Timer.EventSet_enabled}
-Group17.AddRoute(BooleanFilter747.EventInputFalse, TimeSensor323.set_EventSet_enabled);
+Group17.AddRoute(BooleanFilter747.EventInputFalse, TimeSensor323.EventSet_enabled);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Turn012OffTimeTrigger.EventTriggerTime TO Leif_Turn012Timer.stopTime }
-{ Sample Leif_Turn012OffTimeTrigger.EventTriggerTime TO Leif_Turn012Timer.stopTime}
-Group17.AddRoute(TimeTrigger750.EventTriggerTime, TimeSensor323.set_stopTime);
+{ Original "Leif_Turn012OffTimeTrigger.EventTriggerTime TO Leif_Turn012Timer.FdStopTime.EventIn }
+{ Sample Leif_Turn012OffTimeTrigger.EventTriggerTime TO Leif_Turn012Timer.FdStopTime.EventIn}
+Group17.AddRoute(TimeTrigger750.EventTriggerTime, TimeSensor323.FdStopTime.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Turn012OnTimeTrigger.EventTriggerTime TO Leif_Turn012Timer.startTime }
-{ Sample Leif_Turn012OnTimeTrigger.EventTriggerTime TO Leif_Turn012Timer.startTime}
-Group17.AddRoute(TimeTrigger751.EventTriggerTime, TimeSensor323.set_startTime);
+{ Original "Leif_Turn012OnTimeTrigger.EventTriggerTime TO Leif_Turn012Timer.FdStartTime.EventIn }
+{ Sample Leif_Turn012OnTimeTrigger.EventTriggerTime TO Leif_Turn012Timer.FdStartTime.EventIn}
+Group17.AddRoute(TimeTrigger751.EventTriggerTime, TimeSensor323.FdStartTime.EventIn);
 { METHOD .AddX3DROUTE }
 BooleanSequencer760 := TBooleanSequencerNode.Create;
 BooleanSequencer760.SetKey([0,0.223000004887581,0.43299999833107,0.629999995231628,0.730000019073486,0.860000014305115,1]);
@@ -4018,35 +4018,35 @@ TimeTrigger765 := TTimeTriggerNode.Create;
 Group17.FdChildren.Add(TimeTrigger765);
 { Original "Leif_z100sTimer.EventFraction_changed TO Leif_Walk013BooleanSequencer.EventSet_fraction }
 { Sample Leif_z100sTimer.EventFraction_changed TO Leif_Walk013BooleanSequencer.EventSet_fraction}
-Group17.AddRoute(TimeSensor706.EventFraction_changed, BooleanSequencer760.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor706.EventFraction_changed, BooleanSequencer760.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Walk013BooleanSequencer.EventValue_changed TO Leif_Walk013SPLITTERBooleanFilter.EventSet_boolean }
 { Sample Leif_Walk013BooleanSequencer.EventValue_changed TO Leif_Walk013SPLITTERBooleanFilter.EventSet_boolean}
-Group17.AddRoute(BooleanSequencer760.EventValue_changed, BooleanFilter761.set_EventSet_boolean);
+Group17.AddRoute(BooleanSequencer760.EventValue_changed, BooleanFilter761.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Walk013SPLITTERBooleanFilter.EventInputTrue TO Leif_Walk013OnTimeTrigger.EventSet_boolean }
 { Sample Leif_Walk013SPLITTERBooleanFilter.EventInputTrue TO Leif_Walk013OnTimeTrigger.EventSet_boolean}
-Group17.AddRoute(BooleanFilter761.EventInputTrue, TimeTrigger765.set_EventSet_boolean);
+Group17.AddRoute(BooleanFilter761.EventInputTrue, TimeTrigger765.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Walk013SPLITTERBooleanFilter.EventInputFalse TO Leif_Walk013OffTimeTrigger.EventSet_boolean }
 { Sample Leif_Walk013SPLITTERBooleanFilter.EventInputFalse TO Leif_Walk013OffTimeTrigger.EventSet_boolean}
-Group17.AddRoute(BooleanFilter761.EventInputFalse, TimeTrigger764.set_EventSet_boolean);
+Group17.AddRoute(BooleanFilter761.EventInputFalse, TimeTrigger764.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Walk013SPLITTERBooleanFilter.EventInputTrue TO Leif_Walk013Timer.EventSet_enabled }
 { Sample Leif_Walk013SPLITTERBooleanFilter.EventInputTrue TO Leif_Walk013Timer.EventSet_enabled}
-Group17.AddRoute(BooleanFilter761.EventInputTrue, TimeSensor402.set_EventSet_enabled);
+Group17.AddRoute(BooleanFilter761.EventInputTrue, TimeSensor402.EventSet_enabled);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Walk013SPLITTERBooleanFilter.EventInputFalse TO Leif_Walk013Timer.EventSet_enabled }
 { Sample Leif_Walk013SPLITTERBooleanFilter.EventInputFalse TO Leif_Walk013Timer.EventSet_enabled}
-Group17.AddRoute(BooleanFilter761.EventInputFalse, TimeSensor402.set_EventSet_enabled);
+Group17.AddRoute(BooleanFilter761.EventInputFalse, TimeSensor402.EventSet_enabled);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Walk013OffTimeTrigger.EventTriggerTime TO Leif_Walk013Timer.stopTime }
-{ Sample Leif_Walk013OffTimeTrigger.EventTriggerTime TO Leif_Walk013Timer.stopTime}
-Group17.AddRoute(TimeTrigger764.EventTriggerTime, TimeSensor402.set_stopTime);
+{ Original "Leif_Walk013OffTimeTrigger.EventTriggerTime TO Leif_Walk013Timer.FdStopTime.EventIn }
+{ Sample Leif_Walk013OffTimeTrigger.EventTriggerTime TO Leif_Walk013Timer.FdStopTime.EventIn}
+Group17.AddRoute(TimeTrigger764.EventTriggerTime, TimeSensor402.FdStopTime.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Walk013OnTimeTrigger.EventTriggerTime TO Leif_Walk013Timer.startTime }
-{ Sample Leif_Walk013OnTimeTrigger.EventTriggerTime TO Leif_Walk013Timer.startTime}
-Group17.AddRoute(TimeTrigger765.EventTriggerTime, TimeSensor402.set_startTime);
+{ Original "Leif_Walk013OnTimeTrigger.EventTriggerTime TO Leif_Walk013Timer.FdStartTime.EventIn }
+{ Sample Leif_Walk013OnTimeTrigger.EventTriggerTime TO Leif_Walk013Timer.FdStartTime.EventIn}
+Group17.AddRoute(TimeTrigger765.EventTriggerTime, TimeSensor402.FdStartTime.EventIn);
 { METHOD .AddX3DROUTE }
 BooleanSequencer774 := TBooleanSequencerNode.Create;
 BooleanSequencer774.SetKey([0,0.223000004887581,0.43299999833107,0.629999995231628,0.730000019073486,0.860000014305115,1]);
@@ -4063,47 +4063,47 @@ BooleanFilter777 := TBooleanFilterNode.Create;
 { METHOD .FdChildren.Add }
 Group17.FdChildren.Add(BooleanFilter777);
 TimeTrigger778 := TTimeTriggerNode.Create;
+{ METHOD .FdChildren.Add }
+Group17.FdChildren.Add(TimeTrigger778);
 end;
 
 procedure InitLeif5FinalPart88;
 begin
 
-{ METHOD .FdChildren.Add }
-Group17.FdChildren.Add(TimeTrigger778);
 TimeTrigger779 := TTimeTriggerNode.Create;
 { METHOD .FdChildren.Add }
 Group17.FdChildren.Add(TimeTrigger779);
 { Original "Leif_z100sTimer.EventFraction_changed TO Leif_Skip014BooleanSequencer.EventSet_fraction }
 { Sample Leif_z100sTimer.EventFraction_changed TO Leif_Skip014BooleanSequencer.EventSet_fraction}
-Group17.AddRoute(TimeSensor706.EventFraction_changed, BooleanSequencer774.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor706.EventFraction_changed, BooleanSequencer774.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Skip014BooleanSequencer.EventValue_changed TO Leif_Skip014SPLITTERBooleanFilter.EventSet_boolean }
 { Sample Leif_Skip014BooleanSequencer.EventValue_changed TO Leif_Skip014SPLITTERBooleanFilter.EventSet_boolean}
-Group17.AddRoute(BooleanSequencer774.EventValue_changed, BooleanFilter775.set_EventSet_boolean);
+Group17.AddRoute(BooleanSequencer774.EventValue_changed, BooleanFilter775.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Skip014SPLITTERBooleanFilter.EventInputTrue TO Leif_Skip014OnTimeTrigger.EventSet_boolean }
 { Sample Leif_Skip014SPLITTERBooleanFilter.EventInputTrue TO Leif_Skip014OnTimeTrigger.EventSet_boolean}
-Group17.AddRoute(BooleanFilter775.EventInputTrue, TimeTrigger779.set_EventSet_boolean);
+Group17.AddRoute(BooleanFilter775.EventInputTrue, TimeTrigger779.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Skip014SPLITTERBooleanFilter.EventInputFalse TO Leif_Skip014OffTimeTrigger.EventSet_boolean }
 { Sample Leif_Skip014SPLITTERBooleanFilter.EventInputFalse TO Leif_Skip014OffTimeTrigger.EventSet_boolean}
-Group17.AddRoute(BooleanFilter775.EventInputFalse, TimeTrigger778.set_EventSet_boolean);
+Group17.AddRoute(BooleanFilter775.EventInputFalse, TimeTrigger778.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Skip014SPLITTERBooleanFilter.EventInputTrue TO Leif_Skip014Timer.EventSet_enabled }
 { Sample Leif_Skip014SPLITTERBooleanFilter.EventInputTrue TO Leif_Skip014Timer.EventSet_enabled}
-Group17.AddRoute(BooleanFilter775.EventInputTrue, TimeSensor486.set_EventSet_enabled);
+Group17.AddRoute(BooleanFilter775.EventInputTrue, TimeSensor486.EventSet_enabled);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Skip014SPLITTERBooleanFilter.EventInputFalse TO Leif_Skip014Timer.EventSet_enabled }
 { Sample Leif_Skip014SPLITTERBooleanFilter.EventInputFalse TO Leif_Skip014Timer.EventSet_enabled}
-Group17.AddRoute(BooleanFilter775.EventInputFalse, TimeSensor486.set_EventSet_enabled);
+Group17.AddRoute(BooleanFilter775.EventInputFalse, TimeSensor486.EventSet_enabled);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Skip014OffTimeTrigger.EventTriggerTime TO Leif_Skip014Timer.stopTime }
-{ Sample Leif_Skip014OffTimeTrigger.EventTriggerTime TO Leif_Skip014Timer.stopTime}
-Group17.AddRoute(TimeTrigger778.EventTriggerTime, TimeSensor486.set_stopTime);
+{ Original "Leif_Skip014OffTimeTrigger.EventTriggerTime TO Leif_Skip014Timer.FdStopTime.EventIn }
+{ Sample Leif_Skip014OffTimeTrigger.EventTriggerTime TO Leif_Skip014Timer.FdStopTime.EventIn}
+Group17.AddRoute(TimeTrigger778.EventTriggerTime, TimeSensor486.FdStopTime.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Skip014OnTimeTrigger.EventTriggerTime TO Leif_Skip014Timer.startTime }
-{ Sample Leif_Skip014OnTimeTrigger.EventTriggerTime TO Leif_Skip014Timer.startTime}
-Group17.AddRoute(TimeTrigger779.EventTriggerTime, TimeSensor486.set_startTime);
+{ Original "Leif_Skip014OnTimeTrigger.EventTriggerTime TO Leif_Skip014Timer.FdStartTime.EventIn }
+{ Sample Leif_Skip014OnTimeTrigger.EventTriggerTime TO Leif_Skip014Timer.FdStartTime.EventIn}
+Group17.AddRoute(TimeTrigger779.EventTriggerTime, TimeSensor486.FdStartTime.EventIn);
 { METHOD .AddX3DROUTE }
 BooleanSequencer788 := TBooleanSequencerNode.Create;
 BooleanSequencer788.SetKey([0,0.223000004887581,0.43299999833107,0.629999995231628,0.730000019073486,0.860000014305115,1]);
@@ -4127,35 +4127,35 @@ TimeTrigger793 := TTimeTriggerNode.Create;
 Group17.FdChildren.Add(TimeTrigger793);
 { Original "Leif_z100sTimer.EventFraction_changed TO Leif_Stand015BooleanSequencer.EventSet_fraction }
 { Sample Leif_z100sTimer.EventFraction_changed TO Leif_Stand015BooleanSequencer.EventSet_fraction}
-Group17.AddRoute(TimeSensor706.EventFraction_changed, BooleanSequencer788.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor706.EventFraction_changed, BooleanSequencer788.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand015BooleanSequencer.EventValue_changed TO Leif_Stand015SPLITTERBooleanFilter.EventSet_boolean }
 { Sample Leif_Stand015BooleanSequencer.EventValue_changed TO Leif_Stand015SPLITTERBooleanFilter.EventSet_boolean}
-Group17.AddRoute(BooleanSequencer788.EventValue_changed, BooleanFilter789.set_EventSet_boolean);
+Group17.AddRoute(BooleanSequencer788.EventValue_changed, BooleanFilter789.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand015SPLITTERBooleanFilter.EventInputTrue TO Leif_Stand015OnTimeTrigger.EventSet_boolean }
 { Sample Leif_Stand015SPLITTERBooleanFilter.EventInputTrue TO Leif_Stand015OnTimeTrigger.EventSet_boolean}
-Group17.AddRoute(BooleanFilter789.EventInputTrue, TimeTrigger793.set_EventSet_boolean);
+Group17.AddRoute(BooleanFilter789.EventInputTrue, TimeTrigger793.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand015SPLITTERBooleanFilter.EventInputFalse TO Leif_Stand015OffTimeTrigger.EventSet_boolean }
 { Sample Leif_Stand015SPLITTERBooleanFilter.EventInputFalse TO Leif_Stand015OffTimeTrigger.EventSet_boolean}
-Group17.AddRoute(BooleanFilter789.EventInputFalse, TimeTrigger792.set_EventSet_boolean);
+Group17.AddRoute(BooleanFilter789.EventInputFalse, TimeTrigger792.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand015SPLITTERBooleanFilter.EventInputTrue TO Leif_Stand015Timer.EventSet_enabled }
 { Sample Leif_Stand015SPLITTERBooleanFilter.EventInputTrue TO Leif_Stand015Timer.EventSet_enabled}
-Group17.AddRoute(BooleanFilter789.EventInputTrue, TimeSensor515.set_EventSet_enabled);
+Group17.AddRoute(BooleanFilter789.EventInputTrue, TimeSensor515.EventSet_enabled);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand015SPLITTERBooleanFilter.EventInputFalse TO Leif_Stand015Timer.EventSet_enabled }
 { Sample Leif_Stand015SPLITTERBooleanFilter.EventInputFalse TO Leif_Stand015Timer.EventSet_enabled}
-Group17.AddRoute(BooleanFilter789.EventInputFalse, TimeSensor515.set_EventSet_enabled);
+Group17.AddRoute(BooleanFilter789.EventInputFalse, TimeSensor515.EventSet_enabled);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand015OffTimeTrigger.EventTriggerTime TO Leif_Stand015Timer.stopTime }
-{ Sample Leif_Stand015OffTimeTrigger.EventTriggerTime TO Leif_Stand015Timer.stopTime}
-Group17.AddRoute(TimeTrigger792.EventTriggerTime, TimeSensor515.set_stopTime);
+{ Original "Leif_Stand015OffTimeTrigger.EventTriggerTime TO Leif_Stand015Timer.FdStopTime.EventIn }
+{ Sample Leif_Stand015OffTimeTrigger.EventTriggerTime TO Leif_Stand015Timer.FdStopTime.EventIn}
+Group17.AddRoute(TimeTrigger792.EventTriggerTime, TimeSensor515.FdStopTime.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand015OnTimeTrigger.EventTriggerTime TO Leif_Stand015Timer.startTime }
-{ Sample Leif_Stand015OnTimeTrigger.EventTriggerTime TO Leif_Stand015Timer.startTime}
-Group17.AddRoute(TimeTrigger793.EventTriggerTime, TimeSensor515.set_startTime);
+{ Original "Leif_Stand015OnTimeTrigger.EventTriggerTime TO Leif_Stand015Timer.FdStartTime.EventIn }
+{ Sample Leif_Stand015OnTimeTrigger.EventTriggerTime TO Leif_Stand015Timer.FdStartTime.EventIn}
+Group17.AddRoute(TimeTrigger793.EventTriggerTime, TimeSensor515.FdStartTime.EventIn);
 { METHOD .AddX3DROUTE }
 BooleanSequencer802 := TBooleanSequencerNode.Create;
 BooleanSequencer802.SetKey([0,0.223000004887581,0.43299999833107,0.629999995231628,0.730000019073486,0.860000014305115,1]);
@@ -4166,13 +4166,13 @@ BooleanFilter803 := TBooleanFilterNode.Create;
 { METHOD .FdChildren.Add }
 Group17.FdChildren.Add(BooleanFilter803);
 BooleanFilter804 := TBooleanFilterNode.Create;
+{ METHOD .FdChildren.Add }
+Group17.FdChildren.Add(BooleanFilter804);
 end;
 
 procedure InitLeif5FinalPart89;
 begin
 
-{ METHOD .FdChildren.Add }
-Group17.FdChildren.Add(BooleanFilter804);
 BooleanFilter805 := TBooleanFilterNode.Create;
 { METHOD .FdChildren.Add }
 Group17.FdChildren.Add(BooleanFilter805);
@@ -4182,145 +4182,145 @@ Group17.FdChildren.Add(TimeTrigger806);
 TimeTrigger807 := TTimeTriggerNode.Create;
 { METHOD .FdChildren.Add }
 Group17.FdChildren.Add(TimeTrigger807);
-{ Original "Leif_z100sTimer.EventCycleTime TO Leif_Stand016Timer.stopTime }
-{ Sample Leif_z100sTimer.EventCycleTime TO Leif_Stand016Timer.stopTime}
-Group17.AddRoute(TimeSensor706.EventCycleTime, TimeSensor611.set_stopTime);
+{ Original "Leif_z100sTimer.EventCycleTime TO Leif_Stand016Timer.FdStopTime.EventIn }
+{ Sample Leif_z100sTimer.EventCycleTime TO Leif_Stand016Timer.FdStopTime.EventIn}
+Group17.AddRoute(TimeSensor706.EventCycleTime, TimeSensor611.FdStopTime.EventIn);
 { METHOD .AddX3DROUTE }
 { Original "Leif_z100sTimer.EventIsActive TO Leif_Stand016Timer.EventSet_enabled }
 { Sample Leif_z100sTimer.EventIsActive TO Leif_Stand016Timer.EventSet_enabled}
-Group17.AddRoute(TimeSensor706.EventIsActive, TimeSensor611.set_EventSet_enabled);
+Group17.AddRoute(TimeSensor706.EventIsActive, TimeSensor611.EventSet_enabled);
 { METHOD .AddX3DROUTE }
 TimeTrigger810 := TTimeTriggerNode.Create;
 { METHOD .FdChildren.Add }
 Group17.FdChildren.Add(TimeTrigger810);
 { Original "Leif_Stand016FINALEBooleanFilter.EventInputFalse TO Leif_Stand016FINALETimeTrigger.EventSet_boolean }
 { Sample Leif_Stand016FINALEBooleanFilter.EventInputFalse TO Leif_Stand016FINALETimeTrigger.EventSet_boolean}
-Group17.AddRoute(BooleanFilter804.EventInputFalse, TimeTrigger810.set_EventSet_boolean);
+Group17.AddRoute(BooleanFilter804.EventInputFalse, TimeTrigger810.EventSet_boolean);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand016FINALETimeTrigger.EventTriggerTime TO Leif_Stand016Timer.stopTime }
-{ Sample Leif_Stand016FINALETimeTrigger.EventTriggerTime TO Leif_Stand016Timer.stopTime}
-Group17.AddRoute(TimeTrigger810.EventTriggerTime, TimeSensor611.set_stopTime);
+{ Original "Leif_Stand016FINALETimeTrigger.EventTriggerTime TO Leif_Stand016Timer.FdStopTime.EventIn }
+{ Sample Leif_Stand016FINALETimeTrigger.EventTriggerTime TO Leif_Stand016Timer.FdStopTime.EventIn}
+Group17.AddRoute(TimeTrigger810.EventTriggerTime, TimeSensor611.FdStopTime.EventIn);
 { METHOD .AddX3DROUTE }
 { Original "Leif_z100sTimer.EventFraction_changed TO Leif_Stand016BooleanSequencer.EventSet_fraction }
 { Sample Leif_z100sTimer.EventFraction_changed TO Leif_Stand016BooleanSequencer.EventSet_fraction}
-Group17.AddRoute(TimeSensor706.EventFraction_changed, BooleanSequencer802.set_EventSet_fraction);
+Group17.AddRoute(TimeSensor706.EventFraction_changed, BooleanSequencer802.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand016BooleanSequencer.EventValue_changed TO Leif_Stand016SPLITTERBooleanFilter.EventSet_boolean }
 { Sample Leif_Stand016BooleanSequencer.EventValue_changed TO Leif_Stand016SPLITTERBooleanFilter.EventSet_boolean}
-Group17.AddRoute(BooleanSequencer802.EventValue_changed, BooleanFilter803.set_EventSet_boolean);
+Group17.AddRoute(BooleanSequencer802.EventValue_changed, BooleanFilter803.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand016SPLITTERBooleanFilter.EventInputTrue TO Leif_Stand016OnTimeTrigger.EventSet_boolean }
 { Sample Leif_Stand016SPLITTERBooleanFilter.EventInputTrue TO Leif_Stand016OnTimeTrigger.EventSet_boolean}
-Group17.AddRoute(BooleanFilter803.EventInputTrue, TimeTrigger807.set_EventSet_boolean);
+Group17.AddRoute(BooleanFilter803.EventInputTrue, TimeTrigger807.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand016SPLITTERBooleanFilter.EventInputFalse TO Leif_Stand016OffTimeTrigger.EventSet_boolean }
 { Sample Leif_Stand016SPLITTERBooleanFilter.EventInputFalse TO Leif_Stand016OffTimeTrigger.EventSet_boolean}
-Group17.AddRoute(BooleanFilter803.EventInputFalse, TimeTrigger806.set_EventSet_boolean);
+Group17.AddRoute(BooleanFilter803.EventInputFalse, TimeTrigger806.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand016SPLITTERBooleanFilter.EventInputTrue TO Leif_Stand016Timer.EventSet_enabled }
 { Sample Leif_Stand016SPLITTERBooleanFilter.EventInputTrue TO Leif_Stand016Timer.EventSet_enabled}
-Group17.AddRoute(BooleanFilter803.EventInputTrue, TimeSensor611.set_EventSet_enabled);
+Group17.AddRoute(BooleanFilter803.EventInputTrue, TimeSensor611.EventSet_enabled);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand016SPLITTERBooleanFilter.EventInputFalse TO Leif_Stand016Timer.EventSet_enabled }
 { Sample Leif_Stand016SPLITTERBooleanFilter.EventInputFalse TO Leif_Stand016Timer.EventSet_enabled}
-Group17.AddRoute(BooleanFilter803.EventInputFalse, TimeSensor611.set_EventSet_enabled);
+Group17.AddRoute(BooleanFilter803.EventInputFalse, TimeSensor611.EventSet_enabled);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand016OffTimeTrigger.EventTriggerTime TO Leif_Stand016Timer.stopTime }
-{ Sample Leif_Stand016OffTimeTrigger.EventTriggerTime TO Leif_Stand016Timer.stopTime}
-Group17.AddRoute(TimeTrigger806.EventTriggerTime, TimeSensor611.set_stopTime);
+{ Original "Leif_Stand016OffTimeTrigger.EventTriggerTime TO Leif_Stand016Timer.FdStopTime.EventIn }
+{ Sample Leif_Stand016OffTimeTrigger.EventTriggerTime TO Leif_Stand016Timer.FdStopTime.EventIn}
+Group17.AddRoute(TimeTrigger806.EventTriggerTime, TimeSensor611.FdStopTime.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand016OnTimeTrigger.EventTriggerTime TO Leif_Stand016Timer.startTime }
-{ Sample Leif_Stand016OnTimeTrigger.EventTriggerTime TO Leif_Stand016Timer.startTime}
-Group17.AddRoute(TimeTrigger807.EventTriggerTime, TimeSensor611.set_startTime);
+{ Original "Leif_Stand016OnTimeTrigger.EventTriggerTime TO Leif_Stand016Timer.FdStartTime.EventIn }
+{ Sample Leif_Stand016OnTimeTrigger.EventTriggerTime TO Leif_Stand016Timer.FdStartTime.EventIn}
+Group17.AddRoute(TimeTrigger807.EventTriggerTime, TimeSensor611.FdStartTime.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand010Timer.EventStopTime_changed TO Leif_Stand010Timer.startTime }
-{ Sample Leif_Stand010Timer.EventStopTime_changed TO Leif_Stand010Timer.startTime}
-Group17.AddRoute(TimeSensor148.EventStopTime_changed, TimeSensor148.set_startTime);
+{ Original "Leif_Stand010Timer.EventStopTime_changed TO Leif_Stand010Timer.FdStartTime.EventIn }
+{ Sample Leif_Stand010Timer.EventStopTime_changed TO Leif_Stand010Timer.FdStartTime.EventIn}
+Group17.AddRoute(TimeSensor148.EventStopTime_changed, TimeSensor148.FdStartTime.EventIn);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand010Timer.EventIsActive TO Leif_Stand010NEGATERBooleanFilter.EventSet_boolean }
 { Sample Leif_Stand010Timer.EventIsActive TO Leif_Stand010NEGATERBooleanFilter.EventSet_boolean}
-Group17.AddRoute(TimeSensor148.EventIsActive, BooleanFilter720.set_EventSet_boolean);
+Group17.AddRoute(TimeSensor148.EventIsActive, BooleanFilter720.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand010NEGATERBooleanFilter.EventInputNegate TO Leif_Stand010BooleanSequencer.next }
 { Sample Leif_Stand010NEGATERBooleanFilter.EventInputNegate TO Leif_Stand010BooleanSequencer.next}
-Group17.AddRoute(BooleanFilter720.EventInputNegate, BooleanSequencer717.set_next);
+Group17.AddRoute(BooleanFilter720.EventInputNegate, BooleanSequencer717.next);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Run011Timer.EventStopTime_changed TO Leif_Run011Timer.startTime }
-{ Sample Leif_Run011Timer.EventStopTime_changed TO Leif_Run011Timer.startTime}
-Group17.AddRoute(TimeSensor244.EventStopTime_changed, TimeSensor244.set_startTime);
+{ Original "Leif_Run011Timer.EventStopTime_changed TO Leif_Run011Timer.FdStartTime.EventIn }
+{ Sample Leif_Run011Timer.EventStopTime_changed TO Leif_Run011Timer.FdStartTime.EventIn}
+Group17.AddRoute(TimeSensor244.EventStopTime_changed, TimeSensor244.FdStartTime.EventIn);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Run011Timer.EventIsActive TO Leif_Run011NEGATERBooleanFilter.EventSet_boolean }
 { Sample Leif_Run011Timer.EventIsActive TO Leif_Run011NEGATERBooleanFilter.EventSet_boolean}
-Group17.AddRoute(TimeSensor244.EventIsActive, BooleanFilter735.set_EventSet_boolean);
+Group17.AddRoute(TimeSensor244.EventIsActive, BooleanFilter735.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Run011NEGATERBooleanFilter.EventInputNegate TO Leif_Run011BooleanSequencer.next }
 { Sample Leif_Run011NEGATERBooleanFilter.EventInputNegate TO Leif_Run011BooleanSequencer.next}
-Group17.AddRoute(BooleanFilter735.EventInputNegate, BooleanSequencer732.set_next);
+Group17.AddRoute(BooleanFilter735.EventInputNegate, BooleanSequencer732.next);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Turn012Timer.EventStopTime_changed TO Leif_Turn012Timer.startTime }
-{ Sample Leif_Turn012Timer.EventStopTime_changed TO Leif_Turn012Timer.startTime}
-Group17.AddRoute(TimeSensor323.EventStopTime_changed, TimeSensor323.set_startTime);
+{ Original "Leif_Turn012Timer.EventStopTime_changed TO Leif_Turn012Timer.FdStartTime.EventIn }
+{ Sample Leif_Turn012Timer.EventStopTime_changed TO Leif_Turn012Timer.FdStartTime.EventIn}
+Group17.AddRoute(TimeSensor323.EventStopTime_changed, TimeSensor323.FdStartTime.EventIn);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Turn012Timer.EventIsActive TO Leif_Turn012NEGATERBooleanFilter.EventSet_boolean }
 { Sample Leif_Turn012Timer.EventIsActive TO Leif_Turn012NEGATERBooleanFilter.EventSet_boolean}
-Group17.AddRoute(TimeSensor323.EventIsActive, BooleanFilter749.set_EventSet_boolean);
+Group17.AddRoute(TimeSensor323.EventIsActive, BooleanFilter749.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Turn012NEGATERBooleanFilter.EventInputNegate TO Leif_Turn012BooleanSequencer.next }
 { Sample Leif_Turn012NEGATERBooleanFilter.EventInputNegate TO Leif_Turn012BooleanSequencer.next}
-Group17.AddRoute(BooleanFilter749.EventInputNegate, BooleanSequencer746.set_next);
+Group17.AddRoute(BooleanFilter749.EventInputNegate, BooleanSequencer746.next);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Walk013Timer.EventStopTime_changed TO Leif_Walk013Timer.startTime }
-{ Sample Leif_Walk013Timer.EventStopTime_changed TO Leif_Walk013Timer.startTime}
-Group17.AddRoute(TimeSensor402.EventStopTime_changed, TimeSensor402.set_startTime);
+{ Original "Leif_Walk013Timer.EventStopTime_changed TO Leif_Walk013Timer.FdStartTime.EventIn }
+{ Sample Leif_Walk013Timer.EventStopTime_changed TO Leif_Walk013Timer.FdStartTime.EventIn}
+Group17.AddRoute(TimeSensor402.EventStopTime_changed, TimeSensor402.FdStartTime.EventIn);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Walk013Timer.EventIsActive TO Leif_Walk013NEGATERBooleanFilter.EventSet_boolean }
 { Sample Leif_Walk013Timer.EventIsActive TO Leif_Walk013NEGATERBooleanFilter.EventSet_boolean}
-Group17.AddRoute(TimeSensor402.EventIsActive, BooleanFilter763.set_EventSet_boolean);
+Group17.AddRoute(TimeSensor402.EventIsActive, BooleanFilter763.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Walk013NEGATERBooleanFilter.EventInputNegate TO Leif_Walk013BooleanSequencer.next }
 { Sample Leif_Walk013NEGATERBooleanFilter.EventInputNegate TO Leif_Walk013BooleanSequencer.next}
-Group17.AddRoute(BooleanFilter763.EventInputNegate, BooleanSequencer760.set_next);
+Group17.AddRoute(BooleanFilter763.EventInputNegate, BooleanSequencer760.next);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Skip014Timer.EventStopTime_changed TO Leif_Skip014Timer.startTime }
-{ Sample Leif_Skip014Timer.EventStopTime_changed TO Leif_Skip014Timer.startTime}
-Group17.AddRoute(TimeSensor486.EventStopTime_changed, TimeSensor486.set_startTime);
+{ Original "Leif_Skip014Timer.EventStopTime_changed TO Leif_Skip014Timer.FdStartTime.EventIn }
+{ Sample Leif_Skip014Timer.EventStopTime_changed TO Leif_Skip014Timer.FdStartTime.EventIn}
+Group17.AddRoute(TimeSensor486.EventStopTime_changed, TimeSensor486.FdStartTime.EventIn);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Skip014Timer.EventIsActive TO Leif_Skip014NEGATERBooleanFilter.EventSet_boolean }
 { Sample Leif_Skip014Timer.EventIsActive TO Leif_Skip014NEGATERBooleanFilter.EventSet_boolean}
-Group17.AddRoute(TimeSensor486.EventIsActive, BooleanFilter777.set_EventSet_boolean);
+Group17.AddRoute(TimeSensor486.EventIsActive, BooleanFilter777.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Skip014NEGATERBooleanFilter.EventInputNegate TO Leif_Skip014BooleanSequencer.next }
 { Sample Leif_Skip014NEGATERBooleanFilter.EventInputNegate TO Leif_Skip014BooleanSequencer.next}
-Group17.AddRoute(BooleanFilter777.EventInputNegate, BooleanSequencer774.set_next);
+Group17.AddRoute(BooleanFilter777.EventInputNegate, BooleanSequencer774.next);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand015Timer.EventStopTime_changed TO Leif_Stand015Timer.startTime }
-{ Sample Leif_Stand015Timer.EventStopTime_changed TO Leif_Stand015Timer.startTime}
-Group17.AddRoute(TimeSensor515.EventStopTime_changed, TimeSensor515.set_startTime);
+{ Original "Leif_Stand015Timer.EventStopTime_changed TO Leif_Stand015Timer.FdStartTime.EventIn }
+{ Sample Leif_Stand015Timer.EventStopTime_changed TO Leif_Stand015Timer.FdStartTime.EventIn}
+Group17.AddRoute(TimeSensor515.EventStopTime_changed, TimeSensor515.FdStartTime.EventIn);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand015Timer.EventIsActive TO Leif_Stand015NEGATERBooleanFilter.EventSet_boolean }
 { Sample Leif_Stand015Timer.EventIsActive TO Leif_Stand015NEGATERBooleanFilter.EventSet_boolean}
-Group17.AddRoute(TimeSensor515.EventIsActive, BooleanFilter791.set_EventSet_boolean);
+Group17.AddRoute(TimeSensor515.EventIsActive, BooleanFilter791.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Leif_Stand015NEGATERBooleanFilter.EventInputNegate TO Leif_Stand015BooleanSequencer.next }
 { Sample Leif_Stand015NEGATERBooleanFilter.EventInputNegate TO Leif_Stand015BooleanSequencer.next}
-Group17.AddRoute(BooleanFilter791.EventInputNegate, BooleanSequencer788.set_next);
+Group17.AddRoute(BooleanFilter791.EventInputNegate, BooleanSequencer788.next);
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand016Timer.EventStopTime_changed TO Leif_Stand016Timer.startTime }
-{ Sample Leif_Stand016Timer.EventStopTime_changed TO Leif_Stand016Timer.startTime}
-Group17.AddRoute(TimeSensor611.EventStopTime_changed, TimeSensor611.set_startTime);
+{ Original "Leif_Stand016Timer.EventStopTime_changed TO Leif_Stand016Timer.FdStartTime.EventIn }
+{ Sample Leif_Stand016Timer.EventStopTime_changed TO Leif_Stand016Timer.FdStartTime.EventIn}
+Group17.AddRoute(TimeSensor611.EventStopTime_changed, TimeSensor611.FdStartTime.EventIn);
+{ METHOD .AddX3DROUTE }
+{ Original "Leif_Stand016Timer.EventIsActive TO Leif_Stand016NEGATERBooleanFilter.EventSet_boolean }
+{ Sample Leif_Stand016Timer.EventIsActive TO Leif_Stand016NEGATERBooleanFilter.EventSet_boolean}
+Group17.AddRoute(TimeSensor611.EventIsActive, BooleanFilter805.EventSet_boolean);
 end;
 
 procedure InitLeif5FinalPart90;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "Leif_Stand016Timer.EventIsActive TO Leif_Stand016NEGATERBooleanFilter.EventSet_boolean }
-{ Sample Leif_Stand016Timer.EventIsActive TO Leif_Stand016NEGATERBooleanFilter.EventSet_boolean}
-Group17.AddRoute(TimeSensor611.EventIsActive, BooleanFilter805.set_EventSet_boolean);
-{ METHOD .AddX3DROUTE }
 { Original "Leif_Stand016NEGATERBooleanFilter.EventInputNegate TO Leif_Stand016BooleanSequencer.next }
 { Sample Leif_Stand016NEGATERBooleanFilter.EventInputNegate TO Leif_Stand016BooleanSequencer.next}
-Group17.AddRoute(BooleanFilter805.EventInputNegate, BooleanSequencer802.set_next);
+Group17.AddRoute(BooleanFilter805.EventInputNegate, BooleanSequencer802.next);
 { METHOD .AddX3DROUTE }
 { METHOD .AddGroup }
 X3D0.AddChildren([Group17]);

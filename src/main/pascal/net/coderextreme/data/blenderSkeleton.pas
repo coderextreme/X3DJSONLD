@@ -6064,7 +6064,7 @@ ProximitySensor1350.Size := Vector3(1000000,1000000,1000000);
 Group8.FdChildren.Add(ProximitySensor1350);
 { Original "Armature_Close.EventEnterTime TO Armature_Clock.startTime }
 { Sample Armature_Close.EventEnterTime TO Armature_Clock.startTime}
-Group8.AddRoute(ProximitySensor1350.EventEnterTime, TimeSensor1349.set_startTime);
+Group8.AddRoute(ProximitySensor1350.EventEnterTime, TimeSensor1349.startTime);
 { METHOD .AddX3DROUTE }
 OrientationInterpolator1352 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator1352.SetKey([0,1]);
@@ -6868,7 +6868,7 @@ OrientationInterpolator1497.SetKeyValue([Vector4(0,0,0,0),Vector4(0,0,0,0)]);
 Group8.FdChildren.Add(OrientationInterpolator1497);
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_sacrum.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_sacrum.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1352.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1352.EventSet_fraction);
 end;
 
 procedure InitblenderSkeletonPart86;
@@ -6877,1202 +6877,1202 @@ begin
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_sacrum.EventValue_changed TO hanim_sacrum.rotation }
 { Sample Armature_OI_sacrum.EventValue_changed TO hanim_sacrum.rotation}
-Group8.AddRoute(OrientationInterpolator1352.EventValue_changed, HAnimJoint35.set_rotation);
+Group8.AddRoute(OrientationInterpolator1352.EventValue_changed, HAnimJoint35.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_pelvis.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_pelvis.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1353.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1353.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_pelvis.EventValue_changed TO hanim_pelvis.rotation }
 { Sample Armature_OI_pelvis.EventValue_changed TO hanim_pelvis.rotation}
-Group8.AddRoute(OrientationInterpolator1353.EventValue_changed, HAnimJoint43.set_rotation);
+Group8.AddRoute(OrientationInterpolator1353.EventValue_changed, HAnimJoint43.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_thigh.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_thigh.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1354.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1354.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_thigh.EventValue_changed TO hanim_l_thigh.rotation }
 { Sample Armature_OI_l_thigh.EventValue_changed TO hanim_l_thigh.rotation}
-Group8.AddRoute(OrientationInterpolator1354.EventValue_changed, HAnimJoint51.set_rotation);
+Group8.AddRoute(OrientationInterpolator1354.EventValue_changed, HAnimJoint51.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_calf.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_calf.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1355.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1355.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_calf.EventValue_changed TO hanim_l_calf.rotation }
 { Sample Armature_OI_l_calf.EventValue_changed TO hanim_l_calf.rotation}
-Group8.AddRoute(OrientationInterpolator1355.EventValue_changed, HAnimJoint59.set_rotation);
+Group8.AddRoute(OrientationInterpolator1355.EventValue_changed, HAnimJoint59.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_talus.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_talus.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1356.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1356.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_talus.EventValue_changed TO hanim_l_talus.rotation }
 { Sample Armature_OI_l_talus.EventValue_changed TO hanim_l_talus.rotation}
-Group8.AddRoute(OrientationInterpolator1356.EventValue_changed, HAnimJoint67.set_rotation);
+Group8.AddRoute(OrientationInterpolator1356.EventValue_changed, HAnimJoint67.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_navicular.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_navicular.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1357.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1357.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_navicular.EventValue_changed TO hanim_l_navicular.rotation }
 { Sample Armature_OI_l_navicular.EventValue_changed TO hanim_l_navicular.rotation}
-Group8.AddRoute(OrientationInterpolator1357.EventValue_changed, HAnimJoint75.set_rotation);
+Group8.AddRoute(OrientationInterpolator1357.EventValue_changed, HAnimJoint75.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_cuneiform_1.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_cuneiform_1.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1358.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1358.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_cuneiform_1.EventValue_changed TO hanim_l_cuneiform_1.rotation }
 { Sample Armature_OI_l_cuneiform_1.EventValue_changed TO hanim_l_cuneiform_1.rotation}
-Group8.AddRoute(OrientationInterpolator1358.EventValue_changed, HAnimJoint83.set_rotation);
+Group8.AddRoute(OrientationInterpolator1358.EventValue_changed, HAnimJoint83.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_metatarsal_1.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_metatarsal_1.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1359.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1359.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_metatarsal_1.EventValue_changed TO hanim_l_metatarsal_1.rotation }
 { Sample Armature_OI_l_metatarsal_1.EventValue_changed TO hanim_l_metatarsal_1.rotation}
-Group8.AddRoute(OrientationInterpolator1359.EventValue_changed, HAnimJoint91.set_rotation);
+Group8.AddRoute(OrientationInterpolator1359.EventValue_changed, HAnimJoint91.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_tarsal_proximal_phalanx_1.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_tarsal_proximal_phalanx_1.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1360.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1360.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_tarsal_proximal_phalanx_1.EventValue_changed TO hanim_l_tarsal_proximal_phalanx_1.rotation }
 { Sample Armature_OI_l_tarsal_proximal_phalanx_1.EventValue_changed TO hanim_l_tarsal_proximal_phalanx_1.rotation}
-Group8.AddRoute(OrientationInterpolator1360.EventValue_changed, HAnimJoint99.set_rotation);
+Group8.AddRoute(OrientationInterpolator1360.EventValue_changed, HAnimJoint99.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_tarsal_distal_phalanx_1.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_tarsal_distal_phalanx_1.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1361.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1361.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_tarsal_distal_phalanx_1.EventValue_changed TO hanim_l_tarsal_distal_phalanx_1.rotation }
 { Sample Armature_OI_l_tarsal_distal_phalanx_1.EventValue_changed TO hanim_l_tarsal_distal_phalanx_1.rotation}
-Group8.AddRoute(OrientationInterpolator1361.EventValue_changed, HAnimJoint107.set_rotation);
+Group8.AddRoute(OrientationInterpolator1361.EventValue_changed, HAnimJoint107.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_cuneiform_2.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_cuneiform_2.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1362.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1362.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_cuneiform_2.EventValue_changed TO hanim_l_cuneiform_2.rotation }
 { Sample Armature_OI_l_cuneiform_2.EventValue_changed TO hanim_l_cuneiform_2.rotation}
-Group8.AddRoute(OrientationInterpolator1362.EventValue_changed, HAnimJoint115.set_rotation);
+Group8.AddRoute(OrientationInterpolator1362.EventValue_changed, HAnimJoint115.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_metatarsal_2.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_metatarsal_2.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1363.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1363.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_metatarsal_2.EventValue_changed TO hanim_l_metatarsal_2.rotation }
 { Sample Armature_OI_l_metatarsal_2.EventValue_changed TO hanim_l_metatarsal_2.rotation}
-Group8.AddRoute(OrientationInterpolator1363.EventValue_changed, HAnimJoint123.set_rotation);
+Group8.AddRoute(OrientationInterpolator1363.EventValue_changed, HAnimJoint123.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_tarsal_proximal_phalanx_2.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_tarsal_proximal_phalanx_2.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1364.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1364.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_tarsal_proximal_phalanx_2.EventValue_changed TO hanim_l_tarsal_proximal_phalanx_2.rotation }
 { Sample Armature_OI_l_tarsal_proximal_phalanx_2.EventValue_changed TO hanim_l_tarsal_proximal_phalanx_2.rotation}
-Group8.AddRoute(OrientationInterpolator1364.EventValue_changed, HAnimJoint131.set_rotation);
+Group8.AddRoute(OrientationInterpolator1364.EventValue_changed, HAnimJoint131.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_tarsal_middle_phalanx_2.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_tarsal_middle_phalanx_2.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1365.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1365.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_tarsal_middle_phalanx_2.EventValue_changed TO hanim_l_tarsal_middle_phalanx_2.rotation }
 { Sample Armature_OI_l_tarsal_middle_phalanx_2.EventValue_changed TO hanim_l_tarsal_middle_phalanx_2.rotation}
-Group8.AddRoute(OrientationInterpolator1365.EventValue_changed, HAnimJoint139.set_rotation);
+Group8.AddRoute(OrientationInterpolator1365.EventValue_changed, HAnimJoint139.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_tarsal_distal_phalanx_2.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_tarsal_distal_phalanx_2.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1366.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1366.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_tarsal_distal_phalanx_2.EventValue_changed TO hanim_l_tarsal_distal_phalanx_2.rotation }
 { Sample Armature_OI_l_tarsal_distal_phalanx_2.EventValue_changed TO hanim_l_tarsal_distal_phalanx_2.rotation}
-Group8.AddRoute(OrientationInterpolator1366.EventValue_changed, HAnimJoint147.set_rotation);
+Group8.AddRoute(OrientationInterpolator1366.EventValue_changed, HAnimJoint147.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_cuneiform_3.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_cuneiform_3.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1367.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1367.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_cuneiform_3.EventValue_changed TO hanim_l_cuneiform_3.rotation }
 { Sample Armature_OI_l_cuneiform_3.EventValue_changed TO hanim_l_cuneiform_3.rotation}
-Group8.AddRoute(OrientationInterpolator1367.EventValue_changed, HAnimJoint155.set_rotation);
+Group8.AddRoute(OrientationInterpolator1367.EventValue_changed, HAnimJoint155.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_metatarsal_3.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_metatarsal_3.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1368.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1368.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_metatarsal_3.EventValue_changed TO hanim_l_metatarsal_3.rotation }
 { Sample Armature_OI_l_metatarsal_3.EventValue_changed TO hanim_l_metatarsal_3.rotation}
-Group8.AddRoute(OrientationInterpolator1368.EventValue_changed, HAnimJoint163.set_rotation);
+Group8.AddRoute(OrientationInterpolator1368.EventValue_changed, HAnimJoint163.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_tarsal_proximal_phalanx_3.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_tarsal_proximal_phalanx_3.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1369.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1369.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_tarsal_proximal_phalanx_3.EventValue_changed TO hanim_l_tarsal_proximal_phalanx_3.rotation }
 { Sample Armature_OI_l_tarsal_proximal_phalanx_3.EventValue_changed TO hanim_l_tarsal_proximal_phalanx_3.rotation}
-Group8.AddRoute(OrientationInterpolator1369.EventValue_changed, HAnimJoint171.set_rotation);
+Group8.AddRoute(OrientationInterpolator1369.EventValue_changed, HAnimJoint171.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_tarsal_middle_phalanx_3.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_tarsal_middle_phalanx_3.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1370.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1370.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_tarsal_middle_phalanx_3.EventValue_changed TO hanim_l_tarsal_middle_phalanx_3.rotation }
 { Sample Armature_OI_l_tarsal_middle_phalanx_3.EventValue_changed TO hanim_l_tarsal_middle_phalanx_3.rotation}
-Group8.AddRoute(OrientationInterpolator1370.EventValue_changed, HAnimJoint179.set_rotation);
+Group8.AddRoute(OrientationInterpolator1370.EventValue_changed, HAnimJoint179.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_tarsal_distal_phalanx_3.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_tarsal_distal_phalanx_3.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1371.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1371.EventSet_fraction);
+{ METHOD .AddX3DROUTE }
+{ Original "Armature_OI_l_tarsal_distal_phalanx_3.EventValue_changed TO hanim_l_tarsal_distal_phalanx_3.rotation }
+{ Sample Armature_OI_l_tarsal_distal_phalanx_3.EventValue_changed TO hanim_l_tarsal_distal_phalanx_3.rotation}
+Group8.AddRoute(OrientationInterpolator1371.EventValue_changed, HAnimJoint187.rotation);
 end;
 
 procedure InitblenderSkeletonPart87;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "Armature_OI_l_tarsal_distal_phalanx_3.EventValue_changed TO hanim_l_tarsal_distal_phalanx_3.rotation }
-{ Sample Armature_OI_l_tarsal_distal_phalanx_3.EventValue_changed TO hanim_l_tarsal_distal_phalanx_3.rotation}
-Group8.AddRoute(OrientationInterpolator1371.EventValue_changed, HAnimJoint187.set_rotation);
-{ METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_calcaneus.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_calcaneus.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1372.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1372.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_calcaneus.EventValue_changed TO hanim_l_calcaneus.rotation }
 { Sample Armature_OI_l_calcaneus.EventValue_changed TO hanim_l_calcaneus.rotation}
-Group8.AddRoute(OrientationInterpolator1372.EventValue_changed, HAnimJoint195.set_rotation);
+Group8.AddRoute(OrientationInterpolator1372.EventValue_changed, HAnimJoint195.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_cuboid.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_cuboid.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1373.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1373.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_cuboid.EventValue_changed TO hanim_l_cuboid.rotation }
 { Sample Armature_OI_l_cuboid.EventValue_changed TO hanim_l_cuboid.rotation}
-Group8.AddRoute(OrientationInterpolator1373.EventValue_changed, HAnimJoint203.set_rotation);
+Group8.AddRoute(OrientationInterpolator1373.EventValue_changed, HAnimJoint203.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_metatarsal_4.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_metatarsal_4.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1374.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1374.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_metatarsal_4.EventValue_changed TO hanim_l_metatarsal_4.rotation }
 { Sample Armature_OI_l_metatarsal_4.EventValue_changed TO hanim_l_metatarsal_4.rotation}
-Group8.AddRoute(OrientationInterpolator1374.EventValue_changed, HAnimJoint211.set_rotation);
+Group8.AddRoute(OrientationInterpolator1374.EventValue_changed, HAnimJoint211.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_tarsal_proximal_phalanx_4.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_tarsal_proximal_phalanx_4.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1375.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1375.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_tarsal_proximal_phalanx_4.EventValue_changed TO hanim_l_tarsal_proximal_phalanx_4.rotation }
 { Sample Armature_OI_l_tarsal_proximal_phalanx_4.EventValue_changed TO hanim_l_tarsal_proximal_phalanx_4.rotation}
-Group8.AddRoute(OrientationInterpolator1375.EventValue_changed, HAnimJoint219.set_rotation);
+Group8.AddRoute(OrientationInterpolator1375.EventValue_changed, HAnimJoint219.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_tarsal_middle_phalanx_4.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_tarsal_middle_phalanx_4.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1376.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1376.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_tarsal_middle_phalanx_4.EventValue_changed TO hanim_l_tarsal_middle_phalanx_4.rotation }
 { Sample Armature_OI_l_tarsal_middle_phalanx_4.EventValue_changed TO hanim_l_tarsal_middle_phalanx_4.rotation}
-Group8.AddRoute(OrientationInterpolator1376.EventValue_changed, HAnimJoint227.set_rotation);
+Group8.AddRoute(OrientationInterpolator1376.EventValue_changed, HAnimJoint227.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_tarsal_distal_phalanx_4.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_tarsal_distal_phalanx_4.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1377.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1377.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_tarsal_distal_phalanx_4.EventValue_changed TO hanim_l_tarsal_distal_phalanx_4.rotation }
 { Sample Armature_OI_l_tarsal_distal_phalanx_4.EventValue_changed TO hanim_l_tarsal_distal_phalanx_4.rotation}
-Group8.AddRoute(OrientationInterpolator1377.EventValue_changed, HAnimJoint235.set_rotation);
+Group8.AddRoute(OrientationInterpolator1377.EventValue_changed, HAnimJoint235.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_metatarsal_5.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_metatarsal_5.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1378.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1378.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_metatarsal_5.EventValue_changed TO hanim_l_metatarsal_5.rotation }
 { Sample Armature_OI_l_metatarsal_5.EventValue_changed TO hanim_l_metatarsal_5.rotation}
-Group8.AddRoute(OrientationInterpolator1378.EventValue_changed, HAnimJoint243.set_rotation);
+Group8.AddRoute(OrientationInterpolator1378.EventValue_changed, HAnimJoint243.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_tarsal_proximal_phalanx_5.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_tarsal_proximal_phalanx_5.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1379.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1379.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_tarsal_proximal_phalanx_5.EventValue_changed TO hanim_l_tarsal_proximal_phalanx_5.rotation }
 { Sample Armature_OI_l_tarsal_proximal_phalanx_5.EventValue_changed TO hanim_l_tarsal_proximal_phalanx_5.rotation}
-Group8.AddRoute(OrientationInterpolator1379.EventValue_changed, HAnimJoint251.set_rotation);
+Group8.AddRoute(OrientationInterpolator1379.EventValue_changed, HAnimJoint251.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_tarsal_middle_phalanx_5.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_tarsal_middle_phalanx_5.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1380.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1380.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_tarsal_middle_phalanx_5.EventValue_changed TO hanim_l_tarsal_middle_phalanx_5.rotation }
 { Sample Armature_OI_l_tarsal_middle_phalanx_5.EventValue_changed TO hanim_l_tarsal_middle_phalanx_5.rotation}
-Group8.AddRoute(OrientationInterpolator1380.EventValue_changed, HAnimJoint259.set_rotation);
+Group8.AddRoute(OrientationInterpolator1380.EventValue_changed, HAnimJoint259.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_tarsal_distal_phalanx_5.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_tarsal_distal_phalanx_5.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1381.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1381.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_tarsal_distal_phalanx_5.EventValue_changed TO hanim_l_tarsal_distal_phalanx_5.rotation }
 { Sample Armature_OI_l_tarsal_distal_phalanx_5.EventValue_changed TO hanim_l_tarsal_distal_phalanx_5.rotation}
-Group8.AddRoute(OrientationInterpolator1381.EventValue_changed, HAnimJoint267.set_rotation);
+Group8.AddRoute(OrientationInterpolator1381.EventValue_changed, HAnimJoint267.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_thigh.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_thigh.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1382.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1382.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_thigh.EventValue_changed TO hanim_r_thigh.rotation }
 { Sample Armature_OI_r_thigh.EventValue_changed TO hanim_r_thigh.rotation}
-Group8.AddRoute(OrientationInterpolator1382.EventValue_changed, HAnimJoint275.set_rotation);
+Group8.AddRoute(OrientationInterpolator1382.EventValue_changed, HAnimJoint275.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_calf.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_calf.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1383.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1383.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_calf.EventValue_changed TO hanim_r_calf.rotation }
 { Sample Armature_OI_r_calf.EventValue_changed TO hanim_r_calf.rotation}
-Group8.AddRoute(OrientationInterpolator1383.EventValue_changed, HAnimJoint283.set_rotation);
+Group8.AddRoute(OrientationInterpolator1383.EventValue_changed, HAnimJoint283.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_talus.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_talus.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1384.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1384.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_talus.EventValue_changed TO hanim_r_talus.rotation }
 { Sample Armature_OI_r_talus.EventValue_changed TO hanim_r_talus.rotation}
-Group8.AddRoute(OrientationInterpolator1384.EventValue_changed, HAnimJoint291.set_rotation);
+Group8.AddRoute(OrientationInterpolator1384.EventValue_changed, HAnimJoint291.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_navicular.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_navicular.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1385.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1385.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_navicular.EventValue_changed TO hanim_r_navicular.rotation }
 { Sample Armature_OI_r_navicular.EventValue_changed TO hanim_r_navicular.rotation}
-Group8.AddRoute(OrientationInterpolator1385.EventValue_changed, HAnimJoint299.set_rotation);
+Group8.AddRoute(OrientationInterpolator1385.EventValue_changed, HAnimJoint299.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_cuneiform_1.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_cuneiform_1.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1386.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1386.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_cuneiform_1.EventValue_changed TO hanim_r_cuneiform_1.rotation }
 { Sample Armature_OI_r_cuneiform_1.EventValue_changed TO hanim_r_cuneiform_1.rotation}
-Group8.AddRoute(OrientationInterpolator1386.EventValue_changed, HAnimJoint307.set_rotation);
+Group8.AddRoute(OrientationInterpolator1386.EventValue_changed, HAnimJoint307.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_metatarsal_1.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_metatarsal_1.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1387.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1387.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_metatarsal_1.EventValue_changed TO hanim_r_metatarsal_1.rotation }
 { Sample Armature_OI_r_metatarsal_1.EventValue_changed TO hanim_r_metatarsal_1.rotation}
-Group8.AddRoute(OrientationInterpolator1387.EventValue_changed, HAnimJoint315.set_rotation);
+Group8.AddRoute(OrientationInterpolator1387.EventValue_changed, HAnimJoint315.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_tarsal_proximal_phalanx_1.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_tarsal_proximal_phalanx_1.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1388.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1388.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_tarsal_proximal_phalanx_1.EventValue_changed TO hanim_r_tarsal_proximal_phalanx_1.rotation }
 { Sample Armature_OI_r_tarsal_proximal_phalanx_1.EventValue_changed TO hanim_r_tarsal_proximal_phalanx_1.rotation}
-Group8.AddRoute(OrientationInterpolator1388.EventValue_changed, HAnimJoint323.set_rotation);
+Group8.AddRoute(OrientationInterpolator1388.EventValue_changed, HAnimJoint323.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_tarsal_distal_phalanx_1.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_tarsal_distal_phalanx_1.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1389.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1389.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_tarsal_distal_phalanx_1.EventValue_changed TO hanim_r_tarsal_distal_phalanx_1.rotation }
 { Sample Armature_OI_r_tarsal_distal_phalanx_1.EventValue_changed TO hanim_r_tarsal_distal_phalanx_1.rotation}
-Group8.AddRoute(OrientationInterpolator1389.EventValue_changed, HAnimJoint331.set_rotation);
+Group8.AddRoute(OrientationInterpolator1389.EventValue_changed, HAnimJoint331.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_cuneiform_2.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_cuneiform_2.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1390.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1390.EventSet_fraction);
+{ METHOD .AddX3DROUTE }
+{ Original "Armature_OI_r_cuneiform_2.EventValue_changed TO hanim_r_cuneiform_2.rotation }
+{ Sample Armature_OI_r_cuneiform_2.EventValue_changed TO hanim_r_cuneiform_2.rotation}
+Group8.AddRoute(OrientationInterpolator1390.EventValue_changed, HAnimJoint339.rotation);
 end;
 
 procedure InitblenderSkeletonPart88;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "Armature_OI_r_cuneiform_2.EventValue_changed TO hanim_r_cuneiform_2.rotation }
-{ Sample Armature_OI_r_cuneiform_2.EventValue_changed TO hanim_r_cuneiform_2.rotation}
-Group8.AddRoute(OrientationInterpolator1390.EventValue_changed, HAnimJoint339.set_rotation);
-{ METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_metatarsal_2.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_metatarsal_2.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1391.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1391.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_metatarsal_2.EventValue_changed TO hanim_r_metatarsal_2.rotation }
 { Sample Armature_OI_r_metatarsal_2.EventValue_changed TO hanim_r_metatarsal_2.rotation}
-Group8.AddRoute(OrientationInterpolator1391.EventValue_changed, HAnimJoint347.set_rotation);
+Group8.AddRoute(OrientationInterpolator1391.EventValue_changed, HAnimJoint347.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_tarsal_proximal_phalanx_2.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_tarsal_proximal_phalanx_2.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1392.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1392.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_tarsal_proximal_phalanx_2.EventValue_changed TO hanim_r_tarsal_proximal_phalanx_2.rotation }
 { Sample Armature_OI_r_tarsal_proximal_phalanx_2.EventValue_changed TO hanim_r_tarsal_proximal_phalanx_2.rotation}
-Group8.AddRoute(OrientationInterpolator1392.EventValue_changed, HAnimJoint355.set_rotation);
+Group8.AddRoute(OrientationInterpolator1392.EventValue_changed, HAnimJoint355.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_tarsal_middle_phalanx_2.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_tarsal_middle_phalanx_2.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1393.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1393.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_tarsal_middle_phalanx_2.EventValue_changed TO hanim_r_tarsal_middle_phalanx_2.rotation }
 { Sample Armature_OI_r_tarsal_middle_phalanx_2.EventValue_changed TO hanim_r_tarsal_middle_phalanx_2.rotation}
-Group8.AddRoute(OrientationInterpolator1393.EventValue_changed, HAnimJoint363.set_rotation);
+Group8.AddRoute(OrientationInterpolator1393.EventValue_changed, HAnimJoint363.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_tarsal_distal_phalanx_2.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_tarsal_distal_phalanx_2.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1394.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1394.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_tarsal_distal_phalanx_2.EventValue_changed TO hanim_r_tarsal_distal_phalanx_2.rotation }
 { Sample Armature_OI_r_tarsal_distal_phalanx_2.EventValue_changed TO hanim_r_tarsal_distal_phalanx_2.rotation}
-Group8.AddRoute(OrientationInterpolator1394.EventValue_changed, HAnimJoint371.set_rotation);
+Group8.AddRoute(OrientationInterpolator1394.EventValue_changed, HAnimJoint371.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_cuneiform_3.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_cuneiform_3.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1395.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1395.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_cuneiform_3.EventValue_changed TO hanim_r_cuneiform_3.rotation }
 { Sample Armature_OI_r_cuneiform_3.EventValue_changed TO hanim_r_cuneiform_3.rotation}
-Group8.AddRoute(OrientationInterpolator1395.EventValue_changed, HAnimJoint379.set_rotation);
+Group8.AddRoute(OrientationInterpolator1395.EventValue_changed, HAnimJoint379.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_metatarsal_3.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_metatarsal_3.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1396.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1396.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_metatarsal_3.EventValue_changed TO hanim_r_metatarsal_3.rotation }
 { Sample Armature_OI_r_metatarsal_3.EventValue_changed TO hanim_r_metatarsal_3.rotation}
-Group8.AddRoute(OrientationInterpolator1396.EventValue_changed, HAnimJoint387.set_rotation);
+Group8.AddRoute(OrientationInterpolator1396.EventValue_changed, HAnimJoint387.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_tarsal_proximal_phalanx_3.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_tarsal_proximal_phalanx_3.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1397.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1397.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_tarsal_proximal_phalanx_3.EventValue_changed TO hanim_r_tarsal_proximal_phalanx_3.rotation }
 { Sample Armature_OI_r_tarsal_proximal_phalanx_3.EventValue_changed TO hanim_r_tarsal_proximal_phalanx_3.rotation}
-Group8.AddRoute(OrientationInterpolator1397.EventValue_changed, HAnimJoint395.set_rotation);
+Group8.AddRoute(OrientationInterpolator1397.EventValue_changed, HAnimJoint395.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_tarsal_middle_phalanx_3.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_tarsal_middle_phalanx_3.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1398.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1398.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_tarsal_middle_phalanx_3.EventValue_changed TO hanim_r_tarsal_middle_phalanx_3.rotation }
 { Sample Armature_OI_r_tarsal_middle_phalanx_3.EventValue_changed TO hanim_r_tarsal_middle_phalanx_3.rotation}
-Group8.AddRoute(OrientationInterpolator1398.EventValue_changed, HAnimJoint403.set_rotation);
+Group8.AddRoute(OrientationInterpolator1398.EventValue_changed, HAnimJoint403.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_tarsal_distal_phalanx_3.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_tarsal_distal_phalanx_3.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1399.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1399.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_tarsal_distal_phalanx_3.EventValue_changed TO hanim_r_tarsal_distal_phalanx_3.rotation }
 { Sample Armature_OI_r_tarsal_distal_phalanx_3.EventValue_changed TO hanim_r_tarsal_distal_phalanx_3.rotation}
-Group8.AddRoute(OrientationInterpolator1399.EventValue_changed, HAnimJoint411.set_rotation);
+Group8.AddRoute(OrientationInterpolator1399.EventValue_changed, HAnimJoint411.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_calcaneus.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_calcaneus.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1400.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1400.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_calcaneus.EventValue_changed TO hanim_r_calcaneus.rotation }
 { Sample Armature_OI_r_calcaneus.EventValue_changed TO hanim_r_calcaneus.rotation}
-Group8.AddRoute(OrientationInterpolator1400.EventValue_changed, HAnimJoint419.set_rotation);
+Group8.AddRoute(OrientationInterpolator1400.EventValue_changed, HAnimJoint419.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_cuboid.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_cuboid.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1401.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1401.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_cuboid.EventValue_changed TO hanim_r_cuboid.rotation }
 { Sample Armature_OI_r_cuboid.EventValue_changed TO hanim_r_cuboid.rotation}
-Group8.AddRoute(OrientationInterpolator1401.EventValue_changed, HAnimJoint427.set_rotation);
+Group8.AddRoute(OrientationInterpolator1401.EventValue_changed, HAnimJoint427.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_metatarsal_4.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_metatarsal_4.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1402.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1402.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_metatarsal_4.EventValue_changed TO hanim_r_metatarsal_4.rotation }
 { Sample Armature_OI_r_metatarsal_4.EventValue_changed TO hanim_r_metatarsal_4.rotation}
-Group8.AddRoute(OrientationInterpolator1402.EventValue_changed, HAnimJoint435.set_rotation);
+Group8.AddRoute(OrientationInterpolator1402.EventValue_changed, HAnimJoint435.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_tarsal_proximal_phalanx_4.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_tarsal_proximal_phalanx_4.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1403.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1403.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_tarsal_proximal_phalanx_4.EventValue_changed TO hanim_r_tarsal_proximal_phalanx_4.rotation }
 { Sample Armature_OI_r_tarsal_proximal_phalanx_4.EventValue_changed TO hanim_r_tarsal_proximal_phalanx_4.rotation}
-Group8.AddRoute(OrientationInterpolator1403.EventValue_changed, HAnimJoint443.set_rotation);
+Group8.AddRoute(OrientationInterpolator1403.EventValue_changed, HAnimJoint443.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_tarsal_middle_phalanx_4.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_tarsal_middle_phalanx_4.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1404.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1404.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_tarsal_middle_phalanx_4.EventValue_changed TO hanim_r_tarsal_middle_phalanx_4.rotation }
 { Sample Armature_OI_r_tarsal_middle_phalanx_4.EventValue_changed TO hanim_r_tarsal_middle_phalanx_4.rotation}
-Group8.AddRoute(OrientationInterpolator1404.EventValue_changed, HAnimJoint451.set_rotation);
+Group8.AddRoute(OrientationInterpolator1404.EventValue_changed, HAnimJoint451.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_tarsal_distal_phalanx_4.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_tarsal_distal_phalanx_4.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1405.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1405.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_tarsal_distal_phalanx_4.EventValue_changed TO hanim_r_tarsal_distal_phalanx_4.rotation }
 { Sample Armature_OI_r_tarsal_distal_phalanx_4.EventValue_changed TO hanim_r_tarsal_distal_phalanx_4.rotation}
-Group8.AddRoute(OrientationInterpolator1405.EventValue_changed, HAnimJoint459.set_rotation);
+Group8.AddRoute(OrientationInterpolator1405.EventValue_changed, HAnimJoint459.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_metatarsal_5.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_metatarsal_5.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1406.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1406.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_metatarsal_5.EventValue_changed TO hanim_r_metatarsal_5.rotation }
 { Sample Armature_OI_r_metatarsal_5.EventValue_changed TO hanim_r_metatarsal_5.rotation}
-Group8.AddRoute(OrientationInterpolator1406.EventValue_changed, HAnimJoint467.set_rotation);
+Group8.AddRoute(OrientationInterpolator1406.EventValue_changed, HAnimJoint467.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_tarsal_proximal_phalanx_5.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_tarsal_proximal_phalanx_5.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1407.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1407.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_tarsal_proximal_phalanx_5.EventValue_changed TO hanim_r_tarsal_proximal_phalanx_5.rotation }
 { Sample Armature_OI_r_tarsal_proximal_phalanx_5.EventValue_changed TO hanim_r_tarsal_proximal_phalanx_5.rotation}
-Group8.AddRoute(OrientationInterpolator1407.EventValue_changed, HAnimJoint475.set_rotation);
+Group8.AddRoute(OrientationInterpolator1407.EventValue_changed, HAnimJoint475.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_tarsal_middle_phalanx_5.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_tarsal_middle_phalanx_5.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1408.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1408.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_tarsal_middle_phalanx_5.EventValue_changed TO hanim_r_tarsal_middle_phalanx_5.rotation }
 { Sample Armature_OI_r_tarsal_middle_phalanx_5.EventValue_changed TO hanim_r_tarsal_middle_phalanx_5.rotation}
-Group8.AddRoute(OrientationInterpolator1408.EventValue_changed, HAnimJoint483.set_rotation);
+Group8.AddRoute(OrientationInterpolator1408.EventValue_changed, HAnimJoint483.rotation);
+{ METHOD .AddX3DROUTE }
+{ Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_tarsal_distal_phalanx_5.EventSet_fraction }
+{ Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_tarsal_distal_phalanx_5.EventSet_fraction}
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1409.EventSet_fraction);
 end;
 
 procedure InitblenderSkeletonPart89;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_tarsal_distal_phalanx_5.EventSet_fraction }
-{ Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_tarsal_distal_phalanx_5.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1409.set_EventSet_fraction);
-{ METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_tarsal_distal_phalanx_5.EventValue_changed TO hanim_r_tarsal_distal_phalanx_5.rotation }
 { Sample Armature_OI_r_tarsal_distal_phalanx_5.EventValue_changed TO hanim_r_tarsal_distal_phalanx_5.rotation}
-Group8.AddRoute(OrientationInterpolator1409.EventValue_changed, HAnimJoint491.set_rotation);
+Group8.AddRoute(OrientationInterpolator1409.EventValue_changed, HAnimJoint491.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l5.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l5.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1410.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1410.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l5.EventValue_changed TO hanim_l5.rotation }
 { Sample Armature_OI_l5.EventValue_changed TO hanim_l5.rotation}
-Group8.AddRoute(OrientationInterpolator1410.EventValue_changed, HAnimJoint499.set_rotation);
+Group8.AddRoute(OrientationInterpolator1410.EventValue_changed, HAnimJoint499.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l4.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l4.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1411.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1411.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l4.EventValue_changed TO hanim_l4.rotation }
 { Sample Armature_OI_l4.EventValue_changed TO hanim_l4.rotation}
-Group8.AddRoute(OrientationInterpolator1411.EventValue_changed, HAnimJoint507.set_rotation);
+Group8.AddRoute(OrientationInterpolator1411.EventValue_changed, HAnimJoint507.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l3.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l3.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1412.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1412.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l3.EventValue_changed TO hanim_l3.rotation }
 { Sample Armature_OI_l3.EventValue_changed TO hanim_l3.rotation}
-Group8.AddRoute(OrientationInterpolator1412.EventValue_changed, HAnimJoint515.set_rotation);
+Group8.AddRoute(OrientationInterpolator1412.EventValue_changed, HAnimJoint515.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l2.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l2.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1413.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1413.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l2.EventValue_changed TO hanim_l2.rotation }
 { Sample Armature_OI_l2.EventValue_changed TO hanim_l2.rotation}
-Group8.AddRoute(OrientationInterpolator1413.EventValue_changed, HAnimJoint523.set_rotation);
+Group8.AddRoute(OrientationInterpolator1413.EventValue_changed, HAnimJoint523.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l1.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l1.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1414.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1414.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l1.EventValue_changed TO hanim_l1.rotation }
 { Sample Armature_OI_l1.EventValue_changed TO hanim_l1.rotation}
-Group8.AddRoute(OrientationInterpolator1414.EventValue_changed, HAnimJoint531.set_rotation);
+Group8.AddRoute(OrientationInterpolator1414.EventValue_changed, HAnimJoint531.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_t12.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_t12.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1415.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1415.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_t12.EventValue_changed TO hanim_t12.rotation }
 { Sample Armature_OI_t12.EventValue_changed TO hanim_t12.rotation}
-Group8.AddRoute(OrientationInterpolator1415.EventValue_changed, HAnimJoint539.set_rotation);
+Group8.AddRoute(OrientationInterpolator1415.EventValue_changed, HAnimJoint539.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_t11.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_t11.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1416.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1416.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_t11.EventValue_changed TO hanim_t11.rotation }
 { Sample Armature_OI_t11.EventValue_changed TO hanim_t11.rotation}
-Group8.AddRoute(OrientationInterpolator1416.EventValue_changed, HAnimJoint547.set_rotation);
+Group8.AddRoute(OrientationInterpolator1416.EventValue_changed, HAnimJoint547.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_t10.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_t10.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1417.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1417.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_t10.EventValue_changed TO hanim_t10.rotation }
 { Sample Armature_OI_t10.EventValue_changed TO hanim_t10.rotation}
-Group8.AddRoute(OrientationInterpolator1417.EventValue_changed, HAnimJoint555.set_rotation);
+Group8.AddRoute(OrientationInterpolator1417.EventValue_changed, HAnimJoint555.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_t9.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_t9.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1418.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1418.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_t9.EventValue_changed TO hanim_t9.rotation }
 { Sample Armature_OI_t9.EventValue_changed TO hanim_t9.rotation}
-Group8.AddRoute(OrientationInterpolator1418.EventValue_changed, HAnimJoint563.set_rotation);
+Group8.AddRoute(OrientationInterpolator1418.EventValue_changed, HAnimJoint563.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_t8.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_t8.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1419.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1419.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_t8.EventValue_changed TO hanim_t8.rotation }
 { Sample Armature_OI_t8.EventValue_changed TO hanim_t8.rotation}
-Group8.AddRoute(OrientationInterpolator1419.EventValue_changed, HAnimJoint571.set_rotation);
+Group8.AddRoute(OrientationInterpolator1419.EventValue_changed, HAnimJoint571.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_t7.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_t7.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1420.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1420.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_t7.EventValue_changed TO hanim_t7.rotation }
 { Sample Armature_OI_t7.EventValue_changed TO hanim_t7.rotation}
-Group8.AddRoute(OrientationInterpolator1420.EventValue_changed, HAnimJoint579.set_rotation);
+Group8.AddRoute(OrientationInterpolator1420.EventValue_changed, HAnimJoint579.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_t6.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_t6.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1421.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1421.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_t6.EventValue_changed TO hanim_t6.rotation }
 { Sample Armature_OI_t6.EventValue_changed TO hanim_t6.rotation}
-Group8.AddRoute(OrientationInterpolator1421.EventValue_changed, HAnimJoint587.set_rotation);
+Group8.AddRoute(OrientationInterpolator1421.EventValue_changed, HAnimJoint587.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_t5.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_t5.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1422.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1422.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_t5.EventValue_changed TO hanim_t5.rotation }
 { Sample Armature_OI_t5.EventValue_changed TO hanim_t5.rotation}
-Group8.AddRoute(OrientationInterpolator1422.EventValue_changed, HAnimJoint595.set_rotation);
+Group8.AddRoute(OrientationInterpolator1422.EventValue_changed, HAnimJoint595.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_t4.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_t4.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1423.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1423.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_t4.EventValue_changed TO hanim_t4.rotation }
 { Sample Armature_OI_t4.EventValue_changed TO hanim_t4.rotation}
-Group8.AddRoute(OrientationInterpolator1423.EventValue_changed, HAnimJoint603.set_rotation);
+Group8.AddRoute(OrientationInterpolator1423.EventValue_changed, HAnimJoint603.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_t3.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_t3.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1424.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1424.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_t3.EventValue_changed TO hanim_t3.rotation }
 { Sample Armature_OI_t3.EventValue_changed TO hanim_t3.rotation}
-Group8.AddRoute(OrientationInterpolator1424.EventValue_changed, HAnimJoint611.set_rotation);
+Group8.AddRoute(OrientationInterpolator1424.EventValue_changed, HAnimJoint611.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_t2.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_t2.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1425.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1425.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_t2.EventValue_changed TO hanim_t2.rotation }
 { Sample Armature_OI_t2.EventValue_changed TO hanim_t2.rotation}
-Group8.AddRoute(OrientationInterpolator1425.EventValue_changed, HAnimJoint619.set_rotation);
+Group8.AddRoute(OrientationInterpolator1425.EventValue_changed, HAnimJoint619.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_t1.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_t1.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1426.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1426.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_t1.EventValue_changed TO hanim_t1.rotation }
 { Sample Armature_OI_t1.EventValue_changed TO hanim_t1.rotation}
-Group8.AddRoute(OrientationInterpolator1426.EventValue_changed, HAnimJoint627.set_rotation);
+Group8.AddRoute(OrientationInterpolator1426.EventValue_changed, HAnimJoint627.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_c7.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_c7.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1427.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1427.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_c7.EventValue_changed TO hanim_c7.rotation }
 { Sample Armature_OI_c7.EventValue_changed TO hanim_c7.rotation}
-Group8.AddRoute(OrientationInterpolator1427.EventValue_changed, HAnimJoint635.set_rotation);
+Group8.AddRoute(OrientationInterpolator1427.EventValue_changed, HAnimJoint635.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_c6.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_c6.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1428.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1428.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_c6.EventValue_changed TO hanim_c6.rotation }
 { Sample Armature_OI_c6.EventValue_changed TO hanim_c6.rotation}
-Group8.AddRoute(OrientationInterpolator1428.EventValue_changed, HAnimJoint643.set_rotation);
+Group8.AddRoute(OrientationInterpolator1428.EventValue_changed, HAnimJoint643.rotation);
+{ METHOD .AddX3DROUTE }
+{ Original "Armature_Clock.EventFraction_changed TO Armature_OI_c5.EventSet_fraction }
+{ Sample Armature_Clock.EventFraction_changed TO Armature_OI_c5.EventSet_fraction}
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1429.EventSet_fraction);
 end;
 
 procedure InitblenderSkeletonPart90;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "Armature_Clock.EventFraction_changed TO Armature_OI_c5.EventSet_fraction }
-{ Sample Armature_Clock.EventFraction_changed TO Armature_OI_c5.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1429.set_EventSet_fraction);
-{ METHOD .AddX3DROUTE }
 { Original "Armature_OI_c5.EventValue_changed TO hanim_c5.rotation }
 { Sample Armature_OI_c5.EventValue_changed TO hanim_c5.rotation}
-Group8.AddRoute(OrientationInterpolator1429.EventValue_changed, HAnimJoint651.set_rotation);
+Group8.AddRoute(OrientationInterpolator1429.EventValue_changed, HAnimJoint651.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_c4.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_c4.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1430.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1430.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_c4.EventValue_changed TO hanim_c4.rotation }
 { Sample Armature_OI_c4.EventValue_changed TO hanim_c4.rotation}
-Group8.AddRoute(OrientationInterpolator1430.EventValue_changed, HAnimJoint659.set_rotation);
+Group8.AddRoute(OrientationInterpolator1430.EventValue_changed, HAnimJoint659.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_c3.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_c3.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1431.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1431.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_c3.EventValue_changed TO hanim_c3.rotation }
 { Sample Armature_OI_c3.EventValue_changed TO hanim_c3.rotation}
-Group8.AddRoute(OrientationInterpolator1431.EventValue_changed, HAnimJoint667.set_rotation);
+Group8.AddRoute(OrientationInterpolator1431.EventValue_changed, HAnimJoint667.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_c2.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_c2.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1432.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1432.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_c2.EventValue_changed TO hanim_c2.rotation }
 { Sample Armature_OI_c2.EventValue_changed TO hanim_c2.rotation}
-Group8.AddRoute(OrientationInterpolator1432.EventValue_changed, HAnimJoint675.set_rotation);
+Group8.AddRoute(OrientationInterpolator1432.EventValue_changed, HAnimJoint675.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_c1.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_c1.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1433.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1433.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_c1.EventValue_changed TO hanim_c1.rotation }
 { Sample Armature_OI_c1.EventValue_changed TO hanim_c1.rotation}
-Group8.AddRoute(OrientationInterpolator1433.EventValue_changed, HAnimJoint683.set_rotation);
+Group8.AddRoute(OrientationInterpolator1433.EventValue_changed, HAnimJoint683.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_skull.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_skull.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1434.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1434.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_skull.EventValue_changed TO hanim_skull.rotation }
 { Sample Armature_OI_skull.EventValue_changed TO hanim_skull.rotation}
-Group8.AddRoute(OrientationInterpolator1434.EventValue_changed, HAnimJoint691.set_rotation);
+Group8.AddRoute(OrientationInterpolator1434.EventValue_changed, HAnimJoint691.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_eyelid.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_eyelid.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1435.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1435.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_eyelid.EventValue_changed TO hanim_l_eyelid.rotation }
 { Sample Armature_OI_l_eyelid.EventValue_changed TO hanim_l_eyelid.rotation}
-Group8.AddRoute(OrientationInterpolator1435.EventValue_changed, HAnimJoint699.set_rotation);
+Group8.AddRoute(OrientationInterpolator1435.EventValue_changed, HAnimJoint699.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_eyelid.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_eyelid.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1436.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1436.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_eyelid.EventValue_changed TO hanim_r_eyelid.rotation }
 { Sample Armature_OI_r_eyelid.EventValue_changed TO hanim_r_eyelid.rotation}
-Group8.AddRoute(OrientationInterpolator1436.EventValue_changed, HAnimJoint707.set_rotation);
+Group8.AddRoute(OrientationInterpolator1436.EventValue_changed, HAnimJoint707.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_eyeball.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_eyeball.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1437.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1437.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_eyeball.EventValue_changed TO hanim_l_eyeball.rotation }
 { Sample Armature_OI_l_eyeball.EventValue_changed TO hanim_l_eyeball.rotation}
-Group8.AddRoute(OrientationInterpolator1437.EventValue_changed, HAnimJoint715.set_rotation);
+Group8.AddRoute(OrientationInterpolator1437.EventValue_changed, HAnimJoint715.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_eyeball.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_eyeball.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1438.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1438.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_eyeball.EventValue_changed TO hanim_r_eyeball.rotation }
 { Sample Armature_OI_r_eyeball.EventValue_changed TO hanim_r_eyeball.rotation}
-Group8.AddRoute(OrientationInterpolator1438.EventValue_changed, HAnimJoint723.set_rotation);
+Group8.AddRoute(OrientationInterpolator1438.EventValue_changed, HAnimJoint723.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_eyebrow.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_eyebrow.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1439.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1439.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_eyebrow.EventValue_changed TO hanim_l_eyebrow.rotation }
 { Sample Armature_OI_l_eyebrow.EventValue_changed TO hanim_l_eyebrow.rotation}
-Group8.AddRoute(OrientationInterpolator1439.EventValue_changed, HAnimJoint731.set_rotation);
+Group8.AddRoute(OrientationInterpolator1439.EventValue_changed, HAnimJoint731.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_eyebrow.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_eyebrow.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1440.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1440.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_eyebrow.EventValue_changed TO hanim_r_eyebrow.rotation }
 { Sample Armature_OI_r_eyebrow.EventValue_changed TO hanim_r_eyebrow.rotation}
-Group8.AddRoute(OrientationInterpolator1440.EventValue_changed, HAnimJoint739.set_rotation);
+Group8.AddRoute(OrientationInterpolator1440.EventValue_changed, HAnimJoint739.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_jaw.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_jaw.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1441.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1441.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_jaw.EventValue_changed TO hanim_jaw.rotation }
 { Sample Armature_OI_jaw.EventValue_changed TO hanim_jaw.rotation}
-Group8.AddRoute(OrientationInterpolator1441.EventValue_changed, HAnimJoint747.set_rotation);
+Group8.AddRoute(OrientationInterpolator1441.EventValue_changed, HAnimJoint747.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_clavicle.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_clavicle.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1442.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1442.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_clavicle.EventValue_changed TO hanim_l_clavicle.rotation }
 { Sample Armature_OI_l_clavicle.EventValue_changed TO hanim_l_clavicle.rotation}
-Group8.AddRoute(OrientationInterpolator1442.EventValue_changed, HAnimJoint755.set_rotation);
+Group8.AddRoute(OrientationInterpolator1442.EventValue_changed, HAnimJoint755.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_scapula.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_scapula.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1443.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1443.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_scapula.EventValue_changed TO hanim_l_scapula.rotation }
 { Sample Armature_OI_l_scapula.EventValue_changed TO hanim_l_scapula.rotation}
-Group8.AddRoute(OrientationInterpolator1443.EventValue_changed, HAnimJoint763.set_rotation);
+Group8.AddRoute(OrientationInterpolator1443.EventValue_changed, HAnimJoint763.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_upperarm.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_upperarm.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1444.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1444.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_upperarm.EventValue_changed TO hanim_l_upperarm.rotation }
 { Sample Armature_OI_l_upperarm.EventValue_changed TO hanim_l_upperarm.rotation}
-Group8.AddRoute(OrientationInterpolator1444.EventValue_changed, HAnimJoint771.set_rotation);
+Group8.AddRoute(OrientationInterpolator1444.EventValue_changed, HAnimJoint771.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_forearm.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_forearm.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1445.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1445.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_forearm.EventValue_changed TO hanim_l_forearm.rotation }
 { Sample Armature_OI_l_forearm.EventValue_changed TO hanim_l_forearm.rotation}
-Group8.AddRoute(OrientationInterpolator1445.EventValue_changed, HAnimJoint779.set_rotation);
+Group8.AddRoute(OrientationInterpolator1445.EventValue_changed, HAnimJoint779.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_carpal.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_carpal.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1446.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1446.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_carpal.EventValue_changed TO hanim_l_carpal.rotation }
 { Sample Armature_OI_l_carpal.EventValue_changed TO hanim_l_carpal.rotation}
-Group8.AddRoute(OrientationInterpolator1446.EventValue_changed, HAnimJoint787.set_rotation);
+Group8.AddRoute(OrientationInterpolator1446.EventValue_changed, HAnimJoint787.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_trapezium.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_trapezium.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1447.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1447.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_trapezium.EventValue_changed TO hanim_l_trapezium.rotation }
 { Sample Armature_OI_l_trapezium.EventValue_changed TO hanim_l_trapezium.rotation}
-Group8.AddRoute(OrientationInterpolator1447.EventValue_changed, HAnimJoint795.set_rotation);
+Group8.AddRoute(OrientationInterpolator1447.EventValue_changed, HAnimJoint795.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_metacarpal_1.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_metacarpal_1.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1448.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1448.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_metacarpal_1.EventValue_changed TO hanim_l_metacarpal_1.rotation }
 { Sample Armature_OI_l_metacarpal_1.EventValue_changed TO hanim_l_metacarpal_1.rotation}
-Group8.AddRoute(OrientationInterpolator1448.EventValue_changed, HAnimJoint803.set_rotation);
+Group8.AddRoute(OrientationInterpolator1448.EventValue_changed, HAnimJoint803.rotation);
+{ METHOD .AddX3DROUTE }
+{ Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_carpal_proximal_phalanx_1.EventSet_fraction }
+{ Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_carpal_proximal_phalanx_1.EventSet_fraction}
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1449.EventSet_fraction);
 end;
 
 procedure InitblenderSkeletonPart91;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_carpal_proximal_phalanx_1.EventSet_fraction }
-{ Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_carpal_proximal_phalanx_1.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1449.set_EventSet_fraction);
-{ METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_carpal_proximal_phalanx_1.EventValue_changed TO hanim_l_carpal_proximal_phalanx_1.rotation }
 { Sample Armature_OI_l_carpal_proximal_phalanx_1.EventValue_changed TO hanim_l_carpal_proximal_phalanx_1.rotation}
-Group8.AddRoute(OrientationInterpolator1449.EventValue_changed, HAnimJoint811.set_rotation);
+Group8.AddRoute(OrientationInterpolator1449.EventValue_changed, HAnimJoint811.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_carpal_distal_phalanx_1.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_carpal_distal_phalanx_1.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1450.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1450.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_carpal_distal_phalanx_1.EventValue_changed TO hanim_l_carpal_distal_phalanx_1.rotation }
 { Sample Armature_OI_l_carpal_distal_phalanx_1.EventValue_changed TO hanim_l_carpal_distal_phalanx_1.rotation}
-Group8.AddRoute(OrientationInterpolator1450.EventValue_changed, HAnimJoint819.set_rotation);
+Group8.AddRoute(OrientationInterpolator1450.EventValue_changed, HAnimJoint819.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_trapezoid.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_trapezoid.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1451.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1451.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_trapezoid.EventValue_changed TO hanim_l_trapezoid.rotation }
 { Sample Armature_OI_l_trapezoid.EventValue_changed TO hanim_l_trapezoid.rotation}
-Group8.AddRoute(OrientationInterpolator1451.EventValue_changed, HAnimJoint827.set_rotation);
+Group8.AddRoute(OrientationInterpolator1451.EventValue_changed, HAnimJoint827.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_metacarpal_2.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_metacarpal_2.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1452.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1452.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_metacarpal_2.EventValue_changed TO hanim_l_metacarpal_2.rotation }
 { Sample Armature_OI_l_metacarpal_2.EventValue_changed TO hanim_l_metacarpal_2.rotation}
-Group8.AddRoute(OrientationInterpolator1452.EventValue_changed, HAnimJoint835.set_rotation);
+Group8.AddRoute(OrientationInterpolator1452.EventValue_changed, HAnimJoint835.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_carpal_proximal_phalanx_2.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_carpal_proximal_phalanx_2.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1453.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1453.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_carpal_proximal_phalanx_2.EventValue_changed TO hanim_l_carpal_proximal_phalanx_2.rotation }
 { Sample Armature_OI_l_carpal_proximal_phalanx_2.EventValue_changed TO hanim_l_carpal_proximal_phalanx_2.rotation}
-Group8.AddRoute(OrientationInterpolator1453.EventValue_changed, HAnimJoint843.set_rotation);
+Group8.AddRoute(OrientationInterpolator1453.EventValue_changed, HAnimJoint843.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_carpal_middle_phalanx_2.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_carpal_middle_phalanx_2.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1454.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1454.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_carpal_middle_phalanx_2.EventValue_changed TO hanim_l_carpal_middle_phalanx_2.rotation }
 { Sample Armature_OI_l_carpal_middle_phalanx_2.EventValue_changed TO hanim_l_carpal_middle_phalanx_2.rotation}
-Group8.AddRoute(OrientationInterpolator1454.EventValue_changed, HAnimJoint851.set_rotation);
+Group8.AddRoute(OrientationInterpolator1454.EventValue_changed, HAnimJoint851.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_carpal_distal_phalanx_2.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_carpal_distal_phalanx_2.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1455.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1455.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_carpal_distal_phalanx_2.EventValue_changed TO hanim_l_carpal_distal_phalanx_2.rotation }
 { Sample Armature_OI_l_carpal_distal_phalanx_2.EventValue_changed TO hanim_l_carpal_distal_phalanx_2.rotation}
-Group8.AddRoute(OrientationInterpolator1455.EventValue_changed, HAnimJoint859.set_rotation);
+Group8.AddRoute(OrientationInterpolator1455.EventValue_changed, HAnimJoint859.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_capitate.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_capitate.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1456.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1456.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_capitate.EventValue_changed TO hanim_l_capitate.rotation }
 { Sample Armature_OI_l_capitate.EventValue_changed TO hanim_l_capitate.rotation}
-Group8.AddRoute(OrientationInterpolator1456.EventValue_changed, HAnimJoint867.set_rotation);
+Group8.AddRoute(OrientationInterpolator1456.EventValue_changed, HAnimJoint867.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_metacarpal_3.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_metacarpal_3.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1457.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1457.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_metacarpal_3.EventValue_changed TO hanim_l_metacarpal_3.rotation }
 { Sample Armature_OI_l_metacarpal_3.EventValue_changed TO hanim_l_metacarpal_3.rotation}
-Group8.AddRoute(OrientationInterpolator1457.EventValue_changed, HAnimJoint875.set_rotation);
+Group8.AddRoute(OrientationInterpolator1457.EventValue_changed, HAnimJoint875.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_carpal_proximal_phalanx_3.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_carpal_proximal_phalanx_3.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1458.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1458.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_carpal_proximal_phalanx_3.EventValue_changed TO hanim_l_carpal_proximal_phalanx_3.rotation }
 { Sample Armature_OI_l_carpal_proximal_phalanx_3.EventValue_changed TO hanim_l_carpal_proximal_phalanx_3.rotation}
-Group8.AddRoute(OrientationInterpolator1458.EventValue_changed, HAnimJoint883.set_rotation);
+Group8.AddRoute(OrientationInterpolator1458.EventValue_changed, HAnimJoint883.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_carpal_middle_phalanx_3.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_carpal_middle_phalanx_3.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1459.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1459.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_carpal_middle_phalanx_3.EventValue_changed TO hanim_l_carpal_middle_phalanx_3.rotation }
 { Sample Armature_OI_l_carpal_middle_phalanx_3.EventValue_changed TO hanim_l_carpal_middle_phalanx_3.rotation}
-Group8.AddRoute(OrientationInterpolator1459.EventValue_changed, HAnimJoint891.set_rotation);
+Group8.AddRoute(OrientationInterpolator1459.EventValue_changed, HAnimJoint891.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_carpal_distal_phalanx_3.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_carpal_distal_phalanx_3.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1460.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1460.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_carpal_distal_phalanx_3.EventValue_changed TO hanim_l_carpal_distal_phalanx_3.rotation }
 { Sample Armature_OI_l_carpal_distal_phalanx_3.EventValue_changed TO hanim_l_carpal_distal_phalanx_3.rotation}
-Group8.AddRoute(OrientationInterpolator1460.EventValue_changed, HAnimJoint899.set_rotation);
+Group8.AddRoute(OrientationInterpolator1460.EventValue_changed, HAnimJoint899.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_hamate.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_hamate.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1461.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1461.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_hamate.EventValue_changed TO hanim_l_hamate.rotation }
 { Sample Armature_OI_l_hamate.EventValue_changed TO hanim_l_hamate.rotation}
-Group8.AddRoute(OrientationInterpolator1461.EventValue_changed, HAnimJoint907.set_rotation);
+Group8.AddRoute(OrientationInterpolator1461.EventValue_changed, HAnimJoint907.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_metacarpal_4.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_metacarpal_4.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1462.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1462.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_metacarpal_4.EventValue_changed TO hanim_l_metacarpal_4.rotation }
 { Sample Armature_OI_l_metacarpal_4.EventValue_changed TO hanim_l_metacarpal_4.rotation}
-Group8.AddRoute(OrientationInterpolator1462.EventValue_changed, HAnimJoint915.set_rotation);
+Group8.AddRoute(OrientationInterpolator1462.EventValue_changed, HAnimJoint915.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_carpal_proximal_phalanx_4.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_carpal_proximal_phalanx_4.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1463.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1463.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_carpal_proximal_phalanx_4.EventValue_changed TO hanim_l_carpal_proximal_phalanx_4.rotation }
 { Sample Armature_OI_l_carpal_proximal_phalanx_4.EventValue_changed TO hanim_l_carpal_proximal_phalanx_4.rotation}
-Group8.AddRoute(OrientationInterpolator1463.EventValue_changed, HAnimJoint923.set_rotation);
+Group8.AddRoute(OrientationInterpolator1463.EventValue_changed, HAnimJoint923.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_carpal_middle_phalanx_4.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_carpal_middle_phalanx_4.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1464.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1464.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_carpal_middle_phalanx_4.EventValue_changed TO hanim_l_carpal_middle_phalanx_4.rotation }
 { Sample Armature_OI_l_carpal_middle_phalanx_4.EventValue_changed TO hanim_l_carpal_middle_phalanx_4.rotation}
-Group8.AddRoute(OrientationInterpolator1464.EventValue_changed, HAnimJoint931.set_rotation);
+Group8.AddRoute(OrientationInterpolator1464.EventValue_changed, HAnimJoint931.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_carpal_distal_phalanx_4.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_carpal_distal_phalanx_4.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1465.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1465.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_carpal_distal_phalanx_4.EventValue_changed TO hanim_l_carpal_distal_phalanx_4.rotation }
 { Sample Armature_OI_l_carpal_distal_phalanx_4.EventValue_changed TO hanim_l_carpal_distal_phalanx_4.rotation}
-Group8.AddRoute(OrientationInterpolator1465.EventValue_changed, HAnimJoint939.set_rotation);
+Group8.AddRoute(OrientationInterpolator1465.EventValue_changed, HAnimJoint939.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_metacarpal_5.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_metacarpal_5.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1466.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1466.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_metacarpal_5.EventValue_changed TO hanim_l_metacarpal_5.rotation }
 { Sample Armature_OI_l_metacarpal_5.EventValue_changed TO hanim_l_metacarpal_5.rotation}
-Group8.AddRoute(OrientationInterpolator1466.EventValue_changed, HAnimJoint947.set_rotation);
+Group8.AddRoute(OrientationInterpolator1466.EventValue_changed, HAnimJoint947.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_carpal_proximal_phalanx_5.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_carpal_proximal_phalanx_5.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1467.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1467.EventSet_fraction);
+{ METHOD .AddX3DROUTE }
+{ Original "Armature_OI_l_carpal_proximal_phalanx_5.EventValue_changed TO hanim_l_carpal_proximal_phalanx_5.rotation }
+{ Sample Armature_OI_l_carpal_proximal_phalanx_5.EventValue_changed TO hanim_l_carpal_proximal_phalanx_5.rotation}
+Group8.AddRoute(OrientationInterpolator1467.EventValue_changed, HAnimJoint955.rotation);
 end;
 
 procedure InitblenderSkeletonPart92;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "Armature_OI_l_carpal_proximal_phalanx_5.EventValue_changed TO hanim_l_carpal_proximal_phalanx_5.rotation }
-{ Sample Armature_OI_l_carpal_proximal_phalanx_5.EventValue_changed TO hanim_l_carpal_proximal_phalanx_5.rotation}
-Group8.AddRoute(OrientationInterpolator1467.EventValue_changed, HAnimJoint955.set_rotation);
-{ METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_carpal_middle_phalanx_5.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_carpal_middle_phalanx_5.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1468.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1468.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_carpal_middle_phalanx_5.EventValue_changed TO hanim_l_carpal_middle_phalanx_5.rotation }
 { Sample Armature_OI_l_carpal_middle_phalanx_5.EventValue_changed TO hanim_l_carpal_middle_phalanx_5.rotation}
-Group8.AddRoute(OrientationInterpolator1468.EventValue_changed, HAnimJoint963.set_rotation);
+Group8.AddRoute(OrientationInterpolator1468.EventValue_changed, HAnimJoint963.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_l_carpal_distal_phalanx_5.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_l_carpal_distal_phalanx_5.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1469.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1469.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_l_carpal_distal_phalanx_5.EventValue_changed TO hanim_l_carpal_distal_phalanx_5.rotation }
 { Sample Armature_OI_l_carpal_distal_phalanx_5.EventValue_changed TO hanim_l_carpal_distal_phalanx_5.rotation}
-Group8.AddRoute(OrientationInterpolator1469.EventValue_changed, HAnimJoint971.set_rotation);
+Group8.AddRoute(OrientationInterpolator1469.EventValue_changed, HAnimJoint971.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_clavicle.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_clavicle.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1470.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1470.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_clavicle.EventValue_changed TO hanim_r_clavicle.rotation }
 { Sample Armature_OI_r_clavicle.EventValue_changed TO hanim_r_clavicle.rotation}
-Group8.AddRoute(OrientationInterpolator1470.EventValue_changed, HAnimJoint979.set_rotation);
+Group8.AddRoute(OrientationInterpolator1470.EventValue_changed, HAnimJoint979.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_scapula.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_scapula.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1471.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1471.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_scapula.EventValue_changed TO hanim_r_scapula.rotation }
 { Sample Armature_OI_r_scapula.EventValue_changed TO hanim_r_scapula.rotation}
-Group8.AddRoute(OrientationInterpolator1471.EventValue_changed, HAnimJoint987.set_rotation);
+Group8.AddRoute(OrientationInterpolator1471.EventValue_changed, HAnimJoint987.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_upperarm.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_upperarm.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1472.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1472.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_upperarm.EventValue_changed TO hanim_r_upperarm.rotation }
 { Sample Armature_OI_r_upperarm.EventValue_changed TO hanim_r_upperarm.rotation}
-Group8.AddRoute(OrientationInterpolator1472.EventValue_changed, HAnimJoint995.set_rotation);
+Group8.AddRoute(OrientationInterpolator1472.EventValue_changed, HAnimJoint995.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_forearm.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_forearm.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1473.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1473.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_forearm.EventValue_changed TO hanim_r_forearm.rotation }
 { Sample Armature_OI_r_forearm.EventValue_changed TO hanim_r_forearm.rotation}
-Group8.AddRoute(OrientationInterpolator1473.EventValue_changed, HAnimJoint1003.set_rotation);
+Group8.AddRoute(OrientationInterpolator1473.EventValue_changed, HAnimJoint1003.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_carpal.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_carpal.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1474.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1474.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_carpal.EventValue_changed TO hanim_r_carpal.rotation }
 { Sample Armature_OI_r_carpal.EventValue_changed TO hanim_r_carpal.rotation}
-Group8.AddRoute(OrientationInterpolator1474.EventValue_changed, HAnimJoint1011.set_rotation);
+Group8.AddRoute(OrientationInterpolator1474.EventValue_changed, HAnimJoint1011.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_trapezium.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_trapezium.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1475.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1475.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_trapezium.EventValue_changed TO hanim_r_trapezium.rotation }
 { Sample Armature_OI_r_trapezium.EventValue_changed TO hanim_r_trapezium.rotation}
-Group8.AddRoute(OrientationInterpolator1475.EventValue_changed, HAnimJoint1019.set_rotation);
+Group8.AddRoute(OrientationInterpolator1475.EventValue_changed, HAnimJoint1019.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_metacarpal_1.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_metacarpal_1.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1476.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1476.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_metacarpal_1.EventValue_changed TO hanim_r_metacarpal_1.rotation }
 { Sample Armature_OI_r_metacarpal_1.EventValue_changed TO hanim_r_metacarpal_1.rotation}
-Group8.AddRoute(OrientationInterpolator1476.EventValue_changed, HAnimJoint1027.set_rotation);
+Group8.AddRoute(OrientationInterpolator1476.EventValue_changed, HAnimJoint1027.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_carpal_proximal_phalanx_1.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_carpal_proximal_phalanx_1.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1477.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1477.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_carpal_proximal_phalanx_1.EventValue_changed TO hanim_r_carpal_proximal_phalanx_1.rotation }
 { Sample Armature_OI_r_carpal_proximal_phalanx_1.EventValue_changed TO hanim_r_carpal_proximal_phalanx_1.rotation}
-Group8.AddRoute(OrientationInterpolator1477.EventValue_changed, HAnimJoint1035.set_rotation);
+Group8.AddRoute(OrientationInterpolator1477.EventValue_changed, HAnimJoint1035.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_carpal_distal_phalanx_1.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_carpal_distal_phalanx_1.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1478.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1478.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_carpal_distal_phalanx_1.EventValue_changed TO hanim_r_carpal_distal_phalanx_1.rotation }
 { Sample Armature_OI_r_carpal_distal_phalanx_1.EventValue_changed TO hanim_r_carpal_distal_phalanx_1.rotation}
-Group8.AddRoute(OrientationInterpolator1478.EventValue_changed, HAnimJoint1043.set_rotation);
+Group8.AddRoute(OrientationInterpolator1478.EventValue_changed, HAnimJoint1043.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_trapezoid.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_trapezoid.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1479.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1479.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_trapezoid.EventValue_changed TO hanim_r_trapezoid.rotation }
 { Sample Armature_OI_r_trapezoid.EventValue_changed TO hanim_r_trapezoid.rotation}
-Group8.AddRoute(OrientationInterpolator1479.EventValue_changed, HAnimJoint1051.set_rotation);
+Group8.AddRoute(OrientationInterpolator1479.EventValue_changed, HAnimJoint1051.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_metacarpal_2.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_metacarpal_2.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1480.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1480.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_metacarpal_2.EventValue_changed TO hanim_r_metacarpal_2.rotation }
 { Sample Armature_OI_r_metacarpal_2.EventValue_changed TO hanim_r_metacarpal_2.rotation}
-Group8.AddRoute(OrientationInterpolator1480.EventValue_changed, HAnimJoint1059.set_rotation);
+Group8.AddRoute(OrientationInterpolator1480.EventValue_changed, HAnimJoint1059.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_carpal_proximal_phalanx_2.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_carpal_proximal_phalanx_2.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1481.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1481.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_carpal_proximal_phalanx_2.EventValue_changed TO hanim_r_carpal_proximal_phalanx_2.rotation }
 { Sample Armature_OI_r_carpal_proximal_phalanx_2.EventValue_changed TO hanim_r_carpal_proximal_phalanx_2.rotation}
-Group8.AddRoute(OrientationInterpolator1481.EventValue_changed, HAnimJoint1067.set_rotation);
+Group8.AddRoute(OrientationInterpolator1481.EventValue_changed, HAnimJoint1067.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_carpal_middle_phalanx_2.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_carpal_middle_phalanx_2.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1482.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1482.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_carpal_middle_phalanx_2.EventValue_changed TO hanim_r_carpal_middle_phalanx_2.rotation }
 { Sample Armature_OI_r_carpal_middle_phalanx_2.EventValue_changed TO hanim_r_carpal_middle_phalanx_2.rotation}
-Group8.AddRoute(OrientationInterpolator1482.EventValue_changed, HAnimJoint1075.set_rotation);
+Group8.AddRoute(OrientationInterpolator1482.EventValue_changed, HAnimJoint1075.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_carpal_distal_phalanx_2.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_carpal_distal_phalanx_2.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1483.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1483.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_carpal_distal_phalanx_2.EventValue_changed TO hanim_r_carpal_distal_phalanx_2.rotation }
 { Sample Armature_OI_r_carpal_distal_phalanx_2.EventValue_changed TO hanim_r_carpal_distal_phalanx_2.rotation}
-Group8.AddRoute(OrientationInterpolator1483.EventValue_changed, HAnimJoint1083.set_rotation);
+Group8.AddRoute(OrientationInterpolator1483.EventValue_changed, HAnimJoint1083.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_capitate.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_capitate.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1484.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1484.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_capitate.EventValue_changed TO hanim_r_capitate.rotation }
 { Sample Armature_OI_r_capitate.EventValue_changed TO hanim_r_capitate.rotation}
-Group8.AddRoute(OrientationInterpolator1484.EventValue_changed, HAnimJoint1091.set_rotation);
+Group8.AddRoute(OrientationInterpolator1484.EventValue_changed, HAnimJoint1091.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_metacarpal_3.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_metacarpal_3.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1485.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1485.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_metacarpal_3.EventValue_changed TO hanim_r_metacarpal_3.rotation }
 { Sample Armature_OI_r_metacarpal_3.EventValue_changed TO hanim_r_metacarpal_3.rotation}
-Group8.AddRoute(OrientationInterpolator1485.EventValue_changed, HAnimJoint1099.set_rotation);
+Group8.AddRoute(OrientationInterpolator1485.EventValue_changed, HAnimJoint1099.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_carpal_proximal_phalanx_3.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_carpal_proximal_phalanx_3.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1486.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1486.EventSet_fraction);
+{ METHOD .AddX3DROUTE }
+{ Original "Armature_OI_r_carpal_proximal_phalanx_3.EventValue_changed TO hanim_r_carpal_proximal_phalanx_3.rotation }
+{ Sample Armature_OI_r_carpal_proximal_phalanx_3.EventValue_changed TO hanim_r_carpal_proximal_phalanx_3.rotation}
+Group8.AddRoute(OrientationInterpolator1486.EventValue_changed, HAnimJoint1107.rotation);
 end;
 
 procedure InitblenderSkeletonPart93;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "Armature_OI_r_carpal_proximal_phalanx_3.EventValue_changed TO hanim_r_carpal_proximal_phalanx_3.rotation }
-{ Sample Armature_OI_r_carpal_proximal_phalanx_3.EventValue_changed TO hanim_r_carpal_proximal_phalanx_3.rotation}
-Group8.AddRoute(OrientationInterpolator1486.EventValue_changed, HAnimJoint1107.set_rotation);
-{ METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_carpal_middle_phalanx_3.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_carpal_middle_phalanx_3.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1487.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1487.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_carpal_middle_phalanx_3.EventValue_changed TO hanim_r_carpal_middle_phalanx_3.rotation }
 { Sample Armature_OI_r_carpal_middle_phalanx_3.EventValue_changed TO hanim_r_carpal_middle_phalanx_3.rotation}
-Group8.AddRoute(OrientationInterpolator1487.EventValue_changed, HAnimJoint1115.set_rotation);
+Group8.AddRoute(OrientationInterpolator1487.EventValue_changed, HAnimJoint1115.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_carpal_distal_phalanx_3.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_carpal_distal_phalanx_3.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1488.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1488.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_carpal_distal_phalanx_3.EventValue_changed TO hanim_r_carpal_distal_phalanx_3.rotation }
 { Sample Armature_OI_r_carpal_distal_phalanx_3.EventValue_changed TO hanim_r_carpal_distal_phalanx_3.rotation}
-Group8.AddRoute(OrientationInterpolator1488.EventValue_changed, HAnimJoint1123.set_rotation);
+Group8.AddRoute(OrientationInterpolator1488.EventValue_changed, HAnimJoint1123.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_hamate.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_hamate.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1489.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1489.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_hamate.EventValue_changed TO hanim_r_hamate.rotation }
 { Sample Armature_OI_r_hamate.EventValue_changed TO hanim_r_hamate.rotation}
-Group8.AddRoute(OrientationInterpolator1489.EventValue_changed, HAnimJoint1131.set_rotation);
+Group8.AddRoute(OrientationInterpolator1489.EventValue_changed, HAnimJoint1131.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_metacarpal_4.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_metacarpal_4.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1490.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1490.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_metacarpal_4.EventValue_changed TO hanim_r_metacarpal_4.rotation }
 { Sample Armature_OI_r_metacarpal_4.EventValue_changed TO hanim_r_metacarpal_4.rotation}
-Group8.AddRoute(OrientationInterpolator1490.EventValue_changed, HAnimJoint1139.set_rotation);
+Group8.AddRoute(OrientationInterpolator1490.EventValue_changed, HAnimJoint1139.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_carpal_proximal_phalanx_4.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_carpal_proximal_phalanx_4.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1491.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1491.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_carpal_proximal_phalanx_4.EventValue_changed TO hanim_r_carpal_proximal_phalanx_4.rotation }
 { Sample Armature_OI_r_carpal_proximal_phalanx_4.EventValue_changed TO hanim_r_carpal_proximal_phalanx_4.rotation}
-Group8.AddRoute(OrientationInterpolator1491.EventValue_changed, HAnimJoint1147.set_rotation);
+Group8.AddRoute(OrientationInterpolator1491.EventValue_changed, HAnimJoint1147.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_carpal_middle_phalanx_4.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_carpal_middle_phalanx_4.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1492.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1492.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_carpal_middle_phalanx_4.EventValue_changed TO hanim_r_carpal_middle_phalanx_4.rotation }
 { Sample Armature_OI_r_carpal_middle_phalanx_4.EventValue_changed TO hanim_r_carpal_middle_phalanx_4.rotation}
-Group8.AddRoute(OrientationInterpolator1492.EventValue_changed, HAnimJoint1155.set_rotation);
+Group8.AddRoute(OrientationInterpolator1492.EventValue_changed, HAnimJoint1155.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_carpal_distal_phalanx_4.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_carpal_distal_phalanx_4.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1493.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1493.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_carpal_distal_phalanx_4.EventValue_changed TO hanim_r_carpal_distal_phalanx_4.rotation }
 { Sample Armature_OI_r_carpal_distal_phalanx_4.EventValue_changed TO hanim_r_carpal_distal_phalanx_4.rotation}
-Group8.AddRoute(OrientationInterpolator1493.EventValue_changed, HAnimJoint1163.set_rotation);
+Group8.AddRoute(OrientationInterpolator1493.EventValue_changed, HAnimJoint1163.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_metacarpal_5.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_metacarpal_5.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1494.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1494.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_metacarpal_5.EventValue_changed TO hanim_r_metacarpal_5.rotation }
 { Sample Armature_OI_r_metacarpal_5.EventValue_changed TO hanim_r_metacarpal_5.rotation}
-Group8.AddRoute(OrientationInterpolator1494.EventValue_changed, HAnimJoint1171.set_rotation);
+Group8.AddRoute(OrientationInterpolator1494.EventValue_changed, HAnimJoint1171.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_carpal_proximal_phalanx_5.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_carpal_proximal_phalanx_5.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1495.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1495.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_carpal_proximal_phalanx_5.EventValue_changed TO hanim_r_carpal_proximal_phalanx_5.rotation }
 { Sample Armature_OI_r_carpal_proximal_phalanx_5.EventValue_changed TO hanim_r_carpal_proximal_phalanx_5.rotation}
-Group8.AddRoute(OrientationInterpolator1495.EventValue_changed, HAnimJoint1179.set_rotation);
+Group8.AddRoute(OrientationInterpolator1495.EventValue_changed, HAnimJoint1179.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_carpal_middle_phalanx_5.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_carpal_middle_phalanx_5.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1496.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1496.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_carpal_middle_phalanx_5.EventValue_changed TO hanim_r_carpal_middle_phalanx_5.rotation }
 { Sample Armature_OI_r_carpal_middle_phalanx_5.EventValue_changed TO hanim_r_carpal_middle_phalanx_5.rotation}
-Group8.AddRoute(OrientationInterpolator1496.EventValue_changed, HAnimJoint1187.set_rotation);
+Group8.AddRoute(OrientationInterpolator1496.EventValue_changed, HAnimJoint1187.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Armature_Clock.EventFraction_changed TO Armature_OI_r_carpal_distal_phalanx_5.EventSet_fraction }
 { Sample Armature_Clock.EventFraction_changed TO Armature_OI_r_carpal_distal_phalanx_5.EventSet_fraction}
-Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1497.set_EventSet_fraction);
+Group8.AddRoute(TimeSensor1349.EventFraction_changed, OrientationInterpolator1497.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Armature_OI_r_carpal_distal_phalanx_5.EventValue_changed TO hanim_r_carpal_distal_phalanx_5.rotation }
 { Sample Armature_OI_r_carpal_distal_phalanx_5.EventValue_changed TO hanim_r_carpal_distal_phalanx_5.rotation}
-Group8.AddRoute(OrientationInterpolator1497.EventValue_changed, HAnimJoint1195.set_rotation);
+Group8.AddRoute(OrientationInterpolator1497.EventValue_changed, HAnimJoint1195.rotation);
 { METHOD .AddX3DROUTE }
 { METHOD .AddGroup }
 X3D0.AddChildren([Group8]);

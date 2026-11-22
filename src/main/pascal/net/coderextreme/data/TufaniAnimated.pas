@@ -684,25 +684,25 @@ Group24.FdChildren.Add(BooleanFilter31);
 TimeTrigger32 := TTimeTriggerNode.Create;
 { METHOD .FdChildren.Add }
 Group24.FdChildren.Add(TimeTrigger32);
-{ Original "Tufani_StartTIME.EventCycleTime TO Tufani_StartTIME.stopTime }
-{ Sample Tufani_StartTIME.EventCycleTime TO Tufani_StartTIME.stopTime}
-Group24.AddRoute(TimeSensor28.EventCycleTime, TimeSensor28.set_stopTime);
+{ Original "Tufani_StartTIME.EventCycleTime TO Tufani_StartTIME.FdStopTime.EventIn }
+{ Sample Tufani_StartTIME.EventCycleTime TO Tufani_StartTIME.FdStopTime.EventIn}
+Group24.AddRoute(TimeSensor28.EventCycleTime, TimeSensor28.FdStopTime.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_StartTIME.EventStopTime_changed TO Tufani_DelayTIME.startTime }
-{ Sample Tufani_StartTIME.EventStopTime_changed TO Tufani_DelayTIME.startTime}
-Group24.AddRoute(TimeSensor28.EventStopTime_changed, TimeSensor29.set_startTime);
+{ Original "Tufani_StartTIME.EventStopTime_changed TO Tufani_DelayTIME.FdStartTime.EventIn }
+{ Sample Tufani_StartTIME.EventStopTime_changed TO Tufani_DelayTIME.FdStartTime.EventIn}
+Group24.AddRoute(TimeSensor28.EventStopTime_changed, TimeSensor29.FdStartTime.EventIn);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_DelayTIME.EventIsActive TO Tufani_DelayFILTER.EventSet_boolean }
 { Sample Tufani_DelayTIME.EventIsActive TO Tufani_DelayFILTER.EventSet_boolean}
-Group24.AddRoute(TimeSensor29.EventIsActive, BooleanFilter31.set_EventSet_boolean);
+Group24.AddRoute(TimeSensor29.EventIsActive, BooleanFilter31.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_DelayFILTER.EventInputFalse TO Tufani_z100sTimerTRIGGER.EventSet_boolean }
 { Sample Tufani_DelayFILTER.EventInputFalse TO Tufani_z100sTimerTRIGGER.EventSet_boolean}
-Group24.AddRoute(BooleanFilter31.EventInputFalse, TimeTrigger32.set_EventSet_boolean);
+Group24.AddRoute(BooleanFilter31.EventInputFalse, TimeTrigger32.EventSet_boolean);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_z100sTimerTRIGGER.EventTriggerTime TO Tufani_z100sTimer.startTime }
-{ Sample Tufani_z100sTimerTRIGGER.EventTriggerTime TO Tufani_z100sTimer.startTime}
-Group24.AddRoute(TimeTrigger32.EventTriggerTime, TimeSensor30.set_startTime);
+{ Original "Tufani_z100sTimerTRIGGER.EventTriggerTime TO Tufani_z100sTimer.FdStartTime.EventIn }
+{ Sample Tufani_z100sTimerTRIGGER.EventTriggerTime TO Tufani_z100sTimer.FdStartTime.EventIn}
+Group24.AddRoute(TimeTrigger32.EventTriggerTime, TimeSensor30.FdStartTime.EventIn);
 { METHOD .AddX3DROUTE }
 Transform38 := TTransformNode.Create;
 Transform39 := TTransformNode.Create;
@@ -2412,273 +2412,273 @@ OrientationInterpolator404.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0.2),Vect
 Group374.FdChildren.Add(OrientationInterpolator404);
 { Original "Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_r_talocruralRotInterp.EventSet_fraction }
 { Sample Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_r_talocruralRotInterp.EventSet_fraction}
-Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator377.set_EventSet_fraction);
+Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator377.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_r_kneeRotInterp.EventSet_fraction }
 { Sample Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_r_kneeRotInterp.EventSet_fraction}
-Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator378.set_EventSet_fraction);
+Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator378.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_r_hipRotInterp.EventSet_fraction }
 { Sample Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_r_hipRotInterp.EventSet_fraction}
-Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator379.set_EventSet_fraction);
+Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator379.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_l_talocruralRotInterp.EventSet_fraction }
 { Sample Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_l_talocruralRotInterp.EventSet_fraction}
-Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator380.set_EventSet_fraction);
+Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator380.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_l_kneeRotInterp.EventSet_fraction }
 { Sample Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_l_kneeRotInterp.EventSet_fraction}
-Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator381.set_EventSet_fraction);
+Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator381.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_l_hipRotInterp.EventSet_fraction }
 { Sample Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_l_hipRotInterp.EventSet_fraction}
-Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator382.set_EventSet_fraction);
+Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator382.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_lower_bodyRotInterp.EventSet_fraction }
 { Sample Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_lower_bodyRotInterp.EventSet_fraction}
-Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator391.set_EventSet_fraction);
+Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator391.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_r_radiocarpalRotInterp.EventSet_fraction }
 { Sample Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_r_radiocarpalRotInterp.EventSet_fraction}
-Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator383.set_EventSet_fraction);
+Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator383.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_r_elbowRotInterp.EventSet_fraction }
 { Sample Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_r_elbowRotInterp.EventSet_fraction}
-Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator384.set_EventSet_fraction);
+Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator384.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_r_shoulderRotInterp.EventSet_fraction }
 { Sample Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_r_shoulderRotInterp.EventSet_fraction}
-Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator385.set_EventSet_fraction);
+Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator385.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_l_radiocarpalRotInterp.EventSet_fraction }
 { Sample Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_l_radiocarpalRotInterp.EventSet_fraction}
-Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator386.set_EventSet_fraction);
+Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator386.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_l_elbowRotInterp.EventSet_fraction }
 { Sample Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_l_elbowRotInterp.EventSet_fraction}
-Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator387.set_EventSet_fraction);
+Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator387.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_l_shoulderRotInterp.EventSet_fraction }
 { Sample Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_l_shoulderRotInterp.EventSet_fraction}
-Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator388.set_EventSet_fraction);
+Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator388.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_headRotInterp.EventSet_fraction }
 { Sample Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_headRotInterp.EventSet_fraction}
-Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator389.set_EventSet_fraction);
+Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator389.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_neckRotInterp.EventSet_fraction }
 { Sample Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_neckRotInterp.EventSet_fraction}
-Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator390.set_EventSet_fraction);
+Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator390.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_upper_bodyRotInterp.EventSet_fraction }
 { Sample Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_upper_bodyRotInterp.EventSet_fraction}
-Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator392.set_EventSet_fraction);
+Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator392.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_whole_bodyRotInterp.EventSet_fraction }
 { Sample Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_whole_bodyRotInterp.EventSet_fraction}
-Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator393.set_EventSet_fraction);
+Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator393.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_whole_bodyTransInterp.EventSet_fraction }
 { Sample Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_whole_bodyTransInterp.EventSet_fraction}
-Group374.AddRoute(TimeSensor375.EventFraction_changed, PositionInterpolator394.set_EventSet_fraction);
+Group374.AddRoute(TimeSensor375.EventFraction_changed, PositionInterpolator394.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_l_sternoclavicularRoll.EventSet_fraction }
 { Sample Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_l_sternoclavicularRoll.EventSet_fraction}
-Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator395.set_EventSet_fraction);
+Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator395.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_r_sternoclavicularRoll.EventSet_fraction }
 { Sample Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_r_sternoclavicularRoll.EventSet_fraction}
-Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator396.set_EventSet_fraction);
+Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator396.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_r_metatarsophalangeal_2Pitch.EventSet_fraction }
 { Sample Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_r_metatarsophalangeal_2Pitch.EventSet_fraction}
-Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator376.set_EventSet_fraction);
+Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator376.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_sacroiliacYaw.EventSet_fraction }
 { Sample Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_sacroiliacYaw.EventSet_fraction}
-Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator397.set_EventSet_fraction);
+Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator397.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_vl5Yaw.EventSet_fraction }
 { Sample Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_vl5Yaw.EventSet_fraction}
-Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator398.set_EventSet_fraction);
+Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator398.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_vc6Yaw.EventSet_fraction }
 { Sample Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_vc6Yaw.EventSet_fraction}
-Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator399.set_EventSet_fraction);
+Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator399.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_l_carpometacarpal_1Pitch.EventSet_fraction }
 { Sample Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_l_carpometacarpal_1Pitch.EventSet_fraction}
-Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator400.set_EventSet_fraction);
+Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator400.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_r_carpometacarpal_1Pitch.EventSet_fraction }
 { Sample Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_r_carpometacarpal_1Pitch.EventSet_fraction}
-Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator401.set_EventSet_fraction);
+Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator401.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_r_carpal_proximal_interphalangeal_2Roll.EventSet_fraction }
 { Sample Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_r_carpal_proximal_interphalangeal_2Roll.EventSet_fraction}
-Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator402.set_EventSet_fraction);
+Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator402.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_r_metacarpophalangeal_2Roll.EventSet_fraction }
 { Sample Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_r_metacarpophalangeal_2Roll.EventSet_fraction}
-Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator403.set_EventSet_fraction);
+Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator403.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_r_carpal_distal_interphalangeal_2Roll.EventSet_fraction }
 { Sample Tufani_Stand010Timer.EventFraction_changed TO Tufani_Stand010_r_carpal_distal_interphalangeal_2Roll.EventSet_fraction}
-Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator404.set_EventSet_fraction);
+Group374.AddRoute(TimeSensor375.EventFraction_changed, OrientationInterpolator404.EventSet_fraction);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand010_r_talocruralRotInterp.EventValue_changed TO Tufani_r_talocrural.EventSet_rotation }
-{ Sample Tufani_Stand010_r_talocruralRotInterp.EventValue_changed TO Tufani_r_talocrural.EventSet_rotation}
-Group374.AddRoute(OrientationInterpolator377.EventValue_changed, HAnimJoint82.set_EventSet_rotation);
+{ Original "Tufani_Stand010_r_talocruralRotInterp.EventValue_changed TO Tufani_r_talocrural.FdRotation.EventIn }
+{ Sample Tufani_Stand010_r_talocruralRotInterp.EventValue_changed TO Tufani_r_talocrural.FdRotation.EventIn}
+Group374.AddRoute(OrientationInterpolator377.EventValue_changed, HAnimJoint82.FdRotation.EventIn);
 end;
 
 procedure InitTufaniAnimatedPart67;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand010_r_kneeRotInterp.EventValue_changed TO Tufani_r_knee.EventSet_rotation }
-{ Sample Tufani_Stand010_r_kneeRotInterp.EventValue_changed TO Tufani_r_knee.EventSet_rotation}
-Group374.AddRoute(OrientationInterpolator378.EventValue_changed, HAnimJoint77.set_EventSet_rotation);
+{ Original "Tufani_Stand010_r_kneeRotInterp.EventValue_changed TO Tufani_r_knee.FdRotation.EventIn }
+{ Sample Tufani_Stand010_r_kneeRotInterp.EventValue_changed TO Tufani_r_knee.FdRotation.EventIn}
+Group374.AddRoute(OrientationInterpolator378.EventValue_changed, HAnimJoint77.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand010_r_hipRotInterp.EventValue_changed TO Tufani_r_hip.EventSet_rotation }
-{ Sample Tufani_Stand010_r_hipRotInterp.EventValue_changed TO Tufani_r_hip.EventSet_rotation}
-Group374.AddRoute(OrientationInterpolator379.EventValue_changed, HAnimJoint72.set_EventSet_rotation);
+{ Original "Tufani_Stand010_r_hipRotInterp.EventValue_changed TO Tufani_r_hip.FdRotation.EventIn }
+{ Sample Tufani_Stand010_r_hipRotInterp.EventValue_changed TO Tufani_r_hip.FdRotation.EventIn}
+Group374.AddRoute(OrientationInterpolator379.EventValue_changed, HAnimJoint72.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand010_l_talocruralRotInterp.EventValue_changed TO Tufani_l_talocrural.EventSet_rotation }
-{ Sample Tufani_Stand010_l_talocruralRotInterp.EventValue_changed TO Tufani_l_talocrural.EventSet_rotation}
-Group374.AddRoute(OrientationInterpolator380.EventValue_changed, HAnimJoint62.set_EventSet_rotation);
+{ Original "Tufani_Stand010_l_talocruralRotInterp.EventValue_changed TO Tufani_l_talocrural.FdRotation.EventIn }
+{ Sample Tufani_Stand010_l_talocruralRotInterp.EventValue_changed TO Tufani_l_talocrural.FdRotation.EventIn}
+Group374.AddRoute(OrientationInterpolator380.EventValue_changed, HAnimJoint62.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand010_l_kneeRotInterp.EventValue_changed TO Tufani_l_knee.EventSet_rotation }
-{ Sample Tufani_Stand010_l_kneeRotInterp.EventValue_changed TO Tufani_l_knee.EventSet_rotation}
-Group374.AddRoute(OrientationInterpolator381.EventValue_changed, HAnimJoint57.set_EventSet_rotation);
+{ Original "Tufani_Stand010_l_kneeRotInterp.EventValue_changed TO Tufani_l_knee.FdRotation.EventIn }
+{ Sample Tufani_Stand010_l_kneeRotInterp.EventValue_changed TO Tufani_l_knee.FdRotation.EventIn}
+Group374.AddRoute(OrientationInterpolator381.EventValue_changed, HAnimJoint57.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand010_l_hipRotInterp.EventValue_changed TO Tufani_l_hip.EventSet_rotation }
-{ Sample Tufani_Stand010_l_hipRotInterp.EventValue_changed TO Tufani_l_hip.EventSet_rotation}
-Group374.AddRoute(OrientationInterpolator382.EventValue_changed, HAnimJoint52.set_EventSet_rotation);
+{ Original "Tufani_Stand010_l_hipRotInterp.EventValue_changed TO Tufani_l_hip.FdRotation.EventIn }
+{ Sample Tufani_Stand010_l_hipRotInterp.EventValue_changed TO Tufani_l_hip.FdRotation.EventIn}
+Group374.AddRoute(OrientationInterpolator382.EventValue_changed, HAnimJoint52.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand010_r_radiocarpalRotInterp.EventValue_changed TO Tufani_r_radiocarpal.EventSet_rotation }
-{ Sample Tufani_Stand010_r_radiocarpalRotInterp.EventValue_changed TO Tufani_r_radiocarpal.EventSet_rotation}
-Group374.AddRoute(OrientationInterpolator383.EventValue_changed, HAnimJoint232.set_EventSet_rotation);
+{ Original "Tufani_Stand010_r_radiocarpalRotInterp.EventValue_changed TO Tufani_r_radiocarpal.FdRotation.EventIn }
+{ Sample Tufani_Stand010_r_radiocarpalRotInterp.EventValue_changed TO Tufani_r_radiocarpal.FdRotation.EventIn}
+Group374.AddRoute(OrientationInterpolator383.EventValue_changed, HAnimJoint232.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand010_r_elbowRotInterp.EventValue_changed TO Tufani_r_elbow.EventSet_rotation }
-{ Sample Tufani_Stand010_r_elbowRotInterp.EventValue_changed TO Tufani_r_elbow.EventSet_rotation}
-Group374.AddRoute(OrientationInterpolator384.EventValue_changed, HAnimJoint227.set_EventSet_rotation);
+{ Original "Tufani_Stand010_r_elbowRotInterp.EventValue_changed TO Tufani_r_elbow.FdRotation.EventIn }
+{ Sample Tufani_Stand010_r_elbowRotInterp.EventValue_changed TO Tufani_r_elbow.FdRotation.EventIn}
+Group374.AddRoute(OrientationInterpolator384.EventValue_changed, HAnimJoint227.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand010_r_shoulderRotInterp.EventValue_changed TO Tufani_r_shoulder.EventSet_rotation }
-{ Sample Tufani_Stand010_r_shoulderRotInterp.EventValue_changed TO Tufani_r_shoulder.EventSet_rotation}
-Group374.AddRoute(OrientationInterpolator385.EventValue_changed, HAnimJoint222.set_EventSet_rotation);
+{ Original "Tufani_Stand010_r_shoulderRotInterp.EventValue_changed TO Tufani_r_shoulder.FdRotation.EventIn }
+{ Sample Tufani_Stand010_r_shoulderRotInterp.EventValue_changed TO Tufani_r_shoulder.FdRotation.EventIn}
+Group374.AddRoute(OrientationInterpolator385.EventValue_changed, HAnimJoint222.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand010_l_radiocarpalRotInterp.EventValue_changed TO Tufani_l_radiocarpal.EventSet_rotation }
-{ Sample Tufani_Stand010_l_radiocarpalRotInterp.EventValue_changed TO Tufani_l_radiocarpal.EventSet_rotation}
-Group374.AddRoute(OrientationInterpolator386.EventValue_changed, HAnimJoint137.set_EventSet_rotation);
+{ Original "Tufani_Stand010_l_radiocarpalRotInterp.EventValue_changed TO Tufani_l_radiocarpal.FdRotation.EventIn }
+{ Sample Tufani_Stand010_l_radiocarpalRotInterp.EventValue_changed TO Tufani_l_radiocarpal.FdRotation.EventIn}
+Group374.AddRoute(OrientationInterpolator386.EventValue_changed, HAnimJoint137.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand010_l_elbowRotInterp.EventValue_changed TO Tufani_l_elbow.EventSet_rotation }
-{ Sample Tufani_Stand010_l_elbowRotInterp.EventValue_changed TO Tufani_l_elbow.EventSet_rotation}
-Group374.AddRoute(OrientationInterpolator387.EventValue_changed, HAnimJoint132.set_EventSet_rotation);
+{ Original "Tufani_Stand010_l_elbowRotInterp.EventValue_changed TO Tufani_l_elbow.FdRotation.EventIn }
+{ Sample Tufani_Stand010_l_elbowRotInterp.EventValue_changed TO Tufani_l_elbow.FdRotation.EventIn}
+Group374.AddRoute(OrientationInterpolator387.EventValue_changed, HAnimJoint132.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand010_l_shoulderRotInterp.EventValue_changed TO Tufani_l_shoulder.EventSet_rotation }
-{ Sample Tufani_Stand010_l_shoulderRotInterp.EventValue_changed TO Tufani_l_shoulder.EventSet_rotation}
-Group374.AddRoute(OrientationInterpolator388.EventValue_changed, HAnimJoint127.set_EventSet_rotation);
+{ Original "Tufani_Stand010_l_shoulderRotInterp.EventValue_changed TO Tufani_l_shoulder.FdRotation.EventIn }
+{ Sample Tufani_Stand010_l_shoulderRotInterp.EventValue_changed TO Tufani_l_shoulder.FdRotation.EventIn}
+Group374.AddRoute(OrientationInterpolator388.EventValue_changed, HAnimJoint127.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand010_headRotInterp.EventValue_changed TO Tufani_skullbase.EventSet_rotation }
-{ Sample Tufani_Stand010_headRotInterp.EventValue_changed TO Tufani_skullbase.EventSet_rotation}
-Group374.AddRoute(OrientationInterpolator389.EventValue_changed, HAnimJoint117.set_EventSet_rotation);
+{ Original "Tufani_Stand010_headRotInterp.EventValue_changed TO Tufani_skullbase.FdRotation.EventIn }
+{ Sample Tufani_Stand010_headRotInterp.EventValue_changed TO Tufani_skullbase.FdRotation.EventIn}
+Group374.AddRoute(OrientationInterpolator389.EventValue_changed, HAnimJoint117.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand010_lower_bodyRotInterp.EventValue_changed TO Tufani_sacroiliac.EventSet_rotation }
-{ Sample Tufani_Stand010_lower_bodyRotInterp.EventValue_changed TO Tufani_sacroiliac.EventSet_rotation}
-Group374.AddRoute(OrientationInterpolator391.EventValue_changed, HAnimJoint47.set_EventSet_rotation);
+{ Original "Tufani_Stand010_lower_bodyRotInterp.EventValue_changed TO Tufani_sacroiliac.FdRotation.EventIn }
+{ Sample Tufani_Stand010_lower_bodyRotInterp.EventValue_changed TO Tufani_sacroiliac.FdRotation.EventIn}
+Group374.AddRoute(OrientationInterpolator391.EventValue_changed, HAnimJoint47.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand010_whole_bodyRotInterp.EventValue_changed TO Tufani_humanoid_root.EventSet_rotation }
-{ Sample Tufani_Stand010_whole_bodyRotInterp.EventValue_changed TO Tufani_humanoid_root.EventSet_rotation}
-Group374.AddRoute(OrientationInterpolator393.EventValue_changed, HAnimJoint42.set_EventSet_rotation);
+{ Original "Tufani_Stand010_whole_bodyRotInterp.EventValue_changed TO Tufani_humanoid_root.FdRotation.EventIn }
+{ Sample Tufani_Stand010_whole_bodyRotInterp.EventValue_changed TO Tufani_humanoid_root.FdRotation.EventIn}
+Group374.AddRoute(OrientationInterpolator393.EventValue_changed, HAnimJoint42.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand010_whole_bodyTransInterp.EventValue_changed TO Tufani_humanoid_root.EventSet_translation }
-{ Sample Tufani_Stand010_whole_bodyTransInterp.EventValue_changed TO Tufani_humanoid_root.EventSet_translation}
-Group374.AddRoute(PositionInterpolator394.EventValue_changed, HAnimJoint42.set_EventSet_translation);
+{ Original "Tufani_Stand010_whole_bodyTransInterp.EventValue_changed TO Tufani_humanoid_root.FdTranslation.EventIn }
+{ Sample Tufani_Stand010_whole_bodyTransInterp.EventValue_changed TO Tufani_humanoid_root.FdTranslation.EventIn}
+Group374.AddRoute(PositionInterpolator394.EventValue_changed, HAnimJoint42.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand010_l_sternoclavicularRoll.EventValue_changed TO Tufani_l_sternoclavicular.EventSet_rotation }
-{ Sample Tufani_Stand010_l_sternoclavicularRoll.EventValue_changed TO Tufani_l_sternoclavicular.EventSet_rotation}
-Group374.AddRoute(OrientationInterpolator395.EventValue_changed, HAnimJoint122.set_EventSet_rotation);
+{ Original "Tufani_Stand010_l_sternoclavicularRoll.EventValue_changed TO Tufani_l_sternoclavicular.FdRotation.EventIn }
+{ Sample Tufani_Stand010_l_sternoclavicularRoll.EventValue_changed TO Tufani_l_sternoclavicular.FdRotation.EventIn}
+Group374.AddRoute(OrientationInterpolator395.EventValue_changed, HAnimJoint122.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand010_r_sternoclavicularRoll.EventValue_changed TO Tufani_r_sternoclavicular.EventSet_rotation }
-{ Sample Tufani_Stand010_r_sternoclavicularRoll.EventValue_changed TO Tufani_r_sternoclavicular.EventSet_rotation}
-Group374.AddRoute(OrientationInterpolator396.EventValue_changed, HAnimJoint217.set_EventSet_rotation);
+{ Original "Tufani_Stand010_r_sternoclavicularRoll.EventValue_changed TO Tufani_r_sternoclavicular.FdRotation.EventIn }
+{ Sample Tufani_Stand010_r_sternoclavicularRoll.EventValue_changed TO Tufani_r_sternoclavicular.FdRotation.EventIn}
+Group374.AddRoute(OrientationInterpolator396.EventValue_changed, HAnimJoint217.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand010_r_metatarsophalangeal_2Pitch.EventValue_changed TO Tufani_l_metatarsophalangeal_2.EventSet_rotation }
-{ Sample Tufani_Stand010_r_metatarsophalangeal_2Pitch.EventValue_changed TO Tufani_l_metatarsophalangeal_2.EventSet_rotation}
-Group374.AddRoute(OrientationInterpolator376.EventValue_changed, HAnimJoint67.set_EventSet_rotation);
+{ Original "Tufani_Stand010_r_metatarsophalangeal_2Pitch.EventValue_changed TO Tufani_l_metatarsophalangeal_2.FdRotation.EventIn }
+{ Sample Tufani_Stand010_r_metatarsophalangeal_2Pitch.EventValue_changed TO Tufani_l_metatarsophalangeal_2.FdRotation.EventIn}
+Group374.AddRoute(OrientationInterpolator376.EventValue_changed, HAnimJoint67.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand010_r_metatarsophalangeal_2Pitch.EventValue_changed TO Tufani_r_metatarsophalangeal_2.EventSet_rotation }
-{ Sample Tufani_Stand010_r_metatarsophalangeal_2Pitch.EventValue_changed TO Tufani_r_metatarsophalangeal_2.EventSet_rotation}
-Group374.AddRoute(OrientationInterpolator376.EventValue_changed, HAnimJoint87.set_EventSet_rotation);
+{ Original "Tufani_Stand010_r_metatarsophalangeal_2Pitch.EventValue_changed TO Tufani_r_metatarsophalangeal_2.FdRotation.EventIn }
+{ Sample Tufani_Stand010_r_metatarsophalangeal_2Pitch.EventValue_changed TO Tufani_r_metatarsophalangeal_2.FdRotation.EventIn}
+Group374.AddRoute(OrientationInterpolator376.EventValue_changed, HAnimJoint87.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand010_sacroiliacYaw.EventValue_changed TO Tufani_sacroiliac.EventSet_rotation }
-{ Sample Tufani_Stand010_sacroiliacYaw.EventValue_changed TO Tufani_sacroiliac.EventSet_rotation}
-Group374.AddRoute(OrientationInterpolator397.EventValue_changed, HAnimJoint47.set_EventSet_rotation);
+{ Original "Tufani_Stand010_sacroiliacYaw.EventValue_changed TO Tufani_sacroiliac.FdRotation.EventIn }
+{ Sample Tufani_Stand010_sacroiliacYaw.EventValue_changed TO Tufani_sacroiliac.FdRotation.EventIn}
+Group374.AddRoute(OrientationInterpolator397.EventValue_changed, HAnimJoint47.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand010_vl5Yaw.EventValue_changed TO Tufani_vl5.EventSet_rotation }
-{ Sample Tufani_Stand010_vl5Yaw.EventValue_changed TO Tufani_vl5.EventSet_rotation}
-Group374.AddRoute(OrientationInterpolator398.EventValue_changed, HAnimJoint92.set_EventSet_rotation);
+{ Original "Tufani_Stand010_vl5Yaw.EventValue_changed TO Tufani_vl5.FdRotation.EventIn }
+{ Sample Tufani_Stand010_vl5Yaw.EventValue_changed TO Tufani_vl5.FdRotation.EventIn}
+Group374.AddRoute(OrientationInterpolator398.EventValue_changed, HAnimJoint92.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand010_l_carpometacarpal_1Pitch.EventValue_changed TO Tufani_l_carpometacarpal_1.EventSet_rotation }
-{ Sample Tufani_Stand010_l_carpometacarpal_1Pitch.EventValue_changed TO Tufani_l_carpometacarpal_1.EventSet_rotation}
-Group374.AddRoute(OrientationInterpolator400.EventValue_changed, HAnimJoint142.set_EventSet_rotation);
+{ Original "Tufani_Stand010_l_carpometacarpal_1Pitch.EventValue_changed TO Tufani_l_carpometacarpal_1.FdRotation.EventIn }
+{ Sample Tufani_Stand010_l_carpometacarpal_1Pitch.EventValue_changed TO Tufani_l_carpometacarpal_1.FdRotation.EventIn}
+Group374.AddRoute(OrientationInterpolator400.EventValue_changed, HAnimJoint142.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand010_r_carpometacarpal_1Pitch.EventValue_changed TO Tufani_r_carpometacarpal_1.EventSet_rotation }
-{ Sample Tufani_Stand010_r_carpometacarpal_1Pitch.EventValue_changed TO Tufani_r_carpometacarpal_1.EventSet_rotation}
-Group374.AddRoute(OrientationInterpolator401.EventValue_changed, HAnimJoint237.set_EventSet_rotation);
+{ Original "Tufani_Stand010_r_carpometacarpal_1Pitch.EventValue_changed TO Tufani_r_carpometacarpal_1.FdRotation.EventIn }
+{ Sample Tufani_Stand010_r_carpometacarpal_1Pitch.EventValue_changed TO Tufani_r_carpometacarpal_1.FdRotation.EventIn}
+Group374.AddRoute(OrientationInterpolator401.EventValue_changed, HAnimJoint237.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand010_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_proximal_interphalangeal_2.EventSet_rotation }
-{ Sample Tufani_Stand010_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_proximal_interphalangeal_2.EventSet_rotation}
-Group374.AddRoute(OrientationInterpolator402.EventValue_changed, HAnimJoint252.set_EventSet_rotation);
+{ Original "Tufani_Stand010_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_proximal_interphalangeal_2.FdRotation.EventIn }
+{ Sample Tufani_Stand010_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_proximal_interphalangeal_2.FdRotation.EventIn}
+Group374.AddRoute(OrientationInterpolator402.EventValue_changed, HAnimJoint252.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_metacarpophalangeal_2.EventSet_rotation }
-{ Sample Tufani_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_metacarpophalangeal_2.EventSet_rotation}
-Group374.AddRoute(OrientationInterpolator403.EventValue_changed, HAnimJoint257.set_EventSet_rotation);
+{ Original "Tufani_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_metacarpophalangeal_2.FdRotation.EventIn }
+{ Sample Tufani_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_metacarpophalangeal_2.FdRotation.EventIn}
+Group374.AddRoute(OrientationInterpolator403.EventValue_changed, HAnimJoint257.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_distal_interphalangeal_2.EventSet_rotation }
-{ Sample Tufani_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_distal_interphalangeal_2.EventSet_rotation}
-Group374.AddRoute(OrientationInterpolator403.EventValue_changed, HAnimJoint262.set_EventSet_rotation);
+{ Original "Tufani_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_distal_interphalangeal_2.FdRotation.EventIn }
+{ Sample Tufani_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_distal_interphalangeal_2.FdRotation.EventIn}
+Group374.AddRoute(OrientationInterpolator403.EventValue_changed, HAnimJoint262.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand010_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_proximal_interphalangeal_3.EventSet_rotation }
-{ Sample Tufani_Stand010_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_proximal_interphalangeal_3.EventSet_rotation}
-Group374.AddRoute(OrientationInterpolator402.EventValue_changed, HAnimJoint267.set_EventSet_rotation);
+{ Original "Tufani_Stand010_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_proximal_interphalangeal_3.FdRotation.EventIn }
+{ Sample Tufani_Stand010_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_proximal_interphalangeal_3.FdRotation.EventIn}
+Group374.AddRoute(OrientationInterpolator402.EventValue_changed, HAnimJoint267.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_metacarpophalangeal_3.EventSet_rotation }
-{ Sample Tufani_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_metacarpophalangeal_3.EventSet_rotation}
-Group374.AddRoute(OrientationInterpolator403.EventValue_changed, HAnimJoint272.set_EventSet_rotation);
+{ Original "Tufani_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_metacarpophalangeal_3.FdRotation.EventIn }
+{ Sample Tufani_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_metacarpophalangeal_3.FdRotation.EventIn}
+Group374.AddRoute(OrientationInterpolator403.EventValue_changed, HAnimJoint272.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_distal_interphalangeal_3.EventSet_rotation }
-{ Sample Tufani_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_distal_interphalangeal_3.EventSet_rotation}
-Group374.AddRoute(OrientationInterpolator403.EventValue_changed, HAnimJoint277.set_EventSet_rotation);
+{ Original "Tufani_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_distal_interphalangeal_3.FdRotation.EventIn }
+{ Sample Tufani_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_distal_interphalangeal_3.FdRotation.EventIn}
+Group374.AddRoute(OrientationInterpolator403.EventValue_changed, HAnimJoint277.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand010_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_proximal_interphalangeal_4.EventSet_rotation }
-{ Sample Tufani_Stand010_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_proximal_interphalangeal_4.EventSet_rotation}
-Group374.AddRoute(OrientationInterpolator402.EventValue_changed, HAnimJoint282.set_EventSet_rotation);
+{ Original "Tufani_Stand010_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_proximal_interphalangeal_4.FdRotation.EventIn }
+{ Sample Tufani_Stand010_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_proximal_interphalangeal_4.FdRotation.EventIn}
+Group374.AddRoute(OrientationInterpolator402.EventValue_changed, HAnimJoint282.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_metacarpophalangeal_4.EventSet_rotation }
-{ Sample Tufani_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_metacarpophalangeal_4.EventSet_rotation}
-Group374.AddRoute(OrientationInterpolator403.EventValue_changed, HAnimJoint287.set_EventSet_rotation);
+{ Original "Tufani_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_metacarpophalangeal_4.FdRotation.EventIn }
+{ Sample Tufani_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_metacarpophalangeal_4.FdRotation.EventIn}
+Group374.AddRoute(OrientationInterpolator403.EventValue_changed, HAnimJoint287.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_distal_interphalangeal_4.EventSet_rotation }
-{ Sample Tufani_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_distal_interphalangeal_4.EventSet_rotation}
-Group374.AddRoute(OrientationInterpolator403.EventValue_changed, HAnimJoint292.set_EventSet_rotation);
+{ Original "Tufani_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_distal_interphalangeal_4.FdRotation.EventIn }
+{ Sample Tufani_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_distal_interphalangeal_4.FdRotation.EventIn}
+Group374.AddRoute(OrientationInterpolator403.EventValue_changed, HAnimJoint292.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand010_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_proximal_interphalangeal_5.EventSet_rotation }
-{ Sample Tufani_Stand010_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_proximal_interphalangeal_5.EventSet_rotation}
-Group374.AddRoute(OrientationInterpolator402.EventValue_changed, HAnimJoint297.set_EventSet_rotation);
+{ Original "Tufani_Stand010_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_proximal_interphalangeal_5.FdRotation.EventIn }
+{ Sample Tufani_Stand010_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_proximal_interphalangeal_5.FdRotation.EventIn}
+Group374.AddRoute(OrientationInterpolator402.EventValue_changed, HAnimJoint297.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_metacarpophalangeal_5.EventSet_rotation }
-{ Sample Tufani_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_metacarpophalangeal_5.EventSet_rotation}
-Group374.AddRoute(OrientationInterpolator403.EventValue_changed, HAnimJoint302.set_EventSet_rotation);
+{ Original "Tufani_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_metacarpophalangeal_5.FdRotation.EventIn }
+{ Sample Tufani_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_metacarpophalangeal_5.FdRotation.EventIn}
+Group374.AddRoute(OrientationInterpolator403.EventValue_changed, HAnimJoint302.FdRotation.EventIn);
 end;
 
 procedure InitTufaniAnimatedPart68;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_distal_interphalangeal_5.EventSet_rotation }
-{ Sample Tufani_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_distal_interphalangeal_5.EventSet_rotation}
-Group374.AddRoute(OrientationInterpolator403.EventValue_changed, HAnimJoint307.set_EventSet_rotation);
+{ Original "Tufani_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_distal_interphalangeal_5.FdRotation.EventIn }
+{ Sample Tufani_Stand010_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_distal_interphalangeal_5.FdRotation.EventIn}
+Group374.AddRoute(OrientationInterpolator403.EventValue_changed, HAnimJoint307.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group24.FdChildren.Add(Group374);
@@ -2831,35 +2831,35 @@ OrientationInterpolator497.SetKeyValue([Vector4(1,0,0,0),Vector4(1,0,0,-0.25),Ve
 Group470.FdChildren.Add(OrientationInterpolator497);
 { Original "Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_r_talocruralRotInterp_Tufani_Run011.EventSet_fraction }
 { Sample Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_r_talocruralRotInterp_Tufani_Run011.EventSet_fraction}
-Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator478.set_EventSet_fraction);
+Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator478.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_r_kneeRotInterp_Tufani_Run011.EventSet_fraction }
 { Sample Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_r_kneeRotInterp_Tufani_Run011.EventSet_fraction}
-Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator477.set_EventSet_fraction);
+Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator477.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_r_hipRotInterp_Tufani_Run011.EventSet_fraction }
 { Sample Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_r_hipRotInterp_Tufani_Run011.EventSet_fraction}
-Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator476.set_EventSet_fraction);
+Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator476.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_l_talocruralRotInterp_Tufani_Run011.EventSet_fraction }
 { Sample Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_l_talocruralRotInterp_Tufani_Run011.EventSet_fraction}
-Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator475.set_EventSet_fraction);
+Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator475.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_l_kneeRotInterp_Tufani_Run011.EventSet_fraction }
 { Sample Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_l_kneeRotInterp_Tufani_Run011.EventSet_fraction}
-Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator474.set_EventSet_fraction);
+Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator474.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_l_hipRotInterp_Tufani_Run011.EventSet_fraction }
 { Sample Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_l_hipRotInterp_Tufani_Run011.EventSet_fraction}
-Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator473.set_EventSet_fraction);
+Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator473.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_lower_bodyRotInterp_Tufani_Run011.EventSet_fraction }
 { Sample Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_lower_bodyRotInterp_Tufani_Run011.EventSet_fraction}
-Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator485.set_EventSet_fraction);
+Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator485.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_r_radiocarpalRotInterp_Tufani_Run011.EventSet_fraction }
 { Sample Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_r_radiocarpalRotInterp_Tufani_Run011.EventSet_fraction}
-Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator484.set_EventSet_fraction);
+Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator484.EventSet_fraction);
 end;
 
 procedure InitTufaniAnimatedPart71;
@@ -2868,180 +2868,180 @@ begin
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_r_elbowRotInterp_Tufani_Run011.EventSet_fraction }
 { Sample Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_r_elbowRotInterp_Tufani_Run011.EventSet_fraction}
-Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator483.set_EventSet_fraction);
+Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator483.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_r_shoulderRotInterp_Tufani_Run011.EventSet_fraction }
 { Sample Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_r_shoulderRotInterp_Tufani_Run011.EventSet_fraction}
-Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator482.set_EventSet_fraction);
+Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator482.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_l_radiocarpalRotInterp_Tufani_Run011.EventSet_fraction }
 { Sample Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_l_radiocarpalRotInterp_Tufani_Run011.EventSet_fraction}
-Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator481.set_EventSet_fraction);
+Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator481.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_l_elbowRotInterp_Tufani_Run011.EventSet_fraction }
 { Sample Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_l_elbowRotInterp_Tufani_Run011.EventSet_fraction}
-Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator480.set_EventSet_fraction);
+Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator480.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_l_shoulderRotInterp_Tufani_Run011.EventSet_fraction }
 { Sample Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_l_shoulderRotInterp_Tufani_Run011.EventSet_fraction}
-Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator479.set_EventSet_fraction);
+Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator479.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_headRotInterp_Tufani_Run011.EventSet_fraction }
 { Sample Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_headRotInterp_Tufani_Run011.EventSet_fraction}
-Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator486.set_EventSet_fraction);
+Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator486.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_neckRotInterp_Tufani_Run011.EventSet_fraction }
 { Sample Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_neckRotInterp_Tufani_Run011.EventSet_fraction}
-Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator487.set_EventSet_fraction);
+Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator487.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_upper_bodyRotInterp_Tufani_Run011.EventSet_fraction }
 { Sample Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_upper_bodyRotInterp_Tufani_Run011.EventSet_fraction}
-Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator488.set_EventSet_fraction);
+Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator488.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_whole_bodyRotInterp_Tufani_Run011.EventSet_fraction }
 { Sample Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_whole_bodyRotInterp_Tufani_Run011.EventSet_fraction}
-Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator489.set_EventSet_fraction);
+Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator489.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_whole_bodyTranInterp_Tufani_Run011.EventSet_fraction }
 { Sample Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_whole_bodyTranInterp_Tufani_Run011.EventSet_fraction}
-Group470.AddRoute(TimeSensor471.EventFraction_changed, PositionInterpolator490.set_EventSet_fraction);
+Group470.AddRoute(TimeSensor471.EventFraction_changed, PositionInterpolator490.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_l_sternoclavicularRoll.EventSet_fraction }
 { Sample Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_l_sternoclavicularRoll.EventSet_fraction}
-Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator491.set_EventSet_fraction);
+Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator491.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_r_sternoclavicularRoll.EventSet_fraction }
 { Sample Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_r_sternoclavicularRoll.EventSet_fraction}
-Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator492.set_EventSet_fraction);
+Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator492.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_r_metatarsophalangeal_2Pitch.EventSet_fraction }
 { Sample Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_r_metatarsophalangeal_2Pitch.EventSet_fraction}
-Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator472.set_EventSet_fraction);
+Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator472.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_sacroiliacYaw.EventSet_fraction }
 { Sample Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_sacroiliacYaw.EventSet_fraction}
-Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator493.set_EventSet_fraction);
+Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator493.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_vl5Yaw.EventSet_fraction }
 { Sample Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_vl5Yaw.EventSet_fraction}
-Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator494.set_EventSet_fraction);
+Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator494.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_vc6Yaw.EventSet_fraction }
 { Sample Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_vc6Yaw.EventSet_fraction}
-Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator495.set_EventSet_fraction);
+Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator495.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_l_carpometacarpal_1Pitch.EventSet_fraction }
 { Sample Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_l_carpometacarpal_1Pitch.EventSet_fraction}
-Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator496.set_EventSet_fraction);
+Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator496.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_r_carpometacarpal_1Pitch.EventSet_fraction }
 { Sample Tufani_Run011Timer.EventFraction_changed TO Tufani_Run011_r_carpometacarpal_1Pitch.EventSet_fraction}
-Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator497.set_EventSet_fraction);
+Group470.AddRoute(TimeSensor471.EventFraction_changed, OrientationInterpolator497.EventSet_fraction);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Run011_r_talocruralRotInterp_Tufani_Run011.EventValue_changed TO Tufani_r_talocrural.EventSet_rotation }
-{ Sample Tufani_Run011_r_talocruralRotInterp_Tufani_Run011.EventValue_changed TO Tufani_r_talocrural.EventSet_rotation}
-Group470.AddRoute(OrientationInterpolator478.EventValue_changed, HAnimJoint82.set_EventSet_rotation);
+{ Original "Tufani_Run011_r_talocruralRotInterp_Tufani_Run011.EventValue_changed TO Tufani_r_talocrural.FdRotation.EventIn }
+{ Sample Tufani_Run011_r_talocruralRotInterp_Tufani_Run011.EventValue_changed TO Tufani_r_talocrural.FdRotation.EventIn}
+Group470.AddRoute(OrientationInterpolator478.EventValue_changed, HAnimJoint82.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Run011_r_kneeRotInterp_Tufani_Run011.EventValue_changed TO Tufani_r_knee.EventSet_rotation }
-{ Sample Tufani_Run011_r_kneeRotInterp_Tufani_Run011.EventValue_changed TO Tufani_r_knee.EventSet_rotation}
-Group470.AddRoute(OrientationInterpolator477.EventValue_changed, HAnimJoint77.set_EventSet_rotation);
+{ Original "Tufani_Run011_r_kneeRotInterp_Tufani_Run011.EventValue_changed TO Tufani_r_knee.FdRotation.EventIn }
+{ Sample Tufani_Run011_r_kneeRotInterp_Tufani_Run011.EventValue_changed TO Tufani_r_knee.FdRotation.EventIn}
+Group470.AddRoute(OrientationInterpolator477.EventValue_changed, HAnimJoint77.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Run011_r_hipRotInterp_Tufani_Run011.EventValue_changed TO Tufani_r_hip.EventSet_rotation }
-{ Sample Tufani_Run011_r_hipRotInterp_Tufani_Run011.EventValue_changed TO Tufani_r_hip.EventSet_rotation}
-Group470.AddRoute(OrientationInterpolator476.EventValue_changed, HAnimJoint72.set_EventSet_rotation);
+{ Original "Tufani_Run011_r_hipRotInterp_Tufani_Run011.EventValue_changed TO Tufani_r_hip.FdRotation.EventIn }
+{ Sample Tufani_Run011_r_hipRotInterp_Tufani_Run011.EventValue_changed TO Tufani_r_hip.FdRotation.EventIn}
+Group470.AddRoute(OrientationInterpolator476.EventValue_changed, HAnimJoint72.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Run011_l_talocruralRotInterp_Tufani_Run011.EventValue_changed TO Tufani_l_talocrural.EventSet_rotation }
-{ Sample Tufani_Run011_l_talocruralRotInterp_Tufani_Run011.EventValue_changed TO Tufani_l_talocrural.EventSet_rotation}
-Group470.AddRoute(OrientationInterpolator475.EventValue_changed, HAnimJoint62.set_EventSet_rotation);
+{ Original "Tufani_Run011_l_talocruralRotInterp_Tufani_Run011.EventValue_changed TO Tufani_l_talocrural.FdRotation.EventIn }
+{ Sample Tufani_Run011_l_talocruralRotInterp_Tufani_Run011.EventValue_changed TO Tufani_l_talocrural.FdRotation.EventIn}
+Group470.AddRoute(OrientationInterpolator475.EventValue_changed, HAnimJoint62.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Run011_l_kneeRotInterp_Tufani_Run011.EventValue_changed TO Tufani_l_knee.EventSet_rotation }
-{ Sample Tufani_Run011_l_kneeRotInterp_Tufani_Run011.EventValue_changed TO Tufani_l_knee.EventSet_rotation}
-Group470.AddRoute(OrientationInterpolator474.EventValue_changed, HAnimJoint57.set_EventSet_rotation);
+{ Original "Tufani_Run011_l_kneeRotInterp_Tufani_Run011.EventValue_changed TO Tufani_l_knee.FdRotation.EventIn }
+{ Sample Tufani_Run011_l_kneeRotInterp_Tufani_Run011.EventValue_changed TO Tufani_l_knee.FdRotation.EventIn}
+Group470.AddRoute(OrientationInterpolator474.EventValue_changed, HAnimJoint57.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Run011_l_hipRotInterp_Tufani_Run011.EventValue_changed TO Tufani_l_hip.EventSet_rotation }
-{ Sample Tufani_Run011_l_hipRotInterp_Tufani_Run011.EventValue_changed TO Tufani_l_hip.EventSet_rotation}
-Group470.AddRoute(OrientationInterpolator473.EventValue_changed, HAnimJoint52.set_EventSet_rotation);
+{ Original "Tufani_Run011_l_hipRotInterp_Tufani_Run011.EventValue_changed TO Tufani_l_hip.FdRotation.EventIn }
+{ Sample Tufani_Run011_l_hipRotInterp_Tufani_Run011.EventValue_changed TO Tufani_l_hip.FdRotation.EventIn}
+Group470.AddRoute(OrientationInterpolator473.EventValue_changed, HAnimJoint52.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Run011_r_radiocarpalRotInterp_Tufani_Run011.EventValue_changed TO Tufani_r_radiocarpal.EventSet_rotation }
-{ Sample Tufani_Run011_r_radiocarpalRotInterp_Tufani_Run011.EventValue_changed TO Tufani_r_radiocarpal.EventSet_rotation}
-Group470.AddRoute(OrientationInterpolator484.EventValue_changed, HAnimJoint232.set_EventSet_rotation);
+{ Original "Tufani_Run011_r_radiocarpalRotInterp_Tufani_Run011.EventValue_changed TO Tufani_r_radiocarpal.FdRotation.EventIn }
+{ Sample Tufani_Run011_r_radiocarpalRotInterp_Tufani_Run011.EventValue_changed TO Tufani_r_radiocarpal.FdRotation.EventIn}
+Group470.AddRoute(OrientationInterpolator484.EventValue_changed, HAnimJoint232.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Run011_r_elbowRotInterp_Tufani_Run011.EventValue_changed TO Tufani_r_elbow.EventSet_rotation }
-{ Sample Tufani_Run011_r_elbowRotInterp_Tufani_Run011.EventValue_changed TO Tufani_r_elbow.EventSet_rotation}
-Group470.AddRoute(OrientationInterpolator483.EventValue_changed, HAnimJoint227.set_EventSet_rotation);
+{ Original "Tufani_Run011_r_elbowRotInterp_Tufani_Run011.EventValue_changed TO Tufani_r_elbow.FdRotation.EventIn }
+{ Sample Tufani_Run011_r_elbowRotInterp_Tufani_Run011.EventValue_changed TO Tufani_r_elbow.FdRotation.EventIn}
+Group470.AddRoute(OrientationInterpolator483.EventValue_changed, HAnimJoint227.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Run011_r_shoulderRotInterp_Tufani_Run011.EventValue_changed TO Tufani_r_shoulder.EventSet_rotation }
-{ Sample Tufani_Run011_r_shoulderRotInterp_Tufani_Run011.EventValue_changed TO Tufani_r_shoulder.EventSet_rotation}
-Group470.AddRoute(OrientationInterpolator482.EventValue_changed, HAnimJoint222.set_EventSet_rotation);
+{ Original "Tufani_Run011_r_shoulderRotInterp_Tufani_Run011.EventValue_changed TO Tufani_r_shoulder.FdRotation.EventIn }
+{ Sample Tufani_Run011_r_shoulderRotInterp_Tufani_Run011.EventValue_changed TO Tufani_r_shoulder.FdRotation.EventIn}
+Group470.AddRoute(OrientationInterpolator482.EventValue_changed, HAnimJoint222.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Run011_l_radiocarpalRotInterp_Tufani_Run011.EventValue_changed TO Tufani_l_radiocarpal.EventSet_rotation }
-{ Sample Tufani_Run011_l_radiocarpalRotInterp_Tufani_Run011.EventValue_changed TO Tufani_l_radiocarpal.EventSet_rotation}
-Group470.AddRoute(OrientationInterpolator481.EventValue_changed, HAnimJoint137.set_EventSet_rotation);
+{ Original "Tufani_Run011_l_radiocarpalRotInterp_Tufani_Run011.EventValue_changed TO Tufani_l_radiocarpal.FdRotation.EventIn }
+{ Sample Tufani_Run011_l_radiocarpalRotInterp_Tufani_Run011.EventValue_changed TO Tufani_l_radiocarpal.FdRotation.EventIn}
+Group470.AddRoute(OrientationInterpolator481.EventValue_changed, HAnimJoint137.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Run011_l_elbowRotInterp_Tufani_Run011.EventValue_changed TO Tufani_l_elbow.EventSet_rotation }
-{ Sample Tufani_Run011_l_elbowRotInterp_Tufani_Run011.EventValue_changed TO Tufani_l_elbow.EventSet_rotation}
-Group470.AddRoute(OrientationInterpolator480.EventValue_changed, HAnimJoint132.set_EventSet_rotation);
+{ Original "Tufani_Run011_l_elbowRotInterp_Tufani_Run011.EventValue_changed TO Tufani_l_elbow.FdRotation.EventIn }
+{ Sample Tufani_Run011_l_elbowRotInterp_Tufani_Run011.EventValue_changed TO Tufani_l_elbow.FdRotation.EventIn}
+Group470.AddRoute(OrientationInterpolator480.EventValue_changed, HAnimJoint132.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Run011_l_shoulderRotInterp_Tufani_Run011.EventValue_changed TO Tufani_l_shoulder.EventSet_rotation }
-{ Sample Tufani_Run011_l_shoulderRotInterp_Tufani_Run011.EventValue_changed TO Tufani_l_shoulder.EventSet_rotation}
-Group470.AddRoute(OrientationInterpolator479.EventValue_changed, HAnimJoint127.set_EventSet_rotation);
+{ Original "Tufani_Run011_l_shoulderRotInterp_Tufani_Run011.EventValue_changed TO Tufani_l_shoulder.FdRotation.EventIn }
+{ Sample Tufani_Run011_l_shoulderRotInterp_Tufani_Run011.EventValue_changed TO Tufani_l_shoulder.FdRotation.EventIn}
+Group470.AddRoute(OrientationInterpolator479.EventValue_changed, HAnimJoint127.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Run011_lower_bodyRotInterp_Tufani_Run011.EventValue_changed TO Tufani_sacroiliac.EventSet_rotation }
-{ Sample Tufani_Run011_lower_bodyRotInterp_Tufani_Run011.EventValue_changed TO Tufani_sacroiliac.EventSet_rotation}
-Group470.AddRoute(OrientationInterpolator485.EventValue_changed, HAnimJoint47.set_EventSet_rotation);
+{ Original "Tufani_Run011_lower_bodyRotInterp_Tufani_Run011.EventValue_changed TO Tufani_sacroiliac.FdRotation.EventIn }
+{ Sample Tufani_Run011_lower_bodyRotInterp_Tufani_Run011.EventValue_changed TO Tufani_sacroiliac.FdRotation.EventIn}
+Group470.AddRoute(OrientationInterpolator485.EventValue_changed, HAnimJoint47.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Run011_headRotInterp_Tufani_Run011.EventValue_changed TO Tufani_skullbase.EventSet_rotation }
-{ Sample Tufani_Run011_headRotInterp_Tufani_Run011.EventValue_changed TO Tufani_skullbase.EventSet_rotation}
-Group470.AddRoute(OrientationInterpolator486.EventValue_changed, HAnimJoint117.set_EventSet_rotation);
+{ Original "Tufani_Run011_headRotInterp_Tufani_Run011.EventValue_changed TO Tufani_skullbase.FdRotation.EventIn }
+{ Sample Tufani_Run011_headRotInterp_Tufani_Run011.EventValue_changed TO Tufani_skullbase.FdRotation.EventIn}
+Group470.AddRoute(OrientationInterpolator486.EventValue_changed, HAnimJoint117.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Run011_neckRotInterp_Tufani_Run011.EventValue_changed TO Tufani_vc4.EventSet_rotation }
-{ Sample Tufani_Run011_neckRotInterp_Tufani_Run011.EventValue_changed TO Tufani_vc4.EventSet_rotation}
-Group470.AddRoute(OrientationInterpolator487.EventValue_changed, HAnimJoint112.set_EventSet_rotation);
+{ Original "Tufani_Run011_neckRotInterp_Tufani_Run011.EventValue_changed TO Tufani_vc4.FdRotation.EventIn }
+{ Sample Tufani_Run011_neckRotInterp_Tufani_Run011.EventValue_changed TO Tufani_vc4.FdRotation.EventIn}
+Group470.AddRoute(OrientationInterpolator487.EventValue_changed, HAnimJoint112.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Run011_whole_bodyRotInterp_Tufani_Run011.EventValue_changed TO Tufani_humanoid_root.EventSet_rotation }
-{ Sample Tufani_Run011_whole_bodyRotInterp_Tufani_Run011.EventValue_changed TO Tufani_humanoid_root.EventSet_rotation}
-Group470.AddRoute(OrientationInterpolator489.EventValue_changed, HAnimJoint42.set_EventSet_rotation);
+{ Original "Tufani_Run011_whole_bodyRotInterp_Tufani_Run011.EventValue_changed TO Tufani_humanoid_root.FdRotation.EventIn }
+{ Sample Tufani_Run011_whole_bodyRotInterp_Tufani_Run011.EventValue_changed TO Tufani_humanoid_root.FdRotation.EventIn}
+Group470.AddRoute(OrientationInterpolator489.EventValue_changed, HAnimJoint42.FdRotation.EventIn);
 end;
 
 procedure InitTufaniAnimatedPart72;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Run011_whole_bodyTranInterp_Tufani_Run011.EventValue_changed TO Tufani_humanoid_root.EventSet_translation }
-{ Sample Tufani_Run011_whole_bodyTranInterp_Tufani_Run011.EventValue_changed TO Tufani_humanoid_root.EventSet_translation}
-Group470.AddRoute(PositionInterpolator490.EventValue_changed, HAnimJoint42.set_EventSet_translation);
+{ Original "Tufani_Run011_whole_bodyTranInterp_Tufani_Run011.EventValue_changed TO Tufani_humanoid_root.FdTranslation.EventIn }
+{ Sample Tufani_Run011_whole_bodyTranInterp_Tufani_Run011.EventValue_changed TO Tufani_humanoid_root.FdTranslation.EventIn}
+Group470.AddRoute(PositionInterpolator490.EventValue_changed, HAnimJoint42.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Run011_l_sternoclavicularRoll.EventValue_changed TO Tufani_l_sternoclavicular.EventSet_rotation }
-{ Sample Tufani_Run011_l_sternoclavicularRoll.EventValue_changed TO Tufani_l_sternoclavicular.EventSet_rotation}
-Group470.AddRoute(OrientationInterpolator491.EventValue_changed, HAnimJoint122.set_EventSet_rotation);
+{ Original "Tufani_Run011_l_sternoclavicularRoll.EventValue_changed TO Tufani_l_sternoclavicular.FdRotation.EventIn }
+{ Sample Tufani_Run011_l_sternoclavicularRoll.EventValue_changed TO Tufani_l_sternoclavicular.FdRotation.EventIn}
+Group470.AddRoute(OrientationInterpolator491.EventValue_changed, HAnimJoint122.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Run011_r_sternoclavicularRoll.EventValue_changed TO Tufani_r_sternoclavicular.EventSet_rotation }
-{ Sample Tufani_Run011_r_sternoclavicularRoll.EventValue_changed TO Tufani_r_sternoclavicular.EventSet_rotation}
-Group470.AddRoute(OrientationInterpolator492.EventValue_changed, HAnimJoint217.set_EventSet_rotation);
+{ Original "Tufani_Run011_r_sternoclavicularRoll.EventValue_changed TO Tufani_r_sternoclavicular.FdRotation.EventIn }
+{ Sample Tufani_Run011_r_sternoclavicularRoll.EventValue_changed TO Tufani_r_sternoclavicular.FdRotation.EventIn}
+Group470.AddRoute(OrientationInterpolator492.EventValue_changed, HAnimJoint217.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Run011_r_metatarsophalangeal_2Pitch.EventValue_changed TO Tufani_l_metatarsophalangeal_2.EventSet_rotation }
-{ Sample Tufani_Run011_r_metatarsophalangeal_2Pitch.EventValue_changed TO Tufani_l_metatarsophalangeal_2.EventSet_rotation}
-Group470.AddRoute(OrientationInterpolator472.EventValue_changed, HAnimJoint67.set_EventSet_rotation);
+{ Original "Tufani_Run011_r_metatarsophalangeal_2Pitch.EventValue_changed TO Tufani_l_metatarsophalangeal_2.FdRotation.EventIn }
+{ Sample Tufani_Run011_r_metatarsophalangeal_2Pitch.EventValue_changed TO Tufani_l_metatarsophalangeal_2.FdRotation.EventIn}
+Group470.AddRoute(OrientationInterpolator472.EventValue_changed, HAnimJoint67.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Run011_r_metatarsophalangeal_2Pitch.EventValue_changed TO Tufani_r_metatarsophalangeal_2.EventSet_rotation }
-{ Sample Tufani_Run011_r_metatarsophalangeal_2Pitch.EventValue_changed TO Tufani_r_metatarsophalangeal_2.EventSet_rotation}
-Group470.AddRoute(OrientationInterpolator472.EventValue_changed, HAnimJoint87.set_EventSet_rotation);
+{ Original "Tufani_Run011_r_metatarsophalangeal_2Pitch.EventValue_changed TO Tufani_r_metatarsophalangeal_2.FdRotation.EventIn }
+{ Sample Tufani_Run011_r_metatarsophalangeal_2Pitch.EventValue_changed TO Tufani_r_metatarsophalangeal_2.FdRotation.EventIn}
+Group470.AddRoute(OrientationInterpolator472.EventValue_changed, HAnimJoint87.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Run011_sacroiliacYaw.EventValue_changed TO Tufani_sacroiliac.EventSet_rotation }
-{ Sample Tufani_Run011_sacroiliacYaw.EventValue_changed TO Tufani_sacroiliac.EventSet_rotation}
-Group470.AddRoute(OrientationInterpolator493.EventValue_changed, HAnimJoint47.set_EventSet_rotation);
+{ Original "Tufani_Run011_sacroiliacYaw.EventValue_changed TO Tufani_sacroiliac.FdRotation.EventIn }
+{ Sample Tufani_Run011_sacroiliacYaw.EventValue_changed TO Tufani_sacroiliac.FdRotation.EventIn}
+Group470.AddRoute(OrientationInterpolator493.EventValue_changed, HAnimJoint47.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Run011_vl5Yaw.EventValue_changed TO Tufani_vl5.EventSet_rotation }
-{ Sample Tufani_Run011_vl5Yaw.EventValue_changed TO Tufani_vl5.EventSet_rotation}
-Group470.AddRoute(OrientationInterpolator494.EventValue_changed, HAnimJoint92.set_EventSet_rotation);
+{ Original "Tufani_Run011_vl5Yaw.EventValue_changed TO Tufani_vl5.FdRotation.EventIn }
+{ Sample Tufani_Run011_vl5Yaw.EventValue_changed TO Tufani_vl5.FdRotation.EventIn}
+Group470.AddRoute(OrientationInterpolator494.EventValue_changed, HAnimJoint92.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Run011_l_carpometacarpal_1Pitch.EventValue_changed TO Tufani_l_carpometacarpal_1.EventSet_rotation }
-{ Sample Tufani_Run011_l_carpometacarpal_1Pitch.EventValue_changed TO Tufani_l_carpometacarpal_1.EventSet_rotation}
-Group470.AddRoute(OrientationInterpolator496.EventValue_changed, HAnimJoint142.set_EventSet_rotation);
+{ Original "Tufani_Run011_l_carpometacarpal_1Pitch.EventValue_changed TO Tufani_l_carpometacarpal_1.FdRotation.EventIn }
+{ Sample Tufani_Run011_l_carpometacarpal_1Pitch.EventValue_changed TO Tufani_l_carpometacarpal_1.FdRotation.EventIn}
+Group470.AddRoute(OrientationInterpolator496.EventValue_changed, HAnimJoint142.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Run011_r_carpometacarpal_1Pitch.EventValue_changed TO Tufani_r_carpometacarpal_1.EventSet_rotation }
-{ Sample Tufani_Run011_r_carpometacarpal_1Pitch.EventValue_changed TO Tufani_r_carpometacarpal_1.EventSet_rotation}
-Group470.AddRoute(OrientationInterpolator497.EventValue_changed, HAnimJoint237.set_EventSet_rotation);
+{ Original "Tufani_Run011_r_carpometacarpal_1Pitch.EventValue_changed TO Tufani_r_carpometacarpal_1.FdRotation.EventIn }
+{ Sample Tufani_Run011_r_carpometacarpal_1Pitch.EventValue_changed TO Tufani_r_carpometacarpal_1.FdRotation.EventIn}
+Group470.AddRoute(OrientationInterpolator497.EventValue_changed, HAnimJoint237.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group24.FdChildren.Add(Group470);
@@ -3199,212 +3199,212 @@ begin
 
 { Original "Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012s_r_talocruralRotInterp.EventSet_fraction }
 { Sample Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012s_r_talocruralRotInterp.EventSet_fraction}
-Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator552.set_EventSet_fraction);
+Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator552.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012s_r_kneeRotInterp.EventSet_fraction }
 { Sample Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012s_r_kneeRotInterp.EventSet_fraction}
-Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator553.set_EventSet_fraction);
+Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator553.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012s_r_hipRotInterp.EventSet_fraction }
 { Sample Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012s_r_hipRotInterp.EventSet_fraction}
-Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator554.set_EventSet_fraction);
+Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator554.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012s_l_talocruralRotInterp.EventSet_fraction }
 { Sample Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012s_l_talocruralRotInterp.EventSet_fraction}
-Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator555.set_EventSet_fraction);
+Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator555.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012s_l_kneeRotInterp.EventSet_fraction }
 { Sample Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012s_l_kneeRotInterp.EventSet_fraction}
-Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator556.set_EventSet_fraction);
+Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator556.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012s_l_hipRotInterp.EventSet_fraction }
 { Sample Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012s_l_hipRotInterp.EventSet_fraction}
-Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator557.set_EventSet_fraction);
+Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator557.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012s_lower_bodyRotInterp.EventSet_fraction }
 { Sample Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012s_lower_bodyRotInterp.EventSet_fraction}
-Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator567.set_EventSet_fraction);
+Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator567.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012s_r_radiocarpalRotInterp.EventSet_fraction }
 { Sample Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012s_r_radiocarpalRotInterp.EventSet_fraction}
-Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator558.set_EventSet_fraction);
+Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator558.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012s_r_elbowRotInterp.EventSet_fraction }
 { Sample Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012s_r_elbowRotInterp.EventSet_fraction}
-Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator559.set_EventSet_fraction);
+Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator559.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012s_r_shoulderRotInterp.EventSet_fraction }
 { Sample Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012s_r_shoulderRotInterp.EventSet_fraction}
-Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator560.set_EventSet_fraction);
+Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator560.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012s_l_radiocarpalRotInterp.EventSet_fraction }
 { Sample Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012s_l_radiocarpalRotInterp.EventSet_fraction}
-Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator561.set_EventSet_fraction);
+Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator561.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012s_l_elbowRotInterp.EventSet_fraction }
 { Sample Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012s_l_elbowRotInterp.EventSet_fraction}
-Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator562.set_EventSet_fraction);
+Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator562.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012s_l_shoulderRotInterp.EventSet_fraction }
 { Sample Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012s_l_shoulderRotInterp.EventSet_fraction}
-Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator563.set_EventSet_fraction);
+Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator563.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012s_headRotInterp.EventSet_fraction }
 { Sample Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012s_headRotInterp.EventSet_fraction}
-Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator564.set_EventSet_fraction);
+Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator564.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012s_neckRotInterp.EventSet_fraction }
 { Sample Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012s_neckRotInterp.EventSet_fraction}
-Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator565.set_EventSet_fraction);
+Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator565.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012s_upper_bodyRotInterp.EventSet_fraction }
 { Sample Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012s_upper_bodyRotInterp.EventSet_fraction}
-Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator566.set_EventSet_fraction);
+Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator566.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012s_whole_bodyRotInterp.EventSet_fraction }
 { Sample Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012s_whole_bodyRotInterp.EventSet_fraction}
-Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator568.set_EventSet_fraction);
+Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator568.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012s_whole_bodyTransInterp.EventSet_fraction }
 { Sample Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012s_whole_bodyTransInterp.EventSet_fraction}
-Group549.AddRoute(TimeSensor550.EventFraction_changed, PositionInterpolator569.set_EventSet_fraction);
+Group549.AddRoute(TimeSensor550.EventFraction_changed, PositionInterpolator569.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012_l_sternoclavicularRoll.EventSet_fraction }
 { Sample Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012_l_sternoclavicularRoll.EventSet_fraction}
-Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator570.set_EventSet_fraction);
+Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator570.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012_r_sternoclavicularRoll.EventSet_fraction }
 { Sample Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012_r_sternoclavicularRoll.EventSet_fraction}
-Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator571.set_EventSet_fraction);
+Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator571.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012_r_metatarsophalangeal_2Pitch.EventSet_fraction }
 { Sample Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012_r_metatarsophalangeal_2Pitch.EventSet_fraction}
-Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator551.set_EventSet_fraction);
+Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator551.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012_sacroiliacTufani_Turn012.EventSet_fraction }
 { Sample Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012_sacroiliacTufani_Turn012.EventSet_fraction}
-Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator572.set_EventSet_fraction);
+Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator572.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012_vl5Tufani_Turn012.EventSet_fraction }
 { Sample Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012_vl5Tufani_Turn012.EventSet_fraction}
-Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator573.set_EventSet_fraction);
+Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator573.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012_vc6Tufani_Turn012.EventSet_fraction }
 { Sample Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012_vc6Tufani_Turn012.EventSet_fraction}
-Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator574.set_EventSet_fraction);
+Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator574.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012_l_carpometacarpal_1Pitch.EventSet_fraction }
 { Sample Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012_l_carpometacarpal_1Pitch.EventSet_fraction}
-Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator575.set_EventSet_fraction);
+Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator575.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012_r_carpometacarpal_1Pitch.EventSet_fraction }
 { Sample Tufani_Turn012Timer.EventFraction_changed TO Tufani_Turn012_r_carpometacarpal_1Pitch.EventSet_fraction}
-Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator576.set_EventSet_fraction);
+Group549.AddRoute(TimeSensor550.EventFraction_changed, OrientationInterpolator576.EventSet_fraction);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Turn012s_r_talocruralRotInterp.EventValue_changed TO Tufani_r_talocrural.EventSet_rotation }
-{ Sample Tufani_Turn012s_r_talocruralRotInterp.EventValue_changed TO Tufani_r_talocrural.EventSet_rotation}
-Group549.AddRoute(OrientationInterpolator552.EventValue_changed, HAnimJoint82.set_EventSet_rotation);
+{ Original "Tufani_Turn012s_r_talocruralRotInterp.EventValue_changed TO Tufani_r_talocrural.FdRotation.EventIn }
+{ Sample Tufani_Turn012s_r_talocruralRotInterp.EventValue_changed TO Tufani_r_talocrural.FdRotation.EventIn}
+Group549.AddRoute(OrientationInterpolator552.EventValue_changed, HAnimJoint82.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Turn012s_r_kneeRotInterp.EventValue_changed TO Tufani_r_knee.EventSet_rotation }
-{ Sample Tufani_Turn012s_r_kneeRotInterp.EventValue_changed TO Tufani_r_knee.EventSet_rotation}
-Group549.AddRoute(OrientationInterpolator553.EventValue_changed, HAnimJoint77.set_EventSet_rotation);
+{ Original "Tufani_Turn012s_r_kneeRotInterp.EventValue_changed TO Tufani_r_knee.FdRotation.EventIn }
+{ Sample Tufani_Turn012s_r_kneeRotInterp.EventValue_changed TO Tufani_r_knee.FdRotation.EventIn}
+Group549.AddRoute(OrientationInterpolator553.EventValue_changed, HAnimJoint77.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Turn012s_r_hipRotInterp.EventValue_changed TO Tufani_r_hip.EventSet_rotation }
-{ Sample Tufani_Turn012s_r_hipRotInterp.EventValue_changed TO Tufani_r_hip.EventSet_rotation}
-Group549.AddRoute(OrientationInterpolator554.EventValue_changed, HAnimJoint72.set_EventSet_rotation);
+{ Original "Tufani_Turn012s_r_hipRotInterp.EventValue_changed TO Tufani_r_hip.FdRotation.EventIn }
+{ Sample Tufani_Turn012s_r_hipRotInterp.EventValue_changed TO Tufani_r_hip.FdRotation.EventIn}
+Group549.AddRoute(OrientationInterpolator554.EventValue_changed, HAnimJoint72.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Turn012s_l_talocruralRotInterp.EventValue_changed TO Tufani_l_talocrural.EventSet_rotation }
-{ Sample Tufani_Turn012s_l_talocruralRotInterp.EventValue_changed TO Tufani_l_talocrural.EventSet_rotation}
-Group549.AddRoute(OrientationInterpolator555.EventValue_changed, HAnimJoint62.set_EventSet_rotation);
+{ Original "Tufani_Turn012s_l_talocruralRotInterp.EventValue_changed TO Tufani_l_talocrural.FdRotation.EventIn }
+{ Sample Tufani_Turn012s_l_talocruralRotInterp.EventValue_changed TO Tufani_l_talocrural.FdRotation.EventIn}
+Group549.AddRoute(OrientationInterpolator555.EventValue_changed, HAnimJoint62.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Turn012s_l_kneeRotInterp.EventValue_changed TO Tufani_l_knee.EventSet_rotation }
-{ Sample Tufani_Turn012s_l_kneeRotInterp.EventValue_changed TO Tufani_l_knee.EventSet_rotation}
-Group549.AddRoute(OrientationInterpolator556.EventValue_changed, HAnimJoint57.set_EventSet_rotation);
+{ Original "Tufani_Turn012s_l_kneeRotInterp.EventValue_changed TO Tufani_l_knee.FdRotation.EventIn }
+{ Sample Tufani_Turn012s_l_kneeRotInterp.EventValue_changed TO Tufani_l_knee.FdRotation.EventIn}
+Group549.AddRoute(OrientationInterpolator556.EventValue_changed, HAnimJoint57.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Turn012s_l_hipRotInterp.EventValue_changed TO Tufani_l_hip.EventSet_rotation }
-{ Sample Tufani_Turn012s_l_hipRotInterp.EventValue_changed TO Tufani_l_hip.EventSet_rotation}
-Group549.AddRoute(OrientationInterpolator557.EventValue_changed, HAnimJoint52.set_EventSet_rotation);
+{ Original "Tufani_Turn012s_l_hipRotInterp.EventValue_changed TO Tufani_l_hip.FdRotation.EventIn }
+{ Sample Tufani_Turn012s_l_hipRotInterp.EventValue_changed TO Tufani_l_hip.FdRotation.EventIn}
+Group549.AddRoute(OrientationInterpolator557.EventValue_changed, HAnimJoint52.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Turn012s_lower_bodyRotInterp.EventValue_changed TO Tufani_sacroiliac.EventSet_rotation }
-{ Sample Tufani_Turn012s_lower_bodyRotInterp.EventValue_changed TO Tufani_sacroiliac.EventSet_rotation}
-Group549.AddRoute(OrientationInterpolator567.EventValue_changed, HAnimJoint47.set_EventSet_rotation);
+{ Original "Tufani_Turn012s_lower_bodyRotInterp.EventValue_changed TO Tufani_sacroiliac.FdRotation.EventIn }
+{ Sample Tufani_Turn012s_lower_bodyRotInterp.EventValue_changed TO Tufani_sacroiliac.FdRotation.EventIn}
+Group549.AddRoute(OrientationInterpolator567.EventValue_changed, HAnimJoint47.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Turn012s_r_radiocarpalRotInterp.EventValue_changed TO Tufani_r_radiocarpal.EventSet_rotation }
-{ Sample Tufani_Turn012s_r_radiocarpalRotInterp.EventValue_changed TO Tufani_r_radiocarpal.EventSet_rotation}
-Group549.AddRoute(OrientationInterpolator558.EventValue_changed, HAnimJoint232.set_EventSet_rotation);
+{ Original "Tufani_Turn012s_r_radiocarpalRotInterp.EventValue_changed TO Tufani_r_radiocarpal.FdRotation.EventIn }
+{ Sample Tufani_Turn012s_r_radiocarpalRotInterp.EventValue_changed TO Tufani_r_radiocarpal.FdRotation.EventIn}
+Group549.AddRoute(OrientationInterpolator558.EventValue_changed, HAnimJoint232.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Turn012s_r_elbowRotInterp.EventValue_changed TO Tufani_r_elbow.EventSet_rotation }
-{ Sample Tufani_Turn012s_r_elbowRotInterp.EventValue_changed TO Tufani_r_elbow.EventSet_rotation}
-Group549.AddRoute(OrientationInterpolator559.EventValue_changed, HAnimJoint227.set_EventSet_rotation);
+{ Original "Tufani_Turn012s_r_elbowRotInterp.EventValue_changed TO Tufani_r_elbow.FdRotation.EventIn }
+{ Sample Tufani_Turn012s_r_elbowRotInterp.EventValue_changed TO Tufani_r_elbow.FdRotation.EventIn}
+Group549.AddRoute(OrientationInterpolator559.EventValue_changed, HAnimJoint227.FdRotation.EventIn);
+{ METHOD .AddX3DROUTE }
+{ Original "Tufani_Turn012s_r_shoulderRotInterp.EventValue_changed TO Tufani_r_shoulder.FdRotation.EventIn }
+{ Sample Tufani_Turn012s_r_shoulderRotInterp.EventValue_changed TO Tufani_r_shoulder.FdRotation.EventIn}
+Group549.AddRoute(OrientationInterpolator560.EventValue_changed, HAnimJoint222.FdRotation.EventIn);
 end;
 
 procedure InitTufaniAnimatedPart76;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Turn012s_r_shoulderRotInterp.EventValue_changed TO Tufani_r_shoulder.EventSet_rotation }
-{ Sample Tufani_Turn012s_r_shoulderRotInterp.EventValue_changed TO Tufani_r_shoulder.EventSet_rotation}
-Group549.AddRoute(OrientationInterpolator560.EventValue_changed, HAnimJoint222.set_EventSet_rotation);
+{ Original "Tufani_Turn012s_l_radiocarpalRotInterp.EventValue_changed TO Tufani_l_radiocarpal.FdRotation.EventIn }
+{ Sample Tufani_Turn012s_l_radiocarpalRotInterp.EventValue_changed TO Tufani_l_radiocarpal.FdRotation.EventIn}
+Group549.AddRoute(OrientationInterpolator561.EventValue_changed, HAnimJoint137.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Turn012s_l_radiocarpalRotInterp.EventValue_changed TO Tufani_l_radiocarpal.EventSet_rotation }
-{ Sample Tufani_Turn012s_l_radiocarpalRotInterp.EventValue_changed TO Tufani_l_radiocarpal.EventSet_rotation}
-Group549.AddRoute(OrientationInterpolator561.EventValue_changed, HAnimJoint137.set_EventSet_rotation);
+{ Original "Tufani_Turn012s_l_elbowRotInterp.EventValue_changed TO Tufani_l_elbow.FdRotation.EventIn }
+{ Sample Tufani_Turn012s_l_elbowRotInterp.EventValue_changed TO Tufani_l_elbow.FdRotation.EventIn}
+Group549.AddRoute(OrientationInterpolator562.EventValue_changed, HAnimJoint132.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Turn012s_l_elbowRotInterp.EventValue_changed TO Tufani_l_elbow.EventSet_rotation }
-{ Sample Tufani_Turn012s_l_elbowRotInterp.EventValue_changed TO Tufani_l_elbow.EventSet_rotation}
-Group549.AddRoute(OrientationInterpolator562.EventValue_changed, HAnimJoint132.set_EventSet_rotation);
+{ Original "Tufani_Turn012s_l_shoulderRotInterp.EventValue_changed TO Tufani_l_shoulder.FdRotation.EventIn }
+{ Sample Tufani_Turn012s_l_shoulderRotInterp.EventValue_changed TO Tufani_l_shoulder.FdRotation.EventIn}
+Group549.AddRoute(OrientationInterpolator563.EventValue_changed, HAnimJoint127.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Turn012s_l_shoulderRotInterp.EventValue_changed TO Tufani_l_shoulder.EventSet_rotation }
-{ Sample Tufani_Turn012s_l_shoulderRotInterp.EventValue_changed TO Tufani_l_shoulder.EventSet_rotation}
-Group549.AddRoute(OrientationInterpolator563.EventValue_changed, HAnimJoint127.set_EventSet_rotation);
+{ Original "Tufani_Turn012s_headRotInterp.EventValue_changed TO Tufani_skullbase.FdRotation.EventIn }
+{ Sample Tufani_Turn012s_headRotInterp.EventValue_changed TO Tufani_skullbase.FdRotation.EventIn}
+Group549.AddRoute(OrientationInterpolator564.EventValue_changed, HAnimJoint117.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Turn012s_headRotInterp.EventValue_changed TO Tufani_skullbase.EventSet_rotation }
-{ Sample Tufani_Turn012s_headRotInterp.EventValue_changed TO Tufani_skullbase.EventSet_rotation}
-Group549.AddRoute(OrientationInterpolator564.EventValue_changed, HAnimJoint117.set_EventSet_rotation);
+{ Original "Tufani_Turn012s_neckRotInterp.EventValue_changed TO Tufani_vc4.FdRotation.EventIn }
+{ Sample Tufani_Turn012s_neckRotInterp.EventValue_changed TO Tufani_vc4.FdRotation.EventIn}
+Group549.AddRoute(OrientationInterpolator565.EventValue_changed, HAnimJoint112.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Turn012s_neckRotInterp.EventValue_changed TO Tufani_vc4.EventSet_rotation }
-{ Sample Tufani_Turn012s_neckRotInterp.EventValue_changed TO Tufani_vc4.EventSet_rotation}
-Group549.AddRoute(OrientationInterpolator565.EventValue_changed, HAnimJoint112.set_EventSet_rotation);
+{ Original "Tufani_Turn012s_whole_bodyRotInterp.EventValue_changed TO Tufani_humanoid_root.FdRotation.EventIn }
+{ Sample Tufani_Turn012s_whole_bodyRotInterp.EventValue_changed TO Tufani_humanoid_root.FdRotation.EventIn}
+Group549.AddRoute(OrientationInterpolator568.EventValue_changed, HAnimJoint42.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Turn012s_whole_bodyRotInterp.EventValue_changed TO Tufani_humanoid_root.EventSet_rotation }
-{ Sample Tufani_Turn012s_whole_bodyRotInterp.EventValue_changed TO Tufani_humanoid_root.EventSet_rotation}
-Group549.AddRoute(OrientationInterpolator568.EventValue_changed, HAnimJoint42.set_EventSet_rotation);
+{ Original "Tufani_Turn012s_whole_bodyTransInterp.EventValue_changed TO Tufani_humanoid_root.FdTranslation.EventIn }
+{ Sample Tufani_Turn012s_whole_bodyTransInterp.EventValue_changed TO Tufani_humanoid_root.FdTranslation.EventIn}
+Group549.AddRoute(PositionInterpolator569.EventValue_changed, HAnimJoint42.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Turn012s_whole_bodyTransInterp.EventValue_changed TO Tufani_humanoid_root.EventSet_translation }
-{ Sample Tufani_Turn012s_whole_bodyTransInterp.EventValue_changed TO Tufani_humanoid_root.EventSet_translation}
-Group549.AddRoute(PositionInterpolator569.EventValue_changed, HAnimJoint42.set_EventSet_translation);
+{ Original "Tufani_Turn012_l_sternoclavicularRoll.EventValue_changed TO Tufani_l_sternoclavicular.FdRotation.EventIn }
+{ Sample Tufani_Turn012_l_sternoclavicularRoll.EventValue_changed TO Tufani_l_sternoclavicular.FdRotation.EventIn}
+Group549.AddRoute(OrientationInterpolator570.EventValue_changed, HAnimJoint122.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Turn012_l_sternoclavicularRoll.EventValue_changed TO Tufani_l_sternoclavicular.EventSet_rotation }
-{ Sample Tufani_Turn012_l_sternoclavicularRoll.EventValue_changed TO Tufani_l_sternoclavicular.EventSet_rotation}
-Group549.AddRoute(OrientationInterpolator570.EventValue_changed, HAnimJoint122.set_EventSet_rotation);
+{ Original "Tufani_Turn012_r_sternoclavicularRoll.EventValue_changed TO Tufani_r_sternoclavicular.FdRotation.EventIn }
+{ Sample Tufani_Turn012_r_sternoclavicularRoll.EventValue_changed TO Tufani_r_sternoclavicular.FdRotation.EventIn}
+Group549.AddRoute(OrientationInterpolator571.EventValue_changed, HAnimJoint217.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Turn012_r_sternoclavicularRoll.EventValue_changed TO Tufani_r_sternoclavicular.EventSet_rotation }
-{ Sample Tufani_Turn012_r_sternoclavicularRoll.EventValue_changed TO Tufani_r_sternoclavicular.EventSet_rotation}
-Group549.AddRoute(OrientationInterpolator571.EventValue_changed, HAnimJoint217.set_EventSet_rotation);
+{ Original "Tufani_Turn012_r_metatarsophalangeal_2Pitch.EventValue_changed TO Tufani_l_metatarsophalangeal_2.FdRotation.EventIn }
+{ Sample Tufani_Turn012_r_metatarsophalangeal_2Pitch.EventValue_changed TO Tufani_l_metatarsophalangeal_2.FdRotation.EventIn}
+Group549.AddRoute(OrientationInterpolator551.EventValue_changed, HAnimJoint67.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Turn012_r_metatarsophalangeal_2Pitch.EventValue_changed TO Tufani_l_metatarsophalangeal_2.EventSet_rotation }
-{ Sample Tufani_Turn012_r_metatarsophalangeal_2Pitch.EventValue_changed TO Tufani_l_metatarsophalangeal_2.EventSet_rotation}
-Group549.AddRoute(OrientationInterpolator551.EventValue_changed, HAnimJoint67.set_EventSet_rotation);
+{ Original "Tufani_Turn012_r_metatarsophalangeal_2Pitch.EventValue_changed TO Tufani_r_metatarsophalangeal_2.FdRotation.EventIn }
+{ Sample Tufani_Turn012_r_metatarsophalangeal_2Pitch.EventValue_changed TO Tufani_r_metatarsophalangeal_2.FdRotation.EventIn}
+Group549.AddRoute(OrientationInterpolator551.EventValue_changed, HAnimJoint87.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Turn012_r_metatarsophalangeal_2Pitch.EventValue_changed TO Tufani_r_metatarsophalangeal_2.EventSet_rotation }
-{ Sample Tufani_Turn012_r_metatarsophalangeal_2Pitch.EventValue_changed TO Tufani_r_metatarsophalangeal_2.EventSet_rotation}
-Group549.AddRoute(OrientationInterpolator551.EventValue_changed, HAnimJoint87.set_EventSet_rotation);
+{ Original "Tufani_Turn012_sacroiliacTufani_Turn012.EventValue_changed TO Tufani_sacroiliac.FdRotation.EventIn }
+{ Sample Tufani_Turn012_sacroiliacTufani_Turn012.EventValue_changed TO Tufani_sacroiliac.FdRotation.EventIn}
+Group549.AddRoute(OrientationInterpolator572.EventValue_changed, HAnimJoint47.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Turn012_sacroiliacTufani_Turn012.EventValue_changed TO Tufani_sacroiliac.EventSet_rotation }
-{ Sample Tufani_Turn012_sacroiliacTufani_Turn012.EventValue_changed TO Tufani_sacroiliac.EventSet_rotation}
-Group549.AddRoute(OrientationInterpolator572.EventValue_changed, HAnimJoint47.set_EventSet_rotation);
+{ Original "Tufani_Turn012_vl5Tufani_Turn012.EventValue_changed TO Tufani_vl5.FdRotation.EventIn }
+{ Sample Tufani_Turn012_vl5Tufani_Turn012.EventValue_changed TO Tufani_vl5.FdRotation.EventIn}
+Group549.AddRoute(OrientationInterpolator573.EventValue_changed, HAnimJoint92.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Turn012_vl5Tufani_Turn012.EventValue_changed TO Tufani_vl5.EventSet_rotation }
-{ Sample Tufani_Turn012_vl5Tufani_Turn012.EventValue_changed TO Tufani_vl5.EventSet_rotation}
-Group549.AddRoute(OrientationInterpolator573.EventValue_changed, HAnimJoint92.set_EventSet_rotation);
+{ Original "Tufani_Turn012_l_carpometacarpal_1Pitch.EventValue_changed TO Tufani_l_carpometacarpal_1.FdRotation.EventIn }
+{ Sample Tufani_Turn012_l_carpometacarpal_1Pitch.EventValue_changed TO Tufani_l_carpometacarpal_1.FdRotation.EventIn}
+Group549.AddRoute(OrientationInterpolator575.EventValue_changed, HAnimJoint142.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Turn012_l_carpometacarpal_1Pitch.EventValue_changed TO Tufani_l_carpometacarpal_1.EventSet_rotation }
-{ Sample Tufani_Turn012_l_carpometacarpal_1Pitch.EventValue_changed TO Tufani_l_carpometacarpal_1.EventSet_rotation}
-Group549.AddRoute(OrientationInterpolator575.EventValue_changed, HAnimJoint142.set_EventSet_rotation);
-{ METHOD .AddX3DROUTE }
-{ Original "Tufani_Turn012_r_carpometacarpal_1Pitch.EventValue_changed TO Tufani_r_carpometacarpal_1.EventSet_rotation }
-{ Sample Tufani_Turn012_r_carpometacarpal_1Pitch.EventValue_changed TO Tufani_r_carpometacarpal_1.EventSet_rotation}
-Group549.AddRoute(OrientationInterpolator576.EventValue_changed, HAnimJoint237.set_EventSet_rotation);
+{ Original "Tufani_Turn012_r_carpometacarpal_1Pitch.EventValue_changed TO Tufani_r_carpometacarpal_1.FdRotation.EventIn }
+{ Sample Tufani_Turn012_r_carpometacarpal_1Pitch.EventValue_changed TO Tufani_r_carpometacarpal_1.FdRotation.EventIn}
+Group549.AddRoute(OrientationInterpolator576.EventValue_changed, HAnimJoint237.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group24.FdChildren.Add(Group549);
@@ -3436,12 +3436,12 @@ OrientationInterpolator633.SetKeyValue([Vector4(-0.5831,0.0351,0.8116,-0.1481),V
 { METHOD .FdChildren.Add }
 Group628.FdChildren.Add(OrientationInterpolator633);
 OrientationInterpolator634 := TOrientationInterpolatorNode.Create;
+OrientationInterpolator634.SetKey([0,0.125,0.2083,0.375,0.6667,0.9167,1]);
 end;
 
 procedure InitTufaniAnimatedPart77;
 begin
 
-OrientationInterpolator634.SetKey([0,0.125,0.2083,0.375,0.6667,0.9167,1]);
 OrientationInterpolator634.SetKeyValue([Vector4(-1,0,0,-0.0671),Vector4(-1,0,0,-0.2152),Vector4(-1,0,0,-0.3184),Vector4(-1,0,0,-0.4717),Vector4(-1,0,0,-0.2912),Vector4(1,0,0,-0.1222),Vector4(-1,0,0,-0.0671)]);
 { METHOD .FdChildren.Add }
 Group628.FdChildren.Add(OrientationInterpolator634);
@@ -3491,12 +3491,12 @@ OrientationInterpolator643.SetKeyValue([Vector4(1,0,-2,-0.1189),Vector4(-1,0,-1,
 { METHOD .FdChildren.Add }
 Group628.FdChildren.Add(OrientationInterpolator643);
 OrientationInterpolator644 := TOrientationInterpolatorNode.Create;
+OrientationInterpolator644.SetKey([0,0.375,0.4167,0.5,0.5833,0.6667,0.75,0.8333,0.9167,1]);
 end;
 
 procedure InitTufaniAnimatedPart78;
 begin
 
-OrientationInterpolator644.SetKey([0,0.375,0.4167,0.5,0.5833,0.6667,0.75,0.8333,0.9167,1]);
 OrientationInterpolator644.SetKeyValue([Vector4(0,1,0,-0.0864),Vector4(0,1,0,0.1825),Vector4(0,1,0,0.1505),Vector4(0,1,0,-0.1053),Vector4(0,1,0,0.0439),Vector4(0,-1,0,0.0312),Vector4(0,-1,0,0.0794),Vector4(0,-1,0,0.1616),Vector4(0,-1,0,0.155),Vector4(0,1,0,-0.0864)]);
 { METHOD .FdChildren.Add }
 Group628.FdChildren.Add(OrientationInterpolator644);
@@ -3546,12 +3546,12 @@ OrientationInterpolator653.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector
 { METHOD .FdChildren.Add }
 Group628.FdChildren.Add(OrientationInterpolator653);
 OrientationInterpolator654 := TOrientationInterpolatorNode.Create;
+OrientationInterpolator654.SetKey([0,0.2,0.4,0.5,0.6,0.8,1]);
 end;
 
 procedure InitTufaniAnimatedPart79;
 begin
 
-OrientationInterpolator654.SetKey([0,0.2,0.4,0.5,0.6,0.8,1]);
 OrientationInterpolator654.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { METHOD .FdChildren.Add }
 Group628.FdChildren.Add(OrientationInterpolator654);
@@ -3572,224 +3572,224 @@ OrientationInterpolator657.SetKeyValue([Vector4(0,0,1,0),Vector4(1,0,0,-0.25),Ve
 Group628.FdChildren.Add(OrientationInterpolator657);
 { Original "Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_r_ankleRotInterp.EventSet_fraction }
 { Sample Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_r_ankleRotInterp.EventSet_fraction}
-Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator631.set_EventSet_fraction);
+Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator631.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_r_kneeRotInterp.EventSet_fraction }
 { Sample Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_r_kneeRotInterp.EventSet_fraction}
-Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator632.set_EventSet_fraction);
+Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator632.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_r_hipRotInterp.EventSet_fraction }
 { Sample Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_r_hipRotInterp.EventSet_fraction}
-Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator633.set_EventSet_fraction);
+Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator633.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_l_ankleRotInterp.EventSet_fraction }
 { Sample Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_l_ankleRotInterp.EventSet_fraction}
-Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator634.set_EventSet_fraction);
+Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator634.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_l_kneeRotInterp.EventSet_fraction }
 { Sample Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_l_kneeRotInterp.EventSet_fraction}
-Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator635.set_EventSet_fraction);
+Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator635.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_l_hipRotInterp.EventSet_fraction }
 { Sample Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_l_hipRotInterp.EventSet_fraction}
-Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator636.set_EventSet_fraction);
+Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator636.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_lower_bodyRotInterp.EventSet_fraction }
 { Sample Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_lower_bodyRotInterp.EventSet_fraction}
-Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator637.set_EventSet_fraction);
+Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator637.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_r_wristRotInterp.EventSet_fraction }
 { Sample Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_r_wristRotInterp.EventSet_fraction}
-Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator638.set_EventSet_fraction);
+Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator638.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_r_elbowRotInterp.EventSet_fraction }
 { Sample Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_r_elbowRotInterp.EventSet_fraction}
-Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator639.set_EventSet_fraction);
+Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator639.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_r_shoulderRotInterp.EventSet_fraction }
 { Sample Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_r_shoulderRotInterp.EventSet_fraction}
-Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator640.set_EventSet_fraction);
+Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator640.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_l_wristRotInterp.EventSet_fraction }
 { Sample Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_l_wristRotInterp.EventSet_fraction}
-Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator641.set_EventSet_fraction);
+Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator641.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_l_elbowRotInterp.EventSet_fraction }
 { Sample Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_l_elbowRotInterp.EventSet_fraction}
-Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator642.set_EventSet_fraction);
+Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator642.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_l_shoulderRotInterp.EventSet_fraction }
 { Sample Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_l_shoulderRotInterp.EventSet_fraction}
-Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator643.set_EventSet_fraction);
+Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator643.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_headRotInterp.EventSet_fraction }
 { Sample Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_headRotInterp.EventSet_fraction}
-Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator644.set_EventSet_fraction);
+Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator644.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_neckRotInterp.EventSet_fraction }
 { Sample Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_neckRotInterp.EventSet_fraction}
-Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator645.set_EventSet_fraction);
+Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator645.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_upper_bodyRotInterp.EventSet_fraction }
 { Sample Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_upper_bodyRotInterp.EventSet_fraction}
-Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator646.set_EventSet_fraction);
+Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator646.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_whole_bodyRotInterp.EventSet_fraction }
 { Sample Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_whole_bodyRotInterp.EventSet_fraction}
-Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator647.set_EventSet_fraction);
+Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator647.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_whole_bodyTranInterp.EventSet_fraction }
 { Sample Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_whole_bodyTranInterp.EventSet_fraction}
-Group628.AddRoute(TimeSensor629.EventFraction_changed, PositionInterpolator648.set_EventSet_fraction);
+Group628.AddRoute(TimeSensor629.EventFraction_changed, PositionInterpolator648.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_l_sternoclavicularRoll.EventSet_fraction }
 { Sample Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_l_sternoclavicularRoll.EventSet_fraction}
-Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator649.set_EventSet_fraction);
+Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator649.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_l_acromioclavicularRoll.EventSet_fraction }
 { Sample Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_l_acromioclavicularRoll.EventSet_fraction}
-Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator650.set_EventSet_fraction);
+Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator650.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_r_sternoclavicularRoll.EventSet_fraction }
 { Sample Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_r_sternoclavicularRoll.EventSet_fraction}
-Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator651.set_EventSet_fraction);
+Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator651.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_r_acromioclavicularRoll.EventSet_fraction }
 { Sample Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_r_acromioclavicularRoll.EventSet_fraction}
-Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator652.set_EventSet_fraction);
+Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator652.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_r_metatarsalPitch.EventSet_fraction }
 { Sample Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_r_metatarsalPitch.EventSet_fraction}
-Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator630.set_EventSet_fraction);
+Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator630.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_sacroiliacYaw.EventSet_fraction }
 { Sample Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_sacroiliacYaw.EventSet_fraction}
-Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator653.set_EventSet_fraction);
+Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator653.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_vl5Yaw.EventSet_fraction }
 { Sample Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_vl5Yaw.EventSet_fraction}
-Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator654.set_EventSet_fraction);
+Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator654.EventSet_fraction);
+{ METHOD .AddX3DROUTE }
+{ Original "Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_vc6Yaw.EventSet_fraction }
+{ Sample Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_vc6Yaw.EventSet_fraction}
+Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator655.EventSet_fraction);
 end;
 
 procedure InitTufaniAnimatedPart80;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_vc6Yaw.EventSet_fraction }
-{ Sample Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_vc6Yaw.EventSet_fraction}
-Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator655.set_EventSet_fraction);
-{ METHOD .AddX3DROUTE }
 { Original "Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_l_thumb1Pitch.EventSet_fraction }
 { Sample Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_l_thumb1Pitch.EventSet_fraction}
-Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator656.set_EventSet_fraction);
+Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator656.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_r_thumb1Pitch.EventSet_fraction }
 { Sample Tufani_Walk013Timer.EventFraction_changed TO Tufani_Walk013_r_thumb1Pitch.EventSet_fraction}
-Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator657.set_EventSet_fraction);
+Group628.AddRoute(TimeSensor629.EventFraction_changed, OrientationInterpolator657.EventSet_fraction);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Walk013_r_ankleRotInterp.EventValue_changed TO Tufani_r_talocrural.EventSet_rotation }
-{ Sample Tufani_Walk013_r_ankleRotInterp.EventValue_changed TO Tufani_r_talocrural.EventSet_rotation}
-Group628.AddRoute(OrientationInterpolator631.EventValue_changed, HAnimJoint82.set_EventSet_rotation);
+{ Original "Tufani_Walk013_r_ankleRotInterp.EventValue_changed TO Tufani_r_talocrural.FdRotation.EventIn }
+{ Sample Tufani_Walk013_r_ankleRotInterp.EventValue_changed TO Tufani_r_talocrural.FdRotation.EventIn}
+Group628.AddRoute(OrientationInterpolator631.EventValue_changed, HAnimJoint82.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Walk013_r_kneeRotInterp.EventValue_changed TO Tufani_r_knee.EventSet_rotation }
-{ Sample Tufani_Walk013_r_kneeRotInterp.EventValue_changed TO Tufani_r_knee.EventSet_rotation}
-Group628.AddRoute(OrientationInterpolator632.EventValue_changed, HAnimJoint77.set_EventSet_rotation);
+{ Original "Tufani_Walk013_r_kneeRotInterp.EventValue_changed TO Tufani_r_knee.FdRotation.EventIn }
+{ Sample Tufani_Walk013_r_kneeRotInterp.EventValue_changed TO Tufani_r_knee.FdRotation.EventIn}
+Group628.AddRoute(OrientationInterpolator632.EventValue_changed, HAnimJoint77.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Walk013_r_hipRotInterp.EventValue_changed TO Tufani_r_hip.EventSet_rotation }
-{ Sample Tufani_Walk013_r_hipRotInterp.EventValue_changed TO Tufani_r_hip.EventSet_rotation}
-Group628.AddRoute(OrientationInterpolator633.EventValue_changed, HAnimJoint72.set_EventSet_rotation);
+{ Original "Tufani_Walk013_r_hipRotInterp.EventValue_changed TO Tufani_r_hip.FdRotation.EventIn }
+{ Sample Tufani_Walk013_r_hipRotInterp.EventValue_changed TO Tufani_r_hip.FdRotation.EventIn}
+Group628.AddRoute(OrientationInterpolator633.EventValue_changed, HAnimJoint72.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Walk013_l_ankleRotInterp.EventValue_changed TO Tufani_l_talocrural.EventSet_rotation }
-{ Sample Tufani_Walk013_l_ankleRotInterp.EventValue_changed TO Tufani_l_talocrural.EventSet_rotation}
-Group628.AddRoute(OrientationInterpolator634.EventValue_changed, HAnimJoint62.set_EventSet_rotation);
+{ Original "Tufani_Walk013_l_ankleRotInterp.EventValue_changed TO Tufani_l_talocrural.FdRotation.EventIn }
+{ Sample Tufani_Walk013_l_ankleRotInterp.EventValue_changed TO Tufani_l_talocrural.FdRotation.EventIn}
+Group628.AddRoute(OrientationInterpolator634.EventValue_changed, HAnimJoint62.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Walk013_l_kneeRotInterp.EventValue_changed TO Tufani_l_knee.EventSet_rotation }
-{ Sample Tufani_Walk013_l_kneeRotInterp.EventValue_changed TO Tufani_l_knee.EventSet_rotation}
-Group628.AddRoute(OrientationInterpolator635.EventValue_changed, HAnimJoint57.set_EventSet_rotation);
+{ Original "Tufani_Walk013_l_kneeRotInterp.EventValue_changed TO Tufani_l_knee.FdRotation.EventIn }
+{ Sample Tufani_Walk013_l_kneeRotInterp.EventValue_changed TO Tufani_l_knee.FdRotation.EventIn}
+Group628.AddRoute(OrientationInterpolator635.EventValue_changed, HAnimJoint57.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Walk013_l_hipRotInterp.EventValue_changed TO Tufani_l_hip.EventSet_rotation }
-{ Sample Tufani_Walk013_l_hipRotInterp.EventValue_changed TO Tufani_l_hip.EventSet_rotation}
-Group628.AddRoute(OrientationInterpolator636.EventValue_changed, HAnimJoint52.set_EventSet_rotation);
+{ Original "Tufani_Walk013_l_hipRotInterp.EventValue_changed TO Tufani_l_hip.FdRotation.EventIn }
+{ Sample Tufani_Walk013_l_hipRotInterp.EventValue_changed TO Tufani_l_hip.FdRotation.EventIn}
+Group628.AddRoute(OrientationInterpolator636.EventValue_changed, HAnimJoint52.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Walk013_lower_bodyRotInterp.EventValue_changed TO Tufani_sacroiliac.EventSet_rotation }
-{ Sample Tufani_Walk013_lower_bodyRotInterp.EventValue_changed TO Tufani_sacroiliac.EventSet_rotation}
-Group628.AddRoute(OrientationInterpolator637.EventValue_changed, HAnimJoint47.set_EventSet_rotation);
+{ Original "Tufani_Walk013_lower_bodyRotInterp.EventValue_changed TO Tufani_sacroiliac.FdRotation.EventIn }
+{ Sample Tufani_Walk013_lower_bodyRotInterp.EventValue_changed TO Tufani_sacroiliac.FdRotation.EventIn}
+Group628.AddRoute(OrientationInterpolator637.EventValue_changed, HAnimJoint47.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Walk013_r_wristRotInterp.EventValue_changed TO Tufani_r_radiocarpal.EventSet_rotation }
-{ Sample Tufani_Walk013_r_wristRotInterp.EventValue_changed TO Tufani_r_radiocarpal.EventSet_rotation}
-Group628.AddRoute(OrientationInterpolator638.EventValue_changed, HAnimJoint232.set_EventSet_rotation);
+{ Original "Tufani_Walk013_r_wristRotInterp.EventValue_changed TO Tufani_r_radiocarpal.FdRotation.EventIn }
+{ Sample Tufani_Walk013_r_wristRotInterp.EventValue_changed TO Tufani_r_radiocarpal.FdRotation.EventIn}
+Group628.AddRoute(OrientationInterpolator638.EventValue_changed, HAnimJoint232.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Walk013_r_elbowRotInterp.EventValue_changed TO Tufani_r_elbow.EventSet_rotation }
-{ Sample Tufani_Walk013_r_elbowRotInterp.EventValue_changed TO Tufani_r_elbow.EventSet_rotation}
-Group628.AddRoute(OrientationInterpolator639.EventValue_changed, HAnimJoint227.set_EventSet_rotation);
+{ Original "Tufani_Walk013_r_elbowRotInterp.EventValue_changed TO Tufani_r_elbow.FdRotation.EventIn }
+{ Sample Tufani_Walk013_r_elbowRotInterp.EventValue_changed TO Tufani_r_elbow.FdRotation.EventIn}
+Group628.AddRoute(OrientationInterpolator639.EventValue_changed, HAnimJoint227.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Walk013_r_shoulderRotInterp.EventValue_changed TO Tufani_r_shoulder.EventSet_rotation }
-{ Sample Tufani_Walk013_r_shoulderRotInterp.EventValue_changed TO Tufani_r_shoulder.EventSet_rotation}
-Group628.AddRoute(OrientationInterpolator640.EventValue_changed, HAnimJoint222.set_EventSet_rotation);
+{ Original "Tufani_Walk013_r_shoulderRotInterp.EventValue_changed TO Tufani_r_shoulder.FdRotation.EventIn }
+{ Sample Tufani_Walk013_r_shoulderRotInterp.EventValue_changed TO Tufani_r_shoulder.FdRotation.EventIn}
+Group628.AddRoute(OrientationInterpolator640.EventValue_changed, HAnimJoint222.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Walk013_l_wristRotInterp.EventValue_changed TO Tufani_l_radiocarpal.EventSet_rotation }
-{ Sample Tufani_Walk013_l_wristRotInterp.EventValue_changed TO Tufani_l_radiocarpal.EventSet_rotation}
-Group628.AddRoute(OrientationInterpolator641.EventValue_changed, HAnimJoint137.set_EventSet_rotation);
+{ Original "Tufani_Walk013_l_wristRotInterp.EventValue_changed TO Tufani_l_radiocarpal.FdRotation.EventIn }
+{ Sample Tufani_Walk013_l_wristRotInterp.EventValue_changed TO Tufani_l_radiocarpal.FdRotation.EventIn}
+Group628.AddRoute(OrientationInterpolator641.EventValue_changed, HAnimJoint137.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Walk013_l_elbowRotInterp.EventValue_changed TO Tufani_l_elbow.EventSet_rotation }
-{ Sample Tufani_Walk013_l_elbowRotInterp.EventValue_changed TO Tufani_l_elbow.EventSet_rotation}
-Group628.AddRoute(OrientationInterpolator642.EventValue_changed, HAnimJoint132.set_EventSet_rotation);
+{ Original "Tufani_Walk013_l_elbowRotInterp.EventValue_changed TO Tufani_l_elbow.FdRotation.EventIn }
+{ Sample Tufani_Walk013_l_elbowRotInterp.EventValue_changed TO Tufani_l_elbow.FdRotation.EventIn}
+Group628.AddRoute(OrientationInterpolator642.EventValue_changed, HAnimJoint132.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Walk013_l_shoulderRotInterp.EventValue_changed TO Tufani_l_shoulder.EventSet_rotation }
-{ Sample Tufani_Walk013_l_shoulderRotInterp.EventValue_changed TO Tufani_l_shoulder.EventSet_rotation}
-Group628.AddRoute(OrientationInterpolator643.EventValue_changed, HAnimJoint127.set_EventSet_rotation);
+{ Original "Tufani_Walk013_l_shoulderRotInterp.EventValue_changed TO Tufani_l_shoulder.FdRotation.EventIn }
+{ Sample Tufani_Walk013_l_shoulderRotInterp.EventValue_changed TO Tufani_l_shoulder.FdRotation.EventIn}
+Group628.AddRoute(OrientationInterpolator643.EventValue_changed, HAnimJoint127.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Walk013_headRotInterp.EventValue_changed TO Tufani_skullbase.EventSet_rotation }
-{ Sample Tufani_Walk013_headRotInterp.EventValue_changed TO Tufani_skullbase.EventSet_rotation}
-Group628.AddRoute(OrientationInterpolator644.EventValue_changed, HAnimJoint117.set_EventSet_rotation);
+{ Original "Tufani_Walk013_headRotInterp.EventValue_changed TO Tufani_skullbase.FdRotation.EventIn }
+{ Sample Tufani_Walk013_headRotInterp.EventValue_changed TO Tufani_skullbase.FdRotation.EventIn}
+Group628.AddRoute(OrientationInterpolator644.EventValue_changed, HAnimJoint117.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Walk013_neckRotInterp.EventValue_changed TO Tufani_vc4.EventSet_rotation }
-{ Sample Tufani_Walk013_neckRotInterp.EventValue_changed TO Tufani_vc4.EventSet_rotation}
-Group628.AddRoute(OrientationInterpolator645.EventValue_changed, HAnimJoint112.set_EventSet_rotation);
+{ Original "Tufani_Walk013_neckRotInterp.EventValue_changed TO Tufani_vc4.FdRotation.EventIn }
+{ Sample Tufani_Walk013_neckRotInterp.EventValue_changed TO Tufani_vc4.FdRotation.EventIn}
+Group628.AddRoute(OrientationInterpolator645.EventValue_changed, HAnimJoint112.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Walk013_upper_bodyRotInterp.EventValue_changed TO Tufani_vl2.EventSet_rotation }
-{ Sample Tufani_Walk013_upper_bodyRotInterp.EventValue_changed TO Tufani_vl2.EventSet_rotation}
-Group628.AddRoute(OrientationInterpolator646.EventValue_changed, HAnimJoint97.set_EventSet_rotation);
+{ Original "Tufani_Walk013_upper_bodyRotInterp.EventValue_changed TO Tufani_vl2.FdRotation.EventIn }
+{ Sample Tufani_Walk013_upper_bodyRotInterp.EventValue_changed TO Tufani_vl2.FdRotation.EventIn}
+Group628.AddRoute(OrientationInterpolator646.EventValue_changed, HAnimJoint97.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Walk013_whole_bodyRotInterp.EventValue_changed TO Tufani_humanoid_root.EventSet_rotation }
-{ Sample Tufani_Walk013_whole_bodyRotInterp.EventValue_changed TO Tufani_humanoid_root.EventSet_rotation}
-Group628.AddRoute(OrientationInterpolator647.EventValue_changed, HAnimJoint42.set_EventSet_rotation);
+{ Original "Tufani_Walk013_whole_bodyRotInterp.EventValue_changed TO Tufani_humanoid_root.FdRotation.EventIn }
+{ Sample Tufani_Walk013_whole_bodyRotInterp.EventValue_changed TO Tufani_humanoid_root.FdRotation.EventIn}
+Group628.AddRoute(OrientationInterpolator647.EventValue_changed, HAnimJoint42.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Walk013_whole_bodyTranInterp.EventValue_changed TO Tufani_humanoid_root.EventSet_translation }
-{ Sample Tufani_Walk013_whole_bodyTranInterp.EventValue_changed TO Tufani_humanoid_root.EventSet_translation}
-Group628.AddRoute(PositionInterpolator648.EventValue_changed, HAnimJoint42.set_EventSet_translation);
+{ Original "Tufani_Walk013_whole_bodyTranInterp.EventValue_changed TO Tufani_humanoid_root.FdTranslation.EventIn }
+{ Sample Tufani_Walk013_whole_bodyTranInterp.EventValue_changed TO Tufani_humanoid_root.FdTranslation.EventIn}
+Group628.AddRoute(PositionInterpolator648.EventValue_changed, HAnimJoint42.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Walk013_l_sternoclavicularRoll.EventValue_changed TO Tufani_l_sternoclavicular.EventSet_rotation }
-{ Sample Tufani_Walk013_l_sternoclavicularRoll.EventValue_changed TO Tufani_l_sternoclavicular.EventSet_rotation}
-Group628.AddRoute(OrientationInterpolator649.EventValue_changed, HAnimJoint122.set_EventSet_rotation);
+{ Original "Tufani_Walk013_l_sternoclavicularRoll.EventValue_changed TO Tufani_l_sternoclavicular.FdRotation.EventIn }
+{ Sample Tufani_Walk013_l_sternoclavicularRoll.EventValue_changed TO Tufani_l_sternoclavicular.FdRotation.EventIn}
+Group628.AddRoute(OrientationInterpolator649.EventValue_changed, HAnimJoint122.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Walk013_r_sternoclavicularRoll.EventValue_changed TO Tufani_r_sternoclavicular.EventSet_rotation }
-{ Sample Tufani_Walk013_r_sternoclavicularRoll.EventValue_changed TO Tufani_r_sternoclavicular.EventSet_rotation}
-Group628.AddRoute(OrientationInterpolator651.EventValue_changed, HAnimJoint217.set_EventSet_rotation);
+{ Original "Tufani_Walk013_r_sternoclavicularRoll.EventValue_changed TO Tufani_r_sternoclavicular.FdRotation.EventIn }
+{ Sample Tufani_Walk013_r_sternoclavicularRoll.EventValue_changed TO Tufani_r_sternoclavicular.FdRotation.EventIn}
+Group628.AddRoute(OrientationInterpolator651.EventValue_changed, HAnimJoint217.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Walk013_r_metatarsalPitch.EventValue_changed TO Tufani_l_metatarsophalangeal_2.EventSet_rotation }
-{ Sample Tufani_Walk013_r_metatarsalPitch.EventValue_changed TO Tufani_l_metatarsophalangeal_2.EventSet_rotation}
-Group628.AddRoute(OrientationInterpolator630.EventValue_changed, HAnimJoint67.set_EventSet_rotation);
+{ Original "Tufani_Walk013_r_metatarsalPitch.EventValue_changed TO Tufani_l_metatarsophalangeal_2.FdRotation.EventIn }
+{ Sample Tufani_Walk013_r_metatarsalPitch.EventValue_changed TO Tufani_l_metatarsophalangeal_2.FdRotation.EventIn}
+Group628.AddRoute(OrientationInterpolator630.EventValue_changed, HAnimJoint67.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Walk013_r_metatarsalPitch.EventValue_changed TO Tufani_r_metatarsophalangeal_2.EventSet_rotation }
-{ Sample Tufani_Walk013_r_metatarsalPitch.EventValue_changed TO Tufani_r_metatarsophalangeal_2.EventSet_rotation}
-Group628.AddRoute(OrientationInterpolator630.EventValue_changed, HAnimJoint87.set_EventSet_rotation);
+{ Original "Tufani_Walk013_r_metatarsalPitch.EventValue_changed TO Tufani_r_metatarsophalangeal_2.FdRotation.EventIn }
+{ Sample Tufani_Walk013_r_metatarsalPitch.EventValue_changed TO Tufani_r_metatarsophalangeal_2.FdRotation.EventIn}
+Group628.AddRoute(OrientationInterpolator630.EventValue_changed, HAnimJoint87.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Walk013_sacroiliacYaw.EventValue_changed TO Tufani_sacroiliac.EventSet_rotation }
-{ Sample Tufani_Walk013_sacroiliacYaw.EventValue_changed TO Tufani_sacroiliac.EventSet_rotation}
-Group628.AddRoute(OrientationInterpolator653.EventValue_changed, HAnimJoint47.set_EventSet_rotation);
+{ Original "Tufani_Walk013_sacroiliacYaw.EventValue_changed TO Tufani_sacroiliac.FdRotation.EventIn }
+{ Sample Tufani_Walk013_sacroiliacYaw.EventValue_changed TO Tufani_sacroiliac.FdRotation.EventIn}
+Group628.AddRoute(OrientationInterpolator653.EventValue_changed, HAnimJoint47.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Walk013_vl5Yaw.EventValue_changed TO Tufani_vl5.EventSet_rotation }
-{ Sample Tufani_Walk013_vl5Yaw.EventValue_changed TO Tufani_vl5.EventSet_rotation}
-Group628.AddRoute(OrientationInterpolator654.EventValue_changed, HAnimJoint92.set_EventSet_rotation);
+{ Original "Tufani_Walk013_vl5Yaw.EventValue_changed TO Tufani_vl5.FdRotation.EventIn }
+{ Sample Tufani_Walk013_vl5Yaw.EventValue_changed TO Tufani_vl5.FdRotation.EventIn}
+Group628.AddRoute(OrientationInterpolator654.EventValue_changed, HAnimJoint92.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Walk013_l_thumb1Pitch.EventValue_changed TO Tufani_l_carpometacarpal_1.EventSet_rotation }
-{ Sample Tufani_Walk013_l_thumb1Pitch.EventValue_changed TO Tufani_l_carpometacarpal_1.EventSet_rotation}
-Group628.AddRoute(OrientationInterpolator656.EventValue_changed, HAnimJoint142.set_EventSet_rotation);
+{ Original "Tufani_Walk013_l_thumb1Pitch.EventValue_changed TO Tufani_l_carpometacarpal_1.FdRotation.EventIn }
+{ Sample Tufani_Walk013_l_thumb1Pitch.EventValue_changed TO Tufani_l_carpometacarpal_1.FdRotation.EventIn}
+Group628.AddRoute(OrientationInterpolator656.EventValue_changed, HAnimJoint142.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Walk013_r_thumb1Pitch.EventValue_changed TO Tufani_r_carpometacarpal_1.EventSet_rotation }
-{ Sample Tufani_Walk013_r_thumb1Pitch.EventValue_changed TO Tufani_r_carpometacarpal_1.EventSet_rotation}
-Group628.AddRoute(OrientationInterpolator657.EventValue_changed, HAnimJoint237.set_EventSet_rotation);
+{ Original "Tufani_Walk013_r_thumb1Pitch.EventValue_changed TO Tufani_r_carpometacarpal_1.FdRotation.EventIn }
+{ Sample Tufani_Walk013_r_thumb1Pitch.EventValue_changed TO Tufani_r_carpometacarpal_1.FdRotation.EventIn}
+Group628.AddRoute(OrientationInterpolator657.EventValue_changed, HAnimJoint237.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group24.FdChildren.Add(Group628);
@@ -3805,12 +3805,12 @@ OrientationInterpolator714.SetKey([0,0.25,0.5,0.75,1]);
 OrientationInterpolator714.SetKeyValue([Vector4(1,0,0,1),Vector4(0,0,1,0),Vector4(-1,0,0,1),Vector4(-1,0,0,1),Vector4(-1,0,0,0.5)]);
 { METHOD .FdChildren.Add }
 Group712.FdChildren.Add(OrientationInterpolator714);
+OrientationInterpolator715 := TOrientationInterpolatorNode.Create;
 end;
 
 procedure InitTufaniAnimatedPart81;
 begin
 
-OrientationInterpolator715 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator715.SetKey([0,0.25,0.5,0.75,1]);
 OrientationInterpolator715.SetKeyValue([Vector4(-1,0,0,0.1),Vector4(0,0,-1,0),Vector4(-1,0,0,1),Vector4(-1,0,0,1),Vector4(-1,0,0,1.5)]);
 { METHOD .FdChildren.Add }
@@ -3860,12 +3860,12 @@ OrientationInterpolator724.SetKey([0,0.5,1]);
 OrientationInterpolator724.SetKeyValue([Vector4(1,0,0,3),Vector4(1,0,0,0.75),Vector4(1,1,0,0.5)]);
 { METHOD .FdChildren.Add }
 Group712.FdChildren.Add(OrientationInterpolator724);
+OrientationInterpolator725 := TOrientationInterpolatorNode.Create;
 end;
 
 procedure InitTufaniAnimatedPart82;
 begin
 
-OrientationInterpolator725 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator725.SetKey([0,0.4,1]);
 OrientationInterpolator725.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,1.5),Vector4(-1,0,1,1.75)]);
 { METHOD .FdChildren.Add }
@@ -3897,144 +3897,144 @@ OrientationInterpolator730.SetKeyValue([Vector4(-1,0,0,0.5),Vector4(-1,0,0,0.5),
 Group712.FdChildren.Add(OrientationInterpolator730);
 { Original "Tufani_Skip014Timer.EventFraction_changed TO r_ankleRotInterp.EventSet_fraction }
 { Sample Tufani_Skip014Timer.EventFraction_changed TO r_ankleRotInterp.EventSet_fraction}
-Group712.AddRoute(TimeSensor713.EventFraction_changed, OrientationInterpolator714.set_EventSet_fraction);
+Group712.AddRoute(TimeSensor713.EventFraction_changed, OrientationInterpolator714.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Skip014Timer.EventFraction_changed TO r_kneeRotInterp.EventSet_fraction }
 { Sample Tufani_Skip014Timer.EventFraction_changed TO r_kneeRotInterp.EventSet_fraction}
-Group712.AddRoute(TimeSensor713.EventFraction_changed, OrientationInterpolator715.set_EventSet_fraction);
+Group712.AddRoute(TimeSensor713.EventFraction_changed, OrientationInterpolator715.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Skip014Timer.EventFraction_changed TO r_hipRotInterp.EventSet_fraction }
 { Sample Tufani_Skip014Timer.EventFraction_changed TO r_hipRotInterp.EventSet_fraction}
-Group712.AddRoute(TimeSensor713.EventFraction_changed, OrientationInterpolator716.set_EventSet_fraction);
+Group712.AddRoute(TimeSensor713.EventFraction_changed, OrientationInterpolator716.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Skip014Timer.EventFraction_changed TO l_ankleRotInterp.EventSet_fraction }
 { Sample Tufani_Skip014Timer.EventFraction_changed TO l_ankleRotInterp.EventSet_fraction}
-Group712.AddRoute(TimeSensor713.EventFraction_changed, OrientationInterpolator717.set_EventSet_fraction);
+Group712.AddRoute(TimeSensor713.EventFraction_changed, OrientationInterpolator717.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Skip014Timer.EventFraction_changed TO l_kneeRotInterp.EventSet_fraction }
 { Sample Tufani_Skip014Timer.EventFraction_changed TO l_kneeRotInterp.EventSet_fraction}
-Group712.AddRoute(TimeSensor713.EventFraction_changed, OrientationInterpolator718.set_EventSet_fraction);
+Group712.AddRoute(TimeSensor713.EventFraction_changed, OrientationInterpolator718.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Skip014Timer.EventFraction_changed TO l_hipRotInterp.EventSet_fraction }
 { Sample Tufani_Skip014Timer.EventFraction_changed TO l_hipRotInterp.EventSet_fraction}
-Group712.AddRoute(TimeSensor713.EventFraction_changed, OrientationInterpolator719.set_EventSet_fraction);
+Group712.AddRoute(TimeSensor713.EventFraction_changed, OrientationInterpolator719.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Skip014Timer.EventFraction_changed TO lower_bodyRotInterp.EventSet_fraction }
 { Sample Tufani_Skip014Timer.EventFraction_changed TO lower_bodyRotInterp.EventSet_fraction}
-Group712.AddRoute(TimeSensor713.EventFraction_changed, OrientationInterpolator728.set_EventSet_fraction);
+Group712.AddRoute(TimeSensor713.EventFraction_changed, OrientationInterpolator728.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Skip014Timer.EventFraction_changed TO r_wristRotInterp.EventSet_fraction }
 { Sample Tufani_Skip014Timer.EventFraction_changed TO r_wristRotInterp.EventSet_fraction}
-Group712.AddRoute(TimeSensor713.EventFraction_changed, OrientationInterpolator720.set_EventSet_fraction);
+Group712.AddRoute(TimeSensor713.EventFraction_changed, OrientationInterpolator720.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Skip014Timer.EventFraction_changed TO r_elbowRotInterp.EventSet_fraction }
 { Sample Tufani_Skip014Timer.EventFraction_changed TO r_elbowRotInterp.EventSet_fraction}
-Group712.AddRoute(TimeSensor713.EventFraction_changed, OrientationInterpolator721.set_EventSet_fraction);
+Group712.AddRoute(TimeSensor713.EventFraction_changed, OrientationInterpolator721.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Skip014Timer.EventFraction_changed TO r_shoulderRotInterp.EventSet_fraction }
 { Sample Tufani_Skip014Timer.EventFraction_changed TO r_shoulderRotInterp.EventSet_fraction}
-Group712.AddRoute(TimeSensor713.EventFraction_changed, OrientationInterpolator722.set_EventSet_fraction);
+Group712.AddRoute(TimeSensor713.EventFraction_changed, OrientationInterpolator722.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Skip014Timer.EventFraction_changed TO l_wristRotInterp.EventSet_fraction }
 { Sample Tufani_Skip014Timer.EventFraction_changed TO l_wristRotInterp.EventSet_fraction}
-Group712.AddRoute(TimeSensor713.EventFraction_changed, OrientationInterpolator723.set_EventSet_fraction);
+Group712.AddRoute(TimeSensor713.EventFraction_changed, OrientationInterpolator723.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Skip014Timer.EventFraction_changed TO l_elbowRotInterp.EventSet_fraction }
 { Sample Tufani_Skip014Timer.EventFraction_changed TO l_elbowRotInterp.EventSet_fraction}
-Group712.AddRoute(TimeSensor713.EventFraction_changed, OrientationInterpolator724.set_EventSet_fraction);
+Group712.AddRoute(TimeSensor713.EventFraction_changed, OrientationInterpolator724.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Skip014Timer.EventFraction_changed TO l_shoulderRotInterp.EventSet_fraction }
 { Sample Tufani_Skip014Timer.EventFraction_changed TO l_shoulderRotInterp.EventSet_fraction}
-Group712.AddRoute(TimeSensor713.EventFraction_changed, OrientationInterpolator725.set_EventSet_fraction);
+Group712.AddRoute(TimeSensor713.EventFraction_changed, OrientationInterpolator725.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Skip014Timer.EventFraction_changed TO headRotInterp.EventSet_fraction }
 { Sample Tufani_Skip014Timer.EventFraction_changed TO headRotInterp.EventSet_fraction}
-Group712.AddRoute(TimeSensor713.EventFraction_changed, OrientationInterpolator726.set_EventSet_fraction);
+Group712.AddRoute(TimeSensor713.EventFraction_changed, OrientationInterpolator726.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Skip014Timer.EventFraction_changed TO neckRotInterp.EventSet_fraction }
 { Sample Tufani_Skip014Timer.EventFraction_changed TO neckRotInterp.EventSet_fraction}
-Group712.AddRoute(TimeSensor713.EventFraction_changed, OrientationInterpolator727.set_EventSet_fraction);
+Group712.AddRoute(TimeSensor713.EventFraction_changed, OrientationInterpolator727.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Skip014Timer.EventFraction_changed TO upper_bodyRotInterp.EventSet_fraction }
 { Sample Tufani_Skip014Timer.EventFraction_changed TO upper_bodyRotInterp.EventSet_fraction}
-Group712.AddRoute(TimeSensor713.EventFraction_changed, OrientationInterpolator729.set_EventSet_fraction);
+Group712.AddRoute(TimeSensor713.EventFraction_changed, OrientationInterpolator729.EventSet_fraction);
+{ METHOD .AddX3DROUTE }
+{ Original "Tufani_Skip014Timer.EventFraction_changed TO whole_bodyRotInterp.EventSet_fraction }
+{ Sample Tufani_Skip014Timer.EventFraction_changed TO whole_bodyRotInterp.EventSet_fraction}
+Group712.AddRoute(TimeSensor713.EventFraction_changed, OrientationInterpolator730.EventSet_fraction);
 end;
 
 procedure InitTufaniAnimatedPart83;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Skip014Timer.EventFraction_changed TO whole_bodyRotInterp.EventSet_fraction }
-{ Sample Tufani_Skip014Timer.EventFraction_changed TO whole_bodyRotInterp.EventSet_fraction}
-Group712.AddRoute(TimeSensor713.EventFraction_changed, OrientationInterpolator730.set_EventSet_fraction);
+{ Original "r_ankleRotInterp.EventValue_changed TO Tufani_r_talocrural.FdRotation.EventIn }
+{ Sample r_ankleRotInterp.EventValue_changed TO Tufani_r_talocrural.FdRotation.EventIn}
+Group712.AddRoute(OrientationInterpolator714.EventValue_changed, HAnimJoint82.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_ankleRotInterp.EventValue_changed TO Tufani_r_talocrural.EventSet_rotation }
-{ Sample r_ankleRotInterp.EventValue_changed TO Tufani_r_talocrural.EventSet_rotation}
-Group712.AddRoute(OrientationInterpolator714.EventValue_changed, HAnimJoint82.set_EventSet_rotation);
+{ Original "r_kneeRotInterp.EventValue_changed TO Tufani_r_knee.FdRotation.EventIn }
+{ Sample r_kneeRotInterp.EventValue_changed TO Tufani_r_knee.FdRotation.EventIn}
+Group712.AddRoute(OrientationInterpolator715.EventValue_changed, HAnimJoint77.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_kneeRotInterp.EventValue_changed TO Tufani_r_knee.EventSet_rotation }
-{ Sample r_kneeRotInterp.EventValue_changed TO Tufani_r_knee.EventSet_rotation}
-Group712.AddRoute(OrientationInterpolator715.EventValue_changed, HAnimJoint77.set_EventSet_rotation);
+{ Original "r_hipRotInterp.EventValue_changed TO Tufani_r_hip.FdRotation.EventIn }
+{ Sample r_hipRotInterp.EventValue_changed TO Tufani_r_hip.FdRotation.EventIn}
+Group712.AddRoute(OrientationInterpolator716.EventValue_changed, HAnimJoint72.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_hipRotInterp.EventValue_changed TO Tufani_r_hip.EventSet_rotation }
-{ Sample r_hipRotInterp.EventValue_changed TO Tufani_r_hip.EventSet_rotation}
-Group712.AddRoute(OrientationInterpolator716.EventValue_changed, HAnimJoint72.set_EventSet_rotation);
+{ Original "l_ankleRotInterp.EventValue_changed TO Tufani_l_talocrural.FdRotation.EventIn }
+{ Sample l_ankleRotInterp.EventValue_changed TO Tufani_l_talocrural.FdRotation.EventIn}
+Group712.AddRoute(OrientationInterpolator717.EventValue_changed, HAnimJoint62.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "l_ankleRotInterp.EventValue_changed TO Tufani_l_talocrural.EventSet_rotation }
-{ Sample l_ankleRotInterp.EventValue_changed TO Tufani_l_talocrural.EventSet_rotation}
-Group712.AddRoute(OrientationInterpolator717.EventValue_changed, HAnimJoint62.set_EventSet_rotation);
+{ Original "l_kneeRotInterp.EventValue_changed TO Tufani_l_knee.FdRotation.EventIn }
+{ Sample l_kneeRotInterp.EventValue_changed TO Tufani_l_knee.FdRotation.EventIn}
+Group712.AddRoute(OrientationInterpolator718.EventValue_changed, HAnimJoint57.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "l_kneeRotInterp.EventValue_changed TO Tufani_l_knee.EventSet_rotation }
-{ Sample l_kneeRotInterp.EventValue_changed TO Tufani_l_knee.EventSet_rotation}
-Group712.AddRoute(OrientationInterpolator718.EventValue_changed, HAnimJoint57.set_EventSet_rotation);
+{ Original "l_hipRotInterp.EventValue_changed TO Tufani_l_hip.FdRotation.EventIn }
+{ Sample l_hipRotInterp.EventValue_changed TO Tufani_l_hip.FdRotation.EventIn}
+Group712.AddRoute(OrientationInterpolator719.EventValue_changed, HAnimJoint52.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "l_hipRotInterp.EventValue_changed TO Tufani_l_hip.EventSet_rotation }
-{ Sample l_hipRotInterp.EventValue_changed TO Tufani_l_hip.EventSet_rotation}
-Group712.AddRoute(OrientationInterpolator719.EventValue_changed, HAnimJoint52.set_EventSet_rotation);
+{ Original "lower_bodyRotInterp.EventValue_changed TO Tufani_sacroiliac.FdRotation.EventIn }
+{ Sample lower_bodyRotInterp.EventValue_changed TO Tufani_sacroiliac.FdRotation.EventIn}
+Group712.AddRoute(OrientationInterpolator728.EventValue_changed, HAnimJoint47.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "lower_bodyRotInterp.EventValue_changed TO Tufani_sacroiliac.EventSet_rotation }
-{ Sample lower_bodyRotInterp.EventValue_changed TO Tufani_sacroiliac.EventSet_rotation}
-Group712.AddRoute(OrientationInterpolator728.EventValue_changed, HAnimJoint47.set_EventSet_rotation);
+{ Original "r_wristRotInterp.EventValue_changed TO Tufani_r_radiocarpal.FdRotation.EventIn }
+{ Sample r_wristRotInterp.EventValue_changed TO Tufani_r_radiocarpal.FdRotation.EventIn}
+Group712.AddRoute(OrientationInterpolator720.EventValue_changed, HAnimJoint232.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_wristRotInterp.EventValue_changed TO Tufani_r_radiocarpal.EventSet_rotation }
-{ Sample r_wristRotInterp.EventValue_changed TO Tufani_r_radiocarpal.EventSet_rotation}
-Group712.AddRoute(OrientationInterpolator720.EventValue_changed, HAnimJoint232.set_EventSet_rotation);
+{ Original "r_elbowRotInterp.EventValue_changed TO Tufani_r_elbow.FdRotation.EventIn }
+{ Sample r_elbowRotInterp.EventValue_changed TO Tufani_r_elbow.FdRotation.EventIn}
+Group712.AddRoute(OrientationInterpolator721.EventValue_changed, HAnimJoint227.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_elbowRotInterp.EventValue_changed TO Tufani_r_elbow.EventSet_rotation }
-{ Sample r_elbowRotInterp.EventValue_changed TO Tufani_r_elbow.EventSet_rotation}
-Group712.AddRoute(OrientationInterpolator721.EventValue_changed, HAnimJoint227.set_EventSet_rotation);
+{ Original "r_shoulderRotInterp.EventValue_changed TO Tufani_r_shoulder.FdRotation.EventIn }
+{ Sample r_shoulderRotInterp.EventValue_changed TO Tufani_r_shoulder.FdRotation.EventIn}
+Group712.AddRoute(OrientationInterpolator722.EventValue_changed, HAnimJoint222.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "r_shoulderRotInterp.EventValue_changed TO Tufani_r_shoulder.EventSet_rotation }
-{ Sample r_shoulderRotInterp.EventValue_changed TO Tufani_r_shoulder.EventSet_rotation}
-Group712.AddRoute(OrientationInterpolator722.EventValue_changed, HAnimJoint222.set_EventSet_rotation);
+{ Original "l_wristRotInterp.EventValue_changed TO Tufani_l_radiocarpal.FdRotation.EventIn }
+{ Sample l_wristRotInterp.EventValue_changed TO Tufani_l_radiocarpal.FdRotation.EventIn}
+Group712.AddRoute(OrientationInterpolator723.EventValue_changed, HAnimJoint137.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "l_wristRotInterp.EventValue_changed TO Tufani_l_radiocarpal.EventSet_rotation }
-{ Sample l_wristRotInterp.EventValue_changed TO Tufani_l_radiocarpal.EventSet_rotation}
-Group712.AddRoute(OrientationInterpolator723.EventValue_changed, HAnimJoint137.set_EventSet_rotation);
+{ Original "l_elbowRotInterp.EventValue_changed TO Tufani_l_elbow.FdRotation.EventIn }
+{ Sample l_elbowRotInterp.EventValue_changed TO Tufani_l_elbow.FdRotation.EventIn}
+Group712.AddRoute(OrientationInterpolator724.EventValue_changed, HAnimJoint132.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "l_elbowRotInterp.EventValue_changed TO Tufani_l_elbow.EventSet_rotation }
-{ Sample l_elbowRotInterp.EventValue_changed TO Tufani_l_elbow.EventSet_rotation}
-Group712.AddRoute(OrientationInterpolator724.EventValue_changed, HAnimJoint132.set_EventSet_rotation);
+{ Original "l_shoulderRotInterp.EventValue_changed TO Tufani_l_shoulder.FdRotation.EventIn }
+{ Sample l_shoulderRotInterp.EventValue_changed TO Tufani_l_shoulder.FdRotation.EventIn}
+Group712.AddRoute(OrientationInterpolator725.EventValue_changed, HAnimJoint127.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "l_shoulderRotInterp.EventValue_changed TO Tufani_l_shoulder.EventSet_rotation }
-{ Sample l_shoulderRotInterp.EventValue_changed TO Tufani_l_shoulder.EventSet_rotation}
-Group712.AddRoute(OrientationInterpolator725.EventValue_changed, HAnimJoint127.set_EventSet_rotation);
+{ Original "headRotInterp.EventValue_changed TO Tufani_skullbase.FdRotation.EventIn }
+{ Sample headRotInterp.EventValue_changed TO Tufani_skullbase.FdRotation.EventIn}
+Group712.AddRoute(OrientationInterpolator726.EventValue_changed, HAnimJoint117.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "headRotInterp.EventValue_changed TO Tufani_skullbase.EventSet_rotation }
-{ Sample headRotInterp.EventValue_changed TO Tufani_skullbase.EventSet_rotation}
-Group712.AddRoute(OrientationInterpolator726.EventValue_changed, HAnimJoint117.set_EventSet_rotation);
+{ Original "neckRotInterp.EventValue_changed TO Tufani_vc4.FdRotation.EventIn }
+{ Sample neckRotInterp.EventValue_changed TO Tufani_vc4.FdRotation.EventIn}
+Group712.AddRoute(OrientationInterpolator727.EventValue_changed, HAnimJoint112.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "neckRotInterp.EventValue_changed TO Tufani_vc4.EventSet_rotation }
-{ Sample neckRotInterp.EventValue_changed TO Tufani_vc4.EventSet_rotation}
-Group712.AddRoute(OrientationInterpolator727.EventValue_changed, HAnimJoint112.set_EventSet_rotation);
+{ Original "upper_bodyRotInterp.EventValue_changed TO Tufani_vl2.FdRotation.EventIn }
+{ Sample upper_bodyRotInterp.EventValue_changed TO Tufani_vl2.FdRotation.EventIn}
+Group712.AddRoute(OrientationInterpolator729.EventValue_changed, HAnimJoint97.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "upper_bodyRotInterp.EventValue_changed TO Tufani_vl2.EventSet_rotation }
-{ Sample upper_bodyRotInterp.EventValue_changed TO Tufani_vl2.EventSet_rotation}
-Group712.AddRoute(OrientationInterpolator729.EventValue_changed, HAnimJoint97.set_EventSet_rotation);
-{ METHOD .AddX3DROUTE }
-{ Original "whole_bodyRotInterp.EventValue_changed TO Tufani_humanoid_root.EventSet_rotation }
-{ Sample whole_bodyRotInterp.EventValue_changed TO Tufani_humanoid_root.EventSet_rotation}
-Group712.AddRoute(OrientationInterpolator730.EventValue_changed, HAnimJoint42.set_EventSet_rotation);
+{ Original "whole_bodyRotInterp.EventValue_changed TO Tufani_humanoid_root.FdRotation.EventIn }
+{ Sample whole_bodyRotInterp.EventValue_changed TO Tufani_humanoid_root.FdRotation.EventIn}
+Group712.AddRoute(OrientationInterpolator730.EventValue_changed, HAnimJoint42.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group24.FdChildren.Add(Group712);
@@ -4063,13 +4063,13 @@ Group765.FdChildren.Add(OrientationInterpolator769);
 OrientationInterpolator770 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator770.SetKey([0,0.5,1]);
 OrientationInterpolator770.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
+{ METHOD .FdChildren.Add }
+Group765.FdChildren.Add(OrientationInterpolator770);
 end;
 
 procedure InitTufaniAnimatedPart84;
 begin
 
-{ METHOD .FdChildren.Add }
-Group765.FdChildren.Add(OrientationInterpolator770);
 OrientationInterpolator771 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator771.SetKey([0,0.5,1]);
 OrientationInterpolator771.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
@@ -4118,13 +4118,13 @@ Group765.FdChildren.Add(OrientationInterpolator779);
 OrientationInterpolator780 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator780.SetKey([0,0.5,1]);
 OrientationInterpolator780.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
+{ METHOD .FdChildren.Add }
+Group765.FdChildren.Add(OrientationInterpolator780);
 end;
 
 procedure InitTufaniAnimatedPart85;
 begin
 
-{ METHOD .FdChildren.Add }
-Group765.FdChildren.Add(OrientationInterpolator780);
 OrientationInterpolator781 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator781.SetKey([0,0.5,1]);
 OrientationInterpolator781.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
@@ -4173,13 +4173,13 @@ Group765.FdChildren.Add(OrientationInterpolator789);
 OrientationInterpolator790 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator790.SetKey([0,0.2,0.4,0.5,0.6,0.8,1]);
 OrientationInterpolator790.SetKeyValue([Vector4(0,1,0,0),Vector4(0,1,0,0),Vector4(0,1,0,0),Vector4(0,1,0,0),Vector4(-1,0,0,0),Vector4(0,-1,0,0),Vector4(0,1,0,0)]);
+{ METHOD .FdChildren.Add }
+Group765.FdChildren.Add(OrientationInterpolator790);
 end;
 
 procedure InitTufaniAnimatedPart86;
 begin
 
-{ METHOD .FdChildren.Add }
-Group765.FdChildren.Add(OrientationInterpolator790);
 OrientationInterpolator791 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator791.SetKey([0,0.2,0.4,0.6,0.8,1]);
 OrientationInterpolator791.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
@@ -4207,273 +4207,273 @@ OrientationInterpolator795.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0.2),Vect
 Group765.FdChildren.Add(OrientationInterpolator795);
 { Original "Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_r_talocruralRotInterp.EventSet_fraction }
 { Sample Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_r_talocruralRotInterp.EventSet_fraction}
-Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator768.set_EventSet_fraction);
+Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator768.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_r_kneeRotInterp.EventSet_fraction }
 { Sample Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_r_kneeRotInterp.EventSet_fraction}
-Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator769.set_EventSet_fraction);
+Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator769.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_r_hipRotInterp.EventSet_fraction }
 { Sample Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_r_hipRotInterp.EventSet_fraction}
-Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator770.set_EventSet_fraction);
+Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator770.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_l_talocruralRotInterp.EventSet_fraction }
 { Sample Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_l_talocruralRotInterp.EventSet_fraction}
-Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator771.set_EventSet_fraction);
+Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator771.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_l_kneeRotInterp.EventSet_fraction }
 { Sample Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_l_kneeRotInterp.EventSet_fraction}
-Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator772.set_EventSet_fraction);
+Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator772.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_l_hipRotInterp.EventSet_fraction }
 { Sample Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_l_hipRotInterp.EventSet_fraction}
-Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator773.set_EventSet_fraction);
+Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator773.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_lower_bodyRotInterp.EventSet_fraction }
 { Sample Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_lower_bodyRotInterp.EventSet_fraction}
-Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator782.set_EventSet_fraction);
+Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator782.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_r_radiocarpalRotInterp.EventSet_fraction }
 { Sample Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_r_radiocarpalRotInterp.EventSet_fraction}
-Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator774.set_EventSet_fraction);
+Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator774.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_r_elbowRotInterp.EventSet_fraction }
 { Sample Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_r_elbowRotInterp.EventSet_fraction}
-Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator775.set_EventSet_fraction);
+Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator775.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_r_shoulderRotInterp.EventSet_fraction }
 { Sample Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_r_shoulderRotInterp.EventSet_fraction}
-Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator776.set_EventSet_fraction);
+Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator776.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_l_radiocarpalRotInterp.EventSet_fraction }
 { Sample Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_l_radiocarpalRotInterp.EventSet_fraction}
-Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator777.set_EventSet_fraction);
+Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator777.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_l_elbowRotInterp.EventSet_fraction }
 { Sample Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_l_elbowRotInterp.EventSet_fraction}
-Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator778.set_EventSet_fraction);
+Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator778.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_l_shoulderRotInterp.EventSet_fraction }
 { Sample Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_l_shoulderRotInterp.EventSet_fraction}
-Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator779.set_EventSet_fraction);
+Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator779.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_headRotInterp.EventSet_fraction }
 { Sample Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_headRotInterp.EventSet_fraction}
-Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator780.set_EventSet_fraction);
+Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator780.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_neckRotInterp.EventSet_fraction }
 { Sample Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_neckRotInterp.EventSet_fraction}
-Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator781.set_EventSet_fraction);
+Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator781.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_upper_bodyRotInterp.EventSet_fraction }
 { Sample Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_upper_bodyRotInterp.EventSet_fraction}
-Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator783.set_EventSet_fraction);
+Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator783.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_whole_bodyRotInterp.EventSet_fraction }
 { Sample Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_whole_bodyRotInterp.EventSet_fraction}
-Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator784.set_EventSet_fraction);
+Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator784.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_whole_bodyTransInterp.EventSet_fraction }
 { Sample Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_whole_bodyTransInterp.EventSet_fraction}
-Group765.AddRoute(TimeSensor766.EventFraction_changed, PositionInterpolator785.set_EventSet_fraction);
+Group765.AddRoute(TimeSensor766.EventFraction_changed, PositionInterpolator785.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_l_sternoclavicularRoll.EventSet_fraction }
 { Sample Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_l_sternoclavicularRoll.EventSet_fraction}
-Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator786.set_EventSet_fraction);
+Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator786.EventSet_fraction);
+{ METHOD .AddX3DROUTE }
+{ Original "Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_r_sternoclavicularRoll.EventSet_fraction }
+{ Sample Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_r_sternoclavicularRoll.EventSet_fraction}
+Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator787.EventSet_fraction);
 end;
 
 procedure InitTufaniAnimatedPart87;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_r_sternoclavicularRoll.EventSet_fraction }
-{ Sample Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_r_sternoclavicularRoll.EventSet_fraction}
-Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator787.set_EventSet_fraction);
-{ METHOD .AddX3DROUTE }
 { Original "Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_r_metatarsophalangeal_2Pitch.EventSet_fraction }
 { Sample Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_r_metatarsophalangeal_2Pitch.EventSet_fraction}
-Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator767.set_EventSet_fraction);
+Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator767.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_sacroiliacYaw.EventSet_fraction }
 { Sample Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_sacroiliacYaw.EventSet_fraction}
-Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator788.set_EventSet_fraction);
+Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator788.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_vl5Yaw.EventSet_fraction }
 { Sample Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_vl5Yaw.EventSet_fraction}
-Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator789.set_EventSet_fraction);
+Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator789.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_vc6Yaw.EventSet_fraction }
 { Sample Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_vc6Yaw.EventSet_fraction}
-Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator790.set_EventSet_fraction);
+Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator790.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_l_carpometacarpal_1Pitch.EventSet_fraction }
 { Sample Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_l_carpometacarpal_1Pitch.EventSet_fraction}
-Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator791.set_EventSet_fraction);
+Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator791.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_r_carpometacarpal_1Pitch.EventSet_fraction }
 { Sample Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_r_carpometacarpal_1Pitch.EventSet_fraction}
-Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator792.set_EventSet_fraction);
+Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator792.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_r_carpal_proximal_interphalangeal_2Roll.EventSet_fraction }
 { Sample Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_r_carpal_proximal_interphalangeal_2Roll.EventSet_fraction}
-Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator793.set_EventSet_fraction);
+Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator793.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_r_metacarpophalangeal_2Roll.EventSet_fraction }
 { Sample Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_r_metacarpophalangeal_2Roll.EventSet_fraction}
-Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator794.set_EventSet_fraction);
+Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator794.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_r_carpal_distal_interphalangeal_2Roll.EventSet_fraction }
 { Sample Tufani_Stand015Timer.EventFraction_changed TO Tufani_Stand015_r_carpal_distal_interphalangeal_2Roll.EventSet_fraction}
-Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator795.set_EventSet_fraction);
+Group765.AddRoute(TimeSensor766.EventFraction_changed, OrientationInterpolator795.EventSet_fraction);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand015_r_talocruralRotInterp.EventValue_changed TO Tufani_r_talocrural.EventSet_rotation }
-{ Sample Tufani_Stand015_r_talocruralRotInterp.EventValue_changed TO Tufani_r_talocrural.EventSet_rotation}
-Group765.AddRoute(OrientationInterpolator768.EventValue_changed, HAnimJoint82.set_EventSet_rotation);
+{ Original "Tufani_Stand015_r_talocruralRotInterp.EventValue_changed TO Tufani_r_talocrural.FdRotation.EventIn }
+{ Sample Tufani_Stand015_r_talocruralRotInterp.EventValue_changed TO Tufani_r_talocrural.FdRotation.EventIn}
+Group765.AddRoute(OrientationInterpolator768.EventValue_changed, HAnimJoint82.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand015_r_kneeRotInterp.EventValue_changed TO Tufani_r_knee.EventSet_rotation }
-{ Sample Tufani_Stand015_r_kneeRotInterp.EventValue_changed TO Tufani_r_knee.EventSet_rotation}
-Group765.AddRoute(OrientationInterpolator769.EventValue_changed, HAnimJoint77.set_EventSet_rotation);
+{ Original "Tufani_Stand015_r_kneeRotInterp.EventValue_changed TO Tufani_r_knee.FdRotation.EventIn }
+{ Sample Tufani_Stand015_r_kneeRotInterp.EventValue_changed TO Tufani_r_knee.FdRotation.EventIn}
+Group765.AddRoute(OrientationInterpolator769.EventValue_changed, HAnimJoint77.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand015_r_hipRotInterp.EventValue_changed TO Tufani_r_hip.EventSet_rotation }
-{ Sample Tufani_Stand015_r_hipRotInterp.EventValue_changed TO Tufani_r_hip.EventSet_rotation}
-Group765.AddRoute(OrientationInterpolator770.EventValue_changed, HAnimJoint72.set_EventSet_rotation);
+{ Original "Tufani_Stand015_r_hipRotInterp.EventValue_changed TO Tufani_r_hip.FdRotation.EventIn }
+{ Sample Tufani_Stand015_r_hipRotInterp.EventValue_changed TO Tufani_r_hip.FdRotation.EventIn}
+Group765.AddRoute(OrientationInterpolator770.EventValue_changed, HAnimJoint72.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand015_l_talocruralRotInterp.EventValue_changed TO Tufani_l_talocrural.EventSet_rotation }
-{ Sample Tufani_Stand015_l_talocruralRotInterp.EventValue_changed TO Tufani_l_talocrural.EventSet_rotation}
-Group765.AddRoute(OrientationInterpolator771.EventValue_changed, HAnimJoint62.set_EventSet_rotation);
+{ Original "Tufani_Stand015_l_talocruralRotInterp.EventValue_changed TO Tufani_l_talocrural.FdRotation.EventIn }
+{ Sample Tufani_Stand015_l_talocruralRotInterp.EventValue_changed TO Tufani_l_talocrural.FdRotation.EventIn}
+Group765.AddRoute(OrientationInterpolator771.EventValue_changed, HAnimJoint62.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand015_l_kneeRotInterp.EventValue_changed TO Tufani_l_knee.EventSet_rotation }
-{ Sample Tufani_Stand015_l_kneeRotInterp.EventValue_changed TO Tufani_l_knee.EventSet_rotation}
-Group765.AddRoute(OrientationInterpolator772.EventValue_changed, HAnimJoint57.set_EventSet_rotation);
+{ Original "Tufani_Stand015_l_kneeRotInterp.EventValue_changed TO Tufani_l_knee.FdRotation.EventIn }
+{ Sample Tufani_Stand015_l_kneeRotInterp.EventValue_changed TO Tufani_l_knee.FdRotation.EventIn}
+Group765.AddRoute(OrientationInterpolator772.EventValue_changed, HAnimJoint57.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand015_l_hipRotInterp.EventValue_changed TO Tufani_l_hip.EventSet_rotation }
-{ Sample Tufani_Stand015_l_hipRotInterp.EventValue_changed TO Tufani_l_hip.EventSet_rotation}
-Group765.AddRoute(OrientationInterpolator773.EventValue_changed, HAnimJoint52.set_EventSet_rotation);
+{ Original "Tufani_Stand015_l_hipRotInterp.EventValue_changed TO Tufani_l_hip.FdRotation.EventIn }
+{ Sample Tufani_Stand015_l_hipRotInterp.EventValue_changed TO Tufani_l_hip.FdRotation.EventIn}
+Group765.AddRoute(OrientationInterpolator773.EventValue_changed, HAnimJoint52.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand015_r_radiocarpalRotInterp.EventValue_changed TO Tufani_r_radiocarpal.EventSet_rotation }
-{ Sample Tufani_Stand015_r_radiocarpalRotInterp.EventValue_changed TO Tufani_r_radiocarpal.EventSet_rotation}
-Group765.AddRoute(OrientationInterpolator774.EventValue_changed, HAnimJoint232.set_EventSet_rotation);
+{ Original "Tufani_Stand015_r_radiocarpalRotInterp.EventValue_changed TO Tufani_r_radiocarpal.FdRotation.EventIn }
+{ Sample Tufani_Stand015_r_radiocarpalRotInterp.EventValue_changed TO Tufani_r_radiocarpal.FdRotation.EventIn}
+Group765.AddRoute(OrientationInterpolator774.EventValue_changed, HAnimJoint232.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand015_r_elbowRotInterp.EventValue_changed TO Tufani_r_elbow.EventSet_rotation }
-{ Sample Tufani_Stand015_r_elbowRotInterp.EventValue_changed TO Tufani_r_elbow.EventSet_rotation}
-Group765.AddRoute(OrientationInterpolator775.EventValue_changed, HAnimJoint227.set_EventSet_rotation);
+{ Original "Tufani_Stand015_r_elbowRotInterp.EventValue_changed TO Tufani_r_elbow.FdRotation.EventIn }
+{ Sample Tufani_Stand015_r_elbowRotInterp.EventValue_changed TO Tufani_r_elbow.FdRotation.EventIn}
+Group765.AddRoute(OrientationInterpolator775.EventValue_changed, HAnimJoint227.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand015_r_shoulderRotInterp.EventValue_changed TO Tufani_r_shoulder.EventSet_rotation }
-{ Sample Tufani_Stand015_r_shoulderRotInterp.EventValue_changed TO Tufani_r_shoulder.EventSet_rotation}
-Group765.AddRoute(OrientationInterpolator776.EventValue_changed, HAnimJoint222.set_EventSet_rotation);
+{ Original "Tufani_Stand015_r_shoulderRotInterp.EventValue_changed TO Tufani_r_shoulder.FdRotation.EventIn }
+{ Sample Tufani_Stand015_r_shoulderRotInterp.EventValue_changed TO Tufani_r_shoulder.FdRotation.EventIn}
+Group765.AddRoute(OrientationInterpolator776.EventValue_changed, HAnimJoint222.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand015_l_radiocarpalRotInterp.EventValue_changed TO Tufani_l_radiocarpal.EventSet_rotation }
-{ Sample Tufani_Stand015_l_radiocarpalRotInterp.EventValue_changed TO Tufani_l_radiocarpal.EventSet_rotation}
-Group765.AddRoute(OrientationInterpolator777.EventValue_changed, HAnimJoint137.set_EventSet_rotation);
+{ Original "Tufani_Stand015_l_radiocarpalRotInterp.EventValue_changed TO Tufani_l_radiocarpal.FdRotation.EventIn }
+{ Sample Tufani_Stand015_l_radiocarpalRotInterp.EventValue_changed TO Tufani_l_radiocarpal.FdRotation.EventIn}
+Group765.AddRoute(OrientationInterpolator777.EventValue_changed, HAnimJoint137.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand015_l_elbowRotInterp.EventValue_changed TO Tufani_l_elbow.EventSet_rotation }
-{ Sample Tufani_Stand015_l_elbowRotInterp.EventValue_changed TO Tufani_l_elbow.EventSet_rotation}
-Group765.AddRoute(OrientationInterpolator778.EventValue_changed, HAnimJoint132.set_EventSet_rotation);
+{ Original "Tufani_Stand015_l_elbowRotInterp.EventValue_changed TO Tufani_l_elbow.FdRotation.EventIn }
+{ Sample Tufani_Stand015_l_elbowRotInterp.EventValue_changed TO Tufani_l_elbow.FdRotation.EventIn}
+Group765.AddRoute(OrientationInterpolator778.EventValue_changed, HAnimJoint132.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand015_l_shoulderRotInterp.EventValue_changed TO Tufani_l_shoulder.EventSet_rotation }
-{ Sample Tufani_Stand015_l_shoulderRotInterp.EventValue_changed TO Tufani_l_shoulder.EventSet_rotation}
-Group765.AddRoute(OrientationInterpolator779.EventValue_changed, HAnimJoint127.set_EventSet_rotation);
+{ Original "Tufani_Stand015_l_shoulderRotInterp.EventValue_changed TO Tufani_l_shoulder.FdRotation.EventIn }
+{ Sample Tufani_Stand015_l_shoulderRotInterp.EventValue_changed TO Tufani_l_shoulder.FdRotation.EventIn}
+Group765.AddRoute(OrientationInterpolator779.EventValue_changed, HAnimJoint127.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand015_headRotInterp.EventValue_changed TO Tufani_skullbase.EventSet_rotation }
-{ Sample Tufani_Stand015_headRotInterp.EventValue_changed TO Tufani_skullbase.EventSet_rotation}
-Group765.AddRoute(OrientationInterpolator780.EventValue_changed, HAnimJoint117.set_EventSet_rotation);
+{ Original "Tufani_Stand015_headRotInterp.EventValue_changed TO Tufani_skullbase.FdRotation.EventIn }
+{ Sample Tufani_Stand015_headRotInterp.EventValue_changed TO Tufani_skullbase.FdRotation.EventIn}
+Group765.AddRoute(OrientationInterpolator780.EventValue_changed, HAnimJoint117.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand015_lower_bodyRotInterp.EventValue_changed TO Tufani_sacroiliac.EventSet_rotation }
-{ Sample Tufani_Stand015_lower_bodyRotInterp.EventValue_changed TO Tufani_sacroiliac.EventSet_rotation}
-Group765.AddRoute(OrientationInterpolator782.EventValue_changed, HAnimJoint47.set_EventSet_rotation);
+{ Original "Tufani_Stand015_lower_bodyRotInterp.EventValue_changed TO Tufani_sacroiliac.FdRotation.EventIn }
+{ Sample Tufani_Stand015_lower_bodyRotInterp.EventValue_changed TO Tufani_sacroiliac.FdRotation.EventIn}
+Group765.AddRoute(OrientationInterpolator782.EventValue_changed, HAnimJoint47.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand015_whole_bodyRotInterp.EventValue_changed TO Tufani_humanoid_root.EventSet_rotation }
-{ Sample Tufani_Stand015_whole_bodyRotInterp.EventValue_changed TO Tufani_humanoid_root.EventSet_rotation}
-Group765.AddRoute(OrientationInterpolator784.EventValue_changed, HAnimJoint42.set_EventSet_rotation);
+{ Original "Tufani_Stand015_whole_bodyRotInterp.EventValue_changed TO Tufani_humanoid_root.FdRotation.EventIn }
+{ Sample Tufani_Stand015_whole_bodyRotInterp.EventValue_changed TO Tufani_humanoid_root.FdRotation.EventIn}
+Group765.AddRoute(OrientationInterpolator784.EventValue_changed, HAnimJoint42.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand015_whole_bodyTransInterp.EventValue_changed TO Tufani_humanoid_root.EventSet_translation }
-{ Sample Tufani_Stand015_whole_bodyTransInterp.EventValue_changed TO Tufani_humanoid_root.EventSet_translation}
-Group765.AddRoute(PositionInterpolator785.EventValue_changed, HAnimJoint42.set_EventSet_translation);
+{ Original "Tufani_Stand015_whole_bodyTransInterp.EventValue_changed TO Tufani_humanoid_root.FdTranslation.EventIn }
+{ Sample Tufani_Stand015_whole_bodyTransInterp.EventValue_changed TO Tufani_humanoid_root.FdTranslation.EventIn}
+Group765.AddRoute(PositionInterpolator785.EventValue_changed, HAnimJoint42.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand015_l_sternoclavicularRoll.EventValue_changed TO Tufani_l_sternoclavicular.EventSet_rotation }
-{ Sample Tufani_Stand015_l_sternoclavicularRoll.EventValue_changed TO Tufani_l_sternoclavicular.EventSet_rotation}
-Group765.AddRoute(OrientationInterpolator786.EventValue_changed, HAnimJoint122.set_EventSet_rotation);
+{ Original "Tufani_Stand015_l_sternoclavicularRoll.EventValue_changed TO Tufani_l_sternoclavicular.FdRotation.EventIn }
+{ Sample Tufani_Stand015_l_sternoclavicularRoll.EventValue_changed TO Tufani_l_sternoclavicular.FdRotation.EventIn}
+Group765.AddRoute(OrientationInterpolator786.EventValue_changed, HAnimJoint122.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand015_r_sternoclavicularRoll.EventValue_changed TO Tufani_r_sternoclavicular.EventSet_rotation }
-{ Sample Tufani_Stand015_r_sternoclavicularRoll.EventValue_changed TO Tufani_r_sternoclavicular.EventSet_rotation}
-Group765.AddRoute(OrientationInterpolator787.EventValue_changed, HAnimJoint217.set_EventSet_rotation);
+{ Original "Tufani_Stand015_r_sternoclavicularRoll.EventValue_changed TO Tufani_r_sternoclavicular.FdRotation.EventIn }
+{ Sample Tufani_Stand015_r_sternoclavicularRoll.EventValue_changed TO Tufani_r_sternoclavicular.FdRotation.EventIn}
+Group765.AddRoute(OrientationInterpolator787.EventValue_changed, HAnimJoint217.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand015_r_metatarsophalangeal_2Pitch.EventValue_changed TO Tufani_l_metatarsophalangeal_2.EventSet_rotation }
-{ Sample Tufani_Stand015_r_metatarsophalangeal_2Pitch.EventValue_changed TO Tufani_l_metatarsophalangeal_2.EventSet_rotation}
-Group765.AddRoute(OrientationInterpolator767.EventValue_changed, HAnimJoint67.set_EventSet_rotation);
+{ Original "Tufani_Stand015_r_metatarsophalangeal_2Pitch.EventValue_changed TO Tufani_l_metatarsophalangeal_2.FdRotation.EventIn }
+{ Sample Tufani_Stand015_r_metatarsophalangeal_2Pitch.EventValue_changed TO Tufani_l_metatarsophalangeal_2.FdRotation.EventIn}
+Group765.AddRoute(OrientationInterpolator767.EventValue_changed, HAnimJoint67.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand015_r_metatarsophalangeal_2Pitch.EventValue_changed TO Tufani_r_metatarsophalangeal_2.EventSet_rotation }
-{ Sample Tufani_Stand015_r_metatarsophalangeal_2Pitch.EventValue_changed TO Tufani_r_metatarsophalangeal_2.EventSet_rotation}
-Group765.AddRoute(OrientationInterpolator767.EventValue_changed, HAnimJoint87.set_EventSet_rotation);
+{ Original "Tufani_Stand015_r_metatarsophalangeal_2Pitch.EventValue_changed TO Tufani_r_metatarsophalangeal_2.FdRotation.EventIn }
+{ Sample Tufani_Stand015_r_metatarsophalangeal_2Pitch.EventValue_changed TO Tufani_r_metatarsophalangeal_2.FdRotation.EventIn}
+Group765.AddRoute(OrientationInterpolator767.EventValue_changed, HAnimJoint87.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand015_sacroiliacYaw.EventValue_changed TO Tufani_sacroiliac.EventSet_rotation }
-{ Sample Tufani_Stand015_sacroiliacYaw.EventValue_changed TO Tufani_sacroiliac.EventSet_rotation}
-Group765.AddRoute(OrientationInterpolator788.EventValue_changed, HAnimJoint47.set_EventSet_rotation);
+{ Original "Tufani_Stand015_sacroiliacYaw.EventValue_changed TO Tufani_sacroiliac.FdRotation.EventIn }
+{ Sample Tufani_Stand015_sacroiliacYaw.EventValue_changed TO Tufani_sacroiliac.FdRotation.EventIn}
+Group765.AddRoute(OrientationInterpolator788.EventValue_changed, HAnimJoint47.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand015_vl5Yaw.EventValue_changed TO Tufani_vl5.EventSet_rotation }
-{ Sample Tufani_Stand015_vl5Yaw.EventValue_changed TO Tufani_vl5.EventSet_rotation}
-Group765.AddRoute(OrientationInterpolator789.EventValue_changed, HAnimJoint92.set_EventSet_rotation);
+{ Original "Tufani_Stand015_vl5Yaw.EventValue_changed TO Tufani_vl5.FdRotation.EventIn }
+{ Sample Tufani_Stand015_vl5Yaw.EventValue_changed TO Tufani_vl5.FdRotation.EventIn}
+Group765.AddRoute(OrientationInterpolator789.EventValue_changed, HAnimJoint92.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand015_l_carpometacarpal_1Pitch.EventValue_changed TO Tufani_l_carpometacarpal_1.EventSet_rotation }
-{ Sample Tufani_Stand015_l_carpometacarpal_1Pitch.EventValue_changed TO Tufani_l_carpometacarpal_1.EventSet_rotation}
-Group765.AddRoute(OrientationInterpolator791.EventValue_changed, HAnimJoint142.set_EventSet_rotation);
+{ Original "Tufani_Stand015_l_carpometacarpal_1Pitch.EventValue_changed TO Tufani_l_carpometacarpal_1.FdRotation.EventIn }
+{ Sample Tufani_Stand015_l_carpometacarpal_1Pitch.EventValue_changed TO Tufani_l_carpometacarpal_1.FdRotation.EventIn}
+Group765.AddRoute(OrientationInterpolator791.EventValue_changed, HAnimJoint142.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand015_r_carpometacarpal_1Pitch.EventValue_changed TO Tufani_r_carpometacarpal_1.EventSet_rotation }
-{ Sample Tufani_Stand015_r_carpometacarpal_1Pitch.EventValue_changed TO Tufani_r_carpometacarpal_1.EventSet_rotation}
-Group765.AddRoute(OrientationInterpolator792.EventValue_changed, HAnimJoint237.set_EventSet_rotation);
+{ Original "Tufani_Stand015_r_carpometacarpal_1Pitch.EventValue_changed TO Tufani_r_carpometacarpal_1.FdRotation.EventIn }
+{ Sample Tufani_Stand015_r_carpometacarpal_1Pitch.EventValue_changed TO Tufani_r_carpometacarpal_1.FdRotation.EventIn}
+Group765.AddRoute(OrientationInterpolator792.EventValue_changed, HAnimJoint237.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand015_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_proximal_interphalangeal_2.EventSet_rotation }
-{ Sample Tufani_Stand015_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_proximal_interphalangeal_2.EventSet_rotation}
-Group765.AddRoute(OrientationInterpolator793.EventValue_changed, HAnimJoint252.set_EventSet_rotation);
+{ Original "Tufani_Stand015_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_proximal_interphalangeal_2.FdRotation.EventIn }
+{ Sample Tufani_Stand015_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_proximal_interphalangeal_2.FdRotation.EventIn}
+Group765.AddRoute(OrientationInterpolator793.EventValue_changed, HAnimJoint252.FdRotation.EventIn);
+{ METHOD .AddX3DROUTE }
+{ Original "Tufani_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_metacarpophalangeal_2.FdRotation.EventIn }
+{ Sample Tufani_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_metacarpophalangeal_2.FdRotation.EventIn}
+Group765.AddRoute(OrientationInterpolator794.EventValue_changed, HAnimJoint257.FdRotation.EventIn);
 end;
 
 procedure InitTufaniAnimatedPart88;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_metacarpophalangeal_2.EventSet_rotation }
-{ Sample Tufani_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_metacarpophalangeal_2.EventSet_rotation}
-Group765.AddRoute(OrientationInterpolator794.EventValue_changed, HAnimJoint257.set_EventSet_rotation);
+{ Original "Tufani_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_distal_interphalangeal_2.FdRotation.EventIn }
+{ Sample Tufani_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_distal_interphalangeal_2.FdRotation.EventIn}
+Group765.AddRoute(OrientationInterpolator794.EventValue_changed, HAnimJoint262.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_distal_interphalangeal_2.EventSet_rotation }
-{ Sample Tufani_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_distal_interphalangeal_2.EventSet_rotation}
-Group765.AddRoute(OrientationInterpolator794.EventValue_changed, HAnimJoint262.set_EventSet_rotation);
+{ Original "Tufani_Stand015_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_proximal_interphalangeal_3.FdRotation.EventIn }
+{ Sample Tufani_Stand015_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_proximal_interphalangeal_3.FdRotation.EventIn}
+Group765.AddRoute(OrientationInterpolator793.EventValue_changed, HAnimJoint267.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand015_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_proximal_interphalangeal_3.EventSet_rotation }
-{ Sample Tufani_Stand015_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_proximal_interphalangeal_3.EventSet_rotation}
-Group765.AddRoute(OrientationInterpolator793.EventValue_changed, HAnimJoint267.set_EventSet_rotation);
+{ Original "Tufani_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_metacarpophalangeal_3.FdRotation.EventIn }
+{ Sample Tufani_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_metacarpophalangeal_3.FdRotation.EventIn}
+Group765.AddRoute(OrientationInterpolator794.EventValue_changed, HAnimJoint272.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_metacarpophalangeal_3.EventSet_rotation }
-{ Sample Tufani_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_metacarpophalangeal_3.EventSet_rotation}
-Group765.AddRoute(OrientationInterpolator794.EventValue_changed, HAnimJoint272.set_EventSet_rotation);
+{ Original "Tufani_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_distal_interphalangeal_3.FdRotation.EventIn }
+{ Sample Tufani_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_distal_interphalangeal_3.FdRotation.EventIn}
+Group765.AddRoute(OrientationInterpolator794.EventValue_changed, HAnimJoint277.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_distal_interphalangeal_3.EventSet_rotation }
-{ Sample Tufani_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_distal_interphalangeal_3.EventSet_rotation}
-Group765.AddRoute(OrientationInterpolator794.EventValue_changed, HAnimJoint277.set_EventSet_rotation);
+{ Original "Tufani_Stand015_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_proximal_interphalangeal_4.FdRotation.EventIn }
+{ Sample Tufani_Stand015_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_proximal_interphalangeal_4.FdRotation.EventIn}
+Group765.AddRoute(OrientationInterpolator793.EventValue_changed, HAnimJoint282.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand015_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_proximal_interphalangeal_4.EventSet_rotation }
-{ Sample Tufani_Stand015_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_proximal_interphalangeal_4.EventSet_rotation}
-Group765.AddRoute(OrientationInterpolator793.EventValue_changed, HAnimJoint282.set_EventSet_rotation);
+{ Original "Tufani_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_metacarpophalangeal_4.FdRotation.EventIn }
+{ Sample Tufani_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_metacarpophalangeal_4.FdRotation.EventIn}
+Group765.AddRoute(OrientationInterpolator794.EventValue_changed, HAnimJoint287.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_metacarpophalangeal_4.EventSet_rotation }
-{ Sample Tufani_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_metacarpophalangeal_4.EventSet_rotation}
-Group765.AddRoute(OrientationInterpolator794.EventValue_changed, HAnimJoint287.set_EventSet_rotation);
+{ Original "Tufani_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_distal_interphalangeal_4.FdRotation.EventIn }
+{ Sample Tufani_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_distal_interphalangeal_4.FdRotation.EventIn}
+Group765.AddRoute(OrientationInterpolator794.EventValue_changed, HAnimJoint292.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_distal_interphalangeal_4.EventSet_rotation }
-{ Sample Tufani_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_distal_interphalangeal_4.EventSet_rotation}
-Group765.AddRoute(OrientationInterpolator794.EventValue_changed, HAnimJoint292.set_EventSet_rotation);
+{ Original "Tufani_Stand015_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_proximal_interphalangeal_5.FdRotation.EventIn }
+{ Sample Tufani_Stand015_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_proximal_interphalangeal_5.FdRotation.EventIn}
+Group765.AddRoute(OrientationInterpolator793.EventValue_changed, HAnimJoint297.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand015_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_proximal_interphalangeal_5.EventSet_rotation }
-{ Sample Tufani_Stand015_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_proximal_interphalangeal_5.EventSet_rotation}
-Group765.AddRoute(OrientationInterpolator793.EventValue_changed, HAnimJoint297.set_EventSet_rotation);
+{ Original "Tufani_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_metacarpophalangeal_5.FdRotation.EventIn }
+{ Sample Tufani_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_metacarpophalangeal_5.FdRotation.EventIn}
+Group765.AddRoute(OrientationInterpolator794.EventValue_changed, HAnimJoint302.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_metacarpophalangeal_5.EventSet_rotation }
-{ Sample Tufani_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_metacarpophalangeal_5.EventSet_rotation}
-Group765.AddRoute(OrientationInterpolator794.EventValue_changed, HAnimJoint302.set_EventSet_rotation);
-{ METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_distal_interphalangeal_5.EventSet_rotation }
-{ Sample Tufani_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_distal_interphalangeal_5.EventSet_rotation}
-Group765.AddRoute(OrientationInterpolator794.EventValue_changed, HAnimJoint307.set_EventSet_rotation);
+{ Original "Tufani_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_distal_interphalangeal_5.FdRotation.EventIn }
+{ Sample Tufani_Stand015_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_distal_interphalangeal_5.FdRotation.EventIn}
+Group765.AddRoute(OrientationInterpolator794.EventValue_changed, HAnimJoint307.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group24.FdChildren.Add(Group765);
@@ -4511,12 +4511,12 @@ OrientationInterpolator867.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector
 Group861.FdChildren.Add(OrientationInterpolator867);
 OrientationInterpolator868 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator868.SetKey([0,0.5,1]);
+OrientationInterpolator868.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 end;
 
 procedure InitTufaniAnimatedPart89;
 begin
 
-OrientationInterpolator868.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { METHOD .FdChildren.Add }
 Group861.FdChildren.Add(OrientationInterpolator868);
 OrientationInterpolator869 := TOrientationInterpolatorNode.Create;
@@ -4566,12 +4566,12 @@ OrientationInterpolator877.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector
 Group861.FdChildren.Add(OrientationInterpolator877);
 OrientationInterpolator878 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator878.SetKey([0,0.5,1]);
+OrientationInterpolator878.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 end;
 
 procedure InitTufaniAnimatedPart90;
 begin
 
-OrientationInterpolator878.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { METHOD .FdChildren.Add }
 Group861.FdChildren.Add(OrientationInterpolator878);
 OrientationInterpolator879 := TOrientationInterpolatorNode.Create;
@@ -4621,12 +4621,12 @@ OrientationInterpolator887.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector
 Group861.FdChildren.Add(OrientationInterpolator887);
 OrientationInterpolator888 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator888.SetKey([0,0.2,0.4,0.6,0.8,1]);
+OrientationInterpolator888.SetKeyValue([Vector4(1,0,0,0),Vector4(1,0,0,0.5),Vector4(1,0,0,0.1),Vector4(1,0,0,0.27),Vector4(1,0,0,0.2),Vector4(1,0,0,0)]);
 end;
 
 procedure InitTufaniAnimatedPart91;
 begin
 
-OrientationInterpolator888.SetKeyValue([Vector4(1,0,0,0),Vector4(1,0,0,0.5),Vector4(1,0,0,0.1),Vector4(1,0,0,0.27),Vector4(1,0,0,0.2),Vector4(1,0,0,0)]);
 { METHOD .FdChildren.Add }
 Group861.FdChildren.Add(OrientationInterpolator888);
 OrientationInterpolator889 := TOrientationInterpolatorNode.Create;
@@ -4646,273 +4646,273 @@ OrientationInterpolator891.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0.2),Vect
 Group861.FdChildren.Add(OrientationInterpolator891);
 { Original "Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_r_talocruralRotInterp.EventSet_fraction }
 { Sample Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_r_talocruralRotInterp.EventSet_fraction}
-Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator864.set_EventSet_fraction);
+Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator864.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_r_kneeRotInterp.EventSet_fraction }
 { Sample Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_r_kneeRotInterp.EventSet_fraction}
-Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator865.set_EventSet_fraction);
+Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator865.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_r_hipRotInterp.EventSet_fraction }
 { Sample Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_r_hipRotInterp.EventSet_fraction}
-Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator866.set_EventSet_fraction);
+Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator866.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_l_talocruralRotInterp.EventSet_fraction }
 { Sample Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_l_talocruralRotInterp.EventSet_fraction}
-Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator867.set_EventSet_fraction);
+Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator867.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_l_kneeRotInterp.EventSet_fraction }
 { Sample Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_l_kneeRotInterp.EventSet_fraction}
-Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator868.set_EventSet_fraction);
+Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator868.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_l_hipRotInterp.EventSet_fraction }
 { Sample Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_l_hipRotInterp.EventSet_fraction}
-Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator869.set_EventSet_fraction);
+Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator869.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_lower_bodyRotInterp.EventSet_fraction }
 { Sample Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_lower_bodyRotInterp.EventSet_fraction}
-Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator878.set_EventSet_fraction);
+Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator878.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_r_radiocarpalRotInterp.EventSet_fraction }
 { Sample Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_r_radiocarpalRotInterp.EventSet_fraction}
-Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator870.set_EventSet_fraction);
+Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator870.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_r_elbowRotInterp.EventSet_fraction }
 { Sample Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_r_elbowRotInterp.EventSet_fraction}
-Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator871.set_EventSet_fraction);
+Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator871.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_r_shoulderRotInterp.EventSet_fraction }
 { Sample Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_r_shoulderRotInterp.EventSet_fraction}
-Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator872.set_EventSet_fraction);
+Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator872.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_l_radiocarpalRotInterp.EventSet_fraction }
 { Sample Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_l_radiocarpalRotInterp.EventSet_fraction}
-Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator873.set_EventSet_fraction);
+Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator873.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_l_elbowRotInterp.EventSet_fraction }
 { Sample Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_l_elbowRotInterp.EventSet_fraction}
-Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator874.set_EventSet_fraction);
+Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator874.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_l_shoulderRotInterp.EventSet_fraction }
 { Sample Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_l_shoulderRotInterp.EventSet_fraction}
-Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator875.set_EventSet_fraction);
+Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator875.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_headRotInterp.EventSet_fraction }
 { Sample Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_headRotInterp.EventSet_fraction}
-Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator876.set_EventSet_fraction);
+Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator876.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_neckRotInterp.EventSet_fraction }
 { Sample Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_neckRotInterp.EventSet_fraction}
-Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator877.set_EventSet_fraction);
+Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator877.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_upper_bodyRotInterp.EventSet_fraction }
 { Sample Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_upper_bodyRotInterp.EventSet_fraction}
-Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator879.set_EventSet_fraction);
+Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator879.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_whole_bodyRotInterp.EventSet_fraction }
 { Sample Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_whole_bodyRotInterp.EventSet_fraction}
-Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator880.set_EventSet_fraction);
+Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator880.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_whole_bodyTransInterp.EventSet_fraction }
 { Sample Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_whole_bodyTransInterp.EventSet_fraction}
-Group861.AddRoute(TimeSensor862.EventFraction_changed, PositionInterpolator881.set_EventSet_fraction);
+Group861.AddRoute(TimeSensor862.EventFraction_changed, PositionInterpolator881.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_l_sternoclavicularRoll.EventSet_fraction }
 { Sample Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_l_sternoclavicularRoll.EventSet_fraction}
-Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator882.set_EventSet_fraction);
+Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator882.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_r_sternoclavicularRoll.EventSet_fraction }
 { Sample Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_r_sternoclavicularRoll.EventSet_fraction}
-Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator883.set_EventSet_fraction);
+Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator883.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_r_metatarsophalangeal_2Pitch.EventSet_fraction }
 { Sample Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_r_metatarsophalangeal_2Pitch.EventSet_fraction}
-Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator863.set_EventSet_fraction);
+Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator863.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_sacroiliacYaw.EventSet_fraction }
 { Sample Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_sacroiliacYaw.EventSet_fraction}
-Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator884.set_EventSet_fraction);
+Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator884.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_vl5Yaw.EventSet_fraction }
 { Sample Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_vl5Yaw.EventSet_fraction}
-Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator885.set_EventSet_fraction);
+Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator885.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_vc6Yaw.EventSet_fraction }
 { Sample Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_vc6Yaw.EventSet_fraction}
-Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator886.set_EventSet_fraction);
+Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator886.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_l_carpometacarpal_1Pitch.EventSet_fraction }
 { Sample Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_l_carpometacarpal_1Pitch.EventSet_fraction}
-Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator887.set_EventSet_fraction);
+Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator887.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_r_carpometacarpal_1Pitch.EventSet_fraction }
 { Sample Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_r_carpometacarpal_1Pitch.EventSet_fraction}
-Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator888.set_EventSet_fraction);
+Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator888.EventSet_fraction);
+{ METHOD .AddX3DROUTE }
+{ Original "Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_r_carpal_proximal_interphalangeal_2Roll.EventSet_fraction }
+{ Sample Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_r_carpal_proximal_interphalangeal_2Roll.EventSet_fraction}
+Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator889.EventSet_fraction);
 end;
 
 procedure InitTufaniAnimatedPart92;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_r_carpal_proximal_interphalangeal_2Roll.EventSet_fraction }
-{ Sample Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_r_carpal_proximal_interphalangeal_2Roll.EventSet_fraction}
-Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator889.set_EventSet_fraction);
-{ METHOD .AddX3DROUTE }
 { Original "Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_r_metacarpophalangeal_2Roll.EventSet_fraction }
 { Sample Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_r_metacarpophalangeal_2Roll.EventSet_fraction}
-Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator890.set_EventSet_fraction);
+Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator890.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_r_carpal_distal_interphalangeal_2Roll.EventSet_fraction }
 { Sample Tufani_Stand016Timer.EventFraction_changed TO Tufani_Stand016_r_carpal_distal_interphalangeal_2Roll.EventSet_fraction}
-Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator891.set_EventSet_fraction);
+Group861.AddRoute(TimeSensor862.EventFraction_changed, OrientationInterpolator891.EventSet_fraction);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand016_r_talocruralRotInterp.EventValue_changed TO Tufani_r_talocrural.EventSet_rotation }
-{ Sample Tufani_Stand016_r_talocruralRotInterp.EventValue_changed TO Tufani_r_talocrural.EventSet_rotation}
-Group861.AddRoute(OrientationInterpolator864.EventValue_changed, HAnimJoint82.set_EventSet_rotation);
+{ Original "Tufani_Stand016_r_talocruralRotInterp.EventValue_changed TO Tufani_r_talocrural.FdRotation.EventIn }
+{ Sample Tufani_Stand016_r_talocruralRotInterp.EventValue_changed TO Tufani_r_talocrural.FdRotation.EventIn}
+Group861.AddRoute(OrientationInterpolator864.EventValue_changed, HAnimJoint82.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand016_r_kneeRotInterp.EventValue_changed TO Tufani_r_knee.EventSet_rotation }
-{ Sample Tufani_Stand016_r_kneeRotInterp.EventValue_changed TO Tufani_r_knee.EventSet_rotation}
-Group861.AddRoute(OrientationInterpolator865.EventValue_changed, HAnimJoint77.set_EventSet_rotation);
+{ Original "Tufani_Stand016_r_kneeRotInterp.EventValue_changed TO Tufani_r_knee.FdRotation.EventIn }
+{ Sample Tufani_Stand016_r_kneeRotInterp.EventValue_changed TO Tufani_r_knee.FdRotation.EventIn}
+Group861.AddRoute(OrientationInterpolator865.EventValue_changed, HAnimJoint77.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand016_r_hipRotInterp.EventValue_changed TO Tufani_r_hip.EventSet_rotation }
-{ Sample Tufani_Stand016_r_hipRotInterp.EventValue_changed TO Tufani_r_hip.EventSet_rotation}
-Group861.AddRoute(OrientationInterpolator866.EventValue_changed, HAnimJoint72.set_EventSet_rotation);
+{ Original "Tufani_Stand016_r_hipRotInterp.EventValue_changed TO Tufani_r_hip.FdRotation.EventIn }
+{ Sample Tufani_Stand016_r_hipRotInterp.EventValue_changed TO Tufani_r_hip.FdRotation.EventIn}
+Group861.AddRoute(OrientationInterpolator866.EventValue_changed, HAnimJoint72.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand016_l_talocruralRotInterp.EventValue_changed TO Tufani_l_talocrural.EventSet_rotation }
-{ Sample Tufani_Stand016_l_talocruralRotInterp.EventValue_changed TO Tufani_l_talocrural.EventSet_rotation}
-Group861.AddRoute(OrientationInterpolator867.EventValue_changed, HAnimJoint62.set_EventSet_rotation);
+{ Original "Tufani_Stand016_l_talocruralRotInterp.EventValue_changed TO Tufani_l_talocrural.FdRotation.EventIn }
+{ Sample Tufani_Stand016_l_talocruralRotInterp.EventValue_changed TO Tufani_l_talocrural.FdRotation.EventIn}
+Group861.AddRoute(OrientationInterpolator867.EventValue_changed, HAnimJoint62.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand016_l_kneeRotInterp.EventValue_changed TO Tufani_l_knee.EventSet_rotation }
-{ Sample Tufani_Stand016_l_kneeRotInterp.EventValue_changed TO Tufani_l_knee.EventSet_rotation}
-Group861.AddRoute(OrientationInterpolator868.EventValue_changed, HAnimJoint57.set_EventSet_rotation);
+{ Original "Tufani_Stand016_l_kneeRotInterp.EventValue_changed TO Tufani_l_knee.FdRotation.EventIn }
+{ Sample Tufani_Stand016_l_kneeRotInterp.EventValue_changed TO Tufani_l_knee.FdRotation.EventIn}
+Group861.AddRoute(OrientationInterpolator868.EventValue_changed, HAnimJoint57.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand016_l_hipRotInterp.EventValue_changed TO Tufani_l_hip.EventSet_rotation }
-{ Sample Tufani_Stand016_l_hipRotInterp.EventValue_changed TO Tufani_l_hip.EventSet_rotation}
-Group861.AddRoute(OrientationInterpolator869.EventValue_changed, HAnimJoint52.set_EventSet_rotation);
+{ Original "Tufani_Stand016_l_hipRotInterp.EventValue_changed TO Tufani_l_hip.FdRotation.EventIn }
+{ Sample Tufani_Stand016_l_hipRotInterp.EventValue_changed TO Tufani_l_hip.FdRotation.EventIn}
+Group861.AddRoute(OrientationInterpolator869.EventValue_changed, HAnimJoint52.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand016_r_radiocarpalRotInterp.EventValue_changed TO Tufani_r_radiocarpal.EventSet_rotation }
-{ Sample Tufani_Stand016_r_radiocarpalRotInterp.EventValue_changed TO Tufani_r_radiocarpal.EventSet_rotation}
-Group861.AddRoute(OrientationInterpolator870.EventValue_changed, HAnimJoint232.set_EventSet_rotation);
+{ Original "Tufani_Stand016_r_radiocarpalRotInterp.EventValue_changed TO Tufani_r_radiocarpal.FdRotation.EventIn }
+{ Sample Tufani_Stand016_r_radiocarpalRotInterp.EventValue_changed TO Tufani_r_radiocarpal.FdRotation.EventIn}
+Group861.AddRoute(OrientationInterpolator870.EventValue_changed, HAnimJoint232.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand016_r_elbowRotInterp.EventValue_changed TO Tufani_r_elbow.EventSet_rotation }
-{ Sample Tufani_Stand016_r_elbowRotInterp.EventValue_changed TO Tufani_r_elbow.EventSet_rotation}
-Group861.AddRoute(OrientationInterpolator871.EventValue_changed, HAnimJoint227.set_EventSet_rotation);
+{ Original "Tufani_Stand016_r_elbowRotInterp.EventValue_changed TO Tufani_r_elbow.FdRotation.EventIn }
+{ Sample Tufani_Stand016_r_elbowRotInterp.EventValue_changed TO Tufani_r_elbow.FdRotation.EventIn}
+Group861.AddRoute(OrientationInterpolator871.EventValue_changed, HAnimJoint227.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand016_r_shoulderRotInterp.EventValue_changed TO Tufani_r_shoulder.EventSet_rotation }
-{ Sample Tufani_Stand016_r_shoulderRotInterp.EventValue_changed TO Tufani_r_shoulder.EventSet_rotation}
-Group861.AddRoute(OrientationInterpolator872.EventValue_changed, HAnimJoint222.set_EventSet_rotation);
+{ Original "Tufani_Stand016_r_shoulderRotInterp.EventValue_changed TO Tufani_r_shoulder.FdRotation.EventIn }
+{ Sample Tufani_Stand016_r_shoulderRotInterp.EventValue_changed TO Tufani_r_shoulder.FdRotation.EventIn}
+Group861.AddRoute(OrientationInterpolator872.EventValue_changed, HAnimJoint222.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand016_l_radiocarpalRotInterp.EventValue_changed TO Tufani_l_radiocarpal.EventSet_rotation }
-{ Sample Tufani_Stand016_l_radiocarpalRotInterp.EventValue_changed TO Tufani_l_radiocarpal.EventSet_rotation}
-Group861.AddRoute(OrientationInterpolator873.EventValue_changed, HAnimJoint137.set_EventSet_rotation);
+{ Original "Tufani_Stand016_l_radiocarpalRotInterp.EventValue_changed TO Tufani_l_radiocarpal.FdRotation.EventIn }
+{ Sample Tufani_Stand016_l_radiocarpalRotInterp.EventValue_changed TO Tufani_l_radiocarpal.FdRotation.EventIn}
+Group861.AddRoute(OrientationInterpolator873.EventValue_changed, HAnimJoint137.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand016_l_elbowRotInterp.EventValue_changed TO Tufani_l_elbow.EventSet_rotation }
-{ Sample Tufani_Stand016_l_elbowRotInterp.EventValue_changed TO Tufani_l_elbow.EventSet_rotation}
-Group861.AddRoute(OrientationInterpolator874.EventValue_changed, HAnimJoint132.set_EventSet_rotation);
+{ Original "Tufani_Stand016_l_elbowRotInterp.EventValue_changed TO Tufani_l_elbow.FdRotation.EventIn }
+{ Sample Tufani_Stand016_l_elbowRotInterp.EventValue_changed TO Tufani_l_elbow.FdRotation.EventIn}
+Group861.AddRoute(OrientationInterpolator874.EventValue_changed, HAnimJoint132.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand016_l_shoulderRotInterp.EventValue_changed TO Tufani_l_shoulder.EventSet_rotation }
-{ Sample Tufani_Stand016_l_shoulderRotInterp.EventValue_changed TO Tufani_l_shoulder.EventSet_rotation}
-Group861.AddRoute(OrientationInterpolator875.EventValue_changed, HAnimJoint127.set_EventSet_rotation);
+{ Original "Tufani_Stand016_l_shoulderRotInterp.EventValue_changed TO Tufani_l_shoulder.FdRotation.EventIn }
+{ Sample Tufani_Stand016_l_shoulderRotInterp.EventValue_changed TO Tufani_l_shoulder.FdRotation.EventIn}
+Group861.AddRoute(OrientationInterpolator875.EventValue_changed, HAnimJoint127.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand016_headRotInterp.EventValue_changed TO Tufani_skullbase.EventSet_rotation }
-{ Sample Tufani_Stand016_headRotInterp.EventValue_changed TO Tufani_skullbase.EventSet_rotation}
-Group861.AddRoute(OrientationInterpolator876.EventValue_changed, HAnimJoint117.set_EventSet_rotation);
+{ Original "Tufani_Stand016_headRotInterp.EventValue_changed TO Tufani_skullbase.FdRotation.EventIn }
+{ Sample Tufani_Stand016_headRotInterp.EventValue_changed TO Tufani_skullbase.FdRotation.EventIn}
+Group861.AddRoute(OrientationInterpolator876.EventValue_changed, HAnimJoint117.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand016_lower_bodyRotInterp.EventValue_changed TO Tufani_sacroiliac.EventSet_rotation }
-{ Sample Tufani_Stand016_lower_bodyRotInterp.EventValue_changed TO Tufani_sacroiliac.EventSet_rotation}
-Group861.AddRoute(OrientationInterpolator878.EventValue_changed, HAnimJoint47.set_EventSet_rotation);
+{ Original "Tufani_Stand016_lower_bodyRotInterp.EventValue_changed TO Tufani_sacroiliac.FdRotation.EventIn }
+{ Sample Tufani_Stand016_lower_bodyRotInterp.EventValue_changed TO Tufani_sacroiliac.FdRotation.EventIn}
+Group861.AddRoute(OrientationInterpolator878.EventValue_changed, HAnimJoint47.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand016_whole_bodyRotInterp.EventValue_changed TO Tufani_humanoid_root.EventSet_rotation }
-{ Sample Tufani_Stand016_whole_bodyRotInterp.EventValue_changed TO Tufani_humanoid_root.EventSet_rotation}
-Group861.AddRoute(OrientationInterpolator880.EventValue_changed, HAnimJoint42.set_EventSet_rotation);
+{ Original "Tufani_Stand016_whole_bodyRotInterp.EventValue_changed TO Tufani_humanoid_root.FdRotation.EventIn }
+{ Sample Tufani_Stand016_whole_bodyRotInterp.EventValue_changed TO Tufani_humanoid_root.FdRotation.EventIn}
+Group861.AddRoute(OrientationInterpolator880.EventValue_changed, HAnimJoint42.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand016_whole_bodyTransInterp.EventValue_changed TO Tufani_humanoid_root.EventSet_translation }
-{ Sample Tufani_Stand016_whole_bodyTransInterp.EventValue_changed TO Tufani_humanoid_root.EventSet_translation}
-Group861.AddRoute(PositionInterpolator881.EventValue_changed, HAnimJoint42.set_EventSet_translation);
+{ Original "Tufani_Stand016_whole_bodyTransInterp.EventValue_changed TO Tufani_humanoid_root.FdTranslation.EventIn }
+{ Sample Tufani_Stand016_whole_bodyTransInterp.EventValue_changed TO Tufani_humanoid_root.FdTranslation.EventIn}
+Group861.AddRoute(PositionInterpolator881.EventValue_changed, HAnimJoint42.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand016_l_sternoclavicularRoll.EventValue_changed TO Tufani_l_sternoclavicular.EventSet_rotation }
-{ Sample Tufani_Stand016_l_sternoclavicularRoll.EventValue_changed TO Tufani_l_sternoclavicular.EventSet_rotation}
-Group861.AddRoute(OrientationInterpolator882.EventValue_changed, HAnimJoint122.set_EventSet_rotation);
+{ Original "Tufani_Stand016_l_sternoclavicularRoll.EventValue_changed TO Tufani_l_sternoclavicular.FdRotation.EventIn }
+{ Sample Tufani_Stand016_l_sternoclavicularRoll.EventValue_changed TO Tufani_l_sternoclavicular.FdRotation.EventIn}
+Group861.AddRoute(OrientationInterpolator882.EventValue_changed, HAnimJoint122.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand016_r_sternoclavicularRoll.EventValue_changed TO Tufani_r_sternoclavicular.EventSet_rotation }
-{ Sample Tufani_Stand016_r_sternoclavicularRoll.EventValue_changed TO Tufani_r_sternoclavicular.EventSet_rotation}
-Group861.AddRoute(OrientationInterpolator883.EventValue_changed, HAnimJoint217.set_EventSet_rotation);
+{ Original "Tufani_Stand016_r_sternoclavicularRoll.EventValue_changed TO Tufani_r_sternoclavicular.FdRotation.EventIn }
+{ Sample Tufani_Stand016_r_sternoclavicularRoll.EventValue_changed TO Tufani_r_sternoclavicular.FdRotation.EventIn}
+Group861.AddRoute(OrientationInterpolator883.EventValue_changed, HAnimJoint217.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand016_r_metatarsophalangeal_2Pitch.EventValue_changed TO Tufani_l_metatarsophalangeal_2.EventSet_rotation }
-{ Sample Tufani_Stand016_r_metatarsophalangeal_2Pitch.EventValue_changed TO Tufani_l_metatarsophalangeal_2.EventSet_rotation}
-Group861.AddRoute(OrientationInterpolator863.EventValue_changed, HAnimJoint67.set_EventSet_rotation);
+{ Original "Tufani_Stand016_r_metatarsophalangeal_2Pitch.EventValue_changed TO Tufani_l_metatarsophalangeal_2.FdRotation.EventIn }
+{ Sample Tufani_Stand016_r_metatarsophalangeal_2Pitch.EventValue_changed TO Tufani_l_metatarsophalangeal_2.FdRotation.EventIn}
+Group861.AddRoute(OrientationInterpolator863.EventValue_changed, HAnimJoint67.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand016_r_metatarsophalangeal_2Pitch.EventValue_changed TO Tufani_r_metatarsophalangeal_2.EventSet_rotation }
-{ Sample Tufani_Stand016_r_metatarsophalangeal_2Pitch.EventValue_changed TO Tufani_r_metatarsophalangeal_2.EventSet_rotation}
-Group861.AddRoute(OrientationInterpolator863.EventValue_changed, HAnimJoint87.set_EventSet_rotation);
+{ Original "Tufani_Stand016_r_metatarsophalangeal_2Pitch.EventValue_changed TO Tufani_r_metatarsophalangeal_2.FdRotation.EventIn }
+{ Sample Tufani_Stand016_r_metatarsophalangeal_2Pitch.EventValue_changed TO Tufani_r_metatarsophalangeal_2.FdRotation.EventIn}
+Group861.AddRoute(OrientationInterpolator863.EventValue_changed, HAnimJoint87.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand016_sacroiliacYaw.EventValue_changed TO Tufani_sacroiliac.EventSet_rotation }
-{ Sample Tufani_Stand016_sacroiliacYaw.EventValue_changed TO Tufani_sacroiliac.EventSet_rotation}
-Group861.AddRoute(OrientationInterpolator884.EventValue_changed, HAnimJoint47.set_EventSet_rotation);
+{ Original "Tufani_Stand016_sacroiliacYaw.EventValue_changed TO Tufani_sacroiliac.FdRotation.EventIn }
+{ Sample Tufani_Stand016_sacroiliacYaw.EventValue_changed TO Tufani_sacroiliac.FdRotation.EventIn}
+Group861.AddRoute(OrientationInterpolator884.EventValue_changed, HAnimJoint47.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand016_vl5Yaw.EventValue_changed TO Tufani_vl5.EventSet_rotation }
-{ Sample Tufani_Stand016_vl5Yaw.EventValue_changed TO Tufani_vl5.EventSet_rotation}
-Group861.AddRoute(OrientationInterpolator885.EventValue_changed, HAnimJoint92.set_EventSet_rotation);
+{ Original "Tufani_Stand016_vl5Yaw.EventValue_changed TO Tufani_vl5.FdRotation.EventIn }
+{ Sample Tufani_Stand016_vl5Yaw.EventValue_changed TO Tufani_vl5.FdRotation.EventIn}
+Group861.AddRoute(OrientationInterpolator885.EventValue_changed, HAnimJoint92.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand016_l_carpometacarpal_1Pitch.EventValue_changed TO Tufani_l_carpometacarpal_1.EventSet_rotation }
-{ Sample Tufani_Stand016_l_carpometacarpal_1Pitch.EventValue_changed TO Tufani_l_carpometacarpal_1.EventSet_rotation}
-Group861.AddRoute(OrientationInterpolator887.EventValue_changed, HAnimJoint142.set_EventSet_rotation);
+{ Original "Tufani_Stand016_l_carpometacarpal_1Pitch.EventValue_changed TO Tufani_l_carpometacarpal_1.FdRotation.EventIn }
+{ Sample Tufani_Stand016_l_carpometacarpal_1Pitch.EventValue_changed TO Tufani_l_carpometacarpal_1.FdRotation.EventIn}
+Group861.AddRoute(OrientationInterpolator887.EventValue_changed, HAnimJoint142.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand016_r_carpometacarpal_1Pitch.EventValue_changed TO Tufani_r_carpometacarpal_1.EventSet_rotation }
-{ Sample Tufani_Stand016_r_carpometacarpal_1Pitch.EventValue_changed TO Tufani_r_carpometacarpal_1.EventSet_rotation}
-Group861.AddRoute(OrientationInterpolator888.EventValue_changed, HAnimJoint237.set_EventSet_rotation);
+{ Original "Tufani_Stand016_r_carpometacarpal_1Pitch.EventValue_changed TO Tufani_r_carpometacarpal_1.FdRotation.EventIn }
+{ Sample Tufani_Stand016_r_carpometacarpal_1Pitch.EventValue_changed TO Tufani_r_carpometacarpal_1.FdRotation.EventIn}
+Group861.AddRoute(OrientationInterpolator888.EventValue_changed, HAnimJoint237.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand016_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_proximal_interphalangeal_2.EventSet_rotation }
-{ Sample Tufani_Stand016_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_proximal_interphalangeal_2.EventSet_rotation}
-Group861.AddRoute(OrientationInterpolator889.EventValue_changed, HAnimJoint252.set_EventSet_rotation);
+{ Original "Tufani_Stand016_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_proximal_interphalangeal_2.FdRotation.EventIn }
+{ Sample Tufani_Stand016_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_proximal_interphalangeal_2.FdRotation.EventIn}
+Group861.AddRoute(OrientationInterpolator889.EventValue_changed, HAnimJoint252.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_metacarpophalangeal_2.EventSet_rotation }
-{ Sample Tufani_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_metacarpophalangeal_2.EventSet_rotation}
-Group861.AddRoute(OrientationInterpolator890.EventValue_changed, HAnimJoint257.set_EventSet_rotation);
+{ Original "Tufani_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_metacarpophalangeal_2.FdRotation.EventIn }
+{ Sample Tufani_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_metacarpophalangeal_2.FdRotation.EventIn}
+Group861.AddRoute(OrientationInterpolator890.EventValue_changed, HAnimJoint257.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_distal_interphalangeal_2.EventSet_rotation }
-{ Sample Tufani_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_distal_interphalangeal_2.EventSet_rotation}
-Group861.AddRoute(OrientationInterpolator890.EventValue_changed, HAnimJoint262.set_EventSet_rotation);
+{ Original "Tufani_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_distal_interphalangeal_2.FdRotation.EventIn }
+{ Sample Tufani_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_distal_interphalangeal_2.FdRotation.EventIn}
+Group861.AddRoute(OrientationInterpolator890.EventValue_changed, HAnimJoint262.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand016_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_proximal_interphalangeal_3.EventSet_rotation }
-{ Sample Tufani_Stand016_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_proximal_interphalangeal_3.EventSet_rotation}
-Group861.AddRoute(OrientationInterpolator889.EventValue_changed, HAnimJoint267.set_EventSet_rotation);
+{ Original "Tufani_Stand016_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_proximal_interphalangeal_3.FdRotation.EventIn }
+{ Sample Tufani_Stand016_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_proximal_interphalangeal_3.FdRotation.EventIn}
+Group861.AddRoute(OrientationInterpolator889.EventValue_changed, HAnimJoint267.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_metacarpophalangeal_3.EventSet_rotation }
-{ Sample Tufani_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_metacarpophalangeal_3.EventSet_rotation}
-Group861.AddRoute(OrientationInterpolator890.EventValue_changed, HAnimJoint272.set_EventSet_rotation);
+{ Original "Tufani_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_metacarpophalangeal_3.FdRotation.EventIn }
+{ Sample Tufani_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_metacarpophalangeal_3.FdRotation.EventIn}
+Group861.AddRoute(OrientationInterpolator890.EventValue_changed, HAnimJoint272.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_distal_interphalangeal_3.EventSet_rotation }
-{ Sample Tufani_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_distal_interphalangeal_3.EventSet_rotation}
-Group861.AddRoute(OrientationInterpolator890.EventValue_changed, HAnimJoint277.set_EventSet_rotation);
+{ Original "Tufani_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_distal_interphalangeal_3.FdRotation.EventIn }
+{ Sample Tufani_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_distal_interphalangeal_3.FdRotation.EventIn}
+Group861.AddRoute(OrientationInterpolator890.EventValue_changed, HAnimJoint277.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand016_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_proximal_interphalangeal_4.EventSet_rotation }
-{ Sample Tufani_Stand016_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_proximal_interphalangeal_4.EventSet_rotation}
-Group861.AddRoute(OrientationInterpolator889.EventValue_changed, HAnimJoint282.set_EventSet_rotation);
+{ Original "Tufani_Stand016_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_proximal_interphalangeal_4.FdRotation.EventIn }
+{ Sample Tufani_Stand016_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_proximal_interphalangeal_4.FdRotation.EventIn}
+Group861.AddRoute(OrientationInterpolator889.EventValue_changed, HAnimJoint282.FdRotation.EventIn);
+{ METHOD .AddX3DROUTE }
+{ Original "Tufani_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_metacarpophalangeal_4.FdRotation.EventIn }
+{ Sample Tufani_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_metacarpophalangeal_4.FdRotation.EventIn}
+Group861.AddRoute(OrientationInterpolator890.EventValue_changed, HAnimJoint287.FdRotation.EventIn);
 end;
 
 procedure InitTufaniAnimatedPart93;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_metacarpophalangeal_4.EventSet_rotation }
-{ Sample Tufani_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_metacarpophalangeal_4.EventSet_rotation}
-Group861.AddRoute(OrientationInterpolator890.EventValue_changed, HAnimJoint287.set_EventSet_rotation);
+{ Original "Tufani_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_distal_interphalangeal_4.FdRotation.EventIn }
+{ Sample Tufani_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_distal_interphalangeal_4.FdRotation.EventIn}
+Group861.AddRoute(OrientationInterpolator890.EventValue_changed, HAnimJoint292.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_distal_interphalangeal_4.EventSet_rotation }
-{ Sample Tufani_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_distal_interphalangeal_4.EventSet_rotation}
-Group861.AddRoute(OrientationInterpolator890.EventValue_changed, HAnimJoint292.set_EventSet_rotation);
+{ Original "Tufani_Stand016_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_proximal_interphalangeal_5.FdRotation.EventIn }
+{ Sample Tufani_Stand016_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_proximal_interphalangeal_5.FdRotation.EventIn}
+Group861.AddRoute(OrientationInterpolator889.EventValue_changed, HAnimJoint297.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand016_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_proximal_interphalangeal_5.EventSet_rotation }
-{ Sample Tufani_Stand016_r_carpal_proximal_interphalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_proximal_interphalangeal_5.EventSet_rotation}
-Group861.AddRoute(OrientationInterpolator889.EventValue_changed, HAnimJoint297.set_EventSet_rotation);
+{ Original "Tufani_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_metacarpophalangeal_5.FdRotation.EventIn }
+{ Sample Tufani_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_metacarpophalangeal_5.FdRotation.EventIn}
+Group861.AddRoute(OrientationInterpolator890.EventValue_changed, HAnimJoint302.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_metacarpophalangeal_5.EventSet_rotation }
-{ Sample Tufani_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_metacarpophalangeal_5.EventSet_rotation}
-Group861.AddRoute(OrientationInterpolator890.EventValue_changed, HAnimJoint302.set_EventSet_rotation);
-{ METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_distal_interphalangeal_5.EventSet_rotation }
-{ Sample Tufani_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_distal_interphalangeal_5.EventSet_rotation}
-Group861.AddRoute(OrientationInterpolator890.EventValue_changed, HAnimJoint307.set_EventSet_rotation);
+{ Original "Tufani_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_distal_interphalangeal_5.FdRotation.EventIn }
+{ Sample Tufani_Stand016_r_metacarpophalangeal_2Roll.EventValue_changed TO Tufani_r_carpal_distal_interphalangeal_5.FdRotation.EventIn}
+Group861.AddRoute(OrientationInterpolator890.EventValue_changed, HAnimJoint307.FdRotation.EventIn);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group24.FdChildren.Add(Group861);
@@ -4936,49 +4936,49 @@ Group24.FdChildren.Add(TimeTrigger961);
 TimeTrigger962 := TTimeTriggerNode.Create;
 { METHOD .FdChildren.Add }
 Group24.FdChildren.Add(TimeTrigger962);
-{ Original "Tufani_z100sTimer.EventCycleTime TO Tufani_Stand010Timer.startTime }
-{ Sample Tufani_z100sTimer.EventCycleTime TO Tufani_Stand010Timer.startTime}
-Group24.AddRoute(TimeSensor30.EventCycleTime, TimeSensor375.set_startTime);
+{ Original "Tufani_z100sTimer.EventCycleTime TO Tufani_Stand010Timer.FdStartTime.EventIn }
+{ Sample Tufani_z100sTimer.EventCycleTime TO Tufani_Stand010Timer.FdStartTime.EventIn}
+Group24.AddRoute(TimeSensor30.EventCycleTime, TimeSensor375.FdStartTime.EventIn);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_z100sTimer.EventIsActive TO Tufani_z100sTimer.EventSet_enabled }
 { Sample Tufani_z100sTimer.EventIsActive TO Tufani_z100sTimer.EventSet_enabled}
-Group24.AddRoute(TimeSensor30.EventIsActive, TimeSensor30.set_EventSet_enabled);
+Group24.AddRoute(TimeSensor30.EventIsActive, TimeSensor30.EventSet_enabled);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_z100sTimer.EventIsActive TO Tufani_Stand010SPLITTERBooleanFilter.EventSet_boolean }
 { Sample Tufani_z100sTimer.EventIsActive TO Tufani_Stand010SPLITTERBooleanFilter.EventSet_boolean}
-Group24.AddRoute(TimeSensor30.EventIsActive, BooleanFilter958.set_EventSet_boolean);
+Group24.AddRoute(TimeSensor30.EventIsActive, BooleanFilter958.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_z100sTimer.EventFraction_changed TO Tufani_Stand010BooleanSequencer.EventSet_fraction }
 { Sample Tufani_z100sTimer.EventFraction_changed TO Tufani_Stand010BooleanSequencer.EventSet_fraction}
-Group24.AddRoute(TimeSensor30.EventFraction_changed, BooleanSequencer957.set_EventSet_fraction);
+Group24.AddRoute(TimeSensor30.EventFraction_changed, BooleanSequencer957.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand010BooleanSequencer.EventValue_changed TO Tufani_Stand010SPLITTERBooleanFilter.EventSet_boolean }
 { Sample Tufani_Stand010BooleanSequencer.EventValue_changed TO Tufani_Stand010SPLITTERBooleanFilter.EventSet_boolean}
-Group24.AddRoute(BooleanSequencer957.EventValue_changed, BooleanFilter958.set_EventSet_boolean);
+Group24.AddRoute(BooleanSequencer957.EventValue_changed, BooleanFilter958.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand010SPLITTERBooleanFilter.EventInputTrue TO Tufani_Stand010OnTimeTrigger.EventSet_boolean }
 { Sample Tufani_Stand010SPLITTERBooleanFilter.EventInputTrue TO Tufani_Stand010OnTimeTrigger.EventSet_boolean}
-Group24.AddRoute(BooleanFilter958.EventInputTrue, TimeTrigger962.set_EventSet_boolean);
+Group24.AddRoute(BooleanFilter958.EventInputTrue, TimeTrigger962.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand010SPLITTERBooleanFilter.EventInputFalse TO Tufani_Stand010OffTimeTrigger.EventSet_boolean }
 { Sample Tufani_Stand010SPLITTERBooleanFilter.EventInputFalse TO Tufani_Stand010OffTimeTrigger.EventSet_boolean}
-Group24.AddRoute(BooleanFilter958.EventInputFalse, TimeTrigger961.set_EventSet_boolean);
+Group24.AddRoute(BooleanFilter958.EventInputFalse, TimeTrigger961.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand010SPLITTERBooleanFilter.EventInputTrue TO Tufani_Stand010Timer.EventSet_enabled }
 { Sample Tufani_Stand010SPLITTERBooleanFilter.EventInputTrue TO Tufani_Stand010Timer.EventSet_enabled}
-Group24.AddRoute(BooleanFilter958.EventInputTrue, TimeSensor375.set_EventSet_enabled);
+Group24.AddRoute(BooleanFilter958.EventInputTrue, TimeSensor375.EventSet_enabled);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand010SPLITTERBooleanFilter.EventInputFalse TO Tufani_Stand010Timer.EventSet_enabled }
 { Sample Tufani_Stand010SPLITTERBooleanFilter.EventInputFalse TO Tufani_Stand010Timer.EventSet_enabled}
-Group24.AddRoute(BooleanFilter958.EventInputFalse, TimeSensor375.set_EventSet_enabled);
+Group24.AddRoute(BooleanFilter958.EventInputFalse, TimeSensor375.EventSet_enabled);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand010OffTimeTrigger.EventTriggerTime TO Tufani_Stand010Timer.stopTime }
-{ Sample Tufani_Stand010OffTimeTrigger.EventTriggerTime TO Tufani_Stand010Timer.stopTime}
-Group24.AddRoute(TimeTrigger961.EventTriggerTime, TimeSensor375.set_stopTime);
+{ Original "Tufani_Stand010OffTimeTrigger.EventTriggerTime TO Tufani_Stand010Timer.FdStopTime.EventIn }
+{ Sample Tufani_Stand010OffTimeTrigger.EventTriggerTime TO Tufani_Stand010Timer.FdStopTime.EventIn}
+Group24.AddRoute(TimeTrigger961.EventTriggerTime, TimeSensor375.FdStopTime.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand010OnTimeTrigger.EventTriggerTime TO Tufani_Stand010Timer.startTime }
-{ Sample Tufani_Stand010OnTimeTrigger.EventTriggerTime TO Tufani_Stand010Timer.startTime}
-Group24.AddRoute(TimeTrigger962.EventTriggerTime, TimeSensor375.set_startTime);
+{ Original "Tufani_Stand010OnTimeTrigger.EventTriggerTime TO Tufani_Stand010Timer.FdStartTime.EventIn }
+{ Sample Tufani_Stand010OnTimeTrigger.EventTriggerTime TO Tufani_Stand010Timer.FdStartTime.EventIn}
+Group24.AddRoute(TimeTrigger962.EventTriggerTime, TimeSensor375.FdStartTime.EventIn);
 { METHOD .AddX3DROUTE }
 BooleanSequencer974 := TBooleanSequencerNode.Create;
 BooleanSequencer974.SetKey([0,0.23,0.433,1]);
@@ -4992,13 +4992,13 @@ BooleanFilter976 := TBooleanFilterNode.Create;
 { METHOD .FdChildren.Add }
 Group24.FdChildren.Add(BooleanFilter976);
 BooleanFilter977 := TBooleanFilterNode.Create;
+{ METHOD .FdChildren.Add }
+Group24.FdChildren.Add(BooleanFilter977);
 end;
 
 procedure InitTufaniAnimatedPart94;
 begin
 
-{ METHOD .FdChildren.Add }
-Group24.FdChildren.Add(BooleanFilter977);
 TimeTrigger978 := TTimeTriggerNode.Create;
 { METHOD .FdChildren.Add }
 Group24.FdChildren.Add(TimeTrigger978);
@@ -5007,35 +5007,35 @@ TimeTrigger979 := TTimeTriggerNode.Create;
 Group24.FdChildren.Add(TimeTrigger979);
 { Original "Tufani_z100sTimer.EventFraction_changed TO Tufani_Run011BooleanSequencer.EventSet_fraction }
 { Sample Tufani_z100sTimer.EventFraction_changed TO Tufani_Run011BooleanSequencer.EventSet_fraction}
-Group24.AddRoute(TimeSensor30.EventFraction_changed, BooleanSequencer974.set_EventSet_fraction);
+Group24.AddRoute(TimeSensor30.EventFraction_changed, BooleanSequencer974.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Run011BooleanSequencer.EventValue_changed TO Tufani_Run011SPLITTERBooleanFilter.EventSet_boolean }
 { Sample Tufani_Run011BooleanSequencer.EventValue_changed TO Tufani_Run011SPLITTERBooleanFilter.EventSet_boolean}
-Group24.AddRoute(BooleanSequencer974.EventValue_changed, BooleanFilter975.set_EventSet_boolean);
+Group24.AddRoute(BooleanSequencer974.EventValue_changed, BooleanFilter975.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Run011SPLITTERBooleanFilter.EventInputTrue TO Tufani_Run011OnTimeTrigger.EventSet_boolean }
 { Sample Tufani_Run011SPLITTERBooleanFilter.EventInputTrue TO Tufani_Run011OnTimeTrigger.EventSet_boolean}
-Group24.AddRoute(BooleanFilter975.EventInputTrue, TimeTrigger979.set_EventSet_boolean);
+Group24.AddRoute(BooleanFilter975.EventInputTrue, TimeTrigger979.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Run011SPLITTERBooleanFilter.EventInputFalse TO Tufani_Run011OffTimeTrigger.EventSet_boolean }
 { Sample Tufani_Run011SPLITTERBooleanFilter.EventInputFalse TO Tufani_Run011OffTimeTrigger.EventSet_boolean}
-Group24.AddRoute(BooleanFilter975.EventInputFalse, TimeTrigger978.set_EventSet_boolean);
+Group24.AddRoute(BooleanFilter975.EventInputFalse, TimeTrigger978.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Run011SPLITTERBooleanFilter.EventInputTrue TO Tufani_Run011Timer.EventSet_enabled }
 { Sample Tufani_Run011SPLITTERBooleanFilter.EventInputTrue TO Tufani_Run011Timer.EventSet_enabled}
-Group24.AddRoute(BooleanFilter975.EventInputTrue, TimeSensor471.set_EventSet_enabled);
+Group24.AddRoute(BooleanFilter975.EventInputTrue, TimeSensor471.EventSet_enabled);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Run011SPLITTERBooleanFilter.EventInputFalse TO Tufani_Run011Timer.EventSet_enabled }
 { Sample Tufani_Run011SPLITTERBooleanFilter.EventInputFalse TO Tufani_Run011Timer.EventSet_enabled}
-Group24.AddRoute(BooleanFilter975.EventInputFalse, TimeSensor471.set_EventSet_enabled);
+Group24.AddRoute(BooleanFilter975.EventInputFalse, TimeSensor471.EventSet_enabled);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Run011OffTimeTrigger.EventTriggerTime TO Tufani_Run011Timer.stopTime }
-{ Sample Tufani_Run011OffTimeTrigger.EventTriggerTime TO Tufani_Run011Timer.stopTime}
-Group24.AddRoute(TimeTrigger978.EventTriggerTime, TimeSensor471.set_stopTime);
+{ Original "Tufani_Run011OffTimeTrigger.EventTriggerTime TO Tufani_Run011Timer.FdStopTime.EventIn }
+{ Sample Tufani_Run011OffTimeTrigger.EventTriggerTime TO Tufani_Run011Timer.FdStopTime.EventIn}
+Group24.AddRoute(TimeTrigger978.EventTriggerTime, TimeSensor471.FdStopTime.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Run011OnTimeTrigger.EventTriggerTime TO Tufani_Run011Timer.startTime }
-{ Sample Tufani_Run011OnTimeTrigger.EventTriggerTime TO Tufani_Run011Timer.startTime}
-Group24.AddRoute(TimeTrigger979.EventTriggerTime, TimeSensor471.set_startTime);
+{ Original "Tufani_Run011OnTimeTrigger.EventTriggerTime TO Tufani_Run011Timer.FdStartTime.EventIn }
+{ Sample Tufani_Run011OnTimeTrigger.EventTriggerTime TO Tufani_Run011Timer.FdStartTime.EventIn}
+Group24.AddRoute(TimeTrigger979.EventTriggerTime, TimeSensor471.FdStartTime.EventIn);
 { METHOD .AddX3DROUTE }
 BooleanSequencer988 := TBooleanSequencerNode.Create;
 BooleanSequencer988.SetKey([0,0.433,0.55,1]);
@@ -5059,35 +5059,35 @@ TimeTrigger993 := TTimeTriggerNode.Create;
 Group24.FdChildren.Add(TimeTrigger993);
 { Original "Tufani_z100sTimer.EventFraction_changed TO Tufani_Turn012BooleanSequencer.EventSet_fraction }
 { Sample Tufani_z100sTimer.EventFraction_changed TO Tufani_Turn012BooleanSequencer.EventSet_fraction}
-Group24.AddRoute(TimeSensor30.EventFraction_changed, BooleanSequencer988.set_EventSet_fraction);
+Group24.AddRoute(TimeSensor30.EventFraction_changed, BooleanSequencer988.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Turn012BooleanSequencer.EventValue_changed TO Tufani_Turn012SPLITTERBooleanFilter.EventSet_boolean }
 { Sample Tufani_Turn012BooleanSequencer.EventValue_changed TO Tufani_Turn012SPLITTERBooleanFilter.EventSet_boolean}
-Group24.AddRoute(BooleanSequencer988.EventValue_changed, BooleanFilter989.set_EventSet_boolean);
+Group24.AddRoute(BooleanSequencer988.EventValue_changed, BooleanFilter989.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Turn012SPLITTERBooleanFilter.EventInputTrue TO Tufani_Turn012OnTimeTrigger.EventSet_boolean }
 { Sample Tufani_Turn012SPLITTERBooleanFilter.EventInputTrue TO Tufani_Turn012OnTimeTrigger.EventSet_boolean}
-Group24.AddRoute(BooleanFilter989.EventInputTrue, TimeTrigger993.set_EventSet_boolean);
+Group24.AddRoute(BooleanFilter989.EventInputTrue, TimeTrigger993.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Turn012SPLITTERBooleanFilter.EventInputFalse TO Tufani_Turn012OffTimeTrigger.EventSet_boolean }
 { Sample Tufani_Turn012SPLITTERBooleanFilter.EventInputFalse TO Tufani_Turn012OffTimeTrigger.EventSet_boolean}
-Group24.AddRoute(BooleanFilter989.EventInputFalse, TimeTrigger992.set_EventSet_boolean);
+Group24.AddRoute(BooleanFilter989.EventInputFalse, TimeTrigger992.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Turn012SPLITTERBooleanFilter.EventInputTrue TO Tufani_Turn012Timer.EventSet_enabled }
 { Sample Tufani_Turn012SPLITTERBooleanFilter.EventInputTrue TO Tufani_Turn012Timer.EventSet_enabled}
-Group24.AddRoute(BooleanFilter989.EventInputTrue, TimeSensor550.set_EventSet_enabled);
+Group24.AddRoute(BooleanFilter989.EventInputTrue, TimeSensor550.EventSet_enabled);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Turn012SPLITTERBooleanFilter.EventInputFalse TO Tufani_Turn012Timer.EventSet_enabled }
 { Sample Tufani_Turn012SPLITTERBooleanFilter.EventInputFalse TO Tufani_Turn012Timer.EventSet_enabled}
-Group24.AddRoute(BooleanFilter989.EventInputFalse, TimeSensor550.set_EventSet_enabled);
+Group24.AddRoute(BooleanFilter989.EventInputFalse, TimeSensor550.EventSet_enabled);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Turn012OffTimeTrigger.EventTriggerTime TO Tufani_Turn012Timer.stopTime }
-{ Sample Tufani_Turn012OffTimeTrigger.EventTriggerTime TO Tufani_Turn012Timer.stopTime}
-Group24.AddRoute(TimeTrigger992.EventTriggerTime, TimeSensor550.set_stopTime);
+{ Original "Tufani_Turn012OffTimeTrigger.EventTriggerTime TO Tufani_Turn012Timer.FdStopTime.EventIn }
+{ Sample Tufani_Turn012OffTimeTrigger.EventTriggerTime TO Tufani_Turn012Timer.FdStopTime.EventIn}
+Group24.AddRoute(TimeTrigger992.EventTriggerTime, TimeSensor550.FdStopTime.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Turn012OnTimeTrigger.EventTriggerTime TO Tufani_Turn012Timer.startTime }
-{ Sample Tufani_Turn012OnTimeTrigger.EventTriggerTime TO Tufani_Turn012Timer.startTime}
-Group24.AddRoute(TimeTrigger993.EventTriggerTime, TimeSensor550.set_startTime);
+{ Original "Tufani_Turn012OnTimeTrigger.EventTriggerTime TO Tufani_Turn012Timer.FdStartTime.EventIn }
+{ Sample Tufani_Turn012OnTimeTrigger.EventTriggerTime TO Tufani_Turn012Timer.FdStartTime.EventIn}
+Group24.AddRoute(TimeTrigger993.EventTriggerTime, TimeSensor550.FdStartTime.EventIn);
 { METHOD .AddX3DROUTE }
 BooleanSequencer1002 := TBooleanSequencerNode.Create;
 BooleanSequencer1002.SetKey([0,0.55,0.73,1]);
@@ -5095,13 +5095,13 @@ BooleanSequencer1002.SetKeyValue(False,True,False,False);
 { METHOD .FdChildren.Add }
 Group24.FdChildren.Add(BooleanSequencer1002);
 BooleanFilter1003 := TBooleanFilterNode.Create;
+{ METHOD .FdChildren.Add }
+Group24.FdChildren.Add(BooleanFilter1003);
 end;
 
 procedure InitTufaniAnimatedPart95;
 begin
 
-{ METHOD .FdChildren.Add }
-Group24.FdChildren.Add(BooleanFilter1003);
 BooleanFilter1004 := TBooleanFilterNode.Create;
 { METHOD .FdChildren.Add }
 Group24.FdChildren.Add(BooleanFilter1004);
@@ -5116,35 +5116,35 @@ TimeTrigger1007 := TTimeTriggerNode.Create;
 Group24.FdChildren.Add(TimeTrigger1007);
 { Original "Tufani_z100sTimer.EventFraction_changed TO Tufani_Walk013BooleanSequencer.EventSet_fraction }
 { Sample Tufani_z100sTimer.EventFraction_changed TO Tufani_Walk013BooleanSequencer.EventSet_fraction}
-Group24.AddRoute(TimeSensor30.EventFraction_changed, BooleanSequencer1002.set_EventSet_fraction);
+Group24.AddRoute(TimeSensor30.EventFraction_changed, BooleanSequencer1002.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Walk013BooleanSequencer.EventValue_changed TO Tufani_Walk013SPLITTERBooleanFilter.EventSet_boolean }
 { Sample Tufani_Walk013BooleanSequencer.EventValue_changed TO Tufani_Walk013SPLITTERBooleanFilter.EventSet_boolean}
-Group24.AddRoute(BooleanSequencer1002.EventValue_changed, BooleanFilter1003.set_EventSet_boolean);
+Group24.AddRoute(BooleanSequencer1002.EventValue_changed, BooleanFilter1003.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Walk013SPLITTERBooleanFilter.EventInputTrue TO Tufani_Walk013OnTimeTrigger.EventSet_boolean }
 { Sample Tufani_Walk013SPLITTERBooleanFilter.EventInputTrue TO Tufani_Walk013OnTimeTrigger.EventSet_boolean}
-Group24.AddRoute(BooleanFilter1003.EventInputTrue, TimeTrigger1007.set_EventSet_boolean);
+Group24.AddRoute(BooleanFilter1003.EventInputTrue, TimeTrigger1007.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Walk013SPLITTERBooleanFilter.EventInputFalse TO Tufani_Walk013OffTimeTrigger.EventSet_boolean }
 { Sample Tufani_Walk013SPLITTERBooleanFilter.EventInputFalse TO Tufani_Walk013OffTimeTrigger.EventSet_boolean}
-Group24.AddRoute(BooleanFilter1003.EventInputFalse, TimeTrigger1006.set_EventSet_boolean);
+Group24.AddRoute(BooleanFilter1003.EventInputFalse, TimeTrigger1006.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Walk013SPLITTERBooleanFilter.EventInputTrue TO Tufani_Walk013Timer.EventSet_enabled }
 { Sample Tufani_Walk013SPLITTERBooleanFilter.EventInputTrue TO Tufani_Walk013Timer.EventSet_enabled}
-Group24.AddRoute(BooleanFilter1003.EventInputTrue, TimeSensor629.set_EventSet_enabled);
+Group24.AddRoute(BooleanFilter1003.EventInputTrue, TimeSensor629.EventSet_enabled);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Walk013SPLITTERBooleanFilter.EventInputFalse TO Tufani_Walk013Timer.EventSet_enabled }
 { Sample Tufani_Walk013SPLITTERBooleanFilter.EventInputFalse TO Tufani_Walk013Timer.EventSet_enabled}
-Group24.AddRoute(BooleanFilter1003.EventInputFalse, TimeSensor629.set_EventSet_enabled);
+Group24.AddRoute(BooleanFilter1003.EventInputFalse, TimeSensor629.EventSet_enabled);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Walk013OffTimeTrigger.EventTriggerTime TO Tufani_Walk013Timer.stopTime }
-{ Sample Tufani_Walk013OffTimeTrigger.EventTriggerTime TO Tufani_Walk013Timer.stopTime}
-Group24.AddRoute(TimeTrigger1006.EventTriggerTime, TimeSensor629.set_stopTime);
+{ Original "Tufani_Walk013OffTimeTrigger.EventTriggerTime TO Tufani_Walk013Timer.FdStopTime.EventIn }
+{ Sample Tufani_Walk013OffTimeTrigger.EventTriggerTime TO Tufani_Walk013Timer.FdStopTime.EventIn}
+Group24.AddRoute(TimeTrigger1006.EventTriggerTime, TimeSensor629.FdStopTime.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Walk013OnTimeTrigger.EventTriggerTime TO Tufani_Walk013Timer.startTime }
-{ Sample Tufani_Walk013OnTimeTrigger.EventTriggerTime TO Tufani_Walk013Timer.startTime}
-Group24.AddRoute(TimeTrigger1007.EventTriggerTime, TimeSensor629.set_startTime);
+{ Original "Tufani_Walk013OnTimeTrigger.EventTriggerTime TO Tufani_Walk013Timer.FdStartTime.EventIn }
+{ Sample Tufani_Walk013OnTimeTrigger.EventTriggerTime TO Tufani_Walk013Timer.FdStartTime.EventIn}
+Group24.AddRoute(TimeTrigger1007.EventTriggerTime, TimeSensor629.FdStartTime.EventIn);
 { METHOD .AddX3DROUTE }
 BooleanSequencer1016 := TBooleanSequencerNode.Create;
 BooleanSequencer1016.SetKey([0,0.73,0.85,1]);
@@ -5168,43 +5168,43 @@ TimeTrigger1021 := TTimeTriggerNode.Create;
 Group24.FdChildren.Add(TimeTrigger1021);
 { Original "Tufani_z100sTimer.EventFraction_changed TO Tufani_Skip014BooleanSequencer.EventSet_fraction }
 { Sample Tufani_z100sTimer.EventFraction_changed TO Tufani_Skip014BooleanSequencer.EventSet_fraction}
-Group24.AddRoute(TimeSensor30.EventFraction_changed, BooleanSequencer1016.set_EventSet_fraction);
+Group24.AddRoute(TimeSensor30.EventFraction_changed, BooleanSequencer1016.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Skip014BooleanSequencer.EventValue_changed TO Tufani_Skip014SPLITTERBooleanFilter.EventSet_boolean }
 { Sample Tufani_Skip014BooleanSequencer.EventValue_changed TO Tufani_Skip014SPLITTERBooleanFilter.EventSet_boolean}
-Group24.AddRoute(BooleanSequencer1016.EventValue_changed, BooleanFilter1017.set_EventSet_boolean);
+Group24.AddRoute(BooleanSequencer1016.EventValue_changed, BooleanFilter1017.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Skip014SPLITTERBooleanFilter.EventInputTrue TO Tufani_Skip014OnTimeTrigger.EventSet_boolean }
 { Sample Tufani_Skip014SPLITTERBooleanFilter.EventInputTrue TO Tufani_Skip014OnTimeTrigger.EventSet_boolean}
-Group24.AddRoute(BooleanFilter1017.EventInputTrue, TimeTrigger1021.set_EventSet_boolean);
+Group24.AddRoute(BooleanFilter1017.EventInputTrue, TimeTrigger1021.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Skip014SPLITTERBooleanFilter.EventInputFalse TO Tufani_Skip014OffTimeTrigger.EventSet_boolean }
 { Sample Tufani_Skip014SPLITTERBooleanFilter.EventInputFalse TO Tufani_Skip014OffTimeTrigger.EventSet_boolean}
-Group24.AddRoute(BooleanFilter1017.EventInputFalse, TimeTrigger1020.set_EventSet_boolean);
+Group24.AddRoute(BooleanFilter1017.EventInputFalse, TimeTrigger1020.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Skip014SPLITTERBooleanFilter.EventInputTrue TO Tufani_Skip014Timer.EventSet_enabled }
 { Sample Tufani_Skip014SPLITTERBooleanFilter.EventInputTrue TO Tufani_Skip014Timer.EventSet_enabled}
-Group24.AddRoute(BooleanFilter1017.EventInputTrue, TimeSensor713.set_EventSet_enabled);
+Group24.AddRoute(BooleanFilter1017.EventInputTrue, TimeSensor713.EventSet_enabled);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Skip014SPLITTERBooleanFilter.EventInputFalse TO Tufani_Skip014Timer.EventSet_enabled }
 { Sample Tufani_Skip014SPLITTERBooleanFilter.EventInputFalse TO Tufani_Skip014Timer.EventSet_enabled}
-Group24.AddRoute(BooleanFilter1017.EventInputFalse, TimeSensor713.set_EventSet_enabled);
+Group24.AddRoute(BooleanFilter1017.EventInputFalse, TimeSensor713.EventSet_enabled);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Skip014OffTimeTrigger.EventTriggerTime TO Tufani_Skip014Timer.stopTime }
-{ Sample Tufani_Skip014OffTimeTrigger.EventTriggerTime TO Tufani_Skip014Timer.stopTime}
-Group24.AddRoute(TimeTrigger1020.EventTriggerTime, TimeSensor713.set_stopTime);
+{ Original "Tufani_Skip014OffTimeTrigger.EventTriggerTime TO Tufani_Skip014Timer.FdStopTime.EventIn }
+{ Sample Tufani_Skip014OffTimeTrigger.EventTriggerTime TO Tufani_Skip014Timer.FdStopTime.EventIn}
+Group24.AddRoute(TimeTrigger1020.EventTriggerTime, TimeSensor713.FdStopTime.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Skip014OnTimeTrigger.EventTriggerTime TO Tufani_Skip014Timer.startTime }
-{ Sample Tufani_Skip014OnTimeTrigger.EventTriggerTime TO Tufani_Skip014Timer.startTime}
-Group24.AddRoute(TimeTrigger1021.EventTriggerTime, TimeSensor713.set_startTime);
+{ Original "Tufani_Skip014OnTimeTrigger.EventTriggerTime TO Tufani_Skip014Timer.FdStartTime.EventIn }
+{ Sample Tufani_Skip014OnTimeTrigger.EventTriggerTime TO Tufani_Skip014Timer.FdStartTime.EventIn}
+Group24.AddRoute(TimeTrigger1021.EventTriggerTime, TimeSensor713.FdStartTime.EventIn);
 { METHOD .AddX3DROUTE }
 BooleanSequencer1030 := TBooleanSequencerNode.Create;
+BooleanSequencer1030.SetKey([0,0.85,0.9,1]);
 end;
 
 procedure InitTufaniAnimatedPart96;
 begin
 
-BooleanSequencer1030.SetKey([0,0.85,0.9,1]);
 BooleanSequencer1030.SetKeyValue(False,True,False,False);
 { METHOD .FdChildren.Add }
 Group24.FdChildren.Add(BooleanSequencer1030);
@@ -5225,35 +5225,35 @@ TimeTrigger1035 := TTimeTriggerNode.Create;
 Group24.FdChildren.Add(TimeTrigger1035);
 { Original "Tufani_z100sTimer.EventFraction_changed TO Tufani_Stand015BooleanSequencer.EventSet_fraction }
 { Sample Tufani_z100sTimer.EventFraction_changed TO Tufani_Stand015BooleanSequencer.EventSet_fraction}
-Group24.AddRoute(TimeSensor30.EventFraction_changed, BooleanSequencer1030.set_EventSet_fraction);
+Group24.AddRoute(TimeSensor30.EventFraction_changed, BooleanSequencer1030.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand015BooleanSequencer.EventValue_changed TO Tufani_Stand015SPLITTERBooleanFilter.EventSet_boolean }
 { Sample Tufani_Stand015BooleanSequencer.EventValue_changed TO Tufani_Stand015SPLITTERBooleanFilter.EventSet_boolean}
-Group24.AddRoute(BooleanSequencer1030.EventValue_changed, BooleanFilter1031.set_EventSet_boolean);
+Group24.AddRoute(BooleanSequencer1030.EventValue_changed, BooleanFilter1031.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand015SPLITTERBooleanFilter.EventInputTrue TO Tufani_Stand015OnTimeTrigger.EventSet_boolean }
 { Sample Tufani_Stand015SPLITTERBooleanFilter.EventInputTrue TO Tufani_Stand015OnTimeTrigger.EventSet_boolean}
-Group24.AddRoute(BooleanFilter1031.EventInputTrue, TimeTrigger1035.set_EventSet_boolean);
+Group24.AddRoute(BooleanFilter1031.EventInputTrue, TimeTrigger1035.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand015SPLITTERBooleanFilter.EventInputFalse TO Tufani_Stand015OffTimeTrigger.EventSet_boolean }
 { Sample Tufani_Stand015SPLITTERBooleanFilter.EventInputFalse TO Tufani_Stand015OffTimeTrigger.EventSet_boolean}
-Group24.AddRoute(BooleanFilter1031.EventInputFalse, TimeTrigger1034.set_EventSet_boolean);
+Group24.AddRoute(BooleanFilter1031.EventInputFalse, TimeTrigger1034.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand015SPLITTERBooleanFilter.EventInputTrue TO Tufani_Stand015Timer.EventSet_enabled }
 { Sample Tufani_Stand015SPLITTERBooleanFilter.EventInputTrue TO Tufani_Stand015Timer.EventSet_enabled}
-Group24.AddRoute(BooleanFilter1031.EventInputTrue, TimeSensor766.set_EventSet_enabled);
+Group24.AddRoute(BooleanFilter1031.EventInputTrue, TimeSensor766.EventSet_enabled);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand015SPLITTERBooleanFilter.EventInputFalse TO Tufani_Stand015Timer.EventSet_enabled }
 { Sample Tufani_Stand015SPLITTERBooleanFilter.EventInputFalse TO Tufani_Stand015Timer.EventSet_enabled}
-Group24.AddRoute(BooleanFilter1031.EventInputFalse, TimeSensor766.set_EventSet_enabled);
+Group24.AddRoute(BooleanFilter1031.EventInputFalse, TimeSensor766.EventSet_enabled);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand015OffTimeTrigger.EventTriggerTime TO Tufani_Stand015Timer.stopTime }
-{ Sample Tufani_Stand015OffTimeTrigger.EventTriggerTime TO Tufani_Stand015Timer.stopTime}
-Group24.AddRoute(TimeTrigger1034.EventTriggerTime, TimeSensor766.set_stopTime);
+{ Original "Tufani_Stand015OffTimeTrigger.EventTriggerTime TO Tufani_Stand015Timer.FdStopTime.EventIn }
+{ Sample Tufani_Stand015OffTimeTrigger.EventTriggerTime TO Tufani_Stand015Timer.FdStopTime.EventIn}
+Group24.AddRoute(TimeTrigger1034.EventTriggerTime, TimeSensor766.FdStopTime.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand015OnTimeTrigger.EventTriggerTime TO Tufani_Stand015Timer.startTime }
-{ Sample Tufani_Stand015OnTimeTrigger.EventTriggerTime TO Tufani_Stand015Timer.startTime}
-Group24.AddRoute(TimeTrigger1035.EventTriggerTime, TimeSensor766.set_startTime);
+{ Original "Tufani_Stand015OnTimeTrigger.EventTriggerTime TO Tufani_Stand015Timer.FdStartTime.EventIn }
+{ Sample Tufani_Stand015OnTimeTrigger.EventTriggerTime TO Tufani_Stand015Timer.FdStartTime.EventIn}
+Group24.AddRoute(TimeTrigger1035.EventTriggerTime, TimeSensor766.FdStartTime.EventIn);
 { METHOD .AddX3DROUTE }
 BooleanSequencer1044 := TBooleanSequencerNode.Create;
 BooleanSequencer1044.SetKey([0,0.9,1]);
@@ -5277,124 +5277,124 @@ TimeTrigger1049 := TTimeTriggerNode.Create;
 Group24.FdChildren.Add(TimeTrigger1049);
 { Original "Tufani_z100sTimer.EventFraction_changed TO Tufani_Stand016BooleanSequencer.EventSet_fraction }
 { Sample Tufani_z100sTimer.EventFraction_changed TO Tufani_Stand016BooleanSequencer.EventSet_fraction}
-Group24.AddRoute(TimeSensor30.EventFraction_changed, BooleanSequencer1044.set_EventSet_fraction);
+Group24.AddRoute(TimeSensor30.EventFraction_changed, BooleanSequencer1044.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand016BooleanSequencer.EventValue_changed TO Tufani_Stand016SPLITTERBooleanFilter.EventSet_boolean }
 { Sample Tufani_Stand016BooleanSequencer.EventValue_changed TO Tufani_Stand016SPLITTERBooleanFilter.EventSet_boolean}
-Group24.AddRoute(BooleanSequencer1044.EventValue_changed, BooleanFilter1045.set_EventSet_boolean);
+Group24.AddRoute(BooleanSequencer1044.EventValue_changed, BooleanFilter1045.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand016SPLITTERBooleanFilter.EventInputTrue TO Tufani_Stand016OnTimeTrigger.EventSet_boolean }
 { Sample Tufani_Stand016SPLITTERBooleanFilter.EventInputTrue TO Tufani_Stand016OnTimeTrigger.EventSet_boolean}
-Group24.AddRoute(BooleanFilter1045.EventInputTrue, TimeTrigger1049.set_EventSet_boolean);
+Group24.AddRoute(BooleanFilter1045.EventInputTrue, TimeTrigger1049.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand016SPLITTERBooleanFilter.EventInputFalse TO Tufani_Stand016OffTimeTrigger.EventSet_boolean }
 { Sample Tufani_Stand016SPLITTERBooleanFilter.EventInputFalse TO Tufani_Stand016OffTimeTrigger.EventSet_boolean}
-Group24.AddRoute(BooleanFilter1045.EventInputFalse, TimeTrigger1048.set_EventSet_boolean);
+Group24.AddRoute(BooleanFilter1045.EventInputFalse, TimeTrigger1048.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand016SPLITTERBooleanFilter.EventInputTrue TO Tufani_Stand016Timer.EventSet_enabled }
 { Sample Tufani_Stand016SPLITTERBooleanFilter.EventInputTrue TO Tufani_Stand016Timer.EventSet_enabled}
-Group24.AddRoute(BooleanFilter1045.EventInputTrue, TimeSensor862.set_EventSet_enabled);
+Group24.AddRoute(BooleanFilter1045.EventInputTrue, TimeSensor862.EventSet_enabled);
+{ METHOD .AddX3DROUTE }
+{ Original "Tufani_Stand016SPLITTERBooleanFilter.EventInputFalse TO Tufani_Stand016Timer.EventSet_enabled }
+{ Sample Tufani_Stand016SPLITTERBooleanFilter.EventInputFalse TO Tufani_Stand016Timer.EventSet_enabled}
+Group24.AddRoute(BooleanFilter1045.EventInputFalse, TimeSensor862.EventSet_enabled);
 end;
 
 procedure InitTufaniAnimatedPart97;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand016SPLITTERBooleanFilter.EventInputFalse TO Tufani_Stand016Timer.EventSet_enabled }
-{ Sample Tufani_Stand016SPLITTERBooleanFilter.EventInputFalse TO Tufani_Stand016Timer.EventSet_enabled}
-Group24.AddRoute(BooleanFilter1045.EventInputFalse, TimeSensor862.set_EventSet_enabled);
+{ Original "Tufani_Stand016OffTimeTrigger.EventTriggerTime TO Tufani_Stand016Timer.FdStopTime.EventIn }
+{ Sample Tufani_Stand016OffTimeTrigger.EventTriggerTime TO Tufani_Stand016Timer.FdStopTime.EventIn}
+Group24.AddRoute(TimeTrigger1048.EventTriggerTime, TimeSensor862.FdStopTime.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand016OffTimeTrigger.EventTriggerTime TO Tufani_Stand016Timer.stopTime }
-{ Sample Tufani_Stand016OffTimeTrigger.EventTriggerTime TO Tufani_Stand016Timer.stopTime}
-Group24.AddRoute(TimeTrigger1048.EventTriggerTime, TimeSensor862.set_stopTime);
+{ Original "Tufani_Stand016OnTimeTrigger.EventTriggerTime TO Tufani_Stand016Timer.FdStartTime.EventIn }
+{ Sample Tufani_Stand016OnTimeTrigger.EventTriggerTime TO Tufani_Stand016Timer.FdStartTime.EventIn}
+Group24.AddRoute(TimeTrigger1049.EventTriggerTime, TimeSensor862.FdStartTime.EventIn);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand016OnTimeTrigger.EventTriggerTime TO Tufani_Stand016Timer.startTime }
-{ Sample Tufani_Stand016OnTimeTrigger.EventTriggerTime TO Tufani_Stand016Timer.startTime}
-Group24.AddRoute(TimeTrigger1049.EventTriggerTime, TimeSensor862.set_startTime);
-{ METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand010Timer.EventStopTime_changed TO Tufani_Run011Timer.startTime }
-{ Sample Tufani_Stand010Timer.EventStopTime_changed TO Tufani_Run011Timer.startTime}
-Group24.AddRoute(TimeSensor375.EventStopTime_changed, TimeSensor471.set_startTime);
+{ Original "Tufani_Stand010Timer.EventStopTime_changed TO Tufani_Run011Timer.FdStartTime.EventIn }
+{ Sample Tufani_Stand010Timer.EventStopTime_changed TO Tufani_Run011Timer.FdStartTime.EventIn}
+Group24.AddRoute(TimeSensor375.EventStopTime_changed, TimeSensor471.FdStartTime.EventIn);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand010Timer.EventIsActive TO Tufani_Run011NEGATERBooleanFilter.EventSet_boolean }
 { Sample Tufani_Stand010Timer.EventIsActive TO Tufani_Run011NEGATERBooleanFilter.EventSet_boolean}
-Group24.AddRoute(TimeSensor375.EventIsActive, BooleanFilter976.set_EventSet_boolean);
+Group24.AddRoute(TimeSensor375.EventIsActive, BooleanFilter976.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Run011NEGATERBooleanFilter.EventInputNegate TO Tufani_Stand010BooleanSequencer.next }
 { Sample Tufani_Run011NEGATERBooleanFilter.EventInputNegate TO Tufani_Stand010BooleanSequencer.next}
-Group24.AddRoute(BooleanFilter976.EventInputNegate, BooleanSequencer957.set_next);
+Group24.AddRoute(BooleanFilter976.EventInputNegate, BooleanSequencer957.next);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Run011Timer.EventStopTime_changed TO Tufani_Turn012Timer.startTime }
-{ Sample Tufani_Run011Timer.EventStopTime_changed TO Tufani_Turn012Timer.startTime}
-Group24.AddRoute(TimeSensor471.EventStopTime_changed, TimeSensor550.set_startTime);
+{ Original "Tufani_Run011Timer.EventStopTime_changed TO Tufani_Turn012Timer.FdStartTime.EventIn }
+{ Sample Tufani_Run011Timer.EventStopTime_changed TO Tufani_Turn012Timer.FdStartTime.EventIn}
+Group24.AddRoute(TimeSensor471.EventStopTime_changed, TimeSensor550.FdStartTime.EventIn);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Run011Timer.EventIsActive TO Tufani_Turn012NEGATERBooleanFilter.EventSet_boolean }
 { Sample Tufani_Run011Timer.EventIsActive TO Tufani_Turn012NEGATERBooleanFilter.EventSet_boolean}
-Group24.AddRoute(TimeSensor471.EventIsActive, BooleanFilter990.set_EventSet_boolean);
+Group24.AddRoute(TimeSensor471.EventIsActive, BooleanFilter990.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Turn012NEGATERBooleanFilter.EventInputNegate TO Tufani_Run011BooleanSequencer.next }
 { Sample Tufani_Turn012NEGATERBooleanFilter.EventInputNegate TO Tufani_Run011BooleanSequencer.next}
-Group24.AddRoute(BooleanFilter990.EventInputNegate, BooleanSequencer974.set_next);
+Group24.AddRoute(BooleanFilter990.EventInputNegate, BooleanSequencer974.next);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Turn012Timer.EventStopTime_changed TO Tufani_Walk013Timer.startTime }
-{ Sample Tufani_Turn012Timer.EventStopTime_changed TO Tufani_Walk013Timer.startTime}
-Group24.AddRoute(TimeSensor550.EventStopTime_changed, TimeSensor629.set_startTime);
+{ Original "Tufani_Turn012Timer.EventStopTime_changed TO Tufani_Walk013Timer.FdStartTime.EventIn }
+{ Sample Tufani_Turn012Timer.EventStopTime_changed TO Tufani_Walk013Timer.FdStartTime.EventIn}
+Group24.AddRoute(TimeSensor550.EventStopTime_changed, TimeSensor629.FdStartTime.EventIn);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Turn012Timer.EventIsActive TO Tufani_Walk013NEGATERBooleanFilter.EventSet_boolean }
 { Sample Tufani_Turn012Timer.EventIsActive TO Tufani_Walk013NEGATERBooleanFilter.EventSet_boolean}
-Group24.AddRoute(TimeSensor550.EventIsActive, BooleanFilter1004.set_EventSet_boolean);
+Group24.AddRoute(TimeSensor550.EventIsActive, BooleanFilter1004.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Walk013NEGATERBooleanFilter.EventInputNegate TO Tufani_Turn012BooleanSequencer.next }
 { Sample Tufani_Walk013NEGATERBooleanFilter.EventInputNegate TO Tufani_Turn012BooleanSequencer.next}
-Group24.AddRoute(BooleanFilter1004.EventInputNegate, BooleanSequencer988.set_next);
+Group24.AddRoute(BooleanFilter1004.EventInputNegate, BooleanSequencer988.next);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Walk013Timer.EventStopTime_changed TO Tufani_Skip014Timer.startTime }
-{ Sample Tufani_Walk013Timer.EventStopTime_changed TO Tufani_Skip014Timer.startTime}
-Group24.AddRoute(TimeSensor629.EventStopTime_changed, TimeSensor713.set_startTime);
+{ Original "Tufani_Walk013Timer.EventStopTime_changed TO Tufani_Skip014Timer.FdStartTime.EventIn }
+{ Sample Tufani_Walk013Timer.EventStopTime_changed TO Tufani_Skip014Timer.FdStartTime.EventIn}
+Group24.AddRoute(TimeSensor629.EventStopTime_changed, TimeSensor713.FdStartTime.EventIn);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Walk013Timer.EventIsActive TO Tufani_Skip014NEGATERBooleanFilter.EventSet_boolean }
 { Sample Tufani_Walk013Timer.EventIsActive TO Tufani_Skip014NEGATERBooleanFilter.EventSet_boolean}
-Group24.AddRoute(TimeSensor629.EventIsActive, BooleanFilter1018.set_EventSet_boolean);
+Group24.AddRoute(TimeSensor629.EventIsActive, BooleanFilter1018.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Skip014NEGATERBooleanFilter.EventInputNegate TO Tufani_Walk013BooleanSequencer.next }
 { Sample Tufani_Skip014NEGATERBooleanFilter.EventInputNegate TO Tufani_Walk013BooleanSequencer.next}
-Group24.AddRoute(BooleanFilter1018.EventInputNegate, BooleanSequencer1002.set_next);
+Group24.AddRoute(BooleanFilter1018.EventInputNegate, BooleanSequencer1002.next);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Skip014Timer.EventStopTime_changed TO Tufani_Stand015Timer.startTime }
-{ Sample Tufani_Skip014Timer.EventStopTime_changed TO Tufani_Stand015Timer.startTime}
-Group24.AddRoute(TimeSensor713.EventStopTime_changed, TimeSensor766.set_startTime);
+{ Original "Tufani_Skip014Timer.EventStopTime_changed TO Tufani_Stand015Timer.FdStartTime.EventIn }
+{ Sample Tufani_Skip014Timer.EventStopTime_changed TO Tufani_Stand015Timer.FdStartTime.EventIn}
+Group24.AddRoute(TimeSensor713.EventStopTime_changed, TimeSensor766.FdStartTime.EventIn);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Skip014Timer.EventIsActive TO Tufani_Stand015NEGATERBooleanFilter.EventSet_boolean }
 { Sample Tufani_Skip014Timer.EventIsActive TO Tufani_Stand015NEGATERBooleanFilter.EventSet_boolean}
-Group24.AddRoute(TimeSensor713.EventIsActive, BooleanFilter1032.set_EventSet_boolean);
+Group24.AddRoute(TimeSensor713.EventIsActive, BooleanFilter1032.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand015NEGATERBooleanFilter.EventInputNegate TO Tufani_Skip014BooleanSequencer.next }
 { Sample Tufani_Stand015NEGATERBooleanFilter.EventInputNegate TO Tufani_Skip014BooleanSequencer.next}
-Group24.AddRoute(BooleanFilter1032.EventInputNegate, BooleanSequencer1016.set_next);
+Group24.AddRoute(BooleanFilter1032.EventInputNegate, BooleanSequencer1016.next);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand015Timer.EventStopTime_changed TO Tufani_Stand016Timer.startTime }
-{ Sample Tufani_Stand015Timer.EventStopTime_changed TO Tufani_Stand016Timer.startTime}
-Group24.AddRoute(TimeSensor766.EventStopTime_changed, TimeSensor862.set_startTime);
+{ Original "Tufani_Stand015Timer.EventStopTime_changed TO Tufani_Stand016Timer.FdStartTime.EventIn }
+{ Sample Tufani_Stand015Timer.EventStopTime_changed TO Tufani_Stand016Timer.FdStartTime.EventIn}
+Group24.AddRoute(TimeSensor766.EventStopTime_changed, TimeSensor862.FdStartTime.EventIn);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand015Timer.EventIsActive TO Tufani_Stand016NEGATERBooleanFilter.EventSet_boolean }
 { Sample Tufani_Stand015Timer.EventIsActive TO Tufani_Stand016NEGATERBooleanFilter.EventSet_boolean}
-Group24.AddRoute(TimeSensor766.EventIsActive, BooleanFilter1046.set_EventSet_boolean);
+Group24.AddRoute(TimeSensor766.EventIsActive, BooleanFilter1046.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand016NEGATERBooleanFilter.EventInputNegate TO Tufani_Stand015BooleanSequencer.next }
 { Sample Tufani_Stand016NEGATERBooleanFilter.EventInputNegate TO Tufani_Stand015BooleanSequencer.next}
-Group24.AddRoute(BooleanFilter1046.EventInputNegate, BooleanSequencer1030.set_next);
+Group24.AddRoute(BooleanFilter1046.EventInputNegate, BooleanSequencer1030.next);
 { METHOD .AddX3DROUTE }
-{ Original "Tufani_Stand016Timer.EventStopTime_changed TO Tufani_Stand010Timer.startTime }
-{ Sample Tufani_Stand016Timer.EventStopTime_changed TO Tufani_Stand010Timer.startTime}
-Group24.AddRoute(TimeSensor862.EventStopTime_changed, TimeSensor375.set_startTime);
+{ Original "Tufani_Stand016Timer.EventStopTime_changed TO Tufani_Stand010Timer.FdStartTime.EventIn }
+{ Sample Tufani_Stand016Timer.EventStopTime_changed TO Tufani_Stand010Timer.FdStartTime.EventIn}
+Group24.AddRoute(TimeSensor862.EventStopTime_changed, TimeSensor375.FdStartTime.EventIn);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand016Timer.EventIsActive TO Tufani_Stand010NEGATERBooleanFilter.EventSet_boolean }
 { Sample Tufani_Stand016Timer.EventIsActive TO Tufani_Stand010NEGATERBooleanFilter.EventSet_boolean}
-Group24.AddRoute(TimeSensor862.EventIsActive, BooleanFilter959.set_EventSet_boolean);
+Group24.AddRoute(TimeSensor862.EventIsActive, BooleanFilter959.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "Tufani_Stand010NEGATERBooleanFilter.EventInputNegate TO Tufani_Stand016BooleanSequencer.next }
 { Sample Tufani_Stand010NEGATERBooleanFilter.EventInputNegate TO Tufani_Stand016BooleanSequencer.next}
-Group24.AddRoute(BooleanFilter959.EventInputNegate, BooleanSequencer1044.set_next);
+Group24.AddRoute(BooleanFilter959.EventInputNegate, BooleanSequencer1044.next);
 { METHOD .AddX3DROUTE }
 { METHOD .AddGroup }
 X3D0.AddChildren([Group24]);

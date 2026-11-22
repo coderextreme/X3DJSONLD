@@ -366,7 +366,7 @@ Group11.AddRoute(TouchSensor13.EventHitPoint_changed, SFVec3f60);
 { METHOD .AddX3DROUTE }
 { Original "MenuScript.selection TO SceneSwitcher.whichChoice }
 { Sample MenuScript.selection TO SceneSwitcher.whichChoice}
-Group11.AddRoute(MenuScript.[object Object], Switch26.set_whichChoice);
+Group11.AddRoute(MenuScript.[object Object], Switch26.whichChoice);
 { METHOD .AddX3DROUTE }
 { METHOD .AddGroup }
 X3DPrototype10.AddChildren([Group11]);

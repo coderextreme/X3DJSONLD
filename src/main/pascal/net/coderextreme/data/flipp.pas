@@ -137,15 +137,15 @@ begin
 Group9.FdChildren.Add(CoordinateInterpolator24);
 { Original "ci.EventValue_changed TO pointList.EventSet_point }
 { Sample ci.EventValue_changed TO pointList.EventSet_point}
-Group9.AddRoute(CoordinateInterpolator24.EventValue_changed, Coordinate21.set_EventSet_point);
+Group9.AddRoute(CoordinateInterpolator24.EventValue_changed, Coordinate21.EventSet_point);
 { METHOD .AddX3DROUTE }
 { Original "si.EventValue_changed TO ci.EventSet_fraction }
 { Sample si.EventValue_changed TO ci.EventSet_fraction}
-Group9.AddRoute(ScalarInterpolator23.EventValue_changed, CoordinateInterpolator24.set_EventSet_fraction);
+Group9.AddRoute(ScalarInterpolator23.EventValue_changed, CoordinateInterpolator24.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "ts.EventFraction_changed TO si.EventSet_fraction }
 { Sample ts.EventFraction_changed TO si.EventSet_fraction}
-Group9.AddRoute(TimeSensor22.EventFraction_changed, ScalarInterpolator23.set_EventSet_fraction);
+Group9.AddRoute(TimeSensor22.EventFraction_changed, ScalarInterpolator23.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { METHOD .AddGroup }
 X3D0.AddChildren([Group9]);

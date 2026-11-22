@@ -9033,85 +9033,85 @@ HAnimHumanoid70.FdJoints.Add(HAnimJoint73);
 Group39.FdChildren.Add(HAnimHumanoid70);
 { Original "Fire_JinWink_Clock.EventEnterTime TO JinWink_Clock.startTime }
 { Sample Fire_JinWink_Clock.EventEnterTime TO JinWink_Clock.startTime}
-Group39.AddRoute(ProximitySensor8.EventEnterTime, TimeSensor40.set_startTime);
+Group39.AddRoute(ProximitySensor8.EventEnterTime, TimeSensor40.startTime);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group7.FdChildren.Add(Group39);
 { Original "AnimationAdapter_JinBlink.EventValue_changed TO Lower_teeth_MorphInterpolator_JinBlink.FWeight }
 { Sample AnimationAdapter_JinBlink.EventValue_changed TO Lower_teeth_MorphInterpolator_JinBlink.FWeight}
-Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer88.set_FWeight);
+Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer88.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBlink.EventValue_changed TO Tongue_MorphInterpolator_JinBlink.FWeight }
 { Sample AnimationAdapter_JinBlink.EventValue_changed TO Tongue_MorphInterpolator_JinBlink.FWeight}
-Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer1652.set_FWeight);
+Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer1652.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBlink.EventValue_changed TO Upper_teeth_MorphInterpolator_JinBlink.FWeight }
 { Sample AnimationAdapter_JinBlink.EventValue_changed TO Upper_teeth_MorphInterpolator_JinBlink.FWeight}
-Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer1690.set_FWeight);
+Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer1690.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBlink.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinBlink.FWeight }
 { Sample AnimationAdapter_JinBlink.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinBlink.FWeight}
-Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer897.set_FWeight);
+Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer897.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBlink.EventValue_changed TO Neck_MorphInterpolator_JinBlink.FWeight }
 { Sample AnimationAdapter_JinBlink.EventValue_changed TO Neck_MorphInterpolator_JinBlink.FWeight}
-Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer973.set_FWeight);
+Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer973.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBlink.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinBlink.FWeight }
 { Sample AnimationAdapter_JinBlink.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinBlink.FWeight}
-Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer1011.set_FWeight);
+Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer1011.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBlink.EventValue_changed TO Left_ear_MorphInterpolator_JinBlink.FWeight }
 { Sample AnimationAdapter_JinBlink.EventValue_changed TO Left_ear_MorphInterpolator_JinBlink.FWeight}
-Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer363.set_FWeight);
+Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer363.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBlink.EventValue_changed TO Mid_forehead_MorphInterpolator_JinBlink.FWeight }
 { Sample AnimationAdapter_JinBlink.EventValue_changed TO Mid_forehead_MorphInterpolator_JinBlink.FWeight}
-Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer821.set_FWeight);
+Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer821.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBlink.EventValue_changed TO Left_forehead_MorphInterpolator_JinBlink.FWeight }
 { Sample AnimationAdapter_JinBlink.EventValue_changed TO Left_forehead_MorphInterpolator_JinBlink.FWeight}
-Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer439.set_FWeight);
+Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer439.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBlink.EventValue_changed TO Glabella_MorphInterpolator_JinBlink.FWeight }
 { Sample AnimationAdapter_JinBlink.EventValue_changed TO Glabella_MorphInterpolator_JinBlink.FWeight}
-Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer211.set_FWeight);
+Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer211.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBlink.EventValue_changed TO Chin_MorphInterpolator_JinBlink.FWeight }
 { Sample AnimationAdapter_JinBlink.EventValue_changed TO Chin_MorphInterpolator_JinBlink.FWeight}
-Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer173.set_FWeight);
+Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer173.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBlink.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinBlink.FWeight }
 { Sample AnimationAdapter_JinBlink.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinBlink.FWeight}
-Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer515.set_FWeight);
+Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer515.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBlink.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinBlink.FWeight }
 { Sample AnimationAdapter_JinBlink.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinBlink.FWeight}
-Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer135.set_FWeight);
+Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer135.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBlink.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinBlink.FWeight }
 { Sample AnimationAdapter_JinBlink.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinBlink.FWeight}
-Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer401.set_FWeight);
+Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer401.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBlink.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinBlink.FWeight }
 { Sample AnimationAdapter_JinBlink.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinBlink.FWeight}
-Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer249.set_FWeight);
+Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer249.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBlink.EventValue_changed TO Left_temple_MorphInterpolator_JinBlink.FWeight }
 { Sample AnimationAdapter_JinBlink.EventValue_changed TO Left_temple_MorphInterpolator_JinBlink.FWeight}
-Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer667.set_FWeight);
+Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer667.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBlink.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinBlink.FWeight }
 { Sample AnimationAdapter_JinBlink.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinBlink.FWeight}
-Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer859.set_FWeight);
+Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer859.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBlink.EventValue_changed TO Nasal_tip_MorphInterpolator_JinBlink.FWeight }
 { Sample AnimationAdapter_JinBlink.EventValue_changed TO Nasal_tip_MorphInterpolator_JinBlink.FWeight}
-Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer935.set_FWeight);
+Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer935.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBlink.EventValue_changed TO Left_nostril_MorphInterpolator_JinBlink.FWeight }
 { Sample AnimationAdapter_JinBlink.EventValue_changed TO Left_nostril_MorphInterpolator_JinBlink.FWeight}
-Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer591.set_FWeight);
+Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer591.FWeight);
 end;
 
 procedure InitSingleMenuJinPart118;
@@ -9120,147 +9120,147 @@ begin
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBlink.EventValue_changed TO Left_dorsum_MorphInterpolator_JinBlink.FWeight }
 { Sample AnimationAdapter_JinBlink.EventValue_changed TO Left_dorsum_MorphInterpolator_JinBlink.FWeight}
-Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer325.set_FWeight);
+Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer325.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBlink.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinBlink.FWeight }
 { Sample AnimationAdapter_JinBlink.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinBlink.FWeight}
-Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer553.set_FWeight);
+Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer553.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBlink.EventValue_changed TO Left_cheek_MorphInterpolator_JinBlink.FWeight }
 { Sample AnimationAdapter_JinBlink.EventValue_changed TO Left_cheek_MorphInterpolator_JinBlink.FWeight}
-Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer287.set_FWeight);
+Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer287.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBlink.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinBlink.FWeight }
 { Sample AnimationAdapter_JinBlink.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinBlink.FWeight}
-Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer781.set_FWeight);
+Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer781.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBlink.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinBlink.FWeight }
 { Sample AnimationAdapter_JinBlink.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinBlink.FWeight}
-Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer705.set_FWeight);
+Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer705.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBlink.EventValue_changed TO Philtrum_MorphInterpolator_JinBlink.FWeight }
 { Sample AnimationAdapter_JinBlink.EventValue_changed TO Philtrum_MorphInterpolator_JinBlink.FWeight}
-Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer1049.set_FWeight);
+Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer1049.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBlink.EventValue_changed TO Right_forehead_MorphInterpolator_JinBlink.FWeight }
 { Sample AnimationAdapter_JinBlink.EventValue_changed TO Right_forehead_MorphInterpolator_JinBlink.FWeight}
-Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer1277.set_FWeight);
+Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer1277.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBlink.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinBlink.FWeight }
 { Sample AnimationAdapter_JinBlink.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinBlink.FWeight}
-Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer1239.set_FWeight);
+Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer1239.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBlink.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinBlink.FWeight }
 { Sample AnimationAdapter_JinBlink.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinBlink.FWeight}
-Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer743.set_FWeight);
+Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer743.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBlink.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinBlink.FWeight }
 { Sample AnimationAdapter_JinBlink.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinBlink.FWeight}
-Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer477.set_FWeight);
+Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer477.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBlink.EventValue_changed TO Left_pupil_MorphInterpolator_JinBlink.FWeight }
 { Sample AnimationAdapter_JinBlink.EventValue_changed TO Left_pupil_MorphInterpolator_JinBlink.FWeight}
-Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer629.set_FWeight);
+Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer629.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBlink.EventValue_changed TO Right_ear_MorphInterpolator_JinBlink.FWeight }
 { Sample AnimationAdapter_JinBlink.EventValue_changed TO Right_ear_MorphInterpolator_JinBlink.FWeight}
-Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer1201.set_FWeight);
+Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer1201.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBlink.EventValue_changed TO Right_cheek_MorphInterpolator_JinBlink.FWeight }
 { Sample AnimationAdapter_JinBlink.EventValue_changed TO Right_cheek_MorphInterpolator_JinBlink.FWeight}
-Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer1125.set_FWeight);
+Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer1125.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBlink.EventValue_changed TO Right_dorsum_MorphInterpolator_JinBlink.FWeight }
 { Sample AnimationAdapter_JinBlink.EventValue_changed TO Right_dorsum_MorphInterpolator_JinBlink.FWeight}
-Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer1163.set_FWeight);
+Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer1163.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBlink.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinBlink.FWeight }
 { Sample AnimationAdapter_JinBlink.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinBlink.FWeight}
-Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer1087.set_FWeight);
+Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer1087.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBlink.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinBlink.FWeight }
 { Sample AnimationAdapter_JinBlink.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinBlink.FWeight}
-Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer1315.set_FWeight);
+Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer1315.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBlink.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinBlink.FWeight }
 { Sample AnimationAdapter_JinBlink.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinBlink.FWeight}
-Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer1387.set_FWeight);
+Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer1387.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBlink.EventValue_changed TO Right_nostril_MorphInterpolator_JinBlink.FWeight }
 { Sample AnimationAdapter_JinBlink.EventValue_changed TO Right_nostril_MorphInterpolator_JinBlink.FWeight}
-Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer1425.set_FWeight);
+Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer1425.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBlink.EventValue_changed TO Right_pupil_MorphInterpolator_JinBlink.FWeight }
 { Sample AnimationAdapter_JinBlink.EventValue_changed TO Right_pupil_MorphInterpolator_JinBlink.FWeight}
-Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer1463.set_FWeight);
+Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer1463.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBlink.EventValue_changed TO Right_temple_MorphInterpolator_JinBlink.FWeight }
 { Sample AnimationAdapter_JinBlink.EventValue_changed TO Right_temple_MorphInterpolator_JinBlink.FWeight}
-Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer1501.set_FWeight);
+Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer1501.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBlink.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinBlink.FWeight }
 { Sample AnimationAdapter_JinBlink.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinBlink.FWeight}
-Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer1539.set_FWeight);
+Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer1539.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBlink.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinBlink.FWeight }
 { Sample AnimationAdapter_JinBlink.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinBlink.FWeight}
-Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer1577.set_FWeight);
+Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer1577.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBlink.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinBlink.FWeight }
 { Sample AnimationAdapter_JinBlink.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinBlink.FWeight}
-Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer1615.set_FWeight);
+Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer1615.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBlink.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinBlink.FWeight }
 { Sample AnimationAdapter_JinBlink.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinBlink.FWeight}
-Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer1353.set_FWeight);
+Group7.AddRoute(ScalarInterpolator9.EventValue_changed, HAnimDisplacer1353.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "JinBlink_Clock.EventFraction_changed TO AnimationAdapter_JinBlink.EventSet_fraction }
 { Sample JinBlink_Clock.EventFraction_changed TO AnimationAdapter_JinBlink.EventSet_fraction}
-Group7.AddRoute(TimeSensor69.EventFraction_changed, ScalarInterpolator9.set_EventSet_fraction);
+Group7.AddRoute(TimeSensor69.EventFraction_changed, ScalarInterpolator9.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBrowLowerer.EventValue_changed TO Lower_teeth_MorphInterpolator_JinBrowLowerer.FWeight }
 { Sample AnimationAdapter_JinBrowLowerer.EventValue_changed TO Lower_teeth_MorphInterpolator_JinBrowLowerer.FWeight}
-Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer89.set_FWeight);
+Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer89.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBrowLowerer.EventValue_changed TO Tongue_MorphInterpolator_JinBrowLowerer.FWeight }
 { Sample AnimationAdapter_JinBrowLowerer.EventValue_changed TO Tongue_MorphInterpolator_JinBrowLowerer.FWeight}
-Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer1653.set_FWeight);
+Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer1653.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBrowLowerer.EventValue_changed TO Upper_teeth_MorphInterpolator_JinBrowLowerer.FWeight }
 { Sample AnimationAdapter_JinBrowLowerer.EventValue_changed TO Upper_teeth_MorphInterpolator_JinBrowLowerer.FWeight}
-Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer1691.set_FWeight);
+Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer1691.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBrowLowerer.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinBrowLowerer.FWeight }
 { Sample AnimationAdapter_JinBrowLowerer.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinBrowLowerer.FWeight}
-Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer898.set_FWeight);
+Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer898.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBrowLowerer.EventValue_changed TO Neck_MorphInterpolator_JinBrowLowerer.FWeight }
 { Sample AnimationAdapter_JinBrowLowerer.EventValue_changed TO Neck_MorphInterpolator_JinBrowLowerer.FWeight}
-Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer974.set_FWeight);
+Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer974.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBrowLowerer.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinBrowLowerer.FWeight }
 { Sample AnimationAdapter_JinBrowLowerer.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinBrowLowerer.FWeight}
-Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer1012.set_FWeight);
+Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer1012.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBrowLowerer.EventValue_changed TO Left_ear_MorphInterpolator_JinBrowLowerer.FWeight }
 { Sample AnimationAdapter_JinBrowLowerer.EventValue_changed TO Left_ear_MorphInterpolator_JinBrowLowerer.FWeight}
-Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer364.set_FWeight);
+Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer364.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBrowLowerer.EventValue_changed TO Mid_forehead_MorphInterpolator_JinBrowLowerer.FWeight }
 { Sample AnimationAdapter_JinBrowLowerer.EventValue_changed TO Mid_forehead_MorphInterpolator_JinBrowLowerer.FWeight}
-Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer822.set_FWeight);
+Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer822.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBrowLowerer.EventValue_changed TO Left_forehead_MorphInterpolator_JinBrowLowerer.FWeight }
 { Sample AnimationAdapter_JinBrowLowerer.EventValue_changed TO Left_forehead_MorphInterpolator_JinBrowLowerer.FWeight}
-Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer440.set_FWeight);
+Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer440.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBrowLowerer.EventValue_changed TO Glabella_MorphInterpolator_JinBrowLowerer.FWeight }
 { Sample AnimationAdapter_JinBrowLowerer.EventValue_changed TO Glabella_MorphInterpolator_JinBrowLowerer.FWeight}
-Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer212.set_FWeight);
+Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer212.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBrowLowerer.EventValue_changed TO Chin_MorphInterpolator_JinBrowLowerer.FWeight }
 { Sample AnimationAdapter_JinBrowLowerer.EventValue_changed TO Chin_MorphInterpolator_JinBrowLowerer.FWeight}
-Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer174.set_FWeight);
+Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer174.FWeight);
 end;
 
 procedure InitSingleMenuJinPart119;
@@ -9269,139 +9269,139 @@ begin
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBrowLowerer.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinBrowLowerer.FWeight }
 { Sample AnimationAdapter_JinBrowLowerer.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinBrowLowerer.FWeight}
-Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer516.set_FWeight);
+Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer516.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBrowLowerer.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinBrowLowerer.FWeight }
 { Sample AnimationAdapter_JinBrowLowerer.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinBrowLowerer.FWeight}
-Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer136.set_FWeight);
+Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer136.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBrowLowerer.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinBrowLowerer.FWeight }
 { Sample AnimationAdapter_JinBrowLowerer.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinBrowLowerer.FWeight}
-Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer402.set_FWeight);
+Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer402.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBrowLowerer.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinBrowLowerer.FWeight }
 { Sample AnimationAdapter_JinBrowLowerer.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinBrowLowerer.FWeight}
-Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer250.set_FWeight);
+Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer250.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBrowLowerer.EventValue_changed TO Left_temple_MorphInterpolator_JinBrowLowerer.FWeight }
 { Sample AnimationAdapter_JinBrowLowerer.EventValue_changed TO Left_temple_MorphInterpolator_JinBrowLowerer.FWeight}
-Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer668.set_FWeight);
+Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer668.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBrowLowerer.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinBrowLowerer.FWeight }
 { Sample AnimationAdapter_JinBrowLowerer.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinBrowLowerer.FWeight}
-Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer860.set_FWeight);
+Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer860.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBrowLowerer.EventValue_changed TO Nasal_tip_MorphInterpolator_JinBrowLowerer.FWeight }
 { Sample AnimationAdapter_JinBrowLowerer.EventValue_changed TO Nasal_tip_MorphInterpolator_JinBrowLowerer.FWeight}
-Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer936.set_FWeight);
+Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer936.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBrowLowerer.EventValue_changed TO Left_nostril_MorphInterpolator_JinBrowLowerer.FWeight }
 { Sample AnimationAdapter_JinBrowLowerer.EventValue_changed TO Left_nostril_MorphInterpolator_JinBrowLowerer.FWeight}
-Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer592.set_FWeight);
+Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer592.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBrowLowerer.EventValue_changed TO Left_dorsum_MorphInterpolator_JinBrowLowerer.FWeight }
 { Sample AnimationAdapter_JinBrowLowerer.EventValue_changed TO Left_dorsum_MorphInterpolator_JinBrowLowerer.FWeight}
-Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer326.set_FWeight);
+Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer326.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBrowLowerer.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinBrowLowerer.FWeight }
 { Sample AnimationAdapter_JinBrowLowerer.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinBrowLowerer.FWeight}
-Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer554.set_FWeight);
+Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer554.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBrowLowerer.EventValue_changed TO Left_cheek_MorphInterpolator_JinBrowLowerer.FWeight }
 { Sample AnimationAdapter_JinBrowLowerer.EventValue_changed TO Left_cheek_MorphInterpolator_JinBrowLowerer.FWeight}
-Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer288.set_FWeight);
+Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer288.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBrowLowerer.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinBrowLowerer.FWeight }
 { Sample AnimationAdapter_JinBrowLowerer.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinBrowLowerer.FWeight}
-Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer782.set_FWeight);
+Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer782.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBrowLowerer.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinBrowLowerer.FWeight }
 { Sample AnimationAdapter_JinBrowLowerer.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinBrowLowerer.FWeight}
-Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer706.set_FWeight);
+Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer706.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBrowLowerer.EventValue_changed TO Philtrum_MorphInterpolator_JinBrowLowerer.FWeight }
 { Sample AnimationAdapter_JinBrowLowerer.EventValue_changed TO Philtrum_MorphInterpolator_JinBrowLowerer.FWeight}
-Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer1050.set_FWeight);
+Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer1050.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBrowLowerer.EventValue_changed TO Right_forehead_MorphInterpolator_JinBrowLowerer.FWeight }
 { Sample AnimationAdapter_JinBrowLowerer.EventValue_changed TO Right_forehead_MorphInterpolator_JinBrowLowerer.FWeight}
-Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer1278.set_FWeight);
+Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer1278.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBrowLowerer.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinBrowLowerer.FWeight }
 { Sample AnimationAdapter_JinBrowLowerer.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinBrowLowerer.FWeight}
-Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer1240.set_FWeight);
+Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer1240.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBrowLowerer.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinBrowLowerer.FWeight }
 { Sample AnimationAdapter_JinBrowLowerer.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinBrowLowerer.FWeight}
-Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer744.set_FWeight);
+Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer744.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBrowLowerer.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinBrowLowerer.FWeight }
 { Sample AnimationAdapter_JinBrowLowerer.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinBrowLowerer.FWeight}
-Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer478.set_FWeight);
+Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer478.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBrowLowerer.EventValue_changed TO Left_pupil_MorphInterpolator_JinBrowLowerer.FWeight }
 { Sample AnimationAdapter_JinBrowLowerer.EventValue_changed TO Left_pupil_MorphInterpolator_JinBrowLowerer.FWeight}
-Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer630.set_FWeight);
+Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer630.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBrowLowerer.EventValue_changed TO Right_ear_MorphInterpolator_JinBrowLowerer.FWeight }
 { Sample AnimationAdapter_JinBrowLowerer.EventValue_changed TO Right_ear_MorphInterpolator_JinBrowLowerer.FWeight}
-Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer1202.set_FWeight);
+Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer1202.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBrowLowerer.EventValue_changed TO Right_cheek_MorphInterpolator_JinBrowLowerer.FWeight }
 { Sample AnimationAdapter_JinBrowLowerer.EventValue_changed TO Right_cheek_MorphInterpolator_JinBrowLowerer.FWeight}
-Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer1126.set_FWeight);
+Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer1126.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBrowLowerer.EventValue_changed TO Right_dorsum_MorphInterpolator_JinBrowLowerer.FWeight }
 { Sample AnimationAdapter_JinBrowLowerer.EventValue_changed TO Right_dorsum_MorphInterpolator_JinBrowLowerer.FWeight}
-Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer1164.set_FWeight);
+Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer1164.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBrowLowerer.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinBrowLowerer.FWeight }
 { Sample AnimationAdapter_JinBrowLowerer.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinBrowLowerer.FWeight}
-Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer1088.set_FWeight);
+Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer1088.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBrowLowerer.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinBrowLowerer.FWeight }
 { Sample AnimationAdapter_JinBrowLowerer.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinBrowLowerer.FWeight}
-Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer1316.set_FWeight);
+Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer1316.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBrowLowerer.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinBrowLowerer.FWeight }
 { Sample AnimationAdapter_JinBrowLowerer.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinBrowLowerer.FWeight}
-Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer1388.set_FWeight);
+Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer1388.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBrowLowerer.EventValue_changed TO Right_nostril_MorphInterpolator_JinBrowLowerer.FWeight }
 { Sample AnimationAdapter_JinBrowLowerer.EventValue_changed TO Right_nostril_MorphInterpolator_JinBrowLowerer.FWeight}
-Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer1426.set_FWeight);
+Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer1426.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBrowLowerer.EventValue_changed TO Right_pupil_MorphInterpolator_JinBrowLowerer.FWeight }
 { Sample AnimationAdapter_JinBrowLowerer.EventValue_changed TO Right_pupil_MorphInterpolator_JinBrowLowerer.FWeight}
-Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer1464.set_FWeight);
+Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer1464.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBrowLowerer.EventValue_changed TO Right_temple_MorphInterpolator_JinBrowLowerer.FWeight }
 { Sample AnimationAdapter_JinBrowLowerer.EventValue_changed TO Right_temple_MorphInterpolator_JinBrowLowerer.FWeight}
-Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer1502.set_FWeight);
+Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer1502.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBrowLowerer.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinBrowLowerer.FWeight }
 { Sample AnimationAdapter_JinBrowLowerer.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinBrowLowerer.FWeight}
-Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer1540.set_FWeight);
+Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer1540.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBrowLowerer.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinBrowLowerer.FWeight }
 { Sample AnimationAdapter_JinBrowLowerer.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinBrowLowerer.FWeight}
-Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer1578.set_FWeight);
+Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer1578.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBrowLowerer.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinBrowLowerer.FWeight }
 { Sample AnimationAdapter_JinBrowLowerer.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinBrowLowerer.FWeight}
-Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer1616.set_FWeight);
+Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer1616.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinBrowLowerer.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinBrowLowerer.FWeight }
 { Sample AnimationAdapter_JinBrowLowerer.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinBrowLowerer.FWeight}
-Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer1354.set_FWeight);
+Group7.AddRoute(ScalarInterpolator10.EventValue_changed, HAnimDisplacer1354.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "JinBrowLowerer_Clock.EventFraction_changed TO AnimationAdapter_JinBrowLowerer.EventSet_fraction }
 { Sample JinBrowLowerer_Clock.EventFraction_changed TO AnimationAdapter_JinBrowLowerer.EventSet_fraction}
-Group7.AddRoute(TimeSensor68.EventFraction_changed, ScalarInterpolator10.set_EventSet_fraction);
+Group7.AddRoute(TimeSensor68.EventFraction_changed, ScalarInterpolator10.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekPuffer.EventValue_changed TO Lower_teeth_MorphInterpolator_JinCheekPuffer.FWeight }
 { Sample AnimationAdapter_JinCheekPuffer.EventValue_changed TO Lower_teeth_MorphInterpolator_JinCheekPuffer.FWeight}
-Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer90.set_FWeight);
+Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer90.FWeight);
 end;
 
 procedure InitSingleMenuJinPart120;
@@ -9410,139 +9410,139 @@ begin
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekPuffer.EventValue_changed TO Tongue_MorphInterpolator_JinCheekPuffer.FWeight }
 { Sample AnimationAdapter_JinCheekPuffer.EventValue_changed TO Tongue_MorphInterpolator_JinCheekPuffer.FWeight}
-Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer1654.set_FWeight);
+Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer1654.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekPuffer.EventValue_changed TO Upper_teeth_MorphInterpolator_JinCheekPuffer.FWeight }
 { Sample AnimationAdapter_JinCheekPuffer.EventValue_changed TO Upper_teeth_MorphInterpolator_JinCheekPuffer.FWeight}
-Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer1692.set_FWeight);
+Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer1692.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekPuffer.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinCheekPuffer.FWeight }
 { Sample AnimationAdapter_JinCheekPuffer.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinCheekPuffer.FWeight}
-Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer899.set_FWeight);
+Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer899.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekPuffer.EventValue_changed TO Neck_MorphInterpolator_JinCheekPuffer.FWeight }
 { Sample AnimationAdapter_JinCheekPuffer.EventValue_changed TO Neck_MorphInterpolator_JinCheekPuffer.FWeight}
-Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer975.set_FWeight);
+Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer975.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekPuffer.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinCheekPuffer.FWeight }
 { Sample AnimationAdapter_JinCheekPuffer.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinCheekPuffer.FWeight}
-Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer1013.set_FWeight);
+Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer1013.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekPuffer.EventValue_changed TO Left_ear_MorphInterpolator_JinCheekPuffer.FWeight }
 { Sample AnimationAdapter_JinCheekPuffer.EventValue_changed TO Left_ear_MorphInterpolator_JinCheekPuffer.FWeight}
-Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer365.set_FWeight);
+Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer365.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekPuffer.EventValue_changed TO Mid_forehead_MorphInterpolator_JinCheekPuffer.FWeight }
 { Sample AnimationAdapter_JinCheekPuffer.EventValue_changed TO Mid_forehead_MorphInterpolator_JinCheekPuffer.FWeight}
-Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer823.set_FWeight);
+Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer823.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekPuffer.EventValue_changed TO Left_forehead_MorphInterpolator_JinCheekPuffer.FWeight }
 { Sample AnimationAdapter_JinCheekPuffer.EventValue_changed TO Left_forehead_MorphInterpolator_JinCheekPuffer.FWeight}
-Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer441.set_FWeight);
+Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer441.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekPuffer.EventValue_changed TO Glabella_MorphInterpolator_JinCheekPuffer.FWeight }
 { Sample AnimationAdapter_JinCheekPuffer.EventValue_changed TO Glabella_MorphInterpolator_JinCheekPuffer.FWeight}
-Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer213.set_FWeight);
+Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer213.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekPuffer.EventValue_changed TO Chin_MorphInterpolator_JinCheekPuffer.FWeight }
 { Sample AnimationAdapter_JinCheekPuffer.EventValue_changed TO Chin_MorphInterpolator_JinCheekPuffer.FWeight}
-Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer175.set_FWeight);
+Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer175.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekPuffer.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinCheekPuffer.FWeight }
 { Sample AnimationAdapter_JinCheekPuffer.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinCheekPuffer.FWeight}
-Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer517.set_FWeight);
+Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer517.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekPuffer.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinCheekPuffer.FWeight }
 { Sample AnimationAdapter_JinCheekPuffer.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinCheekPuffer.FWeight}
-Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer137.set_FWeight);
+Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer137.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekPuffer.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinCheekPuffer.FWeight }
 { Sample AnimationAdapter_JinCheekPuffer.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinCheekPuffer.FWeight}
-Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer403.set_FWeight);
+Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer403.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekPuffer.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinCheekPuffer.FWeight }
 { Sample AnimationAdapter_JinCheekPuffer.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinCheekPuffer.FWeight}
-Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer251.set_FWeight);
+Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer251.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekPuffer.EventValue_changed TO Left_temple_MorphInterpolator_JinCheekPuffer.FWeight }
 { Sample AnimationAdapter_JinCheekPuffer.EventValue_changed TO Left_temple_MorphInterpolator_JinCheekPuffer.FWeight}
-Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer669.set_FWeight);
+Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer669.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekPuffer.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinCheekPuffer.FWeight }
 { Sample AnimationAdapter_JinCheekPuffer.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinCheekPuffer.FWeight}
-Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer861.set_FWeight);
+Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer861.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekPuffer.EventValue_changed TO Nasal_tip_MorphInterpolator_JinCheekPuffer.FWeight }
 { Sample AnimationAdapter_JinCheekPuffer.EventValue_changed TO Nasal_tip_MorphInterpolator_JinCheekPuffer.FWeight}
-Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer937.set_FWeight);
+Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer937.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekPuffer.EventValue_changed TO Left_nostril_MorphInterpolator_JinCheekPuffer.FWeight }
 { Sample AnimationAdapter_JinCheekPuffer.EventValue_changed TO Left_nostril_MorphInterpolator_JinCheekPuffer.FWeight}
-Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer593.set_FWeight);
+Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer593.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekPuffer.EventValue_changed TO Left_dorsum_MorphInterpolator_JinCheekPuffer.FWeight }
 { Sample AnimationAdapter_JinCheekPuffer.EventValue_changed TO Left_dorsum_MorphInterpolator_JinCheekPuffer.FWeight}
-Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer327.set_FWeight);
+Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer327.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekPuffer.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinCheekPuffer.FWeight }
 { Sample AnimationAdapter_JinCheekPuffer.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinCheekPuffer.FWeight}
-Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer555.set_FWeight);
+Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer555.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekPuffer.EventValue_changed TO Left_cheek_MorphInterpolator_JinCheekPuffer.FWeight }
 { Sample AnimationAdapter_JinCheekPuffer.EventValue_changed TO Left_cheek_MorphInterpolator_JinCheekPuffer.FWeight}
-Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer289.set_FWeight);
+Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer289.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekPuffer.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinCheekPuffer.FWeight }
 { Sample AnimationAdapter_JinCheekPuffer.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinCheekPuffer.FWeight}
-Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer783.set_FWeight);
+Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer783.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekPuffer.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinCheekPuffer.FWeight }
 { Sample AnimationAdapter_JinCheekPuffer.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinCheekPuffer.FWeight}
-Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer707.set_FWeight);
+Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer707.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekPuffer.EventValue_changed TO Philtrum_MorphInterpolator_JinCheekPuffer.FWeight }
 { Sample AnimationAdapter_JinCheekPuffer.EventValue_changed TO Philtrum_MorphInterpolator_JinCheekPuffer.FWeight}
-Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer1051.set_FWeight);
+Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer1051.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekPuffer.EventValue_changed TO Right_forehead_MorphInterpolator_JinCheekPuffer.FWeight }
 { Sample AnimationAdapter_JinCheekPuffer.EventValue_changed TO Right_forehead_MorphInterpolator_JinCheekPuffer.FWeight}
-Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer1279.set_FWeight);
+Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer1279.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekPuffer.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinCheekPuffer.FWeight }
 { Sample AnimationAdapter_JinCheekPuffer.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinCheekPuffer.FWeight}
-Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer1241.set_FWeight);
+Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer1241.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekPuffer.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinCheekPuffer.FWeight }
 { Sample AnimationAdapter_JinCheekPuffer.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinCheekPuffer.FWeight}
-Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer745.set_FWeight);
+Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer745.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekPuffer.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinCheekPuffer.FWeight }
 { Sample AnimationAdapter_JinCheekPuffer.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinCheekPuffer.FWeight}
-Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer479.set_FWeight);
+Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer479.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekPuffer.EventValue_changed TO Left_pupil_MorphInterpolator_JinCheekPuffer.FWeight }
 { Sample AnimationAdapter_JinCheekPuffer.EventValue_changed TO Left_pupil_MorphInterpolator_JinCheekPuffer.FWeight}
-Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer631.set_FWeight);
+Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer631.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekPuffer.EventValue_changed TO Right_ear_MorphInterpolator_JinCheekPuffer.FWeight }
 { Sample AnimationAdapter_JinCheekPuffer.EventValue_changed TO Right_ear_MorphInterpolator_JinCheekPuffer.FWeight}
-Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer1203.set_FWeight);
+Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer1203.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekPuffer.EventValue_changed TO Right_cheek_MorphInterpolator_JinCheekPuffer.FWeight }
 { Sample AnimationAdapter_JinCheekPuffer.EventValue_changed TO Right_cheek_MorphInterpolator_JinCheekPuffer.FWeight}
-Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer1127.set_FWeight);
+Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer1127.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekPuffer.EventValue_changed TO Right_dorsum_MorphInterpolator_JinCheekPuffer.FWeight }
 { Sample AnimationAdapter_JinCheekPuffer.EventValue_changed TO Right_dorsum_MorphInterpolator_JinCheekPuffer.FWeight}
-Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer1165.set_FWeight);
+Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer1165.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekPuffer.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinCheekPuffer.FWeight }
 { Sample AnimationAdapter_JinCheekPuffer.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinCheekPuffer.FWeight}
-Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer1089.set_FWeight);
+Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer1089.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekPuffer.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinCheekPuffer.FWeight }
 { Sample AnimationAdapter_JinCheekPuffer.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinCheekPuffer.FWeight}
-Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer1317.set_FWeight);
+Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer1317.FWeight);
 end;
 
 procedure InitSingleMenuJinPart121;
@@ -9551,139 +9551,139 @@ begin
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekPuffer.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinCheekPuffer.FWeight }
 { Sample AnimationAdapter_JinCheekPuffer.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinCheekPuffer.FWeight}
-Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer1389.set_FWeight);
+Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer1389.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekPuffer.EventValue_changed TO Right_nostril_MorphInterpolator_JinCheekPuffer.FWeight }
 { Sample AnimationAdapter_JinCheekPuffer.EventValue_changed TO Right_nostril_MorphInterpolator_JinCheekPuffer.FWeight}
-Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer1427.set_FWeight);
+Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer1427.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekPuffer.EventValue_changed TO Right_pupil_MorphInterpolator_JinCheekPuffer.FWeight }
 { Sample AnimationAdapter_JinCheekPuffer.EventValue_changed TO Right_pupil_MorphInterpolator_JinCheekPuffer.FWeight}
-Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer1465.set_FWeight);
+Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer1465.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekPuffer.EventValue_changed TO Right_temple_MorphInterpolator_JinCheekPuffer.FWeight }
 { Sample AnimationAdapter_JinCheekPuffer.EventValue_changed TO Right_temple_MorphInterpolator_JinCheekPuffer.FWeight}
-Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer1503.set_FWeight);
+Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer1503.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekPuffer.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinCheekPuffer.FWeight }
 { Sample AnimationAdapter_JinCheekPuffer.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinCheekPuffer.FWeight}
-Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer1541.set_FWeight);
+Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer1541.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekPuffer.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinCheekPuffer.FWeight }
 { Sample AnimationAdapter_JinCheekPuffer.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinCheekPuffer.FWeight}
-Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer1579.set_FWeight);
+Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer1579.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekPuffer.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinCheekPuffer.FWeight }
 { Sample AnimationAdapter_JinCheekPuffer.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinCheekPuffer.FWeight}
-Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer1617.set_FWeight);
+Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer1617.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekPuffer.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinCheekPuffer.FWeight }
 { Sample AnimationAdapter_JinCheekPuffer.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinCheekPuffer.FWeight}
-Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer1355.set_FWeight);
+Group7.AddRoute(ScalarInterpolator11.EventValue_changed, HAnimDisplacer1355.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "JinCheekPuffer_Clock.EventFraction_changed TO AnimationAdapter_JinCheekPuffer.EventSet_fraction }
 { Sample JinCheekPuffer_Clock.EventFraction_changed TO AnimationAdapter_JinCheekPuffer.EventSet_fraction}
-Group7.AddRoute(TimeSensor67.EventFraction_changed, ScalarInterpolator11.set_EventSet_fraction);
+Group7.AddRoute(TimeSensor67.EventFraction_changed, ScalarInterpolator11.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekRaiser.EventValue_changed TO Lower_teeth_MorphInterpolator_JinCheekRaiser.FWeight }
 { Sample AnimationAdapter_JinCheekRaiser.EventValue_changed TO Lower_teeth_MorphInterpolator_JinCheekRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer91.set_FWeight);
+Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer91.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekRaiser.EventValue_changed TO Tongue_MorphInterpolator_JinCheekRaiser.FWeight }
 { Sample AnimationAdapter_JinCheekRaiser.EventValue_changed TO Tongue_MorphInterpolator_JinCheekRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer1655.set_FWeight);
+Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer1655.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekRaiser.EventValue_changed TO Upper_teeth_MorphInterpolator_JinCheekRaiser.FWeight }
 { Sample AnimationAdapter_JinCheekRaiser.EventValue_changed TO Upper_teeth_MorphInterpolator_JinCheekRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer1693.set_FWeight);
+Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer1693.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekRaiser.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinCheekRaiser.FWeight }
 { Sample AnimationAdapter_JinCheekRaiser.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinCheekRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer900.set_FWeight);
+Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer900.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekRaiser.EventValue_changed TO Neck_MorphInterpolator_JinCheekRaiser.FWeight }
 { Sample AnimationAdapter_JinCheekRaiser.EventValue_changed TO Neck_MorphInterpolator_JinCheekRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer976.set_FWeight);
+Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer976.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekRaiser.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinCheekRaiser.FWeight }
 { Sample AnimationAdapter_JinCheekRaiser.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinCheekRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer1014.set_FWeight);
+Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer1014.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekRaiser.EventValue_changed TO Left_ear_MorphInterpolator_JinCheekRaiser.FWeight }
 { Sample AnimationAdapter_JinCheekRaiser.EventValue_changed TO Left_ear_MorphInterpolator_JinCheekRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer366.set_FWeight);
+Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer366.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekRaiser.EventValue_changed TO Mid_forehead_MorphInterpolator_JinCheekRaiser.FWeight }
 { Sample AnimationAdapter_JinCheekRaiser.EventValue_changed TO Mid_forehead_MorphInterpolator_JinCheekRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer824.set_FWeight);
+Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer824.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekRaiser.EventValue_changed TO Left_forehead_MorphInterpolator_JinCheekRaiser.FWeight }
 { Sample AnimationAdapter_JinCheekRaiser.EventValue_changed TO Left_forehead_MorphInterpolator_JinCheekRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer442.set_FWeight);
+Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer442.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekRaiser.EventValue_changed TO Glabella_MorphInterpolator_JinCheekRaiser.FWeight }
 { Sample AnimationAdapter_JinCheekRaiser.EventValue_changed TO Glabella_MorphInterpolator_JinCheekRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer214.set_FWeight);
+Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer214.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekRaiser.EventValue_changed TO Chin_MorphInterpolator_JinCheekRaiser.FWeight }
 { Sample AnimationAdapter_JinCheekRaiser.EventValue_changed TO Chin_MorphInterpolator_JinCheekRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer176.set_FWeight);
+Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer176.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekRaiser.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinCheekRaiser.FWeight }
 { Sample AnimationAdapter_JinCheekRaiser.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinCheekRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer518.set_FWeight);
+Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer518.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekRaiser.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinCheekRaiser.FWeight }
 { Sample AnimationAdapter_JinCheekRaiser.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinCheekRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer138.set_FWeight);
+Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer138.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekRaiser.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinCheekRaiser.FWeight }
 { Sample AnimationAdapter_JinCheekRaiser.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinCheekRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer404.set_FWeight);
+Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer404.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekRaiser.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinCheekRaiser.FWeight }
 { Sample AnimationAdapter_JinCheekRaiser.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinCheekRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer252.set_FWeight);
+Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer252.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekRaiser.EventValue_changed TO Left_temple_MorphInterpolator_JinCheekRaiser.FWeight }
 { Sample AnimationAdapter_JinCheekRaiser.EventValue_changed TO Left_temple_MorphInterpolator_JinCheekRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer670.set_FWeight);
+Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer670.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekRaiser.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinCheekRaiser.FWeight }
 { Sample AnimationAdapter_JinCheekRaiser.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinCheekRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer862.set_FWeight);
+Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer862.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekRaiser.EventValue_changed TO Nasal_tip_MorphInterpolator_JinCheekRaiser.FWeight }
 { Sample AnimationAdapter_JinCheekRaiser.EventValue_changed TO Nasal_tip_MorphInterpolator_JinCheekRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer938.set_FWeight);
+Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer938.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekRaiser.EventValue_changed TO Left_nostril_MorphInterpolator_JinCheekRaiser.FWeight }
 { Sample AnimationAdapter_JinCheekRaiser.EventValue_changed TO Left_nostril_MorphInterpolator_JinCheekRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer594.set_FWeight);
+Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer594.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekRaiser.EventValue_changed TO Left_dorsum_MorphInterpolator_JinCheekRaiser.FWeight }
 { Sample AnimationAdapter_JinCheekRaiser.EventValue_changed TO Left_dorsum_MorphInterpolator_JinCheekRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer328.set_FWeight);
+Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer328.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekRaiser.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinCheekRaiser.FWeight }
 { Sample AnimationAdapter_JinCheekRaiser.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinCheekRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer556.set_FWeight);
+Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer556.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekRaiser.EventValue_changed TO Left_cheek_MorphInterpolator_JinCheekRaiser.FWeight }
 { Sample AnimationAdapter_JinCheekRaiser.EventValue_changed TO Left_cheek_MorphInterpolator_JinCheekRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer290.set_FWeight);
+Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer290.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekRaiser.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinCheekRaiser.FWeight }
 { Sample AnimationAdapter_JinCheekRaiser.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinCheekRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer784.set_FWeight);
+Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer784.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekRaiser.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinCheekRaiser.FWeight }
 { Sample AnimationAdapter_JinCheekRaiser.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinCheekRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer708.set_FWeight);
+Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer708.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekRaiser.EventValue_changed TO Philtrum_MorphInterpolator_JinCheekRaiser.FWeight }
 { Sample AnimationAdapter_JinCheekRaiser.EventValue_changed TO Philtrum_MorphInterpolator_JinCheekRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer1052.set_FWeight);
+Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer1052.FWeight);
 end;
 
 procedure InitSingleMenuJinPart122;
@@ -9692,4825 +9692,4820 @@ begin
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekRaiser.EventValue_changed TO Right_forehead_MorphInterpolator_JinCheekRaiser.FWeight }
 { Sample AnimationAdapter_JinCheekRaiser.EventValue_changed TO Right_forehead_MorphInterpolator_JinCheekRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer1280.set_FWeight);
+Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer1280.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekRaiser.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinCheekRaiser.FWeight }
 { Sample AnimationAdapter_JinCheekRaiser.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinCheekRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer1242.set_FWeight);
+Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer1242.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekRaiser.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinCheekRaiser.FWeight }
 { Sample AnimationAdapter_JinCheekRaiser.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinCheekRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer746.set_FWeight);
+Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer746.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekRaiser.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinCheekRaiser.FWeight }
 { Sample AnimationAdapter_JinCheekRaiser.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinCheekRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer480.set_FWeight);
+Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer480.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekRaiser.EventValue_changed TO Left_pupil_MorphInterpolator_JinCheekRaiser.FWeight }
 { Sample AnimationAdapter_JinCheekRaiser.EventValue_changed TO Left_pupil_MorphInterpolator_JinCheekRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer632.set_FWeight);
+Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer632.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekRaiser.EventValue_changed TO Right_ear_MorphInterpolator_JinCheekRaiser.FWeight }
 { Sample AnimationAdapter_JinCheekRaiser.EventValue_changed TO Right_ear_MorphInterpolator_JinCheekRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer1204.set_FWeight);
+Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer1204.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekRaiser.EventValue_changed TO Right_cheek_MorphInterpolator_JinCheekRaiser.FWeight }
 { Sample AnimationAdapter_JinCheekRaiser.EventValue_changed TO Right_cheek_MorphInterpolator_JinCheekRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer1128.set_FWeight);
+Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer1128.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekRaiser.EventValue_changed TO Right_dorsum_MorphInterpolator_JinCheekRaiser.FWeight }
 { Sample AnimationAdapter_JinCheekRaiser.EventValue_changed TO Right_dorsum_MorphInterpolator_JinCheekRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer1166.set_FWeight);
+Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer1166.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekRaiser.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinCheekRaiser.FWeight }
 { Sample AnimationAdapter_JinCheekRaiser.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinCheekRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer1090.set_FWeight);
+Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer1090.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekRaiser.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinCheekRaiser.FWeight }
 { Sample AnimationAdapter_JinCheekRaiser.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinCheekRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer1318.set_FWeight);
+Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer1318.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekRaiser.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinCheekRaiser.FWeight }
 { Sample AnimationAdapter_JinCheekRaiser.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinCheekRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer1390.set_FWeight);
+Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer1390.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekRaiser.EventValue_changed TO Right_nostril_MorphInterpolator_JinCheekRaiser.FWeight }
 { Sample AnimationAdapter_JinCheekRaiser.EventValue_changed TO Right_nostril_MorphInterpolator_JinCheekRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer1428.set_FWeight);
+Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer1428.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekRaiser.EventValue_changed TO Right_pupil_MorphInterpolator_JinCheekRaiser.FWeight }
 { Sample AnimationAdapter_JinCheekRaiser.EventValue_changed TO Right_pupil_MorphInterpolator_JinCheekRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer1466.set_FWeight);
+Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer1466.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekRaiser.EventValue_changed TO Right_temple_MorphInterpolator_JinCheekRaiser.FWeight }
 { Sample AnimationAdapter_JinCheekRaiser.EventValue_changed TO Right_temple_MorphInterpolator_JinCheekRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer1504.set_FWeight);
+Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer1504.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekRaiser.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinCheekRaiser.FWeight }
 { Sample AnimationAdapter_JinCheekRaiser.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinCheekRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer1542.set_FWeight);
+Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer1542.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekRaiser.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinCheekRaiser.FWeight }
 { Sample AnimationAdapter_JinCheekRaiser.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinCheekRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer1580.set_FWeight);
+Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer1580.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekRaiser.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinCheekRaiser.FWeight }
 { Sample AnimationAdapter_JinCheekRaiser.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinCheekRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer1618.set_FWeight);
+Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer1618.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinCheekRaiser.EventValue_changed TO __0_MorphInterpolator_JinCheekRaiser.FWeight }
 { Sample AnimationAdapter_JinCheekRaiser.EventValue_changed TO __0_MorphInterpolator_JinCheekRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer121.set_FWeight);
+Group7.AddRoute(ScalarInterpolator12.EventValue_changed, HAnimDisplacer121.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "JinCheekRaiser_Clock.EventFraction_changed TO AnimationAdapter_JinCheekRaiser.EventSet_fraction }
 { Sample JinCheekRaiser_Clock.EventFraction_changed TO AnimationAdapter_JinCheekRaiser.EventSet_fraction}
-Group7.AddRoute(TimeSensor66.EventFraction_changed, ScalarInterpolator12.set_EventSet_fraction);
+Group7.AddRoute(TimeSensor66.EventFraction_changed, ScalarInterpolator12.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinChinRaiser.EventValue_changed TO Lower_teeth_MorphInterpolator_JinChinRaiser.FWeight }
 { Sample AnimationAdapter_JinChinRaiser.EventValue_changed TO Lower_teeth_MorphInterpolator_JinChinRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer92.set_FWeight);
+Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer92.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinChinRaiser.EventValue_changed TO Tongue_MorphInterpolator_JinChinRaiser.FWeight }
 { Sample AnimationAdapter_JinChinRaiser.EventValue_changed TO Tongue_MorphInterpolator_JinChinRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer1656.set_FWeight);
+Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer1656.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinChinRaiser.EventValue_changed TO Upper_teeth_MorphInterpolator_JinChinRaiser.FWeight }
 { Sample AnimationAdapter_JinChinRaiser.EventValue_changed TO Upper_teeth_MorphInterpolator_JinChinRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer1694.set_FWeight);
+Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer1694.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinChinRaiser.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinChinRaiser.FWeight }
 { Sample AnimationAdapter_JinChinRaiser.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinChinRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer901.set_FWeight);
+Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer901.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinChinRaiser.EventValue_changed TO Neck_MorphInterpolator_JinChinRaiser.FWeight }
 { Sample AnimationAdapter_JinChinRaiser.EventValue_changed TO Neck_MorphInterpolator_JinChinRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer977.set_FWeight);
+Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer977.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinChinRaiser.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinChinRaiser.FWeight }
 { Sample AnimationAdapter_JinChinRaiser.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinChinRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer1015.set_FWeight);
+Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer1015.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinChinRaiser.EventValue_changed TO Left_ear_MorphInterpolator_JinChinRaiser.FWeight }
 { Sample AnimationAdapter_JinChinRaiser.EventValue_changed TO Left_ear_MorphInterpolator_JinChinRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer367.set_FWeight);
+Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer367.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinChinRaiser.EventValue_changed TO Mid_forehead_MorphInterpolator_JinChinRaiser.FWeight }
 { Sample AnimationAdapter_JinChinRaiser.EventValue_changed TO Mid_forehead_MorphInterpolator_JinChinRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer825.set_FWeight);
+Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer825.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinChinRaiser.EventValue_changed TO Left_forehead_MorphInterpolator_JinChinRaiser.FWeight }
 { Sample AnimationAdapter_JinChinRaiser.EventValue_changed TO Left_forehead_MorphInterpolator_JinChinRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer443.set_FWeight);
+Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer443.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinChinRaiser.EventValue_changed TO Glabella_MorphInterpolator_JinChinRaiser.FWeight }
 { Sample AnimationAdapter_JinChinRaiser.EventValue_changed TO Glabella_MorphInterpolator_JinChinRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer215.set_FWeight);
+Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer215.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinChinRaiser.EventValue_changed TO Chin_MorphInterpolator_JinChinRaiser.FWeight }
 { Sample AnimationAdapter_JinChinRaiser.EventValue_changed TO Chin_MorphInterpolator_JinChinRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer177.set_FWeight);
+Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer177.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinChinRaiser.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinChinRaiser.FWeight }
 { Sample AnimationAdapter_JinChinRaiser.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinChinRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer519.set_FWeight);
+Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer519.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinChinRaiser.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinChinRaiser.FWeight }
 { Sample AnimationAdapter_JinChinRaiser.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinChinRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer139.set_FWeight);
+Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer139.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinChinRaiser.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinChinRaiser.FWeight }
 { Sample AnimationAdapter_JinChinRaiser.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinChinRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer405.set_FWeight);
+Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer405.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinChinRaiser.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinChinRaiser.FWeight }
 { Sample AnimationAdapter_JinChinRaiser.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinChinRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer253.set_FWeight);
+Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer253.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinChinRaiser.EventValue_changed TO Left_temple_MorphInterpolator_JinChinRaiser.FWeight }
+{ Sample AnimationAdapter_JinChinRaiser.EventValue_changed TO Left_temple_MorphInterpolator_JinChinRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer671.FWeight);
 end;
 
 procedure InitSingleMenuJinPart123;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinChinRaiser.EventValue_changed TO Left_temple_MorphInterpolator_JinChinRaiser.FWeight }
-{ Sample AnimationAdapter_JinChinRaiser.EventValue_changed TO Left_temple_MorphInterpolator_JinChinRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer671.set_FWeight);
-{ METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinChinRaiser.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinChinRaiser.FWeight }
 { Sample AnimationAdapter_JinChinRaiser.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinChinRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer863.set_FWeight);
+Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer863.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinChinRaiser.EventValue_changed TO Nasal_tip_MorphInterpolator_JinChinRaiser.FWeight }
 { Sample AnimationAdapter_JinChinRaiser.EventValue_changed TO Nasal_tip_MorphInterpolator_JinChinRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer939.set_FWeight);
+Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer939.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinChinRaiser.EventValue_changed TO Left_nostril_MorphInterpolator_JinChinRaiser.FWeight }
 { Sample AnimationAdapter_JinChinRaiser.EventValue_changed TO Left_nostril_MorphInterpolator_JinChinRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer595.set_FWeight);
+Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer595.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinChinRaiser.EventValue_changed TO Left_dorsum_MorphInterpolator_JinChinRaiser.FWeight }
 { Sample AnimationAdapter_JinChinRaiser.EventValue_changed TO Left_dorsum_MorphInterpolator_JinChinRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer329.set_FWeight);
+Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer329.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinChinRaiser.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinChinRaiser.FWeight }
 { Sample AnimationAdapter_JinChinRaiser.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinChinRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer557.set_FWeight);
+Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer557.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinChinRaiser.EventValue_changed TO Left_cheek_MorphInterpolator_JinChinRaiser.FWeight }
 { Sample AnimationAdapter_JinChinRaiser.EventValue_changed TO Left_cheek_MorphInterpolator_JinChinRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer291.set_FWeight);
+Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer291.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinChinRaiser.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinChinRaiser.FWeight }
 { Sample AnimationAdapter_JinChinRaiser.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinChinRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer785.set_FWeight);
+Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer785.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinChinRaiser.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinChinRaiser.FWeight }
 { Sample AnimationAdapter_JinChinRaiser.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinChinRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer709.set_FWeight);
+Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer709.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinChinRaiser.EventValue_changed TO Philtrum_MorphInterpolator_JinChinRaiser.FWeight }
 { Sample AnimationAdapter_JinChinRaiser.EventValue_changed TO Philtrum_MorphInterpolator_JinChinRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer1053.set_FWeight);
+Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer1053.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinChinRaiser.EventValue_changed TO Right_forehead_MorphInterpolator_JinChinRaiser.FWeight }
 { Sample AnimationAdapter_JinChinRaiser.EventValue_changed TO Right_forehead_MorphInterpolator_JinChinRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer1281.set_FWeight);
+Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer1281.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinChinRaiser.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinChinRaiser.FWeight }
 { Sample AnimationAdapter_JinChinRaiser.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinChinRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer1243.set_FWeight);
+Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer1243.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinChinRaiser.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinChinRaiser.FWeight }
 { Sample AnimationAdapter_JinChinRaiser.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinChinRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer747.set_FWeight);
+Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer747.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinChinRaiser.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinChinRaiser.FWeight }
 { Sample AnimationAdapter_JinChinRaiser.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinChinRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer481.set_FWeight);
+Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer481.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinChinRaiser.EventValue_changed TO Left_pupil_MorphInterpolator_JinChinRaiser.FWeight }
 { Sample AnimationAdapter_JinChinRaiser.EventValue_changed TO Left_pupil_MorphInterpolator_JinChinRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer633.set_FWeight);
+Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer633.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinChinRaiser.EventValue_changed TO Right_ear_MorphInterpolator_JinChinRaiser.FWeight }
 { Sample AnimationAdapter_JinChinRaiser.EventValue_changed TO Right_ear_MorphInterpolator_JinChinRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer1205.set_FWeight);
+Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer1205.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinChinRaiser.EventValue_changed TO Right_cheek_MorphInterpolator_JinChinRaiser.FWeight }
 { Sample AnimationAdapter_JinChinRaiser.EventValue_changed TO Right_cheek_MorphInterpolator_JinChinRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer1129.set_FWeight);
+Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer1129.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinChinRaiser.EventValue_changed TO Right_dorsum_MorphInterpolator_JinChinRaiser.FWeight }
 { Sample AnimationAdapter_JinChinRaiser.EventValue_changed TO Right_dorsum_MorphInterpolator_JinChinRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer1167.set_FWeight);
+Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer1167.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinChinRaiser.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinChinRaiser.FWeight }
 { Sample AnimationAdapter_JinChinRaiser.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinChinRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer1091.set_FWeight);
+Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer1091.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinChinRaiser.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinChinRaiser.FWeight }
 { Sample AnimationAdapter_JinChinRaiser.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinChinRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer1319.set_FWeight);
+Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer1319.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinChinRaiser.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinChinRaiser.FWeight }
 { Sample AnimationAdapter_JinChinRaiser.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinChinRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer1391.set_FWeight);
+Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer1391.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinChinRaiser.EventValue_changed TO Right_nostril_MorphInterpolator_JinChinRaiser.FWeight }
 { Sample AnimationAdapter_JinChinRaiser.EventValue_changed TO Right_nostril_MorphInterpolator_JinChinRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer1429.set_FWeight);
+Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer1429.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinChinRaiser.EventValue_changed TO Right_pupil_MorphInterpolator_JinChinRaiser.FWeight }
 { Sample AnimationAdapter_JinChinRaiser.EventValue_changed TO Right_pupil_MorphInterpolator_JinChinRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer1467.set_FWeight);
+Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer1467.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinChinRaiser.EventValue_changed TO Right_temple_MorphInterpolator_JinChinRaiser.FWeight }
 { Sample AnimationAdapter_JinChinRaiser.EventValue_changed TO Right_temple_MorphInterpolator_JinChinRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer1505.set_FWeight);
+Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer1505.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinChinRaiser.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinChinRaiser.FWeight }
 { Sample AnimationAdapter_JinChinRaiser.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinChinRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer1543.set_FWeight);
+Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer1543.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinChinRaiser.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinChinRaiser.FWeight }
 { Sample AnimationAdapter_JinChinRaiser.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinChinRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer1581.set_FWeight);
+Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer1581.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinChinRaiser.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinChinRaiser.FWeight }
 { Sample AnimationAdapter_JinChinRaiser.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinChinRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer1619.set_FWeight);
+Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer1619.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinChinRaiser.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinChinRaiser.FWeight }
 { Sample AnimationAdapter_JinChinRaiser.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinChinRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer1356.set_FWeight);
+Group7.AddRoute(ScalarInterpolator13.EventValue_changed, HAnimDisplacer1356.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "JinChinRaiser_Clock.EventFraction_changed TO AnimationAdapter_JinChinRaiser.EventSet_fraction }
 { Sample JinChinRaiser_Clock.EventFraction_changed TO AnimationAdapter_JinChinRaiser.EventSet_fraction}
-Group7.AddRoute(TimeSensor65.EventFraction_changed, ScalarInterpolator13.set_EventSet_fraction);
+Group7.AddRoute(TimeSensor65.EventFraction_changed, ScalarInterpolator13.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinDimpler.EventValue_changed TO Lower_teeth_MorphInterpolator_JinDimpler.FWeight }
 { Sample AnimationAdapter_JinDimpler.EventValue_changed TO Lower_teeth_MorphInterpolator_JinDimpler.FWeight}
-Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer93.set_FWeight);
+Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer93.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinDimpler.EventValue_changed TO Tongue_MorphInterpolator_JinDimpler.FWeight }
 { Sample AnimationAdapter_JinDimpler.EventValue_changed TO Tongue_MorphInterpolator_JinDimpler.FWeight}
-Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer1657.set_FWeight);
+Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer1657.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinDimpler.EventValue_changed TO Upper_teeth_MorphInterpolator_JinDimpler.FWeight }
 { Sample AnimationAdapter_JinDimpler.EventValue_changed TO Upper_teeth_MorphInterpolator_JinDimpler.FWeight}
-Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer1695.set_FWeight);
+Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer1695.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinDimpler.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinDimpler.FWeight }
 { Sample AnimationAdapter_JinDimpler.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinDimpler.FWeight}
-Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer902.set_FWeight);
+Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer902.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinDimpler.EventValue_changed TO Neck_MorphInterpolator_JinDimpler.FWeight }
 { Sample AnimationAdapter_JinDimpler.EventValue_changed TO Neck_MorphInterpolator_JinDimpler.FWeight}
-Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer978.set_FWeight);
+Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer978.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinDimpler.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinDimpler.FWeight }
+{ Sample AnimationAdapter_JinDimpler.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinDimpler.FWeight}
+Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer1016.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinDimpler.EventValue_changed TO Left_ear_MorphInterpolator_JinDimpler.FWeight }
+{ Sample AnimationAdapter_JinDimpler.EventValue_changed TO Left_ear_MorphInterpolator_JinDimpler.FWeight}
+Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer368.FWeight);
 end;
 
 procedure InitSingleMenuJinPart124;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinDimpler.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinDimpler.FWeight }
-{ Sample AnimationAdapter_JinDimpler.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinDimpler.FWeight}
-Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer1016.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinDimpler.EventValue_changed TO Left_ear_MorphInterpolator_JinDimpler.FWeight }
-{ Sample AnimationAdapter_JinDimpler.EventValue_changed TO Left_ear_MorphInterpolator_JinDimpler.FWeight}
-Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer368.set_FWeight);
-{ METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinDimpler.EventValue_changed TO Mid_forehead_MorphInterpolator_JinDimpler.FWeight }
 { Sample AnimationAdapter_JinDimpler.EventValue_changed TO Mid_forehead_MorphInterpolator_JinDimpler.FWeight}
-Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer826.set_FWeight);
+Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer826.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinDimpler.EventValue_changed TO Left_forehead_MorphInterpolator_JinDimpler.FWeight }
 { Sample AnimationAdapter_JinDimpler.EventValue_changed TO Left_forehead_MorphInterpolator_JinDimpler.FWeight}
-Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer444.set_FWeight);
+Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer444.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinDimpler.EventValue_changed TO Glabella_MorphInterpolator_JinDimpler.FWeight }
 { Sample AnimationAdapter_JinDimpler.EventValue_changed TO Glabella_MorphInterpolator_JinDimpler.FWeight}
-Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer216.set_FWeight);
+Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer216.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinDimpler.EventValue_changed TO Chin_MorphInterpolator_JinDimpler.FWeight }
 { Sample AnimationAdapter_JinDimpler.EventValue_changed TO Chin_MorphInterpolator_JinDimpler.FWeight}
-Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer178.set_FWeight);
+Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer178.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinDimpler.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinDimpler.FWeight }
 { Sample AnimationAdapter_JinDimpler.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinDimpler.FWeight}
-Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer520.set_FWeight);
+Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer520.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinDimpler.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinDimpler.FWeight }
 { Sample AnimationAdapter_JinDimpler.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinDimpler.FWeight}
-Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer140.set_FWeight);
+Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer140.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinDimpler.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinDimpler.FWeight }
 { Sample AnimationAdapter_JinDimpler.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinDimpler.FWeight}
-Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer406.set_FWeight);
+Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer406.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinDimpler.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinDimpler.FWeight }
 { Sample AnimationAdapter_JinDimpler.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinDimpler.FWeight}
-Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer254.set_FWeight);
+Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer254.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinDimpler.EventValue_changed TO Left_temple_MorphInterpolator_JinDimpler.FWeight }
 { Sample AnimationAdapter_JinDimpler.EventValue_changed TO Left_temple_MorphInterpolator_JinDimpler.FWeight}
-Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer672.set_FWeight);
+Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer672.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinDimpler.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinDimpler.FWeight }
 { Sample AnimationAdapter_JinDimpler.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinDimpler.FWeight}
-Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer864.set_FWeight);
+Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer864.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinDimpler.EventValue_changed TO Nasal_tip_MorphInterpolator_JinDimpler.FWeight }
 { Sample AnimationAdapter_JinDimpler.EventValue_changed TO Nasal_tip_MorphInterpolator_JinDimpler.FWeight}
-Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer940.set_FWeight);
+Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer940.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinDimpler.EventValue_changed TO Left_nostril_MorphInterpolator_JinDimpler.FWeight }
 { Sample AnimationAdapter_JinDimpler.EventValue_changed TO Left_nostril_MorphInterpolator_JinDimpler.FWeight}
-Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer596.set_FWeight);
+Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer596.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinDimpler.EventValue_changed TO Left_dorsum_MorphInterpolator_JinDimpler.FWeight }
 { Sample AnimationAdapter_JinDimpler.EventValue_changed TO Left_dorsum_MorphInterpolator_JinDimpler.FWeight}
-Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer330.set_FWeight);
+Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer330.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinDimpler.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinDimpler.FWeight }
 { Sample AnimationAdapter_JinDimpler.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinDimpler.FWeight}
-Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer558.set_FWeight);
+Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer558.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinDimpler.EventValue_changed TO Left_cheek_MorphInterpolator_JinDimpler.FWeight }
 { Sample AnimationAdapter_JinDimpler.EventValue_changed TO Left_cheek_MorphInterpolator_JinDimpler.FWeight}
-Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer292.set_FWeight);
+Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer292.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinDimpler.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinDimpler.FWeight }
 { Sample AnimationAdapter_JinDimpler.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinDimpler.FWeight}
-Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer786.set_FWeight);
+Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer786.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinDimpler.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinDimpler.FWeight }
 { Sample AnimationAdapter_JinDimpler.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinDimpler.FWeight}
-Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer710.set_FWeight);
+Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer710.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinDimpler.EventValue_changed TO Philtrum_MorphInterpolator_JinDimpler.FWeight }
 { Sample AnimationAdapter_JinDimpler.EventValue_changed TO Philtrum_MorphInterpolator_JinDimpler.FWeight}
-Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer1054.set_FWeight);
+Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer1054.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinDimpler.EventValue_changed TO Right_forehead_MorphInterpolator_JinDimpler.FWeight }
 { Sample AnimationAdapter_JinDimpler.EventValue_changed TO Right_forehead_MorphInterpolator_JinDimpler.FWeight}
-Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer1282.set_FWeight);
+Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer1282.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinDimpler.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinDimpler.FWeight }
 { Sample AnimationAdapter_JinDimpler.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinDimpler.FWeight}
-Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer1244.set_FWeight);
+Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer1244.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinDimpler.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinDimpler.FWeight }
 { Sample AnimationAdapter_JinDimpler.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinDimpler.FWeight}
-Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer748.set_FWeight);
+Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer748.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinDimpler.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinDimpler.FWeight }
 { Sample AnimationAdapter_JinDimpler.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinDimpler.FWeight}
-Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer482.set_FWeight);
+Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer482.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinDimpler.EventValue_changed TO Left_pupil_MorphInterpolator_JinDimpler.FWeight }
 { Sample AnimationAdapter_JinDimpler.EventValue_changed TO Left_pupil_MorphInterpolator_JinDimpler.FWeight}
-Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer634.set_FWeight);
+Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer634.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinDimpler.EventValue_changed TO Right_ear_MorphInterpolator_JinDimpler.FWeight }
 { Sample AnimationAdapter_JinDimpler.EventValue_changed TO Right_ear_MorphInterpolator_JinDimpler.FWeight}
-Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer1206.set_FWeight);
+Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer1206.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinDimpler.EventValue_changed TO Right_cheek_MorphInterpolator_JinDimpler.FWeight }
 { Sample AnimationAdapter_JinDimpler.EventValue_changed TO Right_cheek_MorphInterpolator_JinDimpler.FWeight}
-Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer1130.set_FWeight);
+Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer1130.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinDimpler.EventValue_changed TO Right_dorsum_MorphInterpolator_JinDimpler.FWeight }
 { Sample AnimationAdapter_JinDimpler.EventValue_changed TO Right_dorsum_MorphInterpolator_JinDimpler.FWeight}
-Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer1168.set_FWeight);
+Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer1168.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinDimpler.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinDimpler.FWeight }
 { Sample AnimationAdapter_JinDimpler.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinDimpler.FWeight}
-Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer1092.set_FWeight);
+Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer1092.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinDimpler.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinDimpler.FWeight }
 { Sample AnimationAdapter_JinDimpler.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinDimpler.FWeight}
-Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer1320.set_FWeight);
+Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer1320.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinDimpler.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinDimpler.FWeight }
 { Sample AnimationAdapter_JinDimpler.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinDimpler.FWeight}
-Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer1392.set_FWeight);
+Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer1392.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinDimpler.EventValue_changed TO Right_nostril_MorphInterpolator_JinDimpler.FWeight }
 { Sample AnimationAdapter_JinDimpler.EventValue_changed TO Right_nostril_MorphInterpolator_JinDimpler.FWeight}
-Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer1430.set_FWeight);
+Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer1430.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinDimpler.EventValue_changed TO Right_pupil_MorphInterpolator_JinDimpler.FWeight }
 { Sample AnimationAdapter_JinDimpler.EventValue_changed TO Right_pupil_MorphInterpolator_JinDimpler.FWeight}
-Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer1468.set_FWeight);
+Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer1468.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinDimpler.EventValue_changed TO Right_temple_MorphInterpolator_JinDimpler.FWeight }
 { Sample AnimationAdapter_JinDimpler.EventValue_changed TO Right_temple_MorphInterpolator_JinDimpler.FWeight}
-Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer1506.set_FWeight);
+Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer1506.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinDimpler.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinDimpler.FWeight }
 { Sample AnimationAdapter_JinDimpler.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinDimpler.FWeight}
-Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer1544.set_FWeight);
+Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer1544.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinDimpler.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinDimpler.FWeight }
+{ Sample AnimationAdapter_JinDimpler.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinDimpler.FWeight}
+Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer1582.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinDimpler.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinDimpler.FWeight }
+{ Sample AnimationAdapter_JinDimpler.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinDimpler.FWeight}
+Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer1620.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinDimpler.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinDimpler.FWeight }
+{ Sample AnimationAdapter_JinDimpler.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinDimpler.FWeight}
+Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer1357.FWeight);
 end;
 
 procedure InitSingleMenuJinPart125;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinDimpler.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinDimpler.FWeight }
-{ Sample AnimationAdapter_JinDimpler.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinDimpler.FWeight}
-Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer1582.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinDimpler.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinDimpler.FWeight }
-{ Sample AnimationAdapter_JinDimpler.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinDimpler.FWeight}
-Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer1620.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinDimpler.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinDimpler.FWeight }
-{ Sample AnimationAdapter_JinDimpler.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinDimpler.FWeight}
-Group7.AddRoute(ScalarInterpolator14.EventValue_changed, HAnimDisplacer1357.set_FWeight);
-{ METHOD .AddX3DROUTE }
 { Original "JinDimpler_Clock.EventFraction_changed TO AnimationAdapter_JinDimpler.EventSet_fraction }
 { Sample JinDimpler_Clock.EventFraction_changed TO AnimationAdapter_JinDimpler.EventSet_fraction}
-Group7.AddRoute(TimeSensor64.EventFraction_changed, ScalarInterpolator14.set_EventSet_fraction);
+Group7.AddRoute(TimeSensor64.EventFraction_changed, ScalarInterpolator14.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinEyesClosed.EventValue_changed TO Lower_teeth_MorphInterpolator_JinEyesClosed.FWeight }
 { Sample AnimationAdapter_JinEyesClosed.EventValue_changed TO Lower_teeth_MorphInterpolator_JinEyesClosed.FWeight}
-Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer94.set_FWeight);
+Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer94.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinEyesClosed.EventValue_changed TO Tongue_MorphInterpolator_JinEyesClosed.FWeight }
 { Sample AnimationAdapter_JinEyesClosed.EventValue_changed TO Tongue_MorphInterpolator_JinEyesClosed.FWeight}
-Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer1658.set_FWeight);
+Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer1658.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinEyesClosed.EventValue_changed TO Upper_teeth_MorphInterpolator_JinEyesClosed.FWeight }
 { Sample AnimationAdapter_JinEyesClosed.EventValue_changed TO Upper_teeth_MorphInterpolator_JinEyesClosed.FWeight}
-Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer1696.set_FWeight);
+Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer1696.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinEyesClosed.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinEyesClosed.FWeight }
 { Sample AnimationAdapter_JinEyesClosed.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinEyesClosed.FWeight}
-Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer903.set_FWeight);
+Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer903.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinEyesClosed.EventValue_changed TO Neck_MorphInterpolator_JinEyesClosed.FWeight }
 { Sample AnimationAdapter_JinEyesClosed.EventValue_changed TO Neck_MorphInterpolator_JinEyesClosed.FWeight}
-Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer979.set_FWeight);
+Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer979.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinEyesClosed.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinEyesClosed.FWeight }
 { Sample AnimationAdapter_JinEyesClosed.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinEyesClosed.FWeight}
-Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer1017.set_FWeight);
+Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer1017.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinEyesClosed.EventValue_changed TO Left_ear_MorphInterpolator_JinEyesClosed.FWeight }
 { Sample AnimationAdapter_JinEyesClosed.EventValue_changed TO Left_ear_MorphInterpolator_JinEyesClosed.FWeight}
-Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer369.set_FWeight);
+Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer369.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinEyesClosed.EventValue_changed TO Mid_forehead_MorphInterpolator_JinEyesClosed.FWeight }
 { Sample AnimationAdapter_JinEyesClosed.EventValue_changed TO Mid_forehead_MorphInterpolator_JinEyesClosed.FWeight}
-Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer827.set_FWeight);
+Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer827.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinEyesClosed.EventValue_changed TO Left_forehead_MorphInterpolator_JinEyesClosed.FWeight }
 { Sample AnimationAdapter_JinEyesClosed.EventValue_changed TO Left_forehead_MorphInterpolator_JinEyesClosed.FWeight}
-Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer445.set_FWeight);
+Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer445.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinEyesClosed.EventValue_changed TO Glabella_MorphInterpolator_JinEyesClosed.FWeight }
 { Sample AnimationAdapter_JinEyesClosed.EventValue_changed TO Glabella_MorphInterpolator_JinEyesClosed.FWeight}
-Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer217.set_FWeight);
+Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer217.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinEyesClosed.EventValue_changed TO Chin_MorphInterpolator_JinEyesClosed.FWeight }
 { Sample AnimationAdapter_JinEyesClosed.EventValue_changed TO Chin_MorphInterpolator_JinEyesClosed.FWeight}
-Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer179.set_FWeight);
+Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer179.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinEyesClosed.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinEyesClosed.FWeight }
 { Sample AnimationAdapter_JinEyesClosed.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinEyesClosed.FWeight}
-Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer521.set_FWeight);
+Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer521.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinEyesClosed.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinEyesClosed.FWeight }
 { Sample AnimationAdapter_JinEyesClosed.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinEyesClosed.FWeight}
-Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer141.set_FWeight);
+Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer141.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinEyesClosed.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinEyesClosed.FWeight }
 { Sample AnimationAdapter_JinEyesClosed.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinEyesClosed.FWeight}
-Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer407.set_FWeight);
+Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer407.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinEyesClosed.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinEyesClosed.FWeight }
 { Sample AnimationAdapter_JinEyesClosed.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinEyesClosed.FWeight}
-Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer255.set_FWeight);
+Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer255.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinEyesClosed.EventValue_changed TO Left_temple_MorphInterpolator_JinEyesClosed.FWeight }
 { Sample AnimationAdapter_JinEyesClosed.EventValue_changed TO Left_temple_MorphInterpolator_JinEyesClosed.FWeight}
-Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer673.set_FWeight);
+Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer673.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinEyesClosed.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinEyesClosed.FWeight }
 { Sample AnimationAdapter_JinEyesClosed.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinEyesClosed.FWeight}
-Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer865.set_FWeight);
+Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer865.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinEyesClosed.EventValue_changed TO Nasal_tip_MorphInterpolator_JinEyesClosed.FWeight }
 { Sample AnimationAdapter_JinEyesClosed.EventValue_changed TO Nasal_tip_MorphInterpolator_JinEyesClosed.FWeight}
-Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer941.set_FWeight);
+Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer941.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinEyesClosed.EventValue_changed TO Left_nostril_MorphInterpolator_JinEyesClosed.FWeight }
 { Sample AnimationAdapter_JinEyesClosed.EventValue_changed TO Left_nostril_MorphInterpolator_JinEyesClosed.FWeight}
-Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer597.set_FWeight);
+Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer597.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinEyesClosed.EventValue_changed TO Left_dorsum_MorphInterpolator_JinEyesClosed.FWeight }
 { Sample AnimationAdapter_JinEyesClosed.EventValue_changed TO Left_dorsum_MorphInterpolator_JinEyesClosed.FWeight}
-Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer331.set_FWeight);
+Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer331.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinEyesClosed.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinEyesClosed.FWeight }
 { Sample AnimationAdapter_JinEyesClosed.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinEyesClosed.FWeight}
-Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer559.set_FWeight);
+Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer559.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinEyesClosed.EventValue_changed TO Left_cheek_MorphInterpolator_JinEyesClosed.FWeight }
 { Sample AnimationAdapter_JinEyesClosed.EventValue_changed TO Left_cheek_MorphInterpolator_JinEyesClosed.FWeight}
-Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer293.set_FWeight);
+Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer293.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinEyesClosed.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinEyesClosed.FWeight }
 { Sample AnimationAdapter_JinEyesClosed.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinEyesClosed.FWeight}
-Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer787.set_FWeight);
+Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer787.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinEyesClosed.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinEyesClosed.FWeight }
 { Sample AnimationAdapter_JinEyesClosed.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinEyesClosed.FWeight}
-Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer711.set_FWeight);
+Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer711.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinEyesClosed.EventValue_changed TO Philtrum_MorphInterpolator_JinEyesClosed.FWeight }
 { Sample AnimationAdapter_JinEyesClosed.EventValue_changed TO Philtrum_MorphInterpolator_JinEyesClosed.FWeight}
-Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer1055.set_FWeight);
+Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer1055.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinEyesClosed.EventValue_changed TO Right_forehead_MorphInterpolator_JinEyesClosed.FWeight }
 { Sample AnimationAdapter_JinEyesClosed.EventValue_changed TO Right_forehead_MorphInterpolator_JinEyesClosed.FWeight}
-Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer1283.set_FWeight);
+Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer1283.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinEyesClosed.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinEyesClosed.FWeight }
 { Sample AnimationAdapter_JinEyesClosed.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinEyesClosed.FWeight}
-Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer1245.set_FWeight);
+Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer1245.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinEyesClosed.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinEyesClosed.FWeight }
 { Sample AnimationAdapter_JinEyesClosed.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinEyesClosed.FWeight}
-Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer749.set_FWeight);
+Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer749.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinEyesClosed.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinEyesClosed.FWeight }
 { Sample AnimationAdapter_JinEyesClosed.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinEyesClosed.FWeight}
-Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer483.set_FWeight);
+Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer483.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinEyesClosed.EventValue_changed TO Left_pupil_MorphInterpolator_JinEyesClosed.FWeight }
 { Sample AnimationAdapter_JinEyesClosed.EventValue_changed TO Left_pupil_MorphInterpolator_JinEyesClosed.FWeight}
-Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer635.set_FWeight);
+Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer635.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinEyesClosed.EventValue_changed TO Right_ear_MorphInterpolator_JinEyesClosed.FWeight }
+{ Sample AnimationAdapter_JinEyesClosed.EventValue_changed TO Right_ear_MorphInterpolator_JinEyesClosed.FWeight}
+Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer1207.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinEyesClosed.EventValue_changed TO Right_cheek_MorphInterpolator_JinEyesClosed.FWeight }
+{ Sample AnimationAdapter_JinEyesClosed.EventValue_changed TO Right_cheek_MorphInterpolator_JinEyesClosed.FWeight}
+Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer1131.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinEyesClosed.EventValue_changed TO Right_dorsum_MorphInterpolator_JinEyesClosed.FWeight }
+{ Sample AnimationAdapter_JinEyesClosed.EventValue_changed TO Right_dorsum_MorphInterpolator_JinEyesClosed.FWeight}
+Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer1169.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinEyesClosed.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinEyesClosed.FWeight }
+{ Sample AnimationAdapter_JinEyesClosed.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinEyesClosed.FWeight}
+Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer1093.FWeight);
 end;
 
 procedure InitSingleMenuJinPart126;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinEyesClosed.EventValue_changed TO Right_ear_MorphInterpolator_JinEyesClosed.FWeight }
-{ Sample AnimationAdapter_JinEyesClosed.EventValue_changed TO Right_ear_MorphInterpolator_JinEyesClosed.FWeight}
-Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer1207.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinEyesClosed.EventValue_changed TO Right_cheek_MorphInterpolator_JinEyesClosed.FWeight }
-{ Sample AnimationAdapter_JinEyesClosed.EventValue_changed TO Right_cheek_MorphInterpolator_JinEyesClosed.FWeight}
-Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer1131.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinEyesClosed.EventValue_changed TO Right_dorsum_MorphInterpolator_JinEyesClosed.FWeight }
-{ Sample AnimationAdapter_JinEyesClosed.EventValue_changed TO Right_dorsum_MorphInterpolator_JinEyesClosed.FWeight}
-Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer1169.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinEyesClosed.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinEyesClosed.FWeight }
-{ Sample AnimationAdapter_JinEyesClosed.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinEyesClosed.FWeight}
-Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer1093.set_FWeight);
-{ METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinEyesClosed.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinEyesClosed.FWeight }
 { Sample AnimationAdapter_JinEyesClosed.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinEyesClosed.FWeight}
-Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer1321.set_FWeight);
+Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer1321.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinEyesClosed.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinEyesClosed.FWeight }
 { Sample AnimationAdapter_JinEyesClosed.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinEyesClosed.FWeight}
-Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer1393.set_FWeight);
+Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer1393.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinEyesClosed.EventValue_changed TO Right_nostril_MorphInterpolator_JinEyesClosed.FWeight }
 { Sample AnimationAdapter_JinEyesClosed.EventValue_changed TO Right_nostril_MorphInterpolator_JinEyesClosed.FWeight}
-Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer1431.set_FWeight);
+Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer1431.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinEyesClosed.EventValue_changed TO Right_pupil_MorphInterpolator_JinEyesClosed.FWeight }
 { Sample AnimationAdapter_JinEyesClosed.EventValue_changed TO Right_pupil_MorphInterpolator_JinEyesClosed.FWeight}
-Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer1469.set_FWeight);
+Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer1469.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinEyesClosed.EventValue_changed TO Right_temple_MorphInterpolator_JinEyesClosed.FWeight }
 { Sample AnimationAdapter_JinEyesClosed.EventValue_changed TO Right_temple_MorphInterpolator_JinEyesClosed.FWeight}
-Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer1507.set_FWeight);
+Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer1507.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinEyesClosed.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinEyesClosed.FWeight }
 { Sample AnimationAdapter_JinEyesClosed.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinEyesClosed.FWeight}
-Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer1545.set_FWeight);
+Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer1545.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinEyesClosed.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinEyesClosed.FWeight }
 { Sample AnimationAdapter_JinEyesClosed.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinEyesClosed.FWeight}
-Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer1583.set_FWeight);
+Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer1583.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinEyesClosed.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinEyesClosed.FWeight }
 { Sample AnimationAdapter_JinEyesClosed.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinEyesClosed.FWeight}
-Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer1621.set_FWeight);
+Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer1621.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinEyesClosed.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinEyesClosed.FWeight }
 { Sample AnimationAdapter_JinEyesClosed.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinEyesClosed.FWeight}
-Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer1358.set_FWeight);
+Group7.AddRoute(ScalarInterpolator15.EventValue_changed, HAnimDisplacer1358.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "JinEyesClosed_Clock.EventFraction_changed TO AnimationAdapter_JinEyesClosed.EventSet_fraction }
 { Sample JinEyesClosed_Clock.EventFraction_changed TO AnimationAdapter_JinEyesClosed.EventSet_fraction}
-Group7.AddRoute(TimeSensor63.EventFraction_changed, ScalarInterpolator15.set_EventSet_fraction);
+Group7.AddRoute(TimeSensor63.EventFraction_changed, ScalarInterpolator15.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Lower_teeth_MorphInterpolator_JinInnerBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Lower_teeth_MorphInterpolator_JinInnerBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer95.set_FWeight);
+Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer95.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Tongue_MorphInterpolator_JinInnerBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Tongue_MorphInterpolator_JinInnerBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer1659.set_FWeight);
+Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer1659.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Upper_teeth_MorphInterpolator_JinInnerBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Upper_teeth_MorphInterpolator_JinInnerBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer1697.set_FWeight);
+Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer1697.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinInnerBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinInnerBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer904.set_FWeight);
+Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer904.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Neck_MorphInterpolator_JinInnerBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Neck_MorphInterpolator_JinInnerBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer980.set_FWeight);
+Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer980.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinInnerBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinInnerBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer1018.set_FWeight);
+Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer1018.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Left_ear_MorphInterpolator_JinInnerBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Left_ear_MorphInterpolator_JinInnerBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer370.set_FWeight);
+Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer370.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Mid_forehead_MorphInterpolator_JinInnerBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Mid_forehead_MorphInterpolator_JinInnerBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer828.set_FWeight);
+Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer828.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Left_forehead_MorphInterpolator_JinInnerBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Left_forehead_MorphInterpolator_JinInnerBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer446.set_FWeight);
+Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer446.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Glabella_MorphInterpolator_JinInnerBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Glabella_MorphInterpolator_JinInnerBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer218.set_FWeight);
+Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer218.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Chin_MorphInterpolator_JinInnerBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Chin_MorphInterpolator_JinInnerBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer180.set_FWeight);
+Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer180.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinInnerBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinInnerBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer522.set_FWeight);
+Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer522.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinInnerBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinInnerBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer142.set_FWeight);
+Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer142.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinInnerBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinInnerBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer408.set_FWeight);
+Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer408.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinInnerBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinInnerBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer256.set_FWeight);
+Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer256.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Left_temple_MorphInterpolator_JinInnerBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Left_temple_MorphInterpolator_JinInnerBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer674.set_FWeight);
+Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer674.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinInnerBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinInnerBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer866.set_FWeight);
+Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer866.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Nasal_tip_MorphInterpolator_JinInnerBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Nasal_tip_MorphInterpolator_JinInnerBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer942.set_FWeight);
+Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer942.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Left_nostril_MorphInterpolator_JinInnerBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Left_nostril_MorphInterpolator_JinInnerBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer598.set_FWeight);
+Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer598.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Left_dorsum_MorphInterpolator_JinInnerBrowRaiser.FWeight }
+{ Sample AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Left_dorsum_MorphInterpolator_JinInnerBrowRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer332.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinInnerBrowRaiser.FWeight }
+{ Sample AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinInnerBrowRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer560.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Left_cheek_MorphInterpolator_JinInnerBrowRaiser.FWeight }
+{ Sample AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Left_cheek_MorphInterpolator_JinInnerBrowRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer294.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinInnerBrowRaiser.FWeight }
+{ Sample AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinInnerBrowRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer788.FWeight);
 end;
 
 procedure InitSingleMenuJinPart127;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Left_dorsum_MorphInterpolator_JinInnerBrowRaiser.FWeight }
-{ Sample AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Left_dorsum_MorphInterpolator_JinInnerBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer332.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinInnerBrowRaiser.FWeight }
-{ Sample AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinInnerBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer560.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Left_cheek_MorphInterpolator_JinInnerBrowRaiser.FWeight }
-{ Sample AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Left_cheek_MorphInterpolator_JinInnerBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer294.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinInnerBrowRaiser.FWeight }
-{ Sample AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinInnerBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer788.set_FWeight);
-{ METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinInnerBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinInnerBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer712.set_FWeight);
+Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer712.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Philtrum_MorphInterpolator_JinInnerBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Philtrum_MorphInterpolator_JinInnerBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer1056.set_FWeight);
+Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer1056.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Right_forehead_MorphInterpolator_JinInnerBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Right_forehead_MorphInterpolator_JinInnerBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer1284.set_FWeight);
+Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer1284.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinInnerBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinInnerBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer1246.set_FWeight);
+Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer1246.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinInnerBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinInnerBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer750.set_FWeight);
+Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer750.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinInnerBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinInnerBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer484.set_FWeight);
+Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer484.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Left_pupil_MorphInterpolator_JinInnerBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Left_pupil_MorphInterpolator_JinInnerBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer636.set_FWeight);
+Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer636.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Right_ear_MorphInterpolator_JinInnerBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Right_ear_MorphInterpolator_JinInnerBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer1208.set_FWeight);
+Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer1208.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Right_cheek_MorphInterpolator_JinInnerBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Right_cheek_MorphInterpolator_JinInnerBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer1132.set_FWeight);
+Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer1132.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Right_dorsum_MorphInterpolator_JinInnerBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Right_dorsum_MorphInterpolator_JinInnerBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer1170.set_FWeight);
+Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer1170.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinInnerBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinInnerBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer1094.set_FWeight);
+Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer1094.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinInnerBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinInnerBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer1322.set_FWeight);
+Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer1322.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinInnerBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinInnerBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer1394.set_FWeight);
+Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer1394.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Right_nostril_MorphInterpolator_JinInnerBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Right_nostril_MorphInterpolator_JinInnerBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer1432.set_FWeight);
+Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer1432.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Right_pupil_MorphInterpolator_JinInnerBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Right_pupil_MorphInterpolator_JinInnerBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer1470.set_FWeight);
+Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer1470.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Right_temple_MorphInterpolator_JinInnerBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Right_temple_MorphInterpolator_JinInnerBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer1508.set_FWeight);
+Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer1508.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinInnerBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinInnerBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer1546.set_FWeight);
+Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer1546.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinInnerBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinInnerBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer1584.set_FWeight);
+Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer1584.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinInnerBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinInnerBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer1622.set_FWeight);
+Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer1622.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinInnerBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinInnerBrowRaiser.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinInnerBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer1359.set_FWeight);
+Group7.AddRoute(ScalarInterpolator16.EventValue_changed, HAnimDisplacer1359.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "JinInnerBrowRaiser_Clock.EventFraction_changed TO AnimationAdapter_JinInnerBrowRaiser.EventSet_fraction }
 { Sample JinInnerBrowRaiser_Clock.EventFraction_changed TO AnimationAdapter_JinInnerBrowRaiser.EventSet_fraction}
-Group7.AddRoute(TimeSensor62.EventFraction_changed, ScalarInterpolator16.set_EventSet_fraction);
+Group7.AddRoute(TimeSensor62.EventFraction_changed, ScalarInterpolator16.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinJawDrop.EventValue_changed TO Lower_teeth_MorphInterpolator_JinJawDrop.FWeight }
 { Sample AnimationAdapter_JinJawDrop.EventValue_changed TO Lower_teeth_MorphInterpolator_JinJawDrop.FWeight}
-Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer96.set_FWeight);
+Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer96.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinJawDrop.EventValue_changed TO Tongue_MorphInterpolator_JinJawDrop.FWeight }
 { Sample AnimationAdapter_JinJawDrop.EventValue_changed TO Tongue_MorphInterpolator_JinJawDrop.FWeight}
-Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer1660.set_FWeight);
+Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer1660.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinJawDrop.EventValue_changed TO Upper_teeth_MorphInterpolator_JinJawDrop.FWeight }
 { Sample AnimationAdapter_JinJawDrop.EventValue_changed TO Upper_teeth_MorphInterpolator_JinJawDrop.FWeight}
-Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer1698.set_FWeight);
+Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer1698.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinJawDrop.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinJawDrop.FWeight }
 { Sample AnimationAdapter_JinJawDrop.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinJawDrop.FWeight}
-Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer905.set_FWeight);
+Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer905.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinJawDrop.EventValue_changed TO Neck_MorphInterpolator_JinJawDrop.FWeight }
 { Sample AnimationAdapter_JinJawDrop.EventValue_changed TO Neck_MorphInterpolator_JinJawDrop.FWeight}
-Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer981.set_FWeight);
+Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer981.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinJawDrop.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinJawDrop.FWeight }
 { Sample AnimationAdapter_JinJawDrop.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinJawDrop.FWeight}
-Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer1019.set_FWeight);
+Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer1019.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinJawDrop.EventValue_changed TO Left_ear_MorphInterpolator_JinJawDrop.FWeight }
 { Sample AnimationAdapter_JinJawDrop.EventValue_changed TO Left_ear_MorphInterpolator_JinJawDrop.FWeight}
-Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer371.set_FWeight);
+Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer371.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinJawDrop.EventValue_changed TO Mid_forehead_MorphInterpolator_JinJawDrop.FWeight }
 { Sample AnimationAdapter_JinJawDrop.EventValue_changed TO Mid_forehead_MorphInterpolator_JinJawDrop.FWeight}
-Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer829.set_FWeight);
+Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer829.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinJawDrop.EventValue_changed TO Left_forehead_MorphInterpolator_JinJawDrop.FWeight }
+{ Sample AnimationAdapter_JinJawDrop.EventValue_changed TO Left_forehead_MorphInterpolator_JinJawDrop.FWeight}
+Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer447.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinJawDrop.EventValue_changed TO Glabella_MorphInterpolator_JinJawDrop.FWeight }
+{ Sample AnimationAdapter_JinJawDrop.EventValue_changed TO Glabella_MorphInterpolator_JinJawDrop.FWeight}
+Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer219.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinJawDrop.EventValue_changed TO Chin_MorphInterpolator_JinJawDrop.FWeight }
+{ Sample AnimationAdapter_JinJawDrop.EventValue_changed TO Chin_MorphInterpolator_JinJawDrop.FWeight}
+Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer181.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinJawDrop.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinJawDrop.FWeight }
+{ Sample AnimationAdapter_JinJawDrop.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinJawDrop.FWeight}
+Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer523.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinJawDrop.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinJawDrop.FWeight }
+{ Sample AnimationAdapter_JinJawDrop.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinJawDrop.FWeight}
+Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer143.FWeight);
 end;
 
 procedure InitSingleMenuJinPart128;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinJawDrop.EventValue_changed TO Left_forehead_MorphInterpolator_JinJawDrop.FWeight }
-{ Sample AnimationAdapter_JinJawDrop.EventValue_changed TO Left_forehead_MorphInterpolator_JinJawDrop.FWeight}
-Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer447.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinJawDrop.EventValue_changed TO Glabella_MorphInterpolator_JinJawDrop.FWeight }
-{ Sample AnimationAdapter_JinJawDrop.EventValue_changed TO Glabella_MorphInterpolator_JinJawDrop.FWeight}
-Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer219.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinJawDrop.EventValue_changed TO Chin_MorphInterpolator_JinJawDrop.FWeight }
-{ Sample AnimationAdapter_JinJawDrop.EventValue_changed TO Chin_MorphInterpolator_JinJawDrop.FWeight}
-Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer181.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinJawDrop.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinJawDrop.FWeight }
-{ Sample AnimationAdapter_JinJawDrop.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinJawDrop.FWeight}
-Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer523.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinJawDrop.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinJawDrop.FWeight }
-{ Sample AnimationAdapter_JinJawDrop.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinJawDrop.FWeight}
-Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer143.set_FWeight);
-{ METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinJawDrop.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinJawDrop.FWeight }
 { Sample AnimationAdapter_JinJawDrop.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinJawDrop.FWeight}
-Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer409.set_FWeight);
+Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer409.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinJawDrop.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinJawDrop.FWeight }
 { Sample AnimationAdapter_JinJawDrop.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinJawDrop.FWeight}
-Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer257.set_FWeight);
+Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer257.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinJawDrop.EventValue_changed TO Left_temple_MorphInterpolator_JinJawDrop.FWeight }
 { Sample AnimationAdapter_JinJawDrop.EventValue_changed TO Left_temple_MorphInterpolator_JinJawDrop.FWeight}
-Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer675.set_FWeight);
+Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer675.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinJawDrop.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinJawDrop.FWeight }
 { Sample AnimationAdapter_JinJawDrop.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinJawDrop.FWeight}
-Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer867.set_FWeight);
+Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer867.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinJawDrop.EventValue_changed TO Nasal_tip_MorphInterpolator_JinJawDrop.FWeight }
 { Sample AnimationAdapter_JinJawDrop.EventValue_changed TO Nasal_tip_MorphInterpolator_JinJawDrop.FWeight}
-Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer943.set_FWeight);
+Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer943.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinJawDrop.EventValue_changed TO Left_nostril_MorphInterpolator_JinJawDrop.FWeight }
 { Sample AnimationAdapter_JinJawDrop.EventValue_changed TO Left_nostril_MorphInterpolator_JinJawDrop.FWeight}
-Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer599.set_FWeight);
+Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer599.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinJawDrop.EventValue_changed TO Left_dorsum_MorphInterpolator_JinJawDrop.FWeight }
 { Sample AnimationAdapter_JinJawDrop.EventValue_changed TO Left_dorsum_MorphInterpolator_JinJawDrop.FWeight}
-Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer333.set_FWeight);
+Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer333.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinJawDrop.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinJawDrop.FWeight }
 { Sample AnimationAdapter_JinJawDrop.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinJawDrop.FWeight}
-Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer561.set_FWeight);
+Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer561.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinJawDrop.EventValue_changed TO Left_cheek_MorphInterpolator_JinJawDrop.FWeight }
 { Sample AnimationAdapter_JinJawDrop.EventValue_changed TO Left_cheek_MorphInterpolator_JinJawDrop.FWeight}
-Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer295.set_FWeight);
+Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer295.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinJawDrop.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinJawDrop.FWeight }
 { Sample AnimationAdapter_JinJawDrop.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinJawDrop.FWeight}
-Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer789.set_FWeight);
+Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer789.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinJawDrop.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinJawDrop.FWeight }
 { Sample AnimationAdapter_JinJawDrop.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinJawDrop.FWeight}
-Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer713.set_FWeight);
+Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer713.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinJawDrop.EventValue_changed TO Philtrum_MorphInterpolator_JinJawDrop.FWeight }
 { Sample AnimationAdapter_JinJawDrop.EventValue_changed TO Philtrum_MorphInterpolator_JinJawDrop.FWeight}
-Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer1057.set_FWeight);
+Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer1057.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinJawDrop.EventValue_changed TO Right_forehead_MorphInterpolator_JinJawDrop.FWeight }
 { Sample AnimationAdapter_JinJawDrop.EventValue_changed TO Right_forehead_MorphInterpolator_JinJawDrop.FWeight}
-Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer1285.set_FWeight);
+Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer1285.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinJawDrop.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinJawDrop.FWeight }
 { Sample AnimationAdapter_JinJawDrop.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinJawDrop.FWeight}
-Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer1247.set_FWeight);
+Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer1247.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinJawDrop.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinJawDrop.FWeight }
 { Sample AnimationAdapter_JinJawDrop.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinJawDrop.FWeight}
-Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer751.set_FWeight);
+Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer751.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinJawDrop.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinJawDrop.FWeight }
 { Sample AnimationAdapter_JinJawDrop.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinJawDrop.FWeight}
-Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer485.set_FWeight);
+Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer485.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinJawDrop.EventValue_changed TO Left_pupil_MorphInterpolator_JinJawDrop.FWeight }
 { Sample AnimationAdapter_JinJawDrop.EventValue_changed TO Left_pupil_MorphInterpolator_JinJawDrop.FWeight}
-Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer637.set_FWeight);
+Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer637.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinJawDrop.EventValue_changed TO Right_ear_MorphInterpolator_JinJawDrop.FWeight }
 { Sample AnimationAdapter_JinJawDrop.EventValue_changed TO Right_ear_MorphInterpolator_JinJawDrop.FWeight}
-Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer1209.set_FWeight);
+Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer1209.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinJawDrop.EventValue_changed TO Right_cheek_MorphInterpolator_JinJawDrop.FWeight }
 { Sample AnimationAdapter_JinJawDrop.EventValue_changed TO Right_cheek_MorphInterpolator_JinJawDrop.FWeight}
-Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer1133.set_FWeight);
+Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer1133.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinJawDrop.EventValue_changed TO Right_dorsum_MorphInterpolator_JinJawDrop.FWeight }
 { Sample AnimationAdapter_JinJawDrop.EventValue_changed TO Right_dorsum_MorphInterpolator_JinJawDrop.FWeight}
-Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer1171.set_FWeight);
+Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer1171.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinJawDrop.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinJawDrop.FWeight }
 { Sample AnimationAdapter_JinJawDrop.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinJawDrop.FWeight}
-Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer1095.set_FWeight);
+Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer1095.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinJawDrop.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinJawDrop.FWeight }
 { Sample AnimationAdapter_JinJawDrop.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinJawDrop.FWeight}
-Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer1323.set_FWeight);
+Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer1323.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinJawDrop.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinJawDrop.FWeight }
 { Sample AnimationAdapter_JinJawDrop.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinJawDrop.FWeight}
-Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer1395.set_FWeight);
+Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer1395.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinJawDrop.EventValue_changed TO Right_nostril_MorphInterpolator_JinJawDrop.FWeight }
 { Sample AnimationAdapter_JinJawDrop.EventValue_changed TO Right_nostril_MorphInterpolator_JinJawDrop.FWeight}
-Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer1433.set_FWeight);
+Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer1433.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinJawDrop.EventValue_changed TO Right_pupil_MorphInterpolator_JinJawDrop.FWeight }
 { Sample AnimationAdapter_JinJawDrop.EventValue_changed TO Right_pupil_MorphInterpolator_JinJawDrop.FWeight}
-Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer1471.set_FWeight);
+Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer1471.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinJawDrop.EventValue_changed TO Right_temple_MorphInterpolator_JinJawDrop.FWeight }
 { Sample AnimationAdapter_JinJawDrop.EventValue_changed TO Right_temple_MorphInterpolator_JinJawDrop.FWeight}
-Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer1509.set_FWeight);
+Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer1509.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinJawDrop.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinJawDrop.FWeight }
 { Sample AnimationAdapter_JinJawDrop.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinJawDrop.FWeight}
-Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer1547.set_FWeight);
+Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer1547.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinJawDrop.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinJawDrop.FWeight }
 { Sample AnimationAdapter_JinJawDrop.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinJawDrop.FWeight}
-Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer1585.set_FWeight);
+Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer1585.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinJawDrop.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinJawDrop.FWeight }
 { Sample AnimationAdapter_JinJawDrop.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinJawDrop.FWeight}
-Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer1623.set_FWeight);
+Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer1623.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinJawDrop.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinJawDrop.FWeight }
 { Sample AnimationAdapter_JinJawDrop.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinJawDrop.FWeight}
-Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer1360.set_FWeight);
+Group7.AddRoute(ScalarInterpolator17.EventValue_changed, HAnimDisplacer1360.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "JinJawDrop_Clock.EventFraction_changed TO AnimationAdapter_JinJawDrop.EventSet_fraction }
+{ Sample JinJawDrop_Clock.EventFraction_changed TO AnimationAdapter_JinJawDrop.EventSet_fraction}
+Group7.AddRoute(TimeSensor61.EventFraction_changed, ScalarInterpolator17.EventSet_fraction);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Lower_teeth_MorphInterpolator_JinLidDroop.FWeight }
+{ Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Lower_teeth_MorphInterpolator_JinLidDroop.FWeight}
+Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer97.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Tongue_MorphInterpolator_JinLidDroop.FWeight }
+{ Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Tongue_MorphInterpolator_JinLidDroop.FWeight}
+Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer1661.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Upper_teeth_MorphInterpolator_JinLidDroop.FWeight }
+{ Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Upper_teeth_MorphInterpolator_JinLidDroop.FWeight}
+Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer1699.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinLidDroop.FWeight }
+{ Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinLidDroop.FWeight}
+Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer906.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Neck_MorphInterpolator_JinLidDroop.FWeight }
+{ Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Neck_MorphInterpolator_JinLidDroop.FWeight}
+Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer982.FWeight);
 end;
 
 procedure InitSingleMenuJinPart129;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "JinJawDrop_Clock.EventFraction_changed TO AnimationAdapter_JinJawDrop.EventSet_fraction }
-{ Sample JinJawDrop_Clock.EventFraction_changed TO AnimationAdapter_JinJawDrop.EventSet_fraction}
-Group7.AddRoute(TimeSensor61.EventFraction_changed, ScalarInterpolator17.set_EventSet_fraction);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Lower_teeth_MorphInterpolator_JinLidDroop.FWeight }
-{ Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Lower_teeth_MorphInterpolator_JinLidDroop.FWeight}
-Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer97.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Tongue_MorphInterpolator_JinLidDroop.FWeight }
-{ Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Tongue_MorphInterpolator_JinLidDroop.FWeight}
-Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer1661.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Upper_teeth_MorphInterpolator_JinLidDroop.FWeight }
-{ Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Upper_teeth_MorphInterpolator_JinLidDroop.FWeight}
-Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer1699.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinLidDroop.FWeight }
-{ Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinLidDroop.FWeight}
-Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer906.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Neck_MorphInterpolator_JinLidDroop.FWeight }
-{ Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Neck_MorphInterpolator_JinLidDroop.FWeight}
-Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer982.set_FWeight);
-{ METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinLidDroop.FWeight }
 { Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinLidDroop.FWeight}
-Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer1020.set_FWeight);
+Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer1020.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Left_ear_MorphInterpolator_JinLidDroop.FWeight }
 { Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Left_ear_MorphInterpolator_JinLidDroop.FWeight}
-Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer372.set_FWeight);
+Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer372.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Mid_forehead_MorphInterpolator_JinLidDroop.FWeight }
 { Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Mid_forehead_MorphInterpolator_JinLidDroop.FWeight}
-Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer830.set_FWeight);
+Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer830.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Left_forehead_MorphInterpolator_JinLidDroop.FWeight }
 { Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Left_forehead_MorphInterpolator_JinLidDroop.FWeight}
-Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer448.set_FWeight);
+Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer448.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Glabella_MorphInterpolator_JinLidDroop.FWeight }
 { Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Glabella_MorphInterpolator_JinLidDroop.FWeight}
-Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer220.set_FWeight);
+Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer220.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Chin_MorphInterpolator_JinLidDroop.FWeight }
 { Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Chin_MorphInterpolator_JinLidDroop.FWeight}
-Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer182.set_FWeight);
+Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer182.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinLidDroop.FWeight }
 { Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinLidDroop.FWeight}
-Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer524.set_FWeight);
+Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer524.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinLidDroop.FWeight }
 { Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinLidDroop.FWeight}
-Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer144.set_FWeight);
+Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer144.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinLidDroop.FWeight }
 { Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinLidDroop.FWeight}
-Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer410.set_FWeight);
+Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer410.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinLidDroop.FWeight }
 { Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinLidDroop.FWeight}
-Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer258.set_FWeight);
+Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer258.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Left_temple_MorphInterpolator_JinLidDroop.FWeight }
 { Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Left_temple_MorphInterpolator_JinLidDroop.FWeight}
-Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer676.set_FWeight);
+Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer676.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinLidDroop.FWeight }
 { Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinLidDroop.FWeight}
-Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer868.set_FWeight);
+Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer868.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Nasal_tip_MorphInterpolator_JinLidDroop.FWeight }
 { Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Nasal_tip_MorphInterpolator_JinLidDroop.FWeight}
-Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer944.set_FWeight);
+Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer944.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Left_nostril_MorphInterpolator_JinLidDroop.FWeight }
 { Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Left_nostril_MorphInterpolator_JinLidDroop.FWeight}
-Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer600.set_FWeight);
+Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer600.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Left_dorsum_MorphInterpolator_JinLidDroop.FWeight }
 { Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Left_dorsum_MorphInterpolator_JinLidDroop.FWeight}
-Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer334.set_FWeight);
+Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer334.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinLidDroop.FWeight }
 { Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinLidDroop.FWeight}
-Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer562.set_FWeight);
+Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer562.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Left_cheek_MorphInterpolator_JinLidDroop.FWeight }
 { Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Left_cheek_MorphInterpolator_JinLidDroop.FWeight}
-Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer296.set_FWeight);
+Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer296.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinLidDroop.FWeight }
 { Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinLidDroop.FWeight}
-Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer790.set_FWeight);
+Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer790.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinLidDroop.FWeight }
 { Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinLidDroop.FWeight}
-Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer714.set_FWeight);
+Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer714.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Philtrum_MorphInterpolator_JinLidDroop.FWeight }
 { Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Philtrum_MorphInterpolator_JinLidDroop.FWeight}
-Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer1058.set_FWeight);
+Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer1058.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Right_forehead_MorphInterpolator_JinLidDroop.FWeight }
 { Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Right_forehead_MorphInterpolator_JinLidDroop.FWeight}
-Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer1286.set_FWeight);
+Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer1286.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinLidDroop.FWeight }
 { Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinLidDroop.FWeight}
-Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer1248.set_FWeight);
+Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer1248.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinLidDroop.FWeight }
 { Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinLidDroop.FWeight}
-Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer752.set_FWeight);
+Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer752.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinLidDroop.FWeight }
 { Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinLidDroop.FWeight}
-Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer486.set_FWeight);
+Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer486.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Left_pupil_MorphInterpolator_JinLidDroop.FWeight }
 { Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Left_pupil_MorphInterpolator_JinLidDroop.FWeight}
-Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer638.set_FWeight);
+Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer638.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Right_ear_MorphInterpolator_JinLidDroop.FWeight }
 { Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Right_ear_MorphInterpolator_JinLidDroop.FWeight}
-Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer1210.set_FWeight);
+Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer1210.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Right_cheek_MorphInterpolator_JinLidDroop.FWeight }
 { Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Right_cheek_MorphInterpolator_JinLidDroop.FWeight}
-Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer1134.set_FWeight);
+Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer1134.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Right_dorsum_MorphInterpolator_JinLidDroop.FWeight }
 { Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Right_dorsum_MorphInterpolator_JinLidDroop.FWeight}
-Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer1172.set_FWeight);
+Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer1172.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinLidDroop.FWeight }
 { Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinLidDroop.FWeight}
-Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer1096.set_FWeight);
+Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer1096.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinLidDroop.FWeight }
+{ Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinLidDroop.FWeight}
+Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer1324.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinLidDroop.FWeight }
+{ Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinLidDroop.FWeight}
+Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer1396.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Right_nostril_MorphInterpolator_JinLidDroop.FWeight }
+{ Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Right_nostril_MorphInterpolator_JinLidDroop.FWeight}
+Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer1434.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Right_pupil_MorphInterpolator_JinLidDroop.FWeight }
+{ Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Right_pupil_MorphInterpolator_JinLidDroop.FWeight}
+Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer1472.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Right_temple_MorphInterpolator_JinLidDroop.FWeight }
+{ Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Right_temple_MorphInterpolator_JinLidDroop.FWeight}
+Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer1510.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinLidDroop.FWeight }
+{ Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinLidDroop.FWeight}
+Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer1548.FWeight);
 end;
 
 procedure InitSingleMenuJinPart130;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinLidDroop.FWeight }
-{ Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinLidDroop.FWeight}
-Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer1324.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinLidDroop.FWeight }
-{ Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinLidDroop.FWeight}
-Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer1396.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Right_nostril_MorphInterpolator_JinLidDroop.FWeight }
-{ Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Right_nostril_MorphInterpolator_JinLidDroop.FWeight}
-Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer1434.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Right_pupil_MorphInterpolator_JinLidDroop.FWeight }
-{ Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Right_pupil_MorphInterpolator_JinLidDroop.FWeight}
-Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer1472.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Right_temple_MorphInterpolator_JinLidDroop.FWeight }
-{ Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Right_temple_MorphInterpolator_JinLidDroop.FWeight}
-Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer1510.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinLidDroop.FWeight }
-{ Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinLidDroop.FWeight}
-Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer1548.set_FWeight);
-{ METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinLidDroop.FWeight }
 { Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinLidDroop.FWeight}
-Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer1586.set_FWeight);
+Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer1586.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinLidDroop.FWeight }
 { Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinLidDroop.FWeight}
-Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer1624.set_FWeight);
+Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer1624.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidDroop.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinLidDroop.FWeight }
 { Sample AnimationAdapter_JinLidDroop.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinLidDroop.FWeight}
-Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer1361.set_FWeight);
+Group7.AddRoute(ScalarInterpolator18.EventValue_changed, HAnimDisplacer1361.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "JinLidDroop_Clock.EventFraction_changed TO AnimationAdapter_JinLidDroop.EventSet_fraction }
 { Sample JinLidDroop_Clock.EventFraction_changed TO AnimationAdapter_JinLidDroop.EventSet_fraction}
-Group7.AddRoute(TimeSensor60.EventFraction_changed, ScalarInterpolator18.set_EventSet_fraction);
+Group7.AddRoute(TimeSensor60.EventFraction_changed, ScalarInterpolator18.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Lower_teeth_MorphInterpolator_JinLidTightener.FWeight }
 { Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Lower_teeth_MorphInterpolator_JinLidTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer98.set_FWeight);
+Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer98.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Tongue_MorphInterpolator_JinLidTightener.FWeight }
 { Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Tongue_MorphInterpolator_JinLidTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer1662.set_FWeight);
+Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer1662.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Upper_teeth_MorphInterpolator_JinLidTightener.FWeight }
 { Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Upper_teeth_MorphInterpolator_JinLidTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer1700.set_FWeight);
+Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer1700.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinLidTightener.FWeight }
 { Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinLidTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer907.set_FWeight);
+Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer907.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Neck_MorphInterpolator_JinLidTightener.FWeight }
 { Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Neck_MorphInterpolator_JinLidTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer983.set_FWeight);
+Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer983.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinLidTightener.FWeight }
 { Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinLidTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer1021.set_FWeight);
+Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer1021.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Left_ear_MorphInterpolator_JinLidTightener.FWeight }
 { Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Left_ear_MorphInterpolator_JinLidTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer373.set_FWeight);
+Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer373.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Mid_forehead_MorphInterpolator_JinLidTightener.FWeight }
 { Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Mid_forehead_MorphInterpolator_JinLidTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer831.set_FWeight);
+Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer831.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Left_forehead_MorphInterpolator_JinLidTightener.FWeight }
 { Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Left_forehead_MorphInterpolator_JinLidTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer449.set_FWeight);
+Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer449.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Glabella_MorphInterpolator_JinLidTightener.FWeight }
 { Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Glabella_MorphInterpolator_JinLidTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer221.set_FWeight);
+Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer221.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Chin_MorphInterpolator_JinLidTightener.FWeight }
 { Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Chin_MorphInterpolator_JinLidTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer183.set_FWeight);
+Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer183.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinLidTightener.FWeight }
 { Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinLidTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer525.set_FWeight);
+Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer525.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinLidTightener.FWeight }
 { Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinLidTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer145.set_FWeight);
+Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer145.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinLidTightener.FWeight }
 { Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinLidTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer411.set_FWeight);
+Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer411.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinLidTightener.FWeight }
 { Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinLidTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer259.set_FWeight);
+Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer259.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Left_temple_MorphInterpolator_JinLidTightener.FWeight }
 { Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Left_temple_MorphInterpolator_JinLidTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer677.set_FWeight);
+Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer677.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinLidTightener.FWeight }
 { Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinLidTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer869.set_FWeight);
+Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer869.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Nasal_tip_MorphInterpolator_JinLidTightener.FWeight }
 { Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Nasal_tip_MorphInterpolator_JinLidTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer945.set_FWeight);
+Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer945.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Left_nostril_MorphInterpolator_JinLidTightener.FWeight }
 { Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Left_nostril_MorphInterpolator_JinLidTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer601.set_FWeight);
+Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer601.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Left_dorsum_MorphInterpolator_JinLidTightener.FWeight }
 { Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Left_dorsum_MorphInterpolator_JinLidTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer335.set_FWeight);
+Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer335.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinLidTightener.FWeight }
 { Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinLidTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer563.set_FWeight);
+Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer563.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Left_cheek_MorphInterpolator_JinLidTightener.FWeight }
 { Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Left_cheek_MorphInterpolator_JinLidTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer297.set_FWeight);
+Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer297.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinLidTightener.FWeight }
 { Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinLidTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer791.set_FWeight);
+Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer791.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinLidTightener.FWeight }
 { Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinLidTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer715.set_FWeight);
+Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer715.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Philtrum_MorphInterpolator_JinLidTightener.FWeight }
+{ Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Philtrum_MorphInterpolator_JinLidTightener.FWeight}
+Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer1059.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Right_forehead_MorphInterpolator_JinLidTightener.FWeight }
+{ Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Right_forehead_MorphInterpolator_JinLidTightener.FWeight}
+Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer1287.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinLidTightener.FWeight }
+{ Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinLidTightener.FWeight}
+Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer1249.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinLidTightener.FWeight }
+{ Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinLidTightener.FWeight}
+Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer753.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinLidTightener.FWeight }
+{ Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinLidTightener.FWeight}
+Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer487.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Left_pupil_MorphInterpolator_JinLidTightener.FWeight }
+{ Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Left_pupil_MorphInterpolator_JinLidTightener.FWeight}
+Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer639.FWeight);
 end;
 
 procedure InitSingleMenuJinPart131;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Philtrum_MorphInterpolator_JinLidTightener.FWeight }
-{ Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Philtrum_MorphInterpolator_JinLidTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer1059.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Right_forehead_MorphInterpolator_JinLidTightener.FWeight }
-{ Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Right_forehead_MorphInterpolator_JinLidTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer1287.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinLidTightener.FWeight }
-{ Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinLidTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer1249.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinLidTightener.FWeight }
-{ Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinLidTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer753.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinLidTightener.FWeight }
-{ Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinLidTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer487.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Left_pupil_MorphInterpolator_JinLidTightener.FWeight }
-{ Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Left_pupil_MorphInterpolator_JinLidTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer639.set_FWeight);
-{ METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Right_ear_MorphInterpolator_JinLidTightener.FWeight }
 { Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Right_ear_MorphInterpolator_JinLidTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer1211.set_FWeight);
+Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer1211.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Right_cheek_MorphInterpolator_JinLidTightener.FWeight }
 { Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Right_cheek_MorphInterpolator_JinLidTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer1135.set_FWeight);
+Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer1135.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Right_dorsum_MorphInterpolator_JinLidTightener.FWeight }
 { Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Right_dorsum_MorphInterpolator_JinLidTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer1173.set_FWeight);
+Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer1173.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinLidTightener.FWeight }
 { Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinLidTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer1097.set_FWeight);
+Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer1097.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinLidTightener.FWeight }
 { Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinLidTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer1325.set_FWeight);
+Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer1325.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinLidTightener.FWeight }
 { Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinLidTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer1397.set_FWeight);
+Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer1397.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Right_nostril_MorphInterpolator_JinLidTightener.FWeight }
 { Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Right_nostril_MorphInterpolator_JinLidTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer1435.set_FWeight);
+Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer1435.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Right_pupil_MorphInterpolator_JinLidTightener.FWeight }
 { Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Right_pupil_MorphInterpolator_JinLidTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer1473.set_FWeight);
+Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer1473.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Right_temple_MorphInterpolator_JinLidTightener.FWeight }
 { Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Right_temple_MorphInterpolator_JinLidTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer1511.set_FWeight);
+Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer1511.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinLidTightener.FWeight }
 { Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinLidTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer1549.set_FWeight);
+Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer1549.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinLidTightener.FWeight }
 { Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinLidTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer1587.set_FWeight);
+Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer1587.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinLidTightener.FWeight }
 { Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinLidTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer1625.set_FWeight);
+Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer1625.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLidTightener.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinLidTightener.FWeight }
 { Sample AnimationAdapter_JinLidTightener.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinLidTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer1362.set_FWeight);
+Group7.AddRoute(ScalarInterpolator19.EventValue_changed, HAnimDisplacer1362.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "JinLidTightener_Clock.EventFraction_changed TO AnimationAdapter_JinLidTightener.EventSet_fraction }
 { Sample JinLidTightener_Clock.EventFraction_changed TO AnimationAdapter_JinLidTightener.EventSet_fraction}
-Group7.AddRoute(TimeSensor59.EventFraction_changed, ScalarInterpolator19.set_EventSet_fraction);
+Group7.AddRoute(TimeSensor59.EventFraction_changed, ScalarInterpolator19.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Lower_teeth_MorphInterpolator_JinLipCornerDepressor.FWeight }
 { Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Lower_teeth_MorphInterpolator_JinLipCornerDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer99.set_FWeight);
+Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer99.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Tongue_MorphInterpolator_JinLipCornerDepressor.FWeight }
 { Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Tongue_MorphInterpolator_JinLipCornerDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer1663.set_FWeight);
+Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer1663.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Upper_teeth_MorphInterpolator_JinLipCornerDepressor.FWeight }
 { Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Upper_teeth_MorphInterpolator_JinLipCornerDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer1701.set_FWeight);
+Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer1701.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinLipCornerDepressor.FWeight }
 { Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinLipCornerDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer908.set_FWeight);
+Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer908.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Neck_MorphInterpolator_JinLipCornerDepressor.FWeight }
 { Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Neck_MorphInterpolator_JinLipCornerDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer984.set_FWeight);
+Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer984.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinLipCornerDepressor.FWeight }
 { Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinLipCornerDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer1022.set_FWeight);
+Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer1022.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Left_ear_MorphInterpolator_JinLipCornerDepressor.FWeight }
 { Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Left_ear_MorphInterpolator_JinLipCornerDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer374.set_FWeight);
+Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer374.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Mid_forehead_MorphInterpolator_JinLipCornerDepressor.FWeight }
 { Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Mid_forehead_MorphInterpolator_JinLipCornerDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer832.set_FWeight);
+Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer832.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Left_forehead_MorphInterpolator_JinLipCornerDepressor.FWeight }
 { Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Left_forehead_MorphInterpolator_JinLipCornerDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer450.set_FWeight);
+Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer450.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Glabella_MorphInterpolator_JinLipCornerDepressor.FWeight }
 { Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Glabella_MorphInterpolator_JinLipCornerDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer222.set_FWeight);
+Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer222.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Chin_MorphInterpolator_JinLipCornerDepressor.FWeight }
 { Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Chin_MorphInterpolator_JinLipCornerDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer184.set_FWeight);
+Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer184.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinLipCornerDepressor.FWeight }
 { Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinLipCornerDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer526.set_FWeight);
+Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer526.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinLipCornerDepressor.FWeight }
 { Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinLipCornerDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer146.set_FWeight);
+Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer146.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinLipCornerDepressor.FWeight }
+{ Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinLipCornerDepressor.FWeight}
+Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer412.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinLipCornerDepressor.FWeight }
+{ Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinLipCornerDepressor.FWeight}
+Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer260.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Left_temple_MorphInterpolator_JinLipCornerDepressor.FWeight }
+{ Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Left_temple_MorphInterpolator_JinLipCornerDepressor.FWeight}
+Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer678.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinLipCornerDepressor.FWeight }
+{ Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinLipCornerDepressor.FWeight}
+Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer870.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Nasal_tip_MorphInterpolator_JinLipCornerDepressor.FWeight }
+{ Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Nasal_tip_MorphInterpolator_JinLipCornerDepressor.FWeight}
+Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer946.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Left_nostril_MorphInterpolator_JinLipCornerDepressor.FWeight }
+{ Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Left_nostril_MorphInterpolator_JinLipCornerDepressor.FWeight}
+Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer602.FWeight);
 end;
 
 procedure InitSingleMenuJinPart132;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinLipCornerDepressor.FWeight }
-{ Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinLipCornerDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer412.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinLipCornerDepressor.FWeight }
-{ Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinLipCornerDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer260.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Left_temple_MorphInterpolator_JinLipCornerDepressor.FWeight }
-{ Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Left_temple_MorphInterpolator_JinLipCornerDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer678.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinLipCornerDepressor.FWeight }
-{ Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinLipCornerDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer870.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Nasal_tip_MorphInterpolator_JinLipCornerDepressor.FWeight }
-{ Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Nasal_tip_MorphInterpolator_JinLipCornerDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer946.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Left_nostril_MorphInterpolator_JinLipCornerDepressor.FWeight }
-{ Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Left_nostril_MorphInterpolator_JinLipCornerDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer602.set_FWeight);
-{ METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Left_dorsum_MorphInterpolator_JinLipCornerDepressor.FWeight }
 { Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Left_dorsum_MorphInterpolator_JinLipCornerDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer336.set_FWeight);
+Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer336.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinLipCornerDepressor.FWeight }
 { Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinLipCornerDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer564.set_FWeight);
+Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer564.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Left_cheek_MorphInterpolator_JinLipCornerDepressor.FWeight }
 { Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Left_cheek_MorphInterpolator_JinLipCornerDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer298.set_FWeight);
+Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer298.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinLipCornerDepressor.FWeight }
 { Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinLipCornerDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer792.set_FWeight);
+Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer792.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinLipCornerDepressor.FWeight }
 { Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinLipCornerDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer716.set_FWeight);
+Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer716.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Philtrum_MorphInterpolator_JinLipCornerDepressor.FWeight }
 { Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Philtrum_MorphInterpolator_JinLipCornerDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer1060.set_FWeight);
+Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer1060.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Right_forehead_MorphInterpolator_JinLipCornerDepressor.FWeight }
 { Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Right_forehead_MorphInterpolator_JinLipCornerDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer1288.set_FWeight);
+Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer1288.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinLipCornerDepressor.FWeight }
 { Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinLipCornerDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer1250.set_FWeight);
+Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer1250.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinLipCornerDepressor.FWeight }
 { Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinLipCornerDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer754.set_FWeight);
+Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer754.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinLipCornerDepressor.FWeight }
 { Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinLipCornerDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer488.set_FWeight);
+Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer488.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Left_pupil_MorphInterpolator_JinLipCornerDepressor.FWeight }
 { Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Left_pupil_MorphInterpolator_JinLipCornerDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer640.set_FWeight);
+Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer640.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Right_ear_MorphInterpolator_JinLipCornerDepressor.FWeight }
 { Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Right_ear_MorphInterpolator_JinLipCornerDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer1212.set_FWeight);
+Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer1212.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Right_cheek_MorphInterpolator_JinLipCornerDepressor.FWeight }
 { Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Right_cheek_MorphInterpolator_JinLipCornerDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer1136.set_FWeight);
+Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer1136.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Right_dorsum_MorphInterpolator_JinLipCornerDepressor.FWeight }
 { Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Right_dorsum_MorphInterpolator_JinLipCornerDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer1174.set_FWeight);
+Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer1174.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinLipCornerDepressor.FWeight }
 { Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinLipCornerDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer1098.set_FWeight);
+Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer1098.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinLipCornerDepressor.FWeight }
 { Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinLipCornerDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer1326.set_FWeight);
+Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer1326.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinLipCornerDepressor.FWeight }
 { Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinLipCornerDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer1398.set_FWeight);
+Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer1398.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Right_nostril_MorphInterpolator_JinLipCornerDepressor.FWeight }
 { Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Right_nostril_MorphInterpolator_JinLipCornerDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer1436.set_FWeight);
+Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer1436.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Right_pupil_MorphInterpolator_JinLipCornerDepressor.FWeight }
 { Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Right_pupil_MorphInterpolator_JinLipCornerDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer1474.set_FWeight);
+Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer1474.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Right_temple_MorphInterpolator_JinLipCornerDepressor.FWeight }
 { Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Right_temple_MorphInterpolator_JinLipCornerDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer1512.set_FWeight);
+Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer1512.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinLipCornerDepressor.FWeight }
 { Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinLipCornerDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer1550.set_FWeight);
+Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer1550.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinLipCornerDepressor.FWeight }
 { Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinLipCornerDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer1588.set_FWeight);
+Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer1588.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinLipCornerDepressor.FWeight }
 { Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinLipCornerDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer1626.set_FWeight);
+Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer1626.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinLipCornerDepressor.FWeight }
 { Sample AnimationAdapter_JinLipCornerDepressor.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinLipCornerDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer1363.set_FWeight);
+Group7.AddRoute(ScalarInterpolator20.EventValue_changed, HAnimDisplacer1363.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "JinLipCornerDepressor_Clock.EventFraction_changed TO AnimationAdapter_JinLipCornerDepressor.EventSet_fraction }
 { Sample JinLipCornerDepressor_Clock.EventFraction_changed TO AnimationAdapter_JinLipCornerDepressor.EventSet_fraction}
-Group7.AddRoute(TimeSensor58.EventFraction_changed, ScalarInterpolator20.set_EventSet_fraction);
+Group7.AddRoute(TimeSensor58.EventFraction_changed, ScalarInterpolator20.EventSet_fraction);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Lower_teeth_MorphInterpolator_JinLipCornerPuller.FWeight }
+{ Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Lower_teeth_MorphInterpolator_JinLipCornerPuller.FWeight}
+Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer100.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Tongue_MorphInterpolator_JinLipCornerPuller.FWeight }
+{ Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Tongue_MorphInterpolator_JinLipCornerPuller.FWeight}
+Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer1664.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Upper_teeth_MorphInterpolator_JinLipCornerPuller.FWeight }
+{ Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Upper_teeth_MorphInterpolator_JinLipCornerPuller.FWeight}
+Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer1702.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Neck_MorphInterpolator_JinLipCornerPuller.FWeight }
+{ Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Neck_MorphInterpolator_JinLipCornerPuller.FWeight}
+Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer985.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Hair_MorphInterpolator_JinLipCornerPuller.FWeight }
+{ Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Hair_MorphInterpolator_JinLipCornerPuller.FWeight}
+Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer119.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinLipCornerPuller.FWeight }
+{ Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinLipCornerPuller.FWeight}
+Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer1023.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Left_ear_MorphInterpolator_JinLipCornerPuller.FWeight }
+{ Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Left_ear_MorphInterpolator_JinLipCornerPuller.FWeight}
+Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer375.FWeight);
 end;
 
 procedure InitSingleMenuJinPart133;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Lower_teeth_MorphInterpolator_JinLipCornerPuller.FWeight }
-{ Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Lower_teeth_MorphInterpolator_JinLipCornerPuller.FWeight}
-Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer100.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Tongue_MorphInterpolator_JinLipCornerPuller.FWeight }
-{ Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Tongue_MorphInterpolator_JinLipCornerPuller.FWeight}
-Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer1664.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Upper_teeth_MorphInterpolator_JinLipCornerPuller.FWeight }
-{ Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Upper_teeth_MorphInterpolator_JinLipCornerPuller.FWeight}
-Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer1702.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Neck_MorphInterpolator_JinLipCornerPuller.FWeight }
-{ Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Neck_MorphInterpolator_JinLipCornerPuller.FWeight}
-Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer985.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Hair_MorphInterpolator_JinLipCornerPuller.FWeight }
-{ Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Hair_MorphInterpolator_JinLipCornerPuller.FWeight}
-Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer119.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinLipCornerPuller.FWeight }
-{ Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinLipCornerPuller.FWeight}
-Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer1023.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Left_ear_MorphInterpolator_JinLipCornerPuller.FWeight }
-{ Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Left_ear_MorphInterpolator_JinLipCornerPuller.FWeight}
-Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer375.set_FWeight);
-{ METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Left_forehead_MorphInterpolator_JinLipCornerPuller.FWeight }
 { Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Left_forehead_MorphInterpolator_JinLipCornerPuller.FWeight}
-Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer451.set_FWeight);
+Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer451.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Mid_forehead_MorphInterpolator_JinLipCornerPuller.FWeight }
 { Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Mid_forehead_MorphInterpolator_JinLipCornerPuller.FWeight}
-Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer833.set_FWeight);
+Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer833.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Glabella_MorphInterpolator_JinLipCornerPuller.FWeight }
 { Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Glabella_MorphInterpolator_JinLipCornerPuller.FWeight}
-Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer223.set_FWeight);
+Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer223.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinLipCornerPuller.FWeight }
 { Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinLipCornerPuller.FWeight}
-Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer413.set_FWeight);
+Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer413.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Left_temple_MorphInterpolator_JinLipCornerPuller.FWeight }
 { Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Left_temple_MorphInterpolator_JinLipCornerPuller.FWeight}
-Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer679.set_FWeight);
+Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer679.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinLipCornerPuller.FWeight }
 { Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinLipCornerPuller.FWeight}
-Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer871.set_FWeight);
+Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer871.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Nasal_tip_MorphInterpolator_JinLipCornerPuller.FWeight }
 { Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Nasal_tip_MorphInterpolator_JinLipCornerPuller.FWeight}
-Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer947.set_FWeight);
+Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer947.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Philtrum_MorphInterpolator_JinLipCornerPuller.FWeight }
 { Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Philtrum_MorphInterpolator_JinLipCornerPuller.FWeight}
-Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer1061.set_FWeight);
+Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer1061.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Left_dorsum_MorphInterpolator_JinLipCornerPuller.FWeight }
 { Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Left_dorsum_MorphInterpolator_JinLipCornerPuller.FWeight}
-Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer337.set_FWeight);
+Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer337.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinLipCornerPuller.FWeight }
 { Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinLipCornerPuller.FWeight}
-Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer909.set_FWeight);
+Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer909.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinLipCornerPuller.FWeight }
 { Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinLipCornerPuller.FWeight}
-Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer147.set_FWeight);
+Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer147.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Left_pupil_MorphInterpolator_JinLipCornerPuller.FWeight }
 { Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Left_pupil_MorphInterpolator_JinLipCornerPuller.FWeight}
-Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer641.set_FWeight);
+Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer641.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinLipCornerPuller.FWeight }
 { Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinLipCornerPuller.FWeight}
-Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer489.set_FWeight);
+Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer489.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinLipCornerPuller.FWeight }
 { Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinLipCornerPuller.FWeight}
-Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer755.set_FWeight);
+Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer755.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Left_nostril_MorphInterpolator_JinLipCornerPuller.FWeight }
 { Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Left_nostril_MorphInterpolator_JinLipCornerPuller.FWeight}
-Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer603.set_FWeight);
+Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer603.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinLipCornerPuller.FWeight }
 { Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinLipCornerPuller.FWeight}
-Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer717.set_FWeight);
+Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer717.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinLipCornerPuller.FWeight }
 { Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinLipCornerPuller.FWeight}
-Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer261.set_FWeight);
+Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer261.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinLipCornerPuller.FWeight }
 { Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinLipCornerPuller.FWeight}
-Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer1099.set_FWeight);
+Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer1099.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Right_dorsum_MorphInterpolator_JinLipCornerPuller.FWeight }
 { Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Right_dorsum_MorphInterpolator_JinLipCornerPuller.FWeight}
-Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer1175.set_FWeight);
+Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer1175.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Right_forehead_MorphInterpolator_JinLipCornerPuller.FWeight }
 { Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Right_forehead_MorphInterpolator_JinLipCornerPuller.FWeight}
-Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer1289.set_FWeight);
+Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer1289.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinLipCornerPuller.FWeight }
 { Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinLipCornerPuller.FWeight}
-Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer1327.set_FWeight);
+Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer1327.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Right_nostril_MorphInterpolator_JinLipCornerPuller.FWeight }
 { Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Right_nostril_MorphInterpolator_JinLipCornerPuller.FWeight}
-Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer1437.set_FWeight);
+Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer1437.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Right_pupil_MorphInterpolator_JinLipCornerPuller.FWeight }
 { Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Right_pupil_MorphInterpolator_JinLipCornerPuller.FWeight}
-Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer1475.set_FWeight);
+Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer1475.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinLipCornerPuller.FWeight }
 { Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinLipCornerPuller.FWeight}
-Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer1551.set_FWeight);
+Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer1551.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinLipCornerPuller.FWeight }
 { Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinLipCornerPuller.FWeight}
-Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer1589.set_FWeight);
+Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer1589.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Right_ear_MorphInterpolator_JinLipCornerPuller.FWeight }
 { Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Right_ear_MorphInterpolator_JinLipCornerPuller.FWeight}
-Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer1213.set_FWeight);
+Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer1213.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinLipCornerPuller.FWeight }
+{ Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinLipCornerPuller.FWeight}
+Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer1251.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Right_temple_MorphInterpolator_JinLipCornerPuller.FWeight }
+{ Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Right_temple_MorphInterpolator_JinLipCornerPuller.FWeight}
+Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer1513.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Left_cheek_MorphInterpolator_JinLipCornerPuller.FWeight }
+{ Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Left_cheek_MorphInterpolator_JinLipCornerPuller.FWeight}
+Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer299.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Right_cheek_MorphInterpolator_JinLipCornerPuller.FWeight }
+{ Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Right_cheek_MorphInterpolator_JinLipCornerPuller.FWeight}
+Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer1137.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinLipCornerPuller.FWeight }
+{ Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinLipCornerPuller.FWeight}
+Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer565.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinLipCornerPuller.FWeight }
+{ Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinLipCornerPuller.FWeight}
+Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer1399.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Chin_MorphInterpolator_JinLipCornerPuller.FWeight }
+{ Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Chin_MorphInterpolator_JinLipCornerPuller.FWeight}
+Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer185.FWeight);
 end;
 
 procedure InitSingleMenuJinPart134;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinLipCornerPuller.FWeight }
-{ Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinLipCornerPuller.FWeight}
-Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer1251.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Right_temple_MorphInterpolator_JinLipCornerPuller.FWeight }
-{ Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Right_temple_MorphInterpolator_JinLipCornerPuller.FWeight}
-Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer1513.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Left_cheek_MorphInterpolator_JinLipCornerPuller.FWeight }
-{ Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Left_cheek_MorphInterpolator_JinLipCornerPuller.FWeight}
-Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer299.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Right_cheek_MorphInterpolator_JinLipCornerPuller.FWeight }
-{ Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Right_cheek_MorphInterpolator_JinLipCornerPuller.FWeight}
-Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer1137.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinLipCornerPuller.FWeight }
-{ Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinLipCornerPuller.FWeight}
-Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer565.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinLipCornerPuller.FWeight }
-{ Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinLipCornerPuller.FWeight}
-Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer1399.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Chin_MorphInterpolator_JinLipCornerPuller.FWeight }
-{ Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Chin_MorphInterpolator_JinLipCornerPuller.FWeight}
-Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer185.set_FWeight);
-{ METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinLipCornerPuller.FWeight }
 { Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinLipCornerPuller.FWeight}
-Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer527.set_FWeight);
+Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer527.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinLipCornerPuller.FWeight }
 { Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinLipCornerPuller.FWeight}
-Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer1364.set_FWeight);
+Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer1364.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinLipCornerPuller.FWeight }
 { Sample AnimationAdapter_JinLipCornerPuller.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinLipCornerPuller.FWeight}
-Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer793.set_FWeight);
+Group7.AddRoute(ScalarInterpolator21.EventValue_changed, HAnimDisplacer793.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "JinLipCornerPuller_Clock.EventFraction_changed TO AnimationAdapter_JinLipCornerPuller.EventSet_fraction }
 { Sample JinLipCornerPuller_Clock.EventFraction_changed TO AnimationAdapter_JinLipCornerPuller.EventSet_fraction}
-Group7.AddRoute(TimeSensor57.EventFraction_changed, ScalarInterpolator21.set_EventSet_fraction);
+Group7.AddRoute(TimeSensor57.EventFraction_changed, ScalarInterpolator21.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Lower_teeth_MorphInterpolator_JinLipFunneler.FWeight }
 { Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Lower_teeth_MorphInterpolator_JinLipFunneler.FWeight}
-Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer101.set_FWeight);
+Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer101.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Tongue_MorphInterpolator_JinLipFunneler.FWeight }
 { Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Tongue_MorphInterpolator_JinLipFunneler.FWeight}
-Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer1665.set_FWeight);
+Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer1665.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Upper_teeth_MorphInterpolator_JinLipFunneler.FWeight }
 { Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Upper_teeth_MorphInterpolator_JinLipFunneler.FWeight}
-Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer1703.set_FWeight);
+Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer1703.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinLipFunneler.FWeight }
 { Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinLipFunneler.FWeight}
-Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer910.set_FWeight);
+Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer910.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Neck_MorphInterpolator_JinLipFunneler.FWeight }
 { Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Neck_MorphInterpolator_JinLipFunneler.FWeight}
-Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer986.set_FWeight);
+Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer986.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinLipFunneler.FWeight }
 { Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinLipFunneler.FWeight}
-Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer1024.set_FWeight);
+Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer1024.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Left_ear_MorphInterpolator_JinLipFunneler.FWeight }
 { Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Left_ear_MorphInterpolator_JinLipFunneler.FWeight}
-Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer376.set_FWeight);
+Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer376.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Mid_forehead_MorphInterpolator_JinLipFunneler.FWeight }
 { Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Mid_forehead_MorphInterpolator_JinLipFunneler.FWeight}
-Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer834.set_FWeight);
+Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer834.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Left_forehead_MorphInterpolator_JinLipFunneler.FWeight }
 { Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Left_forehead_MorphInterpolator_JinLipFunneler.FWeight}
-Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer452.set_FWeight);
+Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer452.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Glabella_MorphInterpolator_JinLipFunneler.FWeight }
 { Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Glabella_MorphInterpolator_JinLipFunneler.FWeight}
-Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer224.set_FWeight);
+Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer224.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Chin_MorphInterpolator_JinLipFunneler.FWeight }
 { Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Chin_MorphInterpolator_JinLipFunneler.FWeight}
-Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer186.set_FWeight);
+Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer186.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinLipFunneler.FWeight }
 { Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinLipFunneler.FWeight}
-Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer528.set_FWeight);
+Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer528.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinLipFunneler.FWeight }
 { Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinLipFunneler.FWeight}
-Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer148.set_FWeight);
+Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer148.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinLipFunneler.FWeight }
 { Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinLipFunneler.FWeight}
-Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer414.set_FWeight);
+Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer414.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinLipFunneler.FWeight }
 { Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinLipFunneler.FWeight}
-Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer262.set_FWeight);
+Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer262.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Left_temple_MorphInterpolator_JinLipFunneler.FWeight }
 { Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Left_temple_MorphInterpolator_JinLipFunneler.FWeight}
-Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer680.set_FWeight);
+Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer680.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinLipFunneler.FWeight }
 { Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinLipFunneler.FWeight}
-Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer872.set_FWeight);
+Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer872.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Nasal_tip_MorphInterpolator_JinLipFunneler.FWeight }
 { Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Nasal_tip_MorphInterpolator_JinLipFunneler.FWeight}
-Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer948.set_FWeight);
+Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer948.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Left_nostril_MorphInterpolator_JinLipFunneler.FWeight }
 { Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Left_nostril_MorphInterpolator_JinLipFunneler.FWeight}
-Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer604.set_FWeight);
+Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer604.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Left_dorsum_MorphInterpolator_JinLipFunneler.FWeight }
 { Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Left_dorsum_MorphInterpolator_JinLipFunneler.FWeight}
-Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer338.set_FWeight);
+Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer338.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinLipFunneler.FWeight }
 { Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinLipFunneler.FWeight}
-Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer566.set_FWeight);
+Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer566.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Left_cheek_MorphInterpolator_JinLipFunneler.FWeight }
 { Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Left_cheek_MorphInterpolator_JinLipFunneler.FWeight}
-Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer300.set_FWeight);
+Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer300.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinLipFunneler.FWeight }
 { Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinLipFunneler.FWeight}
-Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer794.set_FWeight);
+Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer794.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinLipFunneler.FWeight }
+{ Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinLipFunneler.FWeight}
+Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer718.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Philtrum_MorphInterpolator_JinLipFunneler.FWeight }
+{ Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Philtrum_MorphInterpolator_JinLipFunneler.FWeight}
+Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer1062.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Right_forehead_MorphInterpolator_JinLipFunneler.FWeight }
+{ Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Right_forehead_MorphInterpolator_JinLipFunneler.FWeight}
+Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer1290.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinLipFunneler.FWeight }
+{ Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinLipFunneler.FWeight}
+Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer1252.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinLipFunneler.FWeight }
+{ Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinLipFunneler.FWeight}
+Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer756.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinLipFunneler.FWeight }
+{ Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinLipFunneler.FWeight}
+Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer490.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Left_pupil_MorphInterpolator_JinLipFunneler.FWeight }
+{ Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Left_pupil_MorphInterpolator_JinLipFunneler.FWeight}
+Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer642.FWeight);
 end;
 
 procedure InitSingleMenuJinPart135;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinLipFunneler.FWeight }
-{ Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinLipFunneler.FWeight}
-Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer718.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Philtrum_MorphInterpolator_JinLipFunneler.FWeight }
-{ Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Philtrum_MorphInterpolator_JinLipFunneler.FWeight}
-Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer1062.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Right_forehead_MorphInterpolator_JinLipFunneler.FWeight }
-{ Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Right_forehead_MorphInterpolator_JinLipFunneler.FWeight}
-Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer1290.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinLipFunneler.FWeight }
-{ Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinLipFunneler.FWeight}
-Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer1252.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinLipFunneler.FWeight }
-{ Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinLipFunneler.FWeight}
-Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer756.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinLipFunneler.FWeight }
-{ Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinLipFunneler.FWeight}
-Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer490.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Left_pupil_MorphInterpolator_JinLipFunneler.FWeight }
-{ Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Left_pupil_MorphInterpolator_JinLipFunneler.FWeight}
-Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer642.set_FWeight);
-{ METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Right_ear_MorphInterpolator_JinLipFunneler.FWeight }
 { Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Right_ear_MorphInterpolator_JinLipFunneler.FWeight}
-Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer1214.set_FWeight);
+Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer1214.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Right_cheek_MorphInterpolator_JinLipFunneler.FWeight }
 { Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Right_cheek_MorphInterpolator_JinLipFunneler.FWeight}
-Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer1138.set_FWeight);
+Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer1138.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Right_dorsum_MorphInterpolator_JinLipFunneler.FWeight }
 { Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Right_dorsum_MorphInterpolator_JinLipFunneler.FWeight}
-Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer1176.set_FWeight);
+Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer1176.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinLipFunneler.FWeight }
 { Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinLipFunneler.FWeight}
-Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer1100.set_FWeight);
+Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer1100.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinLipFunneler.FWeight }
 { Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinLipFunneler.FWeight}
-Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer1328.set_FWeight);
+Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer1328.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinLipFunneler.FWeight }
 { Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinLipFunneler.FWeight}
-Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer1400.set_FWeight);
+Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer1400.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Right_nostril_MorphInterpolator_JinLipFunneler.FWeight }
 { Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Right_nostril_MorphInterpolator_JinLipFunneler.FWeight}
-Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer1438.set_FWeight);
+Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer1438.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Right_pupil_MorphInterpolator_JinLipFunneler.FWeight }
 { Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Right_pupil_MorphInterpolator_JinLipFunneler.FWeight}
-Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer1476.set_FWeight);
+Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer1476.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Right_temple_MorphInterpolator_JinLipFunneler.FWeight }
 { Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Right_temple_MorphInterpolator_JinLipFunneler.FWeight}
-Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer1514.set_FWeight);
+Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer1514.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinLipFunneler.FWeight }
 { Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinLipFunneler.FWeight}
-Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer1552.set_FWeight);
+Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer1552.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinLipFunneler.FWeight }
 { Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinLipFunneler.FWeight}
-Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer1590.set_FWeight);
+Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer1590.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinLipFunneler.FWeight }
 { Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinLipFunneler.FWeight}
-Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer1627.set_FWeight);
+Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer1627.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipFunneler.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinLipFunneler.FWeight }
 { Sample AnimationAdapter_JinLipFunneler.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinLipFunneler.FWeight}
-Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer1365.set_FWeight);
+Group7.AddRoute(ScalarInterpolator22.EventValue_changed, HAnimDisplacer1365.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "JinLipFunneler_Clock.EventFraction_changed TO AnimationAdapter_JinLipFunneler.EventSet_fraction }
 { Sample JinLipFunneler_Clock.EventFraction_changed TO AnimationAdapter_JinLipFunneler.EventSet_fraction}
-Group7.AddRoute(TimeSensor56.EventFraction_changed, ScalarInterpolator22.set_EventSet_fraction);
+Group7.AddRoute(TimeSensor56.EventFraction_changed, ScalarInterpolator22.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Lower_teeth_MorphInterpolator_JinLipPressor.FWeight }
 { Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Lower_teeth_MorphInterpolator_JinLipPressor.FWeight}
-Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer102.set_FWeight);
+Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer102.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Tongue_MorphInterpolator_JinLipPressor.FWeight }
 { Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Tongue_MorphInterpolator_JinLipPressor.FWeight}
-Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer1666.set_FWeight);
+Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer1666.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Upper_teeth_MorphInterpolator_JinLipPressor.FWeight }
 { Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Upper_teeth_MorphInterpolator_JinLipPressor.FWeight}
-Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer1704.set_FWeight);
+Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer1704.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinLipPressor.FWeight }
 { Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinLipPressor.FWeight}
-Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer911.set_FWeight);
+Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer911.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Neck_MorphInterpolator_JinLipPressor.FWeight }
 { Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Neck_MorphInterpolator_JinLipPressor.FWeight}
-Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer987.set_FWeight);
+Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer987.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinLipPressor.FWeight }
 { Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinLipPressor.FWeight}
-Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer1025.set_FWeight);
+Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer1025.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Left_ear_MorphInterpolator_JinLipPressor.FWeight }
 { Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Left_ear_MorphInterpolator_JinLipPressor.FWeight}
-Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer377.set_FWeight);
+Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer377.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Mid_forehead_MorphInterpolator_JinLipPressor.FWeight }
 { Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Mid_forehead_MorphInterpolator_JinLipPressor.FWeight}
-Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer835.set_FWeight);
+Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer835.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Left_forehead_MorphInterpolator_JinLipPressor.FWeight }
 { Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Left_forehead_MorphInterpolator_JinLipPressor.FWeight}
-Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer453.set_FWeight);
+Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer453.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Glabella_MorphInterpolator_JinLipPressor.FWeight }
 { Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Glabella_MorphInterpolator_JinLipPressor.FWeight}
-Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer225.set_FWeight);
+Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer225.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Chin_MorphInterpolator_JinLipPressor.FWeight }
 { Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Chin_MorphInterpolator_JinLipPressor.FWeight}
-Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer187.set_FWeight);
+Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer187.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinLipPressor.FWeight }
 { Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinLipPressor.FWeight}
-Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer529.set_FWeight);
+Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer529.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinLipPressor.FWeight }
 { Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinLipPressor.FWeight}
-Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer149.set_FWeight);
+Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer149.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinLipPressor.FWeight }
+{ Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinLipPressor.FWeight}
+Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer415.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinLipPressor.FWeight }
+{ Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinLipPressor.FWeight}
+Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer263.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Left_temple_MorphInterpolator_JinLipPressor.FWeight }
+{ Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Left_temple_MorphInterpolator_JinLipPressor.FWeight}
+Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer681.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinLipPressor.FWeight }
+{ Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinLipPressor.FWeight}
+Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer873.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Nasal_tip_MorphInterpolator_JinLipPressor.FWeight }
+{ Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Nasal_tip_MorphInterpolator_JinLipPressor.FWeight}
+Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer949.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Left_nostril_MorphInterpolator_JinLipPressor.FWeight }
+{ Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Left_nostril_MorphInterpolator_JinLipPressor.FWeight}
+Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer605.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Left_dorsum_MorphInterpolator_JinLipPressor.FWeight }
+{ Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Left_dorsum_MorphInterpolator_JinLipPressor.FWeight}
+Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer339.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinLipPressor.FWeight }
+{ Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinLipPressor.FWeight}
+Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer567.FWeight);
 end;
 
 procedure InitSingleMenuJinPart136;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinLipPressor.FWeight }
-{ Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinLipPressor.FWeight}
-Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer415.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinLipPressor.FWeight }
-{ Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinLipPressor.FWeight}
-Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer263.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Left_temple_MorphInterpolator_JinLipPressor.FWeight }
-{ Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Left_temple_MorphInterpolator_JinLipPressor.FWeight}
-Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer681.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinLipPressor.FWeight }
-{ Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinLipPressor.FWeight}
-Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer873.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Nasal_tip_MorphInterpolator_JinLipPressor.FWeight }
-{ Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Nasal_tip_MorphInterpolator_JinLipPressor.FWeight}
-Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer949.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Left_nostril_MorphInterpolator_JinLipPressor.FWeight }
-{ Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Left_nostril_MorphInterpolator_JinLipPressor.FWeight}
-Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer605.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Left_dorsum_MorphInterpolator_JinLipPressor.FWeight }
-{ Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Left_dorsum_MorphInterpolator_JinLipPressor.FWeight}
-Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer339.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinLipPressor.FWeight }
-{ Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinLipPressor.FWeight}
-Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer567.set_FWeight);
-{ METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Left_cheek_MorphInterpolator_JinLipPressor.FWeight }
 { Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Left_cheek_MorphInterpolator_JinLipPressor.FWeight}
-Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer301.set_FWeight);
+Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer301.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinLipPressor.FWeight }
 { Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinLipPressor.FWeight}
-Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer795.set_FWeight);
+Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer795.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinLipPressor.FWeight }
 { Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinLipPressor.FWeight}
-Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer719.set_FWeight);
+Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer719.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Philtrum_MorphInterpolator_JinLipPressor.FWeight }
 { Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Philtrum_MorphInterpolator_JinLipPressor.FWeight}
-Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer1063.set_FWeight);
+Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer1063.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Right_forehead_MorphInterpolator_JinLipPressor.FWeight }
 { Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Right_forehead_MorphInterpolator_JinLipPressor.FWeight}
-Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer1291.set_FWeight);
+Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer1291.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinLipPressor.FWeight }
 { Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinLipPressor.FWeight}
-Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer1253.set_FWeight);
+Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer1253.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinLipPressor.FWeight }
 { Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinLipPressor.FWeight}
-Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer757.set_FWeight);
+Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer757.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinLipPressor.FWeight }
 { Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinLipPressor.FWeight}
-Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer491.set_FWeight);
+Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer491.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Left_pupil_MorphInterpolator_JinLipPressor.FWeight }
 { Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Left_pupil_MorphInterpolator_JinLipPressor.FWeight}
-Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer643.set_FWeight);
+Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer643.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Right_ear_MorphInterpolator_JinLipPressor.FWeight }
 { Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Right_ear_MorphInterpolator_JinLipPressor.FWeight}
-Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer1215.set_FWeight);
+Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer1215.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Right_cheek_MorphInterpolator_JinLipPressor.FWeight }
 { Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Right_cheek_MorphInterpolator_JinLipPressor.FWeight}
-Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer1139.set_FWeight);
+Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer1139.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Right_dorsum_MorphInterpolator_JinLipPressor.FWeight }
 { Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Right_dorsum_MorphInterpolator_JinLipPressor.FWeight}
-Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer1177.set_FWeight);
+Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer1177.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinLipPressor.FWeight }
 { Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinLipPressor.FWeight}
-Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer1101.set_FWeight);
+Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer1101.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinLipPressor.FWeight }
 { Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinLipPressor.FWeight}
-Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer1329.set_FWeight);
+Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer1329.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinLipPressor.FWeight }
 { Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinLipPressor.FWeight}
-Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer1401.set_FWeight);
+Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer1401.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Right_nostril_MorphInterpolator_JinLipPressor.FWeight }
 { Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Right_nostril_MorphInterpolator_JinLipPressor.FWeight}
-Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer1439.set_FWeight);
+Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer1439.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Right_pupil_MorphInterpolator_JinLipPressor.FWeight }
 { Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Right_pupil_MorphInterpolator_JinLipPressor.FWeight}
-Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer1477.set_FWeight);
+Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer1477.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Right_temple_MorphInterpolator_JinLipPressor.FWeight }
 { Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Right_temple_MorphInterpolator_JinLipPressor.FWeight}
-Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer1515.set_FWeight);
+Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer1515.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinLipPressor.FWeight }
 { Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinLipPressor.FWeight}
-Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer1553.set_FWeight);
+Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer1553.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinLipPressor.FWeight }
 { Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinLipPressor.FWeight}
-Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer1591.set_FWeight);
+Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer1591.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinLipPressor.FWeight }
 { Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinLipPressor.FWeight}
-Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer1628.set_FWeight);
+Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer1628.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPressor.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinLipPressor.FWeight }
 { Sample AnimationAdapter_JinLipPressor.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinLipPressor.FWeight}
-Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer1366.set_FWeight);
+Group7.AddRoute(ScalarInterpolator23.EventValue_changed, HAnimDisplacer1366.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "JinLipPressor_Clock.EventFraction_changed TO AnimationAdapter_JinLipPressor.EventSet_fraction }
 { Sample JinLipPressor_Clock.EventFraction_changed TO AnimationAdapter_JinLipPressor.EventSet_fraction}
-Group7.AddRoute(TimeSensor55.EventFraction_changed, ScalarInterpolator23.set_EventSet_fraction);
+Group7.AddRoute(TimeSensor55.EventFraction_changed, ScalarInterpolator23.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Lower_teeth_MorphInterpolator_JinLipPuckerer.FWeight }
 { Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Lower_teeth_MorphInterpolator_JinLipPuckerer.FWeight}
-Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer103.set_FWeight);
+Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer103.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Tongue_MorphInterpolator_JinLipPuckerer.FWeight }
 { Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Tongue_MorphInterpolator_JinLipPuckerer.FWeight}
-Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer1667.set_FWeight);
+Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer1667.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Upper_teeth_MorphInterpolator_JinLipPuckerer.FWeight }
 { Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Upper_teeth_MorphInterpolator_JinLipPuckerer.FWeight}
-Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer1705.set_FWeight);
+Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer1705.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinLipPuckerer.FWeight }
+{ Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinLipPuckerer.FWeight}
+Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer912.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Neck_MorphInterpolator_JinLipPuckerer.FWeight }
+{ Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Neck_MorphInterpolator_JinLipPuckerer.FWeight}
+Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer988.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinLipPuckerer.FWeight }
+{ Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinLipPuckerer.FWeight}
+Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer1026.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Left_ear_MorphInterpolator_JinLipPuckerer.FWeight }
+{ Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Left_ear_MorphInterpolator_JinLipPuckerer.FWeight}
+Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer378.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Mid_forehead_MorphInterpolator_JinLipPuckerer.FWeight }
+{ Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Mid_forehead_MorphInterpolator_JinLipPuckerer.FWeight}
+Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer836.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Left_forehead_MorphInterpolator_JinLipPuckerer.FWeight }
+{ Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Left_forehead_MorphInterpolator_JinLipPuckerer.FWeight}
+Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer454.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Glabella_MorphInterpolator_JinLipPuckerer.FWeight }
+{ Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Glabella_MorphInterpolator_JinLipPuckerer.FWeight}
+Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer226.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Chin_MorphInterpolator_JinLipPuckerer.FWeight }
+{ Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Chin_MorphInterpolator_JinLipPuckerer.FWeight}
+Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer188.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinLipPuckerer.FWeight }
+{ Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinLipPuckerer.FWeight}
+Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer530.FWeight);
 end;
 
 procedure InitSingleMenuJinPart137;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinLipPuckerer.FWeight }
-{ Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinLipPuckerer.FWeight}
-Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer912.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Neck_MorphInterpolator_JinLipPuckerer.FWeight }
-{ Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Neck_MorphInterpolator_JinLipPuckerer.FWeight}
-Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer988.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinLipPuckerer.FWeight }
-{ Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinLipPuckerer.FWeight}
-Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer1026.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Left_ear_MorphInterpolator_JinLipPuckerer.FWeight }
-{ Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Left_ear_MorphInterpolator_JinLipPuckerer.FWeight}
-Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer378.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Mid_forehead_MorphInterpolator_JinLipPuckerer.FWeight }
-{ Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Mid_forehead_MorphInterpolator_JinLipPuckerer.FWeight}
-Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer836.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Left_forehead_MorphInterpolator_JinLipPuckerer.FWeight }
-{ Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Left_forehead_MorphInterpolator_JinLipPuckerer.FWeight}
-Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer454.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Glabella_MorphInterpolator_JinLipPuckerer.FWeight }
-{ Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Glabella_MorphInterpolator_JinLipPuckerer.FWeight}
-Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer226.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Chin_MorphInterpolator_JinLipPuckerer.FWeight }
-{ Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Chin_MorphInterpolator_JinLipPuckerer.FWeight}
-Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer188.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinLipPuckerer.FWeight }
-{ Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinLipPuckerer.FWeight}
-Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer530.set_FWeight);
-{ METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinLipPuckerer.FWeight }
 { Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinLipPuckerer.FWeight}
-Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer150.set_FWeight);
+Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer150.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinLipPuckerer.FWeight }
 { Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinLipPuckerer.FWeight}
-Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer416.set_FWeight);
+Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer416.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinLipPuckerer.FWeight }
 { Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinLipPuckerer.FWeight}
-Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer264.set_FWeight);
+Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer264.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Left_temple_MorphInterpolator_JinLipPuckerer.FWeight }
 { Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Left_temple_MorphInterpolator_JinLipPuckerer.FWeight}
-Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer682.set_FWeight);
+Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer682.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinLipPuckerer.FWeight }
 { Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinLipPuckerer.FWeight}
-Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer874.set_FWeight);
+Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer874.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Nasal_tip_MorphInterpolator_JinLipPuckerer.FWeight }
 { Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Nasal_tip_MorphInterpolator_JinLipPuckerer.FWeight}
-Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer950.set_FWeight);
+Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer950.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Left_nostril_MorphInterpolator_JinLipPuckerer.FWeight }
 { Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Left_nostril_MorphInterpolator_JinLipPuckerer.FWeight}
-Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer606.set_FWeight);
+Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer606.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Left_dorsum_MorphInterpolator_JinLipPuckerer.FWeight }
 { Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Left_dorsum_MorphInterpolator_JinLipPuckerer.FWeight}
-Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer340.set_FWeight);
+Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer340.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinLipPuckerer.FWeight }
 { Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinLipPuckerer.FWeight}
-Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer568.set_FWeight);
+Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer568.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Left_cheek_MorphInterpolator_JinLipPuckerer.FWeight }
 { Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Left_cheek_MorphInterpolator_JinLipPuckerer.FWeight}
-Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer302.set_FWeight);
+Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer302.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinLipPuckerer.FWeight }
 { Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinLipPuckerer.FWeight}
-Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer796.set_FWeight);
+Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer796.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinLipPuckerer.FWeight }
 { Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinLipPuckerer.FWeight}
-Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer720.set_FWeight);
+Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer720.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Philtrum_MorphInterpolator_JinLipPuckerer.FWeight }
 { Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Philtrum_MorphInterpolator_JinLipPuckerer.FWeight}
-Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer1064.set_FWeight);
+Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer1064.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Right_forehead_MorphInterpolator_JinLipPuckerer.FWeight }
 { Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Right_forehead_MorphInterpolator_JinLipPuckerer.FWeight}
-Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer1292.set_FWeight);
+Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer1292.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinLipPuckerer.FWeight }
 { Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinLipPuckerer.FWeight}
-Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer1254.set_FWeight);
+Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer1254.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinLipPuckerer.FWeight }
 { Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinLipPuckerer.FWeight}
-Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer758.set_FWeight);
+Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer758.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinLipPuckerer.FWeight }
 { Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinLipPuckerer.FWeight}
-Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer492.set_FWeight);
+Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer492.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Left_pupil_MorphInterpolator_JinLipPuckerer.FWeight }
 { Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Left_pupil_MorphInterpolator_JinLipPuckerer.FWeight}
-Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer644.set_FWeight);
+Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer644.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Right_ear_MorphInterpolator_JinLipPuckerer.FWeight }
 { Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Right_ear_MorphInterpolator_JinLipPuckerer.FWeight}
-Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer1216.set_FWeight);
+Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer1216.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Right_cheek_MorphInterpolator_JinLipPuckerer.FWeight }
 { Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Right_cheek_MorphInterpolator_JinLipPuckerer.FWeight}
-Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer1140.set_FWeight);
+Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer1140.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Right_dorsum_MorphInterpolator_JinLipPuckerer.FWeight }
 { Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Right_dorsum_MorphInterpolator_JinLipPuckerer.FWeight}
-Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer1178.set_FWeight);
+Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer1178.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinLipPuckerer.FWeight }
 { Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinLipPuckerer.FWeight}
-Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer1102.set_FWeight);
+Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer1102.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinLipPuckerer.FWeight }
 { Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinLipPuckerer.FWeight}
-Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer1330.set_FWeight);
+Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer1330.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinLipPuckerer.FWeight }
 { Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinLipPuckerer.FWeight}
-Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer1402.set_FWeight);
+Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer1402.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Right_nostril_MorphInterpolator_JinLipPuckerer.FWeight }
 { Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Right_nostril_MorphInterpolator_JinLipPuckerer.FWeight}
-Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer1440.set_FWeight);
+Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer1440.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Right_pupil_MorphInterpolator_JinLipPuckerer.FWeight }
+{ Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Right_pupil_MorphInterpolator_JinLipPuckerer.FWeight}
+Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer1478.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Right_temple_MorphInterpolator_JinLipPuckerer.FWeight }
+{ Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Right_temple_MorphInterpolator_JinLipPuckerer.FWeight}
+Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer1516.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinLipPuckerer.FWeight }
+{ Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinLipPuckerer.FWeight}
+Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer1554.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinLipPuckerer.FWeight }
+{ Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinLipPuckerer.FWeight}
+Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer1592.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinLipPuckerer.FWeight }
+{ Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinLipPuckerer.FWeight}
+Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer1629.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinLipPuckerer.FWeight }
+{ Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinLipPuckerer.FWeight}
+Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer1367.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "JinLipPuckerer_Clock.EventFraction_changed TO AnimationAdapter_JinLipPuckerer.EventSet_fraction }
+{ Sample JinLipPuckerer_Clock.EventFraction_changed TO AnimationAdapter_JinLipPuckerer.EventSet_fraction}
+Group7.AddRoute(TimeSensor54.EventFraction_changed, ScalarInterpolator24.EventSet_fraction);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Lower_teeth_MorphInterpolator_JinLipsPart.FWeight }
+{ Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Lower_teeth_MorphInterpolator_JinLipsPart.FWeight}
+Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer104.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Tongue_MorphInterpolator_JinLipsPart.FWeight }
+{ Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Tongue_MorphInterpolator_JinLipsPart.FWeight}
+Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer1668.FWeight);
 end;
 
 procedure InitSingleMenuJinPart138;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Right_pupil_MorphInterpolator_JinLipPuckerer.FWeight }
-{ Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Right_pupil_MorphInterpolator_JinLipPuckerer.FWeight}
-Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer1478.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Right_temple_MorphInterpolator_JinLipPuckerer.FWeight }
-{ Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Right_temple_MorphInterpolator_JinLipPuckerer.FWeight}
-Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer1516.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinLipPuckerer.FWeight }
-{ Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinLipPuckerer.FWeight}
-Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer1554.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinLipPuckerer.FWeight }
-{ Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinLipPuckerer.FWeight}
-Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer1592.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinLipPuckerer.FWeight }
-{ Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinLipPuckerer.FWeight}
-Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer1629.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipPuckerer.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinLipPuckerer.FWeight }
-{ Sample AnimationAdapter_JinLipPuckerer.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinLipPuckerer.FWeight}
-Group7.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer1367.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "JinLipPuckerer_Clock.EventFraction_changed TO AnimationAdapter_JinLipPuckerer.EventSet_fraction }
-{ Sample JinLipPuckerer_Clock.EventFraction_changed TO AnimationAdapter_JinLipPuckerer.EventSet_fraction}
-Group7.AddRoute(TimeSensor54.EventFraction_changed, ScalarInterpolator24.set_EventSet_fraction);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Lower_teeth_MorphInterpolator_JinLipsPart.FWeight }
-{ Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Lower_teeth_MorphInterpolator_JinLipsPart.FWeight}
-Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer104.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Tongue_MorphInterpolator_JinLipsPart.FWeight }
-{ Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Tongue_MorphInterpolator_JinLipsPart.FWeight}
-Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer1668.set_FWeight);
-{ METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Upper_teeth_MorphInterpolator_JinLipsPart.FWeight }
 { Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Upper_teeth_MorphInterpolator_JinLipsPart.FWeight}
-Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer1706.set_FWeight);
+Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer1706.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinLipsPart.FWeight }
 { Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinLipsPart.FWeight}
-Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer913.set_FWeight);
+Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer913.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Neck_MorphInterpolator_JinLipsPart.FWeight }
 { Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Neck_MorphInterpolator_JinLipsPart.FWeight}
-Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer989.set_FWeight);
+Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer989.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinLipsPart.FWeight }
 { Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinLipsPart.FWeight}
-Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer1027.set_FWeight);
+Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer1027.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Left_ear_MorphInterpolator_JinLipsPart.FWeight }
 { Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Left_ear_MorphInterpolator_JinLipsPart.FWeight}
-Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer379.set_FWeight);
+Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer379.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Mid_forehead_MorphInterpolator_JinLipsPart.FWeight }
 { Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Mid_forehead_MorphInterpolator_JinLipsPart.FWeight}
-Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer837.set_FWeight);
+Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer837.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Left_forehead_MorphInterpolator_JinLipsPart.FWeight }
 { Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Left_forehead_MorphInterpolator_JinLipsPart.FWeight}
-Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer455.set_FWeight);
+Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer455.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Glabella_MorphInterpolator_JinLipsPart.FWeight }
 { Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Glabella_MorphInterpolator_JinLipsPart.FWeight}
-Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer227.set_FWeight);
+Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer227.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Chin_MorphInterpolator_JinLipsPart.FWeight }
 { Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Chin_MorphInterpolator_JinLipsPart.FWeight}
-Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer189.set_FWeight);
+Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer189.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinLipsPart.FWeight }
 { Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinLipsPart.FWeight}
-Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer531.set_FWeight);
+Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer531.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinLipsPart.FWeight }
 { Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinLipsPart.FWeight}
-Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer151.set_FWeight);
+Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer151.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinLipsPart.FWeight }
 { Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinLipsPart.FWeight}
-Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer417.set_FWeight);
+Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer417.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinLipsPart.FWeight }
 { Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinLipsPart.FWeight}
-Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer265.set_FWeight);
+Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer265.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Left_temple_MorphInterpolator_JinLipsPart.FWeight }
 { Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Left_temple_MorphInterpolator_JinLipsPart.FWeight}
-Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer683.set_FWeight);
+Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer683.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinLipsPart.FWeight }
 { Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinLipsPart.FWeight}
-Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer875.set_FWeight);
+Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer875.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Nasal_tip_MorphInterpolator_JinLipsPart.FWeight }
 { Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Nasal_tip_MorphInterpolator_JinLipsPart.FWeight}
-Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer951.set_FWeight);
+Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer951.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Left_nostril_MorphInterpolator_JinLipsPart.FWeight }
 { Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Left_nostril_MorphInterpolator_JinLipsPart.FWeight}
-Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer607.set_FWeight);
+Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer607.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Left_dorsum_MorphInterpolator_JinLipsPart.FWeight }
 { Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Left_dorsum_MorphInterpolator_JinLipsPart.FWeight}
-Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer341.set_FWeight);
+Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer341.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinLipsPart.FWeight }
 { Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinLipsPart.FWeight}
-Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer569.set_FWeight);
+Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer569.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Left_cheek_MorphInterpolator_JinLipsPart.FWeight }
 { Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Left_cheek_MorphInterpolator_JinLipsPart.FWeight}
-Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer303.set_FWeight);
+Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer303.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinLipsPart.FWeight }
 { Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinLipsPart.FWeight}
-Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer797.set_FWeight);
+Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer797.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinLipsPart.FWeight }
 { Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinLipsPart.FWeight}
-Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer721.set_FWeight);
+Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer721.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Philtrum_MorphInterpolator_JinLipsPart.FWeight }
 { Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Philtrum_MorphInterpolator_JinLipsPart.FWeight}
-Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer1065.set_FWeight);
+Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer1065.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Right_forehead_MorphInterpolator_JinLipsPart.FWeight }
 { Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Right_forehead_MorphInterpolator_JinLipsPart.FWeight}
-Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer1293.set_FWeight);
+Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer1293.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinLipsPart.FWeight }
 { Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinLipsPart.FWeight}
-Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer1255.set_FWeight);
+Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer1255.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinLipsPart.FWeight }
 { Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinLipsPart.FWeight}
-Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer759.set_FWeight);
+Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer759.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinLipsPart.FWeight }
+{ Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinLipsPart.FWeight}
+Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer493.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Left_pupil_MorphInterpolator_JinLipsPart.FWeight }
+{ Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Left_pupil_MorphInterpolator_JinLipsPart.FWeight}
+Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer645.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Right_ear_MorphInterpolator_JinLipsPart.FWeight }
+{ Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Right_ear_MorphInterpolator_JinLipsPart.FWeight}
+Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer1217.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Right_cheek_MorphInterpolator_JinLipsPart.FWeight }
+{ Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Right_cheek_MorphInterpolator_JinLipsPart.FWeight}
+Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer1141.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Right_dorsum_MorphInterpolator_JinLipsPart.FWeight }
+{ Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Right_dorsum_MorphInterpolator_JinLipsPart.FWeight}
+Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer1179.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinLipsPart.FWeight }
+{ Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinLipsPart.FWeight}
+Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer1103.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinLipsPart.FWeight }
+{ Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinLipsPart.FWeight}
+Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer1331.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinLipsPart.FWeight }
+{ Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinLipsPart.FWeight}
+Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer1403.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Right_nostril_MorphInterpolator_JinLipsPart.FWeight }
+{ Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Right_nostril_MorphInterpolator_JinLipsPart.FWeight}
+Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer1441.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Right_pupil_MorphInterpolator_JinLipsPart.FWeight }
+{ Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Right_pupil_MorphInterpolator_JinLipsPart.FWeight}
+Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer1479.FWeight);
 end;
 
 procedure InitSingleMenuJinPart139;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinLipsPart.FWeight }
-{ Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinLipsPart.FWeight}
-Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer493.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Left_pupil_MorphInterpolator_JinLipsPart.FWeight }
-{ Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Left_pupil_MorphInterpolator_JinLipsPart.FWeight}
-Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer645.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Right_ear_MorphInterpolator_JinLipsPart.FWeight }
-{ Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Right_ear_MorphInterpolator_JinLipsPart.FWeight}
-Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer1217.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Right_cheek_MorphInterpolator_JinLipsPart.FWeight }
-{ Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Right_cheek_MorphInterpolator_JinLipsPart.FWeight}
-Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer1141.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Right_dorsum_MorphInterpolator_JinLipsPart.FWeight }
-{ Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Right_dorsum_MorphInterpolator_JinLipsPart.FWeight}
-Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer1179.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinLipsPart.FWeight }
-{ Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinLipsPart.FWeight}
-Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer1103.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinLipsPart.FWeight }
-{ Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinLipsPart.FWeight}
-Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer1331.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinLipsPart.FWeight }
-{ Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinLipsPart.FWeight}
-Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer1403.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Right_nostril_MorphInterpolator_JinLipsPart.FWeight }
-{ Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Right_nostril_MorphInterpolator_JinLipsPart.FWeight}
-Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer1441.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Right_pupil_MorphInterpolator_JinLipsPart.FWeight }
-{ Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Right_pupil_MorphInterpolator_JinLipsPart.FWeight}
-Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer1479.set_FWeight);
-{ METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Right_temple_MorphInterpolator_JinLipsPart.FWeight }
 { Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Right_temple_MorphInterpolator_JinLipsPart.FWeight}
-Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer1517.set_FWeight);
+Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer1517.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinLipsPart.FWeight }
 { Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinLipsPart.FWeight}
-Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer1555.set_FWeight);
+Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer1555.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinLipsPart.FWeight }
 { Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinLipsPart.FWeight}
-Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer1593.set_FWeight);
+Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer1593.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipsPart.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinLipsPart.FWeight }
 { Sample AnimationAdapter_JinLipsPart.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinLipsPart.FWeight}
-Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer1630.set_FWeight);
+Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer1630.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipsPart.EventValue_changed TO __4_MorphInterpolator_JinLipsPart.FWeight }
 { Sample AnimationAdapter_JinLipsPart.EventValue_changed TO __4_MorphInterpolator_JinLipsPart.FWeight}
-Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer126.set_FWeight);
+Group7.AddRoute(ScalarInterpolator25.EventValue_changed, HAnimDisplacer126.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "JinLipsPart_Clock.EventFraction_changed TO AnimationAdapter_JinLipsPart.EventSet_fraction }
 { Sample JinLipsPart_Clock.EventFraction_changed TO AnimationAdapter_JinLipsPart.EventSet_fraction}
-Group7.AddRoute(TimeSensor53.EventFraction_changed, ScalarInterpolator25.set_EventSet_fraction);
+Group7.AddRoute(TimeSensor53.EventFraction_changed, ScalarInterpolator25.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Lower_teeth_MorphInterpolator_JinLipStretcher.FWeight }
 { Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Lower_teeth_MorphInterpolator_JinLipStretcher.FWeight}
-Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer105.set_FWeight);
+Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer105.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Tongue_MorphInterpolator_JinLipStretcher.FWeight }
 { Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Tongue_MorphInterpolator_JinLipStretcher.FWeight}
-Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer1669.set_FWeight);
+Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer1669.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Upper_teeth_MorphInterpolator_JinLipStretcher.FWeight }
 { Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Upper_teeth_MorphInterpolator_JinLipStretcher.FWeight}
-Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer1707.set_FWeight);
+Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer1707.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinLipStretcher.FWeight }
 { Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinLipStretcher.FWeight}
-Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer914.set_FWeight);
+Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer914.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Neck_MorphInterpolator_JinLipStretcher.FWeight }
 { Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Neck_MorphInterpolator_JinLipStretcher.FWeight}
-Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer990.set_FWeight);
+Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer990.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinLipStretcher.FWeight }
 { Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinLipStretcher.FWeight}
-Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer1028.set_FWeight);
+Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer1028.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Left_ear_MorphInterpolator_JinLipStretcher.FWeight }
 { Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Left_ear_MorphInterpolator_JinLipStretcher.FWeight}
-Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer380.set_FWeight);
+Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer380.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Mid_forehead_MorphInterpolator_JinLipStretcher.FWeight }
 { Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Mid_forehead_MorphInterpolator_JinLipStretcher.FWeight}
-Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer838.set_FWeight);
+Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer838.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Left_forehead_MorphInterpolator_JinLipStretcher.FWeight }
 { Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Left_forehead_MorphInterpolator_JinLipStretcher.FWeight}
-Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer456.set_FWeight);
+Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer456.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Glabella_MorphInterpolator_JinLipStretcher.FWeight }
 { Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Glabella_MorphInterpolator_JinLipStretcher.FWeight}
-Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer228.set_FWeight);
+Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer228.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Chin_MorphInterpolator_JinLipStretcher.FWeight }
 { Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Chin_MorphInterpolator_JinLipStretcher.FWeight}
-Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer190.set_FWeight);
+Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer190.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinLipStretcher.FWeight }
 { Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinLipStretcher.FWeight}
-Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer532.set_FWeight);
+Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer532.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinLipStretcher.FWeight }
 { Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinLipStretcher.FWeight}
-Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer152.set_FWeight);
+Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer152.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinLipStretcher.FWeight }
 { Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinLipStretcher.FWeight}
-Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer418.set_FWeight);
+Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer418.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinLipStretcher.FWeight }
 { Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinLipStretcher.FWeight}
-Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer266.set_FWeight);
+Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer266.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Left_temple_MorphInterpolator_JinLipStretcher.FWeight }
 { Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Left_temple_MorphInterpolator_JinLipStretcher.FWeight}
-Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer684.set_FWeight);
+Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer684.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinLipStretcher.FWeight }
 { Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinLipStretcher.FWeight}
-Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer876.set_FWeight);
+Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer876.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Nasal_tip_MorphInterpolator_JinLipStretcher.FWeight }
 { Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Nasal_tip_MorphInterpolator_JinLipStretcher.FWeight}
-Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer952.set_FWeight);
+Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer952.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Left_nostril_MorphInterpolator_JinLipStretcher.FWeight }
+{ Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Left_nostril_MorphInterpolator_JinLipStretcher.FWeight}
+Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer608.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Left_dorsum_MorphInterpolator_JinLipStretcher.FWeight }
+{ Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Left_dorsum_MorphInterpolator_JinLipStretcher.FWeight}
+Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer342.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinLipStretcher.FWeight }
+{ Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinLipStretcher.FWeight}
+Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer570.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Left_cheek_MorphInterpolator_JinLipStretcher.FWeight }
+{ Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Left_cheek_MorphInterpolator_JinLipStretcher.FWeight}
+Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer304.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinLipStretcher.FWeight }
+{ Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinLipStretcher.FWeight}
+Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer798.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinLipStretcher.FWeight }
+{ Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinLipStretcher.FWeight}
+Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer722.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Philtrum_MorphInterpolator_JinLipStretcher.FWeight }
+{ Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Philtrum_MorphInterpolator_JinLipStretcher.FWeight}
+Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer1066.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Right_forehead_MorphInterpolator_JinLipStretcher.FWeight }
+{ Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Right_forehead_MorphInterpolator_JinLipStretcher.FWeight}
+Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer1294.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinLipStretcher.FWeight }
+{ Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinLipStretcher.FWeight}
+Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer1256.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinLipStretcher.FWeight }
+{ Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinLipStretcher.FWeight}
+Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer760.FWeight);
 end;
 
 procedure InitSingleMenuJinPart140;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Left_nostril_MorphInterpolator_JinLipStretcher.FWeight }
-{ Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Left_nostril_MorphInterpolator_JinLipStretcher.FWeight}
-Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer608.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Left_dorsum_MorphInterpolator_JinLipStretcher.FWeight }
-{ Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Left_dorsum_MorphInterpolator_JinLipStretcher.FWeight}
-Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer342.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinLipStretcher.FWeight }
-{ Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinLipStretcher.FWeight}
-Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer570.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Left_cheek_MorphInterpolator_JinLipStretcher.FWeight }
-{ Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Left_cheek_MorphInterpolator_JinLipStretcher.FWeight}
-Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer304.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinLipStretcher.FWeight }
-{ Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinLipStretcher.FWeight}
-Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer798.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinLipStretcher.FWeight }
-{ Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinLipStretcher.FWeight}
-Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer722.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Philtrum_MorphInterpolator_JinLipStretcher.FWeight }
-{ Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Philtrum_MorphInterpolator_JinLipStretcher.FWeight}
-Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer1066.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Right_forehead_MorphInterpolator_JinLipStretcher.FWeight }
-{ Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Right_forehead_MorphInterpolator_JinLipStretcher.FWeight}
-Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer1294.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinLipStretcher.FWeight }
-{ Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinLipStretcher.FWeight}
-Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer1256.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinLipStretcher.FWeight }
-{ Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinLipStretcher.FWeight}
-Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer760.set_FWeight);
-{ METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinLipStretcher.FWeight }
 { Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinLipStretcher.FWeight}
-Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer494.set_FWeight);
+Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer494.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Left_pupil_MorphInterpolator_JinLipStretcher.FWeight }
 { Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Left_pupil_MorphInterpolator_JinLipStretcher.FWeight}
-Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer646.set_FWeight);
+Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer646.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Right_ear_MorphInterpolator_JinLipStretcher.FWeight }
 { Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Right_ear_MorphInterpolator_JinLipStretcher.FWeight}
-Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer1218.set_FWeight);
+Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer1218.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Right_cheek_MorphInterpolator_JinLipStretcher.FWeight }
 { Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Right_cheek_MorphInterpolator_JinLipStretcher.FWeight}
-Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer1142.set_FWeight);
+Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer1142.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Right_dorsum_MorphInterpolator_JinLipStretcher.FWeight }
 { Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Right_dorsum_MorphInterpolator_JinLipStretcher.FWeight}
-Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer1180.set_FWeight);
+Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer1180.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinLipStretcher.FWeight }
 { Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinLipStretcher.FWeight}
-Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer1104.set_FWeight);
+Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer1104.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinLipStretcher.FWeight }
 { Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinLipStretcher.FWeight}
-Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer1332.set_FWeight);
+Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer1332.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinLipStretcher.FWeight }
 { Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinLipStretcher.FWeight}
-Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer1404.set_FWeight);
+Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer1404.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Right_nostril_MorphInterpolator_JinLipStretcher.FWeight }
 { Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Right_nostril_MorphInterpolator_JinLipStretcher.FWeight}
-Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer1442.set_FWeight);
+Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer1442.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Right_pupil_MorphInterpolator_JinLipStretcher.FWeight }
 { Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Right_pupil_MorphInterpolator_JinLipStretcher.FWeight}
-Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer1480.set_FWeight);
+Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer1480.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Right_temple_MorphInterpolator_JinLipStretcher.FWeight }
 { Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Right_temple_MorphInterpolator_JinLipStretcher.FWeight}
-Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer1518.set_FWeight);
+Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer1518.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinLipStretcher.FWeight }
 { Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinLipStretcher.FWeight}
-Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer1556.set_FWeight);
+Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer1556.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinLipStretcher.FWeight }
 { Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinLipStretcher.FWeight}
-Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer1594.set_FWeight);
+Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer1594.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinLipStretcher.FWeight }
 { Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinLipStretcher.FWeight}
-Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer1631.set_FWeight);
+Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer1631.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipStretcher.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinLipStretcher.FWeight }
 { Sample AnimationAdapter_JinLipStretcher.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinLipStretcher.FWeight}
-Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer1368.set_FWeight);
+Group7.AddRoute(ScalarInterpolator26.EventValue_changed, HAnimDisplacer1368.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "JinLipStretcher_Clock.EventFraction_changed TO AnimationAdapter_JinLipStretcher.EventSet_fraction }
 { Sample JinLipStretcher_Clock.EventFraction_changed TO AnimationAdapter_JinLipStretcher.EventSet_fraction}
-Group7.AddRoute(TimeSensor52.EventFraction_changed, ScalarInterpolator26.set_EventSet_fraction);
+Group7.AddRoute(TimeSensor52.EventFraction_changed, ScalarInterpolator26.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Lower_teeth_MorphInterpolator_JinLipSuck.FWeight }
 { Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Lower_teeth_MorphInterpolator_JinLipSuck.FWeight}
-Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer106.set_FWeight);
+Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer106.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Tongue_MorphInterpolator_JinLipSuck.FWeight }
 { Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Tongue_MorphInterpolator_JinLipSuck.FWeight}
-Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer1670.set_FWeight);
+Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer1670.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Upper_teeth_MorphInterpolator_JinLipSuck.FWeight }
 { Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Upper_teeth_MorphInterpolator_JinLipSuck.FWeight}
-Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer1708.set_FWeight);
+Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer1708.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinLipSuck.FWeight }
 { Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinLipSuck.FWeight}
-Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer915.set_FWeight);
+Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer915.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Neck_MorphInterpolator_JinLipSuck.FWeight }
 { Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Neck_MorphInterpolator_JinLipSuck.FWeight}
-Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer991.set_FWeight);
+Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer991.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinLipSuck.FWeight }
 { Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinLipSuck.FWeight}
-Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer1029.set_FWeight);
+Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer1029.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Left_ear_MorphInterpolator_JinLipSuck.FWeight }
 { Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Left_ear_MorphInterpolator_JinLipSuck.FWeight}
-Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer381.set_FWeight);
+Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer381.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Mid_forehead_MorphInterpolator_JinLipSuck.FWeight }
 { Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Mid_forehead_MorphInterpolator_JinLipSuck.FWeight}
-Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer839.set_FWeight);
+Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer839.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Left_forehead_MorphInterpolator_JinLipSuck.FWeight }
+{ Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Left_forehead_MorphInterpolator_JinLipSuck.FWeight}
+Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer457.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Glabella_MorphInterpolator_JinLipSuck.FWeight }
+{ Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Glabella_MorphInterpolator_JinLipSuck.FWeight}
+Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer229.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Chin_MorphInterpolator_JinLipSuck.FWeight }
+{ Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Chin_MorphInterpolator_JinLipSuck.FWeight}
+Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer191.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinLipSuck.FWeight }
+{ Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinLipSuck.FWeight}
+Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer533.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinLipSuck.FWeight }
+{ Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinLipSuck.FWeight}
+Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer153.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinLipSuck.FWeight }
+{ Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinLipSuck.FWeight}
+Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer419.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinLipSuck.FWeight }
+{ Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinLipSuck.FWeight}
+Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer267.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Left_temple_MorphInterpolator_JinLipSuck.FWeight }
+{ Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Left_temple_MorphInterpolator_JinLipSuck.FWeight}
+Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer685.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinLipSuck.FWeight }
+{ Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinLipSuck.FWeight}
+Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer877.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Nasal_tip_MorphInterpolator_JinLipSuck.FWeight }
+{ Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Nasal_tip_MorphInterpolator_JinLipSuck.FWeight}
+Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer953.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Left_nostril_MorphInterpolator_JinLipSuck.FWeight }
+{ Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Left_nostril_MorphInterpolator_JinLipSuck.FWeight}
+Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer609.FWeight);
 end;
 
 procedure InitSingleMenuJinPart141;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Left_forehead_MorphInterpolator_JinLipSuck.FWeight }
-{ Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Left_forehead_MorphInterpolator_JinLipSuck.FWeight}
-Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer457.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Glabella_MorphInterpolator_JinLipSuck.FWeight }
-{ Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Glabella_MorphInterpolator_JinLipSuck.FWeight}
-Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer229.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Chin_MorphInterpolator_JinLipSuck.FWeight }
-{ Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Chin_MorphInterpolator_JinLipSuck.FWeight}
-Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer191.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinLipSuck.FWeight }
-{ Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinLipSuck.FWeight}
-Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer533.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinLipSuck.FWeight }
-{ Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinLipSuck.FWeight}
-Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer153.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinLipSuck.FWeight }
-{ Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinLipSuck.FWeight}
-Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer419.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinLipSuck.FWeight }
-{ Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinLipSuck.FWeight}
-Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer267.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Left_temple_MorphInterpolator_JinLipSuck.FWeight }
-{ Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Left_temple_MorphInterpolator_JinLipSuck.FWeight}
-Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer685.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinLipSuck.FWeight }
-{ Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinLipSuck.FWeight}
-Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer877.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Nasal_tip_MorphInterpolator_JinLipSuck.FWeight }
-{ Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Nasal_tip_MorphInterpolator_JinLipSuck.FWeight}
-Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer953.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Left_nostril_MorphInterpolator_JinLipSuck.FWeight }
-{ Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Left_nostril_MorphInterpolator_JinLipSuck.FWeight}
-Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer609.set_FWeight);
-{ METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Left_dorsum_MorphInterpolator_JinLipSuck.FWeight }
 { Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Left_dorsum_MorphInterpolator_JinLipSuck.FWeight}
-Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer343.set_FWeight);
+Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer343.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinLipSuck.FWeight }
 { Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinLipSuck.FWeight}
-Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer571.set_FWeight);
+Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer571.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Left_cheek_MorphInterpolator_JinLipSuck.FWeight }
 { Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Left_cheek_MorphInterpolator_JinLipSuck.FWeight}
-Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer305.set_FWeight);
+Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer305.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinLipSuck.FWeight }
 { Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinLipSuck.FWeight}
-Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer799.set_FWeight);
+Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer799.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinLipSuck.FWeight }
 { Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinLipSuck.FWeight}
-Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer723.set_FWeight);
+Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer723.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Philtrum_MorphInterpolator_JinLipSuck.FWeight }
 { Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Philtrum_MorphInterpolator_JinLipSuck.FWeight}
-Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer1067.set_FWeight);
+Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer1067.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Right_forehead_MorphInterpolator_JinLipSuck.FWeight }
 { Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Right_forehead_MorphInterpolator_JinLipSuck.FWeight}
-Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer1295.set_FWeight);
+Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer1295.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinLipSuck.FWeight }
 { Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinLipSuck.FWeight}
-Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer1257.set_FWeight);
+Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer1257.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinLipSuck.FWeight }
 { Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinLipSuck.FWeight}
-Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer761.set_FWeight);
+Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer761.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinLipSuck.FWeight }
 { Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinLipSuck.FWeight}
-Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer495.set_FWeight);
+Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer495.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Left_pupil_MorphInterpolator_JinLipSuck.FWeight }
 { Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Left_pupil_MorphInterpolator_JinLipSuck.FWeight}
-Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer647.set_FWeight);
+Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer647.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Right_ear_MorphInterpolator_JinLipSuck.FWeight }
 { Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Right_ear_MorphInterpolator_JinLipSuck.FWeight}
-Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer1219.set_FWeight);
+Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer1219.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Right_cheek_MorphInterpolator_JinLipSuck.FWeight }
 { Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Right_cheek_MorphInterpolator_JinLipSuck.FWeight}
-Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer1143.set_FWeight);
+Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer1143.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Right_dorsum_MorphInterpolator_JinLipSuck.FWeight }
 { Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Right_dorsum_MorphInterpolator_JinLipSuck.FWeight}
-Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer1181.set_FWeight);
+Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer1181.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinLipSuck.FWeight }
 { Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinLipSuck.FWeight}
-Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer1105.set_FWeight);
+Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer1105.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinLipSuck.FWeight }
 { Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinLipSuck.FWeight}
-Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer1333.set_FWeight);
+Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer1333.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinLipSuck.FWeight }
 { Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinLipSuck.FWeight}
-Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer1405.set_FWeight);
+Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer1405.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Right_nostril_MorphInterpolator_JinLipSuck.FWeight }
 { Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Right_nostril_MorphInterpolator_JinLipSuck.FWeight}
-Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer1443.set_FWeight);
+Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer1443.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Right_pupil_MorphInterpolator_JinLipSuck.FWeight }
 { Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Right_pupil_MorphInterpolator_JinLipSuck.FWeight}
-Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer1481.set_FWeight);
+Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer1481.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Right_temple_MorphInterpolator_JinLipSuck.FWeight }
 { Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Right_temple_MorphInterpolator_JinLipSuck.FWeight}
-Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer1519.set_FWeight);
+Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer1519.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinLipSuck.FWeight }
 { Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinLipSuck.FWeight}
-Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer1557.set_FWeight);
+Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer1557.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinLipSuck.FWeight }
 { Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinLipSuck.FWeight}
-Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer1595.set_FWeight);
+Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer1595.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinLipSuck.FWeight }
 { Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinLipSuck.FWeight}
-Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer1632.set_FWeight);
+Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer1632.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipSuck.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinLipSuck.FWeight }
 { Sample AnimationAdapter_JinLipSuck.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinLipSuck.FWeight}
-Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer1369.set_FWeight);
+Group7.AddRoute(ScalarInterpolator27.EventValue_changed, HAnimDisplacer1369.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "JinLipSuck_Clock.EventFraction_changed TO AnimationAdapter_JinLipSuck.EventSet_fraction }
+{ Sample JinLipSuck_Clock.EventFraction_changed TO AnimationAdapter_JinLipSuck.EventSet_fraction}
+Group7.AddRoute(TimeSensor51.EventFraction_changed, ScalarInterpolator27.EventSet_fraction);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Lower_teeth_MorphInterpolator_JinLipTightener.FWeight }
+{ Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Lower_teeth_MorphInterpolator_JinLipTightener.FWeight}
+Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer107.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Tongue_MorphInterpolator_JinLipTightener.FWeight }
+{ Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Tongue_MorphInterpolator_JinLipTightener.FWeight}
+Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer1671.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Upper_teeth_MorphInterpolator_JinLipTightener.FWeight }
+{ Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Upper_teeth_MorphInterpolator_JinLipTightener.FWeight}
+Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer1709.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinLipTightener.FWeight }
+{ Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinLipTightener.FWeight}
+Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer916.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Neck_MorphInterpolator_JinLipTightener.FWeight }
+{ Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Neck_MorphInterpolator_JinLipTightener.FWeight}
+Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer992.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinLipTightener.FWeight }
+{ Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinLipTightener.FWeight}
+Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer1030.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Left_ear_MorphInterpolator_JinLipTightener.FWeight }
+{ Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Left_ear_MorphInterpolator_JinLipTightener.FWeight}
+Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer382.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Mid_forehead_MorphInterpolator_JinLipTightener.FWeight }
+{ Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Mid_forehead_MorphInterpolator_JinLipTightener.FWeight}
+Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer840.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Left_forehead_MorphInterpolator_JinLipTightener.FWeight }
+{ Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Left_forehead_MorphInterpolator_JinLipTightener.FWeight}
+Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer458.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Glabella_MorphInterpolator_JinLipTightener.FWeight }
+{ Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Glabella_MorphInterpolator_JinLipTightener.FWeight}
+Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer230.FWeight);
 end;
 
 procedure InitSingleMenuJinPart142;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "JinLipSuck_Clock.EventFraction_changed TO AnimationAdapter_JinLipSuck.EventSet_fraction }
-{ Sample JinLipSuck_Clock.EventFraction_changed TO AnimationAdapter_JinLipSuck.EventSet_fraction}
-Group7.AddRoute(TimeSensor51.EventFraction_changed, ScalarInterpolator27.set_EventSet_fraction);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Lower_teeth_MorphInterpolator_JinLipTightener.FWeight }
-{ Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Lower_teeth_MorphInterpolator_JinLipTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer107.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Tongue_MorphInterpolator_JinLipTightener.FWeight }
-{ Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Tongue_MorphInterpolator_JinLipTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer1671.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Upper_teeth_MorphInterpolator_JinLipTightener.FWeight }
-{ Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Upper_teeth_MorphInterpolator_JinLipTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer1709.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinLipTightener.FWeight }
-{ Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinLipTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer916.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Neck_MorphInterpolator_JinLipTightener.FWeight }
-{ Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Neck_MorphInterpolator_JinLipTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer992.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinLipTightener.FWeight }
-{ Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinLipTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer1030.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Left_ear_MorphInterpolator_JinLipTightener.FWeight }
-{ Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Left_ear_MorphInterpolator_JinLipTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer382.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Mid_forehead_MorphInterpolator_JinLipTightener.FWeight }
-{ Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Mid_forehead_MorphInterpolator_JinLipTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer840.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Left_forehead_MorphInterpolator_JinLipTightener.FWeight }
-{ Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Left_forehead_MorphInterpolator_JinLipTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer458.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Glabella_MorphInterpolator_JinLipTightener.FWeight }
-{ Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Glabella_MorphInterpolator_JinLipTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer230.set_FWeight);
-{ METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Chin_MorphInterpolator_JinLipTightener.FWeight }
 { Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Chin_MorphInterpolator_JinLipTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer192.set_FWeight);
+Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer192.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinLipTightener.FWeight }
 { Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinLipTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer534.set_FWeight);
+Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer534.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinLipTightener.FWeight }
 { Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinLipTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer154.set_FWeight);
+Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer154.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinLipTightener.FWeight }
 { Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinLipTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer420.set_FWeight);
+Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer420.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinLipTightener.FWeight }
 { Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinLipTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer268.set_FWeight);
+Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer268.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Left_temple_MorphInterpolator_JinLipTightener.FWeight }
 { Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Left_temple_MorphInterpolator_JinLipTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer686.set_FWeight);
+Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer686.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinLipTightener.FWeight }
 { Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinLipTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer878.set_FWeight);
+Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer878.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Nasal_tip_MorphInterpolator_JinLipTightener.FWeight }
 { Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Nasal_tip_MorphInterpolator_JinLipTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer954.set_FWeight);
+Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer954.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Left_nostril_MorphInterpolator_JinLipTightener.FWeight }
 { Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Left_nostril_MorphInterpolator_JinLipTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer610.set_FWeight);
+Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer610.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Left_dorsum_MorphInterpolator_JinLipTightener.FWeight }
 { Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Left_dorsum_MorphInterpolator_JinLipTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer344.set_FWeight);
+Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer344.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinLipTightener.FWeight }
 { Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinLipTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer572.set_FWeight);
+Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer572.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Left_cheek_MorphInterpolator_JinLipTightener.FWeight }
 { Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Left_cheek_MorphInterpolator_JinLipTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer306.set_FWeight);
+Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer306.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinLipTightener.FWeight }
 { Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinLipTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer800.set_FWeight);
+Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer800.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinLipTightener.FWeight }
 { Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinLipTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer724.set_FWeight);
+Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer724.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Philtrum_MorphInterpolator_JinLipTightener.FWeight }
 { Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Philtrum_MorphInterpolator_JinLipTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer1068.set_FWeight);
+Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer1068.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Right_forehead_MorphInterpolator_JinLipTightener.FWeight }
 { Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Right_forehead_MorphInterpolator_JinLipTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer1296.set_FWeight);
+Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer1296.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinLipTightener.FWeight }
 { Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinLipTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer1258.set_FWeight);
+Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer1258.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinLipTightener.FWeight }
 { Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinLipTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer762.set_FWeight);
+Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer762.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinLipTightener.FWeight }
 { Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinLipTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer496.set_FWeight);
+Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer496.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Left_pupil_MorphInterpolator_JinLipTightener.FWeight }
 { Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Left_pupil_MorphInterpolator_JinLipTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer648.set_FWeight);
+Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer648.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Right_ear_MorphInterpolator_JinLipTightener.FWeight }
 { Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Right_ear_MorphInterpolator_JinLipTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer1220.set_FWeight);
+Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer1220.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Right_cheek_MorphInterpolator_JinLipTightener.FWeight }
 { Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Right_cheek_MorphInterpolator_JinLipTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer1144.set_FWeight);
+Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer1144.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Right_dorsum_MorphInterpolator_JinLipTightener.FWeight }
 { Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Right_dorsum_MorphInterpolator_JinLipTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer1182.set_FWeight);
+Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer1182.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinLipTightener.FWeight }
+{ Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinLipTightener.FWeight}
+Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer1106.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinLipTightener.FWeight }
+{ Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinLipTightener.FWeight}
+Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer1334.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinLipTightener.FWeight }
+{ Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinLipTightener.FWeight}
+Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer1406.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Right_nostril_MorphInterpolator_JinLipTightener.FWeight }
+{ Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Right_nostril_MorphInterpolator_JinLipTightener.FWeight}
+Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer1444.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Right_pupil_MorphInterpolator_JinLipTightener.FWeight }
+{ Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Right_pupil_MorphInterpolator_JinLipTightener.FWeight}
+Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer1482.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Right_temple_MorphInterpolator_JinLipTightener.FWeight }
+{ Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Right_temple_MorphInterpolator_JinLipTightener.FWeight}
+Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer1520.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinLipTightener.FWeight }
+{ Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinLipTightener.FWeight}
+Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer1558.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinLipTightener.FWeight }
+{ Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinLipTightener.FWeight}
+Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer1596.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinLipTightener.FWeight }
+{ Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinLipTightener.FWeight}
+Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer1633.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinLipTightener.FWeight }
+{ Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinLipTightener.FWeight}
+Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer1370.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "JinLipTightener_Clock.EventFraction_changed TO AnimationAdapter_JinLipTightener.EventSet_fraction }
+{ Sample JinLipTightener_Clock.EventFraction_changed TO AnimationAdapter_JinLipTightener.EventSet_fraction}
+Group7.AddRoute(TimeSensor50.EventFraction_changed, ScalarInterpolator28.EventSet_fraction);
 end;
 
 procedure InitSingleMenuJinPart143;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinLipTightener.FWeight }
-{ Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinLipTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer1106.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinLipTightener.FWeight }
-{ Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinLipTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer1334.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinLipTightener.FWeight }
-{ Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinLipTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer1406.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Right_nostril_MorphInterpolator_JinLipTightener.FWeight }
-{ Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Right_nostril_MorphInterpolator_JinLipTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer1444.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Right_pupil_MorphInterpolator_JinLipTightener.FWeight }
-{ Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Right_pupil_MorphInterpolator_JinLipTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer1482.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Right_temple_MorphInterpolator_JinLipTightener.FWeight }
-{ Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Right_temple_MorphInterpolator_JinLipTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer1520.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinLipTightener.FWeight }
-{ Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinLipTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer1558.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinLipTightener.FWeight }
-{ Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinLipTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer1596.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinLipTightener.FWeight }
-{ Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinLipTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer1633.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLipTightener.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinLipTightener.FWeight }
-{ Sample AnimationAdapter_JinLipTightener.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinLipTightener.FWeight}
-Group7.AddRoute(ScalarInterpolator28.EventValue_changed, HAnimDisplacer1370.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "JinLipTightener_Clock.EventFraction_changed TO AnimationAdapter_JinLipTightener.EventSet_fraction }
-{ Sample JinLipTightener_Clock.EventFraction_changed TO AnimationAdapter_JinLipTightener.EventSet_fraction}
-Group7.AddRoute(TimeSensor50.EventFraction_changed, ScalarInterpolator28.set_EventSet_fraction);
-{ METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Lower_teeth_MorphInterpolator_JinLowerLipDepressor.FWeight }
 { Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Lower_teeth_MorphInterpolator_JinLowerLipDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer108.set_FWeight);
+Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer108.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Tongue_MorphInterpolator_JinLowerLipDepressor.FWeight }
 { Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Tongue_MorphInterpolator_JinLowerLipDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer1672.set_FWeight);
+Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer1672.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Upper_teeth_MorphInterpolator_JinLowerLipDepressor.FWeight }
 { Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Upper_teeth_MorphInterpolator_JinLowerLipDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer1710.set_FWeight);
+Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer1710.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinLowerLipDepressor.FWeight }
 { Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinLowerLipDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer917.set_FWeight);
+Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer917.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Neck_MorphInterpolator_JinLowerLipDepressor.FWeight }
 { Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Neck_MorphInterpolator_JinLowerLipDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer993.set_FWeight);
+Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer993.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinLowerLipDepressor.FWeight }
 { Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinLowerLipDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer1031.set_FWeight);
+Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer1031.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Left_ear_MorphInterpolator_JinLowerLipDepressor.FWeight }
 { Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Left_ear_MorphInterpolator_JinLowerLipDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer383.set_FWeight);
+Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer383.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Mid_forehead_MorphInterpolator_JinLowerLipDepressor.FWeight }
 { Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Mid_forehead_MorphInterpolator_JinLowerLipDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer841.set_FWeight);
+Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer841.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Left_forehead_MorphInterpolator_JinLowerLipDepressor.FWeight }
 { Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Left_forehead_MorphInterpolator_JinLowerLipDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer459.set_FWeight);
+Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer459.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Glabella_MorphInterpolator_JinLowerLipDepressor.FWeight }
 { Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Glabella_MorphInterpolator_JinLowerLipDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer231.set_FWeight);
+Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer231.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Chin_MorphInterpolator_JinLowerLipDepressor.FWeight }
 { Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Chin_MorphInterpolator_JinLowerLipDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer193.set_FWeight);
+Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer193.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinLowerLipDepressor.FWeight }
 { Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinLowerLipDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer535.set_FWeight);
+Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer535.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinLowerLipDepressor.FWeight }
 { Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinLowerLipDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer155.set_FWeight);
+Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer155.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinLowerLipDepressor.FWeight }
 { Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinLowerLipDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer421.set_FWeight);
+Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer421.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinLowerLipDepressor.FWeight }
 { Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinLowerLipDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer269.set_FWeight);
+Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer269.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Left_temple_MorphInterpolator_JinLowerLipDepressor.FWeight }
 { Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Left_temple_MorphInterpolator_JinLowerLipDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer687.set_FWeight);
+Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer687.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinLowerLipDepressor.FWeight }
 { Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinLowerLipDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer879.set_FWeight);
+Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer879.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Nasal_tip_MorphInterpolator_JinLowerLipDepressor.FWeight }
 { Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Nasal_tip_MorphInterpolator_JinLowerLipDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer955.set_FWeight);
+Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer955.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Left_nostril_MorphInterpolator_JinLowerLipDepressor.FWeight }
 { Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Left_nostril_MorphInterpolator_JinLowerLipDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer611.set_FWeight);
+Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer611.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Left_dorsum_MorphInterpolator_JinLowerLipDepressor.FWeight }
 { Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Left_dorsum_MorphInterpolator_JinLowerLipDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer345.set_FWeight);
+Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer345.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinLowerLipDepressor.FWeight }
 { Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinLowerLipDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer573.set_FWeight);
+Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer573.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Left_cheek_MorphInterpolator_JinLowerLipDepressor.FWeight }
+{ Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Left_cheek_MorphInterpolator_JinLowerLipDepressor.FWeight}
+Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer307.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinLowerLipDepressor.FWeight }
+{ Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinLowerLipDepressor.FWeight}
+Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer801.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinLowerLipDepressor.FWeight }
+{ Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinLowerLipDepressor.FWeight}
+Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer725.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Philtrum_MorphInterpolator_JinLowerLipDepressor.FWeight }
+{ Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Philtrum_MorphInterpolator_JinLowerLipDepressor.FWeight}
+Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer1069.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Right_forehead_MorphInterpolator_JinLowerLipDepressor.FWeight }
+{ Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Right_forehead_MorphInterpolator_JinLowerLipDepressor.FWeight}
+Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer1297.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinLowerLipDepressor.FWeight }
+{ Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinLowerLipDepressor.FWeight}
+Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer1259.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinLowerLipDepressor.FWeight }
+{ Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinLowerLipDepressor.FWeight}
+Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer763.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinLowerLipDepressor.FWeight }
+{ Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinLowerLipDepressor.FWeight}
+Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer497.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Left_pupil_MorphInterpolator_JinLowerLipDepressor.FWeight }
+{ Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Left_pupil_MorphInterpolator_JinLowerLipDepressor.FWeight}
+Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer649.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Right_ear_MorphInterpolator_JinLowerLipDepressor.FWeight }
+{ Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Right_ear_MorphInterpolator_JinLowerLipDepressor.FWeight}
+Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer1221.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Right_cheek_MorphInterpolator_JinLowerLipDepressor.FWeight }
+{ Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Right_cheek_MorphInterpolator_JinLowerLipDepressor.FWeight}
+Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer1145.FWeight);
 end;
 
 procedure InitSingleMenuJinPart144;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Left_cheek_MorphInterpolator_JinLowerLipDepressor.FWeight }
-{ Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Left_cheek_MorphInterpolator_JinLowerLipDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer307.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinLowerLipDepressor.FWeight }
-{ Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinLowerLipDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer801.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinLowerLipDepressor.FWeight }
-{ Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinLowerLipDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer725.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Philtrum_MorphInterpolator_JinLowerLipDepressor.FWeight }
-{ Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Philtrum_MorphInterpolator_JinLowerLipDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer1069.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Right_forehead_MorphInterpolator_JinLowerLipDepressor.FWeight }
-{ Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Right_forehead_MorphInterpolator_JinLowerLipDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer1297.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinLowerLipDepressor.FWeight }
-{ Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinLowerLipDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer1259.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinLowerLipDepressor.FWeight }
-{ Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinLowerLipDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer763.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinLowerLipDepressor.FWeight }
-{ Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinLowerLipDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer497.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Left_pupil_MorphInterpolator_JinLowerLipDepressor.FWeight }
-{ Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Left_pupil_MorphInterpolator_JinLowerLipDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer649.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Right_ear_MorphInterpolator_JinLowerLipDepressor.FWeight }
-{ Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Right_ear_MorphInterpolator_JinLowerLipDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer1221.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Right_cheek_MorphInterpolator_JinLowerLipDepressor.FWeight }
-{ Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Right_cheek_MorphInterpolator_JinLowerLipDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer1145.set_FWeight);
-{ METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Right_dorsum_MorphInterpolator_JinLowerLipDepressor.FWeight }
 { Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Right_dorsum_MorphInterpolator_JinLowerLipDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer1183.set_FWeight);
+Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer1183.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinLowerLipDepressor.FWeight }
 { Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinLowerLipDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer1107.set_FWeight);
+Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer1107.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinLowerLipDepressor.FWeight }
 { Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinLowerLipDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer1335.set_FWeight);
+Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer1335.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinLowerLipDepressor.FWeight }
 { Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinLowerLipDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer1407.set_FWeight);
+Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer1407.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Right_nostril_MorphInterpolator_JinLowerLipDepressor.FWeight }
 { Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Right_nostril_MorphInterpolator_JinLowerLipDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer1445.set_FWeight);
+Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer1445.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Right_pupil_MorphInterpolator_JinLowerLipDepressor.FWeight }
 { Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Right_pupil_MorphInterpolator_JinLowerLipDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer1483.set_FWeight);
+Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer1483.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Right_temple_MorphInterpolator_JinLowerLipDepressor.FWeight }
 { Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Right_temple_MorphInterpolator_JinLowerLipDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer1521.set_FWeight);
+Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer1521.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinLowerLipDepressor.FWeight }
 { Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinLowerLipDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer1559.set_FWeight);
+Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer1559.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinLowerLipDepressor.FWeight }
 { Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinLowerLipDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer1597.set_FWeight);
+Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer1597.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinLowerLipDepressor.FWeight }
 { Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinLowerLipDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer1634.set_FWeight);
+Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer1634.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinLowerLipDepressor.FWeight }
 { Sample AnimationAdapter_JinLowerLipDepressor.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinLowerLipDepressor.FWeight}
-Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer1371.set_FWeight);
+Group7.AddRoute(ScalarInterpolator29.EventValue_changed, HAnimDisplacer1371.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "JinLowerLipDepressor_Clock.EventFraction_changed TO AnimationAdapter_JinLowerLipDepressor.EventSet_fraction }
 { Sample JinLowerLipDepressor_Clock.EventFraction_changed TO AnimationAdapter_JinLowerLipDepressor.EventSet_fraction}
-Group7.AddRoute(TimeSensor49.EventFraction_changed, ScalarInterpolator29.set_EventSet_fraction);
+Group7.AddRoute(TimeSensor49.EventFraction_changed, ScalarInterpolator29.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Lower_teeth_MorphInterpolator_JinMouthStretch.FWeight }
 { Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Lower_teeth_MorphInterpolator_JinMouthStretch.FWeight}
-Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer109.set_FWeight);
+Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer109.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Tongue_MorphInterpolator_JinMouthStretch.FWeight }
 { Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Tongue_MorphInterpolator_JinMouthStretch.FWeight}
-Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer1673.set_FWeight);
+Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer1673.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Upper_teeth_MorphInterpolator_JinMouthStretch.FWeight }
 { Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Upper_teeth_MorphInterpolator_JinMouthStretch.FWeight}
-Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer1711.set_FWeight);
+Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer1711.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinMouthStretch.FWeight }
 { Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinMouthStretch.FWeight}
-Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer918.set_FWeight);
+Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer918.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Neck_MorphInterpolator_JinMouthStretch.FWeight }
 { Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Neck_MorphInterpolator_JinMouthStretch.FWeight}
-Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer994.set_FWeight);
+Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer994.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinMouthStretch.FWeight }
 { Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinMouthStretch.FWeight}
-Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer1032.set_FWeight);
+Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer1032.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Left_ear_MorphInterpolator_JinMouthStretch.FWeight }
 { Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Left_ear_MorphInterpolator_JinMouthStretch.FWeight}
-Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer384.set_FWeight);
+Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer384.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Mid_forehead_MorphInterpolator_JinMouthStretch.FWeight }
 { Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Mid_forehead_MorphInterpolator_JinMouthStretch.FWeight}
-Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer842.set_FWeight);
+Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer842.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Left_forehead_MorphInterpolator_JinMouthStretch.FWeight }
 { Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Left_forehead_MorphInterpolator_JinMouthStretch.FWeight}
-Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer460.set_FWeight);
+Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer460.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Glabella_MorphInterpolator_JinMouthStretch.FWeight }
+{ Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Glabella_MorphInterpolator_JinMouthStretch.FWeight}
+Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer232.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Chin_MorphInterpolator_JinMouthStretch.FWeight }
+{ Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Chin_MorphInterpolator_JinMouthStretch.FWeight}
+Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer194.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinMouthStretch.FWeight }
+{ Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinMouthStretch.FWeight}
+Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer536.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinMouthStretch.FWeight }
+{ Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinMouthStretch.FWeight}
+Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer156.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinMouthStretch.FWeight }
+{ Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinMouthStretch.FWeight}
+Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer422.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinMouthStretch.FWeight }
+{ Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinMouthStretch.FWeight}
+Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer270.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Left_temple_MorphInterpolator_JinMouthStretch.FWeight }
+{ Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Left_temple_MorphInterpolator_JinMouthStretch.FWeight}
+Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer688.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinMouthStretch.FWeight }
+{ Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinMouthStretch.FWeight}
+Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer880.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Nasal_tip_MorphInterpolator_JinMouthStretch.FWeight }
+{ Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Nasal_tip_MorphInterpolator_JinMouthStretch.FWeight}
+Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer956.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Left_nostril_MorphInterpolator_JinMouthStretch.FWeight }
+{ Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Left_nostril_MorphInterpolator_JinMouthStretch.FWeight}
+Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer612.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Left_dorsum_MorphInterpolator_JinMouthStretch.FWeight }
+{ Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Left_dorsum_MorphInterpolator_JinMouthStretch.FWeight}
+Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer346.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinMouthStretch.FWeight }
+{ Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinMouthStretch.FWeight}
+Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer574.FWeight);
 end;
 
 procedure InitSingleMenuJinPart145;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Glabella_MorphInterpolator_JinMouthStretch.FWeight }
-{ Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Glabella_MorphInterpolator_JinMouthStretch.FWeight}
-Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer232.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Chin_MorphInterpolator_JinMouthStretch.FWeight }
-{ Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Chin_MorphInterpolator_JinMouthStretch.FWeight}
-Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer194.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinMouthStretch.FWeight }
-{ Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinMouthStretch.FWeight}
-Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer536.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinMouthStretch.FWeight }
-{ Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinMouthStretch.FWeight}
-Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer156.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinMouthStretch.FWeight }
-{ Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinMouthStretch.FWeight}
-Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer422.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinMouthStretch.FWeight }
-{ Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinMouthStretch.FWeight}
-Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer270.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Left_temple_MorphInterpolator_JinMouthStretch.FWeight }
-{ Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Left_temple_MorphInterpolator_JinMouthStretch.FWeight}
-Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer688.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinMouthStretch.FWeight }
-{ Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinMouthStretch.FWeight}
-Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer880.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Nasal_tip_MorphInterpolator_JinMouthStretch.FWeight }
-{ Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Nasal_tip_MorphInterpolator_JinMouthStretch.FWeight}
-Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer956.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Left_nostril_MorphInterpolator_JinMouthStretch.FWeight }
-{ Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Left_nostril_MorphInterpolator_JinMouthStretch.FWeight}
-Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer612.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Left_dorsum_MorphInterpolator_JinMouthStretch.FWeight }
-{ Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Left_dorsum_MorphInterpolator_JinMouthStretch.FWeight}
-Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer346.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinMouthStretch.FWeight }
-{ Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinMouthStretch.FWeight}
-Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer574.set_FWeight);
-{ METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Left_cheek_MorphInterpolator_JinMouthStretch.FWeight }
 { Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Left_cheek_MorphInterpolator_JinMouthStretch.FWeight}
-Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer308.set_FWeight);
+Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer308.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinMouthStretch.FWeight }
 { Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinMouthStretch.FWeight}
-Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer802.set_FWeight);
+Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer802.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinMouthStretch.FWeight }
 { Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinMouthStretch.FWeight}
-Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer726.set_FWeight);
+Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer726.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Philtrum_MorphInterpolator_JinMouthStretch.FWeight }
 { Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Philtrum_MorphInterpolator_JinMouthStretch.FWeight}
-Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer1070.set_FWeight);
+Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer1070.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Right_forehead_MorphInterpolator_JinMouthStretch.FWeight }
 { Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Right_forehead_MorphInterpolator_JinMouthStretch.FWeight}
-Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer1298.set_FWeight);
+Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer1298.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinMouthStretch.FWeight }
 { Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinMouthStretch.FWeight}
-Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer1260.set_FWeight);
+Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer1260.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinMouthStretch.FWeight }
 { Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinMouthStretch.FWeight}
-Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer764.set_FWeight);
+Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer764.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinMouthStretch.FWeight }
 { Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinMouthStretch.FWeight}
-Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer498.set_FWeight);
+Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer498.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Left_pupil_MorphInterpolator_JinMouthStretch.FWeight }
 { Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Left_pupil_MorphInterpolator_JinMouthStretch.FWeight}
-Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer650.set_FWeight);
+Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer650.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Right_ear_MorphInterpolator_JinMouthStretch.FWeight }
 { Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Right_ear_MorphInterpolator_JinMouthStretch.FWeight}
-Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer1222.set_FWeight);
+Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer1222.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Right_cheek_MorphInterpolator_JinMouthStretch.FWeight }
 { Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Right_cheek_MorphInterpolator_JinMouthStretch.FWeight}
-Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer1146.set_FWeight);
+Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer1146.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Right_dorsum_MorphInterpolator_JinMouthStretch.FWeight }
 { Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Right_dorsum_MorphInterpolator_JinMouthStretch.FWeight}
-Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer1184.set_FWeight);
+Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer1184.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinMouthStretch.FWeight }
 { Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinMouthStretch.FWeight}
-Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer1108.set_FWeight);
+Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer1108.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinMouthStretch.FWeight }
 { Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinMouthStretch.FWeight}
-Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer1336.set_FWeight);
+Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer1336.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinMouthStretch.FWeight }
 { Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinMouthStretch.FWeight}
-Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer1408.set_FWeight);
+Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer1408.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Right_nostril_MorphInterpolator_JinMouthStretch.FWeight }
 { Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Right_nostril_MorphInterpolator_JinMouthStretch.FWeight}
-Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer1446.set_FWeight);
+Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer1446.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Right_pupil_MorphInterpolator_JinMouthStretch.FWeight }
 { Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Right_pupil_MorphInterpolator_JinMouthStretch.FWeight}
-Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer1484.set_FWeight);
+Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer1484.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Right_temple_MorphInterpolator_JinMouthStretch.FWeight }
 { Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Right_temple_MorphInterpolator_JinMouthStretch.FWeight}
-Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer1522.set_FWeight);
+Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer1522.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinMouthStretch.FWeight }
 { Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinMouthStretch.FWeight}
-Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer1560.set_FWeight);
+Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer1560.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinMouthStretch.FWeight }
 { Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinMouthStretch.FWeight}
-Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer1598.set_FWeight);
+Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer1598.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinMouthStretch.FWeight }
 { Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinMouthStretch.FWeight}
-Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer1635.set_FWeight);
+Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer1635.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinMouthStretch.FWeight }
+{ Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinMouthStretch.FWeight}
+Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer1372.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "JinMouthStretch_Clock.EventFraction_changed TO AnimationAdapter_JinMouthStretch.EventSet_fraction }
+{ Sample JinMouthStretch_Clock.EventFraction_changed TO AnimationAdapter_JinMouthStretch.EventSet_fraction}
+Group7.AddRoute(TimeSensor48.EventFraction_changed, ScalarInterpolator30.EventSet_fraction);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Lower_teeth_MorphInterpolator_JinNasolabialDeepener.FWeight }
+{ Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Lower_teeth_MorphInterpolator_JinNasolabialDeepener.FWeight}
+Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer110.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Tongue_MorphInterpolator_JinNasolabialDeepener.FWeight }
+{ Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Tongue_MorphInterpolator_JinNasolabialDeepener.FWeight}
+Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer1674.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Upper_teeth_MorphInterpolator_JinNasolabialDeepener.FWeight }
+{ Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Upper_teeth_MorphInterpolator_JinNasolabialDeepener.FWeight}
+Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer1712.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinNasolabialDeepener.FWeight }
+{ Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinNasolabialDeepener.FWeight}
+Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer919.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Neck_MorphInterpolator_JinNasolabialDeepener.FWeight }
+{ Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Neck_MorphInterpolator_JinNasolabialDeepener.FWeight}
+Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer995.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinNasolabialDeepener.FWeight }
+{ Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinNasolabialDeepener.FWeight}
+Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer1033.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Left_ear_MorphInterpolator_JinNasolabialDeepener.FWeight }
+{ Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Left_ear_MorphInterpolator_JinNasolabialDeepener.FWeight}
+Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer385.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Mid_forehead_MorphInterpolator_JinNasolabialDeepener.FWeight }
+{ Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Mid_forehead_MorphInterpolator_JinNasolabialDeepener.FWeight}
+Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer843.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Left_forehead_MorphInterpolator_JinNasolabialDeepener.FWeight }
+{ Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Left_forehead_MorphInterpolator_JinNasolabialDeepener.FWeight}
+Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer461.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Glabella_MorphInterpolator_JinNasolabialDeepener.FWeight }
+{ Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Glabella_MorphInterpolator_JinNasolabialDeepener.FWeight}
+Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer233.FWeight);
 end;
 
 procedure InitSingleMenuJinPart146;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinMouthStretch.FWeight }
-{ Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinMouthStretch.FWeight}
-Group7.AddRoute(ScalarInterpolator30.EventValue_changed, HAnimDisplacer1372.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "JinMouthStretch_Clock.EventFraction_changed TO AnimationAdapter_JinMouthStretch.EventSet_fraction }
-{ Sample JinMouthStretch_Clock.EventFraction_changed TO AnimationAdapter_JinMouthStretch.EventSet_fraction}
-Group7.AddRoute(TimeSensor48.EventFraction_changed, ScalarInterpolator30.set_EventSet_fraction);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Lower_teeth_MorphInterpolator_JinNasolabialDeepener.FWeight }
-{ Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Lower_teeth_MorphInterpolator_JinNasolabialDeepener.FWeight}
-Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer110.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Tongue_MorphInterpolator_JinNasolabialDeepener.FWeight }
-{ Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Tongue_MorphInterpolator_JinNasolabialDeepener.FWeight}
-Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer1674.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Upper_teeth_MorphInterpolator_JinNasolabialDeepener.FWeight }
-{ Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Upper_teeth_MorphInterpolator_JinNasolabialDeepener.FWeight}
-Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer1712.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinNasolabialDeepener.FWeight }
-{ Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinNasolabialDeepener.FWeight}
-Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer919.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Neck_MorphInterpolator_JinNasolabialDeepener.FWeight }
-{ Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Neck_MorphInterpolator_JinNasolabialDeepener.FWeight}
-Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer995.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinNasolabialDeepener.FWeight }
-{ Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinNasolabialDeepener.FWeight}
-Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer1033.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Left_ear_MorphInterpolator_JinNasolabialDeepener.FWeight }
-{ Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Left_ear_MorphInterpolator_JinNasolabialDeepener.FWeight}
-Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer385.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Mid_forehead_MorphInterpolator_JinNasolabialDeepener.FWeight }
-{ Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Mid_forehead_MorphInterpolator_JinNasolabialDeepener.FWeight}
-Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer843.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Left_forehead_MorphInterpolator_JinNasolabialDeepener.FWeight }
-{ Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Left_forehead_MorphInterpolator_JinNasolabialDeepener.FWeight}
-Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer461.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Glabella_MorphInterpolator_JinNasolabialDeepener.FWeight }
-{ Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Glabella_MorphInterpolator_JinNasolabialDeepener.FWeight}
-Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer233.set_FWeight);
-{ METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Chin_MorphInterpolator_JinNasolabialDeepener.FWeight }
 { Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Chin_MorphInterpolator_JinNasolabialDeepener.FWeight}
-Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer195.set_FWeight);
+Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer195.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinNasolabialDeepener.FWeight }
 { Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinNasolabialDeepener.FWeight}
-Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer537.set_FWeight);
+Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer537.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinNasolabialDeepener.FWeight }
 { Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinNasolabialDeepener.FWeight}
-Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer157.set_FWeight);
+Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer157.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinNasolabialDeepener.FWeight }
 { Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinNasolabialDeepener.FWeight}
-Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer423.set_FWeight);
+Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer423.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinNasolabialDeepener.FWeight }
 { Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinNasolabialDeepener.FWeight}
-Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer271.set_FWeight);
+Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer271.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Left_temple_MorphInterpolator_JinNasolabialDeepener.FWeight }
 { Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Left_temple_MorphInterpolator_JinNasolabialDeepener.FWeight}
-Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer689.set_FWeight);
+Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer689.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinNasolabialDeepener.FWeight }
 { Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinNasolabialDeepener.FWeight}
-Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer881.set_FWeight);
+Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer881.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Nasal_tip_MorphInterpolator_JinNasolabialDeepener.FWeight }
 { Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Nasal_tip_MorphInterpolator_JinNasolabialDeepener.FWeight}
-Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer957.set_FWeight);
+Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer957.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Left_nostril_MorphInterpolator_JinNasolabialDeepener.FWeight }
 { Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Left_nostril_MorphInterpolator_JinNasolabialDeepener.FWeight}
-Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer613.set_FWeight);
+Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer613.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Left_dorsum_MorphInterpolator_JinNasolabialDeepener.FWeight }
 { Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Left_dorsum_MorphInterpolator_JinNasolabialDeepener.FWeight}
-Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer347.set_FWeight);
+Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer347.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinNasolabialDeepener.FWeight }
 { Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinNasolabialDeepener.FWeight}
-Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer575.set_FWeight);
+Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer575.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Left_cheek_MorphInterpolator_JinNasolabialDeepener.FWeight }
 { Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Left_cheek_MorphInterpolator_JinNasolabialDeepener.FWeight}
-Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer309.set_FWeight);
+Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer309.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinNasolabialDeepener.FWeight }
 { Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinNasolabialDeepener.FWeight}
-Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer803.set_FWeight);
+Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer803.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinNasolabialDeepener.FWeight }
 { Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinNasolabialDeepener.FWeight}
-Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer727.set_FWeight);
+Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer727.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Philtrum_MorphInterpolator_JinNasolabialDeepener.FWeight }
 { Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Philtrum_MorphInterpolator_JinNasolabialDeepener.FWeight}
-Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer1071.set_FWeight);
+Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer1071.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_forehead_MorphInterpolator_JinNasolabialDeepener.FWeight }
 { Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_forehead_MorphInterpolator_JinNasolabialDeepener.FWeight}
-Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer1299.set_FWeight);
+Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer1299.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinNasolabialDeepener.FWeight }
 { Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinNasolabialDeepener.FWeight}
-Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer1261.set_FWeight);
+Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer1261.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinNasolabialDeepener.FWeight }
 { Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinNasolabialDeepener.FWeight}
-Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer765.set_FWeight);
+Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer765.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinNasolabialDeepener.FWeight }
 { Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinNasolabialDeepener.FWeight}
-Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer499.set_FWeight);
+Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer499.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Left_pupil_MorphInterpolator_JinNasolabialDeepener.FWeight }
 { Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Left_pupil_MorphInterpolator_JinNasolabialDeepener.FWeight}
-Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer651.set_FWeight);
+Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer651.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_ear_MorphInterpolator_JinNasolabialDeepener.FWeight }
+{ Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_ear_MorphInterpolator_JinNasolabialDeepener.FWeight}
+Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer1223.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_cheek_MorphInterpolator_JinNasolabialDeepener.FWeight }
+{ Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_cheek_MorphInterpolator_JinNasolabialDeepener.FWeight}
+Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer1147.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_dorsum_MorphInterpolator_JinNasolabialDeepener.FWeight }
+{ Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_dorsum_MorphInterpolator_JinNasolabialDeepener.FWeight}
+Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer1185.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinNasolabialDeepener.FWeight }
+{ Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinNasolabialDeepener.FWeight}
+Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer1109.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinNasolabialDeepener.FWeight }
+{ Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinNasolabialDeepener.FWeight}
+Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer1337.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinNasolabialDeepener.FWeight }
+{ Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinNasolabialDeepener.FWeight}
+Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer1409.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_nostril_MorphInterpolator_JinNasolabialDeepener.FWeight }
+{ Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_nostril_MorphInterpolator_JinNasolabialDeepener.FWeight}
+Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer1447.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_pupil_MorphInterpolator_JinNasolabialDeepener.FWeight }
+{ Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_pupil_MorphInterpolator_JinNasolabialDeepener.FWeight}
+Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer1485.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_temple_MorphInterpolator_JinNasolabialDeepener.FWeight }
+{ Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_temple_MorphInterpolator_JinNasolabialDeepener.FWeight}
+Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer1523.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinNasolabialDeepener.FWeight }
+{ Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinNasolabialDeepener.FWeight}
+Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer1561.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinNasolabialDeepener.FWeight }
+{ Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinNasolabialDeepener.FWeight}
+Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer1599.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinNasolabialDeepener.FWeight }
+{ Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinNasolabialDeepener.FWeight}
+Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer1636.FWeight);
 end;
 
 procedure InitSingleMenuJinPart147;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_ear_MorphInterpolator_JinNasolabialDeepener.FWeight }
-{ Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_ear_MorphInterpolator_JinNasolabialDeepener.FWeight}
-Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer1223.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_cheek_MorphInterpolator_JinNasolabialDeepener.FWeight }
-{ Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_cheek_MorphInterpolator_JinNasolabialDeepener.FWeight}
-Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer1147.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_dorsum_MorphInterpolator_JinNasolabialDeepener.FWeight }
-{ Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_dorsum_MorphInterpolator_JinNasolabialDeepener.FWeight}
-Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer1185.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinNasolabialDeepener.FWeight }
-{ Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinNasolabialDeepener.FWeight}
-Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer1109.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinNasolabialDeepener.FWeight }
-{ Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinNasolabialDeepener.FWeight}
-Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer1337.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinNasolabialDeepener.FWeight }
-{ Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinNasolabialDeepener.FWeight}
-Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer1409.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_nostril_MorphInterpolator_JinNasolabialDeepener.FWeight }
-{ Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_nostril_MorphInterpolator_JinNasolabialDeepener.FWeight}
-Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer1447.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_pupil_MorphInterpolator_JinNasolabialDeepener.FWeight }
-{ Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_pupil_MorphInterpolator_JinNasolabialDeepener.FWeight}
-Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer1485.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_temple_MorphInterpolator_JinNasolabialDeepener.FWeight }
-{ Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_temple_MorphInterpolator_JinNasolabialDeepener.FWeight}
-Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer1523.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinNasolabialDeepener.FWeight }
-{ Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinNasolabialDeepener.FWeight}
-Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer1561.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinNasolabialDeepener.FWeight }
-{ Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinNasolabialDeepener.FWeight}
-Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer1599.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinNasolabialDeepener.FWeight }
-{ Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinNasolabialDeepener.FWeight}
-Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer1636.set_FWeight);
-{ METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinNasolabialDeepener.FWeight }
 { Sample AnimationAdapter_JinNasolabialDeepener.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinNasolabialDeepener.FWeight}
-Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer1373.set_FWeight);
+Group7.AddRoute(ScalarInterpolator31.EventValue_changed, HAnimDisplacer1373.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "JinNasolabialDeepener_Clock.EventFraction_changed TO AnimationAdapter_JinNasolabialDeepener.EventSet_fraction }
 { Sample JinNasolabialDeepener_Clock.EventFraction_changed TO AnimationAdapter_JinNasolabialDeepener.EventSet_fraction}
-Group7.AddRoute(TimeSensor47.EventFraction_changed, ScalarInterpolator31.set_EventSet_fraction);
+Group7.AddRoute(TimeSensor47.EventFraction_changed, ScalarInterpolator31.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Lower_teeth_MorphInterpolator_JinNoseWrinkler.FWeight }
 { Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Lower_teeth_MorphInterpolator_JinNoseWrinkler.FWeight}
-Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer111.set_FWeight);
+Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer111.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Tongue_MorphInterpolator_JinNoseWrinkler.FWeight }
 { Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Tongue_MorphInterpolator_JinNoseWrinkler.FWeight}
-Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer1675.set_FWeight);
+Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer1675.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Upper_teeth_MorphInterpolator_JinNoseWrinkler.FWeight }
 { Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Upper_teeth_MorphInterpolator_JinNoseWrinkler.FWeight}
-Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer1713.set_FWeight);
+Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer1713.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinNoseWrinkler.FWeight }
 { Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinNoseWrinkler.FWeight}
-Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer920.set_FWeight);
+Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer920.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Neck_MorphInterpolator_JinNoseWrinkler.FWeight }
 { Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Neck_MorphInterpolator_JinNoseWrinkler.FWeight}
-Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer996.set_FWeight);
+Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer996.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinNoseWrinkler.FWeight }
 { Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinNoseWrinkler.FWeight}
-Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer1034.set_FWeight);
+Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer1034.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Left_ear_MorphInterpolator_JinNoseWrinkler.FWeight }
 { Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Left_ear_MorphInterpolator_JinNoseWrinkler.FWeight}
-Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer386.set_FWeight);
+Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer386.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Mid_forehead_MorphInterpolator_JinNoseWrinkler.FWeight }
 { Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Mid_forehead_MorphInterpolator_JinNoseWrinkler.FWeight}
-Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer844.set_FWeight);
+Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer844.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Left_forehead_MorphInterpolator_JinNoseWrinkler.FWeight }
 { Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Left_forehead_MorphInterpolator_JinNoseWrinkler.FWeight}
-Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer462.set_FWeight);
+Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer462.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Glabella_MorphInterpolator_JinNoseWrinkler.FWeight }
 { Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Glabella_MorphInterpolator_JinNoseWrinkler.FWeight}
-Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer234.set_FWeight);
+Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer234.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Chin_MorphInterpolator_JinNoseWrinkler.FWeight }
 { Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Chin_MorphInterpolator_JinNoseWrinkler.FWeight}
-Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer196.set_FWeight);
+Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer196.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinNoseWrinkler.FWeight }
 { Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinNoseWrinkler.FWeight}
-Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer538.set_FWeight);
+Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer538.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinNoseWrinkler.FWeight }
 { Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinNoseWrinkler.FWeight}
-Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer158.set_FWeight);
+Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer158.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinNoseWrinkler.FWeight }
 { Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinNoseWrinkler.FWeight}
-Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer424.set_FWeight);
+Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer424.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinNoseWrinkler.FWeight }
 { Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinNoseWrinkler.FWeight}
-Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer272.set_FWeight);
+Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer272.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Left_temple_MorphInterpolator_JinNoseWrinkler.FWeight }
 { Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Left_temple_MorphInterpolator_JinNoseWrinkler.FWeight}
-Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer690.set_FWeight);
+Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer690.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinNoseWrinkler.FWeight }
 { Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinNoseWrinkler.FWeight}
-Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer882.set_FWeight);
+Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer882.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Nasal_tip_MorphInterpolator_JinNoseWrinkler.FWeight }
 { Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Nasal_tip_MorphInterpolator_JinNoseWrinkler.FWeight}
-Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer958.set_FWeight);
+Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer958.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Left_nostril_MorphInterpolator_JinNoseWrinkler.FWeight }
 { Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Left_nostril_MorphInterpolator_JinNoseWrinkler.FWeight}
-Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer614.set_FWeight);
+Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer614.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Left_dorsum_MorphInterpolator_JinNoseWrinkler.FWeight }
+{ Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Left_dorsum_MorphInterpolator_JinNoseWrinkler.FWeight}
+Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer348.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinNoseWrinkler.FWeight }
+{ Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinNoseWrinkler.FWeight}
+Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer576.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Left_cheek_MorphInterpolator_JinNoseWrinkler.FWeight }
+{ Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Left_cheek_MorphInterpolator_JinNoseWrinkler.FWeight}
+Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer310.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinNoseWrinkler.FWeight }
+{ Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinNoseWrinkler.FWeight}
+Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer804.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinNoseWrinkler.FWeight }
+{ Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinNoseWrinkler.FWeight}
+Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer728.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Philtrum_MorphInterpolator_JinNoseWrinkler.FWeight }
+{ Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Philtrum_MorphInterpolator_JinNoseWrinkler.FWeight}
+Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer1072.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Right_forehead_MorphInterpolator_JinNoseWrinkler.FWeight }
+{ Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Right_forehead_MorphInterpolator_JinNoseWrinkler.FWeight}
+Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer1300.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinNoseWrinkler.FWeight }
+{ Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinNoseWrinkler.FWeight}
+Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer1262.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinNoseWrinkler.FWeight }
+{ Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinNoseWrinkler.FWeight}
+Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer766.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinNoseWrinkler.FWeight }
+{ Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinNoseWrinkler.FWeight}
+Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer500.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Left_pupil_MorphInterpolator_JinNoseWrinkler.FWeight }
+{ Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Left_pupil_MorphInterpolator_JinNoseWrinkler.FWeight}
+Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer652.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Right_ear_MorphInterpolator_JinNoseWrinkler.FWeight }
+{ Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Right_ear_MorphInterpolator_JinNoseWrinkler.FWeight}
+Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer1224.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Right_cheek_MorphInterpolator_JinNoseWrinkler.FWeight }
+{ Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Right_cheek_MorphInterpolator_JinNoseWrinkler.FWeight}
+Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer1148.FWeight);
 end;
 
 procedure InitSingleMenuJinPart148;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Left_dorsum_MorphInterpolator_JinNoseWrinkler.FWeight }
-{ Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Left_dorsum_MorphInterpolator_JinNoseWrinkler.FWeight}
-Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer348.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinNoseWrinkler.FWeight }
-{ Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinNoseWrinkler.FWeight}
-Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer576.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Left_cheek_MorphInterpolator_JinNoseWrinkler.FWeight }
-{ Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Left_cheek_MorphInterpolator_JinNoseWrinkler.FWeight}
-Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer310.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinNoseWrinkler.FWeight }
-{ Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinNoseWrinkler.FWeight}
-Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer804.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinNoseWrinkler.FWeight }
-{ Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinNoseWrinkler.FWeight}
-Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer728.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Philtrum_MorphInterpolator_JinNoseWrinkler.FWeight }
-{ Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Philtrum_MorphInterpolator_JinNoseWrinkler.FWeight}
-Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer1072.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Right_forehead_MorphInterpolator_JinNoseWrinkler.FWeight }
-{ Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Right_forehead_MorphInterpolator_JinNoseWrinkler.FWeight}
-Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer1300.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinNoseWrinkler.FWeight }
-{ Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinNoseWrinkler.FWeight}
-Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer1262.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinNoseWrinkler.FWeight }
-{ Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinNoseWrinkler.FWeight}
-Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer766.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinNoseWrinkler.FWeight }
-{ Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinNoseWrinkler.FWeight}
-Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer500.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Left_pupil_MorphInterpolator_JinNoseWrinkler.FWeight }
-{ Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Left_pupil_MorphInterpolator_JinNoseWrinkler.FWeight}
-Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer652.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Right_ear_MorphInterpolator_JinNoseWrinkler.FWeight }
-{ Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Right_ear_MorphInterpolator_JinNoseWrinkler.FWeight}
-Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer1224.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Right_cheek_MorphInterpolator_JinNoseWrinkler.FWeight }
-{ Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Right_cheek_MorphInterpolator_JinNoseWrinkler.FWeight}
-Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer1148.set_FWeight);
-{ METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Right_dorsum_MorphInterpolator_JinNoseWrinkler.FWeight }
 { Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Right_dorsum_MorphInterpolator_JinNoseWrinkler.FWeight}
-Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer1186.set_FWeight);
+Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer1186.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinNoseWrinkler.FWeight }
 { Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinNoseWrinkler.FWeight}
-Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer1110.set_FWeight);
+Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer1110.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinNoseWrinkler.FWeight }
 { Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinNoseWrinkler.FWeight}
-Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer1338.set_FWeight);
+Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer1338.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinNoseWrinkler.FWeight }
 { Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinNoseWrinkler.FWeight}
-Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer1410.set_FWeight);
+Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer1410.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Right_nostril_MorphInterpolator_JinNoseWrinkler.FWeight }
 { Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Right_nostril_MorphInterpolator_JinNoseWrinkler.FWeight}
-Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer1448.set_FWeight);
+Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer1448.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Right_pupil_MorphInterpolator_JinNoseWrinkler.FWeight }
 { Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Right_pupil_MorphInterpolator_JinNoseWrinkler.FWeight}
-Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer1486.set_FWeight);
+Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer1486.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Right_temple_MorphInterpolator_JinNoseWrinkler.FWeight }
 { Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Right_temple_MorphInterpolator_JinNoseWrinkler.FWeight}
-Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer1524.set_FWeight);
+Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer1524.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinNoseWrinkler.FWeight }
 { Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinNoseWrinkler.FWeight}
-Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer1562.set_FWeight);
+Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer1562.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinNoseWrinkler.FWeight }
 { Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinNoseWrinkler.FWeight}
-Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer1600.set_FWeight);
+Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer1600.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinNoseWrinkler.FWeight }
 { Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinNoseWrinkler.FWeight}
-Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer1637.set_FWeight);
+Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer1637.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinNoseWrinkler.FWeight }
 { Sample AnimationAdapter_JinNoseWrinkler.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinNoseWrinkler.FWeight}
-Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer1374.set_FWeight);
+Group7.AddRoute(ScalarInterpolator32.EventValue_changed, HAnimDisplacer1374.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "JinNoseWrinkler_Clock.EventFraction_changed TO AnimationAdapter_JinNoseWrinkler.EventSet_fraction }
 { Sample JinNoseWrinkler_Clock.EventFraction_changed TO AnimationAdapter_JinNoseWrinkler.EventSet_fraction}
-Group7.AddRoute(TimeSensor46.EventFraction_changed, ScalarInterpolator32.set_EventSet_fraction);
+Group7.AddRoute(TimeSensor46.EventFraction_changed, ScalarInterpolator32.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Lower_teeth_MorphInterpolator_JinOuterBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Lower_teeth_MorphInterpolator_JinOuterBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer112.set_FWeight);
+Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer112.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Tongue_MorphInterpolator_JinOuterBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Tongue_MorphInterpolator_JinOuterBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer1676.set_FWeight);
+Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer1676.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Upper_teeth_MorphInterpolator_JinOuterBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Upper_teeth_MorphInterpolator_JinOuterBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer1714.set_FWeight);
+Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer1714.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinOuterBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinOuterBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer921.set_FWeight);
+Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer921.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Neck_MorphInterpolator_JinOuterBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Neck_MorphInterpolator_JinOuterBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer997.set_FWeight);
+Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer997.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinOuterBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinOuterBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer1035.set_FWeight);
+Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer1035.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Left_ear_MorphInterpolator_JinOuterBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Left_ear_MorphInterpolator_JinOuterBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer387.set_FWeight);
+Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer387.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Mid_forehead_MorphInterpolator_JinOuterBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Mid_forehead_MorphInterpolator_JinOuterBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer845.set_FWeight);
+Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer845.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Left_forehead_MorphInterpolator_JinOuterBrowRaiser.FWeight }
+{ Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Left_forehead_MorphInterpolator_JinOuterBrowRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer463.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Glabella_MorphInterpolator_JinOuterBrowRaiser.FWeight }
+{ Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Glabella_MorphInterpolator_JinOuterBrowRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer235.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Chin_MorphInterpolator_JinOuterBrowRaiser.FWeight }
+{ Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Chin_MorphInterpolator_JinOuterBrowRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer197.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinOuterBrowRaiser.FWeight }
+{ Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinOuterBrowRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer539.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinOuterBrowRaiser.FWeight }
+{ Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinOuterBrowRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer159.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinOuterBrowRaiser.FWeight }
+{ Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinOuterBrowRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer425.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinOuterBrowRaiser.FWeight }
+{ Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinOuterBrowRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer273.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Left_temple_MorphInterpolator_JinOuterBrowRaiser.FWeight }
+{ Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Left_temple_MorphInterpolator_JinOuterBrowRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer691.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinOuterBrowRaiser.FWeight }
+{ Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinOuterBrowRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer883.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Nasal_tip_MorphInterpolator_JinOuterBrowRaiser.FWeight }
+{ Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Nasal_tip_MorphInterpolator_JinOuterBrowRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer959.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Left_nostril_MorphInterpolator_JinOuterBrowRaiser.FWeight }
+{ Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Left_nostril_MorphInterpolator_JinOuterBrowRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer615.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Left_dorsum_MorphInterpolator_JinOuterBrowRaiser.FWeight }
+{ Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Left_dorsum_MorphInterpolator_JinOuterBrowRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer349.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinOuterBrowRaiser.FWeight }
+{ Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinOuterBrowRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer577.FWeight);
 end;
 
 procedure InitSingleMenuJinPart149;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Left_forehead_MorphInterpolator_JinOuterBrowRaiser.FWeight }
-{ Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Left_forehead_MorphInterpolator_JinOuterBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer463.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Glabella_MorphInterpolator_JinOuterBrowRaiser.FWeight }
-{ Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Glabella_MorphInterpolator_JinOuterBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer235.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Chin_MorphInterpolator_JinOuterBrowRaiser.FWeight }
-{ Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Chin_MorphInterpolator_JinOuterBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer197.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinOuterBrowRaiser.FWeight }
-{ Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinOuterBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer539.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinOuterBrowRaiser.FWeight }
-{ Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinOuterBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer159.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinOuterBrowRaiser.FWeight }
-{ Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinOuterBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer425.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinOuterBrowRaiser.FWeight }
-{ Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinOuterBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer273.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Left_temple_MorphInterpolator_JinOuterBrowRaiser.FWeight }
-{ Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Left_temple_MorphInterpolator_JinOuterBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer691.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinOuterBrowRaiser.FWeight }
-{ Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinOuterBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer883.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Nasal_tip_MorphInterpolator_JinOuterBrowRaiser.FWeight }
-{ Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Nasal_tip_MorphInterpolator_JinOuterBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer959.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Left_nostril_MorphInterpolator_JinOuterBrowRaiser.FWeight }
-{ Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Left_nostril_MorphInterpolator_JinOuterBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer615.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Left_dorsum_MorphInterpolator_JinOuterBrowRaiser.FWeight }
-{ Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Left_dorsum_MorphInterpolator_JinOuterBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer349.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinOuterBrowRaiser.FWeight }
-{ Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinOuterBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer577.set_FWeight);
-{ METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Left_cheek_MorphInterpolator_JinOuterBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Left_cheek_MorphInterpolator_JinOuterBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer311.set_FWeight);
+Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer311.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinOuterBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinOuterBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer805.set_FWeight);
+Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer805.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinOuterBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinOuterBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer729.set_FWeight);
+Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer729.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Philtrum_MorphInterpolator_JinOuterBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Philtrum_MorphInterpolator_JinOuterBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer1073.set_FWeight);
+Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer1073.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Right_forehead_MorphInterpolator_JinOuterBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Right_forehead_MorphInterpolator_JinOuterBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer1301.set_FWeight);
+Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer1301.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinOuterBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinOuterBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer1263.set_FWeight);
+Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer1263.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinOuterBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinOuterBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer767.set_FWeight);
+Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer767.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinOuterBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinOuterBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer501.set_FWeight);
+Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer501.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Left_pupil_MorphInterpolator_JinOuterBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Left_pupil_MorphInterpolator_JinOuterBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer653.set_FWeight);
+Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer653.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Right_ear_MorphInterpolator_JinOuterBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Right_ear_MorphInterpolator_JinOuterBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer1225.set_FWeight);
+Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer1225.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Right_cheek_MorphInterpolator_JinOuterBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Right_cheek_MorphInterpolator_JinOuterBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer1149.set_FWeight);
+Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer1149.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Right_dorsum_MorphInterpolator_JinOuterBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Right_dorsum_MorphInterpolator_JinOuterBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer1187.set_FWeight);
+Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer1187.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinOuterBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinOuterBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer1111.set_FWeight);
+Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer1111.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinOuterBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinOuterBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer1339.set_FWeight);
+Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer1339.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinOuterBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinOuterBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer1411.set_FWeight);
+Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer1411.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Right_nostril_MorphInterpolator_JinOuterBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Right_nostril_MorphInterpolator_JinOuterBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer1449.set_FWeight);
+Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer1449.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Right_pupil_MorphInterpolator_JinOuterBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Right_pupil_MorphInterpolator_JinOuterBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer1487.set_FWeight);
+Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer1487.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Right_temple_MorphInterpolator_JinOuterBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Right_temple_MorphInterpolator_JinOuterBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer1525.set_FWeight);
+Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer1525.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinOuterBrowRaiser.FWeight }
 { Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinOuterBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer1563.set_FWeight);
+Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer1563.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinOuterBrowRaiser.FWeight }
+{ Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinOuterBrowRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer1601.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinOuterBrowRaiser.FWeight }
+{ Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinOuterBrowRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer1638.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinOuterBrowRaiser.FWeight }
+{ Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinOuterBrowRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer1375.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "JinOuterBrowRaiser_Clock.EventFraction_changed TO AnimationAdapter_JinOuterBrowRaiser.EventSet_fraction }
+{ Sample JinOuterBrowRaiser_Clock.EventFraction_changed TO AnimationAdapter_JinOuterBrowRaiser.EventSet_fraction}
+Group7.AddRoute(TimeSensor45.EventFraction_changed, ScalarInterpolator33.EventSet_fraction);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinSlit.EventValue_changed TO Lower_teeth_MorphInterpolator_JinSlit.FWeight }
+{ Sample AnimationAdapter_JinSlit.EventValue_changed TO Lower_teeth_MorphInterpolator_JinSlit.FWeight}
+Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer113.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinSlit.EventValue_changed TO Tongue_MorphInterpolator_JinSlit.FWeight }
+{ Sample AnimationAdapter_JinSlit.EventValue_changed TO Tongue_MorphInterpolator_JinSlit.FWeight}
+Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer1677.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinSlit.EventValue_changed TO Upper_teeth_MorphInterpolator_JinSlit.FWeight }
+{ Sample AnimationAdapter_JinSlit.EventValue_changed TO Upper_teeth_MorphInterpolator_JinSlit.FWeight}
+Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer1715.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinSlit.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinSlit.FWeight }
+{ Sample AnimationAdapter_JinSlit.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinSlit.FWeight}
+Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer922.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinSlit.EventValue_changed TO Neck_MorphInterpolator_JinSlit.FWeight }
+{ Sample AnimationAdapter_JinSlit.EventValue_changed TO Neck_MorphInterpolator_JinSlit.FWeight}
+Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer998.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinSlit.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinSlit.FWeight }
+{ Sample AnimationAdapter_JinSlit.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinSlit.FWeight}
+Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer1036.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinSlit.EventValue_changed TO Left_ear_MorphInterpolator_JinSlit.FWeight }
+{ Sample AnimationAdapter_JinSlit.EventValue_changed TO Left_ear_MorphInterpolator_JinSlit.FWeight}
+Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer388.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinSlit.EventValue_changed TO Mid_forehead_MorphInterpolator_JinSlit.FWeight }
+{ Sample AnimationAdapter_JinSlit.EventValue_changed TO Mid_forehead_MorphInterpolator_JinSlit.FWeight}
+Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer846.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinSlit.EventValue_changed TO Left_forehead_MorphInterpolator_JinSlit.FWeight }
+{ Sample AnimationAdapter_JinSlit.EventValue_changed TO Left_forehead_MorphInterpolator_JinSlit.FWeight}
+Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer464.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinSlit.EventValue_changed TO Glabella_MorphInterpolator_JinSlit.FWeight }
+{ Sample AnimationAdapter_JinSlit.EventValue_changed TO Glabella_MorphInterpolator_JinSlit.FWeight}
+Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer236.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinSlit.EventValue_changed TO Chin_MorphInterpolator_JinSlit.FWeight }
+{ Sample AnimationAdapter_JinSlit.EventValue_changed TO Chin_MorphInterpolator_JinSlit.FWeight}
+Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer198.FWeight);
 end;
 
 procedure InitSingleMenuJinPart150;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinOuterBrowRaiser.FWeight }
-{ Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinOuterBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer1601.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinOuterBrowRaiser.FWeight }
-{ Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinOuterBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer1638.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinOuterBrowRaiser.FWeight }
-{ Sample AnimationAdapter_JinOuterBrowRaiser.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinOuterBrowRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator33.EventValue_changed, HAnimDisplacer1375.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "JinOuterBrowRaiser_Clock.EventFraction_changed TO AnimationAdapter_JinOuterBrowRaiser.EventSet_fraction }
-{ Sample JinOuterBrowRaiser_Clock.EventFraction_changed TO AnimationAdapter_JinOuterBrowRaiser.EventSet_fraction}
-Group7.AddRoute(TimeSensor45.EventFraction_changed, ScalarInterpolator33.set_EventSet_fraction);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinSlit.EventValue_changed TO Lower_teeth_MorphInterpolator_JinSlit.FWeight }
-{ Sample AnimationAdapter_JinSlit.EventValue_changed TO Lower_teeth_MorphInterpolator_JinSlit.FWeight}
-Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer113.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinSlit.EventValue_changed TO Tongue_MorphInterpolator_JinSlit.FWeight }
-{ Sample AnimationAdapter_JinSlit.EventValue_changed TO Tongue_MorphInterpolator_JinSlit.FWeight}
-Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer1677.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinSlit.EventValue_changed TO Upper_teeth_MorphInterpolator_JinSlit.FWeight }
-{ Sample AnimationAdapter_JinSlit.EventValue_changed TO Upper_teeth_MorphInterpolator_JinSlit.FWeight}
-Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer1715.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinSlit.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinSlit.FWeight }
-{ Sample AnimationAdapter_JinSlit.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinSlit.FWeight}
-Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer922.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinSlit.EventValue_changed TO Neck_MorphInterpolator_JinSlit.FWeight }
-{ Sample AnimationAdapter_JinSlit.EventValue_changed TO Neck_MorphInterpolator_JinSlit.FWeight}
-Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer998.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinSlit.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinSlit.FWeight }
-{ Sample AnimationAdapter_JinSlit.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinSlit.FWeight}
-Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer1036.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinSlit.EventValue_changed TO Left_ear_MorphInterpolator_JinSlit.FWeight }
-{ Sample AnimationAdapter_JinSlit.EventValue_changed TO Left_ear_MorphInterpolator_JinSlit.FWeight}
-Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer388.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinSlit.EventValue_changed TO Mid_forehead_MorphInterpolator_JinSlit.FWeight }
-{ Sample AnimationAdapter_JinSlit.EventValue_changed TO Mid_forehead_MorphInterpolator_JinSlit.FWeight}
-Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer846.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinSlit.EventValue_changed TO Left_forehead_MorphInterpolator_JinSlit.FWeight }
-{ Sample AnimationAdapter_JinSlit.EventValue_changed TO Left_forehead_MorphInterpolator_JinSlit.FWeight}
-Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer464.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinSlit.EventValue_changed TO Glabella_MorphInterpolator_JinSlit.FWeight }
-{ Sample AnimationAdapter_JinSlit.EventValue_changed TO Glabella_MorphInterpolator_JinSlit.FWeight}
-Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer236.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinSlit.EventValue_changed TO Chin_MorphInterpolator_JinSlit.FWeight }
-{ Sample AnimationAdapter_JinSlit.EventValue_changed TO Chin_MorphInterpolator_JinSlit.FWeight}
-Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer198.set_FWeight);
-{ METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinSlit.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinSlit.FWeight }
 { Sample AnimationAdapter_JinSlit.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinSlit.FWeight}
-Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer540.set_FWeight);
+Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer540.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinSlit.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinSlit.FWeight }
 { Sample AnimationAdapter_JinSlit.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinSlit.FWeight}
-Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer160.set_FWeight);
+Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer160.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinSlit.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinSlit.FWeight }
 { Sample AnimationAdapter_JinSlit.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinSlit.FWeight}
-Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer426.set_FWeight);
+Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer426.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinSlit.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinSlit.FWeight }
 { Sample AnimationAdapter_JinSlit.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinSlit.FWeight}
-Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer274.set_FWeight);
+Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer274.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinSlit.EventValue_changed TO Left_temple_MorphInterpolator_JinSlit.FWeight }
 { Sample AnimationAdapter_JinSlit.EventValue_changed TO Left_temple_MorphInterpolator_JinSlit.FWeight}
-Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer692.set_FWeight);
+Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer692.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinSlit.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinSlit.FWeight }
 { Sample AnimationAdapter_JinSlit.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinSlit.FWeight}
-Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer884.set_FWeight);
+Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer884.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinSlit.EventValue_changed TO Nasal_tip_MorphInterpolator_JinSlit.FWeight }
 { Sample AnimationAdapter_JinSlit.EventValue_changed TO Nasal_tip_MorphInterpolator_JinSlit.FWeight}
-Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer960.set_FWeight);
+Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer960.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinSlit.EventValue_changed TO Left_nostril_MorphInterpolator_JinSlit.FWeight }
 { Sample AnimationAdapter_JinSlit.EventValue_changed TO Left_nostril_MorphInterpolator_JinSlit.FWeight}
-Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer616.set_FWeight);
+Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer616.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinSlit.EventValue_changed TO Left_dorsum_MorphInterpolator_JinSlit.FWeight }
 { Sample AnimationAdapter_JinSlit.EventValue_changed TO Left_dorsum_MorphInterpolator_JinSlit.FWeight}
-Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer350.set_FWeight);
+Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer350.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinSlit.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinSlit.FWeight }
 { Sample AnimationAdapter_JinSlit.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinSlit.FWeight}
-Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer578.set_FWeight);
+Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer578.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinSlit.EventValue_changed TO Left_cheek_MorphInterpolator_JinSlit.FWeight }
 { Sample AnimationAdapter_JinSlit.EventValue_changed TO Left_cheek_MorphInterpolator_JinSlit.FWeight}
-Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer312.set_FWeight);
+Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer312.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinSlit.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinSlit.FWeight }
 { Sample AnimationAdapter_JinSlit.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinSlit.FWeight}
-Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer806.set_FWeight);
+Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer806.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinSlit.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinSlit.FWeight }
 { Sample AnimationAdapter_JinSlit.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinSlit.FWeight}
-Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer730.set_FWeight);
+Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer730.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinSlit.EventValue_changed TO Philtrum_MorphInterpolator_JinSlit.FWeight }
 { Sample AnimationAdapter_JinSlit.EventValue_changed TO Philtrum_MorphInterpolator_JinSlit.FWeight}
-Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer1074.set_FWeight);
+Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer1074.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinSlit.EventValue_changed TO Right_forehead_MorphInterpolator_JinSlit.FWeight }
 { Sample AnimationAdapter_JinSlit.EventValue_changed TO Right_forehead_MorphInterpolator_JinSlit.FWeight}
-Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer1302.set_FWeight);
+Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer1302.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinSlit.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinSlit.FWeight }
 { Sample AnimationAdapter_JinSlit.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinSlit.FWeight}
-Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer1264.set_FWeight);
+Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer1264.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinSlit.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinSlit.FWeight }
 { Sample AnimationAdapter_JinSlit.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinSlit.FWeight}
-Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer768.set_FWeight);
+Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer768.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinSlit.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinSlit.FWeight }
 { Sample AnimationAdapter_JinSlit.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinSlit.FWeight}
-Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer502.set_FWeight);
+Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer502.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinSlit.EventValue_changed TO Left_pupil_MorphInterpolator_JinSlit.FWeight }
 { Sample AnimationAdapter_JinSlit.EventValue_changed TO Left_pupil_MorphInterpolator_JinSlit.FWeight}
-Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer654.set_FWeight);
+Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer654.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinSlit.EventValue_changed TO Right_ear_MorphInterpolator_JinSlit.FWeight }
 { Sample AnimationAdapter_JinSlit.EventValue_changed TO Right_ear_MorphInterpolator_JinSlit.FWeight}
-Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer1226.set_FWeight);
+Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer1226.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinSlit.EventValue_changed TO Right_cheek_MorphInterpolator_JinSlit.FWeight }
 { Sample AnimationAdapter_JinSlit.EventValue_changed TO Right_cheek_MorphInterpolator_JinSlit.FWeight}
-Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer1150.set_FWeight);
+Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer1150.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinSlit.EventValue_changed TO Right_dorsum_MorphInterpolator_JinSlit.FWeight }
+{ Sample AnimationAdapter_JinSlit.EventValue_changed TO Right_dorsum_MorphInterpolator_JinSlit.FWeight}
+Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer1188.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinSlit.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinSlit.FWeight }
+{ Sample AnimationAdapter_JinSlit.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinSlit.FWeight}
+Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer1112.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinSlit.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinSlit.FWeight }
+{ Sample AnimationAdapter_JinSlit.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinSlit.FWeight}
+Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer1340.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinSlit.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinSlit.FWeight }
+{ Sample AnimationAdapter_JinSlit.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinSlit.FWeight}
+Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer1412.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinSlit.EventValue_changed TO Right_nostril_MorphInterpolator_JinSlit.FWeight }
+{ Sample AnimationAdapter_JinSlit.EventValue_changed TO Right_nostril_MorphInterpolator_JinSlit.FWeight}
+Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer1450.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinSlit.EventValue_changed TO Right_pupil_MorphInterpolator_JinSlit.FWeight }
+{ Sample AnimationAdapter_JinSlit.EventValue_changed TO Right_pupil_MorphInterpolator_JinSlit.FWeight}
+Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer1488.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinSlit.EventValue_changed TO Right_temple_MorphInterpolator_JinSlit.FWeight }
+{ Sample AnimationAdapter_JinSlit.EventValue_changed TO Right_temple_MorphInterpolator_JinSlit.FWeight}
+Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer1526.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinSlit.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinSlit.FWeight }
+{ Sample AnimationAdapter_JinSlit.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinSlit.FWeight}
+Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer1564.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinSlit.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinSlit.FWeight }
+{ Sample AnimationAdapter_JinSlit.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinSlit.FWeight}
+Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer1602.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinSlit.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinSlit.FWeight }
+{ Sample AnimationAdapter_JinSlit.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinSlit.FWeight}
+Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer1639.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinSlit.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinSlit.FWeight }
+{ Sample AnimationAdapter_JinSlit.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinSlit.FWeight}
+Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer1376.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "JinSlit_Clock.EventFraction_changed TO AnimationAdapter_JinSlit.EventSet_fraction }
+{ Sample JinSlit_Clock.EventFraction_changed TO AnimationAdapter_JinSlit.EventSet_fraction}
+Group7.AddRoute(TimeSensor44.EventFraction_changed, ScalarInterpolator34.EventSet_fraction);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinSquint.EventValue_changed TO Lower_teeth_MorphInterpolator_JinSquint.FWeight }
+{ Sample AnimationAdapter_JinSquint.EventValue_changed TO Lower_teeth_MorphInterpolator_JinSquint.FWeight}
+Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer114.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinSquint.EventValue_changed TO Tongue_MorphInterpolator_JinSquint.FWeight }
+{ Sample AnimationAdapter_JinSquint.EventValue_changed TO Tongue_MorphInterpolator_JinSquint.FWeight}
+Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer1678.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinSquint.EventValue_changed TO Upper_teeth_MorphInterpolator_JinSquint.FWeight }
+{ Sample AnimationAdapter_JinSquint.EventValue_changed TO Upper_teeth_MorphInterpolator_JinSquint.FWeight}
+Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer1716.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinSquint.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinSquint.FWeight }
+{ Sample AnimationAdapter_JinSquint.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinSquint.FWeight}
+Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer923.FWeight);
 end;
 
 procedure InitSingleMenuJinPart151;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinSlit.EventValue_changed TO Right_dorsum_MorphInterpolator_JinSlit.FWeight }
-{ Sample AnimationAdapter_JinSlit.EventValue_changed TO Right_dorsum_MorphInterpolator_JinSlit.FWeight}
-Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer1188.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinSlit.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinSlit.FWeight }
-{ Sample AnimationAdapter_JinSlit.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinSlit.FWeight}
-Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer1112.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinSlit.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinSlit.FWeight }
-{ Sample AnimationAdapter_JinSlit.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinSlit.FWeight}
-Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer1340.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinSlit.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinSlit.FWeight }
-{ Sample AnimationAdapter_JinSlit.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinSlit.FWeight}
-Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer1412.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinSlit.EventValue_changed TO Right_nostril_MorphInterpolator_JinSlit.FWeight }
-{ Sample AnimationAdapter_JinSlit.EventValue_changed TO Right_nostril_MorphInterpolator_JinSlit.FWeight}
-Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer1450.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinSlit.EventValue_changed TO Right_pupil_MorphInterpolator_JinSlit.FWeight }
-{ Sample AnimationAdapter_JinSlit.EventValue_changed TO Right_pupil_MorphInterpolator_JinSlit.FWeight}
-Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer1488.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinSlit.EventValue_changed TO Right_temple_MorphInterpolator_JinSlit.FWeight }
-{ Sample AnimationAdapter_JinSlit.EventValue_changed TO Right_temple_MorphInterpolator_JinSlit.FWeight}
-Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer1526.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinSlit.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinSlit.FWeight }
-{ Sample AnimationAdapter_JinSlit.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinSlit.FWeight}
-Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer1564.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinSlit.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinSlit.FWeight }
-{ Sample AnimationAdapter_JinSlit.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinSlit.FWeight}
-Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer1602.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinSlit.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinSlit.FWeight }
-{ Sample AnimationAdapter_JinSlit.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinSlit.FWeight}
-Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer1639.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinSlit.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinSlit.FWeight }
-{ Sample AnimationAdapter_JinSlit.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinSlit.FWeight}
-Group7.AddRoute(ScalarInterpolator34.EventValue_changed, HAnimDisplacer1376.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "JinSlit_Clock.EventFraction_changed TO AnimationAdapter_JinSlit.EventSet_fraction }
-{ Sample JinSlit_Clock.EventFraction_changed TO AnimationAdapter_JinSlit.EventSet_fraction}
-Group7.AddRoute(TimeSensor44.EventFraction_changed, ScalarInterpolator34.set_EventSet_fraction);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinSquint.EventValue_changed TO Lower_teeth_MorphInterpolator_JinSquint.FWeight }
-{ Sample AnimationAdapter_JinSquint.EventValue_changed TO Lower_teeth_MorphInterpolator_JinSquint.FWeight}
-Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer114.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinSquint.EventValue_changed TO Tongue_MorphInterpolator_JinSquint.FWeight }
-{ Sample AnimationAdapter_JinSquint.EventValue_changed TO Tongue_MorphInterpolator_JinSquint.FWeight}
-Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer1678.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinSquint.EventValue_changed TO Upper_teeth_MorphInterpolator_JinSquint.FWeight }
-{ Sample AnimationAdapter_JinSquint.EventValue_changed TO Upper_teeth_MorphInterpolator_JinSquint.FWeight}
-Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer1716.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinSquint.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinSquint.FWeight }
-{ Sample AnimationAdapter_JinSquint.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinSquint.FWeight}
-Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer923.set_FWeight);
-{ METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinSquint.EventValue_changed TO Neck_MorphInterpolator_JinSquint.FWeight }
 { Sample AnimationAdapter_JinSquint.EventValue_changed TO Neck_MorphInterpolator_JinSquint.FWeight}
-Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer999.set_FWeight);
+Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer999.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinSquint.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinSquint.FWeight }
 { Sample AnimationAdapter_JinSquint.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinSquint.FWeight}
-Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer1037.set_FWeight);
+Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer1037.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinSquint.EventValue_changed TO Left_ear_MorphInterpolator_JinSquint.FWeight }
 { Sample AnimationAdapter_JinSquint.EventValue_changed TO Left_ear_MorphInterpolator_JinSquint.FWeight}
-Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer389.set_FWeight);
+Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer389.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinSquint.EventValue_changed TO Mid_forehead_MorphInterpolator_JinSquint.FWeight }
 { Sample AnimationAdapter_JinSquint.EventValue_changed TO Mid_forehead_MorphInterpolator_JinSquint.FWeight}
-Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer847.set_FWeight);
+Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer847.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinSquint.EventValue_changed TO Left_forehead_MorphInterpolator_JinSquint.FWeight }
 { Sample AnimationAdapter_JinSquint.EventValue_changed TO Left_forehead_MorphInterpolator_JinSquint.FWeight}
-Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer465.set_FWeight);
+Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer465.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinSquint.EventValue_changed TO Glabella_MorphInterpolator_JinSquint.FWeight }
 { Sample AnimationAdapter_JinSquint.EventValue_changed TO Glabella_MorphInterpolator_JinSquint.FWeight}
-Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer237.set_FWeight);
+Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer237.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinSquint.EventValue_changed TO Chin_MorphInterpolator_JinSquint.FWeight }
 { Sample AnimationAdapter_JinSquint.EventValue_changed TO Chin_MorphInterpolator_JinSquint.FWeight}
-Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer199.set_FWeight);
+Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer199.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinSquint.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinSquint.FWeight }
 { Sample AnimationAdapter_JinSquint.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinSquint.FWeight}
-Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer541.set_FWeight);
+Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer541.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinSquint.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinSquint.FWeight }
 { Sample AnimationAdapter_JinSquint.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinSquint.FWeight}
-Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer161.set_FWeight);
+Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer161.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinSquint.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinSquint.FWeight }
 { Sample AnimationAdapter_JinSquint.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinSquint.FWeight}
-Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer427.set_FWeight);
+Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer427.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinSquint.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinSquint.FWeight }
 { Sample AnimationAdapter_JinSquint.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinSquint.FWeight}
-Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer275.set_FWeight);
+Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer275.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinSquint.EventValue_changed TO Left_temple_MorphInterpolator_JinSquint.FWeight }
 { Sample AnimationAdapter_JinSquint.EventValue_changed TO Left_temple_MorphInterpolator_JinSquint.FWeight}
-Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer693.set_FWeight);
+Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer693.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinSquint.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinSquint.FWeight }
 { Sample AnimationAdapter_JinSquint.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinSquint.FWeight}
-Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer885.set_FWeight);
+Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer885.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinSquint.EventValue_changed TO Nasal_tip_MorphInterpolator_JinSquint.FWeight }
 { Sample AnimationAdapter_JinSquint.EventValue_changed TO Nasal_tip_MorphInterpolator_JinSquint.FWeight}
-Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer961.set_FWeight);
+Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer961.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinSquint.EventValue_changed TO Left_nostril_MorphInterpolator_JinSquint.FWeight }
 { Sample AnimationAdapter_JinSquint.EventValue_changed TO Left_nostril_MorphInterpolator_JinSquint.FWeight}
-Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer617.set_FWeight);
+Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer617.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinSquint.EventValue_changed TO Left_dorsum_MorphInterpolator_JinSquint.FWeight }
 { Sample AnimationAdapter_JinSquint.EventValue_changed TO Left_dorsum_MorphInterpolator_JinSquint.FWeight}
-Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer351.set_FWeight);
+Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer351.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinSquint.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinSquint.FWeight }
 { Sample AnimationAdapter_JinSquint.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinSquint.FWeight}
-Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer579.set_FWeight);
+Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer579.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinSquint.EventValue_changed TO Left_cheek_MorphInterpolator_JinSquint.FWeight }
 { Sample AnimationAdapter_JinSquint.EventValue_changed TO Left_cheek_MorphInterpolator_JinSquint.FWeight}
-Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer313.set_FWeight);
+Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer313.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinSquint.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinSquint.FWeight }
 { Sample AnimationAdapter_JinSquint.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinSquint.FWeight}
-Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer807.set_FWeight);
+Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer807.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinSquint.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinSquint.FWeight }
 { Sample AnimationAdapter_JinSquint.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinSquint.FWeight}
-Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer731.set_FWeight);
+Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer731.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinSquint.EventValue_changed TO Philtrum_MorphInterpolator_JinSquint.FWeight }
+{ Sample AnimationAdapter_JinSquint.EventValue_changed TO Philtrum_MorphInterpolator_JinSquint.FWeight}
+Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer1075.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinSquint.EventValue_changed TO Right_forehead_MorphInterpolator_JinSquint.FWeight }
+{ Sample AnimationAdapter_JinSquint.EventValue_changed TO Right_forehead_MorphInterpolator_JinSquint.FWeight}
+Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer1303.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinSquint.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinSquint.FWeight }
+{ Sample AnimationAdapter_JinSquint.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinSquint.FWeight}
+Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer1265.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinSquint.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinSquint.FWeight }
+{ Sample AnimationAdapter_JinSquint.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinSquint.FWeight}
+Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer769.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinSquint.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinSquint.FWeight }
+{ Sample AnimationAdapter_JinSquint.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinSquint.FWeight}
+Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer503.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinSquint.EventValue_changed TO Left_pupil_MorphInterpolator_JinSquint.FWeight }
+{ Sample AnimationAdapter_JinSquint.EventValue_changed TO Left_pupil_MorphInterpolator_JinSquint.FWeight}
+Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer655.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinSquint.EventValue_changed TO Right_ear_MorphInterpolator_JinSquint.FWeight }
+{ Sample AnimationAdapter_JinSquint.EventValue_changed TO Right_ear_MorphInterpolator_JinSquint.FWeight}
+Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer1227.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinSquint.EventValue_changed TO Right_cheek_MorphInterpolator_JinSquint.FWeight }
+{ Sample AnimationAdapter_JinSquint.EventValue_changed TO Right_cheek_MorphInterpolator_JinSquint.FWeight}
+Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer1151.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinSquint.EventValue_changed TO Right_dorsum_MorphInterpolator_JinSquint.FWeight }
+{ Sample AnimationAdapter_JinSquint.EventValue_changed TO Right_dorsum_MorphInterpolator_JinSquint.FWeight}
+Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer1189.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinSquint.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinSquint.FWeight }
+{ Sample AnimationAdapter_JinSquint.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinSquint.FWeight}
+Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer1113.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinSquint.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinSquint.FWeight }
+{ Sample AnimationAdapter_JinSquint.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinSquint.FWeight}
+Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer1341.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinSquint.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinSquint.FWeight }
+{ Sample AnimationAdapter_JinSquint.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinSquint.FWeight}
+Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer1413.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinSquint.EventValue_changed TO Right_nostril_MorphInterpolator_JinSquint.FWeight }
+{ Sample AnimationAdapter_JinSquint.EventValue_changed TO Right_nostril_MorphInterpolator_JinSquint.FWeight}
+Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer1451.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinSquint.EventValue_changed TO Right_pupil_MorphInterpolator_JinSquint.FWeight }
+{ Sample AnimationAdapter_JinSquint.EventValue_changed TO Right_pupil_MorphInterpolator_JinSquint.FWeight}
+Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer1489.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinSquint.EventValue_changed TO Right_temple_MorphInterpolator_JinSquint.FWeight }
+{ Sample AnimationAdapter_JinSquint.EventValue_changed TO Right_temple_MorphInterpolator_JinSquint.FWeight}
+Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer1527.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinSquint.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinSquint.FWeight }
+{ Sample AnimationAdapter_JinSquint.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinSquint.FWeight}
+Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer1565.FWeight);
 end;
 
 procedure InitSingleMenuJinPart152;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinSquint.EventValue_changed TO Philtrum_MorphInterpolator_JinSquint.FWeight }
-{ Sample AnimationAdapter_JinSquint.EventValue_changed TO Philtrum_MorphInterpolator_JinSquint.FWeight}
-Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer1075.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinSquint.EventValue_changed TO Right_forehead_MorphInterpolator_JinSquint.FWeight }
-{ Sample AnimationAdapter_JinSquint.EventValue_changed TO Right_forehead_MorphInterpolator_JinSquint.FWeight}
-Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer1303.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinSquint.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinSquint.FWeight }
-{ Sample AnimationAdapter_JinSquint.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinSquint.FWeight}
-Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer1265.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinSquint.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinSquint.FWeight }
-{ Sample AnimationAdapter_JinSquint.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinSquint.FWeight}
-Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer769.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinSquint.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinSquint.FWeight }
-{ Sample AnimationAdapter_JinSquint.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinSquint.FWeight}
-Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer503.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinSquint.EventValue_changed TO Left_pupil_MorphInterpolator_JinSquint.FWeight }
-{ Sample AnimationAdapter_JinSquint.EventValue_changed TO Left_pupil_MorphInterpolator_JinSquint.FWeight}
-Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer655.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinSquint.EventValue_changed TO Right_ear_MorphInterpolator_JinSquint.FWeight }
-{ Sample AnimationAdapter_JinSquint.EventValue_changed TO Right_ear_MorphInterpolator_JinSquint.FWeight}
-Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer1227.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinSquint.EventValue_changed TO Right_cheek_MorphInterpolator_JinSquint.FWeight }
-{ Sample AnimationAdapter_JinSquint.EventValue_changed TO Right_cheek_MorphInterpolator_JinSquint.FWeight}
-Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer1151.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinSquint.EventValue_changed TO Right_dorsum_MorphInterpolator_JinSquint.FWeight }
-{ Sample AnimationAdapter_JinSquint.EventValue_changed TO Right_dorsum_MorphInterpolator_JinSquint.FWeight}
-Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer1189.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinSquint.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinSquint.FWeight }
-{ Sample AnimationAdapter_JinSquint.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinSquint.FWeight}
-Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer1113.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinSquint.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinSquint.FWeight }
-{ Sample AnimationAdapter_JinSquint.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinSquint.FWeight}
-Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer1341.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinSquint.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinSquint.FWeight }
-{ Sample AnimationAdapter_JinSquint.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinSquint.FWeight}
-Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer1413.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinSquint.EventValue_changed TO Right_nostril_MorphInterpolator_JinSquint.FWeight }
-{ Sample AnimationAdapter_JinSquint.EventValue_changed TO Right_nostril_MorphInterpolator_JinSquint.FWeight}
-Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer1451.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinSquint.EventValue_changed TO Right_pupil_MorphInterpolator_JinSquint.FWeight }
-{ Sample AnimationAdapter_JinSquint.EventValue_changed TO Right_pupil_MorphInterpolator_JinSquint.FWeight}
-Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer1489.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinSquint.EventValue_changed TO Right_temple_MorphInterpolator_JinSquint.FWeight }
-{ Sample AnimationAdapter_JinSquint.EventValue_changed TO Right_temple_MorphInterpolator_JinSquint.FWeight}
-Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer1527.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinSquint.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinSquint.FWeight }
-{ Sample AnimationAdapter_JinSquint.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinSquint.FWeight}
-Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer1565.set_FWeight);
-{ METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinSquint.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinSquint.FWeight }
 { Sample AnimationAdapter_JinSquint.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinSquint.FWeight}
-Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer1603.set_FWeight);
+Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer1603.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinSquint.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinSquint.FWeight }
 { Sample AnimationAdapter_JinSquint.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinSquint.FWeight}
-Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer1640.set_FWeight);
+Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer1640.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinSquint.EventValue_changed TO __2_MorphInterpolator_JinSquint.FWeight }
 { Sample AnimationAdapter_JinSquint.EventValue_changed TO __2_MorphInterpolator_JinSquint.FWeight}
-Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer123.set_FWeight);
+Group7.AddRoute(ScalarInterpolator35.EventValue_changed, HAnimDisplacer123.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "JinSquint_Clock.EventFraction_changed TO AnimationAdapter_JinSquint.EventSet_fraction }
 { Sample JinSquint_Clock.EventFraction_changed TO AnimationAdapter_JinSquint.EventSet_fraction}
-Group7.AddRoute(TimeSensor43.EventFraction_changed, ScalarInterpolator35.set_EventSet_fraction);
+Group7.AddRoute(TimeSensor43.EventFraction_changed, ScalarInterpolator35.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Lower_teeth_MorphInterpolator_JinUpperLidRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Lower_teeth_MorphInterpolator_JinUpperLidRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer115.set_FWeight);
+Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer115.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Tongue_MorphInterpolator_JinUpperLidRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Tongue_MorphInterpolator_JinUpperLidRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer1679.set_FWeight);
+Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer1679.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Upper_teeth_MorphInterpolator_JinUpperLidRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Upper_teeth_MorphInterpolator_JinUpperLidRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer1717.set_FWeight);
+Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer1717.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinUpperLidRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinUpperLidRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer924.set_FWeight);
+Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer924.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Neck_MorphInterpolator_JinUpperLidRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Neck_MorphInterpolator_JinUpperLidRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer1000.set_FWeight);
+Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer1000.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinUpperLidRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinUpperLidRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer1038.set_FWeight);
+Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer1038.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_ear_MorphInterpolator_JinUpperLidRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_ear_MorphInterpolator_JinUpperLidRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer390.set_FWeight);
+Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer390.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Mid_forehead_MorphInterpolator_JinUpperLidRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Mid_forehead_MorphInterpolator_JinUpperLidRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer848.set_FWeight);
+Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer848.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_forehead_MorphInterpolator_JinUpperLidRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_forehead_MorphInterpolator_JinUpperLidRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer466.set_FWeight);
+Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer466.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Glabella_MorphInterpolator_JinUpperLidRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Glabella_MorphInterpolator_JinUpperLidRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer238.set_FWeight);
+Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer238.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Chin_MorphInterpolator_JinUpperLidRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Chin_MorphInterpolator_JinUpperLidRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer200.set_FWeight);
+Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer200.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinUpperLidRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinUpperLidRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer542.set_FWeight);
+Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer542.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinUpperLidRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinUpperLidRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer162.set_FWeight);
+Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer162.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinUpperLidRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinUpperLidRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer428.set_FWeight);
+Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer428.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinUpperLidRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinUpperLidRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer276.set_FWeight);
+Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer276.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_temple_MorphInterpolator_JinUpperLidRaiser.FWeight }
+{ Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_temple_MorphInterpolator_JinUpperLidRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer694.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinUpperLidRaiser.FWeight }
+{ Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinUpperLidRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer886.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Nasal_tip_MorphInterpolator_JinUpperLidRaiser.FWeight }
+{ Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Nasal_tip_MorphInterpolator_JinUpperLidRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer962.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_nostril_MorphInterpolator_JinUpperLidRaiser.FWeight }
+{ Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_nostril_MorphInterpolator_JinUpperLidRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer618.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_dorsum_MorphInterpolator_JinUpperLidRaiser.FWeight }
+{ Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_dorsum_MorphInterpolator_JinUpperLidRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer352.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinUpperLidRaiser.FWeight }
+{ Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinUpperLidRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer580.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_cheek_MorphInterpolator_JinUpperLidRaiser.FWeight }
+{ Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_cheek_MorphInterpolator_JinUpperLidRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer314.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinUpperLidRaiser.FWeight }
+{ Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinUpperLidRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer808.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinUpperLidRaiser.FWeight }
+{ Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinUpperLidRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer732.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Philtrum_MorphInterpolator_JinUpperLidRaiser.FWeight }
+{ Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Philtrum_MorphInterpolator_JinUpperLidRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer1076.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Right_forehead_MorphInterpolator_JinUpperLidRaiser.FWeight }
+{ Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Right_forehead_MorphInterpolator_JinUpperLidRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer1304.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinUpperLidRaiser.FWeight }
+{ Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinUpperLidRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer1266.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinUpperLidRaiser.FWeight }
+{ Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinUpperLidRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer770.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinUpperLidRaiser.FWeight }
+{ Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinUpperLidRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer504.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_pupil_MorphInterpolator_JinUpperLidRaiser.FWeight }
+{ Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_pupil_MorphInterpolator_JinUpperLidRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer656.FWeight);
 end;
 
 procedure InitSingleMenuJinPart153;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_temple_MorphInterpolator_JinUpperLidRaiser.FWeight }
-{ Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_temple_MorphInterpolator_JinUpperLidRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer694.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinUpperLidRaiser.FWeight }
-{ Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinUpperLidRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer886.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Nasal_tip_MorphInterpolator_JinUpperLidRaiser.FWeight }
-{ Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Nasal_tip_MorphInterpolator_JinUpperLidRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer962.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_nostril_MorphInterpolator_JinUpperLidRaiser.FWeight }
-{ Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_nostril_MorphInterpolator_JinUpperLidRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer618.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_dorsum_MorphInterpolator_JinUpperLidRaiser.FWeight }
-{ Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_dorsum_MorphInterpolator_JinUpperLidRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer352.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinUpperLidRaiser.FWeight }
-{ Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinUpperLidRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer580.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_cheek_MorphInterpolator_JinUpperLidRaiser.FWeight }
-{ Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_cheek_MorphInterpolator_JinUpperLidRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer314.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinUpperLidRaiser.FWeight }
-{ Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinUpperLidRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer808.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinUpperLidRaiser.FWeight }
-{ Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinUpperLidRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer732.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Philtrum_MorphInterpolator_JinUpperLidRaiser.FWeight }
-{ Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Philtrum_MorphInterpolator_JinUpperLidRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer1076.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Right_forehead_MorphInterpolator_JinUpperLidRaiser.FWeight }
-{ Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Right_forehead_MorphInterpolator_JinUpperLidRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer1304.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinUpperLidRaiser.FWeight }
-{ Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinUpperLidRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer1266.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinUpperLidRaiser.FWeight }
-{ Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinUpperLidRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer770.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinUpperLidRaiser.FWeight }
-{ Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinUpperLidRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer504.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_pupil_MorphInterpolator_JinUpperLidRaiser.FWeight }
-{ Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Left_pupil_MorphInterpolator_JinUpperLidRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer656.set_FWeight);
-{ METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Right_ear_MorphInterpolator_JinUpperLidRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Right_ear_MorphInterpolator_JinUpperLidRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer1228.set_FWeight);
+Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer1228.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Right_cheek_MorphInterpolator_JinUpperLidRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Right_cheek_MorphInterpolator_JinUpperLidRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer1152.set_FWeight);
+Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer1152.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Right_dorsum_MorphInterpolator_JinUpperLidRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Right_dorsum_MorphInterpolator_JinUpperLidRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer1190.set_FWeight);
+Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer1190.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinUpperLidRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinUpperLidRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer1114.set_FWeight);
+Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer1114.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinUpperLidRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinUpperLidRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer1342.set_FWeight);
+Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer1342.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinUpperLidRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinUpperLidRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer1414.set_FWeight);
+Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer1414.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Right_nostril_MorphInterpolator_JinUpperLidRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Right_nostril_MorphInterpolator_JinUpperLidRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer1452.set_FWeight);
+Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer1452.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Right_pupil_MorphInterpolator_JinUpperLidRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Right_pupil_MorphInterpolator_JinUpperLidRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer1490.set_FWeight);
+Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer1490.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Right_temple_MorphInterpolator_JinUpperLidRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Right_temple_MorphInterpolator_JinUpperLidRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer1528.set_FWeight);
+Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer1528.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinUpperLidRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinUpperLidRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer1566.set_FWeight);
+Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer1566.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinUpperLidRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinUpperLidRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer1604.set_FWeight);
+Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer1604.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinUpperLidRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinUpperLidRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer1641.set_FWeight);
+Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer1641.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinUpperLidRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLidRaiser.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinUpperLidRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer1377.set_FWeight);
+Group7.AddRoute(ScalarInterpolator36.EventValue_changed, HAnimDisplacer1377.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "JinUpperLidRaiser_Clock.EventFraction_changed TO AnimationAdapter_JinUpperLidRaiser.EventSet_fraction }
 { Sample JinUpperLidRaiser_Clock.EventFraction_changed TO AnimationAdapter_JinUpperLidRaiser.EventSet_fraction}
-Group7.AddRoute(TimeSensor42.EventFraction_changed, ScalarInterpolator36.set_EventSet_fraction);
+Group7.AddRoute(TimeSensor42.EventFraction_changed, ScalarInterpolator36.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Lower_teeth_MorphInterpolator_JinUpperLipRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Lower_teeth_MorphInterpolator_JinUpperLipRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer116.set_FWeight);
+Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer116.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Tongue_MorphInterpolator_JinUpperLipRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Tongue_MorphInterpolator_JinUpperLipRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer1680.set_FWeight);
+Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer1680.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Upper_teeth_MorphInterpolator_JinUpperLipRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Upper_teeth_MorphInterpolator_JinUpperLipRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer1718.set_FWeight);
+Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer1718.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinUpperLipRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinUpperLipRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer925.set_FWeight);
+Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer925.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Neck_MorphInterpolator_JinUpperLipRaiser.FWeight }
+{ Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Neck_MorphInterpolator_JinUpperLipRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer1001.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinUpperLipRaiser.FWeight }
+{ Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinUpperLipRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer1039.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Left_ear_MorphInterpolator_JinUpperLipRaiser.FWeight }
+{ Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Left_ear_MorphInterpolator_JinUpperLipRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer391.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Mid_forehead_MorphInterpolator_JinUpperLipRaiser.FWeight }
+{ Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Mid_forehead_MorphInterpolator_JinUpperLipRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer849.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Left_forehead_MorphInterpolator_JinUpperLipRaiser.FWeight }
+{ Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Left_forehead_MorphInterpolator_JinUpperLipRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer467.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Glabella_MorphInterpolator_JinUpperLipRaiser.FWeight }
+{ Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Glabella_MorphInterpolator_JinUpperLipRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer239.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Chin_MorphInterpolator_JinUpperLipRaiser.FWeight }
+{ Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Chin_MorphInterpolator_JinUpperLipRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer201.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinUpperLipRaiser.FWeight }
+{ Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinUpperLipRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer543.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinUpperLipRaiser.FWeight }
+{ Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinUpperLipRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer163.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinUpperLipRaiser.FWeight }
+{ Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinUpperLipRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer429.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinUpperLipRaiser.FWeight }
+{ Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinUpperLipRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer277.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Left_temple_MorphInterpolator_JinUpperLipRaiser.FWeight }
+{ Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Left_temple_MorphInterpolator_JinUpperLipRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer695.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinUpperLipRaiser.FWeight }
+{ Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinUpperLipRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer887.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Nasal_tip_MorphInterpolator_JinUpperLipRaiser.FWeight }
+{ Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Nasal_tip_MorphInterpolator_JinUpperLipRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer963.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Left_nostril_MorphInterpolator_JinUpperLipRaiser.FWeight }
+{ Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Left_nostril_MorphInterpolator_JinUpperLipRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer619.FWeight);
 end;
 
 procedure InitSingleMenuJinPart154;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Neck_MorphInterpolator_JinUpperLipRaiser.FWeight }
-{ Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Neck_MorphInterpolator_JinUpperLipRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer1001.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinUpperLipRaiser.FWeight }
-{ Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinUpperLipRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer1039.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Left_ear_MorphInterpolator_JinUpperLipRaiser.FWeight }
-{ Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Left_ear_MorphInterpolator_JinUpperLipRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer391.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Mid_forehead_MorphInterpolator_JinUpperLipRaiser.FWeight }
-{ Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Mid_forehead_MorphInterpolator_JinUpperLipRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer849.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Left_forehead_MorphInterpolator_JinUpperLipRaiser.FWeight }
-{ Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Left_forehead_MorphInterpolator_JinUpperLipRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer467.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Glabella_MorphInterpolator_JinUpperLipRaiser.FWeight }
-{ Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Glabella_MorphInterpolator_JinUpperLipRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer239.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Chin_MorphInterpolator_JinUpperLipRaiser.FWeight }
-{ Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Chin_MorphInterpolator_JinUpperLipRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer201.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinUpperLipRaiser.FWeight }
-{ Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinUpperLipRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer543.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinUpperLipRaiser.FWeight }
-{ Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinUpperLipRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer163.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinUpperLipRaiser.FWeight }
-{ Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinUpperLipRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer429.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinUpperLipRaiser.FWeight }
-{ Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinUpperLipRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer277.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Left_temple_MorphInterpolator_JinUpperLipRaiser.FWeight }
-{ Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Left_temple_MorphInterpolator_JinUpperLipRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer695.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinUpperLipRaiser.FWeight }
-{ Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinUpperLipRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer887.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Nasal_tip_MorphInterpolator_JinUpperLipRaiser.FWeight }
-{ Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Nasal_tip_MorphInterpolator_JinUpperLipRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer963.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Left_nostril_MorphInterpolator_JinUpperLipRaiser.FWeight }
-{ Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Left_nostril_MorphInterpolator_JinUpperLipRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer619.set_FWeight);
-{ METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Left_dorsum_MorphInterpolator_JinUpperLipRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Left_dorsum_MorphInterpolator_JinUpperLipRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer353.set_FWeight);
+Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer353.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinUpperLipRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinUpperLipRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer581.set_FWeight);
+Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer581.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Left_cheek_MorphInterpolator_JinUpperLipRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Left_cheek_MorphInterpolator_JinUpperLipRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer315.set_FWeight);
+Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer315.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinUpperLipRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinUpperLipRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer809.set_FWeight);
+Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer809.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinUpperLipRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinUpperLipRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer733.set_FWeight);
+Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer733.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Philtrum_MorphInterpolator_JinUpperLipRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Philtrum_MorphInterpolator_JinUpperLipRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer1077.set_FWeight);
+Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer1077.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Right_forehead_MorphInterpolator_JinUpperLipRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Right_forehead_MorphInterpolator_JinUpperLipRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer1305.set_FWeight);
+Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer1305.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinUpperLipRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinUpperLipRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer1267.set_FWeight);
+Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer1267.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinUpperLipRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinUpperLipRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer771.set_FWeight);
+Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer771.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinUpperLipRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinUpperLipRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer505.set_FWeight);
+Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer505.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Left_pupil_MorphInterpolator_JinUpperLipRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Left_pupil_MorphInterpolator_JinUpperLipRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer657.set_FWeight);
+Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer657.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Right_ear_MorphInterpolator_JinUpperLipRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Right_ear_MorphInterpolator_JinUpperLipRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer1229.set_FWeight);
+Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer1229.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Right_cheek_MorphInterpolator_JinUpperLipRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Right_cheek_MorphInterpolator_JinUpperLipRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer1153.set_FWeight);
+Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer1153.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Right_dorsum_MorphInterpolator_JinUpperLipRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Right_dorsum_MorphInterpolator_JinUpperLipRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer1191.set_FWeight);
+Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer1191.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinUpperLipRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinUpperLipRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer1115.set_FWeight);
+Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer1115.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinUpperLipRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinUpperLipRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer1343.set_FWeight);
+Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer1343.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinUpperLipRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinUpperLipRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer1415.set_FWeight);
+Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer1415.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Right_nostril_MorphInterpolator_JinUpperLipRaiser.FWeight }
 { Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Right_nostril_MorphInterpolator_JinUpperLipRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer1453.set_FWeight);
+Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer1453.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Right_pupil_MorphInterpolator_JinUpperLipRaiser.FWeight }
+{ Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Right_pupil_MorphInterpolator_JinUpperLipRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer1491.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Right_temple_MorphInterpolator_JinUpperLipRaiser.FWeight }
+{ Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Right_temple_MorphInterpolator_JinUpperLipRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer1529.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinUpperLipRaiser.FWeight }
+{ Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinUpperLipRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer1567.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinUpperLipRaiser.FWeight }
+{ Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinUpperLipRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer1605.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinUpperLipRaiser.FWeight }
+{ Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinUpperLipRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer1642.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinUpperLipRaiser.FWeight }
+{ Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinUpperLipRaiser.FWeight}
+Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer1378.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "JinUpperLipRaiser_Clock.EventFraction_changed TO AnimationAdapter_JinUpperLipRaiser.EventSet_fraction }
+{ Sample JinUpperLipRaiser_Clock.EventFraction_changed TO AnimationAdapter_JinUpperLipRaiser.EventSet_fraction}
+Group7.AddRoute(TimeSensor41.EventFraction_changed, ScalarInterpolator37.EventSet_fraction);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinWink.EventValue_changed TO Lower_teeth_MorphInterpolator_JinWink.FWeight }
+{ Sample AnimationAdapter_JinWink.EventValue_changed TO Lower_teeth_MorphInterpolator_JinWink.FWeight}
+Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer117.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinWink.EventValue_changed TO Tongue_MorphInterpolator_JinWink.FWeight }
+{ Sample AnimationAdapter_JinWink.EventValue_changed TO Tongue_MorphInterpolator_JinWink.FWeight}
+Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer1681.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinWink.EventValue_changed TO Upper_teeth_MorphInterpolator_JinWink.FWeight }
+{ Sample AnimationAdapter_JinWink.EventValue_changed TO Upper_teeth_MorphInterpolator_JinWink.FWeight}
+Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer1719.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinWink.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinWink.FWeight }
+{ Sample AnimationAdapter_JinWink.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinWink.FWeight}
+Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer926.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinWink.EventValue_changed TO Neck_MorphInterpolator_JinWink.FWeight }
+{ Sample AnimationAdapter_JinWink.EventValue_changed TO Neck_MorphInterpolator_JinWink.FWeight}
+Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer1002.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinWink.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinWink.FWeight }
+{ Sample AnimationAdapter_JinWink.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinWink.FWeight}
+Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer1040.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinWink.EventValue_changed TO Left_ear_MorphInterpolator_JinWink.FWeight }
+{ Sample AnimationAdapter_JinWink.EventValue_changed TO Left_ear_MorphInterpolator_JinWink.FWeight}
+Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer392.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinWink.EventValue_changed TO Mid_forehead_MorphInterpolator_JinWink.FWeight }
+{ Sample AnimationAdapter_JinWink.EventValue_changed TO Mid_forehead_MorphInterpolator_JinWink.FWeight}
+Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer850.FWeight);
+{ METHOD .AddX3DROUTE }
+{ Original "AnimationAdapter_JinWink.EventValue_changed TO Left_forehead_MorphInterpolator_JinWink.FWeight }
+{ Sample AnimationAdapter_JinWink.EventValue_changed TO Left_forehead_MorphInterpolator_JinWink.FWeight}
+Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer468.FWeight);
 end;
 
 procedure InitSingleMenuJinPart155;
 begin
 
 { METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Right_pupil_MorphInterpolator_JinUpperLipRaiser.FWeight }
-{ Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Right_pupil_MorphInterpolator_JinUpperLipRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer1491.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Right_temple_MorphInterpolator_JinUpperLipRaiser.FWeight }
-{ Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Right_temple_MorphInterpolator_JinUpperLipRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer1529.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinUpperLipRaiser.FWeight }
-{ Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinUpperLipRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer1567.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinUpperLipRaiser.FWeight }
-{ Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinUpperLipRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer1605.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinUpperLipRaiser.FWeight }
-{ Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinUpperLipRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer1642.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinUpperLipRaiser.FWeight }
-{ Sample AnimationAdapter_JinUpperLipRaiser.EventValue_changed TO Right_lower_vermillion_lip_MorphInterpolator_JinUpperLipRaiser.FWeight}
-Group7.AddRoute(ScalarInterpolator37.EventValue_changed, HAnimDisplacer1378.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "JinUpperLipRaiser_Clock.EventFraction_changed TO AnimationAdapter_JinUpperLipRaiser.EventSet_fraction }
-{ Sample JinUpperLipRaiser_Clock.EventFraction_changed TO AnimationAdapter_JinUpperLipRaiser.EventSet_fraction}
-Group7.AddRoute(TimeSensor41.EventFraction_changed, ScalarInterpolator37.set_EventSet_fraction);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinWink.EventValue_changed TO Lower_teeth_MorphInterpolator_JinWink.FWeight }
-{ Sample AnimationAdapter_JinWink.EventValue_changed TO Lower_teeth_MorphInterpolator_JinWink.FWeight}
-Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer117.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinWink.EventValue_changed TO Tongue_MorphInterpolator_JinWink.FWeight }
-{ Sample AnimationAdapter_JinWink.EventValue_changed TO Tongue_MorphInterpolator_JinWink.FWeight}
-Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer1681.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinWink.EventValue_changed TO Upper_teeth_MorphInterpolator_JinWink.FWeight }
-{ Sample AnimationAdapter_JinWink.EventValue_changed TO Upper_teeth_MorphInterpolator_JinWink.FWeight}
-Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer1719.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinWink.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinWink.FWeight }
-{ Sample AnimationAdapter_JinWink.EventValue_changed TO Mid_upper_vermillion_lip_MorphInterpolator_JinWink.FWeight}
-Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer926.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinWink.EventValue_changed TO Neck_MorphInterpolator_JinWink.FWeight }
-{ Sample AnimationAdapter_JinWink.EventValue_changed TO Neck_MorphInterpolator_JinWink.FWeight}
-Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer1002.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinWink.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinWink.FWeight }
-{ Sample AnimationAdapter_JinWink.EventValue_changed TO Occipital_scalp_MorphInterpolator_JinWink.FWeight}
-Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer1040.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinWink.EventValue_changed TO Left_ear_MorphInterpolator_JinWink.FWeight }
-{ Sample AnimationAdapter_JinWink.EventValue_changed TO Left_ear_MorphInterpolator_JinWink.FWeight}
-Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer392.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinWink.EventValue_changed TO Mid_forehead_MorphInterpolator_JinWink.FWeight }
-{ Sample AnimationAdapter_JinWink.EventValue_changed TO Mid_forehead_MorphInterpolator_JinWink.FWeight}
-Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer850.set_FWeight);
-{ METHOD .AddX3DROUTE }
-{ Original "AnimationAdapter_JinWink.EventValue_changed TO Left_forehead_MorphInterpolator_JinWink.FWeight }
-{ Sample AnimationAdapter_JinWink.EventValue_changed TO Left_forehead_MorphInterpolator_JinWink.FWeight}
-Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer468.set_FWeight);
-{ METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinWink.EventValue_changed TO Glabella_MorphInterpolator_JinWink.FWeight }
 { Sample AnimationAdapter_JinWink.EventValue_changed TO Glabella_MorphInterpolator_JinWink.FWeight}
-Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer240.set_FWeight);
+Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer240.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinWink.EventValue_changed TO Chin_MorphInterpolator_JinWink.FWeight }
 { Sample AnimationAdapter_JinWink.EventValue_changed TO Chin_MorphInterpolator_JinWink.FWeight}
-Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer202.set_FWeight);
+Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer202.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinWink.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinWink.FWeight }
 { Sample AnimationAdapter_JinWink.EventValue_changed TO Left_lower_vermillion_lip_MorphInterpolator_JinWink.FWeight}
-Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer544.set_FWeight);
+Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer544.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinWink.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinWink.FWeight }
 { Sample AnimationAdapter_JinWink.EventValue_changed TO Center_lower_vermillion_lip_MorphInterpolator_JinWink.FWeight}
-Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer164.set_FWeight);
+Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer164.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinWink.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinWink.FWeight }
 { Sample AnimationAdapter_JinWink.EventValue_changed TO Left_eyebrow_MorphInterpolator_JinWink.FWeight}
-Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer430.set_FWeight);
+Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer430.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinWink.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinWink.FWeight }
 { Sample AnimationAdapter_JinWink.EventValue_changed TO Left_bulbar_conjunctiva_MorphInterpolator_JinWink.FWeight}
-Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer278.set_FWeight);
+Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer278.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinWink.EventValue_changed TO Left_temple_MorphInterpolator_JinWink.FWeight }
 { Sample AnimationAdapter_JinWink.EventValue_changed TO Left_temple_MorphInterpolator_JinWink.FWeight}
-Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer696.set_FWeight);
+Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer696.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinWink.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinWink.FWeight }
 { Sample AnimationAdapter_JinWink.EventValue_changed TO Mid_nasal_dorsum_MorphInterpolator_JinWink.FWeight}
-Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer888.set_FWeight);
+Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer888.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinWink.EventValue_changed TO Nasal_tip_MorphInterpolator_JinWink.FWeight }
 { Sample AnimationAdapter_JinWink.EventValue_changed TO Nasal_tip_MorphInterpolator_JinWink.FWeight}
-Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer964.set_FWeight);
+Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer964.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinWink.EventValue_changed TO Left_nostril_MorphInterpolator_JinWink.FWeight }
 { Sample AnimationAdapter_JinWink.EventValue_changed TO Left_nostril_MorphInterpolator_JinWink.FWeight}
-Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer620.set_FWeight);
+Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer620.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinWink.EventValue_changed TO Left_dorsum_MorphInterpolator_JinWink.FWeight }
 { Sample AnimationAdapter_JinWink.EventValue_changed TO Left_dorsum_MorphInterpolator_JinWink.FWeight}
-Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer354.set_FWeight);
+Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer354.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinWink.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinWink.FWeight }
 { Sample AnimationAdapter_JinWink.EventValue_changed TO Left_nasolabial_cheek_MorphInterpolator_JinWink.FWeight}
-Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer582.set_FWeight);
+Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer582.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinWink.EventValue_changed TO Left_cheek_MorphInterpolator_JinWink.FWeight }
 { Sample AnimationAdapter_JinWink.EventValue_changed TO Left_cheek_MorphInterpolator_JinWink.FWeight}
-Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer316.set_FWeight);
+Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer316.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinWink.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinWink.FWeight }
 { Sample AnimationAdapter_JinWink.EventValue_changed TO Left_upper_vermillion_lip_MorphInterpolator_JinWink.FWeight}
-Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer810.set_FWeight);
+Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer810.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinWink.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinWink.FWeight }
 { Sample AnimationAdapter_JinWink.EventValue_changed TO Left_upper_cutaneous_lip_MorphInterpolator_JinWink.FWeight}
-Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer734.set_FWeight);
+Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer734.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinWink.EventValue_changed TO Philtrum_MorphInterpolator_JinWink.FWeight }
 { Sample AnimationAdapter_JinWink.EventValue_changed TO Philtrum_MorphInterpolator_JinWink.FWeight}
-Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer1078.set_FWeight);
+Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer1078.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinWink.EventValue_changed TO Right_forehead_MorphInterpolator_JinWink.FWeight }
 { Sample AnimationAdapter_JinWink.EventValue_changed TO Right_forehead_MorphInterpolator_JinWink.FWeight}
-Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer1306.set_FWeight);
+Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer1306.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinWink.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinWink.FWeight }
 { Sample AnimationAdapter_JinWink.EventValue_changed TO Right_eyebrow_MorphInterpolator_JinWink.FWeight}
-Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer1268.set_FWeight);
+Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer1268.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinWink.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinWink.FWeight }
 { Sample AnimationAdapter_JinWink.EventValue_changed TO Left_upper_eyelid_MorphInterpolator_JinWink.FWeight}
-Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer772.set_FWeight);
+Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer772.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinWink.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinWink.FWeight }
 { Sample AnimationAdapter_JinWink.EventValue_changed TO Left_lower_eyelid_MorphInterpolator_JinWink.FWeight}
-Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer506.set_FWeight);
-end;
-
-procedure InitSingleMenuJinPart156;
-begin
-
+Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer506.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinWink.EventValue_changed TO Left_pupil_MorphInterpolator_JinWink.FWeight }
 { Sample AnimationAdapter_JinWink.EventValue_changed TO Left_pupil_MorphInterpolator_JinWink.FWeight}
-Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer658.set_FWeight);
+Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer658.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinWink.EventValue_changed TO Right_ear_MorphInterpolator_JinWink.FWeight }
 { Sample AnimationAdapter_JinWink.EventValue_changed TO Right_ear_MorphInterpolator_JinWink.FWeight}
-Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer1230.set_FWeight);
+Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer1230.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinWink.EventValue_changed TO Right_cheek_MorphInterpolator_JinWink.FWeight }
 { Sample AnimationAdapter_JinWink.EventValue_changed TO Right_cheek_MorphInterpolator_JinWink.FWeight}
-Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer1154.set_FWeight);
+Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer1154.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinWink.EventValue_changed TO Right_dorsum_MorphInterpolator_JinWink.FWeight }
 { Sample AnimationAdapter_JinWink.EventValue_changed TO Right_dorsum_MorphInterpolator_JinWink.FWeight}
-Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer1192.set_FWeight);
+Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer1192.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinWink.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinWink.FWeight }
 { Sample AnimationAdapter_JinWink.EventValue_changed TO Right_bulbar_conjunctiva_MorphInterpolator_JinWink.FWeight}
-Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer1116.set_FWeight);
+Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer1116.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinWink.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinWink.FWeight }
 { Sample AnimationAdapter_JinWink.EventValue_changed TO Right_lower_eyelid_MorphInterpolator_JinWink.FWeight}
-Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer1344.set_FWeight);
+Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer1344.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinWink.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinWink.FWeight }
 { Sample AnimationAdapter_JinWink.EventValue_changed TO Right_nasolabial_cheek_MorphInterpolator_JinWink.FWeight}
-Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer1416.set_FWeight);
+Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer1416.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinWink.EventValue_changed TO Right_nostril_MorphInterpolator_JinWink.FWeight }
 { Sample AnimationAdapter_JinWink.EventValue_changed TO Right_nostril_MorphInterpolator_JinWink.FWeight}
-Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer1454.set_FWeight);
+Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer1454.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinWink.EventValue_changed TO Right_pupil_MorphInterpolator_JinWink.FWeight }
 { Sample AnimationAdapter_JinWink.EventValue_changed TO Right_pupil_MorphInterpolator_JinWink.FWeight}
-Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer1492.set_FWeight);
+Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer1492.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinWink.EventValue_changed TO Right_temple_MorphInterpolator_JinWink.FWeight }
 { Sample AnimationAdapter_JinWink.EventValue_changed TO Right_temple_MorphInterpolator_JinWink.FWeight}
-Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer1530.set_FWeight);
+Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer1530.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinWink.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinWink.FWeight }
 { Sample AnimationAdapter_JinWink.EventValue_changed TO Right_upper_cutaneous_lip_MorphInterpolator_JinWink.FWeight}
-Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer1568.set_FWeight);
+Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer1568.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinWink.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinWink.FWeight }
 { Sample AnimationAdapter_JinWink.EventValue_changed TO Right_upper_eyelid_MorphInterpolator_JinWink.FWeight}
-Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer1606.set_FWeight);
+Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer1606.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinWink.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinWink.FWeight }
 { Sample AnimationAdapter_JinWink.EventValue_changed TO Right_upper_vermillion_lip_MorphInterpolator_JinWink.FWeight}
-Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer1643.set_FWeight);
+Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer1643.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "AnimationAdapter_JinWink.EventValue_changed TO __2_MorphInterpolator_JinWink.FWeight }
 { Sample AnimationAdapter_JinWink.EventValue_changed TO __2_MorphInterpolator_JinWink.FWeight}
-Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer124.set_FWeight);
+Group7.AddRoute(ScalarInterpolator38.EventValue_changed, HAnimDisplacer124.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "JinWink_Clock.EventFraction_changed TO AnimationAdapter_JinWink.EventSet_fraction }
 { Sample JinWink_Clock.EventFraction_changed TO AnimationAdapter_JinWink.EventSet_fraction}
-Group7.AddRoute(TimeSensor40.EventFraction_changed, ScalarInterpolator38.set_EventSet_fraction);
+Group7.AddRoute(TimeSensor40.EventFraction_changed, ScalarInterpolator38.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Viewpoint and any other scene setup }
 WorldInfo3043 := TWorldInfoNode.Create;
@@ -14519,6 +14514,11 @@ WorldInfo3043.Title := 'SingleMenuJin.x3d';
 Group7.FdChildren.Add(WorldInfo3043);
 Viewpoint3044 := TViewpointNode.Create;
 Viewpoint3044.Position := Vector3(0,20,110);
+end;
+
+procedure InitSingleMenuJinPart156;
+begin
+
 { METHOD .FdChildren.Add }
 Group7.FdChildren.Add(Viewpoint3044);
 Group3045 := TGroupNode.Create;
@@ -14543,11 +14543,6 @@ FontStyle3052.Size := 2.4;
 FontStyle3052.Spacing := 1.2;
 FontStyle3052.Justify := fjMIDDLE;
 FontStyle3052.JustifyMinor := fjMIDDLE;
-end;
-
-procedure InitSingleMenuJinPart157;
-begin
-
 { METHOD .FontStyle }
 Text3051.FontStyle := FontStyle3052;
 { METHOD .Geometry }
@@ -14577,6 +14572,11 @@ SFTime3059 := TSFTime.CreateUndefined(Script3058, false, 'inTime');
 { METHOD .Fd.AddCustomField }
 Script3058.AddCustomField(SFTime3059);
 SFTime3060 := TSFTime.CreateUndefined(Script3058, false, 'resumeTime');
+end;
+
+procedure InitSingleMenuJinPart157;
+begin
+
 { METHOD .Fd.AddCustomField }
 Script3058.AddCustomField(SFTime3060);
 SFTime3061 := TSFTime.CreateUndefined(Script3058, false, 'pauseTime');
@@ -14626,29 +14626,29 @@ Transform3046.AddRoute(JinBlink_Material.diffuseColor, SFColor3063);
 { METHOD .AddX3DROUTE }
 { Original "Script0.diffuseColor TO JinBlink_Material.diffuseColor }
 { Sample Script0.diffuseColor TO JinBlink_Material.diffuseColor}
-Transform3046.AddRoute(Script0.[object Object], Material3055.set_diffuseColor);
+Transform3046.AddRoute(Script0.[object Object], Material3055.diffuseColor);
 { METHOD .AddX3DROUTE }
 { Original "Script0.checked TO JinBlink_Clock.enabled }
 { Sample Script0.checked TO JinBlink_Clock.enabled}
-Transform3046.AddRoute(Script0.[object Object], TimeSensor69.set_enabled);
+Transform3046.AddRoute(Script0.[object Object], TimeSensor69.enabled);
 { METHOD .AddX3DROUTE }
 { Original "Script0.EventPauseTime TO JinBlink_Clock.pauseTime }
 { Sample Script0.EventPauseTime TO JinBlink_Clock.pauseTime}
-Transform3046.AddRoute(Script3058.EventPauseTime, TimeSensor69.set_pauseTime);
+Transform3046.AddRoute(Script3058.EventPauseTime, TimeSensor69.pauseTime);
 { METHOD .AddX3DROUTE }
 { Original "Script0.EventResumeTime TO JinBlink_Clock.resumeTime }
 { Sample Script0.EventResumeTime TO JinBlink_Clock.resumeTime}
-Transform3046.AddRoute(Script3058.EventResumeTime, TimeSensor69.set_resumeTime);
+Transform3046.AddRoute(Script3058.EventResumeTime, TimeSensor69.resumeTime);
 { METHOD .AddX3DROUTE }
 { Original "Script0.EventFraction TO AnimationAdapter_JinBlink.EventSet_fraction }
 { Sample Script0.EventFraction TO AnimationAdapter_JinBlink.EventSet_fraction}
-Transform3046.AddRoute(Script3058.EventFraction, ScalarInterpolator9.set_EventSet_fraction);
+Transform3046.AddRoute(Script3058.EventFraction, ScalarInterpolator9.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group3045.FdChildren.Add(Transform3046);
 { Original "JinBlink_Sensor.EventTouchTime TO JinBlink_Clock.startTime }
 { Sample JinBlink_Sensor.EventTouchTime TO JinBlink_Clock.startTime}
-Group3045.AddRoute(TouchSensor3047.EventTouchTime, TimeSensor69.set_startTime);
+Group3045.AddRoute(TouchSensor3047.EventTouchTime, TimeSensor69.startTime);
 { METHOD .AddX3DROUTE }
 Transform3073 := TTransformNode.Create;
 Transform3073.Translation := Vector3(48,60.4,0);
@@ -14749,29 +14749,29 @@ Transform3073.AddRoute(JinBrowLowerer_Material.diffuseColor, SFColor3090);
 { METHOD .AddX3DROUTE }
 { Original "Script1.diffuseColor TO JinBrowLowerer_Material.diffuseColor }
 { Sample Script1.diffuseColor TO JinBrowLowerer_Material.diffuseColor}
-Transform3073.AddRoute(Script1.[object Object], Material3082.set_diffuseColor);
+Transform3073.AddRoute(Script1.[object Object], Material3082.diffuseColor);
 { METHOD .AddX3DROUTE }
 { Original "Script1.checked TO JinBrowLowerer_Clock.enabled }
 { Sample Script1.checked TO JinBrowLowerer_Clock.enabled}
-Transform3073.AddRoute(Script1.[object Object], TimeSensor68.set_enabled);
+Transform3073.AddRoute(Script1.[object Object], TimeSensor68.enabled);
 { METHOD .AddX3DROUTE }
 { Original "Script1.EventPauseTime TO JinBrowLowerer_Clock.pauseTime }
 { Sample Script1.EventPauseTime TO JinBrowLowerer_Clock.pauseTime}
-Transform3073.AddRoute(Script3085.EventPauseTime, TimeSensor68.set_pauseTime);
+Transform3073.AddRoute(Script3085.EventPauseTime, TimeSensor68.pauseTime);
 { METHOD .AddX3DROUTE }
 { Original "Script1.EventResumeTime TO JinBrowLowerer_Clock.resumeTime }
 { Sample Script1.EventResumeTime TO JinBrowLowerer_Clock.resumeTime}
-Transform3073.AddRoute(Script3085.EventResumeTime, TimeSensor68.set_resumeTime);
+Transform3073.AddRoute(Script3085.EventResumeTime, TimeSensor68.resumeTime);
 { METHOD .AddX3DROUTE }
 { Original "Script1.EventFraction TO AnimationAdapter_JinBrowLowerer.EventSet_fraction }
 { Sample Script1.EventFraction TO AnimationAdapter_JinBrowLowerer.EventSet_fraction}
-Transform3073.AddRoute(Script3085.EventFraction, ScalarInterpolator10.set_EventSet_fraction);
+Transform3073.AddRoute(Script3085.EventFraction, ScalarInterpolator10.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group3045.FdChildren.Add(Transform3073);
 { Original "JinBrowLowerer_Sensor.EventTouchTime TO JinBrowLowerer_Clock.startTime }
 { Sample JinBrowLowerer_Sensor.EventTouchTime TO JinBrowLowerer_Clock.startTime}
-Group3045.AddRoute(TouchSensor3074.EventTouchTime, TimeSensor68.set_startTime);
+Group3045.AddRoute(TouchSensor3074.EventTouchTime, TimeSensor68.startTime);
 { METHOD .AddX3DROUTE }
 Transform3100 := TTransformNode.Create;
 Transform3100.Translation := Vector3(48,57.39999999999999,0);
@@ -14872,29 +14872,29 @@ Transform3100.AddRoute(JinCheekPuffer_Material.diffuseColor, SFColor3117);
 { METHOD .AddX3DROUTE }
 { Original "Script2.diffuseColor TO JinCheekPuffer_Material.diffuseColor }
 { Sample Script2.diffuseColor TO JinCheekPuffer_Material.diffuseColor}
-Transform3100.AddRoute(Script2.[object Object], Material3109.set_diffuseColor);
+Transform3100.AddRoute(Script2.[object Object], Material3109.diffuseColor);
 { METHOD .AddX3DROUTE }
 { Original "Script2.checked TO JinCheekPuffer_Clock.enabled }
 { Sample Script2.checked TO JinCheekPuffer_Clock.enabled}
-Transform3100.AddRoute(Script2.[object Object], TimeSensor67.set_enabled);
+Transform3100.AddRoute(Script2.[object Object], TimeSensor67.enabled);
 { METHOD .AddX3DROUTE }
 { Original "Script2.EventPauseTime TO JinCheekPuffer_Clock.pauseTime }
 { Sample Script2.EventPauseTime TO JinCheekPuffer_Clock.pauseTime}
-Transform3100.AddRoute(Script3112.EventPauseTime, TimeSensor67.set_pauseTime);
+Transform3100.AddRoute(Script3112.EventPauseTime, TimeSensor67.pauseTime);
 { METHOD .AddX3DROUTE }
 { Original "Script2.EventResumeTime TO JinCheekPuffer_Clock.resumeTime }
 { Sample Script2.EventResumeTime TO JinCheekPuffer_Clock.resumeTime}
-Transform3100.AddRoute(Script3112.EventResumeTime, TimeSensor67.set_resumeTime);
+Transform3100.AddRoute(Script3112.EventResumeTime, TimeSensor67.resumeTime);
 { METHOD .AddX3DROUTE }
 { Original "Script2.EventFraction TO AnimationAdapter_JinCheekPuffer.EventSet_fraction }
 { Sample Script2.EventFraction TO AnimationAdapter_JinCheekPuffer.EventSet_fraction}
-Transform3100.AddRoute(Script3112.EventFraction, ScalarInterpolator11.set_EventSet_fraction);
+Transform3100.AddRoute(Script3112.EventFraction, ScalarInterpolator11.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group3045.FdChildren.Add(Transform3100);
 { Original "JinCheekPuffer_Sensor.EventTouchTime TO JinCheekPuffer_Clock.startTime }
 { Sample JinCheekPuffer_Sensor.EventTouchTime TO JinCheekPuffer_Clock.startTime}
-Group3045.AddRoute(TouchSensor3101.EventTouchTime, TimeSensor67.set_startTime);
+Group3045.AddRoute(TouchSensor3101.EventTouchTime, TimeSensor67.startTime);
 { METHOD .AddX3DROUTE }
 Transform3127 := TTransformNode.Create;
 Transform3127.Translation := Vector3(48,54.39999999999999,0);
@@ -14995,29 +14995,29 @@ Transform3127.AddRoute(JinCheekRaiser_Material.diffuseColor, SFColor3144);
 { METHOD .AddX3DROUTE }
 { Original "Script3.diffuseColor TO JinCheekRaiser_Material.diffuseColor }
 { Sample Script3.diffuseColor TO JinCheekRaiser_Material.diffuseColor}
-Transform3127.AddRoute(Script3.[object Object], Material3136.set_diffuseColor);
+Transform3127.AddRoute(Script3.[object Object], Material3136.diffuseColor);
 { METHOD .AddX3DROUTE }
 { Original "Script3.checked TO JinCheekRaiser_Clock.enabled }
 { Sample Script3.checked TO JinCheekRaiser_Clock.enabled}
-Transform3127.AddRoute(Script3.[object Object], TimeSensor66.set_enabled);
+Transform3127.AddRoute(Script3.[object Object], TimeSensor66.enabled);
 { METHOD .AddX3DROUTE }
 { Original "Script3.EventPauseTime TO JinCheekRaiser_Clock.pauseTime }
 { Sample Script3.EventPauseTime TO JinCheekRaiser_Clock.pauseTime}
-Transform3127.AddRoute(Script3139.EventPauseTime, TimeSensor66.set_pauseTime);
+Transform3127.AddRoute(Script3139.EventPauseTime, TimeSensor66.pauseTime);
 { METHOD .AddX3DROUTE }
 { Original "Script3.EventResumeTime TO JinCheekRaiser_Clock.resumeTime }
 { Sample Script3.EventResumeTime TO JinCheekRaiser_Clock.resumeTime}
-Transform3127.AddRoute(Script3139.EventResumeTime, TimeSensor66.set_resumeTime);
+Transform3127.AddRoute(Script3139.EventResumeTime, TimeSensor66.resumeTime);
 { METHOD .AddX3DROUTE }
 { Original "Script3.EventFraction TO AnimationAdapter_JinCheekRaiser.EventSet_fraction }
 { Sample Script3.EventFraction TO AnimationAdapter_JinCheekRaiser.EventSet_fraction}
-Transform3127.AddRoute(Script3139.EventFraction, ScalarInterpolator12.set_EventSet_fraction);
+Transform3127.AddRoute(Script3139.EventFraction, ScalarInterpolator12.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group3045.FdChildren.Add(Transform3127);
 { Original "JinCheekRaiser_Sensor.EventTouchTime TO JinCheekRaiser_Clock.startTime }
 { Sample JinCheekRaiser_Sensor.EventTouchTime TO JinCheekRaiser_Clock.startTime}
-Group3045.AddRoute(TouchSensor3128.EventTouchTime, TimeSensor66.set_startTime);
+Group3045.AddRoute(TouchSensor3128.EventTouchTime, TimeSensor66.startTime);
 { METHOD .AddX3DROUTE }
 Transform3154 := TTransformNode.Create;
 Transform3154.Translation := Vector3(48,51.39999999999999,0);
@@ -15118,29 +15118,29 @@ Transform3154.AddRoute(JinChinRaiser_Material.diffuseColor, SFColor3171);
 { METHOD .AddX3DROUTE }
 { Original "Script4.diffuseColor TO JinChinRaiser_Material.diffuseColor }
 { Sample Script4.diffuseColor TO JinChinRaiser_Material.diffuseColor}
-Transform3154.AddRoute(Script4.[object Object], Material3163.set_diffuseColor);
+Transform3154.AddRoute(Script4.[object Object], Material3163.diffuseColor);
 { METHOD .AddX3DROUTE }
 { Original "Script4.checked TO JinChinRaiser_Clock.enabled }
 { Sample Script4.checked TO JinChinRaiser_Clock.enabled}
-Transform3154.AddRoute(Script4.[object Object], TimeSensor65.set_enabled);
+Transform3154.AddRoute(Script4.[object Object], TimeSensor65.enabled);
 { METHOD .AddX3DROUTE }
 { Original "Script4.EventPauseTime TO JinChinRaiser_Clock.pauseTime }
 { Sample Script4.EventPauseTime TO JinChinRaiser_Clock.pauseTime}
-Transform3154.AddRoute(Script3166.EventPauseTime, TimeSensor65.set_pauseTime);
+Transform3154.AddRoute(Script3166.EventPauseTime, TimeSensor65.pauseTime);
 { METHOD .AddX3DROUTE }
 { Original "Script4.EventResumeTime TO JinChinRaiser_Clock.resumeTime }
 { Sample Script4.EventResumeTime TO JinChinRaiser_Clock.resumeTime}
-Transform3154.AddRoute(Script3166.EventResumeTime, TimeSensor65.set_resumeTime);
+Transform3154.AddRoute(Script3166.EventResumeTime, TimeSensor65.resumeTime);
 { METHOD .AddX3DROUTE }
 { Original "Script4.EventFraction TO AnimationAdapter_JinChinRaiser.EventSet_fraction }
 { Sample Script4.EventFraction TO AnimationAdapter_JinChinRaiser.EventSet_fraction}
-Transform3154.AddRoute(Script3166.EventFraction, ScalarInterpolator13.set_EventSet_fraction);
+Transform3154.AddRoute(Script3166.EventFraction, ScalarInterpolator13.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group3045.FdChildren.Add(Transform3154);
 { Original "JinChinRaiser_Sensor.EventTouchTime TO JinChinRaiser_Clock.startTime }
 { Sample JinChinRaiser_Sensor.EventTouchTime TO JinChinRaiser_Clock.startTime}
-Group3045.AddRoute(TouchSensor3155.EventTouchTime, TimeSensor65.set_startTime);
+Group3045.AddRoute(TouchSensor3155.EventTouchTime, TimeSensor65.startTime);
 { METHOD .AddX3DROUTE }
 Transform3181 := TTransformNode.Create;
 Transform3181.Translation := Vector3(48,48.39999999999999,0);
@@ -15241,29 +15241,29 @@ Transform3181.AddRoute(JinDimpler_Material.diffuseColor, SFColor3198);
 { METHOD .AddX3DROUTE }
 { Original "Script5.diffuseColor TO JinDimpler_Material.diffuseColor }
 { Sample Script5.diffuseColor TO JinDimpler_Material.diffuseColor}
-Transform3181.AddRoute(Script5.[object Object], Material3190.set_diffuseColor);
+Transform3181.AddRoute(Script5.[object Object], Material3190.diffuseColor);
 { METHOD .AddX3DROUTE }
 { Original "Script5.checked TO JinDimpler_Clock.enabled }
 { Sample Script5.checked TO JinDimpler_Clock.enabled}
-Transform3181.AddRoute(Script5.[object Object], TimeSensor64.set_enabled);
+Transform3181.AddRoute(Script5.[object Object], TimeSensor64.enabled);
 { METHOD .AddX3DROUTE }
 { Original "Script5.EventPauseTime TO JinDimpler_Clock.pauseTime }
 { Sample Script5.EventPauseTime TO JinDimpler_Clock.pauseTime}
-Transform3181.AddRoute(Script3193.EventPauseTime, TimeSensor64.set_pauseTime);
+Transform3181.AddRoute(Script3193.EventPauseTime, TimeSensor64.pauseTime);
 { METHOD .AddX3DROUTE }
 { Original "Script5.EventResumeTime TO JinDimpler_Clock.resumeTime }
 { Sample Script5.EventResumeTime TO JinDimpler_Clock.resumeTime}
-Transform3181.AddRoute(Script3193.EventResumeTime, TimeSensor64.set_resumeTime);
+Transform3181.AddRoute(Script3193.EventResumeTime, TimeSensor64.resumeTime);
 { METHOD .AddX3DROUTE }
 { Original "Script5.EventFraction TO AnimationAdapter_JinDimpler.EventSet_fraction }
 { Sample Script5.EventFraction TO AnimationAdapter_JinDimpler.EventSet_fraction}
-Transform3181.AddRoute(Script3193.EventFraction, ScalarInterpolator14.set_EventSet_fraction);
+Transform3181.AddRoute(Script3193.EventFraction, ScalarInterpolator14.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group3045.FdChildren.Add(Transform3181);
 { Original "JinDimpler_Sensor.EventTouchTime TO JinDimpler_Clock.startTime }
 { Sample JinDimpler_Sensor.EventTouchTime TO JinDimpler_Clock.startTime}
-Group3045.AddRoute(TouchSensor3182.EventTouchTime, TimeSensor64.set_startTime);
+Group3045.AddRoute(TouchSensor3182.EventTouchTime, TimeSensor64.startTime);
 { METHOD .AddX3DROUTE }
 Transform3208 := TTransformNode.Create;
 Transform3208.Translation := Vector3(48,45.39999999999999,0);
@@ -15364,29 +15364,29 @@ Transform3208.AddRoute(JinEyesClosed_Material.diffuseColor, SFColor3225);
 { METHOD .AddX3DROUTE }
 { Original "Script6.diffuseColor TO JinEyesClosed_Material.diffuseColor }
 { Sample Script6.diffuseColor TO JinEyesClosed_Material.diffuseColor}
-Transform3208.AddRoute(Script6.[object Object], Material3217.set_diffuseColor);
+Transform3208.AddRoute(Script6.[object Object], Material3217.diffuseColor);
 { METHOD .AddX3DROUTE }
 { Original "Script6.checked TO JinEyesClosed_Clock.enabled }
 { Sample Script6.checked TO JinEyesClosed_Clock.enabled}
-Transform3208.AddRoute(Script6.[object Object], TimeSensor63.set_enabled);
+Transform3208.AddRoute(Script6.[object Object], TimeSensor63.enabled);
 { METHOD .AddX3DROUTE }
 { Original "Script6.EventPauseTime TO JinEyesClosed_Clock.pauseTime }
 { Sample Script6.EventPauseTime TO JinEyesClosed_Clock.pauseTime}
-Transform3208.AddRoute(Script3220.EventPauseTime, TimeSensor63.set_pauseTime);
+Transform3208.AddRoute(Script3220.EventPauseTime, TimeSensor63.pauseTime);
 { METHOD .AddX3DROUTE }
 { Original "Script6.EventResumeTime TO JinEyesClosed_Clock.resumeTime }
 { Sample Script6.EventResumeTime TO JinEyesClosed_Clock.resumeTime}
-Transform3208.AddRoute(Script3220.EventResumeTime, TimeSensor63.set_resumeTime);
+Transform3208.AddRoute(Script3220.EventResumeTime, TimeSensor63.resumeTime);
 { METHOD .AddX3DROUTE }
 { Original "Script6.EventFraction TO AnimationAdapter_JinEyesClosed.EventSet_fraction }
 { Sample Script6.EventFraction TO AnimationAdapter_JinEyesClosed.EventSet_fraction}
-Transform3208.AddRoute(Script3220.EventFraction, ScalarInterpolator15.set_EventSet_fraction);
+Transform3208.AddRoute(Script3220.EventFraction, ScalarInterpolator15.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group3045.FdChildren.Add(Transform3208);
 { Original "JinEyesClosed_Sensor.EventTouchTime TO JinEyesClosed_Clock.startTime }
 { Sample JinEyesClosed_Sensor.EventTouchTime TO JinEyesClosed_Clock.startTime}
-Group3045.AddRoute(TouchSensor3209.EventTouchTime, TimeSensor63.set_startTime);
+Group3045.AddRoute(TouchSensor3209.EventTouchTime, TimeSensor63.startTime);
 { METHOD .AddX3DROUTE }
 Transform3235 := TTransformNode.Create;
 Transform3235.Translation := Vector3(48,42.39999999999999,0);
@@ -15487,29 +15487,29 @@ Transform3235.AddRoute(JinInnerBrowRaiser_Material.diffuseColor, SFColor3252);
 { METHOD .AddX3DROUTE }
 { Original "Script7.diffuseColor TO JinInnerBrowRaiser_Material.diffuseColor }
 { Sample Script7.diffuseColor TO JinInnerBrowRaiser_Material.diffuseColor}
-Transform3235.AddRoute(Script7.[object Object], Material3244.set_diffuseColor);
+Transform3235.AddRoute(Script7.[object Object], Material3244.diffuseColor);
 { METHOD .AddX3DROUTE }
 { Original "Script7.checked TO JinInnerBrowRaiser_Clock.enabled }
 { Sample Script7.checked TO JinInnerBrowRaiser_Clock.enabled}
-Transform3235.AddRoute(Script7.[object Object], TimeSensor62.set_enabled);
+Transform3235.AddRoute(Script7.[object Object], TimeSensor62.enabled);
 { METHOD .AddX3DROUTE }
 { Original "Script7.EventPauseTime TO JinInnerBrowRaiser_Clock.pauseTime }
 { Sample Script7.EventPauseTime TO JinInnerBrowRaiser_Clock.pauseTime}
-Transform3235.AddRoute(Script3247.EventPauseTime, TimeSensor62.set_pauseTime);
+Transform3235.AddRoute(Script3247.EventPauseTime, TimeSensor62.pauseTime);
 { METHOD .AddX3DROUTE }
 { Original "Script7.EventResumeTime TO JinInnerBrowRaiser_Clock.resumeTime }
 { Sample Script7.EventResumeTime TO JinInnerBrowRaiser_Clock.resumeTime}
-Transform3235.AddRoute(Script3247.EventResumeTime, TimeSensor62.set_resumeTime);
+Transform3235.AddRoute(Script3247.EventResumeTime, TimeSensor62.resumeTime);
 { METHOD .AddX3DROUTE }
 { Original "Script7.EventFraction TO AnimationAdapter_JinInnerBrowRaiser.EventSet_fraction }
 { Sample Script7.EventFraction TO AnimationAdapter_JinInnerBrowRaiser.EventSet_fraction}
-Transform3235.AddRoute(Script3247.EventFraction, ScalarInterpolator16.set_EventSet_fraction);
+Transform3235.AddRoute(Script3247.EventFraction, ScalarInterpolator16.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group3045.FdChildren.Add(Transform3235);
 { Original "JinInnerBrowRaiser_Sensor.EventTouchTime TO JinInnerBrowRaiser_Clock.startTime }
 { Sample JinInnerBrowRaiser_Sensor.EventTouchTime TO JinInnerBrowRaiser_Clock.startTime}
-Group3045.AddRoute(TouchSensor3236.EventTouchTime, TimeSensor62.set_startTime);
+Group3045.AddRoute(TouchSensor3236.EventTouchTime, TimeSensor62.startTime);
 { METHOD .AddX3DROUTE }
 Transform3262 := TTransformNode.Create;
 Transform3262.Translation := Vector3(48,39.39999999999999,0);
@@ -15610,29 +15610,29 @@ Transform3262.AddRoute(JinJawDrop_Material.diffuseColor, SFColor3279);
 { METHOD .AddX3DROUTE }
 { Original "Script8.diffuseColor TO JinJawDrop_Material.diffuseColor }
 { Sample Script8.diffuseColor TO JinJawDrop_Material.diffuseColor}
-Transform3262.AddRoute(Script8.[object Object], Material3271.set_diffuseColor);
+Transform3262.AddRoute(Script8.[object Object], Material3271.diffuseColor);
 { METHOD .AddX3DROUTE }
 { Original "Script8.checked TO JinJawDrop_Clock.enabled }
 { Sample Script8.checked TO JinJawDrop_Clock.enabled}
-Transform3262.AddRoute(Script8.[object Object], TimeSensor61.set_enabled);
+Transform3262.AddRoute(Script8.[object Object], TimeSensor61.enabled);
 { METHOD .AddX3DROUTE }
 { Original "Script8.EventPauseTime TO JinJawDrop_Clock.pauseTime }
 { Sample Script8.EventPauseTime TO JinJawDrop_Clock.pauseTime}
-Transform3262.AddRoute(Script3274.EventPauseTime, TimeSensor61.set_pauseTime);
+Transform3262.AddRoute(Script3274.EventPauseTime, TimeSensor61.pauseTime);
 { METHOD .AddX3DROUTE }
 { Original "Script8.EventResumeTime TO JinJawDrop_Clock.resumeTime }
 { Sample Script8.EventResumeTime TO JinJawDrop_Clock.resumeTime}
-Transform3262.AddRoute(Script3274.EventResumeTime, TimeSensor61.set_resumeTime);
+Transform3262.AddRoute(Script3274.EventResumeTime, TimeSensor61.resumeTime);
 { METHOD .AddX3DROUTE }
 { Original "Script8.EventFraction TO AnimationAdapter_JinJawDrop.EventSet_fraction }
 { Sample Script8.EventFraction TO AnimationAdapter_JinJawDrop.EventSet_fraction}
-Transform3262.AddRoute(Script3274.EventFraction, ScalarInterpolator17.set_EventSet_fraction);
+Transform3262.AddRoute(Script3274.EventFraction, ScalarInterpolator17.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group3045.FdChildren.Add(Transform3262);
 { Original "JinJawDrop_Sensor.EventTouchTime TO JinJawDrop_Clock.startTime }
 { Sample JinJawDrop_Sensor.EventTouchTime TO JinJawDrop_Clock.startTime}
-Group3045.AddRoute(TouchSensor3263.EventTouchTime, TimeSensor61.set_startTime);
+Group3045.AddRoute(TouchSensor3263.EventTouchTime, TimeSensor61.startTime);
 { METHOD .AddX3DROUTE }
 Transform3289 := TTransformNode.Create;
 Transform3289.Translation := Vector3(48,36.39999999999999,0);
@@ -15733,29 +15733,29 @@ Transform3289.AddRoute(JinLidDroop_Material.diffuseColor, SFColor3306);
 { METHOD .AddX3DROUTE }
 { Original "Script9.diffuseColor TO JinLidDroop_Material.diffuseColor }
 { Sample Script9.diffuseColor TO JinLidDroop_Material.diffuseColor}
-Transform3289.AddRoute(Script9.[object Object], Material3298.set_diffuseColor);
+Transform3289.AddRoute(Script9.[object Object], Material3298.diffuseColor);
 { METHOD .AddX3DROUTE }
 { Original "Script9.checked TO JinLidDroop_Clock.enabled }
 { Sample Script9.checked TO JinLidDroop_Clock.enabled}
-Transform3289.AddRoute(Script9.[object Object], TimeSensor60.set_enabled);
+Transform3289.AddRoute(Script9.[object Object], TimeSensor60.enabled);
 { METHOD .AddX3DROUTE }
 { Original "Script9.EventPauseTime TO JinLidDroop_Clock.pauseTime }
 { Sample Script9.EventPauseTime TO JinLidDroop_Clock.pauseTime}
-Transform3289.AddRoute(Script3301.EventPauseTime, TimeSensor60.set_pauseTime);
+Transform3289.AddRoute(Script3301.EventPauseTime, TimeSensor60.pauseTime);
 { METHOD .AddX3DROUTE }
 { Original "Script9.EventResumeTime TO JinLidDroop_Clock.resumeTime }
 { Sample Script9.EventResumeTime TO JinLidDroop_Clock.resumeTime}
-Transform3289.AddRoute(Script3301.EventResumeTime, TimeSensor60.set_resumeTime);
+Transform3289.AddRoute(Script3301.EventResumeTime, TimeSensor60.resumeTime);
 { METHOD .AddX3DROUTE }
 { Original "Script9.EventFraction TO AnimationAdapter_JinLidDroop.EventSet_fraction }
 { Sample Script9.EventFraction TO AnimationAdapter_JinLidDroop.EventSet_fraction}
-Transform3289.AddRoute(Script3301.EventFraction, ScalarInterpolator18.set_EventSet_fraction);
+Transform3289.AddRoute(Script3301.EventFraction, ScalarInterpolator18.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group3045.FdChildren.Add(Transform3289);
 { Original "JinLidDroop_Sensor.EventTouchTime TO JinLidDroop_Clock.startTime }
 { Sample JinLidDroop_Sensor.EventTouchTime TO JinLidDroop_Clock.startTime}
-Group3045.AddRoute(TouchSensor3290.EventTouchTime, TimeSensor60.set_startTime);
+Group3045.AddRoute(TouchSensor3290.EventTouchTime, TimeSensor60.startTime);
 { METHOD .AddX3DROUTE }
 Transform3316 := TTransformNode.Create;
 Transform3316.Translation := Vector3(48,33.39999999999999,0);
@@ -15856,29 +15856,29 @@ Transform3316.AddRoute(JinLidTightener_Material.diffuseColor, SFColor3333);
 { METHOD .AddX3DROUTE }
 { Original "Script10.diffuseColor TO JinLidTightener_Material.diffuseColor }
 { Sample Script10.diffuseColor TO JinLidTightener_Material.diffuseColor}
-Transform3316.AddRoute(Script10.[object Object], Material3325.set_diffuseColor);
+Transform3316.AddRoute(Script10.[object Object], Material3325.diffuseColor);
 { METHOD .AddX3DROUTE }
 { Original "Script10.checked TO JinLidTightener_Clock.enabled }
 { Sample Script10.checked TO JinLidTightener_Clock.enabled}
-Transform3316.AddRoute(Script10.[object Object], TimeSensor59.set_enabled);
+Transform3316.AddRoute(Script10.[object Object], TimeSensor59.enabled);
 { METHOD .AddX3DROUTE }
 { Original "Script10.EventPauseTime TO JinLidTightener_Clock.pauseTime }
 { Sample Script10.EventPauseTime TO JinLidTightener_Clock.pauseTime}
-Transform3316.AddRoute(Script3328.EventPauseTime, TimeSensor59.set_pauseTime);
+Transform3316.AddRoute(Script3328.EventPauseTime, TimeSensor59.pauseTime);
 { METHOD .AddX3DROUTE }
 { Original "Script10.EventResumeTime TO JinLidTightener_Clock.resumeTime }
 { Sample Script10.EventResumeTime TO JinLidTightener_Clock.resumeTime}
-Transform3316.AddRoute(Script3328.EventResumeTime, TimeSensor59.set_resumeTime);
+Transform3316.AddRoute(Script3328.EventResumeTime, TimeSensor59.resumeTime);
 { METHOD .AddX3DROUTE }
 { Original "Script10.EventFraction TO AnimationAdapter_JinLidTightener.EventSet_fraction }
 { Sample Script10.EventFraction TO AnimationAdapter_JinLidTightener.EventSet_fraction}
-Transform3316.AddRoute(Script3328.EventFraction, ScalarInterpolator19.set_EventSet_fraction);
+Transform3316.AddRoute(Script3328.EventFraction, ScalarInterpolator19.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group3045.FdChildren.Add(Transform3316);
 { Original "JinLidTightener_Sensor.EventTouchTime TO JinLidTightener_Clock.startTime }
 { Sample JinLidTightener_Sensor.EventTouchTime TO JinLidTightener_Clock.startTime}
-Group3045.AddRoute(TouchSensor3317.EventTouchTime, TimeSensor59.set_startTime);
+Group3045.AddRoute(TouchSensor3317.EventTouchTime, TimeSensor59.startTime);
 { METHOD .AddX3DROUTE }
 Transform3343 := TTransformNode.Create;
 Transform3343.Translation := Vector3(48,30.399999999999995,0);
@@ -15979,29 +15979,29 @@ Transform3343.AddRoute(JinLipCornerDepressor_Material.diffuseColor, SFColor3360)
 { METHOD .AddX3DROUTE }
 { Original "Script11.diffuseColor TO JinLipCornerDepressor_Material.diffuseColor }
 { Sample Script11.diffuseColor TO JinLipCornerDepressor_Material.diffuseColor}
-Transform3343.AddRoute(Script11.[object Object], Material3352.set_diffuseColor);
+Transform3343.AddRoute(Script11.[object Object], Material3352.diffuseColor);
 { METHOD .AddX3DROUTE }
 { Original "Script11.checked TO JinLipCornerDepressor_Clock.enabled }
 { Sample Script11.checked TO JinLipCornerDepressor_Clock.enabled}
-Transform3343.AddRoute(Script11.[object Object], TimeSensor58.set_enabled);
+Transform3343.AddRoute(Script11.[object Object], TimeSensor58.enabled);
 { METHOD .AddX3DROUTE }
 { Original "Script11.EventPauseTime TO JinLipCornerDepressor_Clock.pauseTime }
 { Sample Script11.EventPauseTime TO JinLipCornerDepressor_Clock.pauseTime}
-Transform3343.AddRoute(Script3355.EventPauseTime, TimeSensor58.set_pauseTime);
+Transform3343.AddRoute(Script3355.EventPauseTime, TimeSensor58.pauseTime);
 { METHOD .AddX3DROUTE }
 { Original "Script11.EventResumeTime TO JinLipCornerDepressor_Clock.resumeTime }
 { Sample Script11.EventResumeTime TO JinLipCornerDepressor_Clock.resumeTime}
-Transform3343.AddRoute(Script3355.EventResumeTime, TimeSensor58.set_resumeTime);
+Transform3343.AddRoute(Script3355.EventResumeTime, TimeSensor58.resumeTime);
 { METHOD .AddX3DROUTE }
 { Original "Script11.EventFraction TO AnimationAdapter_JinLipCornerDepressor.EventSet_fraction }
 { Sample Script11.EventFraction TO AnimationAdapter_JinLipCornerDepressor.EventSet_fraction}
-Transform3343.AddRoute(Script3355.EventFraction, ScalarInterpolator20.set_EventSet_fraction);
+Transform3343.AddRoute(Script3355.EventFraction, ScalarInterpolator20.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group3045.FdChildren.Add(Transform3343);
 { Original "JinLipCornerDepressor_Sensor.EventTouchTime TO JinLipCornerDepressor_Clock.startTime }
 { Sample JinLipCornerDepressor_Sensor.EventTouchTime TO JinLipCornerDepressor_Clock.startTime}
-Group3045.AddRoute(TouchSensor3344.EventTouchTime, TimeSensor58.set_startTime);
+Group3045.AddRoute(TouchSensor3344.EventTouchTime, TimeSensor58.startTime);
 { METHOD .AddX3DROUTE }
 Transform3370 := TTransformNode.Create;
 Transform3370.Translation := Vector3(48,27.399999999999995,0);
@@ -16102,29 +16102,29 @@ Transform3370.AddRoute(JinLipCornerPuller_Material.diffuseColor, SFColor3387);
 { METHOD .AddX3DROUTE }
 { Original "Script12.diffuseColor TO JinLipCornerPuller_Material.diffuseColor }
 { Sample Script12.diffuseColor TO JinLipCornerPuller_Material.diffuseColor}
-Transform3370.AddRoute(Script12.[object Object], Material3379.set_diffuseColor);
+Transform3370.AddRoute(Script12.[object Object], Material3379.diffuseColor);
 { METHOD .AddX3DROUTE }
 { Original "Script12.checked TO JinLipCornerPuller_Clock.enabled }
 { Sample Script12.checked TO JinLipCornerPuller_Clock.enabled}
-Transform3370.AddRoute(Script12.[object Object], TimeSensor57.set_enabled);
+Transform3370.AddRoute(Script12.[object Object], TimeSensor57.enabled);
 { METHOD .AddX3DROUTE }
 { Original "Script12.EventPauseTime TO JinLipCornerPuller_Clock.pauseTime }
 { Sample Script12.EventPauseTime TO JinLipCornerPuller_Clock.pauseTime}
-Transform3370.AddRoute(Script3382.EventPauseTime, TimeSensor57.set_pauseTime);
+Transform3370.AddRoute(Script3382.EventPauseTime, TimeSensor57.pauseTime);
 { METHOD .AddX3DROUTE }
 { Original "Script12.EventResumeTime TO JinLipCornerPuller_Clock.resumeTime }
 { Sample Script12.EventResumeTime TO JinLipCornerPuller_Clock.resumeTime}
-Transform3370.AddRoute(Script3382.EventResumeTime, TimeSensor57.set_resumeTime);
+Transform3370.AddRoute(Script3382.EventResumeTime, TimeSensor57.resumeTime);
 { METHOD .AddX3DROUTE }
 { Original "Script12.EventFraction TO AnimationAdapter_JinLipCornerPuller.EventSet_fraction }
 { Sample Script12.EventFraction TO AnimationAdapter_JinLipCornerPuller.EventSet_fraction}
-Transform3370.AddRoute(Script3382.EventFraction, ScalarInterpolator21.set_EventSet_fraction);
+Transform3370.AddRoute(Script3382.EventFraction, ScalarInterpolator21.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group3045.FdChildren.Add(Transform3370);
 { Original "JinLipCornerPuller_Sensor.EventTouchTime TO JinLipCornerPuller_Clock.startTime }
 { Sample JinLipCornerPuller_Sensor.EventTouchTime TO JinLipCornerPuller_Clock.startTime}
-Group3045.AddRoute(TouchSensor3371.EventTouchTime, TimeSensor57.set_startTime);
+Group3045.AddRoute(TouchSensor3371.EventTouchTime, TimeSensor57.startTime);
 { METHOD .AddX3DROUTE }
 Transform3397 := TTransformNode.Create;
 Transform3397.Translation := Vector3(48,24.399999999999995,0);
@@ -16225,29 +16225,29 @@ Transform3397.AddRoute(JinLipFunneler_Material.diffuseColor, SFColor3414);
 { METHOD .AddX3DROUTE }
 { Original "Script13.diffuseColor TO JinLipFunneler_Material.diffuseColor }
 { Sample Script13.diffuseColor TO JinLipFunneler_Material.diffuseColor}
-Transform3397.AddRoute(Script13.[object Object], Material3406.set_diffuseColor);
+Transform3397.AddRoute(Script13.[object Object], Material3406.diffuseColor);
 { METHOD .AddX3DROUTE }
 { Original "Script13.checked TO JinLipFunneler_Clock.enabled }
 { Sample Script13.checked TO JinLipFunneler_Clock.enabled}
-Transform3397.AddRoute(Script13.[object Object], TimeSensor56.set_enabled);
+Transform3397.AddRoute(Script13.[object Object], TimeSensor56.enabled);
 { METHOD .AddX3DROUTE }
 { Original "Script13.EventPauseTime TO JinLipFunneler_Clock.pauseTime }
 { Sample Script13.EventPauseTime TO JinLipFunneler_Clock.pauseTime}
-Transform3397.AddRoute(Script3409.EventPauseTime, TimeSensor56.set_pauseTime);
+Transform3397.AddRoute(Script3409.EventPauseTime, TimeSensor56.pauseTime);
 { METHOD .AddX3DROUTE }
 { Original "Script13.EventResumeTime TO JinLipFunneler_Clock.resumeTime }
 { Sample Script13.EventResumeTime TO JinLipFunneler_Clock.resumeTime}
-Transform3397.AddRoute(Script3409.EventResumeTime, TimeSensor56.set_resumeTime);
+Transform3397.AddRoute(Script3409.EventResumeTime, TimeSensor56.resumeTime);
 { METHOD .AddX3DROUTE }
 { Original "Script13.EventFraction TO AnimationAdapter_JinLipFunneler.EventSet_fraction }
 { Sample Script13.EventFraction TO AnimationAdapter_JinLipFunneler.EventSet_fraction}
-Transform3397.AddRoute(Script3409.EventFraction, ScalarInterpolator22.set_EventSet_fraction);
+Transform3397.AddRoute(Script3409.EventFraction, ScalarInterpolator22.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group3045.FdChildren.Add(Transform3397);
 { Original "JinLipFunneler_Sensor.EventTouchTime TO JinLipFunneler_Clock.startTime }
 { Sample JinLipFunneler_Sensor.EventTouchTime TO JinLipFunneler_Clock.startTime}
-Group3045.AddRoute(TouchSensor3398.EventTouchTime, TimeSensor56.set_startTime);
+Group3045.AddRoute(TouchSensor3398.EventTouchTime, TimeSensor56.startTime);
 { METHOD .AddX3DROUTE }
 Transform3424 := TTransformNode.Create;
 Transform3424.Translation := Vector3(48,21.399999999999995,0);
@@ -16348,29 +16348,29 @@ Transform3424.AddRoute(JinLipPressor_Material.diffuseColor, SFColor3441);
 { METHOD .AddX3DROUTE }
 { Original "Script14.diffuseColor TO JinLipPressor_Material.diffuseColor }
 { Sample Script14.diffuseColor TO JinLipPressor_Material.diffuseColor}
-Transform3424.AddRoute(Script14.[object Object], Material3433.set_diffuseColor);
+Transform3424.AddRoute(Script14.[object Object], Material3433.diffuseColor);
 { METHOD .AddX3DROUTE }
 { Original "Script14.checked TO JinLipPressor_Clock.enabled }
 { Sample Script14.checked TO JinLipPressor_Clock.enabled}
-Transform3424.AddRoute(Script14.[object Object], TimeSensor55.set_enabled);
+Transform3424.AddRoute(Script14.[object Object], TimeSensor55.enabled);
 { METHOD .AddX3DROUTE }
 { Original "Script14.EventPauseTime TO JinLipPressor_Clock.pauseTime }
 { Sample Script14.EventPauseTime TO JinLipPressor_Clock.pauseTime}
-Transform3424.AddRoute(Script3436.EventPauseTime, TimeSensor55.set_pauseTime);
+Transform3424.AddRoute(Script3436.EventPauseTime, TimeSensor55.pauseTime);
 { METHOD .AddX3DROUTE }
 { Original "Script14.EventResumeTime TO JinLipPressor_Clock.resumeTime }
 { Sample Script14.EventResumeTime TO JinLipPressor_Clock.resumeTime}
-Transform3424.AddRoute(Script3436.EventResumeTime, TimeSensor55.set_resumeTime);
+Transform3424.AddRoute(Script3436.EventResumeTime, TimeSensor55.resumeTime);
 { METHOD .AddX3DROUTE }
 { Original "Script14.EventFraction TO AnimationAdapter_JinLipPressor.EventSet_fraction }
 { Sample Script14.EventFraction TO AnimationAdapter_JinLipPressor.EventSet_fraction}
-Transform3424.AddRoute(Script3436.EventFraction, ScalarInterpolator23.set_EventSet_fraction);
+Transform3424.AddRoute(Script3436.EventFraction, ScalarInterpolator23.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group3045.FdChildren.Add(Transform3424);
 { Original "JinLipPressor_Sensor.EventTouchTime TO JinLipPressor_Clock.startTime }
 { Sample JinLipPressor_Sensor.EventTouchTime TO JinLipPressor_Clock.startTime}
-Group3045.AddRoute(TouchSensor3425.EventTouchTime, TimeSensor55.set_startTime);
+Group3045.AddRoute(TouchSensor3425.EventTouchTime, TimeSensor55.startTime);
 { METHOD .AddX3DROUTE }
 Transform3451 := TTransformNode.Create;
 Transform3451.Translation := Vector3(48,18.4,0);
@@ -16471,29 +16471,29 @@ Transform3451.AddRoute(JinLipPuckerer_Material.diffuseColor, SFColor3468);
 { METHOD .AddX3DROUTE }
 { Original "Script15.diffuseColor TO JinLipPuckerer_Material.diffuseColor }
 { Sample Script15.diffuseColor TO JinLipPuckerer_Material.diffuseColor}
-Transform3451.AddRoute(Script15.[object Object], Material3460.set_diffuseColor);
+Transform3451.AddRoute(Script15.[object Object], Material3460.diffuseColor);
 { METHOD .AddX3DROUTE }
 { Original "Script15.checked TO JinLipPuckerer_Clock.enabled }
 { Sample Script15.checked TO JinLipPuckerer_Clock.enabled}
-Transform3451.AddRoute(Script15.[object Object], TimeSensor54.set_enabled);
+Transform3451.AddRoute(Script15.[object Object], TimeSensor54.enabled);
 { METHOD .AddX3DROUTE }
 { Original "Script15.EventPauseTime TO JinLipPuckerer_Clock.pauseTime }
 { Sample Script15.EventPauseTime TO JinLipPuckerer_Clock.pauseTime}
-Transform3451.AddRoute(Script3463.EventPauseTime, TimeSensor54.set_pauseTime);
+Transform3451.AddRoute(Script3463.EventPauseTime, TimeSensor54.pauseTime);
 { METHOD .AddX3DROUTE }
 { Original "Script15.EventResumeTime TO JinLipPuckerer_Clock.resumeTime }
 { Sample Script15.EventResumeTime TO JinLipPuckerer_Clock.resumeTime}
-Transform3451.AddRoute(Script3463.EventResumeTime, TimeSensor54.set_resumeTime);
+Transform3451.AddRoute(Script3463.EventResumeTime, TimeSensor54.resumeTime);
 { METHOD .AddX3DROUTE }
 { Original "Script15.EventFraction TO AnimationAdapter_JinLipPuckerer.EventSet_fraction }
 { Sample Script15.EventFraction TO AnimationAdapter_JinLipPuckerer.EventSet_fraction}
-Transform3451.AddRoute(Script3463.EventFraction, ScalarInterpolator24.set_EventSet_fraction);
+Transform3451.AddRoute(Script3463.EventFraction, ScalarInterpolator24.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group3045.FdChildren.Add(Transform3451);
 { Original "JinLipPuckerer_Sensor.EventTouchTime TO JinLipPuckerer_Clock.startTime }
 { Sample JinLipPuckerer_Sensor.EventTouchTime TO JinLipPuckerer_Clock.startTime}
-Group3045.AddRoute(TouchSensor3452.EventTouchTime, TimeSensor54.set_startTime);
+Group3045.AddRoute(TouchSensor3452.EventTouchTime, TimeSensor54.startTime);
 { METHOD .AddX3DROUTE }
 Transform3478 := TTransformNode.Create;
 Transform3478.Translation := Vector3(48,15.399999999999997,0);
@@ -16594,29 +16594,29 @@ Transform3478.AddRoute(JinLipsPart_Material.diffuseColor, SFColor3495);
 { METHOD .AddX3DROUTE }
 { Original "Script16.diffuseColor TO JinLipsPart_Material.diffuseColor }
 { Sample Script16.diffuseColor TO JinLipsPart_Material.diffuseColor}
-Transform3478.AddRoute(Script16.[object Object], Material3487.set_diffuseColor);
+Transform3478.AddRoute(Script16.[object Object], Material3487.diffuseColor);
 { METHOD .AddX3DROUTE }
 { Original "Script16.checked TO JinLipsPart_Clock.enabled }
 { Sample Script16.checked TO JinLipsPart_Clock.enabled}
-Transform3478.AddRoute(Script16.[object Object], TimeSensor53.set_enabled);
+Transform3478.AddRoute(Script16.[object Object], TimeSensor53.enabled);
 { METHOD .AddX3DROUTE }
 { Original "Script16.EventPauseTime TO JinLipsPart_Clock.pauseTime }
 { Sample Script16.EventPauseTime TO JinLipsPart_Clock.pauseTime}
-Transform3478.AddRoute(Script3490.EventPauseTime, TimeSensor53.set_pauseTime);
+Transform3478.AddRoute(Script3490.EventPauseTime, TimeSensor53.pauseTime);
 { METHOD .AddX3DROUTE }
 { Original "Script16.EventResumeTime TO JinLipsPart_Clock.resumeTime }
 { Sample Script16.EventResumeTime TO JinLipsPart_Clock.resumeTime}
-Transform3478.AddRoute(Script3490.EventResumeTime, TimeSensor53.set_resumeTime);
+Transform3478.AddRoute(Script3490.EventResumeTime, TimeSensor53.resumeTime);
 { METHOD .AddX3DROUTE }
 { Original "Script16.EventFraction TO AnimationAdapter_JinLipsPart.EventSet_fraction }
 { Sample Script16.EventFraction TO AnimationAdapter_JinLipsPart.EventSet_fraction}
-Transform3478.AddRoute(Script3490.EventFraction, ScalarInterpolator25.set_EventSet_fraction);
+Transform3478.AddRoute(Script3490.EventFraction, ScalarInterpolator25.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group3045.FdChildren.Add(Transform3478);
 { Original "JinLipsPart_Sensor.EventTouchTime TO JinLipsPart_Clock.startTime }
 { Sample JinLipsPart_Sensor.EventTouchTime TO JinLipsPart_Clock.startTime}
-Group3045.AddRoute(TouchSensor3479.EventTouchTime, TimeSensor53.set_startTime);
+Group3045.AddRoute(TouchSensor3479.EventTouchTime, TimeSensor53.startTime);
 { METHOD .AddX3DROUTE }
 Transform3505 := TTransformNode.Create;
 Transform3505.Translation := Vector3(48,12.399999999999999,0);
@@ -16717,29 +16717,29 @@ Transform3505.AddRoute(JinLipStretcher_Material.diffuseColor, SFColor3522);
 { METHOD .AddX3DROUTE }
 { Original "Script17.diffuseColor TO JinLipStretcher_Material.diffuseColor }
 { Sample Script17.diffuseColor TO JinLipStretcher_Material.diffuseColor}
-Transform3505.AddRoute(Script17.[object Object], Material3514.set_diffuseColor);
+Transform3505.AddRoute(Script17.[object Object], Material3514.diffuseColor);
 { METHOD .AddX3DROUTE }
 { Original "Script17.checked TO JinLipStretcher_Clock.enabled }
 { Sample Script17.checked TO JinLipStretcher_Clock.enabled}
-Transform3505.AddRoute(Script17.[object Object], TimeSensor52.set_enabled);
+Transform3505.AddRoute(Script17.[object Object], TimeSensor52.enabled);
 { METHOD .AddX3DROUTE }
 { Original "Script17.EventPauseTime TO JinLipStretcher_Clock.pauseTime }
 { Sample Script17.EventPauseTime TO JinLipStretcher_Clock.pauseTime}
-Transform3505.AddRoute(Script3517.EventPauseTime, TimeSensor52.set_pauseTime);
+Transform3505.AddRoute(Script3517.EventPauseTime, TimeSensor52.pauseTime);
 { METHOD .AddX3DROUTE }
 { Original "Script17.EventResumeTime TO JinLipStretcher_Clock.resumeTime }
 { Sample Script17.EventResumeTime TO JinLipStretcher_Clock.resumeTime}
-Transform3505.AddRoute(Script3517.EventResumeTime, TimeSensor52.set_resumeTime);
+Transform3505.AddRoute(Script3517.EventResumeTime, TimeSensor52.resumeTime);
 { METHOD .AddX3DROUTE }
 { Original "Script17.EventFraction TO AnimationAdapter_JinLipStretcher.EventSet_fraction }
 { Sample Script17.EventFraction TO AnimationAdapter_JinLipStretcher.EventSet_fraction}
-Transform3505.AddRoute(Script3517.EventFraction, ScalarInterpolator26.set_EventSet_fraction);
+Transform3505.AddRoute(Script3517.EventFraction, ScalarInterpolator26.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group3045.FdChildren.Add(Transform3505);
 { Original "JinLipStretcher_Sensor.EventTouchTime TO JinLipStretcher_Clock.startTime }
 { Sample JinLipStretcher_Sensor.EventTouchTime TO JinLipStretcher_Clock.startTime}
-Group3045.AddRoute(TouchSensor3506.EventTouchTime, TimeSensor52.set_startTime);
+Group3045.AddRoute(TouchSensor3506.EventTouchTime, TimeSensor52.startTime);
 { METHOD .AddX3DROUTE }
 Transform3532 := TTransformNode.Create;
 Transform3532.Translation := Vector3(48,9.399999999999999,0);
@@ -16840,29 +16840,29 @@ Transform3532.AddRoute(JinLipSuck_Material.diffuseColor, SFColor3549);
 { METHOD .AddX3DROUTE }
 { Original "Script18.diffuseColor TO JinLipSuck_Material.diffuseColor }
 { Sample Script18.diffuseColor TO JinLipSuck_Material.diffuseColor}
-Transform3532.AddRoute(Script18.[object Object], Material3541.set_diffuseColor);
+Transform3532.AddRoute(Script18.[object Object], Material3541.diffuseColor);
 { METHOD .AddX3DROUTE }
 { Original "Script18.checked TO JinLipSuck_Clock.enabled }
 { Sample Script18.checked TO JinLipSuck_Clock.enabled}
-Transform3532.AddRoute(Script18.[object Object], TimeSensor51.set_enabled);
+Transform3532.AddRoute(Script18.[object Object], TimeSensor51.enabled);
 { METHOD .AddX3DROUTE }
 { Original "Script18.EventPauseTime TO JinLipSuck_Clock.pauseTime }
 { Sample Script18.EventPauseTime TO JinLipSuck_Clock.pauseTime}
-Transform3532.AddRoute(Script3544.EventPauseTime, TimeSensor51.set_pauseTime);
+Transform3532.AddRoute(Script3544.EventPauseTime, TimeSensor51.pauseTime);
 { METHOD .AddX3DROUTE }
 { Original "Script18.EventResumeTime TO JinLipSuck_Clock.resumeTime }
 { Sample Script18.EventResumeTime TO JinLipSuck_Clock.resumeTime}
-Transform3532.AddRoute(Script3544.EventResumeTime, TimeSensor51.set_resumeTime);
+Transform3532.AddRoute(Script3544.EventResumeTime, TimeSensor51.resumeTime);
 { METHOD .AddX3DROUTE }
 { Original "Script18.EventFraction TO AnimationAdapter_JinLipSuck.EventSet_fraction }
 { Sample Script18.EventFraction TO AnimationAdapter_JinLipSuck.EventSet_fraction}
-Transform3532.AddRoute(Script3544.EventFraction, ScalarInterpolator27.set_EventSet_fraction);
+Transform3532.AddRoute(Script3544.EventFraction, ScalarInterpolator27.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group3045.FdChildren.Add(Transform3532);
 { Original "JinLipSuck_Sensor.EventTouchTime TO JinLipSuck_Clock.startTime }
 { Sample JinLipSuck_Sensor.EventTouchTime TO JinLipSuck_Clock.startTime}
-Group3045.AddRoute(TouchSensor3533.EventTouchTime, TimeSensor51.set_startTime);
+Group3045.AddRoute(TouchSensor3533.EventTouchTime, TimeSensor51.startTime);
 { METHOD .AddX3DROUTE }
 Transform3559 := TTransformNode.Create;
 Transform3559.Translation := Vector3(48,6.399999999999999,0);
@@ -16963,29 +16963,29 @@ Transform3559.AddRoute(JinLipTightener_Material.diffuseColor, SFColor3576);
 { METHOD .AddX3DROUTE }
 { Original "Script19.diffuseColor TO JinLipTightener_Material.diffuseColor }
 { Sample Script19.diffuseColor TO JinLipTightener_Material.diffuseColor}
-Transform3559.AddRoute(Script19.[object Object], Material3568.set_diffuseColor);
+Transform3559.AddRoute(Script19.[object Object], Material3568.diffuseColor);
 { METHOD .AddX3DROUTE }
 { Original "Script19.checked TO JinLipTightener_Clock.enabled }
 { Sample Script19.checked TO JinLipTightener_Clock.enabled}
-Transform3559.AddRoute(Script19.[object Object], TimeSensor50.set_enabled);
+Transform3559.AddRoute(Script19.[object Object], TimeSensor50.enabled);
 { METHOD .AddX3DROUTE }
 { Original "Script19.EventPauseTime TO JinLipTightener_Clock.pauseTime }
 { Sample Script19.EventPauseTime TO JinLipTightener_Clock.pauseTime}
-Transform3559.AddRoute(Script3571.EventPauseTime, TimeSensor50.set_pauseTime);
+Transform3559.AddRoute(Script3571.EventPauseTime, TimeSensor50.pauseTime);
 { METHOD .AddX3DROUTE }
 { Original "Script19.EventResumeTime TO JinLipTightener_Clock.resumeTime }
 { Sample Script19.EventResumeTime TO JinLipTightener_Clock.resumeTime}
-Transform3559.AddRoute(Script3571.EventResumeTime, TimeSensor50.set_resumeTime);
+Transform3559.AddRoute(Script3571.EventResumeTime, TimeSensor50.resumeTime);
 { METHOD .AddX3DROUTE }
 { Original "Script19.EventFraction TO AnimationAdapter_JinLipTightener.EventSet_fraction }
 { Sample Script19.EventFraction TO AnimationAdapter_JinLipTightener.EventSet_fraction}
-Transform3559.AddRoute(Script3571.EventFraction, ScalarInterpolator28.set_EventSet_fraction);
+Transform3559.AddRoute(Script3571.EventFraction, ScalarInterpolator28.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group3045.FdChildren.Add(Transform3559);
 { Original "JinLipTightener_Sensor.EventTouchTime TO JinLipTightener_Clock.startTime }
 { Sample JinLipTightener_Sensor.EventTouchTime TO JinLipTightener_Clock.startTime}
-Group3045.AddRoute(TouchSensor3560.EventTouchTime, TimeSensor50.set_startTime);
+Group3045.AddRoute(TouchSensor3560.EventTouchTime, TimeSensor50.startTime);
 { METHOD .AddX3DROUTE }
 Transform3586 := TTransformNode.Create;
 Transform3586.Translation := Vector3(48,3.399999999999995,0);
@@ -17086,29 +17086,29 @@ Transform3586.AddRoute(JinLowerLipDepressor_Material.diffuseColor, SFColor3603);
 { METHOD .AddX3DROUTE }
 { Original "Script20.diffuseColor TO JinLowerLipDepressor_Material.diffuseColor }
 { Sample Script20.diffuseColor TO JinLowerLipDepressor_Material.diffuseColor}
-Transform3586.AddRoute(Script20.[object Object], Material3595.set_diffuseColor);
+Transform3586.AddRoute(Script20.[object Object], Material3595.diffuseColor);
 { METHOD .AddX3DROUTE }
 { Original "Script20.checked TO JinLowerLipDepressor_Clock.enabled }
 { Sample Script20.checked TO JinLowerLipDepressor_Clock.enabled}
-Transform3586.AddRoute(Script20.[object Object], TimeSensor49.set_enabled);
+Transform3586.AddRoute(Script20.[object Object], TimeSensor49.enabled);
 { METHOD .AddX3DROUTE }
 { Original "Script20.EventPauseTime TO JinLowerLipDepressor_Clock.pauseTime }
 { Sample Script20.EventPauseTime TO JinLowerLipDepressor_Clock.pauseTime}
-Transform3586.AddRoute(Script3598.EventPauseTime, TimeSensor49.set_pauseTime);
+Transform3586.AddRoute(Script3598.EventPauseTime, TimeSensor49.pauseTime);
 { METHOD .AddX3DROUTE }
 { Original "Script20.EventResumeTime TO JinLowerLipDepressor_Clock.resumeTime }
 { Sample Script20.EventResumeTime TO JinLowerLipDepressor_Clock.resumeTime}
-Transform3586.AddRoute(Script3598.EventResumeTime, TimeSensor49.set_resumeTime);
+Transform3586.AddRoute(Script3598.EventResumeTime, TimeSensor49.resumeTime);
 { METHOD .AddX3DROUTE }
 { Original "Script20.EventFraction TO AnimationAdapter_JinLowerLipDepressor.EventSet_fraction }
 { Sample Script20.EventFraction TO AnimationAdapter_JinLowerLipDepressor.EventSet_fraction}
-Transform3586.AddRoute(Script3598.EventFraction, ScalarInterpolator29.set_EventSet_fraction);
+Transform3586.AddRoute(Script3598.EventFraction, ScalarInterpolator29.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group3045.FdChildren.Add(Transform3586);
 { Original "JinLowerLipDepressor_Sensor.EventTouchTime TO JinLowerLipDepressor_Clock.startTime }
 { Sample JinLowerLipDepressor_Sensor.EventTouchTime TO JinLowerLipDepressor_Clock.startTime}
-Group3045.AddRoute(TouchSensor3587.EventTouchTime, TimeSensor49.set_startTime);
+Group3045.AddRoute(TouchSensor3587.EventTouchTime, TimeSensor49.startTime);
 { METHOD .AddX3DROUTE }
 Transform3613 := TTransformNode.Create;
 Transform3613.Translation := Vector3(48,0.399999999999995,0);
@@ -17209,29 +17209,29 @@ Transform3613.AddRoute(JinMouthStretch_Material.diffuseColor, SFColor3630);
 { METHOD .AddX3DROUTE }
 { Original "Script21.diffuseColor TO JinMouthStretch_Material.diffuseColor }
 { Sample Script21.diffuseColor TO JinMouthStretch_Material.diffuseColor}
-Transform3613.AddRoute(Script21.[object Object], Material3622.set_diffuseColor);
+Transform3613.AddRoute(Script21.[object Object], Material3622.diffuseColor);
 { METHOD .AddX3DROUTE }
 { Original "Script21.checked TO JinMouthStretch_Clock.enabled }
 { Sample Script21.checked TO JinMouthStretch_Clock.enabled}
-Transform3613.AddRoute(Script21.[object Object], TimeSensor48.set_enabled);
+Transform3613.AddRoute(Script21.[object Object], TimeSensor48.enabled);
 { METHOD .AddX3DROUTE }
 { Original "Script21.EventPauseTime TO JinMouthStretch_Clock.pauseTime }
 { Sample Script21.EventPauseTime TO JinMouthStretch_Clock.pauseTime}
-Transform3613.AddRoute(Script3625.EventPauseTime, TimeSensor48.set_pauseTime);
+Transform3613.AddRoute(Script3625.EventPauseTime, TimeSensor48.pauseTime);
 { METHOD .AddX3DROUTE }
 { Original "Script21.EventResumeTime TO JinMouthStretch_Clock.resumeTime }
 { Sample Script21.EventResumeTime TO JinMouthStretch_Clock.resumeTime}
-Transform3613.AddRoute(Script3625.EventResumeTime, TimeSensor48.set_resumeTime);
+Transform3613.AddRoute(Script3625.EventResumeTime, TimeSensor48.resumeTime);
 { METHOD .AddX3DROUTE }
 { Original "Script21.EventFraction TO AnimationAdapter_JinMouthStretch.EventSet_fraction }
 { Sample Script21.EventFraction TO AnimationAdapter_JinMouthStretch.EventSet_fraction}
-Transform3613.AddRoute(Script3625.EventFraction, ScalarInterpolator30.set_EventSet_fraction);
+Transform3613.AddRoute(Script3625.EventFraction, ScalarInterpolator30.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group3045.FdChildren.Add(Transform3613);
 { Original "JinMouthStretch_Sensor.EventTouchTime TO JinMouthStretch_Clock.startTime }
 { Sample JinMouthStretch_Sensor.EventTouchTime TO JinMouthStretch_Clock.startTime}
-Group3045.AddRoute(TouchSensor3614.EventTouchTime, TimeSensor48.set_startTime);
+Group3045.AddRoute(TouchSensor3614.EventTouchTime, TimeSensor48.startTime);
 { METHOD .AddX3DROUTE }
 Transform3640 := TTransformNode.Create;
 Transform3640.Translation := Vector3(48,-2.6000000000000085,0);
@@ -17332,29 +17332,29 @@ Transform3640.AddRoute(JinNasolabialDeepener_Material.diffuseColor, SFColor3657)
 { METHOD .AddX3DROUTE }
 { Original "Script22.diffuseColor TO JinNasolabialDeepener_Material.diffuseColor }
 { Sample Script22.diffuseColor TO JinNasolabialDeepener_Material.diffuseColor}
-Transform3640.AddRoute(Script22.[object Object], Material3649.set_diffuseColor);
+Transform3640.AddRoute(Script22.[object Object], Material3649.diffuseColor);
 { METHOD .AddX3DROUTE }
 { Original "Script22.checked TO JinNasolabialDeepener_Clock.enabled }
 { Sample Script22.checked TO JinNasolabialDeepener_Clock.enabled}
-Transform3640.AddRoute(Script22.[object Object], TimeSensor47.set_enabled);
+Transform3640.AddRoute(Script22.[object Object], TimeSensor47.enabled);
 { METHOD .AddX3DROUTE }
 { Original "Script22.EventPauseTime TO JinNasolabialDeepener_Clock.pauseTime }
 { Sample Script22.EventPauseTime TO JinNasolabialDeepener_Clock.pauseTime}
-Transform3640.AddRoute(Script3652.EventPauseTime, TimeSensor47.set_pauseTime);
+Transform3640.AddRoute(Script3652.EventPauseTime, TimeSensor47.pauseTime);
 { METHOD .AddX3DROUTE }
 { Original "Script22.EventResumeTime TO JinNasolabialDeepener_Clock.resumeTime }
 { Sample Script22.EventResumeTime TO JinNasolabialDeepener_Clock.resumeTime}
-Transform3640.AddRoute(Script3652.EventResumeTime, TimeSensor47.set_resumeTime);
+Transform3640.AddRoute(Script3652.EventResumeTime, TimeSensor47.resumeTime);
 { METHOD .AddX3DROUTE }
 { Original "Script22.EventFraction TO AnimationAdapter_JinNasolabialDeepener.EventSet_fraction }
 { Sample Script22.EventFraction TO AnimationAdapter_JinNasolabialDeepener.EventSet_fraction}
-Transform3640.AddRoute(Script3652.EventFraction, ScalarInterpolator31.set_EventSet_fraction);
+Transform3640.AddRoute(Script3652.EventFraction, ScalarInterpolator31.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group3045.FdChildren.Add(Transform3640);
 { Original "JinNasolabialDeepener_Sensor.EventTouchTime TO JinNasolabialDeepener_Clock.startTime }
 { Sample JinNasolabialDeepener_Sensor.EventTouchTime TO JinNasolabialDeepener_Clock.startTime}
-Group3045.AddRoute(TouchSensor3641.EventTouchTime, TimeSensor47.set_startTime);
+Group3045.AddRoute(TouchSensor3641.EventTouchTime, TimeSensor47.startTime);
 { METHOD .AddX3DROUTE }
 Transform3667 := TTransformNode.Create;
 Transform3667.Translation := Vector3(48,-5.6000000000000085,0);
@@ -17455,29 +17455,29 @@ Transform3667.AddRoute(JinNoseWrinkler_Material.diffuseColor, SFColor3684);
 { METHOD .AddX3DROUTE }
 { Original "Script23.diffuseColor TO JinNoseWrinkler_Material.diffuseColor }
 { Sample Script23.diffuseColor TO JinNoseWrinkler_Material.diffuseColor}
-Transform3667.AddRoute(Script23.[object Object], Material3676.set_diffuseColor);
+Transform3667.AddRoute(Script23.[object Object], Material3676.diffuseColor);
 { METHOD .AddX3DROUTE }
 { Original "Script23.checked TO JinNoseWrinkler_Clock.enabled }
 { Sample Script23.checked TO JinNoseWrinkler_Clock.enabled}
-Transform3667.AddRoute(Script23.[object Object], TimeSensor46.set_enabled);
+Transform3667.AddRoute(Script23.[object Object], TimeSensor46.enabled);
 { METHOD .AddX3DROUTE }
 { Original "Script23.EventPauseTime TO JinNoseWrinkler_Clock.pauseTime }
 { Sample Script23.EventPauseTime TO JinNoseWrinkler_Clock.pauseTime}
-Transform3667.AddRoute(Script3679.EventPauseTime, TimeSensor46.set_pauseTime);
+Transform3667.AddRoute(Script3679.EventPauseTime, TimeSensor46.pauseTime);
 { METHOD .AddX3DROUTE }
 { Original "Script23.EventResumeTime TO JinNoseWrinkler_Clock.resumeTime }
 { Sample Script23.EventResumeTime TO JinNoseWrinkler_Clock.resumeTime}
-Transform3667.AddRoute(Script3679.EventResumeTime, TimeSensor46.set_resumeTime);
+Transform3667.AddRoute(Script3679.EventResumeTime, TimeSensor46.resumeTime);
 { METHOD .AddX3DROUTE }
 { Original "Script23.EventFraction TO AnimationAdapter_JinNoseWrinkler.EventSet_fraction }
 { Sample Script23.EventFraction TO AnimationAdapter_JinNoseWrinkler.EventSet_fraction}
-Transform3667.AddRoute(Script3679.EventFraction, ScalarInterpolator32.set_EventSet_fraction);
+Transform3667.AddRoute(Script3679.EventFraction, ScalarInterpolator32.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group3045.FdChildren.Add(Transform3667);
 { Original "JinNoseWrinkler_Sensor.EventTouchTime TO JinNoseWrinkler_Clock.startTime }
 { Sample JinNoseWrinkler_Sensor.EventTouchTime TO JinNoseWrinkler_Clock.startTime}
-Group3045.AddRoute(TouchSensor3668.EventTouchTime, TimeSensor46.set_startTime);
+Group3045.AddRoute(TouchSensor3668.EventTouchTime, TimeSensor46.startTime);
 { METHOD .AddX3DROUTE }
 Transform3694 := TTransformNode.Create;
 Transform3694.Translation := Vector3(48,-8.600000000000009,0);
@@ -17578,29 +17578,29 @@ Transform3694.AddRoute(JinOuterBrowRaiser_Material.diffuseColor, SFColor3711);
 { METHOD .AddX3DROUTE }
 { Original "Script24.diffuseColor TO JinOuterBrowRaiser_Material.diffuseColor }
 { Sample Script24.diffuseColor TO JinOuterBrowRaiser_Material.diffuseColor}
-Transform3694.AddRoute(Script24.[object Object], Material3703.set_diffuseColor);
+Transform3694.AddRoute(Script24.[object Object], Material3703.diffuseColor);
 { METHOD .AddX3DROUTE }
 { Original "Script24.checked TO JinOuterBrowRaiser_Clock.enabled }
 { Sample Script24.checked TO JinOuterBrowRaiser_Clock.enabled}
-Transform3694.AddRoute(Script24.[object Object], TimeSensor45.set_enabled);
+Transform3694.AddRoute(Script24.[object Object], TimeSensor45.enabled);
 { METHOD .AddX3DROUTE }
 { Original "Script24.EventPauseTime TO JinOuterBrowRaiser_Clock.pauseTime }
 { Sample Script24.EventPauseTime TO JinOuterBrowRaiser_Clock.pauseTime}
-Transform3694.AddRoute(Script3706.EventPauseTime, TimeSensor45.set_pauseTime);
+Transform3694.AddRoute(Script3706.EventPauseTime, TimeSensor45.pauseTime);
 { METHOD .AddX3DROUTE }
 { Original "Script24.EventResumeTime TO JinOuterBrowRaiser_Clock.resumeTime }
 { Sample Script24.EventResumeTime TO JinOuterBrowRaiser_Clock.resumeTime}
-Transform3694.AddRoute(Script3706.EventResumeTime, TimeSensor45.set_resumeTime);
+Transform3694.AddRoute(Script3706.EventResumeTime, TimeSensor45.resumeTime);
 { METHOD .AddX3DROUTE }
 { Original "Script24.EventFraction TO AnimationAdapter_JinOuterBrowRaiser.EventSet_fraction }
 { Sample Script24.EventFraction TO AnimationAdapter_JinOuterBrowRaiser.EventSet_fraction}
-Transform3694.AddRoute(Script3706.EventFraction, ScalarInterpolator33.set_EventSet_fraction);
+Transform3694.AddRoute(Script3706.EventFraction, ScalarInterpolator33.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group3045.FdChildren.Add(Transform3694);
 { Original "JinOuterBrowRaiser_Sensor.EventTouchTime TO JinOuterBrowRaiser_Clock.startTime }
 { Sample JinOuterBrowRaiser_Sensor.EventTouchTime TO JinOuterBrowRaiser_Clock.startTime}
-Group3045.AddRoute(TouchSensor3695.EventTouchTime, TimeSensor45.set_startTime);
+Group3045.AddRoute(TouchSensor3695.EventTouchTime, TimeSensor45.startTime);
 { METHOD .AddX3DROUTE }
 Transform3721 := TTransformNode.Create;
 Transform3721.Translation := Vector3(48,-11.600000000000009,0);
@@ -17701,29 +17701,29 @@ Transform3721.AddRoute(JinSlit_Material.diffuseColor, SFColor3738);
 { METHOD .AddX3DROUTE }
 { Original "Script25.diffuseColor TO JinSlit_Material.diffuseColor }
 { Sample Script25.diffuseColor TO JinSlit_Material.diffuseColor}
-Transform3721.AddRoute(Script25.[object Object], Material3730.set_diffuseColor);
+Transform3721.AddRoute(Script25.[object Object], Material3730.diffuseColor);
 { METHOD .AddX3DROUTE }
 { Original "Script25.checked TO JinSlit_Clock.enabled }
 { Sample Script25.checked TO JinSlit_Clock.enabled}
-Transform3721.AddRoute(Script25.[object Object], TimeSensor44.set_enabled);
+Transform3721.AddRoute(Script25.[object Object], TimeSensor44.enabled);
 { METHOD .AddX3DROUTE }
 { Original "Script25.EventPauseTime TO JinSlit_Clock.pauseTime }
 { Sample Script25.EventPauseTime TO JinSlit_Clock.pauseTime}
-Transform3721.AddRoute(Script3733.EventPauseTime, TimeSensor44.set_pauseTime);
+Transform3721.AddRoute(Script3733.EventPauseTime, TimeSensor44.pauseTime);
 { METHOD .AddX3DROUTE }
 { Original "Script25.EventResumeTime TO JinSlit_Clock.resumeTime }
 { Sample Script25.EventResumeTime TO JinSlit_Clock.resumeTime}
-Transform3721.AddRoute(Script3733.EventResumeTime, TimeSensor44.set_resumeTime);
+Transform3721.AddRoute(Script3733.EventResumeTime, TimeSensor44.resumeTime);
 { METHOD .AddX3DROUTE }
 { Original "Script25.EventFraction TO AnimationAdapter_JinSlit.EventSet_fraction }
 { Sample Script25.EventFraction TO AnimationAdapter_JinSlit.EventSet_fraction}
-Transform3721.AddRoute(Script3733.EventFraction, ScalarInterpolator34.set_EventSet_fraction);
+Transform3721.AddRoute(Script3733.EventFraction, ScalarInterpolator34.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group3045.FdChildren.Add(Transform3721);
 { Original "JinSlit_Sensor.EventTouchTime TO JinSlit_Clock.startTime }
 { Sample JinSlit_Sensor.EventTouchTime TO JinSlit_Clock.startTime}
-Group3045.AddRoute(TouchSensor3722.EventTouchTime, TimeSensor44.set_startTime);
+Group3045.AddRoute(TouchSensor3722.EventTouchTime, TimeSensor44.startTime);
 { METHOD .AddX3DROUTE }
 Transform3748 := TTransformNode.Create;
 Transform3748.Translation := Vector3(48,-14.600000000000001,0);
@@ -17824,29 +17824,29 @@ Transform3748.AddRoute(JinSquint_Material.diffuseColor, SFColor3765);
 { METHOD .AddX3DROUTE }
 { Original "Script26.diffuseColor TO JinSquint_Material.diffuseColor }
 { Sample Script26.diffuseColor TO JinSquint_Material.diffuseColor}
-Transform3748.AddRoute(Script26.[object Object], Material3757.set_diffuseColor);
+Transform3748.AddRoute(Script26.[object Object], Material3757.diffuseColor);
 { METHOD .AddX3DROUTE }
 { Original "Script26.checked TO JinSquint_Clock.enabled }
 { Sample Script26.checked TO JinSquint_Clock.enabled}
-Transform3748.AddRoute(Script26.[object Object], TimeSensor43.set_enabled);
+Transform3748.AddRoute(Script26.[object Object], TimeSensor43.enabled);
 { METHOD .AddX3DROUTE }
 { Original "Script26.EventPauseTime TO JinSquint_Clock.pauseTime }
 { Sample Script26.EventPauseTime TO JinSquint_Clock.pauseTime}
-Transform3748.AddRoute(Script3760.EventPauseTime, TimeSensor43.set_pauseTime);
+Transform3748.AddRoute(Script3760.EventPauseTime, TimeSensor43.pauseTime);
 { METHOD .AddX3DROUTE }
 { Original "Script26.EventResumeTime TO JinSquint_Clock.resumeTime }
 { Sample Script26.EventResumeTime TO JinSquint_Clock.resumeTime}
-Transform3748.AddRoute(Script3760.EventResumeTime, TimeSensor43.set_resumeTime);
+Transform3748.AddRoute(Script3760.EventResumeTime, TimeSensor43.resumeTime);
 { METHOD .AddX3DROUTE }
 { Original "Script26.EventFraction TO AnimationAdapter_JinSquint.EventSet_fraction }
 { Sample Script26.EventFraction TO AnimationAdapter_JinSquint.EventSet_fraction}
-Transform3748.AddRoute(Script3760.EventFraction, ScalarInterpolator35.set_EventSet_fraction);
+Transform3748.AddRoute(Script3760.EventFraction, ScalarInterpolator35.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group3045.FdChildren.Add(Transform3748);
 { Original "JinSquint_Sensor.EventTouchTime TO JinSquint_Clock.startTime }
 { Sample JinSquint_Sensor.EventTouchTime TO JinSquint_Clock.startTime}
-Group3045.AddRoute(TouchSensor3749.EventTouchTime, TimeSensor43.set_startTime);
+Group3045.AddRoute(TouchSensor3749.EventTouchTime, TimeSensor43.startTime);
 { METHOD .AddX3DROUTE }
 Transform3775 := TTransformNode.Create;
 Transform3775.Translation := Vector3(48,-17.6,0);
@@ -17947,29 +17947,29 @@ Transform3775.AddRoute(JinUpperLidRaiser_Material.diffuseColor, SFColor3792);
 { METHOD .AddX3DROUTE }
 { Original "Script27.diffuseColor TO JinUpperLidRaiser_Material.diffuseColor }
 { Sample Script27.diffuseColor TO JinUpperLidRaiser_Material.diffuseColor}
-Transform3775.AddRoute(Script27.[object Object], Material3784.set_diffuseColor);
+Transform3775.AddRoute(Script27.[object Object], Material3784.diffuseColor);
 { METHOD .AddX3DROUTE }
 { Original "Script27.checked TO JinUpperLidRaiser_Clock.enabled }
 { Sample Script27.checked TO JinUpperLidRaiser_Clock.enabled}
-Transform3775.AddRoute(Script27.[object Object], TimeSensor42.set_enabled);
+Transform3775.AddRoute(Script27.[object Object], TimeSensor42.enabled);
 { METHOD .AddX3DROUTE }
 { Original "Script27.EventPauseTime TO JinUpperLidRaiser_Clock.pauseTime }
 { Sample Script27.EventPauseTime TO JinUpperLidRaiser_Clock.pauseTime}
-Transform3775.AddRoute(Script3787.EventPauseTime, TimeSensor42.set_pauseTime);
+Transform3775.AddRoute(Script3787.EventPauseTime, TimeSensor42.pauseTime);
 { METHOD .AddX3DROUTE }
 { Original "Script27.EventResumeTime TO JinUpperLidRaiser_Clock.resumeTime }
 { Sample Script27.EventResumeTime TO JinUpperLidRaiser_Clock.resumeTime}
-Transform3775.AddRoute(Script3787.EventResumeTime, TimeSensor42.set_resumeTime);
+Transform3775.AddRoute(Script3787.EventResumeTime, TimeSensor42.resumeTime);
 { METHOD .AddX3DROUTE }
 { Original "Script27.EventFraction TO AnimationAdapter_JinUpperLidRaiser.EventSet_fraction }
 { Sample Script27.EventFraction TO AnimationAdapter_JinUpperLidRaiser.EventSet_fraction}
-Transform3775.AddRoute(Script3787.EventFraction, ScalarInterpolator36.set_EventSet_fraction);
+Transform3775.AddRoute(Script3787.EventFraction, ScalarInterpolator36.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group3045.FdChildren.Add(Transform3775);
 { Original "JinUpperLidRaiser_Sensor.EventTouchTime TO JinUpperLidRaiser_Clock.startTime }
 { Sample JinUpperLidRaiser_Sensor.EventTouchTime TO JinUpperLidRaiser_Clock.startTime}
-Group3045.AddRoute(TouchSensor3776.EventTouchTime, TimeSensor42.set_startTime);
+Group3045.AddRoute(TouchSensor3776.EventTouchTime, TimeSensor42.startTime);
 { METHOD .AddX3DROUTE }
 Transform3802 := TTransformNode.Create;
 Transform3802.Translation := Vector3(48,-20.6,0);
@@ -18070,29 +18070,29 @@ Transform3802.AddRoute(JinUpperLipRaiser_Material.diffuseColor, SFColor3819);
 { METHOD .AddX3DROUTE }
 { Original "Script28.diffuseColor TO JinUpperLipRaiser_Material.diffuseColor }
 { Sample Script28.diffuseColor TO JinUpperLipRaiser_Material.diffuseColor}
-Transform3802.AddRoute(Script28.[object Object], Material3811.set_diffuseColor);
+Transform3802.AddRoute(Script28.[object Object], Material3811.diffuseColor);
 { METHOD .AddX3DROUTE }
 { Original "Script28.checked TO JinUpperLipRaiser_Clock.enabled }
 { Sample Script28.checked TO JinUpperLipRaiser_Clock.enabled}
-Transform3802.AddRoute(Script28.[object Object], TimeSensor41.set_enabled);
+Transform3802.AddRoute(Script28.[object Object], TimeSensor41.enabled);
 { METHOD .AddX3DROUTE }
 { Original "Script28.EventPauseTime TO JinUpperLipRaiser_Clock.pauseTime }
 { Sample Script28.EventPauseTime TO JinUpperLipRaiser_Clock.pauseTime}
-Transform3802.AddRoute(Script3814.EventPauseTime, TimeSensor41.set_pauseTime);
+Transform3802.AddRoute(Script3814.EventPauseTime, TimeSensor41.pauseTime);
 { METHOD .AddX3DROUTE }
 { Original "Script28.EventResumeTime TO JinUpperLipRaiser_Clock.resumeTime }
 { Sample Script28.EventResumeTime TO JinUpperLipRaiser_Clock.resumeTime}
-Transform3802.AddRoute(Script3814.EventResumeTime, TimeSensor41.set_resumeTime);
+Transform3802.AddRoute(Script3814.EventResumeTime, TimeSensor41.resumeTime);
 { METHOD .AddX3DROUTE }
 { Original "Script28.EventFraction TO AnimationAdapter_JinUpperLipRaiser.EventSet_fraction }
 { Sample Script28.EventFraction TO AnimationAdapter_JinUpperLipRaiser.EventSet_fraction}
-Transform3802.AddRoute(Script3814.EventFraction, ScalarInterpolator37.set_EventSet_fraction);
+Transform3802.AddRoute(Script3814.EventFraction, ScalarInterpolator37.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group3045.FdChildren.Add(Transform3802);
 { Original "JinUpperLipRaiser_Sensor.EventTouchTime TO JinUpperLipRaiser_Clock.startTime }
 { Sample JinUpperLipRaiser_Sensor.EventTouchTime TO JinUpperLipRaiser_Clock.startTime}
-Group3045.AddRoute(TouchSensor3803.EventTouchTime, TimeSensor41.set_startTime);
+Group3045.AddRoute(TouchSensor3803.EventTouchTime, TimeSensor41.startTime);
 { METHOD .AddX3DROUTE }
 Transform3829 := TTransformNode.Create;
 Transform3829.Translation := Vector3(48,-23.599999999999994,0);
@@ -18193,29 +18193,29 @@ Transform3829.AddRoute(JinWink_Material.diffuseColor, SFColor3846);
 { METHOD .AddX3DROUTE }
 { Original "Script29.diffuseColor TO JinWink_Material.diffuseColor }
 { Sample Script29.diffuseColor TO JinWink_Material.diffuseColor}
-Transform3829.AddRoute(Script29.[object Object], Material3838.set_diffuseColor);
+Transform3829.AddRoute(Script29.[object Object], Material3838.diffuseColor);
 { METHOD .AddX3DROUTE }
 { Original "Script29.checked TO JinWink_Clock.enabled }
 { Sample Script29.checked TO JinWink_Clock.enabled}
-Transform3829.AddRoute(Script29.[object Object], TimeSensor40.set_enabled);
+Transform3829.AddRoute(Script29.[object Object], TimeSensor40.enabled);
 { METHOD .AddX3DROUTE }
 { Original "Script29.EventPauseTime TO JinWink_Clock.pauseTime }
 { Sample Script29.EventPauseTime TO JinWink_Clock.pauseTime}
-Transform3829.AddRoute(Script3841.EventPauseTime, TimeSensor40.set_pauseTime);
+Transform3829.AddRoute(Script3841.EventPauseTime, TimeSensor40.pauseTime);
 { METHOD .AddX3DROUTE }
 { Original "Script29.EventResumeTime TO JinWink_Clock.resumeTime }
 { Sample Script29.EventResumeTime TO JinWink_Clock.resumeTime}
-Transform3829.AddRoute(Script3841.EventResumeTime, TimeSensor40.set_resumeTime);
+Transform3829.AddRoute(Script3841.EventResumeTime, TimeSensor40.resumeTime);
 { METHOD .AddX3DROUTE }
 { Original "Script29.EventFraction TO AnimationAdapter_JinWink.EventSet_fraction }
 { Sample Script29.EventFraction TO AnimationAdapter_JinWink.EventSet_fraction}
-Transform3829.AddRoute(Script3841.EventFraction, ScalarInterpolator38.set_EventSet_fraction);
+Transform3829.AddRoute(Script3841.EventFraction, ScalarInterpolator38.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group3045.FdChildren.Add(Transform3829);
 { Original "JinWink_Sensor.EventTouchTime TO JinWink_Clock.startTime }
 { Sample JinWink_Sensor.EventTouchTime TO JinWink_Clock.startTime}
-Group3045.AddRoute(TouchSensor3830.EventTouchTime, TimeSensor40.set_startTime);
+Group3045.AddRoute(TouchSensor3830.EventTouchTime, TimeSensor40.startTime);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group7.FdChildren.Add(Group3045);

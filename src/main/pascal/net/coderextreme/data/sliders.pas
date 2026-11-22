@@ -480,11 +480,11 @@ Script60.SetSourceCode('''ecmascript:\n"+
 Layer17.FdChildren.Add(Script60);
 { Original "OrbitScript.coordIndexes TO Orbit.EventSet_coordIndex }
 { Sample OrbitScript.coordIndexes TO Orbit.EventSet_coordIndex}
-Layer17.AddRoute(OrbitScript.[object Object], IndexedFaceSet56.set_EventSet_coordIndex);
+Layer17.AddRoute(OrbitScript.[object Object], IndexedFaceSet56.EventSet_coordIndex);
 { METHOD .AddX3DROUTE }
 { Original "OrbitScript.coordinates TO OrbitCoordinates.EventSet_point }
 { Sample OrbitScript.coordinates TO OrbitCoordinates.EventSet_point}
-Layer17.AddRoute(OrbitScript.[object Object], Coordinate57.set_EventSet_point);
+Layer17.AddRoute(OrbitScript.[object Object], Coordinate57.EventSet_point);
 { METHOD .AddX3DROUTE }
 { METHOD .FdLayers.Add }
 LayerSet16.FdLayers.Add(Layer17);
@@ -698,9 +698,9 @@ Script111.SetSourceCode('''ecmascript:\n"+
 "};''');
 { METHOD .FdChildren.Add }
 Group95.FdChildren.Add(Script111);
-{ Original "protoSensor.EventTranslation_changed TO protoTransform.EventSet_translation }
-{ Sample protoSensor.EventTranslation_changed TO protoTransform.EventSet_translation}
-Group95.AddRoute(PlaneSensor100.EventTranslation_changed, Transform99.set_EventSet_translation);
+{ Original "protoSensor.EventTranslation_changed TO protoTransform.FdTranslation.EventIn }
+{ Sample protoSensor.EventTranslation_changed TO protoTransform.FdTranslation.EventIn}
+Group95.AddRoute(PlaneSensor100.EventTranslation_changed, Transform99.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
 { Original "protoSensor.EventTranslation_changed TO protoValueTransformerScript.newTranslation }
 { Sample protoSensor.EventTranslation_changed TO protoValueTransformerScript.newTranslation}
@@ -708,7 +708,7 @@ Group95.AddRoute(PlaneSensor100.EventTranslation_changed, SFVec3f114);
 { METHOD .AddX3DROUTE }
 { Original "protoValueTransformerScript.protoText TO protoText.string }
 { Sample protoValueTransformerScript.protoText TO protoText.string}
-Group95.AddRoute(protoValueTransformerScript.[object Object], Text105.set_string);
+Group95.AddRoute(protoValueTransformerScript.[object Object], Text105.string);
 { METHOD .AddX3DROUTE }
 { METHOD .AddGroup }
 X3DPrototype94.AddChildren([Group95]);

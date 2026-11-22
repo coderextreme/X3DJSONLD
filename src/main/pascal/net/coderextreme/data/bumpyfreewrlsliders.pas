@@ -632,11 +632,11 @@ begin
 Layer19.FdChildren.Add(Collision92);
 { Original "EntityManager.EventAddedEntities TO AvatarHolder.addChildren }
 { Sample EntityManager.EventAddedEntities TO AvatarHolder.addChildren}
-Layer19.AddRoute(DISEntityManager87.EventAddedEntities, Group93.set_addChildren);
+Layer19.AddRoute(DISEntityManager87.EventAddedEntities, Group93.addChildren);
 { METHOD .AddX3DROUTE }
 { Original "EntityManager.EventRemovedEntities TO AvatarHolder.removeChildren }
 { Sample EntityManager.EventRemovedEntities TO AvatarHolder.removeChildren}
-Layer19.AddRoute(DISEntityManager87.EventRemovedEntities, Group93.set_removeChildren);
+Layer19.AddRoute(DISEntityManager87.EventRemovedEntities, Group93.removeChildren);
 { METHOD .AddX3DROUTE }
 { METHOD .FdLayers.Add }
 LayerSet18.FdLayers.Add(Layer19);
@@ -901,9 +901,9 @@ Script146.SetSourceCode('''ecmascript:\n"+
 "	};''');
 { METHOD .FdChildren.Add }
 Group120.FdChildren.Add(Script146);
-{ Original "protoSensor.EventTranslation_changed TO protoTransform.EventSet_translation }
-{ Sample protoSensor.EventTranslation_changed TO protoTransform.EventSet_translation}
-Group120.AddRoute(PlaneSensor127.EventTranslation_changed, Transform124.set_EventSet_translation);
+{ Original "protoSensor.EventTranslation_changed TO protoTransform.FdTranslation.EventIn }
+{ Sample protoSensor.EventTranslation_changed TO protoTransform.FdTranslation.EventIn}
+Group120.AddRoute(PlaneSensor127.EventTranslation_changed, Transform124.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
 { Original "protoSensor.EventTranslation_changed TO protoValueTransformerScript.newTranslation }
 { Sample protoSensor.EventTranslation_changed TO protoValueTransformerScript.newTranslation}
@@ -911,7 +911,7 @@ Group120.AddRoute(PlaneSensor127.EventTranslation_changed, SFVec3f149);
 { METHOD .AddX3DROUTE }
 { Original "protoValueTransformerScript.EventProtoNumber_changed TO protoNumber.string }
 { Sample protoValueTransformerScript.EventProtoNumber_changed TO protoNumber.string}
-Group120.AddRoute(Script146.EventProtoNumber_changed, Text142.set_string);
+Group120.AddRoute(Script146.EventProtoNumber_changed, Text142.string);
 { METHOD .AddX3DROUTE }
 { METHOD .AddGroup }
 X3DPrototype119.AddChildren([Group120]);

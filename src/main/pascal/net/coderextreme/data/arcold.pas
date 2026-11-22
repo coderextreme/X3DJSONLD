@@ -272,19 +272,19 @@ TimeSensor45.Loop := True;
 Transform32.FdChildren.Add(TimeSensor45);
 { Original "CL1.EventCycleTime TO MB1.EventSet_location }
 { Sample CL1.EventCycleTime TO MB1.EventSet_location}
-Transform32.AddRoute(TimeSensor45.EventCycleTime, Script40.set_EventSet_location);
+Transform32.AddRoute(TimeSensor45.EventCycleTime, Script40.EventSet_location);
 { METHOD .AddX3DROUTE }
 { Original "CL1.EventFraction_changed TO PI1.EventSet_fraction }
 { Sample CL1.EventFraction_changed TO PI1.EventSet_fraction}
-Transform32.AddRoute(TimeSensor45.EventFraction_changed, PositionInterpolator39.set_EventSet_fraction);
+Transform32.AddRoute(TimeSensor45.EventFraction_changed, PositionInterpolator39.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "MB1.EventKeyValue TO PI1.keyValue }
 { Sample MB1.EventKeyValue TO PI1.keyValue}
-Transform32.AddRoute(Script40.EventKeyValue, PositionInterpolator39.set_keyValue);
+Transform32.AddRoute(Script40.EventKeyValue, PositionInterpolator39.keyValue);
 { METHOD .AddX3DROUTE }
-{ Original "PI1.EventValue_changed TO node.EventSet_translation }
-{ Sample PI1.EventValue_changed TO node.EventSet_translation}
-Transform32.AddRoute(PositionInterpolator39.EventValue_changed, Transform32.set_EventSet_translation);
+{ Original "PI1.EventValue_changed TO node.FdTranslation.EventIn }
+{ Sample PI1.EventValue_changed TO node.FdTranslation.EventIn}
+Transform32.AddRoute(PositionInterpolator39.EventValue_changed, Transform32.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
 { METHOD .AddTransform }
 X3DPrototype31.AddTransform([Transform32]);
@@ -477,27 +477,27 @@ X3DPrototype95.AddSFNode([SFNode102]);
 Group7.AddX3DPrototype([X3DPrototype95]);
 { Original "G1.EventTranslation_changed TO connector1.EventSet_startpoint }
 { Sample G1.EventTranslation_changed TO connector1.EventSet_startpoint}
-Group7.AddRoute(X3DPrototype73.EventTranslation_changed, X3DPrototype77.set_EventSet_startpoint);
+Group7.AddRoute(X3DPrototype73.EventTranslation_changed, X3DPrototype77.EventSet_startpoint);
 { METHOD .AddX3DROUTE }
 { Original "G2.EventTranslation_changed TO connector1.EventSet_endpoint }
 { Sample G2.EventTranslation_changed TO connector1.EventSet_endpoint}
-Group7.AddRoute(X3DPrototype74.EventTranslation_changed, X3DPrototype77.set_EventSet_endpoint);
+Group7.AddRoute(X3DPrototype74.EventTranslation_changed, X3DPrototype77.EventSet_endpoint);
 { METHOD .AddX3DROUTE }
 { Original "G1.EventTranslation_changed TO connector2.EventSet_startpoint }
 { Sample G1.EventTranslation_changed TO connector2.EventSet_startpoint}
-Group7.AddRoute(X3DPrototype73.EventTranslation_changed, X3DPrototype86.set_EventSet_startpoint);
+Group7.AddRoute(X3DPrototype73.EventTranslation_changed, X3DPrototype86.EventSet_startpoint);
 { METHOD .AddX3DROUTE }
 { Original "G3.EventTranslation_changed TO connector2.EventSet_endpoint }
 { Sample G3.EventTranslation_changed TO connector2.EventSet_endpoint}
-Group7.AddRoute(X3DPrototype75.EventTranslation_changed, X3DPrototype86.set_EventSet_endpoint);
+Group7.AddRoute(X3DPrototype75.EventTranslation_changed, X3DPrototype86.EventSet_endpoint);
 { METHOD .AddX3DROUTE }
 { Original "G1.EventTranslation_changed TO connector3.EventSet_startpoint }
 { Sample G1.EventTranslation_changed TO connector3.EventSet_startpoint}
-Group7.AddRoute(X3DPrototype73.EventTranslation_changed, X3DPrototype95.set_EventSet_startpoint);
+Group7.AddRoute(X3DPrototype73.EventTranslation_changed, X3DPrototype95.EventSet_startpoint);
 { METHOD .AddX3DROUTE }
 { Original "G4.EventTranslation_changed TO connector3.EventSet_endpoint }
 { Sample G4.EventTranslation_changed TO connector3.EventSet_endpoint}
-Group7.AddRoute(X3DPrototype76.EventTranslation_changed, X3DPrototype95.set_EventSet_endpoint);
+Group7.AddRoute(X3DPrototype76.EventTranslation_changed, X3DPrototype95.EventSet_endpoint);
 { METHOD .AddX3DROUTE }
 { METHOD .AddGroup }
 X3D0.AddChildren([Group7]);

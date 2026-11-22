@@ -645,11 +645,11 @@ Script97.SetSourceCode('''ecmascript:\n"+
 Layer36.FdChildren.Add(Script97);
 { Original "OrbitScript.coordIndexes TO Orbit.EventSet_coordIndex }
 { Sample OrbitScript.coordIndexes TO Orbit.EventSet_coordIndex}
-Layer36.AddRoute(OrbitScript.[object Object], IndexedFaceSet72.set_EventSet_coordIndex);
+Layer36.AddRoute(OrbitScript.[object Object], IndexedFaceSet72.EventSet_coordIndex);
 { METHOD .AddX3DROUTE }
 { Original "OrbitScript.coordinates TO OrbitCoordinates.EventSet_point }
 { Sample OrbitScript.coordinates TO OrbitCoordinates.EventSet_point}
-Layer36.AddRoute(OrbitScript.[object Object], Coordinate73.set_EventSet_point);
+Layer36.AddRoute(OrbitScript.[object Object], Coordinate73.EventSet_point);
 { METHOD .AddX3DROUTE }
 { DIS multiuser facilities }
 DISEntityManager108 := TDISEntityManagerNode.Create;
@@ -688,11 +688,11 @@ Collision113.Proxy := Group114;
 Layer36.FdChildren.Add(Collision113);
 { Original "EntityManager.EventAddedEntities TO AvatarHolder.addChildren }
 { Sample EntityManager.EventAddedEntities TO AvatarHolder.addChildren}
-Layer36.AddRoute(DISEntityManager108.EventAddedEntities, Group114.set_addChildren);
+Layer36.AddRoute(DISEntityManager108.EventAddedEntities, Group114.addChildren);
 { METHOD .AddX3DROUTE }
 { Original "EntityManager.EventRemovedEntities TO AvatarHolder.removeChildren }
 { Sample EntityManager.EventRemovedEntities TO AvatarHolder.removeChildren}
-Layer36.AddRoute(DISEntityManager108.EventRemovedEntities, Group114.set_removeChildren);
+Layer36.AddRoute(DISEntityManager108.EventRemovedEntities, Group114.removeChildren);
 { METHOD .AddX3DROUTE }
 { METHOD .FdLayers.Add }
 LayerSet35.FdLayers.Add(Layer36);
@@ -914,9 +914,9 @@ Script158.SetSourceCode('''ecmascript:\n"+
 "}''');
 { METHOD .FdChildren.Add }
 Group140.FdChildren.Add(Script158);
-{ Original "protoSensor.EventTranslation_changed TO protoTransform.EventSet_translation }
-{ Sample protoSensor.EventTranslation_changed TO protoTransform.EventSet_translation}
-Group140.AddRoute(PlaneSensor147.EventTranslation_changed, Transform144.set_EventSet_translation);
+{ Original "protoSensor.EventTranslation_changed TO protoTransform.FdTranslation.EventIn }
+{ Sample protoSensor.EventTranslation_changed TO protoTransform.FdTranslation.EventIn}
+Group140.AddRoute(PlaneSensor147.EventTranslation_changed, Transform144.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
 { Original "protoSensor.EventTranslation_changed TO protoValueTransformerScript.newTranslation }
 { Sample protoSensor.EventTranslation_changed TO protoValueTransformerScript.newTranslation}
@@ -924,7 +924,7 @@ Group140.AddRoute(PlaneSensor147.EventTranslation_changed, SFVec3f162);
 { METHOD .AddX3DROUTE }
 { Original "protoValueTransformerScript.EventProtoText_changed TO protoText.string }
 { Sample protoValueTransformerScript.EventProtoText_changed TO protoText.string}
-Group140.AddRoute(Script158.EventProtoText_changed, Text152.set_string);
+Group140.AddRoute(Script158.EventProtoText_changed, Text152.string);
 { METHOD .AddX3DROUTE }
 { METHOD .AddGroup }
 X3DPrototype139.AddChildren([Group140]);

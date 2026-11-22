@@ -188,11 +188,11 @@ HAnimHumanoid25.FdJoints.Add(HAnimJoint31);
 Group20.FdChildren.Add(HAnimHumanoid25);
 { Original "AnimationAdapter_JinMouthStretch.EventValue_changed TO Tongue_MorphInterpolator_JinMouthStretch.FWeight }
 { Sample AnimationAdapter_JinMouthStretch.EventValue_changed TO Tongue_MorphInterpolator_JinMouthStretch.FWeight}
-Group20.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer42.set_FWeight);
+Group20.AddRoute(ScalarInterpolator24.EventValue_changed, HAnimDisplacer42.FWeight);
 { METHOD .AddX3DROUTE }
 { Original "JinMouthStretch_Clock.EventFraction_changed TO AnimationAdapter_JinMouthStretch.EventSet_fraction }
 { Sample JinMouthStretch_Clock.EventFraction_changed TO AnimationAdapter_JinMouthStretch.EventSet_fraction}
-Group20.AddRoute(TimeSensor22.EventFraction_changed, ScalarInterpolator24.set_EventSet_fraction);
+Group20.AddRoute(TimeSensor22.EventFraction_changed, ScalarInterpolator24.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { METHOD .AddGroup }
 X3D0.AddChildren([Group20]);

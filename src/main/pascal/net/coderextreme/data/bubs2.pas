@@ -171,17 +171,17 @@ TimeSensor27.CycleInterval := 10;
 TimeSensor27.Loop := True;
 { METHOD .FdChildren.Add }
 Transform16.FdChildren.Add(TimeSensor27);
-{ Original "bounce.EventTranslation_changed TO body_trans.EventSet_translation }
-{ Sample bounce.EventTranslation_changed TO body_trans.EventSet_translation}
-Transform16.AddRoute(Script21.EventTranslation_changed, Transform16.set_EventSet_translation);
+{ Original "bounce.EventTranslation_changed TO body_trans.FdTranslation.EventIn }
+{ Sample bounce.EventTranslation_changed TO body_trans.FdTranslation.EventIn}
+Transform16.AddRoute(Script21.EventTranslation_changed, Transform16.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
 { Original "bounce.EventScale_changed TO body_trans.scale }
 { Sample bounce.EventScale_changed TO body_trans.scale}
-Transform16.AddRoute(Script21.EventScale_changed, Transform16.set_scale);
+Transform16.AddRoute(Script21.EventScale_changed, Transform16.scale);
 { METHOD .AddX3DROUTE }
 { Original "bubbleClock.EventFraction_changed TO bounce.EventSet_fraction }
 { Sample bubbleClock.EventFraction_changed TO bounce.EventSet_fraction}
-Transform16.AddRoute(TimeSensor27.EventFraction_changed, Script21.set_EventSet_fraction);
+Transform16.AddRoute(TimeSensor27.EventFraction_changed, Script21.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { METHOD .AddTransform }
 X3DPrototype15.AddTransform([Transform16]);

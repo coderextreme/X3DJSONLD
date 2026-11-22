@@ -1136,111 +1136,111 @@ OrientationInterpolator225.SetKeyValue([Vector4(0,0,0,0),Vector4(0,0,0,0)]);
 Group205.FdChildren.Add(OrientationInterpolator225);
 { Original "KeyframeTimer.EventFraction_changed TO Keyframe_HumanoidRootTranslation.EventSet_fraction }
 { Sample KeyframeTimer.EventFraction_changed TO Keyframe_HumanoidRootTranslation.EventSet_fraction}
-Group205.AddRoute(TimeSensor206.EventFraction_changed, PositionInterpolator207.set_EventSet_fraction);
+Group205.AddRoute(TimeSensor206.EventFraction_changed, PositionInterpolator207.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KeyframeTimer.EventFraction_changed TO Keyframe_HumanoidRootOrientation.EventSet_fraction }
 { Sample KeyframeTimer.EventFraction_changed TO Keyframe_HumanoidRootOrientation.EventSet_fraction}
-Group205.AddRoute(TimeSensor206.EventFraction_changed, OrientationInterpolator208.set_EventSet_fraction);
+Group205.AddRoute(TimeSensor206.EventFraction_changed, OrientationInterpolator208.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KeyframeTimer.EventFraction_changed TO Keyframe_sacroiliac.EventSet_fraction }
 { Sample KeyframeTimer.EventFraction_changed TO Keyframe_sacroiliac.EventSet_fraction}
-Group205.AddRoute(TimeSensor206.EventFraction_changed, OrientationInterpolator209.set_EventSet_fraction);
+Group205.AddRoute(TimeSensor206.EventFraction_changed, OrientationInterpolator209.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KeyframeTimer.EventFraction_changed TO Keyframe_l_shoulder.EventSet_fraction }
 { Sample KeyframeTimer.EventFraction_changed TO Keyframe_l_shoulder.EventSet_fraction}
-Group205.AddRoute(TimeSensor206.EventFraction_changed, OrientationInterpolator210.set_EventSet_fraction);
+Group205.AddRoute(TimeSensor206.EventFraction_changed, OrientationInterpolator210.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KeyframeTimer.EventFraction_changed TO Keyframe_l_elbow.EventSet_fraction }
 { Sample KeyframeTimer.EventFraction_changed TO Keyframe_l_elbow.EventSet_fraction}
-Group205.AddRoute(TimeSensor206.EventFraction_changed, OrientationInterpolator211.set_EventSet_fraction);
+Group205.AddRoute(TimeSensor206.EventFraction_changed, OrientationInterpolator211.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KeyframeTimer.EventFraction_changed TO Keyframe_l_radiocarpal.EventSet_fraction }
 { Sample KeyframeTimer.EventFraction_changed TO Keyframe_l_radiocarpal.EventSet_fraction}
-Group205.AddRoute(TimeSensor206.EventFraction_changed, OrientationInterpolator212.set_EventSet_fraction);
+Group205.AddRoute(TimeSensor206.EventFraction_changed, OrientationInterpolator212.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KeyframeTimer.EventFraction_changed TO Keyframe_r_shoulder.EventSet_fraction }
 { Sample KeyframeTimer.EventFraction_changed TO Keyframe_r_shoulder.EventSet_fraction}
-Group205.AddRoute(TimeSensor206.EventFraction_changed, OrientationInterpolator213.set_EventSet_fraction);
+Group205.AddRoute(TimeSensor206.EventFraction_changed, OrientationInterpolator213.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KeyframeTimer.EventFraction_changed TO Keyframe_r_elbow.EventSet_fraction }
 { Sample KeyframeTimer.EventFraction_changed TO Keyframe_r_elbow.EventSet_fraction}
-Group205.AddRoute(TimeSensor206.EventFraction_changed, OrientationInterpolator214.set_EventSet_fraction);
+Group205.AddRoute(TimeSensor206.EventFraction_changed, OrientationInterpolator214.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KeyframeTimer.EventFraction_changed TO Keyframe_r_radiocarpal.EventSet_fraction }
 { Sample KeyframeTimer.EventFraction_changed TO Keyframe_r_radiocarpal.EventSet_fraction}
-Group205.AddRoute(TimeSensor206.EventFraction_changed, OrientationInterpolator215.set_EventSet_fraction);
+Group205.AddRoute(TimeSensor206.EventFraction_changed, OrientationInterpolator215.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KeyframeTimer.EventFraction_changed TO Keyframe_vl5.EventSet_fraction }
 { Sample KeyframeTimer.EventFraction_changed TO Keyframe_vl5.EventSet_fraction}
-Group205.AddRoute(TimeSensor206.EventFraction_changed, OrientationInterpolator216.set_EventSet_fraction);
+Group205.AddRoute(TimeSensor206.EventFraction_changed, OrientationInterpolator216.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KeyframeTimer.EventFraction_changed TO Keyframe_skullbase.EventSet_fraction }
 { Sample KeyframeTimer.EventFraction_changed TO Keyframe_skullbase.EventSet_fraction}
-Group205.AddRoute(TimeSensor206.EventFraction_changed, OrientationInterpolator217.set_EventSet_fraction);
+Group205.AddRoute(TimeSensor206.EventFraction_changed, OrientationInterpolator217.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KeyframeTimer.EventFraction_changed TO Keyframe_l_hip.EventSet_fraction }
 { Sample KeyframeTimer.EventFraction_changed TO Keyframe_l_hip.EventSet_fraction}
-Group205.AddRoute(TimeSensor206.EventFraction_changed, OrientationInterpolator218.set_EventSet_fraction);
+Group205.AddRoute(TimeSensor206.EventFraction_changed, OrientationInterpolator218.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KeyframeTimer.EventFraction_changed TO Keyframe_l_knee.EventSet_fraction }
 { Sample KeyframeTimer.EventFraction_changed TO Keyframe_l_knee.EventSet_fraction}
-Group205.AddRoute(TimeSensor206.EventFraction_changed, OrientationInterpolator219.set_EventSet_fraction);
+Group205.AddRoute(TimeSensor206.EventFraction_changed, OrientationInterpolator219.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KeyframeTimer.EventFraction_changed TO Keyframe_l_talocrural.EventSet_fraction }
 { Sample KeyframeTimer.EventFraction_changed TO Keyframe_l_talocrural.EventSet_fraction}
-Group205.AddRoute(TimeSensor206.EventFraction_changed, OrientationInterpolator220.set_EventSet_fraction);
+Group205.AddRoute(TimeSensor206.EventFraction_changed, OrientationInterpolator220.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KeyframeTimer.EventFraction_changed TO Keyframe_l_metatarsophalangeal.EventSet_fraction }
 { Sample KeyframeTimer.EventFraction_changed TO Keyframe_l_metatarsophalangeal.EventSet_fraction}
-Group205.AddRoute(TimeSensor206.EventFraction_changed, OrientationInterpolator221.set_EventSet_fraction);
+Group205.AddRoute(TimeSensor206.EventFraction_changed, OrientationInterpolator221.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KeyframeTimer.EventFraction_changed TO Keyframe_r_hip.EventSet_fraction }
 { Sample KeyframeTimer.EventFraction_changed TO Keyframe_r_hip.EventSet_fraction}
-Group205.AddRoute(TimeSensor206.EventFraction_changed, OrientationInterpolator222.set_EventSet_fraction);
+Group205.AddRoute(TimeSensor206.EventFraction_changed, OrientationInterpolator222.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KeyframeTimer.EventFraction_changed TO Keyframe_r_knee.EventSet_fraction }
 { Sample KeyframeTimer.EventFraction_changed TO Keyframe_r_knee.EventSet_fraction}
-Group205.AddRoute(TimeSensor206.EventFraction_changed, OrientationInterpolator223.set_EventSet_fraction);
+Group205.AddRoute(TimeSensor206.EventFraction_changed, OrientationInterpolator223.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KeyframeTimer.EventFraction_changed TO Keyframe_r_talocrural.EventSet_fraction }
 { Sample KeyframeTimer.EventFraction_changed TO Keyframe_r_talocrural.EventSet_fraction}
-Group205.AddRoute(TimeSensor206.EventFraction_changed, OrientationInterpolator224.set_EventSet_fraction);
+Group205.AddRoute(TimeSensor206.EventFraction_changed, OrientationInterpolator224.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "KeyframeTimer.EventFraction_changed TO Keyframe_r_metatarsophalangeal.EventSet_fraction }
 { Sample KeyframeTimer.EventFraction_changed TO Keyframe_r_metatarsophalangeal.EventSet_fraction}
-Group205.AddRoute(TimeSensor206.EventFraction_changed, OrientationInterpolator225.set_EventSet_fraction);
+Group205.AddRoute(TimeSensor206.EventFraction_changed, OrientationInterpolator225.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Keyframe_HumanoidRootTranslation.EventValue_changed TO hanim_HumanoidRoot.translation }
 { Sample Keyframe_HumanoidRootTranslation.EventValue_changed TO hanim_HumanoidRoot.translation}
-Group205.AddRoute(PositionInterpolator207.EventValue_changed, HAnimJoint25.set_translation);
+Group205.AddRoute(PositionInterpolator207.EventValue_changed, HAnimJoint25.translation);
 { METHOD .AddX3DROUTE }
 { Original "Keyframe_HumanoidRootOrientation.EventValue_changed TO hanim_HumanoidRoot.rotation }
 { Sample Keyframe_HumanoidRootOrientation.EventValue_changed TO hanim_HumanoidRoot.rotation}
-Group205.AddRoute(OrientationInterpolator208.EventValue_changed, HAnimJoint25.set_rotation);
+Group205.AddRoute(OrientationInterpolator208.EventValue_changed, HAnimJoint25.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Keyframe_sacroiliac.EventValue_changed TO hanim_sacroiliac.rotation }
 { Sample Keyframe_sacroiliac.EventValue_changed TO hanim_sacroiliac.rotation}
-Group205.AddRoute(OrientationInterpolator209.EventValue_changed, HAnimJoint35.set_rotation);
+Group205.AddRoute(OrientationInterpolator209.EventValue_changed, HAnimJoint35.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Keyframe_l_shoulder.EventValue_changed TO hanim_l_shoulder.rotation }
 { Sample Keyframe_l_shoulder.EventValue_changed TO hanim_l_shoulder.rotation}
-Group205.AddRoute(OrientationInterpolator210.EventValue_changed, HAnimJoint145.set_rotation);
+Group205.AddRoute(OrientationInterpolator210.EventValue_changed, HAnimJoint145.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Keyframe_l_elbow.EventValue_changed TO hanim_l_elbow.rotation }
 { Sample Keyframe_l_elbow.EventValue_changed TO hanim_l_elbow.rotation}
-Group205.AddRoute(OrientationInterpolator211.EventValue_changed, HAnimJoint155.set_rotation);
+Group205.AddRoute(OrientationInterpolator211.EventValue_changed, HAnimJoint155.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Keyframe_l_radiocarpal.EventValue_changed TO hanim_l_radiocarpal.rotation }
 { Sample Keyframe_l_radiocarpal.EventValue_changed TO hanim_l_radiocarpal.rotation}
-Group205.AddRoute(OrientationInterpolator212.EventValue_changed, HAnimJoint165.set_rotation);
+Group205.AddRoute(OrientationInterpolator212.EventValue_changed, HAnimJoint165.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Keyframe_r_shoulder.EventValue_changed TO hanim_r_shoulder.rotation }
 { Sample Keyframe_r_shoulder.EventValue_changed TO hanim_r_shoulder.rotation}
-Group205.AddRoute(OrientationInterpolator213.EventValue_changed, HAnimJoint175.set_rotation);
+Group205.AddRoute(OrientationInterpolator213.EventValue_changed, HAnimJoint175.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Keyframe_r_elbow.EventValue_changed TO hanim_r_elbow.rotation }
 { Sample Keyframe_r_elbow.EventValue_changed TO hanim_r_elbow.rotation}
-Group205.AddRoute(OrientationInterpolator214.EventValue_changed, HAnimJoint185.set_rotation);
+Group205.AddRoute(OrientationInterpolator214.EventValue_changed, HAnimJoint185.rotation);
 end;
 
 procedure InitKoreanCharacterMotionAnnexB01JinPart18;
@@ -1249,47 +1249,47 @@ begin
 { METHOD .AddX3DROUTE }
 { Original "Keyframe_r_radiocarpal.EventValue_changed TO hanim_r_radiocarpal.rotation }
 { Sample Keyframe_r_radiocarpal.EventValue_changed TO hanim_r_radiocarpal.rotation}
-Group205.AddRoute(OrientationInterpolator215.EventValue_changed, HAnimJoint195.set_rotation);
+Group205.AddRoute(OrientationInterpolator215.EventValue_changed, HAnimJoint195.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Keyframe_vl5.EventValue_changed TO hanim_vl5.rotation }
 { Sample Keyframe_vl5.EventValue_changed TO hanim_vl5.rotation}
-Group205.AddRoute(OrientationInterpolator216.EventValue_changed, HAnimJoint125.set_rotation);
+Group205.AddRoute(OrientationInterpolator216.EventValue_changed, HAnimJoint125.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Keyframe_skullbase.EventValue_changed TO hanim_skullbase.rotation }
 { Sample Keyframe_skullbase.EventValue_changed TO hanim_skullbase.rotation}
-Group205.AddRoute(OrientationInterpolator217.EventValue_changed, HAnimJoint135.set_rotation);
+Group205.AddRoute(OrientationInterpolator217.EventValue_changed, HAnimJoint135.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Keyframe_l_hip.EventValue_changed TO hanim_l_hip.rotation }
 { Sample Keyframe_l_hip.EventValue_changed TO hanim_l_hip.rotation}
-Group205.AddRoute(OrientationInterpolator218.EventValue_changed, HAnimJoint45.set_rotation);
+Group205.AddRoute(OrientationInterpolator218.EventValue_changed, HAnimJoint45.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Keyframe_l_knee.EventValue_changed TO hanim_l_knee.rotation }
 { Sample Keyframe_l_knee.EventValue_changed TO hanim_l_knee.rotation}
-Group205.AddRoute(OrientationInterpolator219.EventValue_changed, HAnimJoint55.set_rotation);
+Group205.AddRoute(OrientationInterpolator219.EventValue_changed, HAnimJoint55.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Keyframe_l_talocrural.EventValue_changed TO hanim_l_talocrural.rotation }
 { Sample Keyframe_l_talocrural.EventValue_changed TO hanim_l_talocrural.rotation}
-Group205.AddRoute(OrientationInterpolator220.EventValue_changed, HAnimJoint65.set_rotation);
+Group205.AddRoute(OrientationInterpolator220.EventValue_changed, HAnimJoint65.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Keyframe_l_talocrural.EventValue_changed TO hanim_l_metatarsophalangeal.rotation }
 { Sample Keyframe_l_talocrural.EventValue_changed TO hanim_l_metatarsophalangeal.rotation}
-Group205.AddRoute(OrientationInterpolator220.EventValue_changed, HAnimJoint75.set_rotation);
+Group205.AddRoute(OrientationInterpolator220.EventValue_changed, HAnimJoint75.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Keyframe_r_hip.EventValue_changed TO hanim_r_hip.rotation }
 { Sample Keyframe_r_hip.EventValue_changed TO hanim_r_hip.rotation}
-Group205.AddRoute(OrientationInterpolator222.EventValue_changed, HAnimJoint85.set_rotation);
+Group205.AddRoute(OrientationInterpolator222.EventValue_changed, HAnimJoint85.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Keyframe_r_knee.EventValue_changed TO hanim_r_knee.rotation }
 { Sample Keyframe_r_knee.EventValue_changed TO hanim_r_knee.rotation}
-Group205.AddRoute(OrientationInterpolator223.EventValue_changed, HAnimJoint95.set_rotation);
+Group205.AddRoute(OrientationInterpolator223.EventValue_changed, HAnimJoint95.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Keyframe_l_talocrural.EventValue_changed TO hanim_r_talocrural.rotation }
 { Sample Keyframe_l_talocrural.EventValue_changed TO hanim_r_talocrural.rotation}
-Group205.AddRoute(OrientationInterpolator220.EventValue_changed, HAnimJoint105.set_rotation);
+Group205.AddRoute(OrientationInterpolator220.EventValue_changed, HAnimJoint105.rotation);
 { METHOD .AddX3DROUTE }
 { Original "Keyframe_l_talocrural.EventValue_changed TO hanim_r_metatarsophalangeal.rotation }
 { Sample Keyframe_l_talocrural.EventValue_changed TO hanim_r_metatarsophalangeal.rotation}
-Group205.AddRoute(OrientationInterpolator220.EventValue_changed, HAnimJoint115.set_rotation);
+Group205.AddRoute(OrientationInterpolator220.EventValue_changed, HAnimJoint115.rotation);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group21.FdChildren.Add(Group205);

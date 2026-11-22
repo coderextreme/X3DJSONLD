@@ -403,11 +403,11 @@ TimeSensor56.StopTime := 0;
 Group32.FdChildren.Add(TimeSensor56);
 { Original "OrbitClock.EventFraction_changed TO BoxPathAnimator.EventSet_fraction }
 { Sample OrbitClock.EventFraction_changed TO BoxPathAnimator.EventSet_fraction}
-Group32.AddRoute(TimeSensor56.EventFraction_changed, PositionInterpolator55.set_EventSet_fraction);
+Group32.AddRoute(TimeSensor56.EventFraction_changed, PositionInterpolator55.EventSet_fraction);
 { METHOD .AddX3DROUTE }
-{ Original "BoxPathAnimator.EventValue_changed TO LogoGeometryTransform.EventSet_translation }
-{ Sample BoxPathAnimator.EventValue_changed TO LogoGeometryTransform.EventSet_translation}
-Group32.AddRoute(PositionInterpolator55.EventValue_changed, Transform43.set_EventSet_translation);
+{ Original "BoxPathAnimator.EventValue_changed TO LogoGeometryTransform.FdTranslation.EventIn }
+{ Sample BoxPathAnimator.EventValue_changed TO LogoGeometryTransform.FdTranslation.EventIn}
+Group32.AddRoute(PositionInterpolator55.EventValue_changed, Transform43.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
 Transform59 := TTransformNode.Create;
 Transform59.Translation := Vector3(0,-1.5,0);
@@ -477,11 +477,11 @@ TimeSensor72.StopTime := 0;
 Group32.FdChildren.Add(TimeSensor72);
 { Original "SpinClock.EventFraction_changed TO SpinInterpolator.EventSet_fraction }
 { Sample SpinClock.EventFraction_changed TO SpinInterpolator.EventSet_fraction}
-Group32.AddRoute(TimeSensor72.EventFraction_changed, OrientationInterpolator71.set_EventSet_fraction);
+Group32.AddRoute(TimeSensor72.EventFraction_changed, OrientationInterpolator71.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "SpinInterpolator.EventValue_changed TO TextTransform.rotation }
 { Sample SpinInterpolator.EventValue_changed TO TextTransform.rotation}
-Group32.AddRoute(OrientationInterpolator71.EventValue_changed, Transform59.set_rotation);
+Group32.AddRoute(OrientationInterpolator71.EventValue_changed, Transform59.rotation);
 { METHOD .AddX3DROUTE }
 Group75 := TGroupNode.Create;
 Background76 := TBackgroundNode.Create;
@@ -529,7 +529,7 @@ TimeSensor81.StopTime := 0;
 Group75.FdChildren.Add(TimeSensor81);
 { Original "colorTypeConversionScript.colorsOutput TO GradualBackground.skyColor }
 { Sample colorTypeConversionScript.colorsOutput TO GradualBackground.skyColor}
-Group75.AddRoute(colorTypeConversionScript.[object Object], Background76.set_skyColor);
+Group75.AddRoute(colorTypeConversionScript.[object Object], Background76.skyColor);
 { METHOD .AddX3DROUTE }
 { Original "ColorAnimator.EventValue_changed TO colorTypeConversionScript.colorInput }
 { Sample ColorAnimator.EventValue_changed TO colorTypeConversionScript.colorInput}
@@ -537,7 +537,7 @@ Group75.AddRoute(ColorInterpolator80.EventValue_changed, SFColor78);
 { METHOD .AddX3DROUTE }
 { Original "ColorClock.EventFraction_changed TO ColorAnimator.EventSet_fraction }
 { Sample ColorClock.EventFraction_changed TO ColorAnimator.EventSet_fraction}
-Group75.AddRoute(TimeSensor81.EventFraction_changed, ColorInterpolator80.set_EventSet_fraction);
+Group75.AddRoute(TimeSensor81.EventFraction_changed, ColorInterpolator80.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group32.FdChildren.Add(Group75);

@@ -293,15 +293,15 @@ TimeSensor48.Loop := True;
 Group16.FdChildren.Add(TimeSensor48);
 { Original "OrbitScript.coordIndexes TO Orbit.EventSet_coordIndex }
 { Sample OrbitScript.coordIndexes TO Orbit.EventSet_coordIndex}
-Group16.AddRoute(OrbitScript.[object Object], IndexedFaceSet38.set_EventSet_coordIndex);
+Group16.AddRoute(OrbitScript.[object Object], IndexedFaceSet38.EventSet_coordIndex);
 { METHOD .AddX3DROUTE }
 { Original "OrbitScript.coordinates TO OrbitCoordinates.EventSet_point }
 { Sample OrbitScript.coordinates TO OrbitCoordinates.EventSet_point}
-Group16.AddRoute(OrbitScript.[object Object], Coordinate39.set_EventSet_point);
+Group16.AddRoute(OrbitScript.[object Object], Coordinate39.EventSet_point);
 { METHOD .AddX3DROUTE }
 { Original "Clock.EventFraction_changed TO OrbitScript.EventSet_fraction }
 { Sample Clock.EventFraction_changed TO OrbitScript.EventSet_fraction}
-Group16.AddRoute(TimeSensor48.EventFraction_changed, Script40.set_EventSet_fraction);
+Group16.AddRoute(TimeSensor48.EventFraction_changed, Script40.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { METHOD .AddGroup }
 X3D0.AddChildren([Group16]);

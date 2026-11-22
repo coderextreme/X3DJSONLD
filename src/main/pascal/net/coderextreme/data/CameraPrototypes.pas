@@ -541,11 +541,11 @@ OrientationInterpolator65.IS := IS66;
 X3DPrototype42.AddOrientationInterpolator([OrientationInterpolator65]);
 { Original "CameraPositionInterpolator.EventValue_changed TO CameraViewpoint.position }
 { Sample CameraPositionInterpolator.EventValue_changed TO CameraViewpoint.position}
-X3DPrototype42.AddRoute(PositionInterpolator62.EventValue_changed, Viewpoint43.set_position);
+X3DPrototype42.AddRoute(PositionInterpolator62.EventValue_changed, Viewpoint43.position);
 { METHOD .AddX3DROUTE }
 { Original "CameraOrientationInterpolator.EventValue_changed TO CameraViewpoint.orientation }
 { Sample CameraOrientationInterpolator.EventValue_changed TO CameraViewpoint.orientation}
-X3DPrototype42.AddRoute(OrientationInterpolator65.EventValue_changed, Viewpoint43.set_orientation);
+X3DPrototype42.AddRoute(OrientationInterpolator65.EventValue_changed, Viewpoint43.orientation);
 { METHOD .AddX3DROUTE }
 Script70 := TScriptNode.Create;
 Script70.DirectOutput := True;
@@ -824,23 +824,23 @@ Script70.SetSourceCode('''ecmascript:\n"+
 X3DPrototype42.AddScript([Script70]);
 { Original "CameraScript.position TO CameraViewpoint.position }
 { Sample CameraScript.position TO CameraViewpoint.position}
-X3DPrototype42.AddRoute(CameraScript.[object Object], Viewpoint43.set_position);
+X3DPrototype42.AddRoute(CameraScript.[object Object], Viewpoint43.position);
 { METHOD .AddX3DROUTE }
 { Original "CameraScript.EventOrientation TO CameraViewpoint.orientation }
 { Sample CameraScript.EventOrientation TO CameraViewpoint.orientation}
-X3DPrototype42.AddRoute(Script70.EventOrientation, Viewpoint43.set_orientation);
+X3DPrototype42.AddRoute(Script70.EventOrientation, Viewpoint43.orientation);
 { METHOD .AddX3DROUTE }
 { Original "CameraScript.EventIsActive TO CameraViewpoint.EventSet_bind }
 { Sample CameraScript.EventIsActive TO CameraViewpoint.EventSet_bind}
-X3DPrototype42.AddRoute(Script70.EventIsActive, Viewpoint43.set_EventSet_bind);
+X3DPrototype42.AddRoute(Script70.EventIsActive, Viewpoint43.EventSet_bind);
 { METHOD .AddX3DROUTE }
 { Original "CameraScript.EventIsActive TO CameraNavInfo.EventSet_bind }
 { Sample CameraScript.EventIsActive TO CameraNavInfo.EventSet_bind}
-X3DPrototype42.AddRoute(Script70.EventIsActive, NavigationInfo52.set_EventSet_bind);
+X3DPrototype42.AddRoute(Script70.EventIsActive, NavigationInfo52.EventSet_bind);
 { METHOD .AddX3DROUTE }
 { Original "CameraScript.EventIsActive TO CameraDirectionalLight.on }
 { Sample CameraScript.EventIsActive TO CameraDirectionalLight.on}
-X3DPrototype42.AddRoute(Script70.EventIsActive, DirectionalLight57.set_on);
+X3DPrototype42.AddRoute(Script70.EventIsActive, DirectionalLight57.on);
 { METHOD .AddX3DROUTE }
 { METHOD .AddX3DPrototype }
 X3DPrototype17.AddX3DPrototype([X3DPrototype42]);

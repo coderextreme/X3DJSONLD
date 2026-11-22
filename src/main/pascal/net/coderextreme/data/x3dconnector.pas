@@ -112,9 +112,9 @@ PlaneSensor15 := TPlaneSensorNode.Create;
 PlaneSensor15.Description := 'Grab to move';
 { METHOD .FdChildren.Add }
 Transform10.FdChildren.Add(PlaneSensor15);
-{ Original "PS1.EventTranslation_changed TO G1.EventSet_translation }
-{ Sample PS1.EventTranslation_changed TO G1.EventSet_translation}
-Transform10.AddRoute(PlaneSensor15.EventTranslation_changed, Transform10.set_EventSet_translation);
+{ Original "PS1.EventTranslation_changed TO G1.FdTranslation.EventIn }
+{ Sample PS1.EventTranslation_changed TO G1.FdTranslation.EventIn}
+Transform10.AddRoute(PlaneSensor15.EventTranslation_changed, Transform10.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group7.FdChildren.Add(Transform10);
@@ -144,9 +144,9 @@ PlaneSensor22.Description := 'Grab to move';
 PlaneSensor22.Offset := Vector3(1,-1,0.01);
 { METHOD .FdChildren.Add }
 Transform17.FdChildren.Add(PlaneSensor22);
-{ Original "PS2.EventTranslation_changed TO G2.EventSet_translation }
-{ Sample PS2.EventTranslation_changed TO G2.EventSet_translation}
-Transform17.AddRoute(PlaneSensor22.EventTranslation_changed, Transform17.set_EventSet_translation);
+{ Original "PS2.EventTranslation_changed TO G2.FdTranslation.EventIn }
+{ Sample PS2.EventTranslation_changed TO G2.FdTranslation.EventIn}
+Transform17.AddRoute(PlaneSensor22.EventTranslation_changed, Transform17.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group7.FdChildren.Add(Transform17);
@@ -325,11 +325,11 @@ X3DPrototype53.AddSFNode([SFNode60]);
 Group7.AddX3DPrototype([X3DPrototype53]);
 { Original "G1.EventTranslation_changed TO connector1.EventSet_startpoint }
 { Sample G1.EventTranslation_changed TO connector1.EventSet_startpoint}
-Group7.AddRoute(Transform10.EventTranslation_changed, X3DPrototype53.set_EventSet_startpoint);
+Group7.AddRoute(Transform10.EventTranslation_changed, X3DPrototype53.EventSet_startpoint);
 { METHOD .AddX3DROUTE }
 { Original "G2.EventTranslation_changed TO connector1.EventSet_endpoint }
 { Sample G2.EventTranslation_changed TO connector1.EventSet_endpoint}
-Group7.AddRoute(Transform17.EventTranslation_changed, X3DPrototype53.set_EventSet_endpoint);
+Group7.AddRoute(Transform17.EventTranslation_changed, X3DPrototype53.EventSet_endpoint);
 { METHOD .AddX3DROUTE }
 { METHOD .AddGroup }
 X3D0.AddChildren([Group7]);

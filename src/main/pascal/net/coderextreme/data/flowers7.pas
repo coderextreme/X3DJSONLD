@@ -469,55 +469,55 @@ TimeSensor85.Loop := True;
 Group16.FdChildren.Add(TimeSensor85);
 { Original "TourTime.EventFraction_changed TO Animate.EventSet_fraction }
 { Sample TourTime.EventFraction_changed TO Animate.EventSet_fraction}
-Group16.AddRoute(TimeSensor85.EventFraction_changed, Script77.set_EventSet_fraction);
+Group16.AddRoute(TimeSensor85.EventFraction_changed, Script77.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Animate.a TO x_ite.a }
 { Sample Animate.a TO x_ite.a}
-Group16.AddRoute(Animate.[object Object], ComposedShader46.set_a);
+Group16.AddRoute(Animate.[object Object], ComposedShader46.a);
 { METHOD .AddX3DROUTE }
 { Original "Animate.b TO x_ite.b }
 { Sample Animate.b TO x_ite.b}
-Group16.AddRoute(Animate.[object Object], ComposedShader46.set_b);
+Group16.AddRoute(Animate.[object Object], ComposedShader46.b);
 { METHOD .AddX3DROUTE }
 { Original "Animate.c TO x_ite.c }
 { Sample Animate.c TO x_ite.c}
-Group16.AddRoute(Animate.[object Object], ComposedShader46.set_c);
+Group16.AddRoute(Animate.[object Object], ComposedShader46.c);
 { METHOD .AddX3DROUTE }
 { Original "Animate.d TO x_ite.d }
 { Sample Animate.d TO x_ite.d}
-Group16.AddRoute(Animate.[object Object], ComposedShader46.set_d);
+Group16.AddRoute(Animate.[object Object], ComposedShader46.d);
 { METHOD .AddX3DROUTE }
 { Original "Animate.pdelta TO x_ite.pdelta }
 { Sample Animate.pdelta TO x_ite.pdelta}
-Group16.AddRoute(Animate.[object Object], ComposedShader46.set_pdelta);
+Group16.AddRoute(Animate.[object Object], ComposedShader46.pdelta);
 { METHOD .AddX3DROUTE }
 { Original "Animate.tdelta TO x_ite.tdelta }
 { Sample Animate.tdelta TO x_ite.tdelta}
-Group16.AddRoute(Animate.[object Object], ComposedShader46.set_tdelta);
+Group16.AddRoute(Animate.[object Object], ComposedShader46.tdelta);
 { METHOD .AddX3DROUTE }
 { Original "Animate.a TO x3dom.a }
 { Sample Animate.a TO x3dom.a}
-Group16.AddRoute(Animate.[object Object], ComposedShader31.set_a);
+Group16.AddRoute(Animate.[object Object], ComposedShader31.a);
 { METHOD .AddX3DROUTE }
 { Original "Animate.b TO x3dom.b }
 { Sample Animate.b TO x3dom.b}
-Group16.AddRoute(Animate.[object Object], ComposedShader31.set_b);
+Group16.AddRoute(Animate.[object Object], ComposedShader31.b);
 { METHOD .AddX3DROUTE }
 { Original "Animate.c TO x3dom.c }
 { Sample Animate.c TO x3dom.c}
-Group16.AddRoute(Animate.[object Object], ComposedShader31.set_c);
+Group16.AddRoute(Animate.[object Object], ComposedShader31.c);
 { METHOD .AddX3DROUTE }
 { Original "Animate.d TO x3dom.d }
 { Sample Animate.d TO x3dom.d}
-Group16.AddRoute(Animate.[object Object], ComposedShader31.set_d);
+Group16.AddRoute(Animate.[object Object], ComposedShader31.d);
 { METHOD .AddX3DROUTE }
 { Original "Animate.pdelta TO x3dom.pdelta }
 { Sample Animate.pdelta TO x3dom.pdelta}
-Group16.AddRoute(Animate.[object Object], ComposedShader31.set_pdelta);
+Group16.AddRoute(Animate.[object Object], ComposedShader31.pdelta);
 { METHOD .AddX3DROUTE }
 { Original "Animate.tdelta TO x3dom.tdelta }
 { Sample Animate.tdelta TO x3dom.tdelta}
-Group16.AddRoute(Animate.[object Object], ComposedShader31.set_tdelta);
+Group16.AddRoute(Animate.[object Object], ComposedShader31.tdelta);
 { METHOD .AddX3DROUTE }
 { METHOD .AddGroup }
 X3D0.AddChildren([Group16]);

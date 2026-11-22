@@ -709,11 +709,11 @@ BooleanToggle137 := TBooleanToggleNode.Create;
 GeoLocation129.FdChildren.Add(BooleanToggle137);
 { Original "TourTouch.EventIsActive TO TourToggle.EventSet_boolean }
 { Sample TourTouch.EventIsActive TO TourToggle.EventSet_boolean}
-GeoLocation129.AddRoute(TouchSensor136.EventIsActive, BooleanToggle137.set_EventSet_boolean);
+GeoLocation129.AddRoute(TouchSensor136.EventIsActive, BooleanToggle137.EventSet_boolean);
 { METHOD .AddX3DROUTE }
 { Original "TourToggle.toggle TO ViewpointTour.EventSet_enabled }
 { Sample TourToggle.toggle TO ViewpointTour.EventSet_enabled}
-GeoLocation129.AddRoute(TourToggle.toggle, X3DPrototype88.set_EventSet_enabled);
+GeoLocation129.AddRoute(TourToggle.toggle, X3DPrototype88.EventSet_enabled);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group20.FdChildren.Add(GeoLocation129);

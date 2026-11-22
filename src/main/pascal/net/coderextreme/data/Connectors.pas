@@ -531,9 +531,9 @@ Script79.SetSourceCode('''ecmascript:\n"+
 "}''');
 { METHOD .AddScript }
 X3DPrototype58.AddScript([Script79]);
-{ Original "PlaneSensor.EventTranslation_changed TO Node.EventSet_translation }
-{ Sample PlaneSensor.EventTranslation_changed TO Node.EventSet_translation}
-X3DPrototype58.AddRoute(PlaneSensor60.EventTranslation_changed, Transform61.set_EventSet_translation);
+{ Original "PlaneSensor.EventTranslation_changed TO Node.FdTranslation.EventIn }
+{ Sample PlaneSensor.EventTranslation_changed TO Node.FdTranslation.EventIn}
+X3DPrototype58.AddRoute(PlaneSensor60.EventTranslation_changed, Transform61.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
 { METHOD .AddX3DPrototype }
 X3DPrototype55.AddX3DPrototype([X3DPrototype58]);

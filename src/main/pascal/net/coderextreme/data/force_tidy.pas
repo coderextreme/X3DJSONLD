@@ -196,19 +196,19 @@ TimeSensor36.Loop := True;
 Group16.FdChildren.Add(TimeSensor36);
 { Original "nodeClock.EventCycleTime TO MoveBall.EventSet_cycle }
 { Sample nodeClock.EventCycleTime TO MoveBall.EventSet_cycle}
-Group16.AddRoute(TimeSensor36.EventCycleTime, Script31.set_EventSet_cycle);
+Group16.AddRoute(TimeSensor36.EventCycleTime, Script31.EventSet_cycle);
 { METHOD .AddX3DROUTE }
 { Original "nodeClock.EventFraction_changed TO NodePosition.EventSet_fraction }
 { Sample nodeClock.EventFraction_changed TO NodePosition.EventSet_fraction}
-Group16.AddRoute(TimeSensor36.EventFraction_changed, PositionInterpolator30.set_EventSet_fraction);
+Group16.AddRoute(TimeSensor36.EventFraction_changed, PositionInterpolator30.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "MoveBall.EventKeyValue TO NodePosition.EventSet_keyValue }
 { Sample MoveBall.EventKeyValue TO NodePosition.EventSet_keyValue}
-Group16.AddRoute(Script31.EventKeyValue, PositionInterpolator30.set_EventSet_keyValue);
+Group16.AddRoute(Script31.EventKeyValue, PositionInterpolator30.EventSet_keyValue);
 { METHOD .AddX3DROUTE }
-{ Original "NodePosition.EventValue_changed TO transform.EventSet_translation }
-{ Sample NodePosition.EventValue_changed TO transform.EventSet_translation}
-Group16.AddRoute(PositionInterpolator30.EventValue_changed, Transform17.set_EventSet_translation);
+{ Original "NodePosition.EventValue_changed TO transform.FdTranslation.EventIn }
+{ Sample NodePosition.EventValue_changed TO transform.FdTranslation.EventIn}
+Group16.AddRoute(PositionInterpolator30.EventValue_changed, Transform17.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
 { METHOD .AddGroup }
 X3DPrototype15.AddChildren([Group16]);
@@ -282,7 +282,7 @@ Script51.SetSourceCode('''ecmascript:\n"+
 Group46.FdChildren.Add(Script51);
 { Original "MoveCylinder.EventSpine_changed TO extrusion.EventSet_spine }
 { Sample MoveCylinder.EventSpine_changed TO extrusion.EventSet_spine}
-Group46.AddRoute(Script51.EventSpine_changed, Extrusion50.set_EventSet_spine);
+Group46.AddRoute(Script51.EventSpine_changed, Extrusion50.EventSet_spine);
 { METHOD .AddX3DROUTE }
 { METHOD .AddGroup }
 X3DPrototype45.AddChildren([Group46]);
@@ -369,27 +369,27 @@ Group11.AddRoute(PlaneSensor60.EventIsActive, SFBool75);
 { METHOD .AddX3DROUTE }
 { Original "nodeA.EventPosition_changed TO linkA.EventSet_positionA }
 { Sample nodeA.EventPosition_changed TO linkA.EventSet_positionA}
-Group11.AddRoute(X3DPrototype61.EventPosition_changed, X3DPrototype69.set_EventSet_positionA);
+Group11.AddRoute(X3DPrototype61.EventPosition_changed, X3DPrototype69.EventSet_positionA);
 { METHOD .AddX3DROUTE }
 { Original "nodeB.EventPosition_changed TO linkA.EventSet_positionB }
 { Sample nodeB.EventPosition_changed TO linkA.EventSet_positionB}
-Group11.AddRoute(X3DPrototype63.EventPosition_changed, X3DPrototype69.set_EventSet_positionB);
+Group11.AddRoute(X3DPrototype63.EventPosition_changed, X3DPrototype69.EventSet_positionB);
 { METHOD .AddX3DROUTE }
 { Original "nodeA.EventPosition_changed TO linkB.EventSet_positionA }
 { Sample nodeA.EventPosition_changed TO linkB.EventSet_positionA}
-Group11.AddRoute(X3DPrototype61.EventPosition_changed, X3DPrototype70.set_EventSet_positionA);
+Group11.AddRoute(X3DPrototype61.EventPosition_changed, X3DPrototype70.EventSet_positionA);
 { METHOD .AddX3DROUTE }
 { Original "nodeC.EventPosition_changed TO linkB.EventSet_positionB }
 { Sample nodeC.EventPosition_changed TO linkB.EventSet_positionB}
-Group11.AddRoute(X3DPrototype65.EventPosition_changed, X3DPrototype70.set_EventSet_positionB);
+Group11.AddRoute(X3DPrototype65.EventPosition_changed, X3DPrototype70.EventSet_positionB);
 { METHOD .AddX3DROUTE }
 { Original "nodeA.EventPosition_changed TO linkC.EventSet_positionA }
 { Sample nodeA.EventPosition_changed TO linkC.EventSet_positionA}
-Group11.AddRoute(X3DPrototype61.EventPosition_changed, X3DPrototype71.set_EventSet_positionA);
+Group11.AddRoute(X3DPrototype61.EventPosition_changed, X3DPrototype71.EventSet_positionA);
 { METHOD .AddX3DROUTE }
 { Original "nodeD.EventPosition_changed TO linkC.EventSet_positionB }
 { Sample nodeD.EventPosition_changed TO linkC.EventSet_positionB}
-Group11.AddRoute(X3DPrototype67.EventPosition_changed, X3DPrototype71.set_EventSet_positionB);
+Group11.AddRoute(X3DPrototype67.EventPosition_changed, X3DPrototype71.EventSet_positionB);
 { METHOD .AddX3DROUTE }
 { METHOD .AddGroup }
 X3D0.AddChildren([Group11]);

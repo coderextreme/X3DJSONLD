@@ -1324,7 +1324,7 @@ Group7.AddRoute(TouchSensor160.EventTouchTime, SFTime11);
 { METHOD .AddX3DROUTE }
 { Original "Choice0.EventChoice TO SceneSwitcher.whichChoice }
 { Sample Choice0.EventChoice TO SceneSwitcher.whichChoice}
-Group7.AddRoute(Script10.EventChoice, Switch8.set_whichChoice);
+Group7.AddRoute(Script10.EventChoice, Switch8.whichChoice);
 { METHOD .AddX3DROUTE }
 Transform173 := TTransformNode.Create;
 Transform173.Translation := Vector3(48,60.4,0);
@@ -1379,7 +1379,7 @@ Group7.AddRoute(TouchSensor174.EventTouchTime, SFTime16);
 { METHOD .AddX3DROUTE }
 { Original "Choice1.EventChoice TO SceneSwitcher.whichChoice }
 { Sample Choice1.EventChoice TO SceneSwitcher.whichChoice}
-Group7.AddRoute(Script15.EventChoice, Switch8.set_whichChoice);
+Group7.AddRoute(Script15.EventChoice, Switch8.whichChoice);
 { METHOD .AddX3DROUTE }
 Transform187 := TTransformNode.Create;
 Transform187.Translation := Vector3(48,57.39999999999999,0);
@@ -1434,7 +1434,7 @@ Group7.AddRoute(TouchSensor188.EventTouchTime, SFTime21);
 { METHOD .AddX3DROUTE }
 { Original "Choice2.EventChoice TO SceneSwitcher.whichChoice }
 { Sample Choice2.EventChoice TO SceneSwitcher.whichChoice}
-Group7.AddRoute(Script20.EventChoice, Switch8.set_whichChoice);
+Group7.AddRoute(Script20.EventChoice, Switch8.whichChoice);
 { METHOD .AddX3DROUTE }
 Transform201 := TTransformNode.Create;
 Transform201.Translation := Vector3(48,54.39999999999999,0);
@@ -1489,7 +1489,7 @@ Group7.AddRoute(TouchSensor202.EventTouchTime, SFTime26);
 { METHOD .AddX3DROUTE }
 { Original "Choice3.EventChoice TO SceneSwitcher.whichChoice }
 { Sample Choice3.EventChoice TO SceneSwitcher.whichChoice}
-Group7.AddRoute(Script25.EventChoice, Switch8.set_whichChoice);
+Group7.AddRoute(Script25.EventChoice, Switch8.whichChoice);
 { METHOD .AddX3DROUTE }
 Transform215 := TTransformNode.Create;
 Transform215.Translation := Vector3(48,51.39999999999999,0);
@@ -1544,7 +1544,7 @@ Group7.AddRoute(TouchSensor216.EventTouchTime, SFTime31);
 { METHOD .AddX3DROUTE }
 { Original "Choice4.EventChoice TO SceneSwitcher.whichChoice }
 { Sample Choice4.EventChoice TO SceneSwitcher.whichChoice}
-Group7.AddRoute(Script30.EventChoice, Switch8.set_whichChoice);
+Group7.AddRoute(Script30.EventChoice, Switch8.whichChoice);
 { METHOD .AddX3DROUTE }
 Transform229 := TTransformNode.Create;
 Transform229.Translation := Vector3(48,48.39999999999999,0);
@@ -1599,7 +1599,7 @@ Group7.AddRoute(TouchSensor230.EventTouchTime, SFTime36);
 { METHOD .AddX3DROUTE }
 { Original "Choice5.EventChoice TO SceneSwitcher.whichChoice }
 { Sample Choice5.EventChoice TO SceneSwitcher.whichChoice}
-Group7.AddRoute(Script35.EventChoice, Switch8.set_whichChoice);
+Group7.AddRoute(Script35.EventChoice, Switch8.whichChoice);
 { METHOD .AddX3DROUTE }
 Transform243 := TTransformNode.Create;
 Transform243.Translation := Vector3(48,45.39999999999999,0);
@@ -1654,7 +1654,7 @@ Group7.AddRoute(TouchSensor244.EventTouchTime, SFTime41);
 { METHOD .AddX3DROUTE }
 { Original "Choice6.EventChoice TO SceneSwitcher.whichChoice }
 { Sample Choice6.EventChoice TO SceneSwitcher.whichChoice}
-Group7.AddRoute(Script40.EventChoice, Switch8.set_whichChoice);
+Group7.AddRoute(Script40.EventChoice, Switch8.whichChoice);
 { METHOD .AddX3DROUTE }
 Transform257 := TTransformNode.Create;
 Transform257.Translation := Vector3(48,42.39999999999999,0);
@@ -1709,7 +1709,7 @@ Group7.AddRoute(TouchSensor258.EventTouchTime, SFTime46);
 { METHOD .AddX3DROUTE }
 { Original "Choice7.EventChoice TO SceneSwitcher.whichChoice }
 { Sample Choice7.EventChoice TO SceneSwitcher.whichChoice}
-Group7.AddRoute(Script45.EventChoice, Switch8.set_whichChoice);
+Group7.AddRoute(Script45.EventChoice, Switch8.whichChoice);
 { METHOD .AddX3DROUTE }
 Transform271 := TTransformNode.Create;
 Transform271.Translation := Vector3(48,39.39999999999999,0);
@@ -1764,7 +1764,7 @@ Group7.AddRoute(TouchSensor272.EventTouchTime, SFTime51);
 { METHOD .AddX3DROUTE }
 { Original "Choice8.EventChoice TO SceneSwitcher.whichChoice }
 { Sample Choice8.EventChoice TO SceneSwitcher.whichChoice}
-Group7.AddRoute(Script50.EventChoice, Switch8.set_whichChoice);
+Group7.AddRoute(Script50.EventChoice, Switch8.whichChoice);
 { METHOD .AddX3DROUTE }
 Transform285 := TTransformNode.Create;
 Transform285.Translation := Vector3(48,36.39999999999999,0);
@@ -1819,7 +1819,7 @@ Group7.AddRoute(TouchSensor286.EventTouchTime, SFTime56);
 { METHOD .AddX3DROUTE }
 { Original "Choice9.EventChoice TO SceneSwitcher.whichChoice }
 { Sample Choice9.EventChoice TO SceneSwitcher.whichChoice}
-Group7.AddRoute(Script55.EventChoice, Switch8.set_whichChoice);
+Group7.AddRoute(Script55.EventChoice, Switch8.whichChoice);
 { METHOD .AddX3DROUTE }
 Transform299 := TTransformNode.Create;
 Transform299.Translation := Vector3(48,33.39999999999999,0);
@@ -1874,7 +1874,7 @@ Group7.AddRoute(TouchSensor300.EventTouchTime, SFTime61);
 { METHOD .AddX3DROUTE }
 { Original "Choice10.EventChoice TO SceneSwitcher.whichChoice }
 { Sample Choice10.EventChoice TO SceneSwitcher.whichChoice}
-Group7.AddRoute(Script60.EventChoice, Switch8.set_whichChoice);
+Group7.AddRoute(Script60.EventChoice, Switch8.whichChoice);
 { METHOD .AddX3DROUTE }
 Transform313 := TTransformNode.Create;
 Transform313.Translation := Vector3(48,30.399999999999995,0);
@@ -1929,7 +1929,7 @@ Group7.AddRoute(TouchSensor314.EventTouchTime, SFTime66);
 { METHOD .AddX3DROUTE }
 { Original "Choice11.EventChoice TO SceneSwitcher.whichChoice }
 { Sample Choice11.EventChoice TO SceneSwitcher.whichChoice}
-Group7.AddRoute(Script65.EventChoice, Switch8.set_whichChoice);
+Group7.AddRoute(Script65.EventChoice, Switch8.whichChoice);
 { METHOD .AddX3DROUTE }
 Transform327 := TTransformNode.Create;
 Transform327.Translation := Vector3(48,27.399999999999995,0);
@@ -1984,7 +1984,7 @@ Group7.AddRoute(TouchSensor328.EventTouchTime, SFTime71);
 { METHOD .AddX3DROUTE }
 { Original "Choice12.EventChoice TO SceneSwitcher.whichChoice }
 { Sample Choice12.EventChoice TO SceneSwitcher.whichChoice}
-Group7.AddRoute(Script70.EventChoice, Switch8.set_whichChoice);
+Group7.AddRoute(Script70.EventChoice, Switch8.whichChoice);
 { METHOD .AddX3DROUTE }
 Transform341 := TTransformNode.Create;
 Transform341.Translation := Vector3(48,24.399999999999995,0);
@@ -2039,7 +2039,7 @@ Group7.AddRoute(TouchSensor342.EventTouchTime, SFTime76);
 { METHOD .AddX3DROUTE }
 { Original "Choice13.EventChoice TO SceneSwitcher.whichChoice }
 { Sample Choice13.EventChoice TO SceneSwitcher.whichChoice}
-Group7.AddRoute(Script75.EventChoice, Switch8.set_whichChoice);
+Group7.AddRoute(Script75.EventChoice, Switch8.whichChoice);
 { METHOD .AddX3DROUTE }
 Transform355 := TTransformNode.Create;
 Transform355.Translation := Vector3(48,21.399999999999995,0);
@@ -2094,7 +2094,7 @@ Group7.AddRoute(TouchSensor356.EventTouchTime, SFTime81);
 { METHOD .AddX3DROUTE }
 { Original "Choice14.EventChoice TO SceneSwitcher.whichChoice }
 { Sample Choice14.EventChoice TO SceneSwitcher.whichChoice}
-Group7.AddRoute(Script80.EventChoice, Switch8.set_whichChoice);
+Group7.AddRoute(Script80.EventChoice, Switch8.whichChoice);
 { METHOD .AddX3DROUTE }
 Transform369 := TTransformNode.Create;
 Transform369.Translation := Vector3(48,18.4,0);
@@ -2149,7 +2149,7 @@ Group7.AddRoute(TouchSensor370.EventTouchTime, SFTime86);
 { METHOD .AddX3DROUTE }
 { Original "Choice15.EventChoice TO SceneSwitcher.whichChoice }
 { Sample Choice15.EventChoice TO SceneSwitcher.whichChoice}
-Group7.AddRoute(Script85.EventChoice, Switch8.set_whichChoice);
+Group7.AddRoute(Script85.EventChoice, Switch8.whichChoice);
 { METHOD .AddX3DROUTE }
 Transform383 := TTransformNode.Create;
 Transform383.Translation := Vector3(48,15.399999999999997,0);
@@ -2204,7 +2204,7 @@ Group7.AddRoute(TouchSensor384.EventTouchTime, SFTime91);
 { METHOD .AddX3DROUTE }
 { Original "Choice16.EventChoice TO SceneSwitcher.whichChoice }
 { Sample Choice16.EventChoice TO SceneSwitcher.whichChoice}
-Group7.AddRoute(Script90.EventChoice, Switch8.set_whichChoice);
+Group7.AddRoute(Script90.EventChoice, Switch8.whichChoice);
 { METHOD .AddX3DROUTE }
 Transform397 := TTransformNode.Create;
 Transform397.Translation := Vector3(48,12.399999999999999,0);
@@ -2259,7 +2259,7 @@ Group7.AddRoute(TouchSensor398.EventTouchTime, SFTime96);
 { METHOD .AddX3DROUTE }
 { Original "Choice17.EventChoice TO SceneSwitcher.whichChoice }
 { Sample Choice17.EventChoice TO SceneSwitcher.whichChoice}
-Group7.AddRoute(Script95.EventChoice, Switch8.set_whichChoice);
+Group7.AddRoute(Script95.EventChoice, Switch8.whichChoice);
 { METHOD .AddX3DROUTE }
 Transform411 := TTransformNode.Create;
 Transform411.Translation := Vector3(48,9.399999999999999,0);
@@ -2314,7 +2314,7 @@ Group7.AddRoute(TouchSensor412.EventTouchTime, SFTime101);
 { METHOD .AddX3DROUTE }
 { Original "Choice18.EventChoice TO SceneSwitcher.whichChoice }
 { Sample Choice18.EventChoice TO SceneSwitcher.whichChoice}
-Group7.AddRoute(Script100.EventChoice, Switch8.set_whichChoice);
+Group7.AddRoute(Script100.EventChoice, Switch8.whichChoice);
 { METHOD .AddX3DROUTE }
 Transform425 := TTransformNode.Create;
 Transform425.Translation := Vector3(48,6.399999999999999,0);
@@ -2369,7 +2369,7 @@ Group7.AddRoute(TouchSensor426.EventTouchTime, SFTime106);
 { METHOD .AddX3DROUTE }
 { Original "Choice19.EventChoice TO SceneSwitcher.whichChoice }
 { Sample Choice19.EventChoice TO SceneSwitcher.whichChoice}
-Group7.AddRoute(Script105.EventChoice, Switch8.set_whichChoice);
+Group7.AddRoute(Script105.EventChoice, Switch8.whichChoice);
 { METHOD .AddX3DROUTE }
 Transform439 := TTransformNode.Create;
 Transform439.Translation := Vector3(48,3.399999999999995,0);
@@ -2424,7 +2424,7 @@ Group7.AddRoute(TouchSensor440.EventTouchTime, SFTime111);
 { METHOD .AddX3DROUTE }
 { Original "Choice20.EventChoice TO SceneSwitcher.whichChoice }
 { Sample Choice20.EventChoice TO SceneSwitcher.whichChoice}
-Group7.AddRoute(Script110.EventChoice, Switch8.set_whichChoice);
+Group7.AddRoute(Script110.EventChoice, Switch8.whichChoice);
 { METHOD .AddX3DROUTE }
 Transform453 := TTransformNode.Create;
 Transform453.Translation := Vector3(48,0.399999999999995,0);
@@ -2479,7 +2479,7 @@ Group7.AddRoute(TouchSensor454.EventTouchTime, SFTime116);
 { METHOD .AddX3DROUTE }
 { Original "Choice21.EventChoice TO SceneSwitcher.whichChoice }
 { Sample Choice21.EventChoice TO SceneSwitcher.whichChoice}
-Group7.AddRoute(Script115.EventChoice, Switch8.set_whichChoice);
+Group7.AddRoute(Script115.EventChoice, Switch8.whichChoice);
 { METHOD .AddX3DROUTE }
 Transform467 := TTransformNode.Create;
 Transform467.Translation := Vector3(48,-2.6000000000000085,0);
@@ -2534,7 +2534,7 @@ Group7.AddRoute(TouchSensor468.EventTouchTime, SFTime121);
 { METHOD .AddX3DROUTE }
 { Original "Choice22.EventChoice TO SceneSwitcher.whichChoice }
 { Sample Choice22.EventChoice TO SceneSwitcher.whichChoice}
-Group7.AddRoute(Script120.EventChoice, Switch8.set_whichChoice);
+Group7.AddRoute(Script120.EventChoice, Switch8.whichChoice);
 { METHOD .AddX3DROUTE }
 Transform481 := TTransformNode.Create;
 Transform481.Translation := Vector3(48,-5.6000000000000085,0);
@@ -2589,7 +2589,7 @@ Group7.AddRoute(TouchSensor482.EventTouchTime, SFTime126);
 { METHOD .AddX3DROUTE }
 { Original "Choice23.EventChoice TO SceneSwitcher.whichChoice }
 { Sample Choice23.EventChoice TO SceneSwitcher.whichChoice}
-Group7.AddRoute(Script125.EventChoice, Switch8.set_whichChoice);
+Group7.AddRoute(Script125.EventChoice, Switch8.whichChoice);
 { METHOD .AddX3DROUTE }
 Transform495 := TTransformNode.Create;
 Transform495.Translation := Vector3(48,-8.600000000000009,0);
@@ -2644,7 +2644,7 @@ Group7.AddRoute(TouchSensor496.EventTouchTime, SFTime131);
 { METHOD .AddX3DROUTE }
 { Original "Choice24.EventChoice TO SceneSwitcher.whichChoice }
 { Sample Choice24.EventChoice TO SceneSwitcher.whichChoice}
-Group7.AddRoute(Script130.EventChoice, Switch8.set_whichChoice);
+Group7.AddRoute(Script130.EventChoice, Switch8.whichChoice);
 { METHOD .AddX3DROUTE }
 Transform509 := TTransformNode.Create;
 Transform509.Translation := Vector3(48,-11.600000000000009,0);
@@ -2699,7 +2699,7 @@ Group7.AddRoute(TouchSensor510.EventTouchTime, SFTime136);
 { METHOD .AddX3DROUTE }
 { Original "Choice25.EventChoice TO SceneSwitcher.whichChoice }
 { Sample Choice25.EventChoice TO SceneSwitcher.whichChoice}
-Group7.AddRoute(Script135.EventChoice, Switch8.set_whichChoice);
+Group7.AddRoute(Script135.EventChoice, Switch8.whichChoice);
 { METHOD .AddX3DROUTE }
 Transform523 := TTransformNode.Create;
 Transform523.Translation := Vector3(48,-14.600000000000001,0);
@@ -2754,7 +2754,7 @@ Group7.AddRoute(TouchSensor524.EventTouchTime, SFTime141);
 { METHOD .AddX3DROUTE }
 { Original "Choice26.EventChoice TO SceneSwitcher.whichChoice }
 { Sample Choice26.EventChoice TO SceneSwitcher.whichChoice}
-Group7.AddRoute(Script140.EventChoice, Switch8.set_whichChoice);
+Group7.AddRoute(Script140.EventChoice, Switch8.whichChoice);
 { METHOD .AddX3DROUTE }
 Transform537 := TTransformNode.Create;
 Transform537.Translation := Vector3(48,-17.6,0);
@@ -2809,7 +2809,7 @@ Group7.AddRoute(TouchSensor538.EventTouchTime, SFTime146);
 { METHOD .AddX3DROUTE }
 { Original "Choice27.EventChoice TO SceneSwitcher.whichChoice }
 { Sample Choice27.EventChoice TO SceneSwitcher.whichChoice}
-Group7.AddRoute(Script145.EventChoice, Switch8.set_whichChoice);
+Group7.AddRoute(Script145.EventChoice, Switch8.whichChoice);
 { METHOD .AddX3DROUTE }
 Transform551 := TTransformNode.Create;
 Transform551.Translation := Vector3(48,-20.6,0);
@@ -2864,7 +2864,7 @@ Group7.AddRoute(TouchSensor552.EventTouchTime, SFTime151);
 { METHOD .AddX3DROUTE }
 { Original "Choice28.EventChoice TO SceneSwitcher.whichChoice }
 { Sample Choice28.EventChoice TO SceneSwitcher.whichChoice}
-Group7.AddRoute(Script150.EventChoice, Switch8.set_whichChoice);
+Group7.AddRoute(Script150.EventChoice, Switch8.whichChoice);
 { METHOD .AddX3DROUTE }
 Transform565 := TTransformNode.Create;
 Transform565.Translation := Vector3(48,-23.599999999999994,0);
@@ -2919,7 +2919,7 @@ Group7.AddRoute(TouchSensor566.EventTouchTime, SFTime156);
 { METHOD .AddX3DROUTE }
 { Original "Choice29.EventChoice TO SceneSwitcher.whichChoice }
 { Sample Choice29.EventChoice TO SceneSwitcher.whichChoice}
-Group7.AddRoute(Script155.EventChoice, Switch8.set_whichChoice);
+Group7.AddRoute(Script155.EventChoice, Switch8.whichChoice);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group5.FdChildren.Add(Group7);

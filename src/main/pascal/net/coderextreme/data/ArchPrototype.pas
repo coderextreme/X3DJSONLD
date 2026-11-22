@@ -380,7 +380,7 @@ Script40.AddCustomField(IS56);
 X3DPrototype30.AddScript([Script40]);
 { Original "ArchPrototypeScript.computedScale TO ArchTransform.scale }
 { Sample ArchPrototypeScript.computedScale TO ArchTransform.scale}
-X3DPrototype30.AddRoute(ArchPrototypeScript.[object Object], Transform31.set_scale);
+X3DPrototype30.AddRoute(ArchPrototypeScript.[object Object], Transform31.scale);
 end;
 
 procedure InitArchPrototypePart5;
@@ -389,11 +389,11 @@ begin
 { METHOD .AddX3DROUTE }
 { Original "ArchPrototypeScript.pointOut TO ArchChord.point }
 { Sample ArchPrototypeScript.pointOut TO ArchChord.point}
-X3DPrototype30.AddRoute(ArchPrototypeScript.[object Object], Coordinate34.set_point);
+X3DPrototype30.AddRoute(ArchPrototypeScript.[object Object], Coordinate34.point);
 { METHOD .AddX3DROUTE }
 { Original "ArchPrototypeScript.indexOut TO ArchIndex.EventSet_coordIndex }
 { Sample ArchPrototypeScript.indexOut TO ArchIndex.EventSet_coordIndex}
-X3DPrototype30.AddRoute(ArchPrototypeScript.[object Object], IndexedFaceSet33.set_EventSet_coordIndex);
+X3DPrototype30.AddRoute(ArchPrototypeScript.[object Object], IndexedFaceSet33.EventSet_coordIndex);
 { METHOD .AddX3DROUTE }
 { METHOD .AddX3DPrototype }
 X3DPrototype14.AddX3DPrototype([X3DPrototype30]);

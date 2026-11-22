@@ -252,11 +252,11 @@ TimeSensor49.Loop := True;
 Transform19.FdChildren.Add(TimeSensor49);
 { Original "TourTime.EventFraction_changed TO Animate.EventSet_fraction }
 { Sample TourTime.EventFraction_changed TO Animate.EventSet_fraction}
-Transform19.AddRoute(TimeSensor49.EventFraction_changed, Script43.set_EventSet_fraction);
+Transform19.AddRoute(TimeSensor49.EventFraction_changed, Script43.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Animate.EventValues TO x_ite.x3d_ParticleValues }
 { Sample Animate.EventValues TO x_ite.x3d_ParticleValues}
-Transform19.AddRoute(Script43.EventValues, ComposedShader33.set_x3d_ParticleValues);
+Transform19.AddRoute(Script43.EventValues, ComposedShader33.x3d_ParticleValues);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group14.FdChildren.Add(Transform19);

@@ -576,47 +576,47 @@ Group48.FdChildren.Add(OrientationInterpolator112);
 X3DPrototype47.AddChildren([Group48]);
 { Original "TIMER.EventFraction_changed TO HUMANOIDROOT_POSITION_ANIMATOR.EventSet_fraction }
 { Sample TIMER.EventFraction_changed TO HUMANOIDROOT_POSITION_ANIMATOR.EventSet_fraction}
-X3DPrototype47.AddRoute(TimeSensor49.EventFraction_changed, PositionInterpolator58.set_EventSet_fraction);
+X3DPrototype47.AddRoute(TimeSensor49.EventFraction_changed, PositionInterpolator58.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "TIMER.EventFraction_changed TO HUMANOIDROOT_ANIMATOR.EventSet_fraction }
 { Sample TIMER.EventFraction_changed TO HUMANOIDROOT_ANIMATOR.EventSet_fraction}
-X3DPrototype47.AddRoute(TimeSensor49.EventFraction_changed, OrientationInterpolator61.set_EventSet_fraction);
+X3DPrototype47.AddRoute(TimeSensor49.EventFraction_changed, OrientationInterpolator61.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "TIMER.EventFraction_changed TO SACROILIAC_ANIMATOR.EventSet_fraction }
 { Sample TIMER.EventFraction_changed TO SACROILIAC_ANIMATOR.EventSet_fraction}
-X3DPrototype47.AddRoute(TimeSensor49.EventFraction_changed, OrientationInterpolator64.set_EventSet_fraction);
+X3DPrototype47.AddRoute(TimeSensor49.EventFraction_changed, OrientationInterpolator64.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "TIMER.EventFraction_changed TO L_HIP_ANIMATOR.EventSet_fraction }
 { Sample TIMER.EventFraction_changed TO L_HIP_ANIMATOR.EventSet_fraction}
-X3DPrototype47.AddRoute(TimeSensor49.EventFraction_changed, OrientationInterpolator67.set_EventSet_fraction);
+X3DPrototype47.AddRoute(TimeSensor49.EventFraction_changed, OrientationInterpolator67.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "TIMER.EventFraction_changed TO L_KNEE_ANIMATOR.EventSet_fraction }
 { Sample TIMER.EventFraction_changed TO L_KNEE_ANIMATOR.EventSet_fraction}
-X3DPrototype47.AddRoute(TimeSensor49.EventFraction_changed, OrientationInterpolator70.set_EventSet_fraction);
+X3DPrototype47.AddRoute(TimeSensor49.EventFraction_changed, OrientationInterpolator70.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "TIMER.EventFraction_changed TO L_ANKLE_ANIMATOR.EventSet_fraction }
 { Sample TIMER.EventFraction_changed TO L_ANKLE_ANIMATOR.EventSet_fraction}
-X3DPrototype47.AddRoute(TimeSensor49.EventFraction_changed, OrientationInterpolator73.set_EventSet_fraction);
+X3DPrototype47.AddRoute(TimeSensor49.EventFraction_changed, OrientationInterpolator73.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "TIMER.EventFraction_changed TO L_MIDTARSAL_ANIMATOR.EventSet_fraction }
 { Sample TIMER.EventFraction_changed TO L_MIDTARSAL_ANIMATOR.EventSet_fraction}
-X3DPrototype47.AddRoute(TimeSensor49.EventFraction_changed, OrientationInterpolator76.set_EventSet_fraction);
+X3DPrototype47.AddRoute(TimeSensor49.EventFraction_changed, OrientationInterpolator76.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "TIMER.EventFraction_changed TO R_HIP_ANIMATOR.EventSet_fraction }
 { Sample TIMER.EventFraction_changed TO R_HIP_ANIMATOR.EventSet_fraction}
-X3DPrototype47.AddRoute(TimeSensor49.EventFraction_changed, OrientationInterpolator79.set_EventSet_fraction);
+X3DPrototype47.AddRoute(TimeSensor49.EventFraction_changed, OrientationInterpolator79.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "TIMER.EventFraction_changed TO R_KNEE_ANIMATOR.EventSet_fraction }
 { Sample TIMER.EventFraction_changed TO R_KNEE_ANIMATOR.EventSet_fraction}
-X3DPrototype47.AddRoute(TimeSensor49.EventFraction_changed, OrientationInterpolator82.set_EventSet_fraction);
+X3DPrototype47.AddRoute(TimeSensor49.EventFraction_changed, OrientationInterpolator82.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "TIMER.EventFraction_changed TO R_ANKLE_ANIMATOR.EventSet_fraction }
 { Sample TIMER.EventFraction_changed TO R_ANKLE_ANIMATOR.EventSet_fraction}
-X3DPrototype47.AddRoute(TimeSensor49.EventFraction_changed, OrientationInterpolator85.set_EventSet_fraction);
+X3DPrototype47.AddRoute(TimeSensor49.EventFraction_changed, OrientationInterpolator85.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "TIMER.EventFraction_changed TO R_MIDTARSAL_ANIMATOR.EventSet_fraction }
 { Sample TIMER.EventFraction_changed TO R_MIDTARSAL_ANIMATOR.EventSet_fraction}
-X3DPrototype47.AddRoute(TimeSensor49.EventFraction_changed, OrientationInterpolator88.set_EventSet_fraction);
+X3DPrototype47.AddRoute(TimeSensor49.EventFraction_changed, OrientationInterpolator88.EventSet_fraction);
 end;
 
 procedure InitLOA1_JumpAnimationPart8;
@@ -625,35 +625,35 @@ begin
 { METHOD .AddX3DROUTE }
 { Original "TIMER.EventFraction_changed TO VL5_ANIMATOR.EventSet_fraction }
 { Sample TIMER.EventFraction_changed TO VL5_ANIMATOR.EventSet_fraction}
-X3DPrototype47.AddRoute(TimeSensor49.EventFraction_changed, OrientationInterpolator91.set_EventSet_fraction);
+X3DPrototype47.AddRoute(TimeSensor49.EventFraction_changed, OrientationInterpolator91.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "TIMER.EventFraction_changed TO SKULLBASE_ANIMATOR.EventSet_fraction }
 { Sample TIMER.EventFraction_changed TO SKULLBASE_ANIMATOR.EventSet_fraction}
-X3DPrototype47.AddRoute(TimeSensor49.EventFraction_changed, OrientationInterpolator94.set_EventSet_fraction);
+X3DPrototype47.AddRoute(TimeSensor49.EventFraction_changed, OrientationInterpolator94.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "TIMER.EventFraction_changed TO L_SHOULDER_ANIMATOR.EventSet_fraction }
 { Sample TIMER.EventFraction_changed TO L_SHOULDER_ANIMATOR.EventSet_fraction}
-X3DPrototype47.AddRoute(TimeSensor49.EventFraction_changed, OrientationInterpolator97.set_EventSet_fraction);
+X3DPrototype47.AddRoute(TimeSensor49.EventFraction_changed, OrientationInterpolator97.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "TIMER.EventFraction_changed TO L_ELBOW_ANIMATOR.EventSet_fraction }
 { Sample TIMER.EventFraction_changed TO L_ELBOW_ANIMATOR.EventSet_fraction}
-X3DPrototype47.AddRoute(TimeSensor49.EventFraction_changed, OrientationInterpolator100.set_EventSet_fraction);
+X3DPrototype47.AddRoute(TimeSensor49.EventFraction_changed, OrientationInterpolator100.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "TIMER.EventFraction_changed TO L_WRIST_ANIMATOR.EventSet_fraction }
 { Sample TIMER.EventFraction_changed TO L_WRIST_ANIMATOR.EventSet_fraction}
-X3DPrototype47.AddRoute(TimeSensor49.EventFraction_changed, OrientationInterpolator103.set_EventSet_fraction);
+X3DPrototype47.AddRoute(TimeSensor49.EventFraction_changed, OrientationInterpolator103.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "TIMER.EventFraction_changed TO R_SHOULDER_ANIMATOR.EventSet_fraction }
 { Sample TIMER.EventFraction_changed TO R_SHOULDER_ANIMATOR.EventSet_fraction}
-X3DPrototype47.AddRoute(TimeSensor49.EventFraction_changed, OrientationInterpolator106.set_EventSet_fraction);
+X3DPrototype47.AddRoute(TimeSensor49.EventFraction_changed, OrientationInterpolator106.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "TIMER.EventFraction_changed TO R_ELBOW_ANIMATOR.EventSet_fraction }
 { Sample TIMER.EventFraction_changed TO R_ELBOW_ANIMATOR.EventSet_fraction}
-X3DPrototype47.AddRoute(TimeSensor49.EventFraction_changed, OrientationInterpolator109.set_EventSet_fraction);
+X3DPrototype47.AddRoute(TimeSensor49.EventFraction_changed, OrientationInterpolator109.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "TIMER.EventFraction_changed TO R_WRIST_ANIMATOR.EventSet_fraction }
 { Sample TIMER.EventFraction_changed TO R_WRIST_ANIMATOR.EventSet_fraction}
-X3DPrototype47.AddRoute(TimeSensor49.EventFraction_changed, OrientationInterpolator112.set_EventSet_fraction);
+X3DPrototype47.AddRoute(TimeSensor49.EventFraction_changed, OrientationInterpolator112.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { METHOD .AddX3DPrototype }
 X3DPrototype19.AddX3DPrototype([X3DPrototype47]);

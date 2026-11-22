@@ -300,7 +300,7 @@ Shape60.Appearance := Appearance63;
 Transform59.FdChildren.Add(Shape60);
 { Original "TextScript.EventString_changed TO CardText.string }
 { Sample TextScript.EventString_changed TO CardText.string}
-Transform59.AddRoute(Script50.EventString_changed, Text61.set_string);
+Transform59.AddRoute(Script50.EventString_changed, Text61.string);
 { METHOD .AddX3DROUTE }
 Sound66 := TSoundNode.Create;
 Sound66.MaxBack := 100;
@@ -320,11 +320,11 @@ Sound66.Source := AudioClip67;
 Transform59.FdChildren.Add(Sound66);
 { Original "TextScript.textToSpeechUrl TO TextToSpeechAudioClip.url }
 { Sample TextScript.textToSpeechUrl TO TextToSpeechAudioClip.url}
-Transform59.AddRoute(TextScript.[object Object], AudioClip67.set_url);
+Transform59.AddRoute(TextScript.[object Object], AudioClip67.url);
 { METHOD .AddX3DROUTE }
 { Original "TextScript.newCardTime TO TextToSpeechAudioClip.startTime }
 { Sample TextScript.newCardTime TO TextToSpeechAudioClip.startTime}
-Transform59.AddRoute(TextScript.[object Object], AudioClip67.set_startTime);
+Transform59.AddRoute(TextScript.[object Object], AudioClip67.startTime);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group33.FdChildren.Add(Transform59);
@@ -458,7 +458,7 @@ Anchor103.SetParameter(['target=_blank']);
 Anchor103.SetUrl(['http://translate.google.com/translate_tts?tl=en&amp;q=Overtly%20resist%20change']);
 { Original "TextScript.textToSpeechUrl TO TextToSpeechAnchor.url }
 { Sample TextScript.textToSpeechUrl TO TextToSpeechAnchor.url}
-Anchor103.AddRoute(TextScript.[object Object], Anchor103.set_url);
+Anchor103.AddRoute(TextScript.[object Object], Anchor103.url);
 { METHOD .AddX3DROUTE }
 Shape105 := TShapeNode.Create;
 Text106 := TTextNode.Create;

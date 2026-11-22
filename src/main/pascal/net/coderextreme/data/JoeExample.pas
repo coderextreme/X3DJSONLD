@@ -105,7 +105,7 @@ Group3.AddRoute(TouchSensor15.EventTouchTime, SFTime5);
 { METHOD .AddX3DROUTE }
 { Original "OpenVault.vaultUnlocked TO Click.startTime }
 { Sample OpenVault.vaultUnlocked TO Click.startTime}
-Group3.AddRoute(OpenVault.[object Object], AudioClip14.set_startTime);
+Group3.AddRoute(OpenVault.[object Object], AudioClip14.startTime);
 { METHOD .AddX3DROUTE }
 { METHOD .AddGroup }
 X3D0.AddChildren([Group3]);
