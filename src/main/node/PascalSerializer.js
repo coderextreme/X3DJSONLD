@@ -662,7 +662,7 @@ PascalSerializer.prototype = {
 	setInterface : function(interfaceStatement, protoName) {
 		for (let fieldStatement in interfaceStatement.childNodes) {
 			let field = interfaceStatement.childNodes[fieldStatement]
-			if (field.nodeType == 1) {
+			if (field.nodeType === 1) {
 				const allAttributesString = Array.from(field.attributes)
 					  .map(attr => `${attr.name}="${attr.value}"`)
 					  .join(" ");
@@ -674,7 +674,7 @@ PascalSerializer.prototype = {
 					console.error("=============WARNING 2, protoName undefined", protoName);
 				} else if (typeof this.protos === 'undefined') {
 					console.error("=============WARNING 3, this.protos undefined", this.protos);
-				} else if (typeof this.protos[protoName] == 'undefined') {
+				} else if (typeof this.protos[protoName] === 'undefined') {
 					console.error("=============WARNING 4, this.protos[protoName] undefined", protoName, this.protos[protoName]);
 				} else if (typeof field.getAttribute !== 'function') {
 					console.error("=============WARNING 5, field.getAttribute not a function", field.getAttribute);
@@ -716,7 +716,7 @@ PascalSerializer.prototype = {
 			try {
 				parseInt(a);
 				var attrsa = attrs[a];
-				if (attrs.hasOwnProperty(a) && attrsa.nodeType == 2) {
+				if (attrs.hasOwnProperty(a) && attrsa.nodeType === 2) {
 					var attr = attrsa.nodeName;
 					if (attr === "xmlns:xsd") {
 						continue;
@@ -1033,7 +1033,7 @@ PascalSerializer.prototype = {
 		}
 		for (var cn in element.childNodes) {
 			var node = element.childNodes[cn];
-			if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 1) {
+			if (element.childNodes.hasOwnProperty(cn) && node.nodeType === 1) {
 				stack.unshift(this.preno);
 				node.stacknumber = stack[0];
 				this.preno++;
@@ -1110,12 +1110,8 @@ nodeList.push(stackname(child));
 									strval = "nil";
 								}
 							}
-							let fieldVar = stackname(node);
-							if (strval === "nil") {
-								params = "Undefined("+stackname(element)+", false, '"+fieldName+"')";
-							} else {
-								params = "("+stackname(element)+", false, "+fieldVar+", "+strval+")";
-							}
+							// let fieldVar = stackname(node);
+							params = "Undefined("+stackname(element)+", false, '"+fieldName+"')";
 						}
 					}
 					/*
@@ -1125,7 +1121,7 @@ nodeList.push(stackname(child));
 					}
 					*/
 					if (node.nodeName === "Scene") {
-						node.nodeName = "Group"
+						node.nodeName = "Group";
 						params = "";
 					}
 					if (node.nodeName.endsWith("Light")) {
@@ -1228,7 +1224,11 @@ nodeList.push(stackname(child));
 							method === ".SetSkeleton" ||
 							method === ".SetSkin"
 						) {
-							ch += stackname(element)+method+"(["+stackname(node)+"]);\n";
+							if (node.nodeName === "LayerSet") {
+								ch += "X3D0.FdChildren.Add("+stackname(node)+");\n";
+							} else {
+								ch += stackname(element)+method+"(["+stackname(node)+"]);\n";
+							}
 						} else if ( method === ".FdChildren.Add") {
 							ch += stackname(element)+method+"("+stackname(node)+");\n";
 
@@ -1250,7 +1250,7 @@ nodeList.push(stackname(child));
 				}
 				str += ch;
 				stack.shift();
-			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 8) {
+			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType === 8) {
 				if (node.nodeValue.indexOf("}") < 0) {
 					str += "{ "+node.nodeValue+" }\n";
 				} else if (node.nodeValue.indexOf("*)") < 0) {
@@ -1258,7 +1258,7 @@ nodeList.push(stackname(child));
 				} else {
 					str += "// "+(node.nodeValue.replace(/[\r\n]+/g, " "))+"\n";
 				}
-			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 4) {
+			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType === 4) {
 				str += "\n"+stackname(element);
 				str += ".SetSourceCode('''"+node.nodeValue.split(/\r?\n/).map(function(x) {
 					return x.
