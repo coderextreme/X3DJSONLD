@@ -35,7 +35,7 @@
 		</Shape>
     </Transform>
     </Transform>
-    <ProtoDeclare name="point">
+    <ProtoDeclare DEF="point" name="point">
         <ProtoInterface>
             <field accessType='inputOutput' name='translation' type='SFVec3f' value="0 0 0"/>
         </ProtoInterface>
@@ -76,7 +76,7 @@ ecmascript:
            
     </ProtoDeclare>
     <!-- from doug sanden -->
-    <ProtoDeclare name='x3dconnector'>
+    <ProtoDeclare DEF="x3dconnector" name='x3dconnector'>
     <ProtoInterface>
         <field accessType='inputOutput' name='startnode' type='SFNode'/>
         <field accessType='inputOutput' name='endnode' type='SFNode'/>
