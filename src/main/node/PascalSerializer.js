@@ -366,12 +366,30 @@ PascalSerializer.prototype = {
 			element.nodeName === 'MFNode') &&
 			  (method === "Joints" ||
 			   method === "Material" ||
+			   method === "Text" ||
+			   method === "StringSensor" ||
+			   method === "PlaneSensor" ||
 			   method === "Coordinate" ||
 			   method === "Transform" ||
 			   method === "CylinderSensor" ||
 			   method === "Segments")
 		) {
 			method = ".Add"
+			addpre = "fd"; // stripped
+		}
+		if ((element.nodeName === 'field' ||
+			element.nodeName === 'SFNode') &&
+			  (method === "Material" ||
+			   method === "Text" ||
+			   method === "StringSensor" ||
+			   method === "PlaneSensor" ||
+			   method === "HAnimHumanoid" ||
+			   method === "Switch" ||
+			   method === "Coordinate" ||
+			   method === "Transform" ||
+			   method === "CylinderSensor")
+		) {
+			method = ".Value"
 			addpre = "fd"; // stripped
 		}
 		if (element.nodeName === 'HAnimHumanoid' &&
@@ -618,11 +636,12 @@ PascalSerializer.prototype = {
 	setProto : function(protoStatement) {
 		for (let cn in protoStatement.childNodes) {
 			let protoName = protoStatement.getAttribute("DEF") || protoStatement.getAttribute('name');
+			// console.log("protoName", protoName);
 			let proto = this.protos[protoName];
 			if (typeof proto === 'undefined') {
 				proto = {};
 				this.protos[protoName] = proto;
-				console.log("=============INFO, ProtoInstance name", protoName);
+				// console.log("=============INFO, ProtoInstance name", protoName);
 			}	
 			// looking for ProtoInterface and ProtoBody
 			var node = protoStatement.childNodes[cn];
@@ -634,13 +653,13 @@ PascalSerializer.prototype = {
 			this.setInterface(protoStatement, protoStatement.getAttribute("name"));
 		}
 		if (protoStatement.nodeName.endsWith("Script")) {
-			let scriptName = protoStatement.getAttribute("DEF") || protoStatement.getAttribute("name");
+			let scriptName = protoStatement.getAttribute("DEF") || protoStatement.getAttribute('name');
+			// console.log("scriptName", scriptName);
 			this.protos[scriptName]["id"] = Object.keys(this.protos).length;
 			this.setInterface(protoStatement, scriptName)
 		}
 	},
 	setInterface : function(interfaceStatement, protoName) {
-		console.log("HEY", interfaceStatement.nodeName, protoName);
 		for (let fieldStatement in interfaceStatement.childNodes) {
 			let field = interfaceStatement.childNodes[fieldStatement]
 			if (field.nodeType == 1) {
@@ -666,13 +685,14 @@ PascalSerializer.prototype = {
 					let acce = field.getAttribute('accessType');
 					this.protos[protoName][name] = {};
 					this.protos[protoName][name]["name"] = name;
+					this.protos[protoName][name]["field"] = field;
 					this.protos[protoName][name]["type"] = type;
 					this.protos[protoName][name]["accessType"] = acce;
 					if (!type.endsWith("Node")) {
 						this.protos[protoName][name]["default_value"] = valu;
 					} else {
 						this.protos[protoName][name]["children"] = field.childNodes;
-						console.log("Setting children of", protoName, name);
+						// console.log("Setting children of", protoName, name);
 					}
 				}
 			}
@@ -687,8 +707,10 @@ PascalSerializer.prototype = {
 		let ComponentLevel = "''";
 		let FromNode = "''";
 		let FromField = "''";
-		let ToNode = "''";
-		let ToField = "''";
+		let ToNode = "";
+		let ToField = "";
+		let FromDEF = "";
+		let ToDEF = "";
 		for (var a in element.attributes) {
 			var attrs = element.attributes;
 			try {
@@ -760,30 +782,45 @@ PascalSerializer.prototype = {
 						}
 					} else if (element.nodeName === 'X3DRoute') {
 						if (attr === "fromNode") {
+							// strval = strval.replace(/^'|'$/g, '');
 							FromNode = strval;
-							let DEF = this.DEFs[FromNode];
-							if (typeof DEF === 'undefined') {
-								console.error("Route: no DEF for:", FromNode);
-							} else {
-								FromNode = DEF;
-							}
-						} else	if (attr === "fromField") {
+							console.log("FromNode DEF", FromNode, this.DEFs[FromNode]);
+							// TODO: Do we need the rest of this block?
+							FromDEF = this.DEFs[FromNode];
+							console.log("FromNode FromDEF", FromNode, FromDEF)
+						}
+						if (attr === "fromField") {
 							FromField = strval.replace(/^'|'$/g, '');
-							if (FromField.endsWith("_changed") || FromField === "touchTime") {
+							// FromField = strval;
+							console.log("Before from ", FromField);
+							if (
+								FromField.endsWith("_changed") ||
+								FromField === "isOver" ||
+								FromField === "finalText" ||
+								FromField === "enteredText" ||
+								FromField === "isActive" ||
+								FromField === "touchTime"
+							) {
 								FromField = "Event"+FromField.charAt(0).toUpperCase() + FromField.slice(1).toLowerCase();
+							console.log("After from ", FromField);
 							} else {
-								FromField = "Fd"+FromField.charAt(0).toUpperCase() + FromField.slice(1).toLowerCase();
+								// FromField = "Fd"+FromField.charAt(0).toUpperCase() + FromField.slice(1).toLowerCase();
 							}
-						} else	if (attr === "toNode") {
+						}
+						if (attr === "toNode") {
+							// strval = strval.replace(/^'|'$/g, '');
 							ToNode = strval;
-							let DEF = this.DEFs[ToNode];
-							if (typeof DEF === 'undefined') {
-								console.error("Route: no DEF for:", ToNode);
-							} else {
-								ToNode = DEF;
+							console.log("ToNode DEF, ", ToNode, this.DEFs[ToNode]);
+							// TODO: Do we need the rest of this block?
+							ToDEF = this.DEFs[ToNode];
+							console.log("ToNode ToDEF", ToNode, ToDEF)
+							if (typeof ToDEF === 'undefined') {
+								console.error("Route: no ToDEF for:", ToNode);
 							}
-						} else	if (attr === "toField") {
+						}
+						if (attr === "toField") {
 							ToField = strval.replace(/^'|'$/g, '');
+							// ToField = strval;
 							if ( ToField === "set_rotation") {
 								ToField = "rotation";
 							}
@@ -802,7 +839,7 @@ PascalSerializer.prototype = {
 							if (ToField.startsWith("set_")) {
 								ToField = "Event"+ToField.charAt(0).toUpperCase() + ToField.slice(1).toLowerCase();
 							} else {
-								ToField = "Fd"+ToField.charAt(0).toUpperCase() + ToField.slice(1).toLowerCase();
+								// ToField = "Fd"+ToField.charAt(0).toUpperCase() + ToField.slice(1).toLowerCase();
 							}
 						}
 					} else	if (attr === "DEF") {
@@ -810,22 +847,26 @@ PascalSerializer.prototype = {
 						str += stackname(element);
 						str += '.Set'+method+"("+strval+");\n";
 						*/
+						// strval = strval.replace(/^'|'$/g, '');
 						let DEF = this.DEFs[strval];
 						if (typeof DEF !== 'undefined') {
 							console.error("Multiple DEFs with same value:", strval);
+							console.error("DEF", DEF);
 						}
+						console.log("DEF strval", strval, stackname(element));
 						this.DEFs[strval] = stackname(element);
 						this.DEFnumbers[strval] = element.stacknumber;
 						str += stackname(element);
-						str += '.X3DName := '+strval+";\n";
+						str += ".X3DName := "+strval+";\n";
 					} else	if (attr === "USE") {
+						// strval = strval.replace(/^'|'$/g, '');
 						let DEF = this.DEFs[strval];
 						if (typeof DEF === 'undefined') {
 							console.error("USE without DEF:", strval, "DEFfing it");
 							this.DEFs[strval] = stackname(element);
 							this.DEFnumbers[strval] = element.stacknumber;
 							str += stackname(element);
-							str += ' := '+this.DEFs[strval]+";\n";
+							str += " := '"+this.DEFs[strval]+"';\n";
 						} else {
 							// the USE node stack number becomes same as DEF
 							stackname(element, this.DEFnumbers[strval]);
@@ -936,7 +977,7 @@ PascalSerializer.prototype = {
 					}
 				}
 			} catch (e) {
-				console.error(e);
+				console.error("ERROR", attrs[a], a, e);
 			}
 			attrType = "";
 		}
@@ -949,7 +990,46 @@ PascalSerializer.prototype = {
 			str += ".Components["+ComponentName+"] := "+ComponentLevel+";\n";
 		}
 		if (element.nodeName === "X3DRoute") {
-			str += parent_name+".AddRoute("+FromNode+"."+FromField+", "+ToNode+"."+ToField+");\n";
+			str += `{ Original "${FromNode}.${FromField} TO ${ToNode}.${ToField} }\n`;
+			console.log("ROUTE before", FromNode, FromField, ToNode, ToField);
+			ToNode = ToNode.replace(/^'|'$/g, '');
+			let tof = this.protos[ToNode][ToField];
+			let tofsn = stackname(tof.field);
+
+			FromNode = FromNode.replace(/^'|'$/g, '');
+			if (FromField.startsWith("Fd")) {
+				console.log("Before f field", FromNode, FromField);
+				FromField = FromField.slice(2);
+				console.log("After f field", FromNode, FromField);
+			}
+			str += `{ Replaced ${FromNode}.${FromField} TO ${ToNode}.${ToField} }\n`;
+			let fromn = null;
+			let fromf = null;
+			let fromfsn = null;
+			if (FromDEF && (
+				FromField.startsWith("Event") ||
+				FromField.startsWith("isOver") ||
+				FromField.startsWith("finalText") ||
+				FromField.startsWith("enteredText") ||
+				FromField.startsWith("isActive")
+			)) {
+				fromn = FromDEF;
+				fromf = FromField;
+			} else {
+				fromn = FromNode;
+				if (this.protos[FromNode]) {
+					fromf = this.protos[FromNode][FromField];
+				} else {
+					fromf = FromField;
+				}
+			}
+			fromfsn = fromn+"."+fromf;
+			str += `{ Sample ${FromNode}.${FromField} TO ${ToNode}.${ToField}}\n`;
+
+			console.log("ROUTE after", FromNode, FromField, ToNode, ToField);
+			console.log("ROUTE dotted", fromfsn, tofsn);
+			// strval = strval.replace(/^'|'$/g, '');
+			str += parent_name+".AddRoute("+fromfsn+", "+tofsn+");\n";
 		}
 		for (var cn in element.childNodes) {
 			var node = element.childNodes[cn];
@@ -992,6 +1072,7 @@ PascalSerializer.prototype = {
 					if (node.nodeName === "fieldValue" ||
 					    node.nodeName === "field") {
 						isNode = "";
+						let strval = "nil";
 						let instanceName = element.getAttribute('DEF') || element.getAttribute('name');
 						let aTYPE = node.getAttribute("type")
 						if (aTYPE !== "") {
@@ -1002,7 +1083,7 @@ PascalSerializer.prototype = {
 						}
 						let fieldName = node.getAttribute('name');
 						// get the type of the node from the interface
-						console.log("field", fieldName, node.nodeName, instanceName, fieldName);
+						// console.log("field", fieldName, node.nodeName, instanceName, fieldName);
 						if (typeof this.protos !== 'undefined' &&
 							typeof this.protos[instanceName] !== 'undefined' &&
 							typeof this.protos[instanceName][fieldName] !== 'undefined' &&
@@ -1010,14 +1091,12 @@ PascalSerializer.prototype = {
 							let fieldType = this.protos[instanceName][fieldName]["type"];
 							let instanceIndex = this.protos[instanceName]["id"];
 							node.nodeName = fieldType;
-							let strval = "nil";
 							if (fieldType.endsWith("Node")) {
-								console.log("Getting children of", instanceName, fieldName);
+								// console.log("Getting children of", instanceName, fieldName);
 								let nodeList = [];
 								for (const child of this.protos[instanceName][fieldName]['children']) {
 									if (child.nodeName.toString() !== '#text') {
 stackname(child, this.DEFnumbers["'"+child.getAttribute("USE")+"'"] || this.DEFnumbers["'"+child.getAttribute("DEF")+"'"]);
-// console.log("Child", child.stacknumber, child.getAttribute("USE"), child.getAttribute("DEF"));
 nodeList.push(stackname(child));
 									}
 								}
@@ -1031,8 +1110,12 @@ nodeList.push(stackname(child));
 									strval = "nil";
 								}
 							}
-							params = "("+instanceName+instanceIndex+", false, '"+fieldName+"', "+strval+")";
-							console.log("params", params);
+							let fieldVar = stackname(node);
+							if (strval === "nil") {
+								params = "Undefined("+stackname(element)+", false, '"+fieldName+"')";
+							} else {
+								params = "("+stackname(element)+", false, "+fieldVar+", "+strval+")";
+							}
 						}
 					}
 					/*
@@ -1070,7 +1153,7 @@ nodeList.push(stackname(child));
 							console.error("=============WARNING 7, instanceName undefined", instanceName);
 						} else if (typeof this.protos[instanceName] === 'undefined') {
 							console.error("=============WARNING 8, this.protos[instanceName] undefined", instanceName, this.protos[instanceName]);
-							console.error(allAttributesString)
+							console.error("ERROR", allAttributesString)
 						} else {
 
 							this.protos[instanceName]["id"] = Object.keys(this.protos).length;
@@ -1153,10 +1236,15 @@ nodeList.push(stackname(child));
 							method === ".SetSkinCoord"
 						) {
 							ch += stackname(element)+method+"("+stackname(node)+");\n";
+						} else if ( method === ".Fd.Value") {
+							ch += stackname(element)+method.slice(3)+" := "+stackname(node)+";\n";
 						} else if ( method.startsWith(".Fd")) {
 							ch += stackname(element)+method+"("+stackname(node)+");\n";
-						} else {
+						} else if ( method.startsWith(".Set")) {
 							ch += stackname(element)+"."+method.slice(4)+" := "+stackname(node)+";\n";
+						} else {
+							// console.log(method, stackname(element));
+							ch += stackname(element)+method.slice(3)+" := "+stackname(node)+";\n";
 						}
 					}
 				}
