@@ -906,22 +906,22 @@ PascalSerializer.prototype = {
 							ToField = strval.replace(/^'|'$/g, '');
 							// ToField = strval;
 							if ( ToField === "set_rotation") {
-								ToField = "SetRotation";
+								ToField = "FdRotation.EventIn";
 							}
 							if ( ToField === "set_translation") {
-								ToField = "SetTranslation";
+								ToField = "FdTranslation.EventIn";
 							}
 							if ( ToField === "set_scale") {
 								ToField = "scale";
 							}
 							if ( ToField === "set_stopTime") {
-								ToField = "stopTime";
+								ToField = "FdStopTime.EventIn";
 							}
 							if ( ToField === "set_startTime") {
-								ToField = "startTime";
+								ToField = "FdStartTime.EventIn";
 							}
-							if ( ToField === "fraction") {
-								ToField = "set_fraction";
+							if ( ToField === "set_fraction") {
+								// ToField = "FdFraction.EventIn";
 							}
 							if ( ToField === "weight") {
 								ToField = "FWeight";
@@ -1085,9 +1085,15 @@ PascalSerializer.prototype = {
 			// ToNode = ToNode.replace(/^'|'$/g, '');
 			// let tof = this.protos[ToNode][ToField];
 		        let ton = ToDEF;
-			let tof = this.protos[ToNode][ToField];
-			let tofsn = stackname(tof.field);
-			console.log("TO dotted", ton, tofsn);
+			console.log("TO ton dotted", ton, ToField);
+			let tofsn = ton+"."+ToField;
+			try {
+				let tof = this.protos[ToNode][ToField];
+				tofsn = stackname(tof.field);
+			} catch(e) {
+				tofsn = ton+"."+ToField;
+			}
+			console.log("TO tofsn dotted", tofsn);
 
 			let fromn = null;
 			let fromf = null;
@@ -1318,7 +1324,7 @@ nodeList.push(stackname(child));
 					} else if ( method.startsWith(".Set")) {
 						ch += stackname(element)+"."+method.slice(4)+" := "+stackname(node)+";\n";
 					} else {
-						console.log('{ METHOD.SET '+method+' }');
+						// console.log('{ METHOD.SET '+method+' }');
 						ch += stackname(element)+method+" := "+stackname(node)+";\n";
 					}
 				}

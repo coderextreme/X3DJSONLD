@@ -2,7 +2,7 @@ unit ViewFrustumExample;
 
 interface
 
-uses X3DNodes;
+uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
 
 function CreateViewFrustumExample: TX3DRootNode;
 
@@ -10,7 +10,6 @@ implementation
 
 uses CastleVectors;
 
-function CreateViewFrustumExample: TX3DRootNode;
 var
 X3D0: TX3DRootNode;
 Group17: TGroupNode;
@@ -21,14 +20,14 @@ Viewpoint21: TViewpointNode;
 Viewpoint22: TViewpointNode;
 NavigationInfo23: TNavigationInfoNode;
 X3DExternalPrototype24: TX3DExternalPrototype;
-X3DField25: TX3DField;
-X3DField26: TX3DField;
-X3DField27: TX3DField;
-X3DField28: TX3DField;
-X3DField29: TX3DField;
-X3DField30: TX3DField;
-X3DField31: TX3DField;
-X3DField32: TX3DField;
+SFNode25: TSFNode;
+SFNode26: TSFNode;
+SFBool27: TSFBool;
+SFColor28: TSFColor;
+SFColor29: TSFColor;
+SFFloat30: TSFFloat;
+SFFloat31: TSFFloat;
+SFBool32: TSFBool;
 X3DPrototype33: TX3DPrototypeNode;
 SFNode34: TSFNode;
 Viewpoint35: TViewpointNode;
@@ -42,180 +41,182 @@ SFBool42: TSFBool;
 Inline43: TInlineNode;
 Transform44: TTransformNode;
 Inline45: TInlineNode;
+
+procedure InitViewFrustumExamplePart0;
 begin
 X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Immersive';
 X3D0.ForceVersion.Major := 4;
 X3D0.ForceVersion.Minor := 0;
 X3D0.Meta['title'] := 'ViewFrustumExample.x3d';
+{ METHOD .Meta }
 X3D0.Meta['description'] := 'Display view frustum associated with a given pair of Viewpoint and NavigationInfo nodes, illustrating ProtoInstance reuse of a separately declared prototype.';
+{ METHOD .Meta }
 X3D0.Meta['creator'] := 'Don Brutzman';
+{ METHOD .Meta }
 X3D0.Meta['translated'] := '16 August 2008';
+{ METHOD .Meta }
 X3D0.Meta['modified'] := '20 October 2019';
+{ METHOD .Meta }
 X3D0.Meta['reference'] := 'ViewFrustumPrototype.x3d';
+{ METHOD .Meta }
 X3D0.Meta['drawing'] := 'ViewFrustumComputation.png';
+{ METHOD .Meta }
 X3D0.Meta['Image'] := 'ViewFrustumOverheadView.png';
+{ METHOD .Meta }
 X3D0.Meta['Image'] := 'ViewFrustumObliqueView.png';
+{ METHOD .Meta }
 X3D0.Meta['Image'] := 'ViewpointCalculator.png';
+{ METHOD .Meta }
 X3D0.Meta['Image'] := 'ViewpointCalculatorComposed.png';
+{ METHOD .Meta }
 X3D0.Meta['subject'] := 'view culling frustum';
+{ METHOD .Meta }
 X3D0.Meta['identifier'] := 'https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumExample.x3d';
+{ METHOD .Meta }
 X3D0.Meta['generator'] := 'X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit';
+{ METHOD .Meta }
 X3D0.Meta['license'] := '../license.html';
+{ METHOD .Meta }
+{ METHOD .Head }
 Group17 := TGroupNode.Create;
 WorldInfo18 := TWorldInfoNode.Create;
 WorldInfo18.Title := 'ViewFrustumExample.x3d';
-{ .AddChildren }
-Group17.AddChildren([WorldInfo18]);
+{ METHOD .FdChildren.Add }
+Group17.FdChildren.Add(WorldInfo18);
 Viewpoint19 := TViewpointNode.Create;
 Viewpoint19.Description := 'ViewFrustum from above, looking down';
 Viewpoint19.Orientation := Vector4(1,0,0,-1.57);
 Viewpoint19.Position := Vector3(0,40,0);
-{ .AddChildren }
-Group17.AddChildren([Viewpoint19]);
+{ METHOD .FdChildren.Add }
+Group17.FdChildren.Add(Viewpoint19);
 Viewpoint20 := TViewpointNode.Create;
 Viewpoint20.Description := 'ViewFrustum from point of view';
-{ .AddChildren }
-Group17.AddChildren([Viewpoint20]);
+{ METHOD .FdChildren.Add }
+Group17.FdChildren.Add(Viewpoint20);
 Viewpoint21 := TViewpointNode.Create;
 Viewpoint21.Description := 'ViewFrustum behind point of view';
 Viewpoint21.Position := Vector3(0,0,15);
-{ .AddChildren }
-Group17.AddChildren([Viewpoint21]);
+{ METHOD .FdChildren.Add }
+Group17.FdChildren.Add(Viewpoint21);
 Viewpoint22 := TViewpointNode.Create;
 Viewpoint22.Description := 'ViewFrustum oblique side view';
 Viewpoint22.Orientation := Vector4(0.8005,0.5926,0.0898,-0.3743);
 Viewpoint22.Position := Vector3(-5,5,20);
-{ .AddChildren }
-Group17.AddChildren([Viewpoint22]);
+{ METHOD .FdChildren.Add }
+Group17.FdChildren.Add(Viewpoint22);
+end;
+
+procedure InitViewFrustumExamplePart1;
+begin
+
 NavigationInfo23 := TNavigationInfoNode.Create;
 NavigationInfo23.SetType(['EXAMINE','FLY','ANY']);
-{ .AddChildren }
-Group17.AddChildren([NavigationInfo23]);
+{ METHOD .FdChildren.Add }
+Group17.FdChildren.Add(NavigationInfo23);
 X3DExternalPrototype24 := TX3DExternalPrototype.Create;
-X3DExternalPrototype24.NameField := 'ViewFrustum';
 X3DExternalPrototype24.Appinfo := 'Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes';
 X3DExternalPrototype24.Url := '\"ViewFrustumPrototype.x3d#ViewFrustum\"';
-X3DField25 := TX3DField.Create;
-X3DField25.NameField := 'ViewpointNode';
-X3DField25.AccessType := 'initializeOnly';
-X3DField25.Appinfo := 'required: insert Viewpoint DEF or USE node for view of interest';
-X3DField25.Type := 'SFNode';
-{ .SetX3DField }
-X3DExternalPrototype24.X3DField := X3DField25;
-X3DField26 := TX3DField.Create;
-X3DField26.NameField := 'NavigationInfoNode';
-X3DField26.AccessType := 'initializeOnly';
-X3DField26.Appinfo := 'required: insert NavigationInfo DEF or USE node of interest';
-X3DField26.Type := 'SFNode';
-{ .AddX3DField }
-X3DExternalPrototype24.X3DField := X3DField26;
-X3DField27 := TX3DField.Create;
-X3DField27.NameField := 'visible';
-X3DField27.AccessType := 'inputOutput';
-X3DField27.Appinfo := 'whether or not frustum geometry is rendered';
-X3DField27.Type := 'SFBool';
-{ .AddX3DField }
-X3DExternalPrototype24.X3DField := X3DField27;
-X3DField28 := TX3DField.Create;
-X3DField28.NameField := 'lineColor';
-X3DField28.AccessType := 'inputOutput';
-X3DField28.Appinfo := 'RGB color of ViewFrustum outline, default value 0.9 0.9 0.9';
-X3DField28.Type := 'SFColor';
-{ .AddX3DField }
-X3DExternalPrototype24.X3DField := X3DField28;
-X3DField29 := TX3DField.Create;
-X3DField29.NameField := 'frustumColor';
-X3DField29.AccessType := 'inputOutput';
-X3DField29.Appinfo := 'RGB color of ViewFrustum hull geometry, default value 0.8 0.8 0.8';
-X3DField29.Type := 'SFColor';
-{ .AddX3DField }
-X3DExternalPrototype24.X3DField := X3DField29;
-X3DField30 := TX3DField.Create;
-X3DField30.NameField := 'transparency';
-X3DField30.AccessType := 'inputOutput';
-X3DField30.Appinfo := 'transparency of ViewFrustum hull geometry, default value 0.5';
-X3DField30.Type := 'SFFloat';
-{ .AddX3DField }
-X3DExternalPrototype24.X3DField := X3DField30;
-X3DField31 := TX3DField.Create;
-X3DField31.NameField := 'aspectRatio';
-X3DField31.AccessType := 'inputOutput';
-X3DField31.Appinfo := 'assumed ratio height/width, default value 0.75';
-X3DField31.Type := 'SFFloat';
-{ .AddX3DField }
-X3DExternalPrototype24.X3DField := X3DField31;
-X3DField32 := TX3DField.Create;
-X3DField32.NameField := 'trace';
-X3DField32.AccessType := 'initializeOnly';
-X3DField32.Appinfo := 'debug support, default false';
-X3DField32.Type := 'SFBool';
-{ .AddX3DField }
-X3DExternalPrototype24.X3DField := X3DField32;
-{ .AddX3DExternalPrototype }
-Group17.X3DExternalPrototype := X3DExternalPrototype24;
+SFNode25 := TSFNode.CreateUndefined(X3DExternalPrototype24, false, 'ViewpointNode');
+SFNode25.Appinfo := 'required: insert Viewpoint DEF or USE node for view of interest';
+{ METHOD .AddSFNode }
+X3DExternalPrototype24.AddSFNode([SFNode25]);
+SFNode26 := TSFNode.CreateUndefined(X3DExternalPrototype24, false, 'NavigationInfoNode');
+SFNode26.Appinfo := 'required: insert NavigationInfo DEF or USE node of interest';
+{ METHOD .AddSFNode }
+X3DExternalPrototype24.AddSFNode([SFNode26]);
+SFBool27 := TSFBool.CreateUndefined(X3DExternalPrototype24, false, 'visible');
+SFBool27.Appinfo := 'whether or not frustum geometry is rendered';
+{ METHOD .AddSFBool }
+X3DExternalPrototype24.AddSFBool([SFBool27]);
+SFColor28 := TSFColor.CreateUndefined(X3DExternalPrototype24, false, 'lineColor');
+SFColor28.Appinfo := 'RGB color of ViewFrustum outline, default value 0.9 0.9 0.9';
+{ METHOD .AddSFColor }
+X3DExternalPrototype24.AddSFColor([SFColor28]);
+SFColor29 := TSFColor.CreateUndefined(X3DExternalPrototype24, false, 'frustumColor');
+SFColor29.Appinfo := 'RGB color of ViewFrustum hull geometry, default value 0.8 0.8 0.8';
+{ METHOD .AddSFColor }
+X3DExternalPrototype24.AddSFColor([SFColor29]);
+SFFloat30 := TSFFloat.CreateUndefined(X3DExternalPrototype24, false, 'transparency');
+SFFloat30.Appinfo := 'transparency of ViewFrustum hull geometry, default value 0.5';
+{ METHOD .AddSFFloat }
+X3DExternalPrototype24.AddSFFloat([SFFloat30]);
+SFFloat31 := TSFFloat.CreateUndefined(X3DExternalPrototype24, false, 'aspectRatio');
+SFFloat31.Appinfo := 'assumed ratio height/width, default value 0.75';
+{ METHOD .AddSFFloat }
+X3DExternalPrototype24.AddSFFloat([SFFloat31]);
+SFBool32 := TSFBool.CreateUndefined(X3DExternalPrototype24, false, 'trace');
+SFBool32.Appinfo := 'debug support, default false';
+{ METHOD .AddSFBool }
+X3DExternalPrototype24.AddSFBool([SFBool32]);
+{ METHOD .AddX3DExternalPrototype }
+Group17.AddX3DExternalPrototype([X3DExternalPrototype24]);
 { Example use }
 X3DPrototype33 := TX3DPrototypeNode.Create;
-X3DPrototype33.NameField := 'ViewFrustum';
-SFNode34 := TSFNode.Create;
-SFNode34.NameField := 'ViewpointNode';
+SFNode34 := TSFNode.CreateUndefined(X3DPrototype33, false, 'ViewpointNode');
 { prefer empty description to prevent entry in player's ViewpointList }
 Viewpoint35 := TViewpointNode.Create;
 Viewpoint35.Description := 'ViewFrustum ViewpointNode';
-{ .AddViewpoint }
-SFNode34.Viewpoint := Viewpoint35;
-{ .SetSFNode }
-X3DPrototype33.SFNode := SFNode34;
-SFNode36 := TSFNode.Create;
-SFNode36.NameField := 'NavigationInfoNode';
+{ METHOD .AddViewpoint }
+SFNode34.AddViewpoint([Viewpoint35]);
+{ METHOD .AddSFNode }
+X3DPrototype33.AddSFNode([SFNode34]);
+SFNode36 := TSFNode.CreateUndefined(X3DPrototype33, false, 'NavigationInfoNode');
 NavigationInfo37 := TNavigationInfoNode.Create;
 NavigationInfo37.VisibilityLimit := 15;
-{ .SetNavigationInfo }
-SFNode36.NavigationInfo := NavigationInfo37;
-{ .AddSFNode }
-X3DPrototype33.SFNode := SFNode36;
-SFBool38 := TSFBool.Create(ViewFrustum1, false, 'visible', True);
-SFBool38.NameField := 'visible';
+end;
+
+procedure InitViewFrustumExamplePart2;
+begin
+
+{ METHOD .AddNavigationInfo }
+SFNode36.AddNavigationInfo([NavigationInfo37]);
+{ METHOD .AddSFNode }
+X3DPrototype33.AddSFNode([SFNode36]);
+SFBool38 := TSFBool.CreateUndefined(X3DPrototype33, false, 'visible');
 SFBool38.Value := 'true';
-{ .AddSFBool }
-X3DPrototype33.SFBool := SFBool38;
-SFColor39 := TSFColor.Create(ViewFrustum1, false, 'lineColor', Vector3(0.9,0.9,0.9));
-SFColor39.NameField := 'lineColor';
+{ METHOD .AddSFBool }
+X3DPrototype33.AddSFBool([SFBool38]);
+SFColor39 := TSFColor.CreateUndefined(X3DPrototype33, false, 'lineColor');
 SFColor39.Value := '0.9 0.9 0.9';
-{ .AddSFColor }
-X3DPrototype33.SFColor := SFColor39;
-SFColor40 := TSFColor.Create(ViewFrustum1, false, 'frustumColor', Vector3(0.8,0.8,0.8));
-SFColor40.NameField := 'frustumColor';
+{ METHOD .AddSFColor }
+X3DPrototype33.AddSFColor([SFColor39]);
+SFColor40 := TSFColor.CreateUndefined(X3DPrototype33, false, 'frustumColor');
 SFColor40.Value := '0.8 0.8 0.8';
-{ .AddSFColor }
-X3DPrototype33.SFColor := SFColor40;
-SFFloat41 := TSFFloat.Create(ViewFrustum1, false, 'transparency', 0.75);
-SFFloat41.NameField := 'transparency';
+{ METHOD .AddSFColor }
+X3DPrototype33.AddSFColor([SFColor40]);
+SFFloat41 := TSFFloat.CreateUndefined(X3DPrototype33, false, 'transparency');
 SFFloat41.Value := '0.75';
-{ .AddSFFloat }
-X3DPrototype33.SFFloat := SFFloat41;
-SFBool42 := TSFBool.Create(ViewFrustum1, false, 'trace', True);
-SFBool42.NameField := 'trace';
+{ METHOD .AddSFFloat }
+X3DPrototype33.AddSFFloat([SFFloat41]);
+SFBool42 := TSFBool.CreateUndefined(X3DPrototype33, false, 'trace');
 SFBool42.Value := 'true';
-{ .AddSFBool }
-X3DPrototype33.SFBool := SFBool42;
-{ .AddX3DPrototype }
-Group17.X3DPrototype := X3DPrototype33;
+{ METHOD .AddSFBool }
+X3DPrototype33.AddSFBool([SFBool42]);
+{ METHOD .AddX3DPrototype }
+Group17.AddX3DPrototype([X3DPrototype33]);
 { Visualization assists }
 Inline43 := TInlineNode.Create;
 Inline43.SetUrl(['GridXZ_20x20Fixed.x3d']);
-{ .AddChildren }
-Group17.AddChildren([Inline43]);
+{ METHOD .FdChildren.Add }
+Group17.FdChildren.Add(Inline43);
 Transform44 := TTransformNode.Create;
 Transform44.Scale := Vector3(5,5,5);
 Inline45 := TInlineNode.Create;
 Inline45.SetUrl(['CoordinateAxes.x3d']);
-{ .AddChildren }
-Transform44.AddChildren([Inline45]);
-{ .AddChildren }
-Group17.AddChildren([Transform44]);
-{ .AddGroup }
+{ METHOD .FdChildren.Add }
+Transform44.FdChildren.Add(Inline45);
+{ METHOD .FdChildren.Add }
+Group17.FdChildren.Add(Transform44);
+{ METHOD .AddGroup }
 X3D0.AddChildren([Group17]);
+end;
+
+function CreateViewFrustumExample: TX3DRootNode;
+begin
+InitViewFrustumExamplePart0;
+InitViewFrustumExamplePart1;
+InitViewFrustumExamplePart2;
 Result := X3D0;
 end;
 

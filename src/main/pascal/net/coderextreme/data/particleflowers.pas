@@ -2,7 +2,7 @@ unit particleflowers;
 
 interface
 
-uses X3DNodes;
+uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
 
 function Createparticleflowers: TX3DRootNode;
 
@@ -10,7 +10,6 @@ implementation
 
 uses CastleVectors;
 
-function Createparticleflowers: TX3DRootNode;
 var
 X3D0: TX3DRootNode;
 Group15: TGroupNode;
@@ -33,64 +32,80 @@ ImageTexture31: TImageTextureNode;
 ImageTexture32: TImageTextureNode;
 ImageTexture33: TImageTextureNode;
 ComposedShader34: TComposedShaderNode;
-X3DField35: TX3DField;
-X3DField36: TX3DField;
+SFVec3f35: TSFVec3f;
+SFNode36: TSFNode;
 ComposedCubeMapTexture37: TComposedCubeMapTextureNode;
-X3DField38: TX3DField;
-X3DField39: TX3DField;
-X3DField40: TX3DField;
-X3DField41: TX3DField;
-X3DField42: TX3DField;
-X3DField43: TX3DField;
-X3DField44: TX3DField;
-X3DField45: TX3DField;
-X3DField46: TX3DField;
+SFFloat38: TSFFloat;
+SFFloat39: TSFFloat;
+SFFloat40: TSFFloat;
+SFFloat41: TSFFloat;
+SFFloat42: TSFFloat;
+SFFloat43: TSFFloat;
+SFFloat44: TSFFloat;
+SFFloat45: TSFFloat;
+SFFloat46: TSFFloat;
 ShaderPart47: TShaderPartNode;
 ShaderPart48: TShaderPartNode;
 Sphere49: TSphereNode;
 Script50: TScriptNode;
-X3DField51: TX3DField;
-X3DField52: TX3DField;
-X3DField53: TX3DField;
-X3DField54: TX3DField;
-X3DField55: TX3DField;
-X3DField56: TX3DField;
-X3DField57: TX3DField;
-X3DField58: TX3DField;
-X3DField59: TX3DField;
+SFVec3f51: TSFVec3f;
+SFVec3f52: TSFVec3f;
+SFFloat53: TSFFloat;
+SFFloat54: TSFFloat;
+SFFloat55: TSFFloat;
+SFFloat56: TSFFloat;
+SFFloat57: TSFFloat;
+SFFloat58: TSFFloat;
+SFFloat59: TSFFloat;
 TimeSensor60: TTimeSensorNode;
+
+procedure InitparticleflowersPart0;
 begin
 X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Immersive';
 X3D0.ForceVersion.Major := 4;
 X3D0.ForceVersion.Minor := 0;
 X3D0.Components['EnvironmentalEffects'] := 3;
+{ METHOD .Component }
 X3D0.Components['Shaders'] := 1;
+{ METHOD .Component }
 X3D0.Components['CubeMapTexturing'] := 1;
+{ METHOD .Component }
 X3D0.Components['Texturing'] := 1;
+{ METHOD .Component }
 X3D0.Components['Rendering'] := 1;
+{ METHOD .Component }
 X3D0.Components['Grouping'] := 3;
+{ METHOD .Component }
 X3D0.Components['Core'] := 1;
+{ METHOD .Component }
 X3D0.Components['ParticleSystems'] := 3;
+{ METHOD .Component }
 X3D0.Meta['title'] := 'particleflowers.x3d';
+{ METHOD .Meta }
 X3D0.Meta['creator'] := 'John Carlson';
+{ METHOD .Meta }
 X3D0.Meta['description'] := 'A flower particle system';
+{ METHOD .Meta }
 X3D0.Meta['identifier'] := 'https://coderextreme.net/X3DJSONLD/src/main/data/particleflowers.x3d';
+{ METHOD .Meta }
 X3D0.Meta['generator'] := 'Vim';
+{ METHOD .Meta }
+{ METHOD .Head }
 Group15 := TGroupNode.Create;
 WorldInfo16 := TWorldInfoNode.Create;
 WorldInfo16.Title := 'particleflowers.x3d';
-{ .AddChildren }
-Group15.AddChildren([WorldInfo16]);
+{ METHOD .FdChildren.Add }
+Group15.FdChildren.Add(WorldInfo16);
 NavigationInfo17 := TNavigationInfoNode.Create;
 NavigationInfo17.SetType(['ANY','EXAMINE','FLY','LOOKAT']);
-{ .AddChildren }
-Group15.AddChildren([NavigationInfo17]);
+{ METHOD .FdChildren.Add }
+Group15.FdChildren.Add(NavigationInfo17);
 Viewpoint18 := TViewpointNode.Create;
 Viewpoint18.Description := 'Tour Views';
 Viewpoint18.Position := Vector3(0,0,12);
-{ .AddChildren }
-Group15.AddChildren([Viewpoint18]);
+{ METHOD .FdChildren.Add }
+Group15.FdChildren.Add(Viewpoint18);
 Background19 := TBackgroundNode.Create;
 Background19.SetBackUrl(['https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png','../resources/images/all_probes/stpeters_cross/stpeters_back.png']);
 Background19.SetBottomUrl(['https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png','../resources/images/all_probes/stpeters_cross/stpeters_bottom.png']);
@@ -98,220 +113,174 @@ Background19.SetFrontUrl(['https://coderextreme.net/X3DJSONLD/src/main/resources
 Background19.SetLeftUrl(['https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png','../resources/images/all_probes/stpeters_cross/stpeters_left.png']);
 Background19.SetRightUrl(['https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png','../resources/images/all_probes/stpeters_cross/stpeters_right.png']);
 Background19.SetTopUrl(['https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png','../resources/images/all_probes/stpeters_cross/stpeters_top.png']);
-{ .AddChildren }
-Group15.AddChildren([Background19]);
+{ METHOD .FdChildren.Add }
+Group15.FdChildren.Add(Background19);
 Group20 := TGroupNode.Create;
 ParticleSystem21 := TParticleSystemNode.Create;
 ParticleSystem21.MaxParticles := 20;
 ParticleSystem21.GeometryType := 'GEOMETRY';
+end;
+
+procedure InitparticleflowersPart1;
+begin
+
 BoundedPhysicsModel22 := TBoundedPhysicsModelNode.Create;
 Sphere23 := TSphereNode.Create;
 Sphere23.Radius := 100;
-{ .SetGeometry }
+{ METHOD .Geometry }
 BoundedPhysicsModel22.Geometry := Sphere23;
-{ .AddPhysics }
+{ METHOD .Physics }
 ParticleSystem21.Physics := BoundedPhysicsModel22;
 ExplosionEmitter24 := TExplosionEmitterNode.Create;
 ExplosionEmitter24.Speed := 2;
 ExplosionEmitter24.Variation := 0.75;
-{ .SetEmitter }
+{ METHOD .Emitter }
 ParticleSystem21.Emitter := ExplosionEmitter24;
 Appearance25 := TAppearanceNode.Create;
 Material26 := TMaterialNode.Create;
 Material26.DiffuseColor := Vector3(0.7,0.7,0.7);
 Material26.SpecularColor := Vector3(0.5,0.5,0.5);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance25.Material := Material26;
 ComposedCubeMapTexture27 := TComposedCubeMapTextureNode.Create;
 ImageTexture28 := TImageTextureNode.Create;
 ImageTexture28.SetUrl(['https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png','../resources/images/all_probes/stpeters_cross/stpeters_back.png']);
-{ .SetBackTexture }
+{ METHOD .SetBackTexture }
 ComposedCubeMapTexture27.BackTexture := ImageTexture28;
 ImageTexture29 := TImageTextureNode.Create;
 ImageTexture29.SetUrl(['https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png','../resources/images/all_probes/stpeters_cross/stpeters_bottom.png']);
-{ .SetBottomTexture }
+{ METHOD .SetBottomTexture }
 ComposedCubeMapTexture27.BottomTexture := ImageTexture29;
 ImageTexture30 := TImageTextureNode.Create;
 ImageTexture30.SetUrl(['https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png','../resources/images/all_probes/stpeters_cross/stpeters_front.png']);
-{ .SetFrontTexture }
+{ METHOD .SetFrontTexture }
 ComposedCubeMapTexture27.FrontTexture := ImageTexture30;
 ImageTexture31 := TImageTextureNode.Create;
 ImageTexture31.SetUrl(['https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png','../resources/images/all_probes/stpeters_cross/stpeters_left.png']);
-{ .SetLeftTexture }
+{ METHOD .SetLeftTexture }
 ComposedCubeMapTexture27.LeftTexture := ImageTexture31;
 ImageTexture32 := TImageTextureNode.Create;
 ImageTexture32.SetUrl(['https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png','../resources/images/all_probes/stpeters_cross/stpeters_right.png']);
-{ .SetRightTexture }
+{ METHOD .SetRightTexture }
 ComposedCubeMapTexture27.RightTexture := ImageTexture32;
 ImageTexture33 := TImageTextureNode.Create;
 ImageTexture33.SetUrl(['https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png','../resources/images/all_probes/stpeters_cross/stpeters_top.png']);
-{ .SetTopTexture }
+{ METHOD .SetTopTexture }
 ComposedCubeMapTexture27.TopTexture := ImageTexture33;
-{ .SetTexture }
+{ METHOD .Texture }
 Appearance25.Texture := ComposedCubeMapTexture27;
 ComposedShader34 := TComposedShaderNode.Create;
 ComposedShader34.Language := 'GLSL';
-X3DField35 := TX3DField.Create;
-X3DField35.NameField := 'chromaticDispertion';
-X3DField35.AccessType := 'initializeOnly';
-X3DField35.Type := 'SFVec3f';
-X3DField35.Value := '0.98 1 1.033';
-{ .SetX3DField }
-ComposedShader34.X3DField := X3DField35;
-X3DField36 := TX3DField.Create;
-X3DField36.NameField := 'cube';
-X3DField36.Type := 'SFNode';
-X3DField36.AccessType := 'initializeOnly';
-ComposedCubeMapTexture37 := ComposedCubeMapTexture27;
-{ .SetComposedCubeMapTexture }
-X3DField36.ComposedCubeMapTexture := ComposedCubeMapTexture37;
-{ .AddX3DField }
-ComposedShader34.X3DField := X3DField36;
-X3DField38 := TX3DField.Create;
-X3DField38.NameField := 'bias';
-X3DField38.AccessType := 'initializeOnly';
-X3DField38.Type := 'SFFloat';
-X3DField38.Value := '0.5';
-{ .AddX3DField }
-ComposedShader34.X3DField := X3DField38;
-X3DField39 := TX3DField.Create;
-X3DField39.NameField := 'scale';
-X3DField39.AccessType := 'initializeOnly';
-X3DField39.Type := 'SFFloat';
-X3DField39.Value := '0.5';
-{ .AddX3DField }
-ComposedShader34.X3DField := X3DField39;
-X3DField40 := TX3DField.Create;
-X3DField40.NameField := 'power';
-X3DField40.AccessType := 'initializeOnly';
-X3DField40.Type := 'SFFloat';
-X3DField40.Value := '2';
-{ .AddX3DField }
-ComposedShader34.X3DField := X3DField40;
-X3DField41 := TX3DField.Create;
-X3DField41.NameField := 'a';
-X3DField41.Type := 'SFFloat';
-X3DField41.AccessType := 'inputOutput';
-X3DField41.Value := '2';
-{ .AddX3DField }
-ComposedShader34.X3DField := X3DField41;
-X3DField42 := TX3DField.Create;
-X3DField42.NameField := 'b';
-X3DField42.Type := 'SFFloat';
-X3DField42.AccessType := 'inputOutput';
-X3DField42.Value := '1';
-{ .AddX3DField }
-ComposedShader34.X3DField := X3DField42;
-X3DField43 := TX3DField.Create;
-X3DField43.NameField := 'c';
-X3DField43.Type := 'SFFloat';
-X3DField43.AccessType := 'inputOutput';
-X3DField43.Value := '5';
-{ .AddX3DField }
-ComposedShader34.X3DField := X3DField43;
-X3DField44 := TX3DField.Create;
-X3DField44.NameField := 'd';
-X3DField44.Type := 'SFFloat';
-X3DField44.AccessType := 'inputOutput';
-X3DField44.Value := '5';
-{ .AddX3DField }
-ComposedShader34.X3DField := X3DField44;
-X3DField45 := TX3DField.Create;
-X3DField45.NameField := 'tdelta';
-X3DField45.Type := 'SFFloat';
-X3DField45.AccessType := 'inputOutput';
-X3DField45.Value := '0';
-{ .AddX3DField }
-ComposedShader34.X3DField := X3DField45;
-X3DField46 := TX3DField.Create;
-X3DField46.NameField := 'pdelta';
-X3DField46.Type := 'SFFloat';
-X3DField46.AccessType := 'inputOutput';
-X3DField46.Value := '0';
-{ .AddX3DField }
-ComposedShader34.X3DField := X3DField46;
+SFVec3f35 := TSFVec3f.CreateUndefined(ComposedShader34, false, 'chromaticDispertion');
+SFVec3f35.Value := '0.98 1 1.033';
+{ METHOD .AddSFVec3f }
+ComposedShader34.AddSFVec3f([SFVec3f35]);
+SFNode36 := TSFNode.CreateUndefined(ComposedShader34, false, 'cube');
+end;
+
+procedure InitparticleflowersPart2;
+begin
+
+{ METHOD .AddComposedCubeMapTexture }
+SFNode36.AddComposedCubeMapTexture([ComposedCubeMapTexture27]);
+{ METHOD .AddSFNode }
+ComposedShader34.AddSFNode([SFNode36]);
+SFFloat38 := TSFFloat.CreateUndefined(ComposedShader34, false, 'bias');
+SFFloat38.Value := '0.5';
+{ METHOD .AddSFFloat }
+ComposedShader34.AddSFFloat([SFFloat38]);
+SFFloat39 := TSFFloat.CreateUndefined(ComposedShader34, false, 'scale');
+SFFloat39.Value := '0.5';
+{ METHOD .AddSFFloat }
+ComposedShader34.AddSFFloat([SFFloat39]);
+SFFloat40 := TSFFloat.CreateUndefined(ComposedShader34, false, 'power');
+SFFloat40.Value := '2';
+{ METHOD .AddSFFloat }
+ComposedShader34.AddSFFloat([SFFloat40]);
+SFFloat41 := TSFFloat.CreateUndefined(ComposedShader34, false, 'a');
+SFFloat41.Value := '2';
+{ METHOD .AddSFFloat }
+ComposedShader34.AddSFFloat([SFFloat41]);
+SFFloat42 := TSFFloat.CreateUndefined(ComposedShader34, false, 'b');
+SFFloat42.Value := '1';
+{ METHOD .AddSFFloat }
+ComposedShader34.AddSFFloat([SFFloat42]);
+SFFloat43 := TSFFloat.CreateUndefined(ComposedShader34, false, 'c');
+SFFloat43.Value := '5';
+{ METHOD .AddSFFloat }
+ComposedShader34.AddSFFloat([SFFloat43]);
+SFFloat44 := TSFFloat.CreateUndefined(ComposedShader34, false, 'd');
+SFFloat44.Value := '5';
+{ METHOD .AddSFFloat }
+ComposedShader34.AddSFFloat([SFFloat44]);
+SFFloat45 := TSFFloat.CreateUndefined(ComposedShader34, false, 'tdelta');
+SFFloat45.Value := '0';
+{ METHOD .AddSFFloat }
+ComposedShader34.AddSFFloat([SFFloat45]);
+SFFloat46 := TSFFloat.CreateUndefined(ComposedShader34, false, 'pdelta');
+SFFloat46.Value := '0';
+{ METHOD .AddSFFloat }
+ComposedShader34.AddSFFloat([SFFloat46]);
 ShaderPart47 := TShaderPartNode.Create;
 ShaderPart47.SetUrl(['https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flower_particles.vs','../shaders/x_ite_flower_particles.vs']);
-ShaderPart47.Type := 'VERTEX';
-{ .AddParts }
+ShaderPart47.FdType.Value := 'VERTEX';
+{ METHOD .Parts }
 ComposedShader34.Parts := ShaderPart47;
 ShaderPart48 := TShaderPartNode.Create;
 ShaderPart48.SetUrl(['https://coderextreme.net/X3DJSONLD/src/main/shaders/commonnew.fs','../shaders/commonnew.fs']);
-ShaderPart48.Type := 'FRAGMENT';
-{ .AddParts }
+ShaderPart48.FdType.Value := 'FRAGMENT';
+{ METHOD .Parts }
 ComposedShader34.Parts := ShaderPart48;
-{ .AddShaders }
-Appearance25.Shaders := ComposedShader34;
-{ .SetAppearance }
+{ METHOD .AddChildren }
+Appearance25.AddChildren([ComposedShader34]);
+{ METHOD .Appearance }
 ParticleSystem21.Appearance := Appearance25;
 Sphere49 := TSphereNode.Create;
-{ .SetGeometry }
+end;
+
+procedure InitparticleflowersPart3;
+begin
+
+{ METHOD .Geometry }
 ParticleSystem21.Geometry := Sphere49;
-{ .AddChildren }
-Group20.AddChildren([ParticleSystem21]);
+{ METHOD .FdChildren.Add }
+Group20.FdChildren.Add(ParticleSystem21);
 Script50 := TScriptNode.Create;
-X3DField51 := TX3DField.Create;
-X3DField51.NameField := 'translation';
-X3DField51.AccessType := 'inputOutput';
-X3DField51.Type := 'SFVec3f';
-X3DField51.Value := '0 0 0';
-{ .SetX3DField }
-Script50.X3DField := X3DField51;
-X3DField52 := TX3DField.Create;
-X3DField52.NameField := 'velocity';
-X3DField52.AccessType := 'inputOutput';
-X3DField52.Type := 'SFVec3f';
-X3DField52.Value := '0 0 0';
-{ .AddX3DField }
-Script50.X3DField := X3DField52;
-X3DField53 := TX3DField.Create;
-X3DField53.NameField := 'set_fraction';
-X3DField53.AccessType := 'inputOnly';
-X3DField53.Type := 'SFFloat';
-{ .AddX3DField }
-Script50.X3DField := X3DField53;
-X3DField54 := TX3DField.Create;
-X3DField54.NameField := 'a';
-X3DField54.Type := 'SFFloat';
-X3DField54.AccessType := 'inputOutput';
-X3DField54.Value := '0.5';
-{ .AddX3DField }
-Script50.X3DField := X3DField54;
-X3DField55 := TX3DField.Create;
-X3DField55.NameField := 'b';
-X3DField55.Type := 'SFFloat';
-X3DField55.AccessType := 'inputOutput';
-X3DField55.Value := '0.5';
-{ .AddX3DField }
-Script50.X3DField := X3DField55;
-X3DField56 := TX3DField.Create;
-X3DField56.NameField := 'c';
-X3DField56.Type := 'SFFloat';
-X3DField56.AccessType := 'inputOutput';
-X3DField56.Value := '3';
-{ .AddX3DField }
-Script50.X3DField := X3DField56;
-X3DField57 := TX3DField.Create;
-X3DField57.NameField := 'd';
-X3DField57.Type := 'SFFloat';
-X3DField57.AccessType := 'inputOutput';
-X3DField57.Value := '3';
-{ .AddX3DField }
-Script50.X3DField := X3DField57;
-X3DField58 := TX3DField.Create;
-X3DField58.NameField := 'tdelta';
-X3DField58.Type := 'SFFloat';
-X3DField58.AccessType := 'inputOutput';
-X3DField58.Value := '0.5';
-{ .AddX3DField }
-Script50.X3DField := X3DField58;
-X3DField59 := TX3DField.Create;
-X3DField59.NameField := 'pdelta';
-X3DField59.Type := 'SFFloat';
-X3DField59.AccessType := 'inputOutput';
-X3DField59.Value := '0.5';
-{ .AddX3DField }
-Script50.X3DField := X3DField59;
+SFVec3f51 := TSFVec3f.CreateUndefined(Script50, false, 'translation');
+SFVec3f51.Value := '0 0 0';
+{ METHOD .Fd.AddCustomField }
+Script50.AddCustomField(SFVec3f51);
+SFVec3f52 := TSFVec3f.CreateUndefined(Script50, false, 'velocity');
+SFVec3f52.Value := '0 0 0';
+{ METHOD .Fd.AddCustomField }
+Script50.AddCustomField(SFVec3f52);
+SFFloat53 := TSFFloat.CreateUndefined(Script50, false, 'set_fraction');
+{ METHOD .Fd.AddCustomField }
+Script50.AddCustomField(SFFloat53);
+SFFloat54 := TSFFloat.CreateUndefined(Script50, false, 'a');
+SFFloat54.Value := '0.5';
+{ METHOD .Fd.AddCustomField }
+Script50.AddCustomField(SFFloat54);
+SFFloat55 := TSFFloat.CreateUndefined(Script50, false, 'b');
+SFFloat55.Value := '0.5';
+{ METHOD .Fd.AddCustomField }
+Script50.AddCustomField(SFFloat55);
+SFFloat56 := TSFFloat.CreateUndefined(Script50, false, 'c');
+SFFloat56.Value := '3';
+{ METHOD .Fd.AddCustomField }
+Script50.AddCustomField(SFFloat56);
+SFFloat57 := TSFFloat.CreateUndefined(Script50, false, 'd');
+SFFloat57.Value := '3';
+{ METHOD .Fd.AddCustomField }
+Script50.AddCustomField(SFFloat57);
+SFFloat58 := TSFFloat.CreateUndefined(Script50, false, 'tdelta');
+SFFloat58.Value := '0.5';
+{ METHOD .Fd.AddCustomField }
+Script50.AddCustomField(SFFloat58);
+SFFloat59 := TSFFloat.CreateUndefined(Script50, false, 'pdelta');
+SFFloat59.Value := '0.5';
+{ METHOD .Fd.AddCustomField }
+Script50.AddCustomField(SFFloat59);
 
 Script50.SetSourceCode('''ecmascript:\n"+
 "\n"+
@@ -380,31 +349,53 @@ Script50.SetSourceCode('''ecmascript:\n"+
 "					d = 4;\n"+
 "				}\n"+
 "			}''');
-{ .AddChildren }
-Group20.AddChildren([Script50]);
+{ METHOD .FdChildren.Add }
+Group20.FdChildren.Add(Script50);
 TimeSensor60 := TTimeSensorNode.Create;
 TimeSensor60.CycleInterval := 5;
 TimeSensor60.Loop := True;
-{ .AddChildren }
-Group20.AddChildren([TimeSensor60]);
-Group20.AddRoute(TimeSensor60.EventFraction_changed, Script50.EventSet_fraction);
-{ .AddX3DRoute }
-Group20.AddRoute(Script50.FdA, ComposedShader34.FdA);
-{ .AddX3DRoute }
-Group20.AddRoute(Script50.FdB, ComposedShader34.FdB);
-{ .AddX3DRoute }
-Group20.AddRoute(Script50.FdC, ComposedShader34.FdC);
-{ .AddX3DRoute }
-Group20.AddRoute(Script50.FdD, ComposedShader34.FdD);
-{ .AddX3DRoute }
-Group20.AddRoute(Script50.FdPdelta, ComposedShader34.FdPdelta);
-{ .AddX3DRoute }
-Group20.AddRoute(Script50.FdTdelta, ComposedShader34.FdTdelta);
-{ .AddX3DRoute }
-{ .AddChildren }
-Group15.AddChildren([Group20]);
-{ .AddGroup }
+{ METHOD .FdChildren.Add }
+Group20.FdChildren.Add(TimeSensor60);
+{ Original "TourTime.EventFraction_changed TO Animate.EventSet_fraction }
+{ Sample TourTime.EventFraction_changed TO Animate.EventSet_fraction}
+Group20.AddRoute(TimeSensor60.EventFraction_changed, Script50.set_EventSet_fraction);
+{ METHOD .AddX3DROUTE }
+{ Original "Animate.a TO x_ite.a }
+{ Sample Animate.a TO x_ite.a}
+Group20.AddRoute(Animate.[object Object], ComposedShader34.set_a);
+{ METHOD .AddX3DROUTE }
+{ Original "Animate.b TO x_ite.b }
+{ Sample Animate.b TO x_ite.b}
+Group20.AddRoute(Animate.[object Object], ComposedShader34.set_b);
+{ METHOD .AddX3DROUTE }
+{ Original "Animate.c TO x_ite.c }
+{ Sample Animate.c TO x_ite.c}
+Group20.AddRoute(Animate.[object Object], ComposedShader34.set_c);
+{ METHOD .AddX3DROUTE }
+{ Original "Animate.d TO x_ite.d }
+{ Sample Animate.d TO x_ite.d}
+Group20.AddRoute(Animate.[object Object], ComposedShader34.set_d);
+{ METHOD .AddX3DROUTE }
+{ Original "Animate.pdelta TO x_ite.pdelta }
+{ Sample Animate.pdelta TO x_ite.pdelta}
+Group20.AddRoute(Animate.[object Object], ComposedShader34.set_pdelta);
+{ METHOD .AddX3DROUTE }
+{ Original "Animate.tdelta TO x_ite.tdelta }
+{ Sample Animate.tdelta TO x_ite.tdelta}
+Group20.AddRoute(Animate.[object Object], ComposedShader34.set_tdelta);
+{ METHOD .AddX3DROUTE }
+{ METHOD .FdChildren.Add }
+Group15.FdChildren.Add(Group20);
+{ METHOD .AddGroup }
 X3D0.AddChildren([Group15]);
+end;
+
+function Createparticleflowers: TX3DRootNode;
+begin
+InitparticleflowersPart0;
+InitparticleflowersPart1;
+InitparticleflowersPart2;
+InitparticleflowersPart3;
 Result := X3D0;
 end;
 

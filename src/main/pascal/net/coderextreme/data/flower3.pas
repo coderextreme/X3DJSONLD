@@ -2,7 +2,7 @@ unit flower3;
 
 interface
 
-uses X3DNodes;
+uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
 
 function Createflower3: TX3DRootNode;
 
@@ -10,7 +10,6 @@ implementation
 
 uses CastleVectors;
 
-function Createflower3: TX3DRootNode;
 var
 X3D0: TX3DRootNode;
 Group7: TGroupNode;
@@ -25,38 +24,46 @@ Material15: TMaterialNode;
 IndexedFaceSet16: TIndexedFaceSetNode;
 Coordinate17: TCoordinateNode;
 Script18: TScriptNode;
-X3DField19: TX3DField;
-X3DField20: TX3DField;
-X3DField21: TX3DField;
+SFFloat19: TSFFloat;
+MFVec3f20: TMFVec3f;
+MFInt3221: TMFInt32;
 TimeSensor22: TTimeSensorNode;
+
+procedure Initflower3Part0;
 begin
 X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Immersive';
 X3D0.ForceVersion.Major := 4;
 X3D0.ForceVersion.Minor := 0;
 X3D0.Meta['title'] := 'flower3.x3d';
+{ METHOD .Meta }
 X3D0.Meta['creator'] := 'John Carlson';
+{ METHOD .Meta }
 X3D0.Meta['generator'] := 'manual';
+{ METHOD .Meta }
 X3D0.Meta['identifier'] := 'https://coderextreme.net/X3DJSONLD/src/main/data/flower3.x3d';
+{ METHOD .Meta }
 X3D0.Meta['description'] := 'a flower';
+{ METHOD .Meta }
+{ METHOD .Head }
 Group7 := TGroupNode.Create;
 NavigationInfo8 := TNavigationInfoNode.Create;
-{ .AddChildren }
-Group7.AddChildren([NavigationInfo8]);
+{ METHOD .FdChildren.Add }
+Group7.FdChildren.Add(NavigationInfo8);
 DirectionalLight9 := TDirectionalLightNode.Create;
 DirectionalLight9.Direction := Vector3(0,-0.8,-0.2);
 DirectionalLight9.Intensity := 0.5;
-{ .AddChildren }
-Group7.AddChildren([DirectionalLight9]);
+{ METHOD .FdChildren.Add }
+Group7.FdChildren.Add(DirectionalLight9);
 Background10 := TBackgroundNode.Create;
 Background10.SetSkyColor([Vector3(1,1,1)]);
-{ .AddChildren }
-Group7.AddChildren([Background10]);
+{ METHOD .FdChildren.Add }
+Group7.FdChildren.Add(Background10);
 Viewpoint11 := TViewpointNode.Create;
 Viewpoint11.Description := 'One mathematical orbital';
 Viewpoint11.Position := Vector3(0,0,50);
-{ .AddChildren }
-Group7.AddChildren([Viewpoint11]);
+{ METHOD .FdChildren.Add }
+Group7.FdChildren.Add(Viewpoint11);
 Transform12 := TTransformNode.Create;
 Transform12.Translation := Vector3(8,0,0);
 Shape13 := TShapeNode.Create;
@@ -64,40 +71,36 @@ Appearance14 := TAppearanceNode.Create;
 Material15 := TMaterialNode.Create;
 Material15.DiffuseColor := Vector3(0,0.5,1);
 Material15.SpecularColor := Vector3(0,0.5,1);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance14.Material := Material15;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape13.Appearance := Appearance14;
 IndexedFaceSet16 := TIndexedFaceSetNode.Create;
 IndexedFaceSet16.Convex := False;
 Coordinate17 := TCoordinateNode.Create;
-{ .SetCoord }
+{ METHOD .Coord }
 IndexedFaceSet16.Coord := Coordinate17;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape13.Geometry := IndexedFaceSet16;
-{ .AddChild }
-Transform12.AddChildren([Shape13]);
-{ .AddChildren }
-Group7.AddChildren([Transform12]);
+{ METHOD .FdChildren.Add }
+Transform12.FdChildren.Add(Shape13);
+{ METHOD .FdChildren.Add }
+Group7.FdChildren.Add(Transform12);
 Script18 := TScriptNode.Create;
-X3DField19 := TX3DField.Create;
-X3DField19.NameField := 'set_fraction';
-X3DField19.AccessType := 'inputOnly';
-X3DField19.Type := 'SFFloat';
-{ .SetX3DField }
-Script18.X3DField := X3DField19;
-X3DField20 := TX3DField.Create;
-X3DField20.NameField := 'coordinates';
-X3DField20.AccessType := 'outputOnly';
-X3DField20.Type := 'MFVec3f';
-{ .AddX3DField }
-Script18.X3DField := X3DField20;
-X3DField21 := TX3DField.Create;
-X3DField21.NameField := 'coordIndexes';
-X3DField21.AccessType := 'outputOnly';
-X3DField21.Type := 'MFInt32';
-{ .AddX3DField }
-Script18.X3DField := X3DField21;
+end;
+
+procedure Initflower3Part1;
+begin
+
+SFFloat19 := TSFFloat.CreateUndefined(Script18, false, 'set_fraction');
+{ METHOD .Fd.AddCustomField }
+Script18.AddCustomField(SFFloat19);
+MFVec3f20 := TMFVec3f.CreateUndefined(Script18, false, 'coordinates');
+{ METHOD .Fd.AddCustomField }
+Script18.AddCustomField(MFVec3f20);
+MFInt3221 := TMFInt32.CreateUndefined(Script18, false, 'coordIndexes');
+{ METHOD .Fd.AddCustomField }
+Script18.AddCustomField(MFInt3221);
 { <field accessType="inputOutput" name="e" type="SFFloat" value="5"/> }
 { <field accessType="inputOutput" name="f" type="SFFloat" value="5"/> }
 { <field accessType="inputOutput" name="g" type="SFFloat" value="5"/> }
@@ -182,21 +185,33 @@ Script18.SetSourceCode('''ecmascript:\n"+
 "	}\n"+
 "	generateCoordinates(resolution);\n"+
 "}''');
-{ .AddChildren }
-Group7.AddChildren([Script18]);
+{ METHOD .FdChildren.Add }
+Group7.FdChildren.Add(Script18);
 TimeSensor22 := TTimeSensorNode.Create;
 TimeSensor22.CycleInterval := 16;
 TimeSensor22.Loop := True;
-{ .AddChildren }
-Group7.AddChildren([TimeSensor22]);
-Group7.AddRoute(Script18.FdCoordindexes, IndexedFaceSet16.EventSet_coordindex);
-{ .AddX3DRoute }
-Group7.AddRoute(Script18.FdCoordinates, Coordinate17.FdPoint);
-{ .AddX3DRoute }
-Group7.AddRoute(TimeSensor22.EventFraction_changed, Script18.EventSet_fraction);
-{ .AddX3DRoute }
-{ .AddGroup }
+{ METHOD .FdChildren.Add }
+Group7.FdChildren.Add(TimeSensor22);
+{ Original "OrbitScript.coordIndexes TO Orbit.EventSet_coordIndex }
+{ Sample OrbitScript.coordIndexes TO Orbit.EventSet_coordIndex}
+Group7.AddRoute(OrbitScript.[object Object], IndexedFaceSet16.set_EventSet_coordIndex);
+{ METHOD .AddX3DROUTE }
+{ Original "OrbitScript.coordinates TO OrbitCoordinates.point }
+{ Sample OrbitScript.coordinates TO OrbitCoordinates.point}
+Group7.AddRoute(OrbitScript.[object Object], Coordinate17.set_point);
+{ METHOD .AddX3DROUTE }
+{ Original "Clock.EventFraction_changed TO OrbitScript.EventSet_fraction }
+{ Sample Clock.EventFraction_changed TO OrbitScript.EventSet_fraction}
+Group7.AddRoute(TimeSensor22.EventFraction_changed, Script18.set_EventSet_fraction);
+{ METHOD .AddX3DROUTE }
+{ METHOD .AddGroup }
 X3D0.AddChildren([Group7]);
+end;
+
+function Createflower3: TX3DRootNode;
+begin
+Initflower3Part0;
+Initflower3Part1;
 Result := X3D0;
 end;
 

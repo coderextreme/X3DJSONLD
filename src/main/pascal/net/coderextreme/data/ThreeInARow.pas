@@ -2,7 +2,7 @@ unit ThreeInARow;
 
 interface
 
-uses X3DNodes;
+uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
 
 function CreateThreeInARow: TX3DRootNode;
 
@@ -10,7 +10,6 @@ implementation
 
 uses CastleVectors;
 
-function CreateThreeInARow: TX3DRootNode;
 var
 X3D0: TX3DRootNode;
 Group7: TGroupNode;
@@ -25,58 +24,69 @@ Transform15: TTransformNode;
 Shape16: TShapeNode;
 Transform17: TTransformNode;
 Shape18: TShapeNode;
+
+procedure InitThreeInARowPart0;
 begin
 X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Immersive';
 X3D0.ForceVersion.Major := 4;
 X3D0.ForceVersion.Minor := 0;
 X3D0.Meta['title'] := 'ThreeInARow.x3d';
+{ METHOD .Meta }
 X3D0.Meta['creator'] := 'John Carlson';
+{ METHOD .Meta }
 X3D0.Meta['generator'] := 'manual';
+{ METHOD .Meta }
 X3D0.Meta['identifier'] := 'https://coderextreme.net/X3DJSONLD/src/main/data/ThreeInARow.x3d';
+{ METHOD .Meta }
 X3D0.Meta['description'] := '3 boxes';
+{ METHOD .Meta }
+{ METHOD .Head }
 Group7 := TGroupNode.Create;
 NavigationInfo8 := TNavigationInfoNode.Create;
 NavigationInfo8.SetType(['EXAMINE']);
-{ .AddChildren }
-Group7.AddChildren([NavigationInfo8]);
+{ METHOD .FdChildren.Add }
+Group7.FdChildren.Add(NavigationInfo8);
 Viewpoint9 := TViewpointNode.Create;
 Viewpoint9.Description := 'Cubes';
 Viewpoint9.Position := Vector3(0,0,12);
-{ .AddChildren }
-Group7.AddChildren([Viewpoint9]);
+{ METHOD .FdChildren.Add }
+Group7.FdChildren.Add(Viewpoint9);
 Transform10 := TTransformNode.Create;
 Transform10.Translation := Vector3(0,2,0);
 Shape11 := TShapeNode.Create;
 Sphere12 := TSphereNode.Create;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape11.Geometry := Sphere12;
 Appearance13 := TAppearanceNode.Create;
 Material14 := TMaterialNode.Create;
 Material14.DiffuseColor := Vector3(1,1,1);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance13.Material := Material14;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape11.Appearance := Appearance13;
-{ .AddChild }
-Transform10.AddChildren([Shape11]);
-{ .AddChildren }
-Group7.AddChildren([Transform10]);
+{ METHOD .FdChildren.Add }
+Transform10.FdChildren.Add(Shape11);
+{ METHOD .FdChildren.Add }
+Group7.FdChildren.Add(Transform10);
 Transform15 := TTransformNode.Create;
-Shape16 := Shape11;
-{ .AddChild }
-Transform15.AddChildren([Shape16]);
-{ .AddChildren }
-Group7.AddChildren([Transform15]);
+{ METHOD .FdChildren.Add }
+Transform15.FdChildren.Add(Shape11);
+{ METHOD .FdChildren.Add }
+Group7.FdChildren.Add(Transform15);
 Transform17 := TTransformNode.Create;
 Transform17.Translation := Vector3(0,-2,0);
-Shape18 := Shape11;
-{ .AddChild }
-Transform17.AddChildren([Shape18]);
-{ .AddChildren }
-Group7.AddChildren([Transform17]);
-{ .AddGroup }
+{ METHOD .FdChildren.Add }
+Transform17.FdChildren.Add(Shape11);
+{ METHOD .FdChildren.Add }
+Group7.FdChildren.Add(Transform17);
+{ METHOD .AddGroup }
 X3D0.AddChildren([Group7]);
+end;
+
+function CreateThreeInARow: TX3DRootNode;
+begin
+InitThreeInARowPart0;
 Result := X3D0;
 end;
 

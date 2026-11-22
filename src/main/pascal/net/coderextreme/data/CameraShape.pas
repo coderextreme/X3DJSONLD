@@ -2,7 +2,7 @@ unit CameraShape;
 
 interface
 
-uses X3DNodes;
+uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
 
 function CreateCameraShape: TX3DRootNode;
 
@@ -10,7 +10,6 @@ implementation
 
 uses CastleVectors;
 
-function CreateCameraShape: TX3DRootNode;
 var
 X3D0: TX3DRootNode;
 Group13: TGroupNode;
@@ -58,56 +57,75 @@ Transform54: TTransformNode;
 Shape55: TShapeNode;
 Appearance56: TAppearanceNode;
 IndexedFaceSet57: TIndexedFaceSetNode;
+
+procedure InitCameraShapePart0;
 begin
 X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Interactive';
 X3D0.ForceVersion.Major := 4;
 X3D0.ForceVersion.Minor := 0;
 X3D0.Meta['title'] := 'CameraShape.x3d';
+{ METHOD .Meta }
 X3D0.Meta['description'] := 'Simple video camera shape';
+{ METHOD .Meta }
 X3D0.Meta['creator'] := 'Jeff Weekley and Don Brutzman';
+{ METHOD .Meta }
 X3D0.Meta['created'] := '2 June 2009';
+{ METHOD .Meta }
 X3D0.Meta['translated'] := '2 June 2009';
+{ METHOD .Meta }
 X3D0.Meta['modified'] := '13 January 2014';
+{ METHOD .Meta }
 X3D0.Meta['reference'] := 'CameraExamples.x3d';
+{ METHOD .Meta }
 X3D0.Meta['identifier'] := 'https://www.web3d.org/x3d/content/examples/Basic/development/SimpleCamera.x3d';
+{ METHOD .Meta }
 X3D0.Meta['generator'] := 'Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html';
+{ METHOD .Meta }
 X3D0.Meta['generator'] := 'X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit';
+{ METHOD .Meta }
 X3D0.Meta['license'] := '../../license.html';
+{ METHOD .Meta }
+{ METHOD .Head }
 Group13 := TGroupNode.Create;
 WorldInfo14 := TWorldInfoNode.Create;
 WorldInfo14.SetInfo(['VRML2.0 created with Version 1.3, from Alias Maya 2008']);
 WorldInfo14.Title := 'SimpleCamera.x3d';
-{ .AddChildren }
-Group13.AddChildren([WorldInfo14]);
+{ METHOD .FdChildren.Add }
+Group13.FdChildren.Add(WorldInfo14);
 Viewpoint15 := TViewpointNode.Create;
 Viewpoint15.Description := 'Camera view, over the shoulder';
 Viewpoint15.Position := Vector3(0,0.75,3);
-{ .AddChildren }
-Group13.AddChildren([Viewpoint15]);
+{ METHOD .FdChildren.Add }
+Group13.FdChildren.Add(Viewpoint15);
 Viewpoint16 := TViewpointNode.Create;
 Viewpoint16.Description := 'Camera view through lens';
 Viewpoint16.Position := Vector3(0,0,0);
-{ .AddChildren }
-Group13.AddChildren([Viewpoint16]);
+{ METHOD .FdChildren.Add }
+Group13.FdChildren.Add(Viewpoint16);
 Viewpoint17 := TViewpointNode.Create;
 Viewpoint17.Description := 'Camera view from right side';
 Viewpoint17.Orientation := Vector4(0,1,0,1.5708);
 Viewpoint17.Position := Vector3(12,0,-4);
-{ .AddChildren }
-Group13.AddChildren([Viewpoint17]);
+{ METHOD .FdChildren.Add }
+Group13.FdChildren.Add(Viewpoint17);
 Viewpoint18 := TViewpointNode.Create;
 Viewpoint18.Description := 'Camera view from above';
 Viewpoint18.Orientation := Vector4(1,0,0,-1.5708);
 Viewpoint18.Position := Vector3(0,15,-5);
-{ .AddChildren }
-Group13.AddChildren([Viewpoint18]);
+{ METHOD .FdChildren.Add }
+Group13.FdChildren.Add(Viewpoint18);
 Viewpoint19 := TViewpointNode.Create;
 Viewpoint19.Description := 'Camera view from left side';
+end;
+
+procedure InitCameraShapePart1;
+begin
+
 Viewpoint19.Orientation := Vector4(0,1,0,-1.5708);
 Viewpoint19.Position := Vector3(-12,0,-4);
-{ .AddChildren }
-Group13.AddChildren([Viewpoint19]);
+{ METHOD .FdChildren.Add }
+Group13.FdChildren.Add(Viewpoint19);
 Transform20 := TTransformNode.Create;
 Transform20.Scale := Vector3(0.1,0.1,0.1);
 Transform20.Translation := Vector3(0,-0.165,0.02);
@@ -121,12 +139,12 @@ Material24.DiffuseColor := Vector3(0.372322,0.371574,0.373173);
 Material24.Shininess := 0.02;
 Material24.SpecularColor := Vector3(0.890909,0.887832,0.890909);
 { Universal Media Library: Metals 30 }
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance23.Material := Material24;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape22.Appearance := Appearance23;
-{ .AddChildren }
-Switch21.AddChildren([Shape22]);
+{ METHOD .FdChildren.Add }
+Switch21.FdChildren.Add(Shape22);
 Shape25 := TShapeNode.Create;
 IndexedFaceSet26 := TIndexedFaceSetNode.Create;
 IndexedFaceSet26.Convex := False;
@@ -134,15 +152,14 @@ IndexedFaceSet26.SetCoordIndex([0,1,13,12,-1,1,2,14,13,-1,2,3,15,14,-1,3,4,16,15
 IndexedFaceSet26.CreaseAngle := 0.7854;
 Coordinate27 := TCoordinateNode.Create;
 Coordinate27.SetPoint([Vector3(-0.36,-2.39,-0.26),Vector3(-0.36,-1.77,-0.89),Vector3(-0.36,0,-1.7),Vector3(-0.36,0.85,-1.47),Vector3(-0.36,1.47,-0.85),Vector3(-0.36,1.7,0),Vector3(-0.36,1.47,0.85),Vector3(-0.36,-0.07,2.05),Vector3(-0.36,-0.92,2.28),Vector3(-0.36,-1.77,2.05),Vector3(-0.36,-2.39,1.43),Vector3(-0.36,-2.62,0.58),Vector3(0.36,-2.39,-0.26),Vector3(0.36,-1.77,-0.89),Vector3(0.36,0,-1.7),Vector3(0.36,0.85,-1.47),Vector3(0.36,1.47,-0.85),Vector3(0.36,1.7,0),Vector3(0.36,1.47,0.85),Vector3(0.36,-0.07,2.05),Vector3(0.36,-0.92,2.28),Vector3(0.36,-1.77,2.05),Vector3(0.36,-2.39,1.43),Vector3(0.36,-2.62,0.58),Vector3(-0.36,-0.46,0.31),Vector3(0.36,-0.46,0.31)]);
-{ .SetCoord }
+{ METHOD .Coord }
 IndexedFaceSet26.Coord := Coordinate27;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape25.Geometry := IndexedFaceSet26;
-Appearance28 := Appearance23;
-{ .SetAppearance }
-Shape25.Appearance := Appearance28;
-{ .AddChildren }
-Switch21.AddChildren([Shape25]);
+{ METHOD .Appearance }
+Shape25.Appearance := Appearance23;
+{ METHOD .FdChildren.Add }
+Switch21.FdChildren.Add(Shape25);
 Shape29 := TShapeNode.Create;
 IndexedFaceSet30 := TIndexedFaceSetNode.Create;
 IndexedFaceSet30.Convex := False;
@@ -150,15 +167,19 @@ IndexedFaceSet30.SetCoordIndex([0,1,13,12,-1,2,3,25,24,-1,4,5,11,10,-1,6,7,19,18
 IndexedFaceSet30.CreaseAngle := 0.7854;
 Coordinate31 := TCoordinateNode.Create;
 Coordinate31.SetPoint([Vector3(-1.03,-1.26,3),Vector3(1.03,-1.26,3),Vector3(-1.03,1.74,3),Vector3(1.03,1.74,3),Vector3(-0.78,1.21,-3),Vector3(0.78,1.21,-3),Vector3(-0.78,-1.3,-3),Vector3(0.78,-1.3,-3),Vector3(-1.03,0.27,3),Vector3(1.03,0.27,3),Vector3(-0.78,0.27,-3.43),Vector3(0.78,0.27,-3.43),Vector3(-1.03,-0.99,3),Vector3(1.03,-0.99,3),Vector3(-0.78,-1.05,-3.43),Vector3(0.78,-1.05,-3.43),Vector3(-0.79,1.56,-2.76),Vector3(0.79,1.56,-2.76),Vector3(-0.79,-1.56,-2.76),Vector3(0.79,-1.56,-2.76),Vector3(1.13,0.27,-2.76),Vector3(-1.13,0.27,-2.76),Vector3(1.13,-1.31,-2.76),Vector3(-1.13,-1.31,-2.76),Vector3(-1.02,1.73,2.69),Vector3(1.02,1.73,2.69),Vector3(-1.36,0.27,2.69),Vector3(-1.36,-1.45,2.69),Vector3(-1.02,-1.73,2.69),Vector3(1.02,-1.73,2.69),Vector3(1.36,0.27,2.69),Vector3(1.36,-1.45,2.69)]);
-{ .SetCoord }
+{ METHOD .Coord }
 IndexedFaceSet30.Coord := Coordinate31;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape29.Geometry := IndexedFaceSet30;
-Appearance32 := Appearance23;
-{ .SetAppearance }
-Shape29.Appearance := Appearance32;
-{ .AddChildren }
-Switch21.AddChildren([Shape29]);
+{ METHOD .Appearance }
+Shape29.Appearance := Appearance23;
+{ METHOD .FdChildren.Add }
+Switch21.FdChildren.Add(Shape29);
+end;
+
+procedure InitCameraShapePart2;
+begin
+
 Shape33 := TShapeNode.Create;
 IndexedFaceSet34 := TIndexedFaceSetNode.Create;
 IndexedFaceSet34.Convex := False;
@@ -166,15 +187,14 @@ IndexedFaceSet34.SetCoordIndex([1,0,144,145,-1,2,1,145,146,-1,3,2,146,147,-1,4,3
 IndexedFaceSet34.CreaseAngle := 0.7854;
 Coordinate35 := TCoordinateNode.Create;
 Coordinate35.SetPoint([Vector3(0.58,0,-1.44),Vector3(0.5,0.3,-1.44),Vector3(0.29,0.51,-1.44),Vector3(0,0.59,-1.44),Vector3(-0.29,0.51,-1.44),Vector3(-0.5,0.3,-1.44),Vector3(-0.58,0,-1.44),Vector3(-0.5,-0.3,-1.44),Vector3(-0.29,-0.51,-1.44),Vector3(0,-0.59,-1.44),Vector3(0.29,-0.51,-1.44),Vector3(0.5,-0.3,-1.44),Vector3(0.34,0,1.44),Vector3(0.29,0.2,1.44),Vector3(0.17,0.34,1.44),Vector3(0,0.4,1.44),Vector3(-0.17,0.34,1.44),Vector3(-0.29,0.2,1.44),Vector3(-0.34,0,1.44),Vector3(-0.29,-0.2,1.44),Vector3(-0.17,-0.34,1.44),Vector3(0,-0.4,1.44),Vector3(0.17,-0.34,1.44),Vector3(0.29,-0.2,1.44),Vector3(0.4,0,1.44),Vector3(0.34,0.23,1.44),Vector3(0.2,0.4,1.44),Vector3(0,0.47,1.44),Vector3(-0.2,0.4,1.44),Vector3(-0.34,0.23,1.44),Vector3(-0.4,0,1.44),Vector3(-0.34,-0.23,1.44),Vector3(-0.2,-0.4,1.44),Vector3(0,-0.47,1.44),Vector3(0.2,-0.4,1.44),Vector3(0.34,-0.23,1.44),Vector3(0.46,0,1.44),Vector3(0.4,0.27,1.44),Vector3(0.23,0.46,1.44),Vector3(0,0.53,1.44),Vector3(-0.23,0.46,1.44),Vector3(-0.4,0.27,1.44),Vector3(-0.46,0,1.44),Vector3(-0.4,-0.27,1.44),Vector3(-0.23,-0.46,1.44),Vector3(0,-0.53,1.44),Vector3(0.23,-0.46,1.44),Vector3(0.4,-0.27,1.44),Vector3(0.78,0,-1.44),Vector3(0.68,0.4,-1.44),Vector3(0.39,0.69,-1.44),Vector3(0,0.8,-1.44),Vector3(-0.39,0.69,-1.44),Vector3(-0.68,0.4,-1.44),Vector3(-0.78,0,-1.44),Vector3(-0.68,-0.4,-1.44),Vector3(-0.39,-0.69,-1.44),Vector3(0,-0.8,-1.44),Vector3(0.39,-0.69,-1.44),Vector3(0.68,-0.4,-1.44),Vector3(0.68,0,-1.44),Vector3(0.59,0.35,-1.44),Vector3(0.34,0.6,-1.44),Vector3(0,0.69,-1.44),Vector3(-0.34,0.6,-1.44),Vector3(-0.59,0.35,-1.44),Vector3(-0.68,0,-1.44),Vector3(-0.59,-0.35,-1.44),Vector3(-0.34,-0.6,-1.44),Vector3(0,-0.69,-1.44),Vector3(0.34,-0.6,-1.44),Vector3(0.59,-0.35,-1.44),Vector3(0.34,0,0.99),Vector3(0.29,0.2,0.99),Vector3(0.17,0.34,0.99),Vector3(0,0.4,0.99),Vector3(-0.17,0.34,0.99),Vector3(-0.29,0.2,0.99),Vector3(-0.34,0,0.99),Vector3(-0.29,-0.2,0.99),Vector3(-0.17,-0.34,0.99),Vector3(0,-0.4,0.99),Vector3(0.17,-0.34,0.99),Vector3(0.29,-0.2,0.99),Vector3(0.46,0,0.99),Vector3(0.4,0.27,0.99),Vector3(0.23,0.46,0.99),Vector3(0,0.53,0.99),Vector3(-0.23,0.46,0.99),Vector3(-0.4,0.27,0.99),Vector3(-0.46,0,0.99),Vector3(-0.4,-0.27,0.99),Vector3(-0.23,-0.46,0.99),Vector3(0,-0.53,0.99),Vector3(0.23,-0.46,0.99),Vector3(0.4,-0.27,0.99),Vector3(0.46,0,0.07),Vector3(0.4,0.23,0.07),Vector3(0.23,0.4,0.07),Vector3(0,0.47,0.07),Vector3(-0.23,0.4,0.07),Vector3(-0.4,0.23,0.07),Vector3(-0.46,0,0.07),Vector3(-0.4,-0.23,0.07),Vector3(-0.23,-0.4,0.07),Vector3(0,-0.47,0.07),Vector3(0.23,-0.4,0.07),Vector3(0.4,-0.23,0.07),Vector3(0.62,0,0.07),Vector3(0.54,0.31,0.07),Vector3(0.31,0.55,0.07),Vector3(0,0.63,0.07),Vector3(-0.31,0.55,0.07),Vector3(-0.54,0.31,0.07),Vector3(-0.62,0,0.07),Vector3(-0.54,-0.31,0.07),Vector3(-0.31,-0.55,0.07),Vector3(0,-0.63,0.07),Vector3(0.31,-0.55,0.07),Vector3(0.54,-0.31,0.07),Vector3(0.46,0,-0.08),Vector3(0.4,0.23,-0.08),Vector3(0.23,0.4,-0.08),Vector3(0,0.47,-0.08),Vector3(-0.23,0.4,-0.08),Vector3(-0.4,0.23,-0.08),Vector3(-0.46,0,-0.08),Vector3(-0.4,-0.23,-0.08),Vector3(-0.23,-0.4,-0.08),Vector3(0,-0.47,-0.08),Vector3(0.23,-0.4,-0.08),Vector3(0.4,-0.23,-0.08),Vector3(0.62,0,-0.08),Vector3(0.54,0.31,-0.08),Vector3(0.31,0.55,-0.08),Vector3(0,0.63,-0.08),Vector3(-0.31,0.55,-0.08),Vector3(-0.54,0.31,-0.08),Vector3(-0.62,0,-0.08),Vector3(-0.54,-0.31,-0.08),Vector3(-0.31,-0.55,-0.08),Vector3(0,-0.63,-0.08),Vector3(0.31,-0.55,-0.08),Vector3(0.54,-0.31,-0.08),Vector3(0.46,0,-1.19),Vector3(0.4,0.23,-1.19),Vector3(0.23,0.4,-1.19),Vector3(0,0.47,-1.19),Vector3(-0.23,0.4,-1.19),Vector3(-0.4,0.23,-1.19),Vector3(-0.46,0,-1.19),Vector3(-0.4,-0.23,-1.19),Vector3(-0.23,-0.4,-1.19),Vector3(0,-0.47,-1.19),Vector3(0.23,-0.4,-1.19),Vector3(0.4,-0.23,-1.19),Vector3(0.62,0,-1.19),Vector3(0.54,0.31,-1.19),Vector3(0.31,0.55,-1.19),Vector3(0,0.63,-1.19),Vector3(-0.31,0.55,-1.19),Vector3(-0.54,0.31,-1.19),Vector3(-0.62,0,-1.19),Vector3(-0.54,-0.31,-1.19),Vector3(-0.31,-0.55,-1.19),Vector3(0,-0.63,-1.19),Vector3(0.31,-0.55,-1.19),Vector3(0.54,-0.31,-1.19),Vector3(0.62,0,-0.98),Vector3(0.54,0.31,-0.98),Vector3(0.31,0.55,-0.98),Vector3(0,0.63,-0.98),Vector3(-0.31,0.55,-0.98),Vector3(-0.54,0.31,-0.98),Vector3(-0.62,0,-0.98),Vector3(-0.54,-0.31,-0.98),Vector3(-0.31,-0.55,-0.98),Vector3(0,-0.63,-0.98),Vector3(0.31,-0.55,-0.98),Vector3(0.54,-0.31,-0.98),Vector3(0.46,0,-0.98),Vector3(0.4,0.23,-0.98),Vector3(0.23,0.4,-0.98),Vector3(0,0.47,-0.98),Vector3(-0.23,0.4,-0.98),Vector3(-0.4,0.23,-0.98),Vector3(-0.46,0,-0.98),Vector3(-0.4,-0.23,-0.98),Vector3(-0.23,-0.4,-0.98),Vector3(0,-0.47,-0.98),Vector3(0.23,-0.4,-0.98),Vector3(0.4,-0.23,-0.98)]);
-{ .SetCoord }
+{ METHOD .Coord }
 IndexedFaceSet34.Coord := Coordinate35;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape33.Geometry := IndexedFaceSet34;
-Appearance36 := Appearance23;
-{ .SetAppearance }
-Shape33.Appearance := Appearance36;
-{ .AddChildren }
-Switch21.AddChildren([Shape33]);
+{ METHOD .Appearance }
+Shape33.Appearance := Appearance23;
+{ METHOD .FdChildren.Add }
+Switch21.FdChildren.Add(Shape33);
 Shape37 := TShapeNode.Create;
 IndexedFaceSet38 := TIndexedFaceSetNode.Create;
 IndexedFaceSet38.Convex := False;
@@ -182,80 +202,90 @@ IndexedFaceSet38.SetCoordIndex([0,1,12,11,-1,1,2,13,12,-1,2,3,14,13,-1,3,4,15,14
 IndexedFaceSet38.CreaseAngle := 0.7854;
 Coordinate39 := TCoordinateNode.Create;
 Coordinate39.SetPoint([Vector3(0.06,-0.43,-0.02),Vector3(0.05,-0.43,-0.04),Vector3(0.04,-0.43,-0.05),Vector3(0.02,-0.43,-0.06),Vector3(0,-0.43,-0.07),Vector3(-0.02,-0.43,-0.06),Vector3(-0.04,-0.43,-0.05),Vector3(-0.05,-0.43,-0.04),Vector3(-0.06,-0.43,-0.02),Vector3(-0.07,-0.43,0),Vector3(0.07,-0.43,0),Vector3(0.13,-0.41,-0.04),Vector3(0.11,-0.41,-0.08),Vector3(0.08,-0.41,-0.11),Vector3(0.04,-0.41,-0.13),Vector3(0,-0.41,-0.13),Vector3(-0.04,-0.41,-0.13),Vector3(-0.08,-0.41,-0.11),Vector3(-0.11,-0.41,-0.08),Vector3(-0.13,-0.41,-0.04),Vector3(-0.13,-0.41,0),Vector3(0.13,-0.41,0),Vector3(0.19,-0.38,-0.06),Vector3(0.16,-0.38,-0.11),Vector3(0.11,-0.38,-0.16),Vector3(0.06,-0.38,-0.19),Vector3(0,-0.38,-0.2),Vector3(-0.06,-0.38,-0.19),Vector3(-0.11,-0.38,-0.16),Vector3(-0.16,-0.38,-0.11),Vector3(-0.19,-0.38,-0.06),Vector3(-0.2,-0.38,0),Vector3(0.2,-0.38,0),Vector3(0.24,-0.35,-0.08),Vector3(0.2,-0.35,-0.15),Vector3(0.15,-0.35,-0.2),Vector3(0.08,-0.35,-0.24),Vector3(0,-0.35,-0.25),Vector3(-0.08,-0.35,-0.24),Vector3(-0.15,-0.35,-0.2),Vector3(-0.2,-0.35,-0.15),Vector3(-0.24,-0.35,-0.08),Vector3(-0.25,-0.35,0),Vector3(0.25,-0.35,0),Vector3(0.29,-0.3,-0.09),Vector3(0.25,-0.3,-0.18),Vector3(0.18,-0.3,-0.25),Vector3(0.09,-0.3,-0.29),Vector3(0,-0.3,-0.3),Vector3(-0.09,-0.3,-0.29),Vector3(-0.18,-0.3,-0.25),Vector3(-0.25,-0.3,-0.18),Vector3(-0.29,-0.3,-0.09),Vector3(-0.3,-0.3,0),Vector3(0.3,-0.3,0),Vector3(0.33,-0.25,-0.11),Vector3(0.28,-0.25,-0.2),Vector3(0.2,-0.25,-0.28),Vector3(0.11,-0.25,-0.33),Vector3(0,-0.25,-0.35),Vector3(-0.11,-0.25,-0.33),Vector3(-0.2,-0.25,-0.28),Vector3(-0.28,-0.25,-0.2),Vector3(-0.33,-0.25,-0.11),Vector3(-0.35,-0.25,0),Vector3(0.35,-0.25,0),Vector3(0.37,-0.2,-0.12),Vector3(0.31,-0.2,-0.23),Vector3(0.23,-0.2,-0.31),Vector3(0.12,-0.2,-0.37),Vector3(0,-0.2,-0.38),Vector3(-0.12,-0.2,-0.37),Vector3(-0.23,-0.2,-0.31),Vector3(-0.31,-0.2,-0.23),Vector3(-0.37,-0.2,-0.12),Vector3(-0.38,-0.2,0),Vector3(0.38,-0.2,0),Vector3(0.39,-0.13,-0.13),Vector3(0.33,-0.13,-0.24),Vector3(0.24,-0.13,-0.33),Vector3(0.13,-0.13,-0.39),Vector3(0,-0.13,-0.41),Vector3(-0.13,-0.13,-0.39),Vector3(-0.24,-0.13,-0.33),Vector3(-0.33,-0.13,-0.24),Vector3(-0.39,-0.13,-0.13),Vector3(-0.41,-0.13,0),Vector3(0.41,-0.13,0),Vector3(0.4,-0.07,-0.13),Vector3(0.34,-0.07,-0.25),Vector3(0.25,-0.07,-0.34),Vector3(0.13,-0.07,-0.4),Vector3(0,-0.07,-0.43),Vector3(-0.13,-0.07,-0.4),Vector3(-0.25,-0.07,-0.34),Vector3(-0.34,-0.07,-0.25),Vector3(-0.4,-0.07,-0.13),Vector3(-0.43,-0.07,0),Vector3(0.43,-0.07,0),Vector3(0.41,0,-0.13),Vector3(0.35,0,-0.25),Vector3(0.25,0,-0.35),Vector3(0.13,0,-0.41),Vector3(0,0,-0.43),Vector3(-0.13,0,-0.41),Vector3(-0.25,0,-0.35),Vector3(-0.35,0,-0.25),Vector3(-0.41,0,-0.13),Vector3(-0.43,0,0),Vector3(0.43,0,0),Vector3(0.4,0.07,-0.13),Vector3(0.34,0.07,-0.25),Vector3(0.25,0.07,-0.34),Vector3(0.13,0.07,-0.4),Vector3(0,0.07,-0.43),Vector3(-0.13,0.07,-0.4),Vector3(-0.25,0.07,-0.34),Vector3(-0.34,0.07,-0.25),Vector3(-0.4,0.07,-0.13),Vector3(-0.43,0.07,0),Vector3(0.43,0.07,0),Vector3(0.39,0.13,-0.13),Vector3(0.33,0.13,-0.24),Vector3(0.24,0.13,-0.33),Vector3(0.13,0.13,-0.39),Vector3(0,0.13,-0.41),Vector3(-0.13,0.13,-0.39),Vector3(-0.24,0.13,-0.33),Vector3(-0.33,0.13,-0.24),Vector3(-0.39,0.13,-0.13),Vector3(-0.41,0.13,0),Vector3(0.41,0.13,0),Vector3(0.37,0.2,-0.12),Vector3(0.31,0.2,-0.23),Vector3(0.23,0.2,-0.31),Vector3(0.12,0.2,-0.37),Vector3(0,0.2,-0.38),Vector3(-0.12,0.2,-0.37),Vector3(-0.23,0.2,-0.31),Vector3(-0.31,0.2,-0.23),Vector3(-0.37,0.2,-0.12),Vector3(-0.38,0.2,0),Vector3(0.38,0.2,0),Vector3(0.33,0.25,-0.11),Vector3(0.28,0.25,-0.2),Vector3(0.2,0.25,-0.28),Vector3(0.11,0.25,-0.33),Vector3(0,0.25,-0.35),Vector3(-0.11,0.25,-0.33),Vector3(-0.2,0.25,-0.28),Vector3(-0.28,0.25,-0.2),Vector3(-0.33,0.25,-0.11),Vector3(-0.35,0.25,0),Vector3(0.35,0.25,0),Vector3(0.29,0.3,-0.09),Vector3(0.25,0.3,-0.18),Vector3(0.18,0.3,-0.25),Vector3(0.09,0.3,-0.29),Vector3(0,0.3,-0.3),Vector3(-0.09,0.3,-0.29),Vector3(-0.18,0.3,-0.25),Vector3(-0.25,0.3,-0.18),Vector3(-0.29,0.3,-0.09),Vector3(-0.3,0.3,0),Vector3(0.3,0.3,0),Vector3(0.24,0.35,-0.08),Vector3(0.2,0.35,-0.15),Vector3(0.15,0.35,-0.2),Vector3(0.08,0.35,-0.24),Vector3(0,0.35,-0.25),Vector3(-0.08,0.35,-0.24),Vector3(-0.15,0.35,-0.2),Vector3(-0.2,0.35,-0.15),Vector3(-0.24,0.35,-0.08),Vector3(-0.25,0.35,0),Vector3(0.25,0.35,0),Vector3(0.19,0.38,-0.06),Vector3(0.16,0.38,-0.11),Vector3(0.11,0.38,-0.16),Vector3(0.06,0.38,-0.19),Vector3(0,0.38,-0.2),Vector3(-0.06,0.38,-0.19),Vector3(-0.11,0.38,-0.16),Vector3(-0.16,0.38,-0.11),Vector3(-0.19,0.38,-0.06),Vector3(-0.2,0.38,0),Vector3(0.2,0.38,0),Vector3(0.13,0.41,-0.04),Vector3(0.11,0.41,-0.08),Vector3(0.08,0.41,-0.11),Vector3(0.04,0.41,-0.13),Vector3(0,0.41,-0.13),Vector3(-0.04,0.41,-0.13),Vector3(-0.08,0.41,-0.11),Vector3(-0.11,0.41,-0.08),Vector3(-0.13,0.41,-0.04),Vector3(-0.13,0.41,0),Vector3(0.13,0.41,0),Vector3(0.06,0.43,-0.02),Vector3(0.05,0.43,-0.04),Vector3(0.04,0.43,-0.05),Vector3(0.02,0.43,-0.06),Vector3(0,0.43,-0.07),Vector3(-0.02,0.43,-0.06),Vector3(-0.04,0.43,-0.05),Vector3(-0.05,0.43,-0.04),Vector3(-0.06,0.43,-0.02),Vector3(-0.07,0.43,0),Vector3(0.07,0.43,0),Vector3(0,-0.43,0),Vector3(0,0.43,0)]);
-{ .SetCoord }
+end;
+
+procedure InitCameraShapePart3;
+begin
+
+{ METHOD .Coord }
 IndexedFaceSet38.Coord := Coordinate39;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape37.Geometry := IndexedFaceSet38;
-Appearance40 := Appearance23;
-{ .SetAppearance }
-Shape37.Appearance := Appearance40;
-{ .AddChildren }
-Switch21.AddChildren([Shape37]);
-{ .AddChildren }
-Transform20.AddChildren([Switch21]);
+{ METHOD .Appearance }
+Shape37.Appearance := Appearance23;
+{ METHOD .FdChildren.Add }
+Switch21.FdChildren.Add(Shape37);
+{ METHOD .FdChildren.Add }
+Transform20.FdChildren.Add(Switch21);
 Group41 := TGroupNode.Create;
 Transform42 := TTransformNode.Create;
 Transform42.Rotation := Vector4(-1,0,0,0.373518);
 Transform42.Translation := Vector3(-0.038462,3.596312,3.297562);
 Shape43 := TShapeNode.Create;
-Appearance44 := Appearance23;
-{ .SetAppearance }
-Shape43.Appearance := Appearance44;
-IndexedFaceSet45 := IndexedFaceSet26;
-{ .SetGeometry }
-Shape43.Geometry := IndexedFaceSet45;
-{ .AddChild }
-Transform42.AddChildren([Shape43]);
-{ .AddChildren }
-Group41.AddChildren([Transform42]);
+{ METHOD .Appearance }
+Shape43.Appearance := Appearance23;
+{ METHOD .Geometry }
+Shape43.Geometry := IndexedFaceSet26;
+{ METHOD .FdChildren.Add }
+Transform42.FdChildren.Add(Shape43);
+{ METHOD .FdChildren.Add }
+Group41.FdChildren.Add(Transform42);
 Transform46 := TTransformNode.Create;
 Transform46.Scale := Vector3(1,0.727134,0.801457);
 Transform46.Translation := Vector3(-0.030769,1.738461,1.4436);
 Shape47 := TShapeNode.Create;
-Appearance48 := Appearance23;
-{ .SetAppearance }
-Shape47.Appearance := Appearance48;
-IndexedFaceSet49 := IndexedFaceSet30;
-{ .SetGeometry }
-Shape47.Geometry := IndexedFaceSet49;
-{ .AddChild }
-Transform46.AddChildren([Shape47]);
-{ .AddChildren }
-Group41.AddChildren([Transform46]);
+{ METHOD .Appearance }
+Shape47.Appearance := Appearance23;
+{ METHOD .Geometry }
+Shape47.Geometry := IndexedFaceSet30;
+{ METHOD .FdChildren.Add }
+Transform46.FdChildren.Add(Shape47);
+{ METHOD .FdChildren.Add }
+Group41.FdChildren.Add(Transform46);
 Transform50 := TTransformNode.Create;
 Transform50.Scale := Vector3(1,1,0.569444);
 Transform50.Translation := Vector3(0.015385,1.630769,-1.973274);
 Shape51 := TShapeNode.Create;
-Appearance52 := Appearance23;
-{ .SetAppearance }
-Shape51.Appearance := Appearance52;
-IndexedFaceSet53 := IndexedFaceSet34;
-{ .SetGeometry }
-Shape51.Geometry := IndexedFaceSet53;
-{ .AddChild }
-Transform50.AddChildren([Shape51]);
-{ .AddChildren }
-Group41.AddChildren([Transform50]);
+{ METHOD .Appearance }
+Shape51.Appearance := Appearance23;
+{ METHOD .Geometry }
+Shape51.Geometry := IndexedFaceSet34;
+{ METHOD .FdChildren.Add }
+Transform50.FdChildren.Add(Shape51);
+{ METHOD .FdChildren.Add }
+Group41.FdChildren.Add(Transform50);
 Transform54 := TTransformNode.Create;
 Transform54.Scale := Vector3(1.1,1.1,0.1);
 Transform54.Translation := Vector3(-0.015385,1.628515,-2.569231);
 Shape55 := TShapeNode.Create;
-Appearance56 := Appearance23;
-{ .SetAppearance }
-Shape55.Appearance := Appearance56;
-IndexedFaceSet57 := IndexedFaceSet38;
-{ .SetGeometry }
-Shape55.Geometry := IndexedFaceSet57;
-{ .AddChild }
-Transform54.AddChildren([Shape55]);
-{ .AddChildren }
-Group41.AddChildren([Transform54]);
-{ .AddChildren }
-Transform20.AddChildren([Group41]);
-{ .AddChildren }
-Group13.AddChildren([Transform20]);
-{ .AddGroup }
+{ METHOD .Appearance }
+Shape55.Appearance := Appearance23;
+{ METHOD .Geometry }
+Shape55.Geometry := IndexedFaceSet38;
+{ METHOD .FdChildren.Add }
+Transform54.FdChildren.Add(Shape55);
+{ METHOD .FdChildren.Add }
+Group41.FdChildren.Add(Transform54);
+{ METHOD .FdChildren.Add }
+Transform20.FdChildren.Add(Group41);
+{ METHOD .FdChildren.Add }
+Group13.FdChildren.Add(Transform20);
+end;
+
+procedure InitCameraShapePart4;
+begin
+
+{ METHOD .AddGroup }
 X3D0.AddChildren([Group13]);
+end;
+
+function CreateCameraShape: TX3DRootNode;
+begin
+InitCameraShapePart0;
+InitCameraShapePart1;
+InitCameraShapePart2;
+InitCameraShapePart3;
+InitCameraShapePart4;
 Result := X3D0;
 end;
 

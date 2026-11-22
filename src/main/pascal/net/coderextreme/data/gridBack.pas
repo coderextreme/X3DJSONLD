@@ -2,7 +2,7 @@ unit gridBack;
 
 interface
 
-uses X3DNodes;
+uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
 
 function CreategridBack: TX3DRootNode;
 
@@ -10,7 +10,6 @@ implementation
 
 uses CastleVectors;
 
-function CreategridBack: TX3DRootNode;
 var
 X3D0: TX3DRootNode;
 Group13: TGroupNode;
@@ -20,22 +19,36 @@ Material16: TMaterialNode;
 IndexedFaceSet17: TIndexedFaceSetNode;
 Coordinate18: TCoordinateNode;
 Color19: TColorNode;
+
+procedure InitgridBackPart0;
 begin
 X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Interchange';
 X3D0.ForceVersion.Major := 4;
 X3D0.ForceVersion.Minor := 0;
 X3D0.Meta['title'] := 'gridBack.x3d';
+{ METHOD .Meta }
 X3D0.Meta['description'] := 'Checkerboard grid background for X3D/VRML materials selection.';
+{ METHOD .Meta }
 X3D0.Meta['creator'] := 'David Roussel';
+{ METHOD .Meta }
 X3D0.Meta['translator'] := 'James Harney, Don Brutzman NPS';
+{ METHOD .Meta }
 X3D0.Meta['created'] := '8 April 2002';
+{ METHOD .Meta }
 X3D0.Meta['modified'] := '12 January 2014';
+{ METHOD .Meta }
 X3D0.Meta['reference'] := 'http://vrmlstuff.free.fr/materials';
+{ METHOD .Meta }
 X3D0.Meta['subject'] := 'Universal Media Material Library';
+{ METHOD .Meta }
 X3D0.Meta['identifier'] := 'https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.json';
+{ METHOD .Meta }
 X3D0.Meta['generator'] := 'Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html';
+{ METHOD .Meta }
 X3D0.Meta['license'] := '../license.html';
+{ METHOD .Meta }
+{ METHOD .Head }
 Group13 := TGroupNode.Create;
 Shape14 := TShapeNode.Create;
 Appearance15 := TAppearanceNode.Create;
@@ -43,9 +56,9 @@ Material16 := TMaterialNode.Create;
 Material16.AmbientIntensity := 0.01;
 Material16.DiffuseColor := Vector3(1,1,1);
 Material16.Shininess := 0.05;
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance15.Material := Material16;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape14.Appearance := Appearance15;
 IndexedFaceSet17 := TIndexedFaceSetNode.Create;
 IndexedFaceSet17.SetColorIndex([0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0]);
@@ -54,18 +67,23 @@ IndexedFaceSet17.SetCoordIndex([0,8,9,1,-1,1,9,10,2,-1,2,10,11,3,-1,3,11,12,4,-1
 IndexedFaceSet17.NormalPerVertex := False;
 Coordinate18 := TCoordinateNode.Create;
 Coordinate18.SetPoint([Vector3(-5.25,5.25,0),Vector3(-3.75,5.25,0),Vector3(-2.25,5.25,0),Vector3(-0.75,5.25,0),Vector3(0.75,5.25,0),Vector3(2.25,5.25,0),Vector3(3.75,5.25,0),Vector3(5.25,5.25,0),Vector3(-5.25,3.75,0),Vector3(-3.75,3.75,0),Vector3(-2.25,3.75,0),Vector3(-0.75,3.75,0),Vector3(0.75,3.75,0),Vector3(2.25,3.75,0),Vector3(3.75,3.75,0),Vector3(5.25,3.75,0),Vector3(-5.25,2.25,0),Vector3(-3.75,2.25,0),Vector3(-2.25,2.25,0),Vector3(-0.75,2.25,0),Vector3(0.75,2.25,0),Vector3(2.25,2.25,0),Vector3(3.75,2.25,0),Vector3(5.25,2.25,0),Vector3(-5.25,0.75,0),Vector3(-3.75,0.75,0),Vector3(-2.25,0.75,0),Vector3(-0.75,0.75,0),Vector3(0.75,0.75,0),Vector3(2.25,0.75,0),Vector3(3.75,0.75,0),Vector3(5.25,0.75,0),Vector3(-5.25,-0.75,0),Vector3(-3.75,-0.75,0),Vector3(-2.25,-0.75,0),Vector3(-0.75,-0.75,0),Vector3(0.75,-0.75,0),Vector3(2.25,-0.75,0),Vector3(3.75,-0.75,0),Vector3(5.25,-0.75,0),Vector3(-5.25,-2.25,0),Vector3(-3.75,-2.25,0),Vector3(-2.25,-2.25,0),Vector3(-0.75,-2.25,0),Vector3(0.75,-2.25,0),Vector3(2.25,-2.25,0),Vector3(3.75,-2.25,0),Vector3(5.25,-2.25,0),Vector3(-5.25,-3.75,0),Vector3(-3.75,-3.75,0),Vector3(-2.25,-3.75,0),Vector3(-0.75,-3.75,0),Vector3(0.75,-3.75,0),Vector3(2.25,-3.75,0),Vector3(3.75,-3.75,0),Vector3(5.25,-3.75,0),Vector3(-5.25,-5.25,0),Vector3(-3.75,-5.25,0),Vector3(-2.25,-5.25,0),Vector3(-0.75,-5.25,0),Vector3(0.75,-5.25,0),Vector3(2.25,-5.25,0),Vector3(3.75,-5.25,0),Vector3(5.25,-5.25,0)]);
-{ .SetCoord }
+{ METHOD .Coord }
 IndexedFaceSet17.Coord := Coordinate18;
 Color19 := TColorNode.Create;
 Color19.SetColor([Vector3(0.5,0.5,0.5),Vector3(0.75,0.75,0.75)]);
-{ .SetColor }
+{ METHOD .Color }
 IndexedFaceSet17.Color := Color19;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape14.Geometry := IndexedFaceSet17;
-{ .AddChildren }
-Group13.AddChildren([Shape14]);
-{ .AddGroup }
+{ METHOD .FdChildren.Add }
+Group13.FdChildren.Add(Shape14);
+{ METHOD .AddGroup }
 X3D0.AddChildren([Group13]);
+end;
+
+function CreategridBack: TX3DRootNode;
+begin
+InitgridBackPart0;
 Result := X3D0;
 end;
 

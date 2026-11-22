@@ -2,7 +2,7 @@ unit Filters;
 
 interface
 
-uses X3DNodes;
+uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
 
 function CreateFilters: TX3DRootNode;
 
@@ -10,7 +10,6 @@ implementation
 
 uses CastleVectors;
 
-function CreateFilters: TX3DRootNode;
 var
 X3D0: TX3DRootNode;
 Group14: TGroupNode;
@@ -63,42 +62,57 @@ Gain60: TGainNode;
 Analyser61: TAnalyserNode;
 BiquadFilter62: TBiquadFilterNode;
 AudioClip63: TAudioClipNode;
+
+procedure InitFiltersPart0;
 begin
 X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Full';
 X3D0.ForceVersion.Major := 4;
 X3D0.ForceVersion.Minor := 0;
 X3D0.Meta['title'] := 'Filters.x3d';
+{ METHOD .Meta }
 X3D0.Meta['description'] := 'This X3D scene involves three sound sources. Each of them is visualized by a 3D object (in our case is a sphere) that depicts the sound effects. Specifically, we have added filters through of them we are able to manage the different sound effects in an impressive way. Filters can be composed of a number of attributes, frequency, detune, gain and the quality factor which also known as Q. Furthermore, the filters are classified in some specific types, depending on the sound effects that produce. In detail, there is the Low-pass filter which can create more muffled sound. Another one is the High-pass filter, which is used to generate tinny sound. Equally important is the Band-pass filter, which cuts off low and high frequencies and passes through only these within a certain range. On the contrary, the Notch filter has exactly the opposite operation of the Band-pass filter. Then is the Low-shelf filter, its role is to change the amount of bass in a sound, as a result the frequencies that are lower than the current frequency get a boost, while them that are over it remain unchanged. Next, the High-shelf filter is responsible for the quantity of treble in a sound. Moreover, Peaking filter is used in order to handle the amount of midrange in a sound. Lastly, there is the All-pass filter, whose role is to introduce phaser effects.';
+{ METHOD .Meta }
 X3D0.Meta['info'] := 'This work presents an innovative solution of the spatial sound in X3DOM framework, that based on a combinational methodology. Specifically, we suggested the enrichment of X3DOM with spatial sound features, using both the X3D sound nodes and the structure of Web Audio API.';
+{ METHOD .Meta }
 X3D0.Meta['creator'] := 'Efi Lakka, Athanasios Malamos, Dick Puk, Don Brutzman';
+{ METHOD .Meta }
 X3D0.Meta['created'] := '28 October 2020';
+{ METHOD .Meta }
 X3D0.Meta['modified'] := '5 December 2021';
+{ METHOD .Meta }
 X3D0.Meta['reference'] := 'CHANGELOG.txt';
+{ METHOD .Meta }
 X3D0.Meta['TODO'] := 'credit for audio files';
+{ METHOD .Meta }
 X3D0.Meta['reference'] := 'https://www.medialab.hmu.gr/minipages/x3domAudio';
+{ METHOD .Meta }
 X3D0.Meta['identifier'] := 'https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/Filters.x3d';
+{ METHOD .Meta }
 X3D0.Meta['generator'] := 'X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit';
+{ METHOD .Meta }
 X3D0.Meta['license'] := '../license.html';
+{ METHOD .Meta }
+{ METHOD .Head }
 Group14 := TGroupNode.Create;
 WorldInfo15 := TWorldInfoNode.Create;
 WorldInfo15.Title := 'Filters.x3d';
-{ .AddChildren }
-Group14.AddChildren([WorldInfo15]);
+{ METHOD .FdChildren.Add }
+Group14.FdChildren.Add(WorldInfo15);
 NavigationInfo16 := TNavigationInfoNode.Create;
-{ .AddChildren }
-Group14.AddChildren([NavigationInfo16]);
+{ METHOD .FdChildren.Add }
+Group14.FdChildren.Add(NavigationInfo16);
 Background17 := TBackgroundNode.Create;
 Background17.SetSkyColor([Vector3(0.2,0.2,0.2)]);
-{ .AddChildren }
-Group14.AddChildren([Background17]);
+{ METHOD .FdChildren.Add }
+Group14.FdChildren.Add(Background17);
 Viewpoint18 := TViewpointNode.Create;
 Viewpoint18.Description := 'View entire audio model';
 Viewpoint18.Orientation := Vector4(1,0,0,-0.5);
 Viewpoint18.Position := Vector3(0,500,600);
 Viewpoint18.RetainUserOffsets := True;
-{ .AddChildren }
-Group14.AddChildren([Viewpoint18]);
+{ METHOD .FdChildren.Add }
+Group14.FdChildren.Add(Viewpoint18);
 Transform19 := TTransformNode.Create;
 Transform19.Translation := Vector3(-200,50,0);
 Shape20 := TShapeNode.Create;
@@ -107,18 +121,23 @@ Material22 := TMaterialNode.Create;
 Material22.DiffuseColor := Vector3(0.1,0.1,0.1);
 Material22.EmissiveColor := Vector3(0.8,0.8,0.8);
 Material22.SpecularColor := Vector3(0.01,0.01,0.01);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance21.Material := Material22;
-{ .SetAppearance }
+end;
+
+procedure InitFiltersPart1;
+begin
+
+{ METHOD .Appearance }
 Shape20.Appearance := Appearance21;
 Sphere23 := TSphereNode.Create;
 Sphere23.Radius := 30;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape20.Geometry := Sphere23;
-{ .AddChild }
-Transform19.AddChildren([Shape20]);
-{ .AddChildren }
-Group14.AddChildren([Transform19]);
+{ METHOD .FdChildren.Add }
+Transform19.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Group14.FdChildren.Add(Transform19);
 Transform24 := TTransformNode.Create;
 Transform24.Translation := Vector3(0,50,0);
 Shape25 := TShapeNode.Create;
@@ -127,18 +146,18 @@ Material27 := TMaterialNode.Create;
 Material27.DiffuseColor := Vector3(0.1,0.1,0.1);
 Material27.EmissiveColor := Vector3(0.8,0.8,0.8);
 Material27.SpecularColor := Vector3(0.01,0.01,0.01);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance26.Material := Material27;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape25.Appearance := Appearance26;
 Sphere28 := TSphereNode.Create;
 Sphere28.Radius := 30;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape25.Geometry := Sphere28;
-{ .AddChild }
-Transform24.AddChildren([Shape25]);
-{ .AddChildren }
-Group14.AddChildren([Transform24]);
+{ METHOD .FdChildren.Add }
+Transform24.FdChildren.Add(Shape25);
+{ METHOD .FdChildren.Add }
+Group14.FdChildren.Add(Transform24);
 Transform29 := TTransformNode.Create;
 Transform29.Translation := Vector3(200,50,0);
 Shape30 := TShapeNode.Create;
@@ -147,42 +166,47 @@ Material32 := TMaterialNode.Create;
 Material32.DiffuseColor := Vector3(0.1,0.1,0.1);
 Material32.EmissiveColor := Vector3(0.8,0.8,0.8);
 Material32.SpecularColor := Vector3(0.01,0.01,0.01);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance31.Material := Material32;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape30.Appearance := Appearance31;
 Sphere33 := TSphereNode.Create;
 Sphere33.Radius := 30;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape30.Geometry := Sphere33;
-{ .AddChild }
-Transform29.AddChildren([Shape30]);
-{ .AddChildren }
-Group14.AddChildren([Transform29]);
+{ METHOD .FdChildren.Add }
+Transform29.FdChildren.Add(Shape30);
+{ METHOD .FdChildren.Add }
+Group14.FdChildren.Add(Transform29);
 Transform34 := TTransformNode.Create;
 Transform34.Translation := Vector3(0,50,0);
-{ .AddChildren }
-Group14.AddChildren([Transform34]);
+{ METHOD .FdChildren.Add }
+Group14.FdChildren.Add(Transform34);
 Transform35 := TTransformNode.Create;
+end;
+
+procedure InitFiltersPart2;
+begin
+
 Transform35.Translation := Vector3(0,100,0);
-{ .AddChildren }
-Group14.AddChildren([Transform35]);
+{ METHOD .FdChildren.Add }
+Group14.FdChildren.Add(Transform35);
 Transform36 := TTransformNode.Create;
 Transform36.Translation := Vector3(15,100,0);
-{ .AddChildren }
-Group14.AddChildren([Transform36]);
+{ METHOD .FdChildren.Add }
+Group14.FdChildren.Add(Transform36);
 Transform37 := TTransformNode.Create;
 Transform37.Translation := Vector3(30,100,0);
-{ .AddChildren }
-Group14.AddChildren([Transform37]);
+{ METHOD .FdChildren.Add }
+Group14.FdChildren.Add(Transform37);
 Transform38 := TTransformNode.Create;
 Transform38.Translation := Vector3(-15,100,0);
-{ .AddChildren }
-Group14.AddChildren([Transform38]);
+{ METHOD .FdChildren.Add }
+Group14.FdChildren.Add(Transform38);
 Transform39 := TTransformNode.Create;
 Transform39.Translation := Vector3(-30,100,0);
-{ .AddChildren }
-Group14.AddChildren([Transform39]);
+{ METHOD .FdChildren.Add }
+Group14.FdChildren.Add(Transform39);
 Transform40 := TTransformNode.Create;
 Shape41 := TShapeNode.Create;
 Appearance42 := TAppearanceNode.Create;
@@ -190,22 +214,22 @@ Material43 := TMaterialNode.Create;
 Material43.DiffuseColor := Vector3(0.1,0.1,0.1);
 Material43.Shininess := 0.8;
 Material43.SpecularColor := Vector3(0.5,0.6,0.7);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance42.Material := Material43;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape41.Appearance := Appearance42;
 Cylinder44 := TCylinderNode.Create;
 Cylinder44.Radius := 500;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape41.Geometry := Cylinder44;
-{ .AddChild }
-Transform40.AddChildren([Shape41]);
-{ .AddChildren }
-Group14.AddChildren([Transform40]);
+{ METHOD .FdChildren.Add }
+Transform40.FdChildren.Add(Shape41);
+{ METHOD .FdChildren.Add }
+Group14.FdChildren.Add(Transform40);
 ListenerPointSource45 := TListenerPointSourceNode.Create;
 ListenerPointSource45.TrackCurrentView := True;
-{ .AddChildren }
-Group14.AddChildren([ListenerPointSource45]);
+{ METHOD .FdChildren.Add }
+Group14.FdChildren.Add(ListenerPointSource45);
 StreamAudioDestination46 := TStreamAudioDestinationNode.Create;
 DynamicsCompressor47 := TDynamicsCompressorNode.Create;
 Gain48 := TGainNode.Create;
@@ -215,22 +239,26 @@ Analyser51 := TAnalyserNode.Create;
 BiquadFilter52 := TBiquadFilterNode.Create;
 BiquadFilter52.Detune := 50;
 BiquadFilter52.Frequency := 600;
+end;
+
+procedure InitFiltersPart3;
+begin
+
 BiquadFilter52.QualityFactor := 30;
-BiquadFilter52.Type := 'ALLPASS';
 AudioClip53 := TAudioClipNode.Create;
 AudioClip53.Description := 'Techno beat';
 AudioClip53.Loop := True;
 AudioClip53.SetUrl(['sound/techno_beat.mp3','https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/techno_beat.mp3']);
-{ .AddChildren }
-BiquadFilter52.AddChildren([AudioClip53]);
-{ .AddChildren }
-Analyser51.AddChildren([BiquadFilter52]);
-{ .AddChildren }
-Gain50.AddChildren([Analyser51]);
-{ .AddChildren }
-SpatialSound49.AddChildren([Gain50]);
-{ .AddChildren }
-Gain48.AddChildren([SpatialSound49]);
+{ METHOD .FdChildren.Add }
+BiquadFilter52.FdChildren.Add(AudioClip53);
+{ METHOD .FdChildren.Add }
+Analyser51.FdChildren.Add(BiquadFilter52);
+{ METHOD .FdChildren.Add }
+Gain50.FdChildren.Add(Analyser51);
+{ METHOD .FdChildren.Add }
+SpatialSound49.FdChildren.Add(Gain50);
+{ METHOD .FdChildren.Add }
+Gain48.FdChildren.Add(SpatialSound49);
 SpatialSound54 := TSpatialSoundNode.Create;
 Gain55 := TGainNode.Create;
 Analyser56 := TAnalyserNode.Create;
@@ -238,50 +266,62 @@ BiquadFilter57 := TBiquadFilterNode.Create;
 BiquadFilter57.Detune := 15;
 BiquadFilter57.Frequency := 600;
 BiquadFilter57.QualityFactor := 15;
-BiquadFilter57.Type := 'ALLPASS';
 AudioClip58 := TAudioClipNode.Create;
 AudioClip58.Description := 'Simple beat';
 AudioClip58.Loop := True;
 AudioClip58.SetUrl(['sound/beat.mp3','https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/beat.mp3']);
-{ .AddChildren }
-BiquadFilter57.AddChildren([AudioClip58]);
-{ .AddChildren }
-Analyser56.AddChildren([BiquadFilter57]);
-{ .AddChildren }
-Gain55.AddChildren([Analyser56]);
-{ .AddChildren }
-SpatialSound54.AddChildren([Gain55]);
-{ .AddChildren }
-Gain48.AddChildren([SpatialSound54]);
+{ METHOD .FdChildren.Add }
+BiquadFilter57.FdChildren.Add(AudioClip58);
+{ METHOD .FdChildren.Add }
+Analyser56.FdChildren.Add(BiquadFilter57);
+{ METHOD .FdChildren.Add }
+Gain55.FdChildren.Add(Analyser56);
+{ METHOD .FdChildren.Add }
+SpatialSound54.FdChildren.Add(Gain55);
+{ METHOD .FdChildren.Add }
+Gain48.FdChildren.Add(SpatialSound54);
 SpatialSound59 := TSpatialSoundNode.Create;
 Gain60 := TGainNode.Create;
 Analyser61 := TAnalyserNode.Create;
 BiquadFilter62 := TBiquadFilterNode.Create;
 BiquadFilter62.Frequency := 1000;
 BiquadFilter62.QualityFactor := 0;
-BiquadFilter62.Type := 'ALLPASS';
 AudioClip63 := TAudioClipNode.Create;
 AudioClip63.Description := 'Wobble loop';
 AudioClip63.Loop := True;
 AudioClip63.SetUrl(['sound/wobble_loop.mp3','https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/wobble_loop.mp3']);
-{ .AddChildren }
-BiquadFilter62.AddChildren([AudioClip63]);
-{ .AddChildren }
-Analyser61.AddChildren([BiquadFilter62]);
-{ .AddChildren }
-Gain60.AddChildren([Analyser61]);
-{ .AddChildren }
-SpatialSound59.AddChildren([Gain60]);
-{ .AddChildren }
-Gain48.AddChildren([SpatialSound59]);
-{ .AddChildren }
-DynamicsCompressor47.AddChildren([Gain48]);
-{ .AddChildren }
-StreamAudioDestination46.AddChildren([DynamicsCompressor47]);
-{ .AddChildren }
-Group14.AddChildren([StreamAudioDestination46]);
-{ .AddGroup }
+{ METHOD .FdChildren.Add }
+BiquadFilter62.FdChildren.Add(AudioClip63);
+{ METHOD .FdChildren.Add }
+Analyser61.FdChildren.Add(BiquadFilter62);
+{ METHOD .FdChildren.Add }
+Gain60.FdChildren.Add(Analyser61);
+{ METHOD .FdChildren.Add }
+SpatialSound59.FdChildren.Add(Gain60);
+end;
+
+procedure InitFiltersPart4;
+begin
+
+{ METHOD .FdChildren.Add }
+Gain48.FdChildren.Add(SpatialSound59);
+{ METHOD .FdChildren.Add }
+DynamicsCompressor47.FdChildren.Add(Gain48);
+{ METHOD .FdChildren.Add }
+StreamAudioDestination46.FdChildren.Add(DynamicsCompressor47);
+{ METHOD .FdChildren.Add }
+Group14.FdChildren.Add(StreamAudioDestination46);
+{ METHOD .AddGroup }
 X3D0.AddChildren([Group14]);
+end;
+
+function CreateFilters: TX3DRootNode;
+begin
+InitFiltersPart0;
+InitFiltersPart1;
+InitFiltersPart2;
+InitFiltersPart3;
+InitFiltersPart4;
 Result := X3D0;
 end;
 

@@ -2,7 +2,7 @@ unit bubs2;
 
 interface
 
-uses X3DNodes;
+uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
 
 function Createbubs2: TX3DRootNode;
 
@@ -10,7 +10,6 @@ implementation
 
 uses CastleVectors;
 
-function Createbubs2: TX3DRootNode;
 var
 X3D0: TX3DRootNode;
 Group10: TGroupNode;
@@ -25,40 +24,51 @@ Sphere18: TSphereNode;
 Appearance19: TAppearanceNode;
 Material20: TMaterialNode;
 Script21: TScriptNode;
-X3DField22: TX3DField;
-X3DField23: TX3DField;
-X3DField24: TX3DField;
-X3DField25: TX3DField;
-X3DField26: TX3DField;
+SFVec3f22: TSFVec3f;
+SFVec3f23: TSFVec3f;
+SFVec3f24: TSFVec3f;
+SFVec3f25: TSFVec3f;
+SFFloat26: TSFFloat;
 TimeSensor27: TTimeSensorNode;
 X3DPrototype31: TX3DPrototypeNode;
 X3DPrototype32: TX3DPrototypeNode;
 X3DPrototype33: TX3DPrototypeNode;
 X3DPrototype34: TX3DPrototypeNode;
+
+procedure Initbubs2Part0;
 begin
 X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Immersive';
 X3D0.ForceVersion.Major := 4;
 X3D0.ForceVersion.Minor := 0;
 X3D0.Components['Scripting'] := 1;
+{ METHOD .Component }
 X3D0.Meta['title'] := 'bubs2.x3d';
+{ METHOD .Meta }
 X3D0.Meta['creator'] := 'John Carlson';
+{ METHOD .Meta }
 X3D0.Meta['description'] := 'Tour around a prismatic sphere';
+{ METHOD .Meta }
 X3D0.Meta['generator'] := 'X3D-Edit, https://savage.nps.edu/X3D-Edit';
+{ METHOD .Meta }
 X3D0.Meta['identifier'] := 'https://coderextreme.net/X3DJSONLD/src/main/data/geo.x3d';
+{ METHOD .Meta }
 X3D0.Meta['translated'] := '13 March 2016';
+{ METHOD .Meta }
 X3D0.Meta['generator'] := 'X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html';
+{ METHOD .Meta }
+{ METHOD .Head }
 Group10 := TGroupNode.Create;
 NavigationInfo11 := TNavigationInfoNode.Create;
 NavigationInfo11.SetType(['EXAMINE']);
-{ .AddChildren }
-Group10.AddChildren([NavigationInfo11]);
+{ METHOD .FdChildren.Add }
+Group10.FdChildren.Add(NavigationInfo11);
 Viewpoint12 := TViewpointNode.Create;
 Viewpoint12.Position := Vector3(0,0,4);
 Viewpoint12.Orientation := Vector4(1,0,0,0);
 Viewpoint12.Description := 'Bubbles in action';
-{ .AddChildren }
-Group10.AddChildren([Viewpoint12]);
+{ METHOD .FdChildren.Add }
+Group10.FdChildren.Add(Viewpoint12);
 Background13 := TBackgroundNode.Create;
 Background13.SetBackUrl(['../resources/images/BK.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png']);
 Background13.SetBottomUrl(['../resources/images/BT.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png']);
@@ -66,62 +76,51 @@ Background13.SetFrontUrl(['../resources/images/FR.png','https://coderextreme.net
 Background13.SetLeftUrl(['../resources/images/LF.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png']);
 Background13.SetRightUrl(['../resources/images/RT.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png']);
 Background13.SetTopUrl(['../resources/images/TP.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png']);
-{ .AddChildren }
-Group10.AddChildren([Background13]);
+{ METHOD .FdChildren.Add }
+Group10.FdChildren.Add(Background13);
 X3DPrototype14 := TX3DPrototype.Create;
-X3DPrototype14.NameField := 'Bubble';
 X3DPrototype15 := TX3DPrototype.Create;
 Transform16 := TTransformNode.Create;
 Shape17 := TShapeNode.Create;
 Sphere18 := TSphereNode.Create;
 Sphere18.Radius := 0.25;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape17.Geometry := Sphere18;
 Appearance19 := TAppearanceNode.Create;
 Material20 := TMaterialNode.Create;
 Material20.DiffuseColor := Vector3(1,0,0);
 Material20.Transparency := 0.2;
-{ .SetMaterial }
+end;
+
+procedure Initbubs2Part1;
+begin
+
+{ METHOD .SetMaterial }
 Appearance19.Material := Material20;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape17.Appearance := Appearance19;
-{ .AddChild }
-Transform16.AddChildren([Shape17]);
+{ METHOD .FdChildren.Add }
+Transform16.FdChildren.Add(Shape17);
 Script21 := TScriptNode.Create;
-X3DField22 := TX3DField.Create;
-X3DField22.NameField := 'scale';
-X3DField22.AccessType := 'inputOutput';
-X3DField22.Type := 'SFVec3f';
-X3DField22.Value := '1 1 1';
-{ .SetX3DField }
-Script21.X3DField := X3DField22;
-X3DField23 := TX3DField.Create;
-X3DField23.NameField := 'translation';
-X3DField23.AccessType := 'inputOutput';
-X3DField23.Type := 'SFVec3f';
-X3DField23.Value := '0 0 0';
-{ .AddX3DField }
-Script21.X3DField := X3DField23;
-X3DField24 := TX3DField.Create;
-X3DField24.NameField := 'velocity';
-X3DField24.AccessType := 'inputOutput';
-X3DField24.Type := 'SFVec3f';
-X3DField24.Value := '0 0 0';
-{ .AddX3DField }
-Script21.X3DField := X3DField24;
-X3DField25 := TX3DField.Create;
-X3DField25.NameField := 'scalvel';
-X3DField25.AccessType := 'inputOutput';
-X3DField25.Type := 'SFVec3f';
-X3DField25.Value := '0 0 0';
-{ .AddX3DField }
-Script21.X3DField := X3DField25;
-X3DField26 := TX3DField.Create;
-X3DField26.NameField := 'set_fraction';
-X3DField26.AccessType := 'inputOnly';
-X3DField26.Type := 'SFFloat';
-{ .AddX3DField }
-Script21.X3DField := X3DField26;
+SFVec3f22 := TSFVec3f.CreateUndefined(Script21, false, 'scale');
+SFVec3f22.Value := '1 1 1';
+{ METHOD .Fd.AddCustomField }
+Script21.AddCustomField(SFVec3f22);
+SFVec3f23 := TSFVec3f.CreateUndefined(Script21, false, 'translation');
+SFVec3f23.Value := '0 0 0';
+{ METHOD .Fd.AddCustomField }
+Script21.AddCustomField(SFVec3f23);
+SFVec3f24 := TSFVec3f.CreateUndefined(Script21, false, 'velocity');
+SFVec3f24.Value := '0 0 0';
+{ METHOD .Fd.AddCustomField }
+Script21.AddCustomField(SFVec3f24);
+SFVec3f25 := TSFVec3f.CreateUndefined(Script21, false, 'scalvel');
+SFVec3f25.Value := '0 0 0';
+{ METHOD .Fd.AddCustomField }
+Script21.AddCustomField(SFVec3f25);
+SFFloat26 := TSFFloat.CreateUndefined(Script21, false, 'set_fraction');
+{ METHOD .Fd.AddCustomField }
+Script21.AddCustomField(SFFloat26);
 
 Script21.SetSourceCode('''ecmascript:\n"+
 "function initialize() {\n"+
@@ -165,43 +164,51 @@ Script21.SetSourceCode('''ecmascript:\n"+
 "	initialize();\n"+
 "    }\n"+
 "}''');
-{ .AddChildren }
-Transform16.AddChildren([Script21]);
+{ METHOD .FdChildren.Add }
+Transform16.FdChildren.Add(Script21);
 TimeSensor27 := TTimeSensorNode.Create;
 TimeSensor27.CycleInterval := 10;
 TimeSensor27.Loop := True;
-{ .AddChildren }
-Transform16.AddChildren([TimeSensor27]);
-Transform16.AddRoute(Script21.EventTranslation_changed, Transform16.FdTranslation);
-{ .AddX3DRoute }
-Transform16.AddRoute(Script21.EventScale_changed, Transform16.FdScale);
-{ .AddX3DRoute }
-Transform16.AddRoute(TimeSensor27.EventFraction_changed, Script21.EventSet_fraction);
-{ .AddX3DRoute }
-{ .SetTransform }
-X3DPrototype15.Transform := Transform16;
-{ .SetX3DPrototype }
-X3DPrototype14.X3DPrototype := X3DPrototype15;
-{ .AddX3DPrototype }
-Group10.X3DPrototype := X3DPrototype14;
+{ METHOD .FdChildren.Add }
+Transform16.FdChildren.Add(TimeSensor27);
+{ Original "bounce.EventTranslation_changed TO body_trans.EventSet_translation }
+{ Sample bounce.EventTranslation_changed TO body_trans.EventSet_translation}
+Transform16.AddRoute(Script21.EventTranslation_changed, Transform16.set_EventSet_translation);
+{ METHOD .AddX3DROUTE }
+{ Original "bounce.EventScale_changed TO body_trans.scale }
+{ Sample bounce.EventScale_changed TO body_trans.scale}
+Transform16.AddRoute(Script21.EventScale_changed, Transform16.set_scale);
+{ METHOD .AddX3DROUTE }
+{ Original "bubbleClock.EventFraction_changed TO bounce.EventSet_fraction }
+{ Sample bubbleClock.EventFraction_changed TO bounce.EventSet_fraction}
+Transform16.AddRoute(TimeSensor27.EventFraction_changed, Script21.set_EventSet_fraction);
+{ METHOD .AddX3DROUTE }
+{ METHOD .AddTransform }
+X3DPrototype15.AddTransform([Transform16]);
+{ METHOD .AddX3DPrototype }
+X3DPrototype14.AddX3DPrototype([X3DPrototype15]);
+{ METHOD .AddX3DPrototype }
+Group10.AddX3DPrototype([X3DPrototype14]);
 X3DPrototype31 := TX3DPrototypeNode.Create;
-X3DPrototype31.NameField := 'Bubble';
-{ .AddX3DPrototype }
-Group10.X3DPrototype := X3DPrototype31;
+{ METHOD .AddX3DPrototype }
+Group10.AddX3DPrototype([X3DPrototype31]);
 X3DPrototype32 := TX3DPrototypeNode.Create;
-X3DPrototype32.NameField := 'Bubble';
-{ .AddX3DPrototype }
-Group10.X3DPrototype := X3DPrototype32;
+{ METHOD .AddX3DPrototype }
+Group10.AddX3DPrototype([X3DPrototype32]);
 X3DPrototype33 := TX3DPrototypeNode.Create;
-X3DPrototype33.NameField := 'Bubble';
-{ .AddX3DPrototype }
-Group10.X3DPrototype := X3DPrototype33;
+{ METHOD .AddX3DPrototype }
+Group10.AddX3DPrototype([X3DPrototype33]);
 X3DPrototype34 := TX3DPrototypeNode.Create;
-X3DPrototype34.NameField := 'Bubble';
-{ .AddX3DPrototype }
-Group10.X3DPrototype := X3DPrototype34;
-{ .AddGroup }
+{ METHOD .AddX3DPrototype }
+Group10.AddX3DPrototype([X3DPrototype34]);
+{ METHOD .AddGroup }
 X3D0.AddChildren([Group10]);
+end;
+
+function Createbubs2: TX3DRootNode;
+begin
+Initbubs2Part0;
+Initbubs2Part1;
 Result := X3D0;
 end;
 

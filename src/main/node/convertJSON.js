@@ -86,7 +86,7 @@ export default function convertJSON(options) {
 				continue;
 			}
 			var NS = "https://www.web3d.org/specifications/x3d";
-			console.warn("loading", file, "for conversion");
+			console.debug("loading", file, "for conversion");
 			// swap around meta and component ordering
 			let m = json.X3D.head.meta;
 			let c = json.X3D.head.component;

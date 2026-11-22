@@ -2,7 +2,7 @@ unit qq3;
 
 interface
 
-uses X3DNodes;
+uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
 
 function Createqq3: TX3DRootNode;
 
@@ -10,7 +10,6 @@ implementation
 
 uses CastleVectors;
 
-function Createqq3: TX3DRootNode;
 var
 X3D0: TX3DRootNode;
 Group10: TGroupNode;
@@ -38,22 +37,32 @@ Transform31: TTransformNode;
 X3DPrototype32: TX3DPrototypeNode;
 Transform33: TTransformNode;
 X3DPrototype34: TX3DPrototypeNode;
+
+procedure Initqq3Part0;
 begin
 X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Immersive';
 X3D0.ForceVersion.Major := 4;
 X3D0.ForceVersion.Minor := 0;
 X3D0.Meta['title'] := 'qq3.x3d';
+{ METHOD .Meta }
 X3D0.Meta['creator'] := 'John Carlson';
+{ METHOD .Meta }
 X3D0.Meta['translator'] := 'John Carlson';
+{ METHOD .Meta }
 X3D0.Meta['created'] := '11 Jan 2015';
+{ METHOD .Meta }
 X3D0.Meta['modified'] := '05 May 2017';
+{ METHOD .Meta }
 X3D0.Meta['description'] := '12 extrusions';
+{ METHOD .Meta }
 X3D0.Meta['identifier'] := 'https://coderextreme.net/x3d/qq3.x3d';
+{ METHOD .Meta }
 X3D0.Meta['generator'] := 'manual';
+{ METHOD .Meta }
+{ METHOD .Head }
 Group10 := TGroupNode.Create;
 X3DPrototype11 := TX3DPrototype.Create;
-X3DPrototype11.NameField := 'Process';
 X3DPrototype12 := TX3DPrototype.Create;
 Group13 := TGroupNode.Create;
 { left }
@@ -63,20 +72,20 @@ Shape15 := TShapeNode.Create;
 Appearance16 := TAppearanceNode.Create;
 Material17 := TMaterialNode.Create;
 Material17.DiffuseColor := Vector3(0.7,1,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance16.Material := Material17;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape15.Appearance := Appearance16;
 Extrusion18 := TExtrusionNode.Create;
 Extrusion18.SetSpine([Vector3(-2.5,0,0),Vector3(-2,0,0),Vector3(-1.5,0,0)]);
 Extrusion18.CreaseAngle := 0.785;
 Extrusion18.SetCrossSection([Vector2(1,0),Vector2(0.92,-0.38),Vector2(0.71,-0.71),Vector2(0.38,-0.92),Vector2(0,-1),Vector2(-0.38,-0.92),Vector2(-0.71,-0.71),Vector2(-0.92,-0.38),Vector2(-1,0),Vector2(-0.92,0.38),Vector2(-0.71,0.71),Vector2(-0.38,0.92),Vector2(0,1),Vector2(0.38,0.92),Vector2(0.71,0.71),Vector2(0.92,0.38),Vector2(1,0)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape15.Geometry := Extrusion18;
-{ .AddChild }
-Transform14.AddChildren([Shape15]);
-{ .AddChildren }
-Group13.AddChildren([Transform14]);
+{ METHOD .FdChildren.Add }
+Transform14.FdChildren.Add(Shape15);
+{ METHOD .FdChildren.Add }
+Group13.FdChildren.Add(Transform14);
 { right }
 Transform19 := TTransformNode.Create;
 Transform19.Scale := Vector3(0.5,0.5,0.5);
@@ -84,73 +93,79 @@ Shape20 := TShapeNode.Create;
 Appearance21 := TAppearanceNode.Create;
 Material22 := TMaterialNode.Create;
 Material22.DiffuseColor := Vector3(0,0.7,1);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance21.Material := Material22;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape20.Appearance := Appearance21;
 Extrusion23 := TExtrusionNode.Create;
+end;
+
+procedure Initqq3Part1;
+begin
+
 Extrusion23.SetSpine([Vector3(1.5,0,0),Vector3(2,0,0),Vector3(2.5,0,0)]);
 Extrusion23.CreaseAngle := 0.785;
 Extrusion23.SetCrossSection([Vector2(1,0),Vector2(0.92,-0.38),Vector2(0.71,-0.71),Vector2(0.38,-0.92),Vector2(0,-1),Vector2(-0.38,-0.92),Vector2(-0.71,-0.71),Vector2(-0.92,-0.38),Vector2(-1,0),Vector2(-0.92,0.38),Vector2(-0.71,0.71),Vector2(-0.38,0.92),Vector2(0,1),Vector2(0.38,0.92),Vector2(0.71,0.71),Vector2(0.92,0.38),Vector2(1,0)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape20.Geometry := Extrusion23;
-{ .AddChild }
-Transform19.AddChildren([Shape20]);
-{ .AddChildren }
-Group13.AddChildren([Transform19]);
+{ METHOD .FdChildren.Add }
+Transform19.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Group13.FdChildren.Add(Transform19);
 { up }
 Transform24 := TTransformNode.Create;
 Transform24.Scale := Vector3(0.5,0.5,0.5);
-Shape25 := Shape20;
-{ .AddChild }
-Transform24.AddChildren([Shape25]);
-{ .AddChildren }
-Group13.AddChildren([Transform24]);
+{ METHOD .FdChildren.Add }
+Transform24.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Group13.FdChildren.Add(Transform24);
 { down }
 Transform26 := TTransformNode.Create;
 Transform26.Scale := Vector3(0.5,0.5,0.5);
-Shape27 := Shape15;
-{ .AddChild }
-Transform26.AddChildren([Shape27]);
-{ .AddChildren }
-Group13.AddChildren([Transform26]);
-{ .SetGroup }
-X3DPrototype12.Group := Group13;
-{ .SetX3DPrototype }
-X3DPrototype11.X3DPrototype := X3DPrototype12;
-{ .SetX3DPrototype }
-Group10.X3DPrototype := X3DPrototype11;
+{ METHOD .FdChildren.Add }
+Transform26.FdChildren.Add(Shape15);
+{ METHOD .FdChildren.Add }
+Group13.FdChildren.Add(Transform26);
+{ METHOD .AddGroup }
+X3DPrototype12.AddChildren([Group13]);
+{ METHOD .AddX3DPrototype }
+X3DPrototype11.AddX3DPrototype([X3DPrototype12]);
+{ METHOD .AddX3DPrototype }
+Group10.AddX3DPrototype([X3DPrototype11]);
 Viewpoint28 := TViewpointNode.Create;
 Viewpoint28.Description := 'Process pipes';
 Viewpoint28.Orientation := Vector4(1,0,0,-0.4);
 Viewpoint28.Position := Vector3(0,5,12);
-{ .AddChildren }
-Group10.AddChildren([Viewpoint28]);
+{ METHOD .FdChildren.Add }
+Group10.FdChildren.Add(Viewpoint28);
 Transform29 := TTransformNode.Create;
 Transform29.Translation := Vector3(0,-2.5,0);
 X3DPrototype30 := TX3DPrototypeNode.Create;
-X3DPrototype30.NameField := 'Process';
-{ .SetX3DPrototype }
-Transform29.X3DPrototype := X3DPrototype30;
-{ .AddChildren }
-Group10.AddChildren([Transform29]);
+{ METHOD .AddX3DPrototype }
+Transform29.AddX3DPrototype([X3DPrototype30]);
+{ METHOD .FdChildren.Add }
+Group10.FdChildren.Add(Transform29);
 Transform31 := TTransformNode.Create;
 X3DPrototype32 := TX3DPrototypeNode.Create;
-X3DPrototype32.NameField := 'Process';
-{ .SetX3DPrototype }
-Transform31.X3DPrototype := X3DPrototype32;
-{ .AddChildren }
-Group10.AddChildren([Transform31]);
+{ METHOD .AddX3DPrototype }
+Transform31.AddX3DPrototype([X3DPrototype32]);
+{ METHOD .FdChildren.Add }
+Group10.FdChildren.Add(Transform31);
 Transform33 := TTransformNode.Create;
 Transform33.Translation := Vector3(0,2.5,0);
 X3DPrototype34 := TX3DPrototypeNode.Create;
-X3DPrototype34.NameField := 'Process';
-{ .SetX3DPrototype }
-Transform33.X3DPrototype := X3DPrototype34;
-{ .AddChildren }
-Group10.AddChildren([Transform33]);
-{ .AddGroup }
+{ METHOD .AddX3DPrototype }
+Transform33.AddX3DPrototype([X3DPrototype34]);
+{ METHOD .FdChildren.Add }
+Group10.FdChildren.Add(Transform33);
+{ METHOD .AddGroup }
 X3D0.AddChildren([Group10]);
+end;
+
+function Createqq3: TX3DRootNode;
+begin
+Initqq3Part0;
+Initqq3Part1;
 Result := X3D0;
 end;
 

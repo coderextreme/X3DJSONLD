@@ -2,7 +2,7 @@ unit ObliqueStrategies;
 
 interface
 
-uses X3DNodes;
+uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
 
 function CreateObliqueStrategies: TX3DRootNode;
 
@@ -10,7 +10,6 @@ implementation
 
 uses CastleVectors;
 
-function CreateObliqueStrategies: TX3DRootNode;
 var
 X3D0: TX3DRootNode;
 Group33: TGroupNode;
@@ -31,14 +30,14 @@ Coordinate47: TCoordinateNode;
 Appearance48: TAppearanceNode;
 Material49: TMaterialNode;
 Script50: TScriptNode;
-X3DField51: TX3DField;
-X3DField52: TX3DField;
-X3DField53: TX3DField;
-X3DField54: TX3DField;
-X3DField55: TX3DField;
-X3DField56: TX3DField;
-X3DField57: TX3DField;
-X3DField58: TX3DField;
+SFInt3251: TSFInt32;
+MFString52: TMFString;
+MFString53: TMFString;
+SFTime54: TSFTime;
+SFBool55: TSFBool;
+SFBool56: TSFBool;
+SFBool57: TSFBool;
+SFBool58: TSFBool;
 Transform59: TTransformNode;
 Shape60: TShapeNode;
 Text61: TTextNode;
@@ -84,83 +83,122 @@ FontStyle107: TFontStyleNode;
 Appearance108: TAppearanceNode;
 Transform109: TTransformNode;
 Shape110: TShapeNode;
+
+procedure InitObliqueStrategiesPart0;
 begin
 X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Immersive';
 X3D0.ForceVersion.Major := 4;
 X3D0.ForceVersion.Minor := 0;
 X3D0.Meta['title'] := 'ObliqueStrategies.x3d';
+{ METHOD .Meta }
 X3D0.Meta['description'] := 'Text scripting and animation example using Oblique Strategies card set by Brian Eno.';
+{ METHOD .Meta }
 X3D0.Meta['creator'] := 'Don Brutzman, John Kelly, Ben Cheng';
+{ METHOD .Meta }
 X3D0.Meta['created'] := '3 November 2013';
+{ METHOD .Meta }
 X3D0.Meta['modified'] := '10 November 2019';
+{ METHOD .Meta }
 X3D0.Meta['reference'] := 'oblique.html';
+{ METHOD .Meta }
 X3D0.Meta['reference'] := 'ObliqueStrategies.txt';
+{ METHOD .Meta }
 X3D0.Meta['reference'] := 'ObliqueStrategiesScript.js';
+{ METHOD .Meta }
 X3D0.Meta['reference'] := 'http://music.hyperreal.org/artists/brian_eno/oblique/oblique.html';
+{ METHOD .Meta }
 X3D0.Meta['reference'] := 'http://www.eno-web.co.uk/obliques.html';
+{ METHOD .Meta }
 X3D0.Meta['reference'] := 'http://gothpunk.com/haiku-intro.html';
+{ METHOD .Meta }
 X3D0.Meta['reference'] := 'http://www.rtqe.net/ObliqueStrategies/OSintro.html';
+{ METHOD .Meta }
 X3D0.Meta['reference'] := 'https://en.wikipedia.org/wiki/Oblique_Strategies';
+{ METHOD .Meta }
 X3D0.Meta['subject'] := 'Brian Eno, Oblique Strategies';
+{ METHOD .Meta }
 X3D0.Meta['Image'] := 'images/ObliqueStrategiesEntryScreen.png';
+{ METHOD .Meta }
 X3D0.Meta['Sound'] := 'http://translate.google.com/translate_tts?tl=en&q=hello%20X3D';
+{ METHOD .Meta }
 X3D0.Meta['Sound'] := 'translate_tts_HelloX3D.mp3';
+{ METHOD .Meta }
 X3D0.Meta['Sound'] := 'translate_tts_HelloX3D.wav';
+{ METHOD .Meta }
 X3D0.Meta['TODO'] := 'multiliingual translation parameter';
+{ METHOD .Meta }
 X3D0.Meta['reference'] := 'http://stackoverflow.com/questions/9163988/download-mp3-from-google-translate-text-to-speech';
+{ METHOD .Meta }
 X3D0.Meta['reference'] := 'http://www.greenbot.com/article/2105862/how-to-get-started-with-google-text-to-speech.html';
+{ METHOD .Meta }
 X3D0.Meta['warning'] := 'under development, scene Sound/AudioClip triggering (or retrieved file format) not working';
+{ METHOD .Meta }
 X3D0.Meta['warning'] := 'TODO resolve potential error in Script node TextScript: parse problem line 15 \" var strategy = [];';
+{ METHOD .Meta }
 X3D0.Meta['reference'] := 'https://gist.github.com/alotaiba/1728771';
+{ METHOD .Meta }
 X3D0.Meta['reference'] := 'https://stackoverflow.com/questions/35002003/how-to-use-google-translate-tts-with-the-new-v2-api';
+{ METHOD .Meta }
 X3D0.Meta['Sound'] := 'https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=en&q=Hello+X3D4';
+{ METHOD .Meta }
 X3D0.Meta['Sound'] := 'translate_tts_HelloX3D4.mp3';
+{ METHOD .Meta }
 X3D0.Meta['reference'] := 'https://cloud.google.com/translate/docs/basic/translating-text';
+{ METHOD .Meta }
 X3D0.Meta['identifier'] := 'https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategies.x3d';
+{ METHOD .Meta }
 X3D0.Meta['generator'] := 'X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit';
+{ METHOD .Meta }
 X3D0.Meta['license'] := '../license.html';
+{ METHOD .Meta }
+{ METHOD .Head }
 Group33 := TGroupNode.Create;
 WorldInfo34 := TWorldInfoNode.Create;
 WorldInfo34.Title := 'ObliqueStrategies.x3d';
-{ .AddChildren }
-Group33.AddChildren([WorldInfo34]);
+{ METHOD .FdChildren.Add }
+Group33.FdChildren.Add(WorldInfo34);
 NavigationInfo35 := TNavigationInfoNode.Create;
+end;
+
+procedure InitObliqueStrategiesPart1;
+begin
+
 NavigationInfo35.SetType(['NONE']);
-{ .AddChildren }
-Group33.AddChildren([NavigationInfo35]);
+{ METHOD .FdChildren.Add }
+Group33.FdChildren.Add(NavigationInfo35);
 Background36 := TBackgroundNode.Create;
 Background36.SetSkyColor([Vector3(0.419608,0.427451,1)]);
-{ .AddChildren }
-Group33.AddChildren([Background36]);
+{ METHOD .FdChildren.Add }
+Group33.FdChildren.Add(Background36);
 Transform37 := TTransformNode.Create;
 Transform37.Scale := Vector3(0.4,0.4,0.4);
 Transform37.Translation := Vector3(0,1,0);
 TouchSensor38 := TTouchSensorNode.Create;
 TouchSensor38.Description := 'Select to see a new strategy';
-{ .AddChildren }
-Transform37.AddChildren([TouchSensor38]);
+{ METHOD .FdChildren.Add }
+Transform37.FdChildren.Add(TouchSensor38);
 Shape39 := TShapeNode.Create;
 Text40 := TTextNode.Create;
 Text40.SetText(['Oblique Strategies','(Over One Hundred Worthwhile Dilemmas)','by Brian Eno and Peter Schmidt']);
 FontStyle41 := TFontStyleNode.Create;
-FontStyle41.Family := ffSans;
-FontStyle41.Justify := fjMiddle;
-FontStyle41.JustifyMinor := fjMiddle;
-FontStyle41.Style := fsBold;
-{ .SetFontStyle }
+FontStyle41.Family := ffSANS;
+FontStyle41.Justify := fjMIDDLE;
+FontStyle41.JustifyMinor := fjMIDDLE;
+FontStyle41.Style := fsBOLD;
+{ METHOD .FontStyle }
 Text40.FontStyle := FontStyle41;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape39.Geometry := Text40;
 Appearance42 := TAppearanceNode.Create;
 Material43 := TMaterialNode.Create;
 Material43.DiffuseColor := Vector3(1,1,1);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance42.Material := Material43;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape39.Appearance := Appearance42;
-{ .AddChild }
-Transform37.AddChildren([Shape39]);
+{ METHOD .FdChildren.Add }
+Transform37.FdChildren.Add(Shape39);
 Transform44 := TTransformNode.Create;
 Transform44.Scale := Vector3(10,3,1);
 Shape45 := TShapeNode.Create;
@@ -169,113 +207,101 @@ IndexedFaceSet46.SetCoordIndex([0,1,2,3,-1]);
 IndexedFaceSet46.Solid := False;
 Coordinate47 := TCoordinateNode.Create;
 Coordinate47.SetPoint([Vector3(1,1,0),Vector3(1,-1,0),Vector3(-1,-1,0),Vector3(-1,1,0)]);
-{ .SetCoord }
+{ METHOD .Coord }
 IndexedFaceSet46.Coord := Coordinate47;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape45.Geometry := IndexedFaceSet46;
 Appearance48 := TAppearanceNode.Create;
 Material49 := TMaterialNode.Create;
 Material49.AmbientIntensity := 0.245763;
+end;
+
+procedure InitObliqueStrategiesPart2;
+begin
+
 Material49.DiffuseColor := Vector3(0.34773,0.090909,0.005289);
 Material49.Shininess := 0.07;
 Material49.SpecularColor := Vector3(0.336735,0.051091,0.051091);
 Material49.Transparency := 0.8;
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance48.Material := Material49;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape45.Appearance := Appearance48;
-{ .AddChild }
-Transform44.AddChildren([Shape45]);
-{ .AddChildren }
-Transform37.AddChildren([Transform44]);
-{ .AddChildren }
-Group33.AddChildren([Transform37]);
+{ METHOD .FdChildren.Add }
+Transform44.FdChildren.Add(Shape45);
+{ METHOD .FdChildren.Add }
+Transform37.FdChildren.Add(Transform44);
+{ METHOD .FdChildren.Add }
+Group33.FdChildren.Add(Transform37);
 Script50 := TScriptNode.Create;
 Script50.SetUrl(['ObliqueStrategiesScript.js','https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategiesScript.js']);
 { initialize() method includes unit test to printAllStrategies() to console }
 { TODO insert field definitions here (index string_changed previous next random) and then animate! }
-X3DField51 := TX3DField.Create;
-X3DField51.NameField := 'index';
-X3DField51.AccessType := 'initializeOnly';
-X3DField51.Appinfo := 'index for active strategy card, -1 means no selection';
-X3DField51.Type := 'SFInt32';
-X3DField51.Value := '0';
-{ .AddX3DField }
-Script50.X3DField := X3DField51;
-X3DField52 := TX3DField.Create;
-X3DField52.NameField := 'string_changed';
-X3DField52.AccessType := 'outputOnly';
-X3DField52.Appinfo := 'latest strategy card value';
-X3DField52.Type := 'MFString';
-{ .AddX3DField }
-Script50.X3DField := X3DField52;
-X3DField53 := TX3DField.Create;
-X3DField53.NameField := 'textToSpeechUrl';
-X3DField53.AccessType := 'outputOnly';
-X3DField53.Appinfo := '\'url to invoke Google Translate\'';
-X3DField53.Type := 'MFString';
-{ .AddX3DField }
-Script50.X3DField := X3DField53;
-X3DField54 := TX3DField.Create;
-X3DField54.NameField := 'newCardTime';
-X3DField54.AccessType := 'outputOnly';
-X3DField54.Appinfo := 'activate Sound node';
-X3DField54.Type := 'SFTime';
-{ .AddX3DField }
-Script50.X3DField := X3DField54;
-X3DField55 := TX3DField.Create;
-X3DField55.NameField := 'selectPreviousCard';
-X3DField55.AccessType := 'inputOnly';
-X3DField55.Type := 'SFBool';
-{ .AddX3DField }
-Script50.X3DField := X3DField55;
-X3DField56 := TX3DField.Create;
-X3DField56.NameField := 'selectNextCard';
-X3DField56.AccessType := 'inputOnly';
-X3DField56.Type := 'SFBool';
-{ .AddX3DField }
-Script50.X3DField := X3DField56;
-X3DField57 := TX3DField.Create;
-X3DField57.NameField := 'selectRandomCard';
-X3DField57.AccessType := 'inputOnly';
-X3DField57.Type := 'SFBool';
-{ .AddX3DField }
-Script50.X3DField := X3DField57;
-X3DField58 := TX3DField.Create;
-X3DField58.NameField := 'traceEnabled';
-X3DField58.AccessType := 'initializeOnly';
-X3DField58.Appinfo := 'controls console tracing';
-X3DField58.Type := 'SFBool';
-X3DField58.Value := 'true';
-{ .AddX3DField }
-Script50.X3DField := X3DField58;
-{ .AddChildren }
-Group33.AddChildren([Script50]);
+SFInt3251 := TSFInt32.CreateUndefined(Script50, false, 'index');
+SFInt3251.Appinfo := 'index for active strategy card, -1 means no selection';
+SFInt3251.Value := '0';
+{ METHOD .Fd.AddCustomField }
+Script50.AddCustomField(SFInt3251);
+MFString52 := TMFString.CreateUndefined(Script50, false, 'string_changed');
+MFString52.Appinfo := 'latest strategy card value';
+{ METHOD .Fd.AddCustomField }
+Script50.AddCustomField(MFString52);
+MFString53 := TMFString.CreateUndefined(Script50, false, 'textToSpeechUrl');
+MFString53.Appinfo := '\"url to invoke Google Translate\"';
+{ METHOD .Fd.AddCustomField }
+Script50.AddCustomField(MFString53);
+SFTime54 := TSFTime.CreateUndefined(Script50, false, 'newCardTime');
+SFTime54.Appinfo := 'activate Sound node';
+{ METHOD .Fd.AddCustomField }
+Script50.AddCustomField(SFTime54);
+SFBool55 := TSFBool.CreateUndefined(Script50, false, 'selectPreviousCard');
+{ METHOD .Fd.AddCustomField }
+Script50.AddCustomField(SFBool55);
+SFBool56 := TSFBool.CreateUndefined(Script50, false, 'selectNextCard');
+{ METHOD .Fd.AddCustomField }
+Script50.AddCustomField(SFBool56);
+SFBool57 := TSFBool.CreateUndefined(Script50, false, 'selectRandomCard');
+{ METHOD .Fd.AddCustomField }
+Script50.AddCustomField(SFBool57);
+SFBool58 := TSFBool.CreateUndefined(Script50, false, 'traceEnabled');
+SFBool58.Appinfo := 'controls console tracing';
+SFBool58.Value := 'true';
+{ METHOD .Fd.AddCustomField }
+Script50.AddCustomField(SFBool58);
+{ METHOD .FdChildren.Add }
+Group33.FdChildren.Add(Script50);
 Transform59 := TTransformNode.Create;
 Transform59.Scale := Vector3(0.4,0.4,0.4);
 Transform59.Translation := Vector3(0,-1.5,0);
 Shape60 := TShapeNode.Create;
 Text61 := TTextNode.Create;
+end;
+
+procedure InitObliqueStrategiesPart3;
+begin
+
 FontStyle62 := TFontStyleNode.Create;
-FontStyle62.Family := ffSans;
-FontStyle62.Justify := fjMiddle;
-FontStyle62.JustifyMinor := fjMiddle;
-FontStyle62.Style := fsBold;
-{ .SetFontStyle }
+FontStyle62.Family := ffSANS;
+FontStyle62.Justify := fjMIDDLE;
+FontStyle62.JustifyMinor := fjMIDDLE;
+FontStyle62.Style := fsBOLD;
+{ METHOD .FontStyle }
 Text61.FontStyle := FontStyle62;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape60.Geometry := Text61;
 Appearance63 := TAppearanceNode.Create;
 Material64 := TMaterialNode.Create;
 Material64.DiffuseColor := Vector3(1,1,1);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance63.Material := Material64;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape60.Appearance := Appearance63;
-{ .AddChild }
-Transform59.AddChildren([Shape60]);
-Transform59.AddRoute(Script50.EventString_changed, Text61.FdString);
-{ .AddX3DRoute }
+{ METHOD .FdChildren.Add }
+Transform59.FdChildren.Add(Shape60);
+{ Original "TextScript.EventString_changed TO CardText.string }
+{ Sample TextScript.EventString_changed TO CardText.string}
+Transform59.AddRoute(Script50.EventString_changed, Text61.set_string);
+{ METHOD .AddX3DROUTE }
 Sound66 := TSoundNode.Create;
 Sound66.MaxBack := 100;
 Sound66.MaxFront := 100;
@@ -288,42 +314,52 @@ Sound66.MinFront := 20;
 AudioClip67 := TAudioClipNode.Create;
 AudioClip67.Description := 'sends strategy text google translate';
 AudioClip67.SetUrl(['http://translate.google.com/translate_tts?tl=en&amp;q=Feed%20the%20recording%20back%20out%20of%20the%20medium','translate_tts_mp3FileFormatNotSupported.wav','https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/translate_tts_mp3FileFormatNotSupported.wav']);
-{ .SetSource }
+{ METHOD .Source }
 Sound66.Source := AudioClip67;
-{ .AddChildren }
-Transform59.AddChildren([Sound66]);
-Transform59.AddRoute(Script50.FdTexttospeechurl, AudioClip67.FdUrl);
-{ .AddX3DRoute }
-Transform59.AddRoute(Script50.FdNewcardtime, AudioClip67.FdStarttime);
-{ .AddX3DRoute }
-{ .AddChildren }
-Group33.AddChildren([Transform59]);
+{ METHOD .FdChildren.Add }
+Transform59.FdChildren.Add(Sound66);
+{ Original "TextScript.textToSpeechUrl TO TextToSpeechAudioClip.url }
+{ Sample TextScript.textToSpeechUrl TO TextToSpeechAudioClip.url}
+Transform59.AddRoute(TextScript.[object Object], AudioClip67.set_url);
+{ METHOD .AddX3DROUTE }
+{ Original "TextScript.newCardTime TO TextToSpeechAudioClip.startTime }
+{ Sample TextScript.newCardTime TO TextToSpeechAudioClip.startTime}
+Transform59.AddRoute(TextScript.[object Object], AudioClip67.set_startTime);
+{ METHOD .AddX3DROUTE }
+{ METHOD .FdChildren.Add }
+Group33.FdChildren.Add(Transform59);
 Transform70 := TTransformNode.Create;
 Transform70.Scale := Vector3(0.4,0.4,0.4);
 Transform70.Translation := Vector3(-3.2,2.5,0);
 TouchSensor71 := TTouchSensorNode.Create;
 TouchSensor71.Description := 'Select to see previous strategy';
-{ .AddChildren }
-Transform70.AddChildren([TouchSensor71]);
-Transform70.AddRoute(TouchSensor71.FdIsactive, Script50.FdSelectpreviouscard);
-{ .AddX3DRoute }
+{ METHOD .FdChildren.Add }
+Transform70.FdChildren.Add(TouchSensor71);
+{ Original "PreviousTextClickedSensor.EventIsActive TO TextScript.selectPreviousCard }
+{ Sample PreviousTextClickedSensor.EventIsActive TO TextScript.selectPreviousCard}
+Transform70.AddRoute(TouchSensor71.EventIsActive, SFBool55);
+{ METHOD .AddX3DROUTE }
 Shape73 := TShapeNode.Create;
 Text74 := TTextNode.Create;
 Text74.SetText(['previous']);
-FontStyle75 := FontStyle41;
-{ .SetFontStyle }
-Text74.FontStyle := FontStyle75;
-{ .SetGeometry }
+{ METHOD .FontStyle }
+Text74.FontStyle := FontStyle41;
+{ METHOD .Geometry }
 Shape73.Geometry := Text74;
 Appearance76 := TAppearanceNode.Create;
+end;
+
+procedure InitObliqueStrategiesPart4;
+begin
+
 Material77 := TMaterialNode.Create;
 Material77.DiffuseColor := Vector3(1,0,0.6);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance76.Material := Material77;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape73.Appearance := Appearance76;
-{ .AddChild }
-Transform70.AddChildren([Shape73]);
+{ METHOD .FdChildren.Add }
+Transform70.FdChildren.Add(Shape73);
 Transform78 := TTransformNode.Create;
 Transform78.Scale := Vector3(2,0.6,1);
 Shape79 := TShapeNode.Create;
@@ -333,84 +369,86 @@ IndexedFaceSet80.SetCoordIndex([0,1,2,3,-1]);
 IndexedFaceSet80.Solid := False;
 Coordinate81 := TCoordinateNode.Create;
 Coordinate81.SetPoint([Vector3(1,1,0),Vector3(1,-1,0),Vector3(-1,-1,0),Vector3(-1,1,0)]);
-{ .SetCoord }
+{ METHOD .Coord }
 IndexedFaceSet80.Coord := Coordinate81;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape79.Geometry := IndexedFaceSet80;
 Appearance82 := TAppearanceNode.Create;
 Material83 := TMaterialNode.Create;
 Material83.Transparency := 1;
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance82.Material := Material83;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape79.Appearance := Appearance82;
-{ .AddChild }
-Transform78.AddChildren([Shape79]);
-{ .AddChildren }
-Transform70.AddChildren([Transform78]);
-{ .AddChildren }
-Group33.AddChildren([Transform70]);
+{ METHOD .FdChildren.Add }
+Transform78.FdChildren.Add(Shape79);
+{ METHOD .FdChildren.Add }
+Transform70.FdChildren.Add(Transform78);
+{ METHOD .FdChildren.Add }
+Group33.FdChildren.Add(Transform70);
 Transform84 := TTransformNode.Create;
 Transform84.Scale := Vector3(0.4,0.4,0.4);
 Transform84.Translation := Vector3(3.5,2.5,0);
 TouchSensor85 := TTouchSensorNode.Create;
 TouchSensor85.Description := 'Select to see next strategy';
-{ .AddChildren }
-Transform84.AddChildren([TouchSensor85]);
-Transform84.AddRoute(TouchSensor85.FdIsactive, Script50.FdSelectnextcard);
-{ .AddX3DRoute }
+{ METHOD .FdChildren.Add }
+Transform84.FdChildren.Add(TouchSensor85);
+{ Original "NextTextClickedSensor.EventIsActive TO TextScript.selectNextCard }
+{ Sample NextTextClickedSensor.EventIsActive TO TextScript.selectNextCard}
+Transform84.AddRoute(TouchSensor85.EventIsActive, SFBool56);
+{ METHOD .AddX3DROUTE }
 Shape87 := TShapeNode.Create;
 Text88 := TTextNode.Create;
 Text88.SetText(['next']);
-FontStyle89 := FontStyle41;
-{ .SetFontStyle }
-Text88.FontStyle := FontStyle89;
-{ .SetGeometry }
+{ METHOD .FontStyle }
+Text88.FontStyle := FontStyle41;
+{ METHOD .Geometry }
 Shape87.Geometry := Text88;
-Appearance90 := Appearance76;
-{ .SetAppearance }
-Shape87.Appearance := Appearance90;
-{ .AddChild }
-Transform84.AddChildren([Shape87]);
+{ METHOD .Appearance }
+Shape87.Appearance := Appearance76;
+{ METHOD .FdChildren.Add }
+Transform84.FdChildren.Add(Shape87);
 Transform91 := TTransformNode.Create;
 Transform91.Scale := Vector3(1.2,0.6,1);
-Shape92 := Shape79;
-{ .AddChild }
-Transform91.AddChildren([Shape92]);
-{ .AddChildren }
-Transform84.AddChildren([Transform91]);
-{ .AddChildren }
-Group33.AddChildren([Transform84]);
+{ METHOD .FdChildren.Add }
+Transform91.FdChildren.Add(Shape79);
+end;
+
+procedure InitObliqueStrategiesPart5;
+begin
+
+{ METHOD .FdChildren.Add }
+Transform84.FdChildren.Add(Transform91);
+{ METHOD .FdChildren.Add }
+Group33.FdChildren.Add(Transform84);
 Transform93 := TTransformNode.Create;
 Transform93.Scale := Vector3(0.4,0.4,0.4);
 Transform93.Translation := Vector3(-3.3,-0.5,0);
-TouchSensor94 := TouchSensor38;
-{ .AddChildren }
-Transform93.AddChildren([TouchSensor94]);
-Transform93.AddRoute(TouchSensor38.FdIsactive, Script50.FdSelectrandomcard);
-{ .AddX3DRoute }
+{ METHOD .FdChildren.Add }
+Transform93.FdChildren.Add(TouchSensor38);
+{ Original "RandomTextClickedSensor.EventIsActive TO TextScript.selectRandomCard }
+{ Sample RandomTextClickedSensor.EventIsActive TO TextScript.selectRandomCard}
+Transform93.AddRoute(TouchSensor38.EventIsActive, SFBool57);
+{ METHOD .AddX3DROUTE }
 Shape96 := TShapeNode.Create;
 Text97 := TTextNode.Create;
 Text97.SetText(['random']);
-FontStyle98 := FontStyle41;
-{ .SetFontStyle }
-Text97.FontStyle := FontStyle98;
-{ .SetGeometry }
+{ METHOD .FontStyle }
+Text97.FontStyle := FontStyle41;
+{ METHOD .Geometry }
 Shape96.Geometry := Text97;
-Appearance99 := Appearance76;
-{ .SetAppearance }
-Shape96.Appearance := Appearance99;
-{ .AddChild }
-Transform93.AddChildren([Shape96]);
+{ METHOD .Appearance }
+Shape96.Appearance := Appearance76;
+{ METHOD .FdChildren.Add }
+Transform93.FdChildren.Add(Shape96);
 Transform100 := TTransformNode.Create;
 Transform100.Scale := Vector3(1.8,0.6,1);
-Shape101 := Shape79;
-{ .AddChild }
-Transform100.AddChildren([Shape101]);
-{ .AddChildren }
-Transform93.AddChildren([Transform100]);
-{ .AddChildren }
-Group33.AddChildren([Transform93]);
+{ METHOD .FdChildren.Add }
+Transform100.FdChildren.Add(Shape79);
+{ METHOD .FdChildren.Add }
+Transform93.FdChildren.Add(Transform100);
+{ METHOD .FdChildren.Add }
+Group33.FdChildren.Add(Transform93);
 Transform102 := TTransformNode.Create;
 Transform102.Scale := Vector3(0.4,0.4,0.4);
 Transform102.Translation := Vector3(3.3,-0.5,0);
@@ -418,34 +456,49 @@ Anchor103 := TAnchorNode.Create;
 Anchor103.Description := 'text to speech in browser';
 Anchor103.SetParameter(['target=_blank']);
 Anchor103.SetUrl(['http://translate.google.com/translate_tts?tl=en&amp;q=Overtly%20resist%20change']);
-Anchor103.AddRoute(Script50.FdTexttospeechurl, Anchor103.FdUrl);
-{ .SetX3DRoute }
+{ Original "TextScript.textToSpeechUrl TO TextToSpeechAnchor.url }
+{ Sample TextScript.textToSpeechUrl TO TextToSpeechAnchor.url}
+Anchor103.AddRoute(TextScript.[object Object], Anchor103.set_url);
+{ METHOD .AddX3DROUTE }
 Shape105 := TShapeNode.Create;
 Text106 := TTextNode.Create;
 Text106.SetText(['speech']);
-FontStyle107 := FontStyle41;
-{ .SetFontStyle }
-Text106.FontStyle := FontStyle107;
-{ .SetGeometry }
+{ METHOD .FontStyle }
+Text106.FontStyle := FontStyle41;
+{ METHOD .Geometry }
 Shape105.Geometry := Text106;
-Appearance108 := Appearance76;
-{ .SetAppearance }
-Shape105.Appearance := Appearance108;
-{ .AddChildren }
-Anchor103.AddChildren([Shape105]);
+{ METHOD .Appearance }
+Shape105.Appearance := Appearance76;
+{ METHOD .FdChildren.Add }
+Anchor103.FdChildren.Add(Shape105);
 Transform109 := TTransformNode.Create;
 Transform109.Scale := Vector3(1.8,0.6,1);
-Shape110 := Shape79;
-{ .AddChild }
-Transform109.AddChildren([Shape110]);
-{ .AddChildren }
-Anchor103.AddChildren([Transform109]);
-{ .AddChildren }
-Transform102.AddChildren([Anchor103]);
-{ .AddChildren }
-Group33.AddChildren([Transform102]);
-{ .AddGroup }
+{ METHOD .FdChildren.Add }
+Transform109.FdChildren.Add(Shape79);
+{ METHOD .FdChildren.Add }
+Anchor103.FdChildren.Add(Transform109);
+{ METHOD .FdChildren.Add }
+Transform102.FdChildren.Add(Anchor103);
+{ METHOD .FdChildren.Add }
+Group33.FdChildren.Add(Transform102);
+end;
+
+procedure InitObliqueStrategiesPart6;
+begin
+
+{ METHOD .AddGroup }
 X3D0.AddChildren([Group33]);
+end;
+
+function CreateObliqueStrategies: TX3DRootNode;
+begin
+InitObliqueStrategiesPart0;
+InitObliqueStrategiesPart1;
+InitObliqueStrategiesPart2;
+InitObliqueStrategiesPart3;
+InitObliqueStrategiesPart4;
+InitObliqueStrategiesPart5;
+InitObliqueStrategiesPart6;
 Result := X3D0;
 end;
 

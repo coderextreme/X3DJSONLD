@@ -2,7 +2,7 @@ unit personal;
 
 interface
 
-uses X3DNodes;
+uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
 
 function Createpersonal: TX3DRootNode;
 
@@ -10,28 +10,34 @@ implementation
 
 uses CastleVectors;
 
-function Createpersonal: TX3DRootNode;
 var
 X3D0: TX3DRootNode;
 Group6: TGroupNode;
 Viewpoint7: TViewpointNode;
 Switch8: TSwitchNode;
 Inline9: TInlineNode;
+
+procedure InitpersonalPart0;
 begin
 X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Full';
 X3D0.ForceVersion.Major := 4;
 X3D0.ForceVersion.Minor := 0;
 X3D0.Meta['title'] := 'personal.x3d';
+{ METHOD .Meta }
 X3D0.Meta['identifier'] := 'https://someAddress/somePath/personal.x3d';
+{ METHOD .Meta }
 X3D0.Meta['description'] := 'Johns Portfolio';
+{ METHOD .Meta }
 X3D0.Meta['generator'] := 'vim and X3D-Edit, https://savage.nps.edu/X3D-Edit';
+{ METHOD .Meta }
+{ METHOD .Head }
 Group6 := TGroupNode.Create;
 Viewpoint7 := TViewpointNode.Create;
 Viewpoint7.Description := 'Tour Views';
 Viewpoint7.Position := Vector3(0,0,12);
-{ .AddChildren }
-Group6.AddChildren([Viewpoint7]);
+{ METHOD .FdChildren.Add }
+Group6.FdChildren.Add(Viewpoint7);
 Switch8 := TSwitchNode.Create;
 Switch8.WhichChoice := 0;
 { <Inline url='"../data/myextrusion.x3d" "https://coderextreme.net/X3DJSONLD/src/main/data/myextrusion.x3d"'/> }
@@ -44,10 +50,10 @@ Switch8.WhichChoice := 0;
 { <Inline url='"../data/flowers7.x3d" "https://coderextreme.net/X3DJSONLD/src/main/data/flowers7.x3d"'/> }
 Inline9 := TInlineNode.Create;
 Inline9.SetUrl(['../data/force-tidy.x3d','https://coderextreme.net/X3DJSONLD/src/main/data/force-tidy.x3d']);
-{ .AddChildren }
-Switch8.AddChildren([Inline9]);
-{ .AddChildren }
-Group6.AddChildren([Switch8]);
+{ METHOD .FdChildren.Add }
+Switch8.FdChildren.Add(Inline9);
+{ METHOD .FdChildren.Add }
+Group6.FdChildren.Add(Switch8);
 { <Script DEF="Choice0"> }
 { <field name="touchTime" type="SFTime" accessType="inputOnly"/> }
 { <field name="choice" type="SFInt32" accessType="outputOnly"/> }
@@ -282,8 +288,13 @@ Group6.AddChildren([Switch8]);
 { </Transform> }
 { <ROUTE fromNode="Force_Sensor" fromField="touchTime" toNode="Choice8" toField="touchTime"/> }
 { <ROUTE fromNode="Choice8" fromField="choice" toNode="SceneSwitcher" toField="whichChoice"/> }
-{ .AddGroup }
+{ METHOD .AddGroup }
 X3D0.AddChildren([Group6]);
+end;
+
+function Createpersonal: TX3DRootNode;
+begin
+InitpersonalPart0;
 Result := X3D0;
 end;
 

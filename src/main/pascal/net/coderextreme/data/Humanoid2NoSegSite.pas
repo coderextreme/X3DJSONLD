@@ -2,7 +2,7 @@ unit Humanoid2NoSegSite;
 
 interface
 
-uses X3DNodes;
+uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
 
 function CreateHumanoid2NoSegSite: TX3DRootNode;
 
@@ -10,7 +10,6 @@ implementation
 
 uses CastleVectors;
 
-function CreateHumanoid2NoSegSite: TX3DRootNode;
 var
 X3D0: TX3DRootNode;
 Group11: TGroupNode;
@@ -196,20 +195,32 @@ HAnimJoint190: THAnimJointNode;
 HAnimJoint191: THAnimJointNode;
 HAnimJoint192: THAnimJointNode;
 HAnimJoint193: THAnimJointNode;
+
+procedure InitHumanoid2NoSegSitePart0;
 begin
 X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Immersive';
 X3D0.ForceVersion.Major := 4;
 X3D0.ForceVersion.Minor := 0;
 X3D0.Components['HAnim'] := 1;
+{ METHOD .Component }
 X3D0.Meta['title'] := 'Humanoid2NoSegSite.x3d';
+{ METHOD .Meta }
 X3D0.Meta['identifier'] := 'https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Humanoid2NoSegSite.x3d';
+{ METHOD .Meta }
 X3D0.Meta['description'] := 'An attempt at a standard LOA-4 skeleton';
+{ METHOD .Meta }
 X3D0.Meta['generator'] := 'h2.pl';
+{ METHOD .Meta }
 X3D0.Meta['modified'] := '14 Jan 2023';
+{ METHOD .Meta }
 X3D0.Meta['creator'] := 'John Carlson';
+{ METHOD .Meta }
 X3D0.Meta['created'] := '9 November 2020';
+{ METHOD .Meta }
 X3D0.Meta['license'] := '../license.html';
+{ METHOD .Meta }
+{ METHOD .Head }
 Group11 := TGroupNode.Create;
 Transform12 := TTransformNode.Create;
 { DEF for markerfor XYZ axes }
@@ -221,18 +232,18 @@ IndexedLineSet14.ColorPerVertex := False;
 IndexedLineSet14.SetCoordIndex([0,1,-1,0,2,-1,0,3,-1]);
 Coordinate15 := TCoordinateNode.Create;
 Coordinate15.SetPoint([Vector3(0,0,0),Vector3(0.1,0,0),Vector3(0,0.1,0),Vector3(0,0,0.1)]);
-{ .SetCoord }
+{ METHOD .Coord }
 IndexedLineSet14.Coord := Coordinate15;
 Color16 := TColorNode.Create;
 Color16.SetColor([Vector3(1,0,0),Vector3(0,0.6,0),Vector3(0,0,1)]);
-{ .SetColor }
+{ METHOD .Color }
 IndexedLineSet14.Color := Color16;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape13.Geometry := IndexedLineSet14;
-{ .AddChild }
-Transform12.AddChildren([Shape13]);
-{ .AddChildren }
-Group11.AddChildren([Transform12]);
+{ METHOD .FdChildren.Add }
+Transform12.FdChildren.Add(Shape13);
+{ METHOD .FdChildren.Add }
+Group11.FdChildren.Add(Transform12);
 Group17 := TGroupNode.Create;
 { DEFS for markers of skeleton joints, segments, and sites }
 Transform18 := TTransformNode.Create;
@@ -241,39 +252,44 @@ Transform19.Translation := Vector3(0,2,0);
 Shape20 := TShapeNode.Create;
 Sphere21 := TSphereNode.Create;
 Sphere21.Radius := 0.02;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape20.Geometry := Sphere21;
 Appearance22 := TAppearanceNode.Create;
 Material23 := TMaterialNode.Create;
 Material23.DiffuseColor := Vector3(0.8,0,0);
+end;
+
+procedure InitHumanoid2NoSegSitePart1;
+begin
+
 Material23.Transparency := 0.3;
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance22.Material := Material23;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape20.Appearance := Appearance22;
-{ .AddChild }
-Transform19.AddChildren([Shape20]);
-{ .AddChildren }
-Transform18.AddChildren([Transform19]);
+{ METHOD .FdChildren.Add }
+Transform19.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform18.FdChildren.Add(Transform19);
 Transform24 := TTransformNode.Create;
 Transform24.Translation := Vector3(0,2.1,0);
 Shape25 := TShapeNode.Create;
 Sphere26 := TSphereNode.Create;
 Sphere26.Radius := 0.02;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape25.Geometry := Sphere26;
 Appearance27 := TAppearanceNode.Create;
 Material28 := TMaterialNode.Create;
 Material28.DiffuseColor := Vector3(0,0,0.8);
 Material28.Transparency := 0.3;
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance27.Material := Material28;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape25.Appearance := Appearance27;
-{ .AddChild }
-Transform24.AddChildren([Shape25]);
-{ .AddChildren }
-Transform18.AddChildren([Transform24]);
+{ METHOD .FdChildren.Add }
+Transform24.FdChildren.Add(Shape25);
+{ METHOD .FdChildren.Add }
+Transform18.FdChildren.Add(Transform24);
 Transform29 := TTransformNode.Create;
 Transform29.Translation := Vector3(0,2.05,0);
 Shape30 := TShapeNode.Create;
@@ -281,18 +297,18 @@ LineSet31 := TLineSetNode.Create;
 LineSet31.SetVertexCount([2]);
 ColorRGBA32 := TColorRGBANode.Create;
 ColorRGBA32.SetColor([Vector4(1,1,0,1),Vector4(1,1,0,0.1)]);
-{ .SetColor }
+{ METHOD .Color }
 LineSet31.Color := ColorRGBA32;
 Coordinate33 := TCoordinateNode.Create;
 Coordinate33.SetPoint([Vector3(-0.05,0,0),Vector3(0.05,0,0)]);
-{ .SetCoord }
+{ METHOD .Coord }
 LineSet31.Coord := Coordinate33;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape30.Geometry := LineSet31;
-{ .AddChild }
-Transform29.AddChildren([Shape30]);
-{ .AddChildren }
-Transform18.AddChildren([Transform29]);
+{ METHOD .FdChildren.Add }
+Transform29.FdChildren.Add(Shape30);
+{ METHOD .FdChildren.Add }
+Transform18.FdChildren.Add(Transform29);
 Transform34 := TTransformNode.Create;
 Transform34.Translation := Vector3(0,2.1,0);
 Shape35 := TShapeNode.Create;
@@ -300,42 +316,46 @@ IndexedFaceSet36 := TIndexedFaceSetNode.Create;
 IndexedFaceSet36.CreaseAngle := 0.5;
 IndexedFaceSet36.Solid := False;
 IndexedFaceSet36.SetCoordIndex([0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1]);
+end;
+
+procedure InitHumanoid2NoSegSitePart2;
+begin
+
 ColorRGBA37 := TColorRGBANode.Create;
 ColorRGBA37.SetColor([Vector4(1,1,0,1),Vector4(1,1,0,0.1),Vector4(1,1,0,1),Vector4(1,1,0,0.1),Vector4(1,1,0,1),Vector4(1,1,0,0.1)]);
-{ .SetColor }
+{ METHOD .Color }
 IndexedFaceSet36.Color := ColorRGBA37;
 Coordinate38 := TCoordinateNode.Create;
 Coordinate38.SetPoint([Vector3(0,0.01,0),Vector3(-0.01,0,0),Vector3(0,0,0.01),Vector3(0.01,0,0),Vector3(0,0,-0.01),Vector3(0,-0.01,0)]);
-{ .SetCoord }
+{ METHOD .Coord }
 IndexedFaceSet36.Coord := Coordinate38;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape35.Geometry := IndexedFaceSet36;
 Appearance39 := TAppearanceNode.Create;
 Material40 := TMaterialNode.Create;
 Material40.DiffuseColor := Vector3(1,1,0);
 Material40.Transparency := 0.3;
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance39.Material := Material40;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape35.Appearance := Appearance39;
-{ .AddChild }
-Transform34.AddChildren([Shape35]);
-{ .AddChildren }
-Transform18.AddChildren([Transform34]);
-{ .AddChildren }
-Group17.AddChildren([Transform18]);
-{ .AddChildren }
-Group11.AddChildren([Group17]);
+{ METHOD .FdChildren.Add }
+Transform34.FdChildren.Add(Shape35);
+{ METHOD .FdChildren.Add }
+Transform18.FdChildren.Add(Transform34);
+{ METHOD .FdChildren.Add }
+Group17.FdChildren.Add(Transform18);
+{ METHOD .FdChildren.Add }
+Group11.FdChildren.Add(Group17);
 NavigationInfo41 := TNavigationInfoNode.Create;
 NavigationInfo41.Speed := 1.5;
-{ .AddChildren }
-Group11.AddChildren([NavigationInfo41]);
+{ METHOD .FdChildren.Add }
+Group11.FdChildren.Add(NavigationInfo41);
 Viewpoint42 := TViewpointNode.Create;
 Viewpoint42.Description := 'default';
-{ .AddChildren }
-Group11.AddChildren([Viewpoint42]);
+{ METHOD .FdChildren.Add }
+Group11.FdChildren.Add(Viewpoint42);
 HAnimHumanoid43 := THAnimHumanoidNode.Create;
-HAnimHumanoid43.NameField := 'HAnim';
 HAnimHumanoid43.SetInfo(['humanoidVersion=2.0']);
 HAnimHumanoid43.Version := '2.0';
 { <LOD containerField='skin'> (Switch whichChoice='0' and LOD parents each already work in view3dscene) }
@@ -346,748 +366,684 @@ IndexedFaceSet45.SetCoordIndex([0,9,5,-1,0,7,9,-1,0,5,1,-1,1,5,2,-1,1,3,7,-1,2,4
 IndexedFaceSet45.CreaseAngle := 3.1;
 Coordinate46 := TCoordinateNode.Create;
 Coordinate46.SetPoint([Vector3(0,1.77,0),Vector3(0,1.665,0.09),Vector3(-0.033,1.62,0.087),Vector3(0.033,1.62,0.087),Vector3(0,1.55,0.097),Vector3(-0.077,1.64,-0.01),Vector3(-0.0527,1.58,0.015),Vector3(0.077,1.64,-0.01),Vector3(0.0527,1.58,0.015),Vector3(0,1.625,-0.0925),Vector3(-0.03,1.46,0.035),Vector3(0,1.44,0.03),Vector3(0.03,1.46,0.035),Vector3(-0.1135,1.318,0.095),Vector3(0.1135,1.318,0.095),Vector3(0,1.25,0.113),Vector3(-0.087,1.19,0.09),Vector3(-0.0935,1.03,0.075),Vector3(0.087,1.19,0.09),Vector3(0.0935,1.03,0.075),Vector3(-0.1425,1.065,0.0033),Vector3(-0.15,0.9,-0.01),Vector3(0.1425,1.065,0.0033),Vector3(0.15,0.9,-0.01),Vector3(0,1.53,-0.084),Vector3(0.0049,1.1908,-0.1113),Vector3(-0.0773,1.019,-0.12),Vector3(0.0773,1.019,-0.12),Vector3(0.005,1.0915,-0.1091),Vector3(-0.178,1.4825,-0.0625),Vector3(-0.17,1.38,0.007),Vector3(-0.1884,0.8676,-0.036),Vector3(-0.16,1.38,-0.127),Vector3(-0.2,1.1388,-0.08),Vector3(-0.244,1.1388,-0.04),Vector3(-0.165,1.1388,-0.04),Vector3(-0.23,1.133,-0.055),Vector3(-0.1977,0.8169,-0.0177),Vector3(-0.1941,0.6772,-0.0423),Vector3(-0.2117,0.8562,-0.0584),Vector3(-0.1929,0.789,-0.1064),Vector3(0.175,1.4825,-0.06),Vector3(0.17,1.38,0.007),Vector3(0.1901,0.8645,-0.0415),Vector3(0.16,1.38,-0.125),Vector3(0.2,1.1388,-0.08),Vector3(0.165,1.1388,-0.04),Vector3(0.244,1.1388,-0.04),Vector3(0.23,1.133,-0.055),Vector3(0.2009,0.8139,-0.0237),Vector3(0.2056,0.6743,-0.0482),Vector3(0.2142,0.8529,-0.0648),Vector3(0.1929,0.786,-0.1122),Vector3(-0.1,0.4913,-0.03),Vector3(-0.17,0.466,0),Vector3(-0.05,0.466,0),Vector3(-0.165,0.01,0.12),Vector3(-0.15,0.07,0),Vector3(-0.085,0.086,0.0125),Vector3(-0.09,0.056,0.0125),Vector3(-0.115,0.02,0.122),Vector3(-0.115,0.04,-0.055),Vector3(-0.11,0.011,0.19),Vector3(0.0993,0.4881,-0.0309),Vector3(0.17,0.466,0),Vector3(0.05,0.4867,0),Vector3(0.165,0.01,0.12),Vector3(0.15,0.07,0),Vector3(0.085,0.086,0.0125),Vector3(0.09,0.056,0.0125),Vector3(0.115,0.02,0.122),Vector3(0.115,0.04,-0.055),Vector3(0.11,0.011,0.19),Vector3(0,0.875,0),Vector3(-0.0646,1.5149,-0.038),Vector3(0.0646,1.5149,-0.038),Vector3(0,1.07225,0.09),Vector3(-0.11,1.427,-0.1375),Vector3(-0.235,1.42,-0.0625),Vector3(0.11,1.427,-0.1375),Vector3(0.235,1.42,-0.0625),Vector3(0,1.41,-0.145),Vector3(0,0.925,0.08),Vector3(-0.087,1.19,-0.09),Vector3(0.087,1.19,-0.09),Vector3(0.172,1.32,-0.03),Vector3(-0.172,1.32,-0.03),Vector3(0.15,1.23,-0.015),Vector3(-0.15,1.23,-0.015),Vector3(0.079,0.92,-0.14),Vector3(0.1,0.9,0.077),Vector3(-0.079,0.92,-0.14),Vector3(-0.1,0.9,0.075),Vector3(0,0.87,0),Vector3(0.171,0.65,0),Vector3(0.02,0.65,0),Vector3(0.1,0.65,-0.08),Vector3(0.1,0.65,0.07),Vector3(-0.171,0.65,0),Vector3(-0.02,0.65,0),Vector3(-0.1,0.65,-0.08),Vector3(-0.1,0.65,0.07),Vector3(0.25,1.27,-0.04),Vector3(0.17,1.27,-0.04),Vector3(0.2,1.27,-0.09),Vector3(0.2,1.27,0.02),Vector3(0.244,1.1388,-0.04),Vector3(0.165,1.1388,-0.04),Vector3(0.2,1.1388,-0.08),Vector3(0.2,1.1388,-0.013),Vector3(0.225,1,-0.01),Vector3(0.225,1,-0.07),Vector3(0.185,1,-0.01),Vector3(0.185,1,-0.07),Vector3(0.2,1.1388,-0.04),Vector3(0.225,0.92,-0.04),Vector3(0.175,0.92,-0.04),Vector3(0.2,0.92,-0.065),Vector3(0.2,0.92,-0.015),Vector3(0.225,0.89,-0.04),Vector3(0.175,0.89,-0.04),Vector3(0.2,0.89,-0.065),Vector3(0.2,0.89,-0.015),Vector3(0.218,0.86,-0.04),Vector3(0.184,0.86,-0.04),Vector3(0.2,0.87,-0.07),Vector3(0.2,0.87,0),Vector3(0.21,0.85,0),Vector3(0.1854,0.85,0),Vector3(0.212,0.84,-0.015),Vector3(0.183,0.84,-0.015),Vector3(0.213,0.835,-0.04),Vector3(0.19,0.835,-0.04),Vector3(0.211,0.835,-0.065),Vector3(0.192,0.835,-0.065),Vector3(0.208,0.84,-0.085),Vector3(0.19,0.84,-0.085),Vector3(0.2,0.84,-0.095),Vector3(0.215,0.82,0),Vector3(0.193,0.815,0.005),Vector3(0.198,0.8,0.012),Vector3(0.21,0.82,0.03),Vector3(0.19,0.82,0.03),Vector3(0.2,0.835,0.039),Vector3(0.212,0.8,0.05),Vector3(0.188,0.8,0.05),Vector3(0.2,0.807,0.057),Vector3(0.2,0.793,0.035),Vector3(0.2,0.774,0.076),Vector3(0.212,0.78,0.07),Vector3(0.188,0.78,0.07),Vector3(0.2,0.785,0.075),Vector3(0.2,0.77,0.062),Vector3(0.215,0.793,-0.015),Vector3(0.187,0.793,-0.015),Vector3(0.2,0.793,-0.005),Vector3(0.215,0.788,-0.04),Vector3(0.187,0.788,-0.04),Vector3(0.215,0.793,-0.065),Vector3(0.187,0.793,-0.065),Vector3(0.21,0.79,-0.085),Vector3(0.19,0.79,-0.085),Vector3(0.2,0.79,-0.095),Vector3(0.19,0.77,-0.0275),Vector3(0.19,0.77,-0.0525),Vector3(0.19,0.78,-0.0775),Vector3(0.212,0.745,-0.015),Vector3(0.188,0.745,-0.02),Vector3(0.2,0.745,-0.0255),Vector3(0.2,0.745,-0.0045),Vector3(0.211,0.72,-0.015),Vector3(0.189,0.72,-0.015),Vector3(0.2,0.72,-0.0252),Vector3(0.2,0.72,-0.0048),Vector3(0.21,0.695,-0.015),Vector3(0.19,0.695,-0.015),Vector3(0.2,0.695,-0.025),Vector3(0.2,0.695,-0.005),Vector3(0.2,0.685,-0.015),Vector3(0.215,0.74,-0.04),Vector3(0.185,0.74,-0.04),Vector3(0.2,0.74,-0.055),Vector3(0.2,0.74,-0.025),Vector3(0.21,0.7142,-0.04),Vector3(0.19,0.7142,-0.04),Vector3(0.2,0.7142,-0.053),Vector3(0.2,0.7142,-0.027),Vector3(0.21,0.68,-0.04),Vector3(0.19,0.68,-0.04),Vector3(0.2,0.68,-0.05),Vector3(0.2,0.68,-0.03),Vector3(0.2,0.67,-0.04),Vector3(0.212,0.74,-0.065),Vector3(0.188,0.74,-0.065),Vector3(0.2,0.74,-0.0756),Vector3(0.2,0.74,-0.0542),Vector3(0.21,0.7177,-0.065),Vector3(0.19,0.7177,-0.065),Vector3(0.2,0.7177,-0.0751),Vector3(0.2,0.7177,-0.0549),Vector3(0.21,0.695,-0.065),Vector3(0.19,0.695,-0.065),Vector3(0.2,0.695,-0.075),Vector3(0.2,0.695,-0.055),Vector3(0.2,0.685,-0.065),Vector3(0.211,0.755,-0.085),Vector3(0.189,0.755,-0.085),Vector3(0.2,0.755,-0.0952),Vector3(0.2,0.755,-0.0748),Vector3(0.21,0.735,-0.085),Vector3(0.19,0.735,-0.085),Vector3(0.2,0.735,-0.0951),Vector3(0.2,0.735,-0.0749),Vector3(0.21,0.72,-0.085),Vector3(0.19,0.72,-0.085),Vector3(0.2,0.72,-0.095),Vector3(0.2,0.72,-0.075),Vector3(0.2,0.71,-0.085),Vector3(-0.23,1.23,-0.04),Vector3(-0.16,1.23,-0.04),Vector3(-0.2,1.235,-0.105),Vector3(-0.2,1.235,0.02),Vector3(-0.244,1.1388,-0.04),Vector3(-0.165,1.1388,-0.04),Vector3(-0.2,1.1388,-0.08),Vector3(-0.2,1.1388,0.013),Vector3(-0.225,1,-0.01),Vector3(-0.225,1,-0.07),Vector3(-0.185,1,-0.01),Vector3(-0.185,1,-0.07),Vector3(-0.2,1.1388,-0.04),Vector3(-0.225,0.92,-0.04),Vector3(-0.175,0.92,-0.04),Vector3(-0.2,0.92,-0.065),Vector3(-0.2,0.92,-0.015),Vector3(-0.225,0.89,-0.04),Vector3(-0.175,0.89,-0.04),Vector3(-0.2,0.89,-0.065),Vector3(-0.2,0.89,-0.015),Vector3(-0.218,0.86,-0.04),Vector3(-0.184,0.86,-0.04),Vector3(-0.2,0.87,-0.07),Vector3(-0.2,0.87,0),Vector3(-0.21,0.85,0),Vector3(-0.1854,0.85,0),Vector3(-0.212,0.84,-0.015),Vector3(-0.183,0.84,-0.015),Vector3(-0.213,0.835,-0.04),Vector3(-0.19,0.835,-0.04),Vector3(-0.211,0.835,-0.065),Vector3(-0.192,0.835,-0.065),Vector3(-0.208,0.84,-0.085),Vector3(-0.19,0.84,-0.085),Vector3(-0.2,0.84,-0.095),Vector3(-0.215,0.82,0),Vector3(-0.193,0.815,0.005),Vector3(-0.198,0.8,0.012),Vector3(-0.21,0.82,0.03),Vector3(-0.19,0.82,0.03),Vector3(-0.2,0.835,0.039),Vector3(-0.212,0.8,0.05),Vector3(-0.188,0.8,0.05),Vector3(-0.2,0.807,0.057),Vector3(-0.2,0.793,0.035),Vector3(-0.2,0.774,0.076),Vector3(-0.212,0.78,0.07),Vector3(-0.188,0.78,0.07),Vector3(-0.2,0.785,0.075),Vector3(-0.2,0.77,0.062),Vector3(-0.215,0.793,-0.015),Vector3(-0.187,0.793,-0.015),Vector3(-0.2,0.793,-0.005),Vector3(-0.215,0.788,-0.04),Vector3(-0.187,0.788,-0.04),Vector3(-0.215,0.793,-0.065),Vector3(-0.187,0.793,-0.065),Vector3(-0.21,0.79,-0.085),Vector3(-0.19,0.79,-0.085),Vector3(-0.2,0.79,-0.095),Vector3(-0.19,0.77,-0.0275),Vector3(-0.19,0.77,-0.0525),Vector3(-0.19,0.78,-0.0775),Vector3(-0.212,0.745,-0.015),Vector3(-0.188,0.745,-0.02),Vector3(-0.2,0.745,-0.0255),Vector3(-0.2,0.745,-0.0045),Vector3(-0.211,0.72,-0.015),Vector3(-0.189,0.72,-0.015),Vector3(-0.2,0.72,-0.0252),Vector3(-0.2,0.72,-0.0048),Vector3(-0.21,0.695,-0.015),Vector3(-0.19,0.695,-0.015),Vector3(-0.2,0.695,-0.025),Vector3(-0.2,0.695,-0.005),Vector3(-0.2,0.685,-0.015),Vector3(-0.215,0.74,-0.04),Vector3(-0.185,0.74,-0.04),Vector3(-0.2,0.74,-0.055),Vector3(-0.2,0.74,-0.025),Vector3(-0.21,0.7142,-0.04),Vector3(-0.19,0.7142,-0.04),Vector3(-0.2,0.7142,-0.053),Vector3(-0.2,0.7142,-0.027),Vector3(-0.21,0.68,-0.04),Vector3(-0.19,0.68,-0.04),Vector3(-0.2,0.68,-0.05),Vector3(-0.2,0.68,-0.03),Vector3(-0.2,0.67,-0.04),Vector3(-0.212,0.74,-0.065),Vector3(-0.188,0.74,-0.065),Vector3(-0.2,0.74,-0.0756),Vector3(-0.2,0.74,-0.0542),Vector3(-0.21,0.7177,-0.065),Vector3(-0.19,0.7177,-0.065),Vector3(-0.2,0.7177,-0.0751),Vector3(-0.2,0.7177,-0.0549),Vector3(-0.21,0.695,-0.065),Vector3(-0.19,0.695,-0.065),Vector3(-0.2,0.695,-0.075),Vector3(-0.2,0.695,-0.055),Vector3(-0.2,0.685,-0.065),Vector3(-0.211,0.755,-0.085),Vector3(-0.189,0.755,-0.085),Vector3(-0.2,0.755,-0.0952),Vector3(-0.2,0.755,-0.0748),Vector3(-0.21,0.735,-0.085),Vector3(-0.19,0.735,-0.085),Vector3(-0.2,0.735,-0.0951),Vector3(-0.2,0.735,-0.0749),Vector3(-0.21,0.72,-0.085),Vector3(-0.19,0.72,-0.085),Vector3(-0.2,0.72,-0.095),Vector3(-0.2,0.72,-0.075),Vector3(-0.2,0.71,-0.085),Vector3(0.115,0.466,0.06),Vector3(0.115,0.466,-0.055),Vector3(0.15,0.466,0),Vector3(0.05,0.466,0),Vector3(0.17,0.3,0),Vector3(0.06,0.3,0),Vector3(0.1,0.3,-0.05),Vector3(0.1,0.3,0.05),Vector3(0.15,0.07,0),Vector3(0.085,0.086,0.0125),Vector3(0.115,0.069,-0.045),Vector3(0.117,0.0975,0.0615),Vector3(0.1375,0.006,-0.03),Vector3(0.095,0.006,-0.03),Vector3(0.115,0.015,-0.045),Vector3(0.115,0.06,0.1),Vector3(0.115,0,0.07),Vector3(0.165,0,0.07),Vector3(0.095,0,0.07),Vector3(0.115,0.04,0.13),Vector3(0.125,0,0.12),Vector3(0.165,0,0.12),Vector3(0.087,0,0.122),Vector3(0.09,0.012,0.188),Vector3(0.11,0.011,0.19),Vector3(0.128,0.011,0.185),Vector3(0.142,0.011,0.178),Vector3(0.154,0.01,0.168),Vector3(-0.115,0.466,0.06),Vector3(-0.115,0.466,-0.055),Vector3(-0.17,0.466,0),Vector3(-0.05,0.466,0),Vector3(-0.17,0.3,0),Vector3(-0.06,0.3,0),Vector3(-0.1,0.3,-0.05),Vector3(-0.1,0.3,0.05),Vector3(-0.15,0.07,0),Vector3(-0.085,0.086,0.0125),Vector3(-0.115,0.069,-0.045),Vector3(-0.117,0.0975,0.0615),Vector3(-0.1375,0.006,-0.03),Vector3(-0.095,0.006,-0.03),Vector3(-0.095,0.006,-0.03),Vector3(-0.115,0.06,0.1),Vector3(-0.115,0,0.07),Vector3(-0.165,0,0.07),Vector3(-0.095,0,0.07),Vector3(-0.115,0.04,0.13),Vector3(-0.125,0,0.12),Vector3(-0.165,0,0.12),Vector3(-0.087,0,0.122),Vector3(-0.09,0.012,0.188),Vector3(-0.11,0.011,0.19),Vector3(-0.128,0.011,0.185),Vector3(-0.142,0.011,0.178),Vector3(-0.154,0.01,0.168)]);
-{ .SetCoord }
+end;
+
+procedure InitHumanoid2NoSegSitePart3;
+begin
+
+{ METHOD .Coord }
 IndexedFaceSet45.Coord := Coordinate46;
 Color47 := TColorNode.Create;
 Color47.SetColor([Vector3(1,0,0),Vector3(0,1,1),Vector3(0,1,0),Vector3(1,1,0),Vector3(1,1,0),Vector3(1,0,0),Vector3(0,1,0),Vector3(0,0,1),Vector3(0,1,1),Vector3(0,1,1),Vector3(1,1,0),Vector3(1,1,0),Vector3(1,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,1,0),Vector3(1,0,1),Vector3(1,0,0),Vector3(1,0,0),Vector3(1,1,0),Vector3(1,1,0),Vector3(1,1,1),Vector3(1,0,0),Vector3(0,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(1,1,1),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(1,1,0),Vector3(0,1,0),Vector3(0,0,1),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(0,0,1),Vector3(1,1,0),Vector3(0,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(0,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(1,1,0),Vector3(0,0,1),Vector3(0,0,1),Vector3(0,0,1),Vector3(1,1,0),Vector3(0,1,0),Vector3(0,0,1),Vector3(1,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(0,0,1),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(1,0,1),Vector3(1,1,0),Vector3(0,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(1,1,0),Vector3(0,1,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(1,0,1),Vector3(1,0,1),Vector3(1,0,1),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,1),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(1,0,0),Vector3(0,1,0),Vector3(0,0,1),Vector3(0,1,1),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(1,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,1),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,1),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,1,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,1,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,1,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,1),Vector3(1,0,0),Vector3(1,0,1),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(1,0,1),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(0,1,0),Vector3(0,0,1),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(0,0,1),Vector3(1,1,0),Vector3(1,0,1),Vector3(1,0,1),Vector3(1,0,1),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,1),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(1,0,0),Vector3(0,1,0),Vector3(0,0,1),Vector3(0,1,1),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(1,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,1),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,1),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,1,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,1,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,1,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,1),Vector3(1,0,0),Vector3(1,0,1),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(0,1,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,1),Vector3(1,1,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(0,0,1),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(1,1,0),Vector3(0,1,0),Vector3(0,0,1),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,1),Vector3(1,1,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(0,0,1),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(1,1,0),Vector3(0,1,0),Vector3(0,0,1),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,1),Vector3(1,1,1)]);
-{ .SetColor }
+{ METHOD .Color }
 IndexedFaceSet45.Color := Color47;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape44.Geometry := IndexedFaceSet45;
 Appearance48 := TAppearanceNode.Create;
 ImageTexture49 := TImageTextureNode.Create;
 ImageTexture49.Description := 'Blue Spiral Pattern';
 ImageTexture49.SetUrl(['../data/zBlueSpiralBkg2.gif','zBlueSpiralBkg2.gif','https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif']);
-{ .SetTexture }
+{ METHOD .Texture }
 Appearance48.Texture := ImageTexture49;
 Material50 := TMaterialNode.Create;
 Material50.AmbientIntensity := 0.6;
 Material50.DiffuseColor := Vector3(1,1,1);
 Material50.Shininess := 0.6;
 Material50.Transparency := 0.2;
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance48.Material := Material50;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape44.Appearance := Appearance48;
-{ .SetSkin }
-HAnimHumanoid43.SetSkin([Shape44]);
-Coordinate51 := Coordinate46;
-{ .FdSkinCoord.Set }
-HAnimHumanoid43.FdSkinCoord.Set(Coordinate51);
+{ METHOD .SetSkin }
+HAnimHumanoid43.Skin := Shape44;
+{ METHOD .FdSkinCoord.Set }
+HAnimHumanoid43.FdSkinCoord.Set(Coordinate46);
 HAnimJoint52 := THAnimJointNode.Create;
-HAnimJoint52.NameField := 'humanoid_root';
 HAnimJoint52.Center := Vector3(0,0.824,0.0277);
 HAnimJoint52.SetSkinCoordIndex([0]);
 HAnimJoint52.SetSkinCoordWeight([0]);
 HAnimJoint53 := THAnimJointNode.Create;
-HAnimJoint53.NameField := 'sacroiliac';
 HAnimJoint53.Center := Vector3(0,0.9149,0.0016);
 HAnimJoint53.SetSkinCoordIndex([0]);
 HAnimJoint53.SetSkinCoordWeight([0]);
 HAnimJoint54 := THAnimJointNode.Create;
-HAnimJoint54.NameField := 'l_hip';
 HAnimJoint54.Center := Vector3(0.0961,0.9124,-0.0001);
 HAnimJoint54.SetSkinCoordIndex([0]);
 HAnimJoint54.SetSkinCoordWeight([0]);
 HAnimJoint55 := THAnimJointNode.Create;
-HAnimJoint55.NameField := 'l_knee';
 HAnimJoint55.Center := Vector3(0.104,0.4867,0.0308);
 HAnimJoint55.SetSkinCoordIndex([0]);
+end;
+
+procedure InitHumanoid2NoSegSitePart4;
+begin
+
 HAnimJoint55.SetSkinCoordWeight([0]);
 HAnimJoint56 := THAnimJointNode.Create;
-HAnimJoint56.NameField := 'l_talocrural';
 HAnimJoint56.Center := Vector3(0.1101,0.0656,-0.0736);
 HAnimJoint56.SetSkinCoordIndex([0]);
 HAnimJoint56.SetSkinCoordWeight([0]);
 HAnimJoint57 := THAnimJointNode.Create;
-HAnimJoint57.NameField := 'l_tarsometatarsal_2';
 HAnimJoint57.Center := Vector3(0.08,0.0175,-0.0608);
 HAnimJoint57.SetSkinCoordIndex([0]);
 HAnimJoint57.SetSkinCoordWeight([0]);
 HAnimJoint58 := THAnimJointNode.Create;
-HAnimJoint58.NameField := 'l_metatarsophalangeal_2';
 HAnimJoint58.Center := Vector3(0.0824,0.0064,-0.004);
 HAnimJoint58.SetSkinCoordIndex([0]);
 HAnimJoint58.SetSkinCoordWeight([0]);
 HAnimJoint59 := THAnimJointNode.Create;
-HAnimJoint59.NameField := 'l_tarsal_distal_interphalangeal_2';
 HAnimJoint59.Center := Vector3(0.0841,0.0013,0.0216);
 HAnimJoint59.SetSkinCoordIndex([0]);
 HAnimJoint59.SetSkinCoordWeight([0]);
-{ .AddChildren }
-HAnimJoint58.AddChildren([HAnimJoint59]);
-{ .AddChildren }
-HAnimJoint57.AddChildren([HAnimJoint58]);
-{ .AddChildren }
-HAnimJoint56.AddChildren([HAnimJoint57]);
-{ .AddChildren }
-HAnimJoint55.AddChildren([HAnimJoint56]);
-{ .AddChildren }
-HAnimJoint54.AddChildren([HAnimJoint55]);
-{ .AddChildren }
-HAnimJoint53.AddChildren([HAnimJoint54]);
+{ METHOD .FdChildren.Add }
+HAnimJoint58.FdChildren.Add(HAnimJoint59);
+{ METHOD .FdChildren.Add }
+HAnimJoint57.FdChildren.Add(HAnimJoint58);
+{ METHOD .FdChildren.Add }
+HAnimJoint56.FdChildren.Add(HAnimJoint57);
+{ METHOD .FdChildren.Add }
+HAnimJoint55.FdChildren.Add(HAnimJoint56);
+{ METHOD .FdChildren.Add }
+HAnimJoint54.FdChildren.Add(HAnimJoint55);
+{ METHOD .FdChildren.Add }
+HAnimJoint53.FdChildren.Add(HAnimJoint54);
 HAnimJoint60 := THAnimJointNode.Create;
-HAnimJoint60.NameField := 'r_hip';
 HAnimJoint60.Center := Vector3(-0.095,0.9171,0.0029);
 HAnimJoint60.SetSkinCoordIndex([0]);
 HAnimJoint60.SetSkinCoordWeight([0]);
 HAnimJoint61 := THAnimJointNode.Create;
-HAnimJoint61.NameField := 'r_knee';
 HAnimJoint61.Center := Vector3(-0.0867,0.4913,0.0318);
 HAnimJoint61.SetSkinCoordIndex([0]);
 HAnimJoint61.SetSkinCoordWeight([0]);
 HAnimJoint62 := THAnimJointNode.Create;
-HAnimJoint62.NameField := 'r_talocrural';
 HAnimJoint62.Center := Vector3(-0.0801,0.0712,-0.0766);
 HAnimJoint62.SetSkinCoordIndex([0]);
 HAnimJoint62.SetSkinCoordWeight([0]);
 HAnimJoint63 := THAnimJointNode.Create;
-HAnimJoint63.NameField := 'r_tarsometatarsal_2';
 HAnimJoint63.Center := Vector3(-0.08,0.0175,-0.0608);
 HAnimJoint63.SetSkinCoordIndex([0]);
 HAnimJoint63.SetSkinCoordWeight([0]);
 HAnimJoint64 := THAnimJointNode.Create;
-HAnimJoint64.NameField := 'r_metatarsophalangeal_2';
+end;
+
+procedure InitHumanoid2NoSegSitePart5;
+begin
+
 HAnimJoint64.Center := Vector3(-0.0823,0.0064,-0.004);
 HAnimJoint64.SetSkinCoordIndex([0]);
 HAnimJoint64.SetSkinCoordWeight([0]);
 HAnimJoint65 := THAnimJointNode.Create;
-HAnimJoint65.NameField := 'r_tarsal_distal_interphalangeal_2';
 HAnimJoint65.Center := Vector3(-0.0841,0.0013,0.0216);
 HAnimJoint65.SetSkinCoordIndex([0]);
 HAnimJoint65.SetSkinCoordWeight([0]);
-{ .AddChildren }
-HAnimJoint64.AddChildren([HAnimJoint65]);
-{ .AddChildren }
-HAnimJoint63.AddChildren([HAnimJoint64]);
-{ .AddChildren }
-HAnimJoint62.AddChildren([HAnimJoint63]);
-{ .AddChildren }
-HAnimJoint61.AddChildren([HAnimJoint62]);
-{ .AddChildren }
-HAnimJoint60.AddChildren([HAnimJoint61]);
-{ .AddChildren }
-HAnimJoint53.AddChildren([HAnimJoint60]);
-{ .AddChildren }
-HAnimJoint52.AddChildren([HAnimJoint53]);
+{ METHOD .FdChildren.Add }
+HAnimJoint64.FdChildren.Add(HAnimJoint65);
+{ METHOD .FdChildren.Add }
+HAnimJoint63.FdChildren.Add(HAnimJoint64);
+{ METHOD .FdChildren.Add }
+HAnimJoint62.FdChildren.Add(HAnimJoint63);
+{ METHOD .FdChildren.Add }
+HAnimJoint61.FdChildren.Add(HAnimJoint62);
+{ METHOD .FdChildren.Add }
+HAnimJoint60.FdChildren.Add(HAnimJoint61);
+{ METHOD .FdChildren.Add }
+HAnimJoint53.FdChildren.Add(HAnimJoint60);
+{ METHOD .FdChildren.Add }
+HAnimJoint52.FdChildren.Add(HAnimJoint53);
 HAnimJoint66 := THAnimJointNode.Create;
-HAnimJoint66.NameField := 'vl5';
 HAnimJoint66.Center := Vector3(0.0028,1.0568,-0.0776);
 HAnimJoint66.SetSkinCoordIndex([0]);
 HAnimJoint66.SetSkinCoordWeight([0]);
 HAnimJoint67 := THAnimJointNode.Create;
-HAnimJoint67.NameField := 'vl3';
 HAnimJoint67.Center := Vector3(0.0041,1.1276,-0.0796);
 HAnimJoint67.SetSkinCoordIndex([0]);
 HAnimJoint67.SetSkinCoordWeight([0]);
 HAnimJoint68 := THAnimJointNode.Create;
-HAnimJoint68.NameField := 'vl1';
 HAnimJoint68.Center := Vector3(0.0048,1.1912,-0.0805);
 HAnimJoint68.SetSkinCoordIndex([0]);
 HAnimJoint68.SetSkinCoordWeight([0]);
 HAnimJoint69 := THAnimJointNode.Create;
-HAnimJoint69.NameField := 'vt10';
 HAnimJoint69.Center := Vector3(0.0056,1.2848,-0.0822);
 HAnimJoint69.SetSkinCoordIndex([0]);
 HAnimJoint69.SetSkinCoordWeight([0]);
 HAnimJoint70 := THAnimJointNode.Create;
-HAnimJoint70.NameField := 'vt6';
 HAnimJoint70.Center := Vector3(0.0059,1.3866,-0.08);
 HAnimJoint70.SetSkinCoordIndex([0]);
 HAnimJoint70.SetSkinCoordWeight([0]);
 HAnimJoint71 := THAnimJointNode.Create;
-HAnimJoint71.NameField := 'vt1';
 HAnimJoint71.Center := Vector3(0.0065,1.4951,-0.0387);
 HAnimJoint71.SetSkinCoordIndex([0]);
 HAnimJoint71.SetSkinCoordWeight([0]);
 HAnimJoint72 := THAnimJointNode.Create;
-HAnimJoint72.NameField := 'vc4';
 HAnimJoint72.Center := Vector3(0.0066,1.5662,-0.0084);
+end;
+
+procedure InitHumanoid2NoSegSitePart6;
+begin
+
 HAnimJoint72.SetSkinCoordIndex([0]);
 HAnimJoint72.SetSkinCoordWeight([0]);
 HAnimJoint73 := THAnimJointNode.Create;
-HAnimJoint73.NameField := 'vc2';
 HAnimJoint73.Center := Vector3(0.0066,1.5928,-0.0103);
 HAnimJoint73.SetSkinCoordIndex([0]);
 HAnimJoint73.SetSkinCoordWeight([0]);
 HAnimJoint74 := THAnimJointNode.Create;
-HAnimJoint74.NameField := 'skullbase';
 HAnimJoint74.Center := Vector3(0.0044,1.6209,0.0236);
 HAnimJoint74.SetSkinCoordIndex([0]);
 HAnimJoint74.SetSkinCoordWeight([0]);
-{ .AddChildren }
-HAnimJoint73.AddChildren([HAnimJoint74]);
-{ .AddChildren }
-HAnimJoint72.AddChildren([HAnimJoint73]);
-{ .AddChildren }
-HAnimJoint71.AddChildren([HAnimJoint72]);
+{ METHOD .FdChildren.Add }
+HAnimJoint73.FdChildren.Add(HAnimJoint74);
+{ METHOD .FdChildren.Add }
+HAnimJoint72.FdChildren.Add(HAnimJoint73);
+{ METHOD .FdChildren.Add }
+HAnimJoint71.FdChildren.Add(HAnimJoint72);
 HAnimJoint75 := THAnimJointNode.Create;
-HAnimJoint75.NameField := 'l_sternoclavicular';
 HAnimJoint75.Center := Vector3(0.082,1.4488,-0.0353);
 HAnimJoint75.SetSkinCoordIndex([0]);
 HAnimJoint75.SetSkinCoordWeight([0]);
 HAnimJoint76 := THAnimJointNode.Create;
-HAnimJoint76.NameField := 'l_acromioclavicular';
 HAnimJoint76.Center := Vector3(0.0962,1.4269,-0.0424);
 HAnimJoint76.SetSkinCoordIndex([0]);
 HAnimJoint76.SetSkinCoordWeight([0]);
 HAnimJoint77 := THAnimJointNode.Create;
-HAnimJoint77.NameField := 'l_shoulder';
 HAnimJoint77.Center := Vector3(0.2029,1.4376,-0.0387);
 HAnimJoint77.SetSkinCoordIndex([0]);
 HAnimJoint77.SetSkinCoordWeight([0]);
 HAnimJoint78 := THAnimJointNode.Create;
-HAnimJoint78.NameField := 'l_elbow';
 HAnimJoint78.Center := Vector3(0.2014,1.1357,-0.0682);
 HAnimJoint78.SetSkinCoordIndex([0]);
 HAnimJoint78.SetSkinCoordWeight([0]);
 HAnimJoint79 := THAnimJointNode.Create;
-HAnimJoint79.NameField := 'l_radiocarpal';
 HAnimJoint79.Center := Vector3(0.1984,0.8663,-0.0583);
 HAnimJoint79.SetSkinCoordIndex([0]);
 HAnimJoint79.SetSkinCoordWeight([0]);
 HAnimJoint80 := THAnimJointNode.Create;
-HAnimJoint80.NameField := 'l_carpometacarpal_1';
 HAnimJoint80.Center := Vector3(0.1924,0.8472,-0.0534);
 HAnimJoint80.SetSkinCoordIndex([0]);
 HAnimJoint80.SetSkinCoordWeight([0]);
 HAnimJoint81 := THAnimJointNode.Create;
-HAnimJoint81.NameField := 'l_metacarpophalangeal_1';
 HAnimJoint81.Center := Vector3(0.1951,0.8226,0.0246);
 HAnimJoint81.SetSkinCoordIndex([0]);
+end;
+
+procedure InitHumanoid2NoSegSitePart7;
+begin
+
 HAnimJoint81.SetSkinCoordWeight([0]);
 HAnimJoint82 := THAnimJointNode.Create;
-HAnimJoint82.NameField := 'l_carpal_interphalangeal_1';
 HAnimJoint82.Center := Vector3(0.1955,0.8159,0.0464);
 HAnimJoint82.SetSkinCoordIndex([0]);
 HAnimJoint82.SetSkinCoordWeight([0]);
-{ .AddChildren }
-HAnimJoint81.AddChildren([HAnimJoint82]);
-{ .AddChildren }
-HAnimJoint80.AddChildren([HAnimJoint81]);
-{ .AddChildren }
-HAnimJoint79.AddChildren([HAnimJoint80]);
+{ METHOD .FdChildren.Add }
+HAnimJoint81.FdChildren.Add(HAnimJoint82);
+{ METHOD .FdChildren.Add }
+HAnimJoint80.FdChildren.Add(HAnimJoint81);
+{ METHOD .FdChildren.Add }
+HAnimJoint79.FdChildren.Add(HAnimJoint80);
 HAnimJoint83 := THAnimJointNode.Create;
-HAnimJoint83.NameField := 'l_carpometacarpal_2';
 HAnimJoint83.Center := Vector3(0.1983,0.8024,-0.028);
 HAnimJoint83.SetSkinCoordIndex([0]);
 HAnimJoint83.SetSkinCoordWeight([0]);
 HAnimJoint84 := THAnimJointNode.Create;
-HAnimJoint84.NameField := 'l_metacarpophalangeal_2';
 HAnimJoint84.Center := Vector3(0.1983,0.7815,-0.028);
 HAnimJoint84.SetSkinCoordIndex([0]);
 HAnimJoint84.SetSkinCoordWeight([0]);
 HAnimJoint85 := THAnimJointNode.Create;
-HAnimJoint85.NameField := 'l_carpal_proximal_interphalangeal_2';
 HAnimJoint85.Center := Vector3(0.2017,0.7363,-0.0248);
 HAnimJoint85.SetSkinCoordIndex([0]);
 HAnimJoint85.SetSkinCoordWeight([0]);
 HAnimJoint86 := THAnimJointNode.Create;
-HAnimJoint86.NameField := 'l_carpal_distal_interphalangeal_2';
 HAnimJoint86.Center := Vector3(0.2028,0.7139,-0.0236);
 HAnimJoint86.SetSkinCoordIndex([0]);
 HAnimJoint86.SetSkinCoordWeight([0]);
-{ .AddChildren }
-HAnimJoint85.AddChildren([HAnimJoint86]);
-{ .AddChildren }
-HAnimJoint84.AddChildren([HAnimJoint85]);
-{ .AddChildren }
-HAnimJoint83.AddChildren([HAnimJoint84]);
-{ .AddChildren }
-HAnimJoint79.AddChildren([HAnimJoint83]);
+{ METHOD .FdChildren.Add }
+HAnimJoint85.FdChildren.Add(HAnimJoint86);
+{ METHOD .FdChildren.Add }
+HAnimJoint84.FdChildren.Add(HAnimJoint85);
+{ METHOD .FdChildren.Add }
+HAnimJoint83.FdChildren.Add(HAnimJoint84);
+{ METHOD .FdChildren.Add }
+HAnimJoint79.FdChildren.Add(HAnimJoint83);
 HAnimJoint87 := THAnimJointNode.Create;
-HAnimJoint87.NameField := 'l_carpometacarpal_3';
 HAnimJoint87.Center := Vector3(0.1987,0.8029,-0.053);
 HAnimJoint87.SetSkinCoordIndex([0]);
 HAnimJoint87.SetSkinCoordWeight([0]);
 HAnimJoint88 := THAnimJointNode.Create;
-HAnimJoint88.NameField := 'l_metacarpophalangeal_3';
 HAnimJoint88.Center := Vector3(0.1987,0.7818,-0.053);
 HAnimJoint88.SetSkinCoordIndex([0]);
 HAnimJoint88.SetSkinCoordWeight([0]);
 HAnimJoint89 := THAnimJointNode.Create;
-HAnimJoint89.NameField := 'l_carpal_proximal_interphalangeal_3';
 HAnimJoint89.Center := Vector3(0.2013,0.7273,-0.0503);
 HAnimJoint89.SetSkinCoordIndex([0]);
 HAnimJoint89.SetSkinCoordWeight([0]);
+end;
+
+procedure InitHumanoid2NoSegSitePart8;
+begin
+
 HAnimJoint90 := THAnimJointNode.Create;
-HAnimJoint90.NameField := 'l_carpal_distal_interphalangeal_3';
 HAnimJoint90.Center := Vector3(0.2026,0.7011,-0.0494);
 HAnimJoint90.SetSkinCoordIndex([0]);
 HAnimJoint90.SetSkinCoordWeight([0]);
-{ .AddChildren }
-HAnimJoint89.AddChildren([HAnimJoint90]);
-{ .AddChildren }
-HAnimJoint88.AddChildren([HAnimJoint89]);
-{ .AddChildren }
-HAnimJoint87.AddChildren([HAnimJoint88]);
-{ .AddChildren }
-HAnimJoint79.AddChildren([HAnimJoint87]);
+{ METHOD .FdChildren.Add }
+HAnimJoint89.FdChildren.Add(HAnimJoint90);
+{ METHOD .FdChildren.Add }
+HAnimJoint88.FdChildren.Add(HAnimJoint89);
+{ METHOD .FdChildren.Add }
+HAnimJoint87.FdChildren.Add(HAnimJoint88);
+{ METHOD .FdChildren.Add }
+HAnimJoint79.FdChildren.Add(HAnimJoint87);
 HAnimJoint91 := THAnimJointNode.Create;
-HAnimJoint91.NameField := 'l_carpometacarpal_4';
 HAnimJoint91.Center := Vector3(0.1956,0.8019,-0.0794);
 HAnimJoint91.SetSkinCoordIndex([0]);
 HAnimJoint91.SetSkinCoordWeight([0]);
 HAnimJoint92 := THAnimJointNode.Create;
-HAnimJoint92.NameField := 'l_metacarpophalangeal_4';
 HAnimJoint92.Center := Vector3(0.1956,0.7815,-0.0794);
 HAnimJoint92.SetSkinCoordIndex([0]);
 HAnimJoint92.SetSkinCoordWeight([0]);
 HAnimJoint93 := THAnimJointNode.Create;
-HAnimJoint93.NameField := 'l_carpal_proximal_interphalangeal_4';
 HAnimJoint93.Center := Vector3(0.1973,0.7287,-0.0777);
 HAnimJoint93.SetSkinCoordIndex([0]);
 HAnimJoint93.SetSkinCoordWeight([0]);
 HAnimJoint94 := THAnimJointNode.Create;
-HAnimJoint94.NameField := 'l_carpal_distal_interphalangeal_4';
 HAnimJoint94.Center := Vector3(0.1983,0.7045,-0.0767);
 HAnimJoint94.SetSkinCoordIndex([0]);
 HAnimJoint94.SetSkinCoordWeight([0]);
-{ .AddChildren }
-HAnimJoint93.AddChildren([HAnimJoint94]);
-{ .AddChildren }
-HAnimJoint92.AddChildren([HAnimJoint93]);
-{ .AddChildren }
-HAnimJoint91.AddChildren([HAnimJoint92]);
-{ .AddChildren }
-HAnimJoint79.AddChildren([HAnimJoint91]);
+{ METHOD .FdChildren.Add }
+HAnimJoint93.FdChildren.Add(HAnimJoint94);
+{ METHOD .FdChildren.Add }
+HAnimJoint92.FdChildren.Add(HAnimJoint93);
+{ METHOD .FdChildren.Add }
+HAnimJoint91.FdChildren.Add(HAnimJoint92);
+{ METHOD .FdChildren.Add }
+HAnimJoint79.FdChildren.Add(HAnimJoint91);
 HAnimJoint95 := THAnimJointNode.Create;
-HAnimJoint95.NameField := 'l_carpometacarpal_5';
 HAnimJoint95.Center := Vector3(0.1925,0.8066,-0.1036);
 HAnimJoint95.SetSkinCoordIndex([0]);
 HAnimJoint95.SetSkinCoordWeight([0]);
 HAnimJoint96 := THAnimJointNode.Create;
-HAnimJoint96.NameField := 'l_metacarpophalangeal_5';
 HAnimJoint96.Center := Vector3(0.1925,0.7866,-0.1036);
 HAnimJoint96.SetSkinCoordIndex([0]);
 HAnimJoint96.SetSkinCoordWeight([0]);
 HAnimJoint97 := THAnimJointNode.Create;
-HAnimJoint97.NameField := 'l_carpal_proximal_interphalangeal_5';
 HAnimJoint97.Center := Vector3(0.1938,0.7452,-0.1024);
 HAnimJoint97.SetSkinCoordIndex([0]);
 HAnimJoint97.SetSkinCoordWeight([0]);
+end;
+
+procedure InitHumanoid2NoSegSitePart9;
+begin
+
 HAnimJoint98 := THAnimJointNode.Create;
-HAnimJoint98.NameField := 'l_carpal_distal_interphalangeal_5';
 HAnimJoint98.Center := Vector3(0.1948,0.7277,-0.1017);
 HAnimJoint98.SetSkinCoordIndex([0]);
 HAnimJoint98.SetSkinCoordWeight([0]);
-{ .AddChildren }
-HAnimJoint97.AddChildren([HAnimJoint98]);
-{ .AddChildren }
-HAnimJoint96.AddChildren([HAnimJoint97]);
-{ .AddChildren }
-HAnimJoint95.AddChildren([HAnimJoint96]);
-{ .AddChildren }
-HAnimJoint79.AddChildren([HAnimJoint95]);
-{ .AddChildren }
-HAnimJoint78.AddChildren([HAnimJoint79]);
-{ .AddChildren }
-HAnimJoint77.AddChildren([HAnimJoint78]);
-{ .AddChildren }
-HAnimJoint76.AddChildren([HAnimJoint77]);
-{ .AddChildren }
-HAnimJoint75.AddChildren([HAnimJoint76]);
-{ .AddChildren }
-HAnimJoint71.AddChildren([HAnimJoint75]);
+{ METHOD .FdChildren.Add }
+HAnimJoint97.FdChildren.Add(HAnimJoint98);
+{ METHOD .FdChildren.Add }
+HAnimJoint96.FdChildren.Add(HAnimJoint97);
+{ METHOD .FdChildren.Add }
+HAnimJoint95.FdChildren.Add(HAnimJoint96);
+{ METHOD .FdChildren.Add }
+HAnimJoint79.FdChildren.Add(HAnimJoint95);
+{ METHOD .FdChildren.Add }
+HAnimJoint78.FdChildren.Add(HAnimJoint79);
+{ METHOD .FdChildren.Add }
+HAnimJoint77.FdChildren.Add(HAnimJoint78);
+{ METHOD .FdChildren.Add }
+HAnimJoint76.FdChildren.Add(HAnimJoint77);
+{ METHOD .FdChildren.Add }
+HAnimJoint75.FdChildren.Add(HAnimJoint76);
+{ METHOD .FdChildren.Add }
+HAnimJoint71.FdChildren.Add(HAnimJoint75);
 HAnimJoint99 := THAnimJointNode.Create;
-HAnimJoint99.NameField := 'r_sternoclavicular';
 HAnimJoint99.Center := Vector3(-0.0694,1.46,-0.033);
 HAnimJoint99.SetSkinCoordIndex([0]);
 HAnimJoint99.SetSkinCoordWeight([0]);
 HAnimJoint100 := THAnimJointNode.Create;
-HAnimJoint100.NameField := 'r_acromioclavicular';
 HAnimJoint100.Center := Vector3(-0.0836,1.4281,-0.0401);
 HAnimJoint100.SetSkinCoordIndex([0]);
 HAnimJoint100.SetSkinCoordWeight([0]);
 HAnimJoint101 := THAnimJointNode.Create;
-HAnimJoint101.NameField := 'r_shoulder';
 HAnimJoint101.Center := Vector3(-0.1907,1.4407,-0.0325);
 HAnimJoint101.SetSkinCoordIndex([0]);
 HAnimJoint101.SetSkinCoordWeight([0]);
 HAnimJoint102 := THAnimJointNode.Create;
-HAnimJoint102.NameField := 'r_elbow';
 HAnimJoint102.Center := Vector3(-0.1949,1.1388,-0.062);
 HAnimJoint102.SetSkinCoordIndex([0]);
 HAnimJoint102.SetSkinCoordWeight([0]);
 HAnimJoint103 := THAnimJointNode.Create;
-HAnimJoint103.NameField := 'r_radiocarpal';
 HAnimJoint103.Center := Vector3(-0.1959,0.8694,-0.0521);
 HAnimJoint103.SetSkinCoordIndex([0]);
 HAnimJoint103.SetSkinCoordWeight([0]);
 HAnimJoint104 := THAnimJointNode.Create;
-HAnimJoint104.NameField := 'r_carpometacarpal_1';
 HAnimJoint104.Center := Vector3(-0.1899,0.8502,-0.0473);
 HAnimJoint104.SetSkinCoordIndex([0]);
 HAnimJoint104.SetSkinCoordWeight([0]);
 HAnimJoint105 := THAnimJointNode.Create;
-HAnimJoint105.NameField := 'r_metacarpophalangeal_1';
 HAnimJoint105.Center := Vector3(-0.1874,0.8256,0.0306);
 HAnimJoint105.SetSkinCoordIndex([0]);
+end;
+
+procedure InitHumanoid2NoSegSitePart10;
+begin
+
 HAnimJoint105.SetSkinCoordWeight([0]);
 HAnimJoint106 := THAnimJointNode.Create;
-HAnimJoint106.NameField := 'r_carpal_interphalangeal_1';
 HAnimJoint106.Center := Vector3(-0.1864,0.819,0.0506);
 HAnimJoint106.SetSkinCoordIndex([0]);
 HAnimJoint106.SetSkinCoordWeight([0]);
-{ .AddChildren }
-HAnimJoint105.AddChildren([HAnimJoint106]);
-{ .AddChildren }
-HAnimJoint104.AddChildren([HAnimJoint105]);
-{ .AddChildren }
-HAnimJoint103.AddChildren([HAnimJoint104]);
+{ METHOD .FdChildren.Add }
+HAnimJoint105.FdChildren.Add(HAnimJoint106);
+{ METHOD .FdChildren.Add }
+HAnimJoint104.FdChildren.Add(HAnimJoint105);
+{ METHOD .FdChildren.Add }
+HAnimJoint103.FdChildren.Add(HAnimJoint104);
 HAnimJoint107 := THAnimJointNode.Create;
-HAnimJoint107.NameField := 'r_carpometacarpal_2';
 HAnimJoint107.Center := Vector3(-0.1961,0.8055,-0.0218);
 HAnimJoint107.SetSkinCoordIndex([0]);
 HAnimJoint107.SetSkinCoordWeight([0]);
 HAnimJoint108 := THAnimJointNode.Create;
-HAnimJoint108.NameField := 'r_metacarpophalangeal_2';
 HAnimJoint108.Center := Vector3(-0.1961,0.7846,-0.0218);
 HAnimJoint108.SetSkinCoordIndex([0]);
 HAnimJoint108.SetSkinCoordWeight([0]);
 HAnimJoint109 := THAnimJointNode.Create;
-HAnimJoint109.NameField := 'r_carpal_proximal_interphalangeal_2';
 HAnimJoint109.Center := Vector3(-0.1954,0.7393,-0.0185);
 HAnimJoint109.SetSkinCoordIndex([0]);
 HAnimJoint109.SetSkinCoordWeight([0]);
 HAnimJoint110 := THAnimJointNode.Create;
-HAnimJoint110.NameField := 'r_carpal_distal_interphalangeal_2';
 HAnimJoint110.Center := Vector3(-0.1945,0.7169,-0.0173);
 HAnimJoint110.SetSkinCoordIndex([0]);
 HAnimJoint110.SetSkinCoordWeight([0]);
-{ .AddChildren }
-HAnimJoint109.AddChildren([HAnimJoint110]);
-{ .AddChildren }
-HAnimJoint108.AddChildren([HAnimJoint109]);
-{ .AddChildren }
-HAnimJoint107.AddChildren([HAnimJoint108]);
-{ .AddChildren }
-HAnimJoint103.AddChildren([HAnimJoint107]);
+{ METHOD .FdChildren.Add }
+HAnimJoint109.FdChildren.Add(HAnimJoint110);
+{ METHOD .FdChildren.Add }
+HAnimJoint108.FdChildren.Add(HAnimJoint109);
+{ METHOD .FdChildren.Add }
+HAnimJoint107.FdChildren.Add(HAnimJoint108);
+{ METHOD .FdChildren.Add }
+HAnimJoint103.FdChildren.Add(HAnimJoint107);
 HAnimJoint111 := THAnimJointNode.Create;
-HAnimJoint111.NameField := 'r_carpometacarpal_3';
 HAnimJoint111.Center := Vector3(-0.1972,0.806,-0.0468);
 HAnimJoint111.SetSkinCoordIndex([0]);
 HAnimJoint111.SetSkinCoordWeight([0]);
 HAnimJoint112 := THAnimJointNode.Create;
-HAnimJoint112.NameField := 'r_metacarpophalangeal_3';
 HAnimJoint112.Center := Vector3(-0.1972,0.7849,-0.0468);
 HAnimJoint112.SetSkinCoordIndex([0]);
 HAnimJoint112.SetSkinCoordWeight([0]);
 HAnimJoint113 := THAnimJointNode.Create;
-HAnimJoint113.NameField := 'r_carpal_proximal_interphalangeal_3';
 HAnimJoint113.Center := Vector3(-0.195,0.7304,-0.0441);
 HAnimJoint113.SetSkinCoordIndex([0]);
 HAnimJoint113.SetSkinCoordWeight([0]);
+end;
+
+procedure InitHumanoid2NoSegSitePart11;
+begin
+
 HAnimJoint114 := THAnimJointNode.Create;
-HAnimJoint114.NameField := 'r_carpal_distal_interphalangeal_3';
 HAnimJoint114.Center := Vector3(-0.1939,0.7042,-0.0432);
 HAnimJoint114.SetSkinCoordIndex([0]);
 HAnimJoint114.SetSkinCoordWeight([0]);
-{ .AddChildren }
-HAnimJoint113.AddChildren([HAnimJoint114]);
-{ .AddChildren }
-HAnimJoint112.AddChildren([HAnimJoint113]);
-{ .AddChildren }
-HAnimJoint111.AddChildren([HAnimJoint112]);
-{ .AddChildren }
-HAnimJoint103.AddChildren([HAnimJoint111]);
+{ METHOD .FdChildren.Add }
+HAnimJoint113.FdChildren.Add(HAnimJoint114);
+{ METHOD .FdChildren.Add }
+HAnimJoint112.FdChildren.Add(HAnimJoint113);
+{ METHOD .FdChildren.Add }
+HAnimJoint111.FdChildren.Add(HAnimJoint112);
+{ METHOD .FdChildren.Add }
+HAnimJoint103.FdChildren.Add(HAnimJoint111);
 HAnimJoint115 := THAnimJointNode.Create;
-HAnimJoint115.NameField := 'r_carpometacarpal_4';
 HAnimJoint115.Center := Vector3(-0.1951,0.8049,-0.0732);
 HAnimJoint115.SetSkinCoordIndex([0]);
 HAnimJoint115.SetSkinCoordWeight([0]);
 HAnimJoint116 := THAnimJointNode.Create;
-HAnimJoint116.NameField := 'r_metacarpophalangeal_4';
 HAnimJoint116.Center := Vector3(-0.1951,0.7845,-0.0732);
 HAnimJoint116.SetSkinCoordIndex([0]);
 HAnimJoint116.SetSkinCoordWeight([0]);
 HAnimJoint117 := THAnimJointNode.Create;
-HAnimJoint117.NameField := 'r_carpal_proximal_interphalangeal_4';
 HAnimJoint117.Center := Vector3(-0.192,0.7318,-0.0716);
 HAnimJoint117.SetSkinCoordIndex([0]);
 HAnimJoint117.SetSkinCoordWeight([0]);
 HAnimJoint118 := THAnimJointNode.Create;
-HAnimJoint118.NameField := 'r_carpal_distal_interphalangeal_4';
 HAnimJoint118.Center := Vector3(-0.1908,0.7077,-0.0706);
 HAnimJoint118.SetSkinCoordIndex([0]);
 HAnimJoint118.SetSkinCoordWeight([0]);
-{ .AddChildren }
-HAnimJoint117.AddChildren([HAnimJoint118]);
-{ .AddChildren }
-HAnimJoint116.AddChildren([HAnimJoint117]);
-{ .AddChildren }
-HAnimJoint115.AddChildren([HAnimJoint116]);
-{ .AddChildren }
-HAnimJoint103.AddChildren([HAnimJoint115]);
+{ METHOD .FdChildren.Add }
+HAnimJoint117.FdChildren.Add(HAnimJoint118);
+{ METHOD .FdChildren.Add }
+HAnimJoint116.FdChildren.Add(HAnimJoint117);
+{ METHOD .FdChildren.Add }
+HAnimJoint115.FdChildren.Add(HAnimJoint116);
+{ METHOD .FdChildren.Add }
+HAnimJoint103.FdChildren.Add(HAnimJoint115);
 HAnimJoint119 := THAnimJointNode.Create;
-HAnimJoint119.NameField := 'r_carpometacarpal_5';
 HAnimJoint119.Center := Vector3(-0.1926,0.8096,-0.0975);
 HAnimJoint119.SetSkinCoordIndex([0]);
 HAnimJoint119.SetSkinCoordWeight([0]);
 HAnimJoint120 := THAnimJointNode.Create;
-HAnimJoint120.NameField := 'r_metacarpophalangeal_5';
 HAnimJoint120.Center := Vector3(-0.1926,0.7896,-0.0975);
 HAnimJoint120.SetSkinCoordIndex([0]);
 HAnimJoint120.SetSkinCoordWeight([0]);
 HAnimJoint121 := THAnimJointNode.Create;
-HAnimJoint121.NameField := 'r_carpal_proximal_interphalangeal_5';
 HAnimJoint121.Center := Vector3(-0.1902,0.7483,-0.0963);
 HAnimJoint121.SetSkinCoordIndex([0]);
 HAnimJoint121.SetSkinCoordWeight([0]);
+end;
+
+procedure InitHumanoid2NoSegSitePart12;
+begin
+
 HAnimJoint122 := THAnimJointNode.Create;
-HAnimJoint122.NameField := 'r_carpal_distal_interphalangeal_5';
 HAnimJoint122.Center := Vector3(-0.1908,0.754,-0.096);
 HAnimJoint122.SetSkinCoordIndex([0]);
 HAnimJoint122.SetSkinCoordWeight([0]);
-{ .AddChildren }
-HAnimJoint121.AddChildren([HAnimJoint122]);
-{ .AddChildren }
-HAnimJoint120.AddChildren([HAnimJoint121]);
-{ .AddChildren }
-HAnimJoint119.AddChildren([HAnimJoint120]);
-{ .AddChildren }
-HAnimJoint103.AddChildren([HAnimJoint119]);
-{ .AddChildren }
-HAnimJoint102.AddChildren([HAnimJoint103]);
-{ .AddChildren }
-HAnimJoint101.AddChildren([HAnimJoint102]);
-{ .AddChildren }
-HAnimJoint100.AddChildren([HAnimJoint101]);
-{ .AddChildren }
-HAnimJoint99.AddChildren([HAnimJoint100]);
-{ .AddChildren }
-HAnimJoint71.AddChildren([HAnimJoint99]);
-{ .AddChildren }
-HAnimJoint70.AddChildren([HAnimJoint71]);
-{ .AddChildren }
-HAnimJoint69.AddChildren([HAnimJoint70]);
-{ .AddChildren }
-HAnimJoint68.AddChildren([HAnimJoint69]);
-{ .AddChildren }
-HAnimJoint67.AddChildren([HAnimJoint68]);
-{ .AddChildren }
-HAnimJoint66.AddChildren([HAnimJoint67]);
-{ .AddChildren }
-HAnimJoint52.AddChildren([HAnimJoint66]);
-{ .AddSkeleton }
-HAnimHumanoid43.SetSkeleton([HAnimJoint52]);
-HAnimJoint123 := HAnimJoint52;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint123);
-HAnimJoint124 := HAnimJoint53;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint124);
-HAnimJoint125 := HAnimJoint54;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint125);
-HAnimJoint126 := HAnimJoint55;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint126);
-HAnimJoint127 := HAnimJoint56;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint127);
-HAnimJoint128 := HAnimJoint57;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint128);
-HAnimJoint129 := HAnimJoint58;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint129);
-HAnimJoint130 := HAnimJoint59;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint130);
-HAnimJoint131 := HAnimJoint60;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint131);
-HAnimJoint132 := HAnimJoint61;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint132);
-HAnimJoint133 := HAnimJoint62;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint133);
-HAnimJoint134 := HAnimJoint63;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint134);
-HAnimJoint135 := HAnimJoint64;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint135);
-HAnimJoint136 := HAnimJoint65;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint136);
-HAnimJoint137 := HAnimJoint66;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint137);
-HAnimJoint138 := HAnimJoint67;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint138);
-HAnimJoint139 := HAnimJoint68;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint139);
-HAnimJoint140 := HAnimJoint69;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint140);
-HAnimJoint141 := HAnimJoint70;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint141);
-HAnimJoint142 := HAnimJoint71;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint142);
-HAnimJoint143 := HAnimJoint72;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint143);
-HAnimJoint144 := HAnimJoint73;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint144);
-HAnimJoint145 := HAnimJoint74;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint145);
-HAnimJoint146 := HAnimJoint75;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint146);
-HAnimJoint147 := HAnimJoint76;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint147);
-HAnimJoint148 := HAnimJoint77;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint148);
-HAnimJoint149 := HAnimJoint78;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint149);
-HAnimJoint150 := HAnimJoint79;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint150);
-HAnimJoint151 := HAnimJoint80;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint151);
-HAnimJoint152 := HAnimJoint81;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint152);
-HAnimJoint153 := HAnimJoint82;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint153);
-HAnimJoint154 := HAnimJoint83;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint154);
-HAnimJoint155 := HAnimJoint84;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint155);
-HAnimJoint156 := HAnimJoint85;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint156);
-HAnimJoint157 := HAnimJoint86;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint157);
-HAnimJoint158 := HAnimJoint87;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint158);
-HAnimJoint159 := HAnimJoint88;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint159);
-HAnimJoint160 := HAnimJoint89;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint160);
-HAnimJoint161 := HAnimJoint90;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint161);
-HAnimJoint162 := HAnimJoint91;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint162);
-HAnimJoint163 := HAnimJoint92;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint163);
-HAnimJoint164 := HAnimJoint93;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint164);
-HAnimJoint165 := HAnimJoint94;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint165);
-HAnimJoint166 := HAnimJoint95;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint166);
-HAnimJoint167 := HAnimJoint96;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint167);
-HAnimJoint168 := HAnimJoint97;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint168);
-HAnimJoint169 := HAnimJoint98;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint169);
-HAnimJoint170 := HAnimJoint99;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint170);
-HAnimJoint171 := HAnimJoint100;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint171);
-HAnimJoint172 := HAnimJoint101;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint172);
-HAnimJoint173 := HAnimJoint102;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint173);
-HAnimJoint174 := HAnimJoint103;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint174);
-HAnimJoint175 := HAnimJoint104;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint175);
-HAnimJoint176 := HAnimJoint105;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint176);
-HAnimJoint177 := HAnimJoint106;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint177);
-HAnimJoint178 := HAnimJoint107;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint178);
-HAnimJoint179 := HAnimJoint108;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint179);
-HAnimJoint180 := HAnimJoint109;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint180);
-HAnimJoint181 := HAnimJoint110;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint181);
-HAnimJoint182 := HAnimJoint111;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint182);
-HAnimJoint183 := HAnimJoint112;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint183);
-HAnimJoint184 := HAnimJoint113;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint184);
-HAnimJoint185 := HAnimJoint114;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint185);
-HAnimJoint186 := HAnimJoint115;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint186);
-HAnimJoint187 := HAnimJoint116;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint187);
-HAnimJoint188 := HAnimJoint117;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint188);
-HAnimJoint189 := HAnimJoint118;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint189);
-HAnimJoint190 := HAnimJoint119;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint190);
-HAnimJoint191 := HAnimJoint120;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint191);
-HAnimJoint192 := HAnimJoint121;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint192);
-HAnimJoint193 := HAnimJoint122;
-{ .FdJoints.Add }
-HAnimHumanoid43.FdJoints.Add(HAnimJoint193);
-{ .AddChildren }
-Group11.AddChildren([HAnimHumanoid43]);
-{ .AddGroup }
+{ METHOD .FdChildren.Add }
+HAnimJoint121.FdChildren.Add(HAnimJoint122);
+{ METHOD .FdChildren.Add }
+HAnimJoint120.FdChildren.Add(HAnimJoint121);
+{ METHOD .FdChildren.Add }
+HAnimJoint119.FdChildren.Add(HAnimJoint120);
+{ METHOD .FdChildren.Add }
+HAnimJoint103.FdChildren.Add(HAnimJoint119);
+{ METHOD .FdChildren.Add }
+HAnimJoint102.FdChildren.Add(HAnimJoint103);
+{ METHOD .FdChildren.Add }
+HAnimJoint101.FdChildren.Add(HAnimJoint102);
+{ METHOD .FdChildren.Add }
+HAnimJoint100.FdChildren.Add(HAnimJoint101);
+{ METHOD .FdChildren.Add }
+HAnimJoint99.FdChildren.Add(HAnimJoint100);
+{ METHOD .FdChildren.Add }
+HAnimJoint71.FdChildren.Add(HAnimJoint99);
+{ METHOD .FdChildren.Add }
+HAnimJoint70.FdChildren.Add(HAnimJoint71);
+{ METHOD .FdChildren.Add }
+HAnimJoint69.FdChildren.Add(HAnimJoint70);
+{ METHOD .FdChildren.Add }
+HAnimJoint68.FdChildren.Add(HAnimJoint69);
+{ METHOD .FdChildren.Add }
+HAnimJoint67.FdChildren.Add(HAnimJoint68);
+{ METHOD .FdChildren.Add }
+HAnimJoint66.FdChildren.Add(HAnimJoint67);
+{ METHOD .FdChildren.Add }
+HAnimJoint52.FdChildren.Add(HAnimJoint66);
+{ METHOD .FdSkeleton.Add }
+HAnimHumanoid43.FdSkeleton.Add(HAnimJoint52);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint52);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint53);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint54);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint55);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint56);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint57);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint58);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint59);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint60);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint61);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint62);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint63);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint64);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint65);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint66);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint67);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint68);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint69);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint70);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint71);
+end;
+
+procedure InitHumanoid2NoSegSitePart13;
+begin
+
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint72);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint73);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint74);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint75);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint76);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint77);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint78);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint79);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint80);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint81);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint82);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint83);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint84);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint85);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint86);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint87);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint88);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint89);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint90);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint91);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint92);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint93);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint94);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint95);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint96);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint97);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint98);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint99);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint100);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint101);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint102);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint103);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint104);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint105);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint106);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint107);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint108);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint109);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint110);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint111);
+end;
+
+procedure InitHumanoid2NoSegSitePart14;
+begin
+
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint112);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint113);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint114);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint115);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint116);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint117);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint118);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint119);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint120);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint121);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid43.FdJoints.Add(HAnimJoint122);
+{ METHOD .FdChildren.Add }
+Group11.FdChildren.Add(HAnimHumanoid43);
+{ METHOD .AddGroup }
 X3D0.AddChildren([Group11]);
+end;
+
+function CreateHumanoid2NoSegSite: TX3DRootNode;
+begin
+InitHumanoid2NoSegSitePart0;
+InitHumanoid2NoSegSitePart1;
+InitHumanoid2NoSegSitePart2;
+InitHumanoid2NoSegSitePart3;
+InitHumanoid2NoSegSitePart4;
+InitHumanoid2NoSegSitePart5;
+InitHumanoid2NoSegSitePart6;
+InitHumanoid2NoSegSitePart7;
+InitHumanoid2NoSegSitePart8;
+InitHumanoid2NoSegSitePart9;
+InitHumanoid2NoSegSitePart10;
+InitHumanoid2NoSegSitePart11;
+InitHumanoid2NoSegSitePart12;
+InitHumanoid2NoSegSitePart13;
+InitHumanoid2NoSegSitePart14;
 Result := X3D0;
 end;
 

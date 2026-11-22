@@ -2,7 +2,7 @@ unit SmokeTestProgramOutputCanonical;
 
 interface
 
-uses X3DNodes;
+uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
 
 function CreateSmokeTestProgramOutputCanonical: TX3DRootNode;
 
@@ -10,7 +10,6 @@ implementation
 
 uses CastleVectors;
 
-function CreateSmokeTestProgramOutputCanonical: TX3DRootNode;
 var
 X3D0: TX3DRootNode;
 unit5: TunitNode;
@@ -56,14 +55,14 @@ TimeSensor65: TTimeSensorNode;
 Group68: TGroupNode;
 Background69: TBackgroundNode;
 Script70: TScriptNode;
-X3DField71: TX3DField;
-X3DField72: TX3DField;
+SFColor71: TSFColor;
+MFColor72: TMFColor;
 ColorInterpolator73: TColorInterpolatorNode;
 TimeSensor74: TTimeSensorNode;
 X3DPrototype78: TX3DPrototype;
 X3DInterfaceDeclaration79: TX3DInterfaceDeclaration;
-X3DField80: TX3DField;
-X3DField81: TX3DField;
+SFString80: TSFString;
+SFBool81: TSFBool;
 X3DPrototype82: TX3DPrototype;
 Material83: TMaterialNode;
 TouchSensor84: TTouchSensorNode;
@@ -71,7 +70,7 @@ IS85: TIS;
 connect86: Tconnect;
 connect87: Tconnect;
 X3DExternalPrototype88: TX3DExternalPrototype;
-X3DField89: TX3DField;
+SFString89: TSFString;
 Shape90: TShapeNode;
 Appearance91: TAppearanceNode;
 X3DPrototype92: TX3DPrototypeNode;
@@ -91,13 +90,13 @@ IMPORT105: TIMPORTNode;
 EXPORT106: TEXPORTNode;
 X3DPrototype107: TX3DPrototype;
 X3DInterfaceDeclaration108: TX3DInterfaceDeclaration;
-X3DField109: TX3DField;
-X3DField110: TX3DField;
-X3DField111: TX3DField;
-X3DField112: TX3DField;
-X3DField113: TX3DField;
-X3DField114: TX3DField;
-X3DField115: TX3DField;
+SFBool109: TSFBool;
+SFColor110: TSFColor;
+SFColor111: TSFColor;
+SFColor112: TSFColor;
+SFFloat113: TSFFloat;
+SFFloat114: TSFFloat;
+SFFloat115: TSFFloat;
 X3DPrototype116: TX3DPrototype;
 Material117: TMaterialNode;
 IS118: TIS;
@@ -108,10 +107,10 @@ connect122: Tconnect;
 connect123: Tconnect;
 connect124: Tconnect;
 Script125: TScriptNode;
-X3DField126: TX3DField;
-X3DField127: TX3DField;
-X3DField128: TX3DField;
-X3DField129: TX3DField;
+SFBool126: TSFBool;
+SFColor127: TSFColor;
+SFColor128: TSFColor;
+SFTime129: TSFTime;
 IS130: TIS;
 connect131: Tconnect;
 connect132: Tconnect;
@@ -133,7 +132,7 @@ Extrusion147: TExtrusionNode;
 Group148: TGroupNode;
 X3DPrototype149: TX3DPrototype;
 X3DInterfaceDeclaration150: TX3DInterfaceDeclaration;
-X3DField151: TX3DField;
+SFString151: TSFString;
 X3DPrototype152: TX3DPrototype;
 WorldInfo153: TWorldInfoNode;
 X3DPrototype154: TX3DPrototypeNode;
@@ -151,6 +150,8 @@ ShaderProgram165: TShaderProgramNode;
 X3DPrototype166: TX3DPrototypeNode;
 ComposedShader167: TComposedShaderNode;
 ShaderPart168: TShaderPartNode;
+
+procedure InitSmokeTestProgramOutputCanonicalPart0;
 begin
 X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Immersive';
@@ -162,76 +163,99 @@ X3D0.ForceVersion.Minor := 3;
 { comment #3 }
 { comment #4 }
 X3D0.Components['Navigation'] := 3;
+{ METHOD .Component }
 X3D0.Components['Shaders'] := 1;
+{ METHOD .Component }
 X3D0.Components['Layering'] := 1;
+{ METHOD .Component }
 unit5 := TunitNode.Create;
-unit5.NameField := 'AngleUnitConversion';
 unit5.Category := 'angle';
 unit5.ConversionFactor := 1;
-{ .AddUnit }
+{ METHOD .Unit }
 head1.Unit := unit5;
 unit6 := TunitNode.Create;
-unit6.NameField := 'LengthUnitConversion';
 unit6.Category := 'length';
 unit6.ConversionFactor := 1;
-{ .AddUnit }
+{ METHOD .Unit }
 head1.Unit := unit6;
 X3D0.Meta['title'] := 'HelloWorldProgramOutput.x3d';
+{ METHOD .Meta }
 X3D0.Meta['description'] := 'Example HelloWorldProgram creates an X3D model using the X3D Java Scene Access Interface Library (X3DJSAIL)';
+{ METHOD .Meta }
 X3D0.Meta['reference'] := 'https://www.web3d.org/specifications/java/X3DJSAIL.html';
+{ METHOD .Meta }
 X3D0.Meta['generator'] := 'HelloWorldProgramOutput.java';
+{ METHOD .Meta }
 X3D0.Meta['created'] := '6 September 2016';
+{ METHOD .Meta }
 X3D0.Meta['modified'] := '27 December 2018';
+{ METHOD .Meta }
 X3D0.Meta['generator'] := 'X3D Java Scene Access Interface Library (X3DJSAIL)';
+{ METHOD .Meta }
 X3D0.Meta['generator'] := 'https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java';
+{ METHOD .Meta }
 X3D0.Meta['generator'] := 'Netbeans http://www.netbeans.org';
+{ METHOD .Meta }
 X3D0.Meta['creator'] := 'Don Brutzman';
+{ METHOD .Meta }
 X3D0.Meta['reference'] := 'https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/java/examples/HelloWorldProgramOutput.x3d';
+{ METHOD .Meta }
 X3D0.Meta['reference'] := 'Console output, ClassicVRML encoding, VRML97 encoding and pretty-print documentation:';
+{ METHOD .Meta }
 X3D0.Meta['reference'] := 'HelloWorldProgramOutput.txt';
+{ METHOD .Meta }
 X3D0.Meta['reference'] := 'HelloWorldProgramOutput.x3dv';
+{ METHOD .Meta }
 X3D0.Meta['reference'] := 'HelloWorldProgramOutput.wrl';
+{ METHOD .Meta }
 X3D0.Meta['reference'] := 'HelloWorldProgramOutput.html';
+{ METHOD .Meta }
 X3D0.Meta['reference'] := 'https://savage.nps.edu/X3dValidator?url=https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d';
+{ METHOD .Meta }
 X3D0.Meta['identifier'] := 'https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d';
+{ METHOD .Meta }
 X3D0.Meta['license'] := '../license.html';
+{ METHOD .Meta }
+{ METHOD .Head }
 Group26 := TGroupNode.Create;
 ViewpointGroup27 := TViewpointGroupNode.Create;
 ViewpointGroup27.Description := 'Available viewpoints';
 Viewpoint28 := TViewpointNode.Create;
 Viewpoint28.Description := 'Hello X3DJSAIL';
-{ .AddChildren }
-ViewpointGroup27.AddChildren([Viewpoint28]);
+{ METHOD .FdChildren.Add }
+ViewpointGroup27.FdChildren.Add(Viewpoint28);
+end;
+
+procedure InitSmokeTestProgramOutputCanonicalPart1;
+begin
+
 Viewpoint29 := TViewpointNode.Create;
 Viewpoint29.Description := 'top-down view from above';
 Viewpoint29.Orientation := Vector4(1,0,0,-1.570796);
 Viewpoint29.Position := Vector3(0,100,0);
-{ .AddChildren }
-ViewpointGroup27.AddChildren([Viewpoint29]);
-{ .AddChildren }
-Group26.AddChildren([ViewpointGroup27]);
+{ METHOD .FdChildren.Add }
+ViewpointGroup27.FdChildren.Add(Viewpoint29);
+{ METHOD .FdChildren.Add }
+Group26.FdChildren.Add(ViewpointGroup27);
 NavigationInfo30 := TNavigationInfoNode.Create;
 NavigationInfo30.SetType(['EXAMINE','FLY','ANY']);
-{ .AddChildren }
-Group26.AddChildren([NavigationInfo30]);
+{ METHOD .FdChildren.Add }
+Group26.FdChildren.Add(NavigationInfo30);
 WorldInfo31 := TWorldInfoNode.Create;
 WorldInfo31.Title := 'HelloWorldProgram produced by X3D Java SAI Library (X3DJSAIL)';
-{ .AddChildren }
-Group26.AddChildren([WorldInfo31]);
-WorldInfo32 := WorldInfo31;
-{ .AddChildren }
-Group26.AddChildren([WorldInfo32]);
-WorldInfo33 := WorldInfo31;
-{ .AddChildren }
-Group26.AddChildren([WorldInfo33]);
+{ METHOD .FdChildren.Add }
+Group26.FdChildren.Add(WorldInfo31);
+{ METHOD .FdChildren.Add }
+Group26.FdChildren.Add(WorldInfo31);
+{ METHOD .FdChildren.Add }
+Group26.FdChildren.Add(WorldInfo31);
 MetadataString34 := TMetadataStringNode.Create;
-MetadataString34.NameField := 'test';
 MetadataString34.SetValue(['Top-level root Metadata node beneath Scene needs to be one of ''-children'' in JSON encoding']);
-{ .SetMetadata }
+{ METHOD .Metadata }
 Group26.Metadata := MetadataString34;
 LayerSet35 := TLayerSetNode.Create;
-{ .AddChildren }
-Group26.AddChildren([LayerSet35]);
+{ METHOD .FdChildren.Add }
+Group26.FdChildren.Add(LayerSet35);
 Transform36 := TTransformNode.Create;
 Transform36.Translation := Vector3(0,1.5,0);
 Anchor37 := TAnchorNode.Create;
@@ -243,92 +267,102 @@ Material40 := TMaterialNode.Create;
 Material40.DiffuseColor := Vector3(0,1,1);
 Material40.EmissiveColor := Vector3(0.8,0,0);
 Material40.Transparency := 0.1;
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance39.Material := Material40;
 ImageTexture41 := TImageTextureNode.Create;
 ImageTexture41.SetUrl(['images/X3dJavaSceneAccessInterfaceSaiLibrary.png','https://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png']);
-{ .SetTexture }
+{ METHOD .Texture }
 Appearance39.Texture := ImageTexture41;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape38.Appearance := Appearance39;
 Box42 := TBoxNode.Create;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape38.Geometry := Box42;
-{ .AddChildren }
-Anchor37.AddChildren([Shape38]);
-{ .AddChildren }
-Transform36.AddChildren([Anchor37]);
-{ .AddChildren }
-Group26.AddChildren([Transform36]);
+{ METHOD .FdChildren.Add }
+Anchor37.FdChildren.Add(Shape38);
+{ METHOD .FdChildren.Add }
+Transform36.FdChildren.Add(Anchor37);
+{ METHOD .FdChildren.Add }
+Group26.FdChildren.Add(Transform36);
+end;
+
+procedure InitSmokeTestProgramOutputCanonicalPart2;
+begin
+
 Shape43 := TShapeNode.Create;
 Appearance44 := TAppearanceNode.Create;
 Material45 := TMaterialNode.Create;
 Material45.EmissiveColor := Vector3(0.6,0.19607843,0.8);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance44.Material := Material45;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape43.Appearance := Appearance44;
 IndexedLineSet46 := TIndexedLineSetNode.Create;
 IndexedLineSet46.SetCoordIndex([0,1,2,3,4,0]);
 { Coordinate 3-tuple point count: 6 }
 Coordinate47 := TCoordinateNode.Create;
 Coordinate47.SetPoint([Vector3(0,1.5,0),Vector3(2,1.5,0),Vector3(2,1.5,-2),Vector3(-2,1.5,-2),Vector3(-2,1.5,0),Vector3(0,1.5,0)]);
-{ .SetCoord }
+{ METHOD .Coord }
 IndexedLineSet46.Coord := Coordinate47;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape43.Geometry := IndexedLineSet46;
-{ .AddChildren }
-Group26.AddChildren([Shape43]);
+{ METHOD .FdChildren.Add }
+Group26.FdChildren.Add(Shape43);
 PositionInterpolator48 := TPositionInterpolatorNode.Create;
 PositionInterpolator48.SetKey([0,0.125,0.375,0.625,0.875,1]);
 PositionInterpolator48.SetKeyValue([Vector3(0,1.5,0),Vector3(2,1.5,0),Vector3(2,1.5,-2),Vector3(-2,1.5,-2),Vector3(-2,1.5,0),Vector3(0,1.5,0)]);
-{ .AddChildren }
-Group26.AddChildren([PositionInterpolator48]);
+{ METHOD .FdChildren.Add }
+Group26.FdChildren.Add(PositionInterpolator48);
 TimeSensor49 := TTimeSensorNode.Create;
 TimeSensor49.CycleInterval := 8;
 TimeSensor49.Loop := True;
-{ .AddChildren }
-Group26.AddChildren([TimeSensor49]);
-Group26.AddRoute(TimeSensor49.EventFraction_changed, PositionInterpolator48.EventSet_fraction);
-{ .AddX3DRoute }
-Group26.AddRoute(PositionInterpolator48.EventValue_changed, Transform36.FdTranslation);
-{ .AddX3DRoute }
+{ METHOD .FdChildren.Add }
+Group26.FdChildren.Add(TimeSensor49);
+{ Original "OrbitClock.EventFraction_changed TO BoxPathAnimator.EventSet_fraction }
+{ Sample OrbitClock.EventFraction_changed TO BoxPathAnimator.EventSet_fraction}
+Group26.AddRoute(TimeSensor49.EventFraction_changed, PositionInterpolator48.set_EventSet_fraction);
+{ METHOD .AddX3DROUTE }
+{ Original "BoxPathAnimator.EventValue_changed TO LogoGeometryTransform.EventSet_translation }
+{ Sample BoxPathAnimator.EventValue_changed TO LogoGeometryTransform.EventSet_translation}
+Group26.AddRoute(PositionInterpolator48.EventValue_changed, Transform36.set_EventSet_translation);
+{ METHOD .AddX3DROUTE }
 Transform52 := TTransformNode.Create;
 Transform52.Translation := Vector3(0,-1.5,0);
 Shape53 := TShapeNode.Create;
 Appearance54 := TAppearanceNode.Create;
-Material55 := Material40;
-{ .SetMaterial }
-Appearance54.Material := Material55;
-{ .SetAppearance }
+{ METHOD .SetMaterial }
+Appearance54.Material := Material40;
+{ METHOD .Appearance }
 Shape53.Appearance := Appearance54;
 Text56 := TTextNode.Create;
 Text56.SetText(['X3D Java','SAI Library','X3DJSAIL']);
 { Comment example A, plain quotation marks: He said, "Immel did it!" }
 { Comment example B, XML character entities: He said, &quot;Immel did it!&quot; }
 MetadataSet57 := TMetadataSetNode.Create;
-MetadataSet57.NameField := 'EscapedQuotationMarksMetadataSet';
 MetadataString58 := TMetadataStringNode.Create;
-MetadataString58.NameField := 'quotesTestC';
 MetadataString58.SetValue(['MFString example C, backslash-escaped quotes: He said, "Immel did it!"']);
-{ .FdValue.Add }
+{ METHOD .FdValue.Add }
 MetadataSet57.FdValue.Add(MetadataString58);
 MetadataString59 := TMetadataStringNode.Create;
-MetadataString59.NameField := 'extraChildTest';
 MetadataString59.SetValue(['checks MetadataSetObject addValue() method']);
-{ .FdValue.Add }
+{ METHOD .FdValue.Add }
 MetadataSet57.FdValue.Add(MetadataString59);
-{ .SetMetadata }
+{ METHOD .Metadata }
 Text56.Metadata := MetadataSet57;
 FontStyle60 := TFontStyleNode.Create;
-FontStyle60.Justify := fjMiddle;
-FontStyle60.JustifyMinor := fjMiddle;
-{ .SetFontStyle }
+end;
+
+procedure InitSmokeTestProgramOutputCanonicalPart3;
+begin
+
+FontStyle60.Justify := fjMIDDLE;
+FontStyle60.JustifyMinor := fjMIDDLE;
+{ METHOD .FontStyle }
 Text56.FontStyle := FontStyle60;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape53.Geometry := Text56;
-{ .AddChild }
-Transform52.AddChildren([Shape53]);
+{ METHOD .FdChildren.Add }
+Transform52.FdChildren.Add(Shape53);
 Collision61 := TCollisionNode.Create;
 { test containerField='proxy' }
 Shape62 := TShapeNode.Create;
@@ -338,49 +372,47 @@ Shape62 := TShapeNode.Create;
 { reference: https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html }
 Text63 := TTextNode.Create;
 Text63.SetText(['One, Two, Text','He said, "Immel did it!" \"\"']);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape62.Geometry := Text63;
-{ .SetProxy }
+{ METHOD .SetProxy }
 Collision61.Proxy := Shape62;
-{ .AddChildren }
-Transform52.AddChildren([Collision61]);
+{ METHOD .FdChildren.Add }
+Transform52.FdChildren.Add(Collision61);
 { It's a beautiful world }
 { ... for you! }
 { https://en.wikipedia.org/wiki/Beautiful_World_(Devo_song) }
-{ .AddChildren }
-Group26.AddChildren([Transform52]);
+{ METHOD .FdChildren.Add }
+Group26.FdChildren.Add(Transform52);
 { repeatedly spin 180 degrees as a readable special effect }
 OrientationInterpolator64 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator64.SetKey([0,0.5,1]);
 OrientationInterpolator64.SetKeyValue([Vector4(0,1,0,4.712389),Vector4(0,1,0,0),Vector4(0,1,0,1.5707964)]);
-{ .AddChildren }
-Group26.AddChildren([OrientationInterpolator64]);
+{ METHOD .FdChildren.Add }
+Group26.FdChildren.Add(OrientationInterpolator64);
 TimeSensor65 := TTimeSensorNode.Create;
 TimeSensor65.CycleInterval := 5;
 TimeSensor65.Loop := True;
-{ .AddChildren }
-Group26.AddChildren([TimeSensor65]);
-Group26.AddRoute(TimeSensor65.EventFraction_changed, OrientationInterpolator64.EventSet_fraction);
-{ .AddX3DRoute }
-Group26.AddRoute(OrientationInterpolator64.EventValue_changed, Transform52.FdRotation);
-{ .AddX3DRoute }
+{ METHOD .FdChildren.Add }
+Group26.FdChildren.Add(TimeSensor65);
+{ Original "SpinClock.EventFraction_changed TO SpinInterpolator.EventSet_fraction }
+{ Sample SpinClock.EventFraction_changed TO SpinInterpolator.EventSet_fraction}
+Group26.AddRoute(TimeSensor65.EventFraction_changed, OrientationInterpolator64.set_EventSet_fraction);
+{ METHOD .AddX3DROUTE }
+{ Original "SpinInterpolator.EventValue_changed TO TextTransform.rotation }
+{ Sample SpinInterpolator.EventValue_changed TO TextTransform.rotation}
+Group26.AddRoute(OrientationInterpolator64.EventValue_changed, Transform52.set_rotation);
+{ METHOD .AddX3DROUTE }
 Group68 := TGroupNode.Create;
 Background69 := TBackgroundNode.Create;
-{ .AddChildren }
-Group68.AddChildren([Background69]);
+{ METHOD .FdChildren.Add }
+Group68.FdChildren.Add(Background69);
 Script70 := TScriptNode.Create;
-X3DField71 := TX3DField.Create;
-X3DField71.NameField := 'colorInput';
-X3DField71.AccessType := 'inputOnly';
-X3DField71.Type := 'SFColor';
-{ .SetX3DField }
-Script70.X3DField := X3DField71;
-X3DField72 := TX3DField.Create;
-X3DField72.NameField := 'colorsOutput';
-X3DField72.AccessType := 'outputOnly';
-X3DField72.Type := 'MFColor';
-{ .AddX3DField }
-Script70.X3DField := X3DField72;
+SFColor71 := TSFColor.CreateUndefined(Script70, false, 'colorInput');
+{ METHOD .Fd.AddCustomField }
+Script70.AddCustomField(SFColor71);
+MFColor72 := TMFColor.CreateUndefined(Script70, false, 'colorsOutput');
+{ METHOD .Fd.AddCustomField }
+Script70.AddCustomField(MFColor72);
 
 Script70.SetSourceCode('''ecmascript:\n"+
 "\n"+
@@ -389,48 +421,47 @@ Script70.SetSourceCode('''ecmascript:\n"+
 "   colorsOutput = new MFColor(eventValue); // assigning value sends output event\n"+
 "// Browser.print('colorInput=' + eventValue + ', colorsOutput=' + colorsOutput + '\\n');\n"+
 "}''');
-{ .AddChildren }
-Group68.AddChildren([Script70]);
+{ METHOD .FdChildren.Add }
+Group68.FdChildren.Add(Script70);
 ColorInterpolator73 := TColorInterpolatorNode.Create;
 ColorInterpolator73.SetKey([0,0.5,1]);
 ColorInterpolator73.SetKeyValue([Vector3(0.9411765,1,1),Vector3(0.29411766,0,0.50980395),Vector3(0.9411765,1,1)]);
 { AZURE to INDIGO and back again }
-{ .AddChildren }
-Group68.AddChildren([ColorInterpolator73]);
+{ METHOD .FdChildren.Add }
+Group68.FdChildren.Add(ColorInterpolator73);
 TimeSensor74 := TTimeSensorNode.Create;
 TimeSensor74.CycleInterval := 60;
 TimeSensor74.Loop := True;
-{ .AddChildren }
-Group68.AddChildren([TimeSensor74]);
-Group68.AddRoute(Script70.FdColorsoutput, Background69.FdSkycolor);
-{ .AddX3DRoute }
-Group68.AddRoute(ColorInterpolator73.EventValue_changed, Script70.FdColorinput);
-{ .AddX3DRoute }
-Group68.AddRoute(TimeSensor74.EventFraction_changed, ColorInterpolator73.EventSet_fraction);
-{ .AddX3DRoute }
-{ .AddChildren }
-Group26.AddChildren([Group68]);
+{ METHOD .FdChildren.Add }
+Group68.FdChildren.Add(TimeSensor74);
+{ Original "colorTypeConversionScript.colorsOutput TO GradualBackground.skyColor }
+{ Sample colorTypeConversionScript.colorsOutput TO GradualBackground.skyColor}
+Group68.AddRoute(colorTypeConversionScript.[object Object], Background69.set_skyColor);
+{ METHOD .AddX3DROUTE }
+{ Original "ColorAnimator.EventValue_changed TO colorTypeConversionScript.colorInput }
+{ Sample ColorAnimator.EventValue_changed TO colorTypeConversionScript.colorInput}
+Group68.AddRoute(ColorInterpolator73.EventValue_changed, SFColor71);
+{ METHOD .AddX3DROUTE }
+{ Original "ColorClock.EventFraction_changed TO ColorAnimator.EventSet_fraction }
+{ Sample ColorClock.EventFraction_changed TO ColorAnimator.EventSet_fraction}
+Group68.AddRoute(TimeSensor74.EventFraction_changed, ColorInterpolator73.set_EventSet_fraction);
+{ METHOD .AddX3DROUTE }
+{ METHOD .FdChildren.Add }
+Group26.FdChildren.Add(Group68);
 X3DPrototype78 := TX3DPrototype.Create;
-X3DPrototype78.NameField := 'ArtDeco01Material';
 X3DPrototype78.Appinfo := 'tooltip: ArtDeco01Material prototype is a Material node';
 X3DInterfaceDeclaration79 := TX3DInterfaceDeclaration.Create(nil);
-X3DField80 := TX3DField.Create;
-X3DField80.NameField := 'description';
-X3DField80.AccessType := 'inputOutput';
-X3DField80.Appinfo := 'tooltip for descriptionField';
-X3DField80.Type := 'SFString';
-X3DField80.Value := 'ArtDeco01Material prototype is a Material node';
-{ .SetX3DField }
-X3DInterfaceDeclaration79.X3DField := X3DField80;
-X3DField81 := TX3DField.Create;
-X3DField81.NameField := 'enabled';
-X3DField81.AccessType := 'inputOutput';
-X3DField81.Type := 'SFBool';
-X3DField81.Value := 'true';
-{ .AddX3DField }
-X3DInterfaceDeclaration79.X3DField := X3DField81;
-{ .SetX3DInterfaceDeclaration }
-X3DPrototype78.X3DInterfaceDeclaration := X3DInterfaceDeclaration79;
+SFString80 := TSFString.CreateUndefined(X3DInterfaceDeclaration79, false, 'description');
+SFString80.Appinfo := 'tooltip for descriptionField';
+SFString80.Value := 'ArtDeco01Material prototype is a Material node';
+{ METHOD .AddSFString }
+X3DInterfaceDeclaration79.AddSFString([SFString80]);
+SFBool81 := TSFBool.CreateUndefined(X3DInterfaceDeclaration79, false, 'enabled');
+SFBool81.Value := 'true';
+{ METHOD .AddSFBool }
+X3DInterfaceDeclaration79.AddSFBool([SFBool81]);
+{ METHOD .AddX3DInterfaceDeclaration }
+X3DPrototype78.AddX3DInterfaceDeclaration([X3DInterfaceDeclaration79]);
 X3DPrototype82 := TX3DPrototype.Create;
 { Initial node of ProtoBody determines prototype node type }
 Material83 := TMaterialNode.Create;
@@ -438,8 +469,8 @@ Material83.AmbientIntensity := 0.25;
 Material83.DiffuseColor := Vector3(0.282435,0.085159,0.134462);
 Material83.Shininess := 0.127273;
 Material83.SpecularColor := Vector3(0.276305,0.11431,0.139857);
-{ .AddMaterial }
-X3DPrototype82.Material := Material83;
+{ METHOD .AddMaterial }
+X3DPrototype82.AddMaterial([Material83]);
 { [HelloWorldProgram diagnostic] should be connected to scene graph: artDeco01ProtoDeclare.getNodeType()="Material" }
 { presence of follow-on TouchSensor shows that additional nodes are allowed in ProtoBody after initial node, regardless of node types }
 TouchSensor84 := TTouchSensorNode.Create;
@@ -448,241 +479,198 @@ IS85 := TIS.Create;
 connect86 := Tconnect.Create;
 connect86.NodeField := 'description';
 connect86.ProtoField := 'description';
-{ .AddConnect }
+{ METHOD .Connect }
 IS85.Connect := connect86;
 connect87 := Tconnect.Create;
 connect87.NodeField := 'enabled';
 connect87.ProtoField := 'enabled';
-{ .AddConnect }
+{ METHOD .Connect }
 IS85.Connect := connect87;
-{ .SetIS }
+{ METHOD .IS }
 TouchSensor84.IS := IS85;
-{ .AddTouchSensor }
-X3DPrototype82.TouchSensor := TouchSensor84;
-{ .AddX3DPrototype }
-X3DPrototype78.X3DPrototype := X3DPrototype82;
-{ .AddX3DPrototype }
-Group26.X3DPrototype := X3DPrototype78;
+{ METHOD .AddTouchSensor }
+X3DPrototype82.AddTouchSensor([TouchSensor84]);
+{ METHOD .AddX3DPrototype }
+X3DPrototype78.AddX3DPrototype([X3DPrototype82]);
+{ METHOD .AddX3DPrototype }
+Group26.AddX3DPrototype([X3DPrototype78]);
 X3DExternalPrototype88 := TX3DExternalPrototype.Create;
-X3DExternalPrototype88.NameField := 'ArtDeco02Material';
 X3DExternalPrototype88.Appinfo := 'this is a different Material node';
 X3DExternalPrototype88.Url := '\"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material\" \"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material\"';
 { [HelloWorldProgram diagnostic] artDeco02ExternProtoDeclare.getNodeType()="ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time. TODO X3DJSAIL needs to add further capability that retrieves the ExternProtoDeclare file." }
-X3DField89 := TX3DField.Create;
-X3DField89.NameField := 'description';
-X3DField89.AccessType := 'inputOutput';
-X3DField89.Appinfo := 'tooltip for descriptionField';
-X3DField89.Type := 'SFString';
-{ .AddX3DField }
-X3DExternalPrototype88.X3DField := X3DField89;
-{ .AddX3DExternalPrototype }
-Group26.X3DExternalPrototype := X3DExternalPrototype88;
+SFString89 := TSFString.CreateUndefined(X3DExternalPrototype88, false, 'description');
+SFString89.Appinfo := 'tooltip for descriptionField';
+{ METHOD .AddSFString }
+X3DExternalPrototype88.AddSFString([SFString89]);
+{ METHOD .AddX3DExternalPrototype }
+Group26.AddX3DExternalPrototype([X3DExternalPrototype88]);
 { Tested ArtDeco01ProtoInstance, ArtDeco02ProtoInstance for improper node type when ProtoInstance is added in wrong place }
 Shape90 := TShapeNode.Create;
 Appearance91 := TAppearanceNode.Create;
 { ArtDeco01Material prototype goes here... TODO ensure setContainerField is handled in exported Java }
 X3DPrototype92 := TX3DPrototypeNode.Create;
-X3DPrototype92.NameField := 'ArtDeco01Material';
 { [HelloWorldProgram diagnostic] ArtDeco01ProtoInstance.getNodeType()="Material" }
-SFString93 := TSFString.Create(ArtDeco01Material2, false, 'description', 'ArtDeco01Material can substitute for a Material node');
-SFString93.NameField := 'description';
+SFString93 := TSFString.CreateUndefined(X3DPrototype92, false, 'description');
 SFString93.Value := 'ArtDeco01Material can substitute for a Material node';
-{ .AddSFString }
-X3DPrototype92.SFString := SFString93;
-{ .SetMaterial }
+{ METHOD .AddSFString }
+X3DPrototype92.AddSFString([SFString93]);
+{ METHOD .SetMaterial }
 Appearance91.Material := X3DPrototype92;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape90.Appearance := Appearance91;
 Sphere94 := TSphereNode.Create;
 Sphere94.Radius := 0.001;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape90.Geometry := Sphere94;
-{ .AddChildren }
-Group26.AddChildren([Shape90]);
+{ METHOD .FdChildren.Add }
+Group26.FdChildren.Add(Shape90);
 Shape95 := TShapeNode.Create;
 Appearance96 := TAppearanceNode.Create;
 { ArtDeco02Material prototype goes here... TODO ensure setContainerField is handled in exported Java }
 X3DPrototype97 := TX3DPrototypeNode.Create;
-X3DPrototype97.NameField := 'ArtDeco02Material';
 { [HelloWorldProgram diagnostic] ArtDeco02ProtoInstance.getNodeType()="ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time. TODO X3DJSAIL needs to add further capability that retrieves the ExternProtoDeclare file." }
-SFString98 := TSFString.Create(ArtDeco02Material2, false, 'description', 'ArtDeco02Material can substitute for another Material node');
-SFString98.NameField := 'description';
+SFString98 := TSFString.CreateUndefined(X3DPrototype97, false, 'description');
 SFString98.Value := 'ArtDeco02Material can substitute for another Material node';
-{ .AddSFString }
-X3DPrototype97.SFString := SFString98;
-{ .SetMaterial }
+{ METHOD .AddSFString }
+X3DPrototype97.AddSFString([SFString98]);
+{ METHOD .SetMaterial }
 Appearance96.Material := X3DPrototype97;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape95.Appearance := Appearance96;
 Cone99 := TConeNode.Create;
 Cone99.BottomRadius := 0.001;
 Cone99.Height := 0.001;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape95.Geometry := Cone99;
-{ .AddChildren }
-Group26.AddChildren([Shape95]);
+{ METHOD .FdChildren.Add }
+Group26.FdChildren.Add(Shape95);
 Shape100 := TShapeNode.Create;
 Appearance101 := TAppearanceNode.Create;
 { ArtDeco02Material ProtoInstance USE goes here. Note that name field is NOT defined as part of ProtoInstance USE. }
-X3DPrototype102 := X3DPrototype97;
-{ .SetMaterial }
-Appearance101.Material := X3DPrototype102;
-{ .SetAppearance }
+{ METHOD .SetMaterial }
+Appearance101.Material := X3DPrototype97;
+{ METHOD .Appearance }
 Shape100.Appearance := Appearance101;
 Cylinder103 := TCylinderNode.Create;
 Cylinder103.Height := 0.001;
 Cylinder103.Radius := 0.001;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape100.Geometry := Cylinder103;
-{ .AddChildren }
-Group26.AddChildren([Shape100]);
+{ METHOD .FdChildren.Add }
+Group26.FdChildren.Add(Shape100);
 Inline104 := TInlineNode.Create;
 Inline104.SetUrl(['someOtherScene.x3d','https://www.web3d.org/specifications/java/examples/someOtherScene.x3d']);
-{ .AddChildren }
-Group26.AddChildren([Inline104]);
+{ METHOD .FdChildren.Add }
+Group26.FdChildren.Add(Inline104);
 IMPORT105 := TIMPORTNode.Create;
 IMPORT105.AS := 'WorldInfoDEF2';
 IMPORT105.ImportedDEF := 'WorldInfoDEF';
 IMPORT105.InlineDEF := 'inlineSceneDef';
-{ .AddChildren }
-Group26.AddChildren([IMPORT105]);
+{ METHOD .FdChildren.Add }
+Group26.FdChildren.Add(IMPORT105);
 EXPORT106 := TEXPORTNode.Create;
 EXPORT106.AS := 'WorldInfoDEF3';
 EXPORT106.LocalDEF := 'WorldInfoDEF';
-{ .AddChildren }
-Group26.AddChildren([EXPORT106]);
+{ METHOD .FdChildren.Add }
+Group26.FdChildren.Add(EXPORT106);
 X3DPrototype107 := TX3DPrototype.Create;
-X3DPrototype107.NameField := 'MaterialModulator';
 X3DPrototype107.Appinfo := 'mimic a Material node and modulate fields as an animation effect';
 X3DPrototype107.Documentation := 'http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html';
 X3DInterfaceDeclaration108 := TX3DInterfaceDeclaration.Create(nil);
-X3DField109 := TX3DField.Create;
-X3DField109.NameField := 'enabled';
-X3DField109.AccessType := 'inputOutput';
-X3DField109.Type := 'SFBool';
-X3DField109.Value := 'true';
-{ .SetX3DField }
-X3DInterfaceDeclaration108.X3DField := X3DField109;
-X3DField110 := TX3DField.Create;
-X3DField110.NameField := 'diffuseColor';
-X3DField110.AccessType := 'inputOutput';
-X3DField110.Type := 'SFColor';
-X3DField110.Value := '0 0 0';
-{ .AddX3DField }
-X3DInterfaceDeclaration108.X3DField := X3DField110;
-X3DField111 := TX3DField.Create;
-X3DField111.NameField := 'emissiveColor';
-X3DField111.AccessType := 'inputOutput';
-X3DField111.Type := 'SFColor';
-X3DField111.Value := '0.05 0.05 0.5';
-{ .AddX3DField }
-X3DInterfaceDeclaration108.X3DField := X3DField111;
-X3DField112 := TX3DField.Create;
-X3DField112.NameField := 'specularColor';
-X3DField112.AccessType := 'inputOutput';
-X3DField112.Type := 'SFColor';
-X3DField112.Value := '0 0 0';
-{ .AddX3DField }
-X3DInterfaceDeclaration108.X3DField := X3DField112;
-X3DField113 := TX3DField.Create;
-X3DField113.NameField := 'transparency';
-X3DField113.AccessType := 'inputOutput';
-X3DField113.Type := 'SFFloat';
-X3DField113.Value := '0';
-{ .AddX3DField }
-X3DInterfaceDeclaration108.X3DField := X3DField113;
-X3DField114 := TX3DField.Create;
-X3DField114.NameField := 'shininess';
-X3DField114.AccessType := 'inputOutput';
-X3DField114.Type := 'SFFloat';
-X3DField114.Value := '0';
-{ .AddX3DField }
-X3DInterfaceDeclaration108.X3DField := X3DField114;
-X3DField115 := TX3DField.Create;
-X3DField115.NameField := 'ambientIntensity';
-X3DField115.AccessType := 'inputOutput';
-X3DField115.Type := 'SFFloat';
-X3DField115.Value := '0';
-{ .AddX3DField }
-X3DInterfaceDeclaration108.X3DField := X3DField115;
-{ .SetX3DInterfaceDeclaration }
-X3DPrototype107.X3DInterfaceDeclaration := X3DInterfaceDeclaration108;
+SFBool109 := TSFBool.CreateUndefined(X3DInterfaceDeclaration108, false, 'enabled');
+SFBool109.Value := 'true';
+{ METHOD .AddSFBool }
+X3DInterfaceDeclaration108.AddSFBool([SFBool109]);
+SFColor110 := TSFColor.CreateUndefined(X3DInterfaceDeclaration108, false, 'diffuseColor');
+SFColor110.Value := '0 0 0';
+{ METHOD .AddSFColor }
+X3DInterfaceDeclaration108.AddSFColor([SFColor110]);
+SFColor111 := TSFColor.CreateUndefined(X3DInterfaceDeclaration108, false, 'emissiveColor');
+SFColor111.Value := '0.05 0.05 0.5';
+{ METHOD .AddSFColor }
+X3DInterfaceDeclaration108.AddSFColor([SFColor111]);
+SFColor112 := TSFColor.CreateUndefined(X3DInterfaceDeclaration108, false, 'specularColor');
+SFColor112.Value := '0 0 0';
+{ METHOD .AddSFColor }
+X3DInterfaceDeclaration108.AddSFColor([SFColor112]);
+SFFloat113 := TSFFloat.CreateUndefined(X3DInterfaceDeclaration108, false, 'transparency');
+SFFloat113.Value := '0';
+{ METHOD .AddSFFloat }
+X3DInterfaceDeclaration108.AddSFFloat([SFFloat113]);
+SFFloat114 := TSFFloat.CreateUndefined(X3DInterfaceDeclaration108, false, 'shininess');
+SFFloat114.Value := '0';
+{ METHOD .AddSFFloat }
+X3DInterfaceDeclaration108.AddSFFloat([SFFloat114]);
+SFFloat115 := TSFFloat.CreateUndefined(X3DInterfaceDeclaration108, false, 'ambientIntensity');
+SFFloat115.Value := '0';
+{ METHOD .AddSFFloat }
+X3DInterfaceDeclaration108.AddSFFloat([SFFloat115]);
+{ METHOD .AddX3DInterfaceDeclaration }
+X3DPrototype107.AddX3DInterfaceDeclaration([X3DInterfaceDeclaration108]);
 X3DPrototype116 := TX3DPrototype.Create;
 Material117 := TMaterialNode.Create;
 IS118 := TIS.Create;
 connect119 := Tconnect.Create;
 connect119.NodeField := 'diffuseColor';
 connect119.ProtoField := 'diffuseColor';
-{ .AddConnect }
+{ METHOD .Connect }
 IS118.Connect := connect119;
 connect120 := Tconnect.Create;
 connect120.NodeField := 'emissiveColor';
 connect120.ProtoField := 'emissiveColor';
-{ .AddConnect }
+{ METHOD .Connect }
 IS118.Connect := connect120;
 connect121 := Tconnect.Create;
 connect121.NodeField := 'specularColor';
 connect121.ProtoField := 'specularColor';
-{ .AddConnect }
+{ METHOD .Connect }
 IS118.Connect := connect121;
 connect122 := Tconnect.Create;
 connect122.NodeField := 'transparency';
 connect122.ProtoField := 'transparency';
-{ .AddConnect }
+{ METHOD .Connect }
 IS118.Connect := connect122;
 connect123 := Tconnect.Create;
 connect123.NodeField := 'shininess';
 connect123.ProtoField := 'shininess';
-{ .AddConnect }
+{ METHOD .Connect }
 IS118.Connect := connect123;
 connect124 := Tconnect.Create;
 connect124.NodeField := 'ambientIntensity';
 connect124.ProtoField := 'ambientIntensity';
-{ .AddConnect }
+{ METHOD .Connect }
 IS118.Connect := connect124;
-{ .SetIS }
+{ METHOD .IS }
 Material117.IS := IS118;
-{ .SetMaterial }
-X3DPrototype116.Material := Material117;
+{ METHOD .AddMaterial }
+X3DPrototype116.AddMaterial([Material117]);
 { Only first node (the node type) is renderable, others are along for the ride }
 Script125 := TScriptNode.Create;
-X3DField126 := TX3DField.Create;
-X3DField126.NameField := 'enabled';
-X3DField126.AccessType := 'inputOutput';
-X3DField126.Type := 'SFBool';
-{ .SetX3DField }
-Script125.X3DField := X3DField126;
-X3DField127 := TX3DField.Create;
-X3DField127.NameField := 'diffuseColor';
-X3DField127.AccessType := 'inputOutput';
-X3DField127.Type := 'SFColor';
-{ .AddX3DField }
-Script125.X3DField := X3DField127;
-X3DField128 := TX3DField.Create;
-X3DField128.NameField := 'newColor';
-X3DField128.AccessType := 'outputOnly';
-X3DField128.Type := 'SFColor';
-{ .AddX3DField }
-Script125.X3DField := X3DField128;
-X3DField129 := TX3DField.Create;
-X3DField129.NameField := 'clockTrigger';
-X3DField129.AccessType := 'inputOnly';
-X3DField129.Type := 'SFTime';
-{ .AddX3DField }
-Script125.X3DField := X3DField129;
+SFBool126 := TSFBool.CreateUndefined(Script125, false, 'enabled');
+{ METHOD .Fd.AddCustomField }
+Script125.AddCustomField(SFBool126);
+SFColor127 := TSFColor.CreateUndefined(Script125, false, 'diffuseColor');
+{ METHOD .Fd.AddCustomField }
+Script125.AddCustomField(SFColor127);
+SFColor128 := TSFColor.CreateUndefined(Script125, false, 'newColor');
+{ METHOD .Fd.AddCustomField }
+Script125.AddCustomField(SFColor128);
+SFTime129 := TSFTime.CreateUndefined(Script125, false, 'clockTrigger');
+{ METHOD .Fd.AddCustomField }
+Script125.AddCustomField(SFTime129);
 IS130 := TIS.Create;
 connect131 := Tconnect.Create;
 connect131.NodeField := 'enabled';
 connect131.ProtoField := 'enabled';
-{ .AddConnect }
+{ METHOD .Connect }
 IS130.Connect := connect131;
 connect132 := Tconnect.Create;
 connect132.NodeField := 'diffuseColor';
 connect132.ProtoField := 'diffuseColor';
-{ .AddConnect }
+{ METHOD .Connect }
 IS130.Connect := connect132;
-{ .SetIS }
-Script125.IS := IS130;
+{ METHOD .Fd.AddCustomField }
+Script125.AddCustomField(IS130);
 
 Script125.SetSourceCode('''ecmascript:\n"+
 "function initialize ()\n"+
@@ -707,39 +695,37 @@ Script125.SetSourceCode('''ecmascript:\n"+
 "		Browser.print ('diffuseColor=(' + red + ',' + green + ',' + blue + ') newColor=' + newColor.toString() + '\\n');\n"+
 "	}\n"+
 "}''');
-{ .AddScript }
-X3DPrototype116.Script := Script125;
-{ .AddX3DPrototype }
-X3DPrototype107.X3DPrototype := X3DPrototype116;
-{ .AddX3DPrototype }
-Group26.X3DPrototype := X3DPrototype107;
+{ METHOD .AddScript }
+X3DPrototype116.AddScript([Script125]);
+{ METHOD .AddX3DPrototype }
+X3DPrototype107.AddX3DPrototype([X3DPrototype116]);
+{ METHOD .AddX3DPrototype }
+Group26.AddX3DPrototype([X3DPrototype107]);
 { Test success: declarative statement createDeclarativeShapeTests() }
 Group133 := TGroupNode.Create;
 Shape134 := TShapeNode.Create;
 MetadataString135 := TMetadataStringNode.Create;
-MetadataString135.NameField := 'findThisNameValue';
 MetadataString135.SetValue(['test case']);
-{ .AddMetadata }
+{ METHOD .Metadata }
 Shape134.Metadata := MetadataString135;
 Appearance136 := TAppearanceNode.Create;
 { DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance }
 X3DPrototype137 := TX3DPrototypeNode.Create;
-X3DPrototype137.NameField := 'MaterialModulator';
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance136.Material := X3DPrototype137;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape134.Appearance := Appearance136;
 Cone138 := TConeNode.Create;
 Cone138.Bottom := False;
 Cone138.BottomRadius := 0.05;
 Cone138.Height := 0.1;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape134.Geometry := Cone138;
-{ .AddChildren }
-Group133.AddChildren([Shape134]);
+{ METHOD .FdChildren.Add }
+Group133.FdChildren.Add(Shape134);
 { Test success: declarativeGroup.addChild() singleton pipeline method }
-{ .AddChildren }
-Group26.AddChildren([Group133]);
+{ METHOD .FdChildren.Add }
+Group26.FdChildren.Add(Group133);
 { Test success: declarative statement addChild() }
 { Test success: x3dModel.findNodeByDEF(DeclarativeAppearanceExample) = <Appearance DEF='DeclarativeAppearanceExample'/> i.e. <Appearance DEF='DeclarativeAppearanceExample'> <!- - DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance - -> <ProtoInstance DEF='MyMaterialModulator' name='MaterialModulator' containerField='material'/> </Appearance> }
 { Test success: x3dModel.findElementByNameValue(findThisNameValue) = <MetadataString DEF='FindableMetadataStringTest' name='findThisNameValue' value='"test case"'/> }
@@ -755,8 +741,8 @@ Group139 := TGroupNode.Create;
 { ... get1Value[3]=3.0, remove[1]=0 2 3 4 5 6, set1Value(0,10)=10 2 3 4 5 6, multiply(2)=20 4 6 8 10 12, clear= }
 { SFVec3f default=0 0 0, initial=1 2 3, setValue=4 5 6, multiply(2)=8 10 12, normalize()=0.45584232 0.5698029 0.68376344, regex matches()=true }
 { regex test SFVec3f().matches("1 2 3")=true, regex test SFVec3f().matches("1 2 3 4")=false, regex test (SFRotationObject.matches("0 0 0 0")=true, failure detecting illegal (zero axis) rotation value }
-{ .AddChildren }
-Group26.AddChildren([Group139]);
+{ METHOD .FdChildren.Add }
+Group26.FdChildren.Add(Group139);
 Sound140 := TSoundNode.Create;
 Sound140.Location := Vector3(0,1.6,0);
 { set sound-ellipsoid location height at 1.6m to match typical avatar height }
@@ -764,10 +750,10 @@ AudioClip141 := TAudioClipNode.Create;
 AudioClip141.Description := 'chimes';
 AudioClip141.SetUrl(['chimes.wav','https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav']);
 { Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d }
-{ .SetSource }
+{ METHOD .Source }
 Sound140.Source := AudioClip141;
-{ .AddChildren }
-Group26.AddChildren([Sound140]);
+{ METHOD .FdChildren.Add }
+Group26.FdChildren.Add(Sound140);
 Sound142 := TSoundNode.Create;
 Sound142.Location := Vector3(0,1.6,0);
 { set sound-ellipsoid location height at 1.6m to match typical avatar height }
@@ -776,10 +762,10 @@ MovieTexture143.Description := 'mpgsys.mpg from ConformanceNist suite';
 MovieTexture143.SetUrl(['mpgsys.mpg','https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg']);
 { Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d }
 { Expected containerField='source', allowed containerField values="texture" "source" "back" "bottom" "front" "left" "right" "top" "backTexture" "bottomTexture" "frontTexture" "leftTexture" "rightTexture" "topTexture" "watchList" }
-{ .SetSource }
+{ METHOD .Source }
 Sound142.Source := MovieTexture143;
-{ .AddChildren }
-Group26.AddChildren([Sound142]);
+{ METHOD .FdChildren.Add }
+Group26.FdChildren.Add(Sound142);
 { Test success: AnchorObject.isNode()=true, siteAnchor.isNode()=true }
 { Test success: AnchorObject.isStatement()=false, siteAnchor.isStatement()=false }
 { Test success: ROUTEObject.isNode()=false, orbitPositionROUTE.isNode()=false }
@@ -792,98 +778,96 @@ Shape144 := TShapeNode.Create;
 Appearance145 := TAppearanceNode.Create;
 Material146 := TMaterialNode.Create;
 Material146.Transparency := 1;
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance145.Material := Material146;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape144.Appearance := Appearance145;
 Extrusion147 := TExtrusionNode.Create;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape144.Geometry := Extrusion147;
-{ .AddChildren }
-Group26.AddChildren([Shape144]);
+{ METHOD .FdChildren.Add }
+Group26.FdChildren.Add(Shape144);
 Group148 := TGroupNode.Create;
 { Test MFNode children array as an ordered list consisting of comments, statements, ProtoInstance and nodes }
 X3DPrototype149 := TX3DPrototype.Create;
-X3DPrototype149.NameField := 'NewWorldInfo';
 X3DInterfaceDeclaration150 := TX3DInterfaceDeclaration.Create(nil);
-X3DField151 := TX3DField.Create;
-X3DField151.NameField := 'description';
-X3DField151.AccessType := 'initializeOnly';
-X3DField151.Type := 'SFString';
-{ .SetX3DField }
-X3DInterfaceDeclaration150.X3DField := X3DField151;
-{ .SetX3DInterfaceDeclaration }
-X3DPrototype149.X3DInterfaceDeclaration := X3DInterfaceDeclaration150;
+SFString151 := TSFString.CreateUndefined(X3DInterfaceDeclaration150, false, 'description');
+{ METHOD .AddSFString }
+X3DInterfaceDeclaration150.AddSFString([SFString151]);
+{ METHOD .AddX3DInterfaceDeclaration }
+X3DPrototype149.AddX3DInterfaceDeclaration([X3DInterfaceDeclaration150]);
 X3DPrototype152 := TX3DPrototype.Create;
 WorldInfo153 := TWorldInfoNode.Create;
-{ .SetWorldInfo }
-X3DPrototype152.WorldInfo := WorldInfo153;
-{ .AddX3DPrototype }
-X3DPrototype149.X3DPrototype := X3DPrototype152;
-{ .AddX3DPrototype }
-Group148.X3DPrototype := X3DPrototype149;
+{ METHOD .AddWorldInfo }
+X3DPrototype152.AddWorldInfo([WorldInfo153]);
+{ METHOD .AddX3DPrototype }
+X3DPrototype149.AddX3DPrototype([X3DPrototype152]);
+{ METHOD .AddX3DPrototype }
+Group148.AddX3DPrototype([X3DPrototype149]);
 X3DPrototype154 := TX3DPrototypeNode.Create;
-X3DPrototype154.NameField := 'NewWorldInfo';
-SFString155 := TSFString.Create(NewWorldInfo4, false, 'description', 'testing 1 2 3');
-SFString155.NameField := 'description';
+SFString155 := TSFString.CreateUndefined(X3DPrototype154, false, 'description');
 SFString155.Value := 'testing 1 2 3';
-{ .SetSFString }
-X3DPrototype154.SFString := SFString155;
-{ .AddX3DPrototype }
-Group148.X3DPrototype := X3DPrototype154;
+{ METHOD .AddSFString }
+X3DPrototype154.AddSFString([SFString155]);
+{ METHOD .AddX3DPrototype }
+Group148.AddX3DPrototype([X3DPrototype154]);
 Group156 := TGroupNode.Create;
 { intentionally empty }
-{ .AddChildren }
-Group148.AddChildren([Group156]);
+{ METHOD .FdChildren.Add }
+Group148.FdChildren.Add(Group156);
 X3DPrototype157 := TX3DPrototypeNode.Create;
-X3DPrototype157.NameField := 'NewWorldInfo';
-{ .AddX3DPrototype }
-Group148.X3DPrototype := X3DPrototype157;
+{ METHOD .AddX3DPrototype }
+Group148.AddX3DPrototype([X3DPrototype157]);
 Transform158 := TTransformNode.Create;
 { intentionally empty }
-{ .AddChildren }
-Group148.AddChildren([Transform158]);
+{ METHOD .FdChildren.Add }
+Group148.FdChildren.Add(Transform158);
 { Test satisfactorily creates MFNode children array as an ordered list with mixed content }
-{ .AddChildren }
-Group26.AddChildren([Group148]);
+{ METHOD .FdChildren.Add }
+Group26.FdChildren.Add(Group148);
 X3DPrototype159 := TX3DPrototype.Create;
-X3DPrototype159.NameField := 'ShaderProto';
 X3DPrototype160 := TX3DPrototype.Create;
 ProgramShader161 := TProgramShaderNode.Create;
-{ .SetProgramShader }
-X3DPrototype160.ProgramShader := ProgramShader161;
-{ .SetX3DPrototype }
-X3DPrototype159.X3DPrototype := X3DPrototype160;
-{ .AddX3DPrototype }
-Group26.X3DPrototype := X3DPrototype159;
+{ METHOD .AddProgramShader }
+X3DPrototype160.AddProgramShader([ProgramShader161]);
+{ METHOD .AddX3DPrototype }
+X3DPrototype159.AddX3DPrototype([X3DPrototype160]);
+{ METHOD .AddX3DPrototype }
+Group26.AddX3DPrototype([X3DPrototype159]);
 Shape162 := TShapeNode.Create;
 Appearance163 := TAppearanceNode.Create;
 { Test MFNode shaders array as an ordered list consisting of comments, ProtoInstance and nodes }
 { Test satisfactorily creates MFNode shaders array as an ordered list with mixed content }
 ProgramShader164 := TProgramShaderNode.Create;
 ShaderProgram165 := TShaderProgramNode.Create;
-ShaderProgram165.Type := 'VERTEX';
-{ .AddPrograms }
+{ METHOD .Programs }
 ProgramShader164.Programs := ShaderProgram165;
-{ .AddShaders }
-Appearance163.Shaders := ProgramShader164;
+{ METHOD .AddChildren }
+Appearance163.AddChildren([ProgramShader164]);
 X3DPrototype166 := TX3DPrototypeNode.Create;
-X3DPrototype166.NameField := 'ShaderProto';
-{ .AddX3DPrototype }
-Appearance163.X3DPrototype := X3DPrototype166;
+{ METHOD .AddX3DPrototype }
+Appearance163.AddX3DPrototype([X3DPrototype166]);
 ComposedShader167 := TComposedShaderNode.Create;
 ShaderPart168 := TShaderPartNode.Create;
-ShaderPart168.Type := 'VERTEX';
-{ .AddParts }
+ShaderPart168.FdType.Value := 'VERTEX';
+{ METHOD .Parts }
 ComposedShader167.Parts := ShaderPart168;
-{ .AddShaders }
-Appearance163.Shaders := ComposedShader167;
-{ .SetAppearance }
+{ METHOD .AddChildren }
+Appearance163.AddChildren([ComposedShader167]);
+{ METHOD .Appearance }
 Shape162.Appearance := Appearance163;
-{ .AddChildren }
-Group26.AddChildren([Shape162]);
-{ .AddGroup }
+{ METHOD .FdChildren.Add }
+Group26.FdChildren.Add(Shape162);
+{ METHOD .AddGroup }
 X3D0.AddChildren([Group26]);
+end;
+
+function CreateSmokeTestProgramOutputCanonical: TX3DRootNode;
+begin
+InitSmokeTestProgramOutputCanonicalPart0;
+InitSmokeTestProgramOutputCanonicalPart1;
+InitSmokeTestProgramOutputCanonicalPart2;
+InitSmokeTestProgramOutputCanonicalPart3;
 Result := X3D0;
 end;
 

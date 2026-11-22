@@ -2,7 +2,7 @@ unit StandardHumanoid;
 
 interface
 
-uses X3DNodes;
+uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
 
 function CreateStandardHumanoid: TX3DRootNode;
 
@@ -10,7 +10,6 @@ implementation
 
 uses CastleVectors;
 
-function CreateStandardHumanoid: TX3DRootNode;
 var
 X3D0: TX3DRootNode;
 Group11: TGroupNode;
@@ -1772,20 +1771,32 @@ HAnimSegment1766: THAnimSegmentNode;
 HAnimSegment1767: THAnimSegmentNode;
 HAnimSegment1768: THAnimSegmentNode;
 HAnimSegment1769: THAnimSegmentNode;
+
+procedure InitStandardHumanoidPart0;
 begin
 X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Immersive';
 X3D0.ForceVersion.Major := 4;
 X3D0.ForceVersion.Minor := 0;
 X3D0.Components['HAnim'] := 1;
+{ METHOD .Component }
 X3D0.Meta['title'] := 'JohnBoy.x3d';
+{ METHOD .Meta }
 X3D0.Meta['identifier'] := 'http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d';
+{ METHOD .Meta }
 X3D0.Meta['description'] := 'An attempt at a standard LOA-4 skeleton';
+{ METHOD .Meta }
 X3D0.Meta['generator'] := 'h2.pl';
+{ METHOD .Meta }
 X3D0.Meta['modified'] := '14 Jan 2023';
+{ METHOD .Meta }
 X3D0.Meta['creator'] := 'John Carlson';
+{ METHOD .Meta }
 X3D0.Meta['created'] := '9 November 2020';
+{ METHOD .Meta }
 X3D0.Meta['license'] := '../license.html';
+{ METHOD .Meta }
+{ METHOD .Head }
 Group11 := TGroupNode.Create;
 Transform12 := TTransformNode.Create;
 { DEF for markerfor XYZ axes }
@@ -1797,18 +1808,18 @@ IndexedLineSet14.ColorPerVertex := False;
 IndexedLineSet14.SetCoordIndex([0,1,-1,0,2,-1,0,3,-1]);
 Coordinate15 := TCoordinateNode.Create;
 Coordinate15.SetPoint([Vector3(0,0,0),Vector3(0.1,0,0),Vector3(0,0.1,0),Vector3(0,0,0.1)]);
-{ .SetCoord }
+{ METHOD .Coord }
 IndexedLineSet14.Coord := Coordinate15;
 Color16 := TColorNode.Create;
 Color16.SetColor([Vector3(1,0,0),Vector3(0,0.6,0),Vector3(0,0,1)]);
-{ .SetColor }
+{ METHOD .Color }
 IndexedLineSet14.Color := Color16;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape13.Geometry := IndexedLineSet14;
-{ .AddChild }
-Transform12.AddChildren([Shape13]);
-{ .AddChildren }
-Group11.AddChildren([Transform12]);
+{ METHOD .FdChildren.Add }
+Transform12.FdChildren.Add(Shape13);
+{ METHOD .FdChildren.Add }
+Group11.FdChildren.Add(Transform12);
 Group17 := TGroupNode.Create;
 { DEFS for markers of skeleton joints, segments, and sites }
 Transform18 := TTransformNode.Create;
@@ -1817,19 +1828,24 @@ Transform19.Translation := Vector3(0,2.1,0);
 Shape20 := TShapeNode.Create;
 Sphere21 := TSphereNode.Create;
 Sphere21.Radius := 0.04;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape20.Geometry := Sphere21;
 Appearance22 := TAppearanceNode.Create;
 Material23 := TMaterialNode.Create;
 Material23.DiffuseColor := Vector3(0,1,0);
-{ .SetMaterial }
+end;
+
+procedure InitStandardHumanoidPart1;
+begin
+
+{ METHOD .SetMaterial }
 Appearance22.Material := Material23;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape20.Appearance := Appearance22;
-{ .AddChild }
-Transform19.AddChildren([Shape20]);
-{ .AddChildren }
-Transform18.AddChildren([Transform19]);
+{ METHOD .FdChildren.Add }
+Transform19.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform18.FdChildren.Add(Transform19);
 Transform24 := TTransformNode.Create;
 Transform24.Translation := Vector3(0,2.05,0);
 Shape25 := TShapeNode.Create;
@@ -1837,18 +1853,18 @@ LineSet26 := TLineSetNode.Create;
 LineSet26.SetVertexCount([2]);
 ColorRGBA27 := TColorRGBANode.Create;
 ColorRGBA27.SetColor([Vector4(0,0,1,1),Vector4(0,0,1,1)]);
-{ .SetColor }
+{ METHOD .Color }
 LineSet26.Color := ColorRGBA27;
 Coordinate28 := TCoordinateNode.Create;
 Coordinate28.SetPoint([Vector3(-0.05,0,0),Vector3(0.05,0,0)]);
-{ .SetCoord }
+{ METHOD .Coord }
 LineSet26.Coord := Coordinate28;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape25.Geometry := LineSet26;
-{ .AddChild }
-Transform24.AddChildren([Shape25]);
-{ .AddChildren }
-Transform18.AddChildren([Transform24]);
+{ METHOD .FdChildren.Add }
+Transform24.FdChildren.Add(Shape25);
+{ METHOD .FdChildren.Add }
+Transform18.FdChildren.Add(Transform24);
 Transform29 := TTransformNode.Create;
 Transform29.Translation := Vector3(0,2.1,0);
 Shape30 := TShapeNode.Create;
@@ -1858,42 +1874,46 @@ IndexedFaceSet31.Solid := False;
 IndexedFaceSet31.SetCoordIndex([0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1]);
 ColorRGBA32 := TColorRGBANode.Create;
 ColorRGBA32.SetColor([Vector4(1,1,0,1),Vector4(1,1,0,0.1),Vector4(1,1,0,1),Vector4(1,1,0,0.1),Vector4(1,1,0,1),Vector4(1,1,0,0.1)]);
-{ .SetColor }
+{ METHOD .Color }
 IndexedFaceSet31.Color := ColorRGBA32;
 Coordinate33 := TCoordinateNode.Create;
 Coordinate33.SetPoint([Vector3(0,0.01,0),Vector3(-0.01,0,0),Vector3(0,0,0.01),Vector3(0.01,0,0),Vector3(0,0,-0.01),Vector3(0,-0.01,0)]);
-{ .SetCoord }
+{ METHOD .Coord }
 IndexedFaceSet31.Coord := Coordinate33;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape30.Geometry := IndexedFaceSet31;
 Appearance34 := TAppearanceNode.Create;
 Material35 := TMaterialNode.Create;
 Material35.DiffuseColor := Vector3(1,1,1);
 Material35.Transparency := 1;
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance34.Material := Material35;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape30.Appearance := Appearance34;
-{ .AddChild }
-Transform29.AddChildren([Shape30]);
-{ .AddChildren }
-Transform18.AddChildren([Transform29]);
-{ .AddChildren }
-Group17.AddChildren([Transform18]);
-{ .AddChildren }
-Group11.AddChildren([Group17]);
+{ METHOD .FdChildren.Add }
+Transform29.FdChildren.Add(Shape30);
+{ METHOD .FdChildren.Add }
+Transform18.FdChildren.Add(Transform29);
+end;
+
+procedure InitStandardHumanoidPart2;
+begin
+
+{ METHOD .FdChildren.Add }
+Group17.FdChildren.Add(Transform18);
+{ METHOD .FdChildren.Add }
+Group11.FdChildren.Add(Group17);
 NavigationInfo36 := TNavigationInfoNode.Create;
 NavigationInfo36.Speed := 1.5;
-{ .AddChildren }
-Group11.AddChildren([NavigationInfo36]);
+{ METHOD .FdChildren.Add }
+Group11.FdChildren.Add(NavigationInfo36);
 Viewpoint37 := TViewpointNode.Create;
 Viewpoint37.Position := Vector3(0,1,3);
 Viewpoint37.CenterOfRotation := Vector3(0,1,0);
 Viewpoint37.Description := 'default';
-{ .AddChildren }
-Group11.AddChildren([Viewpoint37]);
+{ METHOD .FdChildren.Add }
+Group11.FdChildren.Add(Viewpoint37);
 HAnimHumanoid38 := THAnimHumanoidNode.Create;
-HAnimHumanoid38.NameField := 'HAnim';
 HAnimHumanoid38.SetInfo(['humanoidVersion=2.0']);
 HAnimHumanoid38.Version := '2.0';
 { <LOD containerField='skin'> (Switch whichChoice='0' and LOD parents each already work in view3dscene) }
@@ -1901,212 +1921,218 @@ HAnimHumanoid38.Version := '2.0';
 { </LOD> }
 { <Coordinate USE='TheSkinCoord' containerField='skinCoord'/> }
 HAnimJoint39 := THAnimJointNode.Create;
-HAnimJoint39.NameField := 'humanoid_root';
+end;
+
+procedure InitStandardHumanoidPart3;
+begin
+
 HAnimJoint39.Center := Vector3(0,0.824,0.0277);
 HAnimSegment40 := THAnimSegmentNode.Create;
-HAnimSegment40.NameField := 'sacrum';
 Transform41 := TTransformNode.Create;
 Transform41.Translation := Vector3(0,0.824,0.0277);
 Transform42 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor43 := TTouchSensorNode.Create;
 TouchSensor43.Description := 'Joint humanoid_root';
-{ .AddChildren }
-Transform42.AddChildren([TouchSensor43]);
-Shape44 := Shape20;
-{ .AddChild }
-Transform42.AddChildren([Shape44]);
-{ .AddChildren }
-Transform41.AddChildren([Transform42]);
-{ .AddChildren }
-HAnimSegment40.AddChildren([Transform41]);
+{ METHOD .FdChildren.Add }
+Transform42.FdChildren.Add(TouchSensor43);
+{ METHOD .FdChildren.Add }
+Transform42.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform41.FdChildren.Add(Transform42);
+{ METHOD .FdChildren.Add }
+HAnimSegment40.FdChildren.Add(Transform41);
 TouchSensor45 := TTouchSensorNode.Create;
 TouchSensor45.Description := 'Segment sacrum';
-{ .AddChildren }
-HAnimSegment40.AddChildren([TouchSensor45]);
+{ METHOD .FdChildren.Add }
+HAnimSegment40.FdChildren.Add(TouchSensor45);
 Shape46 := TShapeNode.Create;
 Appearance47 := TAppearanceNode.Create;
 Material48 := TMaterialNode.Create;
 Material48.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance47.Material := Material48;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape46.Appearance := Appearance47;
 Extrusion49 := TExtrusionNode.Create;
 Extrusion49.SetSpine([Vector3(0,0.824,0.0277),Vector3(0,0.9149,0.0016)]);
 Extrusion49.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape46.Geometry := Extrusion49;
-{ .AddChildren }
-HAnimSegment40.AddChildren([Shape46]);
+{ METHOD .FdChildren.Add }
+HAnimSegment40.FdChildren.Add(Shape46);
 TouchSensor50 := TTouchSensorNode.Create;
 TouchSensor50.Description := 'Segment sacrum';
-{ .AddChildren }
-HAnimSegment40.AddChildren([TouchSensor50]);
+{ METHOD .FdChildren.Add }
+HAnimSegment40.FdChildren.Add(TouchSensor50);
 Shape51 := TShapeNode.Create;
 Appearance52 := TAppearanceNode.Create;
 Material53 := TMaterialNode.Create;
 Material53.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance52.Material := Material53;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape51.Appearance := Appearance52;
 Extrusion54 := TExtrusionNode.Create;
 Extrusion54.SetSpine([Vector3(0,0.824,0.0277),Vector3(0.0028,1.0568,-0.0776)]);
 Extrusion54.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape51.Geometry := Extrusion54;
-{ .AddChildren }
-HAnimSegment40.AddChildren([Shape51]);
-{ .AddChildren }
-HAnimJoint39.AddChildren([HAnimSegment40]);
+{ METHOD .FdChildren.Add }
+HAnimSegment40.FdChildren.Add(Shape51);
+{ METHOD .FdChildren.Add }
+HAnimJoint39.FdChildren.Add(HAnimSegment40);
+end;
+
+procedure InitStandardHumanoidPart4;
+begin
+
 HAnimJoint55 := THAnimJointNode.Create;
-HAnimJoint55.NameField := 'sacroiliac';
 HAnimJoint55.Center := Vector3(0,0.9149,0.0016);
 HAnimSegment56 := THAnimSegmentNode.Create;
-HAnimSegment56.NameField := 'pelvis';
 Transform57 := TTransformNode.Create;
 Transform57.Translation := Vector3(0,0.9149,0.0016);
 Transform58 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor59 := TTouchSensorNode.Create;
 TouchSensor59.Description := 'Joint sacroiliac';
-{ .AddChildren }
-Transform58.AddChildren([TouchSensor59]);
-Shape60 := Shape20;
-{ .AddChild }
-Transform58.AddChildren([Shape60]);
-{ .AddChildren }
-Transform57.AddChildren([Transform58]);
-{ .AddChildren }
-HAnimSegment56.AddChildren([Transform57]);
+{ METHOD .FdChildren.Add }
+Transform58.FdChildren.Add(TouchSensor59);
+{ METHOD .FdChildren.Add }
+Transform58.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform57.FdChildren.Add(Transform58);
+{ METHOD .FdChildren.Add }
+HAnimSegment56.FdChildren.Add(Transform57);
 TouchSensor61 := TTouchSensorNode.Create;
 TouchSensor61.Description := 'Segment pelvis';
-{ .AddChildren }
-HAnimSegment56.AddChildren([TouchSensor61]);
+{ METHOD .FdChildren.Add }
+HAnimSegment56.FdChildren.Add(TouchSensor61);
 Shape62 := TShapeNode.Create;
 Appearance63 := TAppearanceNode.Create;
 Material64 := TMaterialNode.Create;
 Material64.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance63.Material := Material64;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape62.Appearance := Appearance63;
 Extrusion65 := TExtrusionNode.Create;
 Extrusion65.SetSpine([Vector3(0,0.9149,0.0016),Vector3(0.0961,0.9124,-0.0001)]);
 Extrusion65.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape62.Geometry := Extrusion65;
-{ .AddChildren }
-HAnimSegment56.AddChildren([Shape62]);
+{ METHOD .FdChildren.Add }
+HAnimSegment56.FdChildren.Add(Shape62);
 TouchSensor66 := TTouchSensorNode.Create;
 TouchSensor66.Description := 'Segment pelvis';
-{ .AddChildren }
-HAnimSegment56.AddChildren([TouchSensor66]);
+{ METHOD .FdChildren.Add }
+HAnimSegment56.FdChildren.Add(TouchSensor66);
 Shape67 := TShapeNode.Create;
 Appearance68 := TAppearanceNode.Create;
 Material69 := TMaterialNode.Create;
 Material69.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance68.Material := Material69;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape67.Appearance := Appearance68;
 Extrusion70 := TExtrusionNode.Create;
 Extrusion70.SetSpine([Vector3(0,0.9149,0.0016),Vector3(-0.095,0.9171,0.0029)]);
 Extrusion70.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape67.Geometry := Extrusion70;
-{ .AddChildren }
-HAnimSegment56.AddChildren([Shape67]);
-{ .AddChildren }
-HAnimJoint55.AddChildren([HAnimSegment56]);
+{ METHOD .FdChildren.Add }
+HAnimSegment56.FdChildren.Add(Shape67);
+end;
+
+procedure InitStandardHumanoidPart5;
+begin
+
+{ METHOD .FdChildren.Add }
+HAnimJoint55.FdChildren.Add(HAnimSegment56);
 HAnimJoint71 := THAnimJointNode.Create;
-HAnimJoint71.NameField := 'l_hip';
 HAnimJoint71.Center := Vector3(0.0961,0.9124,-0.0001);
 HAnimSegment72 := THAnimSegmentNode.Create;
-HAnimSegment72.NameField := 'l_thigh';
 Transform73 := TTransformNode.Create;
 Transform73.Translation := Vector3(0.0961,0.9124,-0.0001);
 Transform74 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor75 := TTouchSensorNode.Create;
 TouchSensor75.Description := 'Joint l_hip';
-{ .AddChildren }
-Transform74.AddChildren([TouchSensor75]);
-Shape76 := Shape20;
-{ .AddChild }
-Transform74.AddChildren([Shape76]);
-{ .AddChildren }
-Transform73.AddChildren([Transform74]);
-{ .AddChildren }
-HAnimSegment72.AddChildren([Transform73]);
+{ METHOD .FdChildren.Add }
+Transform74.FdChildren.Add(TouchSensor75);
+{ METHOD .FdChildren.Add }
+Transform74.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform73.FdChildren.Add(Transform74);
+{ METHOD .FdChildren.Add }
+HAnimSegment72.FdChildren.Add(Transform73);
 TouchSensor77 := TTouchSensorNode.Create;
 TouchSensor77.Description := 'Segment l_thigh';
-{ .AddChildren }
-HAnimSegment72.AddChildren([TouchSensor77]);
+{ METHOD .FdChildren.Add }
+HAnimSegment72.FdChildren.Add(TouchSensor77);
 Shape78 := TShapeNode.Create;
 Appearance79 := TAppearanceNode.Create;
 Material80 := TMaterialNode.Create;
 Material80.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance79.Material := Material80;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape78.Appearance := Appearance79;
 Extrusion81 := TExtrusionNode.Create;
 Extrusion81.SetSpine([Vector3(0.0961,0.9124,-0.0001),Vector3(0.104,0.4867,0.0308)]);
 Extrusion81.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape78.Geometry := Extrusion81;
-{ .AddChildren }
-HAnimSegment72.AddChildren([Shape78]);
-{ .AddChildren }
-HAnimJoint71.AddChildren([HAnimSegment72]);
+{ METHOD .FdChildren.Add }
+HAnimSegment72.FdChildren.Add(Shape78);
+{ METHOD .FdChildren.Add }
+HAnimJoint71.FdChildren.Add(HAnimSegment72);
 HAnimJoint82 := THAnimJointNode.Create;
-HAnimJoint82.NameField := 'l_knee';
 HAnimJoint82.Center := Vector3(0.104,0.4867,0.0308);
 HAnimSegment83 := THAnimSegmentNode.Create;
-HAnimSegment83.NameField := 'l_calf';
 Transform84 := TTransformNode.Create;
 Transform84.Translation := Vector3(0.104,0.4867,0.0308);
 Transform85 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor86 := TTouchSensorNode.Create;
 TouchSensor86.Description := 'Joint l_knee';
-{ .AddChildren }
-Transform85.AddChildren([TouchSensor86]);
-Shape87 := Shape20;
-{ .AddChild }
-Transform85.AddChildren([Shape87]);
-{ .AddChildren }
-Transform84.AddChildren([Transform85]);
-{ .AddChildren }
-HAnimSegment83.AddChildren([Transform84]);
+{ METHOD .FdChildren.Add }
+Transform85.FdChildren.Add(TouchSensor86);
+{ METHOD .FdChildren.Add }
+Transform85.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform84.FdChildren.Add(Transform85);
+{ METHOD .FdChildren.Add }
+HAnimSegment83.FdChildren.Add(Transform84);
+end;
+
+procedure InitStandardHumanoidPart6;
+begin
+
 TouchSensor88 := TTouchSensorNode.Create;
 TouchSensor88.Description := 'Segment l_calf';
-{ .AddChildren }
-HAnimSegment83.AddChildren([TouchSensor88]);
+{ METHOD .FdChildren.Add }
+HAnimSegment83.FdChildren.Add(TouchSensor88);
 Shape89 := TShapeNode.Create;
 Appearance90 := TAppearanceNode.Create;
 Material91 := TMaterialNode.Create;
 Material91.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance90.Material := Material91;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape89.Appearance := Appearance90;
 Extrusion92 := TExtrusionNode.Create;
 Extrusion92.SetSpine([Vector3(0.104,0.4867,0.0308),Vector3(0.1101,0.0656,-0.0736)]);
 Extrusion92.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape89.Geometry := Extrusion92;
-{ .AddChildren }
-HAnimSegment83.AddChildren([Shape89]);
-{ .AddChildren }
-HAnimJoint82.AddChildren([HAnimSegment83]);
+{ METHOD .FdChildren.Add }
+HAnimSegment83.FdChildren.Add(Shape89);
+{ METHOD .FdChildren.Add }
+HAnimJoint82.FdChildren.Add(HAnimSegment83);
 HAnimJoint93 := THAnimJointNode.Create;
-HAnimJoint93.NameField := 'l_talocrural';
 HAnimJoint93.Center := Vector3(0.1101,0.0656,-0.0736);
 HAnimSegment94 := THAnimSegmentNode.Create;
-HAnimSegment94.NameField := 'l_talus';
 Transform95 := TTransformNode.Create;
 Transform95.Scale := Vector3(0.15,0.15,0.15);
 Transform95.Translation := Vector3(0.08,0.06,-0.025);
@@ -2116,1089 +2142,1105 @@ Transform96 := TTransformNode.Create;
 { Empty Transform left foot }
 TouchSensor97 := TTouchSensorNode.Create;
 TouchSensor97.Description := 'Joint l_talocrural';
-{ .AddChildren }
-Transform96.AddChildren([TouchSensor97]);
-Shape98 := Shape20;
-{ .AddChild }
-Transform96.AddChildren([Shape98]);
-{ .AddChildren }
-Transform95.AddChildren([Transform96]);
-{ .AddChildren }
-HAnimSegment94.AddChildren([Transform95]);
+{ METHOD .FdChildren.Add }
+Transform96.FdChildren.Add(TouchSensor97);
+{ METHOD .FdChildren.Add }
+Transform96.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform95.FdChildren.Add(Transform96);
+{ METHOD .FdChildren.Add }
+HAnimSegment94.FdChildren.Add(Transform95);
 TouchSensor99 := TTouchSensorNode.Create;
 TouchSensor99.Description := 'Segment l_talus';
-{ .AddChildren }
-HAnimSegment94.AddChildren([TouchSensor99]);
+{ METHOD .FdChildren.Add }
+HAnimSegment94.FdChildren.Add(TouchSensor99);
 Shape100 := TShapeNode.Create;
 Appearance101 := TAppearanceNode.Create;
 Material102 := TMaterialNode.Create;
 Material102.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance101.Material := Material102;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape100.Appearance := Appearance101;
 Extrusion103 := TExtrusionNode.Create;
 Extrusion103.SetSpine([Vector3(0.1101,0.0656,-0.0736),Vector3(0.0781,0.0283,-0.097)]);
+end;
+
+procedure InitStandardHumanoidPart7;
+begin
+
 Extrusion103.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape100.Geometry := Extrusion103;
-{ .AddChildren }
-HAnimSegment94.AddChildren([Shape100]);
+{ METHOD .FdChildren.Add }
+HAnimSegment94.FdChildren.Add(Shape100);
 TouchSensor104 := TTouchSensorNode.Create;
 TouchSensor104.Description := 'Segment l_talus';
-{ .AddChildren }
-HAnimSegment94.AddChildren([TouchSensor104]);
+{ METHOD .FdChildren.Add }
+HAnimSegment94.FdChildren.Add(TouchSensor104);
 Shape105 := TShapeNode.Create;
 Appearance106 := TAppearanceNode.Create;
 Material107 := TMaterialNode.Create;
 Material107.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance106.Material := Material107;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape105.Appearance := Appearance106;
 Extrusion108 := TExtrusionNode.Create;
 Extrusion108.SetSpine([Vector3(0.1101,0.0656,-0.0736),Vector3(0.0889,0.0494,-0.1278)]);
 Extrusion108.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape105.Geometry := Extrusion108;
-{ .AddChildren }
-HAnimSegment94.AddChildren([Shape105]);
-{ .AddChildren }
-HAnimJoint93.AddChildren([HAnimSegment94]);
+{ METHOD .FdChildren.Add }
+HAnimSegment94.FdChildren.Add(Shape105);
+{ METHOD .FdChildren.Add }
+HAnimJoint93.FdChildren.Add(HAnimSegment94);
 HAnimJoint109 := THAnimJointNode.Create;
-HAnimJoint109.NameField := 'l_talocalcaneonavicular';
 HAnimJoint109.Center := Vector3(0.0781,0.0283,-0.097);
 HAnimSegment110 := THAnimSegmentNode.Create;
-HAnimSegment110.NameField := 'l_navicular';
 Transform111 := TTransformNode.Create;
 Transform111.Translation := Vector3(0.0781,0.0283,-0.097);
 Transform112 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor113 := TTouchSensorNode.Create;
 TouchSensor113.Description := 'Joint l_talocalcaneonavicular';
-{ .AddChildren }
-Transform112.AddChildren([TouchSensor113]);
-Shape114 := Shape20;
-{ .AddChild }
-Transform112.AddChildren([Shape114]);
-{ .AddChildren }
-Transform111.AddChildren([Transform112]);
-{ .AddChildren }
-HAnimSegment110.AddChildren([Transform111]);
+{ METHOD .FdChildren.Add }
+Transform112.FdChildren.Add(TouchSensor113);
+{ METHOD .FdChildren.Add }
+Transform112.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform111.FdChildren.Add(Transform112);
+{ METHOD .FdChildren.Add }
+HAnimSegment110.FdChildren.Add(Transform111);
 TouchSensor115 := TTouchSensorNode.Create;
 TouchSensor115.Description := 'Segment l_navicular';
-{ .AddChildren }
-HAnimSegment110.AddChildren([TouchSensor115]);
+{ METHOD .FdChildren.Add }
+HAnimSegment110.FdChildren.Add(TouchSensor115);
 Shape116 := TShapeNode.Create;
 Appearance117 := TAppearanceNode.Create;
 Material118 := TMaterialNode.Create;
 Material118.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance117.Material := Material118;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape116.Appearance := Appearance117;
 Extrusion119 := TExtrusionNode.Create;
+end;
+
+procedure InitStandardHumanoidPart8;
+begin
+
 Extrusion119.SetSpine([Vector3(0.0781,0.0283,-0.097),Vector3(0.0672,0.0235,-0.0835)]);
 Extrusion119.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape116.Geometry := Extrusion119;
-{ .AddChildren }
-HAnimSegment110.AddChildren([Shape116]);
+{ METHOD .FdChildren.Add }
+HAnimSegment110.FdChildren.Add(Shape116);
 TouchSensor120 := TTouchSensorNode.Create;
 TouchSensor120.Description := 'Segment l_navicular';
-{ .AddChildren }
-HAnimSegment110.AddChildren([TouchSensor120]);
+{ METHOD .FdChildren.Add }
+HAnimSegment110.FdChildren.Add(TouchSensor120);
 Shape121 := TShapeNode.Create;
 Appearance122 := TAppearanceNode.Create;
 Material123 := TMaterialNode.Create;
 Material123.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance122.Material := Material123;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape121.Appearance := Appearance122;
 Extrusion124 := TExtrusionNode.Create;
 Extrusion124.SetSpine([Vector3(0.0781,0.0283,-0.097),Vector3(0.0812,0.025,-0.0805)]);
 Extrusion124.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape121.Geometry := Extrusion124;
-{ .AddChildren }
-HAnimSegment110.AddChildren([Shape121]);
+{ METHOD .FdChildren.Add }
+HAnimSegment110.FdChildren.Add(Shape121);
 TouchSensor125 := TTouchSensorNode.Create;
 TouchSensor125.Description := 'Segment l_navicular';
-{ .AddChildren }
-HAnimSegment110.AddChildren([TouchSensor125]);
+{ METHOD .FdChildren.Add }
+HAnimSegment110.FdChildren.Add(TouchSensor125);
 Shape126 := TShapeNode.Create;
 Appearance127 := TAppearanceNode.Create;
 Material128 := TMaterialNode.Create;
 Material128.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance127.Material := Material128;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape126.Appearance := Appearance127;
 Extrusion129 := TExtrusionNode.Create;
 Extrusion129.SetSpine([Vector3(0.0781,0.0283,-0.097),Vector3(0.0928,0.0248,-0.0821)]);
 Extrusion129.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape126.Geometry := Extrusion129;
-{ .AddChildren }
-HAnimSegment110.AddChildren([Shape126]);
-{ .AddChildren }
-HAnimJoint109.AddChildren([HAnimSegment110]);
+{ METHOD .FdChildren.Add }
+HAnimSegment110.FdChildren.Add(Shape126);
+{ METHOD .FdChildren.Add }
+HAnimJoint109.FdChildren.Add(HAnimSegment110);
 HAnimJoint130 := THAnimJointNode.Create;
-HAnimJoint130.NameField := 'l_cuneonavicular_1';
 HAnimJoint130.Center := Vector3(0.0672,0.0235,-0.0835);
 HAnimSegment131 := THAnimSegmentNode.Create;
-HAnimSegment131.NameField := 'l_cuneiform_1';
 Transform132 := TTransformNode.Create;
 Transform132.Translation := Vector3(0.0672,0.0235,-0.0835);
 Transform133 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor134 := TTouchSensorNode.Create;
+end;
+
+procedure InitStandardHumanoidPart9;
+begin
+
 TouchSensor134.Description := 'Joint l_cuneonavicular_1';
-{ .AddChildren }
-Transform133.AddChildren([TouchSensor134]);
-Shape135 := Shape20;
-{ .AddChild }
-Transform133.AddChildren([Shape135]);
-{ .AddChildren }
-Transform132.AddChildren([Transform133]);
-{ .AddChildren }
-HAnimSegment131.AddChildren([Transform132]);
+{ METHOD .FdChildren.Add }
+Transform133.FdChildren.Add(TouchSensor134);
+{ METHOD .FdChildren.Add }
+Transform133.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform132.FdChildren.Add(Transform133);
+{ METHOD .FdChildren.Add }
+HAnimSegment131.FdChildren.Add(Transform132);
 TouchSensor136 := TTouchSensorNode.Create;
 TouchSensor136.Description := 'Segment l_cuneiform_1';
-{ .AddChildren }
-HAnimSegment131.AddChildren([TouchSensor136]);
+{ METHOD .FdChildren.Add }
+HAnimSegment131.FdChildren.Add(TouchSensor136);
 Shape137 := TShapeNode.Create;
 Appearance138 := TAppearanceNode.Create;
 Material139 := TMaterialNode.Create;
 Material139.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance138.Material := Material139;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape137.Appearance := Appearance138;
 Extrusion140 := TExtrusionNode.Create;
 Extrusion140.SetSpine([Vector3(0.0672,0.0235,-0.0835),Vector3(0.0644,0.0147,-0.0577)]);
 Extrusion140.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape137.Geometry := Extrusion140;
-{ .AddChildren }
-HAnimSegment131.AddChildren([Shape137]);
-{ .AddChildren }
-HAnimJoint130.AddChildren([HAnimSegment131]);
+{ METHOD .FdChildren.Add }
+HAnimSegment131.FdChildren.Add(Shape137);
+{ METHOD .FdChildren.Add }
+HAnimJoint130.FdChildren.Add(HAnimSegment131);
 HAnimJoint141 := THAnimJointNode.Create;
-HAnimJoint141.NameField := 'l_tarsometatarsal_1';
 HAnimJoint141.Center := Vector3(0.0644,0.0147,-0.0577);
 HAnimSegment142 := THAnimSegmentNode.Create;
-HAnimSegment142.NameField := 'l_metatarsal_1';
 Transform143 := TTransformNode.Create;
 Transform143.Translation := Vector3(0.0644,0.0147,-0.0577);
 Transform144 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor145 := TTouchSensorNode.Create;
 TouchSensor145.Description := 'Joint l_tarsometatarsal_1';
-{ .AddChildren }
-Transform144.AddChildren([TouchSensor145]);
-Shape146 := Shape20;
-{ .AddChild }
-Transform144.AddChildren([Shape146]);
-{ .AddChildren }
-Transform143.AddChildren([Transform144]);
-{ .AddChildren }
-HAnimSegment142.AddChildren([Transform143]);
+{ METHOD .FdChildren.Add }
+Transform144.FdChildren.Add(TouchSensor145);
+{ METHOD .FdChildren.Add }
+Transform144.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform143.FdChildren.Add(Transform144);
+{ METHOD .FdChildren.Add }
+HAnimSegment142.FdChildren.Add(Transform143);
 TouchSensor147 := TTouchSensorNode.Create;
 TouchSensor147.Description := 'Segment l_metatarsal_1';
-{ .AddChildren }
-HAnimSegment142.AddChildren([TouchSensor147]);
+{ METHOD .FdChildren.Add }
+HAnimSegment142.FdChildren.Add(TouchSensor147);
 Shape148 := TShapeNode.Create;
 Appearance149 := TAppearanceNode.Create;
 Material150 := TMaterialNode.Create;
 Material150.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance149.Material := Material150;
-{ .SetAppearance }
+end;
+
+procedure InitStandardHumanoidPart10;
+begin
+
+{ METHOD .Appearance }
 Shape148.Appearance := Appearance149;
 Extrusion151 := TExtrusionNode.Create;
 Extrusion151.SetSpine([Vector3(0.0644,0.0147,-0.0577),Vector3(0.0619,0.0059,-0.0083)]);
 Extrusion151.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape148.Geometry := Extrusion151;
-{ .AddChildren }
-HAnimSegment142.AddChildren([Shape148]);
-{ .AddChildren }
-HAnimJoint141.AddChildren([HAnimSegment142]);
+{ METHOD .FdChildren.Add }
+HAnimSegment142.FdChildren.Add(Shape148);
+{ METHOD .FdChildren.Add }
+HAnimJoint141.FdChildren.Add(HAnimSegment142);
 HAnimJoint152 := THAnimJointNode.Create;
-HAnimJoint152.NameField := 'l_metatarsophalangeal_1';
 HAnimJoint152.Center := Vector3(0.0619,0.0059,-0.0083);
 HAnimSegment153 := THAnimSegmentNode.Create;
-HAnimSegment153.NameField := 'l_tarsal_proximal_phalanx_1';
 Transform154 := TTransformNode.Create;
 Transform154.Translation := Vector3(0.0619,0.0059,-0.0083);
 Transform155 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor156 := TTouchSensorNode.Create;
 TouchSensor156.Description := 'Joint l_metatarsophalangeal_1';
-{ .AddChildren }
-Transform155.AddChildren([TouchSensor156]);
-Shape157 := Shape20;
-{ .AddChild }
-Transform155.AddChildren([Shape157]);
-{ .AddChildren }
-Transform154.AddChildren([Transform155]);
-{ .AddChildren }
-HAnimSegment153.AddChildren([Transform154]);
+{ METHOD .FdChildren.Add }
+Transform155.FdChildren.Add(TouchSensor156);
+{ METHOD .FdChildren.Add }
+Transform155.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform154.FdChildren.Add(Transform155);
+{ METHOD .FdChildren.Add }
+HAnimSegment153.FdChildren.Add(Transform154);
 TouchSensor158 := TTouchSensorNode.Create;
 TouchSensor158.Description := 'Segment l_tarsal_proximal_phalanx_1';
-{ .AddChildren }
-HAnimSegment153.AddChildren([TouchSensor158]);
+{ METHOD .FdChildren.Add }
+HAnimSegment153.FdChildren.Add(TouchSensor158);
 Shape159 := TShapeNode.Create;
 Appearance160 := TAppearanceNode.Create;
 Material161 := TMaterialNode.Create;
 Material161.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance160.Material := Material161;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape159.Appearance := Appearance160;
 Extrusion162 := TExtrusionNode.Create;
 Extrusion162.SetSpine([Vector3(0.0619,0.0059,-0.0083),Vector3(0.0619,0.0059,-0.0083)]);
 Extrusion162.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape159.Geometry := Extrusion162;
-{ .AddChildren }
-HAnimSegment153.AddChildren([Shape159]);
-{ .AddChildren }
-HAnimJoint152.AddChildren([HAnimSegment153]);
+{ METHOD .FdChildren.Add }
+HAnimSegment153.FdChildren.Add(Shape159);
+{ METHOD .FdChildren.Add }
+HAnimJoint152.FdChildren.Add(HAnimSegment153);
 HAnimJoint163 := THAnimJointNode.Create;
-HAnimJoint163.NameField := 'l_tarsal_interphalangeal_1';
-{ .AddChildren }
-HAnimJoint152.AddChildren([HAnimJoint163]);
-{ .AddChildren }
-HAnimJoint141.AddChildren([HAnimJoint152]);
-{ .AddChildren }
-HAnimJoint130.AddChildren([HAnimJoint141]);
-{ .AddChildren }
-HAnimJoint109.AddChildren([HAnimJoint130]);
+{ METHOD .FdChildren.Add }
+HAnimJoint152.FdChildren.Add(HAnimJoint163);
+{ METHOD .FdChildren.Add }
+HAnimJoint141.FdChildren.Add(HAnimJoint152);
+{ METHOD .FdChildren.Add }
+HAnimJoint130.FdChildren.Add(HAnimJoint141);
+{ METHOD .FdChildren.Add }
+HAnimJoint109.FdChildren.Add(HAnimJoint130);
 HAnimJoint164 := THAnimJointNode.Create;
-HAnimJoint164.NameField := 'l_cuneonavicular_2';
+end;
+
+procedure InitStandardHumanoidPart11;
+begin
+
 HAnimJoint164.Center := Vector3(0.0812,0.025,-0.0805);
 HAnimSegment165 := THAnimSegmentNode.Create;
-HAnimSegment165.NameField := 'l_cuneiform_2';
 Transform166 := TTransformNode.Create;
 Transform166.Translation := Vector3(0.0812,0.025,-0.0805);
 Transform167 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor168 := TTouchSensorNode.Create;
 TouchSensor168.Description := 'Joint l_cuneonavicular_2';
-{ .AddChildren }
-Transform167.AddChildren([TouchSensor168]);
-Shape169 := Shape20;
-{ .AddChild }
-Transform167.AddChildren([Shape169]);
-{ .AddChildren }
-Transform166.AddChildren([Transform167]);
-{ .AddChildren }
-HAnimSegment165.AddChildren([Transform166]);
+{ METHOD .FdChildren.Add }
+Transform167.FdChildren.Add(TouchSensor168);
+{ METHOD .FdChildren.Add }
+Transform167.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform166.FdChildren.Add(Transform167);
+{ METHOD .FdChildren.Add }
+HAnimSegment165.FdChildren.Add(Transform166);
 TouchSensor170 := TTouchSensorNode.Create;
 TouchSensor170.Description := 'Segment l_cuneiform_2';
-{ .AddChildren }
-HAnimSegment165.AddChildren([TouchSensor170]);
+{ METHOD .FdChildren.Add }
+HAnimSegment165.FdChildren.Add(TouchSensor170);
 Shape171 := TShapeNode.Create;
 Appearance172 := TAppearanceNode.Create;
 Material173 := TMaterialNode.Create;
 Material173.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance172.Material := Material173;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape171.Appearance := Appearance172;
 Extrusion174 := TExtrusionNode.Create;
 Extrusion174.SetSpine([Vector3(0.0812,0.025,-0.0805),Vector3(0.08,0.0175,-0.0608)]);
 Extrusion174.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape171.Geometry := Extrusion174;
-{ .AddChildren }
-HAnimSegment165.AddChildren([Shape171]);
-{ .AddChildren }
-HAnimJoint164.AddChildren([HAnimSegment165]);
+{ METHOD .FdChildren.Add }
+HAnimSegment165.FdChildren.Add(Shape171);
+{ METHOD .FdChildren.Add }
+HAnimJoint164.FdChildren.Add(HAnimSegment165);
 HAnimJoint175 := THAnimJointNode.Create;
-HAnimJoint175.NameField := 'l_tarsometatarsal_2';
 HAnimJoint175.Center := Vector3(0.08,0.0175,-0.0608);
 HAnimSegment176 := THAnimSegmentNode.Create;
-HAnimSegment176.NameField := 'l_metatarsal_2';
 Transform177 := TTransformNode.Create;
 Transform177.Translation := Vector3(0.08,0.0175,-0.0608);
 Transform178 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor179 := TTouchSensorNode.Create;
 TouchSensor179.Description := 'Joint l_tarsometatarsal_2';
-{ .AddChildren }
-Transform178.AddChildren([TouchSensor179]);
-Shape180 := Shape20;
-{ .AddChild }
-Transform178.AddChildren([Shape180]);
-{ .AddChildren }
-Transform177.AddChildren([Transform178]);
-{ .AddChildren }
-HAnimSegment176.AddChildren([Transform177]);
+{ METHOD .FdChildren.Add }
+Transform178.FdChildren.Add(TouchSensor179);
+{ METHOD .FdChildren.Add }
+Transform178.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform177.FdChildren.Add(Transform178);
+{ METHOD .FdChildren.Add }
+HAnimSegment176.FdChildren.Add(Transform177);
 TouchSensor181 := TTouchSensorNode.Create;
 TouchSensor181.Description := 'Segment l_metatarsal_2';
-{ .AddChildren }
-HAnimSegment176.AddChildren([TouchSensor181]);
+end;
+
+procedure InitStandardHumanoidPart12;
+begin
+
+{ METHOD .FdChildren.Add }
+HAnimSegment176.FdChildren.Add(TouchSensor181);
 Shape182 := TShapeNode.Create;
 Appearance183 := TAppearanceNode.Create;
 Material184 := TMaterialNode.Create;
 Material184.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance183.Material := Material184;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape182.Appearance := Appearance183;
 Extrusion185 := TExtrusionNode.Create;
 Extrusion185.SetSpine([Vector3(0.08,0.0175,-0.0608),Vector3(0.0824,0.0064,-0.004)]);
 Extrusion185.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape182.Geometry := Extrusion185;
-{ .AddChildren }
-HAnimSegment176.AddChildren([Shape182]);
-{ .AddChildren }
-HAnimJoint175.AddChildren([HAnimSegment176]);
+{ METHOD .FdChildren.Add }
+HAnimSegment176.FdChildren.Add(Shape182);
+{ METHOD .FdChildren.Add }
+HAnimJoint175.FdChildren.Add(HAnimSegment176);
 HAnimJoint186 := THAnimJointNode.Create;
-HAnimJoint186.NameField := 'l_metatarsophalangeal_2';
 HAnimJoint186.Center := Vector3(0.0824,0.0064,-0.004);
 HAnimSegment187 := THAnimSegmentNode.Create;
-HAnimSegment187.NameField := 'l_tarsal_proximal_phalanx_2';
 Transform188 := TTransformNode.Create;
 Transform188.Translation := Vector3(0.0824,0.0064,-0.004);
 Transform189 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor190 := TTouchSensorNode.Create;
 TouchSensor190.Description := 'Joint l_metatarsophalangeal_2';
-{ .AddChildren }
-Transform189.AddChildren([TouchSensor190]);
-Shape191 := Shape20;
-{ .AddChild }
-Transform189.AddChildren([Shape191]);
-{ .AddChildren }
-Transform188.AddChildren([Transform189]);
-{ .AddChildren }
-HAnimSegment187.AddChildren([Transform188]);
+{ METHOD .FdChildren.Add }
+Transform189.FdChildren.Add(TouchSensor190);
+{ METHOD .FdChildren.Add }
+Transform189.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform188.FdChildren.Add(Transform189);
+{ METHOD .FdChildren.Add }
+HAnimSegment187.FdChildren.Add(Transform188);
 TouchSensor192 := TTouchSensorNode.Create;
 TouchSensor192.Description := 'Segment l_tarsal_proximal_phalanx_2';
-{ .AddChildren }
-HAnimSegment187.AddChildren([TouchSensor192]);
+{ METHOD .FdChildren.Add }
+HAnimSegment187.FdChildren.Add(TouchSensor192);
 Shape193 := TShapeNode.Create;
 Appearance194 := TAppearanceNode.Create;
 Material195 := TMaterialNode.Create;
 Material195.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance194.Material := Material195;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape193.Appearance := Appearance194;
 Extrusion196 := TExtrusionNode.Create;
 Extrusion196.SetSpine([Vector3(0.0824,0.0064,-0.004),Vector3(0.0841,0.0041,0.0121)]);
 Extrusion196.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape193.Geometry := Extrusion196;
-{ .AddChildren }
-HAnimSegment187.AddChildren([Shape193]);
-{ .AddChildren }
-HAnimJoint186.AddChildren([HAnimSegment187]);
+{ METHOD .FdChildren.Add }
+HAnimSegment187.FdChildren.Add(Shape193);
+{ METHOD .FdChildren.Add }
+HAnimJoint186.FdChildren.Add(HAnimSegment187);
+end;
+
+procedure InitStandardHumanoidPart13;
+begin
+
 HAnimJoint197 := THAnimJointNode.Create;
-HAnimJoint197.NameField := 'l_tarsal_proximal_interphalangeal_2';
 HAnimJoint197.Center := Vector3(0.0841,0.0041,0.0121);
 HAnimSegment198 := THAnimSegmentNode.Create;
-HAnimSegment198.NameField := 'l_tarsal_middle_phalanx_2';
 Transform199 := TTransformNode.Create;
 Transform199.Translation := Vector3(0.0841,0.0041,0.0121);
 Transform200 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor201 := TTouchSensorNode.Create;
 TouchSensor201.Description := 'Joint l_tarsal_proximal_interphalangeal_2';
-{ .AddChildren }
-Transform200.AddChildren([TouchSensor201]);
-Shape202 := Shape20;
-{ .AddChild }
-Transform200.AddChildren([Shape202]);
-{ .AddChildren }
-Transform199.AddChildren([Transform200]);
-{ .AddChildren }
-HAnimSegment198.AddChildren([Transform199]);
+{ METHOD .FdChildren.Add }
+Transform200.FdChildren.Add(TouchSensor201);
+{ METHOD .FdChildren.Add }
+Transform200.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform199.FdChildren.Add(Transform200);
+{ METHOD .FdChildren.Add }
+HAnimSegment198.FdChildren.Add(Transform199);
 TouchSensor203 := TTouchSensorNode.Create;
 TouchSensor203.Description := 'Segment l_tarsal_middle_phalanx_2';
-{ .AddChildren }
-HAnimSegment198.AddChildren([TouchSensor203]);
+{ METHOD .FdChildren.Add }
+HAnimSegment198.FdChildren.Add(TouchSensor203);
 Shape204 := TShapeNode.Create;
 Appearance205 := TAppearanceNode.Create;
 Material206 := TMaterialNode.Create;
 Material206.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance205.Material := Material206;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape204.Appearance := Appearance205;
 Extrusion207 := TExtrusionNode.Create;
 Extrusion207.SetSpine([Vector3(0.0841,0.0041,0.0121),Vector3(0.0841,0.0013,0.0216)]);
 Extrusion207.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape204.Geometry := Extrusion207;
-{ .AddChildren }
-HAnimSegment198.AddChildren([Shape204]);
-{ .AddChildren }
-HAnimJoint197.AddChildren([HAnimSegment198]);
+{ METHOD .FdChildren.Add }
+HAnimSegment198.FdChildren.Add(Shape204);
+{ METHOD .FdChildren.Add }
+HAnimJoint197.FdChildren.Add(HAnimSegment198);
 HAnimJoint208 := THAnimJointNode.Create;
-HAnimJoint208.NameField := 'l_tarsal_distal_interphalangeal_2';
 HAnimJoint208.Center := Vector3(0.0841,0.0013,0.0216);
-{ .AddChildren }
-HAnimJoint197.AddChildren([HAnimJoint208]);
-{ .AddChildren }
-HAnimJoint186.AddChildren([HAnimJoint197]);
-{ .AddChildren }
-HAnimJoint175.AddChildren([HAnimJoint186]);
-{ .AddChildren }
-HAnimJoint164.AddChildren([HAnimJoint175]);
-{ .AddChildren }
-HAnimJoint109.AddChildren([HAnimJoint164]);
+{ METHOD .FdChildren.Add }
+HAnimJoint197.FdChildren.Add(HAnimJoint208);
+{ METHOD .FdChildren.Add }
+HAnimJoint186.FdChildren.Add(HAnimJoint197);
+{ METHOD .FdChildren.Add }
+HAnimJoint175.FdChildren.Add(HAnimJoint186);
+{ METHOD .FdChildren.Add }
+HAnimJoint164.FdChildren.Add(HAnimJoint175);
+{ METHOD .FdChildren.Add }
+HAnimJoint109.FdChildren.Add(HAnimJoint164);
 HAnimJoint209 := THAnimJointNode.Create;
-HAnimJoint209.NameField := 'l_cuneonavicular_3';
 HAnimJoint209.Center := Vector3(0.0928,0.0248,-0.0821);
 HAnimSegment210 := THAnimSegmentNode.Create;
-HAnimSegment210.NameField := 'l_cuneiform_3';
 Transform211 := TTransformNode.Create;
 Transform211.Translation := Vector3(0.0928,0.0248,-0.0821);
 Transform212 := TTransformNode.Create;
+end;
+
+procedure InitStandardHumanoidPart14;
+begin
+
 { Empty Transform }
 TouchSensor213 := TTouchSensorNode.Create;
 TouchSensor213.Description := 'Joint l_cuneonavicular_3';
-{ .AddChildren }
-Transform212.AddChildren([TouchSensor213]);
-Shape214 := Shape20;
-{ .AddChild }
-Transform212.AddChildren([Shape214]);
-{ .AddChildren }
-Transform211.AddChildren([Transform212]);
-{ .AddChildren }
-HAnimSegment210.AddChildren([Transform211]);
+{ METHOD .FdChildren.Add }
+Transform212.FdChildren.Add(TouchSensor213);
+{ METHOD .FdChildren.Add }
+Transform212.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform211.FdChildren.Add(Transform212);
+{ METHOD .FdChildren.Add }
+HAnimSegment210.FdChildren.Add(Transform211);
 TouchSensor215 := TTouchSensorNode.Create;
 TouchSensor215.Description := 'Segment l_cuneiform_3';
-{ .AddChildren }
-HAnimSegment210.AddChildren([TouchSensor215]);
+{ METHOD .FdChildren.Add }
+HAnimSegment210.FdChildren.Add(TouchSensor215);
 Shape216 := TShapeNode.Create;
 Appearance217 := TAppearanceNode.Create;
 Material218 := TMaterialNode.Create;
 Material218.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance217.Material := Material218;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape216.Appearance := Appearance217;
 Extrusion219 := TExtrusionNode.Create;
 Extrusion219.SetSpine([Vector3(0.0928,0.0248,-0.0821),Vector3(0.0944,0.0175,-0.0625)]);
 Extrusion219.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape216.Geometry := Extrusion219;
-{ .AddChildren }
-HAnimSegment210.AddChildren([Shape216]);
-{ .AddChildren }
-HAnimJoint209.AddChildren([HAnimSegment210]);
+{ METHOD .FdChildren.Add }
+HAnimSegment210.FdChildren.Add(Shape216);
+{ METHOD .FdChildren.Add }
+HAnimJoint209.FdChildren.Add(HAnimSegment210);
 HAnimJoint220 := THAnimJointNode.Create;
-HAnimJoint220.NameField := 'l_tarsometatarsal_3';
 HAnimJoint220.Center := Vector3(0.0944,0.0175,-0.0625);
 HAnimSegment221 := THAnimSegmentNode.Create;
-HAnimSegment221.NameField := 'l_metatarsal_3';
 Transform222 := TTransformNode.Create;
 Transform222.Translation := Vector3(0.0944,0.0175,-0.0625);
 Transform223 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor224 := TTouchSensorNode.Create;
 TouchSensor224.Description := 'Joint l_tarsometatarsal_3';
-{ .AddChildren }
-Transform223.AddChildren([TouchSensor224]);
-Shape225 := Shape20;
-{ .AddChild }
-Transform223.AddChildren([Shape225]);
-{ .AddChildren }
-Transform222.AddChildren([Transform223]);
-{ .AddChildren }
-HAnimSegment221.AddChildren([Transform222]);
+{ METHOD .FdChildren.Add }
+Transform223.FdChildren.Add(TouchSensor224);
+{ METHOD .FdChildren.Add }
+Transform223.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform222.FdChildren.Add(Transform223);
+{ METHOD .FdChildren.Add }
+HAnimSegment221.FdChildren.Add(Transform222);
 TouchSensor226 := TTouchSensorNode.Create;
 TouchSensor226.Description := 'Segment l_metatarsal_3';
-{ .AddChildren }
-HAnimSegment221.AddChildren([TouchSensor226]);
+{ METHOD .FdChildren.Add }
+HAnimSegment221.FdChildren.Add(TouchSensor226);
 Shape227 := TShapeNode.Create;
 Appearance228 := TAppearanceNode.Create;
 Material229 := TMaterialNode.Create;
 Material229.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+end;
+
+procedure InitStandardHumanoidPart15;
+begin
+
+{ METHOD .SetMaterial }
 Appearance228.Material := Material229;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape227.Appearance := Appearance228;
 Extrusion230 := TExtrusionNode.Create;
 Extrusion230.SetSpine([Vector3(0.0944,0.0175,-0.0625),Vector3(0.0963,0.0065,-0.0065)]);
 Extrusion230.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape227.Geometry := Extrusion230;
-{ .AddChildren }
-HAnimSegment221.AddChildren([Shape227]);
-{ .AddChildren }
-HAnimJoint220.AddChildren([HAnimSegment221]);
+{ METHOD .FdChildren.Add }
+HAnimSegment221.FdChildren.Add(Shape227);
+{ METHOD .FdChildren.Add }
+HAnimJoint220.FdChildren.Add(HAnimSegment221);
 HAnimJoint231 := THAnimJointNode.Create;
-HAnimJoint231.NameField := 'l_metatarsophalangeal_3';
 HAnimJoint231.Center := Vector3(0.0963,0.0065,-0.0065);
 HAnimSegment232 := THAnimSegmentNode.Create;
-HAnimSegment232.NameField := 'l_tarsal_proximal_phalanx_3';
 Transform233 := TTransformNode.Create;
 Transform233.Translation := Vector3(0.0963,0.0065,-0.0065);
 Transform234 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor235 := TTouchSensorNode.Create;
 TouchSensor235.Description := 'Joint l_metatarsophalangeal_3';
-{ .AddChildren }
-Transform234.AddChildren([TouchSensor235]);
-Shape236 := Shape20;
-{ .AddChild }
-Transform234.AddChildren([Shape236]);
-{ .AddChildren }
-Transform233.AddChildren([Transform234]);
-{ .AddChildren }
-HAnimSegment232.AddChildren([Transform233]);
+{ METHOD .FdChildren.Add }
+Transform234.FdChildren.Add(TouchSensor235);
+{ METHOD .FdChildren.Add }
+Transform234.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform233.FdChildren.Add(Transform234);
+{ METHOD .FdChildren.Add }
+HAnimSegment232.FdChildren.Add(Transform233);
 TouchSensor237 := TTouchSensorNode.Create;
 TouchSensor237.Description := 'Segment l_tarsal_proximal_phalanx_3';
-{ .AddChildren }
-HAnimSegment232.AddChildren([TouchSensor237]);
+{ METHOD .FdChildren.Add }
+HAnimSegment232.FdChildren.Add(TouchSensor237);
 Shape238 := TShapeNode.Create;
 Appearance239 := TAppearanceNode.Create;
 Material240 := TMaterialNode.Create;
 Material240.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance239.Material := Material240;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape238.Appearance := Appearance239;
 Extrusion241 := TExtrusionNode.Create;
 Extrusion241.SetSpine([Vector3(0.0963,0.0065,-0.0065),Vector3(0.0987,0.0034,0.0086)]);
 Extrusion241.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape238.Geometry := Extrusion241;
-{ .AddChildren }
-HAnimSegment232.AddChildren([Shape238]);
-{ .AddChildren }
-HAnimJoint231.AddChildren([HAnimSegment232]);
+{ METHOD .FdChildren.Add }
+HAnimSegment232.FdChildren.Add(Shape238);
+{ METHOD .FdChildren.Add }
+HAnimJoint231.FdChildren.Add(HAnimSegment232);
 HAnimJoint242 := THAnimJointNode.Create;
-HAnimJoint242.NameField := 'l_tarsal_proximal_interphalangeal_3';
 HAnimJoint242.Center := Vector3(0.0987,0.0034,0.0086);
 HAnimSegment243 := THAnimSegmentNode.Create;
-HAnimSegment243.NameField := 'l_tarsal_middle_phalanx_3';
 Transform244 := TTransformNode.Create;
 Transform244.Translation := Vector3(0.0987,0.0034,0.0086);
+end;
+
+procedure InitStandardHumanoidPart16;
+begin
+
 Transform245 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor246 := TTouchSensorNode.Create;
 TouchSensor246.Description := 'Joint l_tarsal_proximal_interphalangeal_3';
-{ .AddChildren }
-Transform245.AddChildren([TouchSensor246]);
-Shape247 := Shape20;
-{ .AddChild }
-Transform245.AddChildren([Shape247]);
-{ .AddChildren }
-Transform244.AddChildren([Transform245]);
-{ .AddChildren }
-HAnimSegment243.AddChildren([Transform244]);
+{ METHOD .FdChildren.Add }
+Transform245.FdChildren.Add(TouchSensor246);
+{ METHOD .FdChildren.Add }
+Transform245.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform244.FdChildren.Add(Transform245);
+{ METHOD .FdChildren.Add }
+HAnimSegment243.FdChildren.Add(Transform244);
 TouchSensor248 := TTouchSensorNode.Create;
 TouchSensor248.Description := 'Segment l_tarsal_middle_phalanx_3';
-{ .AddChildren }
-HAnimSegment243.AddChildren([TouchSensor248]);
+{ METHOD .FdChildren.Add }
+HAnimSegment243.FdChildren.Add(TouchSensor248);
 Shape249 := TShapeNode.Create;
 Appearance250 := TAppearanceNode.Create;
 Material251 := TMaterialNode.Create;
 Material251.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance250.Material := Material251;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape249.Appearance := Appearance250;
 Extrusion252 := TExtrusionNode.Create;
 Extrusion252.SetSpine([Vector3(0.0987,0.0034,0.0086),Vector3(0.1002,0.0013,0.0178)]);
 Extrusion252.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape249.Geometry := Extrusion252;
-{ .AddChildren }
-HAnimSegment243.AddChildren([Shape249]);
-{ .AddChildren }
-HAnimJoint242.AddChildren([HAnimSegment243]);
+{ METHOD .FdChildren.Add }
+HAnimSegment243.FdChildren.Add(Shape249);
+{ METHOD .FdChildren.Add }
+HAnimJoint242.FdChildren.Add(HAnimSegment243);
 HAnimJoint253 := THAnimJointNode.Create;
-HAnimJoint253.NameField := 'l_tarsal_distal_interphalangeal_3';
 HAnimJoint253.Center := Vector3(0.1002,0.0013,0.0178);
-{ .AddChildren }
-HAnimJoint242.AddChildren([HAnimJoint253]);
-{ .AddChildren }
-HAnimJoint231.AddChildren([HAnimJoint242]);
-{ .AddChildren }
-HAnimJoint220.AddChildren([HAnimJoint231]);
-{ .AddChildren }
-HAnimJoint209.AddChildren([HAnimJoint220]);
-{ .AddChildren }
-HAnimJoint109.AddChildren([HAnimJoint209]);
-{ .AddChildren }
-HAnimJoint93.AddChildren([HAnimJoint109]);
+{ METHOD .FdChildren.Add }
+HAnimJoint242.FdChildren.Add(HAnimJoint253);
+{ METHOD .FdChildren.Add }
+HAnimJoint231.FdChildren.Add(HAnimJoint242);
+{ METHOD .FdChildren.Add }
+HAnimJoint220.FdChildren.Add(HAnimJoint231);
+{ METHOD .FdChildren.Add }
+HAnimJoint209.FdChildren.Add(HAnimJoint220);
+{ METHOD .FdChildren.Add }
+HAnimJoint109.FdChildren.Add(HAnimJoint209);
+{ METHOD .FdChildren.Add }
+HAnimJoint93.FdChildren.Add(HAnimJoint109);
 HAnimJoint254 := THAnimJointNode.Create;
-HAnimJoint254.NameField := 'l_calcaneocuboid';
 HAnimJoint254.Center := Vector3(0.0889,0.0494,-0.1278);
 HAnimSegment255 := THAnimSegmentNode.Create;
-HAnimSegment255.NameField := 'l_calcaneus';
 Transform256 := TTransformNode.Create;
 Transform256.Translation := Vector3(0.0889,0.0494,-0.1278);
 Transform257 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor258 := TTouchSensorNode.Create;
 TouchSensor258.Description := 'Joint l_calcaneocuboid';
-{ .AddChildren }
-Transform257.AddChildren([TouchSensor258]);
-Shape259 := Shape20;
-{ .AddChild }
-Transform257.AddChildren([Shape259]);
-{ .AddChildren }
-Transform256.AddChildren([Transform257]);
-{ .AddChildren }
-HAnimSegment255.AddChildren([Transform256]);
+{ METHOD .FdChildren.Add }
+Transform257.FdChildren.Add(TouchSensor258);
+{ METHOD .FdChildren.Add }
+Transform257.FdChildren.Add(Shape20);
+end;
+
+procedure InitStandardHumanoidPart17;
+begin
+
+{ METHOD .FdChildren.Add }
+Transform256.FdChildren.Add(Transform257);
+{ METHOD .FdChildren.Add }
+HAnimSegment255.FdChildren.Add(Transform256);
 TouchSensor260 := TTouchSensorNode.Create;
 TouchSensor260.Description := 'Segment l_calcaneus';
-{ .AddChildren }
-HAnimSegment255.AddChildren([TouchSensor260]);
+{ METHOD .FdChildren.Add }
+HAnimSegment255.FdChildren.Add(TouchSensor260);
 Shape261 := TShapeNode.Create;
 Appearance262 := TAppearanceNode.Create;
 Material263 := TMaterialNode.Create;
 Material263.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance262.Material := Material263;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape261.Appearance := Appearance262;
 Extrusion264 := TExtrusionNode.Create;
 Extrusion264.SetSpine([Vector3(0.0889,0.0494,-0.1278),Vector3(0.1105,0.0267,-0.0998)]);
 Extrusion264.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape261.Geometry := Extrusion264;
-{ .AddChildren }
-HAnimSegment255.AddChildren([Shape261]);
-{ .AddChildren }
-HAnimJoint254.AddChildren([HAnimSegment255]);
+{ METHOD .FdChildren.Add }
+HAnimSegment255.FdChildren.Add(Shape261);
+{ METHOD .FdChildren.Add }
+HAnimJoint254.FdChildren.Add(HAnimSegment255);
 HAnimJoint265 := THAnimJointNode.Create;
-HAnimJoint265.NameField := 'l_transversetarsal';
 HAnimJoint265.Center := Vector3(0.1105,0.0267,-0.0998);
 HAnimSegment266 := THAnimSegmentNode.Create;
-HAnimSegment266.NameField := 'l_cuboid';
 Transform267 := TTransformNode.Create;
 Transform267.Translation := Vector3(0.1105,0.0267,-0.0998);
 Transform268 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor269 := TTouchSensorNode.Create;
 TouchSensor269.Description := 'Joint l_transversetarsal';
-{ .AddChildren }
-Transform268.AddChildren([TouchSensor269]);
-Shape270 := Shape20;
-{ .AddChild }
-Transform268.AddChildren([Shape270]);
-{ .AddChildren }
-Transform267.AddChildren([Transform268]);
-{ .AddChildren }
-HAnimSegment266.AddChildren([Transform267]);
+{ METHOD .FdChildren.Add }
+Transform268.FdChildren.Add(TouchSensor269);
+{ METHOD .FdChildren.Add }
+Transform268.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform267.FdChildren.Add(Transform268);
+{ METHOD .FdChildren.Add }
+HAnimSegment266.FdChildren.Add(Transform267);
 TouchSensor271 := TTouchSensorNode.Create;
 TouchSensor271.Description := 'Segment l_cuboid';
-{ .AddChildren }
-HAnimSegment266.AddChildren([TouchSensor271]);
+{ METHOD .FdChildren.Add }
+HAnimSegment266.FdChildren.Add(TouchSensor271);
 Shape272 := TShapeNode.Create;
 Appearance273 := TAppearanceNode.Create;
 Material274 := TMaterialNode.Create;
 Material274.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance273.Material := Material274;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape272.Appearance := Appearance273;
 Extrusion275 := TExtrusionNode.Create;
 Extrusion275.SetSpine([Vector3(0.1105,0.0267,-0.0998),Vector3(0.1063,0.016,-0.0634)]);
+end;
+
+procedure InitStandardHumanoidPart18;
+begin
+
 Extrusion275.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape272.Geometry := Extrusion275;
-{ .AddChildren }
-HAnimSegment266.AddChildren([Shape272]);
+{ METHOD .FdChildren.Add }
+HAnimSegment266.FdChildren.Add(Shape272);
 TouchSensor276 := TTouchSensorNode.Create;
 TouchSensor276.Description := 'Segment l_cuboid';
-{ .AddChildren }
-HAnimSegment266.AddChildren([TouchSensor276]);
+{ METHOD .FdChildren.Add }
+HAnimSegment266.FdChildren.Add(TouchSensor276);
 Shape277 := TShapeNode.Create;
 Appearance278 := TAppearanceNode.Create;
 Material279 := TMaterialNode.Create;
 Material279.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance278.Material := Material279;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape277.Appearance := Appearance278;
 Extrusion280 := TExtrusionNode.Create;
 Extrusion280.SetSpine([Vector3(0.1105,0.0267,-0.0998),Vector3(0.1206,0.0124,-0.0671)]);
 Extrusion280.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape277.Geometry := Extrusion280;
-{ .AddChildren }
-HAnimSegment266.AddChildren([Shape277]);
-{ .AddChildren }
-HAnimJoint265.AddChildren([HAnimSegment266]);
+{ METHOD .FdChildren.Add }
+HAnimSegment266.FdChildren.Add(Shape277);
+{ METHOD .FdChildren.Add }
+HAnimJoint265.FdChildren.Add(HAnimSegment266);
 HAnimJoint281 := THAnimJointNode.Create;
-HAnimJoint281.NameField := 'l_tarsometatarsal_4';
 HAnimJoint281.Center := Vector3(0.1063,0.016,-0.0634);
 HAnimSegment282 := THAnimSegmentNode.Create;
-HAnimSegment282.NameField := 'l_metatarsal_4';
 Transform283 := TTransformNode.Create;
 Transform283.Translation := Vector3(0.1063,0.016,-0.0634);
 Transform284 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor285 := TTouchSensorNode.Create;
 TouchSensor285.Description := 'Joint l_tarsometatarsal_4';
-{ .AddChildren }
-Transform284.AddChildren([TouchSensor285]);
-Shape286 := Shape20;
-{ .AddChild }
-Transform284.AddChildren([Shape286]);
-{ .AddChildren }
-Transform283.AddChildren([Transform284]);
-{ .AddChildren }
-HAnimSegment282.AddChildren([Transform283]);
+{ METHOD .FdChildren.Add }
+Transform284.FdChildren.Add(TouchSensor285);
+{ METHOD .FdChildren.Add }
+Transform284.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform283.FdChildren.Add(Transform284);
+{ METHOD .FdChildren.Add }
+HAnimSegment282.FdChildren.Add(Transform283);
 TouchSensor287 := TTouchSensorNode.Create;
 TouchSensor287.Description := 'Segment l_metatarsal_4';
-{ .AddChildren }
-HAnimSegment282.AddChildren([TouchSensor287]);
+{ METHOD .FdChildren.Add }
+HAnimSegment282.FdChildren.Add(TouchSensor287);
 Shape288 := TShapeNode.Create;
 Appearance289 := TAppearanceNode.Create;
 Material290 := TMaterialNode.Create;
 Material290.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance289.Material := Material290;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape288.Appearance := Appearance289;
 Extrusion291 := TExtrusionNode.Create;
+end;
+
+procedure InitStandardHumanoidPart19;
+begin
+
 Extrusion291.SetSpine([Vector3(0.1063,0.016,-0.0634),Vector3(0.1097,0.0058,-0.0107)]);
 Extrusion291.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape288.Geometry := Extrusion291;
-{ .AddChildren }
-HAnimSegment282.AddChildren([Shape288]);
-{ .AddChildren }
-HAnimJoint281.AddChildren([HAnimSegment282]);
+{ METHOD .FdChildren.Add }
+HAnimSegment282.FdChildren.Add(Shape288);
+{ METHOD .FdChildren.Add }
+HAnimJoint281.FdChildren.Add(HAnimSegment282);
 HAnimJoint292 := THAnimJointNode.Create;
-HAnimJoint292.NameField := 'l_metatarsophalangeal_4';
 HAnimJoint292.Center := Vector3(0.1097,0.0058,-0.0107);
 HAnimSegment293 := THAnimSegmentNode.Create;
-HAnimSegment293.NameField := 'l_tarsal_proximal_phalanx_4';
 Transform294 := TTransformNode.Create;
 Transform294.Translation := Vector3(0.1097,0.0058,-0.0107);
 Transform295 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor296 := TTouchSensorNode.Create;
 TouchSensor296.Description := 'Joint l_metatarsophalangeal_4';
-{ .AddChildren }
-Transform295.AddChildren([TouchSensor296]);
-Shape297 := Shape20;
-{ .AddChild }
-Transform295.AddChildren([Shape297]);
-{ .AddChildren }
-Transform294.AddChildren([Transform295]);
-{ .AddChildren }
-HAnimSegment293.AddChildren([Transform294]);
+{ METHOD .FdChildren.Add }
+Transform295.FdChildren.Add(TouchSensor296);
+{ METHOD .FdChildren.Add }
+Transform295.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform294.FdChildren.Add(Transform295);
+{ METHOD .FdChildren.Add }
+HAnimSegment293.FdChildren.Add(Transform294);
 TouchSensor298 := TTouchSensorNode.Create;
 TouchSensor298.Description := 'Segment l_tarsal_proximal_phalanx_4';
-{ .AddChildren }
-HAnimSegment293.AddChildren([TouchSensor298]);
+{ METHOD .FdChildren.Add }
+HAnimSegment293.FdChildren.Add(TouchSensor298);
 Shape299 := TShapeNode.Create;
 Appearance300 := TAppearanceNode.Create;
 Material301 := TMaterialNode.Create;
 Material301.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance300.Material := Material301;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape299.Appearance := Appearance300;
 Extrusion302 := TExtrusionNode.Create;
 Extrusion302.SetSpine([Vector3(0.1097,0.0058,-0.0107),Vector3(0.114,0.0037,0.0044)]);
 Extrusion302.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape299.Geometry := Extrusion302;
-{ .AddChildren }
-HAnimSegment293.AddChildren([Shape299]);
-{ .AddChildren }
-HAnimJoint292.AddChildren([HAnimSegment293]);
+{ METHOD .FdChildren.Add }
+HAnimSegment293.FdChildren.Add(Shape299);
+{ METHOD .FdChildren.Add }
+HAnimJoint292.FdChildren.Add(HAnimSegment293);
 HAnimJoint303 := THAnimJointNode.Create;
-HAnimJoint303.NameField := 'l_tarsal_proximal_interphalangeal_4';
 HAnimJoint303.Center := Vector3(0.114,0.0037,0.0044);
 HAnimSegment304 := THAnimSegmentNode.Create;
-HAnimSegment304.NameField := 'l_tarsal_middle_phalanx_4';
 Transform305 := TTransformNode.Create;
 Transform305.Translation := Vector3(0.114,0.0037,0.0044);
 Transform306 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor307 := TTouchSensorNode.Create;
 TouchSensor307.Description := 'Joint l_tarsal_proximal_interphalangeal_4';
-{ .AddChildren }
-Transform306.AddChildren([TouchSensor307]);
-Shape308 := Shape20;
-{ .AddChild }
-Transform306.AddChildren([Shape308]);
-{ .AddChildren }
-Transform305.AddChildren([Transform306]);
-{ .AddChildren }
-HAnimSegment304.AddChildren([Transform305]);
+end;
+
+procedure InitStandardHumanoidPart20;
+begin
+
+{ METHOD .FdChildren.Add }
+Transform306.FdChildren.Add(TouchSensor307);
+{ METHOD .FdChildren.Add }
+Transform306.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform305.FdChildren.Add(Transform306);
+{ METHOD .FdChildren.Add }
+HAnimSegment304.FdChildren.Add(Transform305);
 TouchSensor309 := TTouchSensorNode.Create;
 TouchSensor309.Description := 'Segment l_tarsal_middle_phalanx_4';
-{ .AddChildren }
-HAnimSegment304.AddChildren([TouchSensor309]);
+{ METHOD .FdChildren.Add }
+HAnimSegment304.FdChildren.Add(TouchSensor309);
 Shape310 := TShapeNode.Create;
 Appearance311 := TAppearanceNode.Create;
 Material312 := TMaterialNode.Create;
 Material312.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance311.Material := Material312;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape310.Appearance := Appearance311;
 Extrusion313 := TExtrusionNode.Create;
 Extrusion313.SetSpine([Vector3(0.114,0.0037,0.0044),Vector3(0.1155,0.0008,0.0118)]);
 Extrusion313.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape310.Geometry := Extrusion313;
-{ .AddChildren }
-HAnimSegment304.AddChildren([Shape310]);
-{ .AddChildren }
-HAnimJoint303.AddChildren([HAnimSegment304]);
+{ METHOD .FdChildren.Add }
+HAnimSegment304.FdChildren.Add(Shape310);
+{ METHOD .FdChildren.Add }
+HAnimJoint303.FdChildren.Add(HAnimSegment304);
 HAnimJoint314 := THAnimJointNode.Create;
-HAnimJoint314.NameField := 'l_tarsal_distal_interphalangeal_4';
 HAnimJoint314.Center := Vector3(0.1155,0.0008,0.0118);
-{ .AddChildren }
-HAnimJoint303.AddChildren([HAnimJoint314]);
-{ .AddChildren }
-HAnimJoint292.AddChildren([HAnimJoint303]);
-{ .AddChildren }
-HAnimJoint281.AddChildren([HAnimJoint292]);
-{ .AddChildren }
-HAnimJoint265.AddChildren([HAnimJoint281]);
+{ METHOD .FdChildren.Add }
+HAnimJoint303.FdChildren.Add(HAnimJoint314);
+{ METHOD .FdChildren.Add }
+HAnimJoint292.FdChildren.Add(HAnimJoint303);
+{ METHOD .FdChildren.Add }
+HAnimJoint281.FdChildren.Add(HAnimJoint292);
+{ METHOD .FdChildren.Add }
+HAnimJoint265.FdChildren.Add(HAnimJoint281);
 HAnimJoint315 := THAnimJointNode.Create;
-HAnimJoint315.NameField := 'l_tarsometatarsal_5';
 HAnimJoint315.Center := Vector3(0.1206,0.0124,-0.0671);
 HAnimSegment316 := THAnimSegmentNode.Create;
-HAnimSegment316.NameField := 'l_metatarsal_5';
 Transform317 := TTransformNode.Create;
 Transform317.Translation := Vector3(0.1206,0.0124,-0.0671);
 Transform318 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor319 := TTouchSensorNode.Create;
 TouchSensor319.Description := 'Joint l_tarsometatarsal_5';
-{ .AddChildren }
-Transform318.AddChildren([TouchSensor319]);
-Shape320 := Shape20;
-{ .AddChild }
-Transform318.AddChildren([Shape320]);
-{ .AddChildren }
-Transform317.AddChildren([Transform318]);
-{ .AddChildren }
-HAnimSegment316.AddChildren([Transform317]);
+{ METHOD .FdChildren.Add }
+Transform318.FdChildren.Add(TouchSensor319);
+{ METHOD .FdChildren.Add }
+Transform318.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform317.FdChildren.Add(Transform318);
+{ METHOD .FdChildren.Add }
+HAnimSegment316.FdChildren.Add(Transform317);
 TouchSensor321 := TTouchSensorNode.Create;
 TouchSensor321.Description := 'Segment l_metatarsal_5';
-{ .AddChildren }
-HAnimSegment316.AddChildren([TouchSensor321]);
+{ METHOD .FdChildren.Add }
+HAnimSegment316.FdChildren.Add(TouchSensor321);
+end;
+
+procedure InitStandardHumanoidPart21;
+begin
+
 Shape322 := TShapeNode.Create;
 Appearance323 := TAppearanceNode.Create;
 Material324 := TMaterialNode.Create;
 Material324.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance323.Material := Material324;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape322.Appearance := Appearance323;
 Extrusion325 := TExtrusionNode.Create;
 Extrusion325.SetSpine([Vector3(0.1206,0.0124,-0.0671),Vector3(0.1239,0.0051,-0.0153)]);
 Extrusion325.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape322.Geometry := Extrusion325;
-{ .AddChildren }
-HAnimSegment316.AddChildren([Shape322]);
-{ .AddChildren }
-HAnimJoint315.AddChildren([HAnimSegment316]);
+{ METHOD .FdChildren.Add }
+HAnimSegment316.FdChildren.Add(Shape322);
+{ METHOD .FdChildren.Add }
+HAnimJoint315.FdChildren.Add(HAnimSegment316);
 HAnimJoint326 := THAnimJointNode.Create;
-HAnimJoint326.NameField := 'l_metatarsophalangeal_5';
 HAnimJoint326.Center := Vector3(0.1239,0.0051,-0.0153);
 HAnimSegment327 := THAnimSegmentNode.Create;
-HAnimSegment327.NameField := 'l_tarsal_proximal_phalanx_5';
 Transform328 := TTransformNode.Create;
 Transform328.Translation := Vector3(0.1239,0.0051,-0.0153);
 Transform329 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor330 := TTouchSensorNode.Create;
 TouchSensor330.Description := 'Joint l_metatarsophalangeal_5';
-{ .AddChildren }
-Transform329.AddChildren([TouchSensor330]);
-Shape331 := Shape20;
-{ .AddChild }
-Transform329.AddChildren([Shape331]);
-{ .AddChildren }
-Transform328.AddChildren([Transform329]);
-{ .AddChildren }
-HAnimSegment327.AddChildren([Transform328]);
+{ METHOD .FdChildren.Add }
+Transform329.FdChildren.Add(TouchSensor330);
+{ METHOD .FdChildren.Add }
+Transform329.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform328.FdChildren.Add(Transform329);
+{ METHOD .FdChildren.Add }
+HAnimSegment327.FdChildren.Add(Transform328);
 TouchSensor332 := TTouchSensorNode.Create;
 TouchSensor332.Description := 'Segment l_tarsal_proximal_phalanx_5';
-{ .AddChildren }
-HAnimSegment327.AddChildren([TouchSensor332]);
+{ METHOD .FdChildren.Add }
+HAnimSegment327.FdChildren.Add(TouchSensor332);
 Shape333 := TShapeNode.Create;
 Appearance334 := TAppearanceNode.Create;
 Material335 := TMaterialNode.Create;
 Material335.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance334.Material := Material335;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape333.Appearance := Appearance334;
 Extrusion336 := TExtrusionNode.Create;
 Extrusion336.SetSpine([Vector3(0.1239,0.0051,-0.0153),Vector3(0.1262,0.0023,-0.0077)]);
 Extrusion336.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape333.Geometry := Extrusion336;
-{ .AddChildren }
-HAnimSegment327.AddChildren([Shape333]);
-{ .AddChildren }
-HAnimJoint326.AddChildren([HAnimSegment327]);
+{ METHOD .FdChildren.Add }
+HAnimSegment327.FdChildren.Add(Shape333);
+{ METHOD .FdChildren.Add }
+HAnimJoint326.FdChildren.Add(HAnimSegment327);
 HAnimJoint337 := THAnimJointNode.Create;
-HAnimJoint337.NameField := 'l_tarsal_proximal_interphalangeal_5';
+end;
+
+procedure InitStandardHumanoidPart22;
+begin
+
 HAnimJoint337.Center := Vector3(0.1262,0.0023,-0.0077);
 HAnimSegment338 := THAnimSegmentNode.Create;
-HAnimSegment338.NameField := 'l_tarsal_middle_phalanx_5';
 Transform339 := TTransformNode.Create;
 Transform339.Translation := Vector3(0.1262,0.0023,-0.0077);
 Transform340 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor341 := TTouchSensorNode.Create;
 TouchSensor341.Description := 'Joint l_tarsal_proximal_interphalangeal_5';
-{ .AddChildren }
-Transform340.AddChildren([TouchSensor341]);
-Shape342 := Shape20;
-{ .AddChild }
-Transform340.AddChildren([Shape342]);
-{ .AddChildren }
-Transform339.AddChildren([Transform340]);
-{ .AddChildren }
-HAnimSegment338.AddChildren([Transform339]);
+{ METHOD .FdChildren.Add }
+Transform340.FdChildren.Add(TouchSensor341);
+{ METHOD .FdChildren.Add }
+Transform340.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform339.FdChildren.Add(Transform340);
+{ METHOD .FdChildren.Add }
+HAnimSegment338.FdChildren.Add(Transform339);
 TouchSensor343 := TTouchSensorNode.Create;
 TouchSensor343.Description := 'Segment l_tarsal_middle_phalanx_5';
-{ .AddChildren }
-HAnimSegment338.AddChildren([TouchSensor343]);
+{ METHOD .FdChildren.Add }
+HAnimSegment338.FdChildren.Add(TouchSensor343);
 Shape344 := TShapeNode.Create;
 Appearance345 := TAppearanceNode.Create;
 Material346 := TMaterialNode.Create;
 Material346.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance345.Material := Material346;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape344.Appearance := Appearance345;
 Extrusion347 := TExtrusionNode.Create;
 Extrusion347.SetSpine([Vector3(0.1262,0.0023,-0.0077),Vector3(0.1271,0,0)]);
 Extrusion347.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape344.Geometry := Extrusion347;
-{ .AddChildren }
-HAnimSegment338.AddChildren([Shape344]);
-{ .AddChildren }
-HAnimJoint337.AddChildren([HAnimSegment338]);
+{ METHOD .FdChildren.Add }
+HAnimSegment338.FdChildren.Add(Shape344);
+{ METHOD .FdChildren.Add }
+HAnimJoint337.FdChildren.Add(HAnimSegment338);
 HAnimJoint348 := THAnimJointNode.Create;
-HAnimJoint348.NameField := 'l_tarsal_distal_interphalangeal_5';
 HAnimJoint348.Center := Vector3(0.1271,0,0);
-{ .AddChildren }
-HAnimJoint337.AddChildren([HAnimJoint348]);
-{ .AddChildren }
-HAnimJoint326.AddChildren([HAnimJoint337]);
-{ .AddChildren }
-HAnimJoint315.AddChildren([HAnimJoint326]);
-{ .AddChildren }
-HAnimJoint265.AddChildren([HAnimJoint315]);
-{ .AddChildren }
-HAnimJoint254.AddChildren([HAnimJoint265]);
-{ .AddChildren }
-HAnimJoint93.AddChildren([HAnimJoint254]);
-{ .AddChildren }
-HAnimJoint82.AddChildren([HAnimJoint93]);
-{ .AddChildren }
-HAnimJoint71.AddChildren([HAnimJoint82]);
-{ .AddChildren }
-HAnimJoint55.AddChildren([HAnimJoint71]);
+{ METHOD .FdChildren.Add }
+HAnimJoint337.FdChildren.Add(HAnimJoint348);
+{ METHOD .FdChildren.Add }
+HAnimJoint326.FdChildren.Add(HAnimJoint337);
+{ METHOD .FdChildren.Add }
+HAnimJoint315.FdChildren.Add(HAnimJoint326);
+{ METHOD .FdChildren.Add }
+HAnimJoint265.FdChildren.Add(HAnimJoint315);
+{ METHOD .FdChildren.Add }
+HAnimJoint254.FdChildren.Add(HAnimJoint265);
+{ METHOD .FdChildren.Add }
+HAnimJoint93.FdChildren.Add(HAnimJoint254);
+{ METHOD .FdChildren.Add }
+HAnimJoint82.FdChildren.Add(HAnimJoint93);
+{ METHOD .FdChildren.Add }
+HAnimJoint71.FdChildren.Add(HAnimJoint82);
+{ METHOD .FdChildren.Add }
+HAnimJoint55.FdChildren.Add(HAnimJoint71);
 HAnimJoint349 := THAnimJointNode.Create;
-HAnimJoint349.NameField := 'r_hip';
 HAnimJoint349.Center := Vector3(-0.095,0.9171,0.0029);
 HAnimSegment350 := THAnimSegmentNode.Create;
-HAnimSegment350.NameField := 'r_thigh';
+end;
+
+procedure InitStandardHumanoidPart23;
+begin
+
 Transform351 := TTransformNode.Create;
 Transform351.Translation := Vector3(-0.095,0.9171,0.0029);
 Transform352 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor353 := TTouchSensorNode.Create;
 TouchSensor353.Description := 'Joint r_hip';
-{ .AddChildren }
-Transform352.AddChildren([TouchSensor353]);
-Shape354 := Shape20;
-{ .AddChild }
-Transform352.AddChildren([Shape354]);
-{ .AddChildren }
-Transform351.AddChildren([Transform352]);
-{ .AddChildren }
-HAnimSegment350.AddChildren([Transform351]);
+{ METHOD .FdChildren.Add }
+Transform352.FdChildren.Add(TouchSensor353);
+{ METHOD .FdChildren.Add }
+Transform352.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform351.FdChildren.Add(Transform352);
+{ METHOD .FdChildren.Add }
+HAnimSegment350.FdChildren.Add(Transform351);
 TouchSensor355 := TTouchSensorNode.Create;
 TouchSensor355.Description := 'Segment r_thigh';
-{ .AddChildren }
-HAnimSegment350.AddChildren([TouchSensor355]);
+{ METHOD .FdChildren.Add }
+HAnimSegment350.FdChildren.Add(TouchSensor355);
 Shape356 := TShapeNode.Create;
 Appearance357 := TAppearanceNode.Create;
 Material358 := TMaterialNode.Create;
 Material358.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance357.Material := Material358;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape356.Appearance := Appearance357;
 Extrusion359 := TExtrusionNode.Create;
 Extrusion359.SetSpine([Vector3(-0.095,0.9171,0.0029),Vector3(-0.0867,0.4913,0.0318)]);
 Extrusion359.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape356.Geometry := Extrusion359;
-{ .AddChildren }
-HAnimSegment350.AddChildren([Shape356]);
-{ .AddChildren }
-HAnimJoint349.AddChildren([HAnimSegment350]);
+{ METHOD .FdChildren.Add }
+HAnimSegment350.FdChildren.Add(Shape356);
+{ METHOD .FdChildren.Add }
+HAnimJoint349.FdChildren.Add(HAnimSegment350);
 HAnimJoint360 := THAnimJointNode.Create;
-HAnimJoint360.NameField := 'r_knee';
 HAnimJoint360.Center := Vector3(-0.0867,0.4913,0.0318);
 HAnimSegment361 := THAnimSegmentNode.Create;
-HAnimSegment361.NameField := 'r_calf';
 Transform362 := TTransformNode.Create;
 Transform362.Translation := Vector3(-0.0867,0.4913,0.0318);
 Transform363 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor364 := TTouchSensorNode.Create;
 TouchSensor364.Description := 'Joint r_knee';
-{ .AddChildren }
-Transform363.AddChildren([TouchSensor364]);
-Shape365 := Shape20;
-{ .AddChild }
-Transform363.AddChildren([Shape365]);
-{ .AddChildren }
-Transform362.AddChildren([Transform363]);
-{ .AddChildren }
-HAnimSegment361.AddChildren([Transform362]);
+{ METHOD .FdChildren.Add }
+Transform363.FdChildren.Add(TouchSensor364);
+{ METHOD .FdChildren.Add }
+Transform363.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform362.FdChildren.Add(Transform363);
+{ METHOD .FdChildren.Add }
+HAnimSegment361.FdChildren.Add(Transform362);
 TouchSensor366 := TTouchSensorNode.Create;
 TouchSensor366.Description := 'Segment r_calf';
-{ .AddChildren }
-HAnimSegment361.AddChildren([TouchSensor366]);
+{ METHOD .FdChildren.Add }
+HAnimSegment361.FdChildren.Add(TouchSensor366);
 Shape367 := TShapeNode.Create;
+end;
+
+procedure InitStandardHumanoidPart24;
+begin
+
 Appearance368 := TAppearanceNode.Create;
 Material369 := TMaterialNode.Create;
 Material369.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance368.Material := Material369;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape367.Appearance := Appearance368;
 Extrusion370 := TExtrusionNode.Create;
 Extrusion370.SetSpine([Vector3(-0.0867,0.4913,0.0318),Vector3(-0.0801,0.0712,-0.0766)]);
 Extrusion370.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape367.Geometry := Extrusion370;
-{ .AddChildren }
-HAnimSegment361.AddChildren([Shape367]);
-{ .AddChildren }
-HAnimJoint360.AddChildren([HAnimSegment361]);
+{ METHOD .FdChildren.Add }
+HAnimSegment361.FdChildren.Add(Shape367);
+{ METHOD .FdChildren.Add }
+HAnimJoint360.FdChildren.Add(HAnimSegment361);
 HAnimJoint371 := THAnimJointNode.Create;
-HAnimJoint371.NameField := 'r_talocrural';
 HAnimJoint371.Center := Vector3(-0.0801,0.0712,-0.0766);
 HAnimSegment372 := THAnimSegmentNode.Create;
-HAnimSegment372.NameField := 'r_talus';
 Transform373 := TTransformNode.Create;
 Transform373.Scale := Vector3(0.15,0.15,0.15);
 Transform373.Translation := Vector3(-0.05,0.06,-0.025);
@@ -3208,2401 +3250,2439 @@ Transform374 := TTransformNode.Create;
 { Empty Transform right foot }
 TouchSensor375 := TTouchSensorNode.Create;
 TouchSensor375.Description := 'Joint r_talocrural';
-{ .AddChildren }
-Transform374.AddChildren([TouchSensor375]);
-Shape376 := Shape20;
-{ .AddChild }
-Transform374.AddChildren([Shape376]);
-{ .AddChildren }
-Transform373.AddChildren([Transform374]);
-{ .AddChildren }
-HAnimSegment372.AddChildren([Transform373]);
+{ METHOD .FdChildren.Add }
+Transform374.FdChildren.Add(TouchSensor375);
+{ METHOD .FdChildren.Add }
+Transform374.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform373.FdChildren.Add(Transform374);
+{ METHOD .FdChildren.Add }
+HAnimSegment372.FdChildren.Add(Transform373);
 TouchSensor377 := TTouchSensorNode.Create;
 TouchSensor377.Description := 'Segment r_talus';
-{ .AddChildren }
-HAnimSegment372.AddChildren([TouchSensor377]);
+{ METHOD .FdChildren.Add }
+HAnimSegment372.FdChildren.Add(TouchSensor377);
 Shape378 := TShapeNode.Create;
 Appearance379 := TAppearanceNode.Create;
 Material380 := TMaterialNode.Create;
 Material380.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance379.Material := Material380;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape378.Appearance := Appearance379;
 Extrusion381 := TExtrusionNode.Create;
 Extrusion381.SetSpine([Vector3(-0.0801,0.0712,-0.0766),Vector3(-0.0781,0.0283,-0.097)]);
 Extrusion381.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape378.Geometry := Extrusion381;
-{ .AddChildren }
-HAnimSegment372.AddChildren([Shape378]);
+{ METHOD .FdChildren.Add }
+HAnimSegment372.FdChildren.Add(Shape378);
 TouchSensor382 := TTouchSensorNode.Create;
+end;
+
+procedure InitStandardHumanoidPart25;
+begin
+
 TouchSensor382.Description := 'Segment r_talus';
-{ .AddChildren }
-HAnimSegment372.AddChildren([TouchSensor382]);
+{ METHOD .FdChildren.Add }
+HAnimSegment372.FdChildren.Add(TouchSensor382);
 Shape383 := TShapeNode.Create;
 Appearance384 := TAppearanceNode.Create;
 Material385 := TMaterialNode.Create;
 Material385.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance384.Material := Material385;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape383.Appearance := Appearance384;
 Extrusion386 := TExtrusionNode.Create;
 Extrusion386.SetSpine([Vector3(-0.0801,0.0712,-0.0766),Vector3(-0.0889,0.0494,-0.1278)]);
 Extrusion386.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape383.Geometry := Extrusion386;
-{ .AddChildren }
-HAnimSegment372.AddChildren([Shape383]);
-{ .AddChildren }
-HAnimJoint371.AddChildren([HAnimSegment372]);
+{ METHOD .FdChildren.Add }
+HAnimSegment372.FdChildren.Add(Shape383);
+{ METHOD .FdChildren.Add }
+HAnimJoint371.FdChildren.Add(HAnimSegment372);
 HAnimJoint387 := THAnimJointNode.Create;
-HAnimJoint387.NameField := 'r_talocalcaneonavicular';
 HAnimJoint387.Center := Vector3(-0.0781,0.0283,-0.097);
 HAnimSegment388 := THAnimSegmentNode.Create;
-HAnimSegment388.NameField := 'r_navicular';
 Transform389 := TTransformNode.Create;
 Transform389.Translation := Vector3(-0.0781,0.0283,-0.097);
 Transform390 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor391 := TTouchSensorNode.Create;
 TouchSensor391.Description := 'Joint r_talocalcaneonavicular';
-{ .AddChildren }
-Transform390.AddChildren([TouchSensor391]);
-Shape392 := Shape20;
-{ .AddChild }
-Transform390.AddChildren([Shape392]);
-{ .AddChildren }
-Transform389.AddChildren([Transform390]);
-{ .AddChildren }
-HAnimSegment388.AddChildren([Transform389]);
+{ METHOD .FdChildren.Add }
+Transform390.FdChildren.Add(TouchSensor391);
+{ METHOD .FdChildren.Add }
+Transform390.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform389.FdChildren.Add(Transform390);
+{ METHOD .FdChildren.Add }
+HAnimSegment388.FdChildren.Add(Transform389);
 TouchSensor393 := TTouchSensorNode.Create;
 TouchSensor393.Description := 'Segment r_navicular';
-{ .AddChildren }
-HAnimSegment388.AddChildren([TouchSensor393]);
+{ METHOD .FdChildren.Add }
+HAnimSegment388.FdChildren.Add(TouchSensor393);
 Shape394 := TShapeNode.Create;
 Appearance395 := TAppearanceNode.Create;
 Material396 := TMaterialNode.Create;
 Material396.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance395.Material := Material396;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape394.Appearance := Appearance395;
 Extrusion397 := TExtrusionNode.Create;
 Extrusion397.SetSpine([Vector3(-0.0781,0.0283,-0.097),Vector3(-0.0672,0.0235,-0.0835)]);
 Extrusion397.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape394.Geometry := Extrusion397;
-{ .AddChildren }
-HAnimSegment388.AddChildren([Shape394]);
+{ METHOD .FdChildren.Add }
+HAnimSegment388.FdChildren.Add(Shape394);
+end;
+
+procedure InitStandardHumanoidPart26;
+begin
+
 TouchSensor398 := TTouchSensorNode.Create;
 TouchSensor398.Description := 'Segment r_navicular';
-{ .AddChildren }
-HAnimSegment388.AddChildren([TouchSensor398]);
+{ METHOD .FdChildren.Add }
+HAnimSegment388.FdChildren.Add(TouchSensor398);
 Shape399 := TShapeNode.Create;
 Appearance400 := TAppearanceNode.Create;
 Material401 := TMaterialNode.Create;
 Material401.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance400.Material := Material401;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape399.Appearance := Appearance400;
 Extrusion402 := TExtrusionNode.Create;
 Extrusion402.SetSpine([Vector3(-0.0781,0.0283,-0.097),Vector3(-0.0812,0.025,-0.0805)]);
 Extrusion402.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape399.Geometry := Extrusion402;
-{ .AddChildren }
-HAnimSegment388.AddChildren([Shape399]);
+{ METHOD .FdChildren.Add }
+HAnimSegment388.FdChildren.Add(Shape399);
 TouchSensor403 := TTouchSensorNode.Create;
 TouchSensor403.Description := 'Segment r_navicular';
-{ .AddChildren }
-HAnimSegment388.AddChildren([TouchSensor403]);
+{ METHOD .FdChildren.Add }
+HAnimSegment388.FdChildren.Add(TouchSensor403);
 Shape404 := TShapeNode.Create;
 Appearance405 := TAppearanceNode.Create;
 Material406 := TMaterialNode.Create;
 Material406.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance405.Material := Material406;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape404.Appearance := Appearance405;
 Extrusion407 := TExtrusionNode.Create;
 Extrusion407.SetSpine([Vector3(-0.0781,0.0283,-0.097),Vector3(-0.0928,0.0248,-0.0821)]);
 Extrusion407.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape404.Geometry := Extrusion407;
-{ .AddChildren }
-HAnimSegment388.AddChildren([Shape404]);
-{ .AddChildren }
-HAnimJoint387.AddChildren([HAnimSegment388]);
+{ METHOD .FdChildren.Add }
+HAnimSegment388.FdChildren.Add(Shape404);
+{ METHOD .FdChildren.Add }
+HAnimJoint387.FdChildren.Add(HAnimSegment388);
 HAnimJoint408 := THAnimJointNode.Create;
-HAnimJoint408.NameField := 'r_cuneonavicular_1';
 HAnimJoint408.Center := Vector3(-0.0672,0.0235,-0.0835);
 HAnimSegment409 := THAnimSegmentNode.Create;
-HAnimSegment409.NameField := 'r_cuneiform_1';
 Transform410 := TTransformNode.Create;
 Transform410.Translation := Vector3(-0.0672,0.0235,-0.0835);
 Transform411 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor412 := TTouchSensorNode.Create;
 TouchSensor412.Description := 'Joint r_cuneonavicular_1';
-{ .AddChildren }
-Transform411.AddChildren([TouchSensor412]);
-Shape413 := Shape20;
-{ .AddChild }
-Transform411.AddChildren([Shape413]);
-{ .AddChildren }
-Transform410.AddChildren([Transform411]);
-{ .AddChildren }
-HAnimSegment409.AddChildren([Transform410]);
+{ METHOD .FdChildren.Add }
+Transform411.FdChildren.Add(TouchSensor412);
+{ METHOD .FdChildren.Add }
+Transform411.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform410.FdChildren.Add(Transform411);
+end;
+
+procedure InitStandardHumanoidPart27;
+begin
+
+{ METHOD .FdChildren.Add }
+HAnimSegment409.FdChildren.Add(Transform410);
 TouchSensor414 := TTouchSensorNode.Create;
 TouchSensor414.Description := 'Segment r_cuneiform_1';
-{ .AddChildren }
-HAnimSegment409.AddChildren([TouchSensor414]);
+{ METHOD .FdChildren.Add }
+HAnimSegment409.FdChildren.Add(TouchSensor414);
 Shape415 := TShapeNode.Create;
 Appearance416 := TAppearanceNode.Create;
 Material417 := TMaterialNode.Create;
 Material417.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance416.Material := Material417;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape415.Appearance := Appearance416;
 Extrusion418 := TExtrusionNode.Create;
 Extrusion418.SetSpine([Vector3(-0.0672,0.0235,-0.0835),Vector3(-0.0644,0.0147,-0.0577)]);
 Extrusion418.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape415.Geometry := Extrusion418;
-{ .AddChildren }
-HAnimSegment409.AddChildren([Shape415]);
-{ .AddChildren }
-HAnimJoint408.AddChildren([HAnimSegment409]);
+{ METHOD .FdChildren.Add }
+HAnimSegment409.FdChildren.Add(Shape415);
+{ METHOD .FdChildren.Add }
+HAnimJoint408.FdChildren.Add(HAnimSegment409);
 HAnimJoint419 := THAnimJointNode.Create;
-HAnimJoint419.NameField := 'r_tarsometatarsal_1';
 HAnimJoint419.Center := Vector3(-0.0644,0.0147,-0.0577);
 HAnimSegment420 := THAnimSegmentNode.Create;
-HAnimSegment420.NameField := 'r_metatarsal_1';
 Transform421 := TTransformNode.Create;
 Transform421.Translation := Vector3(-0.0644,0.0147,-0.0577);
 Transform422 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor423 := TTouchSensorNode.Create;
 TouchSensor423.Description := 'Joint r_tarsometatarsal_1';
-{ .AddChildren }
-Transform422.AddChildren([TouchSensor423]);
-Shape424 := Shape20;
-{ .AddChild }
-Transform422.AddChildren([Shape424]);
-{ .AddChildren }
-Transform421.AddChildren([Transform422]);
-{ .AddChildren }
-HAnimSegment420.AddChildren([Transform421]);
+{ METHOD .FdChildren.Add }
+Transform422.FdChildren.Add(TouchSensor423);
+{ METHOD .FdChildren.Add }
+Transform422.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform421.FdChildren.Add(Transform422);
+{ METHOD .FdChildren.Add }
+HAnimSegment420.FdChildren.Add(Transform421);
 TouchSensor425 := TTouchSensorNode.Create;
 TouchSensor425.Description := 'Segment r_metatarsal_1';
-{ .AddChildren }
-HAnimSegment420.AddChildren([TouchSensor425]);
+{ METHOD .FdChildren.Add }
+HAnimSegment420.FdChildren.Add(TouchSensor425);
 Shape426 := TShapeNode.Create;
 Appearance427 := TAppearanceNode.Create;
 Material428 := TMaterialNode.Create;
 Material428.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance427.Material := Material428;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape426.Appearance := Appearance427;
 Extrusion429 := TExtrusionNode.Create;
 Extrusion429.SetSpine([Vector3(-0.0644,0.0147,-0.0577),Vector3(-0.0619,0.0059,-0.0083)]);
 Extrusion429.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+end;
+
+procedure InitStandardHumanoidPart28;
+begin
+
+{ METHOD .Geometry }
 Shape426.Geometry := Extrusion429;
-{ .AddChildren }
-HAnimSegment420.AddChildren([Shape426]);
-{ .AddChildren }
-HAnimJoint419.AddChildren([HAnimSegment420]);
+{ METHOD .FdChildren.Add }
+HAnimSegment420.FdChildren.Add(Shape426);
+{ METHOD .FdChildren.Add }
+HAnimJoint419.FdChildren.Add(HAnimSegment420);
 HAnimJoint430 := THAnimJointNode.Create;
-HAnimJoint430.NameField := 'r_metatarsophalangeal_1';
 HAnimJoint430.Center := Vector3(-0.0619,0.0059,-0.0083);
 HAnimSegment431 := THAnimSegmentNode.Create;
-HAnimSegment431.NameField := 'r_tarsal_proximal_phalanx_1';
 Transform432 := TTransformNode.Create;
 Transform432.Translation := Vector3(-0.0619,0.0059,-0.0083);
 Transform433 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor434 := TTouchSensorNode.Create;
 TouchSensor434.Description := 'Joint r_metatarsophalangeal_1';
-{ .AddChildren }
-Transform433.AddChildren([TouchSensor434]);
-Shape435 := Shape20;
-{ .AddChild }
-Transform433.AddChildren([Shape435]);
-{ .AddChildren }
-Transform432.AddChildren([Transform433]);
-{ .AddChildren }
-HAnimSegment431.AddChildren([Transform432]);
+{ METHOD .FdChildren.Add }
+Transform433.FdChildren.Add(TouchSensor434);
+{ METHOD .FdChildren.Add }
+Transform433.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform432.FdChildren.Add(Transform433);
+{ METHOD .FdChildren.Add }
+HAnimSegment431.FdChildren.Add(Transform432);
 TouchSensor436 := TTouchSensorNode.Create;
 TouchSensor436.Description := 'Segment r_tarsal_proximal_phalanx_1';
-{ .AddChildren }
-HAnimSegment431.AddChildren([TouchSensor436]);
+{ METHOD .FdChildren.Add }
+HAnimSegment431.FdChildren.Add(TouchSensor436);
 Shape437 := TShapeNode.Create;
 Appearance438 := TAppearanceNode.Create;
 Material439 := TMaterialNode.Create;
 Material439.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance438.Material := Material439;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape437.Appearance := Appearance438;
 Extrusion440 := TExtrusionNode.Create;
 Extrusion440.SetSpine([Vector3(-0.0619,0.0059,-0.0083),Vector3(-0.0619,0.0059,-0.0083)]);
 Extrusion440.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape437.Geometry := Extrusion440;
-{ .AddChildren }
-HAnimSegment431.AddChildren([Shape437]);
-{ .AddChildren }
-HAnimJoint430.AddChildren([HAnimSegment431]);
+{ METHOD .FdChildren.Add }
+HAnimSegment431.FdChildren.Add(Shape437);
+{ METHOD .FdChildren.Add }
+HAnimJoint430.FdChildren.Add(HAnimSegment431);
 HAnimJoint441 := THAnimJointNode.Create;
-HAnimJoint441.NameField := 'r_tarsal_interphalangeal_1';
-{ .AddChildren }
-HAnimJoint430.AddChildren([HAnimJoint441]);
-{ .AddChildren }
-HAnimJoint419.AddChildren([HAnimJoint430]);
-{ .AddChildren }
-HAnimJoint408.AddChildren([HAnimJoint419]);
-{ .AddChildren }
-HAnimJoint387.AddChildren([HAnimJoint408]);
+{ METHOD .FdChildren.Add }
+HAnimJoint430.FdChildren.Add(HAnimJoint441);
+{ METHOD .FdChildren.Add }
+HAnimJoint419.FdChildren.Add(HAnimJoint430);
+{ METHOD .FdChildren.Add }
+HAnimJoint408.FdChildren.Add(HAnimJoint419);
+{ METHOD .FdChildren.Add }
+HAnimJoint387.FdChildren.Add(HAnimJoint408);
 HAnimJoint442 := THAnimJointNode.Create;
-HAnimJoint442.NameField := 'r_cuneonavicular_2';
 HAnimJoint442.Center := Vector3(-0.0812,0.025,-0.0805);
 HAnimSegment443 := THAnimSegmentNode.Create;
-HAnimSegment443.NameField := 'r_cuneiform_2';
 Transform444 := TTransformNode.Create;
 Transform444.Translation := Vector3(-0.0812,0.025,-0.0805);
+end;
+
+procedure InitStandardHumanoidPart29;
+begin
+
 Transform445 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor446 := TTouchSensorNode.Create;
 TouchSensor446.Description := 'Joint r_cuneonavicular_2';
-{ .AddChildren }
-Transform445.AddChildren([TouchSensor446]);
-Shape447 := Shape20;
-{ .AddChild }
-Transform445.AddChildren([Shape447]);
-{ .AddChildren }
-Transform444.AddChildren([Transform445]);
-{ .AddChildren }
-HAnimSegment443.AddChildren([Transform444]);
+{ METHOD .FdChildren.Add }
+Transform445.FdChildren.Add(TouchSensor446);
+{ METHOD .FdChildren.Add }
+Transform445.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform444.FdChildren.Add(Transform445);
+{ METHOD .FdChildren.Add }
+HAnimSegment443.FdChildren.Add(Transform444);
 TouchSensor448 := TTouchSensorNode.Create;
 TouchSensor448.Description := 'Segment r_cuneiform_2';
-{ .AddChildren }
-HAnimSegment443.AddChildren([TouchSensor448]);
+{ METHOD .FdChildren.Add }
+HAnimSegment443.FdChildren.Add(TouchSensor448);
 Shape449 := TShapeNode.Create;
 Appearance450 := TAppearanceNode.Create;
 Material451 := TMaterialNode.Create;
 Material451.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance450.Material := Material451;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape449.Appearance := Appearance450;
 Extrusion452 := TExtrusionNode.Create;
 Extrusion452.SetSpine([Vector3(-0.0812,0.025,-0.0805),Vector3(-0.08,0.0175,-0.0608)]);
 Extrusion452.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape449.Geometry := Extrusion452;
-{ .AddChildren }
-HAnimSegment443.AddChildren([Shape449]);
-{ .AddChildren }
-HAnimJoint442.AddChildren([HAnimSegment443]);
+{ METHOD .FdChildren.Add }
+HAnimSegment443.FdChildren.Add(Shape449);
+{ METHOD .FdChildren.Add }
+HAnimJoint442.FdChildren.Add(HAnimSegment443);
 HAnimJoint453 := THAnimJointNode.Create;
-HAnimJoint453.NameField := 'r_tarsometatarsal_2';
 HAnimJoint453.Center := Vector3(-0.08,0.0175,-0.0608);
 HAnimSegment454 := THAnimSegmentNode.Create;
-HAnimSegment454.NameField := 'r_metatarsal_2';
 Transform455 := TTransformNode.Create;
 Transform455.Translation := Vector3(-0.08,0.0175,-0.0608);
 Transform456 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor457 := TTouchSensorNode.Create;
 TouchSensor457.Description := 'Joint r_tarsometatarsal_2';
-{ .AddChildren }
-Transform456.AddChildren([TouchSensor457]);
-Shape458 := Shape20;
-{ .AddChild }
-Transform456.AddChildren([Shape458]);
-{ .AddChildren }
-Transform455.AddChildren([Transform456]);
-{ .AddChildren }
-HAnimSegment454.AddChildren([Transform455]);
+{ METHOD .FdChildren.Add }
+Transform456.FdChildren.Add(TouchSensor457);
+{ METHOD .FdChildren.Add }
+Transform456.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform455.FdChildren.Add(Transform456);
+{ METHOD .FdChildren.Add }
+HAnimSegment454.FdChildren.Add(Transform455);
 TouchSensor459 := TTouchSensorNode.Create;
 TouchSensor459.Description := 'Segment r_metatarsal_2';
-{ .AddChildren }
-HAnimSegment454.AddChildren([TouchSensor459]);
+{ METHOD .FdChildren.Add }
+HAnimSegment454.FdChildren.Add(TouchSensor459);
 Shape460 := TShapeNode.Create;
 Appearance461 := TAppearanceNode.Create;
 Material462 := TMaterialNode.Create;
+end;
+
+procedure InitStandardHumanoidPart30;
+begin
+
 Material462.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance461.Material := Material462;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape460.Appearance := Appearance461;
 Extrusion463 := TExtrusionNode.Create;
 Extrusion463.SetSpine([Vector3(-0.08,0.0175,-0.0608),Vector3(-0.0823,0.0064,-0.004)]);
 Extrusion463.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape460.Geometry := Extrusion463;
-{ .AddChildren }
-HAnimSegment454.AddChildren([Shape460]);
-{ .AddChildren }
-HAnimJoint453.AddChildren([HAnimSegment454]);
+{ METHOD .FdChildren.Add }
+HAnimSegment454.FdChildren.Add(Shape460);
+{ METHOD .FdChildren.Add }
+HAnimJoint453.FdChildren.Add(HAnimSegment454);
 HAnimJoint464 := THAnimJointNode.Create;
-HAnimJoint464.NameField := 'r_metatarsophalangeal_2';
 HAnimJoint464.Center := Vector3(-0.0823,0.0064,-0.004);
 HAnimSegment465 := THAnimSegmentNode.Create;
-HAnimSegment465.NameField := 'r_tarsal_proximal_phalanx_2';
 Transform466 := TTransformNode.Create;
 Transform466.Translation := Vector3(-0.0823,0.0064,-0.004);
 Transform467 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor468 := TTouchSensorNode.Create;
 TouchSensor468.Description := 'Joint r_metatarsophalangeal_2';
-{ .AddChildren }
-Transform467.AddChildren([TouchSensor468]);
-Shape469 := Shape20;
-{ .AddChild }
-Transform467.AddChildren([Shape469]);
-{ .AddChildren }
-Transform466.AddChildren([Transform467]);
-{ .AddChildren }
-HAnimSegment465.AddChildren([Transform466]);
+{ METHOD .FdChildren.Add }
+Transform467.FdChildren.Add(TouchSensor468);
+{ METHOD .FdChildren.Add }
+Transform467.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform466.FdChildren.Add(Transform467);
+{ METHOD .FdChildren.Add }
+HAnimSegment465.FdChildren.Add(Transform466);
 TouchSensor470 := TTouchSensorNode.Create;
 TouchSensor470.Description := 'Segment r_tarsal_proximal_phalanx_2';
-{ .AddChildren }
-HAnimSegment465.AddChildren([TouchSensor470]);
+{ METHOD .FdChildren.Add }
+HAnimSegment465.FdChildren.Add(TouchSensor470);
 Shape471 := TShapeNode.Create;
 Appearance472 := TAppearanceNode.Create;
 Material473 := TMaterialNode.Create;
 Material473.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance472.Material := Material473;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape471.Appearance := Appearance472;
 Extrusion474 := TExtrusionNode.Create;
 Extrusion474.SetSpine([Vector3(-0.0823,0.0064,-0.004),Vector3(-0.0841,0.0041,0.0121)]);
 Extrusion474.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape471.Geometry := Extrusion474;
-{ .AddChildren }
-HAnimSegment465.AddChildren([Shape471]);
-{ .AddChildren }
-HAnimJoint464.AddChildren([HAnimSegment465]);
+{ METHOD .FdChildren.Add }
+HAnimSegment465.FdChildren.Add(Shape471);
+{ METHOD .FdChildren.Add }
+HAnimJoint464.FdChildren.Add(HAnimSegment465);
 HAnimJoint475 := THAnimJointNode.Create;
-HAnimJoint475.NameField := 'r_tarsal_proximal_interphalangeal_2';
 HAnimJoint475.Center := Vector3(-0.0841,0.0041,0.0121);
 HAnimSegment476 := THAnimSegmentNode.Create;
-HAnimSegment476.NameField := 'r_tarsal_middle_phalanx_2';
 Transform477 := TTransformNode.Create;
+end;
+
+procedure InitStandardHumanoidPart31;
+begin
+
 Transform477.Translation := Vector3(-0.0841,0.0041,0.0121);
 Transform478 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor479 := TTouchSensorNode.Create;
 TouchSensor479.Description := 'Joint r_tarsal_proximal_interphalangeal_2';
-{ .AddChildren }
-Transform478.AddChildren([TouchSensor479]);
-Shape480 := Shape20;
-{ .AddChild }
-Transform478.AddChildren([Shape480]);
-{ .AddChildren }
-Transform477.AddChildren([Transform478]);
-{ .AddChildren }
-HAnimSegment476.AddChildren([Transform477]);
+{ METHOD .FdChildren.Add }
+Transform478.FdChildren.Add(TouchSensor479);
+{ METHOD .FdChildren.Add }
+Transform478.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform477.FdChildren.Add(Transform478);
+{ METHOD .FdChildren.Add }
+HAnimSegment476.FdChildren.Add(Transform477);
 TouchSensor481 := TTouchSensorNode.Create;
 TouchSensor481.Description := 'Segment r_tarsal_middle_phalanx_2';
-{ .AddChildren }
-HAnimSegment476.AddChildren([TouchSensor481]);
+{ METHOD .FdChildren.Add }
+HAnimSegment476.FdChildren.Add(TouchSensor481);
 Shape482 := TShapeNode.Create;
 Appearance483 := TAppearanceNode.Create;
 Material484 := TMaterialNode.Create;
 Material484.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance483.Material := Material484;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape482.Appearance := Appearance483;
 Extrusion485 := TExtrusionNode.Create;
 Extrusion485.SetSpine([Vector3(-0.0841,0.0041,0.0121),Vector3(-0.0841,0.0013,0.0216)]);
 Extrusion485.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape482.Geometry := Extrusion485;
-{ .AddChildren }
-HAnimSegment476.AddChildren([Shape482]);
-{ .AddChildren }
-HAnimJoint475.AddChildren([HAnimSegment476]);
+{ METHOD .FdChildren.Add }
+HAnimSegment476.FdChildren.Add(Shape482);
+{ METHOD .FdChildren.Add }
+HAnimJoint475.FdChildren.Add(HAnimSegment476);
 HAnimJoint486 := THAnimJointNode.Create;
-HAnimJoint486.NameField := 'r_tarsal_distal_interphalangeal_2';
 HAnimJoint486.Center := Vector3(-0.0841,0.0013,0.0216);
-{ .AddChildren }
-HAnimJoint475.AddChildren([HAnimJoint486]);
-{ .AddChildren }
-HAnimJoint464.AddChildren([HAnimJoint475]);
-{ .AddChildren }
-HAnimJoint453.AddChildren([HAnimJoint464]);
-{ .AddChildren }
-HAnimJoint442.AddChildren([HAnimJoint453]);
-{ .AddChildren }
-HAnimJoint387.AddChildren([HAnimJoint442]);
+{ METHOD .FdChildren.Add }
+HAnimJoint475.FdChildren.Add(HAnimJoint486);
+{ METHOD .FdChildren.Add }
+HAnimJoint464.FdChildren.Add(HAnimJoint475);
+{ METHOD .FdChildren.Add }
+HAnimJoint453.FdChildren.Add(HAnimJoint464);
+{ METHOD .FdChildren.Add }
+HAnimJoint442.FdChildren.Add(HAnimJoint453);
+{ METHOD .FdChildren.Add }
+HAnimJoint387.FdChildren.Add(HAnimJoint442);
 HAnimJoint487 := THAnimJointNode.Create;
-HAnimJoint487.NameField := 'r_cuneonavicular_3';
 HAnimJoint487.Center := Vector3(-0.0928,0.0248,-0.0821);
 HAnimSegment488 := THAnimSegmentNode.Create;
-HAnimSegment488.NameField := 'r_cuneiform_3';
 Transform489 := TTransformNode.Create;
 Transform489.Translation := Vector3(-0.0928,0.0248,-0.0821);
 Transform490 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor491 := TTouchSensorNode.Create;
 TouchSensor491.Description := 'Joint r_cuneonavicular_3';
-{ .AddChildren }
-Transform490.AddChildren([TouchSensor491]);
-Shape492 := Shape20;
-{ .AddChild }
-Transform490.AddChildren([Shape492]);
-{ .AddChildren }
-Transform489.AddChildren([Transform490]);
-{ .AddChildren }
-HAnimSegment488.AddChildren([Transform489]);
+{ METHOD .FdChildren.Add }
+Transform490.FdChildren.Add(TouchSensor491);
+{ METHOD .FdChildren.Add }
+Transform490.FdChildren.Add(Shape20);
+end;
+
+procedure InitStandardHumanoidPart32;
+begin
+
+{ METHOD .FdChildren.Add }
+Transform489.FdChildren.Add(Transform490);
+{ METHOD .FdChildren.Add }
+HAnimSegment488.FdChildren.Add(Transform489);
 TouchSensor493 := TTouchSensorNode.Create;
 TouchSensor493.Description := 'Segment r_cuneiform_3';
-{ .AddChildren }
-HAnimSegment488.AddChildren([TouchSensor493]);
+{ METHOD .FdChildren.Add }
+HAnimSegment488.FdChildren.Add(TouchSensor493);
 Shape494 := TShapeNode.Create;
 Appearance495 := TAppearanceNode.Create;
 Material496 := TMaterialNode.Create;
 Material496.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance495.Material := Material496;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape494.Appearance := Appearance495;
 Extrusion497 := TExtrusionNode.Create;
 Extrusion497.SetSpine([Vector3(-0.0928,0.0248,-0.0821),Vector3(-0.0944,0.0175,-0.0625)]);
 Extrusion497.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape494.Geometry := Extrusion497;
-{ .AddChildren }
-HAnimSegment488.AddChildren([Shape494]);
-{ .AddChildren }
-HAnimJoint487.AddChildren([HAnimSegment488]);
+{ METHOD .FdChildren.Add }
+HAnimSegment488.FdChildren.Add(Shape494);
+{ METHOD .FdChildren.Add }
+HAnimJoint487.FdChildren.Add(HAnimSegment488);
 HAnimJoint498 := THAnimJointNode.Create;
-HAnimJoint498.NameField := 'r_tarsometatarsal_3';
 HAnimJoint498.Center := Vector3(-0.0944,0.0175,-0.0625);
 HAnimSegment499 := THAnimSegmentNode.Create;
-HAnimSegment499.NameField := 'r_metatarsal_3';
 Transform500 := TTransformNode.Create;
 Transform500.Translation := Vector3(-0.0944,0.0175,-0.0625);
 Transform501 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor502 := TTouchSensorNode.Create;
 TouchSensor502.Description := 'Joint r_tarsometatarsal_3';
-{ .AddChildren }
-Transform501.AddChildren([TouchSensor502]);
-Shape503 := Shape20;
-{ .AddChild }
-Transform501.AddChildren([Shape503]);
-{ .AddChildren }
-Transform500.AddChildren([Transform501]);
-{ .AddChildren }
-HAnimSegment499.AddChildren([Transform500]);
+{ METHOD .FdChildren.Add }
+Transform501.FdChildren.Add(TouchSensor502);
+{ METHOD .FdChildren.Add }
+Transform501.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform500.FdChildren.Add(Transform501);
+{ METHOD .FdChildren.Add }
+HAnimSegment499.FdChildren.Add(Transform500);
 TouchSensor504 := TTouchSensorNode.Create;
 TouchSensor504.Description := 'Segment r_metatarsal_3';
-{ .AddChildren }
-HAnimSegment499.AddChildren([TouchSensor504]);
+{ METHOD .FdChildren.Add }
+HAnimSegment499.FdChildren.Add(TouchSensor504);
 Shape505 := TShapeNode.Create;
 Appearance506 := TAppearanceNode.Create;
 Material507 := TMaterialNode.Create;
 Material507.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance506.Material := Material507;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape505.Appearance := Appearance506;
 Extrusion508 := TExtrusionNode.Create;
 Extrusion508.SetSpine([Vector3(-0.0944,0.0175,-0.0625),Vector3(-0.0963,0.0065,-0.0065)]);
+end;
+
+procedure InitStandardHumanoidPart33;
+begin
+
 Extrusion508.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape505.Geometry := Extrusion508;
-{ .AddChildren }
-HAnimSegment499.AddChildren([Shape505]);
-{ .AddChildren }
-HAnimJoint498.AddChildren([HAnimSegment499]);
+{ METHOD .FdChildren.Add }
+HAnimSegment499.FdChildren.Add(Shape505);
+{ METHOD .FdChildren.Add }
+HAnimJoint498.FdChildren.Add(HAnimSegment499);
 HAnimJoint509 := THAnimJointNode.Create;
-HAnimJoint509.NameField := 'r_metatarsophalangeal_3';
 HAnimJoint509.Center := Vector3(-0.0963,0.0065,-0.0065);
 HAnimSegment510 := THAnimSegmentNode.Create;
-HAnimSegment510.NameField := 'r_tarsal_proximal_phalanx_3';
 Transform511 := TTransformNode.Create;
 Transform511.Translation := Vector3(-0.0963,0.0065,-0.0065);
 Transform512 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor513 := TTouchSensorNode.Create;
 TouchSensor513.Description := 'Joint r_metatarsophalangeal_3';
-{ .AddChildren }
-Transform512.AddChildren([TouchSensor513]);
-Shape514 := Shape20;
-{ .AddChild }
-Transform512.AddChildren([Shape514]);
-{ .AddChildren }
-Transform511.AddChildren([Transform512]);
-{ .AddChildren }
-HAnimSegment510.AddChildren([Transform511]);
+{ METHOD .FdChildren.Add }
+Transform512.FdChildren.Add(TouchSensor513);
+{ METHOD .FdChildren.Add }
+Transform512.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform511.FdChildren.Add(Transform512);
+{ METHOD .FdChildren.Add }
+HAnimSegment510.FdChildren.Add(Transform511);
 TouchSensor515 := TTouchSensorNode.Create;
 TouchSensor515.Description := 'Segment r_tarsal_proximal_phalanx_3';
-{ .AddChildren }
-HAnimSegment510.AddChildren([TouchSensor515]);
+{ METHOD .FdChildren.Add }
+HAnimSegment510.FdChildren.Add(TouchSensor515);
 Shape516 := TShapeNode.Create;
 Appearance517 := TAppearanceNode.Create;
 Material518 := TMaterialNode.Create;
 Material518.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance517.Material := Material518;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape516.Appearance := Appearance517;
 Extrusion519 := TExtrusionNode.Create;
 Extrusion519.SetSpine([Vector3(-0.0963,0.0065,-0.0065),Vector3(-0.0987,0.0034,0.0086)]);
 Extrusion519.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape516.Geometry := Extrusion519;
-{ .AddChildren }
-HAnimSegment510.AddChildren([Shape516]);
-{ .AddChildren }
-HAnimJoint509.AddChildren([HAnimSegment510]);
+{ METHOD .FdChildren.Add }
+HAnimSegment510.FdChildren.Add(Shape516);
+{ METHOD .FdChildren.Add }
+HAnimJoint509.FdChildren.Add(HAnimSegment510);
 HAnimJoint520 := THAnimJointNode.Create;
-HAnimJoint520.NameField := 'r_tarsal_proximal_interphalangeal_3';
 HAnimJoint520.Center := Vector3(-0.0987,0.0034,0.0086);
 HAnimSegment521 := THAnimSegmentNode.Create;
-HAnimSegment521.NameField := 'r_tarsal_middle_phalanx_3';
 Transform522 := TTransformNode.Create;
 Transform522.Translation := Vector3(-0.0987,0.0034,0.0086);
 Transform523 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor524 := TTouchSensorNode.Create;
 TouchSensor524.Description := 'Joint r_tarsal_proximal_interphalangeal_3';
-{ .AddChildren }
-Transform523.AddChildren([TouchSensor524]);
-Shape525 := Shape20;
-{ .AddChild }
-Transform523.AddChildren([Shape525]);
-{ .AddChildren }
-Transform522.AddChildren([Transform523]);
-{ .AddChildren }
-HAnimSegment521.AddChildren([Transform522]);
+{ METHOD .FdChildren.Add }
+Transform523.FdChildren.Add(TouchSensor524);
+end;
+
+procedure InitStandardHumanoidPart34;
+begin
+
+{ METHOD .FdChildren.Add }
+Transform523.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform522.FdChildren.Add(Transform523);
+{ METHOD .FdChildren.Add }
+HAnimSegment521.FdChildren.Add(Transform522);
 TouchSensor526 := TTouchSensorNode.Create;
 TouchSensor526.Description := 'Segment r_tarsal_middle_phalanx_3';
-{ .AddChildren }
-HAnimSegment521.AddChildren([TouchSensor526]);
+{ METHOD .FdChildren.Add }
+HAnimSegment521.FdChildren.Add(TouchSensor526);
 Shape527 := TShapeNode.Create;
 Appearance528 := TAppearanceNode.Create;
 Material529 := TMaterialNode.Create;
 Material529.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance528.Material := Material529;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape527.Appearance := Appearance528;
 Extrusion530 := TExtrusionNode.Create;
 Extrusion530.SetSpine([Vector3(-0.0987,0.0034,0.0086),Vector3(-0.1002,0.0013,0.0178)]);
 Extrusion530.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape527.Geometry := Extrusion530;
-{ .AddChildren }
-HAnimSegment521.AddChildren([Shape527]);
-{ .AddChildren }
-HAnimJoint520.AddChildren([HAnimSegment521]);
+{ METHOD .FdChildren.Add }
+HAnimSegment521.FdChildren.Add(Shape527);
+{ METHOD .FdChildren.Add }
+HAnimJoint520.FdChildren.Add(HAnimSegment521);
 HAnimJoint531 := THAnimJointNode.Create;
-HAnimJoint531.NameField := 'r_tarsal_distal_interphalangeal_3';
 HAnimJoint531.Center := Vector3(-0.1002,0.0013,0.0178);
-{ .AddChildren }
-HAnimJoint520.AddChildren([HAnimJoint531]);
-{ .AddChildren }
-HAnimJoint509.AddChildren([HAnimJoint520]);
-{ .AddChildren }
-HAnimJoint498.AddChildren([HAnimJoint509]);
-{ .AddChildren }
-HAnimJoint487.AddChildren([HAnimJoint498]);
-{ .AddChildren }
-HAnimJoint387.AddChildren([HAnimJoint487]);
-{ .AddChildren }
-HAnimJoint371.AddChildren([HAnimJoint387]);
+{ METHOD .FdChildren.Add }
+HAnimJoint520.FdChildren.Add(HAnimJoint531);
+{ METHOD .FdChildren.Add }
+HAnimJoint509.FdChildren.Add(HAnimJoint520);
+{ METHOD .FdChildren.Add }
+HAnimJoint498.FdChildren.Add(HAnimJoint509);
+{ METHOD .FdChildren.Add }
+HAnimJoint487.FdChildren.Add(HAnimJoint498);
+{ METHOD .FdChildren.Add }
+HAnimJoint387.FdChildren.Add(HAnimJoint487);
+{ METHOD .FdChildren.Add }
+HAnimJoint371.FdChildren.Add(HAnimJoint387);
 HAnimJoint532 := THAnimJointNode.Create;
-HAnimJoint532.NameField := 'r_calcaneocuboid';
 HAnimJoint532.Center := Vector3(-0.0889,0.0494,-0.1278);
 HAnimSegment533 := THAnimSegmentNode.Create;
-HAnimSegment533.NameField := 'r_calcaneus';
 Transform534 := TTransformNode.Create;
 Transform534.Translation := Vector3(-0.0889,0.0494,-0.1278);
 Transform535 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor536 := TTouchSensorNode.Create;
 TouchSensor536.Description := 'Joint r_calcaneocuboid';
-{ .AddChildren }
-Transform535.AddChildren([TouchSensor536]);
-Shape537 := Shape20;
-{ .AddChild }
-Transform535.AddChildren([Shape537]);
-{ .AddChildren }
-Transform534.AddChildren([Transform535]);
-{ .AddChildren }
-HAnimSegment533.AddChildren([Transform534]);
+{ METHOD .FdChildren.Add }
+Transform535.FdChildren.Add(TouchSensor536);
+{ METHOD .FdChildren.Add }
+Transform535.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform534.FdChildren.Add(Transform535);
+{ METHOD .FdChildren.Add }
+HAnimSegment533.FdChildren.Add(Transform534);
 TouchSensor538 := TTouchSensorNode.Create;
 TouchSensor538.Description := 'Segment r_calcaneus';
-{ .AddChildren }
-HAnimSegment533.AddChildren([TouchSensor538]);
+end;
+
+procedure InitStandardHumanoidPart35;
+begin
+
+{ METHOD .FdChildren.Add }
+HAnimSegment533.FdChildren.Add(TouchSensor538);
 Shape539 := TShapeNode.Create;
 Appearance540 := TAppearanceNode.Create;
 Material541 := TMaterialNode.Create;
 Material541.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance540.Material := Material541;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape539.Appearance := Appearance540;
 Extrusion542 := TExtrusionNode.Create;
 Extrusion542.SetSpine([Vector3(-0.0889,0.0494,-0.1278),Vector3(-0.1105,0.0267,-0.0998)]);
 Extrusion542.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape539.Geometry := Extrusion542;
-{ .AddChildren }
-HAnimSegment533.AddChildren([Shape539]);
-{ .AddChildren }
-HAnimJoint532.AddChildren([HAnimSegment533]);
+{ METHOD .FdChildren.Add }
+HAnimSegment533.FdChildren.Add(Shape539);
+{ METHOD .FdChildren.Add }
+HAnimJoint532.FdChildren.Add(HAnimSegment533);
 HAnimJoint543 := THAnimJointNode.Create;
-HAnimJoint543.NameField := 'r_transversetarsal';
 HAnimJoint543.Center := Vector3(-0.1105,0.0267,-0.0998);
 HAnimSegment544 := THAnimSegmentNode.Create;
-HAnimSegment544.NameField := 'r_cuboid';
 Transform545 := TTransformNode.Create;
 Transform545.Translation := Vector3(-0.1105,0.0267,-0.0998);
 Transform546 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor547 := TTouchSensorNode.Create;
 TouchSensor547.Description := 'Joint r_transversetarsal';
-{ .AddChildren }
-Transform546.AddChildren([TouchSensor547]);
-Shape548 := Shape20;
-{ .AddChild }
-Transform546.AddChildren([Shape548]);
-{ .AddChildren }
-Transform545.AddChildren([Transform546]);
-{ .AddChildren }
-HAnimSegment544.AddChildren([Transform545]);
+{ METHOD .FdChildren.Add }
+Transform546.FdChildren.Add(TouchSensor547);
+{ METHOD .FdChildren.Add }
+Transform546.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform545.FdChildren.Add(Transform546);
+{ METHOD .FdChildren.Add }
+HAnimSegment544.FdChildren.Add(Transform545);
 TouchSensor549 := TTouchSensorNode.Create;
 TouchSensor549.Description := 'Segment r_cuboid';
-{ .AddChildren }
-HAnimSegment544.AddChildren([TouchSensor549]);
+{ METHOD .FdChildren.Add }
+HAnimSegment544.FdChildren.Add(TouchSensor549);
 Shape550 := TShapeNode.Create;
 Appearance551 := TAppearanceNode.Create;
 Material552 := TMaterialNode.Create;
 Material552.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance551.Material := Material552;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape550.Appearance := Appearance551;
 Extrusion553 := TExtrusionNode.Create;
 Extrusion553.SetSpine([Vector3(-0.1105,0.0267,-0.0998),Vector3(-0.1063,0.016,-0.0634)]);
 Extrusion553.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape550.Geometry := Extrusion553;
-{ .AddChildren }
-HAnimSegment544.AddChildren([Shape550]);
+{ METHOD .FdChildren.Add }
+HAnimSegment544.FdChildren.Add(Shape550);
 TouchSensor554 := TTouchSensorNode.Create;
+end;
+
+procedure InitStandardHumanoidPart36;
+begin
+
 TouchSensor554.Description := 'Segment r_cuboid';
-{ .AddChildren }
-HAnimSegment544.AddChildren([TouchSensor554]);
+{ METHOD .FdChildren.Add }
+HAnimSegment544.FdChildren.Add(TouchSensor554);
 Shape555 := TShapeNode.Create;
 Appearance556 := TAppearanceNode.Create;
 Material557 := TMaterialNode.Create;
 Material557.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance556.Material := Material557;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape555.Appearance := Appearance556;
 Extrusion558 := TExtrusionNode.Create;
 Extrusion558.SetSpine([Vector3(-0.1105,0.0267,-0.0998),Vector3(-0.1206,0.0124,-0.0671)]);
 Extrusion558.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape555.Geometry := Extrusion558;
-{ .AddChildren }
-HAnimSegment544.AddChildren([Shape555]);
-{ .AddChildren }
-HAnimJoint543.AddChildren([HAnimSegment544]);
+{ METHOD .FdChildren.Add }
+HAnimSegment544.FdChildren.Add(Shape555);
+{ METHOD .FdChildren.Add }
+HAnimJoint543.FdChildren.Add(HAnimSegment544);
 HAnimJoint559 := THAnimJointNode.Create;
-HAnimJoint559.NameField := 'r_tarsometatarsal_4';
 HAnimJoint559.Center := Vector3(-0.1063,0.016,-0.0634);
 HAnimSegment560 := THAnimSegmentNode.Create;
-HAnimSegment560.NameField := 'r_metatarsal_4';
 Transform561 := TTransformNode.Create;
 Transform561.Translation := Vector3(-0.1063,0.016,-0.0634);
 Transform562 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor563 := TTouchSensorNode.Create;
 TouchSensor563.Description := 'Joint r_tarsometatarsal_4';
-{ .AddChildren }
-Transform562.AddChildren([TouchSensor563]);
-Shape564 := Shape20;
-{ .AddChild }
-Transform562.AddChildren([Shape564]);
-{ .AddChildren }
-Transform561.AddChildren([Transform562]);
-{ .AddChildren }
-HAnimSegment560.AddChildren([Transform561]);
+{ METHOD .FdChildren.Add }
+Transform562.FdChildren.Add(TouchSensor563);
+{ METHOD .FdChildren.Add }
+Transform562.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform561.FdChildren.Add(Transform562);
+{ METHOD .FdChildren.Add }
+HAnimSegment560.FdChildren.Add(Transform561);
 TouchSensor565 := TTouchSensorNode.Create;
 TouchSensor565.Description := 'Segment r_metatarsal_4';
-{ .AddChildren }
-HAnimSegment560.AddChildren([TouchSensor565]);
+{ METHOD .FdChildren.Add }
+HAnimSegment560.FdChildren.Add(TouchSensor565);
 Shape566 := TShapeNode.Create;
 Appearance567 := TAppearanceNode.Create;
 Material568 := TMaterialNode.Create;
 Material568.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance567.Material := Material568;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape566.Appearance := Appearance567;
 Extrusion569 := TExtrusionNode.Create;
 Extrusion569.SetSpine([Vector3(-0.1063,0.016,-0.0634),Vector3(-0.1097,0.0058,-0.0107)]);
 Extrusion569.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape566.Geometry := Extrusion569;
-{ .AddChildren }
-HAnimSegment560.AddChildren([Shape566]);
-{ .AddChildren }
-HAnimJoint559.AddChildren([HAnimSegment560]);
+{ METHOD .FdChildren.Add }
+HAnimSegment560.FdChildren.Add(Shape566);
+end;
+
+procedure InitStandardHumanoidPart37;
+begin
+
+{ METHOD .FdChildren.Add }
+HAnimJoint559.FdChildren.Add(HAnimSegment560);
 HAnimJoint570 := THAnimJointNode.Create;
-HAnimJoint570.NameField := 'r_metatarsophalangeal_4';
 HAnimJoint570.Center := Vector3(-0.1097,0.0058,-0.0107);
 HAnimSegment571 := THAnimSegmentNode.Create;
-HAnimSegment571.NameField := 'r_tarsal_proximal_phalanx_4';
 Transform572 := TTransformNode.Create;
 Transform572.Translation := Vector3(-0.1097,0.0058,-0.0107);
 Transform573 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor574 := TTouchSensorNode.Create;
 TouchSensor574.Description := 'Joint r_metatarsophalangeal_4';
-{ .AddChildren }
-Transform573.AddChildren([TouchSensor574]);
-Shape575 := Shape20;
-{ .AddChild }
-Transform573.AddChildren([Shape575]);
-{ .AddChildren }
-Transform572.AddChildren([Transform573]);
-{ .AddChildren }
-HAnimSegment571.AddChildren([Transform572]);
+{ METHOD .FdChildren.Add }
+Transform573.FdChildren.Add(TouchSensor574);
+{ METHOD .FdChildren.Add }
+Transform573.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform572.FdChildren.Add(Transform573);
+{ METHOD .FdChildren.Add }
+HAnimSegment571.FdChildren.Add(Transform572);
 TouchSensor576 := TTouchSensorNode.Create;
 TouchSensor576.Description := 'Segment r_tarsal_proximal_phalanx_4';
-{ .AddChildren }
-HAnimSegment571.AddChildren([TouchSensor576]);
+{ METHOD .FdChildren.Add }
+HAnimSegment571.FdChildren.Add(TouchSensor576);
 Shape577 := TShapeNode.Create;
 Appearance578 := TAppearanceNode.Create;
 Material579 := TMaterialNode.Create;
 Material579.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance578.Material := Material579;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape577.Appearance := Appearance578;
 Extrusion580 := TExtrusionNode.Create;
 Extrusion580.SetSpine([Vector3(-0.1097,0.0058,-0.0107),Vector3(-0.114,0.0037,0.0044)]);
 Extrusion580.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape577.Geometry := Extrusion580;
-{ .AddChildren }
-HAnimSegment571.AddChildren([Shape577]);
-{ .AddChildren }
-HAnimJoint570.AddChildren([HAnimSegment571]);
+{ METHOD .FdChildren.Add }
+HAnimSegment571.FdChildren.Add(Shape577);
+{ METHOD .FdChildren.Add }
+HAnimJoint570.FdChildren.Add(HAnimSegment571);
 HAnimJoint581 := THAnimJointNode.Create;
-HAnimJoint581.NameField := 'r_tarsal_proximal_interphalangeal_4';
 HAnimJoint581.Center := Vector3(-0.114,0.0037,0.0044);
 HAnimSegment582 := THAnimSegmentNode.Create;
-HAnimSegment582.NameField := 'r_tarsal_middle_phalanx_4';
 Transform583 := TTransformNode.Create;
 Transform583.Translation := Vector3(-0.114,0.0037,0.0044);
 Transform584 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor585 := TTouchSensorNode.Create;
 TouchSensor585.Description := 'Joint r_tarsal_proximal_interphalangeal_4';
-{ .AddChildren }
-Transform584.AddChildren([TouchSensor585]);
-Shape586 := Shape20;
-{ .AddChild }
-Transform584.AddChildren([Shape586]);
-{ .AddChildren }
-Transform583.AddChildren([Transform584]);
-{ .AddChildren }
-HAnimSegment582.AddChildren([Transform583]);
+{ METHOD .FdChildren.Add }
+Transform584.FdChildren.Add(TouchSensor585);
+{ METHOD .FdChildren.Add }
+Transform584.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform583.FdChildren.Add(Transform584);
+{ METHOD .FdChildren.Add }
+HAnimSegment582.FdChildren.Add(Transform583);
+end;
+
+procedure InitStandardHumanoidPart38;
+begin
+
 TouchSensor587 := TTouchSensorNode.Create;
 TouchSensor587.Description := 'Segment r_tarsal_middle_phalanx_4';
-{ .AddChildren }
-HAnimSegment582.AddChildren([TouchSensor587]);
+{ METHOD .FdChildren.Add }
+HAnimSegment582.FdChildren.Add(TouchSensor587);
 Shape588 := TShapeNode.Create;
 Appearance589 := TAppearanceNode.Create;
 Material590 := TMaterialNode.Create;
 Material590.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance589.Material := Material590;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape588.Appearance := Appearance589;
 Extrusion591 := TExtrusionNode.Create;
 Extrusion591.SetSpine([Vector3(-0.114,0.0037,0.0044),Vector3(-0.1155,0.0008,0.0118)]);
 Extrusion591.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape588.Geometry := Extrusion591;
-{ .AddChildren }
-HAnimSegment582.AddChildren([Shape588]);
-{ .AddChildren }
-HAnimJoint581.AddChildren([HAnimSegment582]);
+{ METHOD .FdChildren.Add }
+HAnimSegment582.FdChildren.Add(Shape588);
+{ METHOD .FdChildren.Add }
+HAnimJoint581.FdChildren.Add(HAnimSegment582);
 HAnimJoint592 := THAnimJointNode.Create;
-HAnimJoint592.NameField := 'r_tarsal_distal_interphalangeal_4';
 HAnimJoint592.Center := Vector3(-0.1155,0.0008,0.0118);
-{ .AddChildren }
-HAnimJoint581.AddChildren([HAnimJoint592]);
-{ .AddChildren }
-HAnimJoint570.AddChildren([HAnimJoint581]);
-{ .AddChildren }
-HAnimJoint559.AddChildren([HAnimJoint570]);
-{ .AddChildren }
-HAnimJoint543.AddChildren([HAnimJoint559]);
+{ METHOD .FdChildren.Add }
+HAnimJoint581.FdChildren.Add(HAnimJoint592);
+{ METHOD .FdChildren.Add }
+HAnimJoint570.FdChildren.Add(HAnimJoint581);
+{ METHOD .FdChildren.Add }
+HAnimJoint559.FdChildren.Add(HAnimJoint570);
+{ METHOD .FdChildren.Add }
+HAnimJoint543.FdChildren.Add(HAnimJoint559);
 HAnimJoint593 := THAnimJointNode.Create;
-HAnimJoint593.NameField := 'r_tarsometatarsal_5';
 HAnimJoint593.Center := Vector3(-0.1206,0.0124,-0.0671);
 HAnimSegment594 := THAnimSegmentNode.Create;
-HAnimSegment594.NameField := 'r_metatarsal_5';
 Transform595 := TTransformNode.Create;
 Transform595.Translation := Vector3(-0.1206,0.0124,-0.0671);
 Transform596 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor597 := TTouchSensorNode.Create;
 TouchSensor597.Description := 'Joint r_tarsometatarsal_5';
-{ .AddChildren }
-Transform596.AddChildren([TouchSensor597]);
-Shape598 := Shape20;
-{ .AddChild }
-Transform596.AddChildren([Shape598]);
-{ .AddChildren }
-Transform595.AddChildren([Transform596]);
-{ .AddChildren }
-HAnimSegment594.AddChildren([Transform595]);
+{ METHOD .FdChildren.Add }
+Transform596.FdChildren.Add(TouchSensor597);
+{ METHOD .FdChildren.Add }
+Transform596.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform595.FdChildren.Add(Transform596);
+{ METHOD .FdChildren.Add }
+HAnimSegment594.FdChildren.Add(Transform595);
 TouchSensor599 := TTouchSensorNode.Create;
 TouchSensor599.Description := 'Segment r_metatarsal_5';
-{ .AddChildren }
-HAnimSegment594.AddChildren([TouchSensor599]);
+{ METHOD .FdChildren.Add }
+HAnimSegment594.FdChildren.Add(TouchSensor599);
 Shape600 := TShapeNode.Create;
 Appearance601 := TAppearanceNode.Create;
 Material602 := TMaterialNode.Create;
 Material602.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+end;
+
+procedure InitStandardHumanoidPart39;
+begin
+
+{ METHOD .SetMaterial }
 Appearance601.Material := Material602;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape600.Appearance := Appearance601;
 Extrusion603 := TExtrusionNode.Create;
 Extrusion603.SetSpine([Vector3(-0.1206,0.0124,-0.0671),Vector3(-0.1239,0.0051,-0.0153)]);
 Extrusion603.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape600.Geometry := Extrusion603;
-{ .AddChildren }
-HAnimSegment594.AddChildren([Shape600]);
-{ .AddChildren }
-HAnimJoint593.AddChildren([HAnimSegment594]);
+{ METHOD .FdChildren.Add }
+HAnimSegment594.FdChildren.Add(Shape600);
+{ METHOD .FdChildren.Add }
+HAnimJoint593.FdChildren.Add(HAnimSegment594);
 HAnimJoint604 := THAnimJointNode.Create;
-HAnimJoint604.NameField := 'r_metatarsophalangeal_5';
 HAnimJoint604.Center := Vector3(-0.1239,0.0051,-0.0153);
 HAnimSegment605 := THAnimSegmentNode.Create;
-HAnimSegment605.NameField := 'r_tarsal_proximal_phalanx_5';
 Transform606 := TTransformNode.Create;
 Transform606.Translation := Vector3(-0.1239,0.0051,-0.0153);
 Transform607 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor608 := TTouchSensorNode.Create;
 TouchSensor608.Description := 'Joint r_metatarsophalangeal_5';
-{ .AddChildren }
-Transform607.AddChildren([TouchSensor608]);
-Shape609 := Shape20;
-{ .AddChild }
-Transform607.AddChildren([Shape609]);
-{ .AddChildren }
-Transform606.AddChildren([Transform607]);
-{ .AddChildren }
-HAnimSegment605.AddChildren([Transform606]);
+{ METHOD .FdChildren.Add }
+Transform607.FdChildren.Add(TouchSensor608);
+{ METHOD .FdChildren.Add }
+Transform607.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform606.FdChildren.Add(Transform607);
+{ METHOD .FdChildren.Add }
+HAnimSegment605.FdChildren.Add(Transform606);
 TouchSensor610 := TTouchSensorNode.Create;
 TouchSensor610.Description := 'Segment r_tarsal_proximal_phalanx_5';
-{ .AddChildren }
-HAnimSegment605.AddChildren([TouchSensor610]);
+{ METHOD .FdChildren.Add }
+HAnimSegment605.FdChildren.Add(TouchSensor610);
 Shape611 := TShapeNode.Create;
 Appearance612 := TAppearanceNode.Create;
 Material613 := TMaterialNode.Create;
 Material613.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance612.Material := Material613;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape611.Appearance := Appearance612;
 Extrusion614 := TExtrusionNode.Create;
 Extrusion614.SetSpine([Vector3(-0.1239,0.0051,-0.0153),Vector3(-0.1262,0.0023,-0.0077)]);
 Extrusion614.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape611.Geometry := Extrusion614;
-{ .AddChildren }
-HAnimSegment605.AddChildren([Shape611]);
-{ .AddChildren }
-HAnimJoint604.AddChildren([HAnimSegment605]);
+{ METHOD .FdChildren.Add }
+HAnimSegment605.FdChildren.Add(Shape611);
+{ METHOD .FdChildren.Add }
+HAnimJoint604.FdChildren.Add(HAnimSegment605);
 HAnimJoint615 := THAnimJointNode.Create;
-HAnimJoint615.NameField := 'r_tarsal_proximal_interphalangeal_5';
 HAnimJoint615.Center := Vector3(-0.1262,0.0023,-0.0077);
 HAnimSegment616 := THAnimSegmentNode.Create;
-HAnimSegment616.NameField := 'r_tarsal_middle_phalanx_5';
 Transform617 := TTransformNode.Create;
 Transform617.Translation := Vector3(-0.1262,0.0023,-0.0077);
+end;
+
+procedure InitStandardHumanoidPart40;
+begin
+
 Transform618 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor619 := TTouchSensorNode.Create;
 TouchSensor619.Description := 'Joint r_tarsal_proximal_interphalangeal_5';
-{ .AddChildren }
-Transform618.AddChildren([TouchSensor619]);
-Shape620 := Shape20;
-{ .AddChild }
-Transform618.AddChildren([Shape620]);
-{ .AddChildren }
-Transform617.AddChildren([Transform618]);
-{ .AddChildren }
-HAnimSegment616.AddChildren([Transform617]);
+{ METHOD .FdChildren.Add }
+Transform618.FdChildren.Add(TouchSensor619);
+{ METHOD .FdChildren.Add }
+Transform618.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform617.FdChildren.Add(Transform618);
+{ METHOD .FdChildren.Add }
+HAnimSegment616.FdChildren.Add(Transform617);
 TouchSensor621 := TTouchSensorNode.Create;
 TouchSensor621.Description := 'Segment r_tarsal_middle_phalanx_5';
-{ .AddChildren }
-HAnimSegment616.AddChildren([TouchSensor621]);
+{ METHOD .FdChildren.Add }
+HAnimSegment616.FdChildren.Add(TouchSensor621);
 Shape622 := TShapeNode.Create;
 Appearance623 := TAppearanceNode.Create;
 Material624 := TMaterialNode.Create;
 Material624.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance623.Material := Material624;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape622.Appearance := Appearance623;
 Extrusion625 := TExtrusionNode.Create;
 Extrusion625.SetSpine([Vector3(-0.1262,0.0023,-0.0077),Vector3(-0.1271,0,0)]);
 Extrusion625.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape622.Geometry := Extrusion625;
-{ .AddChildren }
-HAnimSegment616.AddChildren([Shape622]);
-{ .AddChildren }
-HAnimJoint615.AddChildren([HAnimSegment616]);
+{ METHOD .FdChildren.Add }
+HAnimSegment616.FdChildren.Add(Shape622);
+{ METHOD .FdChildren.Add }
+HAnimJoint615.FdChildren.Add(HAnimSegment616);
 HAnimJoint626 := THAnimJointNode.Create;
-HAnimJoint626.NameField := 'r_tarsal_distal_interphalangeal_5';
 HAnimJoint626.Center := Vector3(-0.1271,0,0);
-{ .AddChildren }
-HAnimJoint615.AddChildren([HAnimJoint626]);
-{ .AddChildren }
-HAnimJoint604.AddChildren([HAnimJoint615]);
-{ .AddChildren }
-HAnimJoint593.AddChildren([HAnimJoint604]);
-{ .AddChildren }
-HAnimJoint543.AddChildren([HAnimJoint593]);
-{ .AddChildren }
-HAnimJoint532.AddChildren([HAnimJoint543]);
-{ .AddChildren }
-HAnimJoint371.AddChildren([HAnimJoint532]);
-{ .AddChildren }
-HAnimJoint360.AddChildren([HAnimJoint371]);
-{ .AddChildren }
-HAnimJoint349.AddChildren([HAnimJoint360]);
-{ .AddChildren }
-HAnimJoint55.AddChildren([HAnimJoint349]);
-{ .AddChildren }
-HAnimJoint39.AddChildren([HAnimJoint55]);
+{ METHOD .FdChildren.Add }
+HAnimJoint615.FdChildren.Add(HAnimJoint626);
+{ METHOD .FdChildren.Add }
+HAnimJoint604.FdChildren.Add(HAnimJoint615);
+{ METHOD .FdChildren.Add }
+HAnimJoint593.FdChildren.Add(HAnimJoint604);
+{ METHOD .FdChildren.Add }
+HAnimJoint543.FdChildren.Add(HAnimJoint593);
+{ METHOD .FdChildren.Add }
+HAnimJoint532.FdChildren.Add(HAnimJoint543);
+{ METHOD .FdChildren.Add }
+HAnimJoint371.FdChildren.Add(HAnimJoint532);
+{ METHOD .FdChildren.Add }
+HAnimJoint360.FdChildren.Add(HAnimJoint371);
+{ METHOD .FdChildren.Add }
+HAnimJoint349.FdChildren.Add(HAnimJoint360);
+{ METHOD .FdChildren.Add }
+HAnimJoint55.FdChildren.Add(HAnimJoint349);
+{ METHOD .FdChildren.Add }
+HAnimJoint39.FdChildren.Add(HAnimJoint55);
 HAnimJoint627 := THAnimJointNode.Create;
-HAnimJoint627.NameField := 'vl5';
 HAnimJoint627.Center := Vector3(0.0028,1.0568,-0.0776);
 HAnimSegment628 := THAnimSegmentNode.Create;
-HAnimSegment628.NameField := 'l5';
 Transform629 := TTransformNode.Create;
 Transform629.Translation := Vector3(0.0028,1.0568,-0.0776);
 Transform630 := TTransformNode.Create;
+end;
+
+procedure InitStandardHumanoidPart41;
+begin
+
 { Empty Transform }
 TouchSensor631 := TTouchSensorNode.Create;
 TouchSensor631.Description := 'Joint vl5';
-{ .AddChildren }
-Transform630.AddChildren([TouchSensor631]);
-Shape632 := Shape20;
-{ .AddChild }
-Transform630.AddChildren([Shape632]);
-{ .AddChildren }
-Transform629.AddChildren([Transform630]);
-{ .AddChildren }
-HAnimSegment628.AddChildren([Transform629]);
+{ METHOD .FdChildren.Add }
+Transform630.FdChildren.Add(TouchSensor631);
+{ METHOD .FdChildren.Add }
+Transform630.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform629.FdChildren.Add(Transform630);
+{ METHOD .FdChildren.Add }
+HAnimSegment628.FdChildren.Add(Transform629);
 TouchSensor633 := TTouchSensorNode.Create;
 TouchSensor633.Description := 'Segment l5';
-{ .AddChildren }
-HAnimSegment628.AddChildren([TouchSensor633]);
+{ METHOD .FdChildren.Add }
+HAnimSegment628.FdChildren.Add(TouchSensor633);
 Shape634 := TShapeNode.Create;
 Appearance635 := TAppearanceNode.Create;
 Material636 := TMaterialNode.Create;
 Material636.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance635.Material := Material636;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape634.Appearance := Appearance635;
 Extrusion637 := TExtrusionNode.Create;
 Extrusion637.SetSpine([Vector3(0.0028,1.0568,-0.0776),Vector3(0.0035,1.0925,-0.0787)]);
 Extrusion637.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape634.Geometry := Extrusion637;
-{ .AddChildren }
-HAnimSegment628.AddChildren([Shape634]);
-{ .AddChildren }
-HAnimJoint627.AddChildren([HAnimSegment628]);
+{ METHOD .FdChildren.Add }
+HAnimSegment628.FdChildren.Add(Shape634);
+{ METHOD .FdChildren.Add }
+HAnimJoint627.FdChildren.Add(HAnimSegment628);
 HAnimJoint638 := THAnimJointNode.Create;
-HAnimJoint638.NameField := 'vl4';
 HAnimJoint638.Center := Vector3(0.0035,1.0925,-0.0787);
 HAnimSegment639 := THAnimSegmentNode.Create;
-HAnimSegment639.NameField := 'l4';
 Transform640 := TTransformNode.Create;
 Transform640.Translation := Vector3(0.0035,1.0925,-0.0787);
 Transform641 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor642 := TTouchSensorNode.Create;
 TouchSensor642.Description := 'Joint vl4';
-{ .AddChildren }
-Transform641.AddChildren([TouchSensor642]);
-Shape643 := Shape20;
-{ .AddChild }
-Transform641.AddChildren([Shape643]);
-{ .AddChildren }
-Transform640.AddChildren([Transform641]);
-{ .AddChildren }
-HAnimSegment639.AddChildren([Transform640]);
+{ METHOD .FdChildren.Add }
+Transform641.FdChildren.Add(TouchSensor642);
+{ METHOD .FdChildren.Add }
+Transform641.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform640.FdChildren.Add(Transform641);
+{ METHOD .FdChildren.Add }
+HAnimSegment639.FdChildren.Add(Transform640);
 TouchSensor644 := TTouchSensorNode.Create;
 TouchSensor644.Description := 'Segment l4';
-{ .AddChildren }
-HAnimSegment639.AddChildren([TouchSensor644]);
+{ METHOD .FdChildren.Add }
+HAnimSegment639.FdChildren.Add(TouchSensor644);
 Shape645 := TShapeNode.Create;
 Appearance646 := TAppearanceNode.Create;
 Material647 := TMaterialNode.Create;
 Material647.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+end;
+
+procedure InitStandardHumanoidPart42;
+begin
+
+{ METHOD .SetMaterial }
 Appearance646.Material := Material647;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape645.Appearance := Appearance646;
 Extrusion648 := TExtrusionNode.Create;
 Extrusion648.SetSpine([Vector3(0.0035,1.0925,-0.0787),Vector3(0.0041,1.1276,-0.0796)]);
 Extrusion648.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape645.Geometry := Extrusion648;
-{ .AddChildren }
-HAnimSegment639.AddChildren([Shape645]);
-{ .AddChildren }
-HAnimJoint638.AddChildren([HAnimSegment639]);
+{ METHOD .FdChildren.Add }
+HAnimSegment639.FdChildren.Add(Shape645);
+{ METHOD .FdChildren.Add }
+HAnimJoint638.FdChildren.Add(HAnimSegment639);
 HAnimJoint649 := THAnimJointNode.Create;
-HAnimJoint649.NameField := 'vl3';
 HAnimJoint649.Center := Vector3(0.0041,1.1276,-0.0796);
 HAnimSegment650 := THAnimSegmentNode.Create;
-HAnimSegment650.NameField := 'l3';
 Transform651 := TTransformNode.Create;
 Transform651.Translation := Vector3(0.0041,1.1276,-0.0796);
 Transform652 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor653 := TTouchSensorNode.Create;
 TouchSensor653.Description := 'Joint vl3';
-{ .AddChildren }
-Transform652.AddChildren([TouchSensor653]);
-Shape654 := Shape20;
-{ .AddChild }
-Transform652.AddChildren([Shape654]);
-{ .AddChildren }
-Transform651.AddChildren([Transform652]);
-{ .AddChildren }
-HAnimSegment650.AddChildren([Transform651]);
+{ METHOD .FdChildren.Add }
+Transform652.FdChildren.Add(TouchSensor653);
+{ METHOD .FdChildren.Add }
+Transform652.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform651.FdChildren.Add(Transform652);
+{ METHOD .FdChildren.Add }
+HAnimSegment650.FdChildren.Add(Transform651);
 TouchSensor655 := TTouchSensorNode.Create;
 TouchSensor655.Description := 'Segment l3';
-{ .AddChildren }
-HAnimSegment650.AddChildren([TouchSensor655]);
+{ METHOD .FdChildren.Add }
+HAnimSegment650.FdChildren.Add(TouchSensor655);
 Shape656 := TShapeNode.Create;
 Appearance657 := TAppearanceNode.Create;
 Material658 := TMaterialNode.Create;
 Material658.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance657.Material := Material658;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape656.Appearance := Appearance657;
 Extrusion659 := TExtrusionNode.Create;
 Extrusion659.SetSpine([Vector3(0.0041,1.1276,-0.0796),Vector3(0.0045,1.1546,-0.08)]);
 Extrusion659.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape656.Geometry := Extrusion659;
-{ .AddChildren }
-HAnimSegment650.AddChildren([Shape656]);
-{ .AddChildren }
-HAnimJoint649.AddChildren([HAnimSegment650]);
+{ METHOD .FdChildren.Add }
+HAnimSegment650.FdChildren.Add(Shape656);
+{ METHOD .FdChildren.Add }
+HAnimJoint649.FdChildren.Add(HAnimSegment650);
 HAnimJoint660 := THAnimJointNode.Create;
-HAnimJoint660.NameField := 'vl2';
 HAnimJoint660.Center := Vector3(0.0045,1.1546,-0.08);
 HAnimSegment661 := THAnimSegmentNode.Create;
-HAnimSegment661.NameField := 'l2';
 Transform662 := TTransformNode.Create;
 Transform662.Translation := Vector3(0.0045,1.1546,-0.08);
+end;
+
+procedure InitStandardHumanoidPart43;
+begin
+
 Transform663 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor664 := TTouchSensorNode.Create;
 TouchSensor664.Description := 'Joint vl2';
-{ .AddChildren }
-Transform663.AddChildren([TouchSensor664]);
-Shape665 := Shape20;
-{ .AddChild }
-Transform663.AddChildren([Shape665]);
-{ .AddChildren }
-Transform662.AddChildren([Transform663]);
-{ .AddChildren }
-HAnimSegment661.AddChildren([Transform662]);
+{ METHOD .FdChildren.Add }
+Transform663.FdChildren.Add(TouchSensor664);
+{ METHOD .FdChildren.Add }
+Transform663.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform662.FdChildren.Add(Transform663);
+{ METHOD .FdChildren.Add }
+HAnimSegment661.FdChildren.Add(Transform662);
 TouchSensor666 := TTouchSensorNode.Create;
 TouchSensor666.Description := 'Segment l2';
-{ .AddChildren }
-HAnimSegment661.AddChildren([TouchSensor666]);
+{ METHOD .FdChildren.Add }
+HAnimSegment661.FdChildren.Add(TouchSensor666);
 Shape667 := TShapeNode.Create;
 Appearance668 := TAppearanceNode.Create;
 Material669 := TMaterialNode.Create;
 Material669.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance668.Material := Material669;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape667.Appearance := Appearance668;
 Extrusion670 := TExtrusionNode.Create;
 Extrusion670.SetSpine([Vector3(0.0045,1.1546,-0.08),Vector3(0.0048,1.1912,-0.0805)]);
 Extrusion670.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape667.Geometry := Extrusion670;
-{ .AddChildren }
-HAnimSegment661.AddChildren([Shape667]);
-{ .AddChildren }
-HAnimJoint660.AddChildren([HAnimSegment661]);
+{ METHOD .FdChildren.Add }
+HAnimSegment661.FdChildren.Add(Shape667);
+{ METHOD .FdChildren.Add }
+HAnimJoint660.FdChildren.Add(HAnimSegment661);
 HAnimJoint671 := THAnimJointNode.Create;
-HAnimJoint671.NameField := 'vl1';
 HAnimJoint671.Center := Vector3(0.0048,1.1912,-0.0805);
 HAnimSegment672 := THAnimSegmentNode.Create;
-HAnimSegment672.NameField := 'l1';
 Transform673 := TTransformNode.Create;
 Transform673.Translation := Vector3(0.0048,1.1912,-0.0805);
 Transform674 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor675 := TTouchSensorNode.Create;
 TouchSensor675.Description := 'Joint vl1';
-{ .AddChildren }
-Transform674.AddChildren([TouchSensor675]);
-Shape676 := Shape20;
-{ .AddChild }
-Transform674.AddChildren([Shape676]);
-{ .AddChildren }
-Transform673.AddChildren([Transform674]);
-{ .AddChildren }
-HAnimSegment672.AddChildren([Transform673]);
+{ METHOD .FdChildren.Add }
+Transform674.FdChildren.Add(TouchSensor675);
+{ METHOD .FdChildren.Add }
+Transform674.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform673.FdChildren.Add(Transform674);
+{ METHOD .FdChildren.Add }
+HAnimSegment672.FdChildren.Add(Transform673);
 TouchSensor677 := TTouchSensorNode.Create;
 TouchSensor677.Description := 'Segment l1';
-{ .AddChildren }
-HAnimSegment672.AddChildren([TouchSensor677]);
+{ METHOD .FdChildren.Add }
+HAnimSegment672.FdChildren.Add(TouchSensor677);
 Shape678 := TShapeNode.Create;
 Appearance679 := TAppearanceNode.Create;
 Material680 := TMaterialNode.Create;
+end;
+
+procedure InitStandardHumanoidPart44;
+begin
+
 Material680.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance679.Material := Material680;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape678.Appearance := Appearance679;
 Extrusion681 := TExtrusionNode.Create;
 Extrusion681.SetSpine([Vector3(0.0048,1.1912,-0.0805),Vector3(0.0051,1.2278,-0.0808)]);
 Extrusion681.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape678.Geometry := Extrusion681;
-{ .AddChildren }
-HAnimSegment672.AddChildren([Shape678]);
-{ .AddChildren }
-HAnimJoint671.AddChildren([HAnimSegment672]);
+{ METHOD .FdChildren.Add }
+HAnimSegment672.FdChildren.Add(Shape678);
+{ METHOD .FdChildren.Add }
+HAnimJoint671.FdChildren.Add(HAnimSegment672);
 HAnimJoint682 := THAnimJointNode.Create;
-HAnimJoint682.NameField := 'vt12';
 HAnimJoint682.Center := Vector3(0.0051,1.2278,-0.0808);
 HAnimSegment683 := THAnimSegmentNode.Create;
-HAnimSegment683.NameField := 't12';
 Transform684 := TTransformNode.Create;
 Transform684.Translation := Vector3(0.0051,1.2278,-0.0808);
 Transform685 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor686 := TTouchSensorNode.Create;
 TouchSensor686.Description := 'Joint vt12';
-{ .AddChildren }
-Transform685.AddChildren([TouchSensor686]);
-Shape687 := Shape20;
-{ .AddChild }
-Transform685.AddChildren([Shape687]);
-{ .AddChildren }
-Transform684.AddChildren([Transform685]);
-{ .AddChildren }
-HAnimSegment683.AddChildren([Transform684]);
+{ METHOD .FdChildren.Add }
+Transform685.FdChildren.Add(TouchSensor686);
+{ METHOD .FdChildren.Add }
+Transform685.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform684.FdChildren.Add(Transform685);
+{ METHOD .FdChildren.Add }
+HAnimSegment683.FdChildren.Add(Transform684);
 TouchSensor688 := TTouchSensorNode.Create;
 TouchSensor688.Description := 'Segment t12';
-{ .AddChildren }
-HAnimSegment683.AddChildren([TouchSensor688]);
+{ METHOD .FdChildren.Add }
+HAnimSegment683.FdChildren.Add(TouchSensor688);
 Shape689 := TShapeNode.Create;
 Appearance690 := TAppearanceNode.Create;
 Material691 := TMaterialNode.Create;
 Material691.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance690.Material := Material691;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape689.Appearance := Appearance690;
 Extrusion692 := TExtrusionNode.Create;
 Extrusion692.SetSpine([Vector3(0.0051,1.2278,-0.0808),Vector3(0.0053,1.2679,-0.081)]);
 Extrusion692.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape689.Geometry := Extrusion692;
-{ .AddChildren }
-HAnimSegment683.AddChildren([Shape689]);
-{ .AddChildren }
-HAnimJoint682.AddChildren([HAnimSegment683]);
+{ METHOD .FdChildren.Add }
+HAnimSegment683.FdChildren.Add(Shape689);
+{ METHOD .FdChildren.Add }
+HAnimJoint682.FdChildren.Add(HAnimSegment683);
 HAnimJoint693 := THAnimJointNode.Create;
-HAnimJoint693.NameField := 'vt11';
 HAnimJoint693.Center := Vector3(0.0053,1.2679,-0.081);
 HAnimSegment694 := THAnimSegmentNode.Create;
-HAnimSegment694.NameField := 't11';
 Transform695 := TTransformNode.Create;
+end;
+
+procedure InitStandardHumanoidPart45;
+begin
+
 Transform695.Translation := Vector3(0.0053,1.2679,-0.081);
 Transform696 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor697 := TTouchSensorNode.Create;
 TouchSensor697.Description := 'Joint vt11';
-{ .AddChildren }
-Transform696.AddChildren([TouchSensor697]);
-Shape698 := Shape20;
-{ .AddChild }
-Transform696.AddChildren([Shape698]);
-{ .AddChildren }
-Transform695.AddChildren([Transform696]);
-{ .AddChildren }
-HAnimSegment694.AddChildren([Transform695]);
+{ METHOD .FdChildren.Add }
+Transform696.FdChildren.Add(TouchSensor697);
+{ METHOD .FdChildren.Add }
+Transform696.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform695.FdChildren.Add(Transform696);
+{ METHOD .FdChildren.Add }
+HAnimSegment694.FdChildren.Add(Transform695);
 TouchSensor699 := TTouchSensorNode.Create;
 TouchSensor699.Description := 'Segment t11';
-{ .AddChildren }
-HAnimSegment694.AddChildren([TouchSensor699]);
+{ METHOD .FdChildren.Add }
+HAnimSegment694.FdChildren.Add(TouchSensor699);
 Shape700 := TShapeNode.Create;
 Appearance701 := TAppearanceNode.Create;
 Material702 := TMaterialNode.Create;
 Material702.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance701.Material := Material702;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape700.Appearance := Appearance701;
 Extrusion703 := TExtrusionNode.Create;
 Extrusion703.SetSpine([Vector3(0.0053,1.2679,-0.081),Vector3(0.0056,1.2848,-0.0822)]);
 Extrusion703.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape700.Geometry := Extrusion703;
-{ .AddChildren }
-HAnimSegment694.AddChildren([Shape700]);
-{ .AddChildren }
-HAnimJoint693.AddChildren([HAnimSegment694]);
+{ METHOD .FdChildren.Add }
+HAnimSegment694.FdChildren.Add(Shape700);
+{ METHOD .FdChildren.Add }
+HAnimJoint693.FdChildren.Add(HAnimSegment694);
 HAnimJoint704 := THAnimJointNode.Create;
-HAnimJoint704.NameField := 'vt10';
 HAnimJoint704.Center := Vector3(0.0056,1.2848,-0.0822);
 HAnimSegment705 := THAnimSegmentNode.Create;
-HAnimSegment705.NameField := 't10';
 Transform706 := TTransformNode.Create;
 Transform706.Translation := Vector3(0.0056,1.2848,-0.0822);
 Transform707 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor708 := TTouchSensorNode.Create;
 TouchSensor708.Description := 'Joint vt10';
-{ .AddChildren }
-Transform707.AddChildren([TouchSensor708]);
-Shape709 := Shape20;
-{ .AddChild }
-Transform707.AddChildren([Shape709]);
-{ .AddChildren }
-Transform706.AddChildren([Transform707]);
-{ .AddChildren }
-HAnimSegment705.AddChildren([Transform706]);
+{ METHOD .FdChildren.Add }
+Transform707.FdChildren.Add(TouchSensor708);
+{ METHOD .FdChildren.Add }
+Transform707.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform706.FdChildren.Add(Transform707);
+{ METHOD .FdChildren.Add }
+HAnimSegment705.FdChildren.Add(Transform706);
 TouchSensor710 := TTouchSensorNode.Create;
 TouchSensor710.Description := 'Segment t10';
-{ .AddChildren }
-HAnimSegment705.AddChildren([TouchSensor710]);
+{ METHOD .FdChildren.Add }
+HAnimSegment705.FdChildren.Add(TouchSensor710);
 Shape711 := TShapeNode.Create;
 Appearance712 := TAppearanceNode.Create;
+end;
+
+procedure InitStandardHumanoidPart46;
+begin
+
 Material713 := TMaterialNode.Create;
 Material713.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance712.Material := Material713;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape711.Appearance := Appearance712;
 Extrusion714 := TExtrusionNode.Create;
 Extrusion714.SetSpine([Vector3(0.0056,1.2848,-0.0822),Vector3(0.0057,1.3126,-0.0838)]);
 Extrusion714.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape711.Geometry := Extrusion714;
-{ .AddChildren }
-HAnimSegment705.AddChildren([Shape711]);
-{ .AddChildren }
-HAnimJoint704.AddChildren([HAnimSegment705]);
+{ METHOD .FdChildren.Add }
+HAnimSegment705.FdChildren.Add(Shape711);
+{ METHOD .FdChildren.Add }
+HAnimJoint704.FdChildren.Add(HAnimSegment705);
 HAnimJoint715 := THAnimJointNode.Create;
-HAnimJoint715.NameField := 'vt9';
 HAnimJoint715.Center := Vector3(0.0057,1.3126,-0.0838);
 HAnimSegment716 := THAnimSegmentNode.Create;
-HAnimSegment716.NameField := 't9';
 Transform717 := TTransformNode.Create;
 Transform717.Translation := Vector3(0.0057,1.3126,-0.0838);
 Transform718 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor719 := TTouchSensorNode.Create;
 TouchSensor719.Description := 'Joint vt9';
-{ .AddChildren }
-Transform718.AddChildren([TouchSensor719]);
-Shape720 := Shape20;
-{ .AddChild }
-Transform718.AddChildren([Shape720]);
-{ .AddChildren }
-Transform717.AddChildren([Transform718]);
-{ .AddChildren }
-HAnimSegment716.AddChildren([Transform717]);
+{ METHOD .FdChildren.Add }
+Transform718.FdChildren.Add(TouchSensor719);
+{ METHOD .FdChildren.Add }
+Transform718.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform717.FdChildren.Add(Transform718);
+{ METHOD .FdChildren.Add }
+HAnimSegment716.FdChildren.Add(Transform717);
 TouchSensor721 := TTouchSensorNode.Create;
 TouchSensor721.Description := 'Segment t9';
-{ .AddChildren }
-HAnimSegment716.AddChildren([TouchSensor721]);
+{ METHOD .FdChildren.Add }
+HAnimSegment716.FdChildren.Add(TouchSensor721);
 Shape722 := TShapeNode.Create;
 Appearance723 := TAppearanceNode.Create;
 Material724 := TMaterialNode.Create;
 Material724.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance723.Material := Material724;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape722.Appearance := Appearance723;
 Extrusion725 := TExtrusionNode.Create;
 Extrusion725.SetSpine([Vector3(0.0057,1.3126,-0.0838),Vector3(0.0057,1.3382,-0.0845)]);
 Extrusion725.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape722.Geometry := Extrusion725;
-{ .AddChildren }
-HAnimSegment716.AddChildren([Shape722]);
-{ .AddChildren }
-HAnimJoint715.AddChildren([HAnimSegment716]);
+{ METHOD .FdChildren.Add }
+HAnimSegment716.FdChildren.Add(Shape722);
+{ METHOD .FdChildren.Add }
+HAnimJoint715.FdChildren.Add(HAnimSegment716);
 HAnimJoint726 := THAnimJointNode.Create;
-HAnimJoint726.NameField := 'vt8';
 HAnimJoint726.Center := Vector3(0.0057,1.3382,-0.0845);
 HAnimSegment727 := THAnimSegmentNode.Create;
-HAnimSegment727.NameField := 't8';
+end;
+
+procedure InitStandardHumanoidPart47;
+begin
+
 Transform728 := TTransformNode.Create;
 Transform728.Translation := Vector3(0.0057,1.3382,-0.0845);
 Transform729 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor730 := TTouchSensorNode.Create;
 TouchSensor730.Description := 'Joint vt8';
-{ .AddChildren }
-Transform729.AddChildren([TouchSensor730]);
-Shape731 := Shape20;
-{ .AddChild }
-Transform729.AddChildren([Shape731]);
-{ .AddChildren }
-Transform728.AddChildren([Transform729]);
-{ .AddChildren }
-HAnimSegment727.AddChildren([Transform728]);
+{ METHOD .FdChildren.Add }
+Transform729.FdChildren.Add(TouchSensor730);
+{ METHOD .FdChildren.Add }
+Transform729.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform728.FdChildren.Add(Transform729);
+{ METHOD .FdChildren.Add }
+HAnimSegment727.FdChildren.Add(Transform728);
 TouchSensor732 := TTouchSensorNode.Create;
 TouchSensor732.Description := 'Segment t8';
-{ .AddChildren }
-HAnimSegment727.AddChildren([TouchSensor732]);
+{ METHOD .FdChildren.Add }
+HAnimSegment727.FdChildren.Add(TouchSensor732);
 Shape733 := TShapeNode.Create;
 Appearance734 := TAppearanceNode.Create;
 Material735 := TMaterialNode.Create;
 Material735.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance734.Material := Material735;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape733.Appearance := Appearance734;
 Extrusion736 := TExtrusionNode.Create;
 Extrusion736.SetSpine([Vector3(0.0057,1.3382,-0.0845),Vector3(0.0058,1.3625,-0.0833)]);
 Extrusion736.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape733.Geometry := Extrusion736;
-{ .AddChildren }
-HAnimSegment727.AddChildren([Shape733]);
-{ .AddChildren }
-HAnimJoint726.AddChildren([HAnimSegment727]);
+{ METHOD .FdChildren.Add }
+HAnimSegment727.FdChildren.Add(Shape733);
+{ METHOD .FdChildren.Add }
+HAnimJoint726.FdChildren.Add(HAnimSegment727);
 HAnimJoint737 := THAnimJointNode.Create;
-HAnimJoint737.NameField := 'vt7';
 HAnimJoint737.Center := Vector3(0.0058,1.3625,-0.0833);
 HAnimSegment738 := THAnimSegmentNode.Create;
-HAnimSegment738.NameField := 't7';
 Transform739 := TTransformNode.Create;
 Transform739.Translation := Vector3(0.0058,1.3625,-0.0833);
 Transform740 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor741 := TTouchSensorNode.Create;
 TouchSensor741.Description := 'Joint vt7';
-{ .AddChildren }
-Transform740.AddChildren([TouchSensor741]);
-Shape742 := Shape20;
-{ .AddChild }
-Transform740.AddChildren([Shape742]);
-{ .AddChildren }
-Transform739.AddChildren([Transform740]);
-{ .AddChildren }
-HAnimSegment738.AddChildren([Transform739]);
+{ METHOD .FdChildren.Add }
+Transform740.FdChildren.Add(TouchSensor741);
+{ METHOD .FdChildren.Add }
+Transform740.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform739.FdChildren.Add(Transform740);
+{ METHOD .FdChildren.Add }
+HAnimSegment738.FdChildren.Add(Transform739);
 TouchSensor743 := TTouchSensorNode.Create;
 TouchSensor743.Description := 'Segment t7';
-{ .AddChildren }
-HAnimSegment738.AddChildren([TouchSensor743]);
+{ METHOD .FdChildren.Add }
+HAnimSegment738.FdChildren.Add(TouchSensor743);
 Shape744 := TShapeNode.Create;
+end;
+
+procedure InitStandardHumanoidPart48;
+begin
+
 Appearance745 := TAppearanceNode.Create;
 Material746 := TMaterialNode.Create;
 Material746.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance745.Material := Material746;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape744.Appearance := Appearance745;
 Extrusion747 := TExtrusionNode.Create;
 Extrusion747.SetSpine([Vector3(0.0058,1.3625,-0.0833),Vector3(0.0059,1.3866,-0.08)]);
 Extrusion747.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape744.Geometry := Extrusion747;
-{ .AddChildren }
-HAnimSegment738.AddChildren([Shape744]);
-{ .AddChildren }
-HAnimJoint737.AddChildren([HAnimSegment738]);
+{ METHOD .FdChildren.Add }
+HAnimSegment738.FdChildren.Add(Shape744);
+{ METHOD .FdChildren.Add }
+HAnimJoint737.FdChildren.Add(HAnimSegment738);
 HAnimJoint748 := THAnimJointNode.Create;
-HAnimJoint748.NameField := 'vt6';
 HAnimJoint748.Center := Vector3(0.0059,1.3866,-0.08);
 HAnimSegment749 := THAnimSegmentNode.Create;
-HAnimSegment749.NameField := 't6';
 Transform750 := TTransformNode.Create;
 Transform750.Translation := Vector3(0.0059,1.3866,-0.08);
 Transform751 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor752 := TTouchSensorNode.Create;
 TouchSensor752.Description := 'Joint vt6';
-{ .AddChildren }
-Transform751.AddChildren([TouchSensor752]);
-Shape753 := Shape20;
-{ .AddChild }
-Transform751.AddChildren([Shape753]);
-{ .AddChildren }
-Transform750.AddChildren([Transform751]);
-{ .AddChildren }
-HAnimSegment749.AddChildren([Transform750]);
+{ METHOD .FdChildren.Add }
+Transform751.FdChildren.Add(TouchSensor752);
+{ METHOD .FdChildren.Add }
+Transform751.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform750.FdChildren.Add(Transform751);
+{ METHOD .FdChildren.Add }
+HAnimSegment749.FdChildren.Add(Transform750);
 TouchSensor754 := TTouchSensorNode.Create;
 TouchSensor754.Description := 'Segment t6';
-{ .AddChildren }
-HAnimSegment749.AddChildren([TouchSensor754]);
+{ METHOD .FdChildren.Add }
+HAnimSegment749.FdChildren.Add(TouchSensor754);
 Shape755 := TShapeNode.Create;
 Appearance756 := TAppearanceNode.Create;
 Material757 := TMaterialNode.Create;
 Material757.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance756.Material := Material757;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape755.Appearance := Appearance756;
 Extrusion758 := TExtrusionNode.Create;
 Extrusion758.SetSpine([Vector3(0.0059,1.3866,-0.08),Vector3(0.006,1.4102,-0.0745)]);
 Extrusion758.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape755.Geometry := Extrusion758;
-{ .AddChildren }
-HAnimSegment749.AddChildren([Shape755]);
-{ .AddChildren }
-HAnimJoint748.AddChildren([HAnimSegment749]);
+{ METHOD .FdChildren.Add }
+HAnimSegment749.FdChildren.Add(Shape755);
+{ METHOD .FdChildren.Add }
+HAnimJoint748.FdChildren.Add(HAnimSegment749);
 HAnimJoint759 := THAnimJointNode.Create;
-HAnimJoint759.NameField := 'vt5';
 HAnimJoint759.Center := Vector3(0.006,1.4102,-0.0745);
+end;
+
+procedure InitStandardHumanoidPart49;
+begin
+
 HAnimSegment760 := THAnimSegmentNode.Create;
-HAnimSegment760.NameField := 't5';
 Transform761 := TTransformNode.Create;
 Transform761.Translation := Vector3(0.006,1.4102,-0.0745);
 Transform762 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor763 := TTouchSensorNode.Create;
 TouchSensor763.Description := 'Joint vt5';
-{ .AddChildren }
-Transform762.AddChildren([TouchSensor763]);
-Shape764 := Shape20;
-{ .AddChild }
-Transform762.AddChildren([Shape764]);
-{ .AddChildren }
-Transform761.AddChildren([Transform762]);
-{ .AddChildren }
-HAnimSegment760.AddChildren([Transform761]);
+{ METHOD .FdChildren.Add }
+Transform762.FdChildren.Add(TouchSensor763);
+{ METHOD .FdChildren.Add }
+Transform762.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform761.FdChildren.Add(Transform762);
+{ METHOD .FdChildren.Add }
+HAnimSegment760.FdChildren.Add(Transform761);
 TouchSensor765 := TTouchSensorNode.Create;
 TouchSensor765.Description := 'Segment t5';
-{ .AddChildren }
-HAnimSegment760.AddChildren([TouchSensor765]);
+{ METHOD .FdChildren.Add }
+HAnimSegment760.FdChildren.Add(TouchSensor765);
 Shape766 := TShapeNode.Create;
 Appearance767 := TAppearanceNode.Create;
 Material768 := TMaterialNode.Create;
 Material768.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance767.Material := Material768;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape766.Appearance := Appearance767;
 Extrusion769 := TExtrusionNode.Create;
 Extrusion769.SetSpine([Vector3(0.006,1.4102,-0.0745),Vector3(0.0061,1.432,-0.0675)]);
 Extrusion769.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape766.Geometry := Extrusion769;
-{ .AddChildren }
-HAnimSegment760.AddChildren([Shape766]);
-{ .AddChildren }
-HAnimJoint759.AddChildren([HAnimSegment760]);
+{ METHOD .FdChildren.Add }
+HAnimSegment760.FdChildren.Add(Shape766);
+{ METHOD .FdChildren.Add }
+HAnimJoint759.FdChildren.Add(HAnimSegment760);
 HAnimJoint770 := THAnimJointNode.Create;
-HAnimJoint770.NameField := 'vt4';
 HAnimJoint770.Center := Vector3(0.0061,1.432,-0.0675);
 HAnimSegment771 := THAnimSegmentNode.Create;
-HAnimSegment771.NameField := 't4';
 Transform772 := TTransformNode.Create;
 Transform772.Translation := Vector3(0.0061,1.432,-0.0675);
 Transform773 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor774 := TTouchSensorNode.Create;
 TouchSensor774.Description := 'Joint vt4';
-{ .AddChildren }
-Transform773.AddChildren([TouchSensor774]);
-Shape775 := Shape20;
-{ .AddChild }
-Transform773.AddChildren([Shape775]);
-{ .AddChildren }
-Transform772.AddChildren([Transform773]);
-{ .AddChildren }
-HAnimSegment771.AddChildren([Transform772]);
+{ METHOD .FdChildren.Add }
+Transform773.FdChildren.Add(TouchSensor774);
+{ METHOD .FdChildren.Add }
+Transform773.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform772.FdChildren.Add(Transform773);
+{ METHOD .FdChildren.Add }
+HAnimSegment771.FdChildren.Add(Transform772);
 TouchSensor776 := TTouchSensorNode.Create;
 TouchSensor776.Description := 'Segment t4';
-{ .AddChildren }
-HAnimSegment771.AddChildren([TouchSensor776]);
+{ METHOD .FdChildren.Add }
+HAnimSegment771.FdChildren.Add(TouchSensor776);
+end;
+
+procedure InitStandardHumanoidPart50;
+begin
+
 Shape777 := TShapeNode.Create;
 Appearance778 := TAppearanceNode.Create;
 Material779 := TMaterialNode.Create;
 Material779.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance778.Material := Material779;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape777.Appearance := Appearance778;
 Extrusion780 := TExtrusionNode.Create;
 Extrusion780.SetSpine([Vector3(0.0061,1.432,-0.0675),Vector3(0.0062,1.4583,-0.057)]);
 Extrusion780.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape777.Geometry := Extrusion780;
-{ .AddChildren }
-HAnimSegment771.AddChildren([Shape777]);
-{ .AddChildren }
-HAnimJoint770.AddChildren([HAnimSegment771]);
+{ METHOD .FdChildren.Add }
+HAnimSegment771.FdChildren.Add(Shape777);
+{ METHOD .FdChildren.Add }
+HAnimJoint770.FdChildren.Add(HAnimSegment771);
 HAnimJoint781 := THAnimJointNode.Create;
-HAnimJoint781.NameField := 'vt3';
 HAnimJoint781.Center := Vector3(0.0062,1.4583,-0.057);
 HAnimSegment782 := THAnimSegmentNode.Create;
-HAnimSegment782.NameField := 't3';
 Transform783 := TTransformNode.Create;
 Transform783.Translation := Vector3(0.0062,1.4583,-0.057);
 Transform784 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor785 := TTouchSensorNode.Create;
 TouchSensor785.Description := 'Joint vt3';
-{ .AddChildren }
-Transform784.AddChildren([TouchSensor785]);
-Shape786 := Shape20;
-{ .AddChild }
-Transform784.AddChildren([Shape786]);
-{ .AddChildren }
-Transform783.AddChildren([Transform784]);
-{ .AddChildren }
-HAnimSegment782.AddChildren([Transform783]);
+{ METHOD .FdChildren.Add }
+Transform784.FdChildren.Add(TouchSensor785);
+{ METHOD .FdChildren.Add }
+Transform784.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform783.FdChildren.Add(Transform784);
+{ METHOD .FdChildren.Add }
+HAnimSegment782.FdChildren.Add(Transform783);
 TouchSensor787 := TTouchSensorNode.Create;
 TouchSensor787.Description := 'Segment t3';
-{ .AddChildren }
-HAnimSegment782.AddChildren([TouchSensor787]);
+{ METHOD .FdChildren.Add }
+HAnimSegment782.FdChildren.Add(TouchSensor787);
 Shape788 := TShapeNode.Create;
 Appearance789 := TAppearanceNode.Create;
 Material790 := TMaterialNode.Create;
 Material790.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance789.Material := Material790;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape788.Appearance := Appearance789;
 Extrusion791 := TExtrusionNode.Create;
 Extrusion791.SetSpine([Vector3(0.0062,1.4583,-0.057),Vector3(0.0063,1.4761,-0.0484)]);
 Extrusion791.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape788.Geometry := Extrusion791;
-{ .AddChildren }
-HAnimSegment782.AddChildren([Shape788]);
-{ .AddChildren }
-HAnimJoint781.AddChildren([HAnimSegment782]);
+{ METHOD .FdChildren.Add }
+HAnimSegment782.FdChildren.Add(Shape788);
+{ METHOD .FdChildren.Add }
+HAnimJoint781.FdChildren.Add(HAnimSegment782);
 HAnimJoint792 := THAnimJointNode.Create;
-HAnimJoint792.NameField := 'vt2';
+end;
+
+procedure InitStandardHumanoidPart51;
+begin
+
 HAnimJoint792.Center := Vector3(0.0063,1.4761,-0.0484);
 HAnimSegment793 := THAnimSegmentNode.Create;
-HAnimSegment793.NameField := 't2';
 Transform794 := TTransformNode.Create;
 Transform794.Translation := Vector3(0.0063,1.4761,-0.0484);
 Transform795 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor796 := TTouchSensorNode.Create;
 TouchSensor796.Description := 'Joint vt2';
-{ .AddChildren }
-Transform795.AddChildren([TouchSensor796]);
-Shape797 := Shape20;
-{ .AddChild }
-Transform795.AddChildren([Shape797]);
-{ .AddChildren }
-Transform794.AddChildren([Transform795]);
-{ .AddChildren }
-HAnimSegment793.AddChildren([Transform794]);
+{ METHOD .FdChildren.Add }
+Transform795.FdChildren.Add(TouchSensor796);
+{ METHOD .FdChildren.Add }
+Transform795.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform794.FdChildren.Add(Transform795);
+{ METHOD .FdChildren.Add }
+HAnimSegment793.FdChildren.Add(Transform794);
 TouchSensor798 := TTouchSensorNode.Create;
 TouchSensor798.Description := 'Segment t2';
-{ .AddChildren }
-HAnimSegment793.AddChildren([TouchSensor798]);
+{ METHOD .FdChildren.Add }
+HAnimSegment793.FdChildren.Add(TouchSensor798);
 Shape799 := TShapeNode.Create;
 Appearance800 := TAppearanceNode.Create;
 Material801 := TMaterialNode.Create;
 Material801.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance800.Material := Material801;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape799.Appearance := Appearance800;
 Extrusion802 := TExtrusionNode.Create;
 Extrusion802.SetSpine([Vector3(0.0063,1.4761,-0.0484),Vector3(0.0065,1.4951,-0.0387)]);
 Extrusion802.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape799.Geometry := Extrusion802;
-{ .AddChildren }
-HAnimSegment793.AddChildren([Shape799]);
-{ .AddChildren }
-HAnimJoint792.AddChildren([HAnimSegment793]);
+{ METHOD .FdChildren.Add }
+HAnimSegment793.FdChildren.Add(Shape799);
+{ METHOD .FdChildren.Add }
+HAnimJoint792.FdChildren.Add(HAnimSegment793);
 HAnimJoint803 := THAnimJointNode.Create;
-HAnimJoint803.NameField := 'vt1';
 HAnimJoint803.Center := Vector3(0.0065,1.4951,-0.0387);
 HAnimSegment804 := THAnimSegmentNode.Create;
-HAnimSegment804.NameField := 't1';
 Transform805 := TTransformNode.Create;
 Transform805.Translation := Vector3(0.0065,1.4951,-0.0387);
 Transform806 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor807 := TTouchSensorNode.Create;
 TouchSensor807.Description := 'Joint vt1';
-{ .AddChildren }
-Transform806.AddChildren([TouchSensor807]);
-Shape808 := Shape20;
-{ .AddChild }
-Transform806.AddChildren([Shape808]);
-{ .AddChildren }
-Transform805.AddChildren([Transform806]);
-{ .AddChildren }
-HAnimSegment804.AddChildren([Transform805]);
+{ METHOD .FdChildren.Add }
+Transform806.FdChildren.Add(TouchSensor807);
+{ METHOD .FdChildren.Add }
+Transform806.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform805.FdChildren.Add(Transform806);
+{ METHOD .FdChildren.Add }
+HAnimSegment804.FdChildren.Add(Transform805);
 TouchSensor809 := TTouchSensorNode.Create;
 TouchSensor809.Description := 'Segment t1';
-{ .AddChildren }
-HAnimSegment804.AddChildren([TouchSensor809]);
+end;
+
+procedure InitStandardHumanoidPart52;
+begin
+
+{ METHOD .FdChildren.Add }
+HAnimSegment804.FdChildren.Add(TouchSensor809);
 Shape810 := TShapeNode.Create;
 Appearance811 := TAppearanceNode.Create;
 Material812 := TMaterialNode.Create;
 Material812.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance811.Material := Material812;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape810.Appearance := Appearance811;
 Extrusion813 := TExtrusionNode.Create;
 Extrusion813.SetSpine([Vector3(0.0065,1.4951,-0.0387),Vector3(0.0066,1.5132,-0.0301)]);
 Extrusion813.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape810.Geometry := Extrusion813;
-{ .AddChildren }
-HAnimSegment804.AddChildren([Shape810]);
+{ METHOD .FdChildren.Add }
+HAnimSegment804.FdChildren.Add(Shape810);
 TouchSensor814 := TTouchSensorNode.Create;
 TouchSensor814.Description := 'Segment t1';
-{ .AddChildren }
-HAnimSegment804.AddChildren([TouchSensor814]);
+{ METHOD .FdChildren.Add }
+HAnimSegment804.FdChildren.Add(TouchSensor814);
 Shape815 := TShapeNode.Create;
 Appearance816 := TAppearanceNode.Create;
 Material817 := TMaterialNode.Create;
 Material817.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance816.Material := Material817;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape815.Appearance := Appearance816;
 Extrusion818 := TExtrusionNode.Create;
 Extrusion818.SetSpine([Vector3(0.0065,1.4951,-0.0387),Vector3(0.082,1.4488,-0.0353)]);
 Extrusion818.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape815.Geometry := Extrusion818;
-{ .AddChildren }
-HAnimSegment804.AddChildren([Shape815]);
+{ METHOD .FdChildren.Add }
+HAnimSegment804.FdChildren.Add(Shape815);
 TouchSensor819 := TTouchSensorNode.Create;
 TouchSensor819.Description := 'Segment t1';
-{ .AddChildren }
-HAnimSegment804.AddChildren([TouchSensor819]);
+{ METHOD .FdChildren.Add }
+HAnimSegment804.FdChildren.Add(TouchSensor819);
 Shape820 := TShapeNode.Create;
 Appearance821 := TAppearanceNode.Create;
 Material822 := TMaterialNode.Create;
 Material822.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance821.Material := Material822;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape820.Appearance := Appearance821;
 Extrusion823 := TExtrusionNode.Create;
 Extrusion823.SetSpine([Vector3(0.0065,1.4951,-0.0387),Vector3(-0.0694,1.46,-0.033)]);
 Extrusion823.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape820.Geometry := Extrusion823;
-{ .AddChildren }
-HAnimSegment804.AddChildren([Shape820]);
-{ .AddChildren }
-HAnimJoint803.AddChildren([HAnimSegment804]);
+{ METHOD .FdChildren.Add }
+HAnimSegment804.FdChildren.Add(Shape820);
+end;
+
+procedure InitStandardHumanoidPart53;
+begin
+
+{ METHOD .FdChildren.Add }
+HAnimJoint803.FdChildren.Add(HAnimSegment804);
 HAnimJoint824 := THAnimJointNode.Create;
-HAnimJoint824.NameField := 'vc7';
 HAnimJoint824.Center := Vector3(0.0066,1.5132,-0.0301);
 HAnimSegment825 := THAnimSegmentNode.Create;
-HAnimSegment825.NameField := 'c7';
 Transform826 := TTransformNode.Create;
 Transform826.Translation := Vector3(0.0066,1.5132,-0.0301);
 Transform827 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor828 := TTouchSensorNode.Create;
 TouchSensor828.Description := 'Joint vc7';
-{ .AddChildren }
-Transform827.AddChildren([TouchSensor828]);
-Shape829 := Shape20;
-{ .AddChild }
-Transform827.AddChildren([Shape829]);
-{ .AddChildren }
-Transform826.AddChildren([Transform827]);
-{ .AddChildren }
-HAnimSegment825.AddChildren([Transform826]);
+{ METHOD .FdChildren.Add }
+Transform827.FdChildren.Add(TouchSensor828);
+{ METHOD .FdChildren.Add }
+Transform827.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform826.FdChildren.Add(Transform827);
+{ METHOD .FdChildren.Add }
+HAnimSegment825.FdChildren.Add(Transform826);
 TouchSensor830 := TTouchSensorNode.Create;
 TouchSensor830.Description := 'Segment c7';
-{ .AddChildren }
-HAnimSegment825.AddChildren([TouchSensor830]);
+{ METHOD .FdChildren.Add }
+HAnimSegment825.FdChildren.Add(TouchSensor830);
 Shape831 := TShapeNode.Create;
 Appearance832 := TAppearanceNode.Create;
 Material833 := TMaterialNode.Create;
 Material833.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance832.Material := Material833;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape831.Appearance := Appearance832;
 Extrusion834 := TExtrusionNode.Create;
 Extrusion834.SetSpine([Vector3(0.0066,1.5132,-0.0301),Vector3(0.0066,1.5357,-0.0143)]);
 Extrusion834.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape831.Geometry := Extrusion834;
-{ .AddChildren }
-HAnimSegment825.AddChildren([Shape831]);
-{ .AddChildren }
-HAnimJoint824.AddChildren([HAnimSegment825]);
+{ METHOD .FdChildren.Add }
+HAnimSegment825.FdChildren.Add(Shape831);
+{ METHOD .FdChildren.Add }
+HAnimJoint824.FdChildren.Add(HAnimSegment825);
 HAnimJoint835 := THAnimJointNode.Create;
-HAnimJoint835.NameField := 'vc6';
 HAnimJoint835.Center := Vector3(0.0066,1.5357,-0.0143);
 HAnimSegment836 := THAnimSegmentNode.Create;
-HAnimSegment836.NameField := 'c6';
 Transform837 := TTransformNode.Create;
 Transform837.Translation := Vector3(0.0066,1.5357,-0.0143);
 Transform838 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor839 := TTouchSensorNode.Create;
 TouchSensor839.Description := 'Joint vc6';
-{ .AddChildren }
-Transform838.AddChildren([TouchSensor839]);
-Shape840 := Shape20;
-{ .AddChild }
-Transform838.AddChildren([Shape840]);
-{ .AddChildren }
-Transform837.AddChildren([Transform838]);
-{ .AddChildren }
-HAnimSegment836.AddChildren([Transform837]);
+{ METHOD .FdChildren.Add }
+Transform838.FdChildren.Add(TouchSensor839);
+{ METHOD .FdChildren.Add }
+Transform838.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform837.FdChildren.Add(Transform838);
+{ METHOD .FdChildren.Add }
+HAnimSegment836.FdChildren.Add(Transform837);
+end;
+
+procedure InitStandardHumanoidPart54;
+begin
+
 TouchSensor841 := TTouchSensorNode.Create;
 TouchSensor841.Description := 'Segment c6';
-{ .AddChildren }
-HAnimSegment836.AddChildren([TouchSensor841]);
+{ METHOD .FdChildren.Add }
+HAnimSegment836.FdChildren.Add(TouchSensor841);
 Shape842 := TShapeNode.Create;
 Appearance843 := TAppearanceNode.Create;
 Material844 := TMaterialNode.Create;
 Material844.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance843.Material := Material844;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape842.Appearance := Appearance843;
 Extrusion845 := TExtrusionNode.Create;
 Extrusion845.SetSpine([Vector3(0.0066,1.5357,-0.0143),Vector3(0.0066,1.552,-0.0082)]);
 Extrusion845.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape842.Geometry := Extrusion845;
-{ .AddChildren }
-HAnimSegment836.AddChildren([Shape842]);
-{ .AddChildren }
-HAnimJoint835.AddChildren([HAnimSegment836]);
+{ METHOD .FdChildren.Add }
+HAnimSegment836.FdChildren.Add(Shape842);
+{ METHOD .FdChildren.Add }
+HAnimJoint835.FdChildren.Add(HAnimSegment836);
 HAnimJoint846 := THAnimJointNode.Create;
-HAnimJoint846.NameField := 'vc5';
 HAnimJoint846.Center := Vector3(0.0066,1.552,-0.0082);
 HAnimSegment847 := THAnimSegmentNode.Create;
-HAnimSegment847.NameField := 'c5';
 Transform848 := TTransformNode.Create;
 Transform848.Translation := Vector3(0.0066,1.552,-0.0082);
 Transform849 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor850 := TTouchSensorNode.Create;
 TouchSensor850.Description := 'Joint vc5';
-{ .AddChildren }
-Transform849.AddChildren([TouchSensor850]);
-Shape851 := Shape20;
-{ .AddChild }
-Transform849.AddChildren([Shape851]);
-{ .AddChildren }
-Transform848.AddChildren([Transform849]);
-{ .AddChildren }
-HAnimSegment847.AddChildren([Transform848]);
+{ METHOD .FdChildren.Add }
+Transform849.FdChildren.Add(TouchSensor850);
+{ METHOD .FdChildren.Add }
+Transform849.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform848.FdChildren.Add(Transform849);
+{ METHOD .FdChildren.Add }
+HAnimSegment847.FdChildren.Add(Transform848);
 TouchSensor852 := TTouchSensorNode.Create;
 TouchSensor852.Description := 'Segment c5';
-{ .AddChildren }
-HAnimSegment847.AddChildren([TouchSensor852]);
+{ METHOD .FdChildren.Add }
+HAnimSegment847.FdChildren.Add(TouchSensor852);
 Shape853 := TShapeNode.Create;
 Appearance854 := TAppearanceNode.Create;
 Material855 := TMaterialNode.Create;
 Material855.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance854.Material := Material855;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape853.Appearance := Appearance854;
 Extrusion856 := TExtrusionNode.Create;
 Extrusion856.SetSpine([Vector3(0.0066,1.552,-0.0082),Vector3(0.0066,1.5662,-0.0084)]);
 Extrusion856.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape853.Geometry := Extrusion856;
-{ .AddChildren }
-HAnimSegment847.AddChildren([Shape853]);
-{ .AddChildren }
-HAnimJoint846.AddChildren([HAnimSegment847]);
+end;
+
+procedure InitStandardHumanoidPart55;
+begin
+
+{ METHOD .FdChildren.Add }
+HAnimSegment847.FdChildren.Add(Shape853);
+{ METHOD .FdChildren.Add }
+HAnimJoint846.FdChildren.Add(HAnimSegment847);
 HAnimJoint857 := THAnimJointNode.Create;
-HAnimJoint857.NameField := 'vc4';
 HAnimJoint857.Center := Vector3(0.0066,1.5662,-0.0084);
 HAnimSegment858 := THAnimSegmentNode.Create;
-HAnimSegment858.NameField := 'c4';
 Transform859 := TTransformNode.Create;
 Transform859.Translation := Vector3(0.0066,1.5662,-0.0084);
 Transform860 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor861 := TTouchSensorNode.Create;
 TouchSensor861.Description := 'Joint vc4';
-{ .AddChildren }
-Transform860.AddChildren([TouchSensor861]);
-Shape862 := Shape20;
-{ .AddChild }
-Transform860.AddChildren([Shape862]);
-{ .AddChildren }
-Transform859.AddChildren([Transform860]);
-{ .AddChildren }
-HAnimSegment858.AddChildren([Transform859]);
+{ METHOD .FdChildren.Add }
+Transform860.FdChildren.Add(TouchSensor861);
+{ METHOD .FdChildren.Add }
+Transform860.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform859.FdChildren.Add(Transform860);
+{ METHOD .FdChildren.Add }
+HAnimSegment858.FdChildren.Add(Transform859);
 TouchSensor863 := TTouchSensorNode.Create;
 TouchSensor863.Description := 'Segment c4';
-{ .AddChildren }
-HAnimSegment858.AddChildren([TouchSensor863]);
+{ METHOD .FdChildren.Add }
+HAnimSegment858.FdChildren.Add(TouchSensor863);
 Shape864 := TShapeNode.Create;
 Appearance865 := TAppearanceNode.Create;
 Material866 := TMaterialNode.Create;
 Material866.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance865.Material := Material866;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape864.Appearance := Appearance865;
 Extrusion867 := TExtrusionNode.Create;
 Extrusion867.SetSpine([Vector3(0.0066,1.5662,-0.0084),Vector3(0.0066,1.58,-0.0103)]);
 Extrusion867.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape864.Geometry := Extrusion867;
-{ .AddChildren }
-HAnimSegment858.AddChildren([Shape864]);
-{ .AddChildren }
-HAnimJoint857.AddChildren([HAnimSegment858]);
+{ METHOD .FdChildren.Add }
+HAnimSegment858.FdChildren.Add(Shape864);
+{ METHOD .FdChildren.Add }
+HAnimJoint857.FdChildren.Add(HAnimSegment858);
 HAnimJoint868 := THAnimJointNode.Create;
-HAnimJoint868.NameField := 'vc3';
 HAnimJoint868.Center := Vector3(0.0066,1.58,-0.0103);
 HAnimSegment869 := THAnimSegmentNode.Create;
-HAnimSegment869.NameField := 'c3';
 Transform870 := TTransformNode.Create;
 Transform870.Translation := Vector3(0.0066,1.58,-0.0103);
 Transform871 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor872 := TTouchSensorNode.Create;
 TouchSensor872.Description := 'Joint vc3';
-{ .AddChildren }
-Transform871.AddChildren([TouchSensor872]);
-Shape873 := Shape20;
-{ .AddChild }
-Transform871.AddChildren([Shape873]);
-{ .AddChildren }
-Transform870.AddChildren([Transform871]);
-{ .AddChildren }
-HAnimSegment869.AddChildren([Transform870]);
+{ METHOD .FdChildren.Add }
+Transform871.FdChildren.Add(TouchSensor872);
+{ METHOD .FdChildren.Add }
+Transform871.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform870.FdChildren.Add(Transform871);
+end;
+
+procedure InitStandardHumanoidPart56;
+begin
+
+{ METHOD .FdChildren.Add }
+HAnimSegment869.FdChildren.Add(Transform870);
 TouchSensor874 := TTouchSensorNode.Create;
 TouchSensor874.Description := 'Segment c3';
-{ .AddChildren }
-HAnimSegment869.AddChildren([TouchSensor874]);
+{ METHOD .FdChildren.Add }
+HAnimSegment869.FdChildren.Add(TouchSensor874);
 Shape875 := TShapeNode.Create;
 Appearance876 := TAppearanceNode.Create;
 Material877 := TMaterialNode.Create;
 Material877.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance876.Material := Material877;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape875.Appearance := Appearance876;
 Extrusion878 := TExtrusionNode.Create;
 Extrusion878.SetSpine([Vector3(0.0066,1.58,-0.0103),Vector3(0.0066,1.5928,-0.0103)]);
 Extrusion878.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape875.Geometry := Extrusion878;
-{ .AddChildren }
-HAnimSegment869.AddChildren([Shape875]);
-{ .AddChildren }
-HAnimJoint868.AddChildren([HAnimSegment869]);
+{ METHOD .FdChildren.Add }
+HAnimSegment869.FdChildren.Add(Shape875);
+{ METHOD .FdChildren.Add }
+HAnimJoint868.FdChildren.Add(HAnimSegment869);
 HAnimJoint879 := THAnimJointNode.Create;
-HAnimJoint879.NameField := 'vc2';
 HAnimJoint879.Center := Vector3(0.0066,1.5928,-0.0103);
 HAnimSegment880 := THAnimSegmentNode.Create;
-HAnimSegment880.NameField := 'c2';
 Transform881 := TTransformNode.Create;
 Transform881.Translation := Vector3(0.0066,1.5928,-0.0103);
 Transform882 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor883 := TTouchSensorNode.Create;
 TouchSensor883.Description := 'Joint vc2';
-{ .AddChildren }
-Transform882.AddChildren([TouchSensor883]);
-Shape884 := Shape20;
-{ .AddChild }
-Transform882.AddChildren([Shape884]);
-{ .AddChildren }
-Transform881.AddChildren([Transform882]);
-{ .AddChildren }
-HAnimSegment880.AddChildren([Transform881]);
+{ METHOD .FdChildren.Add }
+Transform882.FdChildren.Add(TouchSensor883);
+{ METHOD .FdChildren.Add }
+Transform882.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform881.FdChildren.Add(Transform882);
+{ METHOD .FdChildren.Add }
+HAnimSegment880.FdChildren.Add(Transform881);
 TouchSensor885 := TTouchSensorNode.Create;
 TouchSensor885.Description := 'Segment c2';
-{ .AddChildren }
-HAnimSegment880.AddChildren([TouchSensor885]);
+{ METHOD .FdChildren.Add }
+HAnimSegment880.FdChildren.Add(TouchSensor885);
 Shape886 := TShapeNode.Create;
 Appearance887 := TAppearanceNode.Create;
 Material888 := TMaterialNode.Create;
 Material888.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance887.Material := Material888;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape886.Appearance := Appearance887;
 Extrusion889 := TExtrusionNode.Create;
 Extrusion889.SetSpine([Vector3(0.0066,1.5928,-0.0103),Vector3(0.0066,1.6144,-0.0034)]);
 Extrusion889.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+end;
+
+procedure InitStandardHumanoidPart57;
+begin
+
+{ METHOD .Geometry }
 Shape886.Geometry := Extrusion889;
-{ .AddChildren }
-HAnimSegment880.AddChildren([Shape886]);
-{ .AddChildren }
-HAnimJoint879.AddChildren([HAnimSegment880]);
+{ METHOD .FdChildren.Add }
+HAnimSegment880.FdChildren.Add(Shape886);
+{ METHOD .FdChildren.Add }
+HAnimJoint879.FdChildren.Add(HAnimSegment880);
 HAnimJoint890 := THAnimJointNode.Create;
-HAnimJoint890.NameField := 'vc1';
 HAnimJoint890.Center := Vector3(0.0066,1.6144,-0.0034);
 HAnimSegment891 := THAnimSegmentNode.Create;
-HAnimSegment891.NameField := 'c1';
 Transform892 := TTransformNode.Create;
 Transform892.Translation := Vector3(0.0066,1.6144,-0.0034);
 Transform893 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor894 := TTouchSensorNode.Create;
 TouchSensor894.Description := 'Joint vc1';
-{ .AddChildren }
-Transform893.AddChildren([TouchSensor894]);
-Shape895 := Shape20;
-{ .AddChild }
-Transform893.AddChildren([Shape895]);
-{ .AddChildren }
-Transform892.AddChildren([Transform893]);
-{ .AddChildren }
-HAnimSegment891.AddChildren([Transform892]);
+{ METHOD .FdChildren.Add }
+Transform893.FdChildren.Add(TouchSensor894);
+{ METHOD .FdChildren.Add }
+Transform893.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform892.FdChildren.Add(Transform893);
+{ METHOD .FdChildren.Add }
+HAnimSegment891.FdChildren.Add(Transform892);
 TouchSensor896 := TTouchSensorNode.Create;
 TouchSensor896.Description := 'Segment c1';
-{ .AddChildren }
-HAnimSegment891.AddChildren([TouchSensor896]);
+{ METHOD .FdChildren.Add }
+HAnimSegment891.FdChildren.Add(TouchSensor896);
 Shape897 := TShapeNode.Create;
 Appearance898 := TAppearanceNode.Create;
 Material899 := TMaterialNode.Create;
 Material899.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance898.Material := Material899;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape897.Appearance := Appearance898;
 Extrusion900 := TExtrusionNode.Create;
 Extrusion900.SetSpine([Vector3(0.0066,1.6144,-0.0034),Vector3(0.0044,1.6209,0.0236)]);
 Extrusion900.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape897.Geometry := Extrusion900;
-{ .AddChildren }
-HAnimSegment891.AddChildren([Shape897]);
-{ .AddChildren }
-HAnimJoint890.AddChildren([HAnimSegment891]);
+{ METHOD .FdChildren.Add }
+HAnimSegment891.FdChildren.Add(Shape897);
+{ METHOD .FdChildren.Add }
+HAnimJoint890.FdChildren.Add(HAnimSegment891);
 HAnimJoint901 := THAnimJointNode.Create;
-HAnimJoint901.NameField := 'skullbase';
 HAnimJoint901.Center := Vector3(0.0044,1.6209,0.0236);
 HAnimSegment902 := THAnimSegmentNode.Create;
-HAnimSegment902.NameField := 'skull';
 Transform903 := TTransformNode.Create;
 Transform903.Translation := Vector3(0.0044,1.6209,0.0236);
 Transform904 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor905 := TTouchSensorNode.Create;
 TouchSensor905.Description := 'Joint skullbase';
-{ .AddChildren }
-Transform904.AddChildren([TouchSensor905]);
-Shape906 := Shape20;
-{ .AddChild }
-Transform904.AddChildren([Shape906]);
-{ .AddChildren }
-Transform903.AddChildren([Transform904]);
-{ .AddChildren }
-HAnimSegment902.AddChildren([Transform903]);
+{ METHOD .FdChildren.Add }
+Transform904.FdChildren.Add(TouchSensor905);
+{ METHOD .FdChildren.Add }
+Transform904.FdChildren.Add(Shape20);
+end;
+
+procedure InitStandardHumanoidPart58;
+begin
+
+{ METHOD .FdChildren.Add }
+Transform903.FdChildren.Add(Transform904);
+{ METHOD .FdChildren.Add }
+HAnimSegment902.FdChildren.Add(Transform903);
 TouchSensor907 := TTouchSensorNode.Create;
 TouchSensor907.Description := 'Segment skull';
-{ .AddChildren }
-HAnimSegment902.AddChildren([TouchSensor907]);
+{ METHOD .FdChildren.Add }
+HAnimSegment902.FdChildren.Add(TouchSensor907);
 Shape908 := TShapeNode.Create;
 Appearance909 := TAppearanceNode.Create;
 Material910 := TMaterialNode.Create;
 Material910.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance909.Material := Material910;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape908.Appearance := Appearance909;
 Extrusion911 := TExtrusionNode.Create;
 Extrusion911.SetSpine([Vector3(0.0044,1.6209,0.0236),Vector3(0.0503,1.4157,-0.0689)]);
 Extrusion911.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape908.Geometry := Extrusion911;
-{ .AddChildren }
-HAnimSegment902.AddChildren([Shape908]);
+{ METHOD .FdChildren.Add }
+HAnimSegment902.FdChildren.Add(Shape908);
 TouchSensor912 := TTouchSensorNode.Create;
 TouchSensor912.Description := 'Segment skull';
-{ .AddChildren }
-HAnimSegment902.AddChildren([TouchSensor912]);
+{ METHOD .FdChildren.Add }
+HAnimSegment902.FdChildren.Add(TouchSensor912);
 Shape913 := TShapeNode.Create;
 Appearance914 := TAppearanceNode.Create;
 Material915 := TMaterialNode.Create;
 Material915.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance914.Material := Material915;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape913.Appearance := Appearance914;
 Extrusion916 := TExtrusionNode.Create;
 Extrusion916.SetSpine([Vector3(0.0044,1.6209,0.0236),Vector3(-0.0507,1.4157,-0.0689)]);
 Extrusion916.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape913.Geometry := Extrusion916;
-{ .AddChildren }
-HAnimSegment902.AddChildren([Shape913]);
+{ METHOD .FdChildren.Add }
+HAnimSegment902.FdChildren.Add(Shape913);
 TouchSensor917 := TTouchSensorNode.Create;
 TouchSensor917.Description := 'Segment skull';
-{ .AddChildren }
-HAnimSegment902.AddChildren([TouchSensor917]);
+{ METHOD .FdChildren.Add }
+HAnimSegment902.FdChildren.Add(TouchSensor917);
 Shape918 := TShapeNode.Create;
 Appearance919 := TAppearanceNode.Create;
 Material920 := TMaterialNode.Create;
 Material920.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance919.Material := Material920;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape918.Appearance := Appearance919;
 Extrusion921 := TExtrusionNode.Create;
+end;
+
+procedure InitStandardHumanoidPart59;
+begin
+
 Extrusion921.SetSpine([Vector3(0.0044,1.6209,0.0236),Vector3(0.0479,1.3963,-0.0188)]);
 Extrusion921.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape918.Geometry := Extrusion921;
-{ .AddChildren }
-HAnimSegment902.AddChildren([Shape918]);
+{ METHOD .FdChildren.Add }
+HAnimSegment902.FdChildren.Add(Shape918);
 TouchSensor922 := TTouchSensorNode.Create;
 TouchSensor922.Description := 'Segment skull';
-{ .AddChildren }
-HAnimSegment902.AddChildren([TouchSensor922]);
+{ METHOD .FdChildren.Add }
+HAnimSegment902.FdChildren.Add(TouchSensor922);
 Shape923 := TShapeNode.Create;
 Appearance924 := TAppearanceNode.Create;
 Material925 := TMaterialNode.Create;
 Material925.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance924.Material := Material925;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape923.Appearance := Appearance924;
 Extrusion926 := TExtrusionNode.Create;
 Extrusion926.SetSpine([Vector3(0.0044,1.6209,0.0236),Vector3(-0.0483,1.3963,-0.0188)]);
 Extrusion926.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape923.Geometry := Extrusion926;
-{ .AddChildren }
-HAnimSegment902.AddChildren([Shape923]);
+{ METHOD .FdChildren.Add }
+HAnimSegment902.FdChildren.Add(Shape923);
 TouchSensor927 := TTouchSensorNode.Create;
 TouchSensor927.Description := 'Segment skull';
-{ .AddChildren }
-HAnimSegment902.AddChildren([TouchSensor927]);
+{ METHOD .FdChildren.Add }
+HAnimSegment902.FdChildren.Add(TouchSensor927);
 Shape928 := TShapeNode.Create;
 Appearance929 := TAppearanceNode.Create;
 Material930 := TMaterialNode.Create;
 Material930.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance929.Material := Material930;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape928.Appearance := Appearance929;
 Extrusion931 := TExtrusionNode.Create;
 Extrusion931.SetSpine([Vector3(0.0044,1.6209,0.0236),Vector3(0.0216,1.4053,0.0051)]);
 Extrusion931.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape928.Geometry := Extrusion931;
-{ .AddChildren }
-HAnimSegment902.AddChildren([Shape928]);
+{ METHOD .FdChildren.Add }
+HAnimSegment902.FdChildren.Add(Shape928);
 TouchSensor932 := TTouchSensorNode.Create;
 TouchSensor932.Description := 'Segment skull';
-{ .AddChildren }
-HAnimSegment902.AddChildren([TouchSensor932]);
+{ METHOD .FdChildren.Add }
+HAnimSegment902.FdChildren.Add(TouchSensor932);
 Shape933 := TShapeNode.Create;
 Appearance934 := TAppearanceNode.Create;
 Material935 := TMaterialNode.Create;
 Material935.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance934.Material := Material935;
-{ .SetAppearance }
+end;
+
+procedure InitStandardHumanoidPart60;
+begin
+
+{ METHOD .Appearance }
 Shape933.Appearance := Appearance934;
 Extrusion936 := TExtrusionNode.Create;
 Extrusion936.SetSpine([Vector3(0.0044,1.6209,0.0236),Vector3(-0.0219,1.4053,0.0051)]);
 Extrusion936.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape933.Geometry := Extrusion936;
-{ .AddChildren }
-HAnimSegment902.AddChildren([Shape933]);
+{ METHOD .FdChildren.Add }
+HAnimSegment902.FdChildren.Add(Shape933);
 TouchSensor937 := TTouchSensorNode.Create;
 TouchSensor937.Description := 'Segment skull';
-{ .AddChildren }
-HAnimSegment902.AddChildren([TouchSensor937]);
+{ METHOD .FdChildren.Add }
+HAnimSegment902.FdChildren.Add(TouchSensor937);
 Shape938 := TShapeNode.Create;
 Appearance939 := TAppearanceNode.Create;
 Material940 := TMaterialNode.Create;
 Material940.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance939.Material := Material940;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape938.Appearance := Appearance939;
 Extrusion941 := TExtrusionNode.Create;
 Extrusion941.SetSpine([Vector3(0.0044,1.6209,0.0236),Vector3(-0.0002,1.3043,-0.0865)]);
 Extrusion941.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape938.Geometry := Extrusion941;
-{ .AddChildren }
-HAnimSegment902.AddChildren([Shape938]);
-{ .AddChildren }
-HAnimJoint901.AddChildren([HAnimSegment902]);
+{ METHOD .FdChildren.Add }
+HAnimSegment902.FdChildren.Add(Shape938);
+{ METHOD .FdChildren.Add }
+HAnimJoint901.FdChildren.Add(HAnimSegment902);
 HAnimJoint942 := THAnimJointNode.Create;
-HAnimJoint942.NameField := 'l_eyelid_joint';
 HAnimJoint942.Center := Vector3(0.0503,1.4157,-0.0689);
-{ .AddChildren }
-HAnimJoint901.AddChildren([HAnimJoint942]);
+{ METHOD .FdChildren.Add }
+HAnimJoint901.FdChildren.Add(HAnimJoint942);
 HAnimJoint943 := THAnimJointNode.Create;
-HAnimJoint943.NameField := 'r_eyelid_joint';
 HAnimJoint943.Center := Vector3(-0.0507,1.4157,-0.0689);
-{ .AddChildren }
-HAnimJoint901.AddChildren([HAnimJoint943]);
+{ METHOD .FdChildren.Add }
+HAnimJoint901.FdChildren.Add(HAnimJoint943);
 HAnimJoint944 := THAnimJointNode.Create;
-HAnimJoint944.NameField := 'l_eyeball_joint';
 HAnimJoint944.Center := Vector3(0.0479,1.3963,-0.0188);
-{ .AddChildren }
-HAnimJoint901.AddChildren([HAnimJoint944]);
+{ METHOD .FdChildren.Add }
+HAnimJoint901.FdChildren.Add(HAnimJoint944);
 HAnimJoint945 := THAnimJointNode.Create;
-HAnimJoint945.NameField := 'r_eyeball_joint';
 HAnimJoint945.Center := Vector3(-0.0483,1.3963,-0.0188);
-{ .AddChildren }
-HAnimJoint901.AddChildren([HAnimJoint945]);
+{ METHOD .FdChildren.Add }
+HAnimJoint901.FdChildren.Add(HAnimJoint945);
 HAnimJoint946 := THAnimJointNode.Create;
-HAnimJoint946.NameField := 'l_eyebrow_joint';
 HAnimJoint946.Center := Vector3(0.0216,1.4053,0.0051);
-{ .AddChildren }
-HAnimJoint901.AddChildren([HAnimJoint946]);
+{ METHOD .FdChildren.Add }
+HAnimJoint901.FdChildren.Add(HAnimJoint946);
 HAnimJoint947 := THAnimJointNode.Create;
-HAnimJoint947.NameField := 'r_eyebrow_joint';
 HAnimJoint947.Center := Vector3(-0.0219,1.4053,0.0051);
-{ .AddChildren }
-HAnimJoint901.AddChildren([HAnimJoint947]);
+{ METHOD .FdChildren.Add }
+HAnimJoint901.FdChildren.Add(HAnimJoint947);
 HAnimJoint948 := THAnimJointNode.Create;
-HAnimJoint948.NameField := 'temporomandibular';
+end;
+
+procedure InitStandardHumanoidPart61;
+begin
+
 HAnimJoint948.Center := Vector3(-0.0002,1.3043,-0.0865);
-{ .AddChildren }
-HAnimJoint901.AddChildren([HAnimJoint948]);
-{ .AddChildren }
-HAnimJoint890.AddChildren([HAnimJoint901]);
-{ .AddChildren }
-HAnimJoint879.AddChildren([HAnimJoint890]);
-{ .AddChildren }
-HAnimJoint868.AddChildren([HAnimJoint879]);
-{ .AddChildren }
-HAnimJoint857.AddChildren([HAnimJoint868]);
-{ .AddChildren }
-HAnimJoint846.AddChildren([HAnimJoint857]);
-{ .AddChildren }
-HAnimJoint835.AddChildren([HAnimJoint846]);
-{ .AddChildren }
-HAnimJoint824.AddChildren([HAnimJoint835]);
-{ .AddChildren }
-HAnimJoint803.AddChildren([HAnimJoint824]);
+{ METHOD .FdChildren.Add }
+HAnimJoint901.FdChildren.Add(HAnimJoint948);
+{ METHOD .FdChildren.Add }
+HAnimJoint890.FdChildren.Add(HAnimJoint901);
+{ METHOD .FdChildren.Add }
+HAnimJoint879.FdChildren.Add(HAnimJoint890);
+{ METHOD .FdChildren.Add }
+HAnimJoint868.FdChildren.Add(HAnimJoint879);
+{ METHOD .FdChildren.Add }
+HAnimJoint857.FdChildren.Add(HAnimJoint868);
+{ METHOD .FdChildren.Add }
+HAnimJoint846.FdChildren.Add(HAnimJoint857);
+{ METHOD .FdChildren.Add }
+HAnimJoint835.FdChildren.Add(HAnimJoint846);
+{ METHOD .FdChildren.Add }
+HAnimJoint824.FdChildren.Add(HAnimJoint835);
+{ METHOD .FdChildren.Add }
+HAnimJoint803.FdChildren.Add(HAnimJoint824);
 HAnimJoint949 := THAnimJointNode.Create;
-HAnimJoint949.NameField := 'l_sternoclavicular';
 HAnimJoint949.Center := Vector3(0.082,1.4488,-0.0353);
 HAnimSegment950 := THAnimSegmentNode.Create;
-HAnimSegment950.NameField := 'l_clavicle';
 Transform951 := TTransformNode.Create;
 Transform951.Translation := Vector3(0.082,1.4488,-0.0353);
 Transform952 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor953 := TTouchSensorNode.Create;
 TouchSensor953.Description := 'Joint l_sternoclavicular';
-{ .AddChildren }
-Transform952.AddChildren([TouchSensor953]);
-Shape954 := Shape20;
-{ .AddChild }
-Transform952.AddChildren([Shape954]);
-{ .AddChildren }
-Transform951.AddChildren([Transform952]);
-{ .AddChildren }
-HAnimSegment950.AddChildren([Transform951]);
+{ METHOD .FdChildren.Add }
+Transform952.FdChildren.Add(TouchSensor953);
+{ METHOD .FdChildren.Add }
+Transform952.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform951.FdChildren.Add(Transform952);
+{ METHOD .FdChildren.Add }
+HAnimSegment950.FdChildren.Add(Transform951);
 TouchSensor955 := TTouchSensorNode.Create;
 TouchSensor955.Description := 'Segment l_clavicle';
-{ .AddChildren }
-HAnimSegment950.AddChildren([TouchSensor955]);
+{ METHOD .FdChildren.Add }
+HAnimSegment950.FdChildren.Add(TouchSensor955);
 Shape956 := TShapeNode.Create;
 Appearance957 := TAppearanceNode.Create;
 Material958 := TMaterialNode.Create;
 Material958.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance957.Material := Material958;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape956.Appearance := Appearance957;
 Extrusion959 := TExtrusionNode.Create;
 Extrusion959.SetSpine([Vector3(0.082,1.4488,-0.0353),Vector3(0.0962,1.4269,-0.0424)]);
 Extrusion959.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape956.Geometry := Extrusion959;
-{ .AddChildren }
-HAnimSegment950.AddChildren([Shape956]);
-{ .AddChildren }
-HAnimJoint949.AddChildren([HAnimSegment950]);
+{ METHOD .FdChildren.Add }
+HAnimSegment950.FdChildren.Add(Shape956);
+{ METHOD .FdChildren.Add }
+HAnimJoint949.FdChildren.Add(HAnimSegment950);
 HAnimJoint960 := THAnimJointNode.Create;
-HAnimJoint960.NameField := 'l_acromioclavicular';
 HAnimJoint960.Center := Vector3(0.0962,1.4269,-0.0424);
 HAnimSegment961 := THAnimSegmentNode.Create;
-HAnimSegment961.NameField := 'l_scapula';
+end;
+
+procedure InitStandardHumanoidPart62;
+begin
+
 Transform962 := TTransformNode.Create;
 Transform962.Translation := Vector3(0.0962,1.4269,-0.0424);
 Transform963 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor964 := TTouchSensorNode.Create;
 TouchSensor964.Description := 'Joint l_acromioclavicular';
-{ .AddChildren }
-Transform963.AddChildren([TouchSensor964]);
-Shape965 := Shape20;
-{ .AddChild }
-Transform963.AddChildren([Shape965]);
-{ .AddChildren }
-Transform962.AddChildren([Transform963]);
-{ .AddChildren }
-HAnimSegment961.AddChildren([Transform962]);
+{ METHOD .FdChildren.Add }
+Transform963.FdChildren.Add(TouchSensor964);
+{ METHOD .FdChildren.Add }
+Transform963.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform962.FdChildren.Add(Transform963);
+{ METHOD .FdChildren.Add }
+HAnimSegment961.FdChildren.Add(Transform962);
 TouchSensor966 := TTouchSensorNode.Create;
 TouchSensor966.Description := 'Segment l_scapula';
-{ .AddChildren }
-HAnimSegment961.AddChildren([TouchSensor966]);
+{ METHOD .FdChildren.Add }
+HAnimSegment961.FdChildren.Add(TouchSensor966);
 Shape967 := TShapeNode.Create;
 Appearance968 := TAppearanceNode.Create;
 Material969 := TMaterialNode.Create;
 Material969.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance968.Material := Material969;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape967.Appearance := Appearance968;
 Extrusion970 := TExtrusionNode.Create;
 Extrusion970.SetSpine([Vector3(0.0962,1.4269,-0.0424),Vector3(0.2029,1.4376,-0.0387)]);
 Extrusion970.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape967.Geometry := Extrusion970;
-{ .AddChildren }
-HAnimSegment961.AddChildren([Shape967]);
-{ .AddChildren }
-HAnimJoint960.AddChildren([HAnimSegment961]);
+{ METHOD .FdChildren.Add }
+HAnimSegment961.FdChildren.Add(Shape967);
+{ METHOD .FdChildren.Add }
+HAnimJoint960.FdChildren.Add(HAnimSegment961);
 HAnimJoint971 := THAnimJointNode.Create;
-HAnimJoint971.NameField := 'l_shoulder';
 HAnimJoint971.Center := Vector3(0.2029,1.4376,-0.0387);
 HAnimSegment972 := THAnimSegmentNode.Create;
-HAnimSegment972.NameField := 'l_upperarm';
 Transform973 := TTransformNode.Create;
 Transform973.Translation := Vector3(0.2029,1.4376,-0.0387);
 Transform974 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor975 := TTouchSensorNode.Create;
 TouchSensor975.Description := 'Joint l_shoulder';
-{ .AddChildren }
-Transform974.AddChildren([TouchSensor975]);
-Shape976 := Shape20;
-{ .AddChild }
-Transform974.AddChildren([Shape976]);
-{ .AddChildren }
-Transform973.AddChildren([Transform974]);
-{ .AddChildren }
-HAnimSegment972.AddChildren([Transform973]);
+{ METHOD .FdChildren.Add }
+Transform974.FdChildren.Add(TouchSensor975);
+{ METHOD .FdChildren.Add }
+Transform974.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform973.FdChildren.Add(Transform974);
+{ METHOD .FdChildren.Add }
+HAnimSegment972.FdChildren.Add(Transform973);
 TouchSensor977 := TTouchSensorNode.Create;
 TouchSensor977.Description := 'Segment l_upperarm';
-{ .AddChildren }
-HAnimSegment972.AddChildren([TouchSensor977]);
+{ METHOD .FdChildren.Add }
+HAnimSegment972.FdChildren.Add(TouchSensor977);
 Shape978 := TShapeNode.Create;
+end;
+
+procedure InitStandardHumanoidPart63;
+begin
+
 Appearance979 := TAppearanceNode.Create;
 Material980 := TMaterialNode.Create;
 Material980.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance979.Material := Material980;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape978.Appearance := Appearance979;
 Extrusion981 := TExtrusionNode.Create;
 Extrusion981.SetSpine([Vector3(0.2029,1.4376,-0.0387),Vector3(0.2014,1.1357,-0.0682)]);
 Extrusion981.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape978.Geometry := Extrusion981;
-{ .AddChildren }
-HAnimSegment972.AddChildren([Shape978]);
-{ .AddChildren }
-HAnimJoint971.AddChildren([HAnimSegment972]);
+{ METHOD .FdChildren.Add }
+HAnimSegment972.FdChildren.Add(Shape978);
+{ METHOD .FdChildren.Add }
+HAnimJoint971.FdChildren.Add(HAnimSegment972);
 HAnimJoint982 := THAnimJointNode.Create;
-HAnimJoint982.NameField := 'l_elbow';
 HAnimJoint982.Center := Vector3(0.2014,1.1357,-0.0682);
 HAnimSegment983 := THAnimSegmentNode.Create;
-HAnimSegment983.NameField := 'l_forearm';
 Transform984 := TTransformNode.Create;
 Transform984.Translation := Vector3(0.2014,1.1357,-0.0682);
 Transform985 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor986 := TTouchSensorNode.Create;
 TouchSensor986.Description := 'Joint l_elbow';
-{ .AddChildren }
-Transform985.AddChildren([TouchSensor986]);
-Shape987 := Shape20;
-{ .AddChild }
-Transform985.AddChildren([Shape987]);
-{ .AddChildren }
-Transform984.AddChildren([Transform985]);
-{ .AddChildren }
-HAnimSegment983.AddChildren([Transform984]);
+{ METHOD .FdChildren.Add }
+Transform985.FdChildren.Add(TouchSensor986);
+{ METHOD .FdChildren.Add }
+Transform985.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform984.FdChildren.Add(Transform985);
+{ METHOD .FdChildren.Add }
+HAnimSegment983.FdChildren.Add(Transform984);
 TouchSensor988 := TTouchSensorNode.Create;
 TouchSensor988.Description := 'Segment l_forearm';
-{ .AddChildren }
-HAnimSegment983.AddChildren([TouchSensor988]);
+{ METHOD .FdChildren.Add }
+HAnimSegment983.FdChildren.Add(TouchSensor988);
 Shape989 := TShapeNode.Create;
 Appearance990 := TAppearanceNode.Create;
 Material991 := TMaterialNode.Create;
 Material991.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance990.Material := Material991;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape989.Appearance := Appearance990;
 Extrusion992 := TExtrusionNode.Create;
 Extrusion992.SetSpine([Vector3(0.2014,1.1357,-0.0682),Vector3(0.1984,0.8663,-0.0583)]);
 Extrusion992.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape989.Geometry := Extrusion992;
-{ .AddChildren }
-HAnimSegment983.AddChildren([Shape989]);
-{ .AddChildren }
-HAnimJoint982.AddChildren([HAnimSegment983]);
+{ METHOD .FdChildren.Add }
+HAnimSegment983.FdChildren.Add(Shape989);
+{ METHOD .FdChildren.Add }
+HAnimJoint982.FdChildren.Add(HAnimSegment983);
 HAnimJoint993 := THAnimJointNode.Create;
-HAnimJoint993.NameField := 'l_radiocarpal';
 HAnimJoint993.Center := Vector3(0.1984,0.8663,-0.0583);
+end;
+
+procedure InitStandardHumanoidPart64;
+begin
+
 HAnimSegment994 := THAnimSegmentNode.Create;
-HAnimSegment994.NameField := 'l_carpal';
 Transform995 := TTransformNode.Create;
 Transform995.Scale := Vector3(0.2,0.2,0.2);
 Transform995.Translation := Vector3(0.2,0.85,-0.05);
@@ -5613,1091 +5693,1107 @@ Transform996.Rotation := Vector4(0,1,0,-1.57);
 { Transform left hand }
 TouchSensor997 := TTouchSensorNode.Create;
 TouchSensor997.Description := 'Joint l_radiocarpal';
-{ .AddChildren }
-Transform996.AddChildren([TouchSensor997]);
-Shape998 := Shape20;
-{ .AddChild }
-Transform996.AddChildren([Shape998]);
-{ .AddChildren }
-Transform995.AddChildren([Transform996]);
-{ .AddChildren }
-HAnimSegment994.AddChildren([Transform995]);
+{ METHOD .FdChildren.Add }
+Transform996.FdChildren.Add(TouchSensor997);
+{ METHOD .FdChildren.Add }
+Transform996.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform995.FdChildren.Add(Transform996);
+{ METHOD .FdChildren.Add }
+HAnimSegment994.FdChildren.Add(Transform995);
 TouchSensor999 := TTouchSensorNode.Create;
 TouchSensor999.Description := 'Segment l_carpal';
-{ .AddChildren }
-HAnimSegment994.AddChildren([TouchSensor999]);
+{ METHOD .FdChildren.Add }
+HAnimSegment994.FdChildren.Add(TouchSensor999);
 Shape1000 := TShapeNode.Create;
 Appearance1001 := TAppearanceNode.Create;
 Material1002 := TMaterialNode.Create;
 Material1002.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1001.Material := Material1002;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1000.Appearance := Appearance1001;
 Extrusion1003 := TExtrusionNode.Create;
 Extrusion1003.SetSpine([Vector3(0.1984,0.8663,-0.0583),Vector3(0.1811,0.6975,-0.0826)]);
 Extrusion1003.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1000.Geometry := Extrusion1003;
-{ .AddChildren }
-HAnimSegment994.AddChildren([Shape1000]);
+{ METHOD .FdChildren.Add }
+HAnimSegment994.FdChildren.Add(Shape1000);
 TouchSensor1004 := TTouchSensorNode.Create;
 TouchSensor1004.Description := 'Segment l_carpal';
-{ .AddChildren }
-HAnimSegment994.AddChildren([TouchSensor1004]);
+{ METHOD .FdChildren.Add }
+HAnimSegment994.FdChildren.Add(TouchSensor1004);
 Shape1005 := TShapeNode.Create;
 Appearance1006 := TAppearanceNode.Create;
 Material1007 := TMaterialNode.Create;
 Material1007.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1006.Material := Material1007;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1005.Appearance := Appearance1006;
 Extrusion1008 := TExtrusionNode.Create;
 Extrusion1008.SetSpine([Vector3(0.1984,0.8663,-0.0583),Vector3(0.1811,0.6984,-0.0935)]);
 Extrusion1008.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1005.Geometry := Extrusion1008;
-{ .AddChildren }
-HAnimSegment994.AddChildren([Shape1005]);
+end;
+
+procedure InitStandardHumanoidPart65;
+begin
+
+{ METHOD .FdChildren.Add }
+HAnimSegment994.FdChildren.Add(Shape1005);
 TouchSensor1009 := TTouchSensorNode.Create;
 TouchSensor1009.Description := 'Segment l_carpal';
-{ .AddChildren }
-HAnimSegment994.AddChildren([TouchSensor1009]);
+{ METHOD .FdChildren.Add }
+HAnimSegment994.FdChildren.Add(TouchSensor1009);
 Shape1010 := TShapeNode.Create;
 Appearance1011 := TAppearanceNode.Create;
 Material1012 := TMaterialNode.Create;
 Material1012.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1011.Material := Material1012;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1010.Appearance := Appearance1011;
 Extrusion1013 := TExtrusionNode.Create;
 Extrusion1013.SetSpine([Vector3(0.1984,0.8663,-0.0583),Vector3(0.1809,0.7,-0.1067)]);
 Extrusion1013.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1010.Geometry := Extrusion1013;
-{ .AddChildren }
-HAnimSegment994.AddChildren([Shape1010]);
+{ METHOD .FdChildren.Add }
+HAnimSegment994.FdChildren.Add(Shape1010);
 TouchSensor1014 := TTouchSensorNode.Create;
 TouchSensor1014.Description := 'Segment l_carpal';
-{ .AddChildren }
-HAnimSegment994.AddChildren([TouchSensor1014]);
+{ METHOD .FdChildren.Add }
+HAnimSegment994.FdChildren.Add(TouchSensor1014);
 Shape1015 := TShapeNode.Create;
 Appearance1016 := TAppearanceNode.Create;
 Material1017 := TMaterialNode.Create;
 Material1017.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1016.Material := Material1017;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1015.Appearance := Appearance1016;
 Extrusion1018 := TExtrusionNode.Create;
 Extrusion1018.SetSpine([Vector3(0.1984,0.8663,-0.0583),Vector3(0.1809,0.6973,-0.1276)]);
 Extrusion1018.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1015.Geometry := Extrusion1018;
-{ .AddChildren }
-HAnimSegment994.AddChildren([Shape1015]);
-{ .AddChildren }
-HAnimJoint993.AddChildren([HAnimSegment994]);
+{ METHOD .FdChildren.Add }
+HAnimSegment994.FdChildren.Add(Shape1015);
+{ METHOD .FdChildren.Add }
+HAnimJoint993.FdChildren.Add(HAnimSegment994);
 HAnimJoint1019 := THAnimJointNode.Create;
-HAnimJoint1019.NameField := 'l_midcarpal_1';
 HAnimJoint1019.Center := Vector3(0.1811,0.6975,-0.0826);
 HAnimSegment1020 := THAnimSegmentNode.Create;
-HAnimSegment1020.NameField := 'l_trapezium';
 Transform1021 := TTransformNode.Create;
 Transform1021.Translation := Vector3(0.1811,0.6975,-0.0826);
 Transform1022 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor1023 := TTouchSensorNode.Create;
 TouchSensor1023.Description := 'Joint l_midcarpal_1';
-{ .AddChildren }
-Transform1022.AddChildren([TouchSensor1023]);
-Shape1024 := Shape20;
-{ .AddChild }
-Transform1022.AddChildren([Shape1024]);
-{ .AddChildren }
-Transform1021.AddChildren([Transform1022]);
-{ .AddChildren }
-HAnimSegment1020.AddChildren([Transform1021]);
+{ METHOD .FdChildren.Add }
+Transform1022.FdChildren.Add(TouchSensor1023);
+{ METHOD .FdChildren.Add }
+Transform1022.FdChildren.Add(Shape20);
+end;
+
+procedure InitStandardHumanoidPart66;
+begin
+
+{ METHOD .FdChildren.Add }
+Transform1021.FdChildren.Add(Transform1022);
+{ METHOD .FdChildren.Add }
+HAnimSegment1020.FdChildren.Add(Transform1021);
 TouchSensor1025 := TTouchSensorNode.Create;
 TouchSensor1025.Description := 'Segment l_trapezium';
-{ .AddChildren }
-HAnimSegment1020.AddChildren([TouchSensor1025]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1020.FdChildren.Add(TouchSensor1025);
 Shape1026 := TShapeNode.Create;
 Appearance1027 := TAppearanceNode.Create;
 Material1028 := TMaterialNode.Create;
 Material1028.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1027.Material := Material1028;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1026.Appearance := Appearance1027;
 Extrusion1029 := TExtrusionNode.Create;
 Extrusion1029.SetSpine([Vector3(0.1811,0.6975,-0.0826),Vector3(0.1924,0.8472,-0.0534)]);
 Extrusion1029.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1026.Geometry := Extrusion1029;
-{ .AddChildren }
-HAnimSegment1020.AddChildren([Shape1026]);
-{ .AddChildren }
-HAnimJoint1019.AddChildren([HAnimSegment1020]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1020.FdChildren.Add(Shape1026);
+{ METHOD .FdChildren.Add }
+HAnimJoint1019.FdChildren.Add(HAnimSegment1020);
 HAnimJoint1030 := THAnimJointNode.Create;
-HAnimJoint1030.NameField := 'l_carpometacarpal_1';
 HAnimJoint1030.Center := Vector3(0.1924,0.8472,-0.0534);
 HAnimSegment1031 := THAnimSegmentNode.Create;
-HAnimSegment1031.NameField := 'l_metacarpal_1';
 Transform1032 := TTransformNode.Create;
 Transform1032.Translation := Vector3(0.1924,0.8472,-0.0534);
 Transform1033 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor1034 := TTouchSensorNode.Create;
 TouchSensor1034.Description := 'Joint l_carpometacarpal_1';
-{ .AddChildren }
-Transform1033.AddChildren([TouchSensor1034]);
-Shape1035 := Shape20;
-{ .AddChild }
-Transform1033.AddChildren([Shape1035]);
-{ .AddChildren }
-Transform1032.AddChildren([Transform1033]);
-{ .AddChildren }
-HAnimSegment1031.AddChildren([Transform1032]);
+{ METHOD .FdChildren.Add }
+Transform1033.FdChildren.Add(TouchSensor1034);
+{ METHOD .FdChildren.Add }
+Transform1033.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform1032.FdChildren.Add(Transform1033);
+{ METHOD .FdChildren.Add }
+HAnimSegment1031.FdChildren.Add(Transform1032);
 TouchSensor1036 := TTouchSensorNode.Create;
 TouchSensor1036.Description := 'Segment l_metacarpal_1';
-{ .AddChildren }
-HAnimSegment1031.AddChildren([TouchSensor1036]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1031.FdChildren.Add(TouchSensor1036);
 Shape1037 := TShapeNode.Create;
 Appearance1038 := TAppearanceNode.Create;
 Material1039 := TMaterialNode.Create;
 Material1039.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1038.Material := Material1039;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1037.Appearance := Appearance1038;
 Extrusion1040 := TExtrusionNode.Create;
 Extrusion1040.SetSpine([Vector3(0.1924,0.8472,-0.0534),Vector3(0.1951,0.8226,0.0246)]);
+end;
+
+procedure InitStandardHumanoidPart67;
+begin
+
 Extrusion1040.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1037.Geometry := Extrusion1040;
-{ .AddChildren }
-HAnimSegment1031.AddChildren([Shape1037]);
-{ .AddChildren }
-HAnimJoint1030.AddChildren([HAnimSegment1031]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1031.FdChildren.Add(Shape1037);
+{ METHOD .FdChildren.Add }
+HAnimJoint1030.FdChildren.Add(HAnimSegment1031);
 HAnimJoint1041 := THAnimJointNode.Create;
-HAnimJoint1041.NameField := 'l_metacarpophalangeal_1';
 HAnimJoint1041.Center := Vector3(0.1951,0.8226,0.0246);
 HAnimSegment1042 := THAnimSegmentNode.Create;
-HAnimSegment1042.NameField := 'l_carpal_proximal_phalanx_1';
 Transform1043 := TTransformNode.Create;
 Transform1043.Translation := Vector3(0.1951,0.8226,0.0246);
 Transform1044 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor1045 := TTouchSensorNode.Create;
 TouchSensor1045.Description := 'Joint l_metacarpophalangeal_1';
-{ .AddChildren }
-Transform1044.AddChildren([TouchSensor1045]);
-Shape1046 := Shape20;
-{ .AddChild }
-Transform1044.AddChildren([Shape1046]);
-{ .AddChildren }
-Transform1043.AddChildren([Transform1044]);
-{ .AddChildren }
-HAnimSegment1042.AddChildren([Transform1043]);
+{ METHOD .FdChildren.Add }
+Transform1044.FdChildren.Add(TouchSensor1045);
+{ METHOD .FdChildren.Add }
+Transform1044.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform1043.FdChildren.Add(Transform1044);
+{ METHOD .FdChildren.Add }
+HAnimSegment1042.FdChildren.Add(Transform1043);
 TouchSensor1047 := TTouchSensorNode.Create;
 TouchSensor1047.Description := 'Segment l_carpal_proximal_phalanx_1';
-{ .AddChildren }
-HAnimSegment1042.AddChildren([TouchSensor1047]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1042.FdChildren.Add(TouchSensor1047);
 Shape1048 := TShapeNode.Create;
 Appearance1049 := TAppearanceNode.Create;
 Material1050 := TMaterialNode.Create;
 Material1050.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1049.Material := Material1050;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1048.Appearance := Appearance1049;
 Extrusion1051 := TExtrusionNode.Create;
 Extrusion1051.SetSpine([Vector3(0.1951,0.8226,0.0246),Vector3(0.1955,0.8159,0.0464)]);
 Extrusion1051.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1048.Geometry := Extrusion1051;
-{ .AddChildren }
-HAnimSegment1042.AddChildren([Shape1048]);
-{ .AddChildren }
-HAnimJoint1041.AddChildren([HAnimSegment1042]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1042.FdChildren.Add(Shape1048);
+{ METHOD .FdChildren.Add }
+HAnimJoint1041.FdChildren.Add(HAnimSegment1042);
 HAnimJoint1052 := THAnimJointNode.Create;
-HAnimJoint1052.NameField := 'l_carpal_interphalangeal_1';
 HAnimJoint1052.Center := Vector3(0.1955,0.8159,0.0464);
-{ .AddChildren }
-HAnimJoint1041.AddChildren([HAnimJoint1052]);
-{ .AddChildren }
-HAnimJoint1030.AddChildren([HAnimJoint1041]);
-{ .AddChildren }
-HAnimJoint1019.AddChildren([HAnimJoint1030]);
-{ .AddChildren }
-HAnimJoint993.AddChildren([HAnimJoint1019]);
+{ METHOD .FdChildren.Add }
+HAnimJoint1041.FdChildren.Add(HAnimJoint1052);
+{ METHOD .FdChildren.Add }
+HAnimJoint1030.FdChildren.Add(HAnimJoint1041);
+{ METHOD .FdChildren.Add }
+HAnimJoint1019.FdChildren.Add(HAnimJoint1030);
+{ METHOD .FdChildren.Add }
+HAnimJoint993.FdChildren.Add(HAnimJoint1019);
 HAnimJoint1053 := THAnimJointNode.Create;
-HAnimJoint1053.NameField := 'l_midcarpal_2';
 HAnimJoint1053.Center := Vector3(0.1811,0.6984,-0.0935);
 HAnimSegment1054 := THAnimSegmentNode.Create;
-HAnimSegment1054.NameField := 'l_trapezoid';
+end;
+
+procedure InitStandardHumanoidPart68;
+begin
+
 Transform1055 := TTransformNode.Create;
 Transform1055.Translation := Vector3(0.1811,0.6984,-0.0935);
 Transform1056 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor1057 := TTouchSensorNode.Create;
 TouchSensor1057.Description := 'Joint l_midcarpal_2';
-{ .AddChildren }
-Transform1056.AddChildren([TouchSensor1057]);
-Shape1058 := Shape20;
-{ .AddChild }
-Transform1056.AddChildren([Shape1058]);
-{ .AddChildren }
-Transform1055.AddChildren([Transform1056]);
-{ .AddChildren }
-HAnimSegment1054.AddChildren([Transform1055]);
+{ METHOD .FdChildren.Add }
+Transform1056.FdChildren.Add(TouchSensor1057);
+{ METHOD .FdChildren.Add }
+Transform1056.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform1055.FdChildren.Add(Transform1056);
+{ METHOD .FdChildren.Add }
+HAnimSegment1054.FdChildren.Add(Transform1055);
 TouchSensor1059 := TTouchSensorNode.Create;
 TouchSensor1059.Description := 'Segment l_trapezoid';
-{ .AddChildren }
-HAnimSegment1054.AddChildren([TouchSensor1059]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1054.FdChildren.Add(TouchSensor1059);
 Shape1060 := TShapeNode.Create;
 Appearance1061 := TAppearanceNode.Create;
 Material1062 := TMaterialNode.Create;
 Material1062.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1061.Material := Material1062;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1060.Appearance := Appearance1061;
 Extrusion1063 := TExtrusionNode.Create;
 Extrusion1063.SetSpine([Vector3(0.1811,0.6984,-0.0935),Vector3(0.1983,0.8024,-0.028)]);
 Extrusion1063.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1060.Geometry := Extrusion1063;
-{ .AddChildren }
-HAnimSegment1054.AddChildren([Shape1060]);
-{ .AddChildren }
-HAnimJoint1053.AddChildren([HAnimSegment1054]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1054.FdChildren.Add(Shape1060);
+{ METHOD .FdChildren.Add }
+HAnimJoint1053.FdChildren.Add(HAnimSegment1054);
 HAnimJoint1064 := THAnimJointNode.Create;
-HAnimJoint1064.NameField := 'l_carpometacarpal_2';
 HAnimJoint1064.Center := Vector3(0.1983,0.8024,-0.028);
 HAnimSegment1065 := THAnimSegmentNode.Create;
-HAnimSegment1065.NameField := 'l_metacarpal_2';
 Transform1066 := TTransformNode.Create;
 Transform1066.Translation := Vector3(0.1983,0.8024,-0.028);
 Transform1067 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor1068 := TTouchSensorNode.Create;
 TouchSensor1068.Description := 'Joint l_carpometacarpal_2';
-{ .AddChildren }
-Transform1067.AddChildren([TouchSensor1068]);
-Shape1069 := Shape20;
-{ .AddChild }
-Transform1067.AddChildren([Shape1069]);
-{ .AddChildren }
-Transform1066.AddChildren([Transform1067]);
-{ .AddChildren }
-HAnimSegment1065.AddChildren([Transform1066]);
+{ METHOD .FdChildren.Add }
+Transform1067.FdChildren.Add(TouchSensor1068);
+{ METHOD .FdChildren.Add }
+Transform1067.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform1066.FdChildren.Add(Transform1067);
+{ METHOD .FdChildren.Add }
+HAnimSegment1065.FdChildren.Add(Transform1066);
 TouchSensor1070 := TTouchSensorNode.Create;
 TouchSensor1070.Description := 'Segment l_metacarpal_2';
-{ .AddChildren }
-HAnimSegment1065.AddChildren([TouchSensor1070]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1065.FdChildren.Add(TouchSensor1070);
 Shape1071 := TShapeNode.Create;
+end;
+
+procedure InitStandardHumanoidPart69;
+begin
+
 Appearance1072 := TAppearanceNode.Create;
 Material1073 := TMaterialNode.Create;
 Material1073.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1072.Material := Material1073;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1071.Appearance := Appearance1072;
 Extrusion1074 := TExtrusionNode.Create;
 Extrusion1074.SetSpine([Vector3(0.1983,0.8024,-0.028),Vector3(0.1983,0.7815,-0.028)]);
 Extrusion1074.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1071.Geometry := Extrusion1074;
-{ .AddChildren }
-HAnimSegment1065.AddChildren([Shape1071]);
-{ .AddChildren }
-HAnimJoint1064.AddChildren([HAnimSegment1065]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1065.FdChildren.Add(Shape1071);
+{ METHOD .FdChildren.Add }
+HAnimJoint1064.FdChildren.Add(HAnimSegment1065);
 HAnimJoint1075 := THAnimJointNode.Create;
-HAnimJoint1075.NameField := 'l_metacarpophalangeal_2';
 HAnimJoint1075.Center := Vector3(0.1983,0.7815,-0.028);
 HAnimSegment1076 := THAnimSegmentNode.Create;
-HAnimSegment1076.NameField := 'l_carpal_proximal_phalanx_2';
 Transform1077 := TTransformNode.Create;
 Transform1077.Translation := Vector3(0.1983,0.7815,-0.028);
 Transform1078 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor1079 := TTouchSensorNode.Create;
 TouchSensor1079.Description := 'Joint l_metacarpophalangeal_2';
-{ .AddChildren }
-Transform1078.AddChildren([TouchSensor1079]);
-Shape1080 := Shape20;
-{ .AddChild }
-Transform1078.AddChildren([Shape1080]);
-{ .AddChildren }
-Transform1077.AddChildren([Transform1078]);
-{ .AddChildren }
-HAnimSegment1076.AddChildren([Transform1077]);
+{ METHOD .FdChildren.Add }
+Transform1078.FdChildren.Add(TouchSensor1079);
+{ METHOD .FdChildren.Add }
+Transform1078.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform1077.FdChildren.Add(Transform1078);
+{ METHOD .FdChildren.Add }
+HAnimSegment1076.FdChildren.Add(Transform1077);
 TouchSensor1081 := TTouchSensorNode.Create;
 TouchSensor1081.Description := 'Segment l_carpal_proximal_phalanx_2';
-{ .AddChildren }
-HAnimSegment1076.AddChildren([TouchSensor1081]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1076.FdChildren.Add(TouchSensor1081);
 Shape1082 := TShapeNode.Create;
 Appearance1083 := TAppearanceNode.Create;
 Material1084 := TMaterialNode.Create;
 Material1084.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1083.Material := Material1084;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1082.Appearance := Appearance1083;
 Extrusion1085 := TExtrusionNode.Create;
 Extrusion1085.SetSpine([Vector3(0.1983,0.7815,-0.028),Vector3(0.2017,0.7363,-0.0248)]);
 Extrusion1085.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1082.Geometry := Extrusion1085;
-{ .AddChildren }
-HAnimSegment1076.AddChildren([Shape1082]);
-{ .AddChildren }
-HAnimJoint1075.AddChildren([HAnimSegment1076]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1076.FdChildren.Add(Shape1082);
+{ METHOD .FdChildren.Add }
+HAnimJoint1075.FdChildren.Add(HAnimSegment1076);
 HAnimJoint1086 := THAnimJointNode.Create;
-HAnimJoint1086.NameField := 'l_carpal_proximal_interphalangeal_2';
 HAnimJoint1086.Center := Vector3(0.2017,0.7363,-0.0248);
+end;
+
+procedure InitStandardHumanoidPart70;
+begin
+
 HAnimSegment1087 := THAnimSegmentNode.Create;
-HAnimSegment1087.NameField := 'l_carpal_middle_phalanx_2';
 Transform1088 := TTransformNode.Create;
 Transform1088.Translation := Vector3(0.2017,0.7363,-0.0248);
 Transform1089 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor1090 := TTouchSensorNode.Create;
 TouchSensor1090.Description := 'Joint l_carpal_proximal_interphalangeal_2';
-{ .AddChildren }
-Transform1089.AddChildren([TouchSensor1090]);
-Shape1091 := Shape20;
-{ .AddChild }
-Transform1089.AddChildren([Shape1091]);
-{ .AddChildren }
-Transform1088.AddChildren([Transform1089]);
-{ .AddChildren }
-HAnimSegment1087.AddChildren([Transform1088]);
+{ METHOD .FdChildren.Add }
+Transform1089.FdChildren.Add(TouchSensor1090);
+{ METHOD .FdChildren.Add }
+Transform1089.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform1088.FdChildren.Add(Transform1089);
+{ METHOD .FdChildren.Add }
+HAnimSegment1087.FdChildren.Add(Transform1088);
 TouchSensor1092 := TTouchSensorNode.Create;
 TouchSensor1092.Description := 'Segment l_carpal_middle_phalanx_2';
-{ .AddChildren }
-HAnimSegment1087.AddChildren([TouchSensor1092]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1087.FdChildren.Add(TouchSensor1092);
 Shape1093 := TShapeNode.Create;
 Appearance1094 := TAppearanceNode.Create;
 Material1095 := TMaterialNode.Create;
 Material1095.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1094.Material := Material1095;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1093.Appearance := Appearance1094;
 Extrusion1096 := TExtrusionNode.Create;
 Extrusion1096.SetSpine([Vector3(0.2017,0.7363,-0.0248),Vector3(0.2028,0.7139,-0.0236)]);
 Extrusion1096.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1093.Geometry := Extrusion1096;
-{ .AddChildren }
-HAnimSegment1087.AddChildren([Shape1093]);
-{ .AddChildren }
-HAnimJoint1086.AddChildren([HAnimSegment1087]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1087.FdChildren.Add(Shape1093);
+{ METHOD .FdChildren.Add }
+HAnimJoint1086.FdChildren.Add(HAnimSegment1087);
 HAnimJoint1097 := THAnimJointNode.Create;
-HAnimJoint1097.NameField := 'l_carpal_distal_interphalangeal_2';
 HAnimJoint1097.Center := Vector3(0.2028,0.7139,-0.0236);
-{ .AddChildren }
-HAnimJoint1086.AddChildren([HAnimJoint1097]);
-{ .AddChildren }
-HAnimJoint1075.AddChildren([HAnimJoint1086]);
-{ .AddChildren }
-HAnimJoint1064.AddChildren([HAnimJoint1075]);
-{ .AddChildren }
-HAnimJoint1053.AddChildren([HAnimJoint1064]);
-{ .AddChildren }
-HAnimJoint993.AddChildren([HAnimJoint1053]);
+{ METHOD .FdChildren.Add }
+HAnimJoint1086.FdChildren.Add(HAnimJoint1097);
+{ METHOD .FdChildren.Add }
+HAnimJoint1075.FdChildren.Add(HAnimJoint1086);
+{ METHOD .FdChildren.Add }
+HAnimJoint1064.FdChildren.Add(HAnimJoint1075);
+{ METHOD .FdChildren.Add }
+HAnimJoint1053.FdChildren.Add(HAnimJoint1064);
+{ METHOD .FdChildren.Add }
+HAnimJoint993.FdChildren.Add(HAnimJoint1053);
 HAnimJoint1098 := THAnimJointNode.Create;
-HAnimJoint1098.NameField := 'l_midcarpal_3';
 HAnimJoint1098.Center := Vector3(0.1809,0.7,-0.1067);
 HAnimSegment1099 := THAnimSegmentNode.Create;
-HAnimSegment1099.NameField := 'l_capitate';
 Transform1100 := TTransformNode.Create;
 Transform1100.Translation := Vector3(0.1809,0.7,-0.1067);
 Transform1101 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor1102 := TTouchSensorNode.Create;
 TouchSensor1102.Description := 'Joint l_midcarpal_3';
-{ .AddChildren }
-Transform1101.AddChildren([TouchSensor1102]);
-Shape1103 := Shape20;
-{ .AddChild }
-Transform1101.AddChildren([Shape1103]);
-{ .AddChildren }
-Transform1100.AddChildren([Transform1101]);
-{ .AddChildren }
-HAnimSegment1099.AddChildren([Transform1100]);
+end;
+
+procedure InitStandardHumanoidPart71;
+begin
+
+{ METHOD .FdChildren.Add }
+Transform1101.FdChildren.Add(TouchSensor1102);
+{ METHOD .FdChildren.Add }
+Transform1101.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform1100.FdChildren.Add(Transform1101);
+{ METHOD .FdChildren.Add }
+HAnimSegment1099.FdChildren.Add(Transform1100);
 TouchSensor1104 := TTouchSensorNode.Create;
 TouchSensor1104.Description := 'Segment l_capitate';
-{ .AddChildren }
-HAnimSegment1099.AddChildren([TouchSensor1104]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1099.FdChildren.Add(TouchSensor1104);
 Shape1105 := TShapeNode.Create;
 Appearance1106 := TAppearanceNode.Create;
 Material1107 := TMaterialNode.Create;
 Material1107.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1106.Material := Material1107;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1105.Appearance := Appearance1106;
 Extrusion1108 := TExtrusionNode.Create;
 Extrusion1108.SetSpine([Vector3(0.1809,0.7,-0.1067),Vector3(0.1987,0.8029,-0.053)]);
 Extrusion1108.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1105.Geometry := Extrusion1108;
-{ .AddChildren }
-HAnimSegment1099.AddChildren([Shape1105]);
-{ .AddChildren }
-HAnimJoint1098.AddChildren([HAnimSegment1099]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1099.FdChildren.Add(Shape1105);
+{ METHOD .FdChildren.Add }
+HAnimJoint1098.FdChildren.Add(HAnimSegment1099);
 HAnimJoint1109 := THAnimJointNode.Create;
-HAnimJoint1109.NameField := 'l_carpometacarpal_3';
 HAnimJoint1109.Center := Vector3(0.1987,0.8029,-0.053);
 HAnimSegment1110 := THAnimSegmentNode.Create;
-HAnimSegment1110.NameField := 'l_metacarpal_3';
 Transform1111 := TTransformNode.Create;
 Transform1111.Translation := Vector3(0.1987,0.8029,-0.053);
 Transform1112 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor1113 := TTouchSensorNode.Create;
 TouchSensor1113.Description := 'Joint l_carpometacarpal_3';
-{ .AddChildren }
-Transform1112.AddChildren([TouchSensor1113]);
-Shape1114 := Shape20;
-{ .AddChild }
-Transform1112.AddChildren([Shape1114]);
-{ .AddChildren }
-Transform1111.AddChildren([Transform1112]);
-{ .AddChildren }
-HAnimSegment1110.AddChildren([Transform1111]);
+{ METHOD .FdChildren.Add }
+Transform1112.FdChildren.Add(TouchSensor1113);
+{ METHOD .FdChildren.Add }
+Transform1112.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform1111.FdChildren.Add(Transform1112);
+{ METHOD .FdChildren.Add }
+HAnimSegment1110.FdChildren.Add(Transform1111);
 TouchSensor1115 := TTouchSensorNode.Create;
 TouchSensor1115.Description := 'Segment l_metacarpal_3';
-{ .AddChildren }
-HAnimSegment1110.AddChildren([TouchSensor1115]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1110.FdChildren.Add(TouchSensor1115);
 Shape1116 := TShapeNode.Create;
 Appearance1117 := TAppearanceNode.Create;
 Material1118 := TMaterialNode.Create;
 Material1118.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1117.Material := Material1118;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1116.Appearance := Appearance1117;
+end;
+
+procedure InitStandardHumanoidPart72;
+begin
+
 Extrusion1119 := TExtrusionNode.Create;
 Extrusion1119.SetSpine([Vector3(0.1987,0.8029,-0.053),Vector3(0.1987,0.7818,-0.053)]);
 Extrusion1119.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1116.Geometry := Extrusion1119;
-{ .AddChildren }
-HAnimSegment1110.AddChildren([Shape1116]);
-{ .AddChildren }
-HAnimJoint1109.AddChildren([HAnimSegment1110]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1110.FdChildren.Add(Shape1116);
+{ METHOD .FdChildren.Add }
+HAnimJoint1109.FdChildren.Add(HAnimSegment1110);
 HAnimJoint1120 := THAnimJointNode.Create;
-HAnimJoint1120.NameField := 'l_metacarpophalangeal_3';
 HAnimJoint1120.Center := Vector3(0.1987,0.7818,-0.053);
 HAnimSegment1121 := THAnimSegmentNode.Create;
-HAnimSegment1121.NameField := 'l_carpal_proximal_phalanx_3';
 Transform1122 := TTransformNode.Create;
 Transform1122.Translation := Vector3(0.1987,0.7818,-0.053);
 Transform1123 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor1124 := TTouchSensorNode.Create;
 TouchSensor1124.Description := 'Joint l_metacarpophalangeal_3';
-{ .AddChildren }
-Transform1123.AddChildren([TouchSensor1124]);
-Shape1125 := Shape20;
-{ .AddChild }
-Transform1123.AddChildren([Shape1125]);
-{ .AddChildren }
-Transform1122.AddChildren([Transform1123]);
-{ .AddChildren }
-HAnimSegment1121.AddChildren([Transform1122]);
+{ METHOD .FdChildren.Add }
+Transform1123.FdChildren.Add(TouchSensor1124);
+{ METHOD .FdChildren.Add }
+Transform1123.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform1122.FdChildren.Add(Transform1123);
+{ METHOD .FdChildren.Add }
+HAnimSegment1121.FdChildren.Add(Transform1122);
 TouchSensor1126 := TTouchSensorNode.Create;
 TouchSensor1126.Description := 'Segment l_carpal_proximal_phalanx_3';
-{ .AddChildren }
-HAnimSegment1121.AddChildren([TouchSensor1126]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1121.FdChildren.Add(TouchSensor1126);
 Shape1127 := TShapeNode.Create;
 Appearance1128 := TAppearanceNode.Create;
 Material1129 := TMaterialNode.Create;
 Material1129.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1128.Material := Material1129;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1127.Appearance := Appearance1128;
 Extrusion1130 := TExtrusionNode.Create;
 Extrusion1130.SetSpine([Vector3(0.1987,0.7818,-0.053),Vector3(0.2013,0.7273,-0.0503)]);
 Extrusion1130.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1127.Geometry := Extrusion1130;
-{ .AddChildren }
-HAnimSegment1121.AddChildren([Shape1127]);
-{ .AddChildren }
-HAnimJoint1120.AddChildren([HAnimSegment1121]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1121.FdChildren.Add(Shape1127);
+{ METHOD .FdChildren.Add }
+HAnimJoint1120.FdChildren.Add(HAnimSegment1121);
 HAnimJoint1131 := THAnimJointNode.Create;
-HAnimJoint1131.NameField := 'l_carpal_proximal_interphalangeal_3';
 HAnimJoint1131.Center := Vector3(0.2013,0.7273,-0.0503);
 HAnimSegment1132 := THAnimSegmentNode.Create;
-HAnimSegment1132.NameField := 'l_carpal_middle_phalanx_3';
 Transform1133 := TTransformNode.Create;
 Transform1133.Translation := Vector3(0.2013,0.7273,-0.0503);
 Transform1134 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor1135 := TTouchSensorNode.Create;
+end;
+
+procedure InitStandardHumanoidPart73;
+begin
+
 TouchSensor1135.Description := 'Joint l_carpal_proximal_interphalangeal_3';
-{ .AddChildren }
-Transform1134.AddChildren([TouchSensor1135]);
-Shape1136 := Shape20;
-{ .AddChild }
-Transform1134.AddChildren([Shape1136]);
-{ .AddChildren }
-Transform1133.AddChildren([Transform1134]);
-{ .AddChildren }
-HAnimSegment1132.AddChildren([Transform1133]);
+{ METHOD .FdChildren.Add }
+Transform1134.FdChildren.Add(TouchSensor1135);
+{ METHOD .FdChildren.Add }
+Transform1134.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform1133.FdChildren.Add(Transform1134);
+{ METHOD .FdChildren.Add }
+HAnimSegment1132.FdChildren.Add(Transform1133);
 TouchSensor1137 := TTouchSensorNode.Create;
 TouchSensor1137.Description := 'Segment l_carpal_middle_phalanx_3';
-{ .AddChildren }
-HAnimSegment1132.AddChildren([TouchSensor1137]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1132.FdChildren.Add(TouchSensor1137);
 Shape1138 := TShapeNode.Create;
 Appearance1139 := TAppearanceNode.Create;
 Material1140 := TMaterialNode.Create;
 Material1140.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1139.Material := Material1140;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1138.Appearance := Appearance1139;
 Extrusion1141 := TExtrusionNode.Create;
 Extrusion1141.SetSpine([Vector3(0.2013,0.7273,-0.0503),Vector3(0.2026,0.7011,-0.0494)]);
 Extrusion1141.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1138.Geometry := Extrusion1141;
-{ .AddChildren }
-HAnimSegment1132.AddChildren([Shape1138]);
-{ .AddChildren }
-HAnimJoint1131.AddChildren([HAnimSegment1132]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1132.FdChildren.Add(Shape1138);
+{ METHOD .FdChildren.Add }
+HAnimJoint1131.FdChildren.Add(HAnimSegment1132);
 HAnimJoint1142 := THAnimJointNode.Create;
-HAnimJoint1142.NameField := 'l_carpal_distal_interphalangeal_3';
 HAnimJoint1142.Center := Vector3(0.2026,0.7011,-0.0494);
-{ .AddChildren }
-HAnimJoint1131.AddChildren([HAnimJoint1142]);
-{ .AddChildren }
-HAnimJoint1120.AddChildren([HAnimJoint1131]);
-{ .AddChildren }
-HAnimJoint1109.AddChildren([HAnimJoint1120]);
-{ .AddChildren }
-HAnimJoint1098.AddChildren([HAnimJoint1109]);
-{ .AddChildren }
-HAnimJoint993.AddChildren([HAnimJoint1098]);
+{ METHOD .FdChildren.Add }
+HAnimJoint1131.FdChildren.Add(HAnimJoint1142);
+{ METHOD .FdChildren.Add }
+HAnimJoint1120.FdChildren.Add(HAnimJoint1131);
+{ METHOD .FdChildren.Add }
+HAnimJoint1109.FdChildren.Add(HAnimJoint1120);
+{ METHOD .FdChildren.Add }
+HAnimJoint1098.FdChildren.Add(HAnimJoint1109);
+{ METHOD .FdChildren.Add }
+HAnimJoint993.FdChildren.Add(HAnimJoint1098);
 HAnimJoint1143 := THAnimJointNode.Create;
-HAnimJoint1143.NameField := 'l_midcarpal_4_5';
 HAnimJoint1143.Center := Vector3(0.1809,0.6973,-0.1276);
 HAnimSegment1144 := THAnimSegmentNode.Create;
-HAnimSegment1144.NameField := 'l_hamate';
 Transform1145 := TTransformNode.Create;
 Transform1145.Translation := Vector3(0.1809,0.6973,-0.1276);
 Transform1146 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor1147 := TTouchSensorNode.Create;
 TouchSensor1147.Description := 'Joint l_midcarpal_4_5';
-{ .AddChildren }
-Transform1146.AddChildren([TouchSensor1147]);
-Shape1148 := Shape20;
-{ .AddChild }
-Transform1146.AddChildren([Shape1148]);
-{ .AddChildren }
-Transform1145.AddChildren([Transform1146]);
-{ .AddChildren }
-HAnimSegment1144.AddChildren([Transform1145]);
+{ METHOD .FdChildren.Add }
+Transform1146.FdChildren.Add(TouchSensor1147);
+{ METHOD .FdChildren.Add }
+Transform1146.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform1145.FdChildren.Add(Transform1146);
+{ METHOD .FdChildren.Add }
+HAnimSegment1144.FdChildren.Add(Transform1145);
 TouchSensor1149 := TTouchSensorNode.Create;
+end;
+
+procedure InitStandardHumanoidPart74;
+begin
+
 TouchSensor1149.Description := 'Segment l_hamate';
-{ .AddChildren }
-HAnimSegment1144.AddChildren([TouchSensor1149]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1144.FdChildren.Add(TouchSensor1149);
 Shape1150 := TShapeNode.Create;
 Appearance1151 := TAppearanceNode.Create;
 Material1152 := TMaterialNode.Create;
 Material1152.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1151.Material := Material1152;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1150.Appearance := Appearance1151;
 Extrusion1153 := TExtrusionNode.Create;
 Extrusion1153.SetSpine([Vector3(0.1809,0.6973,-0.1276),Vector3(0.1956,0.8019,-0.0794)]);
 Extrusion1153.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1150.Geometry := Extrusion1153;
-{ .AddChildren }
-HAnimSegment1144.AddChildren([Shape1150]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1144.FdChildren.Add(Shape1150);
 TouchSensor1154 := TTouchSensorNode.Create;
 TouchSensor1154.Description := 'Segment l_hamate';
-{ .AddChildren }
-HAnimSegment1144.AddChildren([TouchSensor1154]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1144.FdChildren.Add(TouchSensor1154);
 Shape1155 := TShapeNode.Create;
 Appearance1156 := TAppearanceNode.Create;
 Material1157 := TMaterialNode.Create;
 Material1157.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1156.Material := Material1157;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1155.Appearance := Appearance1156;
 Extrusion1158 := TExtrusionNode.Create;
 Extrusion1158.SetSpine([Vector3(0.1809,0.6973,-0.1276),Vector3(0.1925,0.8066,-0.1036)]);
 Extrusion1158.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1155.Geometry := Extrusion1158;
-{ .AddChildren }
-HAnimSegment1144.AddChildren([Shape1155]);
-{ .AddChildren }
-HAnimJoint1143.AddChildren([HAnimSegment1144]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1144.FdChildren.Add(Shape1155);
+{ METHOD .FdChildren.Add }
+HAnimJoint1143.FdChildren.Add(HAnimSegment1144);
 HAnimJoint1159 := THAnimJointNode.Create;
-HAnimJoint1159.NameField := 'l_carpometacarpal_4';
 HAnimJoint1159.Center := Vector3(0.1956,0.8019,-0.0794);
 HAnimSegment1160 := THAnimSegmentNode.Create;
-HAnimSegment1160.NameField := 'l_metacarpal_4';
 Transform1161 := TTransformNode.Create;
 Transform1161.Translation := Vector3(0.1956,0.8019,-0.0794);
 Transform1162 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor1163 := TTouchSensorNode.Create;
 TouchSensor1163.Description := 'Joint l_carpometacarpal_4';
-{ .AddChildren }
-Transform1162.AddChildren([TouchSensor1163]);
-Shape1164 := Shape20;
-{ .AddChild }
-Transform1162.AddChildren([Shape1164]);
-{ .AddChildren }
-Transform1161.AddChildren([Transform1162]);
-{ .AddChildren }
-HAnimSegment1160.AddChildren([Transform1161]);
+{ METHOD .FdChildren.Add }
+Transform1162.FdChildren.Add(TouchSensor1163);
+{ METHOD .FdChildren.Add }
+Transform1162.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform1161.FdChildren.Add(Transform1162);
+{ METHOD .FdChildren.Add }
+HAnimSegment1160.FdChildren.Add(Transform1161);
+end;
+
+procedure InitStandardHumanoidPart75;
+begin
+
 TouchSensor1165 := TTouchSensorNode.Create;
 TouchSensor1165.Description := 'Segment l_metacarpal_4';
-{ .AddChildren }
-HAnimSegment1160.AddChildren([TouchSensor1165]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1160.FdChildren.Add(TouchSensor1165);
 Shape1166 := TShapeNode.Create;
 Appearance1167 := TAppearanceNode.Create;
 Material1168 := TMaterialNode.Create;
 Material1168.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1167.Material := Material1168;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1166.Appearance := Appearance1167;
 Extrusion1169 := TExtrusionNode.Create;
 Extrusion1169.SetSpine([Vector3(0.1956,0.8019,-0.0794),Vector3(0.1956,0.7815,-0.0794)]);
 Extrusion1169.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1166.Geometry := Extrusion1169;
-{ .AddChildren }
-HAnimSegment1160.AddChildren([Shape1166]);
-{ .AddChildren }
-HAnimJoint1159.AddChildren([HAnimSegment1160]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1160.FdChildren.Add(Shape1166);
+{ METHOD .FdChildren.Add }
+HAnimJoint1159.FdChildren.Add(HAnimSegment1160);
 HAnimJoint1170 := THAnimJointNode.Create;
-HAnimJoint1170.NameField := 'l_metacarpophalangeal_4';
 HAnimJoint1170.Center := Vector3(0.1956,0.7815,-0.0794);
 HAnimSegment1171 := THAnimSegmentNode.Create;
-HAnimSegment1171.NameField := 'l_carpal_proximal_phalanx_4';
 Transform1172 := TTransformNode.Create;
 Transform1172.Translation := Vector3(0.1956,0.7815,-0.0794);
 Transform1173 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor1174 := TTouchSensorNode.Create;
 TouchSensor1174.Description := 'Joint l_metacarpophalangeal_4';
-{ .AddChildren }
-Transform1173.AddChildren([TouchSensor1174]);
-Shape1175 := Shape20;
-{ .AddChild }
-Transform1173.AddChildren([Shape1175]);
-{ .AddChildren }
-Transform1172.AddChildren([Transform1173]);
-{ .AddChildren }
-HAnimSegment1171.AddChildren([Transform1172]);
+{ METHOD .FdChildren.Add }
+Transform1173.FdChildren.Add(TouchSensor1174);
+{ METHOD .FdChildren.Add }
+Transform1173.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform1172.FdChildren.Add(Transform1173);
+{ METHOD .FdChildren.Add }
+HAnimSegment1171.FdChildren.Add(Transform1172);
 TouchSensor1176 := TTouchSensorNode.Create;
 TouchSensor1176.Description := 'Segment l_carpal_proximal_phalanx_4';
-{ .AddChildren }
-HAnimSegment1171.AddChildren([TouchSensor1176]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1171.FdChildren.Add(TouchSensor1176);
 Shape1177 := TShapeNode.Create;
 Appearance1178 := TAppearanceNode.Create;
 Material1179 := TMaterialNode.Create;
 Material1179.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1178.Material := Material1179;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1177.Appearance := Appearance1178;
 Extrusion1180 := TExtrusionNode.Create;
 Extrusion1180.SetSpine([Vector3(0.1956,0.7815,-0.0794),Vector3(0.1973,0.7287,-0.0777)]);
 Extrusion1180.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1177.Geometry := Extrusion1180;
-{ .AddChildren }
-HAnimSegment1171.AddChildren([Shape1177]);
-{ .AddChildren }
-HAnimJoint1170.AddChildren([HAnimSegment1171]);
+end;
+
+procedure InitStandardHumanoidPart76;
+begin
+
+{ METHOD .FdChildren.Add }
+HAnimSegment1171.FdChildren.Add(Shape1177);
+{ METHOD .FdChildren.Add }
+HAnimJoint1170.FdChildren.Add(HAnimSegment1171);
 HAnimJoint1181 := THAnimJointNode.Create;
-HAnimJoint1181.NameField := 'l_carpal_proximal_interphalangeal_4';
 HAnimJoint1181.Center := Vector3(0.1973,0.7287,-0.0777);
 HAnimSegment1182 := THAnimSegmentNode.Create;
-HAnimSegment1182.NameField := 'l_carpal_middle_phalanx_4';
 Transform1183 := TTransformNode.Create;
 Transform1183.Translation := Vector3(0.1973,0.7287,-0.0777);
 Transform1184 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor1185 := TTouchSensorNode.Create;
 TouchSensor1185.Description := 'Joint l_carpal_proximal_interphalangeal_4';
-{ .AddChildren }
-Transform1184.AddChildren([TouchSensor1185]);
-Shape1186 := Shape20;
-{ .AddChild }
-Transform1184.AddChildren([Shape1186]);
-{ .AddChildren }
-Transform1183.AddChildren([Transform1184]);
-{ .AddChildren }
-HAnimSegment1182.AddChildren([Transform1183]);
+{ METHOD .FdChildren.Add }
+Transform1184.FdChildren.Add(TouchSensor1185);
+{ METHOD .FdChildren.Add }
+Transform1184.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform1183.FdChildren.Add(Transform1184);
+{ METHOD .FdChildren.Add }
+HAnimSegment1182.FdChildren.Add(Transform1183);
 TouchSensor1187 := TTouchSensorNode.Create;
 TouchSensor1187.Description := 'Segment l_carpal_middle_phalanx_4';
-{ .AddChildren }
-HAnimSegment1182.AddChildren([TouchSensor1187]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1182.FdChildren.Add(TouchSensor1187);
 Shape1188 := TShapeNode.Create;
 Appearance1189 := TAppearanceNode.Create;
 Material1190 := TMaterialNode.Create;
 Material1190.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1189.Material := Material1190;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1188.Appearance := Appearance1189;
 Extrusion1191 := TExtrusionNode.Create;
 Extrusion1191.SetSpine([Vector3(0.1973,0.7287,-0.0777),Vector3(0.1983,0.7045,-0.0767)]);
 Extrusion1191.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1188.Geometry := Extrusion1191;
-{ .AddChildren }
-HAnimSegment1182.AddChildren([Shape1188]);
-{ .AddChildren }
-HAnimJoint1181.AddChildren([HAnimSegment1182]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1182.FdChildren.Add(Shape1188);
+{ METHOD .FdChildren.Add }
+HAnimJoint1181.FdChildren.Add(HAnimSegment1182);
 HAnimJoint1192 := THAnimJointNode.Create;
-HAnimJoint1192.NameField := 'l_carpal_distal_interphalangeal_4';
 HAnimJoint1192.Center := Vector3(0.1983,0.7045,-0.0767);
-{ .AddChildren }
-HAnimJoint1181.AddChildren([HAnimJoint1192]);
-{ .AddChildren }
-HAnimJoint1170.AddChildren([HAnimJoint1181]);
-{ .AddChildren }
-HAnimJoint1159.AddChildren([HAnimJoint1170]);
-{ .AddChildren }
-HAnimJoint1143.AddChildren([HAnimJoint1159]);
+{ METHOD .FdChildren.Add }
+HAnimJoint1181.FdChildren.Add(HAnimJoint1192);
+{ METHOD .FdChildren.Add }
+HAnimJoint1170.FdChildren.Add(HAnimJoint1181);
+{ METHOD .FdChildren.Add }
+HAnimJoint1159.FdChildren.Add(HAnimJoint1170);
+{ METHOD .FdChildren.Add }
+HAnimJoint1143.FdChildren.Add(HAnimJoint1159);
 HAnimJoint1193 := THAnimJointNode.Create;
-HAnimJoint1193.NameField := 'l_carpometacarpal_5';
 HAnimJoint1193.Center := Vector3(0.1925,0.8066,-0.1036);
 HAnimSegment1194 := THAnimSegmentNode.Create;
-HAnimSegment1194.NameField := 'l_metacarpal_5';
 Transform1195 := TTransformNode.Create;
 Transform1195.Translation := Vector3(0.1925,0.8066,-0.1036);
+end;
+
+procedure InitStandardHumanoidPart77;
+begin
+
 Transform1196 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor1197 := TTouchSensorNode.Create;
 TouchSensor1197.Description := 'Joint l_carpometacarpal_5';
-{ .AddChildren }
-Transform1196.AddChildren([TouchSensor1197]);
-Shape1198 := Shape20;
-{ .AddChild }
-Transform1196.AddChildren([Shape1198]);
-{ .AddChildren }
-Transform1195.AddChildren([Transform1196]);
-{ .AddChildren }
-HAnimSegment1194.AddChildren([Transform1195]);
+{ METHOD .FdChildren.Add }
+Transform1196.FdChildren.Add(TouchSensor1197);
+{ METHOD .FdChildren.Add }
+Transform1196.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform1195.FdChildren.Add(Transform1196);
+{ METHOD .FdChildren.Add }
+HAnimSegment1194.FdChildren.Add(Transform1195);
 TouchSensor1199 := TTouchSensorNode.Create;
 TouchSensor1199.Description := 'Segment l_metacarpal_5';
-{ .AddChildren }
-HAnimSegment1194.AddChildren([TouchSensor1199]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1194.FdChildren.Add(TouchSensor1199);
 Shape1200 := TShapeNode.Create;
 Appearance1201 := TAppearanceNode.Create;
 Material1202 := TMaterialNode.Create;
 Material1202.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1201.Material := Material1202;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1200.Appearance := Appearance1201;
 Extrusion1203 := TExtrusionNode.Create;
 Extrusion1203.SetSpine([Vector3(0.1925,0.8066,-0.1036),Vector3(0.1925,0.7866,-0.1036)]);
 Extrusion1203.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1200.Geometry := Extrusion1203;
-{ .AddChildren }
-HAnimSegment1194.AddChildren([Shape1200]);
-{ .AddChildren }
-HAnimJoint1193.AddChildren([HAnimSegment1194]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1194.FdChildren.Add(Shape1200);
+{ METHOD .FdChildren.Add }
+HAnimJoint1193.FdChildren.Add(HAnimSegment1194);
 HAnimJoint1204 := THAnimJointNode.Create;
-HAnimJoint1204.NameField := 'l_metacarpophalangeal_5';
 HAnimJoint1204.Center := Vector3(0.1925,0.7866,-0.1036);
 HAnimSegment1205 := THAnimSegmentNode.Create;
-HAnimSegment1205.NameField := 'l_carpal_proximal_phalanx_5';
 Transform1206 := TTransformNode.Create;
 Transform1206.Translation := Vector3(0.1925,0.7866,-0.1036);
 Transform1207 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor1208 := TTouchSensorNode.Create;
 TouchSensor1208.Description := 'Joint l_metacarpophalangeal_5';
-{ .AddChildren }
-Transform1207.AddChildren([TouchSensor1208]);
-Shape1209 := Shape20;
-{ .AddChild }
-Transform1207.AddChildren([Shape1209]);
-{ .AddChildren }
-Transform1206.AddChildren([Transform1207]);
-{ .AddChildren }
-HAnimSegment1205.AddChildren([Transform1206]);
+{ METHOD .FdChildren.Add }
+Transform1207.FdChildren.Add(TouchSensor1208);
+{ METHOD .FdChildren.Add }
+Transform1207.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform1206.FdChildren.Add(Transform1207);
+{ METHOD .FdChildren.Add }
+HAnimSegment1205.FdChildren.Add(Transform1206);
 TouchSensor1210 := TTouchSensorNode.Create;
 TouchSensor1210.Description := 'Segment l_carpal_proximal_phalanx_5';
-{ .AddChildren }
-HAnimSegment1205.AddChildren([TouchSensor1210]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1205.FdChildren.Add(TouchSensor1210);
 Shape1211 := TShapeNode.Create;
 Appearance1212 := TAppearanceNode.Create;
 Material1213 := TMaterialNode.Create;
+end;
+
+procedure InitStandardHumanoidPart78;
+begin
+
 Material1213.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1212.Material := Material1213;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1211.Appearance := Appearance1212;
 Extrusion1214 := TExtrusionNode.Create;
 Extrusion1214.SetSpine([Vector3(0.1925,0.7866,-0.1036),Vector3(0.1938,0.7452,-0.1024)]);
 Extrusion1214.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1211.Geometry := Extrusion1214;
-{ .AddChildren }
-HAnimSegment1205.AddChildren([Shape1211]);
-{ .AddChildren }
-HAnimJoint1204.AddChildren([HAnimSegment1205]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1205.FdChildren.Add(Shape1211);
+{ METHOD .FdChildren.Add }
+HAnimJoint1204.FdChildren.Add(HAnimSegment1205);
 HAnimJoint1215 := THAnimJointNode.Create;
-HAnimJoint1215.NameField := 'l_carpal_proximal_interphalangeal_5';
 HAnimJoint1215.Center := Vector3(0.1938,0.7452,-0.1024);
 HAnimSegment1216 := THAnimSegmentNode.Create;
-HAnimSegment1216.NameField := 'l_carpal_middle_phalanx_5';
 Transform1217 := TTransformNode.Create;
 Transform1217.Translation := Vector3(0.1938,0.7452,-0.1024);
 Transform1218 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor1219 := TTouchSensorNode.Create;
 TouchSensor1219.Description := 'Joint l_carpal_proximal_interphalangeal_5';
-{ .AddChildren }
-Transform1218.AddChildren([TouchSensor1219]);
-Shape1220 := Shape20;
-{ .AddChild }
-Transform1218.AddChildren([Shape1220]);
-{ .AddChildren }
-Transform1217.AddChildren([Transform1218]);
-{ .AddChildren }
-HAnimSegment1216.AddChildren([Transform1217]);
+{ METHOD .FdChildren.Add }
+Transform1218.FdChildren.Add(TouchSensor1219);
+{ METHOD .FdChildren.Add }
+Transform1218.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform1217.FdChildren.Add(Transform1218);
+{ METHOD .FdChildren.Add }
+HAnimSegment1216.FdChildren.Add(Transform1217);
 TouchSensor1221 := TTouchSensorNode.Create;
 TouchSensor1221.Description := 'Segment l_carpal_middle_phalanx_5';
-{ .AddChildren }
-HAnimSegment1216.AddChildren([TouchSensor1221]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1216.FdChildren.Add(TouchSensor1221);
 Shape1222 := TShapeNode.Create;
 Appearance1223 := TAppearanceNode.Create;
 Material1224 := TMaterialNode.Create;
 Material1224.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1223.Material := Material1224;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1222.Appearance := Appearance1223;
 Extrusion1225 := TExtrusionNode.Create;
 Extrusion1225.SetSpine([Vector3(0.1938,0.7452,-0.1024),Vector3(0.1948,0.7277,-0.1017)]);
 Extrusion1225.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1222.Geometry := Extrusion1225;
-{ .AddChildren }
-HAnimSegment1216.AddChildren([Shape1222]);
-{ .AddChildren }
-HAnimJoint1215.AddChildren([HAnimSegment1216]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1216.FdChildren.Add(Shape1222);
+{ METHOD .FdChildren.Add }
+HAnimJoint1215.FdChildren.Add(HAnimSegment1216);
 HAnimJoint1226 := THAnimJointNode.Create;
-HAnimJoint1226.NameField := 'l_carpal_distal_interphalangeal_5';
 HAnimJoint1226.Center := Vector3(0.1948,0.7277,-0.1017);
-{ .AddChildren }
-HAnimJoint1215.AddChildren([HAnimJoint1226]);
-{ .AddChildren }
-HAnimJoint1204.AddChildren([HAnimJoint1215]);
-{ .AddChildren }
-HAnimJoint1193.AddChildren([HAnimJoint1204]);
-{ .AddChildren }
-HAnimJoint1143.AddChildren([HAnimJoint1193]);
-{ .AddChildren }
-HAnimJoint993.AddChildren([HAnimJoint1143]);
-{ .AddChildren }
-HAnimJoint982.AddChildren([HAnimJoint993]);
-{ .AddChildren }
-HAnimJoint971.AddChildren([HAnimJoint982]);
-{ .AddChildren }
-HAnimJoint960.AddChildren([HAnimJoint971]);
-{ .AddChildren }
-HAnimJoint949.AddChildren([HAnimJoint960]);
-{ .AddChildren }
-HAnimJoint803.AddChildren([HAnimJoint949]);
+{ METHOD .FdChildren.Add }
+HAnimJoint1215.FdChildren.Add(HAnimJoint1226);
+{ METHOD .FdChildren.Add }
+HAnimJoint1204.FdChildren.Add(HAnimJoint1215);
+end;
+
+procedure InitStandardHumanoidPart79;
+begin
+
+{ METHOD .FdChildren.Add }
+HAnimJoint1193.FdChildren.Add(HAnimJoint1204);
+{ METHOD .FdChildren.Add }
+HAnimJoint1143.FdChildren.Add(HAnimJoint1193);
+{ METHOD .FdChildren.Add }
+HAnimJoint993.FdChildren.Add(HAnimJoint1143);
+{ METHOD .FdChildren.Add }
+HAnimJoint982.FdChildren.Add(HAnimJoint993);
+{ METHOD .FdChildren.Add }
+HAnimJoint971.FdChildren.Add(HAnimJoint982);
+{ METHOD .FdChildren.Add }
+HAnimJoint960.FdChildren.Add(HAnimJoint971);
+{ METHOD .FdChildren.Add }
+HAnimJoint949.FdChildren.Add(HAnimJoint960);
+{ METHOD .FdChildren.Add }
+HAnimJoint803.FdChildren.Add(HAnimJoint949);
 HAnimJoint1227 := THAnimJointNode.Create;
-HAnimJoint1227.NameField := 'r_sternoclavicular';
 HAnimJoint1227.Center := Vector3(-0.0694,1.46,-0.033);
 HAnimSegment1228 := THAnimSegmentNode.Create;
-HAnimSegment1228.NameField := 'r_clavicle';
 Transform1229 := TTransformNode.Create;
 Transform1229.Translation := Vector3(-0.0694,1.46,-0.033);
 Transform1230 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor1231 := TTouchSensorNode.Create;
 TouchSensor1231.Description := 'Joint r_sternoclavicular';
-{ .AddChildren }
-Transform1230.AddChildren([TouchSensor1231]);
-Shape1232 := Shape20;
-{ .AddChild }
-Transform1230.AddChildren([Shape1232]);
-{ .AddChildren }
-Transform1229.AddChildren([Transform1230]);
-{ .AddChildren }
-HAnimSegment1228.AddChildren([Transform1229]);
+{ METHOD .FdChildren.Add }
+Transform1230.FdChildren.Add(TouchSensor1231);
+{ METHOD .FdChildren.Add }
+Transform1230.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform1229.FdChildren.Add(Transform1230);
+{ METHOD .FdChildren.Add }
+HAnimSegment1228.FdChildren.Add(Transform1229);
 TouchSensor1233 := TTouchSensorNode.Create;
 TouchSensor1233.Description := 'Segment r_clavicle';
-{ .AddChildren }
-HAnimSegment1228.AddChildren([TouchSensor1233]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1228.FdChildren.Add(TouchSensor1233);
 Shape1234 := TShapeNode.Create;
 Appearance1235 := TAppearanceNode.Create;
 Material1236 := TMaterialNode.Create;
 Material1236.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1235.Material := Material1236;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1234.Appearance := Appearance1235;
 Extrusion1237 := TExtrusionNode.Create;
 Extrusion1237.SetSpine([Vector3(-0.0694,1.46,-0.033),Vector3(-0.0836,1.4281,-0.0401)]);
 Extrusion1237.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1234.Geometry := Extrusion1237;
-{ .AddChildren }
-HAnimSegment1228.AddChildren([Shape1234]);
-{ .AddChildren }
-HAnimJoint1227.AddChildren([HAnimSegment1228]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1228.FdChildren.Add(Shape1234);
+{ METHOD .FdChildren.Add }
+HAnimJoint1227.FdChildren.Add(HAnimSegment1228);
 HAnimJoint1238 := THAnimJointNode.Create;
-HAnimJoint1238.NameField := 'r_acromioclavicular';
 HAnimJoint1238.Center := Vector3(-0.0836,1.4281,-0.0401);
 HAnimSegment1239 := THAnimSegmentNode.Create;
-HAnimSegment1239.NameField := 'r_scapula';
 Transform1240 := TTransformNode.Create;
 Transform1240.Translation := Vector3(-0.0836,1.4281,-0.0401);
+end;
+
+procedure InitStandardHumanoidPart80;
+begin
+
 Transform1241 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor1242 := TTouchSensorNode.Create;
 TouchSensor1242.Description := 'Joint r_acromioclavicular';
-{ .AddChildren }
-Transform1241.AddChildren([TouchSensor1242]);
-Shape1243 := Shape20;
-{ .AddChild }
-Transform1241.AddChildren([Shape1243]);
-{ .AddChildren }
-Transform1240.AddChildren([Transform1241]);
-{ .AddChildren }
-HAnimSegment1239.AddChildren([Transform1240]);
+{ METHOD .FdChildren.Add }
+Transform1241.FdChildren.Add(TouchSensor1242);
+{ METHOD .FdChildren.Add }
+Transform1241.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform1240.FdChildren.Add(Transform1241);
+{ METHOD .FdChildren.Add }
+HAnimSegment1239.FdChildren.Add(Transform1240);
 TouchSensor1244 := TTouchSensorNode.Create;
 TouchSensor1244.Description := 'Segment r_scapula';
-{ .AddChildren }
-HAnimSegment1239.AddChildren([TouchSensor1244]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1239.FdChildren.Add(TouchSensor1244);
 Shape1245 := TShapeNode.Create;
 Appearance1246 := TAppearanceNode.Create;
 Material1247 := TMaterialNode.Create;
 Material1247.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1246.Material := Material1247;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1245.Appearance := Appearance1246;
 Extrusion1248 := TExtrusionNode.Create;
 Extrusion1248.SetSpine([Vector3(-0.0836,1.4281,-0.0401),Vector3(-0.1907,1.4407,-0.0325)]);
 Extrusion1248.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1245.Geometry := Extrusion1248;
-{ .AddChildren }
-HAnimSegment1239.AddChildren([Shape1245]);
-{ .AddChildren }
-HAnimJoint1238.AddChildren([HAnimSegment1239]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1239.FdChildren.Add(Shape1245);
+{ METHOD .FdChildren.Add }
+HAnimJoint1238.FdChildren.Add(HAnimSegment1239);
 HAnimJoint1249 := THAnimJointNode.Create;
-HAnimJoint1249.NameField := 'r_shoulder';
 HAnimJoint1249.Center := Vector3(-0.1907,1.4407,-0.0325);
 HAnimSegment1250 := THAnimSegmentNode.Create;
-HAnimSegment1250.NameField := 'r_upperarm';
 Transform1251 := TTransformNode.Create;
 Transform1251.Translation := Vector3(-0.1907,1.4407,-0.0325);
 Transform1252 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor1253 := TTouchSensorNode.Create;
 TouchSensor1253.Description := 'Joint r_shoulder';
-{ .AddChildren }
-Transform1252.AddChildren([TouchSensor1253]);
-Shape1254 := Shape20;
-{ .AddChild }
-Transform1252.AddChildren([Shape1254]);
-{ .AddChildren }
-Transform1251.AddChildren([Transform1252]);
-{ .AddChildren }
-HAnimSegment1250.AddChildren([Transform1251]);
+{ METHOD .FdChildren.Add }
+Transform1252.FdChildren.Add(TouchSensor1253);
+{ METHOD .FdChildren.Add }
+Transform1252.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform1251.FdChildren.Add(Transform1252);
+{ METHOD .FdChildren.Add }
+HAnimSegment1250.FdChildren.Add(Transform1251);
 TouchSensor1255 := TTouchSensorNode.Create;
 TouchSensor1255.Description := 'Segment r_upperarm';
-{ .AddChildren }
-HAnimSegment1250.AddChildren([TouchSensor1255]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1250.FdChildren.Add(TouchSensor1255);
 Shape1256 := TShapeNode.Create;
 Appearance1257 := TAppearanceNode.Create;
 Material1258 := TMaterialNode.Create;
+end;
+
+procedure InitStandardHumanoidPart81;
+begin
+
 Material1258.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1257.Material := Material1258;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1256.Appearance := Appearance1257;
 Extrusion1259 := TExtrusionNode.Create;
 Extrusion1259.SetSpine([Vector3(-0.1907,1.4407,-0.0325),Vector3(-0.1949,1.1388,-0.062)]);
 Extrusion1259.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1256.Geometry := Extrusion1259;
-{ .AddChildren }
-HAnimSegment1250.AddChildren([Shape1256]);
-{ .AddChildren }
-HAnimJoint1249.AddChildren([HAnimSegment1250]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1250.FdChildren.Add(Shape1256);
+{ METHOD .FdChildren.Add }
+HAnimJoint1249.FdChildren.Add(HAnimSegment1250);
 HAnimJoint1260 := THAnimJointNode.Create;
-HAnimJoint1260.NameField := 'r_elbow';
 HAnimJoint1260.Center := Vector3(-0.1949,1.1388,-0.062);
 HAnimSegment1261 := THAnimSegmentNode.Create;
-HAnimSegment1261.NameField := 'r_forearm';
 Transform1262 := TTransformNode.Create;
 Transform1262.Translation := Vector3(-0.1949,1.1388,-0.062);
 Transform1263 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor1264 := TTouchSensorNode.Create;
 TouchSensor1264.Description := 'Joint r_elbow';
-{ .AddChildren }
-Transform1263.AddChildren([TouchSensor1264]);
-Shape1265 := Shape20;
-{ .AddChild }
-Transform1263.AddChildren([Shape1265]);
-{ .AddChildren }
-Transform1262.AddChildren([Transform1263]);
-{ .AddChildren }
-HAnimSegment1261.AddChildren([Transform1262]);
+{ METHOD .FdChildren.Add }
+Transform1263.FdChildren.Add(TouchSensor1264);
+{ METHOD .FdChildren.Add }
+Transform1263.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform1262.FdChildren.Add(Transform1263);
+{ METHOD .FdChildren.Add }
+HAnimSegment1261.FdChildren.Add(Transform1262);
 TouchSensor1266 := TTouchSensorNode.Create;
 TouchSensor1266.Description := 'Segment r_forearm';
-{ .AddChildren }
-HAnimSegment1261.AddChildren([TouchSensor1266]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1261.FdChildren.Add(TouchSensor1266);
 Shape1267 := TShapeNode.Create;
 Appearance1268 := TAppearanceNode.Create;
 Material1269 := TMaterialNode.Create;
 Material1269.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1268.Material := Material1269;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1267.Appearance := Appearance1268;
 Extrusion1270 := TExtrusionNode.Create;
 Extrusion1270.SetSpine([Vector3(-0.1949,1.1388,-0.062),Vector3(-0.1959,0.8694,-0.0521)]);
 Extrusion1270.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1267.Geometry := Extrusion1270;
-{ .AddChildren }
-HAnimSegment1261.AddChildren([Shape1267]);
-{ .AddChildren }
-HAnimJoint1260.AddChildren([HAnimSegment1261]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1261.FdChildren.Add(Shape1267);
+{ METHOD .FdChildren.Add }
+HAnimJoint1260.FdChildren.Add(HAnimSegment1261);
 HAnimJoint1271 := THAnimJointNode.Create;
-HAnimJoint1271.NameField := 'r_radiocarpal';
 HAnimJoint1271.Center := Vector3(-0.1959,0.8694,-0.0521);
 HAnimSegment1272 := THAnimSegmentNode.Create;
-HAnimSegment1272.NameField := 'r_carpal';
 Transform1273 := TTransformNode.Create;
+end;
+
+procedure InitStandardHumanoidPart82;
+begin
+
 Transform1273.Scale := Vector3(0.2,0.2,0.2);
 Transform1273.Translation := Vector3(-0.2,0.85,-0.05);
 Transform1273.Rotation := Vector4(0,0,1,-3.14);
@@ -6707,1756 +6803,1650 @@ Transform1274.Rotation := Vector4(0,1,0,1.57);
 { Transform right hand }
 TouchSensor1275 := TTouchSensorNode.Create;
 TouchSensor1275.Description := 'Joint r_radiocarpal';
-{ .AddChildren }
-Transform1274.AddChildren([TouchSensor1275]);
-Shape1276 := Shape20;
-{ .AddChild }
-Transform1274.AddChildren([Shape1276]);
-{ .AddChildren }
-Transform1273.AddChildren([Transform1274]);
-{ .AddChildren }
-HAnimSegment1272.AddChildren([Transform1273]);
+{ METHOD .FdChildren.Add }
+Transform1274.FdChildren.Add(TouchSensor1275);
+{ METHOD .FdChildren.Add }
+Transform1274.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform1273.FdChildren.Add(Transform1274);
+{ METHOD .FdChildren.Add }
+HAnimSegment1272.FdChildren.Add(Transform1273);
 TouchSensor1277 := TTouchSensorNode.Create;
 TouchSensor1277.Description := 'Segment r_carpal';
-{ .AddChildren }
-HAnimSegment1272.AddChildren([TouchSensor1277]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1272.FdChildren.Add(TouchSensor1277);
 Shape1278 := TShapeNode.Create;
 Appearance1279 := TAppearanceNode.Create;
 Material1280 := TMaterialNode.Create;
 Material1280.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1279.Material := Material1280;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1278.Appearance := Appearance1279;
 Extrusion1281 := TExtrusionNode.Create;
 Extrusion1281.SetSpine([Vector3(-0.1959,0.8694,-0.0521),Vector3(-0.1811,0.6975,-0.0826)]);
 Extrusion1281.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1278.Geometry := Extrusion1281;
-{ .AddChildren }
-HAnimSegment1272.AddChildren([Shape1278]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1272.FdChildren.Add(Shape1278);
 TouchSensor1282 := TTouchSensorNode.Create;
 TouchSensor1282.Description := 'Segment r_carpal';
-{ .AddChildren }
-HAnimSegment1272.AddChildren([TouchSensor1282]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1272.FdChildren.Add(TouchSensor1282);
 Shape1283 := TShapeNode.Create;
 Appearance1284 := TAppearanceNode.Create;
 Material1285 := TMaterialNode.Create;
 Material1285.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1284.Material := Material1285;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1283.Appearance := Appearance1284;
 Extrusion1286 := TExtrusionNode.Create;
 Extrusion1286.SetSpine([Vector3(-0.1959,0.8694,-0.0521),Vector3(-0.1811,0.6984,-0.0935)]);
 Extrusion1286.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1283.Geometry := Extrusion1286;
-{ .AddChildren }
-HAnimSegment1272.AddChildren([Shape1283]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1272.FdChildren.Add(Shape1283);
 TouchSensor1287 := TTouchSensorNode.Create;
+end;
+
+procedure InitStandardHumanoidPart83;
+begin
+
 TouchSensor1287.Description := 'Segment r_carpal';
-{ .AddChildren }
-HAnimSegment1272.AddChildren([TouchSensor1287]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1272.FdChildren.Add(TouchSensor1287);
 Shape1288 := TShapeNode.Create;
 Appearance1289 := TAppearanceNode.Create;
 Material1290 := TMaterialNode.Create;
 Material1290.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1289.Material := Material1290;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1288.Appearance := Appearance1289;
 Extrusion1291 := TExtrusionNode.Create;
 Extrusion1291.SetSpine([Vector3(-0.1959,0.8694,-0.0521),Vector3(-0.1809,0.7,-0.1067)]);
 Extrusion1291.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1288.Geometry := Extrusion1291;
-{ .AddChildren }
-HAnimSegment1272.AddChildren([Shape1288]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1272.FdChildren.Add(Shape1288);
 TouchSensor1292 := TTouchSensorNode.Create;
 TouchSensor1292.Description := 'Segment r_carpal';
-{ .AddChildren }
-HAnimSegment1272.AddChildren([TouchSensor1292]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1272.FdChildren.Add(TouchSensor1292);
 Shape1293 := TShapeNode.Create;
 Appearance1294 := TAppearanceNode.Create;
 Material1295 := TMaterialNode.Create;
 Material1295.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1294.Material := Material1295;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1293.Appearance := Appearance1294;
 Extrusion1296 := TExtrusionNode.Create;
 Extrusion1296.SetSpine([Vector3(-0.1959,0.8694,-0.0521),Vector3(-0.1809,0.6973,-0.1276)]);
 Extrusion1296.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1293.Geometry := Extrusion1296;
-{ .AddChildren }
-HAnimSegment1272.AddChildren([Shape1293]);
-{ .AddChildren }
-HAnimJoint1271.AddChildren([HAnimSegment1272]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1272.FdChildren.Add(Shape1293);
+{ METHOD .FdChildren.Add }
+HAnimJoint1271.FdChildren.Add(HAnimSegment1272);
 HAnimJoint1297 := THAnimJointNode.Create;
-HAnimJoint1297.NameField := 'r_midcarpal_1';
 HAnimJoint1297.Center := Vector3(-0.1811,0.6975,-0.0826);
 HAnimSegment1298 := THAnimSegmentNode.Create;
-HAnimSegment1298.NameField := 'r_trapezium';
 Transform1299 := TTransformNode.Create;
 Transform1299.Translation := Vector3(-0.1811,0.6975,-0.0826);
 Transform1300 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor1301 := TTouchSensorNode.Create;
 TouchSensor1301.Description := 'Joint r_midcarpal_1';
-{ .AddChildren }
-Transform1300.AddChildren([TouchSensor1301]);
-Shape1302 := Shape20;
-{ .AddChild }
-Transform1300.AddChildren([Shape1302]);
-{ .AddChildren }
-Transform1299.AddChildren([Transform1300]);
-{ .AddChildren }
-HAnimSegment1298.AddChildren([Transform1299]);
+{ METHOD .FdChildren.Add }
+Transform1300.FdChildren.Add(TouchSensor1301);
+{ METHOD .FdChildren.Add }
+Transform1300.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform1299.FdChildren.Add(Transform1300);
+{ METHOD .FdChildren.Add }
+HAnimSegment1298.FdChildren.Add(Transform1299);
+end;
+
+procedure InitStandardHumanoidPart84;
+begin
+
 TouchSensor1303 := TTouchSensorNode.Create;
 TouchSensor1303.Description := 'Segment r_trapezium';
-{ .AddChildren }
-HAnimSegment1298.AddChildren([TouchSensor1303]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1298.FdChildren.Add(TouchSensor1303);
 Shape1304 := TShapeNode.Create;
 Appearance1305 := TAppearanceNode.Create;
 Material1306 := TMaterialNode.Create;
 Material1306.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1305.Material := Material1306;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1304.Appearance := Appearance1305;
 Extrusion1307 := TExtrusionNode.Create;
 Extrusion1307.SetSpine([Vector3(-0.1811,0.6975,-0.0826),Vector3(-0.1899,0.8502,-0.0473)]);
 Extrusion1307.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1304.Geometry := Extrusion1307;
-{ .AddChildren }
-HAnimSegment1298.AddChildren([Shape1304]);
-{ .AddChildren }
-HAnimJoint1297.AddChildren([HAnimSegment1298]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1298.FdChildren.Add(Shape1304);
+{ METHOD .FdChildren.Add }
+HAnimJoint1297.FdChildren.Add(HAnimSegment1298);
 HAnimJoint1308 := THAnimJointNode.Create;
-HAnimJoint1308.NameField := 'r_carpometacarpal_1';
 HAnimJoint1308.Center := Vector3(-0.1899,0.8502,-0.0473);
 HAnimSegment1309 := THAnimSegmentNode.Create;
-HAnimSegment1309.NameField := 'r_metacarpal_1';
 Transform1310 := TTransformNode.Create;
 Transform1310.Translation := Vector3(-0.1899,0.8502,-0.0473);
 Transform1311 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor1312 := TTouchSensorNode.Create;
 TouchSensor1312.Description := 'Joint r_carpometacarpal_1';
-{ .AddChildren }
-Transform1311.AddChildren([TouchSensor1312]);
-Shape1313 := Shape20;
-{ .AddChild }
-Transform1311.AddChildren([Shape1313]);
-{ .AddChildren }
-Transform1310.AddChildren([Transform1311]);
-{ .AddChildren }
-HAnimSegment1309.AddChildren([Transform1310]);
+{ METHOD .FdChildren.Add }
+Transform1311.FdChildren.Add(TouchSensor1312);
+{ METHOD .FdChildren.Add }
+Transform1311.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform1310.FdChildren.Add(Transform1311);
+{ METHOD .FdChildren.Add }
+HAnimSegment1309.FdChildren.Add(Transform1310);
 TouchSensor1314 := TTouchSensorNode.Create;
 TouchSensor1314.Description := 'Segment r_metacarpal_1';
-{ .AddChildren }
-HAnimSegment1309.AddChildren([TouchSensor1314]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1309.FdChildren.Add(TouchSensor1314);
 Shape1315 := TShapeNode.Create;
 Appearance1316 := TAppearanceNode.Create;
 Material1317 := TMaterialNode.Create;
 Material1317.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1316.Material := Material1317;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1315.Appearance := Appearance1316;
 Extrusion1318 := TExtrusionNode.Create;
 Extrusion1318.SetSpine([Vector3(-0.1899,0.8502,-0.0473),Vector3(-0.1874,0.8256,0.0306)]);
 Extrusion1318.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1315.Geometry := Extrusion1318;
-{ .AddChildren }
-HAnimSegment1309.AddChildren([Shape1315]);
-{ .AddChildren }
-HAnimJoint1308.AddChildren([HAnimSegment1309]);
+end;
+
+procedure InitStandardHumanoidPart85;
+begin
+
+{ METHOD .FdChildren.Add }
+HAnimSegment1309.FdChildren.Add(Shape1315);
+{ METHOD .FdChildren.Add }
+HAnimJoint1308.FdChildren.Add(HAnimSegment1309);
 HAnimJoint1319 := THAnimJointNode.Create;
-HAnimJoint1319.NameField := 'r_metacarpophalangeal_1';
 HAnimJoint1319.Center := Vector3(-0.1874,0.8256,0.0306);
 HAnimSegment1320 := THAnimSegmentNode.Create;
-HAnimSegment1320.NameField := 'r_carpal_proximal_phalanx_1';
 Transform1321 := TTransformNode.Create;
 Transform1321.Translation := Vector3(-0.1874,0.8256,0.0306);
 Transform1322 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor1323 := TTouchSensorNode.Create;
 TouchSensor1323.Description := 'Joint r_metacarpophalangeal_1';
-{ .AddChildren }
-Transform1322.AddChildren([TouchSensor1323]);
-Shape1324 := Shape20;
-{ .AddChild }
-Transform1322.AddChildren([Shape1324]);
-{ .AddChildren }
-Transform1321.AddChildren([Transform1322]);
-{ .AddChildren }
-HAnimSegment1320.AddChildren([Transform1321]);
+{ METHOD .FdChildren.Add }
+Transform1322.FdChildren.Add(TouchSensor1323);
+{ METHOD .FdChildren.Add }
+Transform1322.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform1321.FdChildren.Add(Transform1322);
+{ METHOD .FdChildren.Add }
+HAnimSegment1320.FdChildren.Add(Transform1321);
 TouchSensor1325 := TTouchSensorNode.Create;
 TouchSensor1325.Description := 'Segment r_carpal_proximal_phalanx_1';
-{ .AddChildren }
-HAnimSegment1320.AddChildren([TouchSensor1325]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1320.FdChildren.Add(TouchSensor1325);
 Shape1326 := TShapeNode.Create;
 Appearance1327 := TAppearanceNode.Create;
 Material1328 := TMaterialNode.Create;
 Material1328.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1327.Material := Material1328;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1326.Appearance := Appearance1327;
 Extrusion1329 := TExtrusionNode.Create;
 Extrusion1329.SetSpine([Vector3(-0.1874,0.8256,0.0306),Vector3(-0.1864,0.819,0.0506)]);
 Extrusion1329.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1326.Geometry := Extrusion1329;
-{ .AddChildren }
-HAnimSegment1320.AddChildren([Shape1326]);
-{ .AddChildren }
-HAnimJoint1319.AddChildren([HAnimSegment1320]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1320.FdChildren.Add(Shape1326);
+{ METHOD .FdChildren.Add }
+HAnimJoint1319.FdChildren.Add(HAnimSegment1320);
 HAnimJoint1330 := THAnimJointNode.Create;
-HAnimJoint1330.NameField := 'r_carpal_interphalangeal_1';
 HAnimJoint1330.Center := Vector3(-0.1864,0.819,0.0506);
-{ .AddChildren }
-HAnimJoint1319.AddChildren([HAnimJoint1330]);
-{ .AddChildren }
-HAnimJoint1308.AddChildren([HAnimJoint1319]);
-{ .AddChildren }
-HAnimJoint1297.AddChildren([HAnimJoint1308]);
-{ .AddChildren }
-HAnimJoint1271.AddChildren([HAnimJoint1297]);
+{ METHOD .FdChildren.Add }
+HAnimJoint1319.FdChildren.Add(HAnimJoint1330);
+{ METHOD .FdChildren.Add }
+HAnimJoint1308.FdChildren.Add(HAnimJoint1319);
+{ METHOD .FdChildren.Add }
+HAnimJoint1297.FdChildren.Add(HAnimJoint1308);
+{ METHOD .FdChildren.Add }
+HAnimJoint1271.FdChildren.Add(HAnimJoint1297);
 HAnimJoint1331 := THAnimJointNode.Create;
-HAnimJoint1331.NameField := 'r_midcarpal_2';
 HAnimJoint1331.Center := Vector3(-0.1811,0.6984,-0.0935);
 HAnimSegment1332 := THAnimSegmentNode.Create;
-HAnimSegment1332.NameField := 'r_trapezoid';
 Transform1333 := TTransformNode.Create;
 Transform1333.Translation := Vector3(-0.1811,0.6984,-0.0935);
+end;
+
+procedure InitStandardHumanoidPart86;
+begin
+
 Transform1334 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor1335 := TTouchSensorNode.Create;
 TouchSensor1335.Description := 'Joint r_midcarpal_2';
-{ .AddChildren }
-Transform1334.AddChildren([TouchSensor1335]);
-Shape1336 := Shape20;
-{ .AddChild }
-Transform1334.AddChildren([Shape1336]);
-{ .AddChildren }
-Transform1333.AddChildren([Transform1334]);
-{ .AddChildren }
-HAnimSegment1332.AddChildren([Transform1333]);
+{ METHOD .FdChildren.Add }
+Transform1334.FdChildren.Add(TouchSensor1335);
+{ METHOD .FdChildren.Add }
+Transform1334.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform1333.FdChildren.Add(Transform1334);
+{ METHOD .FdChildren.Add }
+HAnimSegment1332.FdChildren.Add(Transform1333);
 TouchSensor1337 := TTouchSensorNode.Create;
 TouchSensor1337.Description := 'Segment r_trapezoid';
-{ .AddChildren }
-HAnimSegment1332.AddChildren([TouchSensor1337]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1332.FdChildren.Add(TouchSensor1337);
 Shape1338 := TShapeNode.Create;
 Appearance1339 := TAppearanceNode.Create;
 Material1340 := TMaterialNode.Create;
 Material1340.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1339.Material := Material1340;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1338.Appearance := Appearance1339;
 Extrusion1341 := TExtrusionNode.Create;
 Extrusion1341.SetSpine([Vector3(-0.1811,0.6984,-0.0935),Vector3(-0.1961,0.8055,-0.0218)]);
 Extrusion1341.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1338.Geometry := Extrusion1341;
-{ .AddChildren }
-HAnimSegment1332.AddChildren([Shape1338]);
-{ .AddChildren }
-HAnimJoint1331.AddChildren([HAnimSegment1332]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1332.FdChildren.Add(Shape1338);
+{ METHOD .FdChildren.Add }
+HAnimJoint1331.FdChildren.Add(HAnimSegment1332);
 HAnimJoint1342 := THAnimJointNode.Create;
-HAnimJoint1342.NameField := 'r_carpometacarpal_2';
 HAnimJoint1342.Center := Vector3(-0.1961,0.8055,-0.0218);
 HAnimSegment1343 := THAnimSegmentNode.Create;
-HAnimSegment1343.NameField := 'r_metacarpal_2';
 Transform1344 := TTransformNode.Create;
 Transform1344.Translation := Vector3(-0.1961,0.8055,-0.0218);
 Transform1345 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor1346 := TTouchSensorNode.Create;
 TouchSensor1346.Description := 'Joint r_carpometacarpal_2';
-{ .AddChildren }
-Transform1345.AddChildren([TouchSensor1346]);
-Shape1347 := Shape20;
-{ .AddChild }
-Transform1345.AddChildren([Shape1347]);
-{ .AddChildren }
-Transform1344.AddChildren([Transform1345]);
-{ .AddChildren }
-HAnimSegment1343.AddChildren([Transform1344]);
+{ METHOD .FdChildren.Add }
+Transform1345.FdChildren.Add(TouchSensor1346);
+{ METHOD .FdChildren.Add }
+Transform1345.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform1344.FdChildren.Add(Transform1345);
+{ METHOD .FdChildren.Add }
+HAnimSegment1343.FdChildren.Add(Transform1344);
 TouchSensor1348 := TTouchSensorNode.Create;
 TouchSensor1348.Description := 'Segment r_metacarpal_2';
-{ .AddChildren }
-HAnimSegment1343.AddChildren([TouchSensor1348]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1343.FdChildren.Add(TouchSensor1348);
 Shape1349 := TShapeNode.Create;
 Appearance1350 := TAppearanceNode.Create;
 Material1351 := TMaterialNode.Create;
+end;
+
+procedure InitStandardHumanoidPart87;
+begin
+
 Material1351.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1350.Material := Material1351;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1349.Appearance := Appearance1350;
 Extrusion1352 := TExtrusionNode.Create;
 Extrusion1352.SetSpine([Vector3(-0.1961,0.8055,-0.0218),Vector3(-0.1961,0.7846,-0.0218)]);
 Extrusion1352.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1349.Geometry := Extrusion1352;
-{ .AddChildren }
-HAnimSegment1343.AddChildren([Shape1349]);
-{ .AddChildren }
-HAnimJoint1342.AddChildren([HAnimSegment1343]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1343.FdChildren.Add(Shape1349);
+{ METHOD .FdChildren.Add }
+HAnimJoint1342.FdChildren.Add(HAnimSegment1343);
 HAnimJoint1353 := THAnimJointNode.Create;
-HAnimJoint1353.NameField := 'r_metacarpophalangeal_2';
 HAnimJoint1353.Center := Vector3(-0.1961,0.7846,-0.0218);
 HAnimSegment1354 := THAnimSegmentNode.Create;
-HAnimSegment1354.NameField := 'r_carpal_proximal_phalanx_2';
 Transform1355 := TTransformNode.Create;
 Transform1355.Translation := Vector3(-0.1961,0.7846,-0.0218);
 Transform1356 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor1357 := TTouchSensorNode.Create;
 TouchSensor1357.Description := 'Joint r_metacarpophalangeal_2';
-{ .AddChildren }
-Transform1356.AddChildren([TouchSensor1357]);
-Shape1358 := Shape20;
-{ .AddChild }
-Transform1356.AddChildren([Shape1358]);
-{ .AddChildren }
-Transform1355.AddChildren([Transform1356]);
-{ .AddChildren }
-HAnimSegment1354.AddChildren([Transform1355]);
+{ METHOD .FdChildren.Add }
+Transform1356.FdChildren.Add(TouchSensor1357);
+{ METHOD .FdChildren.Add }
+Transform1356.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform1355.FdChildren.Add(Transform1356);
+{ METHOD .FdChildren.Add }
+HAnimSegment1354.FdChildren.Add(Transform1355);
 TouchSensor1359 := TTouchSensorNode.Create;
 TouchSensor1359.Description := 'Segment r_carpal_proximal_phalanx_2';
-{ .AddChildren }
-HAnimSegment1354.AddChildren([TouchSensor1359]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1354.FdChildren.Add(TouchSensor1359);
 Shape1360 := TShapeNode.Create;
 Appearance1361 := TAppearanceNode.Create;
 Material1362 := TMaterialNode.Create;
 Material1362.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1361.Material := Material1362;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1360.Appearance := Appearance1361;
 Extrusion1363 := TExtrusionNode.Create;
 Extrusion1363.SetSpine([Vector3(-0.1961,0.7846,-0.0218),Vector3(-0.1954,0.7393,-0.0185)]);
 Extrusion1363.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1360.Geometry := Extrusion1363;
-{ .AddChildren }
-HAnimSegment1354.AddChildren([Shape1360]);
-{ .AddChildren }
-HAnimJoint1353.AddChildren([HAnimSegment1354]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1354.FdChildren.Add(Shape1360);
+{ METHOD .FdChildren.Add }
+HAnimJoint1353.FdChildren.Add(HAnimSegment1354);
 HAnimJoint1364 := THAnimJointNode.Create;
-HAnimJoint1364.NameField := 'r_carpal_proximal_interphalangeal_2';
 HAnimJoint1364.Center := Vector3(-0.1954,0.7393,-0.0185);
 HAnimSegment1365 := THAnimSegmentNode.Create;
-HAnimSegment1365.NameField := 'r_carpal_middle_phalanx_2';
 Transform1366 := TTransformNode.Create;
+end;
+
+procedure InitStandardHumanoidPart88;
+begin
+
 Transform1366.Translation := Vector3(-0.1954,0.7393,-0.0185);
 Transform1367 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor1368 := TTouchSensorNode.Create;
 TouchSensor1368.Description := 'Joint r_carpal_proximal_interphalangeal_2';
-{ .AddChildren }
-Transform1367.AddChildren([TouchSensor1368]);
-Shape1369 := Shape20;
-{ .AddChild }
-Transform1367.AddChildren([Shape1369]);
-{ .AddChildren }
-Transform1366.AddChildren([Transform1367]);
-{ .AddChildren }
-HAnimSegment1365.AddChildren([Transform1366]);
+{ METHOD .FdChildren.Add }
+Transform1367.FdChildren.Add(TouchSensor1368);
+{ METHOD .FdChildren.Add }
+Transform1367.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform1366.FdChildren.Add(Transform1367);
+{ METHOD .FdChildren.Add }
+HAnimSegment1365.FdChildren.Add(Transform1366);
 TouchSensor1370 := TTouchSensorNode.Create;
 TouchSensor1370.Description := 'Segment r_carpal_middle_phalanx_2';
-{ .AddChildren }
-HAnimSegment1365.AddChildren([TouchSensor1370]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1365.FdChildren.Add(TouchSensor1370);
 Shape1371 := TShapeNode.Create;
 Appearance1372 := TAppearanceNode.Create;
 Material1373 := TMaterialNode.Create;
 Material1373.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1372.Material := Material1373;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1371.Appearance := Appearance1372;
 Extrusion1374 := TExtrusionNode.Create;
 Extrusion1374.SetSpine([Vector3(-0.1954,0.7393,-0.0185),Vector3(-0.1945,0.7169,-0.0173)]);
 Extrusion1374.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1371.Geometry := Extrusion1374;
-{ .AddChildren }
-HAnimSegment1365.AddChildren([Shape1371]);
-{ .AddChildren }
-HAnimJoint1364.AddChildren([HAnimSegment1365]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1365.FdChildren.Add(Shape1371);
+{ METHOD .FdChildren.Add }
+HAnimJoint1364.FdChildren.Add(HAnimSegment1365);
 HAnimJoint1375 := THAnimJointNode.Create;
-HAnimJoint1375.NameField := 'r_carpal_distal_interphalangeal_2';
 HAnimJoint1375.Center := Vector3(-0.1945,0.7169,-0.0173);
-{ .AddChildren }
-HAnimJoint1364.AddChildren([HAnimJoint1375]);
-{ .AddChildren }
-HAnimJoint1353.AddChildren([HAnimJoint1364]);
-{ .AddChildren }
-HAnimJoint1342.AddChildren([HAnimJoint1353]);
-{ .AddChildren }
-HAnimJoint1331.AddChildren([HAnimJoint1342]);
-{ .AddChildren }
-HAnimJoint1271.AddChildren([HAnimJoint1331]);
+{ METHOD .FdChildren.Add }
+HAnimJoint1364.FdChildren.Add(HAnimJoint1375);
+{ METHOD .FdChildren.Add }
+HAnimJoint1353.FdChildren.Add(HAnimJoint1364);
+{ METHOD .FdChildren.Add }
+HAnimJoint1342.FdChildren.Add(HAnimJoint1353);
+{ METHOD .FdChildren.Add }
+HAnimJoint1331.FdChildren.Add(HAnimJoint1342);
+{ METHOD .FdChildren.Add }
+HAnimJoint1271.FdChildren.Add(HAnimJoint1331);
 HAnimJoint1376 := THAnimJointNode.Create;
-HAnimJoint1376.NameField := 'r_midcarpal_3';
 HAnimJoint1376.Center := Vector3(-0.1809,0.7,-0.1067);
 HAnimSegment1377 := THAnimSegmentNode.Create;
-HAnimSegment1377.NameField := 'r_capitate';
 Transform1378 := TTransformNode.Create;
 Transform1378.Translation := Vector3(-0.1809,0.7,-0.1067);
 Transform1379 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor1380 := TTouchSensorNode.Create;
 TouchSensor1380.Description := 'Joint r_midcarpal_3';
-{ .AddChildren }
-Transform1379.AddChildren([TouchSensor1380]);
-Shape1381 := Shape20;
-{ .AddChild }
-Transform1379.AddChildren([Shape1381]);
-{ .AddChildren }
-Transform1378.AddChildren([Transform1379]);
-{ .AddChildren }
-HAnimSegment1377.AddChildren([Transform1378]);
+{ METHOD .FdChildren.Add }
+Transform1379.FdChildren.Add(TouchSensor1380);
+{ METHOD .FdChildren.Add }
+Transform1379.FdChildren.Add(Shape20);
+end;
+
+procedure InitStandardHumanoidPart89;
+begin
+
+{ METHOD .FdChildren.Add }
+Transform1378.FdChildren.Add(Transform1379);
+{ METHOD .FdChildren.Add }
+HAnimSegment1377.FdChildren.Add(Transform1378);
 TouchSensor1382 := TTouchSensorNode.Create;
 TouchSensor1382.Description := 'Segment r_capitate';
-{ .AddChildren }
-HAnimSegment1377.AddChildren([TouchSensor1382]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1377.FdChildren.Add(TouchSensor1382);
 Shape1383 := TShapeNode.Create;
 Appearance1384 := TAppearanceNode.Create;
 Material1385 := TMaterialNode.Create;
 Material1385.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1384.Material := Material1385;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1383.Appearance := Appearance1384;
 Extrusion1386 := TExtrusionNode.Create;
 Extrusion1386.SetSpine([Vector3(-0.1809,0.7,-0.1067),Vector3(-0.1972,0.806,-0.0468)]);
 Extrusion1386.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1383.Geometry := Extrusion1386;
-{ .AddChildren }
-HAnimSegment1377.AddChildren([Shape1383]);
-{ .AddChildren }
-HAnimJoint1376.AddChildren([HAnimSegment1377]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1377.FdChildren.Add(Shape1383);
+{ METHOD .FdChildren.Add }
+HAnimJoint1376.FdChildren.Add(HAnimSegment1377);
 HAnimJoint1387 := THAnimJointNode.Create;
-HAnimJoint1387.NameField := 'r_carpometacarpal_3';
 HAnimJoint1387.Center := Vector3(-0.1972,0.806,-0.0468);
 HAnimSegment1388 := THAnimSegmentNode.Create;
-HAnimSegment1388.NameField := 'r_metacarpal_3';
 Transform1389 := TTransformNode.Create;
 Transform1389.Translation := Vector3(-0.1972,0.806,-0.0468);
 Transform1390 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor1391 := TTouchSensorNode.Create;
 TouchSensor1391.Description := 'Joint r_carpometacarpal_3';
-{ .AddChildren }
-Transform1390.AddChildren([TouchSensor1391]);
-Shape1392 := Shape20;
-{ .AddChild }
-Transform1390.AddChildren([Shape1392]);
-{ .AddChildren }
-Transform1389.AddChildren([Transform1390]);
-{ .AddChildren }
-HAnimSegment1388.AddChildren([Transform1389]);
+{ METHOD .FdChildren.Add }
+Transform1390.FdChildren.Add(TouchSensor1391);
+{ METHOD .FdChildren.Add }
+Transform1390.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform1389.FdChildren.Add(Transform1390);
+{ METHOD .FdChildren.Add }
+HAnimSegment1388.FdChildren.Add(Transform1389);
 TouchSensor1393 := TTouchSensorNode.Create;
 TouchSensor1393.Description := 'Segment r_metacarpal_3';
-{ .AddChildren }
-HAnimSegment1388.AddChildren([TouchSensor1393]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1388.FdChildren.Add(TouchSensor1393);
 Shape1394 := TShapeNode.Create;
 Appearance1395 := TAppearanceNode.Create;
 Material1396 := TMaterialNode.Create;
 Material1396.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1395.Material := Material1396;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1394.Appearance := Appearance1395;
 Extrusion1397 := TExtrusionNode.Create;
 Extrusion1397.SetSpine([Vector3(-0.1972,0.806,-0.0468),Vector3(-0.1972,0.7849,-0.0468)]);
+end;
+
+procedure InitStandardHumanoidPart90;
+begin
+
 Extrusion1397.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1394.Geometry := Extrusion1397;
-{ .AddChildren }
-HAnimSegment1388.AddChildren([Shape1394]);
-{ .AddChildren }
-HAnimJoint1387.AddChildren([HAnimSegment1388]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1388.FdChildren.Add(Shape1394);
+{ METHOD .FdChildren.Add }
+HAnimJoint1387.FdChildren.Add(HAnimSegment1388);
 HAnimJoint1398 := THAnimJointNode.Create;
-HAnimJoint1398.NameField := 'r_metacarpophalangeal_3';
 HAnimJoint1398.Center := Vector3(-0.1972,0.7849,-0.0468);
 HAnimSegment1399 := THAnimSegmentNode.Create;
-HAnimSegment1399.NameField := 'r_carpal_proximal_phalanx_3';
 Transform1400 := TTransformNode.Create;
 Transform1400.Translation := Vector3(-0.1972,0.7849,-0.0468);
 Transform1401 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor1402 := TTouchSensorNode.Create;
 TouchSensor1402.Description := 'Joint r_metacarpophalangeal_3';
-{ .AddChildren }
-Transform1401.AddChildren([TouchSensor1402]);
-Shape1403 := Shape20;
-{ .AddChild }
-Transform1401.AddChildren([Shape1403]);
-{ .AddChildren }
-Transform1400.AddChildren([Transform1401]);
-{ .AddChildren }
-HAnimSegment1399.AddChildren([Transform1400]);
+{ METHOD .FdChildren.Add }
+Transform1401.FdChildren.Add(TouchSensor1402);
+{ METHOD .FdChildren.Add }
+Transform1401.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform1400.FdChildren.Add(Transform1401);
+{ METHOD .FdChildren.Add }
+HAnimSegment1399.FdChildren.Add(Transform1400);
 TouchSensor1404 := TTouchSensorNode.Create;
 TouchSensor1404.Description := 'Segment r_carpal_proximal_phalanx_3';
-{ .AddChildren }
-HAnimSegment1399.AddChildren([TouchSensor1404]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1399.FdChildren.Add(TouchSensor1404);
 Shape1405 := TShapeNode.Create;
 Appearance1406 := TAppearanceNode.Create;
 Material1407 := TMaterialNode.Create;
 Material1407.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1406.Material := Material1407;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1405.Appearance := Appearance1406;
 Extrusion1408 := TExtrusionNode.Create;
 Extrusion1408.SetSpine([Vector3(-0.1972,0.7849,-0.0468),Vector3(-0.195,0.7304,-0.0441)]);
 Extrusion1408.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1405.Geometry := Extrusion1408;
-{ .AddChildren }
-HAnimSegment1399.AddChildren([Shape1405]);
-{ .AddChildren }
-HAnimJoint1398.AddChildren([HAnimSegment1399]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1399.FdChildren.Add(Shape1405);
+{ METHOD .FdChildren.Add }
+HAnimJoint1398.FdChildren.Add(HAnimSegment1399);
 HAnimJoint1409 := THAnimJointNode.Create;
-HAnimJoint1409.NameField := 'r_carpal_proximal_interphalangeal_3';
 HAnimJoint1409.Center := Vector3(-0.195,0.7304,-0.0441);
 HAnimSegment1410 := THAnimSegmentNode.Create;
-HAnimSegment1410.NameField := 'r_carpal_middle_phalanx_3';
 Transform1411 := TTransformNode.Create;
 Transform1411.Translation := Vector3(-0.195,0.7304,-0.0441);
 Transform1412 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor1413 := TTouchSensorNode.Create;
 TouchSensor1413.Description := 'Joint r_carpal_proximal_interphalangeal_3';
-{ .AddChildren }
-Transform1412.AddChildren([TouchSensor1413]);
-Shape1414 := Shape20;
-{ .AddChild }
-Transform1412.AddChildren([Shape1414]);
-{ .AddChildren }
-Transform1411.AddChildren([Transform1412]);
-{ .AddChildren }
-HAnimSegment1410.AddChildren([Transform1411]);
+{ METHOD .FdChildren.Add }
+Transform1412.FdChildren.Add(TouchSensor1413);
+end;
+
+procedure InitStandardHumanoidPart91;
+begin
+
+{ METHOD .FdChildren.Add }
+Transform1412.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform1411.FdChildren.Add(Transform1412);
+{ METHOD .FdChildren.Add }
+HAnimSegment1410.FdChildren.Add(Transform1411);
 TouchSensor1415 := TTouchSensorNode.Create;
 TouchSensor1415.Description := 'Segment r_carpal_middle_phalanx_3';
-{ .AddChildren }
-HAnimSegment1410.AddChildren([TouchSensor1415]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1410.FdChildren.Add(TouchSensor1415);
 Shape1416 := TShapeNode.Create;
 Appearance1417 := TAppearanceNode.Create;
 Material1418 := TMaterialNode.Create;
 Material1418.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1417.Material := Material1418;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1416.Appearance := Appearance1417;
 Extrusion1419 := TExtrusionNode.Create;
 Extrusion1419.SetSpine([Vector3(-0.195,0.7304,-0.0441),Vector3(-0.1939,0.7042,-0.0432)]);
 Extrusion1419.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1416.Geometry := Extrusion1419;
-{ .AddChildren }
-HAnimSegment1410.AddChildren([Shape1416]);
-{ .AddChildren }
-HAnimJoint1409.AddChildren([HAnimSegment1410]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1410.FdChildren.Add(Shape1416);
+{ METHOD .FdChildren.Add }
+HAnimJoint1409.FdChildren.Add(HAnimSegment1410);
 HAnimJoint1420 := THAnimJointNode.Create;
-HAnimJoint1420.NameField := 'r_carpal_distal_interphalangeal_3';
 HAnimJoint1420.Center := Vector3(-0.1939,0.7042,-0.0432);
-{ .AddChildren }
-HAnimJoint1409.AddChildren([HAnimJoint1420]);
-{ .AddChildren }
-HAnimJoint1398.AddChildren([HAnimJoint1409]);
-{ .AddChildren }
-HAnimJoint1387.AddChildren([HAnimJoint1398]);
-{ .AddChildren }
-HAnimJoint1376.AddChildren([HAnimJoint1387]);
-{ .AddChildren }
-HAnimJoint1271.AddChildren([HAnimJoint1376]);
+{ METHOD .FdChildren.Add }
+HAnimJoint1409.FdChildren.Add(HAnimJoint1420);
+{ METHOD .FdChildren.Add }
+HAnimJoint1398.FdChildren.Add(HAnimJoint1409);
+{ METHOD .FdChildren.Add }
+HAnimJoint1387.FdChildren.Add(HAnimJoint1398);
+{ METHOD .FdChildren.Add }
+HAnimJoint1376.FdChildren.Add(HAnimJoint1387);
+{ METHOD .FdChildren.Add }
+HAnimJoint1271.FdChildren.Add(HAnimJoint1376);
 HAnimJoint1421 := THAnimJointNode.Create;
-HAnimJoint1421.NameField := 'r_midcarpal_4_5';
 HAnimJoint1421.Center := Vector3(-0.1809,0.6973,-0.1276);
 HAnimSegment1422 := THAnimSegmentNode.Create;
-HAnimSegment1422.NameField := 'r_hamate';
 Transform1423 := TTransformNode.Create;
 Transform1423.Translation := Vector3(-0.1809,0.6973,-0.1276);
 Transform1424 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor1425 := TTouchSensorNode.Create;
 TouchSensor1425.Description := 'Joint r_midcarpal_4_5';
-{ .AddChildren }
-Transform1424.AddChildren([TouchSensor1425]);
-Shape1426 := Shape20;
-{ .AddChild }
-Transform1424.AddChildren([Shape1426]);
-{ .AddChildren }
-Transform1423.AddChildren([Transform1424]);
-{ .AddChildren }
-HAnimSegment1422.AddChildren([Transform1423]);
+{ METHOD .FdChildren.Add }
+Transform1424.FdChildren.Add(TouchSensor1425);
+{ METHOD .FdChildren.Add }
+Transform1424.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform1423.FdChildren.Add(Transform1424);
+{ METHOD .FdChildren.Add }
+HAnimSegment1422.FdChildren.Add(Transform1423);
 TouchSensor1427 := TTouchSensorNode.Create;
 TouchSensor1427.Description := 'Segment r_hamate';
-{ .AddChildren }
-HAnimSegment1422.AddChildren([TouchSensor1427]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1422.FdChildren.Add(TouchSensor1427);
+end;
+
+procedure InitStandardHumanoidPart92;
+begin
+
 Shape1428 := TShapeNode.Create;
 Appearance1429 := TAppearanceNode.Create;
 Material1430 := TMaterialNode.Create;
 Material1430.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1429.Material := Material1430;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1428.Appearance := Appearance1429;
 Extrusion1431 := TExtrusionNode.Create;
 Extrusion1431.SetSpine([Vector3(-0.1809,0.6973,-0.1276),Vector3(-0.1951,0.8049,-0.0732)]);
 Extrusion1431.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1428.Geometry := Extrusion1431;
-{ .AddChildren }
-HAnimSegment1422.AddChildren([Shape1428]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1422.FdChildren.Add(Shape1428);
 TouchSensor1432 := TTouchSensorNode.Create;
 TouchSensor1432.Description := 'Segment r_hamate';
-{ .AddChildren }
-HAnimSegment1422.AddChildren([TouchSensor1432]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1422.FdChildren.Add(TouchSensor1432);
 Shape1433 := TShapeNode.Create;
 Appearance1434 := TAppearanceNode.Create;
 Material1435 := TMaterialNode.Create;
 Material1435.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1434.Material := Material1435;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1433.Appearance := Appearance1434;
 Extrusion1436 := TExtrusionNode.Create;
 Extrusion1436.SetSpine([Vector3(-0.1809,0.6973,-0.1276),Vector3(-0.1926,0.8096,-0.0975)]);
 Extrusion1436.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1433.Geometry := Extrusion1436;
-{ .AddChildren }
-HAnimSegment1422.AddChildren([Shape1433]);
-{ .AddChildren }
-HAnimJoint1421.AddChildren([HAnimSegment1422]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1422.FdChildren.Add(Shape1433);
+{ METHOD .FdChildren.Add }
+HAnimJoint1421.FdChildren.Add(HAnimSegment1422);
 HAnimJoint1437 := THAnimJointNode.Create;
-HAnimJoint1437.NameField := 'r_carpometacarpal_4';
 HAnimJoint1437.Center := Vector3(-0.1951,0.8049,-0.0732);
 HAnimSegment1438 := THAnimSegmentNode.Create;
-HAnimSegment1438.NameField := 'r_metacarpal_4';
 Transform1439 := TTransformNode.Create;
 Transform1439.Translation := Vector3(-0.1951,0.8049,-0.0732);
 Transform1440 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor1441 := TTouchSensorNode.Create;
 TouchSensor1441.Description := 'Joint r_carpometacarpal_4';
-{ .AddChildren }
-Transform1440.AddChildren([TouchSensor1441]);
-Shape1442 := Shape20;
-{ .AddChild }
-Transform1440.AddChildren([Shape1442]);
-{ .AddChildren }
-Transform1439.AddChildren([Transform1440]);
-{ .AddChildren }
-HAnimSegment1438.AddChildren([Transform1439]);
+{ METHOD .FdChildren.Add }
+Transform1440.FdChildren.Add(TouchSensor1441);
+{ METHOD .FdChildren.Add }
+Transform1440.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform1439.FdChildren.Add(Transform1440);
+{ METHOD .FdChildren.Add }
+HAnimSegment1438.FdChildren.Add(Transform1439);
 TouchSensor1443 := TTouchSensorNode.Create;
 TouchSensor1443.Description := 'Segment r_metacarpal_4';
-{ .AddChildren }
-HAnimSegment1438.AddChildren([TouchSensor1443]);
+end;
+
+procedure InitStandardHumanoidPart93;
+begin
+
+{ METHOD .FdChildren.Add }
+HAnimSegment1438.FdChildren.Add(TouchSensor1443);
 Shape1444 := TShapeNode.Create;
 Appearance1445 := TAppearanceNode.Create;
 Material1446 := TMaterialNode.Create;
 Material1446.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1445.Material := Material1446;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1444.Appearance := Appearance1445;
 Extrusion1447 := TExtrusionNode.Create;
 Extrusion1447.SetSpine([Vector3(-0.1951,0.8049,-0.0732),Vector3(-0.1951,0.7845,-0.0732)]);
 Extrusion1447.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1444.Geometry := Extrusion1447;
-{ .AddChildren }
-HAnimSegment1438.AddChildren([Shape1444]);
-{ .AddChildren }
-HAnimJoint1437.AddChildren([HAnimSegment1438]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1438.FdChildren.Add(Shape1444);
+{ METHOD .FdChildren.Add }
+HAnimJoint1437.FdChildren.Add(HAnimSegment1438);
 HAnimJoint1448 := THAnimJointNode.Create;
-HAnimJoint1448.NameField := 'r_metacarpophalangeal_4';
 HAnimJoint1448.Center := Vector3(-0.1951,0.7845,-0.0732);
 HAnimSegment1449 := THAnimSegmentNode.Create;
-HAnimSegment1449.NameField := 'r_carpal_proximal_phalanx_4';
 Transform1450 := TTransformNode.Create;
 Transform1450.Translation := Vector3(-0.1951,0.7845,-0.0732);
 Transform1451 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor1452 := TTouchSensorNode.Create;
 TouchSensor1452.Description := 'Joint r_metacarpophalangeal_4';
-{ .AddChildren }
-Transform1451.AddChildren([TouchSensor1452]);
-Shape1453 := Shape20;
-{ .AddChild }
-Transform1451.AddChildren([Shape1453]);
-{ .AddChildren }
-Transform1450.AddChildren([Transform1451]);
-{ .AddChildren }
-HAnimSegment1449.AddChildren([Transform1450]);
+{ METHOD .FdChildren.Add }
+Transform1451.FdChildren.Add(TouchSensor1452);
+{ METHOD .FdChildren.Add }
+Transform1451.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform1450.FdChildren.Add(Transform1451);
+{ METHOD .FdChildren.Add }
+HAnimSegment1449.FdChildren.Add(Transform1450);
 TouchSensor1454 := TTouchSensorNode.Create;
 TouchSensor1454.Description := 'Segment r_carpal_proximal_phalanx_4';
-{ .AddChildren }
-HAnimSegment1449.AddChildren([TouchSensor1454]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1449.FdChildren.Add(TouchSensor1454);
 Shape1455 := TShapeNode.Create;
 Appearance1456 := TAppearanceNode.Create;
 Material1457 := TMaterialNode.Create;
 Material1457.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1456.Material := Material1457;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1455.Appearance := Appearance1456;
 Extrusion1458 := TExtrusionNode.Create;
 Extrusion1458.SetSpine([Vector3(-0.1951,0.7845,-0.0732),Vector3(-0.192,0.7318,-0.0716)]);
 Extrusion1458.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1455.Geometry := Extrusion1458;
-{ .AddChildren }
-HAnimSegment1449.AddChildren([Shape1455]);
-{ .AddChildren }
-HAnimJoint1448.AddChildren([HAnimSegment1449]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1449.FdChildren.Add(Shape1455);
+{ METHOD .FdChildren.Add }
+HAnimJoint1448.FdChildren.Add(HAnimSegment1449);
+end;
+
+procedure InitStandardHumanoidPart94;
+begin
+
 HAnimJoint1459 := THAnimJointNode.Create;
-HAnimJoint1459.NameField := 'r_carpal_proximal_interphalangeal_4';
 HAnimJoint1459.Center := Vector3(-0.192,0.7318,-0.0716);
 HAnimSegment1460 := THAnimSegmentNode.Create;
-HAnimSegment1460.NameField := 'r_carpal_middle_phalanx_4';
 Transform1461 := TTransformNode.Create;
 Transform1461.Translation := Vector3(-0.192,0.7318,-0.0716);
 Transform1462 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor1463 := TTouchSensorNode.Create;
 TouchSensor1463.Description := 'Joint r_carpal_proximal_interphalangeal_4';
-{ .AddChildren }
-Transform1462.AddChildren([TouchSensor1463]);
-Shape1464 := Shape20;
-{ .AddChild }
-Transform1462.AddChildren([Shape1464]);
-{ .AddChildren }
-Transform1461.AddChildren([Transform1462]);
-{ .AddChildren }
-HAnimSegment1460.AddChildren([Transform1461]);
+{ METHOD .FdChildren.Add }
+Transform1462.FdChildren.Add(TouchSensor1463);
+{ METHOD .FdChildren.Add }
+Transform1462.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform1461.FdChildren.Add(Transform1462);
+{ METHOD .FdChildren.Add }
+HAnimSegment1460.FdChildren.Add(Transform1461);
 TouchSensor1465 := TTouchSensorNode.Create;
 TouchSensor1465.Description := 'Segment r_carpal_middle_phalanx_4';
-{ .AddChildren }
-HAnimSegment1460.AddChildren([TouchSensor1465]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1460.FdChildren.Add(TouchSensor1465);
 Shape1466 := TShapeNode.Create;
 Appearance1467 := TAppearanceNode.Create;
 Material1468 := TMaterialNode.Create;
 Material1468.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1467.Material := Material1468;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1466.Appearance := Appearance1467;
 Extrusion1469 := TExtrusionNode.Create;
 Extrusion1469.SetSpine([Vector3(-0.192,0.7318,-0.0716),Vector3(-0.1908,0.7077,-0.0706)]);
 Extrusion1469.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1466.Geometry := Extrusion1469;
-{ .AddChildren }
-HAnimSegment1460.AddChildren([Shape1466]);
-{ .AddChildren }
-HAnimJoint1459.AddChildren([HAnimSegment1460]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1460.FdChildren.Add(Shape1466);
+{ METHOD .FdChildren.Add }
+HAnimJoint1459.FdChildren.Add(HAnimSegment1460);
 HAnimJoint1470 := THAnimJointNode.Create;
-HAnimJoint1470.NameField := 'r_carpal_distal_interphalangeal_4';
 HAnimJoint1470.Center := Vector3(-0.1908,0.7077,-0.0706);
-{ .AddChildren }
-HAnimJoint1459.AddChildren([HAnimJoint1470]);
-{ .AddChildren }
-HAnimJoint1448.AddChildren([HAnimJoint1459]);
-{ .AddChildren }
-HAnimJoint1437.AddChildren([HAnimJoint1448]);
-{ .AddChildren }
-HAnimJoint1421.AddChildren([HAnimJoint1437]);
+{ METHOD .FdChildren.Add }
+HAnimJoint1459.FdChildren.Add(HAnimJoint1470);
+{ METHOD .FdChildren.Add }
+HAnimJoint1448.FdChildren.Add(HAnimJoint1459);
+{ METHOD .FdChildren.Add }
+HAnimJoint1437.FdChildren.Add(HAnimJoint1448);
+{ METHOD .FdChildren.Add }
+HAnimJoint1421.FdChildren.Add(HAnimJoint1437);
 HAnimJoint1471 := THAnimJointNode.Create;
-HAnimJoint1471.NameField := 'r_carpometacarpal_5';
 HAnimJoint1471.Center := Vector3(-0.1926,0.8096,-0.0975);
 HAnimSegment1472 := THAnimSegmentNode.Create;
-HAnimSegment1472.NameField := 'r_metacarpal_5';
 Transform1473 := TTransformNode.Create;
 Transform1473.Translation := Vector3(-0.1926,0.8096,-0.0975);
 Transform1474 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor1475 := TTouchSensorNode.Create;
+end;
+
+procedure InitStandardHumanoidPart95;
+begin
+
 TouchSensor1475.Description := 'Joint r_carpometacarpal_5';
-{ .AddChildren }
-Transform1474.AddChildren([TouchSensor1475]);
-Shape1476 := Shape20;
-{ .AddChild }
-Transform1474.AddChildren([Shape1476]);
-{ .AddChildren }
-Transform1473.AddChildren([Transform1474]);
-{ .AddChildren }
-HAnimSegment1472.AddChildren([Transform1473]);
+{ METHOD .FdChildren.Add }
+Transform1474.FdChildren.Add(TouchSensor1475);
+{ METHOD .FdChildren.Add }
+Transform1474.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform1473.FdChildren.Add(Transform1474);
+{ METHOD .FdChildren.Add }
+HAnimSegment1472.FdChildren.Add(Transform1473);
 TouchSensor1477 := TTouchSensorNode.Create;
 TouchSensor1477.Description := 'Segment r_metacarpal_5';
-{ .AddChildren }
-HAnimSegment1472.AddChildren([TouchSensor1477]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1472.FdChildren.Add(TouchSensor1477);
 Shape1478 := TShapeNode.Create;
 Appearance1479 := TAppearanceNode.Create;
 Material1480 := TMaterialNode.Create;
 Material1480.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1479.Material := Material1480;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1478.Appearance := Appearance1479;
 Extrusion1481 := TExtrusionNode.Create;
 Extrusion1481.SetSpine([Vector3(-0.1926,0.8096,-0.0975),Vector3(-0.1926,0.7896,-0.0975)]);
 Extrusion1481.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1478.Geometry := Extrusion1481;
-{ .AddChildren }
-HAnimSegment1472.AddChildren([Shape1478]);
-{ .AddChildren }
-HAnimJoint1471.AddChildren([HAnimSegment1472]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1472.FdChildren.Add(Shape1478);
+{ METHOD .FdChildren.Add }
+HAnimJoint1471.FdChildren.Add(HAnimSegment1472);
 HAnimJoint1482 := THAnimJointNode.Create;
-HAnimJoint1482.NameField := 'r_metacarpophalangeal_5';
 HAnimJoint1482.Center := Vector3(-0.1926,0.7896,-0.0975);
 HAnimSegment1483 := THAnimSegmentNode.Create;
-HAnimSegment1483.NameField := 'r_carpal_proximal_phalanx_5';
 Transform1484 := TTransformNode.Create;
 Transform1484.Translation := Vector3(-0.1926,0.7896,-0.0975);
 Transform1485 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor1486 := TTouchSensorNode.Create;
 TouchSensor1486.Description := 'Joint r_metacarpophalangeal_5';
-{ .AddChildren }
-Transform1485.AddChildren([TouchSensor1486]);
-Shape1487 := Shape20;
-{ .AddChild }
-Transform1485.AddChildren([Shape1487]);
-{ .AddChildren }
-Transform1484.AddChildren([Transform1485]);
-{ .AddChildren }
-HAnimSegment1483.AddChildren([Transform1484]);
+{ METHOD .FdChildren.Add }
+Transform1485.FdChildren.Add(TouchSensor1486);
+{ METHOD .FdChildren.Add }
+Transform1485.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform1484.FdChildren.Add(Transform1485);
+{ METHOD .FdChildren.Add }
+HAnimSegment1483.FdChildren.Add(Transform1484);
 TouchSensor1488 := TTouchSensorNode.Create;
 TouchSensor1488.Description := 'Segment r_carpal_proximal_phalanx_5';
-{ .AddChildren }
-HAnimSegment1483.AddChildren([TouchSensor1488]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1483.FdChildren.Add(TouchSensor1488);
 Shape1489 := TShapeNode.Create;
 Appearance1490 := TAppearanceNode.Create;
 Material1491 := TMaterialNode.Create;
 Material1491.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1490.Material := Material1491;
-{ .SetAppearance }
+end;
+
+procedure InitStandardHumanoidPart96;
+begin
+
+{ METHOD .Appearance }
 Shape1489.Appearance := Appearance1490;
 Extrusion1492 := TExtrusionNode.Create;
 Extrusion1492.SetSpine([Vector3(-0.1926,0.7896,-0.0975),Vector3(-0.1902,0.7483,-0.0963)]);
 Extrusion1492.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1489.Geometry := Extrusion1492;
-{ .AddChildren }
-HAnimSegment1483.AddChildren([Shape1489]);
-{ .AddChildren }
-HAnimJoint1482.AddChildren([HAnimSegment1483]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1483.FdChildren.Add(Shape1489);
+{ METHOD .FdChildren.Add }
+HAnimJoint1482.FdChildren.Add(HAnimSegment1483);
 HAnimJoint1493 := THAnimJointNode.Create;
-HAnimJoint1493.NameField := 'r_carpal_proximal_interphalangeal_5';
 HAnimJoint1493.Center := Vector3(-0.1902,0.7483,-0.0963);
 HAnimSegment1494 := THAnimSegmentNode.Create;
-HAnimSegment1494.NameField := 'r_carpal_middle_phalanx_5';
 Transform1495 := TTransformNode.Create;
 Transform1495.Translation := Vector3(-0.1902,0.7483,-0.0963);
 Transform1496 := TTransformNode.Create;
 { Empty Transform }
 TouchSensor1497 := TTouchSensorNode.Create;
 TouchSensor1497.Description := 'Joint r_carpal_proximal_interphalangeal_5';
-{ .AddChildren }
-Transform1496.AddChildren([TouchSensor1497]);
-Shape1498 := Shape20;
-{ .AddChild }
-Transform1496.AddChildren([Shape1498]);
-{ .AddChildren }
-Transform1495.AddChildren([Transform1496]);
-{ .AddChildren }
-HAnimSegment1494.AddChildren([Transform1495]);
+{ METHOD .FdChildren.Add }
+Transform1496.FdChildren.Add(TouchSensor1497);
+{ METHOD .FdChildren.Add }
+Transform1496.FdChildren.Add(Shape20);
+{ METHOD .FdChildren.Add }
+Transform1495.FdChildren.Add(Transform1496);
+{ METHOD .FdChildren.Add }
+HAnimSegment1494.FdChildren.Add(Transform1495);
 TouchSensor1499 := TTouchSensorNode.Create;
 TouchSensor1499.Description := 'Segment r_carpal_middle_phalanx_5';
-{ .AddChildren }
-HAnimSegment1494.AddChildren([TouchSensor1499]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1494.FdChildren.Add(TouchSensor1499);
 Shape1500 := TShapeNode.Create;
 Appearance1501 := TAppearanceNode.Create;
 Material1502 := TMaterialNode.Create;
 Material1502.DiffuseColor := Vector3(1,0,0);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance1501.Material := Material1502;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape1500.Appearance := Appearance1501;
 Extrusion1503 := TExtrusionNode.Create;
 Extrusion1503.SetSpine([Vector3(-0.1902,0.7483,-0.0963),Vector3(-0.1908,0.754,-0.096)]);
 Extrusion1503.SetCrossSection([Vector2(-0.03,-0.03),Vector2(0.03,-0.03),Vector2(0.03,0.03),Vector2(-0.03,0.03),Vector2(-0.03,-0.03)]);
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape1500.Geometry := Extrusion1503;
-{ .AddChildren }
-HAnimSegment1494.AddChildren([Shape1500]);
-{ .AddChildren }
-HAnimJoint1493.AddChildren([HAnimSegment1494]);
+{ METHOD .FdChildren.Add }
+HAnimSegment1494.FdChildren.Add(Shape1500);
+{ METHOD .FdChildren.Add }
+HAnimJoint1493.FdChildren.Add(HAnimSegment1494);
 HAnimJoint1504 := THAnimJointNode.Create;
-HAnimJoint1504.NameField := 'r_carpal_distal_interphalangeal_5';
 HAnimJoint1504.Center := Vector3(-0.1908,0.754,-0.096);
-{ .AddChildren }
-HAnimJoint1493.AddChildren([HAnimJoint1504]);
-{ .AddChildren }
-HAnimJoint1482.AddChildren([HAnimJoint1493]);
-{ .AddChildren }
-HAnimJoint1471.AddChildren([HAnimJoint1482]);
-{ .AddChildren }
-HAnimJoint1421.AddChildren([HAnimJoint1471]);
-{ .AddChildren }
-HAnimJoint1271.AddChildren([HAnimJoint1421]);
-{ .AddChildren }
-HAnimJoint1260.AddChildren([HAnimJoint1271]);
-{ .AddChildren }
-HAnimJoint1249.AddChildren([HAnimJoint1260]);
-{ .AddChildren }
-HAnimJoint1238.AddChildren([HAnimJoint1249]);
-{ .AddChildren }
-HAnimJoint1227.AddChildren([HAnimJoint1238]);
-{ .AddChildren }
-HAnimJoint803.AddChildren([HAnimJoint1227]);
-{ .AddChildren }
-HAnimJoint792.AddChildren([HAnimJoint803]);
-{ .AddChildren }
-HAnimJoint781.AddChildren([HAnimJoint792]);
-{ .AddChildren }
-HAnimJoint770.AddChildren([HAnimJoint781]);
-{ .AddChildren }
-HAnimJoint759.AddChildren([HAnimJoint770]);
-{ .AddChildren }
-HAnimJoint748.AddChildren([HAnimJoint759]);
-{ .AddChildren }
-HAnimJoint737.AddChildren([HAnimJoint748]);
-{ .AddChildren }
-HAnimJoint726.AddChildren([HAnimJoint737]);
-{ .AddChildren }
-HAnimJoint715.AddChildren([HAnimJoint726]);
-{ .AddChildren }
-HAnimJoint704.AddChildren([HAnimJoint715]);
-{ .AddChildren }
-HAnimJoint693.AddChildren([HAnimJoint704]);
-{ .AddChildren }
-HAnimJoint682.AddChildren([HAnimJoint693]);
-{ .AddChildren }
-HAnimJoint671.AddChildren([HAnimJoint682]);
-{ .AddChildren }
-HAnimJoint660.AddChildren([HAnimJoint671]);
-{ .AddChildren }
-HAnimJoint649.AddChildren([HAnimJoint660]);
-{ .AddChildren }
-HAnimJoint638.AddChildren([HAnimJoint649]);
-{ .AddChildren }
-HAnimJoint627.AddChildren([HAnimJoint638]);
-{ .AddChildren }
-HAnimJoint39.AddChildren([HAnimJoint627]);
-{ .AddSkeleton }
-HAnimHumanoid38.SetSkeleton([HAnimJoint39]);
-HAnimJoint1505 := HAnimJoint39;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1505);
-HAnimJoint1506 := HAnimJoint55;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1506);
-HAnimJoint1507 := HAnimJoint71;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1507);
-HAnimJoint1508 := HAnimJoint82;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1508);
-HAnimJoint1509 := HAnimJoint93;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1509);
-HAnimJoint1510 := HAnimJoint109;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1510);
-HAnimJoint1511 := HAnimJoint130;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1511);
-HAnimJoint1512 := HAnimJoint141;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1512);
-HAnimJoint1513 := HAnimJoint152;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1513);
-HAnimJoint1514 := HAnimJoint163;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1514);
-HAnimJoint1515 := HAnimJoint164;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1515);
-HAnimJoint1516 := HAnimJoint175;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1516);
-HAnimJoint1517 := HAnimJoint186;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1517);
-HAnimJoint1518 := HAnimJoint197;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1518);
-HAnimJoint1519 := HAnimJoint208;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1519);
-HAnimJoint1520 := HAnimJoint209;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1520);
-HAnimJoint1521 := HAnimJoint220;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1521);
-HAnimJoint1522 := HAnimJoint231;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1522);
-HAnimJoint1523 := HAnimJoint242;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1523);
-HAnimJoint1524 := HAnimJoint253;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1524);
-HAnimJoint1525 := HAnimJoint254;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1525);
-HAnimJoint1526 := HAnimJoint265;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1526);
-HAnimJoint1527 := HAnimJoint281;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1527);
-HAnimJoint1528 := HAnimJoint292;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1528);
-HAnimJoint1529 := HAnimJoint303;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1529);
-HAnimJoint1530 := HAnimJoint314;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1530);
-HAnimJoint1531 := HAnimJoint315;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1531);
-HAnimJoint1532 := HAnimJoint326;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1532);
-HAnimJoint1533 := HAnimJoint337;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1533);
-HAnimJoint1534 := HAnimJoint348;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1534);
-HAnimJoint1535 := HAnimJoint349;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1535);
-HAnimJoint1536 := HAnimJoint360;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1536);
-HAnimJoint1537 := HAnimJoint371;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1537);
-HAnimJoint1538 := HAnimJoint387;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1538);
-HAnimJoint1539 := HAnimJoint408;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1539);
-HAnimJoint1540 := HAnimJoint419;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1540);
-HAnimJoint1541 := HAnimJoint430;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1541);
-HAnimJoint1542 := HAnimJoint441;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1542);
-HAnimJoint1543 := HAnimJoint442;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1543);
-HAnimJoint1544 := HAnimJoint453;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1544);
-HAnimJoint1545 := HAnimJoint464;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1545);
-HAnimJoint1546 := HAnimJoint475;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1546);
-HAnimJoint1547 := HAnimJoint486;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1547);
-HAnimJoint1548 := HAnimJoint487;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1548);
-HAnimJoint1549 := HAnimJoint498;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1549);
-HAnimJoint1550 := HAnimJoint509;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1550);
-HAnimJoint1551 := HAnimJoint520;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1551);
-HAnimJoint1552 := HAnimJoint531;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1552);
-HAnimJoint1553 := HAnimJoint532;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1553);
-HAnimJoint1554 := HAnimJoint543;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1554);
-HAnimJoint1555 := HAnimJoint559;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1555);
-HAnimJoint1556 := HAnimJoint570;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1556);
-HAnimJoint1557 := HAnimJoint581;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1557);
-HAnimJoint1558 := HAnimJoint592;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1558);
-HAnimJoint1559 := HAnimJoint593;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1559);
-HAnimJoint1560 := HAnimJoint604;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1560);
-HAnimJoint1561 := HAnimJoint615;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1561);
-HAnimJoint1562 := HAnimJoint626;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1562);
-HAnimJoint1563 := HAnimJoint627;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1563);
-HAnimJoint1564 := HAnimJoint638;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1564);
-HAnimJoint1565 := HAnimJoint649;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1565);
-HAnimJoint1566 := HAnimJoint660;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1566);
-HAnimJoint1567 := HAnimJoint671;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1567);
-HAnimJoint1568 := HAnimJoint682;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1568);
-HAnimJoint1569 := HAnimJoint693;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1569);
-HAnimJoint1570 := HAnimJoint704;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1570);
-HAnimJoint1571 := HAnimJoint715;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1571);
-HAnimJoint1572 := HAnimJoint726;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1572);
-HAnimJoint1573 := HAnimJoint737;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1573);
-HAnimJoint1574 := HAnimJoint748;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1574);
-HAnimJoint1575 := HAnimJoint759;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1575);
-HAnimJoint1576 := HAnimJoint770;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1576);
-HAnimJoint1577 := HAnimJoint781;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1577);
-HAnimJoint1578 := HAnimJoint792;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1578);
-HAnimJoint1579 := HAnimJoint803;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1579);
-HAnimJoint1580 := HAnimJoint824;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1580);
-HAnimJoint1581 := HAnimJoint835;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1581);
-HAnimJoint1582 := HAnimJoint846;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1582);
-HAnimJoint1583 := HAnimJoint857;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1583);
-HAnimJoint1584 := HAnimJoint868;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1584);
-HAnimJoint1585 := HAnimJoint879;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1585);
-HAnimJoint1586 := HAnimJoint890;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1586);
-HAnimJoint1587 := HAnimJoint901;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1587);
-HAnimJoint1588 := HAnimJoint942;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1588);
-HAnimJoint1589 := HAnimJoint943;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1589);
-HAnimJoint1590 := HAnimJoint944;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1590);
-HAnimJoint1591 := HAnimJoint945;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1591);
-HAnimJoint1592 := HAnimJoint946;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1592);
-HAnimJoint1593 := HAnimJoint947;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1593);
-HAnimJoint1594 := HAnimJoint948;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1594);
-HAnimJoint1595 := HAnimJoint949;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1595);
-HAnimJoint1596 := HAnimJoint960;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1596);
-HAnimJoint1597 := HAnimJoint971;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1597);
-HAnimJoint1598 := HAnimJoint982;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1598);
-HAnimJoint1599 := HAnimJoint993;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1599);
-HAnimJoint1600 := HAnimJoint1019;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1600);
-HAnimJoint1601 := HAnimJoint1030;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1601);
-HAnimJoint1602 := HAnimJoint1041;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1602);
-HAnimJoint1603 := HAnimJoint1052;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1603);
-HAnimJoint1604 := HAnimJoint1053;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1604);
-HAnimJoint1605 := HAnimJoint1064;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1605);
-HAnimJoint1606 := HAnimJoint1075;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1606);
-HAnimJoint1607 := HAnimJoint1086;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1607);
-HAnimJoint1608 := HAnimJoint1097;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1608);
-HAnimJoint1609 := HAnimJoint1098;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1609);
-HAnimJoint1610 := HAnimJoint1109;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1610);
-HAnimJoint1611 := HAnimJoint1120;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1611);
-HAnimJoint1612 := HAnimJoint1131;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1612);
-HAnimJoint1613 := HAnimJoint1142;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1613);
-HAnimJoint1614 := HAnimJoint1143;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1614);
-HAnimJoint1615 := HAnimJoint1159;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1615);
-HAnimJoint1616 := HAnimJoint1170;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1616);
-HAnimJoint1617 := HAnimJoint1181;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1617);
-HAnimJoint1618 := HAnimJoint1192;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1618);
-HAnimJoint1619 := HAnimJoint1193;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1619);
-HAnimJoint1620 := HAnimJoint1204;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1620);
-HAnimJoint1621 := HAnimJoint1215;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1621);
-HAnimJoint1622 := HAnimJoint1226;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1622);
-HAnimJoint1623 := HAnimJoint1227;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1623);
-HAnimJoint1624 := HAnimJoint1238;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1624);
-HAnimJoint1625 := HAnimJoint1249;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1625);
-HAnimJoint1626 := HAnimJoint1260;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1626);
-HAnimJoint1627 := HAnimJoint1271;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1627);
-HAnimJoint1628 := HAnimJoint1297;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1628);
-HAnimJoint1629 := HAnimJoint1308;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1629);
-HAnimJoint1630 := HAnimJoint1319;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1630);
-HAnimJoint1631 := HAnimJoint1330;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1631);
-HAnimJoint1632 := HAnimJoint1331;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1632);
-HAnimJoint1633 := HAnimJoint1342;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1633);
-HAnimJoint1634 := HAnimJoint1353;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1634);
-HAnimJoint1635 := HAnimJoint1364;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1635);
-HAnimJoint1636 := HAnimJoint1375;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1636);
-HAnimJoint1637 := HAnimJoint1376;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1637);
-HAnimJoint1638 := HAnimJoint1387;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1638);
-HAnimJoint1639 := HAnimJoint1398;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1639);
-HAnimJoint1640 := HAnimJoint1409;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1640);
-HAnimJoint1641 := HAnimJoint1420;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1641);
-HAnimJoint1642 := HAnimJoint1421;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1642);
-HAnimJoint1643 := HAnimJoint1437;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1643);
-HAnimJoint1644 := HAnimJoint1448;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1644);
-HAnimJoint1645 := HAnimJoint1459;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1645);
-HAnimJoint1646 := HAnimJoint1470;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1646);
-HAnimJoint1647 := HAnimJoint1471;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1647);
-HAnimJoint1648 := HAnimJoint1482;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1648);
-HAnimJoint1649 := HAnimJoint1493;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1649);
-HAnimJoint1650 := HAnimJoint1504;
-{ .FdJoints.Add }
-HAnimHumanoid38.FdJoints.Add(HAnimJoint1650);
-HAnimSegment1651 := HAnimSegment40;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1651);
-HAnimSegment1652 := HAnimSegment56;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1652);
-HAnimSegment1653 := HAnimSegment72;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1653);
-HAnimSegment1654 := HAnimSegment83;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1654);
-HAnimSegment1655 := HAnimSegment94;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1655);
-HAnimSegment1656 := HAnimSegment110;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1656);
-HAnimSegment1657 := HAnimSegment131;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1657);
-HAnimSegment1658 := HAnimSegment142;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1658);
-HAnimSegment1659 := HAnimSegment153;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1659);
-HAnimSegment1660 := HAnimSegment165;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1660);
-HAnimSegment1661 := HAnimSegment176;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1661);
-HAnimSegment1662 := HAnimSegment187;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1662);
-HAnimSegment1663 := HAnimSegment198;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1663);
-HAnimSegment1664 := HAnimSegment210;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1664);
-HAnimSegment1665 := HAnimSegment221;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1665);
-HAnimSegment1666 := HAnimSegment232;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1666);
-HAnimSegment1667 := HAnimSegment243;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1667);
-HAnimSegment1668 := HAnimSegment255;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1668);
-HAnimSegment1669 := HAnimSegment266;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1669);
-HAnimSegment1670 := HAnimSegment282;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1670);
-HAnimSegment1671 := HAnimSegment293;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1671);
-HAnimSegment1672 := HAnimSegment304;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1672);
-HAnimSegment1673 := HAnimSegment316;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1673);
-HAnimSegment1674 := HAnimSegment327;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1674);
-HAnimSegment1675 := HAnimSegment338;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1675);
-HAnimSegment1676 := HAnimSegment350;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1676);
-HAnimSegment1677 := HAnimSegment361;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1677);
-HAnimSegment1678 := HAnimSegment372;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1678);
-HAnimSegment1679 := HAnimSegment388;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1679);
-HAnimSegment1680 := HAnimSegment409;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1680);
-HAnimSegment1681 := HAnimSegment420;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1681);
-HAnimSegment1682 := HAnimSegment431;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1682);
-HAnimSegment1683 := HAnimSegment443;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1683);
-HAnimSegment1684 := HAnimSegment454;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1684);
-HAnimSegment1685 := HAnimSegment465;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1685);
-HAnimSegment1686 := HAnimSegment476;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1686);
-HAnimSegment1687 := HAnimSegment488;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1687);
-HAnimSegment1688 := HAnimSegment499;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1688);
-HAnimSegment1689 := HAnimSegment510;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1689);
-HAnimSegment1690 := HAnimSegment521;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1690);
-HAnimSegment1691 := HAnimSegment533;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1691);
-HAnimSegment1692 := HAnimSegment544;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1692);
-HAnimSegment1693 := HAnimSegment560;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1693);
-HAnimSegment1694 := HAnimSegment571;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1694);
-HAnimSegment1695 := HAnimSegment582;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1695);
-HAnimSegment1696 := HAnimSegment594;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1696);
-HAnimSegment1697 := HAnimSegment605;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1697);
-HAnimSegment1698 := HAnimSegment616;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1698);
-HAnimSegment1699 := HAnimSegment628;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1699);
-HAnimSegment1700 := HAnimSegment639;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1700);
-HAnimSegment1701 := HAnimSegment650;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1701);
-HAnimSegment1702 := HAnimSegment661;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1702);
-HAnimSegment1703 := HAnimSegment672;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1703);
-HAnimSegment1704 := HAnimSegment683;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1704);
-HAnimSegment1705 := HAnimSegment694;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1705);
-HAnimSegment1706 := HAnimSegment705;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1706);
-HAnimSegment1707 := HAnimSegment716;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1707);
-HAnimSegment1708 := HAnimSegment727;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1708);
-HAnimSegment1709 := HAnimSegment738;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1709);
-HAnimSegment1710 := HAnimSegment749;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1710);
-HAnimSegment1711 := HAnimSegment760;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1711);
-HAnimSegment1712 := HAnimSegment771;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1712);
-HAnimSegment1713 := HAnimSegment782;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1713);
-HAnimSegment1714 := HAnimSegment793;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1714);
-HAnimSegment1715 := HAnimSegment804;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1715);
-HAnimSegment1716 := HAnimSegment825;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1716);
-HAnimSegment1717 := HAnimSegment836;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1717);
-HAnimSegment1718 := HAnimSegment847;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1718);
-HAnimSegment1719 := HAnimSegment858;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1719);
-HAnimSegment1720 := HAnimSegment869;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1720);
-HAnimSegment1721 := HAnimSegment880;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1721);
-HAnimSegment1722 := HAnimSegment891;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1722);
-HAnimSegment1723 := HAnimSegment902;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1723);
-HAnimSegment1724 := HAnimSegment950;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1724);
-HAnimSegment1725 := HAnimSegment961;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1725);
-HAnimSegment1726 := HAnimSegment972;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1726);
-HAnimSegment1727 := HAnimSegment983;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1727);
-HAnimSegment1728 := HAnimSegment994;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1728);
-HAnimSegment1729 := HAnimSegment1020;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1729);
-HAnimSegment1730 := HAnimSegment1031;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1730);
-HAnimSegment1731 := HAnimSegment1042;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1731);
-HAnimSegment1732 := HAnimSegment1054;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1732);
-HAnimSegment1733 := HAnimSegment1065;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1733);
-HAnimSegment1734 := HAnimSegment1076;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1734);
-HAnimSegment1735 := HAnimSegment1087;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1735);
-HAnimSegment1736 := HAnimSegment1099;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1736);
-HAnimSegment1737 := HAnimSegment1110;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1737);
-HAnimSegment1738 := HAnimSegment1121;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1738);
-HAnimSegment1739 := HAnimSegment1132;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1739);
-HAnimSegment1740 := HAnimSegment1144;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1740);
-HAnimSegment1741 := HAnimSegment1160;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1741);
-HAnimSegment1742 := HAnimSegment1171;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1742);
-HAnimSegment1743 := HAnimSegment1182;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1743);
-HAnimSegment1744 := HAnimSegment1194;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1744);
-HAnimSegment1745 := HAnimSegment1205;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1745);
-HAnimSegment1746 := HAnimSegment1216;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1746);
-HAnimSegment1747 := HAnimSegment1228;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1747);
-HAnimSegment1748 := HAnimSegment1239;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1748);
-HAnimSegment1749 := HAnimSegment1250;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1749);
-HAnimSegment1750 := HAnimSegment1261;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1750);
-HAnimSegment1751 := HAnimSegment1272;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1751);
-HAnimSegment1752 := HAnimSegment1298;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1752);
-HAnimSegment1753 := HAnimSegment1309;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1753);
-HAnimSegment1754 := HAnimSegment1320;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1754);
-HAnimSegment1755 := HAnimSegment1332;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1755);
-HAnimSegment1756 := HAnimSegment1343;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1756);
-HAnimSegment1757 := HAnimSegment1354;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1757);
-HAnimSegment1758 := HAnimSegment1365;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1758);
-HAnimSegment1759 := HAnimSegment1377;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1759);
-HAnimSegment1760 := HAnimSegment1388;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1760);
-HAnimSegment1761 := HAnimSegment1399;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1761);
-HAnimSegment1762 := HAnimSegment1410;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1762);
-HAnimSegment1763 := HAnimSegment1422;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1763);
-HAnimSegment1764 := HAnimSegment1438;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1764);
-HAnimSegment1765 := HAnimSegment1449;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1765);
-HAnimSegment1766 := HAnimSegment1460;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1766);
-HAnimSegment1767 := HAnimSegment1472;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1767);
-HAnimSegment1768 := HAnimSegment1483;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1768);
-HAnimSegment1769 := HAnimSegment1494;
-{ .FdSegments.Add }
-HAnimHumanoid38.FdSegments.Add(HAnimSegment1769);
-{ .AddChildren }
-Group11.AddChildren([HAnimHumanoid38]);
-{ .AddGroup }
+{ METHOD .FdChildren.Add }
+HAnimJoint1493.FdChildren.Add(HAnimJoint1504);
+{ METHOD .FdChildren.Add }
+HAnimJoint1482.FdChildren.Add(HAnimJoint1493);
+{ METHOD .FdChildren.Add }
+HAnimJoint1471.FdChildren.Add(HAnimJoint1482);
+{ METHOD .FdChildren.Add }
+HAnimJoint1421.FdChildren.Add(HAnimJoint1471);
+end;
+
+procedure InitStandardHumanoidPart97;
+begin
+
+{ METHOD .FdChildren.Add }
+HAnimJoint1271.FdChildren.Add(HAnimJoint1421);
+{ METHOD .FdChildren.Add }
+HAnimJoint1260.FdChildren.Add(HAnimJoint1271);
+{ METHOD .FdChildren.Add }
+HAnimJoint1249.FdChildren.Add(HAnimJoint1260);
+{ METHOD .FdChildren.Add }
+HAnimJoint1238.FdChildren.Add(HAnimJoint1249);
+{ METHOD .FdChildren.Add }
+HAnimJoint1227.FdChildren.Add(HAnimJoint1238);
+{ METHOD .FdChildren.Add }
+HAnimJoint803.FdChildren.Add(HAnimJoint1227);
+{ METHOD .FdChildren.Add }
+HAnimJoint792.FdChildren.Add(HAnimJoint803);
+{ METHOD .FdChildren.Add }
+HAnimJoint781.FdChildren.Add(HAnimJoint792);
+{ METHOD .FdChildren.Add }
+HAnimJoint770.FdChildren.Add(HAnimJoint781);
+{ METHOD .FdChildren.Add }
+HAnimJoint759.FdChildren.Add(HAnimJoint770);
+{ METHOD .FdChildren.Add }
+HAnimJoint748.FdChildren.Add(HAnimJoint759);
+{ METHOD .FdChildren.Add }
+HAnimJoint737.FdChildren.Add(HAnimJoint748);
+{ METHOD .FdChildren.Add }
+HAnimJoint726.FdChildren.Add(HAnimJoint737);
+{ METHOD .FdChildren.Add }
+HAnimJoint715.FdChildren.Add(HAnimJoint726);
+{ METHOD .FdChildren.Add }
+HAnimJoint704.FdChildren.Add(HAnimJoint715);
+{ METHOD .FdChildren.Add }
+HAnimJoint693.FdChildren.Add(HAnimJoint704);
+{ METHOD .FdChildren.Add }
+HAnimJoint682.FdChildren.Add(HAnimJoint693);
+{ METHOD .FdChildren.Add }
+HAnimJoint671.FdChildren.Add(HAnimJoint682);
+{ METHOD .FdChildren.Add }
+HAnimJoint660.FdChildren.Add(HAnimJoint671);
+{ METHOD .FdChildren.Add }
+HAnimJoint649.FdChildren.Add(HAnimJoint660);
+{ METHOD .FdChildren.Add }
+HAnimJoint638.FdChildren.Add(HAnimJoint649);
+{ METHOD .FdChildren.Add }
+HAnimJoint627.FdChildren.Add(HAnimJoint638);
+{ METHOD .FdChildren.Add }
+HAnimJoint39.FdChildren.Add(HAnimJoint627);
+{ METHOD .FdSkeleton.Add }
+HAnimHumanoid38.FdSkeleton.Add(HAnimJoint39);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint39);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint55);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint71);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint82);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint93);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint109);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint130);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint141);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint152);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint163);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint164);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint175);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint186);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint197);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint208);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint209);
+end;
+
+procedure InitStandardHumanoidPart98;
+begin
+
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint220);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint231);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint242);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint253);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint254);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint265);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint281);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint292);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint303);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint314);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint315);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint326);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint337);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint348);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint349);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint360);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint371);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint387);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint408);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint419);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint430);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint441);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint442);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint453);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint464);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint475);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint486);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint487);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint498);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint509);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint520);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint531);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint532);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint543);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint559);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint570);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint581);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint592);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint593);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint604);
+end;
+
+procedure InitStandardHumanoidPart99;
+begin
+
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint615);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint626);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint627);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint638);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint649);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint660);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint671);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint682);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint693);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint704);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint715);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint726);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint737);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint748);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint759);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint770);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint781);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint792);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint803);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint824);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint835);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint846);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint857);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint868);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint879);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint890);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint901);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint942);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint943);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint944);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint945);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint946);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint947);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint948);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint949);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint960);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint971);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint982);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint993);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1019);
+end;
+
+procedure InitStandardHumanoidPart100;
+begin
+
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1030);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1041);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1052);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1053);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1064);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1075);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1086);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1097);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1098);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1109);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1120);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1131);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1142);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1143);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1159);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1170);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1181);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1192);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1193);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1204);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1215);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1226);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1227);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1238);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1249);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1260);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1271);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1297);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1308);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1319);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1330);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1331);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1342);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1353);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1364);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1375);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1376);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1387);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1398);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1409);
+end;
+
+procedure InitStandardHumanoidPart101;
+begin
+
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1420);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1421);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1437);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1448);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1459);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1470);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1471);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1482);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1493);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid38.FdJoints.Add(HAnimJoint1504);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment40);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment56);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment72);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment83);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment94);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment110);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment131);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment142);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment153);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment165);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment176);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment187);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment198);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment210);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment221);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment232);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment243);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment255);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment266);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment282);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment293);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment304);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment316);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment327);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment338);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment350);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment361);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment372);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment388);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment409);
+end;
+
+procedure InitStandardHumanoidPart102;
+begin
+
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment420);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment431);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment443);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment454);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment465);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment476);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment488);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment499);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment510);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment521);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment533);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment544);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment560);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment571);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment582);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment594);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment605);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment616);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment628);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment639);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment650);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment661);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment672);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment683);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment694);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment705);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment716);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment727);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment738);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment749);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment760);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment771);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment782);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment793);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment804);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment825);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment836);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment847);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment858);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment869);
+end;
+
+procedure InitStandardHumanoidPart103;
+begin
+
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment880);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment891);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment902);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment950);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment961);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment972);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment983);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment994);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment1020);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment1031);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment1042);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment1054);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment1065);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment1076);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment1087);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment1099);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment1110);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment1121);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment1132);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment1144);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment1160);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment1171);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment1182);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment1194);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment1205);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment1216);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment1228);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment1239);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment1250);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment1261);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment1272);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment1298);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment1309);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment1320);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment1332);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment1343);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment1354);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment1365);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment1377);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment1388);
+end;
+
+procedure InitStandardHumanoidPart104;
+begin
+
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment1399);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment1410);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment1422);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment1438);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment1449);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment1460);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment1472);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment1483);
+{ METHOD .FdSegments.Add }
+HAnimHumanoid38.FdSegments.Add(HAnimSegment1494);
+{ METHOD .FdChildren.Add }
+Group11.FdChildren.Add(HAnimHumanoid38);
+{ METHOD .AddGroup }
 X3D0.AddChildren([Group11]);
+end;
+
+function CreateStandardHumanoid: TX3DRootNode;
+begin
+InitStandardHumanoidPart0;
+InitStandardHumanoidPart1;
+InitStandardHumanoidPart2;
+InitStandardHumanoidPart3;
+InitStandardHumanoidPart4;
+InitStandardHumanoidPart5;
+InitStandardHumanoidPart6;
+InitStandardHumanoidPart7;
+InitStandardHumanoidPart8;
+InitStandardHumanoidPart9;
+InitStandardHumanoidPart10;
+InitStandardHumanoidPart11;
+InitStandardHumanoidPart12;
+InitStandardHumanoidPart13;
+InitStandardHumanoidPart14;
+InitStandardHumanoidPart15;
+InitStandardHumanoidPart16;
+InitStandardHumanoidPart17;
+InitStandardHumanoidPart18;
+InitStandardHumanoidPart19;
+InitStandardHumanoidPart20;
+InitStandardHumanoidPart21;
+InitStandardHumanoidPart22;
+InitStandardHumanoidPart23;
+InitStandardHumanoidPart24;
+InitStandardHumanoidPart25;
+InitStandardHumanoidPart26;
+InitStandardHumanoidPart27;
+InitStandardHumanoidPart28;
+InitStandardHumanoidPart29;
+InitStandardHumanoidPart30;
+InitStandardHumanoidPart31;
+InitStandardHumanoidPart32;
+InitStandardHumanoidPart33;
+InitStandardHumanoidPart34;
+InitStandardHumanoidPart35;
+InitStandardHumanoidPart36;
+InitStandardHumanoidPart37;
+InitStandardHumanoidPart38;
+InitStandardHumanoidPart39;
+InitStandardHumanoidPart40;
+InitStandardHumanoidPart41;
+InitStandardHumanoidPart42;
+InitStandardHumanoidPart43;
+InitStandardHumanoidPart44;
+InitStandardHumanoidPart45;
+InitStandardHumanoidPart46;
+InitStandardHumanoidPart47;
+InitStandardHumanoidPart48;
+InitStandardHumanoidPart49;
+InitStandardHumanoidPart50;
+InitStandardHumanoidPart51;
+InitStandardHumanoidPart52;
+InitStandardHumanoidPart53;
+InitStandardHumanoidPart54;
+InitStandardHumanoidPart55;
+InitStandardHumanoidPart56;
+InitStandardHumanoidPart57;
+InitStandardHumanoidPart58;
+InitStandardHumanoidPart59;
+InitStandardHumanoidPart60;
+InitStandardHumanoidPart61;
+InitStandardHumanoidPart62;
+InitStandardHumanoidPart63;
+InitStandardHumanoidPart64;
+InitStandardHumanoidPart65;
+InitStandardHumanoidPart66;
+InitStandardHumanoidPart67;
+InitStandardHumanoidPart68;
+InitStandardHumanoidPart69;
+InitStandardHumanoidPart70;
+InitStandardHumanoidPart71;
+InitStandardHumanoidPart72;
+InitStandardHumanoidPart73;
+InitStandardHumanoidPart74;
+InitStandardHumanoidPart75;
+InitStandardHumanoidPart76;
+InitStandardHumanoidPart77;
+InitStandardHumanoidPart78;
+InitStandardHumanoidPart79;
+InitStandardHumanoidPart80;
+InitStandardHumanoidPart81;
+InitStandardHumanoidPart82;
+InitStandardHumanoidPart83;
+InitStandardHumanoidPart84;
+InitStandardHumanoidPart85;
+InitStandardHumanoidPart86;
+InitStandardHumanoidPart87;
+InitStandardHumanoidPart88;
+InitStandardHumanoidPart89;
+InitStandardHumanoidPart90;
+InitStandardHumanoidPart91;
+InitStandardHumanoidPart92;
+InitStandardHumanoidPart93;
+InitStandardHumanoidPart94;
+InitStandardHumanoidPart95;
+InitStandardHumanoidPart96;
+InitStandardHumanoidPart97;
+InitStandardHumanoidPart98;
+InitStandardHumanoidPart99;
+InitStandardHumanoidPart100;
+InitStandardHumanoidPart101;
+InitStandardHumanoidPart102;
+InitStandardHumanoidPart103;
+InitStandardHumanoidPart104;
 Result := X3D0;
 end;
 

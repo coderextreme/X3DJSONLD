@@ -2,7 +2,7 @@ unit HAnimModelFootLeft;
 
 interface
 
-uses X3DNodes;
+uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
 
 function CreateHAnimModelFootLeft: TX3DRootNode;
 
@@ -10,7 +10,6 @@ implementation
 
 uses CastleVectors;
 
-function CreateHAnimModelFootLeft: TX3DRootNode;
 var
 X3D0: TX3DRootNode;
 Group22: TGroupNode;
@@ -303,1115 +302,1137 @@ HAnimJoint308: THAnimJointNode;
 HAnimJoint309: THAnimJointNode;
 HAnimJoint310: THAnimJointNode;
 HAnimJoint311: THAnimJointNode;
+
+procedure InitHAnimModelFootLeftPart0;
 begin
 X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Immersive';
 X3D0.ForceVersion.Major := 4;
 X3D0.ForceVersion.Minor := 0;
 X3D0.Components['HAnim'] := 1;
+{ METHOD .Component }
 X3D0.Meta['title'] := 'HAnimModelFootLeft.x3d';
+{ METHOD .Meta }
 X3D0.Meta['description'] := 'Left foot, using high-fidelity definitions for HAnim version 2.0';
+{ METHOD .Meta }
 X3D0.Meta['creator'] := 'Kwan-Hee YOO, Don Brutzman and Joe Williams';
+{ METHOD .Meta }
 X3D0.Meta['created'] := '26 January 2015';
+{ METHOD .Meta }
 X3D0.Meta['modified'] := '23 December 2021';
+{ METHOD .Meta }
 X3D0.Meta['warning'] := 'not yet to scale';
+{ METHOD .Meta }
 X3D0.Meta['warning'] := 'TODO will X3D HAnim component add a new level to support LOA-4 functionality?';
+{ METHOD .Meta }
 X3D0.Meta['info'] := 'TODO describe how to compute and apply offsets for center values whenever attaching this appendage to a body';
+{ METHOD .Meta }
 X3D0.Meta['reference'] := 'https://www.web3d.org/working-groups/humanoid-animation-HAnim';
+{ METHOD .Meta }
 X3D0.Meta['reference'] := 'https://www.web3d.org/documents/specifications/19774/V2.0';
+{ METHOD .Meta }
 X3D0.Meta['reference'] := 'https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#TheFeet';
+{ METHOD .Meta }
 X3D0.Meta['reference'] := 'https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#f-FootJoints';
+{ METHOD .Meta }
 X3D0.Meta['reference'] := 'https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#Hierarchy4';
+{ METHOD .Meta }
 X3D0.Meta['reference'] := 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/hanim.html';
+{ METHOD .Meta }
 X3D0.Meta['subject'] := 'X3D HAnim humanoid animation';
+{ METHOD .Meta }
 X3D0.Meta['TODO'] := 'Integrate and confirm Segment/Joint names, Viewpoints.';
+{ METHOD .Meta }
 X3D0.Meta['identifier'] := 'https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootLeft.x3d';
+{ METHOD .Meta }
 X3D0.Meta['generator'] := 'X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit';
+{ METHOD .Meta }
 X3D0.Meta['license'] := '../license.html';
+{ METHOD .Meta }
+{ METHOD .Head }
 Group22 := TGroupNode.Create;
 WorldInfo23 := TWorldInfoNode.Create;
 WorldInfo23.Title := 'HAnimModelFootLeft.x3d';
-{ .AddChildren }
-Group22.AddChildren([WorldInfo23]);
+{ METHOD .FdChildren.Add }
+Group22.FdChildren.Add(WorldInfo23);
 HAnimHumanoid24 := THAnimHumanoidNode.Create;
-HAnimHumanoid24.NameField := 'Foot_Left';
 HAnimHumanoid24.Loa := 4;
 HAnimHumanoid24.Version := '2.0';
 { original HAnimHumanoid info='"authorName=Kwan-Hee YOO, Don Brutzman and Joe Williams"' }
 MetadataSet25 := TMetadataSetNode.Create;
-MetadataSet25.NameField := 'HAnimHumanoid.info';
 MetadataSet25.Reference := 'https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid';
 MetadataString26 := TMetadataStringNode.Create;
-MetadataString26.NameField := 'authorName';
 MetadataString26.SetValue(['Kwan-Hee YOO, Don Brutzman and Joe Williams']);
-{ .FdValue.Add }
+{ METHOD .FdValue.Add }
 MetadataSet25.FdValue.Add(MetadataString26);
-{ .AddMetadata }
+{ METHOD .Metadata }
 HAnimHumanoid24.Metadata := MetadataSet25;
 HAnimJoint27 := THAnimJointNode.Create;
-HAnimJoint27.NameField := 'humanoid_root';
 { Might consider putting a HAnimSegment here, but that doesn't help with re-use of this foot model }
 HAnimJoint28 := THAnimJointNode.Create;
-HAnimJoint28.NameField := 'l_talocrural';
 HAnimJoint28.Description := 'connection joint of foot to leg above';
+end;
+
+procedure InitHAnimModelFootLeftPart1;
+begin
+
 HAnimSegment29 := THAnimSegmentNode.Create;
-HAnimSegment29.NameField := 'l_talus';
 Transform30 := TTransformNode.Create;
 Shape31 := TShapeNode.Create;
 Sphere32 := TSphereNode.Create;
 Sphere32.Radius := 0.025;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape31.Geometry := Sphere32;
 Appearance33 := TAppearanceNode.Create;
 Material34 := TMaterialNode.Create;
 Material34.DiffuseColor := Vector3(0,0,1);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance33.Material := Material34;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape31.Appearance := Appearance33;
-{ .AddChild }
-Transform30.AddChildren([Shape31]);
-{ .AddChildren }
-HAnimSegment29.AddChildren([Transform30]);
+{ METHOD .FdChildren.Add }
+Transform30.FdChildren.Add(Shape31);
+{ METHOD .FdChildren.Add }
+HAnimSegment29.FdChildren.Add(Transform30);
 Shape35 := TShapeNode.Create;
 Appearance36 := TAppearanceNode.Create;
 Material37 := TMaterialNode.Create;
 Material37.EmissiveColor := Vector3(1,1,1);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance36.Material := Material37;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape35.Appearance := Appearance36;
 IndexedLineSet38 := TIndexedLineSetNode.Create;
 IndexedLineSet38.SetCoordIndex([0,1]);
 Coordinate39 := TCoordinateNode.Create;
 Coordinate39.SetPoint([Vector3(0,0,0),Vector3(0,-0.3,0)]);
-{ .SetCoord }
+{ METHOD .Coord }
 IndexedLineSet38.Coord := Coordinate39;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape35.Geometry := IndexedLineSet38;
-{ .AddChildren }
-HAnimSegment29.AddChildren([Shape35]);
+{ METHOD .FdChildren.Add }
+HAnimSegment29.FdChildren.Add(Shape35);
 Shape40 := TShapeNode.Create;
 Appearance41 := TAppearanceNode.Create;
 Material42 := TMaterialNode.Create;
 Material42.EmissiveColor := Vector3(1,1,1);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance41.Material := Material42;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape40.Appearance := Appearance41;
 IndexedLineSet43 := TIndexedLineSetNode.Create;
 IndexedLineSet43.SetCoordIndex([0,1]);
 Coordinate44 := TCoordinateNode.Create;
 Coordinate44.SetPoint([Vector3(0,0,0),Vector3(0.2,0.3,0)]);
-{ .SetCoord }
+{ METHOD .Coord }
 IndexedLineSet43.Coord := Coordinate44;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape40.Geometry := IndexedLineSet43;
-{ .AddChildren }
-HAnimSegment29.AddChildren([Shape40]);
-{ .AddChildren }
-HAnimJoint28.AddChildren([HAnimSegment29]);
+{ METHOD .FdChildren.Add }
+HAnimSegment29.FdChildren.Add(Shape40);
+{ METHOD .FdChildren.Add }
+HAnimJoint28.FdChildren.Add(HAnimSegment29);
+end;
+
+procedure InitHAnimModelFootLeftPart2;
+begin
+
 { TCN }
 HAnimJoint45 := THAnimJointNode.Create;
-HAnimJoint45.NameField := 'l_talocalcaneonavicular';
 HAnimJoint45.Center := Vector3(0,-0.3,0);
 HAnimSegment46 := THAnimSegmentNode.Create;
-HAnimSegment46.NameField := 'l_navicular';
 Transform47 := TTransformNode.Create;
 Transform47.Translation := Vector3(0,-0.3,0);
-Shape48 := Shape31;
-{ .AddChild }
-Transform47.AddChildren([Shape48]);
-{ .AddChildren }
-HAnimSegment46.AddChildren([Transform47]);
+{ METHOD .FdChildren.Add }
+Transform47.FdChildren.Add(Shape31);
+{ METHOD .FdChildren.Add }
+HAnimSegment46.FdChildren.Add(Transform47);
 Shape49 := TShapeNode.Create;
 Appearance50 := TAppearanceNode.Create;
 Material51 := TMaterialNode.Create;
 Material51.EmissiveColor := Vector3(1,1,1);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance50.Material := Material51;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape49.Appearance := Appearance50;
 IndexedLineSet52 := TIndexedLineSetNode.Create;
 IndexedLineSet52.SetCoordIndex([0,1]);
 Coordinate53 := TCoordinateNode.Create;
 Coordinate53.SetPoint([Vector3(0,-0.3,0),Vector3(-0.1,-0.45,0)]);
-{ .SetCoord }
+{ METHOD .Coord }
 IndexedLineSet52.Coord := Coordinate53;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape49.Geometry := IndexedLineSet52;
-{ .AddChildren }
-HAnimSegment46.AddChildren([Shape49]);
+{ METHOD .FdChildren.Add }
+HAnimSegment46.FdChildren.Add(Shape49);
 Shape54 := TShapeNode.Create;
 Appearance55 := TAppearanceNode.Create;
 Material56 := TMaterialNode.Create;
 Material56.EmissiveColor := Vector3(1,1,1);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance55.Material := Material56;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape54.Appearance := Appearance55;
 IndexedLineSet57 := TIndexedLineSetNode.Create;
 IndexedLineSet57.SetCoordIndex([0,1]);
 Coordinate58 := TCoordinateNode.Create;
 Coordinate58.SetPoint([Vector3(0,-0.3,0),Vector3(0,-0.45,0)]);
-{ .SetCoord }
+{ METHOD .Coord }
 IndexedLineSet57.Coord := Coordinate58;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape54.Geometry := IndexedLineSet57;
-{ .AddChildren }
-HAnimSegment46.AddChildren([Shape54]);
+{ METHOD .FdChildren.Add }
+HAnimSegment46.FdChildren.Add(Shape54);
 Shape59 := TShapeNode.Create;
 Appearance60 := TAppearanceNode.Create;
 Material61 := TMaterialNode.Create;
 Material61.EmissiveColor := Vector3(1,1,1);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance60.Material := Material61;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape59.Appearance := Appearance60;
 IndexedLineSet62 := TIndexedLineSetNode.Create;
+end;
+
+procedure InitHAnimModelFootLeftPart3;
+begin
+
 IndexedLineSet62.SetCoordIndex([0,1]);
 Coordinate63 := TCoordinateNode.Create;
 Coordinate63.SetPoint([Vector3(0,-0.3,0),Vector3(0.1,-0.4,0)]);
-{ .SetCoord }
+{ METHOD .Coord }
 IndexedLineSet62.Coord := Coordinate63;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape59.Geometry := IndexedLineSet62;
-{ .AddChildren }
-HAnimSegment46.AddChildren([Shape59]);
-{ .AddChildren }
-HAnimJoint45.AddChildren([HAnimSegment46]);
+{ METHOD .FdChildren.Add }
+HAnimSegment46.FdChildren.Add(Shape59);
+{ METHOD .FdChildren.Add }
+HAnimJoint45.FdChildren.Add(HAnimSegment46);
 { CN1 }
 HAnimJoint64 := THAnimJointNode.Create;
-HAnimJoint64.NameField := 'l_cuneonavicular_1';
 HAnimJoint64.Center := Vector3(-0.1,-0.45,0);
 HAnimSegment65 := THAnimSegmentNode.Create;
-HAnimSegment65.NameField := 'l_cuneiform_1';
 Transform66 := TTransformNode.Create;
 Transform66.Translation := Vector3(-0.1,-0.45,0);
-Shape67 := Shape31;
-{ .AddChild }
-Transform66.AddChildren([Shape67]);
-{ .AddChildren }
-HAnimSegment65.AddChildren([Transform66]);
+{ METHOD .FdChildren.Add }
+Transform66.FdChildren.Add(Shape31);
+{ METHOD .FdChildren.Add }
+HAnimSegment65.FdChildren.Add(Transform66);
 Shape68 := TShapeNode.Create;
 Appearance69 := TAppearanceNode.Create;
 Material70 := TMaterialNode.Create;
 Material70.EmissiveColor := Vector3(1,1,1);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance69.Material := Material70;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape68.Appearance := Appearance69;
 IndexedLineSet71 := TIndexedLineSetNode.Create;
 IndexedLineSet71.SetCoordIndex([0,1]);
 Coordinate72 := TCoordinateNode.Create;
 Coordinate72.SetPoint([Vector3(-0.1,-0.45,0),Vector3(-0.1,-0.6,0)]);
-{ .SetCoord }
+{ METHOD .Coord }
 IndexedLineSet71.Coord := Coordinate72;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape68.Geometry := IndexedLineSet71;
-{ .AddChildren }
-HAnimSegment65.AddChildren([Shape68]);
-{ .AddChildren }
-HAnimJoint64.AddChildren([HAnimSegment65]);
+{ METHOD .FdChildren.Add }
+HAnimSegment65.FdChildren.Add(Shape68);
+{ METHOD .FdChildren.Add }
+HAnimJoint64.FdChildren.Add(HAnimSegment65);
 HAnimJoint73 := THAnimJointNode.Create;
-HAnimJoint73.NameField := 'l_tarsometatarsal_1';
 HAnimJoint73.Center := Vector3(-0.1,-0.6,0);
 HAnimSegment74 := THAnimSegmentNode.Create;
-HAnimSegment74.NameField := 'l_metatarsal_1';
 Transform75 := TTransformNode.Create;
 Transform75.Translation := Vector3(-0.1,-0.6,0);
-Shape76 := Shape31;
-{ .AddChild }
-Transform75.AddChildren([Shape76]);
-{ .AddChildren }
-HAnimSegment74.AddChildren([Transform75]);
+{ METHOD .FdChildren.Add }
+Transform75.FdChildren.Add(Shape31);
+{ METHOD .FdChildren.Add }
+HAnimSegment74.FdChildren.Add(Transform75);
 Shape77 := TShapeNode.Create;
 Appearance78 := TAppearanceNode.Create;
 Material79 := TMaterialNode.Create;
 Material79.EmissiveColor := Vector3(1,1,1);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance78.Material := Material79;
-{ .SetAppearance }
+end;
+
+procedure InitHAnimModelFootLeftPart4;
+begin
+
+{ METHOD .Appearance }
 Shape77.Appearance := Appearance78;
 IndexedLineSet80 := TIndexedLineSetNode.Create;
 IndexedLineSet80.SetCoordIndex([0,1]);
 Coordinate81 := TCoordinateNode.Create;
 Coordinate81.SetPoint([Vector3(-0.1,-0.6,0),Vector3(-0.1,-0.9,0)]);
-{ .SetCoord }
+{ METHOD .Coord }
 IndexedLineSet80.Coord := Coordinate81;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape77.Geometry := IndexedLineSet80;
-{ .AddChildren }
-HAnimSegment74.AddChildren([Shape77]);
-{ .AddChildren }
-HAnimJoint73.AddChildren([HAnimSegment74]);
+{ METHOD .FdChildren.Add }
+HAnimSegment74.FdChildren.Add(Shape77);
+{ METHOD .FdChildren.Add }
+HAnimJoint73.FdChildren.Add(HAnimSegment74);
 HAnimJoint82 := THAnimJointNode.Create;
-HAnimJoint82.NameField := 'l_metatarsophalangeal_1';
 HAnimJoint82.Center := Vector3(-0.1,-0.9,0);
 HAnimSegment83 := THAnimSegmentNode.Create;
-HAnimSegment83.NameField := 'l_tarsal_proximal_phalanx_1';
 Transform84 := TTransformNode.Create;
 Transform84.Translation := Vector3(-0.1,-0.9,0);
-Shape85 := Shape31;
-{ .AddChild }
-Transform84.AddChildren([Shape85]);
-{ .AddChildren }
-HAnimSegment83.AddChildren([Transform84]);
+{ METHOD .FdChildren.Add }
+Transform84.FdChildren.Add(Shape31);
+{ METHOD .FdChildren.Add }
+HAnimSegment83.FdChildren.Add(Transform84);
 Shape86 := TShapeNode.Create;
 Appearance87 := TAppearanceNode.Create;
 Material88 := TMaterialNode.Create;
 Material88.EmissiveColor := Vector3(1,1,1);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance87.Material := Material88;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape86.Appearance := Appearance87;
 IndexedLineSet89 := TIndexedLineSetNode.Create;
 IndexedLineSet89.SetCoordIndex([0,1]);
 Coordinate90 := TCoordinateNode.Create;
 Coordinate90.SetPoint([Vector3(-0.1,-0.9,0),Vector3(-0.1,-1.05,0)]);
-{ .SetCoord }
+{ METHOD .Coord }
 IndexedLineSet89.Coord := Coordinate90;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape86.Geometry := IndexedLineSet89;
-{ .AddChildren }
-HAnimSegment83.AddChildren([Shape86]);
-{ .AddChildren }
-HAnimJoint82.AddChildren([HAnimSegment83]);
+{ METHOD .FdChildren.Add }
+HAnimSegment83.FdChildren.Add(Shape86);
+{ METHOD .FdChildren.Add }
+HAnimJoint82.FdChildren.Add(HAnimSegment83);
 HAnimJoint91 := THAnimJointNode.Create;
-HAnimJoint91.NameField := 'l_tarsal_interphalangeal_1';
 HAnimJoint91.Center := Vector3(-0.1,-1.05,0);
 HAnimSegment92 := THAnimSegmentNode.Create;
-HAnimSegment92.NameField := 'l_tarsal_distal_phalanx_1';
 Transform93 := TTransformNode.Create;
 Transform93.Translation := Vector3(-0.1,-1.05,0);
-Shape94 := Shape31;
-{ .AddChild }
-Transform93.AddChildren([Shape94]);
-{ .AddChildren }
-HAnimSegment92.AddChildren([Transform93]);
+{ METHOD .FdChildren.Add }
+Transform93.FdChildren.Add(Shape31);
+{ METHOD .FdChildren.Add }
+HAnimSegment92.FdChildren.Add(Transform93);
 Shape95 := TShapeNode.Create;
 Appearance96 := TAppearanceNode.Create;
 Material97 := TMaterialNode.Create;
+end;
+
+procedure InitHAnimModelFootLeftPart5;
+begin
+
 Material97.EmissiveColor := Vector3(1,1,1);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance96.Material := Material97;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape95.Appearance := Appearance96;
 IndexedLineSet98 := TIndexedLineSetNode.Create;
 IndexedLineSet98.SetCoordIndex([0,1]);
 Coordinate99 := TCoordinateNode.Create;
 Coordinate99.SetPoint([Vector3(-0.1,-1.05,0),Vector3(-0.1,-1.1,0)]);
-{ .SetCoord }
+{ METHOD .Coord }
 IndexedLineSet98.Coord := Coordinate99;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape95.Geometry := IndexedLineSet98;
-{ .AddChildren }
-HAnimSegment92.AddChildren([Shape95]);
-{ .AddChildren }
-HAnimJoint91.AddChildren([HAnimSegment92]);
-{ .AddChildren }
-HAnimJoint82.AddChildren([HAnimJoint91]);
-{ .AddChildren }
-HAnimJoint73.AddChildren([HAnimJoint82]);
-{ .AddChildren }
-HAnimJoint64.AddChildren([HAnimJoint73]);
-{ .AddChildren }
-HAnimJoint45.AddChildren([HAnimJoint64]);
+{ METHOD .FdChildren.Add }
+HAnimSegment92.FdChildren.Add(Shape95);
+{ METHOD .FdChildren.Add }
+HAnimJoint91.FdChildren.Add(HAnimSegment92);
+{ METHOD .FdChildren.Add }
+HAnimJoint82.FdChildren.Add(HAnimJoint91);
+{ METHOD .FdChildren.Add }
+HAnimJoint73.FdChildren.Add(HAnimJoint82);
+{ METHOD .FdChildren.Add }
+HAnimJoint64.FdChildren.Add(HAnimJoint73);
+{ METHOD .FdChildren.Add }
+HAnimJoint45.FdChildren.Add(HAnimJoint64);
 { CN2 }
 HAnimJoint100 := THAnimJointNode.Create;
-HAnimJoint100.NameField := 'l_cuneonavicular_2';
 HAnimJoint100.Center := Vector3(0,-0.45,0);
 HAnimSegment101 := THAnimSegmentNode.Create;
-HAnimSegment101.NameField := 'l_cuneiform_2';
 Transform102 := TTransformNode.Create;
 Transform102.Translation := Vector3(0,-0.45,0);
-Shape103 := Shape31;
-{ .AddChild }
-Transform102.AddChildren([Shape103]);
-{ .AddChildren }
-HAnimSegment101.AddChildren([Transform102]);
+{ METHOD .FdChildren.Add }
+Transform102.FdChildren.Add(Shape31);
+{ METHOD .FdChildren.Add }
+HAnimSegment101.FdChildren.Add(Transform102);
 Shape104 := TShapeNode.Create;
 Appearance105 := TAppearanceNode.Create;
 Material106 := TMaterialNode.Create;
 Material106.EmissiveColor := Vector3(1,1,1);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance105.Material := Material106;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape104.Appearance := Appearance105;
 IndexedLineSet107 := TIndexedLineSetNode.Create;
 IndexedLineSet107.SetCoordIndex([0,1]);
 Coordinate108 := TCoordinateNode.Create;
 Coordinate108.SetPoint([Vector3(0,-0.45,0),Vector3(0.05,-0.6,0)]);
-{ .SetCoord }
+{ METHOD .Coord }
 IndexedLineSet107.Coord := Coordinate108;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape104.Geometry := IndexedLineSet107;
-{ .AddChildren }
-HAnimSegment101.AddChildren([Shape104]);
-{ .AddChildren }
-HAnimJoint100.AddChildren([HAnimSegment101]);
+{ METHOD .FdChildren.Add }
+HAnimSegment101.FdChildren.Add(Shape104);
+{ METHOD .FdChildren.Add }
+HAnimJoint100.FdChildren.Add(HAnimSegment101);
 HAnimJoint109 := THAnimJointNode.Create;
-HAnimJoint109.NameField := 'l_tarsometatarsal_2';
 HAnimJoint109.Center := Vector3(0.05,-0.6,0);
 HAnimSegment110 := THAnimSegmentNode.Create;
-HAnimSegment110.NameField := 'l_metatarsal_2';
 Transform111 := TTransformNode.Create;
+end;
+
+procedure InitHAnimModelFootLeftPart6;
+begin
+
 Transform111.Translation := Vector3(0.05,-0.6,0);
-Shape112 := Shape31;
-{ .AddChild }
-Transform111.AddChildren([Shape112]);
-{ .AddChildren }
-HAnimSegment110.AddChildren([Transform111]);
+{ METHOD .FdChildren.Add }
+Transform111.FdChildren.Add(Shape31);
+{ METHOD .FdChildren.Add }
+HAnimSegment110.FdChildren.Add(Transform111);
 Shape113 := TShapeNode.Create;
 Appearance114 := TAppearanceNode.Create;
 Material115 := TMaterialNode.Create;
 Material115.EmissiveColor := Vector3(1,1,1);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance114.Material := Material115;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape113.Appearance := Appearance114;
 IndexedLineSet116 := TIndexedLineSetNode.Create;
 IndexedLineSet116.SetCoordIndex([0,1]);
 Coordinate117 := TCoordinateNode.Create;
 Coordinate117.SetPoint([Vector3(0.05,-0.6,0),Vector3(0.05,-0.9,0)]);
-{ .SetCoord }
+{ METHOD .Coord }
 IndexedLineSet116.Coord := Coordinate117;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape113.Geometry := IndexedLineSet116;
-{ .AddChildren }
-HAnimSegment110.AddChildren([Shape113]);
-{ .AddChildren }
-HAnimJoint109.AddChildren([HAnimSegment110]);
+{ METHOD .FdChildren.Add }
+HAnimSegment110.FdChildren.Add(Shape113);
+{ METHOD .FdChildren.Add }
+HAnimJoint109.FdChildren.Add(HAnimSegment110);
 HAnimJoint118 := THAnimJointNode.Create;
-HAnimJoint118.NameField := 'l_metatarsophalangeal_2';
 HAnimJoint118.Center := Vector3(0.05,-0.9,0);
 HAnimSegment119 := THAnimSegmentNode.Create;
-HAnimSegment119.NameField := 'l_tarsal_proximal_phalanx_2';
 Transform120 := TTransformNode.Create;
 Transform120.Translation := Vector3(0.05,-0.9,0);
-Shape121 := Shape31;
-{ .AddChild }
-Transform120.AddChildren([Shape121]);
-{ .AddChildren }
-HAnimSegment119.AddChildren([Transform120]);
+{ METHOD .FdChildren.Add }
+Transform120.FdChildren.Add(Shape31);
+{ METHOD .FdChildren.Add }
+HAnimSegment119.FdChildren.Add(Transform120);
 Shape122 := TShapeNode.Create;
 Appearance123 := TAppearanceNode.Create;
 Material124 := TMaterialNode.Create;
 Material124.EmissiveColor := Vector3(1,1,1);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance123.Material := Material124;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape122.Appearance := Appearance123;
 IndexedLineSet125 := TIndexedLineSetNode.Create;
 IndexedLineSet125.SetCoordIndex([0,1]);
 Coordinate126 := TCoordinateNode.Create;
 Coordinate126.SetPoint([Vector3(0.05,-0.9,0),Vector3(0.05,-1.05,0)]);
-{ .SetCoord }
+{ METHOD .Coord }
 IndexedLineSet125.Coord := Coordinate126;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape122.Geometry := IndexedLineSet125;
-{ .AddChildren }
-HAnimSegment119.AddChildren([Shape122]);
-{ .AddChildren }
-HAnimJoint118.AddChildren([HAnimSegment119]);
+{ METHOD .FdChildren.Add }
+HAnimSegment119.FdChildren.Add(Shape122);
+{ METHOD .FdChildren.Add }
+HAnimJoint118.FdChildren.Add(HAnimSegment119);
 HAnimJoint127 := THAnimJointNode.Create;
-HAnimJoint127.NameField := 'l_tarsal_proximal_interphalangeal_2';
 HAnimJoint127.Center := Vector3(0.05,-1.05,0);
+end;
+
+procedure InitHAnimModelFootLeftPart7;
+begin
+
 HAnimSegment128 := THAnimSegmentNode.Create;
-HAnimSegment128.NameField := 'l_tarsal_middle_phalanx_2';
 Transform129 := TTransformNode.Create;
 Transform129.Translation := Vector3(0.05,-1.05,0);
-Shape130 := Shape31;
-{ .AddChild }
-Transform129.AddChildren([Shape130]);
-{ .AddChildren }
-HAnimSegment128.AddChildren([Transform129]);
+{ METHOD .FdChildren.Add }
+Transform129.FdChildren.Add(Shape31);
+{ METHOD .FdChildren.Add }
+HAnimSegment128.FdChildren.Add(Transform129);
 Shape131 := TShapeNode.Create;
 Appearance132 := TAppearanceNode.Create;
 Material133 := TMaterialNode.Create;
 Material133.EmissiveColor := Vector3(1,1,1);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance132.Material := Material133;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape131.Appearance := Appearance132;
 IndexedLineSet134 := TIndexedLineSetNode.Create;
 IndexedLineSet134.SetCoordIndex([0,1]);
 Coordinate135 := TCoordinateNode.Create;
 Coordinate135.SetPoint([Vector3(0.05,-1.05,0),Vector3(0.05,-1.12,0)]);
-{ .SetCoord }
+{ METHOD .Coord }
 IndexedLineSet134.Coord := Coordinate135;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape131.Geometry := IndexedLineSet134;
-{ .AddChildren }
-HAnimSegment128.AddChildren([Shape131]);
-{ .AddChildren }
-HAnimJoint127.AddChildren([HAnimSegment128]);
+{ METHOD .FdChildren.Add }
+HAnimSegment128.FdChildren.Add(Shape131);
+{ METHOD .FdChildren.Add }
+HAnimJoint127.FdChildren.Add(HAnimSegment128);
 HAnimJoint136 := THAnimJointNode.Create;
-HAnimJoint136.NameField := 'l_tarsal_distal_interphalangeal_2';
 HAnimJoint136.Center := Vector3(0.05,-1.12,0);
 HAnimSegment137 := THAnimSegmentNode.Create;
-HAnimSegment137.NameField := 'l_tarsal_distal_phalanx_2';
 Transform138 := TTransformNode.Create;
 Transform138.Translation := Vector3(0.05,-1.12,0);
-Shape139 := Shape31;
-{ .AddChild }
-Transform138.AddChildren([Shape139]);
-{ .AddChildren }
-HAnimSegment137.AddChildren([Transform138]);
+{ METHOD .FdChildren.Add }
+Transform138.FdChildren.Add(Shape31);
+{ METHOD .FdChildren.Add }
+HAnimSegment137.FdChildren.Add(Transform138);
 Shape140 := TShapeNode.Create;
 Appearance141 := TAppearanceNode.Create;
 Material142 := TMaterialNode.Create;
 Material142.EmissiveColor := Vector3(1,1,1);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance141.Material := Material142;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape140.Appearance := Appearance141;
 IndexedLineSet143 := TIndexedLineSetNode.Create;
 IndexedLineSet143.SetCoordIndex([0,1]);
 Coordinate144 := TCoordinateNode.Create;
 Coordinate144.SetPoint([Vector3(0.05,-1.12,0),Vector3(0.05,-1.16,0)]);
-{ .SetCoord }
+{ METHOD .Coord }
 IndexedLineSet143.Coord := Coordinate144;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape140.Geometry := IndexedLineSet143;
-{ .AddChildren }
-HAnimSegment137.AddChildren([Shape140]);
-{ .AddChildren }
-HAnimJoint136.AddChildren([HAnimSegment137]);
-{ .AddChildren }
-HAnimJoint127.AddChildren([HAnimJoint136]);
-{ .AddChildren }
-HAnimJoint118.AddChildren([HAnimJoint127]);
-{ .AddChildren }
-HAnimJoint109.AddChildren([HAnimJoint118]);
-{ .AddChildren }
-HAnimJoint100.AddChildren([HAnimJoint109]);
-{ .AddChildren }
-HAnimJoint45.AddChildren([HAnimJoint100]);
+{ METHOD .FdChildren.Add }
+HAnimSegment137.FdChildren.Add(Shape140);
+{ METHOD .FdChildren.Add }
+HAnimJoint136.FdChildren.Add(HAnimSegment137);
+end;
+
+procedure InitHAnimModelFootLeftPart8;
+begin
+
+{ METHOD .FdChildren.Add }
+HAnimJoint127.FdChildren.Add(HAnimJoint136);
+{ METHOD .FdChildren.Add }
+HAnimJoint118.FdChildren.Add(HAnimJoint127);
+{ METHOD .FdChildren.Add }
+HAnimJoint109.FdChildren.Add(HAnimJoint118);
+{ METHOD .FdChildren.Add }
+HAnimJoint100.FdChildren.Add(HAnimJoint109);
+{ METHOD .FdChildren.Add }
+HAnimJoint45.FdChildren.Add(HAnimJoint100);
 { CN3 }
 HAnimJoint145 := THAnimJointNode.Create;
-HAnimJoint145.NameField := 'l_cuneonavicular_3';
 HAnimJoint145.Center := Vector3(0.1,-0.4,0);
 HAnimSegment146 := THAnimSegmentNode.Create;
-HAnimSegment146.NameField := 'l_cuneiform_3';
 Transform147 := TTransformNode.Create;
 Transform147.Translation := Vector3(0.1,-0.4,0);
-Shape148 := Shape31;
-{ .AddChild }
-Transform147.AddChildren([Shape148]);
-{ .AddChildren }
-HAnimSegment146.AddChildren([Transform147]);
+{ METHOD .FdChildren.Add }
+Transform147.FdChildren.Add(Shape31);
+{ METHOD .FdChildren.Add }
+HAnimSegment146.FdChildren.Add(Transform147);
 Shape149 := TShapeNode.Create;
 Appearance150 := TAppearanceNode.Create;
 Material151 := TMaterialNode.Create;
 Material151.EmissiveColor := Vector3(1,1,1);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance150.Material := Material151;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape149.Appearance := Appearance150;
 IndexedLineSet152 := TIndexedLineSetNode.Create;
 IndexedLineSet152.SetCoordIndex([0,1]);
 Coordinate153 := TCoordinateNode.Create;
 Coordinate153.SetPoint([Vector3(0.1,-0.4,0),Vector3(0.15,-0.6,0)]);
-{ .SetCoord }
+{ METHOD .Coord }
 IndexedLineSet152.Coord := Coordinate153;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape149.Geometry := IndexedLineSet152;
-{ .AddChildren }
-HAnimSegment146.AddChildren([Shape149]);
-{ .AddChildren }
-HAnimJoint145.AddChildren([HAnimSegment146]);
+{ METHOD .FdChildren.Add }
+HAnimSegment146.FdChildren.Add(Shape149);
+{ METHOD .FdChildren.Add }
+HAnimJoint145.FdChildren.Add(HAnimSegment146);
 HAnimJoint154 := THAnimJointNode.Create;
-HAnimJoint154.NameField := 'l_tarsometatarsal_3';
 HAnimJoint154.Center := Vector3(0.15,-0.6,0);
 HAnimSegment155 := THAnimSegmentNode.Create;
-HAnimSegment155.NameField := 'l_metatarsal_3';
 Transform156 := TTransformNode.Create;
 Transform156.Translation := Vector3(0.15,-0.6,0);
-Shape157 := Shape31;
-{ .AddChild }
-Transform156.AddChildren([Shape157]);
-{ .AddChildren }
-HAnimSegment155.AddChildren([Transform156]);
+{ METHOD .FdChildren.Add }
+Transform156.FdChildren.Add(Shape31);
+{ METHOD .FdChildren.Add }
+HAnimSegment155.FdChildren.Add(Transform156);
 Shape158 := TShapeNode.Create;
 Appearance159 := TAppearanceNode.Create;
 Material160 := TMaterialNode.Create;
 Material160.EmissiveColor := Vector3(1,1,1);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance159.Material := Material160;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape158.Appearance := Appearance159;
 IndexedLineSet161 := TIndexedLineSetNode.Create;
+end;
+
+procedure InitHAnimModelFootLeftPart9;
+begin
+
 IndexedLineSet161.SetCoordIndex([0,1]);
 Coordinate162 := TCoordinateNode.Create;
 Coordinate162.SetPoint([Vector3(0.15,-0.6,0),Vector3(0.15,-0.9,0)]);
-{ .SetCoord }
+{ METHOD .Coord }
 IndexedLineSet161.Coord := Coordinate162;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape158.Geometry := IndexedLineSet161;
-{ .AddChildren }
-HAnimSegment155.AddChildren([Shape158]);
-{ .AddChildren }
-HAnimJoint154.AddChildren([HAnimSegment155]);
+{ METHOD .FdChildren.Add }
+HAnimSegment155.FdChildren.Add(Shape158);
+{ METHOD .FdChildren.Add }
+HAnimJoint154.FdChildren.Add(HAnimSegment155);
 HAnimJoint163 := THAnimJointNode.Create;
-HAnimJoint163.NameField := 'l_metatarsophalangeal_3';
 HAnimJoint163.Center := Vector3(0.15,-0.9,0);
 HAnimSegment164 := THAnimSegmentNode.Create;
-HAnimSegment164.NameField := 'l_tarsal_proximal_phalanx_3';
 Transform165 := TTransformNode.Create;
 Transform165.Translation := Vector3(0.15,-0.9,0);
-Shape166 := Shape31;
-{ .AddChild }
-Transform165.AddChildren([Shape166]);
-{ .AddChildren }
-HAnimSegment164.AddChildren([Transform165]);
+{ METHOD .FdChildren.Add }
+Transform165.FdChildren.Add(Shape31);
+{ METHOD .FdChildren.Add }
+HAnimSegment164.FdChildren.Add(Transform165);
 Shape167 := TShapeNode.Create;
 Appearance168 := TAppearanceNode.Create;
 Material169 := TMaterialNode.Create;
 Material169.EmissiveColor := Vector3(1,1,1);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance168.Material := Material169;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape167.Appearance := Appearance168;
 IndexedLineSet170 := TIndexedLineSetNode.Create;
 IndexedLineSet170.SetCoordIndex([0,1]);
 Coordinate171 := TCoordinateNode.Create;
 Coordinate171.SetPoint([Vector3(0.15,-0.9,0),Vector3(0.15,-1.05,0)]);
-{ .SetCoord }
+{ METHOD .Coord }
 IndexedLineSet170.Coord := Coordinate171;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape167.Geometry := IndexedLineSet170;
-{ .AddChildren }
-HAnimSegment164.AddChildren([Shape167]);
-{ .AddChildren }
-HAnimJoint163.AddChildren([HAnimSegment164]);
+{ METHOD .FdChildren.Add }
+HAnimSegment164.FdChildren.Add(Shape167);
+{ METHOD .FdChildren.Add }
+HAnimJoint163.FdChildren.Add(HAnimSegment164);
 HAnimJoint172 := THAnimJointNode.Create;
-HAnimJoint172.NameField := 'l_tarsal_proximal_interphalangeal_3';
 HAnimJoint172.Center := Vector3(0.15,-1.05,0);
 HAnimSegment173 := THAnimSegmentNode.Create;
-HAnimSegment173.NameField := 'l_tarsal_middle_phalanx_3';
 Transform174 := TTransformNode.Create;
 Transform174.Translation := Vector3(0.15,-1.05,0);
-Shape175 := Shape31;
-{ .AddChild }
-Transform174.AddChildren([Shape175]);
-{ .AddChildren }
-HAnimSegment173.AddChildren([Transform174]);
+{ METHOD .FdChildren.Add }
+Transform174.FdChildren.Add(Shape31);
+{ METHOD .FdChildren.Add }
+HAnimSegment173.FdChildren.Add(Transform174);
 Shape176 := TShapeNode.Create;
 Appearance177 := TAppearanceNode.Create;
 Material178 := TMaterialNode.Create;
 Material178.EmissiveColor := Vector3(1,1,1);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance177.Material := Material178;
-{ .SetAppearance }
+end;
+
+procedure InitHAnimModelFootLeftPart10;
+begin
+
+{ METHOD .Appearance }
 Shape176.Appearance := Appearance177;
 IndexedLineSet179 := TIndexedLineSetNode.Create;
 IndexedLineSet179.SetCoordIndex([0,1]);
 Coordinate180 := TCoordinateNode.Create;
 Coordinate180.SetPoint([Vector3(0.15,-1.05,0),Vector3(0.15,-1.13,0)]);
-{ .SetCoord }
+{ METHOD .Coord }
 IndexedLineSet179.Coord := Coordinate180;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape176.Geometry := IndexedLineSet179;
-{ .AddChildren }
-HAnimSegment173.AddChildren([Shape176]);
-{ .AddChildren }
-HAnimJoint172.AddChildren([HAnimSegment173]);
+{ METHOD .FdChildren.Add }
+HAnimSegment173.FdChildren.Add(Shape176);
+{ METHOD .FdChildren.Add }
+HAnimJoint172.FdChildren.Add(HAnimSegment173);
 HAnimJoint181 := THAnimJointNode.Create;
-HAnimJoint181.NameField := 'l_tarsal_distal_interphalangeal_3';
 HAnimJoint181.Center := Vector3(0.15,-1.13,0);
 HAnimSegment182 := THAnimSegmentNode.Create;
-HAnimSegment182.NameField := 'l_tarsal_distal_phalanx_3';
 Transform183 := TTransformNode.Create;
 Transform183.Translation := Vector3(0.15,-1.13,0);
-Shape184 := Shape31;
-{ .AddChild }
-Transform183.AddChildren([Shape184]);
-{ .AddChildren }
-HAnimSegment182.AddChildren([Transform183]);
+{ METHOD .FdChildren.Add }
+Transform183.FdChildren.Add(Shape31);
+{ METHOD .FdChildren.Add }
+HAnimSegment182.FdChildren.Add(Transform183);
 Shape185 := TShapeNode.Create;
 Appearance186 := TAppearanceNode.Create;
 Material187 := TMaterialNode.Create;
 Material187.EmissiveColor := Vector3(1,1,1);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance186.Material := Material187;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape185.Appearance := Appearance186;
 IndexedLineSet188 := TIndexedLineSetNode.Create;
 IndexedLineSet188.SetCoordIndex([0,1]);
 Coordinate189 := TCoordinateNode.Create;
 Coordinate189.SetPoint([Vector3(0.15,-1.13,0),Vector3(0.15,-1.16,0)]);
-{ .SetCoord }
+{ METHOD .Coord }
 IndexedLineSet188.Coord := Coordinate189;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape185.Geometry := IndexedLineSet188;
-{ .AddChildren }
-HAnimSegment182.AddChildren([Shape185]);
-{ .AddChildren }
-HAnimJoint181.AddChildren([HAnimSegment182]);
-{ .AddChildren }
-HAnimJoint172.AddChildren([HAnimJoint181]);
-{ .AddChildren }
-HAnimJoint163.AddChildren([HAnimJoint172]);
-{ .AddChildren }
-HAnimJoint154.AddChildren([HAnimJoint163]);
-{ .AddChildren }
-HAnimJoint145.AddChildren([HAnimJoint154]);
-{ .AddChildren }
-HAnimJoint45.AddChildren([HAnimJoint145]);
-{ .AddChildren }
-HAnimJoint28.AddChildren([HAnimJoint45]);
+{ METHOD .FdChildren.Add }
+HAnimSegment182.FdChildren.Add(Shape185);
+{ METHOD .FdChildren.Add }
+HAnimJoint181.FdChildren.Add(HAnimSegment182);
+{ METHOD .FdChildren.Add }
+HAnimJoint172.FdChildren.Add(HAnimJoint181);
+{ METHOD .FdChildren.Add }
+HAnimJoint163.FdChildren.Add(HAnimJoint172);
+{ METHOD .FdChildren.Add }
+HAnimJoint154.FdChildren.Add(HAnimJoint163);
+{ METHOD .FdChildren.Add }
+HAnimJoint145.FdChildren.Add(HAnimJoint154);
+{ METHOD .FdChildren.Add }
+HAnimJoint45.FdChildren.Add(HAnimJoint145);
+{ METHOD .FdChildren.Add }
+HAnimJoint28.FdChildren.Add(HAnimJoint45);
 { CC }
 HAnimJoint190 := THAnimJointNode.Create;
-HAnimJoint190.NameField := 'l_calcaneocuboid';
 HAnimJoint190.Center := Vector3(0.2,0.3,0);
 HAnimSegment191 := THAnimSegmentNode.Create;
-HAnimSegment191.NameField := 'l_calcaneus';
 Transform192 := TTransformNode.Create;
+end;
+
+procedure InitHAnimModelFootLeftPart11;
+begin
+
 Transform192.Translation := Vector3(0.2,0.3,0);
-Shape193 := Shape31;
-{ .AddChild }
-Transform192.AddChildren([Shape193]);
-{ .AddChildren }
-HAnimSegment191.AddChildren([Transform192]);
+{ METHOD .FdChildren.Add }
+Transform192.FdChildren.Add(Shape31);
+{ METHOD .FdChildren.Add }
+HAnimSegment191.FdChildren.Add(Transform192);
 Shape194 := TShapeNode.Create;
 Appearance195 := TAppearanceNode.Create;
 Material196 := TMaterialNode.Create;
 Material196.EmissiveColor := Vector3(1,1,1);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance195.Material := Material196;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape194.Appearance := Appearance195;
 IndexedLineSet197 := TIndexedLineSetNode.Create;
 IndexedLineSet197.SetCoordIndex([0,1]);
 Coordinate198 := TCoordinateNode.Create;
 Coordinate198.SetPoint([Vector3(0.2,0.3,0),Vector3(0.21,-0.3,0)]);
-{ .SetCoord }
+{ METHOD .Coord }
 IndexedLineSet197.Coord := Coordinate198;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape194.Geometry := IndexedLineSet197;
-{ .AddChildren }
-HAnimSegment191.AddChildren([Shape194]);
-{ .AddChildren }
-HAnimJoint190.AddChildren([HAnimSegment191]);
+{ METHOD .FdChildren.Add }
+HAnimSegment191.FdChildren.Add(Shape194);
+{ METHOD .FdChildren.Add }
+HAnimJoint190.FdChildren.Add(HAnimSegment191);
 { TT }
 HAnimJoint199 := THAnimJointNode.Create;
-HAnimJoint199.NameField := 'l_transversetarsal';
 HAnimJoint199.Center := Vector3(0.21,-0.3,0);
 HAnimSegment200 := THAnimSegmentNode.Create;
-HAnimSegment200.NameField := 'l_cuboid';
 Transform201 := TTransformNode.Create;
 Transform201.Translation := Vector3(0.21,-0.3,0);
-Shape202 := Shape31;
-{ .AddChild }
-Transform201.AddChildren([Shape202]);
-{ .AddChildren }
-HAnimSegment200.AddChildren([Transform201]);
+{ METHOD .FdChildren.Add }
+Transform201.FdChildren.Add(Shape31);
+{ METHOD .FdChildren.Add }
+HAnimSegment200.FdChildren.Add(Transform201);
 Shape203 := TShapeNode.Create;
 Appearance204 := TAppearanceNode.Create;
 Material205 := TMaterialNode.Create;
 Material205.EmissiveColor := Vector3(1,1,1);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance204.Material := Material205;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape203.Appearance := Appearance204;
 IndexedLineSet206 := TIndexedLineSetNode.Create;
 IndexedLineSet206.SetCoordIndex([0,1]);
 Coordinate207 := TCoordinateNode.Create;
 Coordinate207.SetPoint([Vector3(0.21,-0.3,0),Vector3(0.25,-0.58,0)]);
-{ .SetCoord }
+{ METHOD .Coord }
 IndexedLineSet206.Coord := Coordinate207;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape203.Geometry := IndexedLineSet206;
-{ .AddChildren }
-HAnimSegment200.AddChildren([Shape203]);
+{ METHOD .FdChildren.Add }
+HAnimSegment200.FdChildren.Add(Shape203);
 Shape208 := TShapeNode.Create;
 Appearance209 := TAppearanceNode.Create;
 Material210 := TMaterialNode.Create;
+end;
+
+procedure InitHAnimModelFootLeftPart12;
+begin
+
 Material210.EmissiveColor := Vector3(1,1,1);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance209.Material := Material210;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape208.Appearance := Appearance209;
 IndexedLineSet211 := TIndexedLineSetNode.Create;
 IndexedLineSet211.SetCoordIndex([0,1]);
 Coordinate212 := TCoordinateNode.Create;
 Coordinate212.SetPoint([Vector3(0.21,-0.3,0),Vector3(0.33,-0.52,0)]);
-{ .SetCoord }
+{ METHOD .Coord }
 IndexedLineSet211.Coord := Coordinate212;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape208.Geometry := IndexedLineSet211;
-{ .AddChildren }
-HAnimSegment200.AddChildren([Shape208]);
-{ .AddChildren }
-HAnimJoint199.AddChildren([HAnimSegment200]);
+{ METHOD .FdChildren.Add }
+HAnimSegment200.FdChildren.Add(Shape208);
+{ METHOD .FdChildren.Add }
+HAnimJoint199.FdChildren.Add(HAnimSegment200);
 { TMT4 }
 HAnimJoint213 := THAnimJointNode.Create;
-HAnimJoint213.NameField := 'l_tarsometatarsal_4';
 HAnimJoint213.Center := Vector3(0.25,-0.58,0);
 HAnimSegment214 := THAnimSegmentNode.Create;
-HAnimSegment214.NameField := 'l_metatarsal_4';
 Transform215 := TTransformNode.Create;
 Transform215.Translation := Vector3(0.25,-0.58,0);
-Shape216 := Shape31;
-{ .AddChild }
-Transform215.AddChildren([Shape216]);
-{ .AddChildren }
-HAnimSegment214.AddChildren([Transform215]);
+{ METHOD .FdChildren.Add }
+Transform215.FdChildren.Add(Shape31);
+{ METHOD .FdChildren.Add }
+HAnimSegment214.FdChildren.Add(Transform215);
 Shape217 := TShapeNode.Create;
 Appearance218 := TAppearanceNode.Create;
 Material219 := TMaterialNode.Create;
 Material219.EmissiveColor := Vector3(1,1,1);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance218.Material := Material219;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape217.Appearance := Appearance218;
 IndexedLineSet220 := TIndexedLineSetNode.Create;
 IndexedLineSet220.SetCoordIndex([0,1]);
 Coordinate221 := TCoordinateNode.Create;
 Coordinate221.SetPoint([Vector3(0.25,-0.58,0),Vector3(0.25,-0.87,0)]);
-{ .SetCoord }
+{ METHOD .Coord }
 IndexedLineSet220.Coord := Coordinate221;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape217.Geometry := IndexedLineSet220;
-{ .AddChildren }
-HAnimSegment214.AddChildren([Shape217]);
-{ .AddChildren }
-HAnimJoint213.AddChildren([HAnimSegment214]);
+{ METHOD .FdChildren.Add }
+HAnimSegment214.FdChildren.Add(Shape217);
+{ METHOD .FdChildren.Add }
+HAnimJoint213.FdChildren.Add(HAnimSegment214);
 HAnimJoint222 := THAnimJointNode.Create;
-HAnimJoint222.NameField := 'l_metatarsophalangeal_4';
 HAnimJoint222.Center := Vector3(0.25,-0.87,0);
 HAnimSegment223 := THAnimSegmentNode.Create;
-HAnimSegment223.NameField := 'l_tarsal_proximal_phalanx_4';
 Transform224 := TTransformNode.Create;
 Transform224.Translation := Vector3(0.25,-0.87,0);
-Shape225 := Shape31;
-{ .AddChild }
-Transform224.AddChildren([Shape225]);
-{ .AddChildren }
-HAnimSegment223.AddChildren([Transform224]);
+{ METHOD .FdChildren.Add }
+Transform224.FdChildren.Add(Shape31);
+{ METHOD .FdChildren.Add }
+HAnimSegment223.FdChildren.Add(Transform224);
 Shape226 := TShapeNode.Create;
+end;
+
+procedure InitHAnimModelFootLeftPart13;
+begin
+
 Appearance227 := TAppearanceNode.Create;
 Material228 := TMaterialNode.Create;
 Material228.EmissiveColor := Vector3(1,1,1);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance227.Material := Material228;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape226.Appearance := Appearance227;
 IndexedLineSet229 := TIndexedLineSetNode.Create;
 IndexedLineSet229.SetCoordIndex([0,1]);
 Coordinate230 := TCoordinateNode.Create;
 Coordinate230.SetPoint([Vector3(0.25,-0.87,0),Vector3(0.25,-1,0)]);
-{ .SetCoord }
+{ METHOD .Coord }
 IndexedLineSet229.Coord := Coordinate230;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape226.Geometry := IndexedLineSet229;
-{ .AddChildren }
-HAnimSegment223.AddChildren([Shape226]);
-{ .AddChildren }
-HAnimJoint222.AddChildren([HAnimSegment223]);
+{ METHOD .FdChildren.Add }
+HAnimSegment223.FdChildren.Add(Shape226);
+{ METHOD .FdChildren.Add }
+HAnimJoint222.FdChildren.Add(HAnimSegment223);
 HAnimJoint231 := THAnimJointNode.Create;
-HAnimJoint231.NameField := 'l_tarsal_proximal_interphalangeal_4';
 HAnimJoint231.Center := Vector3(0.25,-1,0);
 HAnimSegment232 := THAnimSegmentNode.Create;
-HAnimSegment232.NameField := 'l_tarsal_middle_phalanx_4';
 Transform233 := TTransformNode.Create;
 Transform233.Translation := Vector3(0.25,-1,0);
-Shape234 := Shape31;
-{ .AddChild }
-Transform233.AddChildren([Shape234]);
-{ .AddChildren }
-HAnimSegment232.AddChildren([Transform233]);
+{ METHOD .FdChildren.Add }
+Transform233.FdChildren.Add(Shape31);
+{ METHOD .FdChildren.Add }
+HAnimSegment232.FdChildren.Add(Transform233);
 Shape235 := TShapeNode.Create;
 Appearance236 := TAppearanceNode.Create;
 Material237 := TMaterialNode.Create;
 Material237.EmissiveColor := Vector3(1,1,1);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance236.Material := Material237;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape235.Appearance := Appearance236;
 IndexedLineSet238 := TIndexedLineSetNode.Create;
 IndexedLineSet238.SetCoordIndex([0,1]);
 Coordinate239 := TCoordinateNode.Create;
 Coordinate239.SetPoint([Vector3(0.25,-1,0),Vector3(0.25,-1.1,0)]);
-{ .SetCoord }
+{ METHOD .Coord }
 IndexedLineSet238.Coord := Coordinate239;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape235.Geometry := IndexedLineSet238;
-{ .AddChildren }
-HAnimSegment232.AddChildren([Shape235]);
-{ .AddChildren }
-HAnimJoint231.AddChildren([HAnimSegment232]);
+{ METHOD .FdChildren.Add }
+HAnimSegment232.FdChildren.Add(Shape235);
+{ METHOD .FdChildren.Add }
+HAnimJoint231.FdChildren.Add(HAnimSegment232);
 HAnimJoint240 := THAnimJointNode.Create;
-HAnimJoint240.NameField := 'l_tarsal_distal_interphalangeal_4';
 HAnimJoint240.Center := Vector3(0.25,-1.1,0);
 HAnimSegment241 := THAnimSegmentNode.Create;
-HAnimSegment241.NameField := 'l_tarsal_distal_phalanx_4';
 Transform242 := TTransformNode.Create;
 Transform242.Translation := Vector3(0.25,-1.1,0);
-Shape243 := Shape31;
-{ .AddChild }
-Transform242.AddChildren([Shape243]);
-{ .AddChildren }
-HAnimSegment241.AddChildren([Transform242]);
+{ METHOD .FdChildren.Add }
+Transform242.FdChildren.Add(Shape31);
+end;
+
+procedure InitHAnimModelFootLeftPart14;
+begin
+
+{ METHOD .FdChildren.Add }
+HAnimSegment241.FdChildren.Add(Transform242);
 Shape244 := TShapeNode.Create;
 Appearance245 := TAppearanceNode.Create;
 Material246 := TMaterialNode.Create;
 Material246.EmissiveColor := Vector3(1,1,1);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance245.Material := Material246;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape244.Appearance := Appearance245;
 IndexedLineSet247 := TIndexedLineSetNode.Create;
 IndexedLineSet247.SetCoordIndex([0,1]);
 Coordinate248 := TCoordinateNode.Create;
 Coordinate248.SetPoint([Vector3(0.25,-1.1,0),Vector3(0.25,-1.15,0)]);
-{ .SetCoord }
+{ METHOD .Coord }
 IndexedLineSet247.Coord := Coordinate248;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape244.Geometry := IndexedLineSet247;
-{ .AddChildren }
-HAnimSegment241.AddChildren([Shape244]);
-{ .AddChildren }
-HAnimJoint240.AddChildren([HAnimSegment241]);
-{ .AddChildren }
-HAnimJoint231.AddChildren([HAnimJoint240]);
-{ .AddChildren }
-HAnimJoint222.AddChildren([HAnimJoint231]);
-{ .AddChildren }
-HAnimJoint213.AddChildren([HAnimJoint222]);
-{ .AddChildren }
-HAnimJoint199.AddChildren([HAnimJoint213]);
+{ METHOD .FdChildren.Add }
+HAnimSegment241.FdChildren.Add(Shape244);
+{ METHOD .FdChildren.Add }
+HAnimJoint240.FdChildren.Add(HAnimSegment241);
+{ METHOD .FdChildren.Add }
+HAnimJoint231.FdChildren.Add(HAnimJoint240);
+{ METHOD .FdChildren.Add }
+HAnimJoint222.FdChildren.Add(HAnimJoint231);
+{ METHOD .FdChildren.Add }
+HAnimJoint213.FdChildren.Add(HAnimJoint222);
+{ METHOD .FdChildren.Add }
+HAnimJoint199.FdChildren.Add(HAnimJoint213);
 { TMT5 }
 HAnimJoint249 := THAnimJointNode.Create;
-HAnimJoint249.NameField := 'l_tarsometatarsal_5';
 HAnimJoint249.Center := Vector3(0.33,-0.52,0);
 HAnimSegment250 := THAnimSegmentNode.Create;
-HAnimSegment250.NameField := 'l_metatarsal_5';
 Transform251 := TTransformNode.Create;
 Transform251.Translation := Vector3(0.33,-0.52,0);
-Shape252 := Shape31;
-{ .AddChild }
-Transform251.AddChildren([Shape252]);
-{ .AddChildren }
-HAnimSegment250.AddChildren([Transform251]);
+{ METHOD .FdChildren.Add }
+Transform251.FdChildren.Add(Shape31);
+{ METHOD .FdChildren.Add }
+HAnimSegment250.FdChildren.Add(Transform251);
 Shape253 := TShapeNode.Create;
 Appearance254 := TAppearanceNode.Create;
 Material255 := TMaterialNode.Create;
 Material255.EmissiveColor := Vector3(1,1,1);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance254.Material := Material255;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape253.Appearance := Appearance254;
 IndexedLineSet256 := TIndexedLineSetNode.Create;
 IndexedLineSet256.SetCoordIndex([0,1]);
 Coordinate257 := TCoordinateNode.Create;
 Coordinate257.SetPoint([Vector3(0.33,-0.52,0),Vector3(0.34,-0.8,0)]);
-{ .SetCoord }
+{ METHOD .Coord }
 IndexedLineSet256.Coord := Coordinate257;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape253.Geometry := IndexedLineSet256;
-{ .AddChildren }
-HAnimSegment250.AddChildren([Shape253]);
-{ .AddChildren }
-HAnimJoint249.AddChildren([HAnimSegment250]);
+{ METHOD .FdChildren.Add }
+HAnimSegment250.FdChildren.Add(Shape253);
+{ METHOD .FdChildren.Add }
+HAnimJoint249.FdChildren.Add(HAnimSegment250);
+end;
+
+procedure InitHAnimModelFootLeftPart15;
+begin
+
 HAnimJoint258 := THAnimJointNode.Create;
-HAnimJoint258.NameField := 'l_metatarsophalangeal_5';
 HAnimJoint258.Center := Vector3(0.34,-0.8,0);
 HAnimSegment259 := THAnimSegmentNode.Create;
-HAnimSegment259.NameField := 'l_tarsal_proximal_phalanx_5';
 Transform260 := TTransformNode.Create;
 Transform260.Translation := Vector3(0.34,-0.8,0);
-Shape261 := Shape31;
-{ .AddChild }
-Transform260.AddChildren([Shape261]);
-{ .AddChildren }
-HAnimSegment259.AddChildren([Transform260]);
+{ METHOD .FdChildren.Add }
+Transform260.FdChildren.Add(Shape31);
+{ METHOD .FdChildren.Add }
+HAnimSegment259.FdChildren.Add(Transform260);
 Shape262 := TShapeNode.Create;
 Appearance263 := TAppearanceNode.Create;
 Material264 := TMaterialNode.Create;
 Material264.EmissiveColor := Vector3(1,1,1);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance263.Material := Material264;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape262.Appearance := Appearance263;
 IndexedLineSet265 := TIndexedLineSetNode.Create;
 IndexedLineSet265.SetCoordIndex([0,1]);
 Coordinate266 := TCoordinateNode.Create;
 Coordinate266.SetPoint([Vector3(0.34,-0.8,0),Vector3(0.34,-0.95,0)]);
-{ .SetCoord }
+{ METHOD .Coord }
 IndexedLineSet265.Coord := Coordinate266;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape262.Geometry := IndexedLineSet265;
-{ .AddChildren }
-HAnimSegment259.AddChildren([Shape262]);
-{ .AddChildren }
-HAnimJoint258.AddChildren([HAnimSegment259]);
+{ METHOD .FdChildren.Add }
+HAnimSegment259.FdChildren.Add(Shape262);
+{ METHOD .FdChildren.Add }
+HAnimJoint258.FdChildren.Add(HAnimSegment259);
 HAnimJoint267 := THAnimJointNode.Create;
-HAnimJoint267.NameField := 'l_tarsal_proximal_interphalangeal_5';
 HAnimJoint267.Center := Vector3(0.34,-0.95,0);
 HAnimSegment268 := THAnimSegmentNode.Create;
-HAnimSegment268.NameField := 'l_tarsal_middle_phalanx_5';
 Transform269 := TTransformNode.Create;
 Transform269.Translation := Vector3(0.34,-0.95,0);
-Shape270 := Shape31;
-{ .AddChild }
-Transform269.AddChildren([Shape270]);
-{ .AddChildren }
-HAnimSegment268.AddChildren([Transform269]);
+{ METHOD .FdChildren.Add }
+Transform269.FdChildren.Add(Shape31);
+{ METHOD .FdChildren.Add }
+HAnimSegment268.FdChildren.Add(Transform269);
 Shape271 := TShapeNode.Create;
 Appearance272 := TAppearanceNode.Create;
 Material273 := TMaterialNode.Create;
 Material273.EmissiveColor := Vector3(1,1,1);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance272.Material := Material273;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape271.Appearance := Appearance272;
 IndexedLineSet274 := TIndexedLineSetNode.Create;
 IndexedLineSet274.SetCoordIndex([0,1]);
 Coordinate275 := TCoordinateNode.Create;
 Coordinate275.SetPoint([Vector3(0.34,-0.95,0),Vector3(0.34,-1.05,0)]);
-{ .SetCoord }
+{ METHOD .Coord }
 IndexedLineSet274.Coord := Coordinate275;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape271.Geometry := IndexedLineSet274;
-{ .AddChildren }
-HAnimSegment268.AddChildren([Shape271]);
-{ .AddChildren }
-HAnimJoint267.AddChildren([HAnimSegment268]);
+end;
+
+procedure InitHAnimModelFootLeftPart16;
+begin
+
+{ METHOD .FdChildren.Add }
+HAnimSegment268.FdChildren.Add(Shape271);
+{ METHOD .FdChildren.Add }
+HAnimJoint267.FdChildren.Add(HAnimSegment268);
 HAnimJoint276 := THAnimJointNode.Create;
-HAnimJoint276.NameField := 'l_tarsal_distal_interphalangeal_5';
 HAnimJoint276.Center := Vector3(0.34,-1.05,0);
 HAnimSegment277 := THAnimSegmentNode.Create;
-HAnimSegment277.NameField := 'l_tarsal_distal_phalanx_5';
 Transform278 := TTransformNode.Create;
 Transform278.Translation := Vector3(0.34,-1.05,0);
-Shape279 := Shape31;
-{ .AddChild }
-Transform278.AddChildren([Shape279]);
-{ .AddChildren }
-HAnimSegment277.AddChildren([Transform278]);
+{ METHOD .FdChildren.Add }
+Transform278.FdChildren.Add(Shape31);
+{ METHOD .FdChildren.Add }
+HAnimSegment277.FdChildren.Add(Transform278);
 Shape280 := TShapeNode.Create;
 Appearance281 := TAppearanceNode.Create;
 Material282 := TMaterialNode.Create;
 Material282.EmissiveColor := Vector3(1,1,1);
-{ .SetMaterial }
+{ METHOD .SetMaterial }
 Appearance281.Material := Material282;
-{ .SetAppearance }
+{ METHOD .Appearance }
 Shape280.Appearance := Appearance281;
 IndexedLineSet283 := TIndexedLineSetNode.Create;
 IndexedLineSet283.SetCoordIndex([0,1]);
 Coordinate284 := TCoordinateNode.Create;
 Coordinate284.SetPoint([Vector3(0.34,-1.05,0),Vector3(0.34,-1.08,0)]);
-{ .SetCoord }
+{ METHOD .Coord }
 IndexedLineSet283.Coord := Coordinate284;
-{ .SetGeometry }
+{ METHOD .Geometry }
 Shape280.Geometry := IndexedLineSet283;
-{ .AddChildren }
-HAnimSegment277.AddChildren([Shape280]);
-{ .AddChildren }
-HAnimJoint276.AddChildren([HAnimSegment277]);
-{ .AddChildren }
-HAnimJoint267.AddChildren([HAnimJoint276]);
-{ .AddChildren }
-HAnimJoint258.AddChildren([HAnimJoint267]);
-{ .AddChildren }
-HAnimJoint249.AddChildren([HAnimJoint258]);
-{ .AddChildren }
-HAnimJoint199.AddChildren([HAnimJoint249]);
-{ .AddChildren }
-HAnimJoint190.AddChildren([HAnimJoint199]);
-{ .AddChildren }
-HAnimJoint28.AddChildren([HAnimJoint190]);
-{ .AddChildren }
-HAnimJoint27.AddChildren([HAnimJoint28]);
-{ .AddSkeleton }
-HAnimHumanoid24.SetSkeleton([HAnimJoint27]);
-HAnimJoint285 := HAnimJoint27;
-{ .FdJoints.Add }
-HAnimHumanoid24.FdJoints.Add(HAnimJoint285);
-HAnimJoint286 := HAnimJoint190;
-{ .FdJoints.Add }
-HAnimHumanoid24.FdJoints.Add(HAnimJoint286);
-HAnimJoint287 := HAnimJoint64;
-{ .FdJoints.Add }
-HAnimHumanoid24.FdJoints.Add(HAnimJoint287);
-HAnimJoint288 := HAnimJoint100;
-{ .FdJoints.Add }
-HAnimHumanoid24.FdJoints.Add(HAnimJoint288);
-HAnimJoint289 := HAnimJoint145;
-{ .FdJoints.Add }
-HAnimHumanoid24.FdJoints.Add(HAnimJoint289);
-HAnimJoint290 := HAnimJoint82;
-{ .FdJoints.Add }
-HAnimHumanoid24.FdJoints.Add(HAnimJoint290);
-HAnimJoint291 := HAnimJoint118;
-{ .FdJoints.Add }
-HAnimHumanoid24.FdJoints.Add(HAnimJoint291);
-HAnimJoint292 := HAnimJoint163;
-{ .FdJoints.Add }
-HAnimHumanoid24.FdJoints.Add(HAnimJoint292);
-HAnimJoint293 := HAnimJoint222;
-{ .FdJoints.Add }
-HAnimHumanoid24.FdJoints.Add(HAnimJoint293);
-HAnimJoint294 := HAnimJoint258;
-{ .FdJoints.Add }
-HAnimHumanoid24.FdJoints.Add(HAnimJoint294);
-HAnimJoint295 := HAnimJoint45;
-{ .FdJoints.Add }
-HAnimHumanoid24.FdJoints.Add(HAnimJoint295);
-HAnimJoint296 := HAnimJoint28;
-{ .FdJoints.Add }
-HAnimHumanoid24.FdJoints.Add(HAnimJoint296);
-HAnimJoint297 := HAnimJoint136;
-{ .FdJoints.Add }
-HAnimHumanoid24.FdJoints.Add(HAnimJoint297);
-HAnimJoint298 := HAnimJoint181;
-{ .FdJoints.Add }
-HAnimHumanoid24.FdJoints.Add(HAnimJoint298);
-HAnimJoint299 := HAnimJoint240;
-{ .FdJoints.Add }
-HAnimHumanoid24.FdJoints.Add(HAnimJoint299);
-HAnimJoint300 := HAnimJoint276;
-{ .FdJoints.Add }
-HAnimHumanoid24.FdJoints.Add(HAnimJoint300);
-HAnimJoint301 := HAnimJoint91;
-{ .FdJoints.Add }
-HAnimHumanoid24.FdJoints.Add(HAnimJoint301);
-HAnimJoint302 := HAnimJoint127;
-{ .FdJoints.Add }
-HAnimHumanoid24.FdJoints.Add(HAnimJoint302);
-HAnimJoint303 := HAnimJoint172;
-{ .FdJoints.Add }
-HAnimHumanoid24.FdJoints.Add(HAnimJoint303);
-HAnimJoint304 := HAnimJoint231;
-{ .FdJoints.Add }
-HAnimHumanoid24.FdJoints.Add(HAnimJoint304);
-HAnimJoint305 := HAnimJoint267;
-{ .FdJoints.Add }
-HAnimHumanoid24.FdJoints.Add(HAnimJoint305);
-HAnimJoint306 := HAnimJoint73;
-{ .FdJoints.Add }
-HAnimHumanoid24.FdJoints.Add(HAnimJoint306);
-HAnimJoint307 := HAnimJoint109;
-{ .FdJoints.Add }
-HAnimHumanoid24.FdJoints.Add(HAnimJoint307);
-HAnimJoint308 := HAnimJoint154;
-{ .FdJoints.Add }
-HAnimHumanoid24.FdJoints.Add(HAnimJoint308);
-HAnimJoint309 := HAnimJoint213;
-{ .FdJoints.Add }
-HAnimHumanoid24.FdJoints.Add(HAnimJoint309);
-HAnimJoint310 := HAnimJoint249;
-{ .FdJoints.Add }
-HAnimHumanoid24.FdJoints.Add(HAnimJoint310);
-HAnimJoint311 := HAnimJoint199;
-{ .FdJoints.Add }
-HAnimHumanoid24.FdJoints.Add(HAnimJoint311);
-{ .AddChildren }
-Group22.AddChildren([HAnimHumanoid24]);
-{ .AddGroup }
+{ METHOD .FdChildren.Add }
+HAnimSegment277.FdChildren.Add(Shape280);
+{ METHOD .FdChildren.Add }
+HAnimJoint276.FdChildren.Add(HAnimSegment277);
+{ METHOD .FdChildren.Add }
+HAnimJoint267.FdChildren.Add(HAnimJoint276);
+{ METHOD .FdChildren.Add }
+HAnimJoint258.FdChildren.Add(HAnimJoint267);
+{ METHOD .FdChildren.Add }
+HAnimJoint249.FdChildren.Add(HAnimJoint258);
+{ METHOD .FdChildren.Add }
+HAnimJoint199.FdChildren.Add(HAnimJoint249);
+{ METHOD .FdChildren.Add }
+HAnimJoint190.FdChildren.Add(HAnimJoint199);
+{ METHOD .FdChildren.Add }
+HAnimJoint28.FdChildren.Add(HAnimJoint190);
+{ METHOD .FdChildren.Add }
+HAnimJoint27.FdChildren.Add(HAnimJoint28);
+{ METHOD .FdSkeleton.Add }
+HAnimHumanoid24.FdSkeleton.Add(HAnimJoint27);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid24.FdJoints.Add(HAnimJoint27);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid24.FdJoints.Add(HAnimJoint190);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid24.FdJoints.Add(HAnimJoint64);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid24.FdJoints.Add(HAnimJoint100);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid24.FdJoints.Add(HAnimJoint145);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid24.FdJoints.Add(HAnimJoint82);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid24.FdJoints.Add(HAnimJoint118);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid24.FdJoints.Add(HAnimJoint163);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid24.FdJoints.Add(HAnimJoint222);
+end;
+
+procedure InitHAnimModelFootLeftPart17;
+begin
+
+{ METHOD .FdJoints.Add }
+HAnimHumanoid24.FdJoints.Add(HAnimJoint258);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid24.FdJoints.Add(HAnimJoint45);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid24.FdJoints.Add(HAnimJoint28);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid24.FdJoints.Add(HAnimJoint136);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid24.FdJoints.Add(HAnimJoint181);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid24.FdJoints.Add(HAnimJoint240);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid24.FdJoints.Add(HAnimJoint276);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid24.FdJoints.Add(HAnimJoint91);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid24.FdJoints.Add(HAnimJoint127);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid24.FdJoints.Add(HAnimJoint172);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid24.FdJoints.Add(HAnimJoint231);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid24.FdJoints.Add(HAnimJoint267);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid24.FdJoints.Add(HAnimJoint73);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid24.FdJoints.Add(HAnimJoint109);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid24.FdJoints.Add(HAnimJoint154);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid24.FdJoints.Add(HAnimJoint213);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid24.FdJoints.Add(HAnimJoint249);
+{ METHOD .FdJoints.Add }
+HAnimHumanoid24.FdJoints.Add(HAnimJoint199);
+{ METHOD .FdChildren.Add }
+Group22.FdChildren.Add(HAnimHumanoid24);
+{ METHOD .AddGroup }
 X3D0.AddChildren([Group22]);
+end;
+
+function CreateHAnimModelFootLeft: TX3DRootNode;
+begin
+InitHAnimModelFootLeftPart0;
+InitHAnimModelFootLeftPart1;
+InitHAnimModelFootLeftPart2;
+InitHAnimModelFootLeftPart3;
+InitHAnimModelFootLeftPart4;
+InitHAnimModelFootLeftPart5;
+InitHAnimModelFootLeftPart6;
+InitHAnimModelFootLeftPart7;
+InitHAnimModelFootLeftPart8;
+InitHAnimModelFootLeftPart9;
+InitHAnimModelFootLeftPart10;
+InitHAnimModelFootLeftPart11;
+InitHAnimModelFootLeftPart12;
+InitHAnimModelFootLeftPart13;
+InitHAnimModelFootLeftPart14;
+InitHAnimModelFootLeftPart15;
+InitHAnimModelFootLeftPart16;
+InitHAnimModelFootLeftPart17;
 Result := X3D0;
 end;
 
