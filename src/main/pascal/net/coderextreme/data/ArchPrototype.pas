@@ -2,7 +2,7 @@ unit ArchPrototype;
 
 interface
 
-uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
 
 function CreateArchPrototype: TX3DRootNode;
 
@@ -36,48 +36,32 @@ IndexedFaceSet33: TIndexedFaceSetNode;
 Coordinate34: TCoordinateNode;
 Appearance35: TAppearanceNode;
 Material36: TMaterialNode;
-IS37: TIS;
-connect38: Tconnect;
-connect39: Tconnect;
-Script40: TScriptNode;
+Script38: TScriptNode;
+SFFloat39: TSFFloat;
+SFFloat40: TSFFloat;
 SFFloat41: TSFFloat;
 SFFloat42: TSFFloat;
 SFFloat43: TSFFloat;
 SFFloat44: TSFFloat;
-SFFloat45: TSFFloat;
+SFBool45: TSFBool;
 SFFloat46: TSFFloat;
 SFBool47: TSFBool;
-SFFloat48: TSFFloat;
+SFBool48: TSFBool;
 SFBool49: TSFBool;
 SFBool50: TSFBool;
-SFBool51: TSFBool;
-SFBool52: TSFBool;
-SFVec3f53: TSFVec3f;
-MFVec3f54: TMFVec3f;
-MFInt3255: TMFInt32;
-IS56: TIS;
-connect57: Tconnect;
-connect58: Tconnect;
-connect59: Tconnect;
-connect60: Tconnect;
-connect61: Tconnect;
-connect62: Tconnect;
-connect63: Tconnect;
-connect64: Tconnect;
-connect65: Tconnect;
-connect66: Tconnect;
-connect67: Tconnect;
-connect68: Tconnect;
-X3DPrototype72: TX3DPrototypeNode;
-SFColor73: TSFColor;
-SFColor74: TSFColor;
-SFFloat75: TSFFloat;
-SFFloat76: TSFFloat;
-SFFloat77: TSFFloat;
-SFFloat78: TSFFloat;
-SFFloat79: TSFFloat;
-SFFloat80: TSFFloat;
-Inline81: TInlineNode;
+SFVec3f51: TSFVec3f;
+MFVec3f52: TMFVec3f;
+MFInt3253: TMFInt32;
+X3DPrototype58: TX3DPrototypeNode;
+SFColor59: TSFColor;
+SFColor60: TSFColor;
+SFFloat61: TSFFloat;
+SFFloat62: TSFFloat;
+SFFloat63: TSFFloat;
+SFFloat64: TSFFloat;
+SFFloat65: TSFFloat;
+SFFloat66: TSFFloat;
+Inline67: TInlineNode;
 
 procedure InitArchPrototypePart0;
 begin
@@ -108,10 +92,10 @@ X3D0.Meta['generator'] := 'X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit';
 X3D0.Meta['license'] := '../license.html';
 { METHOD .Meta }
 { METHOD .Head }
-Group13 := TGroupNode.Create;
-X3DPrototype14 := TX3DPrototype.Create;
+Group13 := TGroupNode.Create;;
+X3DPrototype14 := TX3DPrototype.Create;;
 X3DPrototype14.Appinfo := 'Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. - Possibility to create shapes related to an arch: ArchHalf; IntradosOnly; ArchFilled; ArchHalfFilled; Lintel. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js.js.';
-X3DInterfaceDeclaration15 := TX3DInterfaceDeclaration.Create(nil);
+X3DInterfaceDeclaration15 := TX3DInterfaceDeclaration.Create(nil);;
 { COLOR OF ARCH }
 { INPUT PARAMETERS }
 { General parameters: measures in meters }
@@ -138,15 +122,15 @@ SFFloat19.Value := '2';
 X3DInterfaceDeclaration15.AddSFFloat([SFFloat19]);
 SFFloat20 := TSFFloat.CreateUndefined(X3DInterfaceDeclaration15, false, 'depth');
 SFFloat20.Appinfo := 'depth';
-SFFloat20.Value := '3';
-{ METHOD .AddSFFloat }
-X3DInterfaceDeclaration15.AddSFFloat([SFFloat20]);
-SFFloat21 := TSFFloat.CreateUndefined(X3DInterfaceDeclaration15, false, 'topAbutmentHeight');
 end;
 
 procedure InitArchPrototypePart1;
 begin
 
+SFFloat20.Value := '3';
+{ METHOD .AddSFFloat }
+X3DInterfaceDeclaration15.AddSFFloat([SFFloat20]);
+SFFloat21 := TSFFloat.CreateUndefined(X3DInterfaceDeclaration15, false, 'topAbutmentHeight');
 SFFloat21.Appinfo := 'topAbutmentHeight:topAbutmentHeight=0 means no topAbutment';
 SFFloat21.Value := '0.5';
 { METHOD .AddSFFloat }
@@ -194,42 +178,32 @@ X3DInterfaceDeclaration15.AddSFBool([SFBool29]);
 { METHOD .AddX3DInterfaceDeclaration }
 X3DPrototype14.AddX3DInterfaceDeclaration([X3DInterfaceDeclaration15]);
 X3DPrototype30 := TX3DPrototype.Create;
-{ First node determines node type of this prototype }
-{ IndexedFaceset creates arch }
-Transform31 := TTransformNode.Create;
-Shape32 := TShapeNode.Create;
-{ note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly }
-IndexedFaceSet33 := TIndexedFaceSetNode.Create;
 end;
 
 procedure InitArchPrototypePart2;
 begin
-
+;
+{ First node determines node type of this prototype }
+{ IndexedFaceset creates arch }
+Transform31 := TTransformNode.Create;;
+Shape32 := TShapeNode.Create;;
+{ note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly }
+IndexedFaceSet33 := TIndexedFaceSetNode.Create;;
 IndexedFaceSet33.Convex := False;
 IndexedFaceSet33.Solid := False;
-Coordinate34 := TCoordinateNode.Create;
+Coordinate34 := TCoordinateNode.Create;;
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedFaceSet33.Coord := Coordinate34;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape32.Geometry := IndexedFaceSet33;
-Appearance35 := TAppearanceNode.Create;
-Material36 := TMaterialNode.Create;
-IS37 := TIS.Create;
-connect38 := Tconnect.Create;
-connect38.NodeField := 'emissiveColor';
-connect38.ProtoField := 'emissiveColor';
-{ METHOD .Connect }
-IS37.Connect := connect38;
-connect39 := Tconnect.Create;
-connect39.NodeField := 'diffuseColor';
-connect39.ProtoField := 'diffuseColor';
-{ METHOD .Connect }
-IS37.Connect := connect39;
-{ METHOD .IS }
-Material36.IS := IS37;
+Appearance35 := TAppearanceNode.Create;;
+Material36 := TMaterialNode.Create;;
 { METHOD .SetMaterial }
 Appearance35.Material := Material36;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape32.Appearance := Appearance35;
 { METHOD .FdChildren.Add }
 Transform31.FdChildren.Add(Shape32);
@@ -237,208 +211,140 @@ Transform31.FdChildren.Add(Shape32);
 X3DPrototype30.AddTransform([Transform31]);
 { Subsequent nodes do not render, but still must be a valid X3D subgraph }
 { This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs }
-Script40 := TScriptNode.Create;
-Script40.SetUrl(['../node/ArchPrototypeScript.js','https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js']);
+Script38 := TScriptNode.Create;;
+Script38.SetUrl(['../node/ArchPrototypeScript.js','https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js']);
 { INPUT PARAMETERS }
 { General parameters }
 { Parameters to create to create shapes related to arch: put true to apply }
 { OUTPUT PARAMETERS }
-SFFloat41 := TSFFloat.CreateUndefined(Script40, false, 'clearSpanWidth');
-SFFloat41.Appinfo := 'user or default input for clearSpanWidth parameter';
+SFFloat39 := TSFFloat.CreateUndefined(Script38, false, 'clearSpanWidth');
+SFFloat39.Appinfo := 'user or default input for clearSpanWidth parameter';
 { METHOD .Fd.AddCustomField }
-Script40.AddCustomField(SFFloat41);
-SFFloat42 := TSFFloat.CreateUndefined(Script40, false, 'riseHeight');
-SFFloat42.Appinfo := 'user or default input for riseHeight parameter';
+Script38.AddCustomField(SFFloat39);
+SFFloat40 := TSFFloat.CreateUndefined(Script38, false, 'riseHeight');
+SFFloat40.Appinfo := 'user or default input for riseHeight parameter';
 { METHOD .Fd.AddCustomField }
-Script40.AddCustomField(SFFloat42);
-SFFloat43 := TSFFloat.CreateUndefined(Script40, false, 'depth');
-SFFloat43.Appinfo := 'user or default input for depth parameter';
+Script38.AddCustomField(SFFloat40);
+SFFloat41 := TSFFloat.CreateUndefined(Script38, false, 'depth');
+SFFloat41.Appinfo := 'user or default input for depth parameter';
 { METHOD .Fd.AddCustomField }
-Script40.AddCustomField(SFFloat43);
-SFFloat44 := TSFFloat.CreateUndefined(Script40, false, 'topAbutmentHeight');
-SFFloat44.Appinfo := 'user or default input for topAbutmentHeight parameter';
+Script38.AddCustomField(SFFloat41);
+SFFloat42 := TSFFloat.CreateUndefined(Script38, false, 'topAbutmentHeight');
+SFFloat42.Appinfo := 'user or default input for topAbutmentHeight parameter';
 { METHOD .Fd.AddCustomField }
-Script40.AddCustomField(SFFloat44);
-SFFloat45 := TSFFloat.CreateUndefined(Script40, false, 'pierWidth');
-SFFloat45.Appinfo := 'user or default input for pierWidth parameter';
+Script38.AddCustomField(SFFloat42);
+SFFloat43 := TSFFloat.CreateUndefined(Script38, false, 'pierWidth');
+SFFloat43.Appinfo := 'user or default input for pierWidth parameter';
 { METHOD .Fd.AddCustomField }
-Script40.AddCustomField(SFFloat45);
-SFFloat46 := TSFFloat.CreateUndefined(Script40, false, 'pierHeight');
-SFFloat46.Appinfo := 'user or default input for pierHeight parameter';
+Script38.AddCustomField(SFFloat43);
+SFFloat44 := TSFFloat.CreateUndefined(Script38, false, 'pierHeight');
 end;
 
 procedure InitArchPrototypePart3;
 begin
 
+SFFloat44.Appinfo := 'user or default input for pierHeight parameter';
 { METHOD .Fd.AddCustomField }
-Script40.AddCustomField(SFFloat46);
-SFBool47 := TSFBool.CreateUndefined(Script40, false, 'archHalf');
-SFBool47.Appinfo := 'user or default input for archHalf parameter';
+Script38.AddCustomField(SFFloat44);
+SFBool45 := TSFBool.CreateUndefined(Script38, false, 'archHalf');
+SFBool45.Appinfo := 'user or default input for archHalf parameter';
 { METHOD .Fd.AddCustomField }
-Script40.AddCustomField(SFBool47);
-SFFloat48 := TSFFloat.CreateUndefined(Script40, false, 'archHalfExtensionWidth');
-SFFloat48.Appinfo := 'user or default input for archHalfExtensionWidth parameter';
+Script38.AddCustomField(SFBool45);
+SFFloat46 := TSFFloat.CreateUndefined(Script38, false, 'archHalfExtensionWidth');
+SFFloat46.Appinfo := 'user or default input for archHalfExtensionWidth parameter';
 { METHOD .Fd.AddCustomField }
-Script40.AddCustomField(SFFloat48);
-SFBool49 := TSFBool.CreateUndefined(Script40, false, 'onlyIntrados');
-SFBool49.Appinfo := 'user or default input for onlyIntrados parameter';
+Script38.AddCustomField(SFFloat46);
+SFBool47 := TSFBool.CreateUndefined(Script38, false, 'onlyIntrados');
+SFBool47.Appinfo := 'user or default input for onlyIntrados parameter';
 { METHOD .Fd.AddCustomField }
-Script40.AddCustomField(SFBool49);
-SFBool50 := TSFBool.CreateUndefined(Script40, false, 'archFilled');
-SFBool50.Appinfo := 'user or default input for archFilled parameter';
+Script38.AddCustomField(SFBool47);
+SFBool48 := TSFBool.CreateUndefined(Script38, false, 'archFilled');
+SFBool48.Appinfo := 'user or default input for archFilled parameter';
 { METHOD .Fd.AddCustomField }
-Script40.AddCustomField(SFBool50);
-SFBool51 := TSFBool.CreateUndefined(Script40, false, 'archHalfFilled');
-SFBool51.Appinfo := 'user or default input for archHalfFilled parameter';
+Script38.AddCustomField(SFBool48);
+SFBool49 := TSFBool.CreateUndefined(Script38, false, 'archHalfFilled');
+SFBool49.Appinfo := 'user or default input for archHalfFilled parameter';
 { METHOD .Fd.AddCustomField }
-Script40.AddCustomField(SFBool51);
-SFBool52 := TSFBool.CreateUndefined(Script40, false, 'lintel');
-SFBool52.Appinfo := 'user or default input for lintel parameter';
+Script38.AddCustomField(SFBool49);
+SFBool50 := TSFBool.CreateUndefined(Script38, false, 'lintel');
+SFBool50.Appinfo := 'user or default input for lintel parameter';
 { METHOD .Fd.AddCustomField }
-Script40.AddCustomField(SFBool52);
-SFVec3f53 := TSFVec3f.CreateUndefined(Script40, false, 'computedScale');
-SFVec3f53.Appinfo := 'computedScale: modify scale field - NOTE it is not used to modify the whole arch, but to modify clearSpanWidth, riseHeight, depth. It does not affect topAbutmentHeight, pierWidth, pierHeight, archHalfExtensionWidth';
+Script38.AddCustomField(SFBool50);
+SFVec3f51 := TSFVec3f.CreateUndefined(Script38, false, 'computedScale');
+SFVec3f51.Appinfo := 'computedScale: modify scale field - NOTE it is not used to modify the whole arch, but to modify clearSpanWidth, riseHeight, depth. It does not affect topAbutmentHeight, pierWidth, pierHeight, archHalfExtensionWidth';
 { METHOD .Fd.AddCustomField }
-Script40.AddCustomField(SFVec3f53);
-MFVec3f54 := TMFVec3f.CreateUndefined(Script40, false, 'pointOut');
-MFVec3f54.Appinfo := 'send computed points to the Coordinate node';
+Script38.AddCustomField(SFVec3f51);
+MFVec3f52 := TMFVec3f.CreateUndefined(Script38, false, 'pointOut');
+MFVec3f52.Appinfo := 'send computed points to the Coordinate node';
 { METHOD .Fd.AddCustomField }
-Script40.AddCustomField(MFVec3f54);
-MFInt3255 := TMFInt32.CreateUndefined(Script40, false, 'indexOut');
-MFInt3255.Appinfo := 'send computed indices to the IndexedFaceSet node';
+Script38.AddCustomField(MFVec3f52);
+MFInt3253 := TMFInt32.CreateUndefined(Script38, false, 'indexOut');
+MFInt3253.Appinfo := 'send computed indices to the IndexedFaceSet node';
 { METHOD .Fd.AddCustomField }
-Script40.AddCustomField(MFInt3255);
-IS56 := TIS.Create;
-connect57 := Tconnect.Create;
-connect57.NodeField := 'clearSpanWidth';
-connect57.ProtoField := 'clearSpanWidth';
-{ METHOD .Connect }
-IS56.Connect := connect57;
-connect58 := Tconnect.Create;
-connect58.NodeField := 'riseHeight';
-connect58.ProtoField := 'riseHeight';
-{ METHOD .Connect }
-IS56.Connect := connect58;
-connect59 := Tconnect.Create;
-connect59.NodeField := 'depth';
-connect59.ProtoField := 'depth';
-end;
-
-procedure InitArchPrototypePart4;
-begin
-
-{ METHOD .Connect }
-IS56.Connect := connect59;
-connect60 := Tconnect.Create;
-connect60.NodeField := 'pierWidth';
-connect60.ProtoField := 'pierWidth';
-{ METHOD .Connect }
-IS56.Connect := connect60;
-connect61 := Tconnect.Create;
-connect61.NodeField := 'topAbutmentHeight';
-connect61.ProtoField := 'topAbutmentHeight';
-{ METHOD .Connect }
-IS56.Connect := connect61;
-connect62 := Tconnect.Create;
-connect62.NodeField := 'pierHeight';
-connect62.ProtoField := 'pierHeight';
-{ METHOD .Connect }
-IS56.Connect := connect62;
-connect63 := Tconnect.Create;
-connect63.NodeField := 'archHalf';
-connect63.ProtoField := 'archHalf';
-{ METHOD .Connect }
-IS56.Connect := connect63;
-connect64 := Tconnect.Create;
-connect64.NodeField := 'archHalfExtensionWidth';
-connect64.ProtoField := 'archHalfExtensionWidth';
-{ METHOD .Connect }
-IS56.Connect := connect64;
-connect65 := Tconnect.Create;
-connect65.NodeField := 'onlyIntrados';
-connect65.ProtoField := 'onlyIntrados';
-{ METHOD .Connect }
-IS56.Connect := connect65;
-connect66 := Tconnect.Create;
-connect66.NodeField := 'archFilled';
-connect66.ProtoField := 'archFilled';
-{ METHOD .Connect }
-IS56.Connect := connect66;
-connect67 := Tconnect.Create;
-connect67.NodeField := 'archHalfFilled';
-connect67.ProtoField := 'archHalfFilled';
-{ METHOD .Connect }
-IS56.Connect := connect67;
-connect68 := Tconnect.Create;
-connect68.NodeField := 'lintel';
-connect68.ProtoField := 'lintel';
-{ METHOD .Connect }
-IS56.Connect := connect68;
-{ METHOD .Fd.AddCustomField }
-Script40.AddCustomField(IS56);
+Script38.AddCustomField(MFInt3253);
 { METHOD .AddScript }
-X3DPrototype30.AddScript([Script40]);
+X3DPrototype30.AddScript([Script38]);
 { Original "ArchPrototypeScript.computedScale TO ArchTransform.scale }
 { Sample ArchPrototypeScript.computedScale TO ArchTransform.scale}
-X3DPrototype30.AddRoute(ArchPrototypeScript.[object Object], Transform31.scale);
-end;
-
-procedure InitArchPrototypePart5;
-begin
-
+X3DPrototype30.AddRoute(ArchPrototypeScript.undefined, Transform31.scale);
 { METHOD .AddX3DROUTE }
 { Original "ArchPrototypeScript.pointOut TO ArchChord.point }
 { Sample ArchPrototypeScript.pointOut TO ArchChord.point}
-X3DPrototype30.AddRoute(ArchPrototypeScript.[object Object], Coordinate34.point);
+X3DPrototype30.AddRoute(ArchPrototypeScript.undefined, Coordinate34.point);
 { METHOD .AddX3DROUTE }
 { Original "ArchPrototypeScript.indexOut TO ArchIndex.EventSet_coordIndex }
 { Sample ArchPrototypeScript.indexOut TO ArchIndex.EventSet_coordIndex}
-X3DPrototype30.AddRoute(ArchPrototypeScript.[object Object], IndexedFaceSet33.EventSet_coordIndex);
+X3DPrototype30.AddRoute(ArchPrototypeScript.undefined, IndexedFaceSet33.EventSet_coordIndex);
 { METHOD .AddX3DROUTE }
 { METHOD .AddX3DPrototype }
 X3DPrototype14.AddX3DPrototype([X3DPrototype30]);
 { METHOD .AddX3DPrototype }
 Group13.AddX3DPrototype([X3DPrototype14]);
-X3DPrototype72 := TX3DPrototypeNode.Create;
-SFColor73 := TSFColor.CreateUndefined(X3DPrototype72, false, 'diffuseColor');
-SFColor73.Value := '0.5 0.3 0.6';
+X3DPrototype58 := TX3DPrototypeNode;
+SFColor59 := TSFColor.CreateUndefined(X3DPrototype58, false, 'diffuseColor');
+SFColor59.Value := '0.5 0.3 0.6';
 { METHOD .AddSFColor }
-X3DPrototype72.AddSFColor([SFColor73]);
-SFColor74 := TSFColor.CreateUndefined(X3DPrototype72, false, 'emissiveColor');
-SFColor74.Value := '0.5 0.3 0.6';
+X3DPrototype58.AddSFColor([SFColor59]);
+SFColor60 := TSFColor.CreateUndefined(X3DPrototype58, false, 'emissiveColor');
+end;
+
+procedure InitArchPrototypePart4;
+begin
+
+SFColor60.Value := '0.5 0.3 0.6';
 { METHOD .AddSFColor }
-X3DPrototype72.AddSFColor([SFColor74]);
-SFFloat75 := TSFFloat.CreateUndefined(X3DPrototype72, false, 'clearSpanWidth');
-SFFloat75.Value := '5';
+X3DPrototype58.AddSFColor([SFColor60]);
+SFFloat61 := TSFFloat.CreateUndefined(X3DPrototype58, false, 'clearSpanWidth');
+SFFloat61.Value := '5';
 { METHOD .AddSFFloat }
-X3DPrototype72.AddSFFloat([SFFloat75]);
-SFFloat76 := TSFFloat.CreateUndefined(X3DPrototype72, false, 'riseHeight');
-SFFloat76.Value := '2.5';
+X3DPrototype58.AddSFFloat([SFFloat61]);
+SFFloat62 := TSFFloat.CreateUndefined(X3DPrototype58, false, 'riseHeight');
+SFFloat62.Value := '2.5';
 { METHOD .AddSFFloat }
-X3DPrototype72.AddSFFloat([SFFloat76]);
-SFFloat77 := TSFFloat.CreateUndefined(X3DPrototype72, false, 'depth');
-SFFloat77.Value := '2';
+X3DPrototype58.AddSFFloat([SFFloat62]);
+SFFloat63 := TSFFloat.CreateUndefined(X3DPrototype58, false, 'depth');
+SFFloat63.Value := '2';
 { METHOD .AddSFFloat }
-X3DPrototype72.AddSFFloat([SFFloat77]);
-SFFloat78 := TSFFloat.CreateUndefined(X3DPrototype72, false, 'topAbutmentHeight');
-SFFloat78.Value := '0.6';
+X3DPrototype58.AddSFFloat([SFFloat63]);
+SFFloat64 := TSFFloat.CreateUndefined(X3DPrototype58, false, 'topAbutmentHeight');
+SFFloat64.Value := '0.6';
 { METHOD .AddSFFloat }
-X3DPrototype72.AddSFFloat([SFFloat78]);
-SFFloat79 := TSFFloat.CreateUndefined(X3DPrototype72, false, 'pierWidth');
-SFFloat79.Value := '1';
+X3DPrototype58.AddSFFloat([SFFloat64]);
+SFFloat65 := TSFFloat.CreateUndefined(X3DPrototype58, false, 'pierWidth');
+SFFloat65.Value := '1';
 { METHOD .AddSFFloat }
-X3DPrototype72.AddSFFloat([SFFloat79]);
-SFFloat80 := TSFFloat.CreateUndefined(X3DPrototype72, false, 'pierHeight');
-SFFloat80.Value := '2';
+X3DPrototype58.AddSFFloat([SFFloat65]);
+SFFloat66 := TSFFloat.CreateUndefined(X3DPrototype58, false, 'pierHeight');
+SFFloat66.Value := '2';
 { METHOD .AddSFFloat }
-X3DPrototype72.AddSFFloat([SFFloat80]);
+X3DPrototype58.AddSFFloat([SFFloat66]);
 { METHOD .AddX3DPrototype }
-Group13.AddX3DPrototype([X3DPrototype72]);
+Group13.AddX3DPrototype([X3DPrototype58]);
 { Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare) }
-Inline81 := TInlineNode.Create;
-Inline81.SetUrl(['../data/CoordinateAxes.x3d']);
+Inline67 := TInlineNode.Create;;
+Inline67.SetUrl(['../data/CoordinateAxes.x3d']);
 { METHOD .FdChildren.Add }
-Group13.FdChildren.Add(Inline81);
+Group13.FdChildren.Add(Inline67);
 { METHOD .AddGroup }
 X3D0.AddChildren([Group13]);
 end;
@@ -450,7 +356,6 @@ InitArchPrototypePart1;
 InitArchPrototypePart2;
 InitArchPrototypePart3;
 InitArchPrototypePart4;
-InitArchPrototypePart5;
 Result := X3D0;
 end;
 

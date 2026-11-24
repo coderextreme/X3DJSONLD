@@ -2,7 +2,7 @@ unit arc2;
 
 interface
 
-uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
 
 function Createarc2: TX3DRootNode;
 
@@ -76,38 +76,45 @@ X3D0.Meta['identifier'] := 'https://coderextreme.net/X3DJSONLD/src/main/data/arc
 X3D0.Meta['description'] := 'a generic proto to connect two objects';
 { METHOD .Meta }
 { METHOD .Head }
-Group7 := TGroupNode.Create;
-Viewpoint8 := TViewpointNode.Create;
+Group7 := TGroupNode.Create;;
+Viewpoint8 := TViewpointNode.Create;;
 Viewpoint8.Position := Vector3(0,0,5);
 Viewpoint8.Description := 'Only Viewpoint';
 { METHOD .FdChildren.Add }
 Group7.FdChildren.Add(Viewpoint8);
-Background9 := TBackgroundNode.Create;
+Background9 := TBackgroundNode.Create;;
 Background9.SetSkyColor([Vector3(0.4,0.4,0.4)]);
 { METHOD .FdChildren.Add }
 Group7.FdChildren.Add(Background9);
-Transform10 := TTransformNode.Create;
-Transform11 := TTransformNode.Create;
-Shape12 := TShapeNode.Create;
-Sphere13 := TSphereNode.Create;
+Transform10 := TTransformNode.Create;;
+Transform11 := TTransformNode.Create;;
+Shape12 := TShapeNode.Create;;
+Sphere13 := TSphereNode.Create;;
 Sphere13.Radius := 0.1;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape12.Geometry := Sphere13;
-Appearance14 := TAppearanceNode.Create;
-Material15 := TMaterialNode.Create;
+Appearance14 := TAppearanceNode.Create;;
+Material15 := TMaterialNode.Create;;
 Material15.DiffuseColor := Vector3(1,0,0);
 { METHOD .SetMaterial }
 Appearance14.Material := Material15;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape12.Appearance := Appearance14;
 { METHOD .FdChildren.Add }
 Transform11.FdChildren.Add(Shape12);
-PositionInterpolator16 := TPositionInterpolatorNode.Create;
+PositionInterpolator16 := TPositionInterpolatorNode.Create;;
+end;
+
+procedure Initarc2Part1;
+begin
+
 PositionInterpolator16.SetKey([0,1]);
 PositionInterpolator16.SetKeyValue([Vector3(0,0,0),Vector3(0,5,0)]);
 { METHOD .FdChildren.Add }
 Transform11.FdChildren.Add(PositionInterpolator16);
-Script17 := TScriptNode.Create;
+Script17 := TScriptNode.Create;;
 SFVec3f18 := TSFVec3f.CreateUndefined(Script17, false, 'translation');
 SFVec3f18.Value := '0 0 0';
 { METHOD .Fd.AddCustomField }
@@ -116,11 +123,6 @@ SFVec3f19 := TSFVec3f.CreateUndefined(Script17, false, 'old');
 SFVec3f19.Value := '0 0 0';
 { METHOD .Fd.AddCustomField }
 Script17.AddCustomField(SFVec3f19);
-end;
-
-procedure Initarc2Part1;
-begin
-
 SFTime20 := TSFTime.CreateUndefined(Script17, false, 'set_location');
 { METHOD .Fd.AddCustomField }
 Script17.AddCustomField(SFTime20);
@@ -137,7 +139,7 @@ Script17.SetSourceCode('''ecmascript:\n"+
 "               }''');
 { METHOD .FdChildren.Add }
 Transform11.FdChildren.Add(Script17);
-TimeSensor22 := TTimeSensorNode.Create;
+TimeSensor22 := TTimeSensorNode.Create;;
 TimeSensor22.CycleInterval := 3;
 TimeSensor22.Loop := True;
 { METHOD .FdChildren.Add }
@@ -166,28 +168,30 @@ Transform11.AddRoute(Script17.EventTranslation_changed, Transform11.FdTranslatio
 Transform10.FdChildren.Add(Transform11);
 { METHOD .FdChildren.Add }
 Group7.FdChildren.Add(Transform10);
-Transform28 := TTransformNode.Create;
-Transform29 := TTransformNode.Create;
-Shape30 := TShapeNode.Create;
-Sphere31 := TSphereNode.Create;
+Transform28 := TTransformNode.Create;;
+Transform29 := TTransformNode.Create;;
+Shape30 := TShapeNode.Create;;
+Sphere31 := TSphereNode.Create;;
 Sphere31.Radius := 0.1;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape30.Geometry := Sphere31;
-Appearance32 := TAppearanceNode.Create;
-Material33 := TMaterialNode.Create;
+Appearance32 := TAppearanceNode.Create;;
+Material33 := TMaterialNode.Create;;
 Material33.DiffuseColor := Vector3(1,0,0);
 { METHOD .SetMaterial }
 Appearance32.Material := Material33;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape30.Appearance := Appearance32;
 { METHOD .FdChildren.Add }
 Transform29.FdChildren.Add(Shape30);
-PositionInterpolator34 := TPositionInterpolatorNode.Create;
+PositionInterpolator34 := TPositionInterpolatorNode.Create;;
 PositionInterpolator34.SetKey([0,1]);
 PositionInterpolator34.SetKeyValue([Vector3(0,0,0),Vector3(0,5,0)]);
 { METHOD .FdChildren.Add }
 Transform29.FdChildren.Add(PositionInterpolator34);
-Script35 := TScriptNode.Create;
+Script35 := TScriptNode.Create;;
 SFVec3f36 := TSFVec3f.CreateUndefined(Script35, false, 'translation');
 SFVec3f36.Value := '0 0 0';
 { METHOD .Fd.AddCustomField }
@@ -212,7 +216,7 @@ Script35.SetSourceCode('''ecmascript:\n"+
 "               }''');
 { METHOD .FdChildren.Add }
 Transform29.FdChildren.Add(Script35);
-TimeSensor40 := TTimeSensorNode.Create;
+TimeSensor40 := TTimeSensorNode.Create;;
 TimeSensor40.CycleInterval := 3;
 TimeSensor40.Loop := True;
 { METHOD .FdChildren.Add }
@@ -241,20 +245,22 @@ Transform29.AddRoute(Script35.EventTranslation_changed, Transform29.FdTranslatio
 Transform28.FdChildren.Add(Transform29);
 { METHOD .FdChildren.Add }
 Group7.FdChildren.Add(Transform28);
-Transform46 := TTransformNode.Create;
-Transform47 := TTransformNode.Create;
-Shape48 := TShapeNode.Create;
-Appearance49 := TAppearanceNode.Create;
-Material50 := TMaterialNode.Create;
+Transform46 := TTransformNode.Create;;
+Transform47 := TTransformNode.Create;;
+Shape48 := TShapeNode.Create;;
+Appearance49 := TAppearanceNode.Create;;
+Material50 := TMaterialNode.Create;;
 Material50.DiffuseColor := Vector3(0.2,0.7,0.7);
 Material50.Transparency := 0.5;
 { METHOD .SetMaterial }
 Appearance49.Material := Material50;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape48.Appearance := Appearance49;
-Cylinder51 := TCylinderNode.Create;
+Cylinder51 := TCylinderNode.Create;;
 Cylinder51.Radius := 0.05;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape48.Geometry := Cylinder51;
 { METHOD .FdChildren.Add }
 Transform47.FdChildren.Add(Shape48);
@@ -262,7 +268,7 @@ Transform47.FdChildren.Add(Shape48);
 Transform46.FdChildren.Add(Transform47);
 { METHOD .FdChildren.Add }
 Group7.FdChildren.Add(Transform46);
-Script52 := TScriptNode.Create;
+Script52 := TScriptNode.Create;;
 SFNode53 := TSFNode.CreateUndefined(Script52, false, 'startnode');
 { METHOD .Fd.Value }
 SFNode53.Value := Transform10;

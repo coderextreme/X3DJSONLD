@@ -2,7 +2,7 @@ unit asphere;
 
 interface
 
-uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
 
 function Createasphere: TX3DRootNode;
 
@@ -38,18 +38,20 @@ X3D0.Meta['identifier'] := 'https://coderextreme.net/X3DJSONLD/src/main/data/asp
 X3D0.Meta['description'] := 'a sphere';
 { METHOD .Meta }
 { METHOD .Head }
-Group8 := TGroupNode.Create;
-Group9 := TGroupNode.Create;
-Shape10 := TShapeNode.Create;
-Appearance11 := TAppearanceNode.Create;
-Material12 := TMaterialNode.Create;
+Group8 := TGroupNode.Create;;
+Group9 := TGroupNode.Create;;
+Shape10 := TShapeNode.Create;;
+Appearance11 := TAppearanceNode.Create;;
+Material12 := TMaterialNode.Create;;
 Material12.DiffuseColor := Vector3(1,1,1);
 { METHOD .SetMaterial }
 Appearance11.Material := Material12;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape10.Appearance := Appearance11;
-Sphere13 := TSphereNode.Create;
+Sphere13 := TSphereNode.Create;;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape10.Geometry := Sphere13;
 { METHOD .FdChildren.Add }
 Group9.FdChildren.Add(Shape10);

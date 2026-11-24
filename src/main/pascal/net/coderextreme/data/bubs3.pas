@@ -2,7 +2,7 @@ unit bubs3;
 
 interface
 
-uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
 
 function Createbubs3: TX3DRootNode;
 
@@ -82,18 +82,18 @@ X3D0.Meta['generator'] := 'X3D-Edit, https://savage.nps.edu/X3D-Edit';
 X3D0.Meta['identifier'] := 'https://coderextreme.net/X3DJSONLD/src/main/data/bubs.x3d';
 { METHOD .Meta }
 { METHOD .Head }
-Group7 := TGroupNode.Create;
-NavigationInfo8 := TNavigationInfoNode.Create;
+Group7 := TGroupNode.Create;;
+NavigationInfo8 := TNavigationInfoNode.Create;;
 NavigationInfo8.SetType(['EXAMINE']);
 { METHOD .FdChildren.Add }
 Group7.FdChildren.Add(NavigationInfo8);
-Viewpoint9 := TViewpointNode.Create;
+Viewpoint9 := TViewpointNode.Create;;
 Viewpoint9.Position := Vector3(0,0,4);
 Viewpoint9.Orientation := Vector4(1,0,0,0);
 Viewpoint9.Description := 'Bubbles in action';
 { METHOD .FdChildren.Add }
 Group7.FdChildren.Add(Viewpoint9);
-Background10 := TBackgroundNode.Create;
+Background10 := TBackgroundNode.Create;;
 Background10.SetBackUrl(['../resources/images/BK.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png']);
 Background10.SetBottomUrl(['../resources/images/BT.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png']);
 Background10.SetFrontUrl(['../resources/images/FR.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png']);
@@ -102,29 +102,31 @@ Background10.SetRightUrl(['../resources/images/RT.png','https://coderextreme.net
 Background10.SetTopUrl(['../resources/images/TP.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png']);
 { METHOD .FdChildren.Add }
 Group7.FdChildren.Add(Background10);
-Transform11 := TTransformNode.Create;
-Shape12 := TShapeNode.Create;
-Sphere13 := TSphereNode.Create;
+Transform11 := TTransformNode.Create;;
+Shape12 := TShapeNode.Create;;
+Sphere13 := TSphereNode.Create;;
 Sphere13.Radius := 0.25;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape12.Geometry := Sphere13;
-Appearance14 := TAppearanceNode.Create;
-Material15 := TMaterialNode.Create;
-Material15.DiffuseColor := Vector3(1,0,0);
-Material15.Transparency := 0.2;
-{ METHOD .SetMaterial }
-Appearance14.Material := Material15;
-{ METHOD .Appearance }
-Shape12.Appearance := Appearance14;
-{ METHOD .FdChildren.Add }
-Transform11.FdChildren.Add(Shape12);
-Script16 := TScriptNode.Create;
-SFVec3f17 := TSFVec3f.CreateUndefined(Script16, false, 'scale');
+Appearance14 := TAppearanceNode.Create;;
 end;
 
 procedure Initbubs3Part1;
 begin
 
+Material15 := TMaterialNode.Create;;
+Material15.DiffuseColor := Vector3(1,0,0);
+Material15.Transparency := 0.2;
+{ METHOD .SetMaterial }
+Appearance14.Material := Material15;
+{ METHOD .Appearance }
+{ METHOD.SET .Appearance }
+Shape12.Appearance := Appearance14;
+{ METHOD .FdChildren.Add }
+Transform11.FdChildren.Add(Shape12);
+Script16 := TScriptNode.Create;;
+SFVec3f17 := TSFVec3f.CreateUndefined(Script16, false, 'scale');
 SFVec3f17.Value := '1 1 1';
 { METHOD .Fd.AddCustomField }
 Script16.AddCustomField(SFVec3f17);
@@ -185,7 +187,7 @@ Script16.SetSourceCode('''ecmascript:\n"+
 "}''');
 { METHOD .FdChildren.Add }
 Transform11.FdChildren.Add(Script16);
-TimeSensor22 := TTimeSensorNode.Create;
+TimeSensor22 := TTimeSensorNode.Create;;
 TimeSensor22.CycleInterval := 10;
 TimeSensor22.Loop := True;
 { METHOD .FdChildren.Add }
@@ -204,23 +206,25 @@ Transform11.AddRoute(TimeSensor22.EventFraction_changed, Script16.EventSet_fract
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group7.FdChildren.Add(Transform11);
-Transform26 := TTransformNode.Create;
-Shape27 := TShapeNode.Create;
-Sphere28 := TSphereNode.Create;
+Transform26 := TTransformNode.Create;;
+Shape27 := TShapeNode.Create;;
+Sphere28 := TSphereNode.Create;;
 Sphere28.Radius := 0.25;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape27.Geometry := Sphere28;
-Appearance29 := TAppearanceNode.Create;
-Material30 := TMaterialNode.Create;
+Appearance29 := TAppearanceNode.Create;;
+Material30 := TMaterialNode.Create;;
 Material30.DiffuseColor := Vector3(1,0,0);
 Material30.Transparency := 0.2;
 { METHOD .SetMaterial }
 Appearance29.Material := Material30;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape27.Appearance := Appearance29;
 { METHOD .FdChildren.Add }
 Transform26.FdChildren.Add(Shape27);
-Script31 := TScriptNode.Create;
+Script31 := TScriptNode.Create;;
 SFVec3f32 := TSFVec3f.CreateUndefined(Script31, false, 'scale');
 SFVec3f32.Value := '1 1 1';
 { METHOD .Fd.AddCustomField }
@@ -282,7 +286,7 @@ Script31.SetSourceCode('''ecmascript:\n"+
 "}''');
 { METHOD .FdChildren.Add }
 Transform26.FdChildren.Add(Script31);
-TimeSensor37 := TTimeSensorNode.Create;
+TimeSensor37 := TTimeSensorNode.Create;;
 TimeSensor37.CycleInterval := 10;
 TimeSensor37.Loop := True;
 { METHOD .FdChildren.Add }
@@ -301,23 +305,25 @@ Transform26.AddRoute(TimeSensor37.EventFraction_changed, Script31.EventSet_fract
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group7.FdChildren.Add(Transform26);
-Transform41 := TTransformNode.Create;
-Shape42 := TShapeNode.Create;
-Sphere43 := TSphereNode.Create;
+Transform41 := TTransformNode.Create;;
+Shape42 := TShapeNode.Create;;
+Sphere43 := TSphereNode.Create;;
 Sphere43.Radius := 0.25;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape42.Geometry := Sphere43;
-Appearance44 := TAppearanceNode.Create;
-Material45 := TMaterialNode.Create;
+Appearance44 := TAppearanceNode.Create;;
+Material45 := TMaterialNode.Create;;
 Material45.DiffuseColor := Vector3(1,0,0);
 Material45.Transparency := 0.2;
 { METHOD .SetMaterial }
 Appearance44.Material := Material45;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape42.Appearance := Appearance44;
 { METHOD .FdChildren.Add }
 Transform41.FdChildren.Add(Shape42);
-Script46 := TScriptNode.Create;
+Script46 := TScriptNode.Create;;
 SFVec3f47 := TSFVec3f.CreateUndefined(Script46, false, 'scale');
 SFVec3f47.Value := '1 1 1';
 { METHOD .Fd.AddCustomField }
@@ -379,7 +385,7 @@ Script46.SetSourceCode('''ecmascript:\n"+
 "}''');
 { METHOD .FdChildren.Add }
 Transform41.FdChildren.Add(Script46);
-TimeSensor52 := TTimeSensorNode.Create;
+TimeSensor52 := TTimeSensorNode.Create;;
 TimeSensor52.CycleInterval := 10;
 TimeSensor52.Loop := True;
 { METHOD .FdChildren.Add }
@@ -398,23 +404,25 @@ Transform41.AddRoute(TimeSensor52.EventFraction_changed, Script46.EventSet_fract
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group7.FdChildren.Add(Transform41);
-Transform56 := TTransformNode.Create;
-Shape57 := TShapeNode.Create;
-Sphere58 := TSphereNode.Create;
+Transform56 := TTransformNode.Create;;
+Shape57 := TShapeNode.Create;;
+Sphere58 := TSphereNode.Create;;
 Sphere58.Radius := 0.25;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape57.Geometry := Sphere58;
-Appearance59 := TAppearanceNode.Create;
-Material60 := TMaterialNode.Create;
+Appearance59 := TAppearanceNode.Create;;
+Material60 := TMaterialNode.Create;;
 Material60.DiffuseColor := Vector3(1,0,0);
 Material60.Transparency := 0.2;
 { METHOD .SetMaterial }
 Appearance59.Material := Material60;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape57.Appearance := Appearance59;
 { METHOD .FdChildren.Add }
 Transform56.FdChildren.Add(Shape57);
-Script61 := TScriptNode.Create;
+Script61 := TScriptNode.Create;;
 SFVec3f62 := TSFVec3f.CreateUndefined(Script61, false, 'scale');
 SFVec3f62.Value := '1 1 1';
 { METHOD .Fd.AddCustomField }
@@ -476,7 +484,7 @@ Script61.SetSourceCode('''ecmascript:\n"+
 "}''');
 { METHOD .FdChildren.Add }
 Transform56.FdChildren.Add(Script61);
-TimeSensor67 := TTimeSensorNode.Create;
+TimeSensor67 := TTimeSensorNode.Create;;
 TimeSensor67.CycleInterval := 10;
 TimeSensor67.Loop := True;
 { METHOD .FdChildren.Add }

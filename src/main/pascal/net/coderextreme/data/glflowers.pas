@@ -2,7 +2,7 @@ unit glflowers;
 
 interface
 
-uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
 
 function Createglflowers: TX3DRootNode;
 
@@ -49,11 +49,11 @@ X3D0.Meta['generator'] := 'X3D-Edit, https://savage.nps.edu/X3D-Edit';
 X3D0.Meta['identifier'] := 'https://coderextreme.net/X3DJSONLD/src/main/data/glflowers.x3d';
 { METHOD .Meta }
 { METHOD .Head }
-Group7 := TGroupNode.Create;
-NavigationInfo8 := TNavigationInfoNode.Create;
+Group7 := TGroupNode.Create;;
+NavigationInfo8 := TNavigationInfoNode.Create;;
 { METHOD .FdChildren.Add }
 Group7.FdChildren.Add(NavigationInfo8);
-Background9 := TBackgroundNode.Create;
+Background9 := TBackgroundNode.Create;;
 Background9.SetBackUrl(['../resources/images/all_probes/stpeters_cross/stpeters_back.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png']);
 Background9.SetBottomUrl(['../resources/images/all_probes/stpeters_cross/stpeters_bottom.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png']);
 Background9.SetFrontUrl(['../resources/images/all_probes/stpeters_cross/stpeters_front.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png']);
@@ -62,8 +62,8 @@ Background9.SetRightUrl(['../resources/images/all_probes/stpeters_cross/stpeters
 Background9.SetTopUrl(['../resources/images/all_probes/stpeters_cross/stpeters_top.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png']);
 { METHOD .FdChildren.Add }
 Group7.FdChildren.Add(Background9);
-Group10 := TGroupNode.Create;
-X3DExternalPrototype11 := TX3DExternalPrototype.Create;
+Group10 := TGroupNode.Create;;
+X3DExternalPrototype11 := TX3DExternalPrototype.Create;;
 X3DExternalPrototype11.Url := '\"../data/flowerproto.x3d#FlowerProto\"';
 MFString12 := TMFString.CreateUndefined(X3DExternalPrototype11, false, 'vertex');
 { METHOD .AddMFString }
@@ -73,10 +73,15 @@ MFString13 := TMFString.CreateUndefined(X3DExternalPrototype11, false, 'fragment
 X3DExternalPrototype11.AddMFString([MFString13]);
 { METHOD .AddX3DExternalPrototype }
 Group10.AddX3DExternalPrototype([X3DExternalPrototype11]);
-X3DPrototype14 := TX3DPrototype.Create;
-X3DPrototype15 := TX3DPrototype.Create;
-Group16 := TGroupNode.Create;
-X3DPrototype17 := TX3DPrototypeNode.Create;
+X3DPrototype14 := TX3DPrototype.Create;;
+X3DPrototype15 := TX3DPrototype.Create;;
+Group16 := TGroupNode.Create;;
+X3DPrototype17 := TX3DPrototypeNode;
+end;
+
+procedure InitglflowersPart1;
+begin
+
 MFString18 := TMFString.CreateUndefined(X3DPrototype17, false, 'vertex');
 MFString18.Value := '\"../shaders/gl_flowers_chromatic.vs\"';
 { METHOD .AddMFString }
@@ -89,31 +94,26 @@ X3DPrototype17.AddMFString([MFString19]);
 Group16.AddX3DPrototype([X3DPrototype17]);
 { METHOD .AddGroup }
 X3DPrototype15.AddChildren([Group16]);
-end;
-
-procedure InitglflowersPart1;
-begin
-
 { METHOD .AddX3DPrototype }
 X3DPrototype14.AddX3DPrototype([X3DPrototype15]);
 { METHOD .AddX3DPrototype }
 Group10.AddX3DPrototype([X3DPrototype14]);
-X3DPrototype20 := TX3DPrototypeNode.Create;
+X3DPrototype20 := TX3DPrototypeNode;
 { METHOD .AddX3DPrototype }
 Group10.AddX3DPrototype([X3DPrototype20]);
-X3DPrototype21 := TX3DPrototypeNode.Create;
+X3DPrototype21 := TX3DPrototypeNode;
 { METHOD .AddX3DPrototype }
 Group10.AddX3DPrototype([X3DPrototype21]);
-X3DPrototype22 := TX3DPrototypeNode.Create;
+X3DPrototype22 := TX3DPrototypeNode;
 { METHOD .AddX3DPrototype }
 Group10.AddX3DPrototype([X3DPrototype22]);
-X3DPrototype23 := TX3DPrototypeNode.Create;
+X3DPrototype23 := TX3DPrototypeNode;
 { METHOD .AddX3DPrototype }
 Group10.AddX3DPrototype([X3DPrototype23]);
-X3DPrototype24 := TX3DPrototypeNode.Create;
+X3DPrototype24 := TX3DPrototypeNode;
 { METHOD .AddX3DPrototype }
 Group10.AddX3DPrototype([X3DPrototype24]);
-X3DPrototype25 := TX3DPrototypeNode.Create;
+X3DPrototype25 := TX3DPrototypeNode;
 { METHOD .AddX3DPrototype }
 Group10.AddX3DPrototype([X3DPrototype25]);
 { METHOD .FdChildren.Add }

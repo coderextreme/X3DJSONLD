@@ -2,7 +2,7 @@ unit JoeExample;
 
 interface
 
-uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
 
 function CreateJoeExample: TX3DRootNode;
 
@@ -35,8 +35,8 @@ X3D0.ForceVersion.Minor := 0;
 X3D0.Meta['title'] := 'Scripting.x3d';
 { METHOD .Meta }
 { METHOD .Head }
-Group3 := TGroupNode.Create;
-Script4 := TScriptNode.Create;
+Group3 := TGroupNode.Create;;
+Script4 := TScriptNode.Create;;
 SFTime5 := TSFTime.CreateUndefined(Script4, false, 'openVault');
 { METHOD .Fd.AddCustomField }
 Script4.AddCustomField(SFTime5);
@@ -66,33 +66,36 @@ Script4.SetSourceCode('''ecmascript:\n"+
 "      }''');
 { METHOD .FdChildren.Add }
 Group3.FdChildren.Add(Script4);
-Shape9 := TShapeNode.Create;
-Appearance10 := TAppearanceNode.Create;
-Material11 := TMaterialNode.Create;
+Shape9 := TShapeNode.Create;;
+Appearance10 := TAppearanceNode.Create;;
+Material11 := TMaterialNode.Create;;
 Material11.DiffuseColor := Vector3(1,0,0);
 { METHOD .SetMaterial }
 Appearance10.Material := Material11;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape9.Appearance := Appearance10;
-Sphere12 := TSphereNode.Create;
+Sphere12 := TSphereNode.Create;;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape9.Geometry := Sphere12;
 { METHOD .FdChildren.Add }
 Group3.FdChildren.Add(Shape9);
-Sound13 := TSoundNode.Create;
+Sound13 := TSoundNode.Create;;
 Sound13.MaxBack := 1000;
 Sound13.MaxFront := 1000;
 Sound13.MinBack := 1000;
 Sound13.MinFront := 1000;
-AudioClip14 := TAudioClipNode.Create;
+AudioClip14 := TAudioClipNode.Create;;
 AudioClip14.StopTime := 1;
 AudioClip14.Description := 'clicking sound';
 AudioClip14.SetUrl(['../resources/chandubabamusic1.wav']);
 { METHOD .Source }
+{ METHOD.SET .Source }
 Sound13.Source := AudioClip14;
 { METHOD .FdChildren.Add }
 Group3.FdChildren.Add(Sound13);
-TouchSensor15 := TTouchSensorNode.Create;
+TouchSensor15 := TTouchSensorNode.Create;;
 { METHOD .FdChildren.Add }
 Group3.FdChildren.Add(TouchSensor15);
 { Original "TS.EventIsOver TO OpenVault.combinationEntered }
@@ -103,9 +106,9 @@ Group3.AddRoute(TouchSensor15.EventIsOver, SFBool6);
 { Sample TS.EventTouchTime TO OpenVault.openVault}
 Group3.AddRoute(TouchSensor15.EventTouchTime, SFTime5);
 { METHOD .AddX3DROUTE }
-{ Original "OpenVault.vaultUnlocked TO Click.startTime }
-{ Sample OpenVault.vaultUnlocked TO Click.startTime}
-Group3.AddRoute(OpenVault.[object Object], AudioClip14.startTime);
+{ Original "OpenVault.vaultUnlocked TO Click.FdStartTime.EventIn }
+{ Sample OpenVault.vaultUnlocked TO Click.FdStartTime.EventIn}
+Group3.AddRoute(OpenVault.undefined, AudioClip14.FdStartTime.EventIn);
 { METHOD .AddX3DROUTE }
 { METHOD .AddGroup }
 X3D0.AddChildren([Group3]);

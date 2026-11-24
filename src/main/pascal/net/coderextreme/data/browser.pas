@@ -2,7 +2,7 @@ unit browser;
 
 interface
 
-uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
 
 function Createbrowser: TX3DRootNode;
 
@@ -33,8 +33,8 @@ X3D0.Meta['identifier'] := 'https://coderextreme.net/X3DJSONLD/src/main/data/bro
 X3D0.Meta['description'] := 'a script test with embedded \\n between single quotes, a double backslash \\\\ a backslash \\ and a closing quote \"';
 { METHOD .Meta }
 { METHOD .Head }
-Group7 := TGroupNode.Create;
-Script8 := TScriptNode.Create;
+Group7 := TGroupNode.Create;;
+Script8 := TScriptNode.Create;;
 
 Script8.SetSourceCode('''ecmascript:\n"+
 "                function initialize() {\n"+
@@ -42,7 +42,7 @@ Script8.SetSourceCode('''ecmascript:\n"+
 "                }''');
 { METHOD .FdChildren.Add }
 Group7.FdChildren.Add(Script8);
-Script9 := TScriptNode.Create;
+Script9 := TScriptNode.Create;;
 
 Script9.SetSourceCode('''ecmascript:\n"+
 "\n"+

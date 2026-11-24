@@ -2,7 +2,7 @@ unit HAnimPoseExternProtoDeclare;
 
 interface
 
-uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
 
 function CreateHAnimPoseExternProtoDeclare: TX3DRootNode;
 
@@ -97,33 +97,33 @@ X3D0.Meta['identifier'] := 'https://www.web3d.org/x3d/content/examples/HumanoidA
 X3D0.Meta['license'] := 'https://www.web3d.org/x3d/content/examples/license.html';
 { METHOD .Meta }
 { METHOD .Head }
-Group20 := TGroupNode.Create;
-WorldInfo21 := TWorldInfoNode.Create;
+Group20 := TGroupNode.Create;;
+WorldInfo21 := TWorldInfoNode.Create;;
 WorldInfo21.SetInfo(['Design to illustrate a potential HAnimPose node']);
 WorldInfo21.Title := 'HAnimPoseExternProtoDeclare';
 { METHOD .FdChildren.Add }
 Group20.FdChildren.Add(WorldInfo21);
-Background22 := TBackgroundNode.Create;
+Background22 := TBackgroundNode.Create;;
 Background22.SetSkyColor([Vector3(0.6,0.6,0.8)]);
 { METHOD .FdChildren.Add }
 Group20.FdChildren.Add(Background22);
-NavigationInfo23 := TNavigationInfoNode.Create;
+NavigationInfo23 := TNavigationInfoNode.Create;;
 { METHOD .FdChildren.Add }
 Group20.FdChildren.Add(NavigationInfo23);
-X3DExternalPrototype24 := TX3DExternalPrototype.Create;
+X3DExternalPrototype24 := TX3DExternalPrototype.Create;;
 X3DExternalPrototype24.Appinfo := 'Experimental node to assign joint values to a humanoid and assume a pose. Assumes that baseline HAnimHumanoid configuration must be I pose, which can be achieved by resetting every HAnimJoint to default values.';
 X3DExternalPrototype24.Url := '\"Filename.x3d#HAnimPose\" \"https://some.address.org/Filename.x3d#HAnimPose\"';
+end;
+
+procedure InitHAnimPoseExternProtoDeclarePart1;
+begin
+
 SFNode25 := TSFNode.CreateUndefined(X3DExternalPrototype24, false, 'parentHAnimHumanoid');
 SFNode25.Appinfo := 'HAnimHumanoid for this Pose to act upon';
 { METHOD .AddSFNode }
 X3DExternalPrototype24.AddSFNode([SFNode25]);
 SFString26 := TSFString.CreateUndefined(X3DExternalPrototype24, false, 'name');
 SFString26.Appinfo := 'name of this pose';
-end;
-
-procedure InitHAnimPoseExternProtoDeclarePart1;
-begin
-
 { METHOD .AddSFString }
 X3DExternalPrototype24.AddSFString([SFString26]);
 MFNode27 := TMFNode.CreateUndefined(X3DExternalPrototype24, false, 'children');
@@ -172,6 +172,11 @@ SFTime37.Appinfo := 'starts the animation clock';
 { METHOD .AddSFTime }
 X3DExternalPrototype24.AddSFTime([SFTime37]);
 SFBool38 := TSFBool.CreateUndefined(X3DExternalPrototype24, false, 'isLoaded');
+end;
+
+procedure InitHAnimPoseExternProtoDeclarePart2;
+begin
+
 SFBool38.Appinfo := 'possible notification from LoadSensor if using HAnimHumanoid Inline/IMPORT AS/USE';
 { METHOD .AddSFBool }
 X3DExternalPrototype24.AddSFBool([SFBool38]);
@@ -179,57 +184,62 @@ SFBool39 := TSFBool.CreateUndefined(X3DExternalPrototype24, false, 'traceEnabled
 SFBool39.Appinfo := 'debug trace to Browser output console this is a local prototype field';
 { METHOD .AddSFBool }
 X3DExternalPrototype24.AddSFBool([SFBool39]);
-end;
-
-procedure InitHAnimPoseExternProtoDeclarePart2;
-begin
-
 { METHOD .AddX3DExternalPrototype }
 Group20.AddX3DExternalPrototype([X3DExternalPrototype24]);
-Viewpoint40 := TViewpointNode.Create;
+Viewpoint40 := TViewpointNode.Create;;
 Viewpoint40.Description := 'HAnimPoseExternProtoDeclare description';
 Viewpoint40.Position := Vector3(0,1,4);
 { METHOD .FdChildren.Add }
 Group20.FdChildren.Add(Viewpoint40);
-Transform41 := TTransformNode.Create;
+Transform41 := TTransformNode.Create;;
 Transform41.Translation := Vector3(0,1.5,0);
-Anchor42 := TAnchorNode.Create;
+Anchor42 := TAnchorNode.Create;;
 Anchor42.Description := 'go to HAnimPoseExternProtoDeclareIndex page';
 Anchor42.SetParameter(['target=_blank']);
 Anchor42.SetUrl(['https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Poses/HAnimPoseExternProtoDeclareIndex.html']);
-Shape43 := TShapeNode.Create;
-Text44 := TTextNode.Create;
+Shape43 := TShapeNode.Create;;
+Text44 := TTextNode.Create;;
 Text44.SetText(['Utility scene','HAnimPoseExternProtoDeclare.x3d']);
-FontStyle45 := TFontStyleNode.Create;
+FontStyle45 := TFontStyleNode.Create;;
 FontStyle45.Family := ffSANS;
 FontStyle45.Justify := fjMIDDLE;
 FontStyle45.JustifyMinor := fjMIDDLE;
 FontStyle45.Size := 0.15;
 FontStyle45.Style := fsBOLD;
 { METHOD .FontStyle }
+{ METHOD.SET .FontStyle }
 Text44.FontStyle := FontStyle45;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape43.Geometry := Text44;
-Appearance46 := TAppearanceNode.Create;
-Material47 := TMaterialNode.Create;
+Appearance46 := TAppearanceNode.Create;;
+Material47 := TMaterialNode.Create;;
 Material47.DiffuseColor := Vector3(0.1,0.3,0.5);
 { METHOD .SetMaterial }
 Appearance46.Material := Material47;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape43.Appearance := Appearance46;
+end;
+
+procedure InitHAnimPoseExternProtoDeclarePart3;
+begin
+
 { METHOD .FdChildren.Add }
 Anchor42.FdChildren.Add(Shape43);
-Shape48 := TShapeNode.Create;
-Box49 := TBoxNode.Create;
+Shape48 := TShapeNode.Create;;
+Box49 := TBoxNode.Create;;
 Box49.Size := Vector3(3.5,0.5,0.001);
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape48.Geometry := Box49;
-Appearance50 := TAppearanceNode.Create;
-Material51 := TMaterialNode.Create;
+Appearance50 := TAppearanceNode.Create;;
+Material51 := TMaterialNode.Create;;
 Material51.Transparency := 1;
 { METHOD .SetMaterial }
 Appearance50.Material := Material51;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape48.Appearance := Appearance50;
 { METHOD .FdChildren.Add }
 Anchor42.FdChildren.Add(Shape48);
@@ -237,36 +247,41 @@ Anchor42.FdChildren.Add(Shape48);
 Transform41.FdChildren.Add(Anchor42);
 { METHOD .FdChildren.Add }
 Group20.FdChildren.Add(Transform41);
-end;
-
-procedure InitHAnimPoseExternProtoDeclarePart3;
-begin
-
-Transform52 := TTransformNode.Create;
+Transform52 := TTransformNode.Create;;
 Transform52.Translation := Vector3(0,0.5,0);
-Anchor53 := TAnchorNode.Create;
+Anchor53 := TAnchorNode.Create;;
 Anchor53.Description := 'go to HAnimPosePrototypeIndex page';
 Anchor53.SetParameter(['target=_blank']);
 Anchor53.SetUrl(['https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Poses/HAnimPosePrototypeIndex.html']);
-Shape54 := TShapeNode.Create;
-Text55 := TTextNode.Create;
+Shape54 := TShapeNode.Create;;
+Text55 := TTextNode.Create;;
 Text55.SetText(['This model supports','HAnimPosePrototype.x3d']);
 { METHOD .FontStyle }
+{ METHOD.SET .FontStyle }
 Text55.FontStyle := FontStyle45;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape54.Geometry := Text55;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape54.Appearance := Appearance46;
 { METHOD .FdChildren.Add }
 Anchor53.FdChildren.Add(Shape54);
 { METHOD .FdChildren.Add }
 Transform52.FdChildren.Add(Anchor53);
-Shape58 := TShapeNode.Create;
-Box59 := TBoxNode.Create;
+Shape58 := TShapeNode.Create;;
+Box59 := TBoxNode.Create;;
 Box59.Size := Vector3(2.6,0.5,0.001);
+end;
+
+procedure InitHAnimPoseExternProtoDeclarePart4;
+begin
+
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape58.Geometry := Box59;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape58.Appearance := Appearance50;
 { METHOD .FdChildren.Add }
 Transform52.FdChildren.Add(Shape58);
@@ -282,6 +297,7 @@ InitHAnimPoseExternProtoDeclarePart0;
 InitHAnimPoseExternProtoDeclarePart1;
 InitHAnimPoseExternProtoDeclarePart2;
 InitHAnimPoseExternProtoDeclarePart3;
+InitHAnimPoseExternProtoDeclarePart4;
 Result := X3D0;
 end;
 

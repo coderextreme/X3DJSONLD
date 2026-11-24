@@ -2,7 +2,7 @@ unit myextrusion;
 
 interface
 
-uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
 
 function Createmyextrusion: TX3DRootNode;
 
@@ -44,33 +44,40 @@ X3D0.Meta['description'] := 'beginnings of a force directed graph in 3D';
 X3D0.Meta['generator'] := 'Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit';
 { METHOD .Meta }
 { METHOD .Head }
-Group9 := TGroupNode.Create;
-Group10 := TGroupNode.Create;
-Shape11 := TShapeNode.Create;
-Extrusion12 := TExtrusionNode.Create;
+Group9 := TGroupNode.Create;;
+Group10 := TGroupNode.Create;;
+Shape11 := TShapeNode.Create;;
+Extrusion12 := TExtrusionNode.Create;;
 Extrusion12.SetSpine([Vector3(-50,-50,0),Vector3(50,50,0)]);
 Extrusion12.CreaseAngle := 0.785;
 Extrusion12.SetCrossSection([Vector2(1,0),Vector2(0.92,-0.38),Vector2(0.71,-0.71),Vector2(0.38,-0.92),Vector2(0,-1),Vector2(-0.38,-0.92),Vector2(-0.71,-0.71),Vector2(-0.92,-0.38),Vector2(-1,0),Vector2(-0.92,0.38),Vector2(-0.71,0.71),Vector2(-0.38,0.92),Vector2(0,1),Vector2(0.38,0.92),Vector2(0.71,0.71),Vector2(0.92,0.38),Vector2(1,0)]);
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape11.Geometry := Extrusion12;
-Appearance13 := TAppearanceNode.Create;
-Material14 := TMaterialNode.Create;
+Appearance13 := TAppearanceNode.Create;;
+Material14 := TMaterialNode.Create;;
 Material14.DiffuseColor := Vector3(0,1,0);
 { METHOD .SetMaterial }
 Appearance13.Material := Material14;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape11.Appearance := Appearance13;
 { METHOD .FdChildren.Add }
 Group10.FdChildren.Add(Shape11);
-TimeSensor15 := TTimeSensorNode.Create;
+TimeSensor15 := TTimeSensorNode.Create;;
 TimeSensor15.Loop := True;
 { METHOD .FdChildren.Add }
 Group10.FdChildren.Add(TimeSensor15);
-Script16 := TScriptNode.Create;
+Script16 := TScriptNode.Create;;
 SFTime17 := TSFTime.CreateUndefined(Script16, false, 'set_cycle');
 { METHOD .Fd.AddCustomField }
 Script16.AddCustomField(SFTime17);
 MFVec3f18 := TMFVec3f.CreateUndefined(Script16, false, 'spine');
+end;
+
+procedure InitmyextrusionPart1;
+begin
+
 MFVec3f18.Value := '-50 -50 0 50 50 0';
 { METHOD .Fd.AddCustomField }
 Script16.AddCustomField(MFVec3f18);
@@ -105,6 +112,7 @@ end;
 function Createmyextrusion: TX3DRootNode;
 begin
 InitmyextrusionPart0;
+InitmyextrusionPart1;
 Result := X3D0;
 end;
 

@@ -2,7 +2,7 @@ unit flowers4;
 
 interface
 
-uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
 
 function Createflowers4: TX3DRootNode;
 
@@ -81,11 +81,11 @@ X3D0.Meta['identifier'] := 'https://coderextreme.net/X3DJSONLD/src/main/data/flo
 X3D0.Meta['description'] := 'an animated flower';
 { METHOD .Meta }
 { METHOD .Head }
-Group16 := TGroupNode.Create;
-NavigationInfo17 := TNavigationInfoNode.Create;
+Group16 := TGroupNode.Create;;
+NavigationInfo17 := TNavigationInfoNode.Create;;
 { METHOD .FdChildren.Add }
 Group16.FdChildren.Add(NavigationInfo17);
-Background18 := TBackgroundNode.Create;
+Background18 := TBackgroundNode.Create;;
 Background18.SetBackUrl(['../resources/images/all_probes/stpeters_cross/stpeters_back.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png']);
 Background18.SetBottomUrl(['../resources/images/all_probes/stpeters_cross/stpeters_bottom.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png']);
 Background18.SetFrontUrl(['../resources/images/all_probes/stpeters_cross/stpeters_front.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png']);
@@ -94,47 +94,48 @@ Background18.SetRightUrl(['../resources/images/all_probes/stpeters_cross/stpeter
 Background18.SetTopUrl(['../resources/images/all_probes/stpeters_cross/stpeters_top.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png']);
 { METHOD .FdChildren.Add }
 Group16.FdChildren.Add(Background18);
-Transform19 := TTransformNode.Create;
-Shape20 := TShapeNode.Create;
-Appearance21 := TAppearanceNode.Create;
-Material22 := TMaterialNode.Create;
-Material22.DiffuseColor := Vector3(0.7,0.7,0.7);
-Material22.SpecularColor := Vector3(0.5,0.5,0.5);
-{ METHOD .SetMaterial }
-Appearance21.Material := Material22;
-ComposedCubeMapTexture23 := TComposedCubeMapTextureNode.Create;
-ImageTexture24 := TImageTextureNode.Create;
-ImageTexture24.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_back.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png']);
-{ METHOD .SetBackTexture }
-ComposedCubeMapTexture23.BackTexture := ImageTexture24;
+Transform19 := TTransformNode.Create;;
+Shape20 := TShapeNode.Create;;
+Appearance21 := TAppearanceNode.Create;;
+Material22 := TMaterialNode.Create;;
 end;
 
 procedure Initflowers4Part1;
 begin
 
-ImageTexture25 := TImageTextureNode.Create;
+Material22.DiffuseColor := Vector3(0.7,0.7,0.7);
+Material22.SpecularColor := Vector3(0.5,0.5,0.5);
+{ METHOD .SetMaterial }
+Appearance21.Material := Material22;
+ComposedCubeMapTexture23 := TComposedCubeMapTextureNode.Create;;
+ImageTexture24 := TImageTextureNode.Create;;
+ImageTexture24.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_back.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png']);
+{ METHOD .FdBackTexture.Set }
+ComposedCubeMapTexture23.FdBackTexture.Set(ImageTexture24);
+ImageTexture25 := TImageTextureNode.Create;;
 ImageTexture25.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_bottom.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png']);
-{ METHOD .SetBottomTexture }
-ComposedCubeMapTexture23.BottomTexture := ImageTexture25;
-ImageTexture26 := TImageTextureNode.Create;
+{ METHOD .FdBottomTexture.Set }
+ComposedCubeMapTexture23.FdBottomTexture.Set(ImageTexture25);
+ImageTexture26 := TImageTextureNode.Create;;
 ImageTexture26.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_front.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png']);
-{ METHOD .SetFrontTexture }
-ComposedCubeMapTexture23.FrontTexture := ImageTexture26;
-ImageTexture27 := TImageTextureNode.Create;
+{ METHOD .FdFrontTexture.Set }
+ComposedCubeMapTexture23.FdFrontTexture.Set(ImageTexture26);
+ImageTexture27 := TImageTextureNode.Create;;
 ImageTexture27.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_left.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png']);
-{ METHOD .SetLeftTexture }
-ComposedCubeMapTexture23.LeftTexture := ImageTexture27;
-ImageTexture28 := TImageTextureNode.Create;
+{ METHOD .FdLeftTexture.Set }
+ComposedCubeMapTexture23.FdLeftTexture.Set(ImageTexture27);
+ImageTexture28 := TImageTextureNode.Create;;
 ImageTexture28.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_right.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png']);
-{ METHOD .SetRightTexture }
-ComposedCubeMapTexture23.RightTexture := ImageTexture28;
-ImageTexture29 := TImageTextureNode.Create;
+{ METHOD .FdRightTexture.Set }
+ComposedCubeMapTexture23.FdRightTexture.Set(ImageTexture28);
+ImageTexture29 := TImageTextureNode.Create;;
 ImageTexture29.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_top.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png']);
-{ METHOD .SetTopTexture }
-ComposedCubeMapTexture23.TopTexture := ImageTexture29;
+{ METHOD .FdTopTexture.Set }
+ComposedCubeMapTexture23.FdTopTexture.Set(ImageTexture29);
 { METHOD .Texture }
+{ METHOD.SET .Texture }
 Appearance21.Texture := ComposedCubeMapTexture23;
-ComposedShader30 := TComposedShaderNode.Create;
+ComposedShader30 := TComposedShaderNode.Create;;
 ComposedShader30.Language := 'GLSL';
 SFInt3231 := TSFInt32.CreateUndefined(ComposedShader30, false, 'cube');
 SFInt3231.Value := '0';
@@ -145,6 +146,11 @@ SFVec3f32.Value := '0.98 1 1.033';
 { METHOD .AddSFVec3f }
 ComposedShader30.AddSFVec3f([SFVec3f32]);
 SFFloat33 := TSFFloat.CreateUndefined(ComposedShader30, false, 'bias');
+end;
+
+procedure Initflowers4Part2;
+begin
+
 SFFloat33.Value := '0.5';
 { METHOD .AddSFFloat }
 ComposedShader30.AddSFFloat([SFFloat33]);
@@ -156,38 +162,38 @@ SFFloat35 := TSFFloat.CreateUndefined(ComposedShader30, false, 'power');
 SFFloat35.Value := '2';
 { METHOD .AddSFFloat }
 ComposedShader30.AddSFFloat([SFFloat35]);
-ShaderPart36 := TShaderPartNode.Create;
+ShaderPart36 := TShaderPartNode.Create;;
 ShaderPart36.SetUrl(['../shaders/x_ite.vs','https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs','https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs']);
 ShaderPart36.FdType.Value := 'VERTEX';
 { METHOD .Parts }
+{ METHOD.SET .Parts }
 ComposedShader30.Parts := ShaderPart36;
-ShaderPart37 := TShaderPartNode.Create;
+ShaderPart37 := TShaderPartNode.Create;;
 ShaderPart37.SetUrl(['../shaders/x_ite.fs','https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs','https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs']);
 ShaderPart37.FdType.Value := 'FRAGMENT';
-end;
-
-procedure Initflowers4Part2;
-begin
-
 { METHOD .Parts }
+{ METHOD.SET .Parts }
 ComposedShader30.Parts := ShaderPart37;
 { METHOD .AddChildren }
 Appearance21.AddChildren([ComposedShader30]);
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape20.Appearance := Appearance21;
 { <Sphere> }
-IndexedFaceSet38 := TIndexedFaceSetNode.Create;
+IndexedFaceSet38 := TIndexedFaceSetNode.Create;;
 IndexedFaceSet38.Convex := False;
-Coordinate39 := TCoordinateNode.Create;
+Coordinate39 := TCoordinateNode.Create;;
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedFaceSet38.Coord := Coordinate39;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape20.Geometry := IndexedFaceSet38;
 { METHOD .FdChildren.Add }
 Transform19.FdChildren.Add(Shape20);
 { METHOD .FdChildren.Add }
 Group16.FdChildren.Add(Transform19);
-Script40 := TScriptNode.Create;
+Script40 := TScriptNode.Create;;
 SFFloat41 := TSFFloat.CreateUndefined(Script40, false, 'set_fraction');
 { METHOD .Fd.AddCustomField }
 Script40.AddCustomField(SFFloat41);
@@ -201,6 +207,11 @@ SFFloat44 := TSFFloat.CreateUndefined(Script40, false, 'e');
 SFFloat44.Value := '5';
 { METHOD .Fd.AddCustomField }
 Script40.AddCustomField(SFFloat44);
+end;
+
+procedure Initflowers4Part3;
+begin
+
 SFFloat45 := TSFFloat.CreateUndefined(Script40, false, 'f');
 SFFloat45.Value := '5';
 { METHOD .Fd.AddCustomField }
@@ -286,18 +297,18 @@ Script40.SetSourceCode('''ecmascript:\n"+
 "}''');
 { METHOD .FdChildren.Add }
 Group16.FdChildren.Add(Script40);
-TimeSensor48 := TTimeSensorNode.Create;
+TimeSensor48 := TTimeSensorNode.Create;;
 TimeSensor48.CycleInterval := 16;
 TimeSensor48.Loop := True;
 { METHOD .FdChildren.Add }
 Group16.FdChildren.Add(TimeSensor48);
 { Original "OrbitScript.coordIndexes TO Orbit.EventSet_coordIndex }
 { Sample OrbitScript.coordIndexes TO Orbit.EventSet_coordIndex}
-Group16.AddRoute(OrbitScript.[object Object], IndexedFaceSet38.EventSet_coordIndex);
+Group16.AddRoute(OrbitScript.undefined, IndexedFaceSet38.EventSet_coordIndex);
 { METHOD .AddX3DROUTE }
 { Original "OrbitScript.coordinates TO OrbitCoordinates.EventSet_point }
 { Sample OrbitScript.coordinates TO OrbitCoordinates.EventSet_point}
-Group16.AddRoute(OrbitScript.[object Object], Coordinate39.EventSet_point);
+Group16.AddRoute(OrbitScript.undefined, Coordinate39.EventSet_point);
 { METHOD .AddX3DROUTE }
 { Original "Clock.EventFraction_changed TO OrbitScript.EventSet_fraction }
 { Sample Clock.EventFraction_changed TO OrbitScript.EventSet_fraction}
@@ -312,6 +323,7 @@ begin
 Initflowers4Part0;
 Initflowers4Part1;
 Initflowers4Part2;
+Initflowers4Part3;
 Result := X3D0;
 end;
 

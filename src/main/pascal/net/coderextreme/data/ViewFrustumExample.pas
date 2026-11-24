@@ -2,7 +2,7 @@ unit ViewFrustumExample;
 
 interface
 
-uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
 
 function CreateViewFrustumExample: TX3DRootNode;
 
@@ -79,42 +79,42 @@ X3D0.Meta['generator'] := 'X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit';
 X3D0.Meta['license'] := '../license.html';
 { METHOD .Meta }
 { METHOD .Head }
-Group17 := TGroupNode.Create;
-WorldInfo18 := TWorldInfoNode.Create;
+Group17 := TGroupNode.Create;;
+WorldInfo18 := TWorldInfoNode.Create;;
 WorldInfo18.Title := 'ViewFrustumExample.x3d';
 { METHOD .FdChildren.Add }
 Group17.FdChildren.Add(WorldInfo18);
-Viewpoint19 := TViewpointNode.Create;
+Viewpoint19 := TViewpointNode.Create;;
 Viewpoint19.Description := 'ViewFrustum from above, looking down';
 Viewpoint19.Orientation := Vector4(1,0,0,-1.57);
 Viewpoint19.Position := Vector3(0,40,0);
 { METHOD .FdChildren.Add }
 Group17.FdChildren.Add(Viewpoint19);
-Viewpoint20 := TViewpointNode.Create;
+Viewpoint20 := TViewpointNode.Create;;
 Viewpoint20.Description := 'ViewFrustum from point of view';
 { METHOD .FdChildren.Add }
 Group17.FdChildren.Add(Viewpoint20);
-Viewpoint21 := TViewpointNode.Create;
+Viewpoint21 := TViewpointNode.Create;;
 Viewpoint21.Description := 'ViewFrustum behind point of view';
 Viewpoint21.Position := Vector3(0,0,15);
 { METHOD .FdChildren.Add }
 Group17.FdChildren.Add(Viewpoint21);
-Viewpoint22 := TViewpointNode.Create;
-Viewpoint22.Description := 'ViewFrustum oblique side view';
-Viewpoint22.Orientation := Vector4(0.8005,0.5926,0.0898,-0.3743);
-Viewpoint22.Position := Vector3(-5,5,20);
-{ METHOD .FdChildren.Add }
-Group17.FdChildren.Add(Viewpoint22);
 end;
 
 procedure InitViewFrustumExamplePart1;
 begin
 
-NavigationInfo23 := TNavigationInfoNode.Create;
+Viewpoint22 := TViewpointNode.Create;;
+Viewpoint22.Description := 'ViewFrustum oblique side view';
+Viewpoint22.Orientation := Vector4(0.8005,0.5926,0.0898,-0.3743);
+Viewpoint22.Position := Vector3(-5,5,20);
+{ METHOD .FdChildren.Add }
+Group17.FdChildren.Add(Viewpoint22);
+NavigationInfo23 := TNavigationInfoNode.Create;;
 NavigationInfo23.SetType(['EXAMINE','FLY','ANY']);
 { METHOD .FdChildren.Add }
 Group17.FdChildren.Add(NavigationInfo23);
-X3DExternalPrototype24 := TX3DExternalPrototype.Create;
+X3DExternalPrototype24 := TX3DExternalPrototype.Create;;
 X3DExternalPrototype24.Appinfo := 'Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes';
 X3DExternalPrototype24.Url := '\"ViewFrustumPrototype.x3d#ViewFrustum\"';
 SFNode25 := TSFNode.CreateUndefined(X3DExternalPrototype24, false, 'ViewpointNode');
@@ -152,23 +152,23 @@ X3DExternalPrototype24.AddSFBool([SFBool32]);
 { METHOD .AddX3DExternalPrototype }
 Group17.AddX3DExternalPrototype([X3DExternalPrototype24]);
 { Example use }
-X3DPrototype33 := TX3DPrototypeNode.Create;
+X3DPrototype33 := TX3DPrototypeNode;
+end;
+
+procedure InitViewFrustumExamplePart2;
+begin
+
 SFNode34 := TSFNode.CreateUndefined(X3DPrototype33, false, 'ViewpointNode');
 { prefer empty description to prevent entry in player's ViewpointList }
-Viewpoint35 := TViewpointNode.Create;
+Viewpoint35 := TViewpointNode.Create;;
 Viewpoint35.Description := 'ViewFrustum ViewpointNode';
 { METHOD .AddViewpoint }
 SFNode34.AddViewpoint([Viewpoint35]);
 { METHOD .AddSFNode }
 X3DPrototype33.AddSFNode([SFNode34]);
 SFNode36 := TSFNode.CreateUndefined(X3DPrototype33, false, 'NavigationInfoNode');
-NavigationInfo37 := TNavigationInfoNode.Create;
+NavigationInfo37 := TNavigationInfoNode.Create;;
 NavigationInfo37.VisibilityLimit := 15;
-end;
-
-procedure InitViewFrustumExamplePart2;
-begin
-
 { METHOD .AddNavigationInfo }
 SFNode36.AddNavigationInfo([NavigationInfo37]);
 { METHOD .AddSFNode }
@@ -196,18 +196,23 @@ X3DPrototype33.AddSFBool([SFBool42]);
 { METHOD .AddX3DPrototype }
 Group17.AddX3DPrototype([X3DPrototype33]);
 { Visualization assists }
-Inline43 := TInlineNode.Create;
+Inline43 := TInlineNode.Create;;
 Inline43.SetUrl(['GridXZ_20x20Fixed.x3d']);
 { METHOD .FdChildren.Add }
 Group17.FdChildren.Add(Inline43);
-Transform44 := TTransformNode.Create;
+Transform44 := TTransformNode.Create;;
 Transform44.Scale := Vector3(5,5,5);
-Inline45 := TInlineNode.Create;
+Inline45 := TInlineNode.Create;;
 Inline45.SetUrl(['CoordinateAxes.x3d']);
 { METHOD .FdChildren.Add }
 Transform44.FdChildren.Add(Inline45);
 { METHOD .FdChildren.Add }
 Group17.FdChildren.Add(Transform44);
+end;
+
+procedure InitViewFrustumExamplePart3;
+begin
+
 { METHOD .AddGroup }
 X3D0.AddChildren([Group17]);
 end;
@@ -217,6 +222,7 @@ begin
 InitViewFrustumExamplePart0;
 InitViewFrustumExamplePart1;
 InitViewFrustumExamplePart2;
+InitViewFrustumExamplePart3;
 Result := X3D0;
 end;
 

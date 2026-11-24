@@ -2,7 +2,7 @@ unit bumpyx_ite;
 
 interface
 
-uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
 
 function Createbumpyx_ite: TX3DRootNode;
 
@@ -79,75 +79,82 @@ X3D0.Meta['generator'] := 'X3D-Edit, https://savage.nps.edu/X3D-Edit';
 X3D0.Meta['identifier'] := 'https://coderextreme.net/X3DJSONLD/src/main/data/bumpyx_ite.x3d';
 { METHOD .Meta }
 { METHOD .Head }
-Group15 := TGroupNode.Create;
-WorldInfo16 := TWorldInfoNode.Create;
+Group15 := TGroupNode.Create;;
+WorldInfo16 := TWorldInfoNode.Create;;
 WorldInfo16.Title := 'bumpyx_ite.x3d';
 { METHOD .FdChildren.Add }
 Group15.FdChildren.Add(WorldInfo16);
-NavigationInfo17 := TNavigationInfoNode.Create;
+NavigationInfo17 := TNavigationInfoNode.Create;;
 NavigationInfo17.SetType(['ANY','EXAMINE','FLY','LOOKAT']);
 { METHOD .FdChildren.Add }
 Group15.FdChildren.Add(NavigationInfo17);
-Viewpoint18 := TViewpointNode.Create;
+Viewpoint18 := TViewpointNode.Create;;
 Viewpoint18.Position := Vector3(0,0,40);
 Viewpoint18.Description := 'Transparent rose';
 { METHOD .FdChildren.Add }
 Group15.FdChildren.Add(Viewpoint18);
 { Images courtesy of Paul Debevec's Light Probe Image Gallery }
-Background19 := TBackgroundNode.Create;
+Background19 := TBackgroundNode.Create;;
 Background19.SetBackUrl(['../resources/images/all_probes/stpeters_cross/stpeters_back.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png']);
 Background19.SetBottomUrl(['../resources/images/all_probes/stpeters_cross/stpeters_bottom.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png']);
 Background19.SetFrontUrl(['../resources/images/all_probes/stpeters_cross/stpeters_front.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png']);
 Background19.SetLeftUrl(['../resources/images/all_probes/stpeters_cross/stpeters_left.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png']);
 Background19.SetRightUrl(['../resources/images/all_probes/stpeters_cross/stpeters_right.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png']);
 Background19.SetTopUrl(['../resources/images/all_probes/stpeters_cross/stpeters_top.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png']);
-{ METHOD .FdChildren.Add }
-Group15.FdChildren.Add(Background19);
-Transform20 := TTransformNode.Create;
-Shape21 := TShapeNode.Create;
-Sphere22 := TSphereNode.Create;
-Sphere22.Radius := 40;
 end;
 
 procedure Initbumpyx_itePart1;
 begin
 
+{ METHOD .FdChildren.Add }
+Group15.FdChildren.Add(Background19);
+Transform20 := TTransformNode.Create;;
+Shape21 := TShapeNode.Create;;
+Sphere22 := TSphereNode.Create;;
+Sphere22.Radius := 40;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape21.Geometry := Sphere22;
-Appearance23 := TAppearanceNode.Create;
-Material24 := TMaterialNode.Create;
+Appearance23 := TAppearanceNode.Create;;
+Material24 := TMaterialNode.Create;;
 Material24.DiffuseColor := Vector3(0.7,0.7,0.7);
 Material24.SpecularColor := Vector3(0.5,0.5,0.5);
 { METHOD .SetMaterial }
 Appearance23.Material := Material24;
-ComposedCubeMapTexture25 := TComposedCubeMapTextureNode.Create;
-ImageTexture26 := TImageTextureNode.Create;
+ComposedCubeMapTexture25 := TComposedCubeMapTextureNode.Create;;
+ImageTexture26 := TImageTextureNode.Create;;
 ImageTexture26.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_back.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png']);
-{ METHOD .SetBackTexture }
-ComposedCubeMapTexture25.BackTexture := ImageTexture26;
-ImageTexture27 := TImageTextureNode.Create;
+{ METHOD .FdBackTexture.Set }
+ComposedCubeMapTexture25.FdBackTexture.Set(ImageTexture26);
+ImageTexture27 := TImageTextureNode.Create;;
 ImageTexture27.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_bottom.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png']);
-{ METHOD .SetBottomTexture }
-ComposedCubeMapTexture25.BottomTexture := ImageTexture27;
-ImageTexture28 := TImageTextureNode.Create;
+{ METHOD .FdBottomTexture.Set }
+ComposedCubeMapTexture25.FdBottomTexture.Set(ImageTexture27);
+ImageTexture28 := TImageTextureNode.Create;;
 ImageTexture28.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_front.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png']);
-{ METHOD .SetFrontTexture }
-ComposedCubeMapTexture25.FrontTexture := ImageTexture28;
-ImageTexture29 := TImageTextureNode.Create;
+{ METHOD .FdFrontTexture.Set }
+ComposedCubeMapTexture25.FdFrontTexture.Set(ImageTexture28);
+ImageTexture29 := TImageTextureNode.Create;;
 ImageTexture29.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_left.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png']);
-{ METHOD .SetLeftTexture }
-ComposedCubeMapTexture25.LeftTexture := ImageTexture29;
-ImageTexture30 := TImageTextureNode.Create;
+{ METHOD .FdLeftTexture.Set }
+ComposedCubeMapTexture25.FdLeftTexture.Set(ImageTexture29);
+ImageTexture30 := TImageTextureNode.Create;;
 ImageTexture30.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_right.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png']);
-{ METHOD .SetRightTexture }
-ComposedCubeMapTexture25.RightTexture := ImageTexture30;
-ImageTexture31 := TImageTextureNode.Create;
+{ METHOD .FdRightTexture.Set }
+ComposedCubeMapTexture25.FdRightTexture.Set(ImageTexture30);
+ImageTexture31 := TImageTextureNode.Create;;
+end;
+
+procedure Initbumpyx_itePart2;
+begin
+
 ImageTexture31.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_top.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png']);
-{ METHOD .SetTopTexture }
-ComposedCubeMapTexture25.TopTexture := ImageTexture31;
+{ METHOD .FdTopTexture.Set }
+ComposedCubeMapTexture25.FdTopTexture.Set(ImageTexture31);
 { METHOD .Texture }
+{ METHOD.SET .Texture }
 Appearance23.Texture := ComposedCubeMapTexture25;
-ComposedShader32 := TComposedShaderNode.Create;
+ComposedShader32 := TComposedShaderNode.Create;;
 ComposedShader32.Language := 'GLSL';
 SFVec3f33 := TSFVec3f.CreateUndefined(ComposedShader32, false, 'chromaticDispertion');
 SFVec3f33.Value := '0.98 1 1.033';
@@ -166,11 +173,6 @@ SFFloat37 := TSFFloat.CreateUndefined(ComposedShader32, false, 'scale');
 SFFloat37.Value := '0.5';
 { METHOD .AddSFFloat }
 ComposedShader32.AddSFFloat([SFFloat37]);
-end;
-
-procedure Initbumpyx_itePart2;
-begin
-
 SFFloat38 := TSFFloat.CreateUndefined(ComposedShader32, false, 'power');
 SFFloat38.Value := '2';
 { METHOD .AddSFFloat }
@@ -200,14 +202,21 @@ SFFloat44.Value := '0';
 { METHOD .AddSFFloat }
 ComposedShader32.AddSFFloat([SFFloat44]);
 ShaderPart45 := TShaderPartNode.Create;
+end;
+
+procedure Initbumpyx_itePart3;
+begin
+;
 ShaderPart45.SetUrl(['../shaders/x_ite_flowers_chromatic.vs','https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs']);
 ShaderPart45.FdType.Value := 'VERTEX';
 { METHOD .Parts }
+{ METHOD.SET .Parts }
 ComposedShader32.Parts := ShaderPart45;
-ShaderPart46 := TShaderPartNode.Create;
+ShaderPart46 := TShaderPartNode.Create;;
 ShaderPart46.SetUrl(['../shaders/x_ite.fs','https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs']);
 ShaderPart46.FdType.Value := 'FRAGMENT';
 { METHOD .Parts }
+{ METHOD.SET .Parts }
 ComposedShader32.Parts := ShaderPart46;
 { TO CONVERT TO A SPHERE }
 { <ShaderPart url='"../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"'></ShaderPart> }
@@ -215,6 +224,7 @@ ComposedShader32.Parts := ShaderPart46;
 { METHOD .AddChildren }
 Appearance23.AddChildren([ComposedShader32]);
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape21.Appearance := Appearance23;
 { METHOD .FdChildren.Add }
 Transform20.FdChildren.Add(Shape21);
@@ -229,6 +239,7 @@ begin
 Initbumpyx_itePart0;
 Initbumpyx_itePart1;
 Initbumpyx_itePart2;
+Initbumpyx_itePart3;
 Result := X3D0;
 end;
 

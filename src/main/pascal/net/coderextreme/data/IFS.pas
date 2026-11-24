@@ -2,7 +2,7 @@ unit IFS;
 
 interface
 
-uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
 
 function CreateIFS: TX3DRootNode;
 
@@ -49,33 +49,42 @@ X3D0.Meta['created'] := '9 November 2020';
 X3D0.Meta['license'] := '../license.html';
 { METHOD .Meta }
 { METHOD .Head }
-Group11 := TGroupNode.Create;
-Group12 := TGroupNode.Create;
+Group11 := TGroupNode.Create;;
+Group12 := TGroupNode.Create;;
 { DEFS for markers of skeleton joints, segments, and sites }
-Transform13 := TTransformNode.Create;
+Transform13 := TTransformNode.Create;;
 Transform13.Translation := Vector3(0,2.1,0);
-Shape14 := TShapeNode.Create;
-IndexedFaceSet15 := TIndexedFaceSetNode.Create;
+Shape14 := TShapeNode.Create;;
+IndexedFaceSet15 := TIndexedFaceSetNode.Create;;
 IndexedFaceSet15.CreaseAngle := 0.5;
 IndexedFaceSet15.Solid := False;
 IndexedFaceSet15.SetCoordIndex([0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1]);
-ColorRGBA16 := TColorRGBANode.Create;
+ColorRGBA16 := TColorRGBANode.Create;;
 ColorRGBA16.SetColor([Vector4(1,1,0,1),Vector4(1,1,0,0.1)]);
 { METHOD .Color }
+{ METHOD.SET .Color }
 IndexedFaceSet15.Color := ColorRGBA16;
-Coordinate17 := TCoordinateNode.Create;
+Coordinate17 := TCoordinateNode.Create;;
 Coordinate17.SetPoint([Vector3(0,0.01,0),Vector3(-0.01,0,0),Vector3(0,0,0.01),Vector3(0.01,0,0),Vector3(0,0,-0.01),Vector3(0,-0.01,0)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedFaceSet15.Coord := Coordinate17;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape14.Geometry := IndexedFaceSet15;
-Appearance18 := TAppearanceNode.Create;
-Material19 := TMaterialNode.Create;
+Appearance18 := TAppearanceNode.Create;;
+Material19 := TMaterialNode.Create;;
+end;
+
+procedure InitIFSPart1;
+begin
+
 Material19.DiffuseColor := Vector3(1,1,0);
 Material19.Transparency := 0.3;
 { METHOD .SetMaterial }
 Appearance18.Material := Material19;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape14.Appearance := Appearance18;
 { METHOD .FdChildren.Add }
 Transform13.FdChildren.Add(Shape14);
@@ -83,16 +92,11 @@ Transform13.FdChildren.Add(Shape14);
 Group12.FdChildren.Add(Transform13);
 { METHOD .FdChildren.Add }
 Group11.FdChildren.Add(Group12);
-NavigationInfo20 := TNavigationInfoNode.Create;
+NavigationInfo20 := TNavigationInfoNode.Create;;
 NavigationInfo20.Speed := 1.5;
-end;
-
-procedure InitIFSPart1;
-begin
-
 { METHOD .FdChildren.Add }
 Group11.FdChildren.Add(NavigationInfo20);
-Viewpoint21 := TViewpointNode.Create;
+Viewpoint21 := TViewpointNode.Create;;
 Viewpoint21.Description := 'default';
 { METHOD .FdChildren.Add }
 Group11.FdChildren.Add(Viewpoint21);

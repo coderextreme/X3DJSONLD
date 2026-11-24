@@ -2,7 +2,7 @@ unit variationalflowers2;
 
 interface
 
-uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
 
 function Createvariationalflowers2: TX3DRootNode;
 
@@ -80,21 +80,21 @@ X3D0.Meta['description'] := 'A flower particle system';
 X3D0.Meta['identifier'] := 'https://coderextreme.net/X3DJSONLD/src/main/data/variationalflowers.x3d';
 { METHOD .Meta }
 { METHOD .Head }
-Group14 := TGroupNode.Create;
-WorldInfo15 := TWorldInfoNode.Create;
+Group14 := TGroupNode.Create;;
+WorldInfo15 := TWorldInfoNode.Create;;
 WorldInfo15.Title := 'variationalflowers.x3d';
 { METHOD .FdChildren.Add }
 Group14.FdChildren.Add(WorldInfo15);
-NavigationInfo16 := TNavigationInfoNode.Create;
+NavigationInfo16 := TNavigationInfoNode.Create;;
 NavigationInfo16.SetType(['ANY','EXAMINE','FLY','LOOKAT']);
 { METHOD .FdChildren.Add }
 Group14.FdChildren.Add(NavigationInfo16);
-Viewpoint17 := TViewpointNode.Create;
+Viewpoint17 := TViewpointNode.Create;;
 Viewpoint17.Description := 'Tour Views';
 Viewpoint17.Position := Vector3(0,0,12);
 { METHOD .FdChildren.Add }
 Group14.FdChildren.Add(Viewpoint17);
-Background18 := TBackgroundNode.Create;
+Background18 := TBackgroundNode.Create;;
 Background18.SetBackUrl(['../resources/images/all_probes/stpeters_cross/stpeters_back.png']);
 Background18.SetBottomUrl(['../resources/images/all_probes/stpeters_cross/stpeters_bottom.png']);
 Background18.SetFrontUrl(['../resources/images/all_probes/stpeters_cross/stpeters_front.png']);
@@ -103,75 +103,78 @@ Background18.SetRightUrl(['../resources/images/all_probes/stpeters_cross/stpeter
 Background18.SetTopUrl(['../resources/images/all_probes/stpeters_cross/stpeters_top.png']);
 { METHOD .FdChildren.Add }
 Group14.FdChildren.Add(Background18);
-Transform19 := TTransformNode.Create;
-ParticleSystem20 := TParticleSystemNode.Create;
-ParticleSystem20.MaxParticles := 20;
-ParticleSystem20.GeometryType := 'GEOMETRY';
-{ * values - array of MFFloats to pass to ComposedShader }
-{ * variations in values - array of MFFloats to pass to ComposedShader that varies values }
-VariationPhysicsModel21 := TVariationPhysicsModelNode.Create;
 end;
 
 procedure Initvariationalflowers2Part1;
 begin
 
+Transform19 := TTransformNode.Create;;
+ParticleSystem20 := TParticleSystemNode.Create;;
+ParticleSystem20.MaxParticles := 20;
+ParticleSystem20.GeometryType := 'GEOMETRY';
+{ * values - array of MFFloats to pass to ComposedShader }
+{ * variations in values - array of MFFloats to pass to ComposedShader that varies values }
+VariationPhysicsModel21 := TVariationPhysicsModelNode.Create;;
 VariationPhysicsModel21.Values := '2 2 5 5 0 0';
 VariationPhysicsModel21.Variations := '0.2 0.1 0.3 0.3 0.01 0.01';
 { METHOD .AddVariationPhysicsModel }
 ParticleSystem20.AddVariationPhysicsModel([VariationPhysicsModel21]);
-ExplosionEmitter22 := TExplosionEmitterNode.Create;
+ExplosionEmitter22 := TExplosionEmitterNode.Create;;
 ExplosionEmitter22.Speed := 1;
 ExplosionEmitter22.Variation := 0.75;
 { METHOD .Emitter }
+{ METHOD.SET .Emitter }
 ParticleSystem20.Emitter := ExplosionEmitter22;
-Sphere23 := TSphereNode.Create;
+Sphere23 := TSphereNode.Create;;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 ParticleSystem20.Geometry := Sphere23;
-Appearance24 := TAppearanceNode.Create;
-Material25 := TMaterialNode.Create;
+Appearance24 := TAppearanceNode.Create;;
+Material25 := TMaterialNode.Create;;
 Material25.DiffuseColor := Vector3(0.7,0.7,0.7);
 Material25.SpecularColor := Vector3(0.5,0.5,0.5);
 { METHOD .SetMaterial }
 Appearance24.Material := Material25;
-ComposedCubeMapTexture26 := TComposedCubeMapTextureNode.Create;
-ImageTexture27 := TImageTextureNode.Create;
+ComposedCubeMapTexture26 := TComposedCubeMapTextureNode.Create;;
+ImageTexture27 := TImageTextureNode.Create;;
 ImageTexture27.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_back.png']);
-{ METHOD .SetBackTexture }
-ComposedCubeMapTexture26.BackTexture := ImageTexture27;
-ImageTexture28 := TImageTextureNode.Create;
+{ METHOD .FdBackTexture.Set }
+ComposedCubeMapTexture26.FdBackTexture.Set(ImageTexture27);
+ImageTexture28 := TImageTextureNode.Create;;
 ImageTexture28.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_bottom.png']);
-{ METHOD .SetBottomTexture }
-ComposedCubeMapTexture26.BottomTexture := ImageTexture28;
-ImageTexture29 := TImageTextureNode.Create;
+{ METHOD .FdBottomTexture.Set }
+ComposedCubeMapTexture26.FdBottomTexture.Set(ImageTexture28);
+ImageTexture29 := TImageTextureNode.Create;;
 ImageTexture29.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_front.png']);
-{ METHOD .SetFrontTexture }
-ComposedCubeMapTexture26.FrontTexture := ImageTexture29;
-ImageTexture30 := TImageTextureNode.Create;
+{ METHOD .FdFrontTexture.Set }
+ComposedCubeMapTexture26.FdFrontTexture.Set(ImageTexture29);
+end;
+
+procedure Initvariationalflowers2Part2;
+begin
+
+ImageTexture30 := TImageTextureNode.Create;;
 ImageTexture30.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_left.png']);
-{ METHOD .SetLeftTexture }
-ComposedCubeMapTexture26.LeftTexture := ImageTexture30;
-ImageTexture31 := TImageTextureNode.Create;
+{ METHOD .FdLeftTexture.Set }
+ComposedCubeMapTexture26.FdLeftTexture.Set(ImageTexture30);
+ImageTexture31 := TImageTextureNode.Create;;
 ImageTexture31.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_right.png']);
-{ METHOD .SetRightTexture }
-ComposedCubeMapTexture26.RightTexture := ImageTexture31;
-ImageTexture32 := TImageTextureNode.Create;
+{ METHOD .FdRightTexture.Set }
+ComposedCubeMapTexture26.FdRightTexture.Set(ImageTexture31);
+ImageTexture32 := TImageTextureNode.Create;;
 ImageTexture32.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_top.png']);
-{ METHOD .SetTopTexture }
-ComposedCubeMapTexture26.TopTexture := ImageTexture32;
+{ METHOD .FdTopTexture.Set }
+ComposedCubeMapTexture26.FdTopTexture.Set(ImageTexture32);
 { METHOD .Texture }
+{ METHOD.SET .Texture }
 Appearance24.Texture := ComposedCubeMapTexture26;
-ComposedShader33 := TComposedShaderNode.Create;
+ComposedShader33 := TComposedShaderNode.Create;;
 ComposedShader33.Language := 'GLSL';
 SFVec3f34 := TSFVec3f.CreateUndefined(ComposedShader33, false, 'chromaticDispertion');
 SFVec3f34.Value := '0.98 1 1.033';
 { METHOD .AddSFVec3f }
 ComposedShader33.AddSFVec3f([SFVec3f34]);
 SFNode35 := TSFNode.CreateUndefined(ComposedShader33, false, 'cube');
-end;
-
-procedure Initvariationalflowers2Part2;
-begin
-
 { METHOD .AddComposedCubeMapTexture }
 SFNode35.AddComposedCubeMapTexture([ComposedCubeMapTexture26]);
 { METHOD .AddSFNode }
@@ -192,23 +195,31 @@ MFFloat40 := TMFFloat.CreateUndefined(ComposedShader33, false, 'x3d_ParticleValu
 MFFloat40.Value := '2 1 4 4 0 0';
 { METHOD .AddMFFloat }
 ComposedShader33.AddMFFloat([MFFloat40]);
-ShaderPart41 := TShaderPartNode.Create;
+ShaderPart41 := TShaderPartNode.Create;;
 ShaderPart41.SetUrl(['../shaders/x_ite_variations.vs']);
 ShaderPart41.FdType.Value := 'VERTEX';
 { METHOD .Parts }
+{ METHOD.SET .Parts }
 ComposedShader33.Parts := ShaderPart41;
 ShaderPart42 := TShaderPartNode.Create;
+end;
+
+procedure Initvariationalflowers2Part3;
+begin
+;
 ShaderPart42.SetUrl(['../shaders/commonnew.fs']);
 ShaderPart42.FdType.Value := 'FRAGMENT';
 { METHOD .Parts }
+{ METHOD.SET .Parts }
 ComposedShader33.Parts := ShaderPart42;
 { METHOD .AddChildren }
 Appearance24.AddChildren([ComposedShader33]);
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 ParticleSystem20.Appearance := Appearance24;
 { METHOD .FdChildren.Add }
 Transform19.FdChildren.Add(ParticleSystem20);
-Script43 := TScriptNode.Create;
+Script43 := TScriptNode.Create;;
 SFFloat44 := TSFFloat.CreateUndefined(Script43, false, 'set_fraction');
 { METHOD .Fd.AddCustomField }
 Script43.AddCustomField(SFFloat44);
@@ -228,11 +239,6 @@ SFFloat48 := TSFFloat.CreateUndefined(Script43, false, 'updaterate');
 SFFloat48.Value := '0.1';
 { METHOD .Fd.AddCustomField }
 Script43.AddCustomField(SFFloat48);
-end;
-
-procedure Initvariationalflowers2Part3;
-begin
-
 
 Script43.SetSourceCode('''ecmascript:\n"+
 "			function set_fraction(f, tm) {\n"+
@@ -245,7 +251,7 @@ Script43.SetSourceCode('''ecmascript:\n"+
 "			}''');
 { METHOD .FdChildren.Add }
 Transform19.FdChildren.Add(Script43);
-TimeSensor49 := TTimeSensorNode.Create;
+TimeSensor49 := TTimeSensorNode.Create;;
 TimeSensor49.CycleInterval := 45;
 TimeSensor49.Loop := True;
 { METHOD .FdChildren.Add }

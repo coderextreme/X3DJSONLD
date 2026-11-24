@@ -2,7 +2,7 @@ unit rgb_alpha;
 
 interface
 
-uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
 
 function Creatergb_alpha: TX3DRootNode;
 
@@ -83,86 +83,103 @@ X3D0.Meta['generator'] := 'X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit';
 X3D0.Meta['license'] := '../../license.html';
 { METHOD .Meta }
 { METHOD .Head }
-Group20 := TGroupNode.Create;
-NavigationInfo21 := TNavigationInfoNode.Create;
+Group20 := TGroupNode.Create;;
+NavigationInfo21 := TNavigationInfoNode.Create;;
 NavigationInfo21.SetType(['EXAMINE','WALK','FLY','ANY']);
 { METHOD .FdChildren.Add }
 Group20.FdChildren.Add(NavigationInfo21);
-Group22 := TGroupNode.Create;
-Transform23 := TTransformNode.Create;
+Group22 := TGroupNode.Create;;
+Transform23 := TTransformNode.Create;;
 Transform23.Translation := Vector3(6.14221,0.0694613,-0.000999451);
-Shape24 := TShapeNode.Create;
-Appearance25 := TAppearanceNode.Create;
-Material26 := TMaterialNode.Create;
+Shape24 := TShapeNode.Create;;
+Appearance25 := TAppearanceNode.Create;;
+Material26 := TMaterialNode.Create;;
 { METHOD .SetMaterial }
 Appearance25.Material := Material26;
-PixelTexture27 := TPixelTextureNode.Create;
-PixelTexture27.FdImage.Value := MakeRGBAImage(2,2,[4,-16776961,-65536,-65536,-16776961]);
-{ METHOD .Texture }
-Appearance25.Texture := PixelTexture27;
-{ METHOD .Appearance }
-Shape24.Appearance := Appearance25;
-Box28 := TBoxNode.Create;
-{ METHOD .Geometry }
-Shape24.Geometry := Box28;
-{ METHOD .FdChildren.Add }
-Transform23.FdChildren.Add(Shape24);
 end;
 
 procedure Initrgb_alphaPart1;
 begin
 
+PixelTexture27 := TPixelTextureNode.Create;;
+PixelTexture27.FdImage.Value := MakeRGBAImage(2,2,[4,-16776961,-65536,-65536,-16776961]);
+{ METHOD .Texture }
+{ METHOD.SET .Texture }
+Appearance25.Texture := PixelTexture27;
+{ METHOD .Appearance }
+{ METHOD.SET .Appearance }
+Shape24.Appearance := Appearance25;
+Box28 := TBoxNode.Create;;
+{ METHOD .Geometry }
+{ METHOD.SET .Geometry }
+Shape24.Geometry := Box28;
+{ METHOD .FdChildren.Add }
+Transform23.FdChildren.Add(Shape24);
 { METHOD .FdChildren.Add }
 Group22.FdChildren.Add(Transform23);
-Transform29 := TTransformNode.Create;
+Transform29 := TTransformNode.Create;;
 Transform29.Translation := Vector3(-4.85443,0.0694381,-0.00149918);
-Shape30 := TShapeNode.Create;
-Appearance31 := TAppearanceNode.Create;
-Material32 := TMaterialNode.Create;
+Shape30 := TShapeNode.Create;;
+Appearance31 := TAppearanceNode.Create;;
+Material32 := TMaterialNode.Create;;
 { METHOD .SetMaterial }
 Appearance31.Material := Material32;
 { METHOD .Texture }
+{ METHOD.SET .Texture }
 Appearance31.Texture := PixelTexture27;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape30.Appearance := Appearance31;
-Sphere34 := TSphereNode.Create;
+Sphere34 := TSphereNode.Create;;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape30.Geometry := Sphere34;
 { METHOD .FdChildren.Add }
 Transform29.FdChildren.Add(Shape30);
 { METHOD .FdChildren.Add }
 Group22.FdChildren.Add(Transform29);
-Transform35 := TTransformNode.Create;
+Transform35 := TTransformNode.Create;;
 Transform35.Translation := Vector3(-1.47341,0.036672,-0.00175095);
-Shape36 := TShapeNode.Create;
-Appearance37 := TAppearanceNode.Create;
-Material38 := TMaterialNode.Create;
+Shape36 := TShapeNode.Create;;
+Appearance37 := TAppearanceNode.Create;;
+Material38 := TMaterialNode.Create;;
 { METHOD .SetMaterial }
 Appearance37.Material := Material38;
 { METHOD .Texture }
+{ METHOD.SET .Texture }
 Appearance37.Texture := PixelTexture27;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape36.Appearance := Appearance37;
 Cone40 := TConeNode.Create;
+end;
+
+procedure Initrgb_alphaPart2;
+begin
+;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape36.Geometry := Cone40;
 { METHOD .FdChildren.Add }
 Transform35.FdChildren.Add(Shape36);
 { METHOD .FdChildren.Add }
 Group22.FdChildren.Add(Transform35);
-Transform41 := TTransformNode.Create;
+Transform41 := TTransformNode.Create;;
 Transform41.Translation := Vector3(2.31094,0.0694206,-0.00187683);
-Shape42 := TShapeNode.Create;
-Appearance43 := TAppearanceNode.Create;
-Material44 := TMaterialNode.Create;
+Shape42 := TShapeNode.Create;;
+Appearance43 := TAppearanceNode.Create;;
+Material44 := TMaterialNode.Create;;
 { METHOD .SetMaterial }
 Appearance43.Material := Material44;
 { METHOD .Texture }
+{ METHOD.SET .Texture }
 Appearance43.Texture := PixelTexture27;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape42.Appearance := Appearance43;
-Cylinder46 := TCylinderNode.Create;
+Cylinder46 := TCylinderNode.Create;;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape42.Geometry := Cylinder46;
 { METHOD .FdChildren.Add }
 Transform41.FdChildren.Add(Shape42);
@@ -178,6 +195,7 @@ function Creatergb_alpha: TX3DRootNode;
 begin
 Initrgb_alphaPart0;
 Initrgb_alphaPart1;
+Initrgb_alphaPart2;
 Result := X3D0;
 end;
 

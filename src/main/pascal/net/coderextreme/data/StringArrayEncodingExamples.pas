@@ -2,7 +2,7 @@ unit StringArrayEncodingExamples;
 
 interface
 
-uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
 
 function CreateStringArrayEncodingExamples: TX3DRootNode;
 
@@ -58,40 +58,43 @@ X3D0.Meta['generator'] := 'X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit';
 X3D0.Meta['license'] := '../license.html';
 { METHOD .Meta }
 { METHOD .Head }
-Group17 := TGroupNode.Create;
-Viewpoint18 := TViewpointNode.Create;
+Group17 := TGroupNode.Create;;
+Viewpoint18 := TViewpointNode.Create;;
 Viewpoint18.Description := 'Hello MFString syntax';
 { METHOD .FdChildren.Add }
 Group17.FdChildren.Add(Viewpoint18);
-Background19 := TBackgroundNode.Create;
+Background19 := TBackgroundNode.Create;;
 Background19.SetSkyColor([Vector3(0.6,1,0.8)]);
 { METHOD .FdChildren.Add }
 Group17.FdChildren.Add(Background19);
-Shape20 := TShapeNode.Create;
-Text21 := TTextNode.Create;
+Shape20 := TShapeNode.Create;;
+Text21 := TTextNode.Create;;
 Text21.SetText(['One, Two, Three','He said, "Immel did it!"']);
 { alternative XML encoding: Text string='"One, Two, Three" "" "He said, \&quot;Immel did it!\&quot;"' }
 (* alternative Java source: .setString(new String [] {"One, Two, Three", "", "He said, \""Immel did it!\"""}) *)
-FontStyle22 := TFontStyleNode.Create;
+FontStyle22 := TFontStyleNode.Create;;
 FontStyle22.Justify := fjMIDDLE;
 FontStyle22.JustifyMinor := fjMIDDLE;
 FontStyle22.Style := fsBOLD;
 { METHOD .FontStyle }
+{ METHOD.SET .FontStyle }
 Text21.FontStyle := FontStyle22;
-{ METHOD .Geometry }
-Shape20.Geometry := Text21;
-Appearance23 := TAppearanceNode.Create;
-Material24 := TMaterialNode.Create;
-Material24.DiffuseColor := Vector3(0.6,0.4,0.2);
-{ METHOD .SetMaterial }
-Appearance23.Material := Material24;
-{ METHOD .Appearance }
-Shape20.Appearance := Appearance23;
 end;
 
 procedure InitStringArrayEncodingExamplesPart1;
 begin
 
+{ METHOD .Geometry }
+{ METHOD.SET .Geometry }
+Shape20.Geometry := Text21;
+Appearance23 := TAppearanceNode.Create;;
+Material24 := TMaterialNode.Create;;
+Material24.DiffuseColor := Vector3(0.6,0.4,0.2);
+{ METHOD .SetMaterial }
+Appearance23.Material := Material24;
+{ METHOD .Appearance }
+{ METHOD.SET .Appearance }
+Shape20.Appearance := Appearance23;
 { METHOD .FdChildren.Add }
 Group17.FdChildren.Add(Shape20);
 { METHOD .AddGroup }

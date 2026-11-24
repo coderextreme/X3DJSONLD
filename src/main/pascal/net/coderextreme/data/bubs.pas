@@ -2,7 +2,7 @@ unit bubs;
 
 interface
 
-uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
 
 function Createbubs: TX3DRootNode;
 
@@ -54,18 +54,18 @@ X3D0.Meta['generator'] := 'X3D-Edit, https://savage.nps.edu/X3D-Edit';
 X3D0.Meta['identifier'] := 'https://coderextreme.net/X3DJSONLD/src/main/data/bubs.x3d';
 { METHOD .Meta }
 { METHOD .Head }
-Group8 := TGroupNode.Create;
-NavigationInfo9 := TNavigationInfoNode.Create;
+Group8 := TGroupNode.Create;;
+NavigationInfo9 := TNavigationInfoNode.Create;;
 NavigationInfo9.SetType(['EXAMINE']);
 { METHOD .FdChildren.Add }
 Group8.FdChildren.Add(NavigationInfo9);
-Viewpoint10 := TViewpointNode.Create;
+Viewpoint10 := TViewpointNode.Create;;
 Viewpoint10.Position := Vector3(0,0,4);
 Viewpoint10.Orientation := Vector4(1,0,0,0);
 Viewpoint10.Description := 'Bubbles in action';
 { METHOD .FdChildren.Add }
 Group8.FdChildren.Add(Viewpoint10);
-Background11 := TBackgroundNode.Create;
+Background11 := TBackgroundNode.Create;;
 Background11.SetBackUrl(['../resources/images/BK.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png']);
 Background11.SetBottomUrl(['../resources/images/BT.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png']);
 Background11.SetFrontUrl(['../resources/images/FR.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png']);
@@ -74,30 +74,32 @@ Background11.SetRightUrl(['../resources/images/RT.png','https://coderextreme.net
 Background11.SetTopUrl(['../resources/images/TP.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png']);
 { METHOD .FdChildren.Add }
 Group8.FdChildren.Add(Background11);
-X3DPrototype12 := TX3DPrototype.Create;
-X3DPrototype13 := TX3DPrototype.Create;
-Transform14 := TTransformNode.Create;
-Shape15 := TShapeNode.Create;
+X3DPrototype12 := TX3DPrototype.Create;;
+X3DPrototype13 := TX3DPrototype.Create;;
+Transform14 := TTransformNode.Create;;
+Shape15 := TShapeNode.Create;;
 Sphere16 := TSphereNode.Create;
+end;
+
+procedure InitbubsPart1;
+begin
+;
 Sphere16.Radius := 0.25;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape15.Geometry := Sphere16;
-Appearance17 := TAppearanceNode.Create;
-Material18 := TMaterialNode.Create;
+Appearance17 := TAppearanceNode.Create;;
+Material18 := TMaterialNode.Create;;
 Material18.DiffuseColor := Vector3(1,0,0);
 Material18.Transparency := 0.2;
 { METHOD .SetMaterial }
 Appearance17.Material := Material18;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape15.Appearance := Appearance17;
-end;
-
-procedure InitbubsPart1;
-begin
-
 { METHOD .FdChildren.Add }
 Transform14.FdChildren.Add(Shape15);
-Script19 := TScriptNode.Create;
+Script19 := TScriptNode.Create;;
 SFVec3f20 := TSFVec3f.CreateUndefined(Script19, false, 'scale');
 SFVec3f20.Value := '1 1 1';
 { METHOD .Fd.AddCustomField }
@@ -159,7 +161,7 @@ Script19.SetSourceCode('''ecmascript:\n"+
 "}''');
 { METHOD .FdChildren.Add }
 Transform14.FdChildren.Add(Script19);
-TimeSensor25 := TTimeSensorNode.Create;
+TimeSensor25 := TTimeSensorNode.Create;;
 TimeSensor25.CycleInterval := 10;
 TimeSensor25.Loop := True;
 { METHOD .FdChildren.Add }
@@ -182,16 +184,16 @@ X3DPrototype13.AddTransform([Transform14]);
 X3DPrototype12.AddX3DPrototype([X3DPrototype13]);
 { METHOD .AddX3DPrototype }
 Group8.AddX3DPrototype([X3DPrototype12]);
-X3DPrototype29 := TX3DPrototypeNode.Create;
+X3DPrototype29 := TX3DPrototypeNode;
 { METHOD .AddX3DPrototype }
 Group8.AddX3DPrototype([X3DPrototype29]);
-X3DPrototype30 := TX3DPrototypeNode.Create;
+X3DPrototype30 := TX3DPrototypeNode;
 { METHOD .AddX3DPrototype }
 Group8.AddX3DPrototype([X3DPrototype30]);
-X3DPrototype31 := TX3DPrototypeNode.Create;
+X3DPrototype31 := TX3DPrototypeNode;
 { METHOD .AddX3DPrototype }
 Group8.AddX3DPrototype([X3DPrototype31]);
-X3DPrototype32 := TX3DPrototypeNode.Create;
+X3DPrototype32 := TX3DPrototypeNode;
 { METHOD .AddX3DPrototype }
 Group8.AddX3DPrototype([X3DPrototype32]);
 { METHOD .AddGroup }

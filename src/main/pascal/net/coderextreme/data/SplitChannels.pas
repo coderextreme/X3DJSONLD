@@ -2,7 +2,7 @@ unit SplitChannels;
 
 interface
 
-uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
 
 function CreateSplitChannels: TX3DRootNode;
 
@@ -106,105 +106,113 @@ X3D0.Meta['generator'] := 'X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit';
 X3D0.Meta['license'] := '../license.html';
 { METHOD .Meta }
 { METHOD .Head }
-Group14 := TGroupNode.Create;
-WorldInfo15 := TWorldInfoNode.Create;
+Group14 := TGroupNode.Create;;
+WorldInfo15 := TWorldInfoNode.Create;;
 WorldInfo15.Title := 'SplitChannels.x3d';
 { METHOD .FdChildren.Add }
 Group14.FdChildren.Add(WorldInfo15);
-NavigationInfo16 := TNavigationInfoNode.Create;
+NavigationInfo16 := TNavigationInfoNode.Create;;
 NavigationInfo16.SetType(['NONE']);
 { METHOD .FdChildren.Add }
 Group14.FdChildren.Add(NavigationInfo16);
-Background17 := TBackgroundNode.Create;
+Background17 := TBackgroundNode.Create;;
 Background17.SetSkyColor([Vector3(0.2,0.2,0.21)]);
 { METHOD .FdChildren.Add }
 Group14.FdChildren.Add(Background17);
-Viewpoint18 := TViewpointNode.Create;
+Viewpoint18 := TViewpointNode.Create;;
 Viewpoint18.Orientation := Vector4(1,0,0,-0.5);
 Viewpoint18.Position := Vector3(0,500,600);
 Viewpoint18.RetainUserOffsets := True;
 { METHOD .FdChildren.Add }
 Group14.FdChildren.Add(Viewpoint18);
-Transform19 := TTransformNode.Create;
+Transform19 := TTransformNode.Create;;
 Transform19.Translation := Vector3(100,400,400);
 Transform20 := TTransformNode.Create;
-Transform20.Rotation := Vector4(1,0,0,-0.5);
-Transform20.Translation := Vector3(0,40,0);
-Shape21 := TShapeNode.Create;
-Appearance22 := TAppearanceNode.Create;
-Material23 := TMaterialNode.Create;
-Material23.DiffuseColor := Vector3(0,1,0);
 end;
 
 procedure InitSplitChannelsPart1;
 begin
-
+;
+Transform20.Rotation := Vector4(1,0,0,-0.5);
+Transform20.Translation := Vector3(0,40,0);
+Shape21 := TShapeNode.Create;;
+Appearance22 := TAppearanceNode.Create;;
+Material23 := TMaterialNode.Create;;
+Material23.DiffuseColor := Vector3(0,1,0);
 Material23.EmissiveColor := Vector3(0.8,0.8,0.8);
 Material23.SpecularColor := Vector3(0.01,0.01,0.01);
 { METHOD .SetMaterial }
 Appearance22.Material := Material23;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape21.Appearance := Appearance22;
-Box24 := TBoxNode.Create;
+Box24 := TBoxNode.Create;;
 Box24.Size := Vector3(10,80,0.01);
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape21.Geometry := Box24;
 { METHOD .FdChildren.Add }
 Transform20.FdChildren.Add(Shape21);
 { METHOD .FdChildren.Add }
 Transform19.FdChildren.Add(Transform20);
-Transform25 := TTransformNode.Create;
+Transform25 := TTransformNode.Create;;
 Transform25.Rotation := Vector4(1,0,0,-0.5);
 Transform25.Translation := Vector3(-2.7,37,0);
-Shape26 := TShapeNode.Create;
-Appearance27 := TAppearanceNode.Create;
-Material28 := TMaterialNode.Create;
+Shape26 := TShapeNode.Create;;
+Appearance27 := TAppearanceNode.Create;;
+Material28 := TMaterialNode.Create;;
 Material28.DiffuseColor := Vector3(0,1,0);
 Material28.EmissiveColor := Vector3(0.8,0.8,0.8);
 Material28.SpecularColor := Vector3(0.01,0.01,0.01);
 { METHOD .SetMaterial }
 Appearance27.Material := Material28;
-ImageTexture29 := TImageTextureNode.Create;
+ImageTexture29 := TImageTextureNode.Create;;
 ImageTexture29.SetUrl(['images/line.png','https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png']);
 { METHOD .Texture }
+{ METHOD.SET .Texture }
 Appearance27.Texture := ImageTexture29;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape26.Appearance := Appearance27;
 Box30 := TBoxNode.Create;
+end;
+
+procedure InitSplitChannelsPart2;
+begin
+;
 Box30.Size := Vector3(25,83,0.01);
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape26.Geometry := Box30;
 { METHOD .FdChildren.Add }
 Transform25.FdChildren.Add(Shape26);
 { METHOD .FdChildren.Add }
 Transform19.FdChildren.Add(Transform25);
-Transform31 := TTransformNode.Create;
+Transform31 := TTransformNode.Create;;
 Transform31.Rotation := Vector4(1,0,0,-0.5);
 Transform31.Scale := Vector3(10,10,10);
 Transform31.Translation := Vector3(0,-10,0);
-Shape32 := TShapeNode.Create;
-Appearance33 := TAppearanceNode.Create;
-Material34 := TMaterialNode.Create;
+Shape32 := TShapeNode.Create;;
+Appearance33 := TAppearanceNode.Create;;
+Material34 := TMaterialNode.Create;;
 Material34.AmbientIntensity := 0.0933;
 Material34.DiffuseColor := Vector3(0.345,0.345,0.882);
 Material34.Shininess := 0.51;
 Material34.SpecularColor := Vector3(0.46,0.46,0.46);
 { METHOD .SetMaterial }
 Appearance33.Material := Material34;
-end;
-
-procedure InitSplitChannelsPart2;
-begin
-
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape32.Appearance := Appearance33;
-Text35 := TTextNode.Create;
+Text35 := TTextNode.Create;;
 Text35.SetText(['Right Channel Volume']);
-FontStyle36 := TFontStyleNode.Create;
+FontStyle36 := TFontStyleNode.Create;;
 FontStyle36.Style := fsBOLD;
 { METHOD .FontStyle }
+{ METHOD.SET .FontStyle }
 Text35.FontStyle := FontStyle36;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape32.Geometry := Text35;
 { METHOD .FdChildren.Add }
 Transform31.FdChildren.Add(Shape32);
@@ -212,66 +220,76 @@ Transform31.FdChildren.Add(Shape32);
 Transform19.FdChildren.Add(Transform31);
 { METHOD .FdChildren.Add }
 Group14.FdChildren.Add(Transform19);
-Transform37 := TTransformNode.Create;
+Transform37 := TTransformNode.Create;;
 Transform37.Translation := Vector3(-100,400,400);
-Transform38 := TTransformNode.Create;
+Transform38 := TTransformNode.Create;;
 Transform38.Rotation := Vector4(1,0,0,-0.5);
 Transform38.Translation := Vector3(0,40,0);
-Shape39 := TShapeNode.Create;
-Appearance40 := TAppearanceNode.Create;
-Material41 := TMaterialNode.Create;
+end;
+
+procedure InitSplitChannelsPart3;
+begin
+
+Shape39 := TShapeNode.Create;;
+Appearance40 := TAppearanceNode.Create;;
+Material41 := TMaterialNode.Create;;
 Material41.DiffuseColor := Vector3(0,1,0);
 Material41.EmissiveColor := Vector3(0.8,0.8,0.8);
 Material41.SpecularColor := Vector3(0.01,0.01,0.01);
 { METHOD .SetMaterial }
 Appearance40.Material := Material41;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape39.Appearance := Appearance40;
-Box42 := TBoxNode.Create;
+Box42 := TBoxNode.Create;;
 Box42.Size := Vector3(10,80,0.01);
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape39.Geometry := Box42;
 { METHOD .FdChildren.Add }
 Transform38.FdChildren.Add(Shape39);
 { METHOD .FdChildren.Add }
 Transform37.FdChildren.Add(Transform38);
-Transform43 := TTransformNode.Create;
+Transform43 := TTransformNode.Create;;
 Transform43.Rotation := Vector4(1,0,0,-0.5);
 Transform43.Translation := Vector3(13.2,37,0);
-Shape44 := TShapeNode.Create;
-Appearance45 := TAppearanceNode.Create;
-Material46 := TMaterialNode.Create;
+Shape44 := TShapeNode.Create;;
+Appearance45 := TAppearanceNode.Create;;
+Material46 := TMaterialNode.Create;;
 Material46.DiffuseColor := Vector3(0,1,0);
 Material46.EmissiveColor := Vector3(0.8,0.8,0.8);
 Material46.SpecularColor := Vector3(0.01,0.01,0.01);
 { METHOD .SetMaterial }
 Appearance45.Material := Material46;
-ImageTexture47 := TImageTextureNode.Create;
+ImageTexture47 := TImageTextureNode.Create;;
 ImageTexture47.SetUrl(['images/line.png','https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png']);
-end;
-
-procedure InitSplitChannelsPart3;
-begin
-
 { METHOD .Texture }
+{ METHOD.SET .Texture }
 Appearance45.Texture := ImageTexture47;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape44.Appearance := Appearance45;
-Box48 := TBoxNode.Create;
+Box48 := TBoxNode.Create;;
 Box48.Size := Vector3(25,83,0.01);
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape44.Geometry := Box48;
+end;
+
+procedure InitSplitChannelsPart4;
+begin
+
 { METHOD .FdChildren.Add }
 Transform43.FdChildren.Add(Shape44);
 { METHOD .FdChildren.Add }
 Transform37.FdChildren.Add(Transform43);
-Transform49 := TTransformNode.Create;
+Transform49 := TTransformNode.Create;;
 Transform49.Rotation := Vector4(1,0,0,-0.5);
 Transform49.Scale := Vector3(10,10,10);
 Transform49.Translation := Vector3(0,-10,0);
-Shape50 := TShapeNode.Create;
-Appearance51 := TAppearanceNode.Create;
-Material52 := TMaterialNode.Create;
+Shape50 := TShapeNode.Create;;
+Appearance51 := TAppearanceNode.Create;;
+Material52 := TMaterialNode.Create;;
 Material52.AmbientIntensity := 0.0933;
 Material52.DiffuseColor := Vector3(0.345,0.345,0.882);
 Material52.Shininess := 0.51;
@@ -279,12 +297,15 @@ Material52.SpecularColor := Vector3(0.46,0.46,0.46);
 { METHOD .SetMaterial }
 Appearance51.Material := Material52;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape50.Appearance := Appearance51;
-Text53 := TTextNode.Create;
+Text53 := TTextNode.Create;;
 Text53.SetText(['Left Channel Volume']);
 { METHOD .FontStyle }
+{ METHOD.SET .FontStyle }
 Text53.FontStyle := FontStyle36;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape50.Geometry := Text53;
 { METHOD .FdChildren.Add }
 Transform49.FdChildren.Add(Shape50);
@@ -292,44 +313,46 @@ Transform49.FdChildren.Add(Shape50);
 Transform37.FdChildren.Add(Transform49);
 { METHOD .FdChildren.Add }
 Group14.FdChildren.Add(Transform37);
-Transform55 := TTransformNode.Create;
-Shape56 := TShapeNode.Create;
-Appearance57 := TAppearanceNode.Create;
-Material58 := TMaterialNode.Create;
+Transform55 := TTransformNode.Create;;
+Shape56 := TShapeNode.Create;;
+Appearance57 := TAppearanceNode.Create;;
+Material58 := TMaterialNode.Create;;
 Material58.DiffuseColor := Vector3(0.1,0.1,0.1);
 Material58.Shininess := 0.8;
 Material58.SpecularColor := Vector3(0.5,0.6,0.7);
 { METHOD .SetMaterial }
 Appearance57.Material := Material58;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape56.Appearance := Appearance57;
-Box59 := TBoxNode.Create;
+end;
+
+procedure InitSplitChannelsPart5;
+begin
+
+Box59 := TBoxNode.Create;;
 Box59.Size := Vector3(1500,10,500);
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape56.Geometry := Box59;
 { METHOD .FdChildren.Add }
 Transform55.FdChildren.Add(Shape56);
-end;
-
-procedure InitSplitChannelsPart4;
-begin
-
 { METHOD .FdChildren.Add }
 Group14.FdChildren.Add(Transform55);
-ListenerPointSource60 := TListenerPointSourceNode.Create;
+ListenerPointSource60 := TListenerPointSourceNode.Create;;
 ListenerPointSource60.TrackCurrentView := True;
 { METHOD .FdChildren.Add }
 Group14.FdChildren.Add(ListenerPointSource60);
-StreamAudioDestination61 := TStreamAudioDestinationNode.Create;
-Gain62 := TGainNode.Create;
-ChannelMerger63 := TChannelMergerNode.Create;
-ChannelSelector64 := TChannelSelectorNode.Create;
+StreamAudioDestination61 := TStreamAudioDestinationNode.Create;;
+Gain62 := TGainNode.Create;;
+ChannelMerger63 := TChannelMergerNode.Create;;
+ChannelSelector64 := TChannelSelectorNode.Create;;
 Gain65 := 'Gain65';
 { METHOD .FdChildren.Add }
 ChannelSelector64.FdChildren.Add(Gain65);
 { METHOD .FdChildren.Add }
 ChannelMerger63.FdChildren.Add(ChannelSelector64);
-ChannelSelector66 := TChannelSelectorNode.Create;
+ChannelSelector66 := TChannelSelectorNode.Create;;
 ChannelSelector66.ChannelSelection := 1;
 { METHOD .FdChildren.Add }
 ChannelSelector66.FdChildren.Add(Gain65);
@@ -341,40 +364,44 @@ Gain62.FdChildren.Add(ChannelMerger63);
 StreamAudioDestination61.FdChildren.Add(Gain62);
 { METHOD .FdChildren.Add }
 Group14.FdChildren.Add(StreamAudioDestination61);
-ChannelSplitter68 := TChannelSplitterNode.Create;
+ChannelSplitter68 := TChannelSplitterNode.Create;;
 ChannelSplitter68.ChannelCountMode := 'EXPLICIT';
-AudioClip69 := TAudioClipNode.Create;
+AudioClip69 := TAudioClipNode.Create;;
 AudioClip69.Description := 'Violin';
 AudioClip69.SetUrl(['sound/violin.mp3','https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3']);
 { METHOD .Outputs }
+{ METHOD.SET .Outputs }
 ChannelSplitter68.Outputs := AudioClip69;
 { METHOD .FdChildren.Add }
 Group14.FdChildren.Add(ChannelSplitter68);
-Transform70 := TTransformNode.Create;
+Transform70 := TTransformNode.Create;;
+end;
+
+procedure InitSplitChannelsPart6;
+begin
+
 Transform70.Rotation := Vector4(1,0,0,-0.5);
 Transform70.Translation := Vector3(0,100,0);
-Shape71 := TShapeNode.Create;
-Appearance72 := TAppearanceNode.Create;
-Material73 := TMaterialNode.Create;
+Shape71 := TShapeNode.Create;;
+Appearance72 := TAppearanceNode.Create;;
+Material73 := TMaterialNode.Create;;
 Material73.DiffuseColor := Vector3(0.3,1,0.3);
 Material73.EmissiveColor := Vector3(0.8,0.8,0.8);
 Material73.SpecularColor := Vector3(0.01,0.01,0.01);
 { METHOD .SetMaterial }
 Appearance72.Material := Material73;
-ImageTexture74 := TImageTextureNode.Create;
+ImageTexture74 := TImageTextureNode.Create;;
 ImageTexture74.SetUrl(['images/loudspeaker.png','https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/loudspeaker.png']);
 { METHOD .Texture }
+{ METHOD.SET .Texture }
 Appearance72.Texture := ImageTexture74;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape71.Appearance := Appearance72;
-Box75 := TBoxNode.Create;
-end;
-
-procedure InitSplitChannelsPart5;
-begin
-
+Box75 := TBoxNode.Create;;
 Box75.Size := Vector3(100,100,0.001);
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape71.Geometry := Box75;
 { METHOD .FdChildren.Add }
 Transform70.FdChildren.Add(Shape71);
@@ -392,6 +419,7 @@ InitSplitChannelsPart2;
 InitSplitChannelsPart3;
 InitSplitChannelsPart4;
 InitSplitChannelsPart5;
+InitSplitChannelsPart6;
 Result := X3D0;
 end;
 

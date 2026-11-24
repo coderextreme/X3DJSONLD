@@ -2,7 +2,7 @@ unit JohnJoint;
 
 interface
 
-uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
 
 function CreateJohnJoint: TX3DRootNode;
 
@@ -349,32 +349,35 @@ X3D0.Meta['created'] := '12 January 2023';
 X3D0.Meta['license'] := '../license.html';
 { METHOD .Meta }
 { METHOD .Head }
-Group10 := TGroupNode.Create;
-Transform11 := TTransformNode.Create;
+Group10 := TGroupNode.Create;;
+Transform11 := TTransformNode.Create;;
 { DEF for markerfor XYZ axes }
-Shape12 := TShapeNode.Create;
+Shape12 := TShapeNode.Create;;
 { RGB lines showing XYZ axes }
-IndexedLineSet13 := TIndexedLineSetNode.Create;
+IndexedLineSet13 := TIndexedLineSetNode.Create;;
 IndexedLineSet13.SetColorIndex([0,1,2]);
 IndexedLineSet13.ColorPerVertex := False;
 IndexedLineSet13.SetCoordIndex([0,1,-1,0,2,-1,0,3,-1]);
-Coordinate14 := TCoordinateNode.Create;
+Coordinate14 := TCoordinateNode.Create;;
 Coordinate14.SetPoint([Vector3(0,0,0),Vector3(0.1,0,0),Vector3(0,0.1,0),Vector3(0,0,0.1)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet13.Coord := Coordinate14;
-Color15 := TColorNode.Create;
+Color15 := TColorNode.Create;;
 Color15.SetColor([Vector3(1,0,0),Vector3(0,0.6,0),Vector3(0,0,1)]);
 { METHOD .Color }
+{ METHOD.SET .Color }
 IndexedLineSet13.Color := Color15;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape12.Geometry := IndexedLineSet13;
 { METHOD .FdChildren.Add }
 Transform11.FdChildren.Add(Shape12);
 { METHOD .FdChildren.Add }
 Group10.FdChildren.Add(Transform11);
-Group16 := TGroupNode.Create;
+Group16 := TGroupNode.Create;;
 { DEFS for markers of skeleton joints, segments, and sites }
-Transform17 := TTransformNode.Create;
+Transform17 := TTransformNode.Create;;
 { <Transform translation='0 2 0'> }
 { <Shape DEF='HAnimRootShape'> }
 { <Sphere radius='0.02' /> }
@@ -383,44 +386,49 @@ Transform17 := TTransformNode.Create;
 { </Appearance> }
 { </Shape> }
 { </Transform> }
-Transform18 := TTransformNode.Create;
-Transform18.Translation := Vector3(0,2.1,0);
-Shape19 := TShapeNode.Create;
-Sphere20 := TSphereNode.Create;
-Sphere20.Radius := 0.02;
-{ METHOD .Geometry }
-Shape19.Geometry := Sphere20;
-Appearance21 := TAppearanceNode.Create;
-Material22 := TMaterialNode.Create;
-Material22.DiffuseColor := Vector3(0,0,0.8);
-Material22.Transparency := 0.3;
+Transform18 := TTransformNode.Create;;
 end;
 
 procedure InitJohnJointPart1;
 begin
 
+Transform18.Translation := Vector3(0,2.1,0);
+Shape19 := TShapeNode.Create;;
+Sphere20 := TSphereNode.Create;;
+Sphere20.Radius := 0.02;
+{ METHOD .Geometry }
+{ METHOD.SET .Geometry }
+Shape19.Geometry := Sphere20;
+Appearance21 := TAppearanceNode.Create;;
+Material22 := TMaterialNode.Create;;
+Material22.DiffuseColor := Vector3(0,0,0.8);
+Material22.Transparency := 0.3;
 { METHOD .SetMaterial }
 Appearance21.Material := Material22;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape19.Appearance := Appearance21;
 { METHOD .FdChildren.Add }
 Transform18.FdChildren.Add(Shape19);
 { METHOD .FdChildren.Add }
 Transform17.FdChildren.Add(Transform18);
-Transform23 := TTransformNode.Create;
+Transform23 := TTransformNode.Create;;
 Transform23.Translation := Vector3(0,2.05,0);
-Shape24 := TShapeNode.Create;
-LineSet25 := TLineSetNode.Create;
+Shape24 := TShapeNode.Create;;
+LineSet25 := TLineSetNode.Create;;
 LineSet25.SetVertexCount([2]);
-ColorRGBA26 := TColorRGBANode.Create;
+ColorRGBA26 := TColorRGBANode.Create;;
 ColorRGBA26.SetColor([Vector4(1,1,0,1),Vector4(1,1,0,0.1)]);
 { METHOD .Color }
+{ METHOD.SET .Color }
 LineSet25.Color := ColorRGBA26;
-Coordinate27 := TCoordinateNode.Create;
+Coordinate27 := TCoordinateNode.Create;;
 Coordinate27.SetPoint([Vector3(-0.05,0,0),Vector3(0.05,0,0)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 LineSet25.Coord := Coordinate27;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape24.Geometry := LineSet25;
 { METHOD .FdChildren.Add }
 Transform23.FdChildren.Add(Shape24);
@@ -441,42 +449,47 @@ Transform17.FdChildren.Add(Transform23);
 Group16.FdChildren.Add(Transform17);
 { METHOD .FdChildren.Add }
 Group10.FdChildren.Add(Group16);
-NavigationInfo28 := TNavigationInfoNode.Create;
-NavigationInfo28.Speed := 1.5;
-{ METHOD .FdChildren.Add }
-Group10.FdChildren.Add(NavigationInfo28);
-Viewpoint29 := TViewpointNode.Create;
-Viewpoint29.Description := 'default';
-{ METHOD .FdChildren.Add }
-Group10.FdChildren.Add(Viewpoint29);
-HAnimHumanoid30 := THAnimHumanoidNode.Create;
-HAnimHumanoid30.SetInfo(['humanoidVersion=2.0']);
-HAnimHumanoid30.Version := '2.0';
-HAnimJoint31 := THAnimJointNode.Create;
-HAnimJoint31.Center := Vector3(0,0.824,0.0277);
-HAnimJoint32 := THAnimJointNode.Create;
-HAnimJoint32.Center := Vector3(0,0.9149,0.0016);
-HAnimJoint33 := THAnimJointNode.Create;
-HAnimJoint33.Center := Vector3(0.0961,0.9124,-0.0001);
-HAnimJoint34 := THAnimJointNode.Create;
-HAnimJoint34.Center := Vector3(0.104,0.4867,0.0308);
-HAnimJoint35 := THAnimJointNode.Create;
-HAnimJoint35.Center := Vector3(0.1101,0.0656,-0.0736);
-HAnimJoint36 := THAnimJointNode.Create;
+NavigationInfo28 := TNavigationInfoNode.Create;;
 end;
 
 procedure InitJohnJointPart2;
 begin
 
+NavigationInfo28.Speed := 1.5;
+{ METHOD .FdChildren.Add }
+Group10.FdChildren.Add(NavigationInfo28);
+Viewpoint29 := TViewpointNode.Create;;
+Viewpoint29.Description := 'default';
+{ METHOD .FdChildren.Add }
+Group10.FdChildren.Add(Viewpoint29);
+HAnimHumanoid30 := THAnimHumanoidNode.Create;;
+HAnimHumanoid30.SetInfo(['humanoidVersion=2.0']);
+HAnimHumanoid30.Version := '2.0';
+HAnimJoint31 := THAnimJointNode.Create;;
+HAnimJoint31.Center := Vector3(0,0.824,0.0277);
+HAnimJoint32 := THAnimJointNode.Create;;
+HAnimJoint32.Center := Vector3(0,0.9149,0.0016);
+HAnimJoint33 := THAnimJointNode.Create;;
+HAnimJoint33.Center := Vector3(0.0961,0.9124,-0.0001);
+HAnimJoint34 := THAnimJointNode.Create;;
+HAnimJoint34.Center := Vector3(0.104,0.4867,0.0308);
+HAnimJoint35 := THAnimJointNode.Create;;
+HAnimJoint35.Center := Vector3(0.1101,0.0656,-0.0736);
+HAnimJoint36 := THAnimJointNode.Create;;
 HAnimJoint36.Center := Vector3(0,1,0);
-HAnimJoint37 := THAnimJointNode.Create;
+HAnimJoint37 := THAnimJointNode.Create;;
 HAnimJoint37.Center := Vector3(0,1,0);
-HAnimJoint38 := THAnimJointNode.Create;
+HAnimJoint38 := THAnimJointNode.Create;;
 HAnimJoint38.Center := Vector3(0,1,0);
-HAnimJoint39 := THAnimJointNode.Create;
+HAnimJoint39 := THAnimJointNode.Create;;
 HAnimJoint39.Center := Vector3(0,1,0);
-HAnimJoint40 := THAnimJointNode.Create;
+HAnimJoint40 := THAnimJointNode.Create;;
 HAnimJoint40.Center := Vector3(0,1,0);
+end;
+
+procedure InitJohnJointPart3;
+begin
+
 { METHOD .FdChildren.Add }
 HAnimJoint39.FdChildren.Add(HAnimJoint40);
 { METHOD .FdChildren.Add }
@@ -485,15 +498,15 @@ HAnimJoint38.FdChildren.Add(HAnimJoint39);
 HAnimJoint37.FdChildren.Add(HAnimJoint38);
 { METHOD .FdChildren.Add }
 HAnimJoint36.FdChildren.Add(HAnimJoint37);
-HAnimJoint41 := THAnimJointNode.Create;
+HAnimJoint41 := THAnimJointNode.Create;;
 HAnimJoint41.Center := Vector3(0,1,0);
-HAnimJoint42 := THAnimJointNode.Create;
+HAnimJoint42 := THAnimJointNode.Create;;
 HAnimJoint42.Center := Vector3(0,1,0);
-HAnimJoint43 := THAnimJointNode.Create;
+HAnimJoint43 := THAnimJointNode.Create;;
 HAnimJoint43.Center := Vector3(0,1,0);
-HAnimJoint44 := THAnimJointNode.Create;
+HAnimJoint44 := THAnimJointNode.Create;;
 HAnimJoint44.Center := Vector3(0,1,0);
-HAnimJoint45 := THAnimJointNode.Create;
+HAnimJoint45 := THAnimJointNode.Create;;
 HAnimJoint45.Center := Vector3(0,1,0);
 { METHOD .FdChildren.Add }
 HAnimJoint44.FdChildren.Add(HAnimJoint45);
@@ -505,25 +518,25 @@ HAnimJoint42.FdChildren.Add(HAnimJoint43);
 HAnimJoint41.FdChildren.Add(HAnimJoint42);
 { METHOD .FdChildren.Add }
 HAnimJoint36.FdChildren.Add(HAnimJoint41);
-HAnimJoint46 := THAnimJointNode.Create;
+HAnimJoint46 := THAnimJointNode.Create;;
 HAnimJoint46.Center := Vector3(0,1,0);
-HAnimJoint47 := THAnimJointNode.Create;
+HAnimJoint47 := THAnimJointNode.Create;;
 HAnimJoint47.Center := Vector3(0,1,0);
-HAnimJoint48 := THAnimJointNode.Create;
+HAnimJoint48 := THAnimJointNode.Create;;
 HAnimJoint48.Center := Vector3(0,1,0);
-HAnimJoint49 := THAnimJointNode.Create;
+HAnimJoint49 := THAnimJointNode.Create;;
 HAnimJoint49.Center := Vector3(0,1,0);
-HAnimJoint50 := THAnimJointNode.Create;
+HAnimJoint50 := THAnimJointNode.Create;;
 HAnimJoint50.Center := Vector3(0,1,0);
 { METHOD .FdChildren.Add }
 HAnimJoint49.FdChildren.Add(HAnimJoint50);
-{ METHOD .FdChildren.Add }
-HAnimJoint48.FdChildren.Add(HAnimJoint49);
 end;
 
-procedure InitJohnJointPart3;
+procedure InitJohnJointPart4;
 begin
 
+{ METHOD .FdChildren.Add }
+HAnimJoint48.FdChildren.Add(HAnimJoint49);
 { METHOD .FdChildren.Add }
 HAnimJoint47.FdChildren.Add(HAnimJoint48);
 { METHOD .FdChildren.Add }
@@ -532,17 +545,17 @@ HAnimJoint46.FdChildren.Add(HAnimJoint47);
 HAnimJoint36.FdChildren.Add(HAnimJoint46);
 { METHOD .FdChildren.Add }
 HAnimJoint35.FdChildren.Add(HAnimJoint36);
-HAnimJoint51 := THAnimJointNode.Create;
+HAnimJoint51 := THAnimJointNode.Create;;
 HAnimJoint51.Center := Vector3(0,1,0);
-HAnimJoint52 := THAnimJointNode.Create;
+HAnimJoint52 := THAnimJointNode.Create;;
 HAnimJoint52.Center := Vector3(0,1,0);
-HAnimJoint53 := THAnimJointNode.Create;
+HAnimJoint53 := THAnimJointNode.Create;;
 HAnimJoint53.Center := Vector3(0,1,0);
-HAnimJoint54 := THAnimJointNode.Create;
+HAnimJoint54 := THAnimJointNode.Create;;
 HAnimJoint54.Center := Vector3(0,1,0);
-HAnimJoint55 := THAnimJointNode.Create;
+HAnimJoint55 := THAnimJointNode.Create;;
 HAnimJoint55.Center := Vector3(0,1,0);
-HAnimJoint56 := THAnimJointNode.Create;
+HAnimJoint56 := THAnimJointNode.Create;;
 HAnimJoint56.Center := Vector3(0,1,0);
 { METHOD .FdChildren.Add }
 HAnimJoint55.FdChildren.Add(HAnimJoint56);
@@ -552,16 +565,21 @@ HAnimJoint54.FdChildren.Add(HAnimJoint55);
 HAnimJoint53.FdChildren.Add(HAnimJoint54);
 { METHOD .FdChildren.Add }
 HAnimJoint52.FdChildren.Add(HAnimJoint53);
-HAnimJoint57 := THAnimJointNode.Create;
+HAnimJoint57 := THAnimJointNode.Create;;
 HAnimJoint57.Center := Vector3(0,1,0);
-HAnimJoint58 := THAnimJointNode.Create;
+HAnimJoint58 := THAnimJointNode.Create;;
 HAnimJoint58.Center := Vector3(0,1,0);
-HAnimJoint59 := THAnimJointNode.Create;
+HAnimJoint59 := THAnimJointNode.Create;;
 HAnimJoint59.Center := Vector3(0,1,0);
-HAnimJoint60 := THAnimJointNode.Create;
+HAnimJoint60 := THAnimJointNode.Create;;
 HAnimJoint60.Center := Vector3(0,1,0);
 { METHOD .FdChildren.Add }
 HAnimJoint59.FdChildren.Add(HAnimJoint60);
+end;
+
+procedure InitJohnJointPart5;
+begin
+
 { METHOD .FdChildren.Add }
 HAnimJoint58.FdChildren.Add(HAnimJoint59);
 { METHOD .FdChildren.Add }
@@ -578,26 +596,21 @@ HAnimJoint34.FdChildren.Add(HAnimJoint35);
 HAnimJoint33.FdChildren.Add(HAnimJoint34);
 { METHOD .FdChildren.Add }
 HAnimJoint32.FdChildren.Add(HAnimJoint33);
-HAnimJoint61 := THAnimJointNode.Create;
+HAnimJoint61 := THAnimJointNode.Create;;
 HAnimJoint61.Center := Vector3(-0.095,0.9171,0.0029);
-HAnimJoint62 := THAnimJointNode.Create;
-end;
-
-procedure InitJohnJointPart4;
-begin
-
+HAnimJoint62 := THAnimJointNode.Create;;
 HAnimJoint62.Center := Vector3(-0.0867,0.4913,0.0318);
-HAnimJoint63 := THAnimJointNode.Create;
+HAnimJoint63 := THAnimJointNode.Create;;
 HAnimJoint63.Center := Vector3(-0.0801,0.0712,-0.0766);
-HAnimJoint64 := THAnimJointNode.Create;
+HAnimJoint64 := THAnimJointNode.Create;;
 HAnimJoint64.Center := Vector3(0,1,0);
-HAnimJoint65 := THAnimJointNode.Create;
+HAnimJoint65 := THAnimJointNode.Create;;
 HAnimJoint65.Center := Vector3(0,1,0);
-HAnimJoint66 := THAnimJointNode.Create;
+HAnimJoint66 := THAnimJointNode.Create;;
 HAnimJoint66.Center := Vector3(0,1,0);
-HAnimJoint67 := THAnimJointNode.Create;
+HAnimJoint67 := THAnimJointNode.Create;;
 HAnimJoint67.Center := Vector3(0,1,0);
-HAnimJoint68 := THAnimJointNode.Create;
+HAnimJoint68 := THAnimJointNode.Create;;
 HAnimJoint68.Center := Vector3(0,1,0);
 { METHOD .FdChildren.Add }
 HAnimJoint67.FdChildren.Add(HAnimJoint68);
@@ -607,15 +620,20 @@ HAnimJoint66.FdChildren.Add(HAnimJoint67);
 HAnimJoint65.FdChildren.Add(HAnimJoint66);
 { METHOD .FdChildren.Add }
 HAnimJoint64.FdChildren.Add(HAnimJoint65);
-HAnimJoint69 := THAnimJointNode.Create;
+HAnimJoint69 := THAnimJointNode.Create;;
 HAnimJoint69.Center := Vector3(0,1,0);
 HAnimJoint70 := THAnimJointNode.Create;
+end;
+
+procedure InitJohnJointPart6;
+begin
+;
 HAnimJoint70.Center := Vector3(0,1,0);
-HAnimJoint71 := THAnimJointNode.Create;
+HAnimJoint71 := THAnimJointNode.Create;;
 HAnimJoint71.Center := Vector3(0,1,0);
-HAnimJoint72 := THAnimJointNode.Create;
+HAnimJoint72 := THAnimJointNode.Create;;
 HAnimJoint72.Center := Vector3(0,1,0);
-HAnimJoint73 := THAnimJointNode.Create;
+HAnimJoint73 := THAnimJointNode.Create;;
 HAnimJoint73.Center := Vector3(0,1,0);
 { METHOD .FdChildren.Add }
 HAnimJoint72.FdChildren.Add(HAnimJoint73);
@@ -627,20 +645,15 @@ HAnimJoint70.FdChildren.Add(HAnimJoint71);
 HAnimJoint69.FdChildren.Add(HAnimJoint70);
 { METHOD .FdChildren.Add }
 HAnimJoint64.FdChildren.Add(HAnimJoint69);
-HAnimJoint74 := THAnimJointNode.Create;
+HAnimJoint74 := THAnimJointNode.Create;;
 HAnimJoint74.Center := Vector3(0,1,0);
-HAnimJoint75 := THAnimJointNode.Create;
+HAnimJoint75 := THAnimJointNode.Create;;
 HAnimJoint75.Center := Vector3(0,1,0);
-HAnimJoint76 := THAnimJointNode.Create;
+HAnimJoint76 := THAnimJointNode.Create;;
 HAnimJoint76.Center := Vector3(0,1,0);
-HAnimJoint77 := THAnimJointNode.Create;
+HAnimJoint77 := THAnimJointNode.Create;;
 HAnimJoint77.Center := Vector3(0,1,0);
-end;
-
-procedure InitJohnJointPart5;
-begin
-
-HAnimJoint78 := THAnimJointNode.Create;
+HAnimJoint78 := THAnimJointNode.Create;;
 HAnimJoint78.Center := Vector3(0,1,0);
 { METHOD .FdChildren.Add }
 HAnimJoint77.FdChildren.Add(HAnimJoint78);
@@ -654,17 +667,22 @@ HAnimJoint74.FdChildren.Add(HAnimJoint75);
 HAnimJoint64.FdChildren.Add(HAnimJoint74);
 { METHOD .FdChildren.Add }
 HAnimJoint63.FdChildren.Add(HAnimJoint64);
-HAnimJoint79 := THAnimJointNode.Create;
+HAnimJoint79 := THAnimJointNode.Create;;
 HAnimJoint79.Center := Vector3(0,1,0);
-HAnimJoint80 := THAnimJointNode.Create;
+end;
+
+procedure InitJohnJointPart7;
+begin
+
+HAnimJoint80 := THAnimJointNode.Create;;
 HAnimJoint80.Center := Vector3(0,1,0);
-HAnimJoint81 := THAnimJointNode.Create;
+HAnimJoint81 := THAnimJointNode.Create;;
 HAnimJoint81.Center := Vector3(0,1,0);
-HAnimJoint82 := THAnimJointNode.Create;
+HAnimJoint82 := THAnimJointNode.Create;;
 HAnimJoint82.Center := Vector3(0,1,0);
-HAnimJoint83 := THAnimJointNode.Create;
+HAnimJoint83 := THAnimJointNode.Create;;
 HAnimJoint83.Center := Vector3(0,1,0);
-HAnimJoint84 := THAnimJointNode.Create;
+HAnimJoint84 := THAnimJointNode.Create;;
 HAnimJoint84.Center := Vector3(0,1,0);
 { METHOD .FdChildren.Add }
 HAnimJoint83.FdChildren.Add(HAnimJoint84);
@@ -674,13 +692,13 @@ HAnimJoint82.FdChildren.Add(HAnimJoint83);
 HAnimJoint81.FdChildren.Add(HAnimJoint82);
 { METHOD .FdChildren.Add }
 HAnimJoint80.FdChildren.Add(HAnimJoint81);
-HAnimJoint85 := THAnimJointNode.Create;
+HAnimJoint85 := THAnimJointNode.Create;;
 HAnimJoint85.Center := Vector3(0,1,0);
-HAnimJoint86 := THAnimJointNode.Create;
+HAnimJoint86 := THAnimJointNode.Create;;
 HAnimJoint86.Center := Vector3(0,1,0);
-HAnimJoint87 := THAnimJointNode.Create;
+HAnimJoint87 := THAnimJointNode.Create;;
 HAnimJoint87.Center := Vector3(0,1,0);
-HAnimJoint88 := THAnimJointNode.Create;
+HAnimJoint88 := THAnimJointNode.Create;;
 HAnimJoint88.Center := Vector3(0,1,0);
 { METHOD .FdChildren.Add }
 HAnimJoint87.FdChildren.Add(HAnimJoint88);
@@ -698,95 +716,100 @@ HAnimJoint63.FdChildren.Add(HAnimJoint79);
 HAnimJoint62.FdChildren.Add(HAnimJoint63);
 { METHOD .FdChildren.Add }
 HAnimJoint61.FdChildren.Add(HAnimJoint62);
-end;
-
-procedure InitJohnJointPart6;
-begin
-
 { METHOD .FdChildren.Add }
 HAnimJoint32.FdChildren.Add(HAnimJoint61);
-{ METHOD .FdChildren.Add }
-HAnimJoint31.FdChildren.Add(HAnimJoint32);
-HAnimJoint89 := THAnimJointNode.Create;
-HAnimJoint89.Center := Vector3(0.0028,1.0568,-0.0776);
-HAnimJoint90 := THAnimJointNode.Create;
-HAnimJoint90.Center := Vector3(0.0035,1.0925,-0.0787);
-HAnimJoint91 := THAnimJointNode.Create;
-HAnimJoint91.Center := Vector3(0.0041,1.1276,-0.0796);
-HAnimJoint92 := THAnimJointNode.Create;
-HAnimJoint92.Center := Vector3(0.0045,1.1546,-0.08);
-HAnimJoint93 := THAnimJointNode.Create;
-HAnimJoint93.Center := Vector3(0.0048,1.1912,-0.0805);
-HAnimJoint94 := THAnimJointNode.Create;
-HAnimJoint94.Center := Vector3(0.0051,1.2278,-0.0808);
-HAnimJoint95 := THAnimJointNode.Create;
-HAnimJoint95.Center := Vector3(0.0053,1.2679,-0.081);
-HAnimJoint96 := THAnimJointNode.Create;
-HAnimJoint96.Center := Vector3(0.0056,1.2848,-0.0822);
-HAnimJoint97 := THAnimJointNode.Create;
-HAnimJoint97.Center := Vector3(0.0057,1.3126,-0.0838);
-HAnimJoint98 := THAnimJointNode.Create;
-HAnimJoint98.Center := Vector3(0.0057,1.3382,-0.0845);
-HAnimJoint99 := THAnimJointNode.Create;
-HAnimJoint99.Center := Vector3(0.0058,1.3625,-0.0833);
-HAnimJoint100 := THAnimJointNode.Create;
-HAnimJoint100.Center := Vector3(0.0059,1.3866,-0.08);
-HAnimJoint101 := THAnimJointNode.Create;
-HAnimJoint101.Center := Vector3(0.006,1.4102,-0.0745);
-HAnimJoint102 := THAnimJointNode.Create;
-HAnimJoint102.Center := Vector3(0.0061,1.432,-0.0675);
-HAnimJoint103 := THAnimJointNode.Create;
-HAnimJoint103.Center := Vector3(0.0062,1.4583,-0.057);
-HAnimJoint104 := THAnimJointNode.Create;
-HAnimJoint104.Center := Vector3(0.0063,1.4761,-0.0484);
-HAnimJoint105 := THAnimJointNode.Create;
-HAnimJoint105.Center := Vector3(0.0065,1.4951,-0.0387);
-HAnimJoint106 := THAnimJointNode.Create;
-HAnimJoint106.Center := Vector3(0.0066,1.5132,-0.0301);
-HAnimJoint107 := THAnimJointNode.Create;
-HAnimJoint107.Center := Vector3(0.0066,1.5357,-0.0143);
 end;
 
-procedure InitJohnJointPart7;
+procedure InitJohnJointPart8;
 begin
 
-HAnimJoint108 := THAnimJointNode.Create;
+{ METHOD .FdChildren.Add }
+HAnimJoint31.FdChildren.Add(HAnimJoint32);
+HAnimJoint89 := THAnimJointNode.Create;;
+HAnimJoint89.Center := Vector3(0.0028,1.0568,-0.0776);
+HAnimJoint90 := THAnimJointNode.Create;;
+HAnimJoint90.Center := Vector3(0.0035,1.0925,-0.0787);
+HAnimJoint91 := THAnimJointNode.Create;;
+HAnimJoint91.Center := Vector3(0.0041,1.1276,-0.0796);
+HAnimJoint92 := THAnimJointNode.Create;;
+HAnimJoint92.Center := Vector3(0.0045,1.1546,-0.08);
+HAnimJoint93 := THAnimJointNode.Create;;
+HAnimJoint93.Center := Vector3(0.0048,1.1912,-0.0805);
+HAnimJoint94 := THAnimJointNode.Create;;
+HAnimJoint94.Center := Vector3(0.0051,1.2278,-0.0808);
+HAnimJoint95 := THAnimJointNode.Create;;
+HAnimJoint95.Center := Vector3(0.0053,1.2679,-0.081);
+HAnimJoint96 := THAnimJointNode.Create;;
+HAnimJoint96.Center := Vector3(0.0056,1.2848,-0.0822);
+HAnimJoint97 := THAnimJointNode.Create;;
+HAnimJoint97.Center := Vector3(0.0057,1.3126,-0.0838);
+HAnimJoint98 := THAnimJointNode.Create;;
+HAnimJoint98.Center := Vector3(0.0057,1.3382,-0.0845);
+HAnimJoint99 := THAnimJointNode.Create;;
+HAnimJoint99.Center := Vector3(0.0058,1.3625,-0.0833);
+HAnimJoint100 := THAnimJointNode.Create;;
+HAnimJoint100.Center := Vector3(0.0059,1.3866,-0.08);
+HAnimJoint101 := THAnimJointNode.Create;;
+HAnimJoint101.Center := Vector3(0.006,1.4102,-0.0745);
+end;
+
+procedure InitJohnJointPart9;
+begin
+
+HAnimJoint102 := THAnimJointNode.Create;;
+HAnimJoint102.Center := Vector3(0.0061,1.432,-0.0675);
+HAnimJoint103 := THAnimJointNode.Create;;
+HAnimJoint103.Center := Vector3(0.0062,1.4583,-0.057);
+HAnimJoint104 := THAnimJointNode.Create;;
+HAnimJoint104.Center := Vector3(0.0063,1.4761,-0.0484);
+HAnimJoint105 := THAnimJointNode.Create;;
+HAnimJoint105.Center := Vector3(0.0065,1.4951,-0.0387);
+HAnimJoint106 := THAnimJointNode.Create;;
+HAnimJoint106.Center := Vector3(0.0066,1.5132,-0.0301);
+HAnimJoint107 := THAnimJointNode.Create;;
+HAnimJoint107.Center := Vector3(0.0066,1.5357,-0.0143);
+HAnimJoint108 := THAnimJointNode.Create;;
 HAnimJoint108.Center := Vector3(0.0066,1.552,-0.0082);
-HAnimJoint109 := THAnimJointNode.Create;
+HAnimJoint109 := THAnimJointNode.Create;;
 HAnimJoint109.Center := Vector3(0.0066,1.5662,-0.0084);
-HAnimJoint110 := THAnimJointNode.Create;
+HAnimJoint110 := THAnimJointNode.Create;;
 HAnimJoint110.Center := Vector3(0.0066,1.58,-0.0103);
-HAnimJoint111 := THAnimJointNode.Create;
+HAnimJoint111 := THAnimJointNode.Create;;
 HAnimJoint111.Center := Vector3(0.0066,1.5928,-0.0103);
-HAnimJoint112 := THAnimJointNode.Create;
+HAnimJoint112 := THAnimJointNode.Create;;
 HAnimJoint112.Center := Vector3(0.0066,1.6144,-0.0034);
-HAnimJoint113 := THAnimJointNode.Create;
+HAnimJoint113 := THAnimJointNode.Create;;
 HAnimJoint113.Center := Vector3(0.0044,1.6209,0.0236);
-HAnimJoint114 := THAnimJointNode.Create;
+HAnimJoint114 := THAnimJointNode.Create;;
 HAnimJoint114.Center := Vector3(0,1,0);
 { METHOD .FdChildren.Add }
 HAnimJoint113.FdChildren.Add(HAnimJoint114);
-HAnimJoint115 := THAnimJointNode.Create;
+end;
+
+procedure InitJohnJointPart10;
+begin
+
+HAnimJoint115 := THAnimJointNode.Create;;
 HAnimJoint115.Center := Vector3(0,1,0);
 { METHOD .FdChildren.Add }
 HAnimJoint113.FdChildren.Add(HAnimJoint115);
-HAnimJoint116 := THAnimJointNode.Create;
+HAnimJoint116 := THAnimJointNode.Create;;
 HAnimJoint116.Center := Vector3(0,1,0);
 { METHOD .FdChildren.Add }
 HAnimJoint113.FdChildren.Add(HAnimJoint116);
-HAnimJoint117 := THAnimJointNode.Create;
+HAnimJoint117 := THAnimJointNode.Create;;
 HAnimJoint117.Center := Vector3(0,1,0);
 { METHOD .FdChildren.Add }
 HAnimJoint113.FdChildren.Add(HAnimJoint117);
-HAnimJoint118 := THAnimJointNode.Create;
+HAnimJoint118 := THAnimJointNode.Create;;
 HAnimJoint118.Center := Vector3(0,1,0);
 { METHOD .FdChildren.Add }
 HAnimJoint113.FdChildren.Add(HAnimJoint118);
-HAnimJoint119 := THAnimJointNode.Create;
+HAnimJoint119 := THAnimJointNode.Create;;
 HAnimJoint119.Center := Vector3(0,1,0);
 { METHOD .FdChildren.Add }
 HAnimJoint113.FdChildren.Add(HAnimJoint119);
-HAnimJoint120 := THAnimJointNode.Create;
+HAnimJoint120 := THAnimJointNode.Create;;
 HAnimJoint120.Center := Vector3(0,1,0);
 { METHOD .FdChildren.Add }
 HAnimJoint113.FdChildren.Add(HAnimJoint120);
@@ -804,30 +827,30 @@ HAnimJoint108.FdChildren.Add(HAnimJoint109);
 HAnimJoint107.FdChildren.Add(HAnimJoint108);
 { METHOD .FdChildren.Add }
 HAnimJoint106.FdChildren.Add(HAnimJoint107);
-end;
-
-procedure InitJohnJointPart8;
-begin
-
 { METHOD .FdChildren.Add }
 HAnimJoint105.FdChildren.Add(HAnimJoint106);
-HAnimJoint121 := THAnimJointNode.Create;
+HAnimJoint121 := THAnimJointNode.Create;;
 HAnimJoint121.Center := Vector3(0.082,1.4488,-0.0353);
-HAnimJoint122 := THAnimJointNode.Create;
+HAnimJoint122 := THAnimJointNode.Create;;
 HAnimJoint122.Center := Vector3(0.0962,1.4269,-0.0424);
-HAnimJoint123 := THAnimJointNode.Create;
+HAnimJoint123 := THAnimJointNode.Create;;
+end;
+
+procedure InitJohnJointPart11;
+begin
+
 HAnimJoint123.Center := Vector3(0.2029,1.4376,-0.0387);
-HAnimJoint124 := THAnimJointNode.Create;
+HAnimJoint124 := THAnimJointNode.Create;;
 HAnimJoint124.Center := Vector3(0.2014,1.1357,-0.0682);
-HAnimJoint125 := THAnimJointNode.Create;
+HAnimJoint125 := THAnimJointNode.Create;;
 HAnimJoint125.Center := Vector3(0.1984,0.8663,-0.0583);
-HAnimJoint126 := THAnimJointNode.Create;
+HAnimJoint126 := THAnimJointNode.Create;;
 HAnimJoint126.Center := Vector3(0,1,0);
-HAnimJoint127 := THAnimJointNode.Create;
+HAnimJoint127 := THAnimJointNode.Create;;
 HAnimJoint127.Center := Vector3(0.1924,0.8472,-0.0534);
-HAnimJoint128 := THAnimJointNode.Create;
+HAnimJoint128 := THAnimJointNode.Create;;
 HAnimJoint128.Center := Vector3(0.1951,0.8226,0.0246);
-HAnimJoint129 := THAnimJointNode.Create;
+HAnimJoint129 := THAnimJointNode.Create;;
 HAnimJoint129.Center := Vector3(0.1955,0.8159,0.0464);
 { METHOD .FdChildren.Add }
 HAnimJoint128.FdChildren.Add(HAnimJoint129);
@@ -837,40 +860,40 @@ HAnimJoint127.FdChildren.Add(HAnimJoint128);
 HAnimJoint126.FdChildren.Add(HAnimJoint127);
 { METHOD .FdChildren.Add }
 HAnimJoint125.FdChildren.Add(HAnimJoint126);
-HAnimJoint130 := THAnimJointNode.Create;
+HAnimJoint130 := THAnimJointNode.Create;;
 HAnimJoint130.Center := Vector3(0,1,0);
-HAnimJoint131 := THAnimJointNode.Create;
+HAnimJoint131 := THAnimJointNode.Create;;
 HAnimJoint131.Center := Vector3(0.1983,0.8024,-0.028);
-HAnimJoint132 := THAnimJointNode.Create;
+HAnimJoint132 := THAnimJointNode.Create;;
 HAnimJoint132.Center := Vector3(0.1983,0.7815,-0.028);
-HAnimJoint133 := THAnimJointNode.Create;
+HAnimJoint133 := THAnimJointNode.Create;;
 HAnimJoint133.Center := Vector3(0.2017,0.7363,-0.0248);
-HAnimJoint134 := THAnimJointNode.Create;
+HAnimJoint134 := THAnimJointNode.Create;;
 HAnimJoint134.Center := Vector3(0.2028,0.7139,-0.0236);
 { METHOD .FdChildren.Add }
 HAnimJoint133.FdChildren.Add(HAnimJoint134);
 { METHOD .FdChildren.Add }
 HAnimJoint132.FdChildren.Add(HAnimJoint133);
+end;
+
+procedure InitJohnJointPart12;
+begin
+
 { METHOD .FdChildren.Add }
 HAnimJoint131.FdChildren.Add(HAnimJoint132);
 { METHOD .FdChildren.Add }
 HAnimJoint130.FdChildren.Add(HAnimJoint131);
 { METHOD .FdChildren.Add }
 HAnimJoint125.FdChildren.Add(HAnimJoint130);
-HAnimJoint135 := THAnimJointNode.Create;
+HAnimJoint135 := THAnimJointNode.Create;;
 HAnimJoint135.Center := Vector3(0,1,0);
-end;
-
-procedure InitJohnJointPart9;
-begin
-
-HAnimJoint136 := THAnimJointNode.Create;
+HAnimJoint136 := THAnimJointNode.Create;;
 HAnimJoint136.Center := Vector3(0.1987,0.8029,-0.053);
-HAnimJoint137 := THAnimJointNode.Create;
+HAnimJoint137 := THAnimJointNode.Create;;
 HAnimJoint137.Center := Vector3(0.1987,0.7818,-0.053);
-HAnimJoint138 := THAnimJointNode.Create;
+HAnimJoint138 := THAnimJointNode.Create;;
 HAnimJoint138.Center := Vector3(0.2013,0.7273,-0.0503);
-HAnimJoint139 := THAnimJointNode.Create;
+HAnimJoint139 := THAnimJointNode.Create;;
 HAnimJoint139.Center := Vector3(0.2026,0.7011,-0.0494);
 { METHOD .FdChildren.Add }
 HAnimJoint138.FdChildren.Add(HAnimJoint139);
@@ -882,31 +905,36 @@ HAnimJoint136.FdChildren.Add(HAnimJoint137);
 HAnimJoint135.FdChildren.Add(HAnimJoint136);
 { METHOD .FdChildren.Add }
 HAnimJoint125.FdChildren.Add(HAnimJoint135);
-HAnimJoint140 := THAnimJointNode.Create;
+HAnimJoint140 := THAnimJointNode.Create;;
 HAnimJoint140.Center := Vector3(0,1,0);
-HAnimJoint141 := THAnimJointNode.Create;
+HAnimJoint141 := THAnimJointNode.Create;;
 HAnimJoint141.Center := Vector3(0.1956,0.8019,-0.0794);
-HAnimJoint142 := THAnimJointNode.Create;
+HAnimJoint142 := THAnimJointNode.Create;;
 HAnimJoint142.Center := Vector3(0.1956,0.7815,-0.0794);
-HAnimJoint143 := THAnimJointNode.Create;
+HAnimJoint143 := THAnimJointNode.Create;;
 HAnimJoint143.Center := Vector3(0.1973,0.7287,-0.0777);
-HAnimJoint144 := THAnimJointNode.Create;
+HAnimJoint144 := THAnimJointNode.Create;;
 HAnimJoint144.Center := Vector3(0.1983,0.7045,-0.0767);
 { METHOD .FdChildren.Add }
 HAnimJoint143.FdChildren.Add(HAnimJoint144);
 { METHOD .FdChildren.Add }
 HAnimJoint142.FdChildren.Add(HAnimJoint143);
+end;
+
+procedure InitJohnJointPart13;
+begin
+
 { METHOD .FdChildren.Add }
 HAnimJoint141.FdChildren.Add(HAnimJoint142);
 { METHOD .FdChildren.Add }
 HAnimJoint140.FdChildren.Add(HAnimJoint141);
-HAnimJoint145 := THAnimJointNode.Create;
+HAnimJoint145 := THAnimJointNode.Create;;
 HAnimJoint145.Center := Vector3(0.1925,0.8066,-0.1036);
-HAnimJoint146 := THAnimJointNode.Create;
+HAnimJoint146 := THAnimJointNode.Create;;
 HAnimJoint146.Center := Vector3(0.1925,0.7866,-0.1036);
-HAnimJoint147 := THAnimJointNode.Create;
+HAnimJoint147 := THAnimJointNode.Create;;
 HAnimJoint147.Center := Vector3(0.1938,0.7452,-0.1024);
-HAnimJoint148 := THAnimJointNode.Create;
+HAnimJoint148 := THAnimJointNode.Create;;
 HAnimJoint148.Center := Vector3(0.1948,0.7277,-0.1017);
 { METHOD .FdChildren.Add }
 HAnimJoint147.FdChildren.Add(HAnimJoint148);
@@ -918,11 +946,6 @@ HAnimJoint145.FdChildren.Add(HAnimJoint146);
 HAnimJoint140.FdChildren.Add(HAnimJoint145);
 { METHOD .FdChildren.Add }
 HAnimJoint125.FdChildren.Add(HAnimJoint140);
-end;
-
-procedure InitJohnJointPart10;
-begin
-
 { METHOD .FdChildren.Add }
 HAnimJoint124.FdChildren.Add(HAnimJoint125);
 { METHOD .FdChildren.Add }
@@ -933,23 +956,28 @@ HAnimJoint122.FdChildren.Add(HAnimJoint123);
 HAnimJoint121.FdChildren.Add(HAnimJoint122);
 { METHOD .FdChildren.Add }
 HAnimJoint105.FdChildren.Add(HAnimJoint121);
-HAnimJoint149 := THAnimJointNode.Create;
+HAnimJoint149 := THAnimJointNode.Create;;
 HAnimJoint149.Center := Vector3(-0.0694,1.46,-0.033);
-HAnimJoint150 := THAnimJointNode.Create;
+HAnimJoint150 := THAnimJointNode.Create;;
 HAnimJoint150.Center := Vector3(-0.0836,1.4281,-0.0401);
-HAnimJoint151 := THAnimJointNode.Create;
+HAnimJoint151 := THAnimJointNode.Create;;
 HAnimJoint151.Center := Vector3(-0.1907,1.4407,-0.0325);
-HAnimJoint152 := THAnimJointNode.Create;
+HAnimJoint152 := THAnimJointNode.Create;;
 HAnimJoint152.Center := Vector3(-0.1949,1.1388,-0.062);
-HAnimJoint153 := THAnimJointNode.Create;
+HAnimJoint153 := THAnimJointNode.Create;;
 HAnimJoint153.Center := Vector3(-0.1959,0.8694,-0.0521);
 HAnimJoint154 := THAnimJointNode.Create;
+end;
+
+procedure InitJohnJointPart14;
+begin
+;
 HAnimJoint154.Center := Vector3(0,1,0);
-HAnimJoint155 := THAnimJointNode.Create;
+HAnimJoint155 := THAnimJointNode.Create;;
 HAnimJoint155.Center := Vector3(-0.1899,0.8502,-0.0473);
-HAnimJoint156 := THAnimJointNode.Create;
+HAnimJoint156 := THAnimJointNode.Create;;
 HAnimJoint156.Center := Vector3(-0.1874,0.8256,0.0306);
-HAnimJoint157 := THAnimJointNode.Create;
+HAnimJoint157 := THAnimJointNode.Create;;
 HAnimJoint157.Center := Vector3(-0.1864,0.819,0.0506);
 { METHOD .FdChildren.Add }
 HAnimJoint156.FdChildren.Add(HAnimJoint157);
@@ -959,15 +987,15 @@ HAnimJoint155.FdChildren.Add(HAnimJoint156);
 HAnimJoint154.FdChildren.Add(HAnimJoint155);
 { METHOD .FdChildren.Add }
 HAnimJoint153.FdChildren.Add(HAnimJoint154);
-HAnimJoint158 := THAnimJointNode.Create;
+HAnimJoint158 := THAnimJointNode.Create;;
 HAnimJoint158.Center := Vector3(0,1,0);
-HAnimJoint159 := THAnimJointNode.Create;
+HAnimJoint159 := THAnimJointNode.Create;;
 HAnimJoint159.Center := Vector3(-0.1961,0.8055,-0.0218);
-HAnimJoint160 := THAnimJointNode.Create;
+HAnimJoint160 := THAnimJointNode.Create;;
 HAnimJoint160.Center := Vector3(-0.1961,0.7846,-0.0218);
-HAnimJoint161 := THAnimJointNode.Create;
+HAnimJoint161 := THAnimJointNode.Create;;
 HAnimJoint161.Center := Vector3(-0.1954,0.7393,-0.0185);
-HAnimJoint162 := THAnimJointNode.Create;
+HAnimJoint162 := THAnimJointNode.Create;;
 HAnimJoint162.Center := Vector3(-0.1945,0.7169,-0.0173);
 { METHOD .FdChildren.Add }
 HAnimJoint161.FdChildren.Add(HAnimJoint162);
@@ -975,24 +1003,24 @@ HAnimJoint161.FdChildren.Add(HAnimJoint162);
 HAnimJoint160.FdChildren.Add(HAnimJoint161);
 { METHOD .FdChildren.Add }
 HAnimJoint159.FdChildren.Add(HAnimJoint160);
-end;
-
-procedure InitJohnJointPart11;
-begin
-
 { METHOD .FdChildren.Add }
 HAnimJoint158.FdChildren.Add(HAnimJoint159);
 { METHOD .FdChildren.Add }
 HAnimJoint153.FdChildren.Add(HAnimJoint158);
-HAnimJoint163 := THAnimJointNode.Create;
+HAnimJoint163 := THAnimJointNode.Create;;
 HAnimJoint163.Center := Vector3(0,1,0);
-HAnimJoint164 := THAnimJointNode.Create;
+HAnimJoint164 := THAnimJointNode.Create;;
+end;
+
+procedure InitJohnJointPart15;
+begin
+
 HAnimJoint164.Center := Vector3(-0.1972,0.806,-0.0468);
-HAnimJoint165 := THAnimJointNode.Create;
+HAnimJoint165 := THAnimJointNode.Create;;
 HAnimJoint165.Center := Vector3(-0.1972,0.7849,-0.0468);
-HAnimJoint166 := THAnimJointNode.Create;
+HAnimJoint166 := THAnimJointNode.Create;;
 HAnimJoint166.Center := Vector3(-0.195,0.7304,-0.0441);
-HAnimJoint167 := THAnimJointNode.Create;
+HAnimJoint167 := THAnimJointNode.Create;;
 HAnimJoint167.Center := Vector3(-0.1939,0.7042,-0.0432);
 { METHOD .FdChildren.Add }
 HAnimJoint166.FdChildren.Add(HAnimJoint167);
@@ -1004,15 +1032,15 @@ HAnimJoint164.FdChildren.Add(HAnimJoint165);
 HAnimJoint163.FdChildren.Add(HAnimJoint164);
 { METHOD .FdChildren.Add }
 HAnimJoint153.FdChildren.Add(HAnimJoint163);
-HAnimJoint168 := THAnimJointNode.Create;
+HAnimJoint168 := THAnimJointNode.Create;;
 HAnimJoint168.Center := Vector3(0,1,0);
-HAnimJoint169 := THAnimJointNode.Create;
+HAnimJoint169 := THAnimJointNode.Create;;
 HAnimJoint169.Center := Vector3(-0.1951,0.8049,-0.0732);
-HAnimJoint170 := THAnimJointNode.Create;
+HAnimJoint170 := THAnimJointNode.Create;;
 HAnimJoint170.Center := Vector3(-0.1951,0.7845,-0.0732);
-HAnimJoint171 := THAnimJointNode.Create;
+HAnimJoint171 := THAnimJointNode.Create;;
 HAnimJoint171.Center := Vector3(-0.192,0.7318,-0.0716);
-HAnimJoint172 := THAnimJointNode.Create;
+HAnimJoint172 := THAnimJointNode.Create;;
 HAnimJoint172.Center := Vector3(-0.1908,0.7077,-0.0706);
 { METHOD .FdChildren.Add }
 HAnimJoint171.FdChildren.Add(HAnimJoint172);
@@ -1022,21 +1050,21 @@ HAnimJoint170.FdChildren.Add(HAnimJoint171);
 HAnimJoint169.FdChildren.Add(HAnimJoint170);
 { METHOD .FdChildren.Add }
 HAnimJoint168.FdChildren.Add(HAnimJoint169);
-HAnimJoint173 := THAnimJointNode.Create;
+HAnimJoint173 := THAnimJointNode.Create;;
 HAnimJoint173.Center := Vector3(-0.1926,0.8096,-0.0975);
-HAnimJoint174 := THAnimJointNode.Create;
+HAnimJoint174 := THAnimJointNode.Create;;
 HAnimJoint174.Center := Vector3(-0.1926,0.7896,-0.0975);
-HAnimJoint175 := THAnimJointNode.Create;
+end;
+
+procedure InitJohnJointPart16;
+begin
+
+HAnimJoint175 := THAnimJointNode.Create;;
 HAnimJoint175.Center := Vector3(-0.1902,0.7483,-0.0963);
-HAnimJoint176 := THAnimJointNode.Create;
+HAnimJoint176 := THAnimJointNode.Create;;
 HAnimJoint176.Center := Vector3(-0.1908,0.754,-0.096);
 { METHOD .FdChildren.Add }
 HAnimJoint175.FdChildren.Add(HAnimJoint176);
-end;
-
-procedure InitJohnJointPart12;
-begin
-
 { METHOD .FdChildren.Add }
 HAnimJoint174.FdChildren.Add(HAnimJoint175);
 { METHOD .FdChildren.Add }
@@ -1103,6 +1131,11 @@ HAnimHumanoid30.FdJoints.Add(HAnimJoint34);
 HAnimHumanoid30.FdJoints.Add(HAnimJoint35);
 { METHOD .FdJoints.Add }
 HAnimHumanoid30.FdJoints.Add(HAnimJoint36);
+end;
+
+procedure InitJohnJointPart17;
+begin
+
 { METHOD .FdJoints.Add }
 HAnimHumanoid30.FdJoints.Add(HAnimJoint37);
 { METHOD .FdJoints.Add }
@@ -1117,11 +1150,6 @@ HAnimHumanoid30.FdJoints.Add(HAnimJoint41);
 HAnimHumanoid30.FdJoints.Add(HAnimJoint42);
 { METHOD .FdJoints.Add }
 HAnimHumanoid30.FdJoints.Add(HAnimJoint43);
-end;
-
-procedure InitJohnJointPart13;
-begin
-
 { METHOD .FdJoints.Add }
 HAnimHumanoid30.FdJoints.Add(HAnimJoint44);
 { METHOD .FdJoints.Add }
@@ -1188,6 +1216,11 @@ HAnimHumanoid30.FdJoints.Add(HAnimJoint74);
 HAnimHumanoid30.FdJoints.Add(HAnimJoint75);
 { METHOD .FdJoints.Add }
 HAnimHumanoid30.FdJoints.Add(HAnimJoint76);
+end;
+
+procedure InitJohnJointPart18;
+begin
+
 { METHOD .FdJoints.Add }
 HAnimHumanoid30.FdJoints.Add(HAnimJoint77);
 { METHOD .FdJoints.Add }
@@ -1202,11 +1235,6 @@ HAnimHumanoid30.FdJoints.Add(HAnimJoint81);
 HAnimHumanoid30.FdJoints.Add(HAnimJoint82);
 { METHOD .FdJoints.Add }
 HAnimHumanoid30.FdJoints.Add(HAnimJoint83);
-end;
-
-procedure InitJohnJointPart14;
-begin
-
 { METHOD .FdJoints.Add }
 HAnimHumanoid30.FdJoints.Add(HAnimJoint84);
 { METHOD .FdJoints.Add }
@@ -1273,6 +1301,11 @@ HAnimHumanoid30.FdJoints.Add(HAnimJoint114);
 HAnimHumanoid30.FdJoints.Add(HAnimJoint115);
 { METHOD .FdJoints.Add }
 HAnimHumanoid30.FdJoints.Add(HAnimJoint116);
+end;
+
+procedure InitJohnJointPart19;
+begin
+
 { METHOD .FdJoints.Add }
 HAnimHumanoid30.FdJoints.Add(HAnimJoint117);
 { METHOD .FdJoints.Add }
@@ -1287,11 +1320,6 @@ HAnimHumanoid30.FdJoints.Add(HAnimJoint121);
 HAnimHumanoid30.FdJoints.Add(HAnimJoint122);
 { METHOD .FdJoints.Add }
 HAnimHumanoid30.FdJoints.Add(HAnimJoint123);
-end;
-
-procedure InitJohnJointPart15;
-begin
-
 { METHOD .FdJoints.Add }
 HAnimHumanoid30.FdJoints.Add(HAnimJoint124);
 { METHOD .FdJoints.Add }
@@ -1358,6 +1386,11 @@ HAnimHumanoid30.FdJoints.Add(HAnimJoint154);
 HAnimHumanoid30.FdJoints.Add(HAnimJoint155);
 { METHOD .FdJoints.Add }
 HAnimHumanoid30.FdJoints.Add(HAnimJoint156);
+end;
+
+procedure InitJohnJointPart20;
+begin
+
 { METHOD .FdJoints.Add }
 HAnimHumanoid30.FdJoints.Add(HAnimJoint157);
 { METHOD .FdJoints.Add }
@@ -1372,11 +1405,6 @@ HAnimHumanoid30.FdJoints.Add(HAnimJoint161);
 HAnimHumanoid30.FdJoints.Add(HAnimJoint162);
 { METHOD .FdJoints.Add }
 HAnimHumanoid30.FdJoints.Add(HAnimJoint163);
-end;
-
-procedure InitJohnJointPart16;
-begin
-
 { METHOD .FdJoints.Add }
 HAnimHumanoid30.FdJoints.Add(HAnimJoint164);
 { METHOD .FdJoints.Add }
@@ -1428,6 +1456,10 @@ InitJohnJointPart13;
 InitJohnJointPart14;
 InitJohnJointPart15;
 InitJohnJointPart16;
+InitJohnJointPart17;
+InitJohnJointPart18;
+InitJohnJointPart19;
+InitJohnJointPart20;
 Result := X3D0;
 end;
 

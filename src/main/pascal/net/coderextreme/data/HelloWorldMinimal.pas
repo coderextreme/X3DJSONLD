@@ -2,7 +2,7 @@ unit HelloWorldMinimal;
 
 interface
 
-uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
 
 function CreateHelloWorldMinimal: TX3DRootNode;
 
@@ -56,15 +56,16 @@ X3D0.Meta['generator'] := 'X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit';
 X3D0.Meta['license'] := '../license.html';
 { METHOD .Meta }
 { METHOD .Head }
-Group17 := TGroupNode.Create;
-WorldInfo18 := TWorldInfoNode.Create;
+Group17 := TGroupNode.Create;;
+WorldInfo18 := TWorldInfoNode.Create;;
 WorldInfo18.Title := 'HelloWorldMinimal.x3d';
 { METHOD .FdChildren.Add }
 Group17.FdChildren.Add(WorldInfo18);
-Shape19 := TShapeNode.Create;
-Text20 := TTextNode.Create;
+Shape19 := TShapeNode.Create;;
+Text20 := TTextNode.Create;;
 Text20.SetText(['hello, world']);
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape19.Geometry := Text20;
 { METHOD .FdChildren.Add }
 Group17.FdChildren.Add(Shape19);

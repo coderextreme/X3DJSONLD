@@ -2,7 +2,7 @@ unit InlineSoundSource;
 
 interface
 
-uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
 
 function CreateInlineSoundSource: TX3DRootNode;
 
@@ -58,15 +58,15 @@ X3D0.Meta['generator'] := 'X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit';
 X3D0.Meta['license'] := '../license.html';
 { METHOD .Meta }
 { METHOD .Head }
-Group14 := TGroupNode.Create;
-WorldInfo15 := TWorldInfoNode.Create;
+Group14 := TGroupNode.Create;;
+WorldInfo15 := TWorldInfoNode.Create;;
 WorldInfo15.Title := 'InlineSoundSource.x3d';
 { METHOD .FdChildren.Add }
 Group14.FdChildren.Add(WorldInfo15);
-NavigationInfo16 := TNavigationInfoNode.Create;
+NavigationInfo16 := TNavigationInfoNode.Create;;
 { METHOD .FdChildren.Add }
 Group14.FdChildren.Add(NavigationInfo16);
-Background17 := TBackgroundNode.Create;
+Background17 := TBackgroundNode.Create;;
 Background17.SetBackUrl(['images/generic/BK1.png','https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/BK1.png']);
 Background17.SetBottomUrl(['images/generic/DN1.png','https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/DN1.png']);
 Background17.SetFrontUrl(['images/generic/FR1.png','https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/FR1.png']);
@@ -75,48 +75,52 @@ Background17.SetRightUrl(['images/generic/RT1.png','https://x3dgraphics.com/exam
 Background17.SetTopUrl(['images/generic/UP1.png','https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/UP1.png']);
 { METHOD .FdChildren.Add }
 Group14.FdChildren.Add(Background17);
-Viewpoint18 := TViewpointNode.Create;
+Viewpoint18 := TViewpointNode.Create;;
 Viewpoint18.Description := 'Camera001';
 Viewpoint18.FarDistance := 0;
 Viewpoint18.NearDistance := 1;
 Viewpoint18.Orientation := Vector4(1,0,0,-0.523599);
-Viewpoint18.Position := Vector3(0,2000,3500);
-{ METHOD .FdChildren.Add }
-Group14.FdChildren.Add(Viewpoint18);
-Transform19 := TTransformNode.Create;
-Transform19.Translation := Vector3(1.241,0,0.358);
-Shape20 := TShapeNode.Create;
 end;
 
 procedure InitInlineSoundSourcePart1;
 begin
 
-Appearance21 := TAppearanceNode.Create;
-Material22 := TMaterialNode.Create;
+Viewpoint18.Position := Vector3(0,2000,3500);
+{ METHOD .FdChildren.Add }
+Group14.FdChildren.Add(Viewpoint18);
+Transform19 := TTransformNode.Create;;
+Transform19.Translation := Vector3(1.241,0,0.358);
+Shape20 := TShapeNode.Create;;
+Appearance21 := TAppearanceNode.Create;;
+Material22 := TMaterialNode.Create;;
 Material22.DiffuseColor := Vector3(0.122,0.114,0.125);
 { METHOD .SetMaterial }
 Appearance21.Material := Material22;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape20.Appearance := Appearance21;
-IndexedFaceSet23 := TIndexedFaceSetNode.Create;
+IndexedFaceSet23 := TIndexedFaceSetNode.Create;;
 IndexedFaceSet23.SetCoordIndex([0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,15,16,17,-1,18,19,20,-1,21,22,23,-1,24,25,26,-1,27,28,29,-1,30,31,32,-1,33,34,35,-1]);
 IndexedFaceSet23.Solid := False;
-Coordinate24 := TCoordinateNode.Create;
+Coordinate24 := TCoordinateNode.Create;;
 Coordinate24.SetPoint([Vector3(-1000,0,1000),Vector3(-1000,0,-1000),Vector3(1000,0,-1000),Vector3(1000,0,-1000),Vector3(1000,0,1000),Vector3(-1000,0,1000),Vector3(-1000,8.031588,1000),Vector3(1000,8.031588,1000),Vector3(1000,8.031588,-1000),Vector3(1000,8.031588,-1000),Vector3(-1000,8.031588,-1000),Vector3(-1000,8.031588,1000),Vector3(-1000,0,1000),Vector3(1000,0,1000),Vector3(1000,8.031588,1000),Vector3(1000,8.031588,1000),Vector3(-1000,8.031588,1000),Vector3(-1000,0,1000),Vector3(1000,0,1000),Vector3(1000,0,-1000),Vector3(1000,8.031588,-1000),Vector3(1000,8.031588,-1000),Vector3(1000,8.031588,1000),Vector3(1000,0,1000),Vector3(1000,0,-1000),Vector3(-1000,0,-1000),Vector3(-1000,8.031588,-1000),Vector3(-1000,8.031588,-1000),Vector3(1000,8.031588,-1000),Vector3(1000,0,-1000),Vector3(-1000,0,-1000),Vector3(-1000,0,1000),Vector3(-1000,8.031588,1000),Vector3(-1000,8.031588,1000),Vector3(-1000,8.031588,-1000),Vector3(-1000,0,-1000)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedFaceSet23.Coord := Coordinate24;
-Normal25 := TNormalNode.Create;
+Normal25 := TNormalNode.Create;;
 Normal25.SetVector([Vector3(0,-1,0),Vector3(0,-1,0),Vector3(0,-1,0),Vector3(0,-1,0),Vector3(0,-1,0),Vector3(0,-1,0),Vector3(0,1,0),Vector3(0,1,0),Vector3(0,1,0),Vector3(0,1,0),Vector3(0,1,0),Vector3(0,1,0),Vector3(0,0,1),Vector3(0,0,1),Vector3(0,0,1),Vector3(0,0,1),Vector3(0,0,1),Vector3(0,0,1),Vector3(1,0,0),Vector3(1,0,0),Vector3(1,0,0),Vector3(1,0,0),Vector3(1,0,0),Vector3(1,0,0),Vector3(0,0,-1),Vector3(0,0,-1),Vector3(0,0,-1),Vector3(0,0,-1),Vector3(0,0,-1),Vector3(0,0,-1),Vector3(-1,0,0),Vector3(-1,0,0),Vector3(-1,0,0),Vector3(-1,0,0),Vector3(-1,0,0),Vector3(-1,0,0)]);
 { METHOD .Normal }
+{ METHOD.SET .Normal }
 IndexedFaceSet23.Normal := Normal25;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape20.Geometry := IndexedFaceSet23;
 { METHOD .FdChildren.Add }
 Transform19.FdChildren.Add(Shape20);
 { METHOD .FdChildren.Add }
 Group14.FdChildren.Add(Transform19);
-Transform26 := TTransformNode.Create;
-Inline27 := TInlineNode.Create;
+Transform26 := TTransformNode.Create;;
+Inline27 := TInlineNode.Create;;
 Inline27.SetUrl(['x3d/example1.x3d','https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/x3d/example1.x3d','x3d/example1.wrl','https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/x3d/example1.wrl']);
 { METHOD .FdChildren.Add }
 Transform26.FdChildren.Add(Inline27);

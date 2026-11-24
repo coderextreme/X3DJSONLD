@@ -2,7 +2,7 @@ unit GridXZ_20x20Fixed;
 
 interface
 
-uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
 
 function CreateGridXZ_20x20Fixed: TX3DRootNode;
 
@@ -82,66 +82,72 @@ X3D0.Meta['generator'] := 'X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit';
 X3D0.Meta['license'] := '../../license.html';
 { METHOD .Meta }
 { METHOD .Head }
-Group12 := TGroupNode.Create;
-WorldInfo13 := TWorldInfoNode.Create;
+Group12 := TGroupNode.Create;;
+WorldInfo13 := TWorldInfoNode.Create;;
 WorldInfo13.Title := 'GridXZ_20x20Fixed.x3d';
 { METHOD .FdChildren.Add }
 Group12.FdChildren.Add(WorldInfo13);
-Viewpoint14 := TViewpointNode.Create;
+Viewpoint14 := TViewpointNode.Create;;
 Viewpoint14.Description := 'XZ horizontal grid, perpendicular to Y axis (seen from 0 10 25)';
 Viewpoint14.Orientation := Vector4(1,0,0,-0.4);
 Viewpoint14.Position := Vector3(0,10,25);
 { METHOD .FdChildren.Add }
 Group12.FdChildren.Add(Viewpoint14);
-Transform15 := TTransformNode.Create;
-Group16 := TGroupNode.Create;
-Shape17 := TShapeNode.Create;
-IndexedLineSet18 := TIndexedLineSetNode.Create;
+Transform15 := TTransformNode.Create;;
+Group16 := TGroupNode.Create;;
+Shape17 := TShapeNode.Create;;
+IndexedLineSet18 := TIndexedLineSetNode.Create;;
 IndexedLineSet18.SetColorIndex([1,0,0,0,0,2,0,0,0,0,1,0,0,0,0,2,0,0,0,0,1]);
 IndexedLineSet18.ColorPerVertex := False;
 IndexedLineSet18.SetCoordIndex([1,22,-1,2,23,-1,3,24,-1,4,25,-1,5,26,-1,6,27,-1,7,28,-1,8,29,-1,9,30,-1,10,31,-1,11,32,-1,12,33,-1,13,34,-1,14,35,-1,15,36,-1,16,37,-1,17,38,-1,18,39,-1,19,40,-1,20,41,-1,21,42,-1]);
-Coordinate19 := TCoordinateNode.Create;
+Coordinate19 := TCoordinateNode.Create;;
 Coordinate19.SetPoint([Vector3(0,0,0),Vector3(-10,0,10),Vector3(-9,0,10),Vector3(-8,0,10),Vector3(-7,0,10),Vector3(-6,0,10),Vector3(-5,0,10),Vector3(-4,0,10),Vector3(-3,0,10),Vector3(-2,0,10),Vector3(-1,0,10),Vector3(0,0,10),Vector3(1,0,10),Vector3(2,0,10),Vector3(3,0,10),Vector3(4,0,10),Vector3(5,0,10),Vector3(6,0,10),Vector3(7,0,10),Vector3(8,0,10),Vector3(9,0,10),Vector3(10,0,10),Vector3(-10,0,-10),Vector3(-9,0,-10),Vector3(-8,0,-10),Vector3(-7,0,-10),Vector3(-6,0,-10),Vector3(-5,0,-10),Vector3(-4,0,-10),Vector3(-3,0,-10),Vector3(-2,0,-10),Vector3(-1,0,-10),Vector3(0,0,-10),Vector3(1,0,-10),Vector3(2,0,-10),Vector3(3,0,-10),Vector3(4,0,-10),Vector3(5,0,-10),Vector3(6,0,-10),Vector3(7,0,-10),Vector3(8,0,-10),Vector3(9,0,-10),Vector3(10,0,-10)]);
-{ METHOD .Coord }
-IndexedLineSet18.Coord := Coordinate19;
-Color20 := TColorNode.Create;
-Color20.SetColor([Vector3(0.4,0.4,0.4),Vector3(0.8,0.2,0),Vector3(0.4,0.1,0.05)]);
-{ METHOD .Color }
-IndexedLineSet18.Color := Color20;
-{ METHOD .Geometry }
-Shape17.Geometry := IndexedLineSet18;
-{ METHOD .FdChildren.Add }
-Group16.FdChildren.Add(Shape17);
-Transform21 := TTransformNode.Create;
-Transform21.Rotation := Vector4(0,1,0,1.57079);
 end;
 
 procedure InitGridXZ_20x20FixedPart1;
 begin
 
+{ METHOD .Coord }
+{ METHOD.SET .Coord }
+IndexedLineSet18.Coord := Coordinate19;
+Color20 := TColorNode.Create;;
+Color20.SetColor([Vector3(0.4,0.4,0.4),Vector3(0.8,0.2,0),Vector3(0.4,0.1,0.05)]);
+{ METHOD .Color }
+{ METHOD.SET .Color }
+IndexedLineSet18.Color := Color20;
+{ METHOD .Geometry }
+{ METHOD.SET .Geometry }
+Shape17.Geometry := IndexedLineSet18;
+{ METHOD .FdChildren.Add }
+Group16.FdChildren.Add(Shape17);
+Transform21 := TTransformNode.Create;;
+Transform21.Rotation := Vector4(0,1,0,1.57079);
 { METHOD .FdChildren.Add }
 Transform21.FdChildren.Add(Shape17);
 { METHOD .FdChildren.Add }
 Group16.FdChildren.Add(Transform21);
-Transform23 := TTransformNode.Create;
+Transform23 := TTransformNode.Create;;
 Transform23.Translation := Vector3(0,-0.5,0);
-Billboard24 := TBillboardNode.Create;
-Shape25 := TShapeNode.Create;
-Text26 := TTextNode.Create;
+Billboard24 := TBillboardNode.Create;;
+Shape25 := TShapeNode.Create;;
+Text26 := TTextNode.Create;;
 Text26.SetText(['origin']);
-FontStyle27 := TFontStyleNode.Create;
+FontStyle27 := TFontStyleNode.Create;;
 FontStyle27.Justify := fjMIDDLE;
 FontStyle27.JustifyMinor := fjMIDDLE;
 FontStyle27.Size := 0.4;
 { METHOD .FontStyle }
+{ METHOD.SET .FontStyle }
 Text26.FontStyle := FontStyle27;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape25.Geometry := Text26;
-Appearance28 := TAppearanceNode.Create;
-Material29 := TMaterialNode.Create;
+Appearance28 := TAppearanceNode.Create;;
+Material29 := TMaterialNode.Create;;
 { METHOD .SetMaterial }
 Appearance28.Material := Material29;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape25.Appearance := Appearance28;
 { METHOD .FdChildren.Add }
 Billboard24.FdChildren.Add(Shape25);
@@ -149,17 +155,25 @@ Billboard24.FdChildren.Add(Shape25);
 Transform23.FdChildren.Add(Billboard24);
 { METHOD .FdChildren.Add }
 Group16.FdChildren.Add(Transform23);
-Transform30 := TTransformNode.Create;
+Transform30 := TTransformNode.Create;;
+end;
+
+procedure InitGridXZ_20x20FixedPart2;
+begin
+
 Transform30.Translation := Vector3(10,-0.5,10);
-Billboard31 := TBillboardNode.Create;
-Shape32 := TShapeNode.Create;
-Text33 := TTextNode.Create;
+Billboard31 := TBillboardNode.Create;;
+Shape32 := TShapeNode.Create;;
+Text33 := TTextNode.Create;;
 Text33.SetText(['10 0 10']);
 { METHOD .FontStyle }
+{ METHOD.SET .FontStyle }
 Text33.FontStyle := FontStyle27;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape32.Geometry := Text33;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape32.Appearance := Appearance28;
 { METHOD .FdChildren.Add }
 Billboard31.FdChildren.Add(Shape32);
@@ -167,22 +181,20 @@ Billboard31.FdChildren.Add(Shape32);
 Transform30.FdChildren.Add(Billboard31);
 { METHOD .FdChildren.Add }
 Group16.FdChildren.Add(Transform30);
-Transform36 := TTransformNode.Create;
+Transform36 := TTransformNode.Create;;
 Transform36.Translation := Vector3(10,-0.5,-10);
-Billboard37 := TBillboardNode.Create;
-Shape38 := TShapeNode.Create;
-Text39 := TTextNode.Create;
+Billboard37 := TBillboardNode.Create;;
+Shape38 := TShapeNode.Create;;
+Text39 := TTextNode.Create;;
 Text39.SetText(['10 0 -10']);
 { METHOD .FontStyle }
+{ METHOD.SET .FontStyle }
 Text39.FontStyle := FontStyle27;
-end;
-
-procedure InitGridXZ_20x20FixedPart2;
-begin
-
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape38.Geometry := Text39;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape38.Appearance := Appearance28;
 { METHOD .FdChildren.Add }
 Billboard37.FdChildren.Add(Shape38);
@@ -190,17 +202,25 @@ Billboard37.FdChildren.Add(Shape38);
 Transform36.FdChildren.Add(Billboard37);
 { METHOD .FdChildren.Add }
 Group16.FdChildren.Add(Transform36);
-Transform42 := TTransformNode.Create;
+Transform42 := TTransformNode.Create;;
 Transform42.Translation := Vector3(-10,-0.5,10);
-Billboard43 := TBillboardNode.Create;
-Shape44 := TShapeNode.Create;
-Text45 := TTextNode.Create;
+Billboard43 := TBillboardNode.Create;;
+Shape44 := TShapeNode.Create;;
+Text45 := TTextNode.Create;;
 Text45.SetText(['-10 0 10']);
+end;
+
+procedure InitGridXZ_20x20FixedPart3;
+begin
+
 { METHOD .FontStyle }
+{ METHOD.SET .FontStyle }
 Text45.FontStyle := FontStyle27;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape44.Geometry := Text45;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape44.Appearance := Appearance28;
 { METHOD .FdChildren.Add }
 Billboard43.FdChildren.Add(Shape44);
@@ -208,17 +228,20 @@ Billboard43.FdChildren.Add(Shape44);
 Transform42.FdChildren.Add(Billboard43);
 { METHOD .FdChildren.Add }
 Group16.FdChildren.Add(Transform42);
-Transform48 := TTransformNode.Create;
+Transform48 := TTransformNode.Create;;
 Transform48.Translation := Vector3(-10,-0.5,-10);
-Billboard49 := TBillboardNode.Create;
-Shape50 := TShapeNode.Create;
-Text51 := TTextNode.Create;
+Billboard49 := TBillboardNode.Create;;
+Shape50 := TShapeNode.Create;;
+Text51 := TTextNode.Create;;
 Text51.SetText(['-10 0 -10']);
 { METHOD .FontStyle }
+{ METHOD.SET .FontStyle }
 Text51.FontStyle := FontStyle27;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape50.Geometry := Text51;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape50.Appearance := Appearance28;
 { METHOD .FdChildren.Add }
 Billboard49.FdChildren.Add(Shape50);
@@ -239,6 +262,7 @@ begin
 InitGridXZ_20x20FixedPart0;
 InitGridXZ_20x20FixedPart1;
 InitGridXZ_20x20FixedPart2;
+InitGridXZ_20x20FixedPart3;
 Result := X3D0;
 end;
 

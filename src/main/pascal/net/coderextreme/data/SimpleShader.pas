@@ -2,7 +2,7 @@ unit SimpleShader;
 
 interface
 
-uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
 
 function CreateSimpleShader: TX3DRootNode;
 
@@ -23,26 +23,24 @@ Appearance29: TAppearanceNode;
 Material30: TMaterialNode;
 ComposedShader31: TComposedShaderNode;
 SFVec3f32: TSFVec3f;
-IS33: TIS;
-connect34: Tconnect;
+ShaderPart34: TShaderPartNode;
 ShaderPart35: TShaderPartNode;
-ShaderPart36: TShaderPartNode;
-ComposedShader37: TComposedShaderNode;
-SFVec3f38: TSFVec3f;
+ComposedShader36: TComposedShaderNode;
+SFVec3f37: TSFVec3f;
+ShaderPart38: TShaderPartNode;
 ShaderPart39: TShaderPartNode;
-ShaderPart40: TShaderPartNode;
-Sphere41: TSphereNode;
-WorldInfo42: TWorldInfoNode;
+Sphere40: TSphereNode;
+WorldInfo41: TWorldInfoNode;
+MetadataSet42: TMetadataSetNode;
 MetadataSet43: TMetadataSetNode;
 MetadataSet44: TMetadataSetNode;
 MetadataSet45: TMetadataSetNode;
-MetadataSet46: TMetadataSetNode;
-MetadataString47: TMetadataStringNode;
-MetadataSet48: TMetadataSetNode;
+MetadataString46: TMetadataStringNode;
+MetadataSet47: TMetadataSetNode;
+MetadataDouble48: TMetadataDoubleNode;
 MetadataDouble49: TMetadataDoubleNode;
 MetadataDouble50: TMetadataDoubleNode;
-MetadataDouble51: TMetadataDoubleNode;
-X3DPrototype52: TX3DPrototypeNode;
+X3DPrototype51: TX3DPrototypeNode;
 
 procedure InitSimpleShaderPart0;
 begin
@@ -92,73 +90,76 @@ X3D0.Meta['identifier'] := 'https://www.web3d.org/x3d/content/examples/Basic/Sha
 X3D0.Meta['license'] := '../../license.html';
 { METHOD .Meta }
 { METHOD .Head }
-Group22 := TGroupNode.Create;
-X3DPrototype23 := TX3DPrototype.Create;
-X3DInterfaceDeclaration24 := TX3DInterfaceDeclaration.Create(nil);
+Group22 := TGroupNode.Create;;
+X3DPrototype23 := TX3DPrototype.Create;;
+X3DInterfaceDeclaration24 := TX3DInterfaceDeclaration.Create(nil);;
 SFVec3f25 := TSFVec3f.CreateUndefined(X3DInterfaceDeclaration24, false, 'myInputRange');
 SFVec3f25.Value := '0.95 0.44 0.22';
 { METHOD .AddSFVec3f }
 X3DInterfaceDeclaration24.AddSFVec3f([SFVec3f25]);
 { METHOD .AddX3DInterfaceDeclaration }
 X3DPrototype23.AddX3DInterfaceDeclaration([X3DInterfaceDeclaration24]);
-X3DPrototype26 := TX3DPrototype.Create;
-Transform27 := TTransformNode.Create;
-Shape28 := TShapeNode.Create;
-Appearance29 := TAppearanceNode.Create;
-Material30 := TMaterialNode.Create;
-Material30.DiffuseColor := Vector3(0.5,0.5,0.9);
-{ METHOD .SetMaterial }
-Appearance29.Material := Material30;
-ComposedShader31 := TComposedShaderNode.Create;
-ComposedShader31.Language := 'GLSL';
+X3DPrototype26 := TX3DPrototype.Create;;
+Transform27 := TTransformNode.Create;;
+Shape28 := TShapeNode.Create;;
 end;
 
 procedure InitSimpleShaderPart1;
 begin
 
+Appearance29 := TAppearanceNode.Create;;
+Material30 := TMaterialNode.Create;;
+Material30.DiffuseColor := Vector3(0.5,0.5,0.9);
+{ METHOD .SetMaterial }
+Appearance29.Material := Material30;
+ComposedShader31 := TComposedShaderNode.Create;;
+ComposedShader31.Language := 'GLSL';
 SFVec3f32 := TSFVec3f.CreateUndefined(ComposedShader31, false, 'decis');
 { METHOD .AddSFVec3f }
 ComposedShader31.AddSFVec3f([SFVec3f32]);
-IS33 := TIS.Create;
-connect34 := Tconnect.Create;
-connect34.NodeField := 'decis';
-connect34.ProtoField := 'myInputRange';
-{ METHOD .Connect }
-IS33.Connect := connect34;
-{ METHOD .IS }
-ComposedShader31.IS := IS33;
-ShaderPart35 := TShaderPartNode.Create;
-ShaderPart35.FdType.Value := 'VERTEX';
+ShaderPart34 := TShaderPartNode.Create;;
+ShaderPart34.FdType.Value := 'VERTEX';
 { METHOD .Parts }
+{ METHOD.SET .Parts }
+ComposedShader31.Parts := ShaderPart34;
+ShaderPart35 := TShaderPartNode.Create;;
+ShaderPart35.FdType.Value := 'FRAGMENT';
+{ METHOD .Parts }
+{ METHOD.SET .Parts }
 ComposedShader31.Parts := ShaderPart35;
-ShaderPart36 := TShaderPartNode.Create;
-ShaderPart36.FdType.Value := 'FRAGMENT';
-{ METHOD .Parts }
-ComposedShader31.Parts := ShaderPart36;
 { METHOD .AddChildren }
 Appearance29.AddChildren([ComposedShader31]);
-ComposedShader37 := TComposedShaderNode.Create;
-ComposedShader37.Language := 'GLSL';
-SFVec3f38 := TSFVec3f.CreateUndefined(ComposedShader37, false, 'decis');
-SFVec3f38.Value := '0.95 0.77 0.44';
+ComposedShader36 := TComposedShaderNode.Create;;
+ComposedShader36.Language := 'GLSL';
+SFVec3f37 := TSFVec3f.CreateUndefined(ComposedShader36, false, 'decis');
+SFVec3f37.Value := '0.95 0.77 0.44';
 { METHOD .AddSFVec3f }
-ComposedShader37.AddSFVec3f([SFVec3f38]);
-ShaderPart39 := TShaderPartNode.Create;
-ShaderPart39.FdType.Value := 'VERTEX';
+ComposedShader36.AddSFVec3f([SFVec3f37]);
+ShaderPart38 := TShaderPartNode.Create;;
+ShaderPart38.FdType.Value := 'VERTEX';
 { METHOD .Parts }
-ComposedShader37.Parts := ShaderPart39;
-ShaderPart40 := TShaderPartNode.Create;
-ShaderPart40.FdType.Value := 'FRAGMENT';
+{ METHOD.SET .Parts }
+ComposedShader36.Parts := ShaderPart38;
+ShaderPart39 := TShaderPartNode.Create;;
+ShaderPart39.FdType.Value := 'FRAGMENT';
 { METHOD .Parts }
-ComposedShader37.Parts := ShaderPart40;
+{ METHOD.SET .Parts }
+ComposedShader36.Parts := ShaderPart39;
 { METHOD .AddChildren }
-Appearance29.AddChildren([ComposedShader37]);
+Appearance29.AddChildren([ComposedShader36]);
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape28.Appearance := Appearance29;
-Sphere41 := TSphereNode.Create;
-Sphere41.Radius := 1.75;
+Sphere40 := TSphereNode.Create;;
+Sphere40.Radius := 1.75;
 { METHOD .Geometry }
-Shape28.Geometry := Sphere41;
+{ METHOD.SET .Geometry }
+Shape28.Geometry := Sphere40;
+end;
+
+procedure InitSimpleShaderPart2;
+begin
+
 { METHOD .FdChildren.Add }
 Transform27.FdChildren.Add(Shape28);
 { METHOD .AddTransform }
@@ -167,59 +168,60 @@ X3DPrototype26.AddTransform([Transform27]);
 X3DPrototype23.AddX3DPrototype([X3DPrototype26]);
 { METHOD .AddX3DPrototype }
 Group22.AddX3DPrototype([X3DPrototype23]);
-WorldInfo42 := TWorldInfoNode.Create;
-WorldInfo42.Title := 'SimpleShader';
-MetadataSet43 := TMetadataSetNode.Create;
+WorldInfo41 := TWorldInfoNode.Create;;
+WorldInfo41.Title := 'SimpleShader';
+MetadataSet42 := TMetadataSetNode.Create;;
+MetadataSet42.Reference := 'http://titania.create3000.de';
+MetadataSet43 := TMetadataSetNode.Create;;
 MetadataSet43.Reference := 'http://titania.create3000.de';
-MetadataSet44 := TMetadataSetNode.Create;
-end;
-
-procedure InitSimpleShaderPart2;
-begin
-
+MetadataSet44 := TMetadataSetNode.Create;;
 MetadataSet44.Reference := 'http://titania.create3000.de';
-MetadataSet45 := TMetadataSetNode.Create;
-MetadataSet45.Reference := 'http://titania.create3000.de';
 { NULL }
 { METHOD .FdValue.Add }
-MetadataSet44.FdValue.Add(MetadataSet45);
-{ METHOD .FdValue.Add }
 MetadataSet43.FdValue.Add(MetadataSet44);
-MetadataSet46 := TMetadataSetNode.Create;
-MetadataSet46.Reference := 'http://titania.create3000.de';
-MetadataString47 := TMetadataStringNode.Create;
-MetadataString47.Reference := 'http://titania.create3000.de';
-MetadataString47.SetValue(['EXAMINE']);
 { METHOD .FdValue.Add }
-MetadataSet46.FdValue.Add(MetadataString47);
+MetadataSet42.FdValue.Add(MetadataSet43);
+MetadataSet45 := TMetadataSetNode.Create;;
+MetadataSet45.Reference := 'http://titania.create3000.de';
+MetadataString46 := TMetadataStringNode.Create;;
+MetadataString46.Reference := 'http://titania.create3000.de';
+MetadataString46.SetValue(['EXAMINE']);
 { METHOD .FdValue.Add }
-MetadataSet43.FdValue.Add(MetadataSet46);
-MetadataSet48 := TMetadataSetNode.Create;
-MetadataSet48.Reference := 'http://titania.create3000.de';
-MetadataDouble49 := TMetadataDoubleNode.Create;
+MetadataSet45.FdValue.Add(MetadataString46);
+{ METHOD .FdValue.Add }
+MetadataSet42.FdValue.Add(MetadataSet45);
+MetadataSet47 := TMetadataSetNode.Create;;
+MetadataSet47.Reference := 'http://titania.create3000.de';
+MetadataDouble48 := TMetadataDoubleNode.Create;;
+MetadataDouble48.Reference := 'http://titania.create3000.de';
+MetadataDouble48.SetValue6.24067728185014,0.00250837343276661,2.92117542307615;
+{ METHOD .FdValue.Add }
+MetadataSet47.FdValue.Add(MetadataDouble48);
+MetadataDouble49 := TMetadataDoubleNode.Create;;
 MetadataDouble49.Reference := 'http://titania.create3000.de';
-MetadataDouble49.SetValue6.24067728185014,0.00250837343276661,2.92117542307615;
+MetadataDouble49.SetValue-0.110173424710488,0.990158061907379,-0.0863065984000336,1.21146676119191;
 { METHOD .FdValue.Add }
-MetadataSet48.FdValue.Add(MetadataDouble49);
-MetadataDouble50 := TMetadataDoubleNode.Create;
+MetadataSet47.FdValue.Add(MetadataDouble49);
+end;
+
+procedure InitSimpleShaderPart3;
+begin
+
+MetadataDouble50 := TMetadataDoubleNode.Create;;
 MetadataDouble50.Reference := 'http://titania.create3000.de';
-MetadataDouble50.SetValue-0.110173424710488,0.990158061907379,-0.0863065984000336,1.21146676119191;
+MetadataDouble50.SetValue-0.808320198626341,-0.358072370409949,0.22817191560906;
 { METHOD .FdValue.Add }
-MetadataSet48.FdValue.Add(MetadataDouble50);
-MetadataDouble51 := TMetadataDoubleNode.Create;
-MetadataDouble51.Reference := 'http://titania.create3000.de';
-MetadataDouble51.SetValue-0.808320198626341,-0.358072370409949,0.22817191560906;
+MetadataSet47.FdValue.Add(MetadataDouble50);
 { METHOD .FdValue.Add }
-MetadataSet48.FdValue.Add(MetadataDouble51);
-{ METHOD .FdValue.Add }
-MetadataSet43.FdValue.Add(MetadataSet48);
+MetadataSet42.FdValue.Add(MetadataSet47);
 { METHOD .Metadata }
-WorldInfo42.Metadata := MetadataSet43;
+{ METHOD.SET .Metadata }
+WorldInfo41.Metadata := MetadataSet42;
 { METHOD .FdChildren.Add }
-Group22.FdChildren.Add(WorldInfo42);
-X3DPrototype52 := TX3DPrototypeNode.Create;
+Group22.FdChildren.Add(WorldInfo41);
+X3DPrototype51 := TX3DPrototypeNode;
 { METHOD .AddX3DPrototype }
-Group22.AddX3DPrototype([X3DPrototype52]);
+Group22.AddX3DPrototype([X3DPrototype51]);
 { METHOD .AddGroup }
 X3D0.AddChildren([Group22]);
 end;
@@ -229,6 +231,7 @@ begin
 InitSimpleShaderPart0;
 InitSimpleShaderPart1;
 InitSimpleShaderPart2;
+InitSimpleShaderPart3;
 Result := X3D0;
 end;
 

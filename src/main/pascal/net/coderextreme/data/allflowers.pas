@@ -2,7 +2,7 @@ unit allflowers;
 
 interface
 
-uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
 
 function Createallflowers: TX3DRootNode;
 
@@ -42,87 +42,83 @@ SFFloat40: TSFFloat;
 SFFloat41: TSFFloat;
 SFFloat42: TSFFloat;
 ShaderPart43: TShaderPartNode;
-IS44: TIS;
-connect45: Tconnect;
-ShaderPart46: TShaderPartNode;
-IS47: TIS;
-connect48: Tconnect;
-Sphere49: TSphereNode;
-Script50: TScriptNode;
-SFVec3f51: TSFVec3f;
-SFInt3252: TSFInt32;
-SFInt3253: TSFInt32;
-SFVec3f54: TSFVec3f;
+ShaderPart45: TShaderPartNode;
+Sphere47: TSphereNode;
+Script48: TScriptNode;
+SFVec3f49: TSFVec3f;
+SFInt3250: TSFInt32;
+SFInt3251: TSFInt32;
+SFVec3f52: TSFVec3f;
+SFFloat53: TSFFloat;
+SFFloat54: TSFFloat;
 SFFloat55: TSFFloat;
 SFFloat56: TSFFloat;
 SFFloat57: TSFFloat;
 SFFloat58: TSFFloat;
 SFFloat59: TSFFloat;
-SFFloat60: TSFFloat;
-SFFloat61: TSFFloat;
-Script62: TScriptNode;
-SFVec3f63: TSFVec3f;
-SFVec3f64: TSFVec3f;
+Script60: TScriptNode;
+SFVec3f61: TSFVec3f;
+SFVec3f62: TSFVec3f;
+SFFloat63: TSFFloat;
+SFFloat64: TSFFloat;
 SFFloat65: TSFFloat;
 SFFloat66: TSFFloat;
 SFFloat67: TSFFloat;
 SFFloat68: TSFFloat;
 SFFloat69: TSFFloat;
-SFFloat70: TSFFloat;
-SFFloat71: TSFFloat;
-TimeSensor72: TTimeSensorNode;
-NavigationInfo89: TNavigationInfoNode;
-Background90: TBackgroundNode;
-Group91: TGroupNode;
-X3DPrototype92: TX3DPrototypeNode;
-MFString93: TMFString;
+TimeSensor70: TTimeSensorNode;
+NavigationInfo87: TNavigationInfoNode;
+Background88: TBackgroundNode;
+Group89: TGroupNode;
+X3DPrototype90: TX3DPrototypeNode;
+MFString91: TMFString;
+MFString92: TMFString;
+X3DPrototype93: TX3DPrototypeNode;
 MFString94: TMFString;
-X3DPrototype95: TX3DPrototypeNode;
-MFString96: TMFString;
+MFString95: TMFString;
+X3DPrototype96: TX3DPrototypeNode;
 MFString97: TMFString;
-X3DPrototype98: TX3DPrototypeNode;
-MFString99: TMFString;
-MFString100: TMFString;
-Group101: TGroupNode;
-X3DPrototype102: TX3DPrototypeNode;
-MFString103: TMFString;
+MFString98: TMFString;
+Group99: TGroupNode;
+X3DPrototype100: TX3DPrototypeNode;
+MFString101: TMFString;
+MFString102: TMFString;
+X3DPrototype103: TX3DPrototypeNode;
 MFString104: TMFString;
-X3DPrototype105: TX3DPrototypeNode;
-MFString106: TMFString;
+MFString105: TMFString;
+X3DPrototype106: TX3DPrototypeNode;
 MFString107: TMFString;
-X3DPrototype108: TX3DPrototypeNode;
-MFString109: TMFString;
-MFString110: TMFString;
-Group111: TGroupNode;
-X3DPrototype112: TX3DPrototypeNode;
-MFString113: TMFString;
+MFString108: TMFString;
+Group109: TGroupNode;
+X3DPrototype110: TX3DPrototypeNode;
+MFString111: TMFString;
+MFString112: TMFString;
+X3DPrototype113: TX3DPrototypeNode;
 MFString114: TMFString;
-X3DPrototype115: TX3DPrototypeNode;
-MFString116: TMFString;
+MFString115: TMFString;
+X3DPrototype116: TX3DPrototypeNode;
 MFString117: TMFString;
-X3DPrototype118: TX3DPrototypeNode;
-MFString119: TMFString;
-MFString120: TMFString;
-Group121: TGroupNode;
-X3DPrototype122: TX3DPrototypeNode;
-MFString123: TMFString;
+MFString118: TMFString;
+Group119: TGroupNode;
+X3DPrototype120: TX3DPrototypeNode;
+MFString121: TMFString;
+MFString122: TMFString;
+X3DPrototype123: TX3DPrototypeNode;
 MFString124: TMFString;
-X3DPrototype125: TX3DPrototypeNode;
-MFString126: TMFString;
+MFString125: TMFString;
+X3DPrototype126: TX3DPrototypeNode;
 MFString127: TMFString;
-X3DPrototype128: TX3DPrototypeNode;
-MFString129: TMFString;
-MFString130: TMFString;
-Group131: TGroupNode;
-X3DPrototype132: TX3DPrototypeNode;
-MFString133: TMFString;
+MFString128: TMFString;
+Group129: TGroupNode;
+X3DPrototype130: TX3DPrototypeNode;
+MFString131: TMFString;
+MFString132: TMFString;
+X3DPrototype133: TX3DPrototypeNode;
 MFString134: TMFString;
-X3DPrototype135: TX3DPrototypeNode;
-MFString136: TMFString;
+MFString135: TMFString;
+X3DPrototype136: TX3DPrototypeNode;
 MFString137: TMFString;
-X3DPrototype138: TX3DPrototypeNode;
-MFString139: TMFString;
-MFString140: TMFString;
+MFString138: TMFString;
 
 procedure InitallflowersPart0;
 begin
@@ -155,9 +151,9 @@ X3D0.Meta['modified'] := 'Fri, 13 Nov 2026 21:19:45 GMT';
 X3D0.Meta['generator'] := 'Sunrize X3D Editor V2.6.6, https://create3000.github.io/sunrize/';
 { METHOD .Meta }
 { METHOD .Head }
-Group14 := TGroupNode.Create;
-X3DPrototype15 := TX3DPrototype.Create;
-X3DInterfaceDeclaration16 := TX3DInterfaceDeclaration.Create(nil);
+Group14 := TGroupNode.Create;;
+X3DPrototype15 := TX3DPrototype.Create;;
+X3DInterfaceDeclaration16 := TX3DInterfaceDeclaration.Create(nil);;
 MFString17 := TMFString.CreateUndefined(X3DInterfaceDeclaration16, false, 'vertex');
 MFString17.Value := '\"../shaders/x_ite_flowers_chromatic.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs\"';
 { METHOD .AddMFString }
@@ -168,48 +164,49 @@ MFString18.Value := '\"../shaders/x_ite.fs\" \"https://coderextreme.net/X3DJSONL
 X3DInterfaceDeclaration16.AddMFString([MFString18]);
 { METHOD .AddX3DInterfaceDeclaration }
 X3DPrototype15.AddX3DInterfaceDeclaration([X3DInterfaceDeclaration16]);
-X3DPrototype19 := TX3DPrototype.Create;
-Transform20 := TTransformNode.Create;
-Shape21 := TShapeNode.Create;
-Appearance22 := TAppearanceNode.Create;
-Material23 := TMaterialNode.Create;
+X3DPrototype19 := TX3DPrototype.Create;;
+Transform20 := TTransformNode.Create;;
+Shape21 := TShapeNode.Create;;
+Appearance22 := TAppearanceNode.Create;;
+Material23 := TMaterialNode.Create;;
 Material23.DiffuseColor := Vector3(0.7,0.7,0.7);
-Material23.SpecularColor := Vector3(0.5,0.5,0.5);
-{ METHOD .SetMaterial }
-Appearance22.Material := Material23;
-ComposedCubeMapTexture24 := TComposedCubeMapTextureNode.Create;
-ImageTexture25 := TImageTextureNode.Create;
-ImageTexture25.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_front.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png']);
-{ METHOD .SetFrontTexture }
-ComposedCubeMapTexture24.FrontTexture := ImageTexture25;
-ImageTexture26 := TImageTextureNode.Create;
-ImageTexture26.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_back.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png']);
 end;
 
 procedure InitallflowersPart1;
 begin
 
-{ METHOD .SetBackTexture }
-ComposedCubeMapTexture24.BackTexture := ImageTexture26;
-ImageTexture27 := TImageTextureNode.Create;
+Material23.SpecularColor := Vector3(0.5,0.5,0.5);
+{ METHOD .SetMaterial }
+Appearance22.Material := Material23;
+ComposedCubeMapTexture24 := TComposedCubeMapTextureNode.Create;;
+ImageTexture25 := TImageTextureNode.Create;;
+ImageTexture25.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_front.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png']);
+{ METHOD .FdFrontTexture.Set }
+ComposedCubeMapTexture24.FdFrontTexture.Set(ImageTexture25);
+ImageTexture26 := TImageTextureNode.Create;;
+ImageTexture26.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_back.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png']);
+{ METHOD .FdBackTexture.Set }
+ComposedCubeMapTexture24.FdBackTexture.Set(ImageTexture26);
+ImageTexture27 := TImageTextureNode.Create;;
 ImageTexture27.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_left.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png']);
-{ METHOD .SetLeftTexture }
-ComposedCubeMapTexture24.LeftTexture := ImageTexture27;
-ImageTexture28 := TImageTextureNode.Create;
+{ METHOD .FdLeftTexture.Set }
+ComposedCubeMapTexture24.FdLeftTexture.Set(ImageTexture27);
+ImageTexture28 := TImageTextureNode.Create;;
 ImageTexture28.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_right.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png']);
-{ METHOD .SetRightTexture }
-ComposedCubeMapTexture24.RightTexture := ImageTexture28;
-ImageTexture29 := TImageTextureNode.Create;
+{ METHOD .FdRightTexture.Set }
+ComposedCubeMapTexture24.FdRightTexture.Set(ImageTexture28);
+ImageTexture29 := TImageTextureNode.Create;;
 ImageTexture29.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_top.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png']);
-{ METHOD .SetTopTexture }
-ComposedCubeMapTexture24.TopTexture := ImageTexture29;
-ImageTexture30 := TImageTextureNode.Create;
+{ METHOD .FdTopTexture.Set }
+ComposedCubeMapTexture24.FdTopTexture.Set(ImageTexture29);
+ImageTexture30 := TImageTextureNode.Create;;
 ImageTexture30.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_bottom.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png']);
-{ METHOD .SetBottomTexture }
-ComposedCubeMapTexture24.BottomTexture := ImageTexture30;
+{ METHOD .FdBottomTexture.Set }
+ComposedCubeMapTexture24.FdBottomTexture.Set(ImageTexture30);
 { METHOD .Texture }
+{ METHOD.SET .Texture }
 Appearance22.Texture := ComposedCubeMapTexture24;
-ComposedShader31 := TComposedShaderNode.Create;
+ComposedShader31 := TComposedShaderNode.Create;;
 ComposedShader31.Language := 'GLSL';
 SFNode32 := TSFNode.CreateUndefined(ComposedShader31, false, 'cube');
 { METHOD .AddSFNode }
@@ -222,6 +219,11 @@ SFFloat34 := TSFFloat.CreateUndefined(ComposedShader31, false, 'bias');
 { METHOD .AddSFFloat }
 ComposedShader31.AddSFFloat([SFFloat34]);
 SFFloat35 := TSFFloat.CreateUndefined(ComposedShader31, false, 'scale');
+end;
+
+procedure InitallflowersPart2;
+begin
+
 { METHOD .AddSFFloat }
 ComposedShader31.AddSFFloat([SFFloat35]);
 SFFloat36 := TSFFloat.CreateUndefined(ComposedShader31, false, 'power');
@@ -245,87 +247,70 @@ ComposedShader31.AddSFFloat([SFFloat41]);
 SFFloat42 := TSFFloat.CreateUndefined(ComposedShader31, false, 'pdelta');
 { METHOD .AddSFFloat }
 ComposedShader31.AddSFFloat([SFFloat42]);
-ShaderPart43 := TShaderPartNode.Create;
-end;
-
-procedure InitallflowersPart2;
-begin
-
+ShaderPart43 := TShaderPartNode.Create;;
 ShaderPart43.FdType.Value := 'VERTEX';
-IS44 := TIS.Create;
-connect45 := Tconnect.Create;
-connect45.NodeField := 'url';
-connect45.ProtoField := 'vertex';
-{ METHOD .Connect }
-IS44.Connect := connect45;
-{ METHOD .IS }
-ShaderPart43.IS := IS44;
 { METHOD .Parts }
+{ METHOD.SET .Parts }
 ComposedShader31.Parts := ShaderPart43;
-ShaderPart46 := TShaderPartNode.Create;
-ShaderPart46.FdType.Value := 'FRAGMENT';
-IS47 := TIS.Create;
-connect48 := Tconnect.Create;
-connect48.NodeField := 'url';
-connect48.ProtoField := 'fragment';
-{ METHOD .Connect }
-IS47.Connect := connect48;
-{ METHOD .IS }
-ShaderPart46.IS := IS47;
+ShaderPart45 := TShaderPartNode.Create;;
+ShaderPart45.FdType.Value := 'FRAGMENT';
 { METHOD .Parts }
-ComposedShader31.Parts := ShaderPart46;
+{ METHOD.SET .Parts }
+ComposedShader31.Parts := ShaderPart45;
 { METHOD .AddChildren }
 Appearance22.AddChildren([ComposedShader31]);
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape21.Appearance := Appearance22;
-Sphere49 := TSphereNode.Create;
+Sphere47 := TSphereNode.Create;;
 { METHOD .Geometry }
-Shape21.Geometry := Sphere49;
+{ METHOD.SET .Geometry }
+Shape21.Geometry := Sphere47;
 { METHOD .FdChildren.Add }
 Transform20.FdChildren.Add(Shape21);
-Script50 := TScriptNode.Create;
-SFVec3f51 := TSFVec3f.CreateUndefined(Script50, false, 'translation');
+Script48 := TScriptNode.Create;;
+SFVec3f49 := TSFVec3f.CreateUndefined(Script48, false, 'translation');
 { METHOD .Fd.AddCustomField }
-Script50.AddCustomField(SFVec3f51);
-SFInt3252 := TSFInt32.CreateUndefined(Script50, false, 'choice');
-SFInt3252.Value := '0';
+Script48.AddCustomField(SFVec3f49);
+SFInt3250 := TSFInt32.CreateUndefined(Script48, false, 'choice');
+SFInt3250.Value := '0';
 { METHOD .Fd.AddCustomField }
-Script50.AddCustomField(SFInt3252);
-SFInt3253 := TSFInt32.CreateUndefined(Script50, false, 'j');
-SFInt3253.Value := '0';
+Script48.AddCustomField(SFInt3250);
+SFInt3251 := TSFInt32.CreateUndefined(Script48, false, 'j');
+SFInt3251.Value := '0';
 { METHOD .Fd.AddCustomField }
-Script50.AddCustomField(SFInt3253);
-SFVec3f54 := TSFVec3f.CreateUndefined(Script50, false, 'velocity');
-{ METHOD .Fd.AddCustomField }
-Script50.AddCustomField(SFVec3f54);
-SFFloat55 := TSFFloat.CreateUndefined(Script50, false, 'set_fraction');
-{ METHOD .Fd.AddCustomField }
-Script50.AddCustomField(SFFloat55);
-SFFloat56 := TSFFloat.CreateUndefined(Script50, false, 'a');
-{ METHOD .Fd.AddCustomField }
-Script50.AddCustomField(SFFloat56);
-SFFloat57 := TSFFloat.CreateUndefined(Script50, false, 'b');
-{ METHOD .Fd.AddCustomField }
-Script50.AddCustomField(SFFloat57);
-SFFloat58 := TSFFloat.CreateUndefined(Script50, false, 'c');
+Script48.AddCustomField(SFInt3251);
+SFVec3f52 := TSFVec3f.CreateUndefined(Script48, false, 'velocity');
 end;
 
 procedure InitallflowersPart3;
 begin
 
 { METHOD .Fd.AddCustomField }
-Script50.AddCustomField(SFFloat58);
-SFFloat59 := TSFFloat.CreateUndefined(Script50, false, 'd');
+Script48.AddCustomField(SFVec3f52);
+SFFloat53 := TSFFloat.CreateUndefined(Script48, false, 'set_fraction');
 { METHOD .Fd.AddCustomField }
-Script50.AddCustomField(SFFloat59);
-SFFloat60 := TSFFloat.CreateUndefined(Script50, false, 'tdelta');
+Script48.AddCustomField(SFFloat53);
+SFFloat54 := TSFFloat.CreateUndefined(Script48, false, 'a');
 { METHOD .Fd.AddCustomField }
-Script50.AddCustomField(SFFloat60);
-SFFloat61 := TSFFloat.CreateUndefined(Script50, false, 'pdelta');
+Script48.AddCustomField(SFFloat54);
+SFFloat55 := TSFFloat.CreateUndefined(Script48, false, 'b');
 { METHOD .Fd.AddCustomField }
-Script50.AddCustomField(SFFloat61);
+Script48.AddCustomField(SFFloat55);
+SFFloat56 := TSFFloat.CreateUndefined(Script48, false, 'c');
+{ METHOD .Fd.AddCustomField }
+Script48.AddCustomField(SFFloat56);
+SFFloat57 := TSFFloat.CreateUndefined(Script48, false, 'd');
+{ METHOD .Fd.AddCustomField }
+Script48.AddCustomField(SFFloat57);
+SFFloat58 := TSFFloat.CreateUndefined(Script48, false, 'tdelta');
+{ METHOD .Fd.AddCustomField }
+Script48.AddCustomField(SFFloat58);
+SFFloat59 := TSFFloat.CreateUndefined(Script48, false, 'pdelta');
+{ METHOD .Fd.AddCustomField }
+Script48.AddCustomField(SFFloat59);
 
-Script50.SetSourceCode('''castlescript:\n"+
+Script48.SetSourceCode('''castlescript:\n"+
 "\n"+
 "{ CastleScript cannot call user-defined functions, only built-ins,\n"+
 "  so everything is inlined into the two event handlers. }\n"+
@@ -376,38 +361,38 @@ Script50.SetSourceCode('''castlescript:\n"+
 "  when(d > 10, d := 4)\n"+
 "  )''');
 { METHOD .FdChildren.Add }
-Transform20.FdChildren.Add(Script50);
-Script62 := TScriptNode.Create;
-Script62.DirectOutput := True;
-SFVec3f63 := TSFVec3f.CreateUndefined(Script62, false, 'translation');
+Transform20.FdChildren.Add(Script48);
+Script60 := TScriptNode.Create;;
+Script60.DirectOutput := True;
+SFVec3f61 := TSFVec3f.CreateUndefined(Script60, false, 'translation');
 { METHOD .Fd.AddCustomField }
-Script62.AddCustomField(SFVec3f63);
-SFVec3f64 := TSFVec3f.CreateUndefined(Script62, false, 'velocity');
+Script60.AddCustomField(SFVec3f61);
+SFVec3f62 := TSFVec3f.CreateUndefined(Script60, false, 'velocity');
 { METHOD .Fd.AddCustomField }
-Script62.AddCustomField(SFVec3f64);
-SFFloat65 := TSFFloat.CreateUndefined(Script62, false, 'set_fraction');
+Script60.AddCustomField(SFVec3f62);
+SFFloat63 := TSFFloat.CreateUndefined(Script60, false, 'set_fraction');
 { METHOD .Fd.AddCustomField }
-Script62.AddCustomField(SFFloat65);
-SFFloat66 := TSFFloat.CreateUndefined(Script62, false, 'a');
+Script60.AddCustomField(SFFloat63);
+SFFloat64 := TSFFloat.CreateUndefined(Script60, false, 'a');
 { METHOD .Fd.AddCustomField }
-Script62.AddCustomField(SFFloat66);
-SFFloat67 := TSFFloat.CreateUndefined(Script62, false, 'b');
+Script60.AddCustomField(SFFloat64);
+SFFloat65 := TSFFloat.CreateUndefined(Script60, false, 'b');
 { METHOD .Fd.AddCustomField }
-Script62.AddCustomField(SFFloat67);
-SFFloat68 := TSFFloat.CreateUndefined(Script62, false, 'c');
+Script60.AddCustomField(SFFloat65);
+SFFloat66 := TSFFloat.CreateUndefined(Script60, false, 'c');
 { METHOD .Fd.AddCustomField }
-Script62.AddCustomField(SFFloat68);
-SFFloat69 := TSFFloat.CreateUndefined(Script62, false, 'd');
+Script60.AddCustomField(SFFloat66);
+SFFloat67 := TSFFloat.CreateUndefined(Script60, false, 'd');
 { METHOD .Fd.AddCustomField }
-Script62.AddCustomField(SFFloat69);
-SFFloat70 := TSFFloat.CreateUndefined(Script62, false, 'tdelta');
+Script60.AddCustomField(SFFloat67);
+SFFloat68 := TSFFloat.CreateUndefined(Script60, false, 'tdelta');
 { METHOD .Fd.AddCustomField }
-Script62.AddCustomField(SFFloat70);
-SFFloat71 := TSFFloat.CreateUndefined(Script62, false, 'pdelta');
+Script60.AddCustomField(SFFloat68);
+SFFloat69 := TSFFloat.CreateUndefined(Script60, false, 'pdelta');
 { METHOD .Fd.AddCustomField }
-Script62.AddCustomField(SFFloat71);
+Script60.AddCustomField(SFFloat69);
 
-Script62.SetSourceCode('''ecmascript:\n"+
+Script60.SetSourceCode('''ecmascript:\n"+
 "			function initialize() {\n"+
 "			    translation = new SFVec3f(0, 0, 0);\n"+
 "			    velocity = new SFVec3f(\n"+
@@ -474,274 +459,274 @@ Script62.SetSourceCode('''ecmascript:\n"+
 "				}\n"+
 "			}''');
 { METHOD .FdChildren.Add }
-Transform20.FdChildren.Add(Script62);
-TimeSensor72 := TTimeSensorNode.Create;
-TimeSensor72.CycleInterval := 5;
-TimeSensor72.Loop := True;
+Transform20.FdChildren.Add(Script60);
+TimeSensor70 := TTimeSensorNode.Create;;
+TimeSensor70.CycleInterval := 5;
+TimeSensor70.Loop := True;
 { METHOD .FdChildren.Add }
-Transform20.FdChildren.Add(TimeSensor72);
+Transform20.FdChildren.Add(TimeSensor70);
 { METHOD .AddTransform }
 X3DPrototype19.AddTransform([Transform20]);
 { Original "TourTime.EventFraction_changed TO Animate.EventSet_fraction }
 { Sample TourTime.EventFraction_changed TO Animate.EventSet_fraction}
-X3DPrototype19.AddRoute(TimeSensor72.EventFraction_changed, Script62.EventSet_fraction);
+X3DPrototype19.AddRoute(TimeSensor70.EventFraction_changed, Script60.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "Animate.EventTranslation_changed TO xform.FdTranslation.EventIn }
 { Sample Animate.EventTranslation_changed TO xform.FdTranslation.EventIn}
-X3DPrototype19.AddRoute(Script62.EventTranslation_changed, Transform20.FdTranslation.EventIn);
+X3DPrototype19.AddRoute(Script60.EventTranslation_changed, Transform20.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
 { Original "Animate.a TO shader.a }
 { Sample Animate.a TO shader.a}
-X3DPrototype19.AddRoute(Animate.[object Object], ComposedShader31.a);
+X3DPrototype19.AddRoute(Animate.undefined, ComposedShader31.a);
 { METHOD .AddX3DROUTE }
 { Original "Animate.b TO shader.b }
 { Sample Animate.b TO shader.b}
-X3DPrototype19.AddRoute(Animate.[object Object], ComposedShader31.b);
+X3DPrototype19.AddRoute(Animate.undefined, ComposedShader31.b);
 { METHOD .AddX3DROUTE }
 { Original "Animate.c TO shader.c }
 { Sample Animate.c TO shader.c}
-X3DPrototype19.AddRoute(Animate.[object Object], ComposedShader31.c);
+X3DPrototype19.AddRoute(Animate.undefined, ComposedShader31.c);
 { METHOD .AddX3DROUTE }
 { Original "Animate.d TO shader.d }
 { Sample Animate.d TO shader.d}
-X3DPrototype19.AddRoute(Animate.[object Object], ComposedShader31.d);
+X3DPrototype19.AddRoute(Animate.undefined, ComposedShader31.d);
 { METHOD .AddX3DROUTE }
 { Original "Animate.tdelta TO shader.tdelta }
 { Sample Animate.tdelta TO shader.tdelta}
-X3DPrototype19.AddRoute(Animate.[object Object], ComposedShader31.tdelta);
+X3DPrototype19.AddRoute(Animate.undefined, ComposedShader31.tdelta);
 { METHOD .AddX3DROUTE }
 { Original "Animate.pdelta TO shader.pdelta }
 { Sample Animate.pdelta TO shader.pdelta}
-X3DPrototype19.AddRoute(Animate.[object Object], ComposedShader31.pdelta);
+X3DPrototype19.AddRoute(Animate.undefined, ComposedShader31.pdelta);
 { METHOD .AddX3DROUTE }
 { Original "TourTime.EventFraction_changed TO AnimateCastle.EventSet_fraction }
 { Sample TourTime.EventFraction_changed TO AnimateCastle.EventSet_fraction}
-X3DPrototype19.AddRoute(TimeSensor72.EventFraction_changed, Script50.EventSet_fraction);
+X3DPrototype19.AddRoute(TimeSensor70.EventFraction_changed, Script48.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "AnimateCastle.EventTranslation_changed TO xform.FdTranslation.EventIn }
 { Sample AnimateCastle.EventTranslation_changed TO xform.FdTranslation.EventIn}
-X3DPrototype19.AddRoute(Script50.EventTranslation_changed, Transform20.FdTranslation.EventIn);
+X3DPrototype19.AddRoute(Script48.EventTranslation_changed, Transform20.FdTranslation.EventIn);
 { METHOD .AddX3DROUTE }
 { Original "AnimateCastle.a TO shader.a }
 { Sample AnimateCastle.a TO shader.a}
-X3DPrototype19.AddRoute(AnimateCastle.[object Object], ComposedShader31.a);
+X3DPrototype19.AddRoute(AnimateCastle.undefined, ComposedShader31.a);
 { METHOD .AddX3DROUTE }
 { Original "AnimateCastle.b TO shader.b }
 { Sample AnimateCastle.b TO shader.b}
-X3DPrototype19.AddRoute(AnimateCastle.[object Object], ComposedShader31.b);
+X3DPrototype19.AddRoute(AnimateCastle.undefined, ComposedShader31.b);
 { METHOD .AddX3DROUTE }
 { Original "AnimateCastle.c TO shader.c }
 { Sample AnimateCastle.c TO shader.c}
-X3DPrototype19.AddRoute(AnimateCastle.[object Object], ComposedShader31.c);
+X3DPrototype19.AddRoute(AnimateCastle.undefined, ComposedShader31.c);
 { METHOD .AddX3DROUTE }
 { Original "AnimateCastle.d TO shader.d }
 { Sample AnimateCastle.d TO shader.d}
-X3DPrototype19.AddRoute(AnimateCastle.[object Object], ComposedShader31.d);
+X3DPrototype19.AddRoute(AnimateCastle.undefined, ComposedShader31.d);
 { METHOD .AddX3DROUTE }
 { Original "AnimateCastle.tdelta TO shader.tdelta }
 { Sample AnimateCastle.tdelta TO shader.tdelta}
-X3DPrototype19.AddRoute(AnimateCastle.[object Object], ComposedShader31.tdelta);
+X3DPrototype19.AddRoute(AnimateCastle.undefined, ComposedShader31.tdelta);
 { METHOD .AddX3DROUTE }
 { Original "AnimateCastle.pdelta TO shader.pdelta }
 { Sample AnimateCastle.pdelta TO shader.pdelta}
-X3DPrototype19.AddRoute(AnimateCastle.[object Object], ComposedShader31.pdelta);
+X3DPrototype19.AddRoute(AnimateCastle.undefined, ComposedShader31.pdelta);
 { METHOD .AddX3DROUTE }
 { METHOD .AddX3DPrototype }
 X3DPrototype15.AddX3DPrototype([X3DPrototype19]);
 { METHOD .AddX3DPrototype }
 Group14.AddX3DPrototype([X3DPrototype15]);
-NavigationInfo89 := TNavigationInfoNode.Create;
+NavigationInfo87 := TNavigationInfoNode.Create;;
 { METHOD .FdChildren.Add }
-Group14.FdChildren.Add(NavigationInfo89);
-Background90 := TBackgroundNode.Create;
-Background90.SetFrontUrl(['../resources/images/all_probes/stpeters_cross/stpeters_front.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png']);
-Background90.SetBackUrl(['../resources/images/all_probes/stpeters_cross/stpeters_back.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png']);
-Background90.SetLeftUrl(['../resources/images/all_probes/stpeters_cross/stpeters_left.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png']);
-Background90.SetRightUrl(['../resources/images/all_probes/stpeters_cross/stpeters_right.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png']);
-Background90.SetTopUrl(['../resources/images/all_probes/stpeters_cross/stpeters_top.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png']);
-Background90.SetBottomUrl(['../resources/images/all_probes/stpeters_cross/stpeters_bottom.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png']);
+Group14.FdChildren.Add(NavigationInfo87);
+Background88 := TBackgroundNode.Create;;
+Background88.SetFrontUrl(['../resources/images/all_probes/stpeters_cross/stpeters_front.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png']);
+Background88.SetBackUrl(['../resources/images/all_probes/stpeters_cross/stpeters_back.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png']);
+Background88.SetLeftUrl(['../resources/images/all_probes/stpeters_cross/stpeters_left.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png']);
+Background88.SetRightUrl(['../resources/images/all_probes/stpeters_cross/stpeters_right.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png']);
+Background88.SetTopUrl(['../resources/images/all_probes/stpeters_cross/stpeters_top.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png']);
+Background88.SetBottomUrl(['../resources/images/all_probes/stpeters_cross/stpeters_bottom.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png']);
 { METHOD .FdChildren.Add }
-Group14.FdChildren.Add(Background90);
-Group91 := TGroupNode.Create;
-X3DPrototype92 := TX3DPrototypeNode.Create;
-MFString93 := TMFString.CreateUndefined(X3DPrototype92, false, 'vertex');
-MFString93.Value := '\"../shaders/x_ite_flowers_chromatic.vs\"';
+Group14.FdChildren.Add(Background88);
+Group89 := TGroupNode.Create;;
+X3DPrototype90 := TX3DPrototypeNode;
+MFString91 := TMFString.CreateUndefined(X3DPrototype90, false, 'vertex');
+MFString91.Value := '\"../shaders/x_ite_flowers_chromatic.vs\"';
 { METHOD .AddMFString }
-X3DPrototype92.AddMFString([MFString93]);
-MFString94 := TMFString.CreateUndefined(X3DPrototype92, false, 'fragment');
-MFString94.Value := '\"../shaders/x_ite.fs\"';
+X3DPrototype90.AddMFString([MFString91]);
+MFString92 := TMFString.CreateUndefined(X3DPrototype90, false, 'fragment');
+MFString92.Value := '\"../shaders/x_ite.fs\"';
 { METHOD .AddMFString }
-X3DPrototype92.AddMFString([MFString94]);
+X3DPrototype90.AddMFString([MFString92]);
 { METHOD .AddX3DPrototype }
-Group91.AddX3DPrototype([X3DPrototype92]);
-X3DPrototype95 := TX3DPrototypeNode.Create;
-MFString96 := TMFString.CreateUndefined(X3DPrototype95, false, 'vertex');
-MFString96.Value := '\"../shaders/x_ite_flowers_chromatic.vs\"';
+Group89.AddX3DPrototype([X3DPrototype90]);
+X3DPrototype93 := TX3DPrototypeNode;
+MFString94 := TMFString.CreateUndefined(X3DPrototype93, false, 'vertex');
+MFString94.Value := '\"../shaders/x_ite_flowers_chromatic.vs\"';
 { METHOD .AddMFString }
-X3DPrototype95.AddMFString([MFString96]);
-MFString97 := TMFString.CreateUndefined(X3DPrototype95, false, 'fragment');
-MFString97.Value := '\"../shaders/x_ite.fs\"';
+X3DPrototype93.AddMFString([MFString94]);
+MFString95 := TMFString.CreateUndefined(X3DPrototype93, false, 'fragment');
+MFString95.Value := '\"../shaders/x_ite.fs\"';
 { METHOD .AddMFString }
-X3DPrototype95.AddMFString([MFString97]);
+X3DPrototype93.AddMFString([MFString95]);
 { METHOD .AddX3DPrototype }
-Group91.AddX3DPrototype([X3DPrototype95]);
-X3DPrototype98 := TX3DPrototypeNode.Create;
-MFString99 := TMFString.CreateUndefined(X3DPrototype98, false, 'vertex');
-MFString99.Value := '\"../shaders/x_ite_flowers_chromatic.vs\"';
+Group89.AddX3DPrototype([X3DPrototype93]);
+X3DPrototype96 := TX3DPrototypeNode;
+MFString97 := TMFString.CreateUndefined(X3DPrototype96, false, 'vertex');
+MFString97.Value := '\"../shaders/x_ite_flowers_chromatic.vs\"';
 { METHOD .AddMFString }
-X3DPrototype98.AddMFString([MFString99]);
-MFString100 := TMFString.CreateUndefined(X3DPrototype98, false, 'fragment');
-MFString100.Value := '\"../shaders/x_ite.fs\"';
+X3DPrototype96.AddMFString([MFString97]);
+MFString98 := TMFString.CreateUndefined(X3DPrototype96, false, 'fragment');
+MFString98.Value := '\"../shaders/x_ite.fs\"';
 { METHOD .AddMFString }
-X3DPrototype98.AddMFString([MFString100]);
+X3DPrototype96.AddMFString([MFString98]);
 { METHOD .AddX3DPrototype }
-Group91.AddX3DPrototype([X3DPrototype98]);
+Group89.AddX3DPrototype([X3DPrototype96]);
 { METHOD .FdChildren.Add }
-Group14.FdChildren.Add(Group91);
-Group101 := TGroupNode.Create;
-X3DPrototype102 := TX3DPrototypeNode.Create;
-MFString103 := TMFString.CreateUndefined(X3DPrototype102, false, 'vertex');
-MFString103.Value := '\"../shaders/x3dom_flowers_chromatic.vs\"';
+Group14.FdChildren.Add(Group89);
+Group99 := TGroupNode.Create;;
+X3DPrototype100 := TX3DPrototypeNode;
+MFString101 := TMFString.CreateUndefined(X3DPrototype100, false, 'vertex');
+MFString101.Value := '\"../shaders/x3dom_flowers_chromatic.vs\"';
 { METHOD .AddMFString }
-X3DPrototype102.AddMFString([MFString103]);
-MFString104 := TMFString.CreateUndefined(X3DPrototype102, false, 'fragment');
-MFString104.Value := '\"../shaders/common.fs\"';
+X3DPrototype100.AddMFString([MFString101]);
+MFString102 := TMFString.CreateUndefined(X3DPrototype100, false, 'fragment');
+MFString102.Value := '\"../shaders/common.fs\"';
 { METHOD .AddMFString }
-X3DPrototype102.AddMFString([MFString104]);
+X3DPrototype100.AddMFString([MFString102]);
 { METHOD .AddX3DPrototype }
-Group101.AddX3DPrototype([X3DPrototype102]);
-X3DPrototype105 := TX3DPrototypeNode.Create;
-MFString106 := TMFString.CreateUndefined(X3DPrototype105, false, 'vertex');
-MFString106.Value := '\"../shaders/x3dom_flowers_chromatic.vs\"';
+Group99.AddX3DPrototype([X3DPrototype100]);
+X3DPrototype103 := TX3DPrototypeNode;
+MFString104 := TMFString.CreateUndefined(X3DPrototype103, false, 'vertex');
+MFString104.Value := '\"../shaders/x3dom_flowers_chromatic.vs\"';
 { METHOD .AddMFString }
-X3DPrototype105.AddMFString([MFString106]);
-MFString107 := TMFString.CreateUndefined(X3DPrototype105, false, 'fragment');
-MFString107.Value := '\"../shaders/common.fs\"';
+X3DPrototype103.AddMFString([MFString104]);
+MFString105 := TMFString.CreateUndefined(X3DPrototype103, false, 'fragment');
+MFString105.Value := '\"../shaders/common.fs\"';
 { METHOD .AddMFString }
-X3DPrototype105.AddMFString([MFString107]);
+X3DPrototype103.AddMFString([MFString105]);
 { METHOD .AddX3DPrototype }
-Group101.AddX3DPrototype([X3DPrototype105]);
-X3DPrototype108 := TX3DPrototypeNode.Create;
-MFString109 := TMFString.CreateUndefined(X3DPrototype108, false, 'vertex');
-MFString109.Value := '\"../shaders/x3dom_flowers_chromatic.vs\"';
+Group99.AddX3DPrototype([X3DPrototype103]);
+X3DPrototype106 := TX3DPrototypeNode;
+MFString107 := TMFString.CreateUndefined(X3DPrototype106, false, 'vertex');
+MFString107.Value := '\"../shaders/x3dom_flowers_chromatic.vs\"';
 { METHOD .AddMFString }
-X3DPrototype108.AddMFString([MFString109]);
-MFString110 := TMFString.CreateUndefined(X3DPrototype108, false, 'fragment');
-MFString110.Value := '\"../shaders/common.fs\"';
+X3DPrototype106.AddMFString([MFString107]);
+MFString108 := TMFString.CreateUndefined(X3DPrototype106, false, 'fragment');
+MFString108.Value := '\"../shaders/common.fs\"';
 { METHOD .AddMFString }
-X3DPrototype108.AddMFString([MFString110]);
+X3DPrototype106.AddMFString([MFString108]);
 { METHOD .AddX3DPrototype }
-Group101.AddX3DPrototype([X3DPrototype108]);
+Group99.AddX3DPrototype([X3DPrototype106]);
 { METHOD .FdChildren.Add }
-Group14.FdChildren.Add(Group101);
-Group111 := TGroupNode.Create;
-X3DPrototype112 := TX3DPrototypeNode.Create;
-MFString113 := TMFString.CreateUndefined(X3DPrototype112, false, 'vertex');
-MFString113.Value := '\"../shaders/gl_flowers_plain.vs\"';
+Group14.FdChildren.Add(Group99);
+Group109 := TGroupNode.Create;;
+X3DPrototype110 := TX3DPrototypeNode;
+MFString111 := TMFString.CreateUndefined(X3DPrototype110, false, 'vertex');
+MFString111.Value := '\"../shaders/gl_flowers_plain.vs\"';
 { METHOD .AddMFString }
-X3DPrototype112.AddMFString([MFString113]);
-MFString114 := TMFString.CreateUndefined(X3DPrototype112, false, 'fragment');
-MFString114.Value := '\"../shaders/plain.fs\"';
+X3DPrototype110.AddMFString([MFString111]);
+MFString112 := TMFString.CreateUndefined(X3DPrototype110, false, 'fragment');
+MFString112.Value := '\"../shaders/plain.fs\"';
 { METHOD .AddMFString }
-X3DPrototype112.AddMFString([MFString114]);
+X3DPrototype110.AddMFString([MFString112]);
 { METHOD .AddX3DPrototype }
-Group111.AddX3DPrototype([X3DPrototype112]);
-X3DPrototype115 := TX3DPrototypeNode.Create;
-MFString116 := TMFString.CreateUndefined(X3DPrototype115, false, 'vertex');
-MFString116.Value := '\"../shaders/gl_flowers_plain.vs\"';
+Group109.AddX3DPrototype([X3DPrototype110]);
+X3DPrototype113 := TX3DPrototypeNode;
+MFString114 := TMFString.CreateUndefined(X3DPrototype113, false, 'vertex');
+MFString114.Value := '\"../shaders/gl_flowers_plain.vs\"';
 { METHOD .AddMFString }
-X3DPrototype115.AddMFString([MFString116]);
-MFString117 := TMFString.CreateUndefined(X3DPrototype115, false, 'fragment');
-MFString117.Value := '\"../shaders/plain.fs\"';
+X3DPrototype113.AddMFString([MFString114]);
+MFString115 := TMFString.CreateUndefined(X3DPrototype113, false, 'fragment');
+MFString115.Value := '\"../shaders/plain.fs\"';
 { METHOD .AddMFString }
-X3DPrototype115.AddMFString([MFString117]);
+X3DPrototype113.AddMFString([MFString115]);
 { METHOD .AddX3DPrototype }
-Group111.AddX3DPrototype([X3DPrototype115]);
-X3DPrototype118 := TX3DPrototypeNode.Create;
-MFString119 := TMFString.CreateUndefined(X3DPrototype118, false, 'vertex');
-MFString119.Value := '\"../shaders/gl_flowers_plain.vs\"';
+Group109.AddX3DPrototype([X3DPrototype113]);
+X3DPrototype116 := TX3DPrototypeNode;
+MFString117 := TMFString.CreateUndefined(X3DPrototype116, false, 'vertex');
+MFString117.Value := '\"../shaders/gl_flowers_plain.vs\"';
 { METHOD .AddMFString }
-X3DPrototype118.AddMFString([MFString119]);
-MFString120 := TMFString.CreateUndefined(X3DPrototype118, false, 'fragment');
-MFString120.Value := '\"../shaders/plain.fs\"';
+X3DPrototype116.AddMFString([MFString117]);
+MFString118 := TMFString.CreateUndefined(X3DPrototype116, false, 'fragment');
+MFString118.Value := '\"../shaders/plain.fs\"';
 { METHOD .AddMFString }
-X3DPrototype118.AddMFString([MFString120]);
+X3DPrototype116.AddMFString([MFString118]);
 { METHOD .AddX3DPrototype }
-Group111.AddX3DPrototype([X3DPrototype118]);
+Group109.AddX3DPrototype([X3DPrototype116]);
 { METHOD .FdChildren.Add }
-Group14.FdChildren.Add(Group111);
-Group121 := TGroupNode.Create;
-X3DPrototype122 := TX3DPrototypeNode.Create;
-MFString123 := TMFString.CreateUndefined(X3DPrototype122, false, 'vertex');
-MFString123.Value := '\"../shaders/pc_flowers.vs\"';
+Group14.FdChildren.Add(Group109);
+Group119 := TGroupNode.Create;;
+X3DPrototype120 := TX3DPrototypeNode;
+MFString121 := TMFString.CreateUndefined(X3DPrototype120, false, 'vertex');
+MFString121.Value := '\"../shaders/pc_flowers.vs\"';
 { METHOD .AddMFString }
-X3DPrototype122.AddMFString([MFString123]);
-MFString124 := TMFString.CreateUndefined(X3DPrototype122, false, 'fragment');
-MFString124.Value := '\"../shaders/pc_flowers.fs\"';
+X3DPrototype120.AddMFString([MFString121]);
+MFString122 := TMFString.CreateUndefined(X3DPrototype120, false, 'fragment');
+MFString122.Value := '\"../shaders/pc_flowers.fs\"';
 { METHOD .AddMFString }
-X3DPrototype122.AddMFString([MFString124]);
+X3DPrototype120.AddMFString([MFString122]);
 { METHOD .AddX3DPrototype }
-Group121.AddX3DPrototype([X3DPrototype122]);
-X3DPrototype125 := TX3DPrototypeNode.Create;
-MFString126 := TMFString.CreateUndefined(X3DPrototype125, false, 'vertex');
-MFString126.Value := '\"../shaders/pc_flowers.vs\"';
+Group119.AddX3DPrototype([X3DPrototype120]);
+X3DPrototype123 := TX3DPrototypeNode;
+MFString124 := TMFString.CreateUndefined(X3DPrototype123, false, 'vertex');
+MFString124.Value := '\"../shaders/pc_flowers.vs\"';
 { METHOD .AddMFString }
-X3DPrototype125.AddMFString([MFString126]);
-MFString127 := TMFString.CreateUndefined(X3DPrototype125, false, 'fragment');
-MFString127.Value := '\"../shaders/pc_flowers.fs\"';
+X3DPrototype123.AddMFString([MFString124]);
+MFString125 := TMFString.CreateUndefined(X3DPrototype123, false, 'fragment');
+MFString125.Value := '\"../shaders/pc_flowers.fs\"';
 { METHOD .AddMFString }
-X3DPrototype125.AddMFString([MFString127]);
+X3DPrototype123.AddMFString([MFString125]);
 { METHOD .AddX3DPrototype }
-Group121.AddX3DPrototype([X3DPrototype125]);
-X3DPrototype128 := TX3DPrototypeNode.Create;
-MFString129 := TMFString.CreateUndefined(X3DPrototype128, false, 'vertex');
-MFString129.Value := '\"../shaders/pc_flowers.vs\"';
+Group119.AddX3DPrototype([X3DPrototype123]);
+X3DPrototype126 := TX3DPrototypeNode;
+MFString127 := TMFString.CreateUndefined(X3DPrototype126, false, 'vertex');
+MFString127.Value := '\"../shaders/pc_flowers.vs\"';
 { METHOD .AddMFString }
-X3DPrototype128.AddMFString([MFString129]);
-MFString130 := TMFString.CreateUndefined(X3DPrototype128, false, 'fragment');
-MFString130.Value := '\"../shaders/pc_flowers.fs\"';
+X3DPrototype126.AddMFString([MFString127]);
+MFString128 := TMFString.CreateUndefined(X3DPrototype126, false, 'fragment');
+MFString128.Value := '\"../shaders/pc_flowers.fs\"';
 { METHOD .AddMFString }
-X3DPrototype128.AddMFString([MFString130]);
+X3DPrototype126.AddMFString([MFString128]);
 { METHOD .AddX3DPrototype }
-Group121.AddX3DPrototype([X3DPrototype128]);
+Group119.AddX3DPrototype([X3DPrototype126]);
 { METHOD .FdChildren.Add }
-Group14.FdChildren.Add(Group121);
-Group131 := TGroupNode.Create;
-X3DPrototype132 := TX3DPrototypeNode.Create;
-MFString133 := TMFString.CreateUndefined(X3DPrototype132, false, 'vertex');
-MFString133.Value := '\"../shaders/castle_flowers_chromatic.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle_flowers_chromatic.vs\"';
+Group14.FdChildren.Add(Group119);
+Group129 := TGroupNode.Create;;
+X3DPrototype130 := TX3DPrototypeNode;
+MFString131 := TMFString.CreateUndefined(X3DPrototype130, false, 'vertex');
+MFString131.Value := '\"../shaders/castle_flowers_chromatic.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle_flowers_chromatic.vs\"';
 { METHOD .AddMFString }
-X3DPrototype132.AddMFString([MFString133]);
-MFString134 := TMFString.CreateUndefined(X3DPrototype132, false, 'fragment');
-MFString134.Value := '\"../shaders/castle.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.fs\"';
+X3DPrototype130.AddMFString([MFString131]);
+MFString132 := TMFString.CreateUndefined(X3DPrototype130, false, 'fragment');
+MFString132.Value := '\"../shaders/castle.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.fs\"';
 { METHOD .AddMFString }
-X3DPrototype132.AddMFString([MFString134]);
+X3DPrototype130.AddMFString([MFString132]);
 { METHOD .AddX3DPrototype }
-Group131.AddX3DPrototype([X3DPrototype132]);
-X3DPrototype135 := TX3DPrototypeNode.Create;
-MFString136 := TMFString.CreateUndefined(X3DPrototype135, false, 'vertex');
-MFString136.Value := '\"../shaders/castle_flowers_chromatic.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle_flowers_chromatic.vs\"';
+Group129.AddX3DPrototype([X3DPrototype130]);
+X3DPrototype133 := TX3DPrototypeNode;
+MFString134 := TMFString.CreateUndefined(X3DPrototype133, false, 'vertex');
+MFString134.Value := '\"../shaders/castle_flowers_chromatic.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle_flowers_chromatic.vs\"';
 { METHOD .AddMFString }
-X3DPrototype135.AddMFString([MFString136]);
-MFString137 := TMFString.CreateUndefined(X3DPrototype135, false, 'fragment');
-MFString137.Value := '\"../shaders/castle.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.fs\"';
+X3DPrototype133.AddMFString([MFString134]);
+MFString135 := TMFString.CreateUndefined(X3DPrototype133, false, 'fragment');
+MFString135.Value := '\"../shaders/castle.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.fs\"';
 { METHOD .AddMFString }
-X3DPrototype135.AddMFString([MFString137]);
+X3DPrototype133.AddMFString([MFString135]);
 { METHOD .AddX3DPrototype }
-Group131.AddX3DPrototype([X3DPrototype135]);
-X3DPrototype138 := TX3DPrototypeNode.Create;
-MFString139 := TMFString.CreateUndefined(X3DPrototype138, false, 'vertex');
-MFString139.Value := '\"../shaders/castle_flowers_chromatic.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle_flowers_chromatic.vs\"';
+Group129.AddX3DPrototype([X3DPrototype133]);
+X3DPrototype136 := TX3DPrototypeNode;
+MFString137 := TMFString.CreateUndefined(X3DPrototype136, false, 'vertex');
+MFString137.Value := '\"../shaders/castle_flowers_chromatic.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle_flowers_chromatic.vs\"';
 { METHOD .AddMFString }
-X3DPrototype138.AddMFString([MFString139]);
-MFString140 := TMFString.CreateUndefined(X3DPrototype138, false, 'fragment');
-MFString140.Value := '\"../shaders/castle.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.fs\"';
+X3DPrototype136.AddMFString([MFString137]);
+MFString138 := TMFString.CreateUndefined(X3DPrototype136, false, 'fragment');
+MFString138.Value := '\"../shaders/castle.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.fs\"';
 { METHOD .AddMFString }
-X3DPrototype138.AddMFString([MFString140]);
+X3DPrototype136.AddMFString([MFString138]);
 { METHOD .AddX3DPrototype }
-Group131.AddX3DPrototype([X3DPrototype138]);
+Group129.AddX3DPrototype([X3DPrototype136]);
 { METHOD .FdChildren.Add }
-Group14.FdChildren.Add(Group131);
+Group14.FdChildren.Add(Group129);
 { METHOD .AddGroup }
 X3D0.AddChildren([Group14]);
 end;

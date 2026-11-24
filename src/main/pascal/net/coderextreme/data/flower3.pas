@@ -2,7 +2,7 @@ unit flower3;
 
 interface
 
-uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
 
 function Createflower3: TX3DRootNode;
 
@@ -46,52 +46,55 @@ X3D0.Meta['identifier'] := 'https://coderextreme.net/X3DJSONLD/src/main/data/flo
 X3D0.Meta['description'] := 'a flower';
 { METHOD .Meta }
 { METHOD .Head }
-Group7 := TGroupNode.Create;
-NavigationInfo8 := TNavigationInfoNode.Create;
+Group7 := TGroupNode.Create;;
+NavigationInfo8 := TNavigationInfoNode.Create;;
 { METHOD .FdChildren.Add }
 Group7.FdChildren.Add(NavigationInfo8);
-DirectionalLight9 := TDirectionalLightNode.Create;
+DirectionalLight9 := TDirectionalLightNode.Create;;
 DirectionalLight9.Direction := Vector3(0,-0.8,-0.2);
 DirectionalLight9.Intensity := 0.5;
 { METHOD .FdChildren.Add }
 Group7.FdChildren.Add(DirectionalLight9);
-Background10 := TBackgroundNode.Create;
+Background10 := TBackgroundNode.Create;;
 Background10.SetSkyColor([Vector3(1,1,1)]);
 { METHOD .FdChildren.Add }
 Group7.FdChildren.Add(Background10);
-Viewpoint11 := TViewpointNode.Create;
+Viewpoint11 := TViewpointNode.Create;;
 Viewpoint11.Description := 'One mathematical orbital';
 Viewpoint11.Position := Vector3(0,0,50);
 { METHOD .FdChildren.Add }
 Group7.FdChildren.Add(Viewpoint11);
-Transform12 := TTransformNode.Create;
+Transform12 := TTransformNode.Create;;
 Transform12.Translation := Vector3(8,0,0);
-Shape13 := TShapeNode.Create;
-Appearance14 := TAppearanceNode.Create;
-Material15 := TMaterialNode.Create;
+Shape13 := TShapeNode.Create;;
+Appearance14 := TAppearanceNode.Create;;
+Material15 := TMaterialNode.Create;;
 Material15.DiffuseColor := Vector3(0,0.5,1);
 Material15.SpecularColor := Vector3(0,0.5,1);
 { METHOD .SetMaterial }
 Appearance14.Material := Material15;
-{ METHOD .Appearance }
-Shape13.Appearance := Appearance14;
-IndexedFaceSet16 := TIndexedFaceSetNode.Create;
-IndexedFaceSet16.Convex := False;
-Coordinate17 := TCoordinateNode.Create;
-{ METHOD .Coord }
-IndexedFaceSet16.Coord := Coordinate17;
-{ METHOD .Geometry }
-Shape13.Geometry := IndexedFaceSet16;
-{ METHOD .FdChildren.Add }
-Transform12.FdChildren.Add(Shape13);
-{ METHOD .FdChildren.Add }
-Group7.FdChildren.Add(Transform12);
-Script18 := TScriptNode.Create;
 end;
 
 procedure Initflower3Part1;
 begin
 
+{ METHOD .Appearance }
+{ METHOD.SET .Appearance }
+Shape13.Appearance := Appearance14;
+IndexedFaceSet16 := TIndexedFaceSetNode.Create;;
+IndexedFaceSet16.Convex := False;
+Coordinate17 := TCoordinateNode.Create;;
+{ METHOD .Coord }
+{ METHOD.SET .Coord }
+IndexedFaceSet16.Coord := Coordinate17;
+{ METHOD .Geometry }
+{ METHOD.SET .Geometry }
+Shape13.Geometry := IndexedFaceSet16;
+{ METHOD .FdChildren.Add }
+Transform12.FdChildren.Add(Shape13);
+{ METHOD .FdChildren.Add }
+Group7.FdChildren.Add(Transform12);
+Script18 := TScriptNode.Create;;
 SFFloat19 := TSFFloat.CreateUndefined(Script18, false, 'set_fraction');
 { METHOD .Fd.AddCustomField }
 Script18.AddCustomField(SFFloat19);
@@ -187,18 +190,18 @@ Script18.SetSourceCode('''ecmascript:\n"+
 "}''');
 { METHOD .FdChildren.Add }
 Group7.FdChildren.Add(Script18);
-TimeSensor22 := TTimeSensorNode.Create;
+TimeSensor22 := TTimeSensorNode.Create;;
 TimeSensor22.CycleInterval := 16;
 TimeSensor22.Loop := True;
 { METHOD .FdChildren.Add }
 Group7.FdChildren.Add(TimeSensor22);
 { Original "OrbitScript.coordIndexes TO Orbit.EventSet_coordIndex }
 { Sample OrbitScript.coordIndexes TO Orbit.EventSet_coordIndex}
-Group7.AddRoute(OrbitScript.[object Object], IndexedFaceSet16.EventSet_coordIndex);
+Group7.AddRoute(OrbitScript.undefined, IndexedFaceSet16.EventSet_coordIndex);
 { METHOD .AddX3DROUTE }
 { Original "OrbitScript.coordinates TO OrbitCoordinates.point }
 { Sample OrbitScript.coordinates TO OrbitCoordinates.point}
-Group7.AddRoute(OrbitScript.[object Object], Coordinate17.point);
+Group7.AddRoute(OrbitScript.undefined, Coordinate17.point);
 { METHOD .AddX3DROUTE }
 { Original "Clock.EventFraction_changed TO OrbitScript.EventSet_fraction }
 { Sample Clock.EventFraction_changed TO OrbitScript.EventSet_fraction}

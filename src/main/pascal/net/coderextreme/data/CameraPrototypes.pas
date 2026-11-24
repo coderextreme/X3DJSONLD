@@ -2,7 +2,7 @@ unit CameraPrototypes;
 
 interface
 
-uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
 
 function CreateCameraPrototypes: TX3DRootNode;
 
@@ -40,217 +40,140 @@ SFNode40: TSFNode;
 SFBool41: TSFBool;
 X3DPrototype42: TX3DPrototype;
 Viewpoint43: TViewpointNode;
-IS44: TIS;
-connect45: Tconnect;
-connect46: Tconnect;
-connect47: Tconnect;
-connect48: Tconnect;
-connect49: Tconnect;
-connect50: Tconnect;
-connect51: Tconnect;
-NavigationInfo52: TNavigationInfoNode;
-IS53: TIS;
-connect54: Tconnect;
-connect55: Tconnect;
-connect56: Tconnect;
-DirectionalLight57: TDirectionalLightNode;
-IS58: TIS;
-connect59: Tconnect;
-connect60: Tconnect;
-connect61: Tconnect;
-PositionInterpolator62: TPositionInterpolatorNode;
-IS63: TIS;
-connect64: Tconnect;
-OrientationInterpolator65: TOrientationInterpolatorNode;
-IS66: TIS;
-connect67: Tconnect;
-Script70: TScriptNode;
-SFString71: TSFString;
-SFVec3f72: TSFVec3f;
-SFRotation73: TSFRotation;
-SFFloat74: TSFFloat;
-SFBool75: TSFBool;
-SFFloat76: TSFFloat;
-SFFloat77: TSFFloat;
-SFFloat78: TSFFloat;
-MFNode79: TMFNode;
-SFColor80: TSFColor;
-SFFloat81: TSFFloat;
-SFVec3f82: TSFVec3f;
-SFFloat83: TSFFloat;
-SFFloat84: TSFFloat;
+NavigationInfo45: TNavigationInfoNode;
+DirectionalLight47: TDirectionalLightNode;
+PositionInterpolator49: TPositionInterpolatorNode;
+OrientationInterpolator51: TOrientationInterpolatorNode;
+Script55: TScriptNode;
+SFString56: TSFString;
+SFVec3f57: TSFVec3f;
+SFRotation58: TSFRotation;
+SFFloat59: TSFFloat;
+SFBool60: TSFBool;
+SFFloat61: TSFFloat;
+SFFloat62: TSFFloat;
+SFFloat63: TSFFloat;
+MFNode64: TMFNode;
+SFColor65: TSFColor;
+SFFloat66: TSFFloat;
+SFVec3f67: TSFVec3f;
+SFFloat68: TSFFloat;
+SFFloat69: TSFFloat;
+SFBool70: TSFBool;
+SFTime71: TSFTime;
+SFNode72: TSFNode;
+SFNode73: TSFNode;
+Viewpoint74: TViewpointNode;
+SFNode75: TSFNode;
+NavigationInfo76: TNavigationInfoNode;
+SFNode77: TSFNode;
+PositionInterpolator78: TPositionInterpolatorNode;
+SFNode79: TSFNode;
+OrientationInterpolator80: TOrientationInterpolatorNode;
+MFFloat81: TMFFloat;
+MFVec3f82: TMFVec3f;
+MFRotation83: TMFRotation;
+SFBool84: TSFBool;
 SFBool85: TSFBool;
-SFTime86: TSFTime;
-SFNode87: TSFNode;
-SFNode88: TSFNode;
-Viewpoint89: TViewpointNode;
-SFNode90: TSFNode;
-NavigationInfo91: TNavigationInfoNode;
-SFNode92: TSFNode;
-PositionInterpolator93: TPositionInterpolatorNode;
-SFNode94: TSFNode;
-OrientationInterpolator95: TOrientationInterpolatorNode;
-MFFloat96: TMFFloat;
-MFVec3f97: TMFVec3f;
-MFRotation98: TMFRotation;
-SFBool99: TSFBool;
-SFBool100: TSFBool;
-SFInt32101: TSFInt32;
-SFInt32102: TSFInt32;
-SFFloat103: TSFFloat;
-SFTime104: TSFTime;
-SFTime105: TSFTime;
-SFBool106: TSFBool;
-IS107: TIS;
-connect108: Tconnect;
-connect109: Tconnect;
-connect110: Tconnect;
-connect111: Tconnect;
-connect112: Tconnect;
-connect113: Tconnect;
-connect114: Tconnect;
-connect115: Tconnect;
-connect116: Tconnect;
-connect117: Tconnect;
-connect118: Tconnect;
-connect119: Tconnect;
-connect120: Tconnect;
-connect121: Tconnect;
-connect122: Tconnect;
-connect123: Tconnect;
-connect124: Tconnect;
-connect125: Tconnect;
-X3DPrototype131: TX3DPrototype;
-X3DInterfaceDeclaration132: TX3DInterfaceDeclaration;
-SFString133: TSFString;
-SFBool134: TSFBool;
-MFNode135: TMFNode;
-SFVec3f136: TSFVec3f;
-SFRotation137: TSFRotation;
+SFInt3286: TSFInt32;
+SFInt3287: TSFInt32;
+SFFloat88: TSFFloat;
+SFTime89: TSFTime;
+SFTime90: TSFTime;
+SFBool91: TSFBool;
+X3DPrototype98: TX3DPrototype;
+X3DInterfaceDeclaration99: TX3DInterfaceDeclaration;
+SFString100: TSFString;
+SFBool101: TSFBool;
+MFNode102: TMFNode;
+SFVec3f103: TSFVec3f;
+SFRotation104: TSFRotation;
+SFVec3f105: TSFVec3f;
+SFFloat106: TSFFloat;
+SFFloat107: TSFFloat;
+SFFloat108: TSFFloat;
+SFTime109: TSFTime;
+SFBool110: TSFBool;
+SFBool111: TSFBool;
+X3DPrototype112: TX3DPrototype;
+Script113: TScriptNode;
+SFString114: TSFString;
+SFBool115: TSFBool;
+MFNode116: TMFNode;
+SFVec3f117: TSFVec3f;
+SFRotation118: TSFRotation;
+SFVec3f119: TSFVec3f;
+SFFloat120: TSFFloat;
+SFFloat121: TSFFloat;
+SFFloat122: TSFFloat;
+SFTime123: TSFTime;
+SFBool124: TSFBool;
+SFBool125: TSFBool;
+MFFloat126: TMFFloat;
+MFVec3f127: TMFVec3f;
+MFRotation128: TMFRotation;
+X3DPrototype130: TX3DPrototype;
+X3DInterfaceDeclaration131: TX3DInterfaceDeclaration;
+SFString132: TSFString;
+SFBool133: TSFBool;
+SFFloat134: TSFFloat;
+SFVec3f135: TSFVec3f;
+SFRotation136: TSFRotation;
+SFBool137: TSFBool;
 SFVec3f138: TSFVec3f;
 SFFloat139: TSFFloat;
 SFFloat140: TSFFloat;
 SFFloat141: TSFFloat;
-SFTime142: TSFTime;
+SFBool142: TSFBool;
 SFBool143: TSFBool;
-SFBool144: TSFBool;
-X3DPrototype145: TX3DPrototype;
-Script146: TScriptNode;
-SFString147: TSFString;
-SFBool148: TSFBool;
-MFNode149: TMFNode;
-SFVec3f150: TSFVec3f;
-SFRotation151: TSFRotation;
+X3DPrototype144: TX3DPrototype;
+Script145: TScriptNode;
+SFString146: TSFString;
+SFBool147: TSFBool;
+SFFloat148: TSFFloat;
+SFVec3f149: TSFVec3f;
+SFRotation150: TSFRotation;
+SFBool151: TSFBool;
 SFVec3f152: TSFVec3f;
 SFFloat153: TSFFloat;
 SFFloat154: TSFFloat;
 SFFloat155: TSFFloat;
-SFTime156: TSFTime;
+SFBool156: TSFBool;
 SFBool157: TSFBool;
-SFBool158: TSFBool;
-MFFloat159: TMFFloat;
-MFVec3f160: TMFVec3f;
-MFRotation161: TMFRotation;
-IS162: TIS;
-connect163: Tconnect;
-connect164: Tconnect;
-connect165: Tconnect;
-connect166: Tconnect;
-connect167: Tconnect;
-connect168: Tconnect;
-connect169: Tconnect;
-connect170: Tconnect;
-connect171: Tconnect;
-connect172: Tconnect;
-connect173: Tconnect;
-connect174: Tconnect;
-X3DPrototype175: TX3DPrototype;
-X3DInterfaceDeclaration176: TX3DInterfaceDeclaration;
-SFString177: TSFString;
-SFBool178: TSFBool;
-SFFloat179: TSFFloat;
-SFVec3f180: TSFVec3f;
-SFRotation181: TSFRotation;
-SFBool182: TSFBool;
-SFVec3f183: TSFVec3f;
-SFFloat184: TSFFloat;
-SFFloat185: TSFFloat;
-SFFloat186: TSFFloat;
-SFBool187: TSFBool;
-SFBool188: TSFBool;
-X3DPrototype189: TX3DPrototype;
-Script190: TScriptNode;
-SFString191: TSFString;
-SFBool192: TSFBool;
-SFFloat193: TSFFloat;
-SFVec3f194: TSFVec3f;
-SFRotation195: TSFRotation;
-SFBool196: TSFBool;
-SFVec3f197: TSFVec3f;
-SFFloat198: TSFFloat;
-SFFloat199: TSFFloat;
-SFFloat200: TSFFloat;
-SFBool201: TSFBool;
-SFBool202: TSFBool;
-IS203: TIS;
-connect204: Tconnect;
-connect205: Tconnect;
-connect206: Tconnect;
-connect207: Tconnect;
-connect208: Tconnect;
-connect209: Tconnect;
-connect210: Tconnect;
-connect211: Tconnect;
-connect212: Tconnect;
-connect213: Tconnect;
-connect214: Tconnect;
-connect215: Tconnect;
-X3DPrototype216: TX3DPrototype;
-X3DInterfaceDeclaration217: TX3DInterfaceDeclaration;
-SFString218: TSFString;
-SFBool219: TSFBool;
-SFFloat220: TSFFloat;
-SFVec2f221: TSFVec2f;
-SFFloat222: TSFFloat;
-SFTime223: TSFTime;
-SFFloat224: TSFFloat;
-SFTime225: TSFTime;
-MFString226: TMFString;
-MFString227: TMFString;
-SFBool228: TSFBool;
-X3DPrototype229: TX3DPrototype;
-Script230: TScriptNode;
-SFString231: TSFString;
-SFBool232: TSFBool;
-SFFloat233: TSFFloat;
-SFVec2f234: TSFVec2f;
-SFFloat235: TSFFloat;
-SFTime236: TSFTime;
-SFFloat237: TSFFloat;
-SFTime238: TSFTime;
-MFString239: TMFString;
-MFString240: TMFString;
-SFBool241: TSFBool;
-IS242: TIS;
-connect243: Tconnect;
-connect244: Tconnect;
-connect245: Tconnect;
-connect246: Tconnect;
-connect247: Tconnect;
-connect248: Tconnect;
-connect249: Tconnect;
-connect250: Tconnect;
-connect251: Tconnect;
-connect252: Tconnect;
-connect253: Tconnect;
-Background254: TBackgroundNode;
-Anchor255: TAnchorNode;
-Transform256: TTransformNode;
-Shape257: TShapeNode;
-Text258: TTextNode;
-FontStyle259: TFontStyleNode;
-Appearance260: TAppearanceNode;
-Material261: TMaterialNode;
+X3DPrototype159: TX3DPrototype;
+X3DInterfaceDeclaration160: TX3DInterfaceDeclaration;
+SFString161: TSFString;
+SFBool162: TSFBool;
+SFFloat163: TSFFloat;
+SFVec2f164: TSFVec2f;
+SFFloat165: TSFFloat;
+SFTime166: TSFTime;
+SFFloat167: TSFFloat;
+SFTime168: TSFTime;
+MFString169: TMFString;
+MFString170: TMFString;
+SFBool171: TSFBool;
+X3DPrototype172: TX3DPrototype;
+Script173: TScriptNode;
+SFString174: TSFString;
+SFBool175: TSFBool;
+SFFloat176: TSFFloat;
+SFVec2f177: TSFVec2f;
+SFFloat178: TSFFloat;
+SFTime179: TSFTime;
+SFFloat180: TSFFloat;
+SFTime181: TSFTime;
+MFString182: TMFString;
+MFString183: TMFString;
+SFBool184: TSFBool;
+Background186: TBackgroundNode;
+Anchor187: TAnchorNode;
+Transform188: TTransformNode;
+Shape189: TShapeNode;
+Text190: TTextNode;
+FontStyle191: TFontStyleNode;
+Appearance192: TAppearanceNode;
+Material193: TMaterialNode;
 
 procedure InitCameraPrototypesPart0;
 begin
@@ -287,11 +210,11 @@ X3D0.Meta['generator'] := 'X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit';
 X3D0.Meta['license'] := '../license.html';
 { METHOD .Meta }
 { METHOD .Head }
-Group16 := TGroupNode.Create;
+Group16 := TGroupNode.Create;;
 { =============== Camera ============== }
-X3DPrototype17 := TX3DPrototype.Create;
+X3DPrototype17 := TX3DPrototype.Create;;
 X3DPrototype17.Appinfo := 'Camera node provides direct control of scene view to enable cinematic camera animation shot by shot and move by move along with still digital-photography settings for offline rendering of camera images.';
-X3DInterfaceDeclaration18 := TX3DInterfaceDeclaration.Create(nil);
+X3DInterfaceDeclaration18 := TX3DInterfaceDeclaration.Create(nil);;
 { Viewpoint-related fields, NavigationInfo-related fields and Camera-unique fields }
 SFString19 := TSFString.CreateUndefined(X3DInterfaceDeclaration18, false, 'description');
 SFString19.Appinfo := 'Text description to be displayed for this Camera';
@@ -312,15 +235,15 @@ SFFloat22.Appinfo := 'pi/4';
 SFFloat22.Value := '0.7854';
 { METHOD .AddSFFloat }
 X3DInterfaceDeclaration18.AddSFFloat([SFFloat22]);
-SFFloat23 := TSFFloat.CreateUndefined(X3DInterfaceDeclaration18, false, 'set_fraction');
-SFFloat23.Appinfo := 'input fraction drives interpolators';
-{ METHOD .AddSFFloat }
-X3DInterfaceDeclaration18.AddSFFloat([SFFloat23]);
 end;
 
 procedure InitCameraPrototypesPart1;
 begin
 
+SFFloat23 := TSFFloat.CreateUndefined(X3DInterfaceDeclaration18, false, 'set_fraction');
+SFFloat23.Appinfo := 'input fraction drives interpolators';
+{ METHOD .AddSFFloat }
+X3DInterfaceDeclaration18.AddSFFloat([SFFloat23]);
 SFBool24 := TSFBool.CreateUndefined(X3DInterfaceDeclaration18, false, 'set_bind');
 SFBool24.Appinfo := 'input event binds or unbinds this Camera';
 { METHOD .AddSFBool }
@@ -369,15 +292,15 @@ SFColor33.Value := '1 1 1';
 { METHOD .AddSFColor }
 X3DInterfaceDeclaration18.AddSFColor([SFColor33]);
 SFFloat34 := TSFFloat.CreateUndefined(X3DInterfaceDeclaration18, false, 'filterTransparency');
-SFFloat34.Appinfo := 'Camera filter transparency that modifies virtual lens capture';
-SFFloat34.Value := '1';
-{ METHOD .AddSFFloat }
-X3DInterfaceDeclaration18.AddSFFloat([SFFloat34]);
 end;
 
 procedure InitCameraPrototypesPart2;
 begin
 
+SFFloat34.Appinfo := 'Camera filter transparency that modifies virtual lens capture';
+SFFloat34.Value := '1';
+{ METHOD .AddSFFloat }
+X3DInterfaceDeclaration18.AddSFFloat([SFFloat34]);
 SFVec3f35 := TSFVec3f.CreateUndefined(X3DInterfaceDeclaration18, false, 'upVector');
 SFVec3f35.Appinfo := 'upVector changes modify camera orientation (and possibly vice versa)';
 SFVec3f35.Value := '0 1 0';
@@ -413,1048 +336,668 @@ SFBool41.Value := 'false';
 X3DInterfaceDeclaration18.AddSFBool([SFBool41]);
 { METHOD .AddX3DInterfaceDeclaration }
 X3DPrototype17.AddX3DInterfaceDeclaration([X3DInterfaceDeclaration18]);
-X3DPrototype42 := TX3DPrototype.Create;
-Viewpoint43 := TViewpointNode.Create;
-IS44 := TIS.Create;
-connect45 := Tconnect.Create;
-connect45.NodeField := 'description';
-connect45.ProtoField := 'description';
-{ METHOD .Connect }
-IS44.Connect := connect45;
-connect46 := Tconnect.Create;
-connect46.NodeField := 'position';
-connect46.ProtoField := 'position';
-{ METHOD .Connect }
-IS44.Connect := connect46;
-connect47 := Tconnect.Create;
-connect47.NodeField := 'orientation';
-connect47.ProtoField := 'orientation';
+X3DPrototype42 := TX3DPrototype.Create;;
+Viewpoint43 := TViewpointNode.Create;;
+{ METHOD .AddViewpoint }
+X3DPrototype42.AddViewpoint([Viewpoint43]);
+{ NavInfo EXAMINE used since some browsers (InstantReality) try to lock view to vertical when flying to avoid disorientation }
+NavigationInfo45 := TNavigationInfoNode.Create;;
+NavigationInfo45.SetType(['EXAMINE','FLY','ANY']);
+{ METHOD .AddNavigationInfo }
+X3DPrototype42.AddNavigationInfo([NavigationInfo45]);
+{ this DirectionalLight replaces NavigationInfo headlight in order to add color capability }
+DirectionalLight47 := TDirectionalLightNode.Create;;
 end;
 
 procedure InitCameraPrototypesPart3;
 begin
 
-{ METHOD .Connect }
-IS44.Connect := connect47;
-connect48 := Tconnect.Create;
-connect48.NodeField := 'fieldOfView';
-connect48.ProtoField := 'fieldOfView';
-{ METHOD .Connect }
-IS44.Connect := connect48;
-connect49 := Tconnect.Create;
-connect49.NodeField := 'set_bind';
-connect49.ProtoField := 'set_bind';
-{ METHOD .Connect }
-IS44.Connect := connect49;
-connect50 := Tconnect.Create;
-connect50.NodeField := 'bindTime';
-connect50.ProtoField := 'bindTime';
-{ METHOD .Connect }
-IS44.Connect := connect50;
-connect51 := Tconnect.Create;
-connect51.NodeField := 'isBound';
-connect51.ProtoField := 'isBound';
-{ METHOD .Connect }
-IS44.Connect := connect51;
-{ METHOD .IS }
-Viewpoint43.IS := IS44;
-{ METHOD .AddViewpoint }
-X3DPrototype42.AddViewpoint([Viewpoint43]);
-{ NavInfo EXAMINE used since some browsers (InstantReality) try to lock view to vertical when flying to avoid disorientation }
-NavigationInfo52 := TNavigationInfoNode.Create;
-NavigationInfo52.SetType(['EXAMINE','FLY','ANY']);
-IS53 := TIS.Create;
-connect54 := Tconnect.Create;
-connect54.NodeField := 'set_bind';
-connect54.ProtoField := 'set_bind';
-{ METHOD .Connect }
-IS53.Connect := connect54;
-connect55 := Tconnect.Create;
-connect55.NodeField := 'headlight';
-connect55.ProtoField := 'headlight';
-{ METHOD .Connect }
-IS53.Connect := connect55;
-connect56 := Tconnect.Create;
-connect56.NodeField := 'visibilityLimit';
-connect56.ProtoField := 'farClipPlane';
-{ METHOD .Connect }
-IS53.Connect := connect56;
-{ No need to bind outputs bindTime, isBound from NavigationInfo since Viewpoint outputs will suffice. TODO inform BitManagement that bindTime field is missing. }
-{ METHOD .IS }
-NavigationInfo52.IS := IS53;
-{ METHOD .AddNavigationInfo }
-X3DPrototype42.AddNavigationInfo([NavigationInfo52]);
-{ this DirectionalLight replaces NavigationInfo headlight in order to add color capability }
-DirectionalLight57 := TDirectionalLightNode.Create;
-DirectionalLight57.Global := True;
+DirectionalLight47.Global := True;
 { TODO confirm other default field values match NavigationInfo spec }
-IS58 := TIS.Create;
-connect59 := Tconnect.Create;
+{ METHOD .AddDirectionalLight }
+X3DPrototype42.AddDirectionalLight([DirectionalLight47]);
+PositionInterpolator49 := TPositionInterpolatorNode.Create;;
+PositionInterpolator49.SetKey([0,1]);
+PositionInterpolator49.SetKeyValue([Vector3(0,0,0),Vector3(0,0,0)]);
+{ METHOD .AddPositionInterpolator }
+X3DPrototype42.AddPositionInterpolator([PositionInterpolator49]);
+OrientationInterpolator51 := TOrientationInterpolatorNode.Create;;
+OrientationInterpolator51.SetKey([0,1]);
+OrientationInterpolator51.SetKeyValue([Vector4(0,1,0,0),Vector4(0,1,0,0)]);
+{ METHOD .AddOrientationInterpolator }
+X3DPrototype42.AddOrientationInterpolator([OrientationInterpolator51]);
+{ Original "CameraPositionInterpolator.EventValue_changed TO CameraViewpoint.position }
+{ Sample CameraPositionInterpolator.EventValue_changed TO CameraViewpoint.position}
+X3DPrototype42.AddRoute(PositionInterpolator49.EventValue_changed, Viewpoint43.position);
+{ METHOD .AddX3DROUTE }
+{ Original "CameraOrientationInterpolator.EventValue_changed TO CameraViewpoint.orientation }
+{ Sample CameraOrientationInterpolator.EventValue_changed TO CameraViewpoint.orientation}
+X3DPrototype42.AddRoute(OrientationInterpolator51.EventValue_changed, Viewpoint43.orientation);
+{ METHOD .AddX3DROUTE }
+Script55 := TScriptNode.Create;;
+Script55.DirectOutput := True;
+Script55.MustEvaluate := True;
+{ binding is controlled externally, all camera operations proceed the same regardless of whether bound or not }
+SFString56 := TSFString.CreateUndefined(Script55, false, 'description');
+SFString56.Appinfo := 'Text description to be displayed for this Camera';
+{ METHOD .Fd.AddCustomField }
+Script55.AddCustomField(SFString56);
+SFVec3f57 := TSFVec3f.CreateUndefined(Script55, false, 'position');
+SFVec3f57.Appinfo := 'Camera position in local transformation frame';
+{ METHOD .Fd.AddCustomField }
+Script55.AddCustomField(SFVec3f57);
+SFRotation58 := TSFRotation.CreateUndefined(Script55, false, 'orientation');
+SFRotation58.Appinfo := 'Camera rotation in local transformation frame';
+{ METHOD .Fd.AddCustomField }
+Script55.AddCustomField(SFRotation58);
+SFFloat59 := TSFFloat.CreateUndefined(Script55, false, 'set_fraction');
+SFFloat59.Appinfo := 'input fraction drives interpolators';
+{ METHOD .Fd.AddCustomField }
+Script55.AddCustomField(SFFloat59);
+SFBool60 := TSFBool.CreateUndefined(Script55, false, 'set_bind');
+SFBool60.Appinfo := 'input event binds or unbinds this Camera';
+{ METHOD .Fd.AddCustomField }
+Script55.AddCustomField(SFBool60);
+SFFloat61 := TSFFloat.CreateUndefined(Script55, false, 'fieldOfView');
+SFFloat61.Appinfo := 'pi/4';
+{ METHOD .Fd.AddCustomField }
+Script55.AddCustomField(SFFloat61);
+SFFloat62 := TSFFloat.CreateUndefined(Script55, false, 'nearClipPlane');
+SFFloat62.Appinfo := 'Vector distance to near clipping plane';
+{ METHOD .Fd.AddCustomField }
+Script55.AddCustomField(SFFloat62);
+SFFloat63 := TSFFloat.CreateUndefined(Script55, false, 'farClipPlane');
 end;
 
 procedure InitCameraPrototypesPart4;
 begin
 
-connect59.NodeField := 'on';
-connect59.ProtoField := 'headlight';
-{ METHOD .Connect }
-IS58.Connect := connect59;
-connect60 := Tconnect.Create;
-connect60.NodeField := 'color';
-connect60.ProtoField := 'headlightColor';
-{ METHOD .Connect }
-IS58.Connect := connect60;
-connect61 := Tconnect.Create;
-connect61.NodeField := 'intensity';
-connect61.ProtoField := 'headlightIntensity';
-{ METHOD .Connect }
-IS58.Connect := connect61;
-{ METHOD .IS }
-DirectionalLight57.IS := IS58;
-{ METHOD .AddDirectionalLight }
-X3DPrototype42.AddDirectionalLight([DirectionalLight57]);
-PositionInterpolator62 := TPositionInterpolatorNode.Create;
-PositionInterpolator62.SetKey([0,1]);
-PositionInterpolator62.SetKeyValue([Vector3(0,0,0),Vector3(0,0,0)]);
-IS63 := TIS.Create;
-connect64 := Tconnect.Create;
-connect64.NodeField := 'set_fraction';
-connect64.ProtoField := 'set_fraction';
-{ METHOD .Connect }
-IS63.Connect := connect64;
-{ METHOD .IS }
-PositionInterpolator62.IS := IS63;
+SFFloat63.Appinfo := 'Vector distance to far clipping plane';
+{ METHOD .Fd.AddCustomField }
+Script55.AddCustomField(SFFloat63);
+MFNode64 := TMFNode.CreateUndefined(Script55, false, 'shots');
+MFNode64.Appinfo := 'Array of CameraShot nodes which in turn contain CameraMovement nodes';
+{ initialization nodes (if any) go here }
+{ METHOD .Fd.AddCustomField }
+Script55.AddCustomField(MFNode64);
+SFColor65 := TSFColor.CreateUndefined(Script55, false, 'filterColor');
+SFColor65.Appinfo := 'Camera filter color that modifies virtual lens capture';
+{ METHOD .Fd.AddCustomField }
+Script55.AddCustomField(SFColor65);
+SFFloat66 := TSFFloat.CreateUndefined(Script55, false, 'filterTransparency');
+SFFloat66.Appinfo := 'Camera filter transparency that modifies virtual lens capture';
+{ METHOD .Fd.AddCustomField }
+Script55.AddCustomField(SFFloat66);
+SFVec3f67 := TSFVec3f.CreateUndefined(Script55, false, 'upVector');
+SFVec3f67.Appinfo := 'upVector changes modify camera orientation (and possibly vice versa)';
+{ METHOD .Fd.AddCustomField }
+Script55.AddCustomField(SFVec3f67);
+SFFloat68 := TSFFloat.CreateUndefined(Script55, false, 'fStop');
+SFFloat68.Appinfo := 'Focal length divided effective aperture diameter indicating width of focal plane';
+{ METHOD .Fd.AddCustomField }
+Script55.AddCustomField(SFFloat68);
+SFFloat69 := TSFFloat.CreateUndefined(Script55, false, 'focusDistance');
+SFFloat69.Appinfo := 'Distance to focal plane of sharpest focus';
+{ METHOD .Fd.AddCustomField }
+Script55.AddCustomField(SFFloat69);
+SFBool70 := TSFBool.CreateUndefined(Script55, false, 'isActive');
+SFBool70.Appinfo := 'Mark start/stop with true/false output respectively useful to trigger external animations';
+{ METHOD .Fd.AddCustomField }
+Script55.AddCustomField(SFBool70);
+SFTime71 := TSFTime.CreateUndefined(Script55, false, 'totalDuration');
+SFTime71.Appinfo := 'Total duration of contained enabled CameraShot (and thus CameraMovement) move durations';
+{ METHOD .Fd.AddCustomField }
+Script55.AddCustomField(SFTime71);
+SFNode72 := TSFNode.CreateUndefined(Script55, false, 'offlineRender');
+SFNode72.Appinfo := 'OfflineRender node';
+{ initialization node (if any) goes here }
+{ METHOD .Fd.AddCustomField }
+Script55.AddCustomField(SFNode72);
+SFNode73 := TSFNode.CreateUndefined(Script55, false, 'ViewpointNode');
+SFNode73.Appinfo := 'node reference to permit getting setting fields from within Script';
+{ METHOD .AddViewpoint }
+SFNode73.AddViewpoint([Viewpoint43]);
+{ METHOD .Fd.AddCustomField }
+Script55.AddCustomField(SFNode73);
+SFNode75 := TSFNode.CreateUndefined(Script55, false, 'NavInfoNode');
+SFNode75.Appinfo := 'node reference to permit getting setting fields from within Script';
+{ METHOD .AddNavigationInfo }
+SFNode75.AddNavigationInfo([NavigationInfo45]);
+{ METHOD .Fd.AddCustomField }
+Script55.AddCustomField(SFNode75);
+SFNode77 := TSFNode.CreateUndefined(Script55, false, 'CameraPI');
+SFNode77.Appinfo := 'node reference to permit getting setting fields from within Script';
 { METHOD .AddPositionInterpolator }
-X3DPrototype42.AddPositionInterpolator([PositionInterpolator62]);
-OrientationInterpolator65 := TOrientationInterpolatorNode.Create;
-OrientationInterpolator65.SetKey([0,1]);
-OrientationInterpolator65.SetKeyValue([Vector4(0,1,0,0),Vector4(0,1,0,0)]);
-IS66 := TIS.Create;
-connect67 := Tconnect.Create;
-connect67.NodeField := 'set_fraction';
-connect67.ProtoField := 'set_fraction';
-{ METHOD .Connect }
-IS66.Connect := connect67;
-{ METHOD .IS }
-OrientationInterpolator65.IS := IS66;
-{ METHOD .AddOrientationInterpolator }
-X3DPrototype42.AddOrientationInterpolator([OrientationInterpolator65]);
-{ Original "CameraPositionInterpolator.EventValue_changed TO CameraViewpoint.position }
-{ Sample CameraPositionInterpolator.EventValue_changed TO CameraViewpoint.position}
-X3DPrototype42.AddRoute(PositionInterpolator62.EventValue_changed, Viewpoint43.position);
-{ METHOD .AddX3DROUTE }
-{ Original "CameraOrientationInterpolator.EventValue_changed TO CameraViewpoint.orientation }
-{ Sample CameraOrientationInterpolator.EventValue_changed TO CameraViewpoint.orientation}
-X3DPrototype42.AddRoute(OrientationInterpolator65.EventValue_changed, Viewpoint43.orientation);
-{ METHOD .AddX3DROUTE }
-Script70 := TScriptNode.Create;
-Script70.DirectOutput := True;
-Script70.MustEvaluate := True;
-{ binding is controlled externally, all camera operations proceed the same regardless of whether bound or not }
-SFString71 := TSFString.CreateUndefined(Script70, false, 'description');
-SFString71.Appinfo := 'Text description to be displayed for this Camera';
+SFNode77.AddPositionInterpolator([PositionInterpolator49]);
 end;
 
 procedure InitCameraPrototypesPart5;
 begin
 
 { METHOD .Fd.AddCustomField }
-Script70.AddCustomField(SFString71);
-SFVec3f72 := TSFVec3f.CreateUndefined(Script70, false, 'position');
-SFVec3f72.Appinfo := 'Camera position in local transformation frame';
+Script55.AddCustomField(SFNode77);
+SFNode79 := TSFNode.CreateUndefined(Script55, false, 'CameraOI');
+SFNode79.Appinfo := 'node reference to permit getting setting fields from within Script';
+{ METHOD .AddOrientationInterpolator }
+SFNode79.AddOrientationInterpolator([OrientationInterpolator51]);
 { METHOD .Fd.AddCustomField }
-Script70.AddCustomField(SFVec3f72);
-SFRotation73 := TSFRotation.CreateUndefined(Script70, false, 'orientation');
-SFRotation73.Appinfo := 'Camera rotation in local transformation frame';
+Script55.AddCustomField(SFNode79);
+MFFloat81 := TMFFloat.CreateUndefined(Script55, false, 'key');
+MFFloat81.Appinfo := 'key array for interpolators';
 { METHOD .Fd.AddCustomField }
-Script70.AddCustomField(SFRotation73);
-SFFloat74 := TSFFloat.CreateUndefined(Script70, false, 'set_fraction');
-SFFloat74.Appinfo := 'input fraction drives interpolators';
+Script55.AddCustomField(MFFloat81);
+MFVec3f82 := TMFVec3f.CreateUndefined(Script55, false, 'keyValuePosition');
+MFVec3f82.Appinfo := 'keyValue array for PositionInterpolator';
 { METHOD .Fd.AddCustomField }
-Script70.AddCustomField(SFFloat74);
-SFBool75 := TSFBool.CreateUndefined(Script70, false, 'set_bind');
-SFBool75.Appinfo := 'input event binds or unbinds this Camera';
+Script55.AddCustomField(MFVec3f82);
+MFRotation83 := TMFRotation.CreateUndefined(Script55, false, 'keyValueOrientation');
+MFRotation83.Appinfo := 'keyValue array for OrientationInterpolator';
 { METHOD .Fd.AddCustomField }
-Script70.AddCustomField(SFBool75);
-SFFloat76 := TSFFloat.CreateUndefined(Script70, false, 'fieldOfView');
-SFFloat76.Appinfo := 'pi/4';
+Script55.AddCustomField(MFRotation83);
+SFBool84 := TSFBool.CreateUndefined(Script55, false, 'animated');
+SFBool84.Appinfo := 'whether internal CameraShot and CameraMove nodes are tracking or changed via ROUTE events';
+SFBool84.Value := 'false';
 { METHOD .Fd.AddCustomField }
-Script70.AddCustomField(SFFloat76);
-SFFloat77 := TSFFloat.CreateUndefined(Script70, false, 'nearClipPlane');
-SFFloat77.Appinfo := 'Vector distance to near clipping plane';
+Script55.AddCustomField(SFBool84);
+SFBool85 := TSFBool.CreateUndefined(Script55, false, 'initialized');
+SFBool85.Appinfo := 'perform checkShots() function once immediately after initialization';
+SFBool85.Value := 'false';
 { METHOD .Fd.AddCustomField }
-Script70.AddCustomField(SFFloat77);
-SFFloat78 := TSFFloat.CreateUndefined(Script70, false, 'farClipPlane');
-SFFloat78.Appinfo := 'Vector distance to far clipping plane';
+Script55.AddCustomField(SFBool85);
+SFInt3286 := TSFInt32.CreateUndefined(Script55, false, 'shotCount');
+SFInt3286.Appinfo := 'how many CameraShot nodes are contained in shots array';
+SFInt3286.Value := '0';
 { METHOD .Fd.AddCustomField }
-Script70.AddCustomField(SFFloat78);
-MFNode79 := TMFNode.CreateUndefined(Script70, false, 'shots');
-MFNode79.Appinfo := 'Array of CameraShot nodes which in turn contain CameraMovement nodes';
-{ initialization nodes (if any) go here }
+Script55.AddCustomField(SFInt3286);
+SFInt3287 := TSFInt32.CreateUndefined(Script55, false, 'movesCount');
+SFInt3287.Appinfo := 'how many CameraMove nodes are contained in moves array';
+SFInt3287.Value := '0';
 { METHOD .Fd.AddCustomField }
-Script70.AddCustomField(MFNode79);
-SFColor80 := TSFColor.CreateUndefined(Script70, false, 'filterColor');
-SFColor80.Appinfo := 'Camera filter color that modifies virtual lens capture';
+Script55.AddCustomField(SFInt3287);
+SFFloat88 := TSFFloat.CreateUndefined(Script55, false, 'frameCount');
+SFFloat88.Appinfo := 'how many frames were created in current loop';
+SFFloat88.Value := '0';
 { METHOD .Fd.AddCustomField }
-Script70.AddCustomField(SFColor80);
-SFFloat81 := TSFFloat.CreateUndefined(Script70, false, 'filterTransparency');
-SFFloat81.Appinfo := 'Camera filter transparency that modifies virtual lens capture';
+Script55.AddCustomField(SFFloat88);
+SFTime89 := TSFTime.CreateUndefined(Script55, false, 'startTime');
+SFTime89.Appinfo := 'holding variable';
+SFTime89.Value := '0';
 { METHOD .Fd.AddCustomField }
-Script70.AddCustomField(SFFloat81);
-SFVec3f82 := TSFVec3f.CreateUndefined(Script70, false, 'upVector');
-SFVec3f82.Appinfo := 'upVector changes modify camera orientation (and possibly vice versa)';
-{ METHOD .Fd.AddCustomField }
-Script70.AddCustomField(SFVec3f82);
-SFFloat83 := TSFFloat.CreateUndefined(Script70, false, 'fStop');
-SFFloat83.Appinfo := 'Focal length divided effective aperture diameter indicating width of focal plane';
-{ METHOD .Fd.AddCustomField }
-Script70.AddCustomField(SFFloat83);
-SFFloat84 := TSFFloat.CreateUndefined(Script70, false, 'focusDistance');
-SFFloat84.Appinfo := 'Distance to focal plane of sharpest focus';
-{ METHOD .Fd.AddCustomField }
-Script70.AddCustomField(SFFloat84);
+Script55.AddCustomField(SFTime89);
+SFTime90 := TSFTime.CreateUndefined(Script55, false, 'priorTraceTime');
+SFTime90.Appinfo := 'holding variable';
 end;
 
 procedure InitCameraPrototypesPart6;
 begin
 
-SFBool85 := TSFBool.CreateUndefined(Script70, false, 'isActive');
-SFBool85.Appinfo := 'Mark start/stop with true/false output respectively useful to trigger external animations';
+SFTime90.Value := '0';
 { METHOD .Fd.AddCustomField }
-Script70.AddCustomField(SFBool85);
-SFTime86 := TSFTime.CreateUndefined(Script70, false, 'totalDuration');
-SFTime86.Appinfo := 'Total duration of contained enabled CameraShot (and thus CameraMovement) move durations';
+Script55.AddCustomField(SFTime90);
+SFBool91 := TSFBool.CreateUndefined(Script55, false, 'traceEnabled');
+SFBool91.Appinfo := 'enable console output to trace script computations and prototype progress';
 { METHOD .Fd.AddCustomField }
-Script70.AddCustomField(SFTime86);
-SFNode87 := TSFNode.CreateUndefined(Script70, false, 'offlineRender');
-SFNode87.Appinfo := 'OfflineRender node';
-{ initialization node (if any) goes here }
-{ METHOD .Fd.AddCustomField }
-Script70.AddCustomField(SFNode87);
-SFNode88 := TSFNode.CreateUndefined(Script70, false, 'ViewpointNode');
-SFNode88.Appinfo := 'node reference to permit getting setting fields from within Script';
-{ METHOD .AddViewpoint }
-SFNode88.AddViewpoint([Viewpoint43]);
-{ METHOD .Fd.AddCustomField }
-Script70.AddCustomField(SFNode88);
-SFNode90 := TSFNode.CreateUndefined(Script70, false, 'NavInfoNode');
-SFNode90.Appinfo := 'node reference to permit getting setting fields from within Script';
-{ METHOD .AddNavigationInfo }
-SFNode90.AddNavigationInfo([NavigationInfo52]);
-{ METHOD .Fd.AddCustomField }
-Script70.AddCustomField(SFNode90);
-SFNode92 := TSFNode.CreateUndefined(Script70, false, 'CameraPI');
-SFNode92.Appinfo := 'node reference to permit getting setting fields from within Script';
-{ METHOD .AddPositionInterpolator }
-SFNode92.AddPositionInterpolator([PositionInterpolator62]);
-{ METHOD .Fd.AddCustomField }
-Script70.AddCustomField(SFNode92);
-SFNode94 := TSFNode.CreateUndefined(Script70, false, 'CameraOI');
-SFNode94.Appinfo := 'node reference to permit getting setting fields from within Script';
-{ METHOD .AddOrientationInterpolator }
-SFNode94.AddOrientationInterpolator([OrientationInterpolator65]);
-{ METHOD .Fd.AddCustomField }
-Script70.AddCustomField(SFNode94);
-MFFloat96 := TMFFloat.CreateUndefined(Script70, false, 'key');
-MFFloat96.Appinfo := 'key array for interpolators';
-{ METHOD .Fd.AddCustomField }
-Script70.AddCustomField(MFFloat96);
-MFVec3f97 := TMFVec3f.CreateUndefined(Script70, false, 'keyValuePosition');
-MFVec3f97.Appinfo := 'keyValue array for PositionInterpolator';
-{ METHOD .Fd.AddCustomField }
-Script70.AddCustomField(MFVec3f97);
-MFRotation98 := TMFRotation.CreateUndefined(Script70, false, 'keyValueOrientation');
-MFRotation98.Appinfo := 'keyValue array for OrientationInterpolator';
-{ METHOD .Fd.AddCustomField }
-Script70.AddCustomField(MFRotation98);
-SFBool99 := TSFBool.CreateUndefined(Script70, false, 'animated');
-SFBool99.Appinfo := 'whether internal CameraShot and CameraMove nodes are tracking or changed via ROUTE events';
-SFBool99.Value := 'false';
-{ METHOD .Fd.AddCustomField }
-Script70.AddCustomField(SFBool99);
-SFBool100 := TSFBool.CreateUndefined(Script70, false, 'initialized');
-SFBool100.Appinfo := 'perform checkShots() function once immediately after initialization';
-end;
+Script55.AddCustomField(SFBool91);
 
-procedure InitCameraPrototypesPart7;
-begin
-
-SFBool100.Value := 'false';
-{ METHOD .Fd.AddCustomField }
-Script70.AddCustomField(SFBool100);
-SFInt32101 := TSFInt32.CreateUndefined(Script70, false, 'shotCount');
-SFInt32101.Appinfo := 'how many CameraShot nodes are contained in shots array';
-SFInt32101.Value := '0';
-{ METHOD .Fd.AddCustomField }
-Script70.AddCustomField(SFInt32101);
-SFInt32102 := TSFInt32.CreateUndefined(Script70, false, 'movesCount');
-SFInt32102.Appinfo := 'how many CameraMove nodes are contained in moves array';
-SFInt32102.Value := '0';
-{ METHOD .Fd.AddCustomField }
-Script70.AddCustomField(SFInt32102);
-SFFloat103 := TSFFloat.CreateUndefined(Script70, false, 'frameCount');
-SFFloat103.Appinfo := 'how many frames were created in current loop';
-SFFloat103.Value := '0';
-{ METHOD .Fd.AddCustomField }
-Script70.AddCustomField(SFFloat103);
-SFTime104 := TSFTime.CreateUndefined(Script70, false, 'startTime');
-SFTime104.Appinfo := 'holding variable';
-SFTime104.Value := '0';
-{ METHOD .Fd.AddCustomField }
-Script70.AddCustomField(SFTime104);
-SFTime105 := TSFTime.CreateUndefined(Script70, false, 'priorTraceTime');
-SFTime105.Appinfo := 'holding variable';
-SFTime105.Value := '0';
-{ METHOD .Fd.AddCustomField }
-Script70.AddCustomField(SFTime105);
-SFBool106 := TSFBool.CreateUndefined(Script70, false, 'traceEnabled');
-SFBool106.Appinfo := 'enable console output to trace script computations and prototype progress';
-{ METHOD .Fd.AddCustomField }
-Script70.AddCustomField(SFBool106);
-IS107 := TIS.Create;
-connect108 := Tconnect.Create;
-connect108.NodeField := 'description';
-connect108.ProtoField := 'description';
-{ METHOD .Connect }
-IS107.Connect := connect108;
-connect109 := Tconnect.Create;
-connect109.NodeField := 'position';
-connect109.ProtoField := 'position';
-{ METHOD .Connect }
-IS107.Connect := connect109;
-connect110 := Tconnect.Create;
-connect110.NodeField := 'orientation';
-connect110.ProtoField := 'orientation';
-{ METHOD .Connect }
-IS107.Connect := connect110;
-connect111 := Tconnect.Create;
-connect111.NodeField := 'set_fraction';
-end;
-
-procedure InitCameraPrototypesPart8;
-begin
-
-connect111.ProtoField := 'set_fraction';
-{ METHOD .Connect }
-IS107.Connect := connect111;
-connect112 := Tconnect.Create;
-connect112.NodeField := 'set_bind';
-connect112.ProtoField := 'set_bind';
-{ METHOD .Connect }
-IS107.Connect := connect112;
-connect113 := Tconnect.Create;
-connect113.NodeField := 'fieldOfView';
-connect113.ProtoField := 'fieldOfView';
-{ METHOD .Connect }
-IS107.Connect := connect113;
-connect114 := Tconnect.Create;
-connect114.NodeField := 'nearClipPlane';
-connect114.ProtoField := 'nearClipPlane';
-{ METHOD .Connect }
-IS107.Connect := connect114;
-connect115 := Tconnect.Create;
-connect115.NodeField := 'farClipPlane';
-connect115.ProtoField := 'farClipPlane';
-{ METHOD .Connect }
-IS107.Connect := connect115;
-connect116 := Tconnect.Create;
-connect116.NodeField := 'shots';
-connect116.ProtoField := 'shots';
-{ METHOD .Connect }
-IS107.Connect := connect116;
-connect117 := Tconnect.Create;
-connect117.NodeField := 'filterColor';
-connect117.ProtoField := 'filterColor';
-{ METHOD .Connect }
-IS107.Connect := connect117;
-connect118 := Tconnect.Create;
-connect118.NodeField := 'filterTransparency';
-connect118.ProtoField := 'filterTransparency';
-{ METHOD .Connect }
-IS107.Connect := connect118;
-connect119 := Tconnect.Create;
-connect119.NodeField := 'upVector';
-connect119.ProtoField := 'upVector';
-{ METHOD .Connect }
-IS107.Connect := connect119;
-connect120 := Tconnect.Create;
-connect120.NodeField := 'fStop';
-connect120.ProtoField := 'fStop';
-{ METHOD .Connect }
-IS107.Connect := connect120;
-connect121 := Tconnect.Create;
-connect121.NodeField := 'focusDistance';
-end;
-
-procedure InitCameraPrototypesPart9;
-begin
-
-connect121.ProtoField := 'focusDistance';
-{ METHOD .Connect }
-IS107.Connect := connect121;
-connect122 := Tconnect.Create;
-connect122.NodeField := 'isActive';
-connect122.ProtoField := 'isActive';
-{ METHOD .Connect }
-IS107.Connect := connect122;
-connect123 := Tconnect.Create;
-connect123.NodeField := 'totalDuration';
-connect123.ProtoField := 'totalDuration';
-{ METHOD .Connect }
-IS107.Connect := connect123;
-connect124 := Tconnect.Create;
-connect124.NodeField := 'offlineRender';
-connect124.ProtoField := 'offlineRender';
-{ METHOD .Connect }
-IS107.Connect := connect124;
-connect125 := Tconnect.Create;
-connect125.NodeField := 'traceEnabled';
-connect125.ProtoField := 'traceEnabled';
-{ METHOD .Connect }
-IS107.Connect := connect125;
-{ METHOD .Fd.AddCustomField }
-Script70.AddCustomField(IS107);
-
-Script70.SetSourceCode('''ecmascript:\n"+
+Script55.SetSourceCode('''ecmascript:\n"+
 "function initialize () // CameraScript\n"+
 "{\n"+
 "//  tracePrint ('initialize start...');\\n\\n    NavInfoNode.avatarSize[0]   = nearClipPlane;\\n\\n    // remaining setups deferred to invocation of checkShots() method\\n    // thanks to Yvonne Jung Fraunhofer for diagnosing better approach to function initialization\\n    alwaysPrint ('initialize complete');\\n}\\n\\nfunction checkShots (eventValue)\\n{\\n    tracePrint ('checkShots() method should only occur after initialize() methods in all other Scripts are complete');\\n\\n    // compute totalDuration by summing durations from contained CameraShot and CameraMovement nodes\\n    totalDuration= 0;\\n    shotCount  = shots.length;\\n    movesCount = 0;\\n    for (i = 0; i < shotCount; i++) // shots index\\n    {\\n       tracePrint ('shots[' + i + '].moves.length=' + shots[i].moves.length);\\n       movesCount   += shots[i].moves.length;\\n       totalDuration = totalDuration + shots[i].shotDuration;\\n       if (shots[i].moves.length == 0)\\n       {\\n          alwaysPrint ('warning: CameraShot[' + i + '][' + shots[i].description + '] has no contained CameraMove nodes');\\n       }\\n    }\\n    // size checks before proceeding\\n    if (shotCount == 0)\\n    {\\n       alwaysPrint ('warning: no CameraShot nodes found for the shots, nothing to do!');\\n       return;\\n    }\\n    else if (movesCount == 0)\\n    {\\n       alwaysPrint ('warning: no CameraMove nodes found for the shots, nothing to do!');\\n       return;\\n    }\\n    else if (totalDuration == 0)\\n    {\\n       alwaysPrint ('warning: totalDuration = 0 seconds, nothing to do!');\\n       return;\\n    }\\n    tracePrint ('number of contained CameraShot nodes=' + shotCount);\\n    tracePrint ('number of contained CameraMove nodes=' + movesCount);\\n    tracePrint ('totalDuration=' + totalDuration + ' seconds for all shots and moves');\\n\\n    // compute interpolators\\n    var k = 0; // index for latest key, keyValuePosition, keyValueOrientation\\n    for (i = 0; i < shotCount; i++) // shots index\\n    {\\n        if (i==0) // initial entries\\n        {\\n           key[0]                   = 0.0; // no previous move\\n           keyValuePosition[0]      = shots[i].initialPosition;\\n           keyValueOrientation[0]   = shots[i].initialOrientation;\\n        }\\n        else     // new shot repositions, reorients camera as clean break from preceding shot/move\\n        {\\n           key[k+1]                 = key[k]; // start from end from previous move\\n           keyValuePosition[k+1]    = shots[i].initialPosition;\\n           keyValueOrientation[k+1] = shots[i].initialOrientation;\\n           k++;\\n        }\\n        tracePrint (shots[i].description);\\n        tracePrint ('shots[i].moves.length=' + shots[i].moves.length);\\n\\n        for (j = 0; j < shots[i].moves.length; j++) // moves index\\n        {\\n            var durationFloat =              shots[i].moves[j].duration;  // implicit type conversion from SFTime\\n            //  durationFloat = new SFFloat (shots[i].moves[j].duration); // explicit type conversion from SFTime\\n            //  tracePrint ('durationFloat=' + durationFloat);\\n            key[k+1]               = key[k] + (durationFloat / totalDuration);\\n            keyValuePosition[k+1]  = shots[i].moves[j].goalPosition;\\n            if (!animated)\\n            {\\n                 keyValueOrientation[k+1] = shots[i].moves[j].goalOrientation;\\n            }\\n            else\\n            {\\n                // using constructor SFRotation (SFVec3f fromVector, SFVec3f toVector)\\n                // see X3D ECMAScript binding Table 7.18 — SFRotation instance creation functions\\n\\n                // test if difference vector is zero, if so maintain previous rotation\\n                var shotVector = ViewpointNode.position.subtract(shots[i].moves[j].goalAimPoint).normalize();\\n                if (shotVector.length() >= 0)\\n                {\\n                    // default view direction is along -Z axis\\n                    shots[i].moves[j].goalOrientation = new SFRotation (new SFVec3f (0, 0, 1), shotVector);\\n                    keyValueOrientation[k+1] = shots[i].moves[j].goalOrientation;\\n                }\\n                else // note (k > 0)\\n                {\\n                    keyValueOrientation[k+1] = keyValueOrientation[k];  // no change\\n                }\\n\\n                tracePrint ('shots[' + i + '].moves[' + j + '].goalAimPoint=' + shots[i].moves[j].goalAimPoint.toString());\\n                tracePrint ('        ViewpointNode.position=' + ViewpointNode.position.toString());\\n                tracePrint ('          shotVector     delta=' + ViewpointNode.position.subtract(shots[i].moves[j].goalAimPoint).toString());\\n                tracePrint ('          shotVector normalize=' + ViewpointNode.position.subtract(shots[i].moves[j].goalAimPoint).normalize().toString());\\n                tracePrint ('               goalOrientation=' + shots[i].moves[j].goalOrientation.toString());\\n                tracePrint ('      keyValueOrientation[k+1]=' + keyValueOrientation[k+1].toString() + '\\n');\\n            }\\n            k++; // update index to match latest key, keyValuePosition, keyValueOrientation\\n\\n            // check animated parameter:  set true if any of moves are tracking moves\\n            if (!animated)  animated = shots[i].moves[j].tracking; // once true, remains true\\n         // tracePrint ('shots[' + i + '].moves[' + j + '].tracking=' + shots[i].moves[j].tracking + ', animated=' + animated);\\n\\n            // intermediate trace\\n            tracePrint ('                key=' + key);\\n            tracePrint ('   keyValuePosition=' + keyValuePosition);\\n            tracePrint ('keyValueOrientation=' + keyValueOrientation);\\n            tracePrint ('- ' + shots[i].moves[j].description);\\n        }\\n    }\\n    tracePrint ('                key=' + key);\\n    tracePrint ('   keyValuePosition=' + keyValuePosition);\\n    tracePrint ('keyValueOrientation=' + keyValueOrientation);\\n    if (key.length != keyValuePosition.length)\\n    {\\n      alwaysPrint ('warning: internal error during array construction, ' +\\n                  'key.length=' + key.length + ' must equal ' +\\n                  'keyValuePosition.length=' + keyValuePosition.length);\\n    }\\n    if (key.length != keyValueOrientation.length)\\n    {\\n      alwaysPrint ('warning: internal error during array construction, ' +\\n                  'key.length=' + key.length + ' must equal ' +\\n                  'keyValueOrientation.length=' + keyValueOrientation.length);\\n    }\\n    if (key.length != (shotCount + movesCount))\\n    {\\n      alwaysPrint ('warning: internal error during array construction, ' +\\n                  'key.length=' + key.length + ' must equal ' +\\n                  '(shotCount + movesCount)=' + (shotCount + movesCount));\\n    }\\n    tracePrint ('           animated=' + animated);\\n    // set node values\\n    CameraPI.key      = key;\\n    CameraOI.key      = key;\\n    CameraPI.keyValue = keyValuePosition;\\n    CameraOI.keyValue = keyValueOrientation;\\n\\n    if (!animated) // output results\\n    {\\n        tracePrint ('<PositionInterpolator    DEF=\\'CameraPositionInterpolator\\'    key=\\'' + stripBrackets(CameraPI.key) + '\\' keyValue=\\'' + stripBrackets(CameraPI.keyValue) + '\\'/>');\\n        tracePrint ('<OrientationInterpolator DEF=\\'CameraOrientationInterpolator\\' key=\\'' + stripBrackets(CameraOI.key) + '\\' keyValue=\\'' + stripBrackets(CameraOI.keyValue) + '\\'/>');\\n    }\\n    tracePrint ('checkShots() complete');\\n}\\n\\nfunction stripBrackets (fieldArray)\\n{\\n    // some browsers add brackets to array output strings, this function strips them\\n    outputString = '';\\n    for (i = 0; i < fieldArray.length; i++)\\n    {\\n       outputString += fieldArray[i].toString();\\n       if (i < fieldArray.length - 1) outputString += ' ';\\n    }\\n    return outputString;\\n}\\n\\nfunction set_fraction (eventValue, timestamp) // input event received for inputOnly field\\n{\\n   // traceEnabled = false;  // for testing purposes\\n\\n   // if Camera is being animated, immediately recompute interpolator settings\\n   if (animated) checkShots (true);\\n\\n   // trace progress on console with reduced output frequency\\n   if (frameCount == 0)\\n   {\\n      alwaysPrint ('Animation loop commencing, timestamp=' + timestamp);\\n      startTime      = timestamp;\\n      priorTraceTime = timestamp;\\n      alwaysPrint ('shotClock=' + (timestamp - startTime) + ' seconds, frameCount=' + frameCount + ', fraction=' + eventValue + ', position=' + ViewpointNode.position.toString() + ', orientation=' + ViewpointNode.orientation.toString());\\n\\n      if (animated) // output results\\n      {\\n        // TODO how to report or speed up response?  alwaysPrint ('  aimPoint=' + aimPoint.toString());\\n        tracePrint ('  <PositionInterpolator    DEF=\\'CameraPositionInterpolator\\'    key=\\'' + stripBrackets(CameraPI.key) + '\\' keyValue=\\'' + stripBrackets(CameraPI.keyValue) + '\\'/>');\\n        tracePrint ('  <OrientationInterpolator DEF=\\'CameraOrientationInterpolator\\' key=\\'' + stripBrackets(CameraOI.key) + '\\' keyValue=\\'' + stripBrackets(CameraOI.keyValue) + '\\'/>');\\n      }\\n   }\\n   else if ((timestamp - priorTraceTime) >= 1.0) // 1 second trace interval\\n   {\\n      alwaysPrint ('shotClock=' + (timestamp - startTime) + ' seconds, frameCount=' + frameCount + ', fraction=' + eventValue + ', position=' + ViewpointNode.position.toString() + ', orientation=' + ViewpointNode.orientation.toString());\\n      priorTraceTime = timestamp;\\n\\n      if (animated) // output results\\n      {\\n        // TODO how to report or speed up response?  alwaysPrint ('  aimPoint=' + aimPoint.toString());\\n        tracePrint ('  <PositionInterpolator    DEF=\\'CameraPositionInterpolator\\'    key=\\'' + stripBrackets(CameraPI.key) + '\\' keyValue=\\'' + stripBrackets(CameraPI.keyValue) + '\\'/>');\\n        alwaysPrint ('  <OrientationInterpolator DEF=\\'CameraOrientationInterpolator\\' key=\\'' + stripBrackets(CameraOI.key) + '\\' keyValue=\\'' + stripBrackets(CameraOI.keyValue) + '\\'/>');\\n      }\\n   }\\n   if (eventValue == 0)\\n   {\\n      // note that zero value is not necessarily sent first by TimeSensor, so otherwise ignored\\n      frameCount++;\\n   }\\n   else if (eventValue == 1)\\n   {\\n      alwaysPrint ('shotClock=' + (timestamp - startTime) + ', frameCount=' + frameCount + ', fraction=' + eventValue + ', position=' + ViewpointNode.position.toString() + ', orientation=' + ViewpointNode.orientation.toString());\\n      if (animated) // output results\\n      {\\n        // TODO how to report or speed up response?  alwaysPrint ('  aimPoint=' + aimPoint.toString());\\n      }\\n      alwaysPrint ('Animation loop complete.');\\n      // do not unbind the Viewpoint and NavigationInfo nodes, let that be controlled externally\\n   }\\n   else\\n   {\\n      frameCount++;\\n   }\\n}\\n\\nfunction set_bind (eventValue) // input event received for inputOnly field\\n{\\n   // need to ensure CameraShot nodes are properly initialized\\n   if (initialized == false)\\n   {\\n      checkShots (true);\\n      initialized = true;\\n   }\\n   if (eventValue)\\n   {\\n       tracePrint ('Camera has been bound');\\n   }\\n   else\\n   {\\n       tracePrint ('Camera has been unbound');\\n   }\\n}\\n\\nfunction set_description (eventValue) // input event received for inputOutput field\\n{\\n    description = eventValue;\\n}\\n\\nfunction set_position (eventValue) // input event received for inputOutput field\\n{\\n    position = eventValue;\\n}\\n\\nfunction set_orientation (eventValue) // input event received for inputOutput field\\n{\\n    orientation = eventValue;\\n}\\n\\nfunction set_fieldOfView (eventValue) // input event received for inputOutput field\\n{\\n    fieldOfView = eventValue;\\n}\\n\\nfunction set_nearClipPlane (eventValue) // input event received for inputOutput field\\n{\\n    nearClipPlane = eventValue;\\n}\\n\\nfunction set_farClipPlane (eventValue) // input event received for inputOutput field\\n{\\n    farClipPlane = eventValue;\\n}\\n\\nfunction set_shots (eventValue) // input event received for inputOutput field\\n{\\n    shots = eventValue;\\n}\\n\\nfunction set_filterColor (eventValue) // input event received for inputOutput field\\n{\\n    filterColor = eventValue;\\n}\\n\\nfunction set_filterTransparency (eventValue) // input event received for inputOutput field\\n{\\n    filterTransparency = eventValue;\\n}\\n\\nfunction set_upVector (eventValue) // input event received for inputOutput field\\n{\\n    upVector = eventValue;\\n}\\n\\nfunction set_fStop (eventValue) // input event received for inputOutput field\\n{\\n    fStop = eventValue;\\n}\\n\\nfunction set_focusDistance (eventValue) // input event received for inputOutput field\\n{\\n    focusDistance = eventValue;\\n}\\n\\nfunction set_offlineRender (eventValue) // input event received for inputOutput field\\n{\\n    offlineRender = eventValue;\\n}\\n\\nfunction set_key (eventValue) // input event received for inputOutput field\\n{\\n    key = eventValue;\\n}\\n\\nfunction set_keyValuePosition (eventValue) // input event received for inputOutput field\\n{\\n    keyValuePosition = eventValue;\\n}\\n\\nfunction set_keyValueOrientation (eventValue) // input event received for inputOutput field\\n{\\n    keyValueOrientation = eventValue;\\n}\\n\\nfunction set_animated (eventValue) // input event received for inputOutput field\\n{\\n    animated = eventValue;\\n}\\n\\nfunction tracePrint (outputValue)\\n{\\n	if (traceEnabled) alwaysPrint (outputValue);\\n}\\nfunction alwaysPrint (outputValue)\\n{\\n    // try to ensure outputValue is converted to string despite Browser.println idiosyncracies\\n    var outputString = outputValue.toString(); // utility function according to spec\\n    if (outputString == null) outputString = outputValue; // direct cast\\n\\n    if  (description.length > 0)\\n         Browser.print ('[Camera: ' + description + '] ' + outputString + '\\n');\\n    else\\n         Browser.print ('[Camera] ' + outputString + '\\n');\n"+
 "}''');
 { METHOD .AddScript }
-X3DPrototype42.AddScript([Script70]);
+X3DPrototype42.AddScript([Script55]);
 { Original "CameraScript.position TO CameraViewpoint.position }
 { Sample CameraScript.position TO CameraViewpoint.position}
-X3DPrototype42.AddRoute(CameraScript.[object Object], Viewpoint43.position);
+X3DPrototype42.AddRoute(CameraScript.undefined, Viewpoint43.position);
 { METHOD .AddX3DROUTE }
 { Original "CameraScript.EventOrientation TO CameraViewpoint.orientation }
 { Sample CameraScript.EventOrientation TO CameraViewpoint.orientation}
-X3DPrototype42.AddRoute(Script70.EventOrientation, Viewpoint43.orientation);
+X3DPrototype42.AddRoute(Script55.EventOrientation, Viewpoint43.orientation);
 { METHOD .AddX3DROUTE }
 { Original "CameraScript.EventIsActive TO CameraViewpoint.EventSet_bind }
 { Sample CameraScript.EventIsActive TO CameraViewpoint.EventSet_bind}
-X3DPrototype42.AddRoute(Script70.EventIsActive, Viewpoint43.EventSet_bind);
+X3DPrototype42.AddRoute(Script55.EventIsActive, Viewpoint43.EventSet_bind);
 { METHOD .AddX3DROUTE }
 { Original "CameraScript.EventIsActive TO CameraNavInfo.EventSet_bind }
 { Sample CameraScript.EventIsActive TO CameraNavInfo.EventSet_bind}
-X3DPrototype42.AddRoute(Script70.EventIsActive, NavigationInfo52.EventSet_bind);
+X3DPrototype42.AddRoute(Script55.EventIsActive, NavigationInfo45.EventSet_bind);
 { METHOD .AddX3DROUTE }
 { Original "CameraScript.EventIsActive TO CameraDirectionalLight.on }
 { Sample CameraScript.EventIsActive TO CameraDirectionalLight.on}
-X3DPrototype42.AddRoute(Script70.EventIsActive, DirectionalLight57.on);
+X3DPrototype42.AddRoute(Script55.EventIsActive, DirectionalLight47.on);
 { METHOD .AddX3DROUTE }
 { METHOD .AddX3DPrototype }
 X3DPrototype17.AddX3DPrototype([X3DPrototype42]);
 { METHOD .AddX3DPrototype }
 Group16.AddX3DPrototype([X3DPrototype17]);
 { =============== CameraShot ============== }
-X3DPrototype131 := TX3DPrototype.Create;
-X3DPrototype131.Appinfo := 'CameraShot collects a specific set of CameraMovement animations that make up an individual shot.';
-X3DInterfaceDeclaration132 := TX3DInterfaceDeclaration.Create(nil);
-SFString133 := TSFString.CreateUndefined(X3DInterfaceDeclaration132, false, 'description');
-SFString133.Appinfo := 'Text description to be displayed for this CameraShot';
+X3DPrototype98 := TX3DPrototype.Create;;
+X3DPrototype98.Appinfo := 'CameraShot collects a specific set of CameraMovement animations that make up an individual shot.';
+X3DInterfaceDeclaration99 := TX3DInterfaceDeclaration.Create(nil);;
+SFString100 := TSFString.CreateUndefined(X3DInterfaceDeclaration99, false, 'description');
+SFString100.Appinfo := 'Text description to be displayed for this CameraShot';
 { METHOD .AddSFString }
-X3DInterfaceDeclaration132.AddSFString([SFString133]);
-SFBool134 := TSFBool.CreateUndefined(X3DInterfaceDeclaration132, false, 'enabled');
-SFBool134.Appinfo := 'Whether this CameraShot can be activated';
-SFBool134.Value := 'true';
+X3DInterfaceDeclaration99.AddSFString([SFString100]);
+SFBool101 := TSFBool.CreateUndefined(X3DInterfaceDeclaration99, false, 'enabled');
+SFBool101.Appinfo := 'Whether this CameraShot can be activated';
+SFBool101.Value := 'true';
 { METHOD .AddSFBool }
-X3DInterfaceDeclaration132.AddSFBool([SFBool134]);
-MFNode135 := TMFNode.CreateUndefined(X3DInterfaceDeclaration132, false, 'moves');
-MFNode135.Appinfo := 'Set of CameraMovement nodes';
+X3DInterfaceDeclaration99.AddSFBool([SFBool101]);
+MFNode102 := TMFNode.CreateUndefined(X3DInterfaceDeclaration99, false, 'moves');
+MFNode102.Appinfo := 'Set of CameraMovement nodes';
 { initializing CameraMovement nodes are inserted here by scene author using ProtoInstance }
 { METHOD .AddMFNode }
-X3DInterfaceDeclaration132.AddMFNode([MFNode135]);
-SFVec3f136 := TSFVec3f.CreateUndefined(X3DInterfaceDeclaration132, false, 'initialPosition');
-SFVec3f136.Appinfo := 'Setup to reinitialize camera position for this shot';
-SFVec3f136.Value := '0 0 10';
+X3DInterfaceDeclaration99.AddMFNode([MFNode102]);
+SFVec3f103 := TSFVec3f.CreateUndefined(X3DInterfaceDeclaration99, false, 'initialPosition');
+SFVec3f103.Appinfo := 'Setup to reinitialize camera position for this shot';
+SFVec3f103.Value := '0 0 10';
 { METHOD .AddSFVec3f }
-X3DInterfaceDeclaration132.AddSFVec3f([SFVec3f136]);
-SFRotation137 := TSFRotation.CreateUndefined(X3DInterfaceDeclaration132, false, 'initialOrientation');
-SFRotation137.Appinfo := 'Setup to reinitialize camera rotation for this shot';
-SFRotation137.Value := '0 0 1 0';
+X3DInterfaceDeclaration99.AddSFVec3f([SFVec3f103]);
+SFRotation104 := TSFRotation.CreateUndefined(X3DInterfaceDeclaration99, false, 'initialOrientation');
+SFRotation104.Appinfo := 'Setup to reinitialize camera rotation for this shot';
+SFRotation104.Value := '0 0 1 0';
 { METHOD .AddSFRotation }
-X3DInterfaceDeclaration132.AddSFRotation([SFRotation137]);
-SFVec3f138 := TSFVec3f.CreateUndefined(X3DInterfaceDeclaration132, false, 'initialAimPoint');
-SFVec3f138.Appinfo := 'Setup to reinitialize aimpoint (relative location for camera direction) for this shot';
-SFVec3f138.Value := '0 0 0';
+X3DInterfaceDeclaration99.AddSFRotation([SFRotation104]);
+SFVec3f105 := TSFVec3f.CreateUndefined(X3DInterfaceDeclaration99, false, 'initialAimPoint');
+SFVec3f105.Appinfo := 'Setup to reinitialize aimpoint (relative location for camera direction) for this shot';
+SFVec3f105.Value := '0 0 0';
 { METHOD .AddSFVec3f }
-X3DInterfaceDeclaration132.AddSFVec3f([SFVec3f138]);
-SFFloat139 := TSFFloat.CreateUndefined(X3DInterfaceDeclaration132, false, 'initialFieldOfView');
-SFFloat139.Appinfo := 'pi/4';
-SFFloat139.Value := '0.7854';
+X3DInterfaceDeclaration99.AddSFVec3f([SFVec3f105]);
+SFFloat106 := TSFFloat.CreateUndefined(X3DInterfaceDeclaration99, false, 'initialFieldOfView');
+SFFloat106.Appinfo := 'pi/4';
+SFFloat106.Value := '0.7854';
 { METHOD .AddSFFloat }
-X3DInterfaceDeclaration132.AddSFFloat([SFFloat139]);
-SFFloat140 := TSFFloat.CreateUndefined(X3DInterfaceDeclaration132, false, 'initialFStop');
-SFFloat140.Appinfo := 'Focal length divided effective aperture diameter indicating width of focal plane';
-SFFloat140.Value := '5.6';
+X3DInterfaceDeclaration99.AddSFFloat([SFFloat106]);
+SFFloat107 := TSFFloat.CreateUndefined(X3DInterfaceDeclaration99, false, 'initialFStop');
+SFFloat107.Appinfo := 'Focal length divided effective aperture diameter indicating width of focal plane';
+SFFloat107.Value := '5.6';
 { METHOD .AddSFFloat }
-X3DInterfaceDeclaration132.AddSFFloat([SFFloat140]);
-SFFloat141 := TSFFloat.CreateUndefined(X3DInterfaceDeclaration132, false, 'initialFocusDistance');
-SFFloat141.Appinfo := 'Distance to focal plane of sharpest focus';
-SFFloat141.Value := '10';
+X3DInterfaceDeclaration99.AddSFFloat([SFFloat107]);
+SFFloat108 := TSFFloat.CreateUndefined(X3DInterfaceDeclaration99, false, 'initialFocusDistance');
+SFFloat108.Appinfo := 'Distance to focal plane of sharpest focus';
+SFFloat108.Value := '10';
 { METHOD .AddSFFloat }
-X3DInterfaceDeclaration132.AddSFFloat([SFFloat141]);
-SFTime142 := TSFTime.CreateUndefined(X3DInterfaceDeclaration132, false, 'shotDuration');
-SFTime142.Appinfo := 'Subtotal duration of contained CameraMovement move durations';
+X3DInterfaceDeclaration99.AddSFFloat([SFFloat108]);
+SFTime109 := TSFTime.CreateUndefined(X3DInterfaceDeclaration99, false, 'shotDuration');
+SFTime109.Appinfo := 'Subtotal duration of contained CameraMovement move durations';
 { METHOD .AddSFTime }
-X3DInterfaceDeclaration132.AddSFTime([SFTime142]);
-SFBool143 := TSFBool.CreateUndefined(X3DInterfaceDeclaration132, false, 'isActive');
-SFBool143.Appinfo := 'Mark start/stop with true/false output respectively useful to trigger external animations';
+X3DInterfaceDeclaration99.AddSFTime([SFTime109]);
+SFBool110 := TSFBool.CreateUndefined(X3DInterfaceDeclaration99, false, 'isActive');
+SFBool110.Appinfo := 'Mark start/stop with true/false output respectively useful to trigger external animations';
 { METHOD .AddSFBool }
-X3DInterfaceDeclaration132.AddSFBool([SFBool143]);
-SFBool144 := TSFBool.CreateUndefined(X3DInterfaceDeclaration132, false, 'traceEnabled');
-SFBool144.Appinfo := 'enable console output to trace script computations and prototype progress';
-SFBool144.Value := 'false';
+X3DInterfaceDeclaration99.AddSFBool([SFBool110]);
+SFBool111 := TSFBool.CreateUndefined(X3DInterfaceDeclaration99, false, 'traceEnabled');
+SFBool111.Appinfo := 'enable console output to trace script computations and prototype progress';
+SFBool111.Value := 'false';
 { METHOD .AddSFBool }
-X3DInterfaceDeclaration132.AddSFBool([SFBool144]);
+X3DInterfaceDeclaration99.AddSFBool([SFBool111]);
 { METHOD .AddX3DInterfaceDeclaration }
-X3DPrototype131.AddX3DInterfaceDeclaration([X3DInterfaceDeclaration132]);
-X3DPrototype145 := TX3DPrototype.Create;
-Script146 := TScriptNode.Create;
-Script146.DirectOutput := True;
-Script146.MustEvaluate := True;
-SFString147 := TSFString.CreateUndefined(Script146, false, 'description');
-SFString147.Appinfo := 'Text description to be displayed for this CameraShot';
+X3DPrototype98.AddX3DInterfaceDeclaration([X3DInterfaceDeclaration99]);
+X3DPrototype112 := TX3DPrototype.Create;;
+Script113 := TScriptNode.Create;;
+Script113.DirectOutput := True;
+Script113.MustEvaluate := True;
+SFString114 := TSFString.CreateUndefined(Script113, false, 'description');
+SFString114.Appinfo := 'Text description to be displayed for this CameraShot';
 { METHOD .Fd.AddCustomField }
-Script146.AddCustomField(SFString147);
-SFBool148 := TSFBool.CreateUndefined(Script146, false, 'enabled');
-SFBool148.Appinfo := 'Whether this CameraShot can be activated';
+Script113.AddCustomField(SFString114);
+SFBool115 := TSFBool.CreateUndefined(Script113, false, 'enabled');
+SFBool115.Appinfo := 'Whether this CameraShot can be activated';
 { METHOD .Fd.AddCustomField }
-Script146.AddCustomField(SFBool148);
-MFNode149 := TMFNode.CreateUndefined(Script146, false, 'moves');
-MFNode149.Appinfo := 'Set of CameraMovement nodes';
+Script113.AddCustomField(SFBool115);
+MFNode116 := TMFNode.CreateUndefined(Script113, false, 'moves');
+MFNode116.Appinfo := 'Set of CameraMovement nodes';
 { initialization nodes (if any) go here }
 { METHOD .Fd.AddCustomField }
-Script146.AddCustomField(MFNode149);
-SFVec3f150 := TSFVec3f.CreateUndefined(Script146, false, 'initialPosition');
-SFVec3f150.Appinfo := 'Setup to reinitialize camera position for this shot';
+Script113.AddCustomField(MFNode116);
+SFVec3f117 := TSFVec3f.CreateUndefined(Script113, false, 'initialPosition');
+SFVec3f117.Appinfo := 'Setup to reinitialize camera position for this shot';
 { METHOD .Fd.AddCustomField }
-Script146.AddCustomField(SFVec3f150);
-SFRotation151 := TSFRotation.CreateUndefined(Script146, false, 'initialOrientation');
-SFRotation151.Appinfo := 'Setup to reinitialize camera rotation for this shot';
+Script113.AddCustomField(SFVec3f117);
+SFRotation118 := TSFRotation.CreateUndefined(Script113, false, 'initialOrientation');
+SFRotation118.Appinfo := 'Setup to reinitialize camera rotation for this shot';
 { METHOD .Fd.AddCustomField }
-Script146.AddCustomField(SFRotation151);
-SFVec3f152 := TSFVec3f.CreateUndefined(Script146, false, 'initialAimPoint');
-SFVec3f152.Appinfo := 'Setup to reinitialize aimpoint (relative location for camera direction) for this shot';
+Script113.AddCustomField(SFRotation118);
+SFVec3f119 := TSFVec3f.CreateUndefined(Script113, false, 'initialAimPoint');
+SFVec3f119.Appinfo := 'Setup to reinitialize aimpoint (relative location for camera direction) for this shot';
 { METHOD .Fd.AddCustomField }
-Script146.AddCustomField(SFVec3f152);
-SFFloat153 := TSFFloat.CreateUndefined(Script146, false, 'initialFieldOfView');
-SFFloat153.Appinfo := 'pi/4';
+Script113.AddCustomField(SFVec3f119);
+SFFloat120 := TSFFloat.CreateUndefined(Script113, false, 'initialFieldOfView');
+SFFloat120.Appinfo := 'pi/4';
 { METHOD .Fd.AddCustomField }
-Script146.AddCustomField(SFFloat153);
-SFFloat154 := TSFFloat.CreateUndefined(Script146, false, 'initialFStop');
-SFFloat154.Appinfo := 'Focal length divided effective aperture diameter indicating width of focal plane';
+Script113.AddCustomField(SFFloat120);
+SFFloat121 := TSFFloat.CreateUndefined(Script113, false, 'initialFStop');
+SFFloat121.Appinfo := 'Focal length divided effective aperture diameter indicating width of focal plane';
 { METHOD .Fd.AddCustomField }
-Script146.AddCustomField(SFFloat154);
-SFFloat155 := TSFFloat.CreateUndefined(Script146, false, 'initialFocusDistance');
-SFFloat155.Appinfo := 'Distance to focal plane of sharpest focus';
+Script113.AddCustomField(SFFloat121);
+SFFloat122 := TSFFloat.CreateUndefined(Script113, false, 'initialFocusDistance');
+SFFloat122.Appinfo := 'Distance to focal plane of sharpest focus';
 { METHOD .Fd.AddCustomField }
-Script146.AddCustomField(SFFloat155);
-SFTime156 := TSFTime.CreateUndefined(Script146, false, 'shotDuration');
-SFTime156.Appinfo := 'Subtotal duration of contained CameraMovement move durations';
+Script113.AddCustomField(SFFloat122);
+SFTime123 := TSFTime.CreateUndefined(Script113, false, 'shotDuration');
+SFTime123.Appinfo := 'Subtotal duration of contained CameraMovement move durations';
 { METHOD .Fd.AddCustomField }
-Script146.AddCustomField(SFTime156);
-SFBool157 := TSFBool.CreateUndefined(Script146, false, 'isActive');
-SFBool157.Appinfo := 'Mark start/stop with true/false output respectively useful to trigger external animations';
+Script113.AddCustomField(SFTime123);
+SFBool124 := TSFBool.CreateUndefined(Script113, false, 'isActive');
+SFBool124.Appinfo := 'Mark start/stop with true/false output respectively useful to trigger external animations';
 { METHOD .Fd.AddCustomField }
-Script146.AddCustomField(SFBool157);
-SFBool158 := TSFBool.CreateUndefined(Script146, false, 'traceEnabled');
-SFBool158.Appinfo := 'enable console output to trace script computations and prototype progress';
+Script113.AddCustomField(SFBool124);
+SFBool125 := TSFBool.CreateUndefined(Script113, false, 'traceEnabled');
+SFBool125.Appinfo := 'enable console output to trace script computations and prototype progress';
 { METHOD .Fd.AddCustomField }
-Script146.AddCustomField(SFBool158);
-MFFloat159 := TMFFloat.CreateUndefined(Script146, false, 'key');
-MFFloat159.Appinfo := 'key array for interpolators';
+Script113.AddCustomField(SFBool125);
+MFFloat126 := TMFFloat.CreateUndefined(Script113, false, 'key');
+MFFloat126.Appinfo := 'key array for interpolators';
 { METHOD .Fd.AddCustomField }
-Script146.AddCustomField(MFFloat159);
-MFVec3f160 := TMFVec3f.CreateUndefined(Script146, false, 'keyValuePosition');
-MFVec3f160.Appinfo := 'keyValue array for PositionInterpolator';
+Script113.AddCustomField(MFFloat126);
+MFVec3f127 := TMFVec3f.CreateUndefined(Script113, false, 'keyValuePosition');
+MFVec3f127.Appinfo := 'keyValue array for PositionInterpolator';
 { METHOD .Fd.AddCustomField }
-Script146.AddCustomField(MFVec3f160);
-MFRotation161 := TMFRotation.CreateUndefined(Script146, false, 'keyValueOrientation');
-MFRotation161.Appinfo := 'keyValue array for OrientationInterpolator';
+Script113.AddCustomField(MFVec3f127);
+MFRotation128 := TMFRotation.CreateUndefined(Script113, false, 'keyValueOrientation');
+MFRotation128.Appinfo := 'keyValue array for OrientationInterpolator';
 { METHOD .Fd.AddCustomField }
-Script146.AddCustomField(MFRotation161);
-IS162 := TIS.Create;
-connect163 := Tconnect.Create;
-connect163.NodeField := 'description';
-connect163.ProtoField := 'description';
-{ METHOD .Connect }
-IS162.Connect := connect163;
-connect164 := Tconnect.Create;
-connect164.NodeField := 'enabled';
-connect164.ProtoField := 'enabled';
-{ METHOD .Connect }
-IS162.Connect := connect164;
-connect165 := Tconnect.Create;
-connect165.NodeField := 'moves';
-connect165.ProtoField := 'moves';
-{ METHOD .Connect }
-IS162.Connect := connect165;
-connect166 := Tconnect.Create;
-connect166.NodeField := 'initialPosition';
-connect166.ProtoField := 'initialPosition';
-{ METHOD .Connect }
-IS162.Connect := connect166;
-connect167 := Tconnect.Create;
-connect167.NodeField := 'initialOrientation';
-connect167.ProtoField := 'initialOrientation';
-{ METHOD .Connect }
-IS162.Connect := connect167;
-connect168 := Tconnect.Create;
-connect168.NodeField := 'initialAimPoint';
-connect168.ProtoField := 'initialAimPoint';
-{ METHOD .Connect }
-IS162.Connect := connect168;
-connect169 := Tconnect.Create;
-connect169.NodeField := 'initialFieldOfView';
-connect169.ProtoField := 'initialFieldOfView';
-{ METHOD .Connect }
-IS162.Connect := connect169;
-connect170 := Tconnect.Create;
-connect170.NodeField := 'initialFStop';
-connect170.ProtoField := 'initialFStop';
-{ METHOD .Connect }
-IS162.Connect := connect170;
-connect171 := Tconnect.Create;
-connect171.NodeField := 'initialFocusDistance';
-connect171.ProtoField := 'initialFocusDistance';
-{ METHOD .Connect }
-IS162.Connect := connect171;
-connect172 := Tconnect.Create;
-connect172.NodeField := 'shotDuration';
-connect172.ProtoField := 'shotDuration';
-{ METHOD .Connect }
-IS162.Connect := connect172;
-connect173 := Tconnect.Create;
-connect173.NodeField := 'isActive';
-connect173.ProtoField := 'isActive';
-{ METHOD .Connect }
-IS162.Connect := connect173;
-connect174 := Tconnect.Create;
-connect174.NodeField := 'traceEnabled';
-connect174.ProtoField := 'traceEnabled';
-{ METHOD .Connect }
-IS162.Connect := connect174;
-{ METHOD .Fd.AddCustomField }
-Script146.AddCustomField(IS162);
+Script113.AddCustomField(MFRotation128);
 
-Script146.SetSourceCode('''ecmascript:\n"+
+Script113.SetSourceCode('''ecmascript:\n"+
 "function initialize () // CameraShotScript\n"+
 "{\n"+
 "//  tracePrint ('initialize start...');\\n\\n    // compute shotDuration by summing durations from contained CameraMovement nodes\\n    shotDuration = 0;\\n    for (i = 0; i < moves.length; i++)\\n    {\\n        shotDuration = shotDuration + moves[i].duration;\\n    }\\n    alwaysPrint ('number of contained CameraMove nodes=' + moves.length + ', shotDuration=' + shotDuration + ' seconds');\\n\\n//  tracePrint ('... initialize() complete');\\n}\\n\\nfunction set_description (eventValue) // input event received for inputOutput field\\n{\\n    description = eventValue;\\n}\\n\\nfunction set_enabled (eventValue) // input event received for inputOutput field\\n{\\n    enabled = eventValue;\\n}\\n\\nfunction set_moves (eventValue) // input event received for inputOutput field\\n{\\n    moves = eventValue;\\n}\\n\\nfunction set_initialPosition (eventValue) // input event received for inputOutput field\\n{\\n    initialPosition = eventValue;\\n}\\n\\nfunction set_initialOrientation (eventValue) // input event received for inputOutput field\\n{\\n    initialOrientation = eventValue;\\n}\\n\\nfunction set_initialAimPoint (eventValue) // input event received for inputOutput field\\n{\\n    initialAimPoint = eventValue;\\n}\\n\\nfunction set_initialFieldOfView (eventValue) // input event received for inputOutput field\\n{\\n    initialFieldOfView = eventValue;\\n}\\n\\nfunction set_initialFStop (eventValue) // input event received for inputOutput field\\n{\\n    initialFStop = eventValue;\\n}\\n\\nfunction set_initialFocusDistance (eventValue) // input event received for inputOutput field\\n{\\n    initialFocusDistance = eventValue;\\n}\\n\\nfunction set_key (eventValue) // input event received for inputOutput field\\n{\\n    key = eventValue;\\n}\\n\\nfunction set_keyValuePosition (eventValue) // input event received for inputOutput field\\n{\\n    keyValuePosition = eventValue;\\n}\\n\\nfunction set_keyValueOrientation (eventValue) // input event received for inputOutput field\\n{\\n    keyValueOrientation = eventValue;\\n}\\n\\n// TODO consider method set_active for constructed Camera node BooleanSequencer to send isActive\\n\\nfunction tracePrint (outputValue)\\n{\\n	if (traceEnabled) alwaysPrint (outputValue);\\n}\\nfunction alwaysPrint (outputValue)\\n{\\n	// try to ensure outputValue is converted to string despite browser idiosyncracies\\n    var outputString = outputValue.toString(); // utility function according to spec\\n    if (outputString == null) outputString = outputValue; // direct cast\\n\\n    if  (description.length > 0)\\n         Browser.print ('[CameraShot: ' + description + '] ' + outputString + '\\n');\\n    else\\n         Browser.print ('[CameraShot] ' + outputString + '\\n');\n"+
 "}''');
 { METHOD .AddScript }
-X3DPrototype145.AddScript([Script146]);
+X3DPrototype112.AddScript([Script113]);
 { Add any ROUTEs here, going from Script to other nodes within ProtoBody }
 { METHOD .AddX3DPrototype }
-X3DPrototype131.AddX3DPrototype([X3DPrototype145]);
+X3DPrototype98.AddX3DPrototype([X3DPrototype112]);
 { METHOD .AddX3DPrototype }
-Group16.AddX3DPrototype([X3DPrototype131]);
+Group16.AddX3DPrototype([X3DPrototype98]);
 { =============== CameraMovement ============== }
-X3DPrototype175 := TX3DPrototype.Create;
-X3DPrototype175.Appinfo := 'CameraMovement node defines a single camera movement animation including goalPosition, goalOrientation, goalAimPoint and goalFieldOfView.';
-X3DInterfaceDeclaration176 := TX3DInterfaceDeclaration.Create(nil);
-SFString177 := TSFString.CreateUndefined(X3DInterfaceDeclaration176, false, 'description');
-SFString177.Appinfo := 'Text description to be displayed for this CameraMovement';
+X3DPrototype130 := TX3DPrototype.Create;;
+X3DPrototype130.Appinfo := 'CameraMovement node defines a single camera movement animation including goalPosition, goalOrientation, goalAimPoint and goalFieldOfView.';
+X3DInterfaceDeclaration131 := TX3DInterfaceDeclaration.Create(nil);;
+SFString132 := TSFString.CreateUndefined(X3DInterfaceDeclaration131, false, 'description');
+SFString132.Appinfo := 'Text description to be displayed for this CameraMovement';
 { METHOD .AddSFString }
-X3DInterfaceDeclaration176.AddSFString([SFString177]);
-SFBool178 := TSFBool.CreateUndefined(X3DInterfaceDeclaration176, false, 'enabled');
-SFBool178.Appinfo := 'Whether this CameraMovement can be activated';
-SFBool178.Value := 'true';
+X3DInterfaceDeclaration131.AddSFString([SFString132]);
+SFBool133 := TSFBool.CreateUndefined(X3DInterfaceDeclaration131, false, 'enabled');
+SFBool133.Appinfo := 'Whether this CameraMovement can be activated';
+SFBool133.Value := 'true';
 { METHOD .AddSFBool }
-X3DInterfaceDeclaration176.AddSFBool([SFBool178]);
-SFFloat179 := TSFFloat.CreateUndefined(X3DInterfaceDeclaration176, false, 'duration');
-SFFloat179.Appinfo := 'Duration in seconds for this move';
-SFFloat179.Value := '0';
+X3DInterfaceDeclaration131.AddSFBool([SFBool133]);
+SFFloat134 := TSFFloat.CreateUndefined(X3DInterfaceDeclaration131, false, 'duration');
+SFFloat134.Appinfo := 'Duration in seconds for this move';
+SFFloat134.Value := '0';
 { METHOD .AddSFFloat }
-X3DInterfaceDeclaration176.AddSFFloat([SFFloat179]);
-SFVec3f180 := TSFVec3f.CreateUndefined(X3DInterfaceDeclaration176, false, 'goalPosition');
-SFVec3f180.Appinfo := 'Goal camera position for this move';
-SFVec3f180.Value := '0 0 10';
+X3DInterfaceDeclaration131.AddSFFloat([SFFloat134]);
+SFVec3f135 := TSFVec3f.CreateUndefined(X3DInterfaceDeclaration131, false, 'goalPosition');
+SFVec3f135.Appinfo := 'Goal camera position for this move';
+SFVec3f135.Value := '0 0 10';
 { METHOD .AddSFVec3f }
-X3DInterfaceDeclaration176.AddSFVec3f([SFVec3f180]);
-SFRotation181 := TSFRotation.CreateUndefined(X3DInterfaceDeclaration176, false, 'goalOrientation');
-SFRotation181.Appinfo := 'Goal camera rotation for this move';
-SFRotation181.Value := '0 0 1 0';
+X3DInterfaceDeclaration131.AddSFVec3f([SFVec3f135]);
+SFRotation136 := TSFRotation.CreateUndefined(X3DInterfaceDeclaration131, false, 'goalOrientation');
+SFRotation136.Appinfo := 'Goal camera rotation for this move';
+SFRotation136.Value := '0 0 1 0';
 { METHOD .AddSFRotation }
-X3DInterfaceDeclaration176.AddSFRotation([SFRotation181]);
-SFBool182 := TSFBool.CreateUndefined(X3DInterfaceDeclaration176, false, 'tracking');
-SFBool182.Appinfo := 'Whether or not camera direction is tracking towards the aimPoint';
-SFBool182.Value := 'false';
+X3DInterfaceDeclaration131.AddSFRotation([SFRotation136]);
+SFBool137 := TSFBool.CreateUndefined(X3DInterfaceDeclaration131, false, 'tracking');
+SFBool137.Appinfo := 'Whether or not camera direction is tracking towards the aimPoint';
+SFBool137.Value := 'false';
 { METHOD .AddSFBool }
-X3DInterfaceDeclaration176.AddSFBool([SFBool182]);
-SFVec3f183 := TSFVec3f.CreateUndefined(X3DInterfaceDeclaration176, false, 'goalAimPoint');
-SFVec3f183.Appinfo := 'Goal aimPoint for this move, ignored if tracking=false';
-SFVec3f183.Value := '0 0 0';
+X3DInterfaceDeclaration131.AddSFBool([SFBool137]);
+SFVec3f138 := TSFVec3f.CreateUndefined(X3DInterfaceDeclaration131, false, 'goalAimPoint');
+SFVec3f138.Appinfo := 'Goal aimPoint for this move, ignored if tracking=false';
+SFVec3f138.Value := '0 0 0';
 { METHOD .AddSFVec3f }
-X3DInterfaceDeclaration176.AddSFVec3f([SFVec3f183]);
-SFFloat184 := TSFFloat.CreateUndefined(X3DInterfaceDeclaration176, false, 'goalFieldOfView');
-SFFloat184.Appinfo := 'Goal fieldOfView for this move';
-SFFloat184.Value := '0.7854';
+X3DInterfaceDeclaration131.AddSFVec3f([SFVec3f138]);
+SFFloat139 := TSFFloat.CreateUndefined(X3DInterfaceDeclaration131, false, 'goalFieldOfView');
+SFFloat139.Appinfo := 'Goal fieldOfView for this move';
+SFFloat139.Value := '0.7854';
 { METHOD .AddSFFloat }
-X3DInterfaceDeclaration176.AddSFFloat([SFFloat184]);
-SFFloat185 := TSFFloat.CreateUndefined(X3DInterfaceDeclaration176, false, 'goalFStop');
-SFFloat185.Appinfo := 'Focal length divided effective aperture diameter indicating width of focal plane';
-SFFloat185.Value := '5.6';
+X3DInterfaceDeclaration131.AddSFFloat([SFFloat139]);
+SFFloat140 := TSFFloat.CreateUndefined(X3DInterfaceDeclaration131, false, 'goalFStop');
+SFFloat140.Appinfo := 'Focal length divided effective aperture diameter indicating width of focal plane';
+SFFloat140.Value := '5.6';
 { METHOD .AddSFFloat }
-X3DInterfaceDeclaration176.AddSFFloat([SFFloat185]);
-SFFloat186 := TSFFloat.CreateUndefined(X3DInterfaceDeclaration176, false, 'goalFocusDistance');
-SFFloat186.Appinfo := 'Distance to focal plane of sharpest focus';
-SFFloat186.Value := '10';
+X3DInterfaceDeclaration131.AddSFFloat([SFFloat140]);
+SFFloat141 := TSFFloat.CreateUndefined(X3DInterfaceDeclaration131, false, 'goalFocusDistance');
+SFFloat141.Appinfo := 'Distance to focal plane of sharpest focus';
+SFFloat141.Value := '10';
 { METHOD .AddSFFloat }
-X3DInterfaceDeclaration176.AddSFFloat([SFFloat186]);
-SFBool187 := TSFBool.CreateUndefined(X3DInterfaceDeclaration176, false, 'isActive');
-SFBool187.Appinfo := 'Mark start/stop with true/false output respectively useful to trigger external animations';
+X3DInterfaceDeclaration131.AddSFFloat([SFFloat141]);
+SFBool142 := TSFBool.CreateUndefined(X3DInterfaceDeclaration131, false, 'isActive');
+SFBool142.Appinfo := 'Mark start/stop with true/false output respectively useful to trigger external animations';
 { METHOD .AddSFBool }
-X3DInterfaceDeclaration176.AddSFBool([SFBool187]);
-SFBool188 := TSFBool.CreateUndefined(X3DInterfaceDeclaration176, false, 'traceEnabled');
-SFBool188.Appinfo := 'enable console output to trace script computations and prototype progress';
-SFBool188.Value := 'false';
+X3DInterfaceDeclaration131.AddSFBool([SFBool142]);
+SFBool143 := TSFBool.CreateUndefined(X3DInterfaceDeclaration131, false, 'traceEnabled');
+SFBool143.Appinfo := 'enable console output to trace script computations and prototype progress';
+SFBool143.Value := 'false';
 { METHOD .AddSFBool }
-X3DInterfaceDeclaration176.AddSFBool([SFBool188]);
+X3DInterfaceDeclaration131.AddSFBool([SFBool143]);
 { METHOD .AddX3DInterfaceDeclaration }
-X3DPrototype175.AddX3DInterfaceDeclaration([X3DInterfaceDeclaration176]);
-X3DPrototype189 := TX3DPrototype.Create;
+X3DPrototype130.AddX3DInterfaceDeclaration([X3DInterfaceDeclaration131]);
+X3DPrototype144 := TX3DPrototype.Create;;
 { First node determines node type of this prototype }
 { Subsequent nodes do not render, but still must be a valid X3D subgraph }
 { Script holds CameraMovement initialization values for query by parent CameraShot, and also permits changing values via events }
-Script190 := TScriptNode.Create;
-Script190.DirectOutput := True;
-Script190.MustEvaluate := True;
-SFString191 := TSFString.CreateUndefined(Script190, false, 'description');
-SFString191.Appinfo := 'Text description to be displayed for this CameraMovement';
+Script145 := TScriptNode.Create;;
+Script145.DirectOutput := True;
+Script145.MustEvaluate := True;
+SFString146 := TSFString.CreateUndefined(Script145, false, 'description');
+SFString146.Appinfo := 'Text description to be displayed for this CameraMovement';
 { METHOD .Fd.AddCustomField }
-Script190.AddCustomField(SFString191);
-SFBool192 := TSFBool.CreateUndefined(Script190, false, 'enabled');
-SFBool192.Appinfo := 'Whether this CameraMovement can be activated';
+Script145.AddCustomField(SFString146);
+SFBool147 := TSFBool.CreateUndefined(Script145, false, 'enabled');
+SFBool147.Appinfo := 'Whether this CameraMovement can be activated';
 { METHOD .Fd.AddCustomField }
-Script190.AddCustomField(SFBool192);
-SFFloat193 := TSFFloat.CreateUndefined(Script190, false, 'duration');
-SFFloat193.Appinfo := 'Duration in seconds for this move';
+Script145.AddCustomField(SFBool147);
+SFFloat148 := TSFFloat.CreateUndefined(Script145, false, 'duration');
+SFFloat148.Appinfo := 'Duration in seconds for this move';
 { METHOD .Fd.AddCustomField }
-Script190.AddCustomField(SFFloat193);
-SFVec3f194 := TSFVec3f.CreateUndefined(Script190, false, 'goalPosition');
-SFVec3f194.Appinfo := 'Goal camera position for this move';
+Script145.AddCustomField(SFFloat148);
+SFVec3f149 := TSFVec3f.CreateUndefined(Script145, false, 'goalPosition');
+SFVec3f149.Appinfo := 'Goal camera position for this move';
 { METHOD .Fd.AddCustomField }
-Script190.AddCustomField(SFVec3f194);
-SFRotation195 := TSFRotation.CreateUndefined(Script190, false, 'goalOrientation');
-SFRotation195.Appinfo := 'Goal camera rotation for this move';
+Script145.AddCustomField(SFVec3f149);
+SFRotation150 := TSFRotation.CreateUndefined(Script145, false, 'goalOrientation');
+SFRotation150.Appinfo := 'Goal camera rotation for this move';
 { METHOD .Fd.AddCustomField }
-Script190.AddCustomField(SFRotation195);
-SFBool196 := TSFBool.CreateUndefined(Script190, false, 'tracking');
-SFBool196.Appinfo := 'Whether or not camera direction is tracking towards the aimPoint';
+Script145.AddCustomField(SFRotation150);
+SFBool151 := TSFBool.CreateUndefined(Script145, false, 'tracking');
+SFBool151.Appinfo := 'Whether or not camera direction is tracking towards the aimPoint';
 { METHOD .Fd.AddCustomField }
-Script190.AddCustomField(SFBool196);
-SFVec3f197 := TSFVec3f.CreateUndefined(Script190, false, 'goalAimPoint');
-SFVec3f197.Appinfo := 'Goal aimPoint for this move, ignored if tracking=false';
+Script145.AddCustomField(SFBool151);
+SFVec3f152 := TSFVec3f.CreateUndefined(Script145, false, 'goalAimPoint');
+SFVec3f152.Appinfo := 'Goal aimPoint for this move, ignored if tracking=false';
 { METHOD .Fd.AddCustomField }
-Script190.AddCustomField(SFVec3f197);
-SFFloat198 := TSFFloat.CreateUndefined(Script190, false, 'goalFieldOfView');
-SFFloat198.Appinfo := 'Goal fieldOfView for this move';
+Script145.AddCustomField(SFVec3f152);
+SFFloat153 := TSFFloat.CreateUndefined(Script145, false, 'goalFieldOfView');
+SFFloat153.Appinfo := 'Goal fieldOfView for this move';
 { METHOD .Fd.AddCustomField }
-Script190.AddCustomField(SFFloat198);
-SFFloat199 := TSFFloat.CreateUndefined(Script190, false, 'goalFStop');
-SFFloat199.Appinfo := 'Focal length divided effective aperture diameter indicating width of focal plane';
+Script145.AddCustomField(SFFloat153);
+SFFloat154 := TSFFloat.CreateUndefined(Script145, false, 'goalFStop');
+SFFloat154.Appinfo := 'Focal length divided effective aperture diameter indicating width of focal plane';
 { METHOD .Fd.AddCustomField }
-Script190.AddCustomField(SFFloat199);
-SFFloat200 := TSFFloat.CreateUndefined(Script190, false, 'goalFocusDistance');
-SFFloat200.Appinfo := 'Distance to focal plane of sharpest focus';
+Script145.AddCustomField(SFFloat154);
+SFFloat155 := TSFFloat.CreateUndefined(Script145, false, 'goalFocusDistance');
+SFFloat155.Appinfo := 'Distance to focal plane of sharpest focus';
 { METHOD .Fd.AddCustomField }
-Script190.AddCustomField(SFFloat200);
-SFBool201 := TSFBool.CreateUndefined(Script190, false, 'isActive');
-SFBool201.Appinfo := 'Mark start/stop with true/false output respectively useful to trigger external animations';
+Script145.AddCustomField(SFFloat155);
+SFBool156 := TSFBool.CreateUndefined(Script145, false, 'isActive');
+SFBool156.Appinfo := 'Mark start/stop with true/false output respectively useful to trigger external animations';
 { METHOD .Fd.AddCustomField }
-Script190.AddCustomField(SFBool201);
-SFBool202 := TSFBool.CreateUndefined(Script190, false, 'traceEnabled');
-SFBool202.Appinfo := 'enable console output to trace script computations and prototype progress';
+Script145.AddCustomField(SFBool156);
+SFBool157 := TSFBool.CreateUndefined(Script145, false, 'traceEnabled');
+SFBool157.Appinfo := 'enable console output to trace script computations and prototype progress';
 { METHOD .Fd.AddCustomField }
-Script190.AddCustomField(SFBool202);
-IS203 := TIS.Create;
-connect204 := Tconnect.Create;
-connect204.NodeField := 'description';
-connect204.ProtoField := 'description';
-{ METHOD .Connect }
-IS203.Connect := connect204;
-connect205 := Tconnect.Create;
-connect205.NodeField := 'enabled';
-connect205.ProtoField := 'enabled';
-{ METHOD .Connect }
-IS203.Connect := connect205;
-connect206 := Tconnect.Create;
-connect206.NodeField := 'duration';
-connect206.ProtoField := 'duration';
-{ METHOD .Connect }
-IS203.Connect := connect206;
-connect207 := Tconnect.Create;
-connect207.NodeField := 'goalPosition';
-connect207.ProtoField := 'goalPosition';
-{ METHOD .Connect }
-IS203.Connect := connect207;
-connect208 := Tconnect.Create;
-connect208.NodeField := 'goalOrientation';
-connect208.ProtoField := 'goalOrientation';
-{ METHOD .Connect }
-IS203.Connect := connect208;
-connect209 := Tconnect.Create;
-connect209.NodeField := 'tracking';
-connect209.ProtoField := 'tracking';
-{ METHOD .Connect }
-IS203.Connect := connect209;
-connect210 := Tconnect.Create;
-connect210.NodeField := 'goalAimPoint';
-connect210.ProtoField := 'goalAimPoint';
-{ METHOD .Connect }
-IS203.Connect := connect210;
-connect211 := Tconnect.Create;
-connect211.NodeField := 'goalFieldOfView';
-connect211.ProtoField := 'goalFieldOfView';
-{ METHOD .Connect }
-IS203.Connect := connect211;
-connect212 := Tconnect.Create;
-connect212.NodeField := 'goalFStop';
-connect212.ProtoField := 'goalFStop';
-{ METHOD .Connect }
-IS203.Connect := connect212;
-connect213 := Tconnect.Create;
-connect213.NodeField := 'goalFocusDistance';
-connect213.ProtoField := 'goalFocusDistance';
-{ METHOD .Connect }
-IS203.Connect := connect213;
-connect214 := Tconnect.Create;
-connect214.NodeField := 'isActive';
-connect214.ProtoField := 'isActive';
-{ METHOD .Connect }
-IS203.Connect := connect214;
-connect215 := Tconnect.Create;
-connect215.NodeField := 'traceEnabled';
-connect215.ProtoField := 'traceEnabled';
-{ METHOD .Connect }
-IS203.Connect := connect215;
-{ METHOD .Fd.AddCustomField }
-Script190.AddCustomField(IS203);
+Script145.AddCustomField(SFBool157);
 
-Script190.SetSourceCode('''ecmascript:\n"+
+Script145.SetSourceCode('''ecmascript:\n"+
 "function initialize () // CameraMovementScript\n"+
 "{\n"+
 "//  tracePrint ('initialize start...');\\n    alwaysPrint ('initialize goalPosition=' + goalPosition.toString() + ', goalOrientation=' + goalOrientation.toString() +\\n                           ', goalAimPoint=' + goalAimPoint.toString() // + ', tracking=' + tracking.toString()\\n                           );\\n    if (duration < 0)\\n    {\\n       alwaysPrint ('error: negative duration=' + duration + ', reset to 0 and ignored');\\n       duration = 0;\\n    }\\n    else if (duration == 0)\\n    {\\n       alwaysPrint ('warning: duration=0, nothing to do!');\\n    }\\n    tracePrint ('... initialize complete');\\n}\\n\\nfunction set_goalAimPoint (eventValue) // input event received for inputOutput field\\n{\\n    goalAimPoint_changed = eventValue;\\n    tracePrint ('goalAimPoint=' + goalAimPoint.toString());\\n\\n    // updated goalOrientation tracking is handled by Camera recomputing the OrientationInterpolator\\n}\\n\\nfunction set_description (eventValue) // input event received for inputOutput field\\n{\\n    description = eventValue;\\n}\\n\\nfunction set_enabled (eventValue) // input event received for inputOutput field\\n{\\n    enabled = eventValue;\\n}\\n\\nfunction set_duration (eventValue) // input event received for inputOutput field\\n{\\n    duration = eventValue;\\n}\\n\\nfunction set_goalPosition (eventValue) // input event received for inputOutput field\\n{\\n    goalPosition = eventValue;\\n}\\n\\nfunction set_goalOrientation (eventValue) // input event received for inputOutput field\\n{\\n    goalOrientation = eventValue;\\n}\\n\\nfunction set_tracking (eventValue) // input event received for inputOutput field\\n{\\n    tracking = eventValue;\\n}\\n\\nfunction set_goalFieldOfView (eventValue) // input event received for inputOutput field\\n{\\n    goalFieldOfView = eventValue;\\n}\\n\\nfunction set_goalFStop (eventValue) // input event received for inputOutput field\\n{\\n    goalFStop = eventValue;\\n}\\n\\nfunction set_goalFocusDistance (eventValue) // input event received for inputOutput field\\n{\\n    goalFocusDistance = eventValue;\\n}\\n\\n// TODO consider method set_active for constructed Camera node BooleanSequencer to send isActive\\n\\nfunction tracePrint (outputValue)\\n{\\n	if (traceEnabled) alwaysPrint (outputValue);\\n}\\n\\nfunction alwaysPrint (outputValue)\\n{\\n	// try to ensure outputValue is converted to string despite browser idiosyncracies\\n    var outputString = outputValue.toString(); // utility function according to spec\\n    if (outputString == null) outputString = outputValue; // direct cast\\n\\n    if  (description.length > 0)\\n         Browser.print ('[CameraMovement: ' + description + '] ' + outputString + '\\n');\\n    else\\n         Browser.print ('[CameraMovement] ' + outputString + '\\n');\n"+
 "}''');
 { METHOD .AddScript }
-X3DPrototype189.AddScript([Script190]);
+X3DPrototype144.AddScript([Script145]);
 { Add any ROUTEs here, going from Script to other nodes within ProtoBody }
 { METHOD .AddX3DPrototype }
-X3DPrototype175.AddX3DPrototype([X3DPrototype189]);
+X3DPrototype130.AddX3DPrototype([X3DPrototype144]);
 { METHOD .AddX3DPrototype }
-Group16.AddX3DPrototype([X3DPrototype175]);
+Group16.AddX3DPrototype([X3DPrototype130]);
 { =============== OfflineRender ============== }
-X3DPrototype216 := TX3DPrototype.Create;
-X3DPrototype216.Appinfo := 'OfflineRender defines a parameters for offline rendering of Camera animation output to a movie file (or possibly a still shot).';
-X3DInterfaceDeclaration217 := TX3DInterfaceDeclaration.Create(nil);
+X3DPrototype159 := TX3DPrototype.Create;;
+X3DPrototype159.Appinfo := 'OfflineRender defines a parameters for offline rendering of Camera animation output to a movie file (or possibly a still shot).';
+X3DInterfaceDeclaration160 := TX3DInterfaceDeclaration.Create(nil);;
 { TODO non-photorealistic rendering (NPR) parameters }
-SFString218 := TSFString.CreateUndefined(X3DInterfaceDeclaration217, false, 'description');
-SFString218.Appinfo := 'Text description to be displayed for this OfflineRender';
+SFString161 := TSFString.CreateUndefined(X3DInterfaceDeclaration160, false, 'description');
+SFString161.Appinfo := 'Text description to be displayed for this OfflineRender';
 { METHOD .AddSFString }
-X3DInterfaceDeclaration217.AddSFString([SFString218]);
-SFBool219 := TSFBool.CreateUndefined(X3DInterfaceDeclaration217, false, 'enabled');
-SFBool219.Appinfo := 'Whether this OfflineRender can be activated';
-SFBool219.Value := 'true';
+X3DInterfaceDeclaration160.AddSFString([SFString161]);
+SFBool162 := TSFBool.CreateUndefined(X3DInterfaceDeclaration160, false, 'enabled');
+SFBool162.Appinfo := 'Whether this OfflineRender can be activated';
+SFBool162.Value := 'true';
 { METHOD .AddSFBool }
-X3DInterfaceDeclaration217.AddSFBool([SFBool219]);
-SFFloat220 := TSFFloat.CreateUndefined(X3DInterfaceDeclaration217, false, 'frameRate');
-SFFloat220.Appinfo := 'Frames per second recorded for this rendering';
-SFFloat220.Value := '30';
+X3DInterfaceDeclaration160.AddSFBool([SFBool162]);
+SFFloat163 := TSFFloat.CreateUndefined(X3DInterfaceDeclaration160, false, 'frameRate');
+SFFloat163.Appinfo := 'Frames per second recorded for this rendering';
+SFFloat163.Value := '30';
 { METHOD .AddSFFloat }
-X3DInterfaceDeclaration217.AddSFFloat([SFFloat220]);
-SFVec2f221 := TSFVec2f.CreateUndefined(X3DInterfaceDeclaration217, false, 'frameSize');
-SFVec2f221.Appinfo := 'Size of frame in number of pixels width and height';
-SFVec2f221.Value := '640 480';
+X3DInterfaceDeclaration160.AddSFFloat([SFFloat163]);
+SFVec2f164 := TSFVec2f.CreateUndefined(X3DInterfaceDeclaration160, false, 'frameSize');
+SFVec2f164.Appinfo := 'Size of frame in number of pixels width and height';
+SFVec2f164.Value := '640 480';
 { METHOD .AddSFVec2f }
-X3DInterfaceDeclaration217.AddSFVec2f([SFVec2f221]);
-SFFloat222 := TSFFloat.CreateUndefined(X3DInterfaceDeclaration217, false, 'pixelAspectRatio');
-SFFloat222.Appinfo := 'Relative dimensions of pixel height/width typically 1.33 or 1';
-SFFloat222.Value := '1.33';
+X3DInterfaceDeclaration160.AddSFVec2f([SFVec2f164]);
+SFFloat165 := TSFFloat.CreateUndefined(X3DInterfaceDeclaration160, false, 'pixelAspectRatio');
+SFFloat165.Appinfo := 'Relative dimensions of pixel height/width typically 1.33 or 1';
+SFFloat165.Value := '1.33';
 { METHOD .AddSFFloat }
-X3DInterfaceDeclaration217.AddSFFloat([SFFloat222]);
-SFTime223 := TSFTime.CreateUndefined(X3DInterfaceDeclaration217, false, 'set_startTime');
-SFTime223.Appinfo := 'Begin render operation';
+X3DInterfaceDeclaration160.AddSFFloat([SFFloat165]);
+SFTime166 := TSFTime.CreateUndefined(X3DInterfaceDeclaration160, false, 'set_startTime');
+SFTime166.Appinfo := 'Begin render operation';
 { METHOD .AddSFTime }
-X3DInterfaceDeclaration217.AddSFTime([SFTime223]);
-SFFloat224 := TSFFloat.CreateUndefined(X3DInterfaceDeclaration217, false, 'progress');
-SFFloat224.Appinfo := 'Progress performing render operation (0..1)';
+X3DInterfaceDeclaration160.AddSFTime([SFTime166]);
+SFFloat167 := TSFFloat.CreateUndefined(X3DInterfaceDeclaration160, false, 'progress');
+SFFloat167.Appinfo := 'Progress performing render operation (0..1)';
 { METHOD .AddSFFloat }
-X3DInterfaceDeclaration217.AddSFFloat([SFFloat224]);
-SFTime225 := TSFTime.CreateUndefined(X3DInterfaceDeclaration217, false, 'renderCompleteTime');
-SFTime225.Appinfo := 'Render operation complete';
+X3DInterfaceDeclaration160.AddSFFloat([SFFloat167]);
+SFTime168 := TSFTime.CreateUndefined(X3DInterfaceDeclaration160, false, 'renderCompleteTime');
+SFTime168.Appinfo := 'Render operation complete';
 { METHOD .AddSFTime }
-X3DInterfaceDeclaration217.AddSFTime([SFTime225]);
-MFString226 := TMFString.CreateUndefined(X3DInterfaceDeclaration217, false, 'movieFormat');
-MFString226.Appinfo := 'Format of rendered output movie (mpeg mp4 etc.), use first supported format';
-MFString226.Value := '\"mpeg\"';
+X3DInterfaceDeclaration160.AddSFTime([SFTime168]);
+MFString169 := TMFString.CreateUndefined(X3DInterfaceDeclaration160, false, 'movieFormat');
+MFString169.Appinfo := 'Format of rendered output movie (mpeg mp4 etc.), use first supported format';
+MFString169.Value := '\"mpeg\"';
 { METHOD .AddMFString }
-X3DInterfaceDeclaration217.AddMFString([MFString226]);
-MFString227 := TMFString.CreateUndefined(X3DInterfaceDeclaration217, false, 'imageFormat');
-MFString227.Appinfo := 'Format of rendered output images (png jpeg gif tiff etc.) use first supported format';
-MFString227.Value := '\"png\"';
+X3DInterfaceDeclaration160.AddMFString([MFString169]);
+MFString170 := TMFString.CreateUndefined(X3DInterfaceDeclaration160, false, 'imageFormat');
+MFString170.Appinfo := 'Format of rendered output images (png jpeg gif tiff etc.) use first supported format';
+MFString170.Value := '\"png\"';
 { METHOD .AddMFString }
-X3DInterfaceDeclaration217.AddMFString([MFString227]);
-SFBool228 := TSFBool.CreateUndefined(X3DInterfaceDeclaration217, false, 'traceEnabled');
-SFBool228.Appinfo := 'enable console output to trace script computations and prototype progress';
-SFBool228.Value := 'false';
+X3DInterfaceDeclaration160.AddMFString([MFString170]);
+SFBool171 := TSFBool.CreateUndefined(X3DInterfaceDeclaration160, false, 'traceEnabled');
+SFBool171.Appinfo := 'enable console output to trace script computations and prototype progress';
+SFBool171.Value := 'false';
 { METHOD .AddSFBool }
-X3DInterfaceDeclaration217.AddSFBool([SFBool228]);
+X3DInterfaceDeclaration160.AddSFBool([SFBool171]);
 { METHOD .AddX3DInterfaceDeclaration }
-X3DPrototype216.AddX3DInterfaceDeclaration([X3DInterfaceDeclaration217]);
-X3DPrototype229 := TX3DPrototype.Create;
+X3DPrototype159.AddX3DInterfaceDeclaration([X3DInterfaceDeclaration160]);
+X3DPrototype172 := TX3DPrototype.Create;;
 { First node determines node type of this prototype }
 { Subsequent nodes do not render, but still must be a valid X3D subgraph }
-Script230 := TScriptNode.Create;
-Script230.MustEvaluate := True;
-SFString231 := TSFString.CreateUndefined(Script230, false, 'description');
-SFString231.Appinfo := 'Text description to be displayed for this OfflineRender';
+Script173 := TScriptNode.Create;;
+Script173.MustEvaluate := True;
+SFString174 := TSFString.CreateUndefined(Script173, false, 'description');
+SFString174.Appinfo := 'Text description to be displayed for this OfflineRender';
 { METHOD .Fd.AddCustomField }
-Script230.AddCustomField(SFString231);
-SFBool232 := TSFBool.CreateUndefined(Script230, false, 'enabled');
-SFBool232.Appinfo := 'Whether this OfflineRender can be activated';
+Script173.AddCustomField(SFString174);
+SFBool175 := TSFBool.CreateUndefined(Script173, false, 'enabled');
+SFBool175.Appinfo := 'Whether this OfflineRender can be activated';
 { METHOD .Fd.AddCustomField }
-Script230.AddCustomField(SFBool232);
-SFFloat233 := TSFFloat.CreateUndefined(Script230, false, 'frameRate');
-SFFloat233.Appinfo := 'Frames per second recorded for this rendering';
+Script173.AddCustomField(SFBool175);
+SFFloat176 := TSFFloat.CreateUndefined(Script173, false, 'frameRate');
+SFFloat176.Appinfo := 'Frames per second recorded for this rendering';
 { METHOD .Fd.AddCustomField }
-Script230.AddCustomField(SFFloat233);
-SFVec2f234 := TSFVec2f.CreateUndefined(Script230, false, 'frameSize');
-SFVec2f234.Appinfo := 'Size of frame in number of pixels width and height';
+Script173.AddCustomField(SFFloat176);
+SFVec2f177 := TSFVec2f.CreateUndefined(Script173, false, 'frameSize');
+SFVec2f177.Appinfo := 'Size of frame in number of pixels width and height';
 { METHOD .Fd.AddCustomField }
-Script230.AddCustomField(SFVec2f234);
-SFFloat235 := TSFFloat.CreateUndefined(Script230, false, 'pixelAspectRatio');
-SFFloat235.Appinfo := 'Relative dimensions of pixel height/width typically 1.33 or 1';
+Script173.AddCustomField(SFVec2f177);
+SFFloat178 := TSFFloat.CreateUndefined(Script173, false, 'pixelAspectRatio');
+SFFloat178.Appinfo := 'Relative dimensions of pixel height/width typically 1.33 or 1';
 { METHOD .Fd.AddCustomField }
-Script230.AddCustomField(SFFloat235);
-SFTime236 := TSFTime.CreateUndefined(Script230, false, 'set_startTime');
-SFTime236.Appinfo := 'Begin render operation';
+Script173.AddCustomField(SFFloat178);
+SFTime179 := TSFTime.CreateUndefined(Script173, false, 'set_startTime');
+SFTime179.Appinfo := 'Begin render operation';
 { METHOD .Fd.AddCustomField }
-Script230.AddCustomField(SFTime236);
-SFFloat237 := TSFFloat.CreateUndefined(Script230, false, 'progress');
-SFFloat237.Appinfo := 'Progress performing render operation (0..1)';
+Script173.AddCustomField(SFTime179);
+SFFloat180 := TSFFloat.CreateUndefined(Script173, false, 'progress');
+SFFloat180.Appinfo := 'Progress performing render operation (0..1)';
 { METHOD .Fd.AddCustomField }
-Script230.AddCustomField(SFFloat237);
-SFTime238 := TSFTime.CreateUndefined(Script230, false, 'renderCompleteTime');
-SFTime238.Appinfo := 'Render operation complete';
+Script173.AddCustomField(SFFloat180);
+SFTime181 := TSFTime.CreateUndefined(Script173, false, 'renderCompleteTime');
+SFTime181.Appinfo := 'Render operation complete';
 { METHOD .Fd.AddCustomField }
-Script230.AddCustomField(SFTime238);
-MFString239 := TMFString.CreateUndefined(Script230, false, 'movieFormat');
-MFString239.Appinfo := 'Format of rendered output movie (mpeg mp4 etc.)';
+Script173.AddCustomField(SFTime181);
+MFString182 := TMFString.CreateUndefined(Script173, false, 'movieFormat');
+MFString182.Appinfo := 'Format of rendered output movie (mpeg mp4 etc.)';
 { METHOD .Fd.AddCustomField }
-Script230.AddCustomField(MFString239);
-MFString240 := TMFString.CreateUndefined(Script230, false, 'imageFormat');
-MFString240.Appinfo := 'Format of rendered output images (png jpeg gif tiff etc.)';
+Script173.AddCustomField(MFString182);
+MFString183 := TMFString.CreateUndefined(Script173, false, 'imageFormat');
+MFString183.Appinfo := 'Format of rendered output images (png jpeg gif tiff etc.)';
 { METHOD .Fd.AddCustomField }
-Script230.AddCustomField(MFString240);
-SFBool241 := TSFBool.CreateUndefined(Script230, false, 'traceEnabled');
-SFBool241.Appinfo := 'enable console output to trace script computations and prototype progress';
+Script173.AddCustomField(MFString183);
+SFBool184 := TSFBool.CreateUndefined(Script173, false, 'traceEnabled');
+SFBool184.Appinfo := 'enable console output to trace script computations and prototype progress';
 { METHOD .Fd.AddCustomField }
-Script230.AddCustomField(SFBool241);
-IS242 := TIS.Create;
-connect243 := Tconnect.Create;
-connect243.NodeField := 'description';
-connect243.ProtoField := 'description';
-{ METHOD .Connect }
-IS242.Connect := connect243;
-connect244 := Tconnect.Create;
-connect244.NodeField := 'enabled';
-connect244.ProtoField := 'enabled';
-{ METHOD .Connect }
-IS242.Connect := connect244;
-connect245 := Tconnect.Create;
-connect245.NodeField := 'frameRate';
-connect245.ProtoField := 'frameRate';
-{ METHOD .Connect }
-IS242.Connect := connect245;
-connect246 := Tconnect.Create;
-connect246.NodeField := 'frameSize';
-connect246.ProtoField := 'frameSize';
-{ METHOD .Connect }
-IS242.Connect := connect246;
-connect247 := Tconnect.Create;
-connect247.NodeField := 'pixelAspectRatio';
-connect247.ProtoField := 'pixelAspectRatio';
-{ METHOD .Connect }
-IS242.Connect := connect247;
-connect248 := Tconnect.Create;
-connect248.NodeField := 'set_startTime';
-connect248.ProtoField := 'set_startTime';
-{ METHOD .Connect }
-IS242.Connect := connect248;
-connect249 := Tconnect.Create;
-connect249.NodeField := 'progress';
-connect249.ProtoField := 'progress';
-{ METHOD .Connect }
-IS242.Connect := connect249;
-connect250 := Tconnect.Create;
-connect250.NodeField := 'renderCompleteTime';
-connect250.ProtoField := 'renderCompleteTime';
-{ METHOD .Connect }
-IS242.Connect := connect250;
-connect251 := Tconnect.Create;
-connect251.NodeField := 'movieFormat';
-connect251.ProtoField := 'movieFormat';
-{ METHOD .Connect }
-IS242.Connect := connect251;
-connect252 := Tconnect.Create;
-connect252.NodeField := 'imageFormat';
-connect252.ProtoField := 'imageFormat';
-{ METHOD .Connect }
-IS242.Connect := connect252;
-connect253 := Tconnect.Create;
-connect253.NodeField := 'traceEnabled';
-connect253.ProtoField := 'traceEnabled';
-{ METHOD .Connect }
-IS242.Connect := connect253;
-{ METHOD .Fd.AddCustomField }
-Script230.AddCustomField(IS242);
+Script173.AddCustomField(SFBool184);
 
-Script230.SetSourceCode('''ecmascript:\n"+
+Script173.SetSourceCode('''ecmascript:\n"+
 "function initialize () // OfflineRenderScript\n"+
 "{\n"+
 "//  tracePrint ('initialize start...');\\n\\n    tracePrint ('... initialize complete');\\n}\\n\\nfunction set_description (eventValue) // input event received for inputOutput field\\n{\\n    description = eventValue;\\n}\\n\\nfunction set_enabled (eventValue) // input event received for inputOutput field\\n{\\n    enabled = eventValue;\\n}\\n\\nfunction set_frameRate (eventValue) // input event received for inputOutput field\\n{\\n    frameRate = eventValue;\\n}\\n\\nfunction set_frameSize (eventValue) // input event received for inputOutput field\\n{\\n    frameSize = eventValue;\\n}\\n\\nfunction set_pixelAspectRatio (eventValue) // input event received for inputOutput field\\n{\\n    pixelAspectRatio = eventValue;\\n}\\n\\nfunction set_startTime (eventValue) // input event received for inputOnly field\\n{\\n   // do something with input eventValue;\\n}\\n\\nfunction tracePrint (outputValue)\\n{\\n	if (traceEnabled) alwaysPrint (outputValue);\\n}\\n\\nfunction alwaysPrint (outputValue)\\n{\\n	// try to ensure outputValue is converted to string despite browser idiosyncracies\\n    var outputString = outputValue.toString(); // utility function according to spec\\n    if (outputString == null) outputString = outputValue; // direct cast\\n\\n    if  (description.length > 0)\\n         Browser.print ('[OfflineRender: ' + description + '] ' + outputString + '\\n');\\n    else\\n         Browser.print ('[OfflineRender] ' + outputString + '\\n');\n"+
 "}''');
 { METHOD .AddScript }
-X3DPrototype229.AddScript([Script230]);
+X3DPrototype172.AddScript([Script173]);
 { Add any ROUTEs here, going from Script to other nodes within ProtoBody }
 { METHOD .AddX3DPrototype }
-X3DPrototype216.AddX3DPrototype([X3DPrototype229]);
+X3DPrototype159.AddX3DPrototype([X3DPrototype172]);
 { METHOD .AddX3DPrototype }
-Group16.AddX3DPrototype([X3DPrototype216]);
+Group16.AddX3DPrototype([X3DPrototype159]);
 { =============== Launch Prototype Example ============== }
-Background254 := TBackgroundNode.Create;
-Background254.SetSkyColor([Vector3(0.282353,0.380392,0.470588)]);
+Background186 := TBackgroundNode.Create;;
+Background186.SetSkyColor([Vector3(0.282353,0.380392,0.470588)]);
 { METHOD .FdChildren.Add }
-Group16.FdChildren.Add(Background254);
-Anchor255 := TAnchorNode.Create;
-Anchor255.Description := 'launch CameraExample scene';
-Anchor255.SetUrl(['CameraExamples.x3d','https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d','CameraExamples.wrl','https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.wrl']);
-Transform256 := TTransformNode.Create;
-Shape257 := TShapeNode.Create;
-Text258 := TTextNode.Create;
-Text258.SetText(['CameraPrototypes.x3d','defines multiple prototype nodes','Click on this text to see','CameraExamples.x3d scene']);
-FontStyle259 := TFontStyleNode.Create;
-FontStyle259.Justify := fjMIDDLE;
-FontStyle259.JustifyMinor := fjMIDDLE;
+Group16.FdChildren.Add(Background186);
+Anchor187 := TAnchorNode.Create;;
+Anchor187.Description := 'launch CameraExample scene';
+Anchor187.SetUrl(['CameraExamples.x3d','https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d','CameraExamples.wrl','https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.wrl']);
+Transform188 := TTransformNode.Create;;
+Shape189 := TShapeNode.Create;;
+Text190 := TTextNode.Create;;
+Text190.SetText(['CameraPrototypes.x3d','defines multiple prototype nodes','Click on this text to see','CameraExamples.x3d scene']);
+FontStyle191 := TFontStyleNode.Create;;
+FontStyle191.Justify := fjMIDDLE;
+FontStyle191.JustifyMinor := fjMIDDLE;
 { METHOD .FontStyle }
-Text258.FontStyle := FontStyle259;
+{ METHOD.SET .FontStyle }
+Text190.FontStyle := FontStyle191;
 { METHOD .Geometry }
-Shape257.Geometry := Text258;
-Appearance260 := TAppearanceNode.Create;
-Material261 := TMaterialNode.Create;
-Material261.DiffuseColor := Vector3(1,1,0.2);
+{ METHOD.SET .Geometry }
+Shape189.Geometry := Text190;
+Appearance192 := TAppearanceNode.Create;;
+Material193 := TMaterialNode.Create;;
+Material193.DiffuseColor := Vector3(1,1,0.2);
 { METHOD .SetMaterial }
-Appearance260.Material := Material261;
+Appearance192.Material := Material193;
 { METHOD .Appearance }
-Shape257.Appearance := Appearance260;
+{ METHOD.SET .Appearance }
+Shape189.Appearance := Appearance192;
 { METHOD .FdChildren.Add }
-Transform256.FdChildren.Add(Shape257);
+Transform188.FdChildren.Add(Shape189);
 { METHOD .FdChildren.Add }
-Anchor255.FdChildren.Add(Transform256);
+Anchor187.FdChildren.Add(Transform188);
 { METHOD .FdChildren.Add }
-Group16.FdChildren.Add(Anchor255);
+Group16.FdChildren.Add(Anchor187);
 { METHOD .AddGroup }
 X3D0.AddChildren([Group16]);
 end;
@@ -1468,9 +1011,6 @@ InitCameraPrototypesPart3;
 InitCameraPrototypesPart4;
 InitCameraPrototypesPart5;
 InitCameraPrototypesPart6;
-InitCameraPrototypesPart7;
-InitCameraPrototypesPart8;
-InitCameraPrototypesPart9;
 Result := X3D0;
 end;
 

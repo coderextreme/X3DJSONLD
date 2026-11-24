@@ -2,7 +2,7 @@ unit JoeSkeletonSkinSite;
 
 interface
 
-uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
 
 function CreateJoeSkeletonSkinSite: TX3DRootNode;
 
@@ -1501,91 +1501,91 @@ X3D0.Meta['license'] := '../license.html';
 X3D0.Meta['generator'] := 'X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html';
 { METHOD .Meta }
 { METHOD .Head }
-Group32 := TGroupNode.Create;
-WorldInfo33 := TWorldInfoNode.Create;
+Group32 := TGroupNode.Create;;
+WorldInfo33 := TWorldInfoNode.Create;;
 WorldInfo33.SetInfo(['By Joe for Joe','HAnim V1 LOA3 Skeleton Joint centers and Site translations Adapted for approximatrion of ManGLoss Site Location Example and HANIM 200x Default Joint Centers, LOA3']);
 WorldInfo33.Title := 'JoeSkeletonSkinSite.x3d';
-{ METHOD .FdChildren.Add }
-Group32.FdChildren.Add(WorldInfo33);
-NavigationInfo34 := TNavigationInfoNode.Create;
 end;
 
 procedure InitJoeSkeletonSkinSitePart1;
 begin
 
 { METHOD .FdChildren.Add }
+Group32.FdChildren.Add(WorldInfo33);
+NavigationInfo34 := TNavigationInfoNode.Create;;
+{ METHOD .FdChildren.Add }
 Group32.FdChildren.Add(NavigationInfo34);
-Background35 := TBackgroundNode.Create;
+Background35 := TBackgroundNode.Create;;
 Background35.SetGroundAngle([1.57]);
 Background35.SetGroundColor([Vector3(0,0.1,0),Vector3(0,0.1,0)]);
 Background35.SetSkyColor([Vector3(0,0,0.1)]);
 { METHOD .FdChildren.Add }
 Group32.FdChildren.Add(Background35);
 { Authoring hint: these axes are aligned within local coordinate system }
-Group36 := TGroupNode.Create;
-Viewpoint37 := TViewpointNode.Create;
+Group36 := TGroupNode.Create;;
+Viewpoint37 := TViewpointNode.Create;;
 Viewpoint37.Description := 'Front Up View';
 Viewpoint37.Orientation := Vector4(-1,-1,0,0.55);
 Viewpoint37.Position := Vector3(-1,2,2.5);
 { METHOD .FdChildren.Add }
 Group36.FdChildren.Add(Viewpoint37);
-Viewpoint38 := TViewpointNode.Create;
+Viewpoint38 := TViewpointNode.Create;;
 Viewpoint38.Description := 'From Left View';
 Viewpoint38.Orientation := Vector4(0.3,1,0,-1.57);
 Viewpoint38.Position := Vector3(-2.5,1.5,0);
 { METHOD .FdChildren.Add }
 Group36.FdChildren.Add(Viewpoint38);
-Viewpoint39 := TViewpointNode.Create;
+Viewpoint39 := TViewpointNode.Create;;
 Viewpoint39.Description := 'Front Mid View';
 Viewpoint39.Position := Vector3(0,0.5,1.25);
 { METHOD .FdChildren.Add }
 Group36.FdChildren.Add(Viewpoint39);
-Viewpoint40 := TViewpointNode.Create;
+Viewpoint40 := TViewpointNode.Create;;
 Viewpoint40.Description := 'Front Feet View';
 Viewpoint40.Position := Vector3(0,0,0.75);
 { METHOD .FdChildren.Add }
 Group36.FdChildren.Add(Viewpoint40);
-Viewpoint41 := TViewpointNode.Create;
+Viewpoint41 := TViewpointNode.Create;;
 Viewpoint41.Description := 'From Right View';
 Viewpoint41.Orientation := Vector4(0,1,0,1.57);
 Viewpoint41.Position := Vector3(1,1,0);
 { METHOD .FdChildren.Add }
 Group36.FdChildren.Add(Viewpoint41);
-Viewpoint42 := TViewpointNode.Create;
-Viewpoint42.CenterOfRotation := Vector3(0,1.65,0);
-Viewpoint42.Description := 'Front Head View';
-Viewpoint42.Position := Vector3(0,1.65,0.75);
-{ METHOD .FdChildren.Add }
-Group36.FdChildren.Add(Viewpoint42);
-Viewpoint43 := TViewpointNode.Create;
-Viewpoint43.Description := 'Front Mid View';
-Viewpoint43.Position := Vector3(0,1,1.75);
-{ METHOD .FdChildren.Add }
-Group36.FdChildren.Add(Viewpoint43);
-Viewpoint44 := TViewpointNode.Create;
 end;
 
 procedure InitJoeSkeletonSkinSitePart2;
 begin
 
+Viewpoint42 := TViewpointNode.Create;;
+Viewpoint42.CenterOfRotation := Vector3(0,1.65,0);
+Viewpoint42.Description := 'Front Head View';
+Viewpoint42.Position := Vector3(0,1.65,0.75);
+{ METHOD .FdChildren.Add }
+Group36.FdChildren.Add(Viewpoint42);
+Viewpoint43 := TViewpointNode.Create;;
+Viewpoint43.Description := 'Front Mid View';
+Viewpoint43.Position := Vector3(0,1,1.75);
+{ METHOD .FdChildren.Add }
+Group36.FdChildren.Add(Viewpoint43);
+Viewpoint44 := TViewpointNode.Create;;
 Viewpoint44.Description := 'Rear View';
 Viewpoint44.Orientation := Vector4(0,1,0,3.14);
 Viewpoint44.Position := Vector3(0,1.5,-4);
 { METHOD .FdChildren.Add }
 Group36.FdChildren.Add(Viewpoint44);
-Viewpoint45 := TViewpointNode.Create;
+Viewpoint45 := TViewpointNode.Create;;
 Viewpoint45.Description := 'Top View';
 Viewpoint45.Orientation := Vector4(1,0,0,-1.57);
 Viewpoint45.Position := Vector3(0,4,0);
 { METHOD .FdChildren.Add }
 Group36.FdChildren.Add(Viewpoint45);
-Viewpoint46 := TViewpointNode.Create;
+Viewpoint46 := TViewpointNode.Create;;
 Viewpoint46.Description := 'Bottom View';
 Viewpoint46.Orientation := Vector4(1,0,0,1.57);
 Viewpoint46.Position := Vector3(0,-4,0);
 { METHOD .FdChildren.Add }
 Group36.FdChildren.Add(Viewpoint46);
-Viewpoint47 := TViewpointNode.Create;
+Viewpoint47 := TViewpointNode.Create;;
 Viewpoint47.Description := 'Right View';
 Viewpoint47.Orientation := Vector4(0,1,0,1.57);
 Viewpoint47.Position := Vector3(4,1.5,0);
@@ -1593,50 +1593,59 @@ Viewpoint47.Position := Vector3(4,1.5,0);
 Group36.FdChildren.Add(Viewpoint47);
 { METHOD .FdChildren.Add }
 Group32.FdChildren.Add(Group36);
-Group48 := TGroupNode.Create;
+Group48 := TGroupNode.Create;;
 Group48.Visible := False;
 Transform49 := TTransformNode.Create;
+end;
+
+procedure InitJoeSkeletonSkinSitePart3;
+begin
+;
 Transform49.Scale := Vector3(5,5,5);
 Transform49.Translation := Vector3(0,2.1,0);
-Shape50 := TShapeNode.Create;
-Appearance51 := TAppearanceNode.Create;
-Material52 := TMaterialNode.Create;
+Shape50 := TShapeNode.Create;;
+Appearance51 := TAppearanceNode.Create;;
+Material52 := TMaterialNode.Create;;
 Material52.AmbientIntensity := 0.5;
 Material52.DiffuseColor := Vector3(0,0,0);
 Material52.Shininess := 1;
 { METHOD .SetMaterial }
 Appearance51.Material := Material52;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape50.Appearance := Appearance51;
-IndexedFaceSet53 := TIndexedFaceSetNode.Create;
+IndexedFaceSet53 := TIndexedFaceSetNode.Create;;
 IndexedFaceSet53.SetCoordIndex([0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1]);
 IndexedFaceSet53.CreaseAngle := 0.1;
-Color54 := TColorNode.Create;
+Color54 := TColorNode.Create;;
 Color54.SetColor([Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,1,1),Vector3(0,1,1),Vector3(1,1,0)]);
 { METHOD .Color }
+{ METHOD.SET .Color }
 IndexedFaceSet53.Color := Color54;
-Coordinate55 := TCoordinateNode.Create;
-end;
-
-procedure InitJoeSkeletonSkinSitePart3;
-begin
-
+Coordinate55 := TCoordinateNode.Create;;
 Coordinate55.SetPoint([Vector3(0,0.01,0),Vector3(-0.01,0,0),Vector3(0,0,0.0157),Vector3(0.01,0,0),Vector3(0,0,-0.01),Vector3(0,-0.01,0)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedFaceSet53.Coord := Coordinate55;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape50.Geometry := IndexedFaceSet53;
 { METHOD .FdChildren.Add }
 Transform49.FdChildren.Add(Shape50);
 { METHOD .FdChildren.Add }
 Group48.FdChildren.Add(Transform49);
-Transform56 := TTransformNode.Create;
+Transform56 := TTransformNode.Create;;
 Transform56.Scale := Vector3(0.1,0.1,0.1);
 Transform56.Translation := Vector3(-0.2,0.773,-0.016);
-Shape57 := TShapeNode.Create;
-Appearance58 := TAppearanceNode.Create;
-Material59 := TMaterialNode.Create;
+Shape57 := TShapeNode.Create;;
+Appearance58 := TAppearanceNode.Create;;
+Material59 := TMaterialNode.Create;;
 Material59.AmbientIntensity := 1;
+end;
+
+procedure InitJoeSkeletonSkinSitePart4;
+begin
+
 Material59.DiffuseColor := Vector3(1,0,0);
 Material59.EmissiveColor := Vector3(1,0,0);
 Material59.Shininess := 0.7;
@@ -1644,54 +1653,60 @@ Material59.SpecularColor := Vector3(1,0,0);
 { METHOD .SetMaterial }
 Appearance58.Material := Material59;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape57.Appearance := Appearance58;
-IndexedFaceSet60 := TIndexedFaceSetNode.Create;
+IndexedFaceSet60 := TIndexedFaceSetNode.Create;;
 IndexedFaceSet60.SetCoordIndex([0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1]);
 IndexedFaceSet60.CreaseAngle := 0.1;
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedFaceSet60.Coord := Coordinate55;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape57.Geometry := IndexedFaceSet60;
 { METHOD .FdChildren.Add }
 Transform56.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 Group48.FdChildren.Add(Transform56);
-Transform62 := TTransformNode.Create;
+Transform62 := TTransformNode.Create;;
 Transform62.Scale := Vector3(0.1,0.1,0.1);
 Transform62.Translation := Vector3(0,0.2,0);
-Shape63 := TShapeNode.Create;
-Appearance64 := TAppearanceNode.Create;
-Material65 := TMaterialNode.Create;
+Shape63 := TShapeNode.Create;;
+Appearance64 := TAppearanceNode.Create;;
+Material65 := TMaterialNode.Create;;
 Material65.DiffuseColor := Vector3(0,1,0);
 Material65.EmissiveColor := Vector3(0,1,0);
 Material65.SpecularColor := Vector3(0,1,0);
 { METHOD .SetMaterial }
 Appearance64.Material := Material65;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape63.Appearance := Appearance64;
-IndexedLineSet66 := TIndexedLineSetNode.Create;
+IndexedLineSet66 := TIndexedLineSetNode.Create;;
 IndexedLineSet66.SetCoordIndex([0,1,-1]);
-Coordinate67 := TCoordinateNode.Create;
+Coordinate67 := TCoordinateNode.Create;;
 Coordinate67.SetPoint([Vector3(0,0,0),Vector3(0,0.0001,0)]);
-end;
-
-procedure InitJoeSkeletonSkinSitePart4;
-begin
-
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet66.Coord := Coordinate67;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape63.Geometry := IndexedLineSet66;
 { METHOD .FdChildren.Add }
 Transform62.FdChildren.Add(Shape63);
 { METHOD .FdChildren.Add }
 Group48.FdChildren.Add(Transform62);
 Transform68 := TTransformNode.Create;
+end;
+
+procedure InitJoeSkeletonSkinSitePart5;
+begin
+;
 Transform68.Scale := Vector3(0.1,0.1,0.1);
 Transform68.Translation := Vector3(-0.2,0.773,-0.016);
-Shape69 := TShapeNode.Create;
-Appearance70 := TAppearanceNode.Create;
-Material71 := TMaterialNode.Create;
+Shape69 := TShapeNode.Create;;
+Appearance70 := TAppearanceNode.Create;;
+Material71 := TMaterialNode.Create;;
 Material71.AmbientIntensity := 0.5;
 Material71.DiffuseColor := Vector3(0,1,0);
 Material71.EmissiveColor := Vector3(0,1,0);
@@ -1700,10 +1715,12 @@ Material71.SpecularColor := Vector3(0,1,0);
 { METHOD .SetMaterial }
 Appearance70.Material := Material71;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape69.Appearance := Appearance70;
-Sphere72 := TSphereNode.Create;
+Sphere72 := TSphereNode.Create;;
 Sphere72.Radius := 0.005;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape69.Geometry := Sphere72;
 { METHOD .FdChildren.Add }
 Transform68.FdChildren.Add(Shape69);
@@ -1711,56 +1728,60 @@ Transform68.FdChildren.Add(Shape69);
 Group48.FdChildren.Add(Transform68);
 { METHOD .FdChildren.Add }
 Group32.FdChildren.Add(Group48);
-Group73 := TGroupNode.Create;
-Group74 := TGroupNode.Create;
-HAnimHumanoid75 := THAnimHumanoidNode.Create;
+Group73 := TGroupNode.Create;;
+Group74 := TGroupNode.Create;;
+HAnimHumanoid75 := THAnimHumanoidNode.Create;;
 HAnimHumanoid75.Loa := 4;
 HAnimHumanoid75.Version := '2.0';
 { original HAnimHumanoid info='"humanoidVersion=2.0"' }
 { <LOD containerField='skin'> (Switch whichChoice='0' and LOD parents each already work in view3dscene) }
 { </LOD> }
-MetadataSet76 := TMetadataSetNode.Create;
+MetadataSet76 := TMetadataSetNode.Create;;
 MetadataSet76.Reference := 'https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid';
-MetadataString77 := TMetadataStringNode.Create;
+MetadataString77 := TMetadataStringNode.Create;;
 MetadataString77.SetValue(['2.0']);
 { METHOD .FdValue.Add }
 MetadataSet76.FdValue.Add(MetadataString77);
 { METHOD .Metadata }
+{ METHOD.SET .Metadata }
 HAnimHumanoid75.Metadata := MetadataSet76;
 HAnimJoint78 := THAnimJointNode.Create;
+end;
+
+procedure InitJoeSkeletonSkinSitePart6;
+begin
+;
 HAnimJoint78.Center := Vector3(0,0.875,0);
-HAnimSegment79 := THAnimSegmentNode.Create;
-Transform80 := TTransformNode.Create;
+HAnimSegment79 := THAnimSegmentNode.Create;;
+Transform80 := TTransformNode.Create;;
 Transform80.Translation := Vector3(0,0.875,0);
 { METHOD .FdChildren.Add }
 Transform80.FdChildren.Add(Shape50);
-end;
-
-procedure InitJoeSkeletonSkinSitePart5;
-begin
-
 { METHOD .FdChildren.Add }
 HAnimSegment79.FdChildren.Add(Transform80);
-Shape82 := TShapeNode.Create;
+Shape82 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape82.Appearance := Appearance64;
-IndexedLineSet84 := TIndexedLineSetNode.Create;
+IndexedLineSet84 := TIndexedLineSetNode.Create;;
 IndexedLineSet84.SetCoordIndex([0,1,-1]);
-Coordinate85 := TCoordinateNode.Create;
+Coordinate85 := TCoordinateNode.Create;;
 Coordinate85.SetPoint([Vector3(0,0.875,0),Vector3(0,0.92,0)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet84.Coord := Coordinate85;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape82.Geometry := IndexedLineSet84;
 { METHOD .FdChildren.Add }
 HAnimSegment79.FdChildren.Add(Shape82);
-Transform86 := TTransformNode.Create;
+Transform86 := TTransformNode.Create;;
 Transform86.Translation := Vector3(0,0.92,0.08);
 { METHOD .FdChildren.Add }
 Transform86.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment79.FdChildren.Add(Transform86);
-Transform88 := TTransformNode.Create;
+Transform88 := TTransformNode.Create;;
 Transform88.Translation := Vector3(0,0.87,-0.022);
 { METHOD .FdChildren.Add }
 Transform88.FdChildren.Add(Shape69);
@@ -1768,88 +1789,96 @@ Transform88.FdChildren.Add(Shape69);
 HAnimSegment79.FdChildren.Add(Transform88);
 { METHOD .FdChildren.Add }
 HAnimJoint78.FdChildren.Add(HAnimSegment79);
-HAnimJoint90 := THAnimJointNode.Create;
+HAnimJoint90 := THAnimJointNode.Create;;
 HAnimJoint90.Center := Vector3(0,0.92,0);
 HAnimJoint90.SetSkinCoordIndex([17,19,20,21,22,23,26,27,73,82,89,91,93]);
 HAnimJoint90.SetSkinCoordWeight([1,1,1,1,1,1,1,1,1,1,0.35,0.35,1]);
-HAnimSegment91 := THAnimSegmentNode.Create;
+HAnimSegment91 := THAnimSegmentNode.Create;;
 Transform92 := TTransformNode.Create;
+end;
+
+procedure InitJoeSkeletonSkinSitePart7;
+begin
+;
 Transform92.Translation := Vector3(0,0.9149,0.0016);
-Transform93 := TTransformNode.Create;
+Transform93 := TTransformNode.Create;;
 { METHOD .FdChildren.Add }
 Transform93.FdChildren.Add(Shape50);
 { METHOD .FdChildren.Add }
 Transform92.FdChildren.Add(Transform93);
 { METHOD .FdChildren.Add }
 HAnimSegment91.FdChildren.Add(Transform92);
-Shape95 := TShapeNode.Create;
+Shape95 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape95.Appearance := Appearance64;
-IndexedLineSet97 := TIndexedLineSetNode.Create;
+IndexedLineSet97 := TIndexedLineSetNode.Create;;
 IndexedLineSet97.SetCoordIndex([0,1,-1,0,2,-1,0,3,-1]);
-Coordinate98 := TCoordinateNode.Create;
+Coordinate98 := TCoordinateNode.Create;;
 Coordinate98.SetPoint([Vector3(0,0.92,0),Vector3(0.0961,0.9124,0),Vector3(-0.095,0.9171,0.0029),Vector3(0,1.045,-0.095)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet97.Coord := Coordinate98;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape95.Geometry := IndexedLineSet97;
 { METHOD .FdChildren.Add }
 HAnimSegment91.FdChildren.Add(Shape95);
-HAnimSite99 := THAnimSiteNode.Create;
-end;
-
-procedure InitJoeSkeletonSkinSitePart6;
-begin
-
+HAnimSite99 := THAnimSiteNode.Create;;
 HAnimSite99.Translation := Vector3(0.1425,1.065,0.0033);
 { METHOD .FdChildren.Add }
 HAnimSite99.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment91.FdChildren.Add(HAnimSite99);
-HAnimSite101 := THAnimSiteNode.Create;
+HAnimSite101 := THAnimSiteNode.Create;;
 HAnimSite101.Translation := Vector3(0.15,0.9,-0.01);
 { METHOD .FdChildren.Add }
 HAnimSite101.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment91.FdChildren.Add(HAnimSite101);
-HAnimSite103 := THAnimSiteNode.Create;
+HAnimSite103 := THAnimSiteNode.Create;;
 HAnimSite103.Translation := Vector3(-0.1425,1.065,0.0033);
 { METHOD .FdChildren.Add }
 HAnimSite103.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment91.FdChildren.Add(HAnimSite103);
-HAnimSite105 := THAnimSiteNode.Create;
+HAnimSite105 := THAnimSiteNode.Create;;
 HAnimSite105.Translation := Vector3(-0.15,0.9,-0.01);
 { METHOD .FdChildren.Add }
 HAnimSite105.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment91.FdChildren.Add(HAnimSite105);
 HAnimSite107 := THAnimSiteNode.Create;
+end;
+
+procedure InitJoeSkeletonSkinSitePart8;
+begin
+;
 HAnimSite107.Translation := Vector3(0.0935,1.03,0.075);
 { METHOD .FdChildren.Add }
 HAnimSite107.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment91.FdChildren.Add(HAnimSite107);
-HAnimSite109 := THAnimSiteNode.Create;
+HAnimSite109 := THAnimSiteNode.Create;;
 HAnimSite109.Translation := Vector3(-0.0935,1.03,0.075);
 { METHOD .FdChildren.Add }
 HAnimSite109.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment91.FdChildren.Add(HAnimSite109);
-HAnimSite111 := THAnimSiteNode.Create;
+HAnimSite111 := THAnimSiteNode.Create;;
 HAnimSite111.Translation := Vector3(0.0773,1.019,-0.12);
 { METHOD .FdChildren.Add }
 HAnimSite111.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment91.FdChildren.Add(HAnimSite111);
-HAnimSite113 := THAnimSiteNode.Create;
+HAnimSite113 := THAnimSiteNode.Create;;
 HAnimSite113.Translation := Vector3(-0.0773,1.019,-0.12);
 { METHOD .FdChildren.Add }
 HAnimSite113.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment91.FdChildren.Add(HAnimSite113);
-HAnimSite115 := THAnimSiteNode.Create;
-Transform116 := TTransformNode.Create;
+HAnimSite115 := THAnimSiteNode.Create;;
+Transform116 := TTransformNode.Create;;
 Transform116.Scale := Vector3(3,3,3);
 { METHOD .FdChildren.Add }
 Transform116.FdChildren.Add(Shape57);
@@ -1857,97 +1886,100 @@ Transform116.FdChildren.Add(Shape57);
 HAnimSite115.FdChildren.Add(Transform116);
 { METHOD .FdChildren.Add }
 HAnimSegment91.FdChildren.Add(HAnimSite115);
-HAnimSite118 := THAnimSiteNode.Create;
+HAnimSite118 := THAnimSiteNode.Create;;
 HAnimSite118.Translation := Vector3(0,0.87,-0.022);
 { METHOD .FdChildren.Add }
 HAnimSite118.FdChildren.Add(Shape57);
-end;
-
-procedure InitJoeSkeletonSkinSitePart7;
-begin
-
 { METHOD .FdChildren.Add }
 HAnimSegment91.FdChildren.Add(HAnimSite118);
 { METHOD .FdChildren.Add }
 HAnimJoint90.FdChildren.Add(HAnimSegment91);
-HAnimJoint120 := THAnimJointNode.Create;
+HAnimJoint120 := THAnimJointNode.Create;;
 HAnimJoint120.Center := Vector3(0.1,0.92,0);
 HAnimJoint120.SetSkinCoordIndex([89,90,94,95,96,97]);
 HAnimJoint120.SetSkinCoordWeight([0.65,1,1,1,1,1]);
-HAnimSegment121 := THAnimSegmentNode.Create;
-Transform122 := TTransformNode.Create;
+HAnimSegment121 := THAnimSegmentNode.Create;;
+end;
+
+procedure InitJoeSkeletonSkinSitePart9;
+begin
+
+Transform122 := TTransformNode.Create;;
 Transform122.Translation := Vector3(0.1,0.92,0);
 { METHOD .FdChildren.Add }
 Transform122.FdChildren.Add(Shape50);
 { METHOD .FdChildren.Add }
 HAnimSegment121.FdChildren.Add(Transform122);
-Shape124 := TShapeNode.Create;
+Shape124 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape124.Appearance := Appearance64;
-IndexedLineSet126 := TIndexedLineSetNode.Create;
+IndexedLineSet126 := TIndexedLineSetNode.Create;;
 IndexedLineSet126.SetCoordIndex([0,1,-1]);
-Coordinate127 := TCoordinateNode.Create;
+Coordinate127 := TCoordinateNode.Create;;
 Coordinate127.SetPoint([Vector3(0.1,0.92,0),Vector3(0.115,0.466,0)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet126.Coord := Coordinate127;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape124.Geometry := IndexedLineSet126;
 { METHOD .FdChildren.Add }
 HAnimSegment121.FdChildren.Add(Shape124);
-Transform128 := TTransformNode.Create;
+Transform128 := TTransformNode.Create;;
 Transform128.Translation := Vector3(0.1,0.9,0.0775);
 { METHOD .FdChildren.Add }
 Transform128.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment121.FdChildren.Add(Transform128);
-Transform130 := TTransformNode.Create;
+Transform130 := TTransformNode.Create;;
 Transform130.Translation := Vector3(0.079,0.92,-0.14);
 { METHOD .FdChildren.Add }
 Transform130.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment121.FdChildren.Add(Transform130);
-Transform132 := TTransformNode.Create;
+Transform132 := TTransformNode.Create;;
 Transform132.Translation := Vector3(0.171,0.65,0);
 { METHOD .FdChildren.Add }
 Transform132.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment121.FdChildren.Add(Transform132);
-Transform134 := TTransformNode.Create;
+Transform134 := TTransformNode.Create;;
 Transform134.Translation := Vector3(0.02,0.65,0);
 { METHOD .FdChildren.Add }
 Transform134.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment121.FdChildren.Add(Transform134);
-Transform136 := TTransformNode.Create;
+Transform136 := TTransformNode.Create;;
 Transform136.Translation := Vector3(0.1,0.65,-0.08);
+end;
+
+procedure InitJoeSkeletonSkinSitePart10;
+begin
+
 { METHOD .FdChildren.Add }
 Transform136.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment121.FdChildren.Add(Transform136);
-end;
-
-procedure InitJoeSkeletonSkinSitePart8;
-begin
-
-Transform138 := TTransformNode.Create;
+Transform138 := TTransformNode.Create;;
 Transform138.Translation := Vector3(0.1,0.65,0.07);
 { METHOD .FdChildren.Add }
 Transform138.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment121.FdChildren.Add(Transform138);
-HAnimSite140 := THAnimSiteNode.Create;
+HAnimSite140 := THAnimSiteNode.Create;;
 HAnimSite140.Translation := Vector3(0.115,0.466,-0.055);
 { METHOD .FdChildren.Add }
 HAnimSite140.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment121.FdChildren.Add(HAnimSite140);
-HAnimSite142 := THAnimSiteNode.Create;
+HAnimSite142 := THAnimSiteNode.Create;;
 HAnimSite142.Translation := Vector3(0.17,0.466,0);
 { METHOD .FdChildren.Add }
 HAnimSite142.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment121.FdChildren.Add(HAnimSite142);
-HAnimSite144 := THAnimSiteNode.Create;
+HAnimSite144 := THAnimSiteNode.Create;;
 HAnimSite144.Translation := Vector3(0.05,0.466,0);
 { METHOD .FdChildren.Add }
 HAnimSite144.FdChildren.Add(Shape57);
@@ -1955,90 +1987,98 @@ HAnimSite144.FdChildren.Add(Shape57);
 HAnimSegment121.FdChildren.Add(HAnimSite144);
 { METHOD .FdChildren.Add }
 HAnimJoint120.FdChildren.Add(HAnimSegment121);
-HAnimJoint146 := THAnimJointNode.Create;
+HAnimJoint146 := THAnimJointNode.Create;;
 HAnimJoint146.Center := Vector3(0.115,0.466,0);
 HAnimJoint146.SetSkinCoordIndex([334,335,336,337,338,339,340,341]);
 HAnimJoint146.SetSkinCoordWeight([1,1,1,1,1,1,1,1]);
-HAnimSegment147 := THAnimSegmentNode.Create;
-Transform148 := TTransformNode.Create;
+HAnimSegment147 := THAnimSegmentNode.Create;;
+Transform148 := TTransformNode.Create;;
 Transform148.Translation := Vector3(0.115,0.466,0);
 { METHOD .FdChildren.Add }
 Transform148.FdChildren.Add(Shape50);
 { METHOD .FdChildren.Add }
 HAnimSegment147.FdChildren.Add(Transform148);
-Shape150 := TShapeNode.Create;
+Shape150 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape150.Appearance := Appearance64;
-IndexedLineSet152 := TIndexedLineSetNode.Create;
+IndexedLineSet152 := TIndexedLineSetNode.Create;;
+end;
+
+procedure InitJoeSkeletonSkinSitePart11;
+begin
+
 IndexedLineSet152.SetCoordIndex([0,1,-1]);
-Coordinate153 := TCoordinateNode.Create;
+Coordinate153 := TCoordinateNode.Create;;
 Coordinate153.SetPoint([Vector3(0.115,0.466,0),Vector3(0.1,0.069,0)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet152.Coord := Coordinate153;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape150.Geometry := IndexedLineSet152;
 { METHOD .FdChildren.Add }
 HAnimSegment147.FdChildren.Add(Shape150);
-Transform154 := TTransformNode.Create;
+Transform154 := TTransformNode.Create;;
 Transform154.Translation := Vector3(0.115,0.466,0.06);
 { METHOD .FdChildren.Add }
 Transform154.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment147.FdChildren.Add(Transform154);
-Transform156 := TTransformNode.Create;
-end;
-
-procedure InitJoeSkeletonSkinSitePart9;
-begin
-
+Transform156 := TTransformNode.Create;;
 Transform156.Translation := Vector3(0.115,0.466,-0.055);
 { METHOD .FdChildren.Add }
 Transform156.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment147.FdChildren.Add(Transform156);
-Transform158 := TTransformNode.Create;
+Transform158 := TTransformNode.Create;;
 Transform158.Translation := Vector3(0.17,0.466,0);
 { METHOD .FdChildren.Add }
 Transform158.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment147.FdChildren.Add(Transform158);
-Transform160 := TTransformNode.Create;
+Transform160 := TTransformNode.Create;;
 Transform160.Translation := Vector3(0.05,0.466,0);
 { METHOD .FdChildren.Add }
 Transform160.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment147.FdChildren.Add(Transform160);
-Transform162 := TTransformNode.Create;
+Transform162 := TTransformNode.Create;;
 Transform162.Translation := Vector3(0.17,0.3,0);
 { METHOD .FdChildren.Add }
 Transform162.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment147.FdChildren.Add(Transform162);
-Transform164 := TTransformNode.Create;
+Transform164 := TTransformNode.Create;;
 Transform164.Translation := Vector3(0.06,0.3,0);
 { METHOD .FdChildren.Add }
 Transform164.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment147.FdChildren.Add(Transform164);
-Transform166 := TTransformNode.Create;
+Transform166 := TTransformNode.Create;;
 Transform166.Translation := Vector3(0.1,0.3,-0.05);
+end;
+
+procedure InitJoeSkeletonSkinSitePart12;
+begin
+
 { METHOD .FdChildren.Add }
 Transform166.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment147.FdChildren.Add(Transform166);
-Transform168 := TTransformNode.Create;
+Transform168 := TTransformNode.Create;;
 Transform168.Translation := Vector3(0.1,0.3,0.05);
 { METHOD .FdChildren.Add }
 Transform168.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment147.FdChildren.Add(Transform168);
-HAnimSite170 := THAnimSiteNode.Create;
+HAnimSite170 := THAnimSiteNode.Create;;
 HAnimSite170.Translation := Vector3(0.15,0.07,0);
 { METHOD .FdChildren.Add }
 HAnimSite170.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment147.FdChildren.Add(HAnimSite170);
-HAnimSite172 := THAnimSiteNode.Create;
+HAnimSite172 := THAnimSiteNode.Create;;
 HAnimSite172.Translation := Vector3(0.085,0.086,0.0125);
 { METHOD .FdChildren.Add }
 HAnimSite172.FdChildren.Add(Shape57);
@@ -2046,66 +2086,69 @@ HAnimSite172.FdChildren.Add(Shape57);
 HAnimSegment147.FdChildren.Add(HAnimSite172);
 { METHOD .FdChildren.Add }
 HAnimJoint146.FdChildren.Add(HAnimSegment147);
-HAnimJoint174 := THAnimJointNode.Create;
+HAnimJoint174 := THAnimJointNode.Create;;
 HAnimJoint174.Center := Vector3(0.115,0.069,0);
 HAnimJoint174.SetSkinCoordIndex([342,343,344,345]);
 HAnimJoint174.SetSkinCoordWeight([1,1,1,1]);
-end;
-
-procedure InitJoeSkeletonSkinSitePart10;
-begin
-
-HAnimSegment175 := THAnimSegmentNode.Create;
-Transform176 := TTransformNode.Create;
+HAnimSegment175 := THAnimSegmentNode.Create;;
+Transform176 := TTransformNode.Create;;
 Transform176.Translation := Vector3(0.115,0.069,0);
 { METHOD .FdChildren.Add }
 Transform176.FdChildren.Add(Shape50);
 { METHOD .FdChildren.Add }
 HAnimSegment175.FdChildren.Add(Transform176);
-Shape178 := TShapeNode.Create;
+Shape178 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape178.Appearance := Appearance64;
-IndexedLineSet180 := TIndexedLineSetNode.Create;
+IndexedLineSet180 := TIndexedLineSetNode.Create;;
 IndexedLineSet180.SetCoordIndex([0,1,-1]);
-Coordinate181 := TCoordinateNode.Create;
+Coordinate181 := TCoordinateNode.Create;;
 Coordinate181.SetPoint([Vector3(0.1,0.069,0),Vector3(0.115,0.031,0.03)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet180.Coord := Coordinate181;
+end;
+
+procedure InitJoeSkeletonSkinSitePart13;
+begin
+
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape178.Geometry := IndexedLineSet180;
 { METHOD .FdChildren.Add }
 HAnimSegment175.FdChildren.Add(Shape178);
-Transform182 := TTransformNode.Create;
+Transform182 := TTransformNode.Create;;
 Transform182.Translation := Vector3(0.15,0.07,0);
 { METHOD .FdChildren.Add }
 Transform182.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment175.FdChildren.Add(Transform182);
-Transform184 := TTransformNode.Create;
+Transform184 := TTransformNode.Create;;
 Transform184.Translation := Vector3(0.085,0.086,0.0125);
 { METHOD .FdChildren.Add }
 Transform184.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment175.FdChildren.Add(Transform184);
-Transform186 := TTransformNode.Create;
+Transform186 := TTransformNode.Create;;
 Transform186.Translation := Vector3(0.115,0.069,-0.045);
 { METHOD .FdChildren.Add }
 Transform186.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment175.FdChildren.Add(Transform186);
-Transform188 := TTransformNode.Create;
+Transform188 := TTransformNode.Create;;
 Transform188.Translation := Vector3(0.117,0.0975,0.0615);
 { METHOD .FdChildren.Add }
 Transform188.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment175.FdChildren.Add(Transform188);
-HAnimSite190 := THAnimSiteNode.Create;
+HAnimSite190 := THAnimSiteNode.Create;;
 HAnimSite190.Translation := Vector3(0.09,0.056,0.0125);
 { METHOD .FdChildren.Add }
 HAnimSite190.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment175.FdChildren.Add(HAnimSite190);
-HAnimSite192 := THAnimSiteNode.Create;
+HAnimSite192 := THAnimSiteNode.Create;;
 HAnimSite192.Translation := Vector3(0.115,0.04,-0.055);
 { METHOD .FdChildren.Add }
 HAnimSite192.FdChildren.Add(Shape57);
@@ -2113,48 +2156,51 @@ HAnimSite192.FdChildren.Add(Shape57);
 HAnimSegment175.FdChildren.Add(HAnimSite192);
 { METHOD .FdChildren.Add }
 HAnimJoint174.FdChildren.Add(HAnimSegment175);
-HAnimJoint194 := THAnimJointNode.Create;
-end;
-
-procedure InitJoeSkeletonSkinSitePart11;
-begin
-
+HAnimJoint194 := THAnimJointNode.Create;;
 HAnimJoint194.Center := Vector3(0.115,0.031,0.03);
 HAnimJoint194.SetSkinCoordIndex([346,347,348,71]);
 HAnimJoint194.SetSkinCoordWeight([1,1,1,1]);
-HAnimSegment195 := THAnimSegmentNode.Create;
-Transform196 := TTransformNode.Create;
+HAnimSegment195 := THAnimSegmentNode.Create;;
+end;
+
+procedure InitJoeSkeletonSkinSitePart14;
+begin
+
+Transform196 := TTransformNode.Create;;
 Transform196.Translation := Vector3(0.115,0.031,0.03);
 { METHOD .FdChildren.Add }
 Transform196.FdChildren.Add(Shape50);
 { METHOD .FdChildren.Add }
 HAnimSegment195.FdChildren.Add(Transform196);
-Shape198 := TShapeNode.Create;
+Shape198 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape198.Appearance := Appearance64;
-IndexedLineSet200 := TIndexedLineSetNode.Create;
+IndexedLineSet200 := TIndexedLineSetNode.Create;;
 IndexedLineSet200.SetCoordIndex([0,1,-1]);
-Coordinate201 := TCoordinateNode.Create;
+Coordinate201 := TCoordinateNode.Create;;
 Coordinate201.SetPoint([Vector3(0.115,0.031,0.03),Vector3(0.115,0.037,0.09)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet200.Coord := Coordinate201;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape198.Geometry := IndexedLineSet200;
 { METHOD .FdChildren.Add }
 HAnimSegment195.FdChildren.Add(Shape198);
-Transform202 := TTransformNode.Create;
+Transform202 := TTransformNode.Create;;
 Transform202.Translation := Vector3(0.1375,0.006,-0.03);
 { METHOD .FdChildren.Add }
 Transform202.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment195.FdChildren.Add(Transform202);
-Transform204 := TTransformNode.Create;
+Transform204 := TTransformNode.Create;;
 Transform204.Translation := Vector3(0.095,0.006,-0.03);
 { METHOD .FdChildren.Add }
 Transform204.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment195.FdChildren.Add(Transform204);
-Transform206 := TTransformNode.Create;
+Transform206 := TTransformNode.Create;;
 Transform206.Translation := Vector3(0.115,0.015,-0.045);
 { METHOD .FdChildren.Add }
 Transform206.FdChildren.Add(Shape69);
@@ -2162,163 +2208,174 @@ Transform206.FdChildren.Add(Shape69);
 HAnimSegment195.FdChildren.Add(Transform206);
 { METHOD .FdChildren.Add }
 HAnimJoint194.FdChildren.Add(HAnimSegment195);
-HAnimJoint208 := THAnimJointNode.Create;
+HAnimJoint208 := THAnimJointNode.Create;;
 HAnimJoint208.Center := Vector3(0.115,0.037,0.09);
 HAnimJoint208.SetSkinCoordIndex([349,350,351,352]);
 HAnimJoint208.SetSkinCoordWeight([1,1,1,1]);
-HAnimSegment209 := THAnimSegmentNode.Create;
-Transform210 := TTransformNode.Create;
+HAnimSegment209 := THAnimSegmentNode.Create;;
+end;
+
+procedure InitJoeSkeletonSkinSitePart15;
+begin
+
+Transform210 := TTransformNode.Create;;
 Transform210.Translation := Vector3(0.115,0.037,0.09);
 { METHOD .FdChildren.Add }
 Transform210.FdChildren.Add(Shape50);
 { METHOD .FdChildren.Add }
 HAnimSegment209.FdChildren.Add(Transform210);
-Shape212 := TShapeNode.Create;
-end;
-
-procedure InitJoeSkeletonSkinSitePart12;
-begin
-
+Shape212 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape212.Appearance := Appearance64;
-IndexedLineSet214 := TIndexedLineSetNode.Create;
+IndexedLineSet214 := TIndexedLineSetNode.Create;;
 IndexedLineSet214.SetCoordIndex([0,1,-1]);
-Coordinate215 := TCoordinateNode.Create;
+Coordinate215 := TCoordinateNode.Create;;
 Coordinate215.SetPoint([Vector3(0.115,0.037,0.09),Vector3(0.115,0.02,0.122)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet214.Coord := Coordinate215;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape212.Geometry := IndexedLineSet214;
 { METHOD .FdChildren.Add }
 HAnimSegment209.FdChildren.Add(Shape212);
-Transform216 := TTransformNode.Create;
+Transform216 := TTransformNode.Create;;
 Transform216.Translation := Vector3(0.115,0.06,0.1);
 { METHOD .FdChildren.Add }
 Transform216.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment209.FdChildren.Add(Transform216);
-Transform218 := TTransformNode.Create;
+Transform218 := TTransformNode.Create;;
 Transform218.Translation := Vector3(0.115,0,0.07);
 { METHOD .FdChildren.Add }
 Transform218.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment209.FdChildren.Add(Transform218);
-Transform220 := TTransformNode.Create;
+Transform220 := TTransformNode.Create;;
 Transform220.Translation := Vector3(0.165,0,0.07);
 { METHOD .FdChildren.Add }
 Transform220.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment209.FdChildren.Add(Transform220);
-Transform222 := TTransformNode.Create;
+Transform222 := TTransformNode.Create;;
 Transform222.Translation := Vector3(0.095,0,0.07);
 { METHOD .FdChildren.Add }
 Transform222.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment209.FdChildren.Add(Transform222);
-HAnimSite224 := THAnimSiteNode.Create;
+HAnimSite224 := THAnimSiteNode.Create;;
 HAnimSite224.Translation := Vector3(0.087,0.01,0.122);
+end;
+
+procedure InitJoeSkeletonSkinSitePart16;
+begin
+
 { METHOD .FdChildren.Add }
 HAnimSite224.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment209.FdChildren.Add(HAnimSite224);
 { METHOD .FdChildren.Add }
 HAnimJoint208.FdChildren.Add(HAnimSegment209);
-HAnimJoint226 := THAnimJointNode.Create;
+HAnimJoint226 := THAnimJointNode.Create;;
 HAnimJoint226.Center := Vector3(0.115,0.02,0.122);
 HAnimJoint226.SetSkinCoordIndex([353,354,355,356,357,358,359,360,361]);
 HAnimJoint226.SetSkinCoordWeight([1,1,1,1,1,1,1,1,1]);
-HAnimSegment227 := THAnimSegmentNode.Create;
-Transform228 := TTransformNode.Create;
+HAnimSegment227 := THAnimSegmentNode.Create;;
+Transform228 := TTransformNode.Create;;
 Transform228.Translation := Vector3(0.115,0.02,0.13);
 { METHOD .FdChildren.Add }
 Transform228.FdChildren.Add(Shape50);
 { METHOD .FdChildren.Add }
 HAnimSegment227.FdChildren.Add(Transform228);
-Shape230 := TShapeNode.Create;
+Shape230 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape230.Appearance := Appearance64;
-end;
-
-procedure InitJoeSkeletonSkinSitePart13;
-begin
-
-IndexedLineSet232 := TIndexedLineSetNode.Create;
+IndexedLineSet232 := TIndexedLineSetNode.Create;;
 IndexedLineSet232.SetCoordIndex([0,1,-1]);
-Coordinate233 := TCoordinateNode.Create;
+Coordinate233 := TCoordinateNode.Create;;
 Coordinate233.SetPoint([Vector3(0.115,0.02,0.122),Vector3(0.132,0.013,0.19)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet232.Coord := Coordinate233;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape230.Geometry := IndexedLineSet232;
 { METHOD .FdChildren.Add }
 HAnimSegment227.FdChildren.Add(Shape230);
-Transform234 := TTransformNode.Create;
+Transform234 := TTransformNode.Create;;
 Transform234.Translation := Vector3(0.115,0.04,0.13);
 { METHOD .FdChildren.Add }
 Transform234.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment227.FdChildren.Add(Transform234);
-Transform236 := TTransformNode.Create;
+Transform236 := TTransformNode.Create;;
 Transform236.Translation := Vector3(0.125,0,0.12);
 { METHOD .FdChildren.Add }
 Transform236.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment227.FdChildren.Add(Transform236);
-Transform238 := TTransformNode.Create;
+Transform238 := TTransformNode.Create;;
 Transform238.Translation := Vector3(0.165,0,0.12);
+end;
+
+procedure InitJoeSkeletonSkinSitePart17;
+begin
+
 { METHOD .FdChildren.Add }
 Transform238.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment227.FdChildren.Add(Transform238);
-Transform240 := TTransformNode.Create;
+Transform240 := TTransformNode.Create;;
 Transform240.Translation := Vector3(0.087,0,0.122);
 { METHOD .FdChildren.Add }
 Transform240.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment227.FdChildren.Add(Transform240);
-Transform242 := TTransformNode.Create;
+Transform242 := TTransformNode.Create;;
 Transform242.Translation := Vector3(0.09,0.012,0.188);
 { METHOD .FdChildren.Add }
 Transform242.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment227.FdChildren.Add(Transform242);
-Transform244 := TTransformNode.Create;
+Transform244 := TTransformNode.Create;;
 Transform244.Translation := Vector3(0.11,0.011,0.19);
 { METHOD .FdChildren.Add }
 Transform244.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment227.FdChildren.Add(Transform244);
-Transform246 := TTransformNode.Create;
+Transform246 := TTransformNode.Create;;
 Transform246.Translation := Vector3(0.128,0.011,0.185);
 { METHOD .FdChildren.Add }
 Transform246.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment227.FdChildren.Add(Transform246);
-Transform248 := TTransformNode.Create;
+Transform248 := TTransformNode.Create;;
 Transform248.Translation := Vector3(0.142,0.011,0.178);
 { METHOD .FdChildren.Add }
 Transform248.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment227.FdChildren.Add(Transform248);
-Transform250 := TTransformNode.Create;
-end;
-
-procedure InitJoeSkeletonSkinSitePart14;
-begin
-
+Transform250 := TTransformNode.Create;;
 Transform250.Translation := Vector3(0.154,0.01,0.168);
 { METHOD .FdChildren.Add }
 Transform250.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment227.FdChildren.Add(Transform250);
-HAnimSite252 := THAnimSiteNode.Create;
+HAnimSite252 := THAnimSiteNode.Create;;
 HAnimSite252.Translation := Vector3(0.165,0.01,0.12);
 { METHOD .FdChildren.Add }
 HAnimSite252.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment227.FdChildren.Add(HAnimSite252);
-HAnimSite254 := THAnimSiteNode.Create;
+HAnimSite254 := THAnimSiteNode.Create;;
 HAnimSite254.Translation := Vector3(0.11,0.011,0.19);
+end;
+
+procedure InitJoeSkeletonSkinSitePart18;
+begin
+
 { METHOD .FdChildren.Add }
 HAnimSite254.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
@@ -2337,84 +2394,87 @@ HAnimJoint146.FdChildren.Add(HAnimJoint174);
 HAnimJoint120.FdChildren.Add(HAnimJoint146);
 { METHOD .FdChildren.Add }
 HAnimJoint90.FdChildren.Add(HAnimJoint120);
-HAnimJoint256 := THAnimJointNode.Create;
+HAnimJoint256 := THAnimJointNode.Create;;
 HAnimJoint256.Center := Vector3(-0.1,0.92,0);
 HAnimJoint256.SetSkinCoordIndex([91,92,98,99,100,101]);
 HAnimJoint256.SetSkinCoordWeight([0.65,1,1,1,1,1]);
-HAnimSegment257 := THAnimSegmentNode.Create;
-Transform258 := TTransformNode.Create;
+HAnimSegment257 := THAnimSegmentNode.Create;;
+Transform258 := TTransformNode.Create;;
 Transform258.Translation := Vector3(-0.1,0.92,0);
 { METHOD .FdChildren.Add }
 Transform258.FdChildren.Add(Shape50);
 { METHOD .FdChildren.Add }
 HAnimSegment257.FdChildren.Add(Transform258);
-Shape260 := TShapeNode.Create;
+Shape260 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape260.Appearance := Appearance64;
-IndexedLineSet262 := TIndexedLineSetNode.Create;
+IndexedLineSet262 := TIndexedLineSetNode.Create;;
 IndexedLineSet262.SetCoordIndex([0,1,-1]);
-Coordinate263 := TCoordinateNode.Create;
+Coordinate263 := TCoordinateNode.Create;;
 Coordinate263.SetPoint([Vector3(-0.1,0.92,0),Vector3(-0.1,0.4913,0)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet262.Coord := Coordinate263;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape260.Geometry := IndexedLineSet262;
 { METHOD .FdChildren.Add }
 HAnimSegment257.FdChildren.Add(Shape260);
-Transform264 := TTransformNode.Create;
+Transform264 := TTransformNode.Create;;
 Transform264.Translation := Vector3(-0.079,0.92,-0.14);
 { METHOD .FdChildren.Add }
 Transform264.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment257.FdChildren.Add(Transform264);
+Transform266 := TTransformNode.Create;;
 end;
 
-procedure InitJoeSkeletonSkinSitePart15;
+procedure InitJoeSkeletonSkinSitePart19;
 begin
 
-Transform266 := TTransformNode.Create;
 Transform266.Translation := Vector3(-0.1,0.9,0.075);
 { METHOD .FdChildren.Add }
 Transform266.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment257.FdChildren.Add(Transform266);
-Transform268 := TTransformNode.Create;
+Transform268 := TTransformNode.Create;;
 Transform268.Translation := Vector3(-0.171,0.65,0);
 { METHOD .FdChildren.Add }
 Transform268.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment257.FdChildren.Add(Transform268);
-Transform270 := TTransformNode.Create;
+Transform270 := TTransformNode.Create;;
 Transform270.Translation := Vector3(-0.02,0.65,0);
 { METHOD .FdChildren.Add }
 Transform270.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment257.FdChildren.Add(Transform270);
-Transform272 := TTransformNode.Create;
+Transform272 := TTransformNode.Create;;
 Transform272.Translation := Vector3(-0.1,0.65,-0.08);
 { METHOD .FdChildren.Add }
 Transform272.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment257.FdChildren.Add(Transform272);
-Transform274 := TTransformNode.Create;
+Transform274 := TTransformNode.Create;;
 Transform274.Translation := Vector3(-0.1,0.65,0.07);
 { METHOD .FdChildren.Add }
 Transform274.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment257.FdChildren.Add(Transform274);
-HAnimSite276 := THAnimSiteNode.Create;
+HAnimSite276 := THAnimSiteNode.Create;;
 HAnimSite276.Translation := Vector3(-0.115,0.466,-0.055);
 { METHOD .FdChildren.Add }
 HAnimSite276.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment257.FdChildren.Add(HAnimSite276);
-HAnimSite278 := THAnimSiteNode.Create;
+HAnimSite278 := THAnimSiteNode.Create;;
 HAnimSite278.Translation := Vector3(-0.17,0.466,0);
 { METHOD .FdChildren.Add }
 HAnimSite278.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment257.FdChildren.Add(HAnimSite278);
-HAnimSite280 := THAnimSiteNode.Create;
+HAnimSite280 := THAnimSiteNode.Create;;
 HAnimSite280.Translation := Vector3(-0.05,0.466,0);
 { METHOD .FdChildren.Add }
 HAnimSite280.FdChildren.Add(Shape57);
@@ -2423,94 +2483,97 @@ HAnimSegment257.FdChildren.Add(HAnimSite280);
 { METHOD .FdChildren.Add }
 HAnimJoint256.FdChildren.Add(HAnimSegment257);
 HAnimJoint282 := THAnimJointNode.Create;
+end;
+
+procedure InitJoeSkeletonSkinSitePart20;
+begin
+;
 HAnimJoint282.Center := Vector3(-0.05,0.466,0);
 HAnimJoint282.SetSkinCoordIndex([362,363,364,365,366,367,368,369]);
 HAnimJoint282.SetSkinCoordWeight([1,1,1,1,1,1,1,1]);
-HAnimSegment283 := THAnimSegmentNode.Create;
-Transform284 := TTransformNode.Create;
+HAnimSegment283 := THAnimSegmentNode.Create;;
+Transform284 := TTransformNode.Create;;
 Transform284.Translation := Vector3(-0.1,0.4913,0);
-end;
-
-procedure InitJoeSkeletonSkinSitePart16;
-begin
-
 { METHOD .FdChildren.Add }
 Transform284.FdChildren.Add(Shape50);
 { METHOD .FdChildren.Add }
 HAnimSegment283.FdChildren.Add(Transform284);
-Shape286 := TShapeNode.Create;
+Shape286 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape286.Appearance := Appearance64;
-IndexedLineSet288 := TIndexedLineSetNode.Create;
+IndexedLineSet288 := TIndexedLineSetNode.Create;;
 IndexedLineSet288.SetCoordIndex([0,1,-1]);
-Coordinate289 := TCoordinateNode.Create;
+Coordinate289 := TCoordinateNode.Create;;
 Coordinate289.SetPoint([Vector3(-0.1,0.4913,0),Vector3(-0.1,0.0712,0)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet288.Coord := Coordinate289;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape286.Geometry := IndexedLineSet288;
 { METHOD .FdChildren.Add }
 HAnimSegment283.FdChildren.Add(Shape286);
-Transform290 := TTransformNode.Create;
+Transform290 := TTransformNode.Create;;
 Transform290.Translation := Vector3(-0.115,0.466,0.06);
 { METHOD .FdChildren.Add }
 Transform290.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment283.FdChildren.Add(Transform290);
-Transform292 := TTransformNode.Create;
+Transform292 := TTransformNode.Create;;
 Transform292.Translation := Vector3(-0.115,0.466,-0.055);
 { METHOD .FdChildren.Add }
 Transform292.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment283.FdChildren.Add(Transform292);
-Transform294 := TTransformNode.Create;
+Transform294 := TTransformNode.Create;;
 Transform294.Translation := Vector3(-0.17,0.466,0);
 { METHOD .FdChildren.Add }
 Transform294.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment283.FdChildren.Add(Transform294);
-Transform296 := TTransformNode.Create;
+Transform296 := TTransformNode.Create;;
+end;
+
+procedure InitJoeSkeletonSkinSitePart21;
+begin
+
 Transform296.Translation := Vector3(-0.05,0.466,0);
 { METHOD .FdChildren.Add }
 Transform296.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment283.FdChildren.Add(Transform296);
-Transform298 := TTransformNode.Create;
+Transform298 := TTransformNode.Create;;
 Transform298.Translation := Vector3(-0.17,0.3,0);
 { METHOD .FdChildren.Add }
 Transform298.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment283.FdChildren.Add(Transform298);
-Transform300 := TTransformNode.Create;
+Transform300 := TTransformNode.Create;;
 Transform300.Translation := Vector3(-0.06,0.3,0);
 { METHOD .FdChildren.Add }
 Transform300.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment283.FdChildren.Add(Transform300);
-Transform302 := TTransformNode.Create;
+Transform302 := TTransformNode.Create;;
 Transform302.Translation := Vector3(-0.1,0.3,-0.05);
 { METHOD .FdChildren.Add }
 Transform302.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment283.FdChildren.Add(Transform302);
-Transform304 := TTransformNode.Create;
-end;
-
-procedure InitJoeSkeletonSkinSitePart17;
-begin
-
+Transform304 := TTransformNode.Create;;
 Transform304.Translation := Vector3(-0.1,0.3,0.05);
 { METHOD .FdChildren.Add }
 Transform304.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment283.FdChildren.Add(Transform304);
-HAnimSite306 := THAnimSiteNode.Create;
+HAnimSite306 := THAnimSiteNode.Create;;
 HAnimSite306.Translation := Vector3(-0.15,0.07,0);
 { METHOD .FdChildren.Add }
 HAnimSite306.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment283.FdChildren.Add(HAnimSite306);
-HAnimSite308 := THAnimSiteNode.Create;
+HAnimSite308 := THAnimSiteNode.Create;;
 HAnimSite308.Translation := Vector3(-0.085,0.086,0.0125);
 { METHOD .FdChildren.Add }
 HAnimSite308.FdChildren.Add(Shape57);
@@ -2518,66 +2581,74 @@ HAnimSite308.FdChildren.Add(Shape57);
 HAnimSegment283.FdChildren.Add(HAnimSite308);
 { METHOD .FdChildren.Add }
 HAnimJoint282.FdChildren.Add(HAnimSegment283);
-HAnimJoint310 := THAnimJointNode.Create;
+HAnimJoint310 := THAnimJointNode.Create;;
 HAnimJoint310.Center := Vector3(-0.115,0.069,0);
 HAnimJoint310.SetSkinCoordIndex([370,371,372,373]);
 HAnimJoint310.SetSkinCoordWeight([1,1,1,1]);
 HAnimSegment311 := THAnimSegmentNode.Create;
-Transform312 := TTransformNode.Create;
+end;
+
+procedure InitJoeSkeletonSkinSitePart22;
+begin
+;
+Transform312 := TTransformNode.Create;;
 Transform312.Translation := Vector3(-0.1,0.0712,0);
 { METHOD .FdChildren.Add }
 Transform312.FdChildren.Add(Shape50);
 { METHOD .FdChildren.Add }
 HAnimSegment311.FdChildren.Add(Transform312);
-Shape314 := TShapeNode.Create;
+Shape314 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape314.Appearance := Appearance64;
-IndexedLineSet316 := TIndexedLineSetNode.Create;
+IndexedLineSet316 := TIndexedLineSetNode.Create;;
 IndexedLineSet316.SetCoordIndex([0,1,-1]);
-Coordinate317 := TCoordinateNode.Create;
+Coordinate317 := TCoordinateNode.Create;;
 Coordinate317.SetPoint([Vector3(-0.1,0.0712,0),Vector3(-0.1,0.015,-0.01)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet316.Coord := Coordinate317;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape314.Geometry := IndexedLineSet316;
 { METHOD .FdChildren.Add }
 HAnimSegment311.FdChildren.Add(Shape314);
-Transform318 := TTransformNode.Create;
+Transform318 := TTransformNode.Create;;
 Transform318.Translation := Vector3(-0.15,0.07,0);
 { METHOD .FdChildren.Add }
 Transform318.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment311.FdChildren.Add(Transform318);
-Transform320 := TTransformNode.Create;
+Transform320 := TTransformNode.Create;;
 Transform320.Translation := Vector3(-0.085,0.086,0.0125);
 { METHOD .FdChildren.Add }
 Transform320.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment311.FdChildren.Add(Transform320);
-Transform322 := TTransformNode.Create;
+Transform322 := TTransformNode.Create;;
 Transform322.Translation := Vector3(-0.115,0.069,-0.045);
-end;
-
-procedure InitJoeSkeletonSkinSitePart18;
-begin
-
 { METHOD .FdChildren.Add }
 Transform322.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment311.FdChildren.Add(Transform322);
-Transform324 := TTransformNode.Create;
+Transform324 := TTransformNode.Create;;
 Transform324.Translation := Vector3(-0.117,0.0975,0.0615);
 { METHOD .FdChildren.Add }
 Transform324.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment311.FdChildren.Add(Transform324);
-HAnimSite326 := THAnimSiteNode.Create;
+HAnimSite326 := THAnimSiteNode.Create;;
+end;
+
+procedure InitJoeSkeletonSkinSitePart23;
+begin
+
 HAnimSite326.Translation := Vector3(-0.09,0.056,0.0125);
 { METHOD .FdChildren.Add }
 HAnimSite326.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment311.FdChildren.Add(HAnimSite326);
-HAnimSite328 := THAnimSiteNode.Create;
+HAnimSite328 := THAnimSiteNode.Create;;
 HAnimSite328.Translation := Vector3(-0.115,0.04,-0.055);
 { METHOD .FdChildren.Add }
 HAnimSite328.FdChildren.Add(Shape57);
@@ -2585,48 +2656,51 @@ HAnimSite328.FdChildren.Add(Shape57);
 HAnimSegment311.FdChildren.Add(HAnimSite328);
 { METHOD .FdChildren.Add }
 HAnimJoint310.FdChildren.Add(HAnimSegment311);
-HAnimJoint330 := THAnimJointNode.Create;
+HAnimJoint330 := THAnimJointNode.Create;;
 HAnimJoint330.Center := Vector3(-0.1,0.015,-0.01);
 HAnimJoint330.SetSkinCoordIndex([374,375,376]);
 HAnimJoint330.SetSkinCoordWeight([1,1,1]);
-HAnimSegment331 := THAnimSegmentNode.Create;
-Transform332 := TTransformNode.Create;
+HAnimSegment331 := THAnimSegmentNode.Create;;
+Transform332 := TTransformNode.Create;;
 Transform332.Translation := Vector3(-0.1,0.015,-0.01);
 { METHOD .FdChildren.Add }
 Transform332.FdChildren.Add(Shape50);
 { METHOD .FdChildren.Add }
 HAnimSegment331.FdChildren.Add(Transform332);
-Shape334 := TShapeNode.Create;
+Shape334 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape334.Appearance := Appearance64;
-IndexedLineSet336 := TIndexedLineSetNode.Create;
+IndexedLineSet336 := TIndexedLineSetNode.Create;;
 IndexedLineSet336.SetCoordIndex([0,1,-1]);
-Coordinate337 := TCoordinateNode.Create;
+Coordinate337 := TCoordinateNode.Create;;
 Coordinate337.SetPoint([Vector3(-0.1,0.015,-0.01),Vector3(-0.1,0.02,0.07)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet336.Coord := Coordinate337;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape334.Geometry := IndexedLineSet336;
 { METHOD .FdChildren.Add }
 HAnimSegment331.FdChildren.Add(Shape334);
-Transform338 := TTransformNode.Create;
+Transform338 := TTransformNode.Create;;
 Transform338.Translation := Vector3(-0.1375,0.006,-0.03);
 { METHOD .FdChildren.Add }
 Transform338.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment331.FdChildren.Add(Transform338);
-Transform340 := TTransformNode.Create;
+Transform340 := TTransformNode.Create;;
+end;
+
+procedure InitJoeSkeletonSkinSitePart24;
+begin
+
 Transform340.Translation := Vector3(-0.095,0.006,-0.03);
 { METHOD .FdChildren.Add }
 Transform340.FdChildren.Add(Shape69);
-end;
-
-procedure InitJoeSkeletonSkinSitePart19;
-begin
-
 { METHOD .FdChildren.Add }
 HAnimSegment331.FdChildren.Add(Transform340);
-Transform342 := TTransformNode.Create;
+Transform342 := TTransformNode.Create;;
 Transform342.Translation := Vector3(-0.095,0.006,-0.03);
 { METHOD .FdChildren.Add }
 Transform342.FdChildren.Add(Shape69);
@@ -2634,60 +2708,63 @@ Transform342.FdChildren.Add(Shape69);
 HAnimSegment331.FdChildren.Add(Transform342);
 { METHOD .FdChildren.Add }
 HAnimJoint330.FdChildren.Add(HAnimSegment331);
-HAnimJoint344 := THAnimJointNode.Create;
+HAnimJoint344 := THAnimJointNode.Create;;
 HAnimJoint344.Center := Vector3(-0.115,0.037,0.09);
 HAnimJoint344.SetSkinCoordIndex([377,378,379,380]);
 HAnimJoint344.SetSkinCoordWeight([1,1,1,1]);
-HAnimSegment345 := THAnimSegmentNode.Create;
-Transform346 := TTransformNode.Create;
+HAnimSegment345 := THAnimSegmentNode.Create;;
+Transform346 := TTransformNode.Create;;
 Transform346.Translation := Vector3(-0.1,0.02,0.07);
 { METHOD .FdChildren.Add }
 Transform346.FdChildren.Add(Shape50);
 { METHOD .FdChildren.Add }
 HAnimSegment345.FdChildren.Add(Transform346);
-Shape348 := TShapeNode.Create;
+Shape348 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape348.Appearance := Appearance64;
-IndexedLineSet350 := TIndexedLineSetNode.Create;
+IndexedLineSet350 := TIndexedLineSetNode.Create;;
 IndexedLineSet350.SetCoordIndex([0,1,-1]);
-Coordinate351 := TCoordinateNode.Create;
+Coordinate351 := TCoordinateNode.Create;;
 Coordinate351.SetPoint([Vector3(-0.1,0.02,0.07),Vector3(-0.1,0.01,0.14)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet350.Coord := Coordinate351;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape348.Geometry := IndexedLineSet350;
 { METHOD .FdChildren.Add }
 HAnimSegment345.FdChildren.Add(Shape348);
-Transform352 := TTransformNode.Create;
+Transform352 := TTransformNode.Create;;
 Transform352.Translation := Vector3(-0.115,0.06,0.1);
 { METHOD .FdChildren.Add }
 Transform352.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment345.FdChildren.Add(Transform352);
-Transform354 := TTransformNode.Create;
+Transform354 := TTransformNode.Create;;
+end;
+
+procedure InitJoeSkeletonSkinSitePart25;
+begin
+
 Transform354.Translation := Vector3(-0.115,0,0.07);
 { METHOD .FdChildren.Add }
 Transform354.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment345.FdChildren.Add(Transform354);
-Transform356 := TTransformNode.Create;
+Transform356 := TTransformNode.Create;;
 Transform356.Translation := Vector3(-0.165,0,0.07);
 { METHOD .FdChildren.Add }
 Transform356.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment345.FdChildren.Add(Transform356);
-Transform358 := TTransformNode.Create;
+Transform358 := TTransformNode.Create;;
 Transform358.Translation := Vector3(-0.165,0,0.07);
 { METHOD .FdChildren.Add }
 Transform358.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment345.FdChildren.Add(Transform358);
-end;
-
-procedure InitJoeSkeletonSkinSitePart20;
-begin
-
-HAnimSite360 := THAnimSiteNode.Create;
+HAnimSite360 := THAnimSiteNode.Create;;
 HAnimSite360.Translation := Vector3(-0.115,0.02,0.122);
 { METHOD .FdChildren.Add }
 HAnimSite360.FdChildren.Add(Shape57);
@@ -2695,96 +2772,104 @@ HAnimSite360.FdChildren.Add(Shape57);
 HAnimSegment345.FdChildren.Add(HAnimSite360);
 { METHOD .FdChildren.Add }
 HAnimJoint344.FdChildren.Add(HAnimSegment345);
-HAnimJoint362 := THAnimJointNode.Create;
+HAnimJoint362 := THAnimJointNode.Create;;
 HAnimJoint362.Center := Vector3(-0.1,0.01,0.14);
 HAnimJoint362.SetSkinCoordIndex([381,382,383,384,385,386,387,388,389]);
 HAnimJoint362.SetSkinCoordWeight([1,1,1,1,1,1,1,1,1]);
-HAnimSegment363 := THAnimSegmentNode.Create;
-Transform364 := TTransformNode.Create;
+HAnimSegment363 := THAnimSegmentNode.Create;;
+Transform364 := TTransformNode.Create;;
 Transform364.Translation := Vector3(-0.1086,0.01,0.14);
 { METHOD .FdChildren.Add }
 Transform364.FdChildren.Add(Shape50);
 { METHOD .FdChildren.Add }
 HAnimSegment363.FdChildren.Add(Transform364);
-Shape366 := TShapeNode.Create;
+Shape366 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape366.Appearance := Appearance64;
-IndexedLineSet368 := TIndexedLineSetNode.Create;
+IndexedLineSet368 := TIndexedLineSetNode.Create;;
 IndexedLineSet368.SetCoordIndex([0,1,-1]);
-Coordinate369 := TCoordinateNode.Create;
+Coordinate369 := TCoordinateNode.Create;;
 Coordinate369.SetPoint([Vector3(-0.1,0.01,0.14),Vector3(-0.1043,0.0016,0.2)]);
+end;
+
+procedure InitJoeSkeletonSkinSitePart26;
+begin
+
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet368.Coord := Coordinate369;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape366.Geometry := IndexedLineSet368;
 { METHOD .FdChildren.Add }
 HAnimSegment363.FdChildren.Add(Shape366);
-Transform370 := TTransformNode.Create;
+Transform370 := TTransformNode.Create;;
 Transform370.Translation := Vector3(-0.115,0.04,0.13);
 { METHOD .FdChildren.Add }
 Transform370.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment363.FdChildren.Add(Transform370);
-Transform372 := TTransformNode.Create;
+Transform372 := TTransformNode.Create;;
 Transform372.Translation := Vector3(-0.125,0,0.12);
 { METHOD .FdChildren.Add }
 Transform372.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment363.FdChildren.Add(Transform372);
-Transform374 := TTransformNode.Create;
+Transform374 := TTransformNode.Create;;
 Transform374.Translation := Vector3(-0.165,0,0.12);
 { METHOD .FdChildren.Add }
 Transform374.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment363.FdChildren.Add(Transform374);
-Transform376 := TTransformNode.Create;
+Transform376 := TTransformNode.Create;;
 Transform376.Translation := Vector3(-0.087,0,0.122);
 { METHOD .FdChildren.Add }
 Transform376.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment363.FdChildren.Add(Transform376);
-Transform378 := TTransformNode.Create;
-end;
-
-procedure InitJoeSkeletonSkinSitePart21;
-begin
-
+Transform378 := TTransformNode.Create;;
 Transform378.Translation := Vector3(-0.09,0.012,0.188);
 { METHOD .FdChildren.Add }
 Transform378.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment363.FdChildren.Add(Transform378);
-Transform380 := TTransformNode.Create;
+Transform380 := TTransformNode.Create;;
 Transform380.Translation := Vector3(-0.11,0.011,0.19);
 { METHOD .FdChildren.Add }
 Transform380.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment363.FdChildren.Add(Transform380);
-Transform382 := TTransformNode.Create;
+Transform382 := TTransformNode.Create;;
 Transform382.Translation := Vector3(-0.128,0.011,0.185);
 { METHOD .FdChildren.Add }
 Transform382.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment363.FdChildren.Add(Transform382);
-Transform384 := TTransformNode.Create;
+Transform384 := TTransformNode.Create;;
+end;
+
+procedure InitJoeSkeletonSkinSitePart27;
+begin
+
 Transform384.Translation := Vector3(-0.142,0.011,0.178);
 { METHOD .FdChildren.Add }
 Transform384.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment363.FdChildren.Add(Transform384);
-Transform386 := TTransformNode.Create;
+Transform386 := TTransformNode.Create;;
 Transform386.Translation := Vector3(-0.154,0.01,0.168);
 { METHOD .FdChildren.Add }
 Transform386.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment363.FdChildren.Add(Transform386);
-HAnimSite388 := THAnimSiteNode.Create;
+HAnimSite388 := THAnimSiteNode.Create;;
 HAnimSite388.Translation := Vector3(-0.165,0.01,0.12);
 { METHOD .FdChildren.Add }
 HAnimSite388.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment363.FdChildren.Add(HAnimSite388);
-HAnimSite390 := THAnimSiteNode.Create;
+HAnimSite390 := THAnimSiteNode.Create;;
 HAnimSite390.Translation := Vector3(-0.11,0.011,0.19);
 { METHOD .FdChildren.Add }
 HAnimSite390.FdChildren.Add(Shape57);
@@ -2806,52 +2891,58 @@ HAnimJoint256.FdChildren.Add(HAnimJoint282);
 HAnimJoint90.FdChildren.Add(HAnimJoint256);
 { METHOD .FdChildren.Add }
 HAnimJoint78.FdChildren.Add(HAnimJoint90);
-HAnimJoint392 := THAnimJointNode.Create;
+HAnimJoint392 := THAnimJointNode.Create;;
 HAnimJoint392.Center := Vector3(0,1.045,-0.095);
 HAnimJoint392.SetSkinCoordIndex([28,76]);
 HAnimJoint392.SetSkinCoordWeight([1,1]);
-HAnimSegment393 := THAnimSegmentNode.Create;
-end;
-
-procedure InitJoeSkeletonSkinSitePart22;
-begin
-
-Shape394 := TShapeNode.Create;
+HAnimSegment393 := THAnimSegmentNode.Create;;
+Shape394 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape394.Appearance := Appearance64;
-IndexedLineSet396 := TIndexedLineSetNode.Create;
+IndexedLineSet396 := TIndexedLineSetNode.Create;;
 IndexedLineSet396.SetCoordIndex([0,1,-1]);
 Coordinate397 := TCoordinateNode.Create;
+end;
+
+procedure InitJoeSkeletonSkinSitePart28;
+begin
+;
 Coordinate397.SetPoint([Vector3(0,1.045,-0.095),Vector3(0,0.9149,0.0016)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet396.Coord := Coordinate397;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape394.Geometry := IndexedLineSet396;
 { METHOD .FdChildren.Add }
 HAnimSegment393.FdChildren.Add(Shape394);
 { METHOD .FdChildren.Add }
 HAnimJoint392.FdChildren.Add(HAnimSegment393);
-HAnimSegment398 := THAnimSegmentNode.Create;
-Shape399 := TShapeNode.Create;
+HAnimSegment398 := THAnimSegmentNode.Create;;
+Shape399 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape399.Appearance := Appearance64;
-IndexedLineSet401 := TIndexedLineSetNode.Create;
+IndexedLineSet401 := TIndexedLineSetNode.Create;;
 IndexedLineSet401.SetCoordIndex([0,1,-1]);
-Coordinate402 := TCoordinateNode.Create;
+Coordinate402 := TCoordinateNode.Create;;
 Coordinate402.SetPoint([Vector3(0,1.045,-0.095),Vector3(0,1.068,-0.085)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet401.Coord := Coordinate402;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape399.Geometry := IndexedLineSet401;
 { METHOD .FdChildren.Add }
 HAnimSegment398.FdChildren.Add(Shape399);
-HAnimSite403 := THAnimSiteNode.Create;
+HAnimSite403 := THAnimSiteNode.Create;;
 HAnimSite403.Translation := Vector3(0,1.0915,-0.1091);
 { METHOD .FdChildren.Add }
 HAnimSite403.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment398.FdChildren.Add(HAnimSite403);
-HAnimSite405 := THAnimSiteNode.Create;
+HAnimSite405 := THAnimSiteNode.Create;;
 HAnimSite405.Translation := Vector3(0,1.0723,0.09);
 { METHOD .FdChildren.Add }
 HAnimSite405.FdChildren.Add(Shape57);
@@ -2859,28 +2950,31 @@ HAnimSite405.FdChildren.Add(Shape57);
 HAnimSegment398.FdChildren.Add(HAnimSite405);
 { METHOD .FdChildren.Add }
 HAnimJoint392.FdChildren.Add(HAnimSegment398);
-HAnimJoint407 := THAnimJointNode.Create;
+HAnimJoint407 := THAnimJointNode.Create;;
 HAnimJoint407.Center := Vector3(0,1.068,-0.085);
-HAnimSegment408 := THAnimSegmentNode.Create;
-Shape409 := TShapeNode.Create;
+HAnimSegment408 := THAnimSegmentNode.Create;;
+Shape409 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape409.Appearance := Appearance64;
 IndexedLineSet411 := TIndexedLineSetNode.Create;
-IndexedLineSet411.SetCoordIndex([0,1,-1]);
-Coordinate412 := TCoordinateNode.Create;
-Coordinate412.SetPoint([Vector3(0,1.068,-0.085),Vector3(0,1.092,-0.0725)]);
-{ METHOD .Coord }
-IndexedLineSet411.Coord := Coordinate412;
-{ METHOD .Geometry }
-Shape409.Geometry := IndexedLineSet411;
 end;
 
-procedure InitJoeSkeletonSkinSitePart23;
+procedure InitJoeSkeletonSkinSitePart29;
 begin
-
+;
+IndexedLineSet411.SetCoordIndex([0,1,-1]);
+Coordinate412 := TCoordinateNode.Create;;
+Coordinate412.SetPoint([Vector3(0,1.068,-0.085),Vector3(0,1.092,-0.0725)]);
+{ METHOD .Coord }
+{ METHOD.SET .Coord }
+IndexedLineSet411.Coord := Coordinate412;
+{ METHOD .Geometry }
+{ METHOD.SET .Geometry }
+Shape409.Geometry := IndexedLineSet411;
 { METHOD .FdChildren.Add }
 HAnimSegment408.FdChildren.Add(Shape409);
-Transform413 := TTransformNode.Create;
+Transform413 := TTransformNode.Create;;
 Transform413.Translation := Vector3(0,1.068,-0.085);
 { METHOD .FdChildren.Add }
 Transform413.FdChildren.Add(Shape50);
@@ -2888,23 +2982,26 @@ Transform413.FdChildren.Add(Shape50);
 HAnimSegment408.FdChildren.Add(Transform413);
 { METHOD .FdChildren.Add }
 HAnimJoint407.FdChildren.Add(HAnimSegment408);
-HAnimJoint415 := THAnimJointNode.Create;
+HAnimJoint415 := THAnimJointNode.Create;;
 HAnimJoint415.Center := Vector3(0,1.092,-0.0725);
-HAnimSegment416 := THAnimSegmentNode.Create;
-Shape417 := TShapeNode.Create;
+HAnimSegment416 := THAnimSegmentNode.Create;;
+Shape417 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape417.Appearance := Appearance64;
-IndexedLineSet419 := TIndexedLineSetNode.Create;
+IndexedLineSet419 := TIndexedLineSetNode.Create;;
 IndexedLineSet419.SetCoordIndex([0,1,-1]);
-Coordinate420 := TCoordinateNode.Create;
+Coordinate420 := TCoordinateNode.Create;;
 Coordinate420.SetPoint([Vector3(0,1.092,-0.0725),Vector3(0,1.12,-0.065)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet419.Coord := Coordinate420;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape417.Geometry := IndexedLineSet419;
 { METHOD .FdChildren.Add }
 HAnimSegment416.FdChildren.Add(Shape417);
-Transform421 := TTransformNode.Create;
+Transform421 := TTransformNode.Create;;
 Transform421.Translation := Vector3(0,1.092,-0.0725);
 { METHOD .FdChildren.Add }
 Transform421.FdChildren.Add(Shape50);
@@ -2912,84 +3009,92 @@ Transform421.FdChildren.Add(Shape50);
 HAnimSegment416.FdChildren.Add(Transform421);
 { METHOD .FdChildren.Add }
 HAnimJoint415.FdChildren.Add(HAnimSegment416);
-HAnimJoint423 := THAnimJointNode.Create;
+HAnimJoint423 := THAnimJointNode.Create;;
 HAnimJoint423.Center := Vector3(0,1.12,-0.065);
+end;
+
+procedure InitJoeSkeletonSkinSitePart30;
+begin
+
 HAnimJoint423.SetSkinCoordIndex([16,18,25,83,84,85,86,87,88]);
 HAnimJoint423.SetSkinCoordWeight([1,1,1,1,1,1,0.7,1,0.8]);
-HAnimSegment424 := THAnimSegmentNode.Create;
-Shape425 := TShapeNode.Create;
+HAnimSegment424 := THAnimSegmentNode.Create;;
+Shape425 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape425.Appearance := Appearance64;
-IndexedLineSet427 := TIndexedLineSetNode.Create;
+IndexedLineSet427 := TIndexedLineSetNode.Create;;
 IndexedLineSet427.SetCoordIndex([0,1,-1]);
-Coordinate428 := TCoordinateNode.Create;
+Coordinate428 := TCoordinateNode.Create;;
 Coordinate428.SetPoint([Vector3(0,1.12,-0.065),Vector3(0,1.1459,-0.0625)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet427.Coord := Coordinate428;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape425.Geometry := IndexedLineSet427;
 { METHOD .FdChildren.Add }
 HAnimSegment424.FdChildren.Add(Shape425);
-Transform429 := TTransformNode.Create;
+Transform429 := TTransformNode.Create;;
 Transform429.Translation := Vector3(0,1.12,-0.065);
 { METHOD .FdChildren.Add }
 Transform429.FdChildren.Add(Shape50);
-end;
-
-procedure InitJoeSkeletonSkinSitePart24;
-begin
-
 { METHOD .FdChildren.Add }
 HAnimSegment424.FdChildren.Add(Transform429);
-Transform431 := TTransformNode.Create;
+Transform431 := TTransformNode.Create;;
 Transform431.Translation := Vector3(-0.087,1.19,-0.09);
 { METHOD .FdChildren.Add }
 Transform431.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment424.FdChildren.Add(Transform431);
-Transform433 := TTransformNode.Create;
+Transform433 := TTransformNode.Create;;
 Transform433.Translation := Vector3(0.087,1.19,-0.09);
 { METHOD .FdChildren.Add }
 Transform433.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment424.FdChildren.Add(Transform433);
-Transform435 := TTransformNode.Create;
+Transform435 := TTransformNode.Create;;
 Transform435.Translation := Vector3(0.172,1.32,-0.03);
 { METHOD .FdChildren.Add }
 Transform435.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment424.FdChildren.Add(Transform435);
-Transform437 := TTransformNode.Create;
+Transform437 := TTransformNode.Create;;
 Transform437.Translation := Vector3(-0.172,1.32,-0.03);
 { METHOD .FdChildren.Add }
 Transform437.FdChildren.Add(Shape69);
+end;
+
+procedure InitJoeSkeletonSkinSitePart31;
+begin
+
 { METHOD .FdChildren.Add }
 HAnimSegment424.FdChildren.Add(Transform437);
-Transform439 := TTransformNode.Create;
+Transform439 := TTransformNode.Create;;
 Transform439.Translation := Vector3(0.15,1.23,-0.015);
 { METHOD .FdChildren.Add }
 Transform439.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment424.FdChildren.Add(Transform439);
-Transform441 := TTransformNode.Create;
+Transform441 := TTransformNode.Create;;
 Transform441.Translation := Vector3(-0.15,1.23,-0.015);
 { METHOD .FdChildren.Add }
 Transform441.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment424.FdChildren.Add(Transform441);
-HAnimSite443 := THAnimSiteNode.Create;
+HAnimSite443 := THAnimSiteNode.Create;;
 HAnimSite443.Translation := Vector3(-0.087,1.19,0.09);
 { METHOD .FdChildren.Add }
 HAnimSite443.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment424.FdChildren.Add(HAnimSite443);
-HAnimSite445 := THAnimSiteNode.Create;
+HAnimSite445 := THAnimSiteNode.Create;;
 HAnimSite445.Translation := Vector3(0.087,1.19,0.09);
 { METHOD .FdChildren.Add }
 HAnimSite445.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment424.FdChildren.Add(HAnimSite445);
-HAnimSite447 := THAnimSiteNode.Create;
+HAnimSite447 := THAnimSiteNode.Create;;
 HAnimSite447.Translation := Vector3(0,1.1908,-0.1113);
 { METHOD .FdChildren.Add }
 HAnimSite447.FdChildren.Add(Shape57);
@@ -2997,28 +3102,31 @@ HAnimSite447.FdChildren.Add(Shape57);
 HAnimSegment424.FdChildren.Add(HAnimSite447);
 { METHOD .FdChildren.Add }
 HAnimJoint423.FdChildren.Add(HAnimSegment424);
-HAnimJoint449 := THAnimJointNode.Create;
+HAnimJoint449 := THAnimJointNode.Create;;
 HAnimJoint449.Center := Vector3(0,1.1459,-0.0625);
+HAnimSegment450 := THAnimSegmentNode.Create;;
+Shape451 := TShapeNode.Create;;
+{ METHOD .Appearance }
+{ METHOD.SET .Appearance }
+Shape451.Appearance := Appearance64;
+IndexedLineSet453 := TIndexedLineSetNode.Create;;
+IndexedLineSet453.SetCoordIndex([0,1,-1]);
+Coordinate454 := TCoordinateNode.Create;;
 end;
 
-procedure InitJoeSkeletonSkinSitePart25;
+procedure InitJoeSkeletonSkinSitePart32;
 begin
 
-HAnimSegment450 := THAnimSegmentNode.Create;
-Shape451 := TShapeNode.Create;
-{ METHOD .Appearance }
-Shape451.Appearance := Appearance64;
-IndexedLineSet453 := TIndexedLineSetNode.Create;
-IndexedLineSet453.SetCoordIndex([0,1,-1]);
-Coordinate454 := TCoordinateNode.Create;
 Coordinate454.SetPoint([Vector3(0,1.1459,-0.0625),Vector3(0,1.179,-0.068)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet453.Coord := Coordinate454;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape451.Geometry := IndexedLineSet453;
 { METHOD .FdChildren.Add }
 HAnimSegment450.FdChildren.Add(Shape451);
-Transform455 := TTransformNode.Create;
+Transform455 := TTransformNode.Create;;
 Transform455.Translation := Vector3(0,1.1459,-0.0625);
 { METHOD .FdChildren.Add }
 Transform455.FdChildren.Add(Shape50);
@@ -3026,23 +3134,26 @@ Transform455.FdChildren.Add(Shape50);
 HAnimSegment450.FdChildren.Add(Transform455);
 { METHOD .FdChildren.Add }
 HAnimJoint449.FdChildren.Add(HAnimSegment450);
-HAnimJoint457 := THAnimJointNode.Create;
+HAnimJoint457 := THAnimJointNode.Create;;
 HAnimJoint457.Center := Vector3(0,1.179,-0.068);
-HAnimSegment458 := THAnimSegmentNode.Create;
-Shape459 := TShapeNode.Create;
+HAnimSegment458 := THAnimSegmentNode.Create;;
+Shape459 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape459.Appearance := Appearance64;
-IndexedLineSet461 := TIndexedLineSetNode.Create;
+IndexedLineSet461 := TIndexedLineSetNode.Create;;
 IndexedLineSet461.SetCoordIndex([0,1,-1]);
-Coordinate462 := TCoordinateNode.Create;
+Coordinate462 := TCoordinateNode.Create;;
 Coordinate462.SetPoint([Vector3(0,1.179,-0.068),Vector3(0,1.242,-0.09)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet461.Coord := Coordinate462;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape459.Geometry := IndexedLineSet461;
 { METHOD .FdChildren.Add }
 HAnimSegment458.FdChildren.Add(Shape459);
-Transform463 := TTransformNode.Create;
+Transform463 := TTransformNode.Create;;
 Transform463.Translation := Vector3(0,1.179,-0.068);
 { METHOD .FdChildren.Add }
 Transform463.FdChildren.Add(Shape50);
@@ -3050,28 +3161,31 @@ Transform463.FdChildren.Add(Shape50);
 HAnimSegment458.FdChildren.Add(Transform463);
 { METHOD .FdChildren.Add }
 HAnimJoint457.FdChildren.Add(HAnimSegment458);
-HAnimJoint465 := THAnimJointNode.Create;
+HAnimJoint465 := THAnimJointNode.Create;;
 HAnimJoint465.Center := Vector3(0,1.2679,-0.081);
-HAnimSegment466 := THAnimSegmentNode.Create;
-Shape467 := TShapeNode.Create;
-{ METHOD .Appearance }
-Shape467.Appearance := Appearance64;
-IndexedLineSet469 := TIndexedLineSetNode.Create;
-IndexedLineSet469.SetCoordIndex([0,1,-1]);
-Coordinate470 := TCoordinateNode.Create;
+HAnimSegment466 := THAnimSegmentNode.Create;;
+Shape467 := TShapeNode.Create;;
 end;
 
-procedure InitJoeSkeletonSkinSitePart26;
+procedure InitJoeSkeletonSkinSitePart33;
 begin
 
+{ METHOD .Appearance }
+{ METHOD.SET .Appearance }
+Shape467.Appearance := Appearance64;
+IndexedLineSet469 := TIndexedLineSetNode.Create;;
+IndexedLineSet469.SetCoordIndex([0,1,-1]);
+Coordinate470 := TCoordinateNode.Create;;
 Coordinate470.SetPoint([Vector3(0,1.2145,-0.0755),Vector3(0,1.242,-0.09)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet469.Coord := Coordinate470;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape467.Geometry := IndexedLineSet469;
 { METHOD .FdChildren.Add }
 HAnimSegment466.FdChildren.Add(Shape467);
-Transform471 := TTransformNode.Create;
+Transform471 := TTransformNode.Create;;
 Transform471.Translation := Vector3(0,1.2145,-0.0755);
 { METHOD .FdChildren.Add }
 Transform471.FdChildren.Add(Shape50);
@@ -3079,31 +3193,39 @@ Transform471.FdChildren.Add(Shape50);
 HAnimSegment466.FdChildren.Add(Transform471);
 { METHOD .FdChildren.Add }
 HAnimJoint465.FdChildren.Add(HAnimSegment466);
-HAnimJoint473 := THAnimJointNode.Create;
+HAnimJoint473 := THAnimJointNode.Create;;
 HAnimJoint473.Center := Vector3(0,1.242,-0.09);
 HAnimJoint473.SetSkinCoordIndex([15]);
 HAnimJoint473.SetSkinCoordWeight([1]);
-HAnimSegment474 := THAnimSegmentNode.Create;
-Shape475 := TShapeNode.Create;
+HAnimSegment474 := THAnimSegmentNode.Create;;
+Shape475 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape475.Appearance := Appearance64;
-IndexedLineSet477 := TIndexedLineSetNode.Create;
+IndexedLineSet477 := TIndexedLineSetNode.Create;;
 IndexedLineSet477.SetCoordIndex([0,1,-1]);
-Coordinate478 := TCoordinateNode.Create;
+Coordinate478 := TCoordinateNode.Create;;
 Coordinate478.SetPoint([Vector3(0,1.242,-0.09),Vector3(0,1.268,-0.1)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet477.Coord := Coordinate478;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape475.Geometry := IndexedLineSet477;
 { METHOD .FdChildren.Add }
 HAnimSegment474.FdChildren.Add(Shape475);
-Transform479 := TTransformNode.Create;
+Transform479 := TTransformNode.Create;;
 Transform479.Translation := Vector3(0,1.242,-0.09);
 { METHOD .FdChildren.Add }
 Transform479.FdChildren.Add(Shape50);
 { METHOD .FdChildren.Add }
 HAnimSegment474.FdChildren.Add(Transform479);
-HAnimSite481 := THAnimSiteNode.Create;
+end;
+
+procedure InitJoeSkeletonSkinSitePart34;
+begin
+
+HAnimSite481 := THAnimSiteNode.Create;;
 HAnimSite481.Translation := Vector3(0,1.25,0.113);
 { METHOD .FdChildren.Add }
 HAnimSite481.FdChildren.Add(Shape57);
@@ -3111,66 +3233,72 @@ HAnimSite481.FdChildren.Add(Shape57);
 HAnimSegment474.FdChildren.Add(HAnimSite481);
 { METHOD .FdChildren.Add }
 HAnimJoint473.FdChildren.Add(HAnimSegment474);
-HAnimJoint483 := THAnimJointNode.Create;
+HAnimJoint483 := THAnimJointNode.Create;;
 HAnimJoint483.Center := Vector3(0,1.268,-0.1);
 HAnimJoint483.SetSkinCoordIndex([13,14]);
 HAnimJoint483.SetSkinCoordWeight([1,1]);
-HAnimSegment484 := THAnimSegmentNode.Create;
-Shape485 := TShapeNode.Create;
+HAnimSegment484 := THAnimSegmentNode.Create;;
+Shape485 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape485.Appearance := Appearance64;
-IndexedLineSet487 := TIndexedLineSetNode.Create;
-end;
-
-procedure InitJoeSkeletonSkinSitePart27;
-begin
-
+IndexedLineSet487 := TIndexedLineSetNode.Create;;
 IndexedLineSet487.SetCoordIndex([0,1,-1]);
-Coordinate488 := TCoordinateNode.Create;
+Coordinate488 := TCoordinateNode.Create;;
 Coordinate488.SetPoint([Vector3(0,1.268,-0.1),Vector3(0,1.294,-0.11)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet487.Coord := Coordinate488;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape485.Geometry := IndexedLineSet487;
 { METHOD .FdChildren.Add }
 HAnimSegment484.FdChildren.Add(Shape485);
-Transform489 := TTransformNode.Create;
+Transform489 := TTransformNode.Create;;
 Transform489.Translation := Vector3(0,1.268,-0.1);
 { METHOD .FdChildren.Add }
 Transform489.FdChildren.Add(Shape50);
 { METHOD .FdChildren.Add }
 HAnimSegment484.FdChildren.Add(Transform489);
-HAnimSite491 := THAnimSiteNode.Create;
+HAnimSite491 := THAnimSiteNode.Create;;
 HAnimSite491.Translation := Vector3(-0.1135,1.318,0.095);
 { METHOD .FdChildren.Add }
 HAnimSite491.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment484.FdChildren.Add(HAnimSite491);
-HAnimSite493 := THAnimSiteNode.Create;
+HAnimSite493 := THAnimSiteNode.Create;;
 HAnimSite493.Translation := Vector3(0.1135,1.318,0.095);
 { METHOD .FdChildren.Add }
 HAnimSite493.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment484.FdChildren.Add(HAnimSite493);
+end;
+
+procedure InitJoeSkeletonSkinSitePart35;
+begin
+
 { METHOD .FdChildren.Add }
 HAnimJoint483.FdChildren.Add(HAnimSegment484);
-HAnimJoint495 := THAnimJointNode.Create;
+HAnimJoint495 := THAnimJointNode.Create;;
 HAnimJoint495.Center := Vector3(0,1.294,-0.11);
-HAnimSegment496 := THAnimSegmentNode.Create;
-Shape497 := TShapeNode.Create;
+HAnimSegment496 := THAnimSegmentNode.Create;;
+Shape497 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape497.Appearance := Appearance64;
-IndexedLineSet499 := TIndexedLineSetNode.Create;
+IndexedLineSet499 := TIndexedLineSetNode.Create;;
 IndexedLineSet499.SetCoordIndex([0,1,-1]);
-Coordinate500 := TCoordinateNode.Create;
+Coordinate500 := TCoordinateNode.Create;;
 Coordinate500.SetPoint([Vector3(0,1.294,-0.11),Vector3(0,1.352,-0.12)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet499.Coord := Coordinate500;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape497.Geometry := IndexedLineSet499;
 { METHOD .FdChildren.Add }
 HAnimSegment496.FdChildren.Add(Shape497);
-Transform501 := TTransformNode.Create;
+Transform501 := TTransformNode.Create;;
 Transform501.Translation := Vector3(0,1.294,-0.11);
 { METHOD .FdChildren.Add }
 Transform501.FdChildren.Add(Shape50);
@@ -3178,28 +3306,31 @@ Transform501.FdChildren.Add(Shape50);
 HAnimSegment496.FdChildren.Add(Transform501);
 { METHOD .FdChildren.Add }
 HAnimJoint495.FdChildren.Add(HAnimSegment496);
-HAnimJoint503 := THAnimJointNode.Create;
+HAnimJoint503 := THAnimJointNode.Create;;
 HAnimJoint503.Center := Vector3(0,1.323,-0.1155);
-HAnimSegment504 := THAnimSegmentNode.Create;
-Shape505 := TShapeNode.Create;
-end;
-
-procedure InitJoeSkeletonSkinSitePart28;
-begin
-
+HAnimSegment504 := THAnimSegmentNode.Create;;
+Shape505 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape505.Appearance := Appearance64;
-IndexedLineSet507 := TIndexedLineSetNode.Create;
+IndexedLineSet507 := TIndexedLineSetNode.Create;;
 IndexedLineSet507.SetCoordIndex([0,1,-1]);
-Coordinate508 := TCoordinateNode.Create;
+Coordinate508 := TCoordinateNode.Create;;
 Coordinate508.SetPoint([Vector3(0,1.352,-0.12),Vector3(0,1.381,-0.1235)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet507.Coord := Coordinate508;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape505.Geometry := IndexedLineSet507;
+end;
+
+procedure InitJoeSkeletonSkinSitePart36;
+begin
+
 { METHOD .FdChildren.Add }
 HAnimSegment504.FdChildren.Add(Shape505);
-Transform509 := TTransformNode.Create;
+Transform509 := TTransformNode.Create;;
 Transform509.Translation := Vector3(0,1.323,-0.1155);
 { METHOD .FdChildren.Add }
 Transform509.FdChildren.Add(Shape50);
@@ -3207,23 +3338,26 @@ Transform509.FdChildren.Add(Shape50);
 HAnimSegment504.FdChildren.Add(Transform509);
 { METHOD .FdChildren.Add }
 HAnimJoint503.FdChildren.Add(HAnimSegment504);
-HAnimJoint511 := THAnimJointNode.Create;
+HAnimJoint511 := THAnimJointNode.Create;;
 HAnimJoint511.Center := Vector3(0,1.352,-0.12);
-HAnimSegment512 := THAnimSegmentNode.Create;
-Shape513 := TShapeNode.Create;
+HAnimSegment512 := THAnimSegmentNode.Create;;
+Shape513 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape513.Appearance := Appearance64;
-IndexedLineSet515 := TIndexedLineSetNode.Create;
+IndexedLineSet515 := TIndexedLineSetNode.Create;;
 IndexedLineSet515.SetCoordIndex([0,1,-1]);
-Coordinate516 := TCoordinateNode.Create;
+Coordinate516 := TCoordinateNode.Create;;
 Coordinate516.SetPoint([Vector3(0,1.381,-0.1235),Vector3(0,1.41,-0.1235)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet515.Coord := Coordinate516;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape513.Geometry := IndexedLineSet515;
 { METHOD .FdChildren.Add }
 HAnimSegment512.FdChildren.Add(Shape513);
-Transform517 := TTransformNode.Create;
+Transform517 := TTransformNode.Create;;
 Transform517.Translation := Vector3(0,1.352,-0.12);
 { METHOD .FdChildren.Add }
 Transform517.FdChildren.Add(Shape50);
@@ -3231,28 +3365,31 @@ Transform517.FdChildren.Add(Shape50);
 HAnimSegment512.FdChildren.Add(Transform517);
 { METHOD .FdChildren.Add }
 HAnimJoint511.FdChildren.Add(HAnimSegment512);
-HAnimJoint519 := THAnimJointNode.Create;
+HAnimJoint519 := THAnimJointNode.Create;;
 HAnimJoint519.Center := Vector3(0,1.381,-0.1235);
-HAnimSegment520 := THAnimSegmentNode.Create;
-Shape521 := TShapeNode.Create;
+HAnimSegment520 := THAnimSegmentNode.Create;;
+Shape521 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape521.Appearance := Appearance64;
-IndexedLineSet523 := TIndexedLineSetNode.Create;
-IndexedLineSet523.SetCoordIndex([0,1,-1]);
-Coordinate524 := TCoordinateNode.Create;
-Coordinate524.SetPoint([Vector3(0,1.41,-0.1235),Vector3(0,1.438,-0.12)]);
-{ METHOD .Coord }
-IndexedLineSet523.Coord := Coordinate524;
+IndexedLineSet523 := TIndexedLineSetNode.Create;;
 end;
 
-procedure InitJoeSkeletonSkinSitePart29;
+procedure InitJoeSkeletonSkinSitePart37;
 begin
 
+IndexedLineSet523.SetCoordIndex([0,1,-1]);
+Coordinate524 := TCoordinateNode.Create;;
+Coordinate524.SetPoint([Vector3(0,1.41,-0.1235),Vector3(0,1.438,-0.12)]);
+{ METHOD .Coord }
+{ METHOD.SET .Coord }
+IndexedLineSet523.Coord := Coordinate524;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape521.Geometry := IndexedLineSet523;
 { METHOD .FdChildren.Add }
 HAnimSegment520.FdChildren.Add(Shape521);
-Transform525 := TTransformNode.Create;
+Transform525 := TTransformNode.Create;;
 Transform525.Translation := Vector3(0,1.381,-0.1235);
 { METHOD .FdChildren.Add }
 Transform525.FdChildren.Add(Shape50);
@@ -3260,60 +3397,66 @@ Transform525.FdChildren.Add(Shape50);
 HAnimSegment520.FdChildren.Add(Transform525);
 { METHOD .FdChildren.Add }
 HAnimJoint519.FdChildren.Add(HAnimSegment520);
-HAnimJoint527 := THAnimJointNode.Create;
+HAnimJoint527 := THAnimJointNode.Create;;
 HAnimJoint527.Center := Vector3(0,1.41,-0.1235);
 HAnimJoint527.SetSkinCoordIndex([81]);
 HAnimJoint527.SetSkinCoordWeight([1]);
-HAnimSegment528 := THAnimSegmentNode.Create;
-Shape529 := TShapeNode.Create;
+HAnimSegment528 := THAnimSegmentNode.Create;;
+Shape529 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape529.Appearance := Appearance64;
-IndexedLineSet531 := TIndexedLineSetNode.Create;
+IndexedLineSet531 := TIndexedLineSetNode.Create;;
 IndexedLineSet531.SetCoordIndex([0,1,-1]);
-Coordinate532 := TCoordinateNode.Create;
+Coordinate532 := TCoordinateNode.Create;;
 Coordinate532.SetPoint([Vector3(0,1.41,-0.1235),Vector3(0,1.438,-0.12)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet531.Coord := Coordinate532;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape529.Geometry := IndexedLineSet531;
 { METHOD .FdChildren.Add }
 HAnimSegment528.FdChildren.Add(Shape529);
-Transform533 := TTransformNode.Create;
+Transform533 := TTransformNode.Create;;
 Transform533.Translation := Vector3(0,1.41,-0.1235);
 { METHOD .FdChildren.Add }
 Transform533.FdChildren.Add(Shape50);
 { METHOD .FdChildren.Add }
 HAnimSegment528.FdChildren.Add(Transform533);
-Transform535 := TTransformNode.Create;
+Transform535 := TTransformNode.Create;;
 Transform535.Translation := Vector3(0,1.41,-0.145);
+end;
+
+procedure InitJoeSkeletonSkinSitePart38;
+begin
+
 { METHOD .FdChildren.Add }
 Transform535.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment528.FdChildren.Add(Transform535);
 { METHOD .FdChildren.Add }
 HAnimJoint527.FdChildren.Add(HAnimSegment528);
-HAnimJoint537 := THAnimJointNode.Create;
+HAnimJoint537 := THAnimJointNode.Create;;
 HAnimJoint537.Center := Vector3(0,1.438,-0.12);
-HAnimSegment538 := THAnimSegmentNode.Create;
-Shape539 := TShapeNode.Create;
+HAnimSegment538 := THAnimSegmentNode.Create;;
+Shape539 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape539.Appearance := Appearance64;
-IndexedLineSet541 := TIndexedLineSetNode.Create;
+IndexedLineSet541 := TIndexedLineSetNode.Create;;
 IndexedLineSet541.SetCoordIndex([0,1,-1]);
-Coordinate542 := TCoordinateNode.Create;
+Coordinate542 := TCoordinateNode.Create;;
 Coordinate542.SetPoint([Vector3(0,1.438,-0.12),Vector3(0,1.468,-0.105)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet541.Coord := Coordinate542;
-end;
-
-procedure InitJoeSkeletonSkinSitePart30;
-begin
-
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape539.Geometry := IndexedLineSet541;
 { METHOD .FdChildren.Add }
 HAnimSegment538.FdChildren.Add(Shape539);
-Transform543 := TTransformNode.Create;
+Transform543 := TTransformNode.Create;;
 Transform543.Translation := Vector3(0,1.438,-0.12);
 { METHOD .FdChildren.Add }
 Transform543.FdChildren.Add(Shape50);
@@ -3321,23 +3464,31 @@ Transform543.FdChildren.Add(Shape50);
 HAnimSegment538.FdChildren.Add(Transform543);
 { METHOD .FdChildren.Add }
 HAnimJoint537.FdChildren.Add(HAnimSegment538);
-HAnimJoint545 := THAnimJointNode.Create;
+HAnimJoint545 := THAnimJointNode.Create;;
 HAnimJoint545.Center := Vector3(0,1.468,-0.105);
-HAnimSegment546 := THAnimSegmentNode.Create;
-Shape547 := TShapeNode.Create;
+HAnimSegment546 := THAnimSegmentNode.Create;;
+Shape547 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape547.Appearance := Appearance64;
-IndexedLineSet549 := TIndexedLineSetNode.Create;
+IndexedLineSet549 := TIndexedLineSetNode.Create;;
 IndexedLineSet549.SetCoordIndex([0,1,-1]);
-Coordinate550 := TCoordinateNode.Create;
+Coordinate550 := TCoordinateNode.Create;;
 Coordinate550.SetPoint([Vector3(0,1.468,-0.105),Vector3(0,1.497,-0.09)]);
+end;
+
+procedure InitJoeSkeletonSkinSitePart39;
+begin
+
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet549.Coord := Coordinate550;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape547.Geometry := IndexedLineSet549;
 { METHOD .FdChildren.Add }
 HAnimSegment546.FdChildren.Add(Shape547);
-Transform551 := TTransformNode.Create;
+Transform551 := TTransformNode.Create;;
 Transform551.Translation := Vector3(0,1.468,-0.105);
 { METHOD .FdChildren.Add }
 Transform551.FdChildren.Add(Shape50);
@@ -3345,42 +3496,45 @@ Transform551.FdChildren.Add(Shape50);
 HAnimSegment546.FdChildren.Add(Transform551);
 { METHOD .FdChildren.Add }
 HAnimJoint545.FdChildren.Add(HAnimSegment546);
-HAnimJoint553 := THAnimJointNode.Create;
+HAnimJoint553 := THAnimJointNode.Create;;
 HAnimJoint553.Center := Vector3(0,1.497,-0.09);
 HAnimJoint553.SetSkinCoordIndex([11,24]);
 HAnimJoint553.SetSkinCoordWeight([1,1]);
-HAnimSegment554 := THAnimSegmentNode.Create;
-Shape555 := TShapeNode.Create;
+HAnimSegment554 := THAnimSegmentNode.Create;;
+Shape555 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape555.Appearance := Appearance64;
-IndexedLineSet557 := TIndexedLineSetNode.Create;
+IndexedLineSet557 := TIndexedLineSetNode.Create;;
 IndexedLineSet557.SetCoordIndex([0,1,-1]);
-Coordinate558 := TCoordinateNode.Create;
+Coordinate558 := TCoordinateNode.Create;;
 Coordinate558.SetPoint([Vector3(0,1.497,-0.09),Vector3(0,1.525,-0.072)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet557.Coord := Coordinate558;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape555.Geometry := IndexedLineSet557;
 { METHOD .FdChildren.Add }
 HAnimSegment554.FdChildren.Add(Shape555);
-Transform559 := TTransformNode.Create;
+Transform559 := TTransformNode.Create;;
 Transform559.Translation := Vector3(0,1.497,-0.09);
-end;
-
-procedure InitJoeSkeletonSkinSitePart31;
-begin
-
 { METHOD .FdChildren.Add }
 Transform559.FdChildren.Add(Shape50);
 { METHOD .FdChildren.Add }
 HAnimSegment554.FdChildren.Add(Transform559);
-HAnimSite561 := THAnimSiteNode.Create;
+HAnimSite561 := THAnimSiteNode.Create;;
 HAnimSite561.Translation := Vector3(0,1.44,0.03);
 { METHOD .FdChildren.Add }
 HAnimSite561.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment554.FdChildren.Add(HAnimSite561);
-HAnimSite563 := THAnimSiteNode.Create;
+HAnimSite563 := THAnimSiteNode.Create;;
+end;
+
+procedure InitJoeSkeletonSkinSitePart40;
+begin
+
 HAnimSite563.Translation := Vector3(0,1.53,-0.084);
 { METHOD .FdChildren.Add }
 HAnimSite563.FdChildren.Add(Shape57);
@@ -3388,37 +3542,40 @@ HAnimSite563.FdChildren.Add(Shape57);
 HAnimSegment554.FdChildren.Add(HAnimSite563);
 { METHOD .FdChildren.Add }
 HAnimJoint553.FdChildren.Add(HAnimSegment554);
-HAnimJoint565 := THAnimJointNode.Create;
+HAnimJoint565 := THAnimJointNode.Create;;
 HAnimJoint565.Center := Vector3(0,1.525,-0.072);
 HAnimJoint565.SetSkinCoordIndex([74,75]);
 HAnimJoint565.SetSkinCoordWeight([1,1]);
-HAnimSegment566 := THAnimSegmentNode.Create;
-Shape567 := TShapeNode.Create;
+HAnimSegment566 := THAnimSegmentNode.Create;;
+Shape567 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape567.Appearance := Appearance64;
-IndexedLineSet569 := TIndexedLineSetNode.Create;
+IndexedLineSet569 := TIndexedLineSetNode.Create;;
 IndexedLineSet569.SetCoordIndex([0,1,-1,0,2,-1,0,3,-1]);
-Coordinate570 := TCoordinateNode.Create;
+Coordinate570 := TCoordinateNode.Create;;
 Coordinate570.SetPoint([Vector3(0,1.525,-0.072),Vector3(0.082,1.4488,-0.0353),Vector3(-0.03,1.46,0.02),Vector3(0,1.54,-0.05)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet569.Coord := Coordinate570;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape567.Geometry := IndexedLineSet569;
 { METHOD .FdChildren.Add }
 HAnimSegment566.FdChildren.Add(Shape567);
-Transform571 := TTransformNode.Create;
+Transform571 := TTransformNode.Create;;
 Transform571.Translation := Vector3(0,1.525,-0.072);
 { METHOD .FdChildren.Add }
 Transform571.FdChildren.Add(Shape50);
 { METHOD .FdChildren.Add }
 HAnimSegment566.FdChildren.Add(Transform571);
-HAnimSite573 := THAnimSiteNode.Create;
+HAnimSite573 := THAnimSiteNode.Create;;
 HAnimSite573.Translation := Vector3(-0.0646,1.5149,-0.0385);
 { METHOD .FdChildren.Add }
 HAnimSite573.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment566.FdChildren.Add(HAnimSite573);
-HAnimSite575 := THAnimSiteNode.Create;
+HAnimSite575 := THAnimSiteNode.Create;;
 HAnimSite575.Translation := Vector3(0.0646,1.5149,-0.0385);
 { METHOD .FdChildren.Add }
 HAnimSite575.FdChildren.Add(Shape57);
@@ -3427,27 +3584,30 @@ HAnimSegment566.FdChildren.Add(HAnimSite575);
 { METHOD .FdChildren.Add }
 HAnimJoint565.FdChildren.Add(HAnimSegment566);
 HAnimJoint577 := THAnimJointNode.Create;
-HAnimJoint577.Center := Vector3(0,1.54,-0.05);
 end;
 
-procedure InitJoeSkeletonSkinSitePart32;
+procedure InitJoeSkeletonSkinSitePart41;
 begin
-
-HAnimSegment578 := THAnimSegmentNode.Create;
-Shape579 := TShapeNode.Create;
+;
+HAnimJoint577.Center := Vector3(0,1.54,-0.05);
+HAnimSegment578 := THAnimSegmentNode.Create;;
+Shape579 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape579.Appearance := Appearance64;
-IndexedLineSet581 := TIndexedLineSetNode.Create;
+IndexedLineSet581 := TIndexedLineSetNode.Create;;
 IndexedLineSet581.SetCoordIndex([0,1,-1]);
-Coordinate582 := TCoordinateNode.Create;
+Coordinate582 := TCoordinateNode.Create;;
 Coordinate582.SetPoint([Vector3(0,1.54,-0.05),Vector3(0,1.5675,-0.0256)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet581.Coord := Coordinate582;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape579.Geometry := IndexedLineSet581;
 { METHOD .FdChildren.Add }
 HAnimSegment578.FdChildren.Add(Shape579);
-Transform583 := TTransformNode.Create;
+Transform583 := TTransformNode.Create;;
 Transform583.Translation := Vector3(0,1.54,-0.05);
 { METHOD .FdChildren.Add }
 Transform583.FdChildren.Add(Shape50);
@@ -3455,52 +3615,58 @@ Transform583.FdChildren.Add(Shape50);
 HAnimSegment578.FdChildren.Add(Transform583);
 { METHOD .FdChildren.Add }
 HAnimJoint577.FdChildren.Add(HAnimSegment578);
-HAnimJoint585 := THAnimJointNode.Create;
+HAnimJoint585 := THAnimJointNode.Create;;
 HAnimJoint585.Center := Vector3(0,1.552,-0.035);
-HAnimSegment586 := THAnimSegmentNode.Create;
-Transform587 := TTransformNode.Create;
+HAnimSegment586 := THAnimSegmentNode.Create;;
+Transform587 := TTransformNode.Create;;
 Transform587.Translation := Vector3(0,1.552,-0.035);
 { METHOD .FdChildren.Add }
 Transform587.FdChildren.Add(Shape50);
 { METHOD .FdChildren.Add }
 HAnimSegment586.FdChildren.Add(Transform587);
-Shape589 := TShapeNode.Create;
+Shape589 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape589.Appearance := Appearance64;
-IndexedLineSet591 := TIndexedLineSetNode.Create;
+IndexedLineSet591 := TIndexedLineSetNode.Create;;
 IndexedLineSet591.SetCoordIndex([0,1,-1]);
-Coordinate592 := TCoordinateNode.Create;
+Coordinate592 := TCoordinateNode.Create;;
+end;
+
+procedure InitJoeSkeletonSkinSitePart42;
+begin
+
 Coordinate592.SetPoint([Vector3(0,1.5675,-0.0256),Vector3(0,1.5823,-0.0185)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet591.Coord := Coordinate592;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape589.Geometry := IndexedLineSet591;
 { METHOD .FdChildren.Add }
 HAnimSegment586.FdChildren.Add(Shape589);
 { METHOD .FdChildren.Add }
 HAnimJoint585.FdChildren.Add(HAnimSegment586);
-HAnimJoint593 := THAnimJointNode.Create;
+HAnimJoint593 := THAnimJointNode.Create;;
 HAnimJoint593.Center := Vector3(0,1.5675,-0.0256);
-HAnimSegment594 := THAnimSegmentNode.Create;
-Shape595 := TShapeNode.Create;
+HAnimSegment594 := THAnimSegmentNode.Create;;
+Shape595 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape595.Appearance := Appearance64;
-IndexedLineSet597 := TIndexedLineSetNode.Create;
+IndexedLineSet597 := TIndexedLineSetNode.Create;;
 IndexedLineSet597.SetCoordIndex([0,1,-1]);
-Coordinate598 := TCoordinateNode.Create;
-end;
-
-procedure InitJoeSkeletonSkinSitePart33;
-begin
-
+Coordinate598 := TCoordinateNode.Create;;
 Coordinate598.SetPoint([Vector3(0,1.5823,-0.0185),Vector3(0,1.595,-0.0175)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet597.Coord := Coordinate598;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape595.Geometry := IndexedLineSet597;
 { METHOD .FdChildren.Add }
 HAnimSegment594.FdChildren.Add(Shape595);
-Transform599 := TTransformNode.Create;
+Transform599 := TTransformNode.Create;;
 Transform599.Translation := Vector3(0,1.5675,-0.0256);
 { METHOD .FdChildren.Add }
 Transform599.FdChildren.Add(Shape50);
@@ -3508,23 +3674,31 @@ Transform599.FdChildren.Add(Shape50);
 HAnimSegment594.FdChildren.Add(Transform599);
 { METHOD .FdChildren.Add }
 HAnimJoint593.FdChildren.Add(HAnimSegment594);
-HAnimJoint601 := THAnimJointNode.Create;
+HAnimJoint601 := THAnimJointNode.Create;;
 HAnimJoint601.Center := Vector3(0,1.5823,-0.0185);
-HAnimSegment602 := THAnimSegmentNode.Create;
-Shape603 := TShapeNode.Create;
+HAnimSegment602 := THAnimSegmentNode.Create;;
+Shape603 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape603.Appearance := Appearance64;
-IndexedLineSet605 := TIndexedLineSetNode.Create;
+IndexedLineSet605 := TIndexedLineSetNode.Create;;
 IndexedLineSet605.SetCoordIndex([0,1,-1]);
 Coordinate606 := TCoordinateNode.Create;
+end;
+
+procedure InitJoeSkeletonSkinSitePart43;
+begin
+;
 Coordinate606.SetPoint([Vector3(0,1.595,-0.0175),Vector3(0,1.61,-0.015)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet605.Coord := Coordinate606;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape603.Geometry := IndexedLineSet605;
 { METHOD .FdChildren.Add }
 HAnimSegment602.FdChildren.Add(Shape603);
-Transform607 := TTransformNode.Create;
+Transform607 := TTransformNode.Create;;
 Transform607.Translation := Vector3(0,1.5823,-0.0185);
 { METHOD .FdChildren.Add }
 Transform607.FdChildren.Add(Shape50);
@@ -3532,52 +3706,58 @@ Transform607.FdChildren.Add(Shape50);
 HAnimSegment602.FdChildren.Add(Transform607);
 { METHOD .FdChildren.Add }
 HAnimJoint601.FdChildren.Add(HAnimSegment602);
-HAnimJoint609 := THAnimJointNode.Create;
+HAnimJoint609 := THAnimJointNode.Create;;
 HAnimJoint609.Center := Vector3(0,1.595,-0.0175);
-HAnimSegment610 := THAnimSegmentNode.Create;
-Shape611 := TShapeNode.Create;
+HAnimSegment610 := THAnimSegmentNode.Create;;
+Shape611 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape611.Appearance := Appearance64;
-IndexedLineSet613 := TIndexedLineSetNode.Create;
+IndexedLineSet613 := TIndexedLineSetNode.Create;;
 IndexedLineSet613.SetCoordIndex([0,1,-1]);
-Coordinate614 := TCoordinateNode.Create;
+Coordinate614 := TCoordinateNode.Create;;
 Coordinate614.SetPoint([Vector3(0,1.61,-0.015),Vector3(0,1.6144,-0.0034)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet613.Coord := Coordinate614;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape611.Geometry := IndexedLineSet613;
 { METHOD .FdChildren.Add }
 HAnimSegment610.FdChildren.Add(Shape611);
-Transform615 := TTransformNode.Create;
+Transform615 := TTransformNode.Create;;
 Transform615.Translation := Vector3(0,1.595,-0.0175);
-end;
-
-procedure InitJoeSkeletonSkinSitePart34;
-begin
-
 { METHOD .FdChildren.Add }
 Transform615.FdChildren.Add(Shape50);
 { METHOD .FdChildren.Add }
 HAnimSegment610.FdChildren.Add(Transform615);
 { METHOD .FdChildren.Add }
 HAnimJoint609.FdChildren.Add(HAnimSegment610);
-HAnimJoint617 := THAnimJointNode.Create;
+HAnimJoint617 := THAnimJointNode.Create;;
 HAnimJoint617.Center := Vector3(0,1.61,-0.015);
-HAnimSegment618 := THAnimSegmentNode.Create;
+HAnimSegment618 := THAnimSegmentNode.Create;;
 Shape619 := TShapeNode.Create;
+end;
+
+procedure InitJoeSkeletonSkinSitePart44;
+begin
+;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape619.Appearance := Appearance64;
-IndexedLineSet621 := TIndexedLineSetNode.Create;
+IndexedLineSet621 := TIndexedLineSetNode.Create;;
 IndexedLineSet621.SetCoordIndex([0,1,-1]);
-Coordinate622 := TCoordinateNode.Create;
+Coordinate622 := TCoordinateNode.Create;;
 Coordinate622.SetPoint([Vector3(0,1.6144,-0.0034),Vector3(0,1.63,-0.01)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet621.Coord := Coordinate622;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape619.Geometry := IndexedLineSet621;
 { METHOD .FdChildren.Add }
 HAnimSegment618.FdChildren.Add(Shape619);
-Transform623 := TTransformNode.Create;
+Transform623 := TTransformNode.Create;;
 Transform623.Translation := Vector3(0,1.61,-0.015);
 { METHOD .FdChildren.Add }
 Transform623.FdChildren.Add(Shape50);
@@ -3585,90 +3765,98 @@ Transform623.FdChildren.Add(Shape50);
 HAnimSegment618.FdChildren.Add(Transform623);
 { METHOD .FdChildren.Add }
 HAnimJoint617.FdChildren.Add(HAnimSegment618);
-HAnimJoint625 := THAnimJointNode.Create;
+HAnimJoint625 := THAnimJointNode.Create;;
 HAnimJoint625.Center := Vector3(0,1.63,-0.01);
 HAnimJoint625.SetSkinCoordIndex([0,1,2,3,4,5,6,7,8,9]);
 HAnimJoint625.SetSkinCoordWeight([1,1,1,1,1,1,1,1,1,1]);
-HAnimSegment626 := THAnimSegmentNode.Create;
-Shape627 := TShapeNode.Create;
+HAnimSegment626 := THAnimSegmentNode.Create;;
+Shape627 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape627.Appearance := Appearance64;
-IndexedLineSet629 := TIndexedLineSetNode.Create;
+IndexedLineSet629 := TIndexedLineSetNode.Create;;
 IndexedLineSet629.SetCoordIndex([0,1,-1,0,2,-1]);
-Coordinate630 := TCoordinateNode.Create;
+Coordinate630 := TCoordinateNode.Create;;
 Coordinate630.SetPoint([Vector3(0,1.63,-0.01),Vector3(0.034,1.659,0.06),Vector3(-0.034,1.655,0.065)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet629.Coord := Coordinate630;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape627.Geometry := IndexedLineSet629;
 { METHOD .FdChildren.Add }
 HAnimSegment626.FdChildren.Add(Shape627);
-Transform631 := TTransformNode.Create;
+Transform631 := TTransformNode.Create;;
 Transform631.Translation := Vector3(0,1.63,-0.01);
 { METHOD .FdChildren.Add }
 Transform631.FdChildren.Add(Shape50);
-{ METHOD .FdChildren.Add }
-HAnimSegment626.FdChildren.Add(Transform631);
-HAnimSite633 := THAnimSiteNode.Create;
-HAnimSite633.Translation := Vector3(0,1.77,0);
 end;
 
-procedure InitJoeSkeletonSkinSitePart35;
+procedure InitJoeSkeletonSkinSitePart45;
 begin
 
+{ METHOD .FdChildren.Add }
+HAnimSegment626.FdChildren.Add(Transform631);
+HAnimSite633 := THAnimSiteNode.Create;;
+HAnimSite633.Translation := Vector3(0,1.77,0);
 { METHOD .FdChildren.Add }
 HAnimSite633.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment626.FdChildren.Add(HAnimSite633);
-HAnimSite635 := THAnimSiteNode.Create;
+HAnimSite635 := THAnimSiteNode.Create;;
 HAnimSite635.Translation := Vector3(0,1.665,0.09);
 { METHOD .FdChildren.Add }
 HAnimSite635.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment626.FdChildren.Add(HAnimSite635);
-HAnimSite637 := THAnimSiteNode.Create;
+HAnimSite637 := THAnimSiteNode.Create;;
 HAnimSite637.Translation := Vector3(-0.033,1.62,0.087);
 { METHOD .FdChildren.Add }
 HAnimSite637.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment626.FdChildren.Add(HAnimSite637);
-HAnimSite639 := THAnimSiteNode.Create;
+HAnimSite639 := THAnimSiteNode.Create;;
 HAnimSite639.Translation := Vector3(0.033,1.62,0.087);
 { METHOD .FdChildren.Add }
 HAnimSite639.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment626.FdChildren.Add(HAnimSite639);
-HAnimSite641 := THAnimSiteNode.Create;
+HAnimSite641 := THAnimSiteNode.Create;;
 HAnimSite641.Translation := Vector3(0,1.55,0.097);
 { METHOD .FdChildren.Add }
 HAnimSite641.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment626.FdChildren.Add(HAnimSite641);
-HAnimSite643 := THAnimSiteNode.Create;
+HAnimSite643 := THAnimSiteNode.Create;;
 HAnimSite643.Translation := Vector3(-0.077,1.64,-0.01);
 { METHOD .FdChildren.Add }
 HAnimSite643.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment626.FdChildren.Add(HAnimSite643);
-HAnimSite645 := THAnimSiteNode.Create;
+HAnimSite645 := THAnimSiteNode.Create;;
 HAnimSite645.Translation := Vector3(-0.052,1.58,0.015);
 { METHOD .FdChildren.Add }
 HAnimSite645.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment626.FdChildren.Add(HAnimSite645);
-HAnimSite647 := THAnimSiteNode.Create;
+HAnimSite647 := THAnimSiteNode.Create;;
 HAnimSite647.Translation := Vector3(0.077,1.64,-0.01);
 { METHOD .FdChildren.Add }
 HAnimSite647.FdChildren.Add(Shape57);
+end;
+
+procedure InitJoeSkeletonSkinSitePart46;
+begin
+
 { METHOD .FdChildren.Add }
 HAnimSegment626.FdChildren.Add(HAnimSite647);
-HAnimSite649 := THAnimSiteNode.Create;
+HAnimSite649 := THAnimSiteNode.Create;;
 HAnimSite649.Translation := Vector3(0.0631,1.58,0.015);
 { METHOD .FdChildren.Add }
 HAnimSite649.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment626.FdChildren.Add(HAnimSite649);
-HAnimSite651 := THAnimSiteNode.Create;
+HAnimSite651 := THAnimSiteNode.Create;;
 HAnimSite651.Translation := Vector3(0,1.625,-0.0925);
 { METHOD .FdChildren.Add }
 HAnimSite651.FdChildren.Add(Shape57);
@@ -3676,28 +3864,26 @@ HAnimSite651.FdChildren.Add(Shape57);
 HAnimSegment626.FdChildren.Add(HAnimSite651);
 { METHOD .FdChildren.Add }
 HAnimJoint625.FdChildren.Add(HAnimSegment626);
-HAnimJoint653 := THAnimJointNode.Create;
-end;
-
-procedure InitJoeSkeletonSkinSitePart36;
-begin
-
+HAnimJoint653 := THAnimJointNode.Create;;
 HAnimJoint653.Center := Vector3(0.034,1.659,0.06);
-HAnimSegment654 := THAnimSegmentNode.Create;
-Shape655 := TShapeNode.Create;
+HAnimSegment654 := THAnimSegmentNode.Create;;
+Shape655 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape655.Appearance := Appearance64;
-IndexedLineSet657 := TIndexedLineSetNode.Create;
+IndexedLineSet657 := TIndexedLineSetNode.Create;;
 IndexedLineSet657.SetCoordIndex([0,1,-1]);
-Coordinate658 := TCoordinateNode.Create;
+Coordinate658 := TCoordinateNode.Create;;
 Coordinate658.SetPoint([Vector3(0.034,1.655,0.065),Vector3(-0.034,1.655,0.065)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet657.Coord := Coordinate658;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape655.Geometry := IndexedLineSet657;
 { METHOD .FdChildren.Add }
 HAnimSegment654.FdChildren.Add(Shape655);
-Transform659 := TTransformNode.Create;
+Transform659 := TTransformNode.Create;;
 Transform659.Scale := Vector3(1,1,1.4);
 Transform659.Translation := Vector3(0.034,1.655,0.065);
 { METHOD .FdChildren.Add }
@@ -3708,23 +3894,31 @@ HAnimSegment654.FdChildren.Add(Transform659);
 HAnimJoint653.FdChildren.Add(HAnimSegment654);
 { METHOD .FdChildren.Add }
 HAnimJoint625.FdChildren.Add(HAnimJoint653);
-HAnimJoint661 := THAnimJointNode.Create;
+HAnimJoint661 := THAnimJointNode.Create;;
 HAnimJoint661.Center := Vector3(-0.034,1.659,0.06);
-HAnimSegment662 := THAnimSegmentNode.Create;
-Shape663 := TShapeNode.Create;
+end;
+
+procedure InitJoeSkeletonSkinSitePart47;
+begin
+
+HAnimSegment662 := THAnimSegmentNode.Create;;
+Shape663 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape663.Appearance := Appearance64;
-IndexedLineSet665 := TIndexedLineSetNode.Create;
+IndexedLineSet665 := TIndexedLineSetNode.Create;;
 IndexedLineSet665.SetCoordIndex([0,1,-1]);
-Coordinate666 := TCoordinateNode.Create;
+Coordinate666 := TCoordinateNode.Create;;
 Coordinate666.SetPoint([Vector3(0.034,1.655,0.065),Vector3(-0.034,1.655,0.065)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet665.Coord := Coordinate666;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape663.Geometry := IndexedLineSet665;
 { METHOD .FdChildren.Add }
 HAnimSegment662.FdChildren.Add(Shape663);
-Transform667 := TTransformNode.Create;
+Transform667 := TTransformNode.Create;;
 Transform667.Scale := Vector3(1,1,1.4);
 Transform667.Translation := Vector3(-0.034,1.655,0.065);
 { METHOD .FdChildren.Add }
@@ -3741,11 +3935,6 @@ HAnimJoint617.FdChildren.Add(HAnimJoint625);
 HAnimJoint609.FdChildren.Add(HAnimJoint617);
 { METHOD .FdChildren.Add }
 HAnimJoint601.FdChildren.Add(HAnimJoint609);
-end;
-
-procedure InitJoeSkeletonSkinSitePart37;
-begin
-
 { METHOD .FdChildren.Add }
 HAnimJoint593.FdChildren.Add(HAnimJoint601);
 { METHOD .FdChildren.Add }
@@ -3756,31 +3945,39 @@ HAnimJoint577.FdChildren.Add(HAnimJoint585);
 HAnimJoint565.FdChildren.Add(HAnimJoint577);
 { METHOD .FdChildren.Add }
 HAnimJoint553.FdChildren.Add(HAnimJoint565);
-HAnimJoint669 := THAnimJointNode.Create;
+HAnimJoint669 := THAnimJointNode.Create;;
 HAnimJoint669.Center := Vector3(0.082,1.4488,-0.0353);
 HAnimJoint669.SetSkinCoordIndex([12]);
 HAnimJoint669.SetSkinCoordWeight([1]);
-HAnimSegment670 := THAnimSegmentNode.Create;
-Shape671 := TShapeNode.Create;
+HAnimSegment670 := THAnimSegmentNode.Create;;
+Shape671 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape671.Appearance := Appearance64;
-IndexedLineSet673 := TIndexedLineSetNode.Create;
+end;
+
+procedure InitJoeSkeletonSkinSitePart48;
+begin
+
+IndexedLineSet673 := TIndexedLineSetNode.Create;;
 IndexedLineSet673.SetCoordIndex([0,1,-1]);
-Coordinate674 := TCoordinateNode.Create;
+Coordinate674 := TCoordinateNode.Create;;
 Coordinate674.SetPoint([Vector3(0.082,1.4488,-0.0353),Vector3(0.0962,1.4269,-0.0424)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet673.Coord := Coordinate674;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape671.Geometry := IndexedLineSet673;
 { METHOD .FdChildren.Add }
 HAnimSegment670.FdChildren.Add(Shape671);
-Transform675 := TTransformNode.Create;
+Transform675 := TTransformNode.Create;;
 Transform675.Translation := Vector3(0.082,1.4488,-0.0353);
 { METHOD .FdChildren.Add }
 Transform675.FdChildren.Add(Shape50);
 { METHOD .FdChildren.Add }
 HAnimSegment670.FdChildren.Add(Transform675);
-HAnimSite677 := THAnimSiteNode.Create;
+HAnimSite677 := THAnimSiteNode.Create;;
 HAnimSite677.Translation := Vector3(0.03,1.46,0.035);
 { METHOD .FdChildren.Add }
 HAnimSite677.FdChildren.Add(Shape57);
@@ -3788,54 +3985,57 @@ HAnimSite677.FdChildren.Add(Shape57);
 HAnimSegment670.FdChildren.Add(HAnimSite677);
 { METHOD .FdChildren.Add }
 HAnimJoint669.FdChildren.Add(HAnimSegment670);
-HAnimJoint679 := THAnimJointNode.Create;
+HAnimJoint679 := THAnimJointNode.Create;;
 HAnimJoint679.Center := Vector3(0.0962,1.4269,-0.0424);
 HAnimJoint679.SetSkinCoordIndex([79]);
 HAnimJoint679.SetSkinCoordWeight([1]);
-HAnimSegment680 := THAnimSegmentNode.Create;
-Shape681 := TShapeNode.Create;
+HAnimSegment680 := THAnimSegmentNode.Create;;
+Shape681 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape681.Appearance := Appearance64;
-IndexedLineSet683 := TIndexedLineSetNode.Create;
+IndexedLineSet683 := TIndexedLineSetNode.Create;;
 IndexedLineSet683.SetCoordIndex([0,1,-1]);
-Coordinate684 := TCoordinateNode.Create;
+Coordinate684 := TCoordinateNode.Create;;
 Coordinate684.SetPoint([Vector3(0.0962,1.4269,-0.0424),Vector3(0.2,1.44,-0.04)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet683.Coord := Coordinate684;
-end;
-
-procedure InitJoeSkeletonSkinSitePart38;
-begin
-
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape681.Geometry := IndexedLineSet683;
 { METHOD .FdChildren.Add }
 HAnimSegment680.FdChildren.Add(Shape681);
 Transform685 := TTransformNode.Create;
+end;
+
+procedure InitJoeSkeletonSkinSitePart49;
+begin
+;
 Transform685.Translation := Vector3(0.0962,1.4269,-0.0424);
 { METHOD .FdChildren.Add }
 Transform685.FdChildren.Add(Shape50);
 { METHOD .FdChildren.Add }
 HAnimSegment680.FdChildren.Add(Transform685);
-Transform687 := TTransformNode.Create;
+Transform687 := TTransformNode.Create;;
 Transform687.Translation := Vector3(0.11,1.427,-0.1375);
 { METHOD .FdChildren.Add }
 Transform687.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment680.FdChildren.Add(Transform687);
-HAnimSite689 := THAnimSiteNode.Create;
+HAnimSite689 := THAnimSiteNode.Create;;
 HAnimSite689.Translation := Vector3(0.175,1.4825,-0.06);
 { METHOD .FdChildren.Add }
 HAnimSite689.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment680.FdChildren.Add(HAnimSite689);
-HAnimSite691 := THAnimSiteNode.Create;
+HAnimSite691 := THAnimSiteNode.Create;;
 HAnimSite691.Translation := Vector3(0.17,1.38,0.007);
 { METHOD .FdChildren.Add }
 HAnimSite691.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment680.FdChildren.Add(HAnimSite691);
-HAnimSite693 := THAnimSiteNode.Create;
+HAnimSite693 := THAnimSiteNode.Create;;
 HAnimSite693.Translation := Vector3(0.16,1.38,-0.125);
 { METHOD .FdChildren.Add }
 HAnimSite693.FdChildren.Add(Shape57);
@@ -3843,78 +4043,86 @@ HAnimSite693.FdChildren.Add(Shape57);
 HAnimSegment680.FdChildren.Add(HAnimSite693);
 { METHOD .FdChildren.Add }
 HAnimJoint679.FdChildren.Add(HAnimSegment680);
-HAnimJoint695 := THAnimJointNode.Create;
+HAnimJoint695 := THAnimJointNode.Create;;
 HAnimJoint695.Center := Vector3(0.2,1.44,-0.04);
 HAnimJoint695.SetSkinCoordIndex([41,42,44,80,102,103,104,105]);
 HAnimJoint695.SetSkinCoordWeight([1,1,1,1,1,1,1,1]);
-HAnimSegment696 := THAnimSegmentNode.Create;
-Shape697 := TShapeNode.Create;
+HAnimSegment696 := THAnimSegmentNode.Create;;
+Shape697 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape697.Appearance := Appearance64;
-IndexedLineSet699 := TIndexedLineSetNode.Create;
+IndexedLineSet699 := TIndexedLineSetNode.Create;;
 IndexedLineSet699.SetCoordIndex([0,1,-1]);
-Coordinate700 := TCoordinateNode.Create;
+Coordinate700 := TCoordinateNode.Create;;
+end;
+
+procedure InitJoeSkeletonSkinSitePart50;
+begin
+
 Coordinate700.SetPoint([Vector3(0.2029,1.44,-0.0387),Vector3(0.2,1.1388,-0.04)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet699.Coord := Coordinate700;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape697.Geometry := IndexedLineSet699;
 { METHOD .FdChildren.Add }
 HAnimSegment696.FdChildren.Add(Shape697);
-Transform701 := TTransformNode.Create;
+Transform701 := TTransformNode.Create;;
 Transform701.Translation := Vector3(0.2,1.44,-0.04);
 { METHOD .FdChildren.Add }
 Transform701.FdChildren.Add(Shape50);
-end;
-
-procedure InitJoeSkeletonSkinSitePart39;
-begin
-
 { METHOD .FdChildren.Add }
 HAnimSegment696.FdChildren.Add(Transform701);
-Transform703 := TTransformNode.Create;
+Transform703 := TTransformNode.Create;;
 Transform703.Translation := Vector3(0.235,1.42,-0.0625);
 { METHOD .FdChildren.Add }
 Transform703.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment696.FdChildren.Add(Transform703);
-Transform705 := TTransformNode.Create;
+Transform705 := TTransformNode.Create;;
 Transform705.Translation := Vector3(0.25,1.27,-0.04);
 { METHOD .FdChildren.Add }
 Transform705.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment696.FdChildren.Add(Transform705);
-Transform707 := TTransformNode.Create;
+Transform707 := TTransformNode.Create;;
 Transform707.Translation := Vector3(0.17,1.27,-0.04);
 { METHOD .FdChildren.Add }
 Transform707.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment696.FdChildren.Add(Transform707);
-Transform709 := TTransformNode.Create;
+Transform709 := TTransformNode.Create;;
 Transform709.Translation := Vector3(0.2,1.27,-0.09);
 { METHOD .FdChildren.Add }
 Transform709.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment696.FdChildren.Add(Transform709);
-Transform711 := TTransformNode.Create;
+Transform711 := TTransformNode.Create;;
 Transform711.Translation := Vector3(0.2,1.27,0.02);
 { METHOD .FdChildren.Add }
 Transform711.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment696.FdChildren.Add(Transform711);
-HAnimSite713 := THAnimSiteNode.Create;
+HAnimSite713 := THAnimSiteNode.Create;;
 HAnimSite713.Translation := Vector3(0.165,1.1388,-0.04);
 { METHOD .FdChildren.Add }
 HAnimSite713.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment696.FdChildren.Add(HAnimSite713);
 HAnimSite715 := THAnimSiteNode.Create;
+end;
+
+procedure InitJoeSkeletonSkinSitePart51;
+begin
+;
 HAnimSite715.Translation := Vector3(0.23,1.133,-0.055);
 { METHOD .FdChildren.Add }
 HAnimSite715.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment696.FdChildren.Add(HAnimSite715);
-HAnimSite717 := THAnimSiteNode.Create;
+HAnimSite717 := THAnimSiteNode.Create;;
 HAnimSite717.Translation := Vector3(0.244,1.1388,-0.04);
 { METHOD .FdChildren.Add }
 HAnimSite717.FdChildren.Add(Shape57);
@@ -3922,121 +4130,127 @@ HAnimSite717.FdChildren.Add(Shape57);
 HAnimSegment696.FdChildren.Add(HAnimSite717);
 { METHOD .FdChildren.Add }
 HAnimJoint695.FdChildren.Add(HAnimSegment696);
-HAnimJoint719 := THAnimJointNode.Create;
+HAnimJoint719 := THAnimJointNode.Create;;
 HAnimJoint719.Center := Vector3(0.2,1.1388,-0.04);
 HAnimJoint719.SetSkinCoordIndex([45,46,47,109,110,111,112,113,115,116,117,118]);
 HAnimJoint719.SetSkinCoordWeight([1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]);
-HAnimSegment720 := THAnimSegmentNode.Create;
-Shape721 := TShapeNode.Create;
-end;
-
-procedure InitJoeSkeletonSkinSitePart40;
-begin
-
+HAnimSegment720 := THAnimSegmentNode.Create;;
+Shape721 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape721.Appearance := Appearance64;
-IndexedLineSet723 := TIndexedLineSetNode.Create;
+IndexedLineSet723 := TIndexedLineSetNode.Create;;
 IndexedLineSet723.SetCoordIndex([0,1,-1]);
-Coordinate724 := TCoordinateNode.Create;
+Coordinate724 := TCoordinateNode.Create;;
 Coordinate724.SetPoint([Vector3(0.2,1.1388,-0.04),Vector3(0.2,0.87,-0.04)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet723.Coord := Coordinate724;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape721.Geometry := IndexedLineSet723;
 { METHOD .FdChildren.Add }
 HAnimSegment720.FdChildren.Add(Shape721);
-Transform725 := TTransformNode.Create;
+Transform725 := TTransformNode.Create;;
 Transform725.Translation := Vector3(0.2,1.1388,-0.04);
 { METHOD .FdChildren.Add }
 Transform725.FdChildren.Add(Shape50);
 { METHOD .FdChildren.Add }
 HAnimSegment720.FdChildren.Add(Transform725);
-Transform727 := TTransformNode.Create;
+Transform727 := TTransformNode.Create;;
 Transform727.Translation := Vector3(0.2,1.1388,-0.013);
 { METHOD .FdChildren.Add }
 Transform727.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment720.FdChildren.Add(Transform727);
 Transform729 := TTransformNode.Create;
+end;
+
+procedure InitJoeSkeletonSkinSitePart52;
+begin
+;
 Transform729.Translation := Vector3(0.225,1,-0.01);
 { METHOD .FdChildren.Add }
 Transform729.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment720.FdChildren.Add(Transform729);
-Transform731 := TTransformNode.Create;
+Transform731 := TTransformNode.Create;;
 Transform731.Translation := Vector3(0.225,1,-0.07);
 { METHOD .FdChildren.Add }
 Transform731.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment720.FdChildren.Add(Transform731);
-Transform733 := TTransformNode.Create;
+Transform733 := TTransformNode.Create;;
 Transform733.Translation := Vector3(0.185,1,-0.01);
 { METHOD .FdChildren.Add }
 Transform733.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment720.FdChildren.Add(Transform733);
-Transform735 := TTransformNode.Create;
+Transform735 := TTransformNode.Create;;
 Transform735.Translation := Vector3(0.185,1,-0.07);
 { METHOD .FdChildren.Add }
 Transform735.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment720.FdChildren.Add(Transform735);
-HAnimSite737 := THAnimSiteNode.Create;
+HAnimSite737 := THAnimSiteNode.Create;;
 HAnimSite737.Translation := Vector3(0.1901,0.8645,-0.0415);
 { METHOD .FdChildren.Add }
 HAnimSite737.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment720.FdChildren.Add(HAnimSite737);
-HAnimSite739 := THAnimSiteNode.Create;
+HAnimSite739 := THAnimSiteNode.Create;;
 HAnimSite739.Translation := Vector3(0.2,1.1388,-0.08);
 { METHOD .FdChildren.Add }
 HAnimSite739.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment720.FdChildren.Add(HAnimSite739);
-end;
-
-procedure InitJoeSkeletonSkinSitePart41;
-begin
-
 { METHOD .FdChildren.Add }
 HAnimJoint719.FdChildren.Add(HAnimSegment720);
-HAnimJoint741 := THAnimJointNode.Create;
+HAnimJoint741 := THAnimJointNode.Create;;
 HAnimJoint741.Center := Vector3(0.2,0.87,-0.04);
 HAnimJoint741.SetSkinCoordIndex([119,120,121,122,123,124,125,126]);
 HAnimJoint741.SetSkinCoordWeight([1,1,1,1,1,1,1,1]);
-HAnimSegment742 := THAnimSegmentNode.Create;
-Shape743 := TShapeNode.Create;
+HAnimSegment742 := THAnimSegmentNode.Create;;
+Shape743 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape743.Appearance := Appearance64;
-IndexedLineSet745 := TIndexedLineSetNode.Create;
+end;
+
+procedure InitJoeSkeletonSkinSitePart53;
+begin
+
+IndexedLineSet745 := TIndexedLineSetNode.Create;;
 IndexedLineSet745.SetCoordIndex([0,1,-1,0,2,-1,0,3,-1,0,4,-1,0,5,-1]);
-Coordinate746 := TCoordinateNode.Create;
+Coordinate746 := TCoordinateNode.Create;;
 Coordinate746.SetPoint([Vector3(0.2,0.87,-0.04),Vector3(0.1924,0.8472,-0.0534),Vector3(0.1983,0.8024,-0.028),Vector3(0.1987,0.8029,-0.053),Vector3(0.1956,0.8019,-0.0794),Vector3(0.1925,0.8066,-0.1036)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet745.Coord := Coordinate746;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape743.Geometry := IndexedLineSet745;
 { METHOD .FdChildren.Add }
 HAnimSegment742.FdChildren.Add(Shape743);
-Transform747 := TTransformNode.Create;
+Transform747 := TTransformNode.Create;;
 Transform747.Translation := Vector3(0.2,0.87,-0.04);
 { METHOD .FdChildren.Add }
 Transform747.FdChildren.Add(Shape50);
 { METHOD .FdChildren.Add }
 HAnimSegment742.FdChildren.Add(Transform747);
-HAnimSite749 := THAnimSiteNode.Create;
+HAnimSite749 := THAnimSiteNode.Create;;
 HAnimSite749.Translation := Vector3(0.2009,0.8139,-0.0237);
 { METHOD .FdChildren.Add }
 HAnimSite749.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment742.FdChildren.Add(HAnimSite749);
-HAnimSite751 := THAnimSiteNode.Create;
+HAnimSite751 := THAnimSiteNode.Create;;
 HAnimSite751.Translation := Vector3(0.2142,0.8529,-0.0648);
 { METHOD .FdChildren.Add }
 HAnimSite751.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment742.FdChildren.Add(HAnimSite751);
-HAnimSite753 := THAnimSiteNode.Create;
+HAnimSite753 := THAnimSiteNode.Create;;
 HAnimSite753.Translation := Vector3(0.1929,0.786,-0.1122);
 { METHOD .FdChildren.Add }
 HAnimSite753.FdChildren.Add(Shape57);
@@ -4044,30 +4258,33 @@ HAnimSite753.FdChildren.Add(Shape57);
 HAnimSegment742.FdChildren.Add(HAnimSite753);
 { METHOD .FdChildren.Add }
 HAnimJoint741.FdChildren.Add(HAnimSegment742);
-HAnimJoint755 := THAnimJointNode.Create;
+HAnimJoint755 := THAnimJointNode.Create;;
 HAnimJoint755.Center := Vector3(0.1924,0.8472,-0.0534);
 HAnimJoint755.SetSkinCoordIndex([127,128]);
 HAnimJoint755.SetSkinCoordWeight([1,1]);
-HAnimSegment756 := THAnimSegmentNode.Create;
-Shape757 := TShapeNode.Create;
+HAnimSegment756 := THAnimSegmentNode.Create;;
+Shape757 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape757.Appearance := Appearance64;
-IndexedLineSet759 := TIndexedLineSetNode.Create;
 end;
 
-procedure InitJoeSkeletonSkinSitePart42;
+procedure InitJoeSkeletonSkinSitePart54;
 begin
 
+IndexedLineSet759 := TIndexedLineSetNode.Create;;
 IndexedLineSet759.SetCoordIndex([0,1,-1]);
-Coordinate760 := TCoordinateNode.Create;
+Coordinate760 := TCoordinateNode.Create;;
 Coordinate760.SetPoint([Vector3(0.1924,0.8472,-0.0534),Vector3(0.1951,0.8226,0.0246)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet759.Coord := Coordinate760;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape757.Geometry := IndexedLineSet759;
 { METHOD .FdChildren.Add }
 HAnimSegment756.FdChildren.Add(Shape757);
-Transform761 := TTransformNode.Create;
+Transform761 := TTransformNode.Create;;
 Transform761.Translation := Vector3(0.1924,0.8472,-0.0534);
 { METHOD .FdChildren.Add }
 Transform761.FdChildren.Add(Shape50);
@@ -4075,25 +4292,28 @@ Transform761.FdChildren.Add(Shape50);
 HAnimSegment756.FdChildren.Add(Transform761);
 { METHOD .FdChildren.Add }
 HAnimJoint755.FdChildren.Add(HAnimSegment756);
-HAnimJoint763 := THAnimJointNode.Create;
+HAnimJoint763 := THAnimJointNode.Create;;
 HAnimJoint763.Center := Vector3(0.1951,0.8226,0.0246);
 HAnimJoint763.SetSkinCoordIndex([138,139,140,141,142,143]);
 HAnimJoint763.SetSkinCoordWeight([0.5,0.5,0.5,1,1,1]);
-HAnimSegment764 := THAnimSegmentNode.Create;
-Shape765 := TShapeNode.Create;
+HAnimSegment764 := THAnimSegmentNode.Create;;
+Shape765 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape765.Appearance := Appearance64;
-IndexedLineSet767 := TIndexedLineSetNode.Create;
+IndexedLineSet767 := TIndexedLineSetNode.Create;;
 IndexedLineSet767.SetCoordIndex([0,1,-1]);
-Coordinate768 := TCoordinateNode.Create;
+Coordinate768 := TCoordinateNode.Create;;
 Coordinate768.SetPoint([Vector3(0.1951,0.8226,0.0246),Vector3(0.1955,0.8159,0.0464)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet767.Coord := Coordinate768;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape765.Geometry := IndexedLineSet767;
 { METHOD .FdChildren.Add }
 HAnimSegment764.FdChildren.Add(Shape765);
-Transform769 := TTransformNode.Create;
+Transform769 := TTransformNode.Create;;
 Transform769.Translation := Vector3(0.1951,0.8226,0.0246);
 { METHOD .FdChildren.Add }
 Transform769.FdChildren.Add(Shape50);
@@ -4101,36 +4321,39 @@ Transform769.FdChildren.Add(Shape50);
 HAnimSegment764.FdChildren.Add(Transform769);
 { METHOD .FdChildren.Add }
 HAnimJoint763.FdChildren.Add(HAnimSegment764);
-HAnimJoint771 := THAnimJointNode.Create;
+end;
+
+procedure InitJoeSkeletonSkinSitePart55;
+begin
+
+HAnimJoint771 := THAnimJointNode.Create;;
 HAnimJoint771.Center := Vector3(0.1955,0.8159,0.0464);
 HAnimJoint771.SetSkinCoordIndex([144,145,146,147,148,149,150,151,152]);
 HAnimJoint771.SetSkinCoordWeight([1,1,1,1,1,1,1,1,1]);
-HAnimSegment772 := THAnimSegmentNode.Create;
-Shape773 := TShapeNode.Create;
+HAnimSegment772 := THAnimSegmentNode.Create;;
+Shape773 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape773.Appearance := Appearance64;
-IndexedLineSet775 := TIndexedLineSetNode.Create;
+IndexedLineSet775 := TIndexedLineSetNode.Create;;
 IndexedLineSet775.SetCoordIndex([0,1,-1]);
-Coordinate776 := TCoordinateNode.Create;
-end;
-
-procedure InitJoeSkeletonSkinSitePart43;
-begin
-
+Coordinate776 := TCoordinateNode.Create;;
 Coordinate776.SetPoint([Vector3(0.1955,0.8159,0.0464),Vector3(0.1982,0.8061,0.0759)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet775.Coord := Coordinate776;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape773.Geometry := IndexedLineSet775;
 { METHOD .FdChildren.Add }
 HAnimSegment772.FdChildren.Add(Shape773);
-Transform777 := TTransformNode.Create;
+Transform777 := TTransformNode.Create;;
 Transform777.Translation := Vector3(0.1955,0.8159,0.0464);
 { METHOD .FdChildren.Add }
 Transform777.FdChildren.Add(Shape50);
 { METHOD .FdChildren.Add }
 HAnimSegment772.FdChildren.Add(Transform777);
-HAnimSite779 := THAnimSiteNode.Create;
+HAnimSite779 := THAnimSiteNode.Create;;
 HAnimSite779.Translation := Vector3(0.1982,0.8061,0.0759);
 { METHOD .FdChildren.Add }
 HAnimSite779.FdChildren.Add(Shape57);
@@ -4144,25 +4367,33 @@ HAnimJoint763.FdChildren.Add(HAnimJoint771);
 HAnimJoint755.FdChildren.Add(HAnimJoint763);
 { METHOD .FdChildren.Add }
 HAnimJoint741.FdChildren.Add(HAnimJoint755);
-HAnimJoint781 := THAnimJointNode.Create;
+HAnimJoint781 := THAnimJointNode.Create;;
 HAnimJoint781.Center := Vector3(0.1983,0.8024,-0.028);
 HAnimJoint781.SetSkinCoordIndex([129,130]);
 HAnimJoint781.SetSkinCoordWeight([1,1]);
-HAnimSegment782 := THAnimSegmentNode.Create;
-Shape783 := TShapeNode.Create;
+HAnimSegment782 := THAnimSegmentNode.Create;;
+end;
+
+procedure InitJoeSkeletonSkinSitePart56;
+begin
+
+Shape783 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape783.Appearance := Appearance64;
-IndexedLineSet785 := TIndexedLineSetNode.Create;
+IndexedLineSet785 := TIndexedLineSetNode.Create;;
 IndexedLineSet785.SetCoordIndex([0,1,-1]);
-Coordinate786 := TCoordinateNode.Create;
+Coordinate786 := TCoordinateNode.Create;;
 Coordinate786.SetPoint([Vector3(0.1983,0.8024,-0.028),Vector3(0.1983,0.7815,-0.028)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet785.Coord := Coordinate786;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape783.Geometry := IndexedLineSet785;
 { METHOD .FdChildren.Add }
 HAnimSegment782.FdChildren.Add(Shape783);
-Transform787 := TTransformNode.Create;
+Transform787 := TTransformNode.Create;;
 Transform787.Translation := Vector3(0.1983,0.8024,-0.028);
 { METHOD .FdChildren.Add }
 Transform787.FdChildren.Add(Shape50);
@@ -4170,56 +4401,62 @@ Transform787.FdChildren.Add(Shape50);
 HAnimSegment782.FdChildren.Add(Transform787);
 { METHOD .FdChildren.Add }
 HAnimJoint781.FdChildren.Add(HAnimSegment782);
-HAnimJoint789 := THAnimJointNode.Create;
+HAnimJoint789 := THAnimJointNode.Create;;
 HAnimJoint789.Center := Vector3(0.1983,0.7815,-0.028);
 HAnimJoint789.SetSkinCoordIndex([138,139,140,153,154,155,163]);
 HAnimJoint789.SetSkinCoordWeight([0.5,0.5,0.5,1,1,1,0.5]);
-HAnimSegment790 := THAnimSegmentNode.Create;
-end;
-
-procedure InitJoeSkeletonSkinSitePart44;
-begin
-
-Shape791 := TShapeNode.Create;
+HAnimSegment790 := THAnimSegmentNode.Create;;
+Shape791 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape791.Appearance := Appearance64;
-IndexedLineSet793 := TIndexedLineSetNode.Create;
+IndexedLineSet793 := TIndexedLineSetNode.Create;;
 IndexedLineSet793.SetCoordIndex([0,1,-1]);
-Coordinate794 := TCoordinateNode.Create;
+Coordinate794 := TCoordinateNode.Create;;
 Coordinate794.SetPoint([Vector3(0.1983,0.7815,-0.028),Vector3(0.2017,0.7363,-0.0248)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet793.Coord := Coordinate794;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape791.Geometry := IndexedLineSet793;
 { METHOD .FdChildren.Add }
 HAnimSegment790.FdChildren.Add(Shape791);
-Transform795 := TTransformNode.Create;
+Transform795 := TTransformNode.Create;;
 Transform795.Translation := Vector3(0.1983,0.7815,-0.028);
+end;
+
+procedure InitJoeSkeletonSkinSitePart57;
+begin
+
 { METHOD .FdChildren.Add }
 Transform795.FdChildren.Add(Shape50);
 { METHOD .FdChildren.Add }
 HAnimSegment790.FdChildren.Add(Transform795);
 { METHOD .FdChildren.Add }
 HAnimJoint789.FdChildren.Add(HAnimSegment790);
-HAnimJoint797 := THAnimJointNode.Create;
+HAnimJoint797 := THAnimJointNode.Create;;
 HAnimJoint797.Center := Vector3(0.2017,0.7363,-0.0248);
 HAnimJoint797.SetSkinCoordIndex([166,167,168,169]);
 HAnimJoint797.SetSkinCoordWeight([1,1,1,1]);
-HAnimSegment798 := THAnimSegmentNode.Create;
-Shape799 := TShapeNode.Create;
+HAnimSegment798 := THAnimSegmentNode.Create;;
+Shape799 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape799.Appearance := Appearance64;
-IndexedLineSet801 := TIndexedLineSetNode.Create;
+IndexedLineSet801 := TIndexedLineSetNode.Create;;
 IndexedLineSet801.SetCoordIndex([0,1,-1]);
-Coordinate802 := TCoordinateNode.Create;
+Coordinate802 := TCoordinateNode.Create;;
 Coordinate802.SetPoint([Vector3(0.2017,0.7363,-0.0248),Vector3(0.2028,0.7139,-0.0236)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet801.Coord := Coordinate802;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape799.Geometry := IndexedLineSet801;
 { METHOD .FdChildren.Add }
 HAnimSegment798.FdChildren.Add(Shape799);
-Transform803 := TTransformNode.Create;
+Transform803 := TTransformNode.Create;;
 Transform803.Translation := Vector3(0.2017,0.7363,-0.0248);
 { METHOD .FdChildren.Add }
 Transform803.FdChildren.Add(Shape50);
@@ -4227,42 +4464,45 @@ Transform803.FdChildren.Add(Shape50);
 HAnimSegment798.FdChildren.Add(Transform803);
 { METHOD .FdChildren.Add }
 HAnimJoint797.FdChildren.Add(HAnimSegment798);
-HAnimJoint805 := THAnimJointNode.Create;
+HAnimJoint805 := THAnimJointNode.Create;;
 HAnimJoint805.Center := Vector3(0.2028,0.7139,-0.0236);
 HAnimJoint805.SetSkinCoordIndex([170,171,172,173,174,175,176,177,178]);
 HAnimJoint805.SetSkinCoordWeight([1,1,1,1,1,1,1,1,1]);
-HAnimSegment806 := THAnimSegmentNode.Create;
-Shape807 := TShapeNode.Create;
+HAnimSegment806 := THAnimSegmentNode.Create;;
+Shape807 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape807.Appearance := Appearance64;
+IndexedLineSet809 := TIndexedLineSetNode.Create;;
 end;
 
-procedure InitJoeSkeletonSkinSitePart45;
+procedure InitJoeSkeletonSkinSitePart58;
 begin
 
-IndexedLineSet809 := TIndexedLineSetNode.Create;
 IndexedLineSet809.SetCoordIndex([0,1,-1]);
-Coordinate810 := TCoordinateNode.Create;
+Coordinate810 := TCoordinateNode.Create;;
 Coordinate810.SetPoint([Vector3(0.2028,0.7139,-0.0236),Vector3(0.2089,0.6858,-0.0245)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet809.Coord := Coordinate810;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape807.Geometry := IndexedLineSet809;
 { METHOD .FdChildren.Add }
 HAnimSegment806.FdChildren.Add(Shape807);
-Transform811 := TTransformNode.Create;
+Transform811 := TTransformNode.Create;;
 Transform811.Translation := Vector3(0.2028,0.7139,-0.0236);
 { METHOD .FdChildren.Add }
 Transform811.FdChildren.Add(Shape50);
 { METHOD .FdChildren.Add }
 HAnimSegment806.FdChildren.Add(Transform811);
-HAnimSite813 := THAnimSiteNode.Create;
+HAnimSite813 := THAnimSiteNode.Create;;
 HAnimSite813.Translation := Vector3(0.2089,0.6858,-0.0245);
 { METHOD .FdChildren.Add }
 HAnimSite813.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment806.FdChildren.Add(HAnimSite813);
-HAnimSite815 := THAnimSiteNode.Create;
+HAnimSite815 := THAnimSiteNode.Create;;
 HAnimSite815.Translation := Vector3(0.2056,0.6743,-0.0482);
 { METHOD .FdChildren.Add }
 HAnimSite815.FdChildren.Add(Shape57);
@@ -4278,56 +4518,62 @@ HAnimJoint789.FdChildren.Add(HAnimJoint797);
 HAnimJoint781.FdChildren.Add(HAnimJoint789);
 { METHOD .FdChildren.Add }
 HAnimJoint741.FdChildren.Add(HAnimJoint781);
-HAnimJoint817 := THAnimJointNode.Create;
+HAnimJoint817 := THAnimJointNode.Create;;
 HAnimJoint817.Center := Vector3(0.1987,0.8029,-0.053);
 HAnimJoint817.SetSkinCoordIndex([131,132]);
 HAnimJoint817.SetSkinCoordWeight([1,1]);
-HAnimSegment818 := THAnimSegmentNode.Create;
-Shape819 := TShapeNode.Create;
+HAnimSegment818 := THAnimSegmentNode.Create;;
+Shape819 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape819.Appearance := Appearance64;
-IndexedLineSet821 := TIndexedLineSetNode.Create;
+IndexedLineSet821 := TIndexedLineSetNode.Create;;
 IndexedLineSet821.SetCoordIndex([0,1,-1]);
-Coordinate822 := TCoordinateNode.Create;
+end;
+
+procedure InitJoeSkeletonSkinSitePart59;
+begin
+
+Coordinate822 := TCoordinateNode.Create;;
 Coordinate822.SetPoint([Vector3(0.1987,0.8029,-0.053),Vector3(0.1987,0.7818,-0.053)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet821.Coord := Coordinate822;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape819.Geometry := IndexedLineSet821;
 { METHOD .FdChildren.Add }
 HAnimSegment818.FdChildren.Add(Shape819);
-Transform823 := TTransformNode.Create;
+Transform823 := TTransformNode.Create;;
 Transform823.Translation := Vector3(0.1987,0.8029,-0.053);
-end;
-
-procedure InitJoeSkeletonSkinSitePart46;
-begin
-
 { METHOD .FdChildren.Add }
 Transform823.FdChildren.Add(Shape50);
 { METHOD .FdChildren.Add }
 HAnimSegment818.FdChildren.Add(Transform823);
 { METHOD .FdChildren.Add }
 HAnimJoint817.FdChildren.Add(HAnimSegment818);
-HAnimJoint825 := THAnimJointNode.Create;
+HAnimJoint825 := THAnimJointNode.Create;;
 HAnimJoint825.Center := Vector3(0.1987,0.7818,-0.053);
 HAnimJoint825.SetSkinCoordIndex([156,157,163,164]);
 HAnimJoint825.SetSkinCoordWeight([1,1,0.5,0.5]);
-HAnimSegment826 := THAnimSegmentNode.Create;
-Shape827 := TShapeNode.Create;
+HAnimSegment826 := THAnimSegmentNode.Create;;
+Shape827 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape827.Appearance := Appearance64;
-IndexedLineSet829 := TIndexedLineSetNode.Create;
+IndexedLineSet829 := TIndexedLineSetNode.Create;;
 IndexedLineSet829.SetCoordIndex([0,1,-1]);
-Coordinate830 := TCoordinateNode.Create;
+Coordinate830 := TCoordinateNode.Create;;
 Coordinate830.SetPoint([Vector3(0.1987,0.7818,-0.053),Vector3(0.2013,0.7273,-0.0503)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet829.Coord := Coordinate830;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape827.Geometry := IndexedLineSet829;
 { METHOD .FdChildren.Add }
 HAnimSegment826.FdChildren.Add(Shape827);
-Transform831 := TTransformNode.Create;
+Transform831 := TTransformNode.Create;;
 Transform831.Translation := Vector3(0.1987,0.7818,-0.053);
 { METHOD .FdChildren.Add }
 Transform831.FdChildren.Add(Shape50);
@@ -4335,62 +4581,73 @@ Transform831.FdChildren.Add(Shape50);
 HAnimSegment826.FdChildren.Add(Transform831);
 { METHOD .FdChildren.Add }
 HAnimJoint825.FdChildren.Add(HAnimSegment826);
-HAnimJoint833 := THAnimJointNode.Create;
+HAnimJoint833 := THAnimJointNode.Create;;
 HAnimJoint833.Center := Vector3(0.2013,0.7273,-0.0503);
+end;
+
+procedure InitJoeSkeletonSkinSitePart60;
+begin
+
 HAnimJoint833.SetSkinCoordIndex([179,180,181,182]);
 HAnimJoint833.SetSkinCoordWeight([1,1,1,1]);
-HAnimSegment834 := THAnimSegmentNode.Create;
-Shape835 := TShapeNode.Create;
+HAnimSegment834 := THAnimSegmentNode.Create;;
+Shape835 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape835.Appearance := Appearance64;
-IndexedLineSet837 := TIndexedLineSetNode.Create;
+IndexedLineSet837 := TIndexedLineSetNode.Create;;
 IndexedLineSet837.SetCoordIndex([0,1,-1]);
-Coordinate838 := TCoordinateNode.Create;
+Coordinate838 := TCoordinateNode.Create;;
 Coordinate838.SetPoint([Vector3(0.2013,0.7273,-0.0503),Vector3(0.2026,0.7011,-0.0494)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet837.Coord := Coordinate838;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape835.Geometry := IndexedLineSet837;
 { METHOD .FdChildren.Add }
 HAnimSegment834.FdChildren.Add(Shape835);
-Transform839 := TTransformNode.Create;
+Transform839 := TTransformNode.Create;;
 Transform839.Translation := Vector3(0.2013,0.7273,-0.0503);
 { METHOD .FdChildren.Add }
 Transform839.FdChildren.Add(Shape50);
 { METHOD .FdChildren.Add }
 HAnimSegment834.FdChildren.Add(Transform839);
-end;
-
-procedure InitJoeSkeletonSkinSitePart47;
-begin
-
 { METHOD .FdChildren.Add }
 HAnimJoint833.FdChildren.Add(HAnimSegment834);
-HAnimJoint841 := THAnimJointNode.Create;
+HAnimJoint841 := THAnimJointNode.Create;;
 HAnimJoint841.Center := Vector3(0.2026,0.7011,-0.0494);
 HAnimJoint841.SetSkinCoordIndex([183,184,185,186,187,188,189,190,191]);
 HAnimJoint841.SetSkinCoordWeight([1,1,1,1,1,1,1,1,1]);
-HAnimSegment842 := THAnimSegmentNode.Create;
-Shape843 := TShapeNode.Create;
+HAnimSegment842 := THAnimSegmentNode.Create;;
+Shape843 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape843.Appearance := Appearance64;
-IndexedLineSet845 := TIndexedLineSetNode.Create;
+IndexedLineSet845 := TIndexedLineSetNode.Create;;
 IndexedLineSet845.SetCoordIndex([0,1,-1]);
-Coordinate846 := TCoordinateNode.Create;
+Coordinate846 := TCoordinateNode.Create;;
 Coordinate846.SetPoint([Vector3(0.2026,0.7011,-0.0494),Vector3(0.208,0.6731,-0.0491)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet845.Coord := Coordinate846;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape843.Geometry := IndexedLineSet845;
+end;
+
+procedure InitJoeSkeletonSkinSitePart61;
+begin
+
 { METHOD .FdChildren.Add }
 HAnimSegment842.FdChildren.Add(Shape843);
-HAnimSite847 := THAnimSiteNode.Create;
+HAnimSite847 := THAnimSiteNode.Create;;
 HAnimSite847.Translation := Vector3(0.208,0.6731,-0.0491);
 { METHOD .FdChildren.Add }
 HAnimSite847.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment842.FdChildren.Add(HAnimSite847);
-Transform849 := TTransformNode.Create;
+Transform849 := TTransformNode.Create;;
 Transform849.Translation := Vector3(0.2026,0.7011,-0.0494);
 { METHOD .FdChildren.Add }
 Transform849.FdChildren.Add(Shape50);
@@ -4406,56 +4663,62 @@ HAnimJoint825.FdChildren.Add(HAnimJoint833);
 HAnimJoint817.FdChildren.Add(HAnimJoint825);
 { METHOD .FdChildren.Add }
 HAnimJoint741.FdChildren.Add(HAnimJoint817);
-HAnimJoint851 := THAnimJointNode.Create;
+HAnimJoint851 := THAnimJointNode.Create;;
 HAnimJoint851.Center := Vector3(0.1956,0.8019,-0.0794);
 HAnimJoint851.SetSkinCoordIndex([133,134]);
 HAnimJoint851.SetSkinCoordWeight([1,1]);
-HAnimSegment852 := THAnimSegmentNode.Create;
-Shape853 := TShapeNode.Create;
+HAnimSegment852 := THAnimSegmentNode.Create;;
+Shape853 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape853.Appearance := Appearance64;
-IndexedLineSet855 := TIndexedLineSetNode.Create;
+IndexedLineSet855 := TIndexedLineSetNode.Create;;
 IndexedLineSet855.SetCoordIndex([0,1,-1]);
-Coordinate856 := TCoordinateNode.Create;
+Coordinate856 := TCoordinateNode.Create;;
 Coordinate856.SetPoint([Vector3(0.1956,0.8019,-0.0794),Vector3(0.1956,0.7815,-0.0794)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet855.Coord := Coordinate856;
-end;
-
-procedure InitJoeSkeletonSkinSitePart48;
-begin
-
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape853.Geometry := IndexedLineSet855;
 { METHOD .FdChildren.Add }
 HAnimSegment852.FdChildren.Add(Shape853);
-Transform857 := TTransformNode.Create;
+Transform857 := TTransformNode.Create;;
 Transform857.Translation := Vector3(0.1956,0.8019,-0.0794);
 { METHOD .FdChildren.Add }
 Transform857.FdChildren.Add(Shape50);
 { METHOD .FdChildren.Add }
 HAnimSegment852.FdChildren.Add(Transform857);
+end;
+
+procedure InitJoeSkeletonSkinSitePart62;
+begin
+
 { METHOD .FdChildren.Add }
 HAnimJoint851.FdChildren.Add(HAnimSegment852);
-HAnimJoint859 := THAnimJointNode.Create;
+HAnimJoint859 := THAnimJointNode.Create;;
 HAnimJoint859.Center := Vector3(0.1956,0.7815,-0.0794);
 HAnimJoint859.SetSkinCoordIndex([158,159,164,165]);
 HAnimJoint859.SetSkinCoordWeight([1,1,0.5,0.5]);
-HAnimSegment860 := THAnimSegmentNode.Create;
-Shape861 := TShapeNode.Create;
+HAnimSegment860 := THAnimSegmentNode.Create;;
+Shape861 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape861.Appearance := Appearance64;
-IndexedLineSet863 := TIndexedLineSetNode.Create;
+IndexedLineSet863 := TIndexedLineSetNode.Create;;
 IndexedLineSet863.SetCoordIndex([0,1,-1]);
-Coordinate864 := TCoordinateNode.Create;
+Coordinate864 := TCoordinateNode.Create;;
 Coordinate864.SetPoint([Vector3(0.1956,0.7815,-0.0794),Vector3(0.1973,0.7287,-0.0777)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet863.Coord := Coordinate864;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape861.Geometry := IndexedLineSet863;
 { METHOD .FdChildren.Add }
 HAnimSegment860.FdChildren.Add(Shape861);
-Transform865 := TTransformNode.Create;
+Transform865 := TTransformNode.Create;;
 Transform865.Translation := Vector3(0.1956,0.7815,-0.0794);
 { METHOD .FdChildren.Add }
 Transform865.FdChildren.Add(Shape50);
@@ -4463,30 +4726,33 @@ Transform865.FdChildren.Add(Shape50);
 HAnimSegment860.FdChildren.Add(Transform865);
 { METHOD .FdChildren.Add }
 HAnimJoint859.FdChildren.Add(HAnimSegment860);
-HAnimJoint867 := THAnimJointNode.Create;
+HAnimJoint867 := THAnimJointNode.Create;;
 HAnimJoint867.Center := Vector3(0.1973,0.7287,-0.0777);
 HAnimJoint867.SetSkinCoordIndex([192,193,194,195]);
 HAnimJoint867.SetSkinCoordWeight([1,1,1,1]);
-HAnimSegment868 := THAnimSegmentNode.Create;
-Shape869 := TShapeNode.Create;
+HAnimSegment868 := THAnimSegmentNode.Create;;
+Shape869 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape869.Appearance := Appearance64;
-IndexedLineSet871 := TIndexedLineSetNode.Create;
+IndexedLineSet871 := TIndexedLineSetNode.Create;;
 IndexedLineSet871.SetCoordIndex([0,1,-1]);
 Coordinate872 := TCoordinateNode.Create;
+end;
+
+procedure InitJoeSkeletonSkinSitePart63;
+begin
+;
 Coordinate872.SetPoint([Vector3(0.1973,0.7287,-0.0777),Vector3(0.1983,0.7045,-0.0767)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet871.Coord := Coordinate872;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape869.Geometry := IndexedLineSet871;
 { METHOD .FdChildren.Add }
 HAnimSegment868.FdChildren.Add(Shape869);
-end;
-
-procedure InitJoeSkeletonSkinSitePart49;
-begin
-
-Transform873 := TTransformNode.Create;
+Transform873 := TTransformNode.Create;;
 Transform873.Translation := Vector3(0.1973,0.7287,-0.0777);
 { METHOD .FdChildren.Add }
 Transform873.FdChildren.Add(Shape50);
@@ -4494,36 +4760,44 @@ Transform873.FdChildren.Add(Shape50);
 HAnimSegment868.FdChildren.Add(Transform873);
 { METHOD .FdChildren.Add }
 HAnimJoint867.FdChildren.Add(HAnimSegment868);
-HAnimJoint875 := THAnimJointNode.Create;
+HAnimJoint875 := THAnimJointNode.Create;;
 HAnimJoint875.Center := Vector3(0.1983,0.7045,-0.0767);
 HAnimJoint875.SetSkinCoordIndex([196,197,198,199,200,201,202,203,204]);
 HAnimJoint875.SetSkinCoordWeight([1,1,1,1,1,1,1,1,1]);
-HAnimSegment876 := THAnimSegmentNode.Create;
-Shape877 := TShapeNode.Create;
+HAnimSegment876 := THAnimSegmentNode.Create;;
+Shape877 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape877.Appearance := Appearance64;
-IndexedLineSet879 := TIndexedLineSetNode.Create;
+IndexedLineSet879 := TIndexedLineSetNode.Create;;
 IndexedLineSet879.SetCoordIndex([0,1,-1]);
-Coordinate880 := TCoordinateNode.Create;
+Coordinate880 := TCoordinateNode.Create;;
 Coordinate880.SetPoint([Vector3(0.1983,0.7045,-0.0767),Vector3(0.2035,0.675,-0.0756)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet879.Coord := Coordinate880;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape877.Geometry := IndexedLineSet879;
 { METHOD .FdChildren.Add }
 HAnimSegment876.FdChildren.Add(Shape877);
-Transform881 := TTransformNode.Create;
+Transform881 := TTransformNode.Create;;
 Transform881.Translation := Vector3(0.1983,0.7045,-0.0767);
 { METHOD .FdChildren.Add }
 Transform881.FdChildren.Add(Shape50);
 { METHOD .FdChildren.Add }
 HAnimSegment876.FdChildren.Add(Transform881);
-HAnimSite883 := THAnimSiteNode.Create;
+HAnimSite883 := THAnimSiteNode.Create;;
 HAnimSite883.Translation := Vector3(0.2035,0.675,-0.0756);
 { METHOD .FdChildren.Add }
 HAnimSite883.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment876.FdChildren.Add(HAnimSite883);
+end;
+
+procedure InitJoeSkeletonSkinSitePart64;
+begin
+
 { METHOD .FdChildren.Add }
 HAnimJoint875.FdChildren.Add(HAnimSegment876);
 { METHOD .FdChildren.Add }
@@ -4534,30 +4808,28 @@ HAnimJoint859.FdChildren.Add(HAnimJoint867);
 HAnimJoint851.FdChildren.Add(HAnimJoint859);
 { METHOD .FdChildren.Add }
 HAnimJoint741.FdChildren.Add(HAnimJoint851);
-HAnimJoint885 := THAnimJointNode.Create;
+HAnimJoint885 := THAnimJointNode.Create;;
 HAnimJoint885.Center := Vector3(0.1925,0.8066,-0.1036);
 HAnimJoint885.SetSkinCoordIndex([135,136,137,165]);
 HAnimJoint885.SetSkinCoordWeight([1,1,1,0.5]);
-HAnimSegment886 := THAnimSegmentNode.Create;
-Shape887 := TShapeNode.Create;
+HAnimSegment886 := THAnimSegmentNode.Create;;
+Shape887 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape887.Appearance := Appearance64;
-IndexedLineSet889 := TIndexedLineSetNode.Create;
-end;
-
-procedure InitJoeSkeletonSkinSitePart50;
-begin
-
+IndexedLineSet889 := TIndexedLineSetNode.Create;;
 IndexedLineSet889.SetCoordIndex([0,1,-1]);
-Coordinate890 := TCoordinateNode.Create;
+Coordinate890 := TCoordinateNode.Create;;
 Coordinate890.SetPoint([Vector3(0.1925,0.8066,-0.1036),Vector3(0.1925,0.7866,-0.1036)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet889.Coord := Coordinate890;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape887.Geometry := IndexedLineSet889;
 { METHOD .FdChildren.Add }
 HAnimSegment886.FdChildren.Add(Shape887);
-Transform891 := TTransformNode.Create;
+Transform891 := TTransformNode.Create;;
 Transform891.Translation := Vector3(0.1925,0.8066,-0.1036);
 { METHOD .FdChildren.Add }
 Transform891.FdChildren.Add(Shape50);
@@ -4565,25 +4837,33 @@ Transform891.FdChildren.Add(Shape50);
 HAnimSegment886.FdChildren.Add(Transform891);
 { METHOD .FdChildren.Add }
 HAnimJoint885.FdChildren.Add(HAnimSegment886);
-HAnimJoint893 := THAnimJointNode.Create;
+HAnimJoint893 := THAnimJointNode.Create;;
 HAnimJoint893.Center := Vector3(0.1925,0.7866,-0.1036);
 HAnimJoint893.SetSkinCoordIndex([160,161,162]);
 HAnimJoint893.SetSkinCoordWeight([1,1,1]);
-HAnimSegment894 := THAnimSegmentNode.Create;
-Shape895 := TShapeNode.Create;
+HAnimSegment894 := THAnimSegmentNode.Create;;
+Shape895 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape895.Appearance := Appearance64;
-IndexedLineSet897 := TIndexedLineSetNode.Create;
+end;
+
+procedure InitJoeSkeletonSkinSitePart65;
+begin
+
+IndexedLineSet897 := TIndexedLineSetNode.Create;;
 IndexedLineSet897.SetCoordIndex([0,1,-1]);
-Coordinate898 := TCoordinateNode.Create;
+Coordinate898 := TCoordinateNode.Create;;
 Coordinate898.SetPoint([Vector3(0.1925,0.7866,-0.1036),Vector3(0.1938,0.7452,-0.1024)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet897.Coord := Coordinate898;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape895.Geometry := IndexedLineSet897;
 { METHOD .FdChildren.Add }
 HAnimSegment894.FdChildren.Add(Shape895);
-Transform899 := TTransformNode.Create;
+Transform899 := TTransformNode.Create;;
 Transform899.Translation := Vector3(0.1925,0.7866,-0.1036);
 { METHOD .FdChildren.Add }
 Transform899.FdChildren.Add(Shape50);
@@ -4591,62 +4871,68 @@ Transform899.FdChildren.Add(Shape50);
 HAnimSegment894.FdChildren.Add(Transform899);
 { METHOD .FdChildren.Add }
 HAnimJoint893.FdChildren.Add(HAnimSegment894);
-HAnimJoint901 := THAnimJointNode.Create;
+HAnimJoint901 := THAnimJointNode.Create;;
 HAnimJoint901.Center := Vector3(0.1938,0.7452,-0.1024);
 HAnimJoint901.SetSkinCoordIndex([205,206,207,208]);
 HAnimJoint901.SetSkinCoordWeight([1,1,1,1]);
-HAnimSegment902 := THAnimSegmentNode.Create;
-Transform903 := TTransformNode.Create;
+HAnimSegment902 := THAnimSegmentNode.Create;;
+Transform903 := TTransformNode.Create;;
 Transform903.Translation := Vector3(0.1938,0.7452,-0.1024);
 { METHOD .FdChildren.Add }
 Transform903.FdChildren.Add(Shape50);
 { METHOD .FdChildren.Add }
 HAnimSegment902.FdChildren.Add(Transform903);
-Shape905 := TShapeNode.Create;
-end;
-
-procedure InitJoeSkeletonSkinSitePart51;
-begin
-
+Shape905 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape905.Appearance := Appearance64;
-IndexedLineSet907 := TIndexedLineSetNode.Create;
+IndexedLineSet907 := TIndexedLineSetNode.Create;;
 IndexedLineSet907.SetCoordIndex([0,1,-1]);
-Coordinate908 := TCoordinateNode.Create;
+Coordinate908 := TCoordinateNode.Create;;
 Coordinate908.SetPoint([Vector3(0.1938,0.7452,-0.1024),Vector3(0.1948,0.7277,-0.1017)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet907.Coord := Coordinate908;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape905.Geometry := IndexedLineSet907;
 { METHOD .FdChildren.Add }
 HAnimSegment902.FdChildren.Add(Shape905);
 { METHOD .FdChildren.Add }
 HAnimJoint901.FdChildren.Add(HAnimSegment902);
-HAnimJoint909 := THAnimJointNode.Create;
+end;
+
+procedure InitJoeSkeletonSkinSitePart66;
+begin
+
+HAnimJoint909 := THAnimJointNode.Create;;
 HAnimJoint909.Center := Vector3(0.1948,0.7277,-0.1017);
 HAnimJoint909.SetSkinCoordIndex([209,210,211,212,213,214,215,216,217]);
 HAnimJoint909.SetSkinCoordWeight([1,1,1,1,1,1,1,1,1]);
-HAnimSegment910 := THAnimSegmentNode.Create;
-Shape911 := TShapeNode.Create;
+HAnimSegment910 := THAnimSegmentNode.Create;;
+Shape911 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape911.Appearance := Appearance64;
-IndexedLineSet913 := TIndexedLineSetNode.Create;
+IndexedLineSet913 := TIndexedLineSetNode.Create;;
 IndexedLineSet913.SetCoordIndex([0,1,-1]);
-Coordinate914 := TCoordinateNode.Create;
+Coordinate914 := TCoordinateNode.Create;;
 Coordinate914.SetPoint([Vector3(0.1948,0.7277,-0.1017),Vector3(0.2014,0.7009,-0.1012)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet913.Coord := Coordinate914;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape911.Geometry := IndexedLineSet913;
 { METHOD .FdChildren.Add }
 HAnimSegment910.FdChildren.Add(Shape911);
-Transform915 := TTransformNode.Create;
+Transform915 := TTransformNode.Create;;
 Transform915.Translation := Vector3(0.1948,0.7277,-0.1017);
 { METHOD .FdChildren.Add }
 Transform915.FdChildren.Add(Shape50);
 { METHOD .FdChildren.Add }
 HAnimSegment910.FdChildren.Add(Transform915);
-HAnimSite917 := THAnimSiteNode.Create;
+HAnimSite917 := THAnimSiteNode.Create;;
 HAnimSite917.Translation := Vector3(0.2014,0.7009,-0.1012);
 { METHOD .FdChildren.Add }
 HAnimSite917.FdChildren.Add(Shape57);
@@ -4670,38 +4956,41 @@ HAnimJoint695.FdChildren.Add(HAnimJoint719);
 HAnimJoint679.FdChildren.Add(HAnimJoint695);
 { METHOD .FdChildren.Add }
 HAnimJoint669.FdChildren.Add(HAnimJoint679);
-end;
-
-procedure InitJoeSkeletonSkinSitePart52;
-begin
-
 { METHOD .FdChildren.Add }
 HAnimJoint553.FdChildren.Add(HAnimJoint669);
 HAnimJoint919 := THAnimJointNode.Create;
+end;
+
+procedure InitJoeSkeletonSkinSitePart67;
+begin
+;
 HAnimJoint919.Center := Vector3(-0.03,1.46,0);
 HAnimJoint919.SetSkinCoordIndex([10]);
 HAnimJoint919.SetSkinCoordWeight([1]);
-HAnimSegment920 := THAnimSegmentNode.Create;
-Shape921 := TShapeNode.Create;
+HAnimSegment920 := THAnimSegmentNode.Create;;
+Shape921 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape921.Appearance := Appearance64;
-IndexedLineSet923 := TIndexedLineSetNode.Create;
+IndexedLineSet923 := TIndexedLineSetNode.Create;;
 IndexedLineSet923.SetCoordIndex([0,1,-1]);
-Coordinate924 := TCoordinateNode.Create;
+Coordinate924 := TCoordinateNode.Create;;
 Coordinate924.SetPoint([Vector3(-0.03,1.46,0.02),Vector3(-0.09,1.41,-0.09)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet923.Coord := Coordinate924;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape921.Geometry := IndexedLineSet923;
 { METHOD .FdChildren.Add }
 HAnimSegment920.FdChildren.Add(Shape921);
-Transform925 := TTransformNode.Create;
+Transform925 := TTransformNode.Create;;
 Transform925.Translation := Vector3(-0.03,1.46,0.02);
 { METHOD .FdChildren.Add }
 Transform925.FdChildren.Add(Shape50);
 { METHOD .FdChildren.Add }
 HAnimSegment920.FdChildren.Add(Transform925);
-HAnimSite927 := THAnimSiteNode.Create;
+HAnimSite927 := THAnimSiteNode.Create;;
 HAnimSite927.Translation := Vector3(-0.03,1.46,0.035);
 { METHOD .FdChildren.Add }
 HAnimSite927.FdChildren.Add(Shape57);
@@ -4709,54 +4998,57 @@ HAnimSite927.FdChildren.Add(Shape57);
 HAnimSegment920.FdChildren.Add(HAnimSite927);
 { METHOD .FdChildren.Add }
 HAnimJoint919.FdChildren.Add(HAnimSegment920);
-HAnimJoint929 := THAnimJointNode.Create;
+HAnimJoint929 := THAnimJointNode.Create;;
 HAnimJoint929.Center := Vector3(-0.09,1.41,-0.11);
 HAnimJoint929.SetSkinCoordIndex([77,29]);
 HAnimJoint929.SetSkinCoordWeight([1,0.9]);
-HAnimSegment930 := THAnimSegmentNode.Create;
-Shape931 := TShapeNode.Create;
+HAnimSegment930 := THAnimSegmentNode.Create;;
+Shape931 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape931.Appearance := Appearance64;
 IndexedLineSet933 := TIndexedLineSetNode.Create;
+end;
+
+procedure InitJoeSkeletonSkinSitePart68;
+begin
+;
 IndexedLineSet933.SetCoordIndex([0,1,-1]);
-Coordinate934 := TCoordinateNode.Create;
+Coordinate934 := TCoordinateNode.Create;;
 Coordinate934.SetPoint([Vector3(-0.09,1.41,-0.09),Vector3(-0.2,1.44,-0.04)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet933.Coord := Coordinate934;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape931.Geometry := IndexedLineSet933;
 { METHOD .FdChildren.Add }
 HAnimSegment930.FdChildren.Add(Shape931);
-Transform935 := TTransformNode.Create;
+Transform935 := TTransformNode.Create;;
 Transform935.Translation := Vector3(-0.09,1.41,-0.09);
-end;
-
-procedure InitJoeSkeletonSkinSitePart53;
-begin
-
 { METHOD .FdChildren.Add }
 Transform935.FdChildren.Add(Shape50);
 { METHOD .FdChildren.Add }
 HAnimSegment930.FdChildren.Add(Transform935);
-Transform937 := TTransformNode.Create;
+Transform937 := TTransformNode.Create;;
 Transform937.Translation := Vector3(-0.11,1.427,-0.1375);
 { METHOD .FdChildren.Add }
 Transform937.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment930.FdChildren.Add(Transform937);
-HAnimSite939 := THAnimSiteNode.Create;
+HAnimSite939 := THAnimSiteNode.Create;;
 HAnimSite939.Translation := Vector3(-0.178,1.4825,-0.0625);
 { METHOD .FdChildren.Add }
 HAnimSite939.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment930.FdChildren.Add(HAnimSite939);
-HAnimSite941 := THAnimSiteNode.Create;
+HAnimSite941 := THAnimSiteNode.Create;;
 HAnimSite941.Translation := Vector3(-0.17,1.38,0.007);
 { METHOD .FdChildren.Add }
 HAnimSite941.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment930.FdChildren.Add(HAnimSite941);
-HAnimSite943 := THAnimSiteNode.Create;
+HAnimSite943 := THAnimSiteNode.Create;;
 HAnimSite943.Translation := Vector3(-0.16,1.38,-0.127);
 { METHOD .FdChildren.Add }
 HAnimSite943.FdChildren.Add(Shape57);
@@ -4764,174 +5056,185 @@ HAnimSite943.FdChildren.Add(Shape57);
 HAnimSegment930.FdChildren.Add(HAnimSite943);
 { METHOD .FdChildren.Add }
 HAnimJoint929.FdChildren.Add(HAnimSegment930);
-HAnimJoint945 := THAnimJointNode.Create;
+HAnimJoint945 := THAnimJointNode.Create;;
 HAnimJoint945.Center := Vector3(-0.2,1.44,-0.04);
 HAnimJoint945.SetSkinCoordIndex([29,30,32,78,218,219,220,221,86,88]);
 HAnimJoint945.SetSkinCoordWeight([0.1,1,1,1,1,1,1,1,0.3,0.2]);
 HAnimSegment946 := THAnimSegmentNode.Create;
-Transform947 := TTransformNode.Create;
+end;
+
+procedure InitJoeSkeletonSkinSitePart69;
+begin
+;
+Transform947 := TTransformNode.Create;;
 Transform947.Translation := Vector3(-0.2,1.44,-0.04);
 { METHOD .FdChildren.Add }
 Transform947.FdChildren.Add(Shape50);
 { METHOD .FdChildren.Add }
 HAnimSegment946.FdChildren.Add(Transform947);
-Shape949 := TShapeNode.Create;
+Shape949 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape949.Appearance := Appearance64;
-IndexedLineSet951 := TIndexedLineSetNode.Create;
+IndexedLineSet951 := TIndexedLineSetNode.Create;;
 IndexedLineSet951.SetCoordIndex([0,1,-1]);
-Coordinate952 := TCoordinateNode.Create;
+Coordinate952 := TCoordinateNode.Create;;
 Coordinate952.SetPoint([Vector3(-0.2,1.44,-0.04),Vector3(-0.2,1.1388,-0.04)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet951.Coord := Coordinate952;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape949.Geometry := IndexedLineSet951;
 { METHOD .FdChildren.Add }
 HAnimSegment946.FdChildren.Add(Shape949);
-Transform953 := TTransformNode.Create;
+Transform953 := TTransformNode.Create;;
 Transform953.Translation := Vector3(-0.178,1.4825,-0.0625);
 { METHOD .FdChildren.Add }
 Transform953.FdChildren.Add(Shape69);
-end;
-
-procedure InitJoeSkeletonSkinSitePart54;
-begin
-
 { METHOD .FdChildren.Add }
 HAnimSegment946.FdChildren.Add(Transform953);
-Transform955 := TTransformNode.Create;
+Transform955 := TTransformNode.Create;;
 Transform955.Translation := Vector3(-0.17,1.38,0.007);
 { METHOD .FdChildren.Add }
 Transform955.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment946.FdChildren.Add(Transform955);
-Transform957 := TTransformNode.Create;
+Transform957 := TTransformNode.Create;;
 Transform957.Translation := Vector3(-0.16,1.38,-0.127);
 { METHOD .FdChildren.Add }
 Transform957.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment946.FdChildren.Add(Transform957);
-Transform959 := TTransformNode.Create;
+Transform959 := TTransformNode.Create;;
 Transform959.Translation := Vector3(-0.235,1.42,-0.0625);
 { METHOD .FdChildren.Add }
 Transform959.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment946.FdChildren.Add(Transform959);
-Transform961 := TTransformNode.Create;
+Transform961 := TTransformNode.Create;;
+end;
+
+procedure InitJoeSkeletonSkinSitePart70;
+begin
+
 Transform961.Translation := Vector3(-0.23,1.235,-0.04);
 { METHOD .FdChildren.Add }
 Transform961.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment946.FdChildren.Add(Transform961);
-Transform963 := TTransformNode.Create;
+Transform963 := TTransformNode.Create;;
 Transform963.Translation := Vector3(-0.16,1.23,-0.04);
 { METHOD .FdChildren.Add }
 Transform963.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment946.FdChildren.Add(Transform963);
-Transform965 := TTransformNode.Create;
+Transform965 := TTransformNode.Create;;
 Transform965.Translation := Vector3(-0.2,1.23,-0.105);
 { METHOD .FdChildren.Add }
 Transform965.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment946.FdChildren.Add(Transform965);
-Transform967 := TTransformNode.Create;
+Transform967 := TTransformNode.Create;;
 Transform967.Translation := Vector3(-0.2,1.235,0.02);
 { METHOD .FdChildren.Add }
 Transform967.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment946.FdChildren.Add(Transform967);
-HAnimSite969 := THAnimSiteNode.Create;
+HAnimSite969 := THAnimSiteNode.Create;;
 HAnimSite969.Translation := Vector3(-0.165,1.1388,-0.04);
 { METHOD .FdChildren.Add }
 HAnimSite969.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment946.FdChildren.Add(HAnimSite969);
-HAnimSite971 := THAnimSiteNode.Create;
+HAnimSite971 := THAnimSiteNode.Create;;
 HAnimSite971.Translation := Vector3(-0.23,1.133,-0.055);
 { METHOD .FdChildren.Add }
 HAnimSite971.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment946.FdChildren.Add(HAnimSite971);
-HAnimSite973 := THAnimSiteNode.Create;
+HAnimSite973 := THAnimSiteNode.Create;;
 HAnimSite973.Translation := Vector3(-0.244,1.1388,-0.04);
 { METHOD .FdChildren.Add }
 HAnimSite973.FdChildren.Add(Shape57);
-end;
-
-procedure InitJoeSkeletonSkinSitePart55;
-begin
-
 { METHOD .FdChildren.Add }
 HAnimSegment946.FdChildren.Add(HAnimSite973);
 { METHOD .FdChildren.Add }
 HAnimJoint945.FdChildren.Add(HAnimSegment946);
-HAnimJoint975 := THAnimJointNode.Create;
+HAnimJoint975 := THAnimJointNode.Create;;
 HAnimJoint975.Center := Vector3(-0.2,1.1388,-0.04);
 HAnimJoint975.SetSkinCoordIndex([33,34,35,225,226,227,228,229,231,232,233,234]);
 HAnimJoint975.SetSkinCoordWeight([1,1,1,1,1,1,1,1,1,1,1,1]);
 HAnimSegment976 := THAnimSegmentNode.Create;
-Shape977 := TShapeNode.Create;
+end;
+
+procedure InitJoeSkeletonSkinSitePart71;
+begin
+;
+Shape977 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape977.Appearance := Appearance64;
-IndexedLineSet979 := TIndexedLineSetNode.Create;
+IndexedLineSet979 := TIndexedLineSetNode.Create;;
 IndexedLineSet979.SetCoordIndex([0,1,-1]);
-Coordinate980 := TCoordinateNode.Create;
+Coordinate980 := TCoordinateNode.Create;;
 Coordinate980.SetPoint([Vector3(-0.2,1.1388,-0.04),Vector3(-0.2,0.89,-0.04)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet979.Coord := Coordinate980;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape977.Geometry := IndexedLineSet979;
 { METHOD .FdChildren.Add }
 HAnimSegment976.FdChildren.Add(Shape977);
-Transform981 := TTransformNode.Create;
+Transform981 := TTransformNode.Create;;
 Transform981.Translation := Vector3(-0.2,1.1388,-0.04);
 { METHOD .FdChildren.Add }
 Transform981.FdChildren.Add(Shape50);
 { METHOD .FdChildren.Add }
 HAnimSegment976.FdChildren.Add(Transform981);
-Transform983 := TTransformNode.Create;
+Transform983 := TTransformNode.Create;;
 Transform983.Translation := Vector3(-0.2,1.1388,0.013);
 { METHOD .FdChildren.Add }
 Transform983.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment976.FdChildren.Add(Transform983);
-Transform985 := TTransformNode.Create;
+Transform985 := TTransformNode.Create;;
 Transform985.Translation := Vector3(-0.225,1,-0.01);
 { METHOD .FdChildren.Add }
 Transform985.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment976.FdChildren.Add(Transform985);
-Transform987 := TTransformNode.Create;
+Transform987 := TTransformNode.Create;;
 Transform987.Translation := Vector3(-0.225,1,-0.07);
 { METHOD .FdChildren.Add }
 Transform987.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment976.FdChildren.Add(Transform987);
-Transform989 := TTransformNode.Create;
+Transform989 := TTransformNode.Create;;
 Transform989.Translation := Vector3(-0.185,1,-0.01);
 { METHOD .FdChildren.Add }
 Transform989.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment976.FdChildren.Add(Transform989);
-Transform991 := TTransformNode.Create;
+Transform991 := TTransformNode.Create;;
+end;
+
+procedure InitJoeSkeletonSkinSitePart72;
+begin
+
 Transform991.Translation := Vector3(-0.185,1,-0.07);
 { METHOD .FdChildren.Add }
 Transform991.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment976.FdChildren.Add(Transform991);
-end;
-
-procedure InitJoeSkeletonSkinSitePart56;
-begin
-
-HAnimSite993 := THAnimSiteNode.Create;
+HAnimSite993 := THAnimSiteNode.Create;;
 HAnimSite993.Translation := Vector3(-0.2,0.9,-0.015);
 { METHOD .FdChildren.Add }
 HAnimSite993.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment976.FdChildren.Add(HAnimSite993);
-HAnimSite995 := THAnimSiteNode.Create;
+HAnimSite995 := THAnimSiteNode.Create;;
 HAnimSite995.Translation := Vector3(-0.2,1.1388,-0.08);
 { METHOD .FdChildren.Add }
 HAnimSite995.FdChildren.Add(Shape57);
@@ -4939,31 +5242,39 @@ HAnimSite995.FdChildren.Add(Shape57);
 HAnimSegment976.FdChildren.Add(HAnimSite995);
 { METHOD .FdChildren.Add }
 HAnimJoint975.FdChildren.Add(HAnimSegment976);
-HAnimJoint997 := THAnimJointNode.Create;
+HAnimJoint997 := THAnimJointNode.Create;;
 HAnimJoint997.Center := Vector3(-0.2,0.89,-0.04);
 HAnimJoint997.SetSkinCoordIndex([235,236,237,238,239,240,241,242]);
 HAnimJoint997.SetSkinCoordWeight([1,1,1,1,1,1,1,1]);
-HAnimSegment998 := THAnimSegmentNode.Create;
-Shape999 := TShapeNode.Create;
+HAnimSegment998 := THAnimSegmentNode.Create;;
+Shape999 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape999.Appearance := Appearance64;
-IndexedLineSet1001 := TIndexedLineSetNode.Create;
+IndexedLineSet1001 := TIndexedLineSetNode.Create;;
 IndexedLineSet1001.SetCoordIndex([0,1,-1,0,2,-1,0,3,-1,0,4,-1,0,5,-1]);
-Coordinate1002 := TCoordinateNode.Create;
+Coordinate1002 := TCoordinateNode.Create;;
 Coordinate1002.SetPoint([Vector3(-0.2,0.89,-0.04),Vector3(-0.2,0.85,0),Vector3(-0.2,0.84,-0.015),Vector3(-0.2,0.835,-0.04),Vector3(-0.2,0.835,-0.065),Vector3(-0.2,0.84,-0.085)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet1001.Coord := Coordinate1002;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape999.Geometry := IndexedLineSet1001;
 { METHOD .FdChildren.Add }
 HAnimSegment998.FdChildren.Add(Shape999);
-Transform1003 := TTransformNode.Create;
+Transform1003 := TTransformNode.Create;;
 Transform1003.Translation := Vector3(-0.2,0.89,-0.04);
 { METHOD .FdChildren.Add }
 Transform1003.FdChildren.Add(Shape50);
 { METHOD .FdChildren.Add }
 HAnimSegment998.FdChildren.Add(Transform1003);
-HAnimSite1005 := THAnimSiteNode.Create;
+HAnimSite1005 := THAnimSiteNode.Create;;
+end;
+
+procedure InitJoeSkeletonSkinSitePart73;
+begin
+
 HAnimSite1005.Translation := Vector3(-0.2,0.9,-0.085);
 { METHOD .FdChildren.Add }
 HAnimSite1005.FdChildren.Add(Shape57);
@@ -4971,30 +5282,28 @@ HAnimSite1005.FdChildren.Add(Shape57);
 HAnimSegment998.FdChildren.Add(HAnimSite1005);
 { METHOD .FdChildren.Add }
 HAnimJoint997.FdChildren.Add(HAnimSegment998);
-HAnimJoint1007 := THAnimJointNode.Create;
+HAnimJoint1007 := THAnimJointNode.Create;;
 HAnimJoint1007.Center := Vector3(-0.2,0.85,0);
 HAnimJoint1007.SetSkinCoordIndex([243,244]);
 HAnimJoint1007.SetSkinCoordWeight([1,1]);
-HAnimSegment1008 := THAnimSegmentNode.Create;
-Shape1009 := TShapeNode.Create;
+HAnimSegment1008 := THAnimSegmentNode.Create;;
+Shape1009 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape1009.Appearance := Appearance64;
-IndexedLineSet1011 := TIndexedLineSetNode.Create;
-end;
-
-procedure InitJoeSkeletonSkinSitePart57;
-begin
-
+IndexedLineSet1011 := TIndexedLineSetNode.Create;;
 IndexedLineSet1011.SetCoordIndex([0,1,-1]);
-Coordinate1012 := TCoordinateNode.Create;
+Coordinate1012 := TCoordinateNode.Create;;
 Coordinate1012.SetPoint([Vector3(-0.2,0.85,0),Vector3(-0.2,0.82,0.03)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet1011.Coord := Coordinate1012;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape1009.Geometry := IndexedLineSet1011;
 { METHOD .FdChildren.Add }
 HAnimSegment1008.FdChildren.Add(Shape1009);
-Transform1013 := TTransformNode.Create;
+Transform1013 := TTransformNode.Create;;
 Transform1013.Translation := Vector3(-0.2,0.85,0);
 { METHOD .FdChildren.Add }
 Transform1013.FdChildren.Add(Shape50);
@@ -5002,25 +5311,33 @@ Transform1013.FdChildren.Add(Shape50);
 HAnimSegment1008.FdChildren.Add(Transform1013);
 { METHOD .FdChildren.Add }
 HAnimJoint1007.FdChildren.Add(HAnimSegment1008);
-HAnimJoint1015 := THAnimJointNode.Create;
+HAnimJoint1015 := THAnimJointNode.Create;;
 HAnimJoint1015.Center := Vector3(-0.2,0.82,0.03);
 HAnimJoint1015.SetSkinCoordIndex([254,255,256,257,258,259]);
 HAnimJoint1015.SetSkinCoordWeight([0.5,0.5,0.5,1,1,1]);
-HAnimSegment1016 := THAnimSegmentNode.Create;
-Shape1017 := TShapeNode.Create;
+HAnimSegment1016 := THAnimSegmentNode.Create;;
+Shape1017 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape1017.Appearance := Appearance64;
 IndexedLineSet1019 := TIndexedLineSetNode.Create;
+end;
+
+procedure InitJoeSkeletonSkinSitePart74;
+begin
+;
 IndexedLineSet1019.SetCoordIndex([0,1,-1]);
-Coordinate1020 := TCoordinateNode.Create;
+Coordinate1020 := TCoordinateNode.Create;;
 Coordinate1020.SetPoint([Vector3(-0.2,0.82,0.03),Vector3(-0.2,0.8,0.05)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet1019.Coord := Coordinate1020;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape1017.Geometry := IndexedLineSet1019;
 { METHOD .FdChildren.Add }
 HAnimSegment1016.FdChildren.Add(Shape1017);
-Transform1021 := TTransformNode.Create;
+Transform1021 := TTransformNode.Create;;
 Transform1021.Translation := Vector3(-0.2,0.82,0.03);
 { METHOD .FdChildren.Add }
 Transform1021.FdChildren.Add(Shape50);
@@ -5028,42 +5345,45 @@ Transform1021.FdChildren.Add(Shape50);
 HAnimSegment1016.FdChildren.Add(Transform1021);
 { METHOD .FdChildren.Add }
 HAnimJoint1015.FdChildren.Add(HAnimSegment1016);
-HAnimJoint1023 := THAnimJointNode.Create;
+HAnimJoint1023 := THAnimJointNode.Create;;
 HAnimJoint1023.Center := Vector3(-0.2,0.8,0.05);
 HAnimJoint1023.SetSkinCoordIndex([260,261,262,263,264,265,266,267,268]);
 HAnimJoint1023.SetSkinCoordWeight([1,1,1,1,1,1,1,1,1]);
-HAnimSegment1024 := THAnimSegmentNode.Create;
-Shape1025 := TShapeNode.Create;
+HAnimSegment1024 := THAnimSegmentNode.Create;;
+Shape1025 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape1025.Appearance := Appearance64;
-IndexedLineSet1027 := TIndexedLineSetNode.Create;
+IndexedLineSet1027 := TIndexedLineSetNode.Create;;
 IndexedLineSet1027.SetCoordIndex([0,1,-1]);
-Coordinate1028 := TCoordinateNode.Create;
-end;
-
-procedure InitJoeSkeletonSkinSitePart58;
-begin
-
+Coordinate1028 := TCoordinateNode.Create;;
 Coordinate1028.SetPoint([Vector3(-0.2,0.8,0.05),Vector3(-0.2,0.78,0.07)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet1027.Coord := Coordinate1028;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape1025.Geometry := IndexedLineSet1027;
 { METHOD .FdChildren.Add }
 HAnimSegment1024.FdChildren.Add(Shape1025);
-Transform1029 := TTransformNode.Create;
+Transform1029 := TTransformNode.Create;;
 Transform1029.Translation := Vector3(-0.2,0.785,0.075);
 { METHOD .FdChildren.Add }
 Transform1029.FdChildren.Add(Shape69);
 { METHOD .FdChildren.Add }
 HAnimSegment1024.FdChildren.Add(Transform1029);
-Transform1031 := TTransformNode.Create;
+Transform1031 := TTransformNode.Create;;
+end;
+
+procedure InitJoeSkeletonSkinSitePart75;
+begin
+
 Transform1031.Translation := Vector3(-0.2,0.8,0.05);
 { METHOD .FdChildren.Add }
 Transform1031.FdChildren.Add(Shape50);
 { METHOD .FdChildren.Add }
 HAnimSegment1024.FdChildren.Add(Transform1031);
-HAnimSite1033 := THAnimSiteNode.Create;
+HAnimSite1033 := THAnimSiteNode.Create;;
 HAnimSite1033.Translation := Vector3(-0.2,0.78,0.07);
 { METHOD .FdChildren.Add }
 HAnimSite1033.FdChildren.Add(Shape57);
@@ -5077,62 +5397,68 @@ HAnimJoint1015.FdChildren.Add(HAnimJoint1023);
 HAnimJoint1007.FdChildren.Add(HAnimJoint1015);
 { METHOD .FdChildren.Add }
 HAnimJoint997.FdChildren.Add(HAnimJoint1007);
-HAnimJoint1035 := THAnimJointNode.Create;
+HAnimJoint1035 := THAnimJointNode.Create;;
 HAnimJoint1035.Center := Vector3(-0.2,0.84,-0.015);
 HAnimJoint1035.SetSkinCoordIndex([245,246]);
 HAnimJoint1035.SetSkinCoordWeight([1,1]);
-HAnimSegment1036 := THAnimSegmentNode.Create;
-Shape1037 := TShapeNode.Create;
+HAnimSegment1036 := THAnimSegmentNode.Create;;
+Shape1037 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape1037.Appearance := Appearance64;
-IndexedLineSet1039 := TIndexedLineSetNode.Create;
+IndexedLineSet1039 := TIndexedLineSetNode.Create;;
 IndexedLineSet1039.SetCoordIndex([0,1,-1]);
-Coordinate1040 := TCoordinateNode.Create;
+Coordinate1040 := TCoordinateNode.Create;;
 Coordinate1040.SetPoint([Vector3(-0.2,0.84,-0.015),Vector3(-0.2,0.793,-0.015)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet1039.Coord := Coordinate1040;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape1037.Geometry := IndexedLineSet1039;
 { METHOD .FdChildren.Add }
 HAnimSegment1036.FdChildren.Add(Shape1037);
-Transform1041 := TTransformNode.Create;
+Transform1041 := TTransformNode.Create;;
 Transform1041.Translation := Vector3(-0.2,0.84,-0.015);
 { METHOD .FdChildren.Add }
 Transform1041.FdChildren.Add(Shape50);
 { METHOD .FdChildren.Add }
 HAnimSegment1036.FdChildren.Add(Transform1041);
-HAnimSite1043 := THAnimSiteNode.Create;
+HAnimSite1043 := THAnimSiteNode.Create;;
 HAnimSite1043.Translation := Vector3(-0.2,0.793,-0.005);
-end;
-
-procedure InitJoeSkeletonSkinSitePart59;
-begin
-
 { METHOD .FdChildren.Add }
 HAnimSite1043.FdChildren.Add(Shape57);
+end;
+
+procedure InitJoeSkeletonSkinSitePart76;
+begin
+
 { METHOD .FdChildren.Add }
 HAnimSegment1036.FdChildren.Add(HAnimSite1043);
 { METHOD .FdChildren.Add }
 HAnimJoint1035.FdChildren.Add(HAnimSegment1036);
-HAnimJoint1045 := THAnimJointNode.Create;
+HAnimJoint1045 := THAnimJointNode.Create;;
 HAnimJoint1045.Center := Vector3(-0.2,0.793,-0.015);
 HAnimJoint1045.SetSkinCoordIndex([254,255,256,269,270,271,279]);
 HAnimJoint1045.SetSkinCoordWeight([0.5,0.5,0.5,1,1,1,0.5]);
-HAnimSegment1046 := THAnimSegmentNode.Create;
-Shape1047 := TShapeNode.Create;
+HAnimSegment1046 := THAnimSegmentNode.Create;;
+Shape1047 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape1047.Appearance := Appearance64;
-IndexedLineSet1049 := TIndexedLineSetNode.Create;
+IndexedLineSet1049 := TIndexedLineSetNode.Create;;
 IndexedLineSet1049.SetCoordIndex([0,1,-1]);
-Coordinate1050 := TCoordinateNode.Create;
+Coordinate1050 := TCoordinateNode.Create;;
 Coordinate1050.SetPoint([Vector3(-0.2,0.793,-0.015),Vector3(-0.2,0.745,-0.015)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet1049.Coord := Coordinate1050;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape1047.Geometry := IndexedLineSet1049;
 { METHOD .FdChildren.Add }
 HAnimSegment1046.FdChildren.Add(Shape1047);
-Transform1051 := TTransformNode.Create;
+Transform1051 := TTransformNode.Create;;
 Transform1051.Translation := Vector3(-0.2,0.793,-0.015);
 { METHOD .FdChildren.Add }
 Transform1051.FdChildren.Add(Shape50);
@@ -5140,65 +5466,76 @@ Transform1051.FdChildren.Add(Shape50);
 HAnimSegment1046.FdChildren.Add(Transform1051);
 { METHOD .FdChildren.Add }
 HAnimJoint1045.FdChildren.Add(HAnimSegment1046);
-HAnimJoint1053 := THAnimJointNode.Create;
+HAnimJoint1053 := THAnimJointNode.Create;;
 HAnimJoint1053.Center := Vector3(-0.2,0.745,-0.015);
 HAnimJoint1053.SetSkinCoordIndex([282,283,284,285]);
 HAnimJoint1053.SetSkinCoordWeight([1,1,1,1]);
-HAnimSegment1054 := THAnimSegmentNode.Create;
-Shape1055 := TShapeNode.Create;
+HAnimSegment1054 := THAnimSegmentNode.Create;;
+Shape1055 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape1055.Appearance := Appearance64;
-IndexedLineSet1057 := TIndexedLineSetNode.Create;
+IndexedLineSet1057 := TIndexedLineSetNode.Create;;
 IndexedLineSet1057.SetCoordIndex([0,1,-1]);
-Coordinate1058 := TCoordinateNode.Create;
+end;
+
+procedure InitJoeSkeletonSkinSitePart77;
+begin
+
+Coordinate1058 := TCoordinateNode.Create;;
 Coordinate1058.SetPoint([Vector3(-0.2,0.745,-0.015),Vector3(-0.2,0.72,-0.015)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet1057.Coord := Coordinate1058;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape1055.Geometry := IndexedLineSet1057;
 { METHOD .FdChildren.Add }
 HAnimSegment1054.FdChildren.Add(Shape1055);
-Transform1059 := TTransformNode.Create;
+Transform1059 := TTransformNode.Create;;
 Transform1059.Translation := Vector3(-0.2,0.745,-0.015);
 { METHOD .FdChildren.Add }
 Transform1059.FdChildren.Add(Shape50);
 { METHOD .FdChildren.Add }
 HAnimSegment1054.FdChildren.Add(Transform1059);
-end;
-
-procedure InitJoeSkeletonSkinSitePart60;
-begin
-
 { METHOD .FdChildren.Add }
 HAnimJoint1053.FdChildren.Add(HAnimSegment1054);
-HAnimJoint1061 := THAnimJointNode.Create;
+HAnimJoint1061 := THAnimJointNode.Create;;
 HAnimJoint1061.Center := Vector3(-0.2,0.72,-0.015);
 HAnimJoint1061.SetSkinCoordIndex([286,287,288,289,290,291,292,293,294]);
 HAnimJoint1061.SetSkinCoordWeight([1,1,1,1,1,1,1,1,1]);
-HAnimSegment1062 := THAnimSegmentNode.Create;
-Shape1063 := TShapeNode.Create;
+HAnimSegment1062 := THAnimSegmentNode.Create;;
+Shape1063 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape1063.Appearance := Appearance64;
-IndexedLineSet1065 := TIndexedLineSetNode.Create;
+IndexedLineSet1065 := TIndexedLineSetNode.Create;;
 IndexedLineSet1065.SetCoordIndex([0,1,-1]);
-Coordinate1066 := TCoordinateNode.Create;
+Coordinate1066 := TCoordinateNode.Create;;
 Coordinate1066.SetPoint([Vector3(-0.2,0.72,-0.015),Vector3(-0.2,0.695,-0.015)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet1065.Coord := Coordinate1066;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape1063.Geometry := IndexedLineSet1065;
 { METHOD .FdChildren.Add }
 HAnimSegment1062.FdChildren.Add(Shape1063);
-Transform1067 := TTransformNode.Create;
+Transform1067 := TTransformNode.Create;;
 Transform1067.Translation := Vector3(-0.2,0.72,-0.015);
 { METHOD .FdChildren.Add }
 Transform1067.FdChildren.Add(Shape50);
 { METHOD .FdChildren.Add }
 HAnimSegment1062.FdChildren.Add(Transform1067);
-HAnimSite1069 := THAnimSiteNode.Create;
+HAnimSite1069 := THAnimSiteNode.Create;;
 HAnimSite1069.Translation := Vector3(-0.2,0.695,-0.015);
 { METHOD .FdChildren.Add }
 HAnimSite1069.FdChildren.Add(Shape57);
+end;
+
+procedure InitJoeSkeletonSkinSitePart78;
+begin
+
 { METHOD .FdChildren.Add }
 HAnimSegment1062.FdChildren.Add(HAnimSite1069);
 { METHOD .FdChildren.Add }
@@ -5211,30 +5548,28 @@ HAnimJoint1045.FdChildren.Add(HAnimJoint1053);
 HAnimJoint1035.FdChildren.Add(HAnimJoint1045);
 { METHOD .FdChildren.Add }
 HAnimJoint997.FdChildren.Add(HAnimJoint1035);
-HAnimJoint1071 := THAnimJointNode.Create;
+HAnimJoint1071 := THAnimJointNode.Create;;
 HAnimJoint1071.Center := Vector3(-0.2,0.835,-0.04);
 HAnimJoint1071.SetSkinCoordIndex([247,248]);
 HAnimJoint1071.SetSkinCoordWeight([1,1]);
-HAnimSegment1072 := THAnimSegmentNode.Create;
-Shape1073 := TShapeNode.Create;
+HAnimSegment1072 := THAnimSegmentNode.Create;;
+Shape1073 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape1073.Appearance := Appearance64;
-IndexedLineSet1075 := TIndexedLineSetNode.Create;
+IndexedLineSet1075 := TIndexedLineSetNode.Create;;
 IndexedLineSet1075.SetCoordIndex([0,1,-1]);
-Coordinate1076 := TCoordinateNode.Create;
+Coordinate1076 := TCoordinateNode.Create;;
 Coordinate1076.SetPoint([Vector3(-0.2,0.835,-0.04),Vector3(-0.2,0.788,-0.04)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet1075.Coord := Coordinate1076;
-end;
-
-procedure InitJoeSkeletonSkinSitePart61;
-begin
-
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape1073.Geometry := IndexedLineSet1075;
 { METHOD .FdChildren.Add }
 HAnimSegment1072.FdChildren.Add(Shape1073);
-Transform1077 := TTransformNode.Create;
+Transform1077 := TTransformNode.Create;;
 Transform1077.Translation := Vector3(-0.2,0.835,-0.04);
 { METHOD .FdChildren.Add }
 Transform1077.FdChildren.Add(Shape50);
@@ -5242,25 +5577,33 @@ Transform1077.FdChildren.Add(Shape50);
 HAnimSegment1072.FdChildren.Add(Transform1077);
 { METHOD .FdChildren.Add }
 HAnimJoint1071.FdChildren.Add(HAnimSegment1072);
-HAnimJoint1079 := THAnimJointNode.Create;
+HAnimJoint1079 := THAnimJointNode.Create;;
 HAnimJoint1079.Center := Vector3(-0.2,0.788,-0.04);
 HAnimJoint1079.SetSkinCoordIndex([272,273,279,280]);
 HAnimJoint1079.SetSkinCoordWeight([1,1,0.5,0.5]);
-HAnimSegment1080 := THAnimSegmentNode.Create;
-Shape1081 := TShapeNode.Create;
+HAnimSegment1080 := THAnimSegmentNode.Create;;
+Shape1081 := TShapeNode.Create;;
+end;
+
+procedure InitJoeSkeletonSkinSitePart79;
+begin
+
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape1081.Appearance := Appearance64;
-IndexedLineSet1083 := TIndexedLineSetNode.Create;
+IndexedLineSet1083 := TIndexedLineSetNode.Create;;
 IndexedLineSet1083.SetCoordIndex([0,1,-1]);
-Coordinate1084 := TCoordinateNode.Create;
+Coordinate1084 := TCoordinateNode.Create;;
 Coordinate1084.SetPoint([Vector3(-0.2,0.788,-0.04),Vector3(-0.2,0.74,-0.04)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet1083.Coord := Coordinate1084;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape1081.Geometry := IndexedLineSet1083;
 { METHOD .FdChildren.Add }
 HAnimSegment1080.FdChildren.Add(Shape1081);
-Transform1085 := TTransformNode.Create;
+Transform1085 := TTransformNode.Create;;
 Transform1085.Translation := Vector3(-0.2,0.788,-0.04);
 { METHOD .FdChildren.Add }
 Transform1085.FdChildren.Add(Shape50);
@@ -5268,68 +5611,74 @@ Transform1085.FdChildren.Add(Shape50);
 HAnimSegment1080.FdChildren.Add(Transform1085);
 { METHOD .FdChildren.Add }
 HAnimJoint1079.FdChildren.Add(HAnimSegment1080);
-HAnimJoint1087 := THAnimJointNode.Create;
+HAnimJoint1087 := THAnimJointNode.Create;;
 HAnimJoint1087.Center := Vector3(-0.2,0.74,-0.04);
 HAnimJoint1087.SetSkinCoordIndex([295,296,297,298]);
 HAnimJoint1087.SetSkinCoordWeight([1,1,1,1]);
-HAnimSegment1088 := THAnimSegmentNode.Create;
-Shape1089 := TShapeNode.Create;
+HAnimSegment1088 := THAnimSegmentNode.Create;;
+Shape1089 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape1089.Appearance := Appearance64;
-IndexedLineSet1091 := TIndexedLineSetNode.Create;
+IndexedLineSet1091 := TIndexedLineSetNode.Create;;
 IndexedLineSet1091.SetCoordIndex([0,1,-1]);
-Coordinate1092 := TCoordinateNode.Create;
+Coordinate1092 := TCoordinateNode.Create;;
 Coordinate1092.SetPoint([Vector3(-0.2,0.74,-0.04),Vector3(-0.2,0.7142,-0.04)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet1091.Coord := Coordinate1092;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape1089.Geometry := IndexedLineSet1091;
 { METHOD .FdChildren.Add }
 HAnimSegment1088.FdChildren.Add(Shape1089);
-end;
-
-procedure InitJoeSkeletonSkinSitePart62;
-begin
-
-Transform1093 := TTransformNode.Create;
+Transform1093 := TTransformNode.Create;;
 Transform1093.Translation := Vector3(-0.2,0.74,-0.04);
 { METHOD .FdChildren.Add }
 Transform1093.FdChildren.Add(Shape50);
 { METHOD .FdChildren.Add }
 HAnimSegment1088.FdChildren.Add(Transform1093);
+end;
+
+procedure InitJoeSkeletonSkinSitePart80;
+begin
+
 { METHOD .FdChildren.Add }
 HAnimJoint1087.FdChildren.Add(HAnimSegment1088);
-HAnimJoint1095 := THAnimJointNode.Create;
+HAnimJoint1095 := THAnimJointNode.Create;;
 HAnimJoint1095.Center := Vector3(-0.2,0.7142,-0.04);
 HAnimJoint1095.SetSkinCoordIndex([299,300,301,302,303,304,305,306,307]);
 HAnimJoint1095.SetSkinCoordWeight([1,1,1,1,1,1,1,1,1]);
-HAnimSegment1096 := THAnimSegmentNode.Create;
-Shape1097 := TShapeNode.Create;
+HAnimSegment1096 := THAnimSegmentNode.Create;;
+Shape1097 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape1097.Appearance := Appearance64;
-IndexedLineSet1099 := TIndexedLineSetNode.Create;
+IndexedLineSet1099 := TIndexedLineSetNode.Create;;
 IndexedLineSet1099.SetCoordIndex([0,1,-1]);
-Coordinate1100 := TCoordinateNode.Create;
+Coordinate1100 := TCoordinateNode.Create;;
 Coordinate1100.SetPoint([Vector3(-0.2,0.7142,-0.04),Vector3(-0.2,0.6758,-0.04)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet1099.Coord := Coordinate1100;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape1097.Geometry := IndexedLineSet1099;
 { METHOD .FdChildren.Add }
 HAnimSegment1096.FdChildren.Add(Shape1097);
-Transform1101 := TTransformNode.Create;
+Transform1101 := TTransformNode.Create;;
 Transform1101.Translation := Vector3(-0.2,0.7142,-0.04);
 { METHOD .FdChildren.Add }
 Transform1101.FdChildren.Add(Shape50);
 { METHOD .FdChildren.Add }
 HAnimSegment1096.FdChildren.Add(Transform1101);
-HAnimSite1103 := THAnimSiteNode.Create;
+HAnimSite1103 := THAnimSiteNode.Create;;
 HAnimSite1103.Translation := Vector3(-0.2,0.68,-0.04);
 { METHOD .FdChildren.Add }
 HAnimSite1103.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 HAnimSegment1096.FdChildren.Add(HAnimSite1103);
-HAnimSite1105 := THAnimSiteNode.Create;
+HAnimSite1105 := THAnimSiteNode.Create;;
 HAnimSite1105.Translation := Vector3(-0.2,0.68,-0.04);
 { METHOD .FdChildren.Add }
 HAnimSite1105.FdChildren.Add(Shape57);
@@ -5345,30 +5694,33 @@ HAnimJoint1079.FdChildren.Add(HAnimJoint1087);
 HAnimJoint1071.FdChildren.Add(HAnimJoint1079);
 { METHOD .FdChildren.Add }
 HAnimJoint997.FdChildren.Add(HAnimJoint1071);
-HAnimJoint1107 := THAnimJointNode.Create;
+end;
+
+procedure InitJoeSkeletonSkinSitePart81;
+begin
+
+HAnimJoint1107 := THAnimJointNode.Create;;
 HAnimJoint1107.Center := Vector3(-0.2,0.835,-0.065);
 HAnimJoint1107.SetSkinCoordIndex([249,250]);
 HAnimJoint1107.SetSkinCoordWeight([1,1]);
-end;
-
-procedure InitJoeSkeletonSkinSitePart63;
-begin
-
-HAnimSegment1108 := THAnimSegmentNode.Create;
-Shape1109 := TShapeNode.Create;
+HAnimSegment1108 := THAnimSegmentNode.Create;;
+Shape1109 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape1109.Appearance := Appearance64;
-IndexedLineSet1111 := TIndexedLineSetNode.Create;
+IndexedLineSet1111 := TIndexedLineSetNode.Create;;
 IndexedLineSet1111.SetCoordIndex([0,1,-1]);
-Coordinate1112 := TCoordinateNode.Create;
+Coordinate1112 := TCoordinateNode.Create;;
 Coordinate1112.SetPoint([Vector3(-0.2,0.835,-0.065),Vector3(-0.2,0.793,-0.065)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet1111.Coord := Coordinate1112;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape1109.Geometry := IndexedLineSet1111;
 { METHOD .FdChildren.Add }
 HAnimSegment1108.FdChildren.Add(Shape1109);
-Transform1113 := TTransformNode.Create;
+Transform1113 := TTransformNode.Create;;
 Transform1113.Translation := Vector3(-0.2,0.835,-0.065);
 { METHOD .FdChildren.Add }
 Transform1113.FdChildren.Add(Shape50);
@@ -5376,25 +5728,33 @@ Transform1113.FdChildren.Add(Shape50);
 HAnimSegment1108.FdChildren.Add(Transform1113);
 { METHOD .FdChildren.Add }
 HAnimJoint1107.FdChildren.Add(HAnimSegment1108);
-HAnimJoint1115 := THAnimJointNode.Create;
+HAnimJoint1115 := THAnimJointNode.Create;;
 HAnimJoint1115.Center := Vector3(-0.2,0.793,-0.065);
 HAnimJoint1115.SetSkinCoordIndex([274,275,280,281]);
 HAnimJoint1115.SetSkinCoordWeight([1,1,0.5,0.5]);
-HAnimSegment1116 := THAnimSegmentNode.Create;
-Shape1117 := TShapeNode.Create;
+HAnimSegment1116 := THAnimSegmentNode.Create;;
+Shape1117 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape1117.Appearance := Appearance64;
-IndexedLineSet1119 := TIndexedLineSetNode.Create;
+IndexedLineSet1119 := TIndexedLineSetNode.Create;;
 IndexedLineSet1119.SetCoordIndex([0,1,-1]);
-Coordinate1120 := TCoordinateNode.Create;
+Coordinate1120 := TCoordinateNode.Create;;
+end;
+
+procedure InitJoeSkeletonSkinSitePart82;
+begin
+
 Coordinate1120.SetPoint([Vector3(-0.2,0.793,-0.065),Vector3(-0.2,0.74,-0.065)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet1119.Coord := Coordinate1120;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape1117.Geometry := IndexedLineSet1119;
 { METHOD .FdChildren.Add }
 HAnimSegment1116.FdChildren.Add(Shape1117);
-Transform1121 := TTransformNode.Create;
+Transform1121 := TTransformNode.Create;;
 Transform1121.Translation := Vector3(-0.2,0.793,-0.065);
 { METHOD .FdChildren.Add }
 Transform1121.FdChildren.Add(Shape50);
@@ -5402,30 +5762,28 @@ Transform1121.FdChildren.Add(Shape50);
 HAnimSegment1116.FdChildren.Add(Transform1121);
 { METHOD .FdChildren.Add }
 HAnimJoint1115.FdChildren.Add(HAnimSegment1116);
-HAnimJoint1123 := THAnimJointNode.Create;
+HAnimJoint1123 := THAnimJointNode.Create;;
 HAnimJoint1123.Center := Vector3(-0.2,0.74,-0.065);
 HAnimJoint1123.SetSkinCoordIndex([308,309,310,311]);
 HAnimJoint1123.SetSkinCoordWeight([1,1,1,1]);
-HAnimSegment1124 := THAnimSegmentNode.Create;
-Shape1125 := TShapeNode.Create;
-end;
-
-procedure InitJoeSkeletonSkinSitePart64;
-begin
-
+HAnimSegment1124 := THAnimSegmentNode.Create;;
+Shape1125 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape1125.Appearance := Appearance64;
-IndexedLineSet1127 := TIndexedLineSetNode.Create;
+IndexedLineSet1127 := TIndexedLineSetNode.Create;;
 IndexedLineSet1127.SetCoordIndex([0,1,-1]);
-Coordinate1128 := TCoordinateNode.Create;
+Coordinate1128 := TCoordinateNode.Create;;
 Coordinate1128.SetPoint([Vector3(-0.2,0.74,-0.065),Vector3(-0.2,0.7177,-0.065)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet1127.Coord := Coordinate1128;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape1125.Geometry := IndexedLineSet1127;
 { METHOD .FdChildren.Add }
 HAnimSegment1124.FdChildren.Add(Shape1125);
-Transform1129 := TTransformNode.Create;
+Transform1129 := TTransformNode.Create;;
 Transform1129.Translation := Vector3(-0.2,0.74,-0.065);
 { METHOD .FdChildren.Add }
 Transform1129.FdChildren.Add(Shape50);
@@ -5433,31 +5791,39 @@ Transform1129.FdChildren.Add(Shape50);
 HAnimSegment1124.FdChildren.Add(Transform1129);
 { METHOD .FdChildren.Add }
 HAnimJoint1123.FdChildren.Add(HAnimSegment1124);
-HAnimJoint1131 := THAnimJointNode.Create;
+HAnimJoint1131 := THAnimJointNode.Create;;
 HAnimJoint1131.Center := Vector3(-0.2,0.7177,-0.065);
 HAnimJoint1131.SetSkinCoordIndex([312,313,314,315,316,317,318,319,320]);
 HAnimJoint1131.SetSkinCoordWeight([1,1,1,1,1,1,1,1,1]);
-HAnimSegment1132 := THAnimSegmentNode.Create;
-Shape1133 := TShapeNode.Create;
+end;
+
+procedure InitJoeSkeletonSkinSitePart83;
+begin
+
+HAnimSegment1132 := THAnimSegmentNode.Create;;
+Shape1133 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape1133.Appearance := Appearance64;
-IndexedLineSet1135 := TIndexedLineSetNode.Create;
+IndexedLineSet1135 := TIndexedLineSetNode.Create;;
 IndexedLineSet1135.SetCoordIndex([0,1,-1]);
-Coordinate1136 := TCoordinateNode.Create;
+Coordinate1136 := TCoordinateNode.Create;;
 Coordinate1136.SetPoint([Vector3(-0.2,0.7177,-0.065),Vector3(-0.2,0.695,-0.065)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet1135.Coord := Coordinate1136;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape1133.Geometry := IndexedLineSet1135;
 { METHOD .FdChildren.Add }
 HAnimSegment1132.FdChildren.Add(Shape1133);
-Transform1137 := TTransformNode.Create;
+Transform1137 := TTransformNode.Create;;
 Transform1137.Translation := Vector3(-0.2,0.7177,-0.065);
 { METHOD .FdChildren.Add }
 Transform1137.FdChildren.Add(Shape50);
 { METHOD .FdChildren.Add }
 HAnimSegment1132.FdChildren.Add(Transform1137);
-HAnimSite1139 := THAnimSiteNode.Create;
+HAnimSite1139 := THAnimSiteNode.Create;;
 HAnimSite1139.Translation := Vector3(-0.2,0.695,-0.065);
 { METHOD .FdChildren.Add }
 HAnimSite1139.FdChildren.Add(Shape57);
@@ -5473,36 +5839,39 @@ HAnimJoint1115.FdChildren.Add(HAnimJoint1123);
 HAnimJoint1107.FdChildren.Add(HAnimJoint1115);
 { METHOD .FdChildren.Add }
 HAnimJoint997.FdChildren.Add(HAnimJoint1107);
-end;
-
-procedure InitJoeSkeletonSkinSitePart65;
-begin
-
-HAnimJoint1141 := THAnimJointNode.Create;
+HAnimJoint1141 := THAnimJointNode.Create;;
 HAnimJoint1141.Center := Vector3(-0.2,0.84,-0.085);
 HAnimJoint1141.SetSkinCoordIndex([251,252,253,281]);
 HAnimJoint1141.SetSkinCoordWeight([1,1,1,0.5]);
-HAnimSegment1142 := THAnimSegmentNode.Create;
-Shape1143 := TShapeNode.Create;
+HAnimSegment1142 := THAnimSegmentNode.Create;;
+Shape1143 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape1143.Appearance := Appearance64;
 IndexedLineSet1145 := TIndexedLineSetNode.Create;
+end;
+
+procedure InitJoeSkeletonSkinSitePart84;
+begin
+;
 IndexedLineSet1145.SetCoordIndex([0,1,-1]);
-Coordinate1146 := TCoordinateNode.Create;
+Coordinate1146 := TCoordinateNode.Create;;
 Coordinate1146.SetPoint([Vector3(-0.2,0.84,-0.085),Vector3(-0.2,0.79,-0.085)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet1145.Coord := Coordinate1146;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape1143.Geometry := IndexedLineSet1145;
 { METHOD .FdChildren.Add }
 HAnimSegment1142.FdChildren.Add(Shape1143);
-Transform1147 := TTransformNode.Create;
+Transform1147 := TTransformNode.Create;;
 Transform1147.Translation := Vector3(-0.2,0.84,-0.085);
 { METHOD .FdChildren.Add }
 Transform1147.FdChildren.Add(Shape50);
 { METHOD .FdChildren.Add }
 HAnimSegment1142.FdChildren.Add(Transform1147);
-HAnimSite1149 := THAnimSiteNode.Create;
+HAnimSite1149 := THAnimSiteNode.Create;;
 HAnimSite1149.Translation := Vector3(-0.2,0.79,-0.095);
 { METHOD .FdChildren.Add }
 HAnimSite1149.FdChildren.Add(Shape57);
@@ -5510,56 +5879,62 @@ HAnimSite1149.FdChildren.Add(Shape57);
 HAnimSegment1142.FdChildren.Add(HAnimSite1149);
 { METHOD .FdChildren.Add }
 HAnimJoint1141.FdChildren.Add(HAnimSegment1142);
-HAnimJoint1151 := THAnimJointNode.Create;
+HAnimJoint1151 := THAnimJointNode.Create;;
 HAnimJoint1151.Center := Vector3(-0.2,0.79,-0.085);
 HAnimJoint1151.SetSkinCoordIndex([276,277,278]);
 HAnimJoint1151.SetSkinCoordWeight([1,1,1]);
-HAnimSegment1152 := THAnimSegmentNode.Create;
-Shape1153 := TShapeNode.Create;
+HAnimSegment1152 := THAnimSegmentNode.Create;;
+Shape1153 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape1153.Appearance := Appearance64;
-IndexedLineSet1155 := TIndexedLineSetNode.Create;
+IndexedLineSet1155 := TIndexedLineSetNode.Create;;
 IndexedLineSet1155.SetCoordIndex([0,1,-1]);
-Coordinate1156 := TCoordinateNode.Create;
+Coordinate1156 := TCoordinateNode.Create;;
 Coordinate1156.SetPoint([Vector3(-0.2,0.79,-0.085),Vector3(-0.2,0.755,-0.085)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet1155.Coord := Coordinate1156;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape1153.Geometry := IndexedLineSet1155;
 { METHOD .FdChildren.Add }
 HAnimSegment1152.FdChildren.Add(Shape1153);
-Transform1157 := TTransformNode.Create;
+Transform1157 := TTransformNode.Create;;
+end;
+
+procedure InitJoeSkeletonSkinSitePart85;
+begin
+
 Transform1157.Translation := Vector3(-0.2,0.79,-0.085);
 { METHOD .FdChildren.Add }
 Transform1157.FdChildren.Add(Shape50);
-end;
-
-procedure InitJoeSkeletonSkinSitePart66;
-begin
-
 { METHOD .FdChildren.Add }
 HAnimSegment1152.FdChildren.Add(Transform1157);
 { METHOD .FdChildren.Add }
 HAnimJoint1151.FdChildren.Add(HAnimSegment1152);
-HAnimJoint1159 := THAnimJointNode.Create;
+HAnimJoint1159 := THAnimJointNode.Create;;
 HAnimJoint1159.Center := Vector3(-0.2,0.755,-0.085);
 HAnimJoint1159.SetSkinCoordIndex([321,322,323,324]);
 HAnimJoint1159.SetSkinCoordWeight([1,1,1,1]);
-HAnimSegment1160 := THAnimSegmentNode.Create;
-Shape1161 := TShapeNode.Create;
+HAnimSegment1160 := THAnimSegmentNode.Create;;
+Shape1161 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape1161.Appearance := Appearance64;
-IndexedLineSet1163 := TIndexedLineSetNode.Create;
+IndexedLineSet1163 := TIndexedLineSetNode.Create;;
 IndexedLineSet1163.SetCoordIndex([0,1,-1]);
-Coordinate1164 := TCoordinateNode.Create;
+Coordinate1164 := TCoordinateNode.Create;;
 Coordinate1164.SetPoint([Vector3(-0.2,0.755,-0.085),Vector3(-0.2,0.735,-0.085)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet1163.Coord := Coordinate1164;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape1161.Geometry := IndexedLineSet1163;
 { METHOD .FdChildren.Add }
 HAnimSegment1160.FdChildren.Add(Shape1161);
-Transform1165 := TTransformNode.Create;
+Transform1165 := TTransformNode.Create;;
 Transform1165.Translation := Vector3(-0.2,0.755,-0.085);
 { METHOD .FdChildren.Add }
 Transform1165.FdChildren.Add(Shape50);
@@ -5567,36 +5942,39 @@ Transform1165.FdChildren.Add(Shape50);
 HAnimSegment1160.FdChildren.Add(Transform1165);
 { METHOD .FdChildren.Add }
 HAnimJoint1159.FdChildren.Add(HAnimSegment1160);
-HAnimJoint1167 := THAnimJointNode.Create;
+HAnimJoint1167 := THAnimJointNode.Create;;
 HAnimJoint1167.Center := Vector3(-0.2,0.735,-0.09);
 HAnimJoint1167.SetSkinCoordIndex([325,326,327,328,329,330,331,332,333]);
 HAnimJoint1167.SetSkinCoordWeight([1,1,1,1,1,1,1,1,1]);
-HAnimSegment1168 := THAnimSegmentNode.Create;
-Shape1169 := TShapeNode.Create;
+HAnimSegment1168 := THAnimSegmentNode.Create;;
+Shape1169 := TShapeNode.Create;;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape1169.Appearance := Appearance64;
 IndexedLineSet1171 := TIndexedLineSetNode.Create;
+end;
+
+procedure InitJoeSkeletonSkinSitePart86;
+begin
+;
 IndexedLineSet1171.SetCoordIndex([0,1,-1]);
-Coordinate1172 := TCoordinateNode.Create;
+Coordinate1172 := TCoordinateNode.Create;;
 Coordinate1172.SetPoint([Vector3(-0.2,0.735,-0.085),Vector3(-0.2,0.72,-0.085)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet1171.Coord := Coordinate1172;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape1169.Geometry := IndexedLineSet1171;
 { METHOD .FdChildren.Add }
 HAnimSegment1168.FdChildren.Add(Shape1169);
-Transform1173 := TTransformNode.Create;
+Transform1173 := TTransformNode.Create;;
 Transform1173.Translation := Vector3(-0.2,0.735,-0.085);
 { METHOD .FdChildren.Add }
 Transform1173.FdChildren.Add(Shape50);
 { METHOD .FdChildren.Add }
 HAnimSegment1168.FdChildren.Add(Transform1173);
-HAnimSite1175 := THAnimSiteNode.Create;
-end;
-
-procedure InitJoeSkeletonSkinSitePart67;
-begin
-
+HAnimSite1175 := THAnimSiteNode.Create;;
 HAnimSite1175.Translation := Vector3(-0.2,0.72,-0.085);
 { METHOD .FdChildren.Add }
 HAnimSite1175.FdChildren.Add(Shape57);
@@ -5646,6 +6024,11 @@ HAnimJoint465.FdChildren.Add(HAnimJoint473);
 HAnimJoint457.FdChildren.Add(HAnimJoint465);
 { METHOD .FdChildren.Add }
 HAnimJoint449.FdChildren.Add(HAnimJoint457);
+end;
+
+procedure InitJoeSkeletonSkinSitePart87;
+begin
+
 { METHOD .FdChildren.Add }
 HAnimJoint423.FdChildren.Add(HAnimJoint449);
 { METHOD .FdChildren.Add }
@@ -5658,44 +6041,44 @@ HAnimJoint392.FdChildren.Add(HAnimJoint407);
 HAnimJoint78.FdChildren.Add(HAnimJoint392);
 { METHOD .FdSkeleton.Add }
 HAnimHumanoid75.FdSkeleton.Add(HAnimJoint78);
-Shape1177 := TShapeNode.Create;
-Appearance1178 := TAppearanceNode.Create;
-Material1179 := TMaterialNode.Create;
+Shape1177 := TShapeNode.Create;;
+Appearance1178 := TAppearanceNode.Create;;
+Material1179 := TMaterialNode.Create;;
 Material1179.AmbientIntensity := 0.6;
 Material1179.DiffuseColor := Vector3(1,1,1);
 Material1179.Shininess := 0.6;
 Material1179.Transparency := 0.2;
 { METHOD .SetMaterial }
 Appearance1178.Material := Material1179;
-ImageTexture1180 := TImageTextureNode.Create;
-end;
-
-procedure InitJoeSkeletonSkinSitePart68;
-begin
-
+ImageTexture1180 := TImageTextureNode.Create;;
 ImageTexture1180.Description := 'Blue Spiral Pattern';
 ImageTexture1180.SetUrl(['zBlueSpiralBkg2.gif','https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif']);
 { METHOD .Texture }
+{ METHOD.SET .Texture }
 Appearance1178.Texture := ImageTexture1180;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape1177.Appearance := Appearance1178;
-IndexedFaceSet1181 := TIndexedFaceSetNode.Create;
+IndexedFaceSet1181 := TIndexedFaceSetNode.Create;;
 IndexedFaceSet1181.SetCoordIndex([0,9,5,-1,0,7,9,-1,0,5,1,-1,1,5,2,-1,1,3,7,-1,2,4,3,-1,0,1,7,-1,1,2,3,-1,5,6,2,-1,7,3,8,-1,6,4,2,-1,3,4,8,-1,9,6,5,-1,9,7,8,-1,4,6,10,-1,4,10,12,-1,4,12,8,-1,10,11,12,-1,9,75,24,-1,9,24,74,-1,9,8,75,-1,9,74,6,-1,10,6,74,-1,12,75,8,-1,74,24,29,-1,24,77,29,-1,10,74,29,-1,77,32,29,-1,32,78,29,-1,78,30,29,-1,30,10,29,-1,41,24,75,-1,41,75,12,-1,41,12,42,-1,41,42,80,-1,41,80,44,-1,41,44,79,-1,41,79,24,-1,81,24,79,-1,81,77,24,-1,81,25,77,-1,81,79,25,-1,25,79,44,-1,25,32,77,-1,25,83,32,-1,25,26,83,-1,25,27,26,-1,25,84,27,-1,25,44,84,-1,11,10,30,-1,11,30,13,-1,11,13,15,-1,11,15,14,-1,11,14,42,-1,11,42,12,-1,15,13,16,-1,15,18,14,-1,15,16,76,-1,15,76,18,-1,76,16,17,-1,76,17,82,-1,76,82,19,-1,76,19,18,-1,22,18,19,-1,22,87,18,-1,22,27,84,-1,22,84,87,-1,87,84,85,-1,85,84,44,-1,85,42,14,-1,87,14,18,-1,87,85,14,-1,20,83,26,-1,20,17,16,-1,20,16,88,-1,20,88,83,-1,88,16,13,-1,88,13,86,-1,88,86,83,-1,86,13,30,-1,86,32,83,-1,23,89,22,-1,89,27,22,-1,89,91,27,-1,91,26,27,-1,91,20,26,-1,21,20,91,-1,21,17,20,-1,21,92,17,-1,82,17,92,-1,82,90,19,-1,23,22,19,-1,23,19,90,-1,82,92,101,-1,82,101,99,-1,82,99,93,-1,82,93,95,-1,82,95,97,-1,82,97,90,-1,23,90,97,-1,23,97,94,-1,23,94,89,-1,89,94,96,-1,89,96,95,-1,89,95,93,-1,89,93,91,-1,91,93,99,-1,91,99,100,-1,91,100,98,-1,21,91,98,-1,21,98,101,-1,21,101,92,-1,85,105,42,-1,85,103,105,-1,85,44,103,-1,103,44,104,-1,80,42,105,-1,80,105,102,-1,80,102,104,-1,80,104,44,-1,105,109,102,-1,102,109,47,-1,47,104,102,-1,104,47,45,-1,104,45,103,-1,103,45,46,-1,103,46,109,-1,103,109,105,-1,109,112,110,-1,109,110,47,-1,47,110,111,-1,47,111,45,-1,45,111,113,-1,113,46,45,-1,46,113,112,-1,112,109,46,-1,112,118,110,-1,110,118,115,-1,110,115,111,-1,111,115,117,-1,111,117,113,-1,113,117,116,-1,113,116,112,-1,112,116,118,-1,115,118,119,-1,119,118,122,-1,118,116,122,-1,122,116,120,-1,116,117,120,-1,120,117,121,-1,117,115,121,-1,115,119,121,-1,119,127,123,-1,119,122,127,-1,122,126,127,-1,122,128,126,-1,122,120,128,-1,120,124,128,-1,120,121,124,-1,121,125,124,-1,121,119,125,-1,119,123,125,-1,127,129,123,-1,127,126,129,-1,129,126,141,-1,141,126,143,-1,126,142,143,-1,126,128,142,-1,128,124,130,-1,142,128,130,-1,124,132,130,-1,124,134,132,-1,125,134,124,-1,125,136,134,-1,125,137,136,-1,125,135,137,-1,125,133,135,-1,125,123,133,-1,123,131,133,-1,123,129,131,-1,131,129,138,-1,129,141,138,-1,138,141,144,-1,141,143,144,-1,143,146,144,-1,142,146,143,-1,142,145,146,-1,139,145,142,-1,130,139,142,-1,139,130,132,-1,139,132,154,-1,132,157,154,-1,132,159,157,-1,132,134,159,-1,134,136,159,-1,136,161,159,-1,136,137,161,-1,137,162,161,-1,160,162,137,-1,135,160,137,-1,133,160,135,-1,133,158,160,-1,131,158,133,-1,156,158,131,-1,153,156,131,-1,131,138,153,-1,138,155,153,-1,140,155,138,-1,138,144,140,-1,144,147,140,-1,140,147,145,-1,140,145,139,-1,139,155,140,-1,154,155,139,-1,146,149,144,-1,146,151,149,-1,145,151,146,-1,150,151,145,-1,145,152,150,-1,147,152,145,-1,147,149,152,-1,147,144,149,-1,148,149,151,-1,148,152,149,-1,148,150,152,-1,148,151,150,-1,160,207,162,-1,160,205,207,-1,165,208,205,-1,160,165,205,-1,158,165,160,-1,161,162,207,-1,161,207,206,-1,165,206,208,-1,206,165,161,-1,161,165,159,-1,207,209,211,-1,205,209,207,-1,205,212,209,-1,205,208,212,-1,206,212,208,-1,206,210,212,-1,206,207,210,-1,207,211,210,-1,209,212,213,-1,212,216,213,-1,212,214,216,-1,210,214,212,-1,210,215,214,-1,210,211,215,-1,209,215,211,-1,209,213,215,-1,217,213,216,-1,217,215,213,-1,217,214,215,-1,217,216,214,-1,158,194,165,-1,192,194,158,-1,164,195,192,-1,158,164,192,-1,156,164,158,-1,159,194,165,-1,159,194,193,-1,159,193,195,-1,159,195,164,-1,159,164,157,-1,157,164,180,-1,192,198,194,-1,192,196,198,-1,192,195,196,-1,195,199,196,-1,196,199,200,-1,199,203,200,-1,193,199,195,-1,193,197,199,-1,193,198,197,-1,193,194,198,-1,199,201,203,-1,197,201,199,-1,197,198,201,-1,198,202,201,-1,196,202,198,-1,200,202,196,-1,204,202,200,-1,204,201,202,-1,204,203,201,-1,204,200,203,-1,156,181,164,-1,156,179,181,-1,156,182,179,-1,156,163,182,-1,163,180,182,-1,157,180,163,-1,164,181,180,-1,179,182,183,-1,182,186,183,-1,182,184,186,-1,180,184,182,-1,180,181,184,-1,181,185,184,-1,179,185,181,-1,183,185,179,-1,183,186,187,-1,186,190,187,-1,184,190,186,-1,184,188,190,-1,184,185,188,-1,185,189,188,-1,185,183,189,-1,183,187,189,-1,191,189,187,-1,191,188,189,-1,191,190,188,-1,191,187,190,-1,153,163,156,-1,153,168,163,-1,153,166,168,-1,153,169,166,-1,155,169,153,-1,155,167,169,-1,154,167,155,-1,154,163,167,-1,154,157,163,-1,163,168,167,-1,166,169,170,-1,169,173,170,-1,169,171,173,-1,169,167,171,-1,167,168,171,-1,168,172,171,-1,168,170,172,-1,170,168,166,-1,170,173,174,-1,173,177,174,-1,173,175,177,-1,173,171,175,-1,171,172,175,-1,172,176,175,-1,172,174,176,-1,170,174,172,-1,178,176,174,-1,178,175,176,-1,178,177,175,-1,178,174,177,-1,86,30,221,-1,86,221,219,-1,86,219,32,-1,32,219,220,-1,78,32,220,-1,78,220,218,-1,78,218,221,-1,78,221,30,-1,221,225,219,-1,219,225,35,-1,35,33,219,-1,33,220,219,-1,33,34,220,-1,220,34,218,-1,221,218,34,-1,34,225,221,-1,225,226,228,-1,225,228,35,-1,35,228,229,-1,35,229,33,-1,33,229,227,-1,33,227,34,-1,34,227,226,-1,34,226,225,-1,226,234,228,-1,228,234,232,-1,232,229,228,-1,232,233,229,-1,229,233,227,-1,227,233,231,-1,227,231,226,-1,226,231,234,-1,231,235,234,-1,235,238,234,-1,234,238,232,-1,238,236,232,-1,232,236,233,-1,236,237,233,-1,233,237,231,-1,231,237,235,-1,235,239,243,-1,235,243,238,-1,238,243,242,-1,238,242,244,-1,238,244,236,-1,236,244,240,-1,236,240,237,-1,237,240,241,-1,237,241,235,-1,235,241,239,-1,243,239,245,-1,243,245,242,-1,245,257,242,-1,257,259,242,-1,242,259,258,-1,242,258,244,-1,244,246,240,-1,258,246,244,-1,240,246,248,-1,240,248,250,-1,241,240,250,-1,241,250,252,-1,241,252,253,-1,241,253,251,-1,241,251,249,-1,241,249,239,-1,239,249,247,-1,239,247,245,-1,247,254,245,-1,245,254,257,-1,254,260,257,-1,257,260,259,-1,259,260,262,-1,258,259,262,-1,258,262,261,-1,255,258,261,-1,246,258,255,-1,255,248,246,-1,255,270,248,-1,248,270,273,-1,248,273,275,-1,248,275,250,-1,250,275,252,-1,252,275,277,-1,252,277,253,-1,253,277,278,-1,276,253,278,-1,251,253,276,-1,249,251,276,-1,249,276,274,-1,247,249,274,-1,272,247,274,-1,269,247,272,-1,247,269,254,-1,254,269,271,-1,256,254,271,-1,254,256,260,-1,260,256,263,-1,256,261,263,-1,256,255,261,-1,255,256,271,-1,270,255,271,-1,262,260,265,-1,262,265,267,-1,261,262,267,-1,266,261,267,-1,261,266,268,-1,263,261,268,-1,263,268,265,-1,263,265,260,-1,264,267,265,-1,264,265,268,-1,264,268,266,-1,264,266,267,-1,276,278,323,-1,276,323,321,-1,281,321,324,-1,276,321,281,-1,274,276,281,-1,277,323,278,-1,277,322,323,-1,281,324,322,-1,322,277,281,-1,277,275,281,-1,323,327,325,-1,321,323,325,-1,321,325,328,-1,321,328,324,-1,322,324,328,-1,322,328,326,-1,322,326,323,-1,323,326,327,-1,325,329,328,-1,328,329,332,-1,328,332,330,-1,326,328,330,-1,326,330,331,-1,326,331,327,-1,325,327,331,-1,325,331,329,-1,333,332,329,-1,333,329,331,-1,333,331,330,-1,333,330,332,-1,274,281,310,-1,308,274,310,-1,280,308,311,-1,274,308,280,-1,272,274,280,-1,275,310,281,-1,275,309,310,-1,275,311,309,-1,275,280,311,-1,275,273,280,-1,273,296,280,-1,308,310,314,-1,308,314,312,-1,308,312,311,-1,311,312,315,-1,312,316,315,-1,315,316,319,-1,309,311,315,-1,309,315,313,-1,309,313,314,-1,309,314,310,-1,315,319,317,-1,313,315,317,-1,313,317,314,-1,314,317,318,-1,312,314,318,-1,316,312,318,-1,320,316,318,-1,320,318,317,-1,320,317,319,-1,320,319,316,-1,272,280,297,-1,272,297,295,-1,272,295,298,-1,272,298,279,-1,279,298,296,-1,273,279,296,-1,280,296,297,-1,295,299,298,-1,298,299,302,-1,298,302,300,-1,296,298,300,-1,296,300,297,-1,297,300,301,-1,295,297,301,-1,299,295,301,-1,299,303,302,-1,302,303,306,-1,300,302,306,-1,300,306,304,-1,300,304,301,-1,301,304,305,-1,301,305,299,-1,299,305,303,-1,307,303,305,-1,307,305,304,-1,307,304,306,-1,307,306,303,-1,269,272,279,-1,269,279,284,-1,269,284,282,-1,269,282,285,-1,271,269,285,-1,271,285,283,-1,270,271,283,-1,270,283,279,-1,270,279,273,-1,279,283,284,-1,282,286,285,-1,285,286,289,-1,285,289,287,-1,285,287,283,-1,283,287,284,-1,284,287,288,-1,284,288,286,-1,286,282,284,-1,286,290,289,-1,289,290,293,-1,289,293,291,-1,289,291,287,-1,287,291,288,-1,288,291,292,-1,288,292,290,-1,286,288,290,-1,294,290,292,-1,294,292,291,-1,294,291,293,-1,294,293,290,-1,97,334,336,-1,97,336,94,-1,94,336,96,-1,336,335,96,-1,96,335,95,-1,95,335,337,-1,95,337,334,-1,95,334,97,-1,334,341,336,-1,336,341,338,-1,336,338,335,-1,335,338,340,-1,335,340,337,-1,337,340,339,-1,337,339,334,-1,334,339,341,-1,341,345,342,-1,341,342,338,-1,338,342,340,-1,340,342,344,-1,340,344,339,-1,339,344,343,-1,339,343,345,-1,339,345,341,-1,345,349,342,-1,342,349,351,-1,342,351,346,-1,342,346,344,-1,71,346,348,-1,71,344,346,-1,71,348,347,-1,71,347,344,-1,344,347,343,-1,343,347,352,-1,343,352,349,-1,343,349,345,-1,349,352,356,-1,349,356,353,-1,349,353,355,-1,349,355,351,-1,354,356,352,-1,354,352,350,-1,354,350,351,-1,354,351,355,-1,353,356,357,-1,353,357,358,-1,353,358,359,-1,353,359,360,-1,353,360,361,-1,353,361,355,-1,354,357,356,-1,350,346,351,-1,348,346,347,-1,350,347,346,-1,350,352,347,-1,354,358,357,-1,354,359,358,-1,354,360,359,-1,354,361,360,-1,354,355,361,-1,101,362,365,-1,101,365,99,-1,99,365,100,-1,100,365,363,-1,100,363,98,-1,98,363,364,-1,98,364,101,-1,101,364,362,-1,362,369,367,-1,362,367,365,-1,365,367,363,-1,363,367,368,-1,363,367,368,-1,363,368,366,-1,363,366,364,-1,364,366,362,-1,362,366,369,-1,369,373,371,-1,369,371,367,-1,367,371,368,-1,368,371,372,-1,368,372,366,-1,366,372,370,-1,366,370,369,-1,369,370,373,-1,373,377,380,-1,373,380,375,-1,373,375,371,-1,371,375,372,-1,372,375,376,-1,372,376,374,-1,372,374,370,-1,370,374,379,-1,373,370,379,-1,373,379,377,-1,377,379,383,-1,377,383,381,-1,377,381,384,-1,377,384,380,-1,381,383,389,-1,381,389,388,-1,381,388,387,-1,381,387,386,-1,381,386,385,-1,381,385,384,-1,376,375,374,-1,378,379,374,-1,378,374,375,-1,378,375,380,-1,382,386,387,-1,382,387,388,-1,382,388,389,-1,382,389,383,-1,382,383,379,-1,382,379,378,-1,382,378,380,-1,382,380,384,-1,382,384,385,-1,382,385,386,-1]);
 IndexedFaceSet1181.CreaseAngle := 3.1;
-Color1182 := TColorNode.Create;
+Color1182 := TColorNode.Create;;
 Color1182.SetColor([Vector3(1,0,0),Vector3(0,1,1),Vector3(0,1,0),Vector3(1,1,0),Vector3(1,1,0),Vector3(1,0,0),Vector3(0,1,0),Vector3(0,0,1),Vector3(0,1,1),Vector3(0,1,1),Vector3(1,1,0),Vector3(1,1,0),Vector3(1,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,1,0),Vector3(1,0,1),Vector3(1,0,0),Vector3(1,0,0),Vector3(1,1,0),Vector3(1,1,0),Vector3(1,1,1),Vector3(1,0,0),Vector3(0,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(1,1,1),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(1,1,0),Vector3(0,1,0),Vector3(0,0,1),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(0,0,1),Vector3(1,1,0),Vector3(0,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(0,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(1,1,0),Vector3(0,0,1),Vector3(0,0,1),Vector3(0,0,1),Vector3(1,1,0),Vector3(0,1,0),Vector3(0,0,1),Vector3(1,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(0,0,1),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(1,0,1),Vector3(1,1,0),Vector3(0,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(1,1,0),Vector3(0,1,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(1,0,1),Vector3(1,0,1),Vector3(1,0,1),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,1),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(1,0,0),Vector3(0,1,0),Vector3(0,0,1),Vector3(0,1,1),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(1,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,1),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,1),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,1,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,1,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,1,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,1),Vector3(1,0,0),Vector3(1,0,1),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(1,0,1),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(0,1,0),Vector3(0,0,1),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(0,0,1),Vector3(1,1,0),Vector3(1,0,1),Vector3(1,0,1),Vector3(1,0,1),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,1),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(1,0,0),Vector3(0,1,0),Vector3(0,0,1),Vector3(0,1,1),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(1,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,1),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,1),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,1,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,1,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,1,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(0,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,1),Vector3(1,0,0),Vector3(1,0,1),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,0,0),Vector3(1,0,1),Vector3(0,0,1),Vector3(0,1,0),Vector3(0,1,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,1),Vector3(1,1,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(0,0,1),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(1,1,0),Vector3(0,1,0),Vector3(0,0,1),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,1),Vector3(1,1,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(0,0,1),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(1,1,0),Vector3(0,1,0),Vector3(0,0,1),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,0,1),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(0,1,0),Vector3(1,1,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,1),Vector3(0,1,0),Vector3(1,0,1),Vector3(1,1,1)]);
 end;
 
-procedure InitJoeSkeletonSkinSitePart69;
+procedure InitJoeSkeletonSkinSitePart88;
 begin
 
 { METHOD .Color }
+{ METHOD.SET .Color }
 IndexedFaceSet1181.Color := Color1182;
-Coordinate1183 := TCoordinateNode.Create;
+Coordinate1183 := TCoordinateNode.Create;;
 Coordinate1183.SetPoint([Vector3(0,1.77,0),Vector3(0,1.665,0.09),Vector3(-0.033,1.62,0.087),Vector3(0.033,1.62,0.087),Vector3(0,1.55,0.097),Vector3(-0.077,1.64,-0.01),Vector3(-0.0527,1.58,0.015),Vector3(0.077,1.64,-0.01),Vector3(0.0527,1.58,0.015),Vector3(0,1.625,-0.0925),Vector3(-0.03,1.46,0.035),Vector3(0,1.44,0.03),Vector3(0.03,1.46,0.035),Vector3(-0.1135,1.318,0.095),Vector3(0.1135,1.318,0.095),Vector3(0,1.25,0.113),Vector3(-0.087,1.19,0.09),Vector3(-0.0935,1.03,0.075),Vector3(0.087,1.19,0.09),Vector3(0.0935,1.03,0.075),Vector3(-0.1425,1.065,0.0033),Vector3(-0.15,0.9,-0.01),Vector3(0.1425,1.065,0.0033),Vector3(0.15,0.9,-0.01),Vector3(0,1.53,-0.084),Vector3(0.0049,1.1908,-0.1113),Vector3(-0.0773,1.019,-0.12),Vector3(0.0773,1.019,-0.12),Vector3(0.005,1.0915,-0.1091),Vector3(-0.178,1.4825,-0.0625),Vector3(-0.17,1.38,0.007),Vector3(-0.1884,0.8676,-0.036),Vector3(-0.16,1.38,-0.127),Vector3(-0.2,1.1388,-0.08),Vector3(-0.244,1.1388,-0.04),Vector3(-0.165,1.1388,-0.04),Vector3(-0.23,1.133,-0.055),Vector3(-0.1977,0.8169,-0.0177),Vector3(-0.1941,0.6772,-0.0423),Vector3(-0.2117,0.8562,-0.0584),Vector3(-0.1929,0.789,-0.1064),Vector3(0.175,1.4825,-0.06),Vector3(0.17,1.38,0.007),Vector3(0.1901,0.8645,-0.0415),Vector3(0.16,1.38,-0.125),Vector3(0.2,1.1388,-0.08),Vector3(0.165,1.1388,-0.04),Vector3(0.244,1.1388,-0.04),Vector3(0.23,1.133,-0.055),Vector3(0.2009,0.8139,-0.0237),Vector3(0.2056,0.6743,-0.0482),Vector3(0.2142,0.8529,-0.0648),Vector3(0.1929,0.786,-0.1122),Vector3(-0.1,0.4913,-0.03),Vector3(-0.17,0.466,0),Vector3(-0.05,0.466,0),Vector3(-0.165,0.01,0.12),Vector3(-0.15,0.07,0),Vector3(-0.085,0.086,0.0125),Vector3(-0.09,0.056,0.0125),Vector3(-0.115,0.02,0.122),Vector3(-0.115,0.04,-0.055),Vector3(-0.11,0.011,0.19),Vector3(0.0993,0.4881,-0.0309),Vector3(0.17,0.466,0),Vector3(0.05,0.4867,0),Vector3(0.165,0.01,0.12),Vector3(0.15,0.07,0),Vector3(0.085,0.086,0.0125),Vector3(0.09,0.056,0.0125),Vector3(0.115,0.02,0.122),Vector3(0.115,0.04,-0.055),Vector3(0.11,0.011,0.19),Vector3(0,0.875,0),Vector3(-0.0646,1.5149,-0.038),Vector3(0.0646,1.5149,-0.038),Vector3(0,1.0723,0.09),Vector3(-0.11,1.427,-0.1375),Vector3(-0.235,1.42,-0.0625),Vector3(0.11,1.427,-0.1375),Vector3(0.235,1.42,-0.0625),Vector3(0,1.41,-0.145),Vector3(0,0.925,0.08),Vector3(-0.087,1.19,-0.09),Vector3(0.087,1.19,-0.09),Vector3(0.172,1.32,-0.03),Vector3(-0.172,1.32,-0.03),Vector3(0.15,1.23,-0.015),Vector3(-0.15,1.23,-0.015),Vector3(0.079,0.92,-0.14),Vector3(0.1,0.9,0.077),Vector3(-0.079,0.92,-0.14),Vector3(-0.1,0.9,0.075),Vector3(0,0.87,0),Vector3(0.171,0.65,0),Vector3(0.02,0.65,0),Vector3(0.1,0.65,-0.08),Vector3(0.1,0.65,0.07),Vector3(-0.171,0.65,0),Vector3(-0.02,0.65,0),Vector3(-0.1,0.65,-0.08),Vector3(-0.1,0.65,0.07),Vector3(0.25,1.27,-0.04),Vector3(0.17,1.27,-0.04),Vector3(0.2,1.27,-0.09),Vector3(0.2,1.27,0.02),Vector3(0.244,1.1388,-0.04),Vector3(0.165,1.1388,-0.04),Vector3(0.2,1.1388,-0.08),Vector3(0.2,1.1388,-0.013),Vector3(0.225,1,-0.01),Vector3(0.225,1,-0.07),Vector3(0.185,1,-0.01),Vector3(0.185,1,-0.07),Vector3(0.2,1.1388,-0.04),Vector3(0.225,0.92,-0.04),Vector3(0.175,0.92,-0.04),Vector3(0.2,0.92,-0.065),Vector3(0.2,0.92,-0.015),Vector3(0.225,0.89,-0.04),Vector3(0.175,0.89,-0.04),Vector3(0.2,0.89,-0.065),Vector3(0.2,0.89,-0.015),Vector3(0.218,0.86,-0.04),Vector3(0.184,0.86,-0.04),Vector3(0.2,0.87,-0.07),Vector3(0.2,0.87,0),Vector3(0.21,0.85,0),Vector3(0.1854,0.85,0),Vector3(0.212,0.84,-0.015),Vector3(0.183,0.84,-0.015),Vector3(0.213,0.835,-0.04),Vector3(0.19,0.835,-0.04),Vector3(0.211,0.835,-0.065),Vector3(0.192,0.835,-0.065),Vector3(0.208,0.84,-0.085),Vector3(0.19,0.84,-0.085),Vector3(0.2,0.84,-0.095),Vector3(0.215,0.82,0),Vector3(0.193,0.815,0.005),Vector3(0.198,0.8,0.012),Vector3(0.21,0.82,0.03),Vector3(0.19,0.82,0.03),Vector3(0.2,0.835,0.039),Vector3(0.212,0.8,0.05),Vector3(0.188,0.8,0.05),Vector3(0.2,0.807,0.057),Vector3(0.2,0.793,0.035),Vector3(0.2,0.774,0.076),Vector3(0.212,0.78,0.07),Vector3(0.188,0.78,0.07),Vector3(0.2,0.785,0.075),Vector3(0.2,0.77,0.062),Vector3(0.215,0.793,-0.015),Vector3(0.187,0.793,-0.015),Vector3(0.2,0.793,-0.005),Vector3(0.215,0.788,-0.04),Vector3(0.187,0.788,-0.04),Vector3(0.215,0.793,-0.065),Vector3(0.187,0.793,-0.065),Vector3(0.21,0.79,-0.085),Vector3(0.19,0.79,-0.085),Vector3(0.2,0.79,-0.095),Vector3(0.19,0.77,-0.0275),Vector3(0.19,0.77,-0.0525),Vector3(0.19,0.78,-0.0775),Vector3(0.212,0.745,-0.015),Vector3(0.188,0.745,-0.02),Vector3(0.2,0.745,-0.0255),Vector3(0.2,0.745,-0.0045),Vector3(0.211,0.72,-0.015),Vector3(0.189,0.72,-0.015),Vector3(0.2,0.72,-0.0252),Vector3(0.2,0.72,-0.0048),Vector3(0.21,0.695,-0.015),Vector3(0.19,0.695,-0.015),Vector3(0.2,0.695,-0.025),Vector3(0.2,0.695,-0.005),Vector3(0.2,0.685,-0.015),Vector3(0.215,0.74,-0.04),Vector3(0.185,0.74,-0.04),Vector3(0.2,0.74,-0.055),Vector3(0.2,0.74,-0.025),Vector3(0.21,0.7142,-0.04),Vector3(0.19,0.7142,-0.04),Vector3(0.2,0.7142,-0.053),Vector3(0.2,0.7142,-0.027),Vector3(0.21,0.68,-0.04),Vector3(0.19,0.68,-0.04),Vector3(0.2,0.68,-0.05),Vector3(0.2,0.68,-0.03),Vector3(0.2,0.67,-0.04),Vector3(0.212,0.74,-0.065),Vector3(0.188,0.74,-0.065),Vector3(0.2,0.74,-0.0756),Vector3(0.2,0.74,-0.0542),Vector3(0.21,0.7177,-0.065),Vector3(0.19,0.7177,-0.065),Vector3(0.2,0.7177,-0.0751),Vector3(0.2,0.7177,-0.0549),Vector3(0.21,0.695,-0.065),Vector3(0.19,0.695,-0.065),Vector3(0.2,0.695,-0.075),Vector3(0.2,0.695,-0.055),Vector3(0.2,0.685,-0.065),Vector3(0.211,0.755,-0.085),Vector3(0.189,0.755,-0.085),Vector3(0.2,0.755,-0.0952),Vector3(0.2,0.755,-0.0748),Vector3(0.21,0.735,-0.085),Vector3(0.19,0.735,-0.085),Vector3(0.2,0.735,-0.0951),Vector3(0.2,0.735,-0.0749),Vector3(0.21,0.72,-0.085),Vector3(0.19,0.72,-0.085),Vector3(0.2,0.72,-0.095),Vector3(0.2,0.72,-0.075),Vector3(0.2,0.71,-0.085),Vector3(-0.23,1.23,-0.04),Vector3(-0.16,1.23,-0.04),Vector3(-0.2,1.235,-0.105),Vector3(-0.2,1.235,0.02),Vector3(-0.244,1.1388,-0.04),Vector3(-0.165,1.1388,-0.04),Vector3(-0.2,1.1388,-0.08),Vector3(-0.2,1.1388,0.013),Vector3(-0.225,1,-0.01),Vector3(-0.225,1,-0.07),Vector3(-0.185,1,-0.01),Vector3(-0.185,1,-0.07),Vector3(-0.2,1.1388,-0.04),Vector3(-0.225,0.92,-0.04),Vector3(-0.175,0.92,-0.04),Vector3(-0.2,0.92,-0.065),Vector3(-0.2,0.92,-0.015),Vector3(-0.225,0.89,-0.04),Vector3(-0.175,0.89,-0.04),Vector3(-0.2,0.89,-0.065),Vector3(-0.2,0.89,-0.015),Vector3(-0.218,0.86,-0.04),Vector3(-0.184,0.86,-0.04),Vector3(-0.2,0.87,-0.07),Vector3(-0.2,0.87,0),Vector3(-0.21,0.85,0),Vector3(-0.1854,0.85,0),Vector3(-0.212,0.84,-0.015),Vector3(-0.183,0.84,-0.015),Vector3(-0.213,0.835,-0.04),Vector3(-0.19,0.835,-0.04),Vector3(-0.211,0.835,-0.065),Vector3(-0.192,0.835,-0.065),Vector3(-0.208,0.84,-0.085),Vector3(-0.19,0.84,-0.085),Vector3(-0.2,0.84,-0.095),Vector3(-0.215,0.82,0),Vector3(-0.193,0.815,0.005),Vector3(-0.198,0.8,0.012),Vector3(-0.21,0.82,0.03),Vector3(-0.19,0.82,0.03),Vector3(-0.2,0.835,0.039),Vector3(-0.212,0.8,0.05),Vector3(-0.188,0.8,0.05),Vector3(-0.2,0.807,0.057),Vector3(-0.2,0.793,0.035),Vector3(-0.2,0.774,0.076),Vector3(-0.212,0.78,0.07),Vector3(-0.188,0.78,0.07),Vector3(-0.2,0.785,0.075),Vector3(-0.2,0.77,0.062),Vector3(-0.215,0.793,-0.015),Vector3(-0.187,0.793,-0.015),Vector3(-0.2,0.793,-0.005),Vector3(-0.215,0.788,-0.04),Vector3(-0.187,0.788,-0.04),Vector3(-0.215,0.793,-0.065),Vector3(-0.187,0.793,-0.065),Vector3(-0.21,0.79,-0.085),Vector3(-0.19,0.79,-0.085),Vector3(-0.2,0.79,-0.095),Vector3(-0.19,0.77,-0.0275),Vector3(-0.19,0.77,-0.0525),Vector3(-0.19,0.78,-0.0775),Vector3(-0.212,0.745,-0.015),Vector3(-0.188,0.745,-0.02),Vector3(-0.2,0.745,-0.0255),Vector3(-0.2,0.745,-0.0045),Vector3(-0.211,0.72,-0.015),Vector3(-0.189,0.72,-0.015),Vector3(-0.2,0.72,-0.0252),Vector3(-0.2,0.72,-0.0048),Vector3(-0.21,0.695,-0.015),Vector3(-0.19,0.695,-0.015),Vector3(-0.2,0.695,-0.025),Vector3(-0.2,0.695,-0.005),Vector3(-0.2,0.685,-0.015),Vector3(-0.215,0.74,-0.04),Vector3(-0.185,0.74,-0.04),Vector3(-0.2,0.74,-0.055),Vector3(-0.2,0.74,-0.025),Vector3(-0.21,0.7142,-0.04),Vector3(-0.19,0.7142,-0.04),Vector3(-0.2,0.7142,-0.053),Vector3(-0.2,0.7142,-0.027),Vector3(-0.21,0.68,-0.04),Vector3(-0.19,0.68,-0.04),Vector3(-0.2,0.68,-0.05),Vector3(-0.2,0.68,-0.03),Vector3(-0.2,0.67,-0.04),Vector3(-0.212,0.74,-0.065),Vector3(-0.188,0.74,-0.065),Vector3(-0.2,0.74,-0.0756),Vector3(-0.2,0.74,-0.0542),Vector3(-0.21,0.7177,-0.065),Vector3(-0.19,0.7177,-0.065),Vector3(-0.2,0.7177,-0.0751),Vector3(-0.2,0.7177,-0.0549),Vector3(-0.21,0.695,-0.065),Vector3(-0.19,0.695,-0.065),Vector3(-0.2,0.695,-0.075),Vector3(-0.2,0.695,-0.055),Vector3(-0.2,0.685,-0.065),Vector3(-0.211,0.755,-0.085),Vector3(-0.189,0.755,-0.085),Vector3(-0.2,0.755,-0.0952),Vector3(-0.2,0.755,-0.0748),Vector3(-0.21,0.735,-0.085),Vector3(-0.19,0.735,-0.085),Vector3(-0.2,0.735,-0.0951),Vector3(-0.2,0.735,-0.0749),Vector3(-0.21,0.72,-0.085),Vector3(-0.19,0.72,-0.085),Vector3(-0.2,0.72,-0.095),Vector3(-0.2,0.72,-0.075),Vector3(-0.2,0.71,-0.085),Vector3(0.115,0.466,0.06),Vector3(0.115,0.466,-0.055),Vector3(0.15,0.466,0),Vector3(0.05,0.466,0),Vector3(0.17,0.3,0),Vector3(0.06,0.3,0),Vector3(0.1,0.3,-0.05),Vector3(0.1,0.3,0.05),Vector3(0.15,0.07,0),Vector3(0.085,0.086,0.0125),Vector3(0.115,0.069,-0.045),Vector3(0.117,0.0975,0.0615),Vector3(0.1375,0.006,-0.03),Vector3(0.095,0.006,-0.03),Vector3(0.115,0.015,-0.045),Vector3(0.115,0.06,0.1),Vector3(0.115,0,0.07),Vector3(0.165,0,0.07),Vector3(0.095,0,0.07),Vector3(0.115,0.04,0.13),Vector3(0.125,0,0.12),Vector3(0.165,0,0.12),Vector3(0.087,0,0.122),Vector3(0.09,0.012,0.188),Vector3(0.11,0.011,0.19),Vector3(0.128,0.011,0.185),Vector3(0.142,0.011,0.178),Vector3(0.154,0.01,0.168),Vector3(-0.115,0.466,0.06),Vector3(-0.115,0.466,-0.055),Vector3(-0.17,0.466,0),Vector3(-0.05,0.466,0),Vector3(-0.17,0.3,0),Vector3(-0.06,0.3,0),Vector3(-0.1,0.3,-0.05),Vector3(-0.1,0.3,0.05),Vector3(-0.15,0.07,0),Vector3(-0.085,0.086,0.0125),Vector3(-0.115,0.069,-0.045),Vector3(-0.117,0.0975,0.0615),Vector3(-0.1375,0.006,-0.03),Vector3(-0.095,0.006,-0.03),Vector3(-0.095,0.006,-0.03),Vector3(-0.115,0.06,0.1),Vector3(-0.115,0,0.07),Vector3(-0.165,0,0.07),Vector3(-0.095,0,0.07),Vector3(-0.115,0.04,0.13),Vector3(-0.125,0,0.12),Vector3(-0.165,0,0.12),Vector3(-0.087,0,0.122),Vector3(-0.09,0.012,0.188),Vector3(-0.11,0.011,0.19),Vector3(-0.128,0.011,0.185),Vector3(-0.142,0.011,0.178),Vector3(-0.154,0.01,0.168)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedFaceSet1181.Coord := Coordinate1183;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape1177.Geometry := IndexedFaceSet1181;
 { METHOD .SetSkin }
 HAnimHumanoid75.Skin := Shape1177;
@@ -5741,13 +6124,13 @@ HAnimHumanoid75.FdJoints.Add(HAnimJoint545);
 HAnimHumanoid75.FdJoints.Add(HAnimJoint553);
 { METHOD .FdJoints.Add }
 HAnimHumanoid75.FdJoints.Add(HAnimJoint565);
-{ METHOD .FdJoints.Add }
-HAnimHumanoid75.FdJoints.Add(HAnimJoint577);
 end;
 
-procedure InitJoeSkeletonSkinSitePart70;
+procedure InitJoeSkeletonSkinSitePart89;
 begin
 
+{ METHOD .FdJoints.Add }
+HAnimHumanoid75.FdJoints.Add(HAnimJoint577);
 { METHOD .FdJoints.Add }
 HAnimHumanoid75.FdJoints.Add(HAnimJoint585);
 { METHOD .FdJoints.Add }
@@ -5826,13 +6209,13 @@ HAnimHumanoid75.FdJoints.Add(HAnimJoint719);
 HAnimHumanoid75.FdJoints.Add(HAnimJoint975);
 { METHOD .FdJoints.Add }
 HAnimHumanoid75.FdJoints.Add(HAnimJoint653);
-{ METHOD .FdJoints.Add }
-HAnimHumanoid75.FdJoints.Add(HAnimJoint661);
 end;
 
-procedure InitJoeSkeletonSkinSitePart71;
+procedure InitJoeSkeletonSkinSitePart90;
 begin
 
+{ METHOD .FdJoints.Add }
+HAnimHumanoid75.FdJoints.Add(HAnimJoint661);
 { METHOD .FdJoints.Add }
 HAnimHumanoid75.FdJoints.Add(HAnimJoint120);
 { METHOD .FdJoints.Add }
@@ -5911,13 +6294,13 @@ HAnimHumanoid75.FdSegments.Add(HAnimSegment424);
 HAnimHumanoid75.FdSegments.Add(HAnimSegment416);
 { METHOD .FdSegments.Add }
 HAnimHumanoid75.FdSegments.Add(HAnimSegment408);
-{ METHOD .FdSegments.Add }
-HAnimHumanoid75.FdSegments.Add(HAnimSegment398);
 end;
 
-procedure InitJoeSkeletonSkinSitePart72;
+procedure InitJoeSkeletonSkinSitePart91;
 begin
 
+{ METHOD .FdSegments.Add }
+HAnimHumanoid75.FdSegments.Add(HAnimSegment398);
 { METHOD .FdSegments.Add }
 HAnimHumanoid75.FdSegments.Add(HAnimSegment91);
 { METHOD .FdSegments.Add }
@@ -5996,13 +6379,13 @@ HAnimHumanoid75.FdSegments.Add(HAnimSegment902);
 HAnimHumanoid75.FdSegments.Add(HAnimSegment1160);
 { METHOD .FdSegments.Add }
 HAnimHumanoid75.FdSegments.Add(HAnimSegment764);
-{ METHOD .FdSegments.Add }
-HAnimHumanoid75.FdSegments.Add(HAnimSegment1016);
 end;
 
-procedure InitJoeSkeletonSkinSitePart73;
+procedure InitJoeSkeletonSkinSitePart92;
 begin
 
+{ METHOD .FdSegments.Add }
+HAnimHumanoid75.FdSegments.Add(HAnimSegment1016);
 { METHOD .FdSegments.Add }
 HAnimHumanoid75.FdSegments.Add(HAnimSegment790);
 { METHOD .FdSegments.Add }
@@ -6081,13 +6464,13 @@ HAnimHumanoid75.FdSegments.Add(HAnimSegment696);
 HAnimHumanoid75.FdSegments.Add(HAnimSegment946);
 { METHOD .SetSites }
 HAnimHumanoid75.Sites := HAnimSite563;
-{ METHOD .SetSites }
-HAnimHumanoid75.Sites := HAnimSite118;
 end;
 
-procedure InitJoeSkeletonSkinSitePart74;
+procedure InitJoeSkeletonSkinSitePart93;
 begin
 
+{ METHOD .SetSites }
+HAnimHumanoid75.Sites := HAnimSite118;
 { METHOD .SetSites }
 HAnimHumanoid75.Sites := HAnimSite115;
 { METHOD .SetSites }
@@ -6166,13 +6549,13 @@ HAnimHumanoid75.Sites := HAnimSite144;
 HAnimHumanoid75.Sites := HAnimSite280;
 { METHOD .SetSites }
 HAnimHumanoid75.Sites := HAnimSite649;
-{ METHOD .SetSites }
-HAnimHumanoid75.Sites := HAnimSite645;
 end;
 
-procedure InitJoeSkeletonSkinSitePart75;
+procedure InitJoeSkeletonSkinSitePart94;
 begin
 
+{ METHOD .SetSites }
+HAnimHumanoid75.Sites := HAnimSite645;
 { METHOD .SetSites }
 HAnimHumanoid75.Sites := HAnimSite717;
 { METHOD .SetSites }
@@ -6251,13 +6634,13 @@ HAnimHumanoid75.Sites := HAnimSite254;
 HAnimHumanoid75.Sites := HAnimSite390;
 { METHOD .SetSites }
 HAnimHumanoid75.Sites := HAnimSite493;
-{ METHOD .SetSites }
-HAnimHumanoid75.Sites := HAnimSite491;
 end;
 
-procedure InitJoeSkeletonSkinSitePart76;
+procedure InitJoeSkeletonSkinSitePart95;
 begin
 
+{ METHOD .SetSites }
+HAnimHumanoid75.Sites := HAnimSite491;
 { METHOD .SetSites }
 HAnimHumanoid75.Sites := HAnimSite647;
 { METHOD .SetSites }
@@ -6277,7 +6660,7 @@ Group73.FdChildren.Add(Group74);
 { METHOD .FdChildren.Add }
 Group32.FdChildren.Add(Group73);
 { expected best practice: EXPORT AS='fileName' for clarity }
-EXPORT1452 := TEXPORTNode.Create;
+EXPORT1452 := TEXPORTNode.Create;;
 EXPORT1452.AS := 'JoeSkeletonSkinSite';
 EXPORT1452.LocalDEF := 'Joe_Human';
 { METHOD .FdChildren.Add }
@@ -6365,6 +6748,25 @@ InitJoeSkeletonSkinSitePart73;
 InitJoeSkeletonSkinSitePart74;
 InitJoeSkeletonSkinSitePart75;
 InitJoeSkeletonSkinSitePart76;
+InitJoeSkeletonSkinSitePart77;
+InitJoeSkeletonSkinSitePart78;
+InitJoeSkeletonSkinSitePart79;
+InitJoeSkeletonSkinSitePart80;
+InitJoeSkeletonSkinSitePart81;
+InitJoeSkeletonSkinSitePart82;
+InitJoeSkeletonSkinSitePart83;
+InitJoeSkeletonSkinSitePart84;
+InitJoeSkeletonSkinSitePart85;
+InitJoeSkeletonSkinSitePart86;
+InitJoeSkeletonSkinSitePart87;
+InitJoeSkeletonSkinSitePart88;
+InitJoeSkeletonSkinSitePart89;
+InitJoeSkeletonSkinSitePart90;
+InitJoeSkeletonSkinSitePart91;
+InitJoeSkeletonSkinSitePart92;
+InitJoeSkeletonSkinSitePart93;
+InitJoeSkeletonSkinSitePart94;
+InitJoeSkeletonSkinSitePart95;
 Result := X3D0;
 end;
 

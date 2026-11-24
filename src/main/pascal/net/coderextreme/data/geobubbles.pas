@@ -2,7 +2,7 @@ unit geobubbles;
 
 interface
 
-uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
 
 function Creategeobubbles: TX3DRootNode;
 
@@ -47,16 +47,16 @@ X3D0.Meta['identifier'] := 'https://coderextreme.net/X3DJSONLD/src/main/data/geo
 X3D0.Meta['description'] := 'geo bubbles';
 { METHOD .Meta }
 { METHOD .Head }
-Group8 := TGroupNode.Create;
+Group8 := TGroupNode.Create;;
 { Viewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views'/ }
 { PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/ }
-GeoViewpoint9 := TGeoViewpointNode.Create;
+GeoViewpoint9 := TGeoViewpointNode.Create;;
 GeoViewpoint9.Position := Vector3Double(0,0,4);
 GeoViewpoint9.Orientation := Vector4(1,0,0,0);
 GeoViewpoint9.Description := 'Tour Views';
 { METHOD .FdChildren.Add }
 Group8.FdChildren.Add(GeoViewpoint9);
-Background10 := TBackgroundNode.Create;
+Background10 := TBackgroundNode.Create;;
 Background10.SetBackUrl(['../resources/images/BK.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png']);
 Background10.SetBottomUrl(['../resources/images/BT.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png']);
 Background10.SetFrontUrl(['../resources/images/FR.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png']);
@@ -65,39 +65,41 @@ Background10.SetRightUrl(['../resources/images/RT.png','https://coderextreme.net
 Background10.SetTopUrl(['../resources/images/TP.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png']);
 { METHOD .FdChildren.Add }
 Group8.FdChildren.Add(Background10);
-Transform11 := TTransformNode.Create;
-Shape12 := TShapeNode.Create;
-Sphere13 := TSphereNode.Create;
+Transform11 := TTransformNode.Create;;
+Shape12 := TShapeNode.Create;;
+Sphere13 := TSphereNode.Create;;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape12.Geometry := Sphere13;
-Appearance14 := TAppearanceNode.Create;
-Material15 := TMaterialNode.Create;
+Appearance14 := TAppearanceNode.Create;;
+Material15 := TMaterialNode.Create;;
 Material15.DiffuseColor := Vector3(0.7,0.7,0.7);
 Material15.SpecularColor := Vector3(0.5,0.5,0.5);
-{ METHOD .SetMaterial }
-Appearance14.Material := Material15;
-{ METHOD .Appearance }
-Shape12.Appearance := Appearance14;
-{ METHOD .FdChildren.Add }
-Transform11.FdChildren.Add(Shape12);
-{ METHOD .FdChildren.Add }
-Group8.FdChildren.Add(Transform11);
-TimeSensor16 := TTimeSensorNode.Create;
-TimeSensor16.CycleInterval := 5;
-TimeSensor16.Loop := True;
-{ METHOD .FdChildren.Add }
-Group8.FdChildren.Add(TimeSensor16);
 end;
 
 procedure InitgeobubblesPart1;
 begin
 
-GeoPositionInterpolator17 := TGeoPositionInterpolatorNode.Create;
+{ METHOD .SetMaterial }
+Appearance14.Material := Material15;
+{ METHOD .Appearance }
+{ METHOD.SET .Appearance }
+Shape12.Appearance := Appearance14;
+{ METHOD .FdChildren.Add }
+Transform11.FdChildren.Add(Shape12);
+{ METHOD .FdChildren.Add }
+Group8.FdChildren.Add(Transform11);
+TimeSensor16 := TTimeSensorNode.Create;;
+TimeSensor16.CycleInterval := 5;
+TimeSensor16.Loop := True;
+{ METHOD .FdChildren.Add }
+Group8.FdChildren.Add(TimeSensor16);
+GeoPositionInterpolator17 := TGeoPositionInterpolatorNode.Create;;
 GeoPositionInterpolator17.SetKey([0,1]);
 GeoPositionInterpolator17.SetKeyValue(0.0015708,0,4,0,0.0015708,4);
 { METHOD .FdChildren.Add }
 Group8.FdChildren.Add(GeoPositionInterpolator17);
-Script18 := TScriptNode.Create;
+Script18 := TScriptNode.Create;;
 SFTime19 := TSFTime.CreateUndefined(Script18, false, 'set_cycle');
 { METHOD .Fd.AddCustomField }
 Script18.AddCustomField(SFTime19);
@@ -139,7 +141,7 @@ Group8.AddRoute(TimeSensor16.EventCycleTime, Script18.EventSet_cycle);
 { METHOD .AddX3DROUTE }
 { Original "RandomTourTime.position TO TourPosition.keyValue }
 { Sample RandomTourTime.position TO TourPosition.keyValue}
-Group8.AddRoute(RandomTourTime.[object Object], GeoPositionInterpolator17.keyValue);
+Group8.AddRoute(RandomTourTime.undefined, GeoPositionInterpolator17.keyValue);
 { METHOD .AddX3DROUTE }
 { Original "TourTime.EventFraction_changed TO TourPosition.EventSet_fraction }
 { Sample TourTime.EventFraction_changed TO TourPosition.EventSet_fraction}

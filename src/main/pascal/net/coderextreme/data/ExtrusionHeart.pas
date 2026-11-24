@@ -2,7 +2,7 @@ unit ExtrusionHeart;
 
 interface
 
-uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
 
 function CreateExtrusionHeart: TX3DRootNode;
 
@@ -43,31 +43,38 @@ X3D0.Meta['generator'] := 'X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit';
 X3D0.Meta['license'] := '../license.html';
 { METHOD .Meta }
 { METHOD .Head }
-Group10 := TGroupNode.Create;
-Viewpoint11 := TViewpointNode.Create;
+Group10 := TGroupNode.Create;;
+Viewpoint11 := TViewpointNode.Create;;
 Viewpoint11.Description := 'Extrusion Heart';
 Viewpoint11.Orientation := Vector4(1,0,0,1.57);
 Viewpoint11.Position := Vector3(0,-4,0);
 { METHOD .FdChildren.Add }
 Group10.FdChildren.Add(Viewpoint11);
-Transform12 := TTransformNode.Create;
+Transform12 := TTransformNode.Create;;
 Transform12.Translation := Vector3(0,-0.5,0);
-Shape13 := TShapeNode.Create;
-Extrusion14 := TExtrusionNode.Create;
+Shape13 := TShapeNode.Create;;
+Extrusion14 := TExtrusionNode.Create;;
 Extrusion14.CreaseAngle := 3.14159;
 Extrusion14.SetCrossSection([Vector2(0,0.8),Vector2(0.2,1),Vector2(0.7,0.95),Vector2(1,0.5),Vector2(0.8,0),Vector2(0.5,-0.3),Vector2(0,-0.7),Vector2(-0.5,-0.3),Vector2(-0.8,0),Vector2(-1,0.5),Vector2(-0.7,0.95),Vector2(-0.2,1),Vector2(0,0.8)]);
 Extrusion14.SetScale([Vector2(0.01,0.01),Vector2(0.8,0.8),Vector2(1,1),Vector2(0.8,0.8),Vector2(0.01,0.01)]);
 Extrusion14.Solid := False;
 Extrusion14.SetSpine([Vector3(0,0,0),Vector3(0,0.1,0),Vector3(0,0.5,0),Vector3(0,0.9,0),Vector3(0,1,0)]);
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape13.Geometry := Extrusion14;
-Appearance15 := TAppearanceNode.Create;
-Material16 := TMaterialNode.Create;
+Appearance15 := TAppearanceNode.Create;;
+Material16 := TMaterialNode.Create;;
 Material16.DiffuseColor := Vector3(0.8,0.3,0.3);
 { METHOD .SetMaterial }
 Appearance15.Material := Material16;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape13.Appearance := Appearance15;
+end;
+
+procedure InitExtrusionHeartPart1;
+begin
+
 { METHOD .FdChildren.Add }
 Transform12.FdChildren.Add(Shape13);
 { METHOD .FdChildren.Add }
@@ -79,6 +86,7 @@ end;
 function CreateExtrusionHeart: TX3DRootNode;
 begin
 InitExtrusionHeartPart0;
+InitExtrusionHeartPart1;
 Result := X3D0;
 end;
 

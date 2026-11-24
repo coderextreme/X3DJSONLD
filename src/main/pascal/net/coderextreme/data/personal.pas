@@ -2,7 +2,7 @@ unit personal;
 
 interface
 
-uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
 
 function Createpersonal: TX3DRootNode;
 
@@ -32,13 +32,13 @@ X3D0.Meta['description'] := 'Johns Portfolio';
 X3D0.Meta['generator'] := 'vim and X3D-Edit, https://savage.nps.edu/X3D-Edit';
 { METHOD .Meta }
 { METHOD .Head }
-Group6 := TGroupNode.Create;
-Viewpoint7 := TViewpointNode.Create;
+Group6 := TGroupNode.Create;;
+Viewpoint7 := TViewpointNode.Create;;
 Viewpoint7.Description := 'Tour Views';
 Viewpoint7.Position := Vector3(0,0,12);
 { METHOD .FdChildren.Add }
 Group6.FdChildren.Add(Viewpoint7);
-Switch8 := TSwitchNode.Create;
+Switch8 := TSwitchNode.Create;;
 Switch8.WhichChoice := 0;
 { <Inline url='"../data/myextrusion.x3d" "https://coderextreme.net/X3DJSONLD/src/main/data/myextrusion.x3d"'/> }
 { <Inline url='"../data/ballx_ite.x3d" "https://coderextreme.net/X3DJSONLD/src/main/data/ballx_ite.x3d"'/> }
@@ -48,7 +48,7 @@ Switch8.WhichChoice := 0;
 { <Inline url='"../data/flowers2.x3d" "https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d"'/> }
 { <Inline url='"../data/flowers4.x3d" "https://coderextreme.net/X3DJSONLD/src/main/data/flowers4.x3d"'/> }
 { <Inline url='"../data/flowers7.x3d" "https://coderextreme.net/X3DJSONLD/src/main/data/flowers7.x3d"'/> }
-Inline9 := TInlineNode.Create;
+Inline9 := TInlineNode.Create;;
 Inline9.SetUrl(['../data/force-tidy.x3d','https://coderextreme.net/X3DJSONLD/src/main/data/force-tidy.x3d']);
 { METHOD .FdChildren.Add }
 Switch8.FdChildren.Add(Inline9);

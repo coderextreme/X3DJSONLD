@@ -2,7 +2,7 @@ unit HAnimModelHandRight;
 
 interface
 
-uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
 
 function CreateHAnimModelHandRight: TX3DRootNode;
 
@@ -332,246 +332,282 @@ X3D0.Meta['generator'] := 'X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit';
 X3D0.Meta['license'] := '../license.html';
 { METHOD .Meta }
 { METHOD .Head }
-Group24 := TGroupNode.Create;
-WorldInfo25 := TWorldInfoNode.Create;
+Group24 := TGroupNode.Create;;
+WorldInfo25 := TWorldInfoNode.Create;;
 WorldInfo25.Title := 'HAnimModelHandRight.x3d';
 { METHOD .FdChildren.Add }
 Group24.FdChildren.Add(WorldInfo25);
-HAnimHumanoid26 := THAnimHumanoidNode.Create;
+HAnimHumanoid26 := THAnimHumanoidNode.Create;;
 HAnimHumanoid26.Loa := 4;
 HAnimHumanoid26.Version := '2.0';
 { original HAnimHumanoid info='"authorName=Kwan-Hee YOO, Don Brutzman and Joe Williams"' }
-MetadataSet27 := TMetadataSetNode.Create;
+MetadataSet27 := TMetadataSetNode.Create;;
 MetadataSet27.Reference := 'https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid';
 MetadataString28 := TMetadataStringNode.Create;
-MetadataString28.SetValue(['Kwan-Hee YOO, Don Brutzman and Joe Williams']);
-{ METHOD .FdValue.Add }
-MetadataSet27.FdValue.Add(MetadataString28);
-{ METHOD .Metadata }
-HAnimHumanoid26.Metadata := MetadataSet27;
-HAnimJoint29 := THAnimJointNode.Create;
 end;
 
 procedure InitHAnimModelHandRightPart1;
 begin
-
+;
+MetadataString28.SetValue(['Kwan-Hee YOO, Don Brutzman and Joe Williams']);
+{ METHOD .FdValue.Add }
+MetadataSet27.FdValue.Add(MetadataString28);
+{ METHOD .Metadata }
+{ METHOD.SET .Metadata }
+HAnimHumanoid26.Metadata := MetadataSet27;
+HAnimJoint29 := THAnimJointNode.Create;;
 { Might consider putting a HAnimSegment here, but that doesn't help with re-use of this hand model }
-HAnimJoint30 := THAnimJointNode.Create;
+HAnimJoint30 := THAnimJointNode.Create;;
 HAnimJoint30.Description := 'connection joint of hand to leg above';
-HAnimSegment31 := THAnimSegmentNode.Create;
-Transform32 := TTransformNode.Create;
-Shape33 := TShapeNode.Create;
-Sphere34 := TSphereNode.Create;
+HAnimSegment31 := THAnimSegmentNode.Create;;
+Transform32 := TTransformNode.Create;;
+Shape33 := TShapeNode.Create;;
+Sphere34 := TSphereNode.Create;;
 Sphere34.Radius := 0.025;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape33.Geometry := Sphere34;
-Appearance35 := TAppearanceNode.Create;
-Material36 := TMaterialNode.Create;
+Appearance35 := TAppearanceNode.Create;;
+Material36 := TMaterialNode.Create;;
 Material36.DiffuseColor := Vector3(0,0,1);
 { METHOD .SetMaterial }
 Appearance35.Material := Material36;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape33.Appearance := Appearance35;
 { METHOD .FdChildren.Add }
 Transform32.FdChildren.Add(Shape33);
 { METHOD .FdChildren.Add }
 HAnimSegment31.FdChildren.Add(Transform32);
-Shape37 := TShapeNode.Create;
-Appearance38 := TAppearanceNode.Create;
-Material39 := TMaterialNode.Create;
+Shape37 := TShapeNode.Create;;
+Appearance38 := TAppearanceNode.Create;;
+Material39 := TMaterialNode.Create;;
 Material39.EmissiveColor := Vector3(1,1,1);
 { METHOD .SetMaterial }
 Appearance38.Material := Material39;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape37.Appearance := Appearance38;
-IndexedLineSet40 := TIndexedLineSetNode.Create;
+IndexedLineSet40 := TIndexedLineSetNode.Create;;
 IndexedLineSet40.SetCoordIndex([0,1]);
-Coordinate41 := TCoordinateNode.Create;
-Coordinate41.SetPoint([Vector3(0,0,0),Vector3(-0.1,0.1,0)]);
-{ METHOD .Coord }
-IndexedLineSet40.Coord := Coordinate41;
-{ METHOD .Geometry }
-Shape37.Geometry := IndexedLineSet40;
-{ METHOD .FdChildren.Add }
-HAnimSegment31.FdChildren.Add(Shape37);
-Shape42 := TShapeNode.Create;
-Appearance43 := TAppearanceNode.Create;
-Material44 := TMaterialNode.Create;
-Material44.EmissiveColor := Vector3(1,1,1);
-{ METHOD .SetMaterial }
-Appearance43.Material := Material44;
-{ METHOD .Appearance }
-Shape42.Appearance := Appearance43;
-IndexedLineSet45 := TIndexedLineSetNode.Create;
-IndexedLineSet45.SetCoordIndex([0,1]);
-Coordinate46 := TCoordinateNode.Create;
-Coordinate46.SetPoint([Vector3(0,0,0),Vector3(0,0.07,0)]);
-{ METHOD .Coord }
-IndexedLineSet45.Coord := Coordinate46;
-{ METHOD .Geometry }
-Shape42.Geometry := IndexedLineSet45;
 end;
 
 procedure InitHAnimModelHandRightPart2;
 begin
 
+Coordinate41 := TCoordinateNode.Create;;
+Coordinate41.SetPoint([Vector3(0,0,0),Vector3(-0.1,0.1,0)]);
+{ METHOD .Coord }
+{ METHOD.SET .Coord }
+IndexedLineSet40.Coord := Coordinate41;
+{ METHOD .Geometry }
+{ METHOD.SET .Geometry }
+Shape37.Geometry := IndexedLineSet40;
+{ METHOD .FdChildren.Add }
+HAnimSegment31.FdChildren.Add(Shape37);
+Shape42 := TShapeNode.Create;;
+Appearance43 := TAppearanceNode.Create;;
+Material44 := TMaterialNode.Create;;
+Material44.EmissiveColor := Vector3(1,1,1);
+{ METHOD .SetMaterial }
+Appearance43.Material := Material44;
+{ METHOD .Appearance }
+{ METHOD.SET .Appearance }
+Shape42.Appearance := Appearance43;
+IndexedLineSet45 := TIndexedLineSetNode.Create;;
+IndexedLineSet45.SetCoordIndex([0,1]);
+Coordinate46 := TCoordinateNode.Create;;
+Coordinate46.SetPoint([Vector3(0,0,0),Vector3(0,0.07,0)]);
+{ METHOD .Coord }
+{ METHOD.SET .Coord }
+IndexedLineSet45.Coord := Coordinate46;
+{ METHOD .Geometry }
+{ METHOD.SET .Geometry }
+Shape42.Geometry := IndexedLineSet45;
 { METHOD .FdChildren.Add }
 HAnimSegment31.FdChildren.Add(Shape42);
-Shape47 := TShapeNode.Create;
-Appearance48 := TAppearanceNode.Create;
-Material49 := TMaterialNode.Create;
+Shape47 := TShapeNode.Create;;
+Appearance48 := TAppearanceNode.Create;;
+Material49 := TMaterialNode.Create;;
 Material49.EmissiveColor := Vector3(1,1,1);
 { METHOD .SetMaterial }
 Appearance48.Material := Material49;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape47.Appearance := Appearance48;
-IndexedLineSet50 := TIndexedLineSetNode.Create;
+IndexedLineSet50 := TIndexedLineSetNode.Create;;
 IndexedLineSet50.SetCoordIndex([0,1]);
-Coordinate51 := TCoordinateNode.Create;
+Coordinate51 := TCoordinateNode.Create;;
 Coordinate51.SetPoint([Vector3(0,0,0),Vector3(0.1,0.1,0)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet50.Coord := Coordinate51;
+end;
+
+procedure InitHAnimModelHandRightPart3;
+begin
+
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape47.Geometry := IndexedLineSet50;
 { METHOD .FdChildren.Add }
 HAnimSegment31.FdChildren.Add(Shape47);
 { METHOD .FdChildren.Add }
 HAnimJoint30.FdChildren.Add(HAnimSegment31);
 { MC1 }
-HAnimJoint52 := THAnimJointNode.Create;
+HAnimJoint52 := THAnimJointNode.Create;;
 HAnimJoint52.Center := Vector3(-0.14,0.09,0);
-HAnimSegment53 := THAnimSegmentNode.Create;
-Transform54 := TTransformNode.Create;
+HAnimSegment53 := THAnimSegmentNode.Create;;
+Transform54 := TTransformNode.Create;;
 Transform54.Translation := Vector3(-0.14,0.09,0);
-Shape55 := TShapeNode.Create;
-Sphere56 := TSphereNode.Create;
+Shape55 := TShapeNode.Create;;
+Sphere56 := TSphereNode.Create;;
 Sphere56.Radius := 0.025;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape55.Geometry := Sphere56;
-Appearance57 := TAppearanceNode.Create;
-Material58 := TMaterialNode.Create;
+Appearance57 := TAppearanceNode.Create;;
+Material58 := TMaterialNode.Create;;
 Material58.DiffuseColor := Vector3(1,0,0);
 { METHOD .SetMaterial }
 Appearance57.Material := Material58;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape55.Appearance := Appearance57;
 { METHOD .FdChildren.Add }
 Transform54.FdChildren.Add(Shape55);
 { METHOD .FdChildren.Add }
 HAnimSegment53.FdChildren.Add(Transform54);
-Shape59 := TShapeNode.Create;
-Appearance60 := TAppearanceNode.Create;
-Material61 := TMaterialNode.Create;
+Shape59 := TShapeNode.Create;;
+Appearance60 := TAppearanceNode.Create;;
+Material61 := TMaterialNode.Create;;
 Material61.EmissiveColor := Vector3(1,1,1);
 { METHOD .SetMaterial }
 Appearance60.Material := Material61;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape59.Appearance := Appearance60;
-IndexedLineSet62 := TIndexedLineSetNode.Create;
+IndexedLineSet62 := TIndexedLineSetNode.Create;;
 IndexedLineSet62.SetCoordIndex([0,1]);
-Coordinate63 := TCoordinateNode.Create;
+Coordinate63 := TCoordinateNode.Create;;
 end;
 
-procedure InitHAnimModelHandRightPart3;
+procedure InitHAnimModelHandRightPart4;
 begin
 
 Coordinate63.SetPoint([Vector3(-0.1,0.1,0),Vector3(-0.2,0.15,0)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet62.Coord := Coordinate63;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape59.Geometry := IndexedLineSet62;
 { METHOD .FdChildren.Add }
 HAnimSegment53.FdChildren.Add(Shape59);
 { METHOD .FdChildren.Add }
 HAnimJoint52.FdChildren.Add(HAnimSegment53);
 { thumb finger }
-HAnimJoint64 := THAnimJointNode.Create;
+HAnimJoint64 := THAnimJointNode.Create;;
 HAnimJoint64.Center := Vector3(-0.2,0.15,0);
-HAnimSegment65 := THAnimSegmentNode.Create;
-Transform66 := TTransformNode.Create;
+HAnimSegment65 := THAnimSegmentNode.Create;;
+Transform66 := TTransformNode.Create;;
 Transform66.Translation := Vector3(-0.2,0.15,0);
 { METHOD .FdChildren.Add }
 Transform66.FdChildren.Add(Shape33);
 { METHOD .FdChildren.Add }
 HAnimSegment65.FdChildren.Add(Transform66);
-Shape68 := TShapeNode.Create;
-Appearance69 := TAppearanceNode.Create;
-Material70 := TMaterialNode.Create;
+Shape68 := TShapeNode.Create;;
+Appearance69 := TAppearanceNode.Create;;
+Material70 := TMaterialNode.Create;;
 Material70.EmissiveColor := Vector3(1,1,1);
 { METHOD .SetMaterial }
 Appearance69.Material := Material70;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape68.Appearance := Appearance69;
-IndexedLineSet71 := TIndexedLineSetNode.Create;
+IndexedLineSet71 := TIndexedLineSetNode.Create;;
 IndexedLineSet71.SetCoordIndex([0,1]);
-Coordinate72 := TCoordinateNode.Create;
+Coordinate72 := TCoordinateNode.Create;;
 Coordinate72.SetPoint([Vector3(-0.2,0.15,0),Vector3(-0.3,0.3,0)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet71.Coord := Coordinate72;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape68.Geometry := IndexedLineSet71;
 { METHOD .FdChildren.Add }
 HAnimSegment65.FdChildren.Add(Shape68);
 { METHOD .FdChildren.Add }
 HAnimJoint64.FdChildren.Add(HAnimSegment65);
-HAnimJoint73 := THAnimJointNode.Create;
+HAnimJoint73 := THAnimJointNode.Create;;
 HAnimJoint73.Center := Vector3(-0.3,0.3,0);
-HAnimSegment74 := THAnimSegmentNode.Create;
+HAnimSegment74 := THAnimSegmentNode.Create;;
 Transform75 := TTransformNode.Create;
+end;
+
+procedure InitHAnimModelHandRightPart5;
+begin
+;
 Transform75.Translation := Vector3(-0.3,0.3,0);
 { METHOD .FdChildren.Add }
 Transform75.FdChildren.Add(Shape33);
 { METHOD .FdChildren.Add }
 HAnimSegment74.FdChildren.Add(Transform75);
-Shape77 := TShapeNode.Create;
-Appearance78 := TAppearanceNode.Create;
-Material79 := TMaterialNode.Create;
+Shape77 := TShapeNode.Create;;
+Appearance78 := TAppearanceNode.Create;;
+Material79 := TMaterialNode.Create;;
 Material79.EmissiveColor := Vector3(1,1,1);
 { METHOD .SetMaterial }
 Appearance78.Material := Material79;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape77.Appearance := Appearance78;
-IndexedLineSet80 := TIndexedLineSetNode.Create;
-end;
-
-procedure InitHAnimModelHandRightPart4;
-begin
-
+IndexedLineSet80 := TIndexedLineSetNode.Create;;
 IndexedLineSet80.SetCoordIndex([0,1]);
-Coordinate81 := TCoordinateNode.Create;
+Coordinate81 := TCoordinateNode.Create;;
 Coordinate81.SetPoint([Vector3(-0.3,0.3,0),Vector3(-0.35,0.4,0)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet80.Coord := Coordinate81;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape77.Geometry := IndexedLineSet80;
 { METHOD .FdChildren.Add }
 HAnimSegment74.FdChildren.Add(Shape77);
 { METHOD .FdChildren.Add }
 HAnimJoint73.FdChildren.Add(HAnimSegment74);
-HAnimJoint82 := THAnimJointNode.Create;
+HAnimJoint82 := THAnimJointNode.Create;;
 HAnimJoint82.Center := Vector3(-0.35,0.4,0);
-HAnimSegment83 := THAnimSegmentNode.Create;
-Transform84 := TTransformNode.Create;
+HAnimSegment83 := THAnimSegmentNode.Create;;
+Transform84 := TTransformNode.Create;;
 Transform84.Translation := Vector3(-0.35,0.4,0);
 { METHOD .FdChildren.Add }
 Transform84.FdChildren.Add(Shape33);
 { METHOD .FdChildren.Add }
 HAnimSegment83.FdChildren.Add(Transform84);
-Shape86 := TShapeNode.Create;
-Appearance87 := TAppearanceNode.Create;
-Material88 := TMaterialNode.Create;
+Shape86 := TShapeNode.Create;;
+Appearance87 := TAppearanceNode.Create;;
+Material88 := TMaterialNode.Create;;
 Material88.EmissiveColor := Vector3(1,1,1);
+end;
+
+procedure InitHAnimModelHandRightPart6;
+begin
+
 { METHOD .SetMaterial }
 Appearance87.Material := Material88;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape86.Appearance := Appearance87;
-IndexedLineSet89 := TIndexedLineSetNode.Create;
+IndexedLineSet89 := TIndexedLineSetNode.Create;;
 IndexedLineSet89.SetCoordIndex([0,1]);
-Coordinate90 := TCoordinateNode.Create;
+Coordinate90 := TCoordinateNode.Create;;
 Coordinate90.SetPoint([Vector3(-0.35,0.4,0),Vector3(-0.36,0.45,0)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet89.Coord := Coordinate90;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape86.Geometry := IndexedLineSet89;
 { METHOD .FdChildren.Add }
 HAnimSegment83.FdChildren.Add(Shape86);
@@ -586,165 +622,185 @@ HAnimJoint52.FdChildren.Add(HAnimJoint64);
 { METHOD .FdChildren.Add }
 HAnimJoint30.FdChildren.Add(HAnimJoint52);
 { MC2 }
-HAnimJoint91 := THAnimJointNode.Create;
+HAnimJoint91 := THAnimJointNode.Create;;
 HAnimJoint91.Center := Vector3(-0.07,0.07,0);
-HAnimSegment92 := THAnimSegmentNode.Create;
-Transform93 := TTransformNode.Create;
+HAnimSegment92 := THAnimSegmentNode.Create;;
+Transform93 := TTransformNode.Create;;
 Transform93.Translation := Vector3(-0.07,0.07,0);
 { METHOD .FdChildren.Add }
 Transform93.FdChildren.Add(Shape55);
 { METHOD .FdChildren.Add }
 HAnimSegment92.FdChildren.Add(Transform93);
-Shape95 := TShapeNode.Create;
-end;
-
-procedure InitHAnimModelHandRightPart5;
-begin
-
-Appearance96 := TAppearanceNode.Create;
-Material97 := TMaterialNode.Create;
+Shape95 := TShapeNode.Create;;
+Appearance96 := TAppearanceNode.Create;;
+Material97 := TMaterialNode.Create;;
 Material97.EmissiveColor := Vector3(1,1,1);
 { METHOD .SetMaterial }
 Appearance96.Material := Material97;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape95.Appearance := Appearance96;
-IndexedLineSet98 := TIndexedLineSetNode.Create;
+IndexedLineSet98 := TIndexedLineSetNode.Create;;
 IndexedLineSet98.SetCoordIndex([0,1]);
-Coordinate99 := TCoordinateNode.Create;
+Coordinate99 := TCoordinateNode.Create;;
+end;
+
+procedure InitHAnimModelHandRightPart7;
+begin
+
 Coordinate99.SetPoint([Vector3(-0.1,0.1,0),Vector3(-0.1,0.2,0)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet98.Coord := Coordinate99;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape95.Geometry := IndexedLineSet98;
 { METHOD .FdChildren.Add }
 HAnimSegment92.FdChildren.Add(Shape95);
 { METHOD .FdChildren.Add }
 HAnimJoint91.FdChildren.Add(HAnimSegment92);
 { index finger }
-HAnimJoint100 := THAnimJointNode.Create;
+HAnimJoint100 := THAnimJointNode.Create;;
 HAnimJoint100.Center := Vector3(-0.1,0.2,0);
-HAnimSegment101 := THAnimSegmentNode.Create;
-Transform102 := TTransformNode.Create;
+HAnimSegment101 := THAnimSegmentNode.Create;;
+Transform102 := TTransformNode.Create;;
 Transform102.Translation := Vector3(-0.1,0.2,0);
 { METHOD .FdChildren.Add }
 Transform102.FdChildren.Add(Shape33);
 { METHOD .FdChildren.Add }
 HAnimSegment101.FdChildren.Add(Transform102);
-Shape104 := TShapeNode.Create;
-Appearance105 := TAppearanceNode.Create;
-Material106 := TMaterialNode.Create;
+Shape104 := TShapeNode.Create;;
+Appearance105 := TAppearanceNode.Create;;
+Material106 := TMaterialNode.Create;;
 Material106.EmissiveColor := Vector3(1,1,1);
 { METHOD .SetMaterial }
 Appearance105.Material := Material106;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape104.Appearance := Appearance105;
-IndexedLineSet107 := TIndexedLineSetNode.Create;
+IndexedLineSet107 := TIndexedLineSetNode.Create;;
 IndexedLineSet107.SetCoordIndex([0,1]);
-Coordinate108 := TCoordinateNode.Create;
+Coordinate108 := TCoordinateNode.Create;;
 Coordinate108.SetPoint([Vector3(-0.1,0.2,0),Vector3(-0.15,0.5,0)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet107.Coord := Coordinate108;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape104.Geometry := IndexedLineSet107;
 { METHOD .FdChildren.Add }
 HAnimSegment101.FdChildren.Add(Shape104);
 { METHOD .FdChildren.Add }
 HAnimJoint100.FdChildren.Add(HAnimSegment101);
-HAnimJoint109 := THAnimJointNode.Create;
+HAnimJoint109 := THAnimJointNode.Create;;
 HAnimJoint109.Center := Vector3(-0.15,0.5,0);
-HAnimSegment110 := THAnimSegmentNode.Create;
+HAnimSegment110 := THAnimSegmentNode.Create;;
 Transform111 := TTransformNode.Create;
+end;
+
+procedure InitHAnimModelHandRightPart8;
+begin
+;
 Transform111.Translation := Vector3(-0.15,0.5,0);
 { METHOD .FdChildren.Add }
 Transform111.FdChildren.Add(Shape33);
-end;
-
-procedure InitHAnimModelHandRightPart6;
-begin
-
 { METHOD .FdChildren.Add }
 HAnimSegment110.FdChildren.Add(Transform111);
-Shape113 := TShapeNode.Create;
-Appearance114 := TAppearanceNode.Create;
-Material115 := TMaterialNode.Create;
+Shape113 := TShapeNode.Create;;
+Appearance114 := TAppearanceNode.Create;;
+Material115 := TMaterialNode.Create;;
 Material115.EmissiveColor := Vector3(1,1,1);
 { METHOD .SetMaterial }
 Appearance114.Material := Material115;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape113.Appearance := Appearance114;
-IndexedLineSet116 := TIndexedLineSetNode.Create;
+IndexedLineSet116 := TIndexedLineSetNode.Create;;
 IndexedLineSet116.SetCoordIndex([0,1]);
-Coordinate117 := TCoordinateNode.Create;
+Coordinate117 := TCoordinateNode.Create;;
 Coordinate117.SetPoint([Vector3(-0.15,0.5,0),Vector3(-0.2,0.7,0)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet116.Coord := Coordinate117;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape113.Geometry := IndexedLineSet116;
 { METHOD .FdChildren.Add }
 HAnimSegment110.FdChildren.Add(Shape113);
 { METHOD .FdChildren.Add }
 HAnimJoint109.FdChildren.Add(HAnimSegment110);
-HAnimJoint118 := THAnimJointNode.Create;
+HAnimJoint118 := THAnimJointNode.Create;;
 HAnimJoint118.Center := Vector3(-0.2,0.7,0);
-HAnimSegment119 := THAnimSegmentNode.Create;
-Transform120 := TTransformNode.Create;
+HAnimSegment119 := THAnimSegmentNode.Create;;
+Transform120 := TTransformNode.Create;;
 Transform120.Translation := Vector3(-0.2,0.7,0);
 { METHOD .FdChildren.Add }
 Transform120.FdChildren.Add(Shape33);
 { METHOD .FdChildren.Add }
 HAnimSegment119.FdChildren.Add(Transform120);
-Shape122 := TShapeNode.Create;
-Appearance123 := TAppearanceNode.Create;
-Material124 := TMaterialNode.Create;
+Shape122 := TShapeNode.Create;;
+Appearance123 := TAppearanceNode.Create;;
+Material124 := TMaterialNode.Create;;
 Material124.EmissiveColor := Vector3(1,1,1);
+end;
+
+procedure InitHAnimModelHandRightPart9;
+begin
+
 { METHOD .SetMaterial }
 Appearance123.Material := Material124;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape122.Appearance := Appearance123;
-IndexedLineSet125 := TIndexedLineSetNode.Create;
+IndexedLineSet125 := TIndexedLineSetNode.Create;;
 IndexedLineSet125.SetCoordIndex([0,1]);
-Coordinate126 := TCoordinateNode.Create;
+Coordinate126 := TCoordinateNode.Create;;
 Coordinate126.SetPoint([Vector3(-0.2,0.7,0),Vector3(-0.24,0.87,0)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet125.Coord := Coordinate126;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape122.Geometry := IndexedLineSet125;
 { METHOD .FdChildren.Add }
 HAnimSegment119.FdChildren.Add(Shape122);
 { METHOD .FdChildren.Add }
 HAnimJoint118.FdChildren.Add(HAnimSegment119);
-HAnimJoint127 := THAnimJointNode.Create;
+HAnimJoint127 := THAnimJointNode.Create;;
 HAnimJoint127.Center := Vector3(-0.24,0.87,0);
-HAnimSegment128 := THAnimSegmentNode.Create;
-Transform129 := TTransformNode.Create;
-end;
-
-procedure InitHAnimModelHandRightPart7;
-begin
-
+HAnimSegment128 := THAnimSegmentNode.Create;;
+Transform129 := TTransformNode.Create;;
 Transform129.Translation := Vector3(-0.24,0.87,0);
 { METHOD .FdChildren.Add }
 Transform129.FdChildren.Add(Shape33);
 { METHOD .FdChildren.Add }
 HAnimSegment128.FdChildren.Add(Transform129);
-Shape131 := TShapeNode.Create;
-Appearance132 := TAppearanceNode.Create;
-Material133 := TMaterialNode.Create;
+Shape131 := TShapeNode.Create;;
+Appearance132 := TAppearanceNode.Create;;
+Material133 := TMaterialNode.Create;;
 Material133.EmissiveColor := Vector3(1,1,1);
 { METHOD .SetMaterial }
 Appearance132.Material := Material133;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape131.Appearance := Appearance132;
-IndexedLineSet134 := TIndexedLineSetNode.Create;
+IndexedLineSet134 := TIndexedLineSetNode.Create;;
 IndexedLineSet134.SetCoordIndex([0,1]);
-Coordinate135 := TCoordinateNode.Create;
+Coordinate135 := TCoordinateNode.Create;;
 Coordinate135.SetPoint([Vector3(-0.24,0.87,0),Vector3(-0.26,0.93,0)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet134.Coord := Coordinate135;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape131.Geometry := IndexedLineSet134;
 { METHOD .FdChildren.Add }
 HAnimSegment128.FdChildren.Add(Shape131);
+end;
+
+procedure InitHAnimModelHandRightPart10;
+begin
+
 { METHOD .FdChildren.Add }
 HAnimJoint127.FdChildren.Add(HAnimSegment128);
 { METHOD .FdChildren.Add }
@@ -758,162 +814,177 @@ HAnimJoint91.FdChildren.Add(HAnimJoint100);
 { METHOD .FdChildren.Add }
 HAnimJoint30.FdChildren.Add(HAnimJoint91);
 { MC3 }
-HAnimJoint136 := THAnimJointNode.Create;
+HAnimJoint136 := THAnimJointNode.Create;;
 HAnimJoint136.Center := Vector3(0,0.07,0);
-HAnimSegment137 := THAnimSegmentNode.Create;
-Transform138 := TTransformNode.Create;
+HAnimSegment137 := THAnimSegmentNode.Create;;
+Transform138 := TTransformNode.Create;;
 Transform138.Translation := Vector3(0,0.07,0);
 { METHOD .FdChildren.Add }
 Transform138.FdChildren.Add(Shape55);
 { METHOD .FdChildren.Add }
 HAnimSegment137.FdChildren.Add(Transform138);
-Shape140 := TShapeNode.Create;
-Appearance141 := TAppearanceNode.Create;
-Material142 := TMaterialNode.Create;
+Shape140 := TShapeNode.Create;;
+Appearance141 := TAppearanceNode.Create;;
+Material142 := TMaterialNode.Create;;
 Material142.EmissiveColor := Vector3(1,1,1);
 { METHOD .SetMaterial }
 Appearance141.Material := Material142;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape140.Appearance := Appearance141;
-IndexedLineSet143 := TIndexedLineSetNode.Create;
+IndexedLineSet143 := TIndexedLineSetNode.Create;;
 IndexedLineSet143.SetCoordIndex([0,1]);
-Coordinate144 := TCoordinateNode.Create;
+Coordinate144 := TCoordinateNode.Create;;
 Coordinate144.SetPoint([Vector3(0,0.07,0),Vector3(0,0.2,0)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet143.Coord := Coordinate144;
-end;
-
-procedure InitHAnimModelHandRightPart8;
-begin
-
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape140.Geometry := IndexedLineSet143;
 { METHOD .FdChildren.Add }
 HAnimSegment137.FdChildren.Add(Shape140);
 { METHOD .FdChildren.Add }
 HAnimJoint136.FdChildren.Add(HAnimSegment137);
 { Middle fingle }
-HAnimJoint145 := THAnimJointNode.Create;
+HAnimJoint145 := THAnimJointNode.Create;;
 HAnimJoint145.Center := Vector3(0,0.2,0);
-HAnimSegment146 := THAnimSegmentNode.Create;
-Transform147 := TTransformNode.Create;
+HAnimSegment146 := THAnimSegmentNode.Create;;
+end;
+
+procedure InitHAnimModelHandRightPart11;
+begin
+
+Transform147 := TTransformNode.Create;;
 Transform147.Translation := Vector3(0,0.2,0);
 { METHOD .FdChildren.Add }
 Transform147.FdChildren.Add(Shape33);
 { METHOD .FdChildren.Add }
 HAnimSegment146.FdChildren.Add(Transform147);
-Shape149 := TShapeNode.Create;
-Appearance150 := TAppearanceNode.Create;
-Material151 := TMaterialNode.Create;
+Shape149 := TShapeNode.Create;;
+Appearance150 := TAppearanceNode.Create;;
+Material151 := TMaterialNode.Create;;
 Material151.EmissiveColor := Vector3(1,1,1);
 { METHOD .SetMaterial }
 Appearance150.Material := Material151;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape149.Appearance := Appearance150;
-IndexedLineSet152 := TIndexedLineSetNode.Create;
+IndexedLineSet152 := TIndexedLineSetNode.Create;;
 IndexedLineSet152.SetCoordIndex([0,1]);
-Coordinate153 := TCoordinateNode.Create;
+Coordinate153 := TCoordinateNode.Create;;
 Coordinate153.SetPoint([Vector3(0,0.2,0),Vector3(-0.03,0.5,0)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet152.Coord := Coordinate153;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape149.Geometry := IndexedLineSet152;
 { METHOD .FdChildren.Add }
 HAnimSegment146.FdChildren.Add(Shape149);
 { METHOD .FdChildren.Add }
 HAnimJoint145.FdChildren.Add(HAnimSegment146);
-HAnimJoint154 := THAnimJointNode.Create;
+HAnimJoint154 := THAnimJointNode.Create;;
 HAnimJoint154.Center := Vector3(-0.03,0.5,0);
-HAnimSegment155 := THAnimSegmentNode.Create;
-Transform156 := TTransformNode.Create;
+HAnimSegment155 := THAnimSegmentNode.Create;;
+Transform156 := TTransformNode.Create;;
 Transform156.Translation := Vector3(-0.03,0.5,0);
 { METHOD .FdChildren.Add }
 Transform156.FdChildren.Add(Shape33);
 { METHOD .FdChildren.Add }
 HAnimSegment155.FdChildren.Add(Transform156);
-Shape158 := TShapeNode.Create;
-Appearance159 := TAppearanceNode.Create;
-Material160 := TMaterialNode.Create;
+Shape158 := TShapeNode.Create;;
+Appearance159 := TAppearanceNode.Create;;
+Material160 := TMaterialNode.Create;;
+end;
+
+procedure InitHAnimModelHandRightPart12;
+begin
+
 Material160.EmissiveColor := Vector3(1,1,1);
 { METHOD .SetMaterial }
 Appearance159.Material := Material160;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape158.Appearance := Appearance159;
-IndexedLineSet161 := TIndexedLineSetNode.Create;
+IndexedLineSet161 := TIndexedLineSetNode.Create;;
 IndexedLineSet161.SetCoordIndex([0,1]);
-Coordinate162 := TCoordinateNode.Create;
-end;
-
-procedure InitHAnimModelHandRightPart9;
-begin
-
+Coordinate162 := TCoordinateNode.Create;;
 Coordinate162.SetPoint([Vector3(-0.03,0.5,0),Vector3(-0.05,0.75,0)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet161.Coord := Coordinate162;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape158.Geometry := IndexedLineSet161;
 { METHOD .FdChildren.Add }
 HAnimSegment155.FdChildren.Add(Shape158);
 { METHOD .FdChildren.Add }
 HAnimJoint154.FdChildren.Add(HAnimSegment155);
-HAnimJoint163 := THAnimJointNode.Create;
+HAnimJoint163 := THAnimJointNode.Create;;
 HAnimJoint163.Center := Vector3(-0.05,0.75,0);
-HAnimSegment164 := THAnimSegmentNode.Create;
-Transform165 := TTransformNode.Create;
+HAnimSegment164 := THAnimSegmentNode.Create;;
+Transform165 := TTransformNode.Create;;
 Transform165.Translation := Vector3(-0.05,0.75,0);
 { METHOD .FdChildren.Add }
 Transform165.FdChildren.Add(Shape33);
 { METHOD .FdChildren.Add }
 HAnimSegment164.FdChildren.Add(Transform165);
-Shape167 := TShapeNode.Create;
-Appearance168 := TAppearanceNode.Create;
-Material169 := TMaterialNode.Create;
+Shape167 := TShapeNode.Create;;
+Appearance168 := TAppearanceNode.Create;;
+Material169 := TMaterialNode.Create;;
 Material169.EmissiveColor := Vector3(1,1,1);
 { METHOD .SetMaterial }
 Appearance168.Material := Material169;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape167.Appearance := Appearance168;
-IndexedLineSet170 := TIndexedLineSetNode.Create;
+IndexedLineSet170 := TIndexedLineSetNode.Create;;
 IndexedLineSet170.SetCoordIndex([0,1]);
-Coordinate171 := TCoordinateNode.Create;
+Coordinate171 := TCoordinateNode.Create;;
 Coordinate171.SetPoint([Vector3(-0.05,0.75,0),Vector3(-0.08,0.96,0)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet170.Coord := Coordinate171;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape167.Geometry := IndexedLineSet170;
+end;
+
+procedure InitHAnimModelHandRightPart13;
+begin
+
 { METHOD .FdChildren.Add }
 HAnimSegment164.FdChildren.Add(Shape167);
 { METHOD .FdChildren.Add }
 HAnimJoint163.FdChildren.Add(HAnimSegment164);
-HAnimJoint172 := THAnimJointNode.Create;
+HAnimJoint172 := THAnimJointNode.Create;;
 HAnimJoint172.Center := Vector3(-0.08,0.96,0);
-HAnimSegment173 := THAnimSegmentNode.Create;
-Transform174 := TTransformNode.Create;
+HAnimSegment173 := THAnimSegmentNode.Create;;
+Transform174 := TTransformNode.Create;;
 Transform174.Translation := Vector3(-0.08,0.96,0);
 { METHOD .FdChildren.Add }
 Transform174.FdChildren.Add(Shape33);
 { METHOD .FdChildren.Add }
 HAnimSegment173.FdChildren.Add(Transform174);
-Shape176 := TShapeNode.Create;
-Appearance177 := TAppearanceNode.Create;
-Material178 := TMaterialNode.Create;
+Shape176 := TShapeNode.Create;;
+Appearance177 := TAppearanceNode.Create;;
+Material178 := TMaterialNode.Create;;
 Material178.EmissiveColor := Vector3(1,1,1);
 { METHOD .SetMaterial }
 Appearance177.Material := Material178;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape176.Appearance := Appearance177;
-IndexedLineSet179 := TIndexedLineSetNode.Create;
-end;
-
-procedure InitHAnimModelHandRightPart10;
-begin
-
+IndexedLineSet179 := TIndexedLineSetNode.Create;;
 IndexedLineSet179.SetCoordIndex([0,1]);
-Coordinate180 := TCoordinateNode.Create;
+Coordinate180 := TCoordinateNode.Create;;
 Coordinate180.SetPoint([Vector3(-0.08,0.96,0),Vector3(-0.09,1.05,0)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet179.Coord := Coordinate180;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape176.Geometry := IndexedLineSet179;
 { METHOD .FdChildren.Add }
 HAnimSegment173.FdChildren.Add(Shape176);
@@ -930,180 +1001,203 @@ HAnimJoint136.FdChildren.Add(HAnimJoint145);
 { METHOD .FdChildren.Add }
 HAnimJoint30.FdChildren.Add(HAnimJoint136);
 { MC4_5 }
-HAnimJoint181 := THAnimJointNode.Create;
+HAnimJoint181 := THAnimJointNode.Create;;
 HAnimJoint181.Center := Vector3(0.1,0.1,0);
 HAnimSegment182 := THAnimSegmentNode.Create;
-Transform183 := TTransformNode.Create;
+end;
+
+procedure InitHAnimModelHandRightPart14;
+begin
+;
+Transform183 := TTransformNode.Create;;
 Transform183.Translation := Vector3(0.1,0.1,0);
 { METHOD .FdChildren.Add }
 Transform183.FdChildren.Add(Shape55);
 { METHOD .FdChildren.Add }
 HAnimSegment182.FdChildren.Add(Transform183);
-Shape185 := TShapeNode.Create;
-Appearance186 := TAppearanceNode.Create;
-Material187 := TMaterialNode.Create;
+Shape185 := TShapeNode.Create;;
+Appearance186 := TAppearanceNode.Create;;
+Material187 := TMaterialNode.Create;;
 Material187.EmissiveColor := Vector3(1,1,1);
 { METHOD .SetMaterial }
 Appearance186.Material := Material187;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape185.Appearance := Appearance186;
-IndexedLineSet188 := TIndexedLineSetNode.Create;
+IndexedLineSet188 := TIndexedLineSetNode.Create;;
 IndexedLineSet188.SetCoordIndex([0,1]);
-Coordinate189 := TCoordinateNode.Create;
+Coordinate189 := TCoordinateNode.Create;;
 Coordinate189.SetPoint([Vector3(0.1,0.1,0),Vector3(0.1,0.2,0)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet188.Coord := Coordinate189;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape185.Geometry := IndexedLineSet188;
 { METHOD .FdChildren.Add }
 HAnimSegment182.FdChildren.Add(Shape185);
-Shape190 := TShapeNode.Create;
-Appearance191 := TAppearanceNode.Create;
-Material192 := TMaterialNode.Create;
+Shape190 := TShapeNode.Create;;
+Appearance191 := TAppearanceNode.Create;;
+Material192 := TMaterialNode.Create;;
 Material192.EmissiveColor := Vector3(1,1,1);
 { METHOD .SetMaterial }
 Appearance191.Material := Material192;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape190.Appearance := Appearance191;
-IndexedLineSet193 := TIndexedLineSetNode.Create;
+IndexedLineSet193 := TIndexedLineSetNode.Create;;
 IndexedLineSet193.SetCoordIndex([0,1]);
-end;
-
-procedure InitHAnimModelHandRightPart11;
-begin
-
-Coordinate194 := TCoordinateNode.Create;
+Coordinate194 := TCoordinateNode.Create;;
 Coordinate194.SetPoint([Vector3(0.1,0.1,0),Vector3(0.15,0.17,0)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet193.Coord := Coordinate194;
+end;
+
+procedure InitHAnimModelHandRightPart15;
+begin
+
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape190.Geometry := IndexedLineSet193;
 { METHOD .FdChildren.Add }
 HAnimSegment182.FdChildren.Add(Shape190);
 { METHOD .FdChildren.Add }
 HAnimJoint181.FdChildren.Add(HAnimSegment182);
 { ring finger }
-HAnimJoint195 := THAnimJointNode.Create;
+HAnimJoint195 := THAnimJointNode.Create;;
 HAnimJoint195.Center := Vector3(0.1,0.2,0);
-HAnimSegment196 := THAnimSegmentNode.Create;
-Transform197 := TTransformNode.Create;
+HAnimSegment196 := THAnimSegmentNode.Create;;
+Transform197 := TTransformNode.Create;;
 Transform197.Translation := Vector3(0.1,0.2,0);
 { METHOD .FdChildren.Add }
 Transform197.FdChildren.Add(Shape33);
 { METHOD .FdChildren.Add }
 HAnimSegment196.FdChildren.Add(Transform197);
-Shape199 := TShapeNode.Create;
-Appearance200 := TAppearanceNode.Create;
-Material201 := TMaterialNode.Create;
+Shape199 := TShapeNode.Create;;
+Appearance200 := TAppearanceNode.Create;;
+Material201 := TMaterialNode.Create;;
 Material201.EmissiveColor := Vector3(1,1,1);
 { METHOD .SetMaterial }
 Appearance200.Material := Material201;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape199.Appearance := Appearance200;
-IndexedLineSet202 := TIndexedLineSetNode.Create;
+IndexedLineSet202 := TIndexedLineSetNode.Create;;
 IndexedLineSet202.SetCoordIndex([0,1]);
-Coordinate203 := TCoordinateNode.Create;
+Coordinate203 := TCoordinateNode.Create;;
 Coordinate203.SetPoint([Vector3(0.1,0.2,0),Vector3(0.1,0.47,0)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet202.Coord := Coordinate203;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape199.Geometry := IndexedLineSet202;
 { METHOD .FdChildren.Add }
 HAnimSegment196.FdChildren.Add(Shape199);
 { METHOD .FdChildren.Add }
 HAnimJoint195.FdChildren.Add(HAnimSegment196);
-HAnimJoint204 := THAnimJointNode.Create;
+HAnimJoint204 := THAnimJointNode.Create;;
 HAnimJoint204.Center := Vector3(0.1,0.47,0);
-HAnimSegment205 := THAnimSegmentNode.Create;
-Transform206 := TTransformNode.Create;
+HAnimSegment205 := THAnimSegmentNode.Create;;
+Transform206 := TTransformNode.Create;;
 Transform206.Translation := Vector3(0.1,0.47,0);
+end;
+
+procedure InitHAnimModelHandRightPart16;
+begin
+
 { METHOD .FdChildren.Add }
 Transform206.FdChildren.Add(Shape33);
 { METHOD .FdChildren.Add }
 HAnimSegment205.FdChildren.Add(Transform206);
-Shape208 := TShapeNode.Create;
-Appearance209 := TAppearanceNode.Create;
-Material210 := TMaterialNode.Create;
+Shape208 := TShapeNode.Create;;
+Appearance209 := TAppearanceNode.Create;;
+Material210 := TMaterialNode.Create;;
 Material210.EmissiveColor := Vector3(1,1,1);
 { METHOD .SetMaterial }
 Appearance209.Material := Material210;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape208.Appearance := Appearance209;
-end;
-
-procedure InitHAnimModelHandRightPart12;
-begin
-
-IndexedLineSet211 := TIndexedLineSetNode.Create;
+IndexedLineSet211 := TIndexedLineSetNode.Create;;
 IndexedLineSet211.SetCoordIndex([0,1]);
-Coordinate212 := TCoordinateNode.Create;
+Coordinate212 := TCoordinateNode.Create;;
 Coordinate212.SetPoint([Vector3(0.1,0.47,0),Vector3(0.1,0.7,0)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet211.Coord := Coordinate212;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape208.Geometry := IndexedLineSet211;
 { METHOD .FdChildren.Add }
 HAnimSegment205.FdChildren.Add(Shape208);
 { METHOD .FdChildren.Add }
 HAnimJoint204.FdChildren.Add(HAnimSegment205);
-HAnimJoint213 := THAnimJointNode.Create;
+HAnimJoint213 := THAnimJointNode.Create;;
 HAnimJoint213.Center := Vector3(0.1,0.7,0);
-HAnimSegment214 := THAnimSegmentNode.Create;
-Transform215 := TTransformNode.Create;
+HAnimSegment214 := THAnimSegmentNode.Create;;
+Transform215 := TTransformNode.Create;;
 Transform215.Translation := Vector3(0.1,0.7,0);
 { METHOD .FdChildren.Add }
 Transform215.FdChildren.Add(Shape33);
 { METHOD .FdChildren.Add }
 HAnimSegment214.FdChildren.Add(Transform215);
-Shape217 := TShapeNode.Create;
-Appearance218 := TAppearanceNode.Create;
-Material219 := TMaterialNode.Create;
+Shape217 := TShapeNode.Create;;
+Appearance218 := TAppearanceNode.Create;;
+Material219 := TMaterialNode.Create;;
 Material219.EmissiveColor := Vector3(1,1,1);
 { METHOD .SetMaterial }
 Appearance218.Material := Material219;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape217.Appearance := Appearance218;
-IndexedLineSet220 := TIndexedLineSetNode.Create;
+end;
+
+procedure InitHAnimModelHandRightPart17;
+begin
+
+IndexedLineSet220 := TIndexedLineSetNode.Create;;
 IndexedLineSet220.SetCoordIndex([0,1]);
-Coordinate221 := TCoordinateNode.Create;
+Coordinate221 := TCoordinateNode.Create;;
 Coordinate221.SetPoint([Vector3(0.1,0.7,0),Vector3(0.1,0.93,0)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet220.Coord := Coordinate221;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape217.Geometry := IndexedLineSet220;
 { METHOD .FdChildren.Add }
 HAnimSegment214.FdChildren.Add(Shape217);
 { METHOD .FdChildren.Add }
 HAnimJoint213.FdChildren.Add(HAnimSegment214);
-HAnimJoint222 := THAnimJointNode.Create;
+HAnimJoint222 := THAnimJointNode.Create;;
 HAnimJoint222.Center := Vector3(0.1,0.93,0);
-HAnimSegment223 := THAnimSegmentNode.Create;
-Transform224 := TTransformNode.Create;
+HAnimSegment223 := THAnimSegmentNode.Create;;
+Transform224 := TTransformNode.Create;;
 Transform224.Translation := Vector3(0.1,0.93,0);
 { METHOD .FdChildren.Add }
 Transform224.FdChildren.Add(Shape33);
 { METHOD .FdChildren.Add }
 HAnimSegment223.FdChildren.Add(Transform224);
-Shape226 := TShapeNode.Create;
-Appearance227 := TAppearanceNode.Create;
-Material228 := TMaterialNode.Create;
+Shape226 := TShapeNode.Create;;
+Appearance227 := TAppearanceNode.Create;;
+Material228 := TMaterialNode.Create;;
 Material228.EmissiveColor := Vector3(1,1,1);
-end;
-
-procedure InitHAnimModelHandRightPart13;
-begin
-
 { METHOD .SetMaterial }
 Appearance227.Material := Material228;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape226.Appearance := Appearance227;
-IndexedLineSet229 := TIndexedLineSetNode.Create;
+IndexedLineSet229 := TIndexedLineSetNode.Create;;
 IndexedLineSet229.SetCoordIndex([0,1]);
-Coordinate230 := TCoordinateNode.Create;
+Coordinate230 := TCoordinateNode.Create;;
 Coordinate230.SetPoint([Vector3(0.1,0.93,0),Vector3(0.1,1,0)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet229.Coord := Coordinate230;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape226.Geometry := IndexedLineSet229;
 { METHOD .FdChildren.Add }
 HAnimSegment223.FdChildren.Add(Shape226);
@@ -1111,6 +1205,11 @@ HAnimSegment223.FdChildren.Add(Shape226);
 HAnimJoint222.FdChildren.Add(HAnimSegment223);
 { METHOD .FdChildren.Add }
 HAnimJoint213.FdChildren.Add(HAnimJoint222);
+end;
+
+procedure InitHAnimModelHandRightPart18;
+begin
+
 { METHOD .FdChildren.Add }
 HAnimJoint204.FdChildren.Add(HAnimJoint213);
 { METHOD .FdChildren.Add }
@@ -1118,127 +1217,139 @@ HAnimJoint195.FdChildren.Add(HAnimJoint204);
 { METHOD .FdChildren.Add }
 HAnimJoint181.FdChildren.Add(HAnimJoint195);
 { pinky finger }
-HAnimJoint231 := THAnimJointNode.Create;
+HAnimJoint231 := THAnimJointNode.Create;;
 HAnimJoint231.Center := Vector3(0.15,0.17,0);
-HAnimSegment232 := THAnimSegmentNode.Create;
-Transform233 := TTransformNode.Create;
+HAnimSegment232 := THAnimSegmentNode.Create;;
+Transform233 := TTransformNode.Create;;
 Transform233.Translation := Vector3(0.15,0.17,0);
 { METHOD .FdChildren.Add }
 Transform233.FdChildren.Add(Shape33);
 { METHOD .FdChildren.Add }
 HAnimSegment232.FdChildren.Add(Transform233);
-Shape235 := TShapeNode.Create;
-Appearance236 := TAppearanceNode.Create;
-Material237 := TMaterialNode.Create;
+Shape235 := TShapeNode.Create;;
+Appearance236 := TAppearanceNode.Create;;
+Material237 := TMaterialNode.Create;;
 Material237.EmissiveColor := Vector3(1,1,1);
 { METHOD .SetMaterial }
 Appearance236.Material := Material237;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape235.Appearance := Appearance236;
-IndexedLineSet238 := TIndexedLineSetNode.Create;
+IndexedLineSet238 := TIndexedLineSetNode.Create;;
 IndexedLineSet238.SetCoordIndex([0,1]);
-Coordinate239 := TCoordinateNode.Create;
+Coordinate239 := TCoordinateNode.Create;;
 Coordinate239.SetPoint([Vector3(0.15,0.17,0),Vector3(0.2,0.4,0)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet238.Coord := Coordinate239;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape235.Geometry := IndexedLineSet238;
 { METHOD .FdChildren.Add }
 HAnimSegment232.FdChildren.Add(Shape235);
 { METHOD .FdChildren.Add }
 HAnimJoint231.FdChildren.Add(HAnimSegment232);
-HAnimJoint240 := THAnimJointNode.Create;
+HAnimJoint240 := THAnimJointNode.Create;;
 HAnimJoint240.Center := Vector3(0.2,0.4,0);
-HAnimSegment241 := THAnimSegmentNode.Create;
-Transform242 := TTransformNode.Create;
+HAnimSegment241 := THAnimSegmentNode.Create;;
+Transform242 := TTransformNode.Create;;
 Transform242.Translation := Vector3(0.2,0.4,0);
 end;
 
-procedure InitHAnimModelHandRightPart14;
+procedure InitHAnimModelHandRightPart19;
 begin
 
 { METHOD .FdChildren.Add }
 Transform242.FdChildren.Add(Shape33);
 { METHOD .FdChildren.Add }
 HAnimSegment241.FdChildren.Add(Transform242);
-Shape244 := TShapeNode.Create;
-Appearance245 := TAppearanceNode.Create;
-Material246 := TMaterialNode.Create;
+Shape244 := TShapeNode.Create;;
+Appearance245 := TAppearanceNode.Create;;
+Material246 := TMaterialNode.Create;;
 Material246.EmissiveColor := Vector3(1,1,1);
 { METHOD .SetMaterial }
 Appearance245.Material := Material246;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape244.Appearance := Appearance245;
-IndexedLineSet247 := TIndexedLineSetNode.Create;
+IndexedLineSet247 := TIndexedLineSetNode.Create;;
 IndexedLineSet247.SetCoordIndex([0,1]);
-Coordinate248 := TCoordinateNode.Create;
+Coordinate248 := TCoordinateNode.Create;;
 Coordinate248.SetPoint([Vector3(0.2,0.4,0),Vector3(0.23,0.63,0)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet247.Coord := Coordinate248;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape244.Geometry := IndexedLineSet247;
 { METHOD .FdChildren.Add }
 HAnimSegment241.FdChildren.Add(Shape244);
 { METHOD .FdChildren.Add }
 HAnimJoint240.FdChildren.Add(HAnimSegment241);
-HAnimJoint249 := THAnimJointNode.Create;
+HAnimJoint249 := THAnimJointNode.Create;;
 HAnimJoint249.Center := Vector3(0.23,0.63,0);
-HAnimSegment250 := THAnimSegmentNode.Create;
-Transform251 := TTransformNode.Create;
+HAnimSegment250 := THAnimSegmentNode.Create;;
+Transform251 := TTransformNode.Create;;
 Transform251.Translation := Vector3(0.23,0.63,0);
 { METHOD .FdChildren.Add }
 Transform251.FdChildren.Add(Shape33);
 { METHOD .FdChildren.Add }
 HAnimSegment250.FdChildren.Add(Transform251);
-Shape253 := TShapeNode.Create;
-Appearance254 := TAppearanceNode.Create;
-Material255 := TMaterialNode.Create;
+Shape253 := TShapeNode.Create;;
+Appearance254 := TAppearanceNode.Create;;
+Material255 := TMaterialNode.Create;;
 Material255.EmissiveColor := Vector3(1,1,1);
 { METHOD .SetMaterial }
 Appearance254.Material := Material255;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape253.Appearance := Appearance254;
-IndexedLineSet256 := TIndexedLineSetNode.Create;
+end;
+
+procedure InitHAnimModelHandRightPart20;
+begin
+
+IndexedLineSet256 := TIndexedLineSetNode.Create;;
 IndexedLineSet256.SetCoordIndex([0,1]);
-Coordinate257 := TCoordinateNode.Create;
+Coordinate257 := TCoordinateNode.Create;;
 Coordinate257.SetPoint([Vector3(0.23,0.63,0),Vector3(0.25,0.79,0)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet256.Coord := Coordinate257;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape253.Geometry := IndexedLineSet256;
 { METHOD .FdChildren.Add }
 HAnimSegment250.FdChildren.Add(Shape253);
 { METHOD .FdChildren.Add }
 HAnimJoint249.FdChildren.Add(HAnimSegment250);
-HAnimJoint258 := THAnimJointNode.Create;
+HAnimJoint258 := THAnimJointNode.Create;;
 HAnimJoint258.Center := Vector3(0.25,0.79,0);
-HAnimSegment259 := THAnimSegmentNode.Create;
-end;
-
-procedure InitHAnimModelHandRightPart15;
-begin
-
-Transform260 := TTransformNode.Create;
+HAnimSegment259 := THAnimSegmentNode.Create;;
+Transform260 := TTransformNode.Create;;
 Transform260.Translation := Vector3(0.25,0.79,0);
 { METHOD .FdChildren.Add }
 Transform260.FdChildren.Add(Shape33);
 { METHOD .FdChildren.Add }
 HAnimSegment259.FdChildren.Add(Transform260);
-Shape262 := TShapeNode.Create;
-Appearance263 := TAppearanceNode.Create;
-Material264 := TMaterialNode.Create;
+Shape262 := TShapeNode.Create;;
+Appearance263 := TAppearanceNode.Create;;
+Material264 := TMaterialNode.Create;;
 Material264.EmissiveColor := Vector3(1,1,1);
 { METHOD .SetMaterial }
 Appearance263.Material := Material264;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape262.Appearance := Appearance263;
-IndexedLineSet265 := TIndexedLineSetNode.Create;
+IndexedLineSet265 := TIndexedLineSetNode.Create;;
 IndexedLineSet265.SetCoordIndex([0,1]);
-Coordinate266 := TCoordinateNode.Create;
+Coordinate266 := TCoordinateNode.Create;;
 Coordinate266.SetPoint([Vector3(0.25,0.79,0),Vector3(0.26,0.85,0)]);
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedLineSet265.Coord := Coordinate266;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape262.Geometry := IndexedLineSet265;
 { METHOD .FdChildren.Add }
 HAnimSegment259.FdChildren.Add(Shape262);
@@ -1246,6 +1357,11 @@ HAnimSegment259.FdChildren.Add(Shape262);
 HAnimJoint258.FdChildren.Add(HAnimSegment259);
 { METHOD .FdChildren.Add }
 HAnimJoint249.FdChildren.Add(HAnimJoint258);
+end;
+
+procedure InitHAnimModelHandRightPart21;
+begin
+
 { METHOD .FdChildren.Add }
 HAnimJoint240.FdChildren.Add(HAnimJoint249);
 { METHOD .FdChildren.Add }
@@ -1288,11 +1404,6 @@ HAnimHumanoid26.FdJoints.Add(HAnimJoint145);
 HAnimHumanoid26.FdJoints.Add(HAnimJoint195);
 { METHOD .FdJoints.Add }
 HAnimHumanoid26.FdJoints.Add(HAnimJoint231);
-end;
-
-procedure InitHAnimModelHandRightPart16;
-begin
-
 { METHOD .FdJoints.Add }
 HAnimHumanoid26.FdJoints.Add(HAnimJoint73);
 { METHOD .FdJoints.Add }
@@ -1338,6 +1449,11 @@ InitHAnimModelHandRightPart13;
 InitHAnimModelHandRightPart14;
 InitHAnimModelHandRightPart15;
 InitHAnimModelHandRightPart16;
+InitHAnimModelHandRightPart17;
+InitHAnimModelHandRightPart18;
+InitHAnimModelHandRightPart19;
+InitHAnimModelHandRightPart20;
+InitHAnimModelHandRightPart21;
 Result := X3D0;
 end;
 

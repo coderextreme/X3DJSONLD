@@ -2,7 +2,7 @@ unit SmokeTestProgramOutput_MeshLabImport;
 
 interface
 
-uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
 
 function CreateSmokeTestProgramOutput_MeshLabImport: TX3DRootNode;
 
@@ -32,14 +32,16 @@ X3D0.Meta['created'] := '9 June 2021';
 X3D0.Meta['generator'] := 'Meshlab X3D Exported, http://meshlab.sourceforge.net';
 { METHOD .Meta }
 { METHOD .Head }
-Group6 := TGroupNode.Create;
-Shape7 := TShapeNode.Create;
-IndexedFaceSet8 := TIndexedFaceSetNode.Create;
+Group6 := TGroupNode.Create;;
+Shape7 := TShapeNode.Create;;
+IndexedFaceSet8 := TIndexedFaceSetNode.Create;;
 IndexedFaceSet8.Solid := False;
-Coordinate9 := TCoordinateNode.Create;
+Coordinate9 := TCoordinateNode.Create;;
 { METHOD .Coord }
+{ METHOD.SET .Coord }
 IndexedFaceSet8.Coord := Coordinate9;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape7.Geometry := IndexedFaceSet8;
 { METHOD .FdChildren.Add }
 Group6.FdChildren.Add(Shape7);

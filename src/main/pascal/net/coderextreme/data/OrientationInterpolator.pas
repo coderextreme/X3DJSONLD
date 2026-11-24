@@ -2,7 +2,7 @@ unit OrientationInterpolator;
 
 interface
 
-uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
 
 function CreateOrientationInterpolator: TX3DRootNode;
 
@@ -32,8 +32,8 @@ X3D0.Meta['created'] := '29 December 2025';
 X3D0.Meta['license'] := 'license.html';
 { METHOD .Meta }
 { METHOD .Head }
-Group7 := TGroupNode.Create;
-WorldInfo8 := TWorldInfoNode.Create;
+Group7 := TGroupNode.Create;;
+WorldInfo8 := TWorldInfoNode.Create;;
 WorldInfo8.Title := 'OrientationInterpolator.x3d';
 { METHOD .FdChildren.Add }
 Group7.FdChildren.Add(WorldInfo8);

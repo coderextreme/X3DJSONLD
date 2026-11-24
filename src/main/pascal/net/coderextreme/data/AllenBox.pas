@@ -2,7 +2,7 @@ unit AllenBox;
 
 interface
 
-uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
 
 function CreateAllenBox: TX3DRootNode;
 
@@ -36,29 +36,31 @@ X3D0.Meta['created'] := '8 July 2025';
 X3D0.Meta['license'] := '../license.html';
 { METHOD .Meta }
 { METHOD .Head }
-Group6 := TGroupNode.Create;
-WorldInfo7 := TWorldInfoNode.Create;
+Group6 := TGroupNode.Create;;
+WorldInfo7 := TWorldInfoNode.Create;;
 WorldInfo7.Title := 'AllenBox.x3d';
 { METHOD .FdChildren.Add }
 Group6.FdChildren.Add(WorldInfo7);
-NavigationInfo8 := TNavigationInfoNode.Create;
+NavigationInfo8 := TNavigationInfoNode.Create;;
 NavigationInfo8.SetAvatarSize([0.15,1.53,0.75]);
 NavigationInfo8.Speed := 0.5;
 NavigationInfo8.SetType(['EXAMINE']);
 { METHOD .FdChildren.Add }
 Group6.FdChildren.Add(NavigationInfo8);
-Transform9 := TTransformNode.Create;
+Transform9 := TTransformNode.Create;;
 Transform9.Scale := Vector3(1,0.0125,1);
 Transform9.Translation := Vector3(0,-0.0125,0);
-Shape10 := TShapeNode.Create;
-Box11 := TBoxNode.Create;
+Shape10 := TShapeNode.Create;;
+Box11 := TBoxNode.Create;;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape10.Geometry := Box11;
-Appearance12 := TAppearanceNode.Create;
-Material13 := TMaterialNode.Create;
+Appearance12 := TAppearanceNode.Create;;
+Material13 := TMaterialNode.Create;;
 { METHOD .SetMaterial }
 Appearance12.Material := Material13;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape10.Appearance := Appearance12;
 { METHOD .FdChildren.Add }
 Transform9.FdChildren.Add(Shape10);

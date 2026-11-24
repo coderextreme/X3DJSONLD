@@ -2,7 +2,7 @@ unit bubs2;
 
 interface
 
-uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
 
 function Createbubs2: TX3DRootNode;
 
@@ -58,18 +58,18 @@ X3D0.Meta['translated'] := '13 March 2016';
 X3D0.Meta['generator'] := 'X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html';
 { METHOD .Meta }
 { METHOD .Head }
-Group10 := TGroupNode.Create;
-NavigationInfo11 := TNavigationInfoNode.Create;
+Group10 := TGroupNode.Create;;
+NavigationInfo11 := TNavigationInfoNode.Create;;
 NavigationInfo11.SetType(['EXAMINE']);
 { METHOD .FdChildren.Add }
 Group10.FdChildren.Add(NavigationInfo11);
-Viewpoint12 := TViewpointNode.Create;
+Viewpoint12 := TViewpointNode.Create;;
 Viewpoint12.Position := Vector3(0,0,4);
 Viewpoint12.Orientation := Vector4(1,0,0,0);
 Viewpoint12.Description := 'Bubbles in action';
 { METHOD .FdChildren.Add }
 Group10.FdChildren.Add(Viewpoint12);
-Background13 := TBackgroundNode.Create;
+Background13 := TBackgroundNode.Create;;
 Background13.SetBackUrl(['../resources/images/BK.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png']);
 Background13.SetBottomUrl(['../resources/images/BT.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png']);
 Background13.SetFrontUrl(['../resources/images/FR.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png']);
@@ -78,30 +78,32 @@ Background13.SetRightUrl(['../resources/images/RT.png','https://coderextreme.net
 Background13.SetTopUrl(['../resources/images/TP.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png']);
 { METHOD .FdChildren.Add }
 Group10.FdChildren.Add(Background13);
-X3DPrototype14 := TX3DPrototype.Create;
-X3DPrototype15 := TX3DPrototype.Create;
-Transform16 := TTransformNode.Create;
+X3DPrototype14 := TX3DPrototype.Create;;
+X3DPrototype15 := TX3DPrototype.Create;;
+Transform16 := TTransformNode.Create;;
 Shape17 := TShapeNode.Create;
-Sphere18 := TSphereNode.Create;
-Sphere18.Radius := 0.25;
-{ METHOD .Geometry }
-Shape17.Geometry := Sphere18;
-Appearance19 := TAppearanceNode.Create;
-Material20 := TMaterialNode.Create;
-Material20.DiffuseColor := Vector3(1,0,0);
-Material20.Transparency := 0.2;
 end;
 
 procedure Initbubs2Part1;
 begin
-
+;
+Sphere18 := TSphereNode.Create;;
+Sphere18.Radius := 0.25;
+{ METHOD .Geometry }
+{ METHOD.SET .Geometry }
+Shape17.Geometry := Sphere18;
+Appearance19 := TAppearanceNode.Create;;
+Material20 := TMaterialNode.Create;;
+Material20.DiffuseColor := Vector3(1,0,0);
+Material20.Transparency := 0.2;
 { METHOD .SetMaterial }
 Appearance19.Material := Material20;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape17.Appearance := Appearance19;
 { METHOD .FdChildren.Add }
 Transform16.FdChildren.Add(Shape17);
-Script21 := TScriptNode.Create;
+Script21 := TScriptNode.Create;;
 SFVec3f22 := TSFVec3f.CreateUndefined(Script21, false, 'scale');
 SFVec3f22.Value := '1 1 1';
 { METHOD .Fd.AddCustomField }
@@ -166,7 +168,7 @@ Script21.SetSourceCode('''ecmascript:\n"+
 "}''');
 { METHOD .FdChildren.Add }
 Transform16.FdChildren.Add(Script21);
-TimeSensor27 := TTimeSensorNode.Create;
+TimeSensor27 := TTimeSensorNode.Create;;
 TimeSensor27.CycleInterval := 10;
 TimeSensor27.Loop := True;
 { METHOD .FdChildren.Add }
@@ -189,16 +191,16 @@ X3DPrototype15.AddTransform([Transform16]);
 X3DPrototype14.AddX3DPrototype([X3DPrototype15]);
 { METHOD .AddX3DPrototype }
 Group10.AddX3DPrototype([X3DPrototype14]);
-X3DPrototype31 := TX3DPrototypeNode.Create;
+X3DPrototype31 := TX3DPrototypeNode;
 { METHOD .AddX3DPrototype }
 Group10.AddX3DPrototype([X3DPrototype31]);
-X3DPrototype32 := TX3DPrototypeNode.Create;
+X3DPrototype32 := TX3DPrototypeNode;
 { METHOD .AddX3DPrototype }
 Group10.AddX3DPrototype([X3DPrototype32]);
-X3DPrototype33 := TX3DPrototypeNode.Create;
+X3DPrototype33 := TX3DPrototypeNode;
 { METHOD .AddX3DPrototype }
 Group10.AddX3DPrototype([X3DPrototype33]);
-X3DPrototype34 := TX3DPrototypeNode.Create;
+X3DPrototype34 := TX3DPrototypeNode;
 { METHOD .AddX3DPrototype }
 Group10.AddX3DPrototype([X3DPrototype34]);
 { METHOD .AddGroup }

@@ -2,7 +2,7 @@ unit abox;
 
 interface
 
-uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
 
 function Createabox: TX3DRootNode;
 
@@ -20,22 +20,18 @@ Shape11: TShapeNode;
 Sphere12: TSphereNode;
 X3DPrototype13: TX3DPrototype;
 Transform14: TTransformNode;
-IS15: TIS;
-connect16: Tconnect;
-X3DPrototype17: TX3DPrototype;
-X3DInterfaceDeclaration18: TX3DInterfaceDeclaration;
-MFNode19: TMFNode;
-Shape20: TShapeNode;
-Cylinder21: TCylinderNode;
-X3DPrototype22: TX3DPrototype;
-Transform23: TTransformNode;
-X3DPrototype24: TX3DPrototypeNode;
-IS25: TIS;
-connect26: Tconnect;
-X3DPrototype27: TX3DPrototypeNode;
-MFNode28: TMFNode;
-Shape29: TShapeNode;
-Box30: TBoxNode;
+X3DPrototype16: TX3DPrototype;
+X3DInterfaceDeclaration17: TX3DInterfaceDeclaration;
+MFNode18: TMFNode;
+Shape19: TShapeNode;
+Cylinder20: TCylinderNode;
+X3DPrototype21: TX3DPrototype;
+Transform22: TTransformNode;
+X3DPrototype23: TX3DPrototypeNode;
+X3DPrototype25: TX3DPrototypeNode;
+MFNode26: TMFNode;
+Shape27: TShapeNode;
+Box28: TBoxNode;
 
 procedure InitaboxPart0;
 begin
@@ -54,13 +50,14 @@ X3D0.Meta['identifier'] := 'https://coderextreme.net/X3DJSONLD/src/main/data/abo
 X3D0.Meta['description'] := 'a box';
 { METHOD .Meta }
 { METHOD .Head }
-Group7 := TGroupNode.Create;
-X3DPrototype8 := TX3DPrototype.Create;
-X3DInterfaceDeclaration9 := TX3DInterfaceDeclaration.Create(nil);
+Group7 := TGroupNode.Create;;
+X3DPrototype8 := TX3DPrototype.Create;;
+X3DInterfaceDeclaration9 := TX3DInterfaceDeclaration.Create(nil);;
 MFNode10 := TMFNode.CreateUndefined(X3DInterfaceDeclaration9, false, 'myShape');
-Shape11 := TShapeNode.Create;
-Sphere12 := TSphereNode.Create;
+Shape11 := TShapeNode.Create;;
+Sphere12 := TSphereNode.Create;;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape11.Geometry := Sphere12;
 { METHOD .AddShape }
 MFNode10.AddShape([Shape11]);
@@ -68,72 +65,58 @@ MFNode10.AddShape([Shape11]);
 X3DInterfaceDeclaration9.AddMFNode([MFNode10]);
 { METHOD .AddX3DInterfaceDeclaration }
 X3DPrototype8.AddX3DInterfaceDeclaration([X3DInterfaceDeclaration9]);
-X3DPrototype13 := TX3DPrototype.Create;
-Transform14 := TTransformNode.Create;
-IS15 := TIS.Create;
-connect16 := Tconnect.Create;
-connect16.NodeField := 'children';
-connect16.ProtoField := 'myShape';
-{ METHOD .Connect }
-IS15.Connect := connect16;
-{ METHOD .IS }
-Transform14.IS := IS15;
+X3DPrototype13 := TX3DPrototype.Create;;
+Transform14 := TTransformNode.Create;;
 { METHOD .AddTransform }
 X3DPrototype13.AddTransform([Transform14]);
 { METHOD .AddX3DPrototype }
 X3DPrototype8.AddX3DPrototype([X3DPrototype13]);
 { METHOD .AddX3DPrototype }
 Group7.AddX3DPrototype([X3DPrototype8]);
-X3DPrototype17 := TX3DPrototype.Create;
-X3DInterfaceDeclaration18 := TX3DInterfaceDeclaration.Create(nil);
-MFNode19 := TMFNode.CreateUndefined(X3DInterfaceDeclaration18, false, 'myShape');
-Shape20 := TShapeNode.Create;
-Cylinder21 := TCylinderNode.Create;
-{ METHOD .Geometry }
-Shape20.Geometry := Cylinder21;
-{ METHOD .AddShape }
-MFNode19.AddShape([Shape20]);
-{ METHOD .AddMFNode }
-X3DInterfaceDeclaration18.AddMFNode([MFNode19]);
-{ METHOD .AddX3DInterfaceDeclaration }
-X3DPrototype17.AddX3DInterfaceDeclaration([X3DInterfaceDeclaration18]);
-X3DPrototype22 := TX3DPrototype.Create;
+X3DPrototype16 := TX3DPrototype.Create;;
+X3DInterfaceDeclaration17 := TX3DInterfaceDeclaration.Create(nil);;
+MFNode18 := TMFNode.CreateUndefined(X3DInterfaceDeclaration17, false, 'myShape');
+Shape19 := TShapeNode.Create;;
+Cylinder20 := TCylinderNode.Create;;
 end;
 
 procedure InitaboxPart1;
 begin
 
-Transform23 := TTransformNode.Create;
-X3DPrototype24 := TX3DPrototypeNode.Create;
-IS25 := TIS.Create;
-connect26 := Tconnect.Create;
-connect26.NodeField := 'myShape';
-connect26.ProtoField := 'myShape';
-{ METHOD .Connect }
-IS25.Connect := connect26;
-{ METHOD .SetIS }
-X3DPrototype24.IS := IS25;
-{ METHOD .AddX3DPrototype }
-Transform23.AddX3DPrototype([X3DPrototype24]);
-{ METHOD .AddTransform }
-X3DPrototype22.AddTransform([Transform23]);
-{ METHOD .AddX3DPrototype }
-X3DPrototype17.AddX3DPrototype([X3DPrototype22]);
-{ METHOD .AddX3DPrototype }
-Group7.AddX3DPrototype([X3DPrototype17]);
-X3DPrototype27 := TX3DPrototypeNode.Create;
-MFNode28 := TMFNode.CreateUndefined(X3DPrototype27, false, 'myShape');
-Shape29 := TShapeNode.Create;
-Box30 := TBoxNode.Create;
-Box30.Size := Vector3(140,140,140);
 { METHOD .Geometry }
-Shape29.Geometry := Box30;
+{ METHOD.SET .Geometry }
+Shape19.Geometry := Cylinder20;
 { METHOD .AddShape }
-MFNode28.AddShape([Shape29]);
+MFNode18.AddShape([Shape19]);
 { METHOD .AddMFNode }
-X3DPrototype27.AddMFNode([MFNode28]);
+X3DInterfaceDeclaration17.AddMFNode([MFNode18]);
+{ METHOD .AddX3DInterfaceDeclaration }
+X3DPrototype16.AddX3DInterfaceDeclaration([X3DInterfaceDeclaration17]);
+X3DPrototype21 := TX3DPrototype.Create;;
+Transform22 := TTransformNode.Create;;
+X3DPrototype23 := TX3DPrototypeNode;
 { METHOD .AddX3DPrototype }
-Group7.AddX3DPrototype([X3DPrototype27]);
+Transform22.AddX3DPrototype([X3DPrototype23]);
+{ METHOD .AddTransform }
+X3DPrototype21.AddTransform([Transform22]);
+{ METHOD .AddX3DPrototype }
+X3DPrototype16.AddX3DPrototype([X3DPrototype21]);
+{ METHOD .AddX3DPrototype }
+Group7.AddX3DPrototype([X3DPrototype16]);
+X3DPrototype25 := TX3DPrototypeNode;
+MFNode26 := TMFNode.CreateUndefined(X3DPrototype25, false, 'myShape');
+Shape27 := TShapeNode.Create;;
+Box28 := TBoxNode.Create;;
+Box28.Size := Vector3(140,140,140);
+{ METHOD .Geometry }
+{ METHOD.SET .Geometry }
+Shape27.Geometry := Box28;
+{ METHOD .AddShape }
+MFNode26.AddShape([Shape27]);
+{ METHOD .AddMFNode }
+X3DPrototype25.AddMFNode([MFNode26]);
+{ METHOD .AddX3DPrototype }
+Group7.AddX3DPrototype([X3DPrototype25]);
 { METHOD .AddGroup }
 X3D0.AddChildren([Group7]);
 end;

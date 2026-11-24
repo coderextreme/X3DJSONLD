@@ -2,7 +2,7 @@ unit bumpyfreewrl;
 
 interface
 
-uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
 
 function Createbumpyfreewrl: TX3DRootNode;
 
@@ -78,21 +78,21 @@ X3D0.Meta['generator'] := 'X3D-Edit, https://savage.nps.edu/X3D-Edit';
 X3D0.Meta['identifier'] := 'https://coderextreme.net/X3DJSONLD/src/main/data/bumpfreewrl.x3d';
 { METHOD .Meta }
 { METHOD .Head }
-Group15 := TGroupNode.Create;
-WorldInfo16 := TWorldInfoNode.Create;
+Group15 := TGroupNode.Create;;
+WorldInfo16 := TWorldInfoNode.Create;;
 WorldInfo16.Title := 'bumpyx_ite.x3d';
 { METHOD .FdChildren.Add }
 Group15.FdChildren.Add(WorldInfo16);
-NavigationInfo17 := TNavigationInfoNode.Create;
+NavigationInfo17 := TNavigationInfoNode.Create;;
 { METHOD .FdChildren.Add }
 Group15.FdChildren.Add(NavigationInfo17);
-Viewpoint18 := TViewpointNode.Create;
+Viewpoint18 := TViewpointNode.Create;;
 Viewpoint18.Position := Vector3(0,0,40);
 Viewpoint18.Description := 'Transparent rose';
 { METHOD .FdChildren.Add }
 Group15.FdChildren.Add(Viewpoint18);
 { Images courtesy of Paul Debevec's Light Probe Image Gallery }
-Background19 := TBackgroundNode.Create;
+Background19 := TBackgroundNode.Create;;
 Background19.SetBackUrl(['../resources/images/all_probes/stpeters_cross/stpeters_back.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png']);
 Background19.SetBottomUrl(['../resources/images/all_probes/stpeters_cross/stpeters_bottom.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png']);
 Background19.SetFrontUrl(['../resources/images/all_probes/stpeters_cross/stpeters_front.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png']);
@@ -101,51 +101,58 @@ Background19.SetRightUrl(['../resources/images/all_probes/stpeters_cross/stpeter
 Background19.SetTopUrl(['../resources/images/all_probes/stpeters_cross/stpeters_top.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png']);
 { METHOD .FdChildren.Add }
 Group15.FdChildren.Add(Background19);
-Transform20 := TTransformNode.Create;
-Shape21 := TShapeNode.Create;
-Sphere22 := TSphereNode.Create;
-Sphere22.Radius := 5;
-{ METHOD .Geometry }
-Shape21.Geometry := Sphere22;
 end;
 
 procedure InitbumpyfreewrlPart1;
 begin
 
-Appearance23 := TAppearanceNode.Create;
-Material24 := TMaterialNode.Create;
+Transform20 := TTransformNode.Create;;
+Shape21 := TShapeNode.Create;;
+Sphere22 := TSphereNode.Create;;
+Sphere22.Radius := 5;
+{ METHOD .Geometry }
+{ METHOD.SET .Geometry }
+Shape21.Geometry := Sphere22;
+Appearance23 := TAppearanceNode.Create;;
+Material24 := TMaterialNode.Create;;
 Material24.DiffuseColor := Vector3(0.7,0.7,0.7);
 Material24.SpecularColor := Vector3(0.5,0.5,0.5);
 { METHOD .SetMaterial }
 Appearance23.Material := Material24;
-ComposedCubeMapTexture25 := TComposedCubeMapTextureNode.Create;
-ImageTexture26 := TImageTextureNode.Create;
+ComposedCubeMapTexture25 := TComposedCubeMapTextureNode.Create;;
+ImageTexture26 := TImageTextureNode.Create;;
 ImageTexture26.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_back.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png']);
-{ METHOD .SetBackTexture }
-ComposedCubeMapTexture25.BackTexture := ImageTexture26;
-ImageTexture27 := TImageTextureNode.Create;
+{ METHOD .FdBackTexture.Set }
+ComposedCubeMapTexture25.FdBackTexture.Set(ImageTexture26);
+ImageTexture27 := TImageTextureNode.Create;;
 ImageTexture27.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_bottom.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png']);
-{ METHOD .SetBottomTexture }
-ComposedCubeMapTexture25.BottomTexture := ImageTexture27;
-ImageTexture28 := TImageTextureNode.Create;
+{ METHOD .FdBottomTexture.Set }
+ComposedCubeMapTexture25.FdBottomTexture.Set(ImageTexture27);
+ImageTexture28 := TImageTextureNode.Create;;
 ImageTexture28.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_front.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png']);
-{ METHOD .SetFrontTexture }
-ComposedCubeMapTexture25.FrontTexture := ImageTexture28;
-ImageTexture29 := TImageTextureNode.Create;
+{ METHOD .FdFrontTexture.Set }
+ComposedCubeMapTexture25.FdFrontTexture.Set(ImageTexture28);
+ImageTexture29 := TImageTextureNode.Create;;
 ImageTexture29.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_left.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png']);
-{ METHOD .SetLeftTexture }
-ComposedCubeMapTexture25.LeftTexture := ImageTexture29;
-ImageTexture30 := TImageTextureNode.Create;
+{ METHOD .FdLeftTexture.Set }
+ComposedCubeMapTexture25.FdLeftTexture.Set(ImageTexture29);
+ImageTexture30 := TImageTextureNode.Create;;
 ImageTexture30.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_right.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png']);
-{ METHOD .SetRightTexture }
-ComposedCubeMapTexture25.RightTexture := ImageTexture30;
-ImageTexture31 := TImageTextureNode.Create;
+{ METHOD .FdRightTexture.Set }
+ComposedCubeMapTexture25.FdRightTexture.Set(ImageTexture30);
+ImageTexture31 := TImageTextureNode.Create;;
 ImageTexture31.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_top.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png']);
-{ METHOD .SetTopTexture }
-ComposedCubeMapTexture25.TopTexture := ImageTexture31;
+end;
+
+procedure InitbumpyfreewrlPart2;
+begin
+
+{ METHOD .FdTopTexture.Set }
+ComposedCubeMapTexture25.FdTopTexture.Set(ImageTexture31);
 { METHOD .Texture }
+{ METHOD.SET .Texture }
 Appearance23.Texture := ComposedCubeMapTexture25;
-ComposedShader32 := TComposedShaderNode.Create;
+ComposedShader32 := TComposedShaderNode.Create;;
 ComposedShader32.Language := 'GLSL';
 SFVec3f33 := TSFVec3f.CreateUndefined(ComposedShader32, false, 'chromaticDispertion');
 SFVec3f33.Value := '0.98 1 1.033';
@@ -164,11 +171,6 @@ SFFloat36.Value := '0.5';
 { METHOD .AddSFFloat }
 ComposedShader32.AddSFFloat([SFFloat36]);
 SFFloat37 := TSFFloat.CreateUndefined(ComposedShader32, false, 'power');
-end;
-
-procedure InitbumpyfreewrlPart2;
-begin
-
 SFFloat37.Value := '2';
 { METHOD .AddSFFloat }
 ComposedShader32.AddSFFloat([SFFloat37]);
@@ -196,19 +198,27 @@ SFFloat43 := TSFFloat.CreateUndefined(ComposedShader32, false, 'pdelta');
 SFFloat43.Value := '0';
 { METHOD .AddSFFloat }
 ComposedShader32.AddSFFloat([SFFloat43]);
-ShaderPart44 := TShaderPartNode.Create;
+ShaderPart44 := TShaderPartNode.Create;;
+end;
+
+procedure InitbumpyfreewrlPart3;
+begin
+
 ShaderPart44.SetUrl(['../shaders/freewrl_flowers_chromatic.vs','https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_flowers_chromatic.vs']);
 ShaderPart44.FdType.Value := 'VERTEX';
 { METHOD .Parts }
+{ METHOD.SET .Parts }
 ComposedShader32.Parts := ShaderPart44;
-ShaderPart45 := TShaderPartNode.Create;
+ShaderPart45 := TShaderPartNode.Create;;
 ShaderPart45.SetUrl(['../shaders/freewrl_bubbles.fs','https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_bubbles.fs']);
 ShaderPart45.FdType.Value := 'FRAGMENT';
 { METHOD .Parts }
+{ METHOD.SET .Parts }
 ComposedShader32.Parts := ShaderPart45;
 { METHOD .AddChildren }
 Appearance23.AddChildren([ComposedShader32]);
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape21.Appearance := Appearance23;
 { METHOD .FdChildren.Add }
 Transform20.FdChildren.Add(Shape21);
@@ -223,6 +233,7 @@ begin
 InitbumpyfreewrlPart0;
 InitbumpyfreewrlPart1;
 InitbumpyfreewrlPart2;
+InitbumpyfreewrlPart3;
 Result := X3D0;
 end;
 

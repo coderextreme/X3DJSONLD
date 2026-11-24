@@ -2,7 +2,7 @@ unit x3dconnectorProto;
 
 interface
 
-uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
 
 function Createx3dconnectorProto: TX3DRootNode;
 
@@ -74,40 +74,33 @@ SFNode72: TSFNode;
 SFNode73: TSFNode;
 SFVec3f74: TSFVec3f;
 SFVec3f75: TSFVec3f;
-IS76: TIS;
-connect77: Tconnect;
-connect78: Tconnect;
-connect79: Tconnect;
-connect80: Tconnect;
-connect81: Tconnect;
-connect82: Tconnect;
-X3DPrototype83: TX3DPrototypeNode;
+X3DPrototype77: TX3DPrototypeNode;
+SFNode78: TSFNode;
+Transform79: TTransformNode;
+SFNode80: TSFNode;
+Transform81: TTransformNode;
+SFNode82: TSFNode;
+Transform83: TTransformNode;
 SFNode84: TSFNode;
 Transform85: TTransformNode;
-SFNode86: TSFNode;
-Transform87: TTransformNode;
-SFNode88: TSFNode;
-Transform89: TTransformNode;
-SFNode90: TSFNode;
-Transform91: TTransformNode;
-X3DPrototype92: TX3DPrototypeNode;
+X3DPrototype86: TX3DPrototypeNode;
+SFNode87: TSFNode;
+Transform88: TTransformNode;
+SFNode89: TSFNode;
+Transform90: TTransformNode;
+SFNode91: TSFNode;
+Transform92: TTransformNode;
 SFNode93: TSFNode;
 Transform94: TTransformNode;
-SFNode95: TSFNode;
-Transform96: TTransformNode;
-SFNode97: TSFNode;
-Transform98: TTransformNode;
-SFNode99: TSFNode;
-Transform100: TTransformNode;
-X3DPrototype101: TX3DPrototypeNode;
+X3DPrototype95: TX3DPrototypeNode;
+SFNode96: TSFNode;
+Transform97: TTransformNode;
+SFNode98: TSFNode;
+Transform99: TTransformNode;
+SFNode100: TSFNode;
+Transform101: TTransformNode;
 SFNode102: TSFNode;
 Transform103: TTransformNode;
-SFNode104: TSFNode;
-Transform105: TTransformNode;
-SFNode106: TSFNode;
-Transform107: TTransformNode;
-SFNode108: TSFNode;
-Transform109: TTransformNode;
 
 procedure Initx3dconnectorProtoPart0;
 begin
@@ -132,36 +125,43 @@ X3D0.Meta['description'] := 'a generic proto to connect two objects';
 X3D0.Meta['license'] := 'https://www.web3d.org/x3d/content/examples/license.html';
 { METHOD .Meta }
 { METHOD .Head }
-Group10 := TGroupNode.Create;
-WorldInfo11 := TWorldInfoNode.Create;
+Group10 := TGroupNode.Create;;
+WorldInfo11 := TWorldInfoNode.Create;;
 WorldInfo11.Title := 'Connector Proto';
 { METHOD .FdChildren.Add }
 Group10.FdChildren.Add(WorldInfo11);
-Viewpoint12 := TViewpointNode.Create;
+Viewpoint12 := TViewpointNode.Create;;
 Viewpoint12.Position := Vector3(0,0,5);
 Viewpoint12.Description := 'Only Viewpoint';
 { METHOD .FdChildren.Add }
 Group10.FdChildren.Add(Viewpoint12);
-Background13 := TBackgroundNode.Create;
+Background13 := TBackgroundNode.Create;;
 Background13.SetSkyColor([Vector3(0.4,0.4,0.4)]);
 { METHOD .FdChildren.Add }
 Group10.FdChildren.Add(Background13);
-Transform14 := TTransformNode.Create;
-Shape15 := TShapeNode.Create;
-Appearance16 := TAppearanceNode.Create;
-Material17 := TMaterialNode.Create;
+Transform14 := TTransformNode.Create;;
+Shape15 := TShapeNode.Create;;
+Appearance16 := TAppearanceNode.Create;;
+Material17 := TMaterialNode.Create;;
 Material17.DiffuseColor := Vector3(0.7,0.2,0.2);
 { METHOD .SetMaterial }
 Appearance16.Material := Material17;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape15.Appearance := Appearance16;
-Sphere18 := TSphereNode.Create;
+Sphere18 := TSphereNode.Create;;
+end;
+
+procedure Initx3dconnectorProtoPart1;
+begin
+
 Sphere18.Radius := 0.1;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape15.Geometry := Sphere18;
 { METHOD .FdChildren.Add }
 Transform14.FdChildren.Add(Shape15);
-PlaneSensor19 := TPlaneSensorNode.Create;
+PlaneSensor19 := TPlaneSensorNode.Create;;
 PlaneSensor19.Description := 'Grab to move';
 { METHOD .FdChildren.Add }
 Transform14.FdChildren.Add(PlaneSensor19);
@@ -171,28 +171,25 @@ Transform14.AddRoute(PlaneSensor19.EventTranslation_changed, Transform14.FdTrans
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group10.FdChildren.Add(Transform14);
-Transform21 := TTransformNode.Create;
-end;
-
-procedure Initx3dconnectorProtoPart1;
-begin
-
+Transform21 := TTransformNode.Create;;
 Transform21.Translation := Vector3(1,-1,0.01);
-Shape22 := TShapeNode.Create;
-Appearance23 := TAppearanceNode.Create;
-Material24 := TMaterialNode.Create;
+Shape22 := TShapeNode.Create;;
+Appearance23 := TAppearanceNode.Create;;
+Material24 := TMaterialNode.Create;;
 Material24.DiffuseColor := Vector3(0.2,0.7,0.2);
 { METHOD .SetMaterial }
 Appearance23.Material := Material24;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape22.Appearance := Appearance23;
-Sphere25 := TSphereNode.Create;
+Sphere25 := TSphereNode.Create;;
 Sphere25.Radius := 0.1;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape22.Geometry := Sphere25;
 { METHOD .FdChildren.Add }
 Transform21.FdChildren.Add(Shape22);
-PlaneSensor26 := TPlaneSensorNode.Create;
+PlaneSensor26 := TPlaneSensorNode.Create;;
 PlaneSensor26.Description := 'Grab to move';
 PlaneSensor26.Offset := Vector3(1,-1,0.01);
 { METHOD .FdChildren.Add }
@@ -203,23 +200,30 @@ Transform21.AddRoute(PlaneSensor26.EventTranslation_changed, Transform21.FdTrans
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group10.FdChildren.Add(Transform21);
-Transform28 := TTransformNode.Create;
+Transform28 := TTransformNode.Create;;
 Transform28.Translation := Vector3(1,1,0.01);
-Shape29 := TShapeNode.Create;
-Appearance30 := TAppearanceNode.Create;
-Material31 := TMaterialNode.Create;
+Shape29 := TShapeNode.Create;;
+Appearance30 := TAppearanceNode.Create;;
+end;
+
+procedure Initx3dconnectorProtoPart2;
+begin
+
+Material31 := TMaterialNode.Create;;
 Material31.DiffuseColor := Vector3(0.2,0.7,0.2);
 { METHOD .SetMaterial }
 Appearance30.Material := Material31;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape29.Appearance := Appearance30;
-Sphere32 := TSphereNode.Create;
+Sphere32 := TSphereNode.Create;;
 Sphere32.Radius := 0.1;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape29.Geometry := Sphere32;
 { METHOD .FdChildren.Add }
 Transform28.FdChildren.Add(Shape29);
-PlaneSensor33 := TPlaneSensorNode.Create;
+PlaneSensor33 := TPlaneSensorNode.Create;;
 PlaneSensor33.Description := 'Grab to move';
 PlaneSensor33.Offset := Vector3(1,1,0.01);
 { METHOD .FdChildren.Add }
@@ -230,28 +234,25 @@ Transform28.AddRoute(PlaneSensor33.EventTranslation_changed, Transform28.FdTrans
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group10.FdChildren.Add(Transform28);
-Transform35 := TTransformNode.Create;
+Transform35 := TTransformNode.Create;;
 Transform35.Translation := Vector3(-1,1,0.01);
-Shape36 := TShapeNode.Create;
-Appearance37 := TAppearanceNode.Create;
-Material38 := TMaterialNode.Create;
-end;
-
-procedure Initx3dconnectorProtoPart2;
-begin
-
+Shape36 := TShapeNode.Create;;
+Appearance37 := TAppearanceNode.Create;;
+Material38 := TMaterialNode.Create;;
 Material38.DiffuseColor := Vector3(0.2,0.7,0.2);
 { METHOD .SetMaterial }
 Appearance37.Material := Material38;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape36.Appearance := Appearance37;
-Sphere39 := TSphereNode.Create;
+Sphere39 := TSphereNode.Create;;
 Sphere39.Radius := 0.1;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape36.Geometry := Sphere39;
 { METHOD .FdChildren.Add }
 Transform35.FdChildren.Add(Shape36);
-PlaneSensor40 := TPlaneSensorNode.Create;
+PlaneSensor40 := TPlaneSensorNode.Create;;
 PlaneSensor40.Description := 'Grab to move';
 PlaneSensor40.Offset := Vector3(-1,1,0.01);
 { METHOD .FdChildren.Add }
@@ -259,23 +260,30 @@ Transform35.FdChildren.Add(PlaneSensor40);
 { Original "PS4.EventTranslation_changed TO G4.FdTranslation.EventIn }
 { Sample PS4.EventTranslation_changed TO G4.FdTranslation.EventIn}
 Transform35.AddRoute(PlaneSensor40.EventTranslation_changed, Transform35.FdTranslation.EventIn);
+end;
+
+procedure Initx3dconnectorProtoPart3;
+begin
+
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group10.FdChildren.Add(Transform35);
-Transform42 := TTransformNode.Create;
-Transform43 := TTransformNode.Create;
-Shape44 := TShapeNode.Create;
-Appearance45 := TAppearanceNode.Create;
-Material46 := TMaterialNode.Create;
+Transform42 := TTransformNode.Create;;
+Transform43 := TTransformNode.Create;;
+Shape44 := TShapeNode.Create;;
+Appearance45 := TAppearanceNode.Create;;
+Material46 := TMaterialNode.Create;;
 Material46.DiffuseColor := Vector3(0.2,0.7,0.7);
 Material46.Transparency := 0.5;
 { METHOD .SetMaterial }
 Appearance45.Material := Material46;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape44.Appearance := Appearance45;
-Cylinder47 := TCylinderNode.Create;
+Cylinder47 := TCylinderNode.Create;;
 Cylinder47.Radius := 0.05;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape44.Geometry := Cylinder47;
 { METHOD .FdChildren.Add }
 Transform43.FdChildren.Add(Shape44);
@@ -283,24 +291,26 @@ Transform43.FdChildren.Add(Shape44);
 Transform42.FdChildren.Add(Transform43);
 { METHOD .FdChildren.Add }
 Group10.FdChildren.Add(Transform42);
-Transform48 := TTransformNode.Create;
-Transform49 := TTransformNode.Create;
-Shape50 := TShapeNode.Create;
-Appearance51 := TAppearanceNode.Create;
-Material52 := TMaterialNode.Create;
+Transform48 := TTransformNode.Create;;
+Transform49 := TTransformNode.Create;;
+Shape50 := TShapeNode.Create;;
+Appearance51 := TAppearanceNode.Create;;
+Material52 := TMaterialNode.Create;;
 Material52.DiffuseColor := Vector3(0.2,0.7,0.7);
 Material52.Transparency := 0.5;
 { METHOD .SetMaterial }
 Appearance51.Material := Material52;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape50.Appearance := Appearance51;
-Cylinder53 := TCylinderNode.Create;
+Cylinder53 := TCylinderNode.Create;;
 Cylinder53.Radius := 0.05;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape50.Geometry := Cylinder53;
 end;
 
-procedure Initx3dconnectorProtoPart3;
+procedure Initx3dconnectorProtoPart4;
 begin
 
 { METHOD .FdChildren.Add }
@@ -309,20 +319,22 @@ Transform49.FdChildren.Add(Shape50);
 Transform48.FdChildren.Add(Transform49);
 { METHOD .FdChildren.Add }
 Group10.FdChildren.Add(Transform48);
-Transform54 := TTransformNode.Create;
-Transform55 := TTransformNode.Create;
-Shape56 := TShapeNode.Create;
-Appearance57 := TAppearanceNode.Create;
-Material58 := TMaterialNode.Create;
+Transform54 := TTransformNode.Create;;
+Transform55 := TTransformNode.Create;;
+Shape56 := TShapeNode.Create;;
+Appearance57 := TAppearanceNode.Create;;
+Material58 := TMaterialNode.Create;;
 Material58.DiffuseColor := Vector3(0.2,0.7,0.7);
 Material58.Transparency := 0.5;
 { METHOD .SetMaterial }
 Appearance57.Material := Material58;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape56.Appearance := Appearance57;
-Cylinder59 := TCylinderNode.Create;
+Cylinder59 := TCylinderNode.Create;;
 Cylinder59.Radius := 0.05;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape56.Geometry := Cylinder59;
 { METHOD .FdChildren.Add }
 Transform55.FdChildren.Add(Shape56);
@@ -330,8 +342,8 @@ Transform55.FdChildren.Add(Shape56);
 Transform54.FdChildren.Add(Transform55);
 { METHOD .FdChildren.Add }
 Group10.FdChildren.Add(Transform54);
-X3DPrototype60 := TX3DPrototype.Create;
-X3DInterfaceDeclaration61 := TX3DInterfaceDeclaration.Create(nil);
+X3DPrototype60 := TX3DPrototype.Create;;
+X3DInterfaceDeclaration61 := TX3DInterfaceDeclaration.Create(nil);;
 SFNode62 := TSFNode.CreateUndefined(X3DInterfaceDeclaration61, false, 'startnode');
 { METHOD .AddSFNode }
 X3DInterfaceDeclaration61.AddSFNode([SFNode62]);
@@ -350,10 +362,15 @@ X3DInterfaceDeclaration61.AddSFVec3f([SFVec3f66]);
 SFVec3f67 := TSFVec3f.CreateUndefined(X3DInterfaceDeclaration61, false, 'set_endpoint');
 { METHOD .AddSFVec3f }
 X3DInterfaceDeclaration61.AddSFVec3f([SFVec3f67]);
+end;
+
+procedure Initx3dconnectorProtoPart5;
+begin
+
 { METHOD .AddX3DInterfaceDeclaration }
 X3DPrototype60.AddX3DInterfaceDeclaration([X3DInterfaceDeclaration61]);
-X3DPrototype68 := TX3DPrototype.Create;
-Script69 := TScriptNode.Create;
+X3DPrototype68 := TX3DPrototype.Create;;
+Script69 := TScriptNode.Create;;
 Script69.DirectOutput := True;
 SFNode70 := TSFNode.CreateUndefined(Script69, false, 'startnode');
 { METHOD .Fd.AddCustomField }
@@ -361,11 +378,6 @@ Script69.AddCustomField(SFNode70);
 SFNode71 := TSFNode.CreateUndefined(Script69, false, 'endnode');
 { METHOD .Fd.AddCustomField }
 Script69.AddCustomField(SFNode71);
-end;
-
-procedure Initx3dconnectorProtoPart4;
-begin
-
 SFNode72 := TSFNode.CreateUndefined(Script69, false, 'transnode');
 { METHOD .Fd.AddCustomField }
 Script69.AddCustomField(SFNode72);
@@ -378,39 +390,6 @@ Script69.AddCustomField(SFVec3f74);
 SFVec3f75 := TSFVec3f.CreateUndefined(Script69, false, 'set_endpoint');
 { METHOD .Fd.AddCustomField }
 Script69.AddCustomField(SFVec3f75);
-IS76 := TIS.Create;
-connect77 := Tconnect.Create;
-connect77.NodeField := 'startnode';
-connect77.ProtoField := 'startnode';
-{ METHOD .Connect }
-IS76.Connect := connect77;
-connect78 := Tconnect.Create;
-connect78.NodeField := 'endnode';
-connect78.ProtoField := 'endnode';
-{ METHOD .Connect }
-IS76.Connect := connect78;
-connect79 := Tconnect.Create;
-connect79.NodeField := 'transnode';
-connect79.ProtoField := 'transnode';
-{ METHOD .Connect }
-IS76.Connect := connect79;
-connect80 := Tconnect.Create;
-connect80.NodeField := 'rotscalenode';
-connect80.ProtoField := 'rotscalenode';
-{ METHOD .Connect }
-IS76.Connect := connect80;
-connect81 := Tconnect.Create;
-connect81.NodeField := 'set_startpoint';
-connect81.ProtoField := 'set_startpoint';
-{ METHOD .Connect }
-IS76.Connect := connect81;
-connect82 := Tconnect.Create;
-connect82.NodeField := 'set_endpoint';
-connect82.ProtoField := 'set_endpoint';
-{ METHOD .Connect }
-IS76.Connect := connect82;
-{ METHOD .Fd.AddCustomField }
-Script69.AddCustomField(IS76);
 
 Script69.SetSourceCode('''ecmascript:\n"+
 "        function recompute(startpoint,endpoint){\n"+
@@ -451,98 +430,98 @@ X3DPrototype68.AddScript([Script69]);
 X3DPrototype60.AddX3DPrototype([X3DPrototype68]);
 { METHOD .AddX3DPrototype }
 Group10.AddX3DPrototype([X3DPrototype60]);
-X3DPrototype83 := TX3DPrototypeNode.Create;
-SFNode84 := TSFNode.CreateUndefined(X3DPrototype83, false, 'startnode');
+X3DPrototype77 := TX3DPrototypeNode;
+SFNode78 := TSFNode.CreateUndefined(X3DPrototype77, false, 'startnode');
 { METHOD .Fd.Value }
-SFNode84.Value := Transform14;
+SFNode78.Value := Transform14;
 { METHOD .AddSFNode }
-X3DPrototype83.AddSFNode([SFNode84]);
-SFNode86 := TSFNode.CreateUndefined(X3DPrototype83, false, 'endnode');
+X3DPrototype77.AddSFNode([SFNode78]);
+SFNode80 := TSFNode.CreateUndefined(X3DPrototype77, false, 'endnode');
 { METHOD .Fd.Value }
-SFNode86.Value := Transform21;
+SFNode80.Value := Transform21;
 { METHOD .AddSFNode }
-X3DPrototype83.AddSFNode([SFNode86]);
-SFNode88 := TSFNode.CreateUndefined(X3DPrototype83, false, 'transnode');
+X3DPrototype77.AddSFNode([SFNode80]);
+SFNode82 := TSFNode.CreateUndefined(X3DPrototype77, false, 'transnode');
 { METHOD .Fd.Value }
-SFNode88.Value := Transform42;
+SFNode82.Value := Transform42;
 { METHOD .AddSFNode }
-X3DPrototype83.AddSFNode([SFNode88]);
-SFNode90 := TSFNode.CreateUndefined(X3DPrototype83, false, 'rotscalenode');
+X3DPrototype77.AddSFNode([SFNode82]);
+SFNode84 := TSFNode.CreateUndefined(X3DPrototype77, false, 'rotscalenode');
 { METHOD .Fd.Value }
-SFNode90.Value := Transform43;
+SFNode84.Value := Transform43;
 { METHOD .AddSFNode }
-X3DPrototype83.AddSFNode([SFNode90]);
+X3DPrototype77.AddSFNode([SFNode84]);
 { METHOD .AddX3DPrototype }
-Group10.AddX3DPrototype([X3DPrototype83]);
-X3DPrototype92 := TX3DPrototypeNode.Create;
-SFNode93 := TSFNode.CreateUndefined(X3DPrototype92, false, 'startnode');
+Group10.AddX3DPrototype([X3DPrototype77]);
+X3DPrototype86 := TX3DPrototypeNode;
+SFNode87 := TSFNode.CreateUndefined(X3DPrototype86, false, 'startnode');
 { METHOD .Fd.Value }
-SFNode93.Value := Transform14;
+SFNode87.Value := Transform14;
 { METHOD .AddSFNode }
-X3DPrototype92.AddSFNode([SFNode93]);
-SFNode95 := TSFNode.CreateUndefined(X3DPrototype92, false, 'endnode');
+X3DPrototype86.AddSFNode([SFNode87]);
+SFNode89 := TSFNode.CreateUndefined(X3DPrototype86, false, 'endnode');
 { METHOD .Fd.Value }
-SFNode95.Value := Transform28;
+SFNode89.Value := Transform28;
 { METHOD .AddSFNode }
-X3DPrototype92.AddSFNode([SFNode95]);
-SFNode97 := TSFNode.CreateUndefined(X3DPrototype92, false, 'transnode');
+X3DPrototype86.AddSFNode([SFNode89]);
+SFNode91 := TSFNode.CreateUndefined(X3DPrototype86, false, 'transnode');
 { METHOD .Fd.Value }
-SFNode97.Value := Transform48;
+SFNode91.Value := Transform48;
 { METHOD .AddSFNode }
-X3DPrototype92.AddSFNode([SFNode97]);
-SFNode99 := TSFNode.CreateUndefined(X3DPrototype92, false, 'rotscalenode');
+X3DPrototype86.AddSFNode([SFNode91]);
+SFNode93 := TSFNode.CreateUndefined(X3DPrototype86, false, 'rotscalenode');
 { METHOD .Fd.Value }
-SFNode99.Value := Transform49;
+SFNode93.Value := Transform49;
 { METHOD .AddSFNode }
-X3DPrototype92.AddSFNode([SFNode99]);
+X3DPrototype86.AddSFNode([SFNode93]);
 { METHOD .AddX3DPrototype }
-Group10.AddX3DPrototype([X3DPrototype92]);
-X3DPrototype101 := TX3DPrototypeNode.Create;
-SFNode102 := TSFNode.CreateUndefined(X3DPrototype101, false, 'startnode');
+Group10.AddX3DPrototype([X3DPrototype86]);
+X3DPrototype95 := TX3DPrototypeNode;
+SFNode96 := TSFNode.CreateUndefined(X3DPrototype95, false, 'startnode');
 { METHOD .Fd.Value }
-SFNode102.Value := Transform14;
+SFNode96.Value := Transform14;
 { METHOD .AddSFNode }
-X3DPrototype101.AddSFNode([SFNode102]);
-SFNode104 := TSFNode.CreateUndefined(X3DPrototype101, false, 'endnode');
+X3DPrototype95.AddSFNode([SFNode96]);
+SFNode98 := TSFNode.CreateUndefined(X3DPrototype95, false, 'endnode');
 { METHOD .Fd.Value }
-SFNode104.Value := Transform35;
+SFNode98.Value := Transform35;
 { METHOD .AddSFNode }
-X3DPrototype101.AddSFNode([SFNode104]);
-SFNode106 := TSFNode.CreateUndefined(X3DPrototype101, false, 'transnode');
+X3DPrototype95.AddSFNode([SFNode98]);
+SFNode100 := TSFNode.CreateUndefined(X3DPrototype95, false, 'transnode');
 { METHOD .Fd.Value }
-SFNode106.Value := Transform54;
+SFNode100.Value := Transform54;
 { METHOD .AddSFNode }
-X3DPrototype101.AddSFNode([SFNode106]);
-SFNode108 := TSFNode.CreateUndefined(X3DPrototype101, false, 'rotscalenode');
+X3DPrototype95.AddSFNode([SFNode100]);
+SFNode102 := TSFNode.CreateUndefined(X3DPrototype95, false, 'rotscalenode');
 { METHOD .Fd.Value }
-SFNode108.Value := Transform55;
+SFNode102.Value := Transform55;
 { METHOD .AddSFNode }
-X3DPrototype101.AddSFNode([SFNode108]);
+X3DPrototype95.AddSFNode([SFNode102]);
 { METHOD .AddX3DPrototype }
-Group10.AddX3DPrototype([X3DPrototype101]);
+Group10.AddX3DPrototype([X3DPrototype95]);
 { Original "G1.EventTranslation_changed TO connector1.EventSet_startpoint }
 { Sample G1.EventTranslation_changed TO connector1.EventSet_startpoint}
-Group10.AddRoute(Transform14.EventTranslation_changed, X3DPrototype83.EventSet_startpoint);
+Group10.AddRoute(Transform14.EventTranslation_changed, X3DPrototype77.EventSet_startpoint);
 { METHOD .AddX3DROUTE }
 { Original "G2.EventTranslation_changed TO connector1.EventSet_endpoint }
 { Sample G2.EventTranslation_changed TO connector1.EventSet_endpoint}
-Group10.AddRoute(Transform21.EventTranslation_changed, X3DPrototype83.EventSet_endpoint);
+Group10.AddRoute(Transform21.EventTranslation_changed, X3DPrototype77.EventSet_endpoint);
 { METHOD .AddX3DROUTE }
 { Original "G1.EventTranslation_changed TO connector2.EventSet_startpoint }
 { Sample G1.EventTranslation_changed TO connector2.EventSet_startpoint}
-Group10.AddRoute(Transform14.EventTranslation_changed, X3DPrototype92.EventSet_startpoint);
+Group10.AddRoute(Transform14.EventTranslation_changed, X3DPrototype86.EventSet_startpoint);
 { METHOD .AddX3DROUTE }
 { Original "G3.EventTranslation_changed TO connector2.EventSet_endpoint }
 { Sample G3.EventTranslation_changed TO connector2.EventSet_endpoint}
-Group10.AddRoute(Transform28.EventTranslation_changed, X3DPrototype92.EventSet_endpoint);
+Group10.AddRoute(Transform28.EventTranslation_changed, X3DPrototype86.EventSet_endpoint);
 { METHOD .AddX3DROUTE }
 { Original "G1.EventTranslation_changed TO connector3.EventSet_startpoint }
 { Sample G1.EventTranslation_changed TO connector3.EventSet_startpoint}
-Group10.AddRoute(Transform14.EventTranslation_changed, X3DPrototype101.EventSet_startpoint);
+Group10.AddRoute(Transform14.EventTranslation_changed, X3DPrototype95.EventSet_startpoint);
 { METHOD .AddX3DROUTE }
 { Original "G4.EventTranslation_changed TO connector3.EventSet_endpoint }
 { Sample G4.EventTranslation_changed TO connector3.EventSet_endpoint}
-Group10.AddRoute(Transform35.EventTranslation_changed, X3DPrototype101.EventSet_endpoint);
+Group10.AddRoute(Transform35.EventTranslation_changed, X3DPrototype95.EventSet_endpoint);
 { METHOD .AddX3DROUTE }
 { METHOD .AddGroup }
 X3D0.AddChildren([Group10]);
@@ -555,6 +534,7 @@ Initx3dconnectorProtoPart1;
 Initx3dconnectorProtoPart2;
 Initx3dconnectorProtoPart3;
 Initx3dconnectorProtoPart4;
+Initx3dconnectorProtoPart5;
 Result := X3D0;
 end;
 

@@ -2,7 +2,7 @@ unit HelloWorldNoXmlNoDoctype;
 
 interface
 
-uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
 
 function CreateHelloWorldNoXmlNoDoctype: TX3DRootNode;
 
@@ -39,7 +39,7 @@ X3D0.Meta['license'] := 'https://www.web3d.org/x3d/content/examples/license.html
 X3D0.Meta['generator'] := 'X3D-Edit 4.0, https://www.web3d.org/x3d/tools/X3D-Edit';
 { METHOD .Meta }
 { METHOD .Head }
-Group11 := TGroupNode.Create;
+Group11 := TGroupNode.Create;;
 { Example scene to illustrate X3D nodes and fields (XML elements and attributes) }
 { METHOD .AddGroup }
 X3D0.AddChildren([Group11]);

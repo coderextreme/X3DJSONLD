@@ -2,7 +2,7 @@ unit particleballs;
 
 interface
 
-uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
 
 function Createparticleballs: TX3DRootNode;
 
@@ -73,21 +73,21 @@ X3D0.Meta['description'] := 'A flower proto with configurable shaders';
 X3D0.Meta['identifier'] := 'https://coderextreme.net/X3DJSONLD/src/main/data/particleflowers.x3d';
 { METHOD .Meta }
 { METHOD .Head }
-Group14 := TGroupNode.Create;
-WorldInfo15 := TWorldInfoNode.Create;
+Group14 := TGroupNode.Create;;
+WorldInfo15 := TWorldInfoNode.Create;;
 WorldInfo15.Title := 'particleflowers.x3d';
 { METHOD .FdChildren.Add }
 Group14.FdChildren.Add(WorldInfo15);
-NavigationInfo16 := TNavigationInfoNode.Create;
+NavigationInfo16 := TNavigationInfoNode.Create;;
 NavigationInfo16.SetType(['ANY','EXAMINE','FLY','LOOKAT']);
 { METHOD .FdChildren.Add }
 Group14.FdChildren.Add(NavigationInfo16);
-Viewpoint17 := TViewpointNode.Create;
+Viewpoint17 := TViewpointNode.Create;;
 Viewpoint17.Description := 'Tour Views';
 Viewpoint17.Position := Vector3(0,0,12);
 { METHOD .FdChildren.Add }
 Group14.FdChildren.Add(Viewpoint17);
-Background18 := TBackgroundNode.Create;
+Background18 := TBackgroundNode.Create;;
 Background18.SetBackUrl(['https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png']);
 Background18.SetBottomUrl(['https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png']);
 Background18.SetFrontUrl(['https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png']);
@@ -96,63 +96,73 @@ Background18.SetRightUrl(['https://coderextreme.net/X3DJSONLD/src/main/resources
 Background18.SetTopUrl(['https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png']);
 { METHOD .FdChildren.Add }
 Group14.FdChildren.Add(Background18);
-Transform19 := TTransformNode.Create;
-ParticleSystem20 := TParticleSystemNode.Create;
-ParticleSystem20.MaxParticles := 20;
-ParticleSystem20.GeometryType := 'GEOMETRY';
-BoundedPhysicsModel21 := TBoundedPhysicsModelNode.Create;
 end;
 
 procedure InitparticleballsPart1;
 begin
 
-Sphere22 := TSphereNode.Create;
+Transform19 := TTransformNode.Create;;
+ParticleSystem20 := TParticleSystemNode.Create;;
+ParticleSystem20.MaxParticles := 20;
+ParticleSystem20.GeometryType := 'GEOMETRY';
+BoundedPhysicsModel21 := TBoundedPhysicsModelNode.Create;;
+Sphere22 := TSphereNode.Create;;
 Sphere22.Radius := 100;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 BoundedPhysicsModel21.Geometry := Sphere22;
 { METHOD .Physics }
+{ METHOD.SET .Physics }
 ParticleSystem20.Physics := BoundedPhysicsModel21;
-ExplosionEmitter23 := TExplosionEmitterNode.Create;
+ExplosionEmitter23 := TExplosionEmitterNode.Create;;
 ExplosionEmitter23.Speed := 2;
 ExplosionEmitter23.Variation := 0.75;
 { METHOD .Emitter }
+{ METHOD.SET .Emitter }
 ParticleSystem20.Emitter := ExplosionEmitter23;
 { <Shape> }
-Sphere24 := TSphereNode.Create;
+Sphere24 := TSphereNode.Create;;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 ParticleSystem20.Geometry := Sphere24;
-Appearance25 := TAppearanceNode.Create;
-Material26 := TMaterialNode.Create;
+Appearance25 := TAppearanceNode.Create;;
+Material26 := TMaterialNode.Create;;
 Material26.DiffuseColor := Vector3(0.7,0.7,0.7);
 Material26.SpecularColor := Vector3(0.5,0.5,0.5);
 { METHOD .SetMaterial }
 Appearance25.Material := Material26;
-ComposedCubeMapTexture27 := TComposedCubeMapTextureNode.Create;
-ImageTexture28 := TImageTextureNode.Create;
+ComposedCubeMapTexture27 := TComposedCubeMapTextureNode.Create;;
+ImageTexture28 := TImageTextureNode.Create;;
 ImageTexture28.SetUrl(['https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png']);
-{ METHOD .SetBackTexture }
-ComposedCubeMapTexture27.BackTexture := ImageTexture28;
-ImageTexture29 := TImageTextureNode.Create;
+{ METHOD .FdBackTexture.Set }
+ComposedCubeMapTexture27.FdBackTexture.Set(ImageTexture28);
+ImageTexture29 := TImageTextureNode.Create;;
 ImageTexture29.SetUrl(['https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png']);
-{ METHOD .SetBottomTexture }
-ComposedCubeMapTexture27.BottomTexture := ImageTexture29;
-ImageTexture30 := TImageTextureNode.Create;
+{ METHOD .FdBottomTexture.Set }
+ComposedCubeMapTexture27.FdBottomTexture.Set(ImageTexture29);
+ImageTexture30 := TImageTextureNode.Create;;
+end;
+
+procedure InitparticleballsPart2;
+begin
+
 ImageTexture30.SetUrl(['https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png']);
-{ METHOD .SetFrontTexture }
-ComposedCubeMapTexture27.FrontTexture := ImageTexture30;
-ImageTexture31 := TImageTextureNode.Create;
+{ METHOD .FdFrontTexture.Set }
+ComposedCubeMapTexture27.FdFrontTexture.Set(ImageTexture30);
+ImageTexture31 := TImageTextureNode.Create;;
 ImageTexture31.SetUrl(['https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png']);
-{ METHOD .SetLeftTexture }
-ComposedCubeMapTexture27.LeftTexture := ImageTexture31;
-ImageTexture32 := TImageTextureNode.Create;
+{ METHOD .FdLeftTexture.Set }
+ComposedCubeMapTexture27.FdLeftTexture.Set(ImageTexture31);
+ImageTexture32 := TImageTextureNode.Create;;
 ImageTexture32.SetUrl(['https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png']);
-{ METHOD .SetRightTexture }
-ComposedCubeMapTexture27.RightTexture := ImageTexture32;
-ImageTexture33 := TImageTextureNode.Create;
+{ METHOD .FdRightTexture.Set }
+ComposedCubeMapTexture27.FdRightTexture.Set(ImageTexture32);
+ImageTexture33 := TImageTextureNode.Create;;
 ImageTexture33.SetUrl(['https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png']);
-{ METHOD .SetTopTexture }
-ComposedCubeMapTexture27.TopTexture := ImageTexture33;
+{ METHOD .FdTopTexture.Set }
+ComposedCubeMapTexture27.FdTopTexture.Set(ImageTexture33);
 { METHOD .Texture }
+{ METHOD.SET .Texture }
 Appearance25.Texture := ComposedCubeMapTexture27;
 { <ComposedShader language='GLSL'> }
 { <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'></field> }
@@ -174,17 +184,12 @@ Appearance25.Texture := ComposedCubeMapTexture27;
 { <ShaderPart url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs"'/> }
 { <ShaderPart type='FRAGMENT' url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.fs"'/> }
 { </ComposedShader> }
-ComposedShader34 := TComposedShaderNode.Create;
+ComposedShader34 := TComposedShaderNode.Create;;
 ComposedShader34.Language := 'GLSL';
 SFVec3f35 := TSFVec3f.CreateUndefined(ComposedShader34, false, 'chromaticDispertion');
 SFVec3f35.Value := '0.98 1 1.033';
 { METHOD .AddSFVec3f }
 ComposedShader34.AddSFVec3f([SFVec3f35]);
-end;
-
-procedure InitparticleballsPart2;
-begin
-
 SFNode36 := TSFNode.CreateUndefined(ComposedShader34, false, 'cube');
 { METHOD .AddComposedCubeMapTexture }
 SFNode36.AddComposedCubeMapTexture([ComposedCubeMapTexture27]);
@@ -202,19 +207,27 @@ SFFloat40 := TSFFloat.CreateUndefined(ComposedShader34, false, 'power');
 SFFloat40.Value := '2';
 { METHOD .AddSFFloat }
 ComposedShader34.AddSFFloat([SFFloat40]);
-ShaderPart41 := TShaderPartNode.Create;
+ShaderPart41 := TShaderPartNode.Create;;
 ShaderPart41.SetUrl(['../shaders/x_iteparticles.vs','https://coderextreme.net/X3DJSONLD/src/main/shaders/x_iteparticles.vs']);
 ShaderPart41.FdType.Value := 'VERTEX';
 { METHOD .Parts }
+{ METHOD.SET .Parts }
 ComposedShader34.Parts := ShaderPart41;
-ShaderPart42 := TShaderPartNode.Create;
+ShaderPart42 := TShaderPartNode.Create;;
+end;
+
+procedure InitparticleballsPart3;
+begin
+
 ShaderPart42.SetUrl(['https://coderextreme.net/X3DJSONLD/src/main/shaders/commonnew.fs']);
 ShaderPart42.FdType.Value := 'FRAGMENT';
 { METHOD .Parts }
+{ METHOD.SET .Parts }
 ComposedShader34.Parts := ShaderPart42;
 { METHOD .AddChildren }
 Appearance25.AddChildren([ComposedShader34]);
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 ParticleSystem20.Appearance := Appearance25;
 { METHOD .FdChildren.Add }
 Transform19.FdChildren.Add(ParticleSystem20);
@@ -230,6 +243,7 @@ begin
 InitparticleballsPart0;
 InitparticleballsPart1;
 InitparticleballsPart2;
+InitparticleballsPart3;
 Result := X3D0;
 end;
 

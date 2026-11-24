@@ -2,7 +2,7 @@ unit PoseCollection;
 
 interface
 
-uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
 
 function CreatePoseCollection: TX3DRootNode;
 
@@ -61,72 +61,77 @@ X3D0.Meta['generator'] := 'X3D-Edit 4.0, https://www.web3d.org/x3d/tools/X3D-Edi
 X3D0.Meta['license'] := '../license.html';
 { METHOD .Meta }
 { METHOD .Head }
-Group16 := TGroupNode.Create;
-WorldInfo17 := TWorldInfoNode.Create;
+Group16 := TGroupNode.Create;;
+WorldInfo17 := TWorldInfoNode.Create;;
 WorldInfo17.Title := 'PoseCollection.x3d';
 { METHOD .FdChildren.Add }
 Group16.FdChildren.Add(WorldInfo17);
-HAnimPose18 := THAnimPoseNode.Create;
+HAnimPose18 := THAnimPoseNode.Create;;
 HAnimPose18.Description := 'Standing position, I pose';
 HAnimPose18.Loa := 1;
 HAnimPose18.TransitionDuration := 0;
-HAnimJoint19 := THAnimJointNode.Create;
+HAnimJoint19 := THAnimJointNode.Create;;
 HAnimJoint19.Description := 'right wrist';
 HAnimJoint19.Rotation := Vector4(0,-0.2,0,0.25);
 { METHOD .FdChildren.Add }
 HAnimPose18.FdChildren.Add(HAnimJoint19);
-HAnimJoint20 := THAnimJointNode.Create;
+HAnimJoint20 := THAnimJointNode.Create;;
 HAnimJoint20.Description := 'right elbow';
 HAnimJoint20.Rotation := Vector4(-0.75,1,1,1.6);
 { METHOD .FdChildren.Add }
 HAnimPose18.FdChildren.Add(HAnimJoint20);
 HAnimJoint21 := THAnimJointNode.Create;
-HAnimJoint21.Description := 'right shoulder';
-HAnimJoint21.Rotation := Vector4(-0.1,0,-0.02,0.25);
-{ METHOD .FdChildren.Add }
-HAnimPose18.FdChildren.Add(HAnimJoint21);
-HAnimJoint22 := THAnimJointNode.Create;
-HAnimJoint22.Description := 'right acromioclavicular';
 end;
 
 procedure InitPoseCollectionPart1;
 begin
-
+;
+HAnimJoint21.Description := 'right shoulder';
+HAnimJoint21.Rotation := Vector4(-0.1,0,-0.02,0.25);
+{ METHOD .FdChildren.Add }
+HAnimPose18.FdChildren.Add(HAnimJoint21);
+HAnimJoint22 := THAnimJointNode.Create;;
+HAnimJoint22.Description := 'right acromioclavicular';
 HAnimJoint22.Rotation := Vector4(0,0.05,0,0.05);
 { METHOD .FdChildren.Add }
 HAnimPose18.FdChildren.Add(HAnimJoint22);
-HAnimJoint23 := THAnimJointNode.Create;
+HAnimJoint23 := THAnimJointNode.Create;;
 HAnimJoint23.Description := 'right sternoclavicular';
 HAnimJoint23.Rotation := Vector4(0,0.05,0,0.05);
 { METHOD .FdChildren.Add }
 HAnimPose18.FdChildren.Add(HAnimJoint23);
-HAnimJoint24 := THAnimJointNode.Create;
+HAnimJoint24 := THAnimJointNode.Create;;
 HAnimJoint24.Description := 'left wrist';
 HAnimJoint24.Rotation := Vector4(0,-0.2,0,0.25);
 { METHOD .FdChildren.Add }
 HAnimPose18.FdChildren.Add(HAnimJoint24);
-HAnimJoint25 := THAnimJointNode.Create;
+HAnimJoint25 := THAnimJointNode.Create;;
 HAnimJoint25.Description := 'left elbow';
 HAnimJoint25.Rotation := Vector4(-0.75,1,1,1.6);
 { METHOD .FdChildren.Add }
 HAnimPose18.FdChildren.Add(HAnimJoint25);
-HAnimJoint26 := THAnimJointNode.Create;
+HAnimJoint26 := THAnimJointNode.Create;;
 HAnimJoint26.Description := 'left shoulder';
 HAnimJoint26.Rotation := Vector4(-0.1,0,-0.02,0.25);
 { METHOD .FdChildren.Add }
 HAnimPose18.FdChildren.Add(HAnimJoint26);
-HAnimJoint27 := THAnimJointNode.Create;
+HAnimJoint27 := THAnimJointNode.Create;;
 HAnimJoint27.Description := 'left acromioclavicular';
 HAnimJoint27.Rotation := Vector4(0,0.05,0,0.05);
 { METHOD .FdChildren.Add }
 HAnimPose18.FdChildren.Add(HAnimJoint27);
-HAnimJoint28 := THAnimJointNode.Create;
+HAnimJoint28 := THAnimJointNode.Create;;
 HAnimJoint28.Description := 'left sternoclavicular';
 HAnimJoint28.Rotation := Vector4(0,0.05,0,0.05);
 { METHOD .FdChildren.Add }
 HAnimPose18.FdChildren.Add(HAnimJoint28);
 { METHOD .FdChildren.Add }
 Group16.FdChildren.Add(HAnimPose18);
+end;
+
+procedure InitPoseCollectionPart2;
+begin
+
 { METHOD .AddGroup }
 X3D0.AddChildren([Group16]);
 end;
@@ -135,6 +140,7 @@ function CreatePoseCollection: TX3DRootNode;
 begin
 InitPoseCollectionPart0;
 InitPoseCollectionPart1;
+InitPoseCollectionPart2;
 Result := X3D0;
 end;
 

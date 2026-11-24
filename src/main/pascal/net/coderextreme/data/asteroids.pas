@@ -2,7 +2,7 @@ unit asteroids;
 
 interface
 
-uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
 
 function Createasteroids: TX3DRootNode;
 
@@ -20,9 +20,7 @@ Shape11: TShapeNode;
 Sphere12: TSphereNode;
 X3DPrototype13: TX3DPrototype;
 Transform14: TTransformNode;
-IS15: TIS;
-connect16: Tconnect;
-X3DPrototype17: TX3DPrototypeNode;
+X3DPrototype16: TX3DPrototypeNode;
 
 procedure InitasteroidsPart0;
 begin
@@ -41,13 +39,14 @@ X3D0.Meta['identifier'] := 'https://coderextreme.net/X3DJSONLD/src/main/data/ast
 X3D0.Meta['description'] := 'asteroids';
 { METHOD .Meta }
 { METHOD .Head }
-Group7 := TGroupNode.Create;
-X3DPrototype8 := TX3DPrototype.Create;
-X3DInterfaceDeclaration9 := TX3DInterfaceDeclaration.Create(nil);
+Group7 := TGroupNode.Create;;
+X3DPrototype8 := TX3DPrototype.Create;;
+X3DInterfaceDeclaration9 := TX3DInterfaceDeclaration.Create(nil);;
 MFNode10 := TMFNode.CreateUndefined(X3DInterfaceDeclaration9, false, 'myShape');
-Shape11 := TShapeNode.Create;
-Sphere12 := TSphereNode.Create;
+Shape11 := TShapeNode.Create;;
+Sphere12 := TSphereNode.Create;;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape11.Geometry := Sphere12;
 { METHOD .AddShape }
 MFNode10.AddShape([Shape11]);
@@ -55,25 +54,17 @@ MFNode10.AddShape([Shape11]);
 X3DInterfaceDeclaration9.AddMFNode([MFNode10]);
 { METHOD .AddX3DInterfaceDeclaration }
 X3DPrototype8.AddX3DInterfaceDeclaration([X3DInterfaceDeclaration9]);
-X3DPrototype13 := TX3DPrototype.Create;
-Transform14 := TTransformNode.Create;
-IS15 := TIS.Create;
-connect16 := Tconnect.Create;
-connect16.NodeField := 'children';
-connect16.ProtoField := 'myShape';
-{ METHOD .Connect }
-IS15.Connect := connect16;
-{ METHOD .IS }
-Transform14.IS := IS15;
+X3DPrototype13 := TX3DPrototype.Create;;
+Transform14 := TTransformNode.Create;;
 { METHOD .AddTransform }
 X3DPrototype13.AddTransform([Transform14]);
 { METHOD .AddX3DPrototype }
 X3DPrototype8.AddX3DPrototype([X3DPrototype13]);
 { METHOD .AddX3DPrototype }
 Group7.AddX3DPrototype([X3DPrototype8]);
-X3DPrototype17 := TX3DPrototypeNode.Create;
+X3DPrototype16 := TX3DPrototypeNode;
 { METHOD .AddX3DPrototype }
-Group7.AddX3DPrototype([X3DPrototype17]);
+Group7.AddX3DPrototype([X3DPrototype16]);
 { METHOD .AddGroup }
 X3D0.AddChildren([Group7]);
 end;

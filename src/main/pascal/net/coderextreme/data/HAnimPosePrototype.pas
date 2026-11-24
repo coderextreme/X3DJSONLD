@@ -2,7 +2,7 @@ unit HAnimPosePrototype;
 
 interface
 
-uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
 
 function CreateHAnimPosePrototype: TX3DRootNode;
 
@@ -40,145 +40,140 @@ SFBool66: TSFBool;
 SFBool67: TSFBool;
 X3DPrototype68: TX3DPrototype;
 TimeSensor69: TTimeSensorNode;
-IS70: TIS;
-connect71: Tconnect;
-connect72: Tconnect;
-connect73: Tconnect;
-connect74: Tconnect;
-connect75: Tconnect;
-TimeSensor76: TTimeSensorNode;
-IS77: TIS;
-connect78: Tconnect;
-connect79: Tconnect;
-connect80: Tconnect;
-Group81: TGroupNode;
-Group82: TGroupNode;
-Script83: TScriptNode;
-SFNode84: TSFNode;
-SFString85: TSFString;
-SFInt3286: TSFInt32;
-SFString87: TSFString;
+TimeSensor71: TTimeSensorNode;
+Group73: TGroupNode;
+Group74: TGroupNode;
+Script75: TScriptNode;
+SFNode76: TSFNode;
+SFString77: TSFString;
+SFInt3278: TSFInt32;
+SFString79: TSFString;
+SFBool80: TSFBool;
+SFBool81: TSFBool;
+MFNode82: TMFNode;
+SFTime83: TSFTime;
+SFBool84: TSFBool;
+SFFloat85: TSFFloat;
+SFTime86: TSFTime;
+SFBool87: TSFBool;
 SFBool88: TSFBool;
-SFBool89: TSFBool;
-MFNode90: TMFNode;
-SFTime91: TSFTime;
-SFBool92: TSFBool;
-SFFloat93: TSFFloat;
-SFTime94: TSFTime;
-SFBool95: TSFBool;
+SFInt3289: TSFInt32;
+SFInt3290: TSFInt32;
+MFNode91: TMFNode;
+Viewpoint93: TViewpointNode;
+X3DPrototype94: TX3DPrototypeNode;
+SFString95: TSFString;
 SFBool96: TSFBool;
-SFInt3297: TSFInt32;
-SFInt3298: TSFInt32;
-MFNode99: TMFNode;
-IS100: TIS;
-connect101: Tconnect;
-connect102: Tconnect;
-connect103: Tconnect;
-connect104: Tconnect;
-connect105: Tconnect;
-connect106: Tconnect;
-connect107: Tconnect;
-connect108: Tconnect;
-connect109: Tconnect;
-connect110: Tconnect;
-connect111: Tconnect;
-connect112: Tconnect;
-connect113: Tconnect;
-Viewpoint114: TViewpointNode;
-X3DPrototype115: TX3DPrototypeNode;
-SFString116: TSFString;
-SFBool117: TSFBool;
-SFNode118: TSFNode;
-HAnimHumanoid119: THAnimHumanoidNode;
-SFInt32120: TSFInt32;
-SFString121: TSFString;
-MFNode122: TMFNode;
-HAnimJoint123: THAnimJointNode;
-HAnimJoint124: THAnimJointNode;
-SFTime125: TSFTime;
-X3DPrototype126: TX3DPrototypeNode;
-SFString127: TSFString;
-SFBool128: TSFBool;
-SFNode129: TSFNode;
-HAnimHumanoid130: THAnimHumanoidNode;
-SFInt32131: TSFInt32;
-SFString132: TSFString;
-MFNode133: TMFNode;
+SFNode97: TSFNode;
+HAnimHumanoid98: THAnimHumanoidNode;
+SFInt3299: TSFInt32;
+SFString100: TSFString;
+MFNode101: TMFNode;
+HAnimJoint102: THAnimJointNode;
+HAnimJoint103: THAnimJointNode;
+SFTime104: TSFTime;
+X3DPrototype105: TX3DPrototypeNode;
+SFString106: TSFString;
+SFBool107: TSFBool;
+SFNode108: TSFNode;
+HAnimHumanoid109: THAnimHumanoidNode;
+SFInt32110: TSFInt32;
+SFString111: TSFString;
+MFNode112: TMFNode;
+HAnimJoint113: THAnimJointNode;
+HAnimJoint114: THAnimJointNode;
+SFTime115: TSFTime;
+SFBool116: TSFBool;
+X3DPrototype117: TX3DPrototypeNode;
+SFString118: TSFString;
+SFBool119: TSFBool;
+SFNode120: TSFNode;
+HAnimHumanoid121: THAnimHumanoidNode;
+SFInt32122: TSFInt32;
+SFString123: TSFString;
+MFNode124: TMFNode;
+HAnimJoint125: THAnimJointNode;
+HAnimJoint126: THAnimJointNode;
+HAnimJoint127: THAnimJointNode;
+HAnimJoint128: THAnimJointNode;
+HAnimJoint129: THAnimJointNode;
+HAnimJoint130: THAnimJointNode;
+HAnimJoint131: THAnimJointNode;
+HAnimJoint132: THAnimJointNode;
+HAnimJoint133: THAnimJointNode;
 HAnimJoint134: THAnimJointNode;
 HAnimJoint135: THAnimJointNode;
-SFTime136: TSFTime;
-SFBool137: TSFBool;
-X3DPrototype138: TX3DPrototypeNode;
-SFString139: TSFString;
-SFBool140: TSFBool;
-SFNode141: TSFNode;
-HAnimHumanoid142: THAnimHumanoidNode;
-SFInt32143: TSFInt32;
+HAnimJoint136: THAnimJointNode;
+HAnimJoint137: THAnimJointNode;
+HAnimJoint138: THAnimJointNode;
+HAnimJoint139: THAnimJointNode;
+HAnimJoint140: THAnimJointNode;
+SFTime141: TSFTime;
+SFBool142: TSFBool;
+X3DPrototype143: TX3DPrototypeNode;
 SFString144: TSFString;
-MFNode145: TMFNode;
-HAnimJoint146: THAnimJointNode;
-HAnimJoint147: THAnimJointNode;
-HAnimJoint148: THAnimJointNode;
-HAnimJoint149: THAnimJointNode;
-HAnimJoint150: THAnimJointNode;
-HAnimJoint151: THAnimJointNode;
-HAnimJoint152: THAnimJointNode;
-HAnimJoint153: THAnimJointNode;
-HAnimJoint154: THAnimJointNode;
-HAnimJoint155: THAnimJointNode;
-HAnimJoint156: THAnimJointNode;
-HAnimJoint157: THAnimJointNode;
-HAnimJoint158: THAnimJointNode;
-HAnimJoint159: THAnimJointNode;
-HAnimJoint160: THAnimJointNode;
-HAnimJoint161: THAnimJointNode;
-SFTime162: TSFTime;
-SFBool163: TSFBool;
-X3DPrototype164: TX3DPrototypeNode;
+SFBool145: TSFBool;
+SFNode146: TSFNode;
+HAnimHumanoid147: THAnimHumanoidNode;
+SFInt32148: TSFInt32;
+SFString149: TSFString;
+MFNode150: TMFNode;
+SFTime151: TSFTime;
+SFBool152: TSFBool;
+X3DPrototype153: TX3DPrototypeNode;
+SFString154: TSFString;
+SFBool155: TSFBool;
+SFString156: TSFString;
+SFTime157: TSFTime;
+SFBool158: TSFBool;
+X3DPrototype159: TX3DPrototypeNode;
+SFString160: TSFString;
+SFBool161: TSFBool;
+SFNode162: TSFNode;
+HAnimHumanoid163: THAnimHumanoidNode;
+SFInt32164: TSFInt32;
 SFString165: TSFString;
-SFBool166: TSFBool;
-SFNode167: TSFNode;
-HAnimHumanoid168: THAnimHumanoidNode;
-SFInt32169: TSFInt32;
-SFString170: TSFString;
-MFNode171: TMFNode;
-SFTime172: TSFTime;
-SFBool173: TSFBool;
-X3DPrototype174: TX3DPrototypeNode;
-SFString175: TSFString;
-SFBool176: TSFBool;
-SFString177: TSFString;
-SFTime178: TSFTime;
-SFBool179: TSFBool;
-X3DPrototype180: TX3DPrototypeNode;
-SFString181: TSFString;
-SFBool182: TSFBool;
-SFNode183: TSFNode;
-HAnimHumanoid184: THAnimHumanoidNode;
-SFInt32185: TSFInt32;
-SFString186: TSFString;
-MFNode187: TMFNode;
-HAnimJoint188: THAnimJointNode;
-SFTime189: TSFTime;
-SFBool190: TSFBool;
-X3DPrototype191: TX3DPrototypeNode;
-SFString192: TSFString;
-SFBool193: TSFBool;
-SFNode194: TSFNode;
-HAnimHumanoid195: THAnimHumanoidNode;
-SFInt32196: TSFInt32;
-SFString197: TSFString;
-MFNode198: TMFNode;
-HAnimJoint199: THAnimJointNode;
-SFTime200: TSFTime;
-SFBool201: TSFBool;
-Group202: TGroupNode;
-Transform203: TTransformNode;
+MFNode166: TMFNode;
+HAnimJoint167: THAnimJointNode;
+SFTime168: TSFTime;
+SFBool169: TSFBool;
+X3DPrototype170: TX3DPrototypeNode;
+SFString171: TSFString;
+SFBool172: TSFBool;
+SFNode173: TSFNode;
+HAnimHumanoid174: THAnimHumanoidNode;
+SFInt32175: TSFInt32;
+SFString176: TSFString;
+MFNode177: TMFNode;
+HAnimJoint178: THAnimJointNode;
+SFTime179: TSFTime;
+SFBool180: TSFBool;
+Group181: TGroupNode;
+Transform182: TTransformNode;
+Shape183: TShapeNode;
+Text184: TTextNode;
+FontStyle185: TFontStyleNode;
+Appearance186: TAppearanceNode;
+Material187: TMaterialNode;
+Transform188: TTransformNode;
+Shape189: TShapeNode;
+Text190: TTextNode;
+FontStyle191: TFontStyleNode;
+Appearance192: TAppearanceNode;
+Shape193: TShapeNode;
+Appearance194: TAppearanceNode;
+Material195: TMaterialNode;
+Box196: TBoxNode;
+TouchSensor197: TTouchSensorNode;
+Transform199: TTransformNode;
+Shape200: TShapeNode;
+Text201: TTextNode;
+FontStyle202: TFontStyleNode;
+Appearance203: TAppearanceNode;
 Shape204: TShapeNode;
-Text205: TTextNode;
-FontStyle206: TFontStyleNode;
-Appearance207: TAppearanceNode;
-Material208: TMaterialNode;
+Appearance205: TAppearanceNode;
+Box206: TBoxNode;
+TouchSensor207: TTouchSensorNode;
 Transform209: TTransformNode;
 Shape210: TShapeNode;
 Text211: TTextNode;
@@ -186,84 +181,65 @@ FontStyle212: TFontStyleNode;
 Appearance213: TAppearanceNode;
 Shape214: TShapeNode;
 Appearance215: TAppearanceNode;
-Material216: TMaterialNode;
-Box217: TBoxNode;
-TouchSensor218: TTouchSensorNode;
-Transform220: TTransformNode;
-Shape221: TShapeNode;
-Text222: TTextNode;
-FontStyle223: TFontStyleNode;
-Appearance224: TAppearanceNode;
-Shape225: TShapeNode;
-Appearance226: TAppearanceNode;
-Box227: TBoxNode;
-TouchSensor228: TTouchSensorNode;
-Transform230: TTransformNode;
-Shape231: TShapeNode;
-Text232: TTextNode;
-FontStyle233: TFontStyleNode;
-Appearance234: TAppearanceNode;
-Shape235: TShapeNode;
-Appearance236: TAppearanceNode;
-Box237: TBoxNode;
-TouchSensor238: TTouchSensorNode;
-Transform240: TTransformNode;
-Shape241: TShapeNode;
-Text242: TTextNode;
-FontStyle243: TFontStyleNode;
-Appearance244: TAppearanceNode;
-Shape245: TShapeNode;
-Appearance246: TAppearanceNode;
-Box247: TBoxNode;
-TouchSensor248: TTouchSensorNode;
-Transform250: TTransformNode;
-Shape251: TShapeNode;
-Text252: TTextNode;
-FontStyle253: TFontStyleNode;
-Appearance254: TAppearanceNode;
+Box216: TBoxNode;
+TouchSensor217: TTouchSensorNode;
+Transform219: TTransformNode;
+Shape220: TShapeNode;
+Text221: TTextNode;
+FontStyle222: TFontStyleNode;
+Appearance223: TAppearanceNode;
+Shape224: TShapeNode;
+Appearance225: TAppearanceNode;
+Box226: TBoxNode;
+TouchSensor227: TTouchSensorNode;
+Transform229: TTransformNode;
+Shape230: TShapeNode;
+Text231: TTextNode;
+FontStyle232: TFontStyleNode;
+Appearance233: TAppearanceNode;
+Shape234: TShapeNode;
+Appearance235: TAppearanceNode;
+Box236: TBoxNode;
+TouchSensor237: TTouchSensorNode;
+Transform239: TTransformNode;
+Shape240: TShapeNode;
+Text241: TTextNode;
+FontStyle242: TFontStyleNode;
+Appearance243: TAppearanceNode;
+Shape244: TShapeNode;
+Appearance245: TAppearanceNode;
+Box246: TBoxNode;
+TouchSensor247: TTouchSensorNode;
+Transform249: TTransformNode;
+Shape250: TShapeNode;
+Text251: TTextNode;
+FontStyle252: TFontStyleNode;
+Appearance253: TAppearanceNode;
+Material254: TMaterialNode;
 Shape255: TShapeNode;
 Appearance256: TAppearanceNode;
 Box257: TBoxNode;
 TouchSensor258: TTouchSensorNode;
-Transform260: TTransformNode;
-Shape261: TShapeNode;
-Text262: TTextNode;
-FontStyle263: TFontStyleNode;
-Appearance264: TAppearanceNode;
+TimeSensor259: TTimeSensorNode;
+ScalarInterpolator260: TScalarInterpolatorNode;
+Transform264: TTransformNode;
 Shape265: TShapeNode;
-Appearance266: TAppearanceNode;
-Box267: TBoxNode;
-TouchSensor268: TTouchSensorNode;
-Transform270: TTransformNode;
-Shape271: TShapeNode;
-Text272: TTextNode;
-FontStyle273: TFontStyleNode;
-Appearance274: TAppearanceNode;
-Material275: TMaterialNode;
-Shape276: TShapeNode;
-Appearance277: TAppearanceNode;
-Box278: TBoxNode;
-TouchSensor279: TTouchSensorNode;
-TimeSensor280: TTimeSensorNode;
-ScalarInterpolator281: TScalarInterpolatorNode;
-Transform285: TTransformNode;
-Shape286: TShapeNode;
-Text287: TTextNode;
-FontStyle288: TFontStyleNode;
-Appearance289: TAppearanceNode;
-Shape290: TShapeNode;
-Appearance291: TAppearanceNode;
-Box292: TBoxNode;
-TouchSensor293: TTouchSensorNode;
-Group295: TGroupNode;
-Transform303: TTransformNode;
-Inline304: TInlineNode;
-Transform305: TTransformNode;
-Shape306: TShapeNode;
-Text307: TTextNode;
-FontStyle308: TFontStyleNode;
-Appearance309: TAppearanceNode;
-Material310: TMaterialNode;
+Text266: TTextNode;
+FontStyle267: TFontStyleNode;
+Appearance268: TAppearanceNode;
+Shape269: TShapeNode;
+Appearance270: TAppearanceNode;
+Box271: TBoxNode;
+TouchSensor272: TTouchSensorNode;
+Group274: TGroupNode;
+Transform282: TTransformNode;
+Inline283: TInlineNode;
+Transform284: TTransformNode;
+Shape285: TShapeNode;
+Text286: TTextNode;
+FontStyle287: TFontStyleNode;
+Appearance288: TAppearanceNode;
+Material289: TMaterialNode;
 
 procedure InitHAnimPosePrototypePart0;
 begin
@@ -357,35 +333,35 @@ X3D0.Meta['identifier'] := 'https://www.web3d.org/x3d/content/examples/HumanoidA
 X3D0.Meta['license'] := 'https://www.web3d.org/x3d/content/examples/license.html';
 { METHOD .Meta }
 { METHOD .Head }
-Group42 := TGroupNode.Create;
-WorldInfo43 := TWorldInfoNode.Create;
+Group42 := TGroupNode.Create;;
+WorldInfo43 := TWorldInfoNode.Create;;
 WorldInfo43.SetInfo(['Design to illustrate a potential HAnimPose node']);
 WorldInfo43.Title := 'HAnimPosePrototype.x3d';
 { METHOD .FdChildren.Add }
 Group42.FdChildren.Add(WorldInfo43);
-Background44 := TBackgroundNode.Create;
+Background44 := TBackgroundNode.Create;;
 Background44.SetSkyColor([Vector3(0.8,0.8,1)]);
 { METHOD .FdChildren.Add }
 Group42.FdChildren.Add(Background44);
-NavigationInfo45 := TNavigationInfoNode.Create;
+NavigationInfo45 := TNavigationInfoNode.Create;;
 { METHOD .FdChildren.Add }
 Group42.FdChildren.Add(NavigationInfo45);
-Group46 := TGroupNode.Create;
+Group46 := TGroupNode.Create;;
 { Multiple HAnimHumanoid Inline/IMPORT models are available to support testing: Characters/ JinLOA1 JinLOA2 JinLOA3 JinLOA4 ../Skin/JoeKick ../Skin/JoeSkeletonSkinSite ../Skin/BoxMan1 ../Skin/BoxMan2 }
 { Also tested satisfactorily: KoreanCharacter01Jin KoreanCharacter02Chul KoreanCharacter03Hyun KoreanCharacter04Young KoreanCharacter05Ju KoreanCharacter06Ga KoreanCharacter07No KoreanCharacter08Da KoreanCharacter09Ru KoreanCharacter10Mi KoreanCharacter11Min KoreanCharacter12Sun }
-Inline47 := TInlineNode.Create;
+Inline47 := TInlineNode.Create;;
 Inline47.Description := 'remote HAnimHumanoid for IMPORT';
 Inline47.SetUrl(['../Skin/BoxMan2.x3d','https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/BoxMan2.x3d']);
 { METHOD .FdChildren.Add }
 Group46.FdChildren.Add(Inline47);
 { Note that the following importedDEF must match the EXPORT name found in remote file }
-IMPORT48 := TIMPORTNode.Create;
+IMPORT48 := TIMPORTNode.Create;;
 IMPORT48.AS := 'HumanoidImported';
 IMPORT48.ImportedDEF := 'BoxMan2';
 IMPORT48.InlineDEF := 'HumanoidInline';
 { METHOD .FdChildren.Add }
 Group46.FdChildren.Add(IMPORT48);
-LoadSensor49 := TLoadSensorNode.Create;
+LoadSensor49 := TLoadSensorNode.Create;;
 LoadSensor49.TimeOut := 2;
 { METHOD .FdChildren.Add }
 LoadSensor49.FdChildren.Add(Inline47);
@@ -393,9 +369,14 @@ LoadSensor49.FdChildren.Add(Inline47);
 Group46.FdChildren.Add(LoadSensor49);
 { METHOD .FdChildren.Add }
 Group42.FdChildren.Add(Group46);
-X3DPrototype51 := TX3DPrototype.Create;
+X3DPrototype51 := TX3DPrototype.Create;;
 X3DPrototype51.Appinfo := 'Experimental node to assign joint values to a humanoid and assume a pose. Assumes that baseline HAnimHumanoid configuration must be I pose, which can be achieved by resetting every HAnimJoint to default values.';
-X3DInterfaceDeclaration52 := TX3DInterfaceDeclaration.Create(nil);
+end;
+
+procedure InitHAnimPosePrototypePart2;
+begin
+
+X3DInterfaceDeclaration52 := TX3DInterfaceDeclaration.Create(nil);;
 SFNode53 := TSFNode.CreateUndefined(X3DInterfaceDeclaration52, false, 'parentHAnimHumanoid');
 SFNode53.Appinfo := 'HAnimHumanoid for this Pose to act upon';
 { HAnimHumanoid initialization node goes here, this field is only used in the prototype implementation }
@@ -407,11 +388,6 @@ SFString54.Value := 'newPoseName';
 { METHOD .AddSFString }
 X3DInterfaceDeclaration52.AddSFString([SFString54]);
 MFNode55 := TMFNode.CreateUndefined(X3DInterfaceDeclaration52, false, 'children');
-end;
-
-procedure InitHAnimPosePrototypePart2;
-begin
-
 MFNode55.Appinfo := 'joint values to apply to HAnimHumanoid';
 { initializating Joint nodes (if any) go here }
 { METHOD .AddMFNode }
@@ -452,6 +428,11 @@ SFBool63.Appinfo := 'reset the skeleton to I pose with all joints zeroed';
 { METHOD .AddSFBool }
 X3DInterfaceDeclaration52.AddSFBool([SFBool63]);
 SFFloat64 := TSFFloat.CreateUndefined(X3DInterfaceDeclaration52, false, 'set_fraction');
+end;
+
+procedure InitHAnimPosePrototypePart3;
+begin
+
 SFFloat64.Appinfo := 'allows transition to proceed incrementally from fraction [0..10';
 { METHOD .AddSFFloat }
 X3DInterfaceDeclaration52.AddSFFloat([SFFloat64]);
@@ -465,1036 +446,962 @@ SFBool66.Appinfo := 'possible notification from LoadSensor if using HAnimHumanoi
 X3DInterfaceDeclaration52.AddSFBool([SFBool66]);
 SFBool67 := TSFBool.CreateUndefined(X3DInterfaceDeclaration52, false, 'traceEnabled');
 SFBool67.Appinfo := 'debug trace to Browser output console this is a local prototype field';
-end;
-
-procedure InitHAnimPosePrototypePart3;
-begin
-
 SFBool67.Value := 'true';
 { METHOD .AddSFBool }
 X3DInterfaceDeclaration52.AddSFBool([SFBool67]);
 { METHOD .AddX3DInterfaceDeclaration }
 X3DPrototype51.AddX3DInterfaceDeclaration([X3DInterfaceDeclaration52]);
-X3DPrototype68 := TX3DPrototype.Create;
-TimeSensor69 := TTimeSensorNode.Create;
+X3DPrototype68 := TX3DPrototype.Create;;
+TimeSensor69 := TTimeSensorNode.Create;;
 TimeSensor69.Description := 'control timing of pose animation when triggered';
-IS70 := TIS.Create;
-connect71 := Tconnect.Create;
-connect71.NodeField := 'enabled';
-connect71.ProtoField := 'enabled';
-{ METHOD .Connect }
-IS70.Connect := connect71;
-connect72 := Tconnect.Create;
-connect72.NodeField := 'cycleInterval';
-connect72.ProtoField := 'transitionDuration';
-{ METHOD .Connect }
-IS70.Connect := connect72;
-connect73 := Tconnect.Create;
-connect73.NodeField := 'isActive';
-connect73.ProtoField := 'isActive';
-{ METHOD .Connect }
-IS70.Connect := connect73;
-connect74 := Tconnect.Create;
-connect74.NodeField := 'startTime';
-connect74.ProtoField := 'set_startTime';
-{ METHOD .Connect }
-IS70.Connect := connect74;
-connect75 := Tconnect.Create;
-connect75.NodeField := 'metadata';
-connect75.ProtoField := 'metadata';
-{ METHOD .Connect }
-IS70.Connect := connect75;
-{ METHOD .IS }
-TimeSensor69.IS := IS70;
 { METHOD .AddTimeSensor }
 X3DPrototype68.AddTimeSensor([TimeSensor69]);
-TimeSensor76 := TTimeSensorNode.Create;
-TimeSensor76.Description := 'control timing of skeleton reset to \"A\" pose when triggered';
-IS77 := TIS.Create;
-connect78 := Tconnect.Create;
-connect78.NodeField := 'enabled';
-connect78.ProtoField := 'enabled';
-{ METHOD .Connect }
-IS77.Connect := connect78;
-connect79 := Tconnect.Create;
-connect79.NodeField := 'cycleInterval';
-connect79.ProtoField := 'transitionDuration';
-{ METHOD .Connect }
-IS77.Connect := connect79;
+TimeSensor71 := TTimeSensorNode.Create;;
+TimeSensor71.Description := 'control timing of skeleton reset to \"A\" pose when triggered';
+{ METHOD .AddTimeSensor }
+X3DPrototype68.AddTimeSensor([TimeSensor71]);
+Group73 := TGroupNode.Create;;
+{ interpolators generated by prototype script appear here at runtime }
+{ METHOD .AddGroup }
+X3DPrototype68.AddChildren([Group73]);
+Group74 := TGroupNode.Create;;
+{ interpolators generated by prototype script appear here at runtime }
+{ METHOD .AddGroup }
+X3DPrototype68.AddChildren([Group74]);
+Script75 := TScriptNode.Create;;
+Script75.DirectOutput := True;
+Script75.SetUrl(['HAnimPosePrototypeScript.js','https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Poses/HAnimPosePrototypeScript.js']);
+SFNode76 := TSFNode.CreateUndefined(Script75, false, 'parentHAnimHumanoid');
+SFNode76.Appinfo := 'Humanoid for this Pose to act upon';
+{ initialization node (if any) goes here }
+{ METHOD .Fd.AddCustomField }
+Script75.AddCustomField(SFNode76);
+SFString77 := TSFString.CreateUndefined(Script75, false, 'name');
+SFString77.Appinfo := 'name of this pose';
+{ METHOD .Fd.AddCustomField }
+Script75.AddCustomField(SFString77);
+SFInt3278 := TSFInt32.CreateUndefined(Script75, false, 'loa');
 end;
 
 procedure InitHAnimPosePrototypePart4;
 begin
 
-connect80 := Tconnect.Create;
-connect80.NodeField := 'startTime';
-connect80.ProtoField := 'set_startTime';
-{ METHOD .Connect }
-IS77.Connect := connect80;
-{ no need to report isActive since that would be duplicative }
-{ METHOD .IS }
-TimeSensor76.IS := IS77;
-{ METHOD .AddTimeSensor }
-X3DPrototype68.AddTimeSensor([TimeSensor76]);
-Group81 := TGroupNode.Create;
-{ interpolators generated by prototype script appear here at runtime }
-{ METHOD .AddGroup }
-X3DPrototype68.AddChildren([Group81]);
-Group82 := TGroupNode.Create;
-{ interpolators generated by prototype script appear here at runtime }
-{ METHOD .AddGroup }
-X3DPrototype68.AddChildren([Group82]);
-Script83 := TScriptNode.Create;
-Script83.DirectOutput := True;
-Script83.SetUrl(['HAnimPosePrototypeScript.js','https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Poses/HAnimPosePrototypeScript.js']);
-SFNode84 := TSFNode.CreateUndefined(Script83, false, 'parentHAnimHumanoid');
-SFNode84.Appinfo := 'Humanoid for this Pose to act upon';
-{ initialization node (if any) goes here }
+SFInt3278.Appinfo := 'default is no loa';
 { METHOD .Fd.AddCustomField }
-Script83.AddCustomField(SFNode84);
-SFString85 := TSFString.CreateUndefined(Script83, false, 'name');
-SFString85.Appinfo := 'name of this pose';
+Script75.AddCustomField(SFInt3278);
+SFString79 := TSFString.CreateUndefined(Script75, false, 'description');
+SFString79.Appinfo := 'explanation of purpose';
 { METHOD .Fd.AddCustomField }
-Script83.AddCustomField(SFString85);
-SFInt3286 := TSFInt32.CreateUndefined(Script83, false, 'loa');
-SFInt3286.Appinfo := 'default is no loa';
+Script75.AddCustomField(SFString79);
+SFBool80 := TSFBool.CreateUndefined(Script75, false, 'enabled');
+SFBool80.Appinfo := 'default value true';
 { METHOD .Fd.AddCustomField }
-Script83.AddCustomField(SFInt3286);
-SFString87 := TSFString.CreateUndefined(Script83, false, 'description');
-SFString87.Appinfo := 'explanation of purpose';
+Script75.AddCustomField(SFBool80);
+SFBool81 := TSFBool.CreateUndefined(Script75, false, 'resetAllJoints');
+SFBool81.Appinfo := 'reset the skeleton to I pose with all joints zeroed';
 { METHOD .Fd.AddCustomField }
-Script83.AddCustomField(SFString87);
-SFBool88 := TSFBool.CreateUndefined(Script83, false, 'enabled');
-SFBool88.Appinfo := 'default value true';
-{ METHOD .Fd.AddCustomField }
-Script83.AddCustomField(SFBool88);
-SFBool89 := TSFBool.CreateUndefined(Script83, false, 'resetAllJoints');
-SFBool89.Appinfo := 'reset the skeleton to I pose with all joints zeroed';
-{ METHOD .Fd.AddCustomField }
-Script83.AddCustomField(SFBool89);
-MFNode90 := TMFNode.CreateUndefined(Script83, false, 'children');
-MFNode90.Appinfo := 'joint values to apply to HAnimHumanoid';
+Script75.AddCustomField(SFBool81);
+MFNode82 := TMFNode.CreateUndefined(Script75, false, 'children');
+MFNode82.Appinfo := 'joint values to apply to HAnimHumanoid';
 { initializating Joint nodes (if any) go here }
 { METHOD .Fd.AddCustomField }
-Script83.AddCustomField(MFNode90);
-SFTime91 := TSFTime.CreateUndefined(Script83, false, 'transitionDuration');
-SFTime91.Appinfo := 'how many seconds to achieve the pose';
+Script75.AddCustomField(MFNode82);
+SFTime83 := TSFTime.CreateUndefined(Script75, false, 'transitionDuration');
+SFTime83.Appinfo := 'how many seconds to achieve the pose';
 { METHOD .Fd.AddCustomField }
-Script83.AddCustomField(SFTime91);
-SFBool92 := TSFBool.CreateUndefined(Script83, false, 'commencePose');
-SFBool92.Appinfo := 'this event tells the HAnimPose node to fully transition, equivalent to set_fraction=1';
+Script75.AddCustomField(SFTime83);
+SFBool84 := TSFBool.CreateUndefined(Script75, false, 'commencePose');
+SFBool84.Appinfo := 'this event tells the HAnimPose node to fully transition, equivalent to set_fraction=1';
 { METHOD .Fd.AddCustomField }
-Script83.AddCustomField(SFBool92);
+Script75.AddCustomField(SFBool84);
+SFFloat85 := TSFFloat.CreateUndefined(Script75, false, 'set_fraction');
+SFFloat85.Appinfo := 'allows transition to proceed incrementally from fraction [0..10';
+{ METHOD .Fd.AddCustomField }
+Script75.AddCustomField(SFFloat85);
+SFTime86 := TSFTime.CreateUndefined(Script75, false, 'set_startTime');
+SFTime86.Appinfo := 'starts the animation clock';
+{ METHOD .Fd.AddCustomField }
+Script75.AddCustomField(SFTime86);
+SFBool87 := TSFBool.CreateUndefined(Script75, false, 'isLoaded');
+SFBool87.Appinfo := 'possible notification from LoadSensor if using HAnimHumanoid Inline/IMPORT AS/USE';
+{ METHOD .Fd.AddCustomField }
+Script75.AddCustomField(SFBool87);
+SFBool88 := TSFBool.CreateUndefined(Script75, false, 'traceEnabled');
+SFBool88.Appinfo := 'debug trace to Browser output console';
+{ METHOD .Fd.AddCustomField }
+Script75.AddCustomField(SFBool88);
+SFInt3289 := TSFInt32.CreateUndefined(Script75, false, 'numberPoseJoints');
+SFInt3289.Appinfo := 'number of joints found in children field';
+SFInt3289.Value := '0';
+{ METHOD .Fd.AddCustomField }
+Script75.AddCustomField(SFInt3289);
+SFInt3290 := TSFInt32.CreateUndefined(Script75, false, 'numberSkeletonJoints');
+SFInt3290.Appinfo := 'number of joints found in Humanoid';
+SFInt3290.Value := '0';
+{ METHOD .Fd.AddCustomField }
+Script75.AddCustomField(SFInt3290);
 end;
 
 procedure InitHAnimPosePrototypePart5;
 begin
 
-SFFloat93 := TSFFloat.CreateUndefined(Script83, false, 'set_fraction');
-SFFloat93.Appinfo := 'allows transition to proceed incrementally from fraction [0..10';
-{ METHOD .Fd.AddCustomField }
-Script83.AddCustomField(SFFloat93);
-SFTime94 := TSFTime.CreateUndefined(Script83, false, 'set_startTime');
-SFTime94.Appinfo := 'starts the animation clock';
-{ METHOD .Fd.AddCustomField }
-Script83.AddCustomField(SFTime94);
-SFBool95 := TSFBool.CreateUndefined(Script83, false, 'isLoaded');
-SFBool95.Appinfo := 'possible notification from LoadSensor if using HAnimHumanoid Inline/IMPORT AS/USE';
-{ METHOD .Fd.AddCustomField }
-Script83.AddCustomField(SFBool95);
-SFBool96 := TSFBool.CreateUndefined(Script83, false, 'traceEnabled');
-SFBool96.Appinfo := 'debug trace to Browser output console';
-{ METHOD .Fd.AddCustomField }
-Script83.AddCustomField(SFBool96);
-SFInt3297 := TSFInt32.CreateUndefined(Script83, false, 'numberPoseJoints');
-SFInt3297.Appinfo := 'number of joints found in children field';
-SFInt3297.Value := '0';
-{ METHOD .Fd.AddCustomField }
-Script83.AddCustomField(SFInt3297);
-SFInt3298 := TSFInt32.CreateUndefined(Script83, false, 'numberSkeletonJoints');
-SFInt3298.Appinfo := 'number of joints found in Humanoid';
-SFInt3298.Value := '0';
-{ METHOD .Fd.AddCustomField }
-Script83.AddCustomField(SFInt3298);
-MFNode99 := TMFNode.CreateUndefined(Script83, false, 'jointOrientationInterpolators');
-MFNode99.Appinfo := 'OrientationInterpolator node array matching number of children';
+MFNode91 := TMFNode.CreateUndefined(Script75, false, 'jointOrientationInterpolators');
+MFNode91.Appinfo := 'OrientationInterpolator node array matching number of children';
 { initializating Joint nodes (if any) go here }
 { METHOD .Fd.AddCustomField }
-Script83.AddCustomField(MFNode99);
-IS100 := TIS.Create;
-connect101 := Tconnect.Create;
-connect101.NodeField := 'parentHAnimHumanoid';
-connect101.ProtoField := 'parentHAnimHumanoid';
-{ METHOD .Connect }
-IS100.Connect := connect101;
-connect102 := Tconnect.Create;
-connect102.NodeField := 'name';
-connect102.ProtoField := 'name';
-{ METHOD .Connect }
-IS100.Connect := connect102;
-connect103 := Tconnect.Create;
-connect103.NodeField := 'loa';
-connect103.ProtoField := 'loa';
-{ METHOD .Connect }
-IS100.Connect := connect103;
-connect104 := Tconnect.Create;
-connect104.NodeField := 'description';
-connect104.ProtoField := 'description';
-{ METHOD .Connect }
-IS100.Connect := connect104;
+Script75.AddCustomField(MFNode91);
+{ METHOD .AddScript }
+X3DPrototype68.AddScript([Script75]);
+{ METHOD .AddX3DPrototype }
+X3DPrototype51.AddX3DPrototype([X3DPrototype68]);
+{ METHOD .AddX3DPrototype }
+Group42.AddX3DPrototype([X3DPrototype51]);
+Viewpoint93 := TViewpointNode.Create;;
+Viewpoint93.Description := 'HAnimPose for HumanoidInline IMPORT model';
+Viewpoint93.Position := Vector3(0,1,4);
+{ METHOD .FdChildren.Add }
+Group42.FdChildren.Add(Viewpoint93);
+{ no longer required: including full model <HAnimHumanoid DEF='hanim_JinLOA1' loa='2' name='JinLOA1' scale='0.0225 0.0225 0.0225'> etc... }
+X3DPrototype94 := TX3DPrototypeNode;
+SFString95 := TSFString.CreateUndefined(X3DPrototype94, false, 'name');
+SFString95.Value := 'T';
+{ METHOD .AddSFString }
+X3DPrototype94.AddSFString([SFString95]);
+SFBool96 := TSFBool.CreateUndefined(X3DPrototype94, false, 'enabled');
+SFBool96.Value := 'true';
+{ METHOD .AddSFBool }
+X3DPrototype94.AddSFBool([SFBool96]);
+SFNode97 := TSFNode.CreateUndefined(X3DPrototype94, false, 'parentHAnimHumanoid');
+{ HumanoidImported for Inline/IMPORT (or else USE='hanim_JinLOA1' if copy of original HAnimHumanoid is embedded in this model) }
+{ debug test case for incorrect node type: <HAnimJoint DEF="ErrorDiagnosticsTest" USE='HumanoidImported'/> }
+HAnimHumanoid98 := 'HAnimHumanoid98';
+{ METHOD .Fd.Value }
+SFNode97.Value := HAnimHumanoid98;
+{ METHOD .AddSFNode }
+X3DPrototype94.AddSFNode([SFNode97]);
+SFInt3299 := TSFInt32.CreateUndefined(X3DPrototype94, false, 'loa');
+SFInt3299.Value := '1';
+{ METHOD .AddSFInt32 }
+X3DPrototype94.AddSFInt32([SFInt3299]);
+SFString100 := TSFString.CreateUndefined(X3DPrototype94, false, 'description');
+SFString100.Value := 'arms stretched outward and level similar to letter T';
+{ METHOD .AddSFString }
+X3DPrototype94.AddSFString([SFString100]);
+MFNode101 := TMFNode.CreateUndefined(X3DPrototype94, false, 'children');
+HAnimJoint102 := THAnimJointNode.Create;;
+HAnimJoint102.Description := 'left shoulder';
+HAnimJoint102.Rotation := Vector4(0,0,1,1.57);
+{ METHOD .AddHAnimJoint }
+MFNode101.AddHAnimJoint([HAnimJoint102]);
+HAnimJoint103 := THAnimJointNode.Create;;
+HAnimJoint103.Description := 'right shoulder';
+HAnimJoint103.Rotation := Vector4(0,0,-1,1.57);
+{ METHOD .AddHAnimJoint }
+MFNode101.AddHAnimJoint([HAnimJoint103]);
+{ test case for illegal child triggers validation reports without problem: HAnimSegment DEF='TestCase' description='confirm type checking' name='specialTestCase'/ }
+{ METHOD .AddMFNode }
+X3DPrototype94.AddMFNode([MFNode101]);
 end;
 
 procedure InitHAnimPosePrototypePart6;
 begin
 
-connect105 := Tconnect.Create;
-connect105.NodeField := 'enabled';
-connect105.ProtoField := 'enabled';
-{ METHOD .Connect }
-IS100.Connect := connect105;
-connect106 := Tconnect.Create;
-connect106.NodeField := 'resetAllJoints';
-connect106.ProtoField := 'resetAllJoints';
-{ METHOD .Connect }
-IS100.Connect := connect106;
-connect107 := Tconnect.Create;
-connect107.NodeField := 'children';
-connect107.ProtoField := 'children';
-{ METHOD .Connect }
-IS100.Connect := connect107;
-connect108 := Tconnect.Create;
-connect108.NodeField := 'transitionDuration';
-connect108.ProtoField := 'transitionDuration';
-{ METHOD .Connect }
-IS100.Connect := connect108;
-connect109 := Tconnect.Create;
-connect109.NodeField := 'commencePose';
-connect109.ProtoField := 'commencePose';
-{ METHOD .Connect }
-IS100.Connect := connect109;
-connect110 := Tconnect.Create;
-connect110.NodeField := 'set_fraction';
-connect110.ProtoField := 'set_fraction';
-{ METHOD .Connect }
-IS100.Connect := connect110;
-connect111 := Tconnect.Create;
-connect111.NodeField := 'set_startTime';
-connect111.ProtoField := 'set_startTime';
-{ METHOD .Connect }
-IS100.Connect := connect111;
-connect112 := Tconnect.Create;
-connect112.NodeField := 'isLoaded';
-connect112.ProtoField := 'isLoaded';
-{ METHOD .Connect }
-IS100.Connect := connect112;
-connect113 := Tconnect.Create;
-connect113.NodeField := 'traceEnabled';
-connect113.ProtoField := 'traceEnabled';
-{ METHOD .Connect }
-IS100.Connect := connect113;
-{ METHOD .Fd.AddCustomField }
-Script83.AddCustomField(IS100);
-{ METHOD .AddScript }
-X3DPrototype68.AddScript([Script83]);
+SFTime104 := TSFTime.CreateUndefined(X3DPrototype94, false, 'transitionDuration');
+SFTime104.Value := '1.3';
+{ METHOD .AddSFTime }
+X3DPrototype94.AddSFTime([SFTime104]);
 { METHOD .AddX3DPrototype }
-X3DPrototype51.AddX3DPrototype([X3DPrototype68]);
+Group42.AddX3DPrototype([X3DPrototype94]);
+X3DPrototype105 := TX3DPrototypeNode;
+SFString106 := TSFString.CreateUndefined(X3DPrototype105, false, 'name');
+SFString106.Value := 'A';
+{ METHOD .AddSFString }
+X3DPrototype105.AddSFString([SFString106]);
+SFBool107 := TSFBool.CreateUndefined(X3DPrototype105, false, 'enabled');
+SFBool107.Value := 'true';
+{ METHOD .AddSFBool }
+X3DPrototype105.AddSFBool([SFBool107]);
+SFNode108 := TSFNode.CreateUndefined(X3DPrototype105, false, 'parentHAnimHumanoid');
+{ HumanoidImported for Inline/IMPORT (or else USE='hanim_JinLOA1' if copy of original HAnimHumanoid is embedded in this model) }
+{ METHOD .Fd.Value }
+SFNode108.Value := HAnimHumanoid98;
+{ METHOD .AddSFNode }
+X3DPrototype105.AddSFNode([SFNode108]);
+SFInt32110 := TSFInt32.CreateUndefined(X3DPrototype105, false, 'loa');
+SFInt32110.Value := '1';
+{ METHOD .AddSFInt32 }
+X3DPrototype105.AddSFInt32([SFInt32110]);
+SFString111 := TSFString.CreateUndefined(X3DPrototype105, false, 'description');
+SFString111.Value := 'arms stretched outward and downward similar to letter A';
+{ METHOD .AddSFString }
+X3DPrototype105.AddSFString([SFString111]);
+MFNode112 := TMFNode.CreateUndefined(X3DPrototype105, false, 'children');
+HAnimJoint113 := THAnimJointNode.Create;;
+HAnimJoint113.Description := 'left shoulder';
+HAnimJoint113.Rotation := Vector4(0,0,1,0.5);
+{ METHOD .AddHAnimJoint }
+MFNode112.AddHAnimJoint([HAnimJoint113]);
+HAnimJoint114 := THAnimJointNode.Create;;
+HAnimJoint114.Description := 'right shoulder';
+HAnimJoint114.Rotation := Vector4(0,0,-1,0.5);
+{ METHOD .AddHAnimJoint }
+MFNode112.AddHAnimJoint([HAnimJoint114]);
+{ METHOD .AddMFNode }
+X3DPrototype105.AddMFNode([MFNode112]);
+SFTime115 := TSFTime.CreateUndefined(X3DPrototype105, false, 'transitionDuration');
+SFTime115.Value := '1.2';
+{ METHOD .AddSFTime }
+X3DPrototype105.AddSFTime([SFTime115]);
+SFBool116 := TSFBool.CreateUndefined(X3DPrototype105, false, 'traceEnabled');
+SFBool116.Value := 'true';
+{ METHOD .AddSFBool }
+X3DPrototype105.AddSFBool([SFBool116]);
 { METHOD .AddX3DPrototype }
-Group42.AddX3DPrototype([X3DPrototype51]);
+Group42.AddX3DPrototype([X3DPrototype105]);
+X3DPrototype117 := TX3DPrototypeNode;
 end;
 
 procedure InitHAnimPosePrototypePart7;
 begin
 
-Viewpoint114 := TViewpointNode.Create;
-Viewpoint114.Description := 'HAnimPose for HumanoidInline IMPORT model';
-Viewpoint114.Position := Vector3(0,1,4);
-{ METHOD .FdChildren.Add }
-Group42.FdChildren.Add(Viewpoint114);
-{ no longer required: including full model <HAnimHumanoid DEF='hanim_JinLOA1' loa='2' name='JinLOA1' scale='0.0225 0.0225 0.0225'> etc... }
-X3DPrototype115 := TX3DPrototypeNode.Create;
-SFString116 := TSFString.CreateUndefined(X3DPrototype115, false, 'name');
-SFString116.Value := 'T';
+{ thanks Joe }
+SFString118 := TSFString.CreateUndefined(X3DPrototype117, false, 'name');
+SFString118.Value := 'TouchDown';
 { METHOD .AddSFString }
-X3DPrototype115.AddSFString([SFString116]);
-SFBool117 := TSFBool.CreateUndefined(X3DPrototype115, false, 'enabled');
-SFBool117.Value := 'true';
+X3DPrototype117.AddSFString([SFString118]);
+SFBool119 := TSFBool.CreateUndefined(X3DPrototype117, false, 'enabled');
+SFBool119.Value := 'true';
 { METHOD .AddSFBool }
-X3DPrototype115.AddSFBool([SFBool117]);
-SFNode118 := TSFNode.CreateUndefined(X3DPrototype115, false, 'parentHAnimHumanoid');
+X3DPrototype117.AddSFBool([SFBool119]);
+SFNode120 := TSFNode.CreateUndefined(X3DPrototype117, false, 'parentHAnimHumanoid');
 { HumanoidImported for Inline/IMPORT (or else USE='hanim_JinLOA1' if copy of original HAnimHumanoid is embedded in this model) }
-{ debug test case for incorrect node type: <HAnimJoint DEF="ErrorDiagnosticsTest" USE='HumanoidImported'/> }
-HAnimHumanoid119 := 'HAnimHumanoid119';
 { METHOD .Fd.Value }
-SFNode118.Value := HAnimHumanoid119;
+SFNode120.Value := HAnimHumanoid98;
 { METHOD .AddSFNode }
-X3DPrototype115.AddSFNode([SFNode118]);
-SFInt32120 := TSFInt32.CreateUndefined(X3DPrototype115, false, 'loa');
-SFInt32120.Value := '1';
+X3DPrototype117.AddSFNode([SFNode120]);
+SFInt32122 := TSFInt32.CreateUndefined(X3DPrototype117, false, 'loa');
+SFInt32122.Value := '1';
 { METHOD .AddSFInt32 }
-X3DPrototype115.AddSFInt32([SFInt32120]);
-SFString121 := TSFString.CreateUndefined(X3DPrototype115, false, 'description');
-SFString121.Value := 'arms stretched outward and level similar to letter T';
+X3DPrototype117.AddSFInt32([SFInt32122]);
+SFString123 := TSFString.CreateUndefined(X3DPrototype117, false, 'description');
+SFString123.Value := 'arms and legs stretched outward providing a TouchDown gesture';
 { METHOD .AddSFString }
-X3DPrototype115.AddSFString([SFString121]);
-MFNode122 := TMFNode.CreateUndefined(X3DPrototype115, false, 'children');
-HAnimJoint123 := THAnimJointNode.Create;
-HAnimJoint123.Description := 'left shoulder';
-HAnimJoint123.Rotation := Vector4(0,0,1,1.57);
+X3DPrototype117.AddSFString([SFString123]);
+MFNode124 := TMFNode.CreateUndefined(X3DPrototype117, false, 'children');
+HAnimJoint125 := THAnimJointNode.Create;;
+HAnimJoint125.Rotation := Vector4(0,1,0,-0.698132);
 { METHOD .AddHAnimJoint }
-MFNode122.AddHAnimJoint([HAnimJoint123]);
-HAnimJoint124 := THAnimJointNode.Create;
-HAnimJoint124.Description := 'right shoulder';
-HAnimJoint124.Rotation := Vector4(0,0,-1,1.57);
+MFNode124.AddHAnimJoint([HAnimJoint125]);
+HAnimJoint126 := THAnimJointNode.Create;;
+HAnimJoint126.Rotation := Vector4(-1,1,1,1);
 { METHOD .AddHAnimJoint }
-MFNode122.AddHAnimJoint([HAnimJoint124]);
-{ test case for illegal child triggers validation reports without problem: HAnimSegment DEF='TestCase' description='confirm type checking' name='specialTestCase'/ }
-{ METHOD .AddMFNode }
-X3DPrototype115.AddMFNode([MFNode122]);
-SFTime125 := TSFTime.CreateUndefined(X3DPrototype115, false, 'transitionDuration');
-SFTime125.Value := '1.3';
-{ METHOD .AddSFTime }
-X3DPrototype115.AddSFTime([SFTime125]);
-{ METHOD .AddX3DPrototype }
-Group42.AddX3DPrototype([X3DPrototype115]);
-X3DPrototype126 := TX3DPrototypeNode.Create;
-SFString127 := TSFString.CreateUndefined(X3DPrototype126, false, 'name');
-SFString127.Value := 'A';
-{ METHOD .AddSFString }
-X3DPrototype126.AddSFString([SFString127]);
-SFBool128 := TSFBool.CreateUndefined(X3DPrototype126, false, 'enabled');
+MFNode124.AddHAnimJoint([HAnimJoint126]);
+HAnimJoint127 := THAnimJointNode.Create;;
+HAnimJoint127.Rotation := Vector4(1,0,0,1);
+{ METHOD .AddHAnimJoint }
+MFNode124.AddHAnimJoint([HAnimJoint127]);
+HAnimJoint128 := THAnimJointNode.Create;;
+HAnimJoint128.Rotation := Vector4(-0.2,0,0.1,0.225);
+{ METHOD .AddHAnimJoint }
+MFNode124.AddHAnimJoint([HAnimJoint128]);
+HAnimJoint129 := THAnimJointNode.Create;;
+HAnimJoint129.Rotation := Vector4(-1,-1,-1,1);
+{ METHOD .AddHAnimJoint }
+MFNode124.AddHAnimJoint([HAnimJoint129]);
+HAnimJoint130 := THAnimJointNode.Create;;
+HAnimJoint130.Rotation := Vector4(1,0,0,1);
+{ METHOD .AddHAnimJoint }
+MFNode124.AddHAnimJoint([HAnimJoint130]);
 end;
 
 procedure InitHAnimPosePrototypePart8;
 begin
 
-SFBool128.Value := 'true';
-{ METHOD .AddSFBool }
-X3DPrototype126.AddSFBool([SFBool128]);
-SFNode129 := TSFNode.CreateUndefined(X3DPrototype126, false, 'parentHAnimHumanoid');
-{ HumanoidImported for Inline/IMPORT (or else USE='hanim_JinLOA1' if copy of original HAnimHumanoid is embedded in this model) }
-{ METHOD .Fd.Value }
-SFNode129.Value := HAnimHumanoid119;
-{ METHOD .AddSFNode }
-X3DPrototype126.AddSFNode([SFNode129]);
-SFInt32131 := TSFInt32.CreateUndefined(X3DPrototype126, false, 'loa');
-SFInt32131.Value := '1';
-{ METHOD .AddSFInt32 }
-X3DPrototype126.AddSFInt32([SFInt32131]);
-SFString132 := TSFString.CreateUndefined(X3DPrototype126, false, 'description');
-SFString132.Value := 'arms stretched outward and downward similar to letter A';
-{ METHOD .AddSFString }
-X3DPrototype126.AddSFString([SFString132]);
-MFNode133 := TMFNode.CreateUndefined(X3DPrototype126, false, 'children');
-HAnimJoint134 := THAnimJointNode.Create;
-HAnimJoint134.Description := 'left shoulder';
-HAnimJoint134.Rotation := Vector4(0,0,1,0.5);
+HAnimJoint131 := THAnimJointNode.Create;;
+HAnimJoint131.Rotation := Vector4(-0.2,0,0.1,0.25);
 { METHOD .AddHAnimJoint }
-MFNode133.AddHAnimJoint([HAnimJoint134]);
-HAnimJoint135 := THAnimJointNode.Create;
-HAnimJoint135.Description := 'right shoulder';
-HAnimJoint135.Rotation := Vector4(0,0,-1,0.5);
+MFNode124.AddHAnimJoint([HAnimJoint131]);
+HAnimJoint132 := THAnimJointNode.Create;;
+HAnimJoint132.Rotation := Vector4(0,0,0.01,0.2);
 { METHOD .AddHAnimJoint }
-MFNode133.AddHAnimJoint([HAnimJoint135]);
+MFNode124.AddHAnimJoint([HAnimJoint132]);
+HAnimJoint133 := THAnimJointNode.Create;;
+HAnimJoint133.Rotation := Vector4(0,0,0.01,0.1);
+{ METHOD .AddHAnimJoint }
+MFNode124.AddHAnimJoint([HAnimJoint133]);
+HAnimJoint134 := THAnimJointNode.Create;;
+HAnimJoint134.Rotation := Vector4(0,0,-0.01,0.15);
+{ METHOD .AddHAnimJoint }
+MFNode124.AddHAnimJoint([HAnimJoint134]);
+HAnimJoint135 := THAnimJointNode.Create;;
+HAnimJoint135.Rotation := Vector4(-1,0.5,1,2);
+{ METHOD .AddHAnimJoint }
+MFNode124.AddHAnimJoint([HAnimJoint135]);
+HAnimJoint136 := THAnimJointNode.Create;;
+HAnimJoint136.Rotation := Vector4(-1,0,0,1);
+{ METHOD .AddHAnimJoint }
+MFNode124.AddHAnimJoint([HAnimJoint136]);
+HAnimJoint137 := THAnimJointNode.Create;;
+{ METHOD .AddHAnimJoint }
+MFNode124.AddHAnimJoint([HAnimJoint137]);
+HAnimJoint138 := THAnimJointNode.Create;;
+HAnimJoint138.Rotation := Vector4(-1,-0.5,-1,2.6);
+{ METHOD .AddHAnimJoint }
+MFNode124.AddHAnimJoint([HAnimJoint138]);
+HAnimJoint139 := THAnimJointNode.Create;;
+HAnimJoint139.Rotation := Vector4(-1,0,0,1);
+{ METHOD .AddHAnimJoint }
+MFNode124.AddHAnimJoint([HAnimJoint139]);
+HAnimJoint140 := THAnimJointNode.Create;;
+{ METHOD .AddHAnimJoint }
+MFNode124.AddHAnimJoint([HAnimJoint140]);
 { METHOD .AddMFNode }
-X3DPrototype126.AddMFNode([MFNode133]);
-SFTime136 := TSFTime.CreateUndefined(X3DPrototype126, false, 'transitionDuration');
-SFTime136.Value := '1.2';
-{ METHOD .AddSFTime }
-X3DPrototype126.AddSFTime([SFTime136]);
-SFBool137 := TSFBool.CreateUndefined(X3DPrototype126, false, 'traceEnabled');
-SFBool137.Value := 'true';
-{ METHOD .AddSFBool }
-X3DPrototype126.AddSFBool([SFBool137]);
-{ METHOD .AddX3DPrototype }
-Group42.AddX3DPrototype([X3DPrototype126]);
-X3DPrototype138 := TX3DPrototypeNode.Create;
-{ thanks Joe }
-SFString139 := TSFString.CreateUndefined(X3DPrototype138, false, 'name');
-SFString139.Value := 'TouchDown';
-{ METHOD .AddSFString }
-X3DPrototype138.AddSFString([SFString139]);
-SFBool140 := TSFBool.CreateUndefined(X3DPrototype138, false, 'enabled');
-SFBool140.Value := 'true';
-{ METHOD .AddSFBool }
-X3DPrototype138.AddSFBool([SFBool140]);
-SFNode141 := TSFNode.CreateUndefined(X3DPrototype138, false, 'parentHAnimHumanoid');
-{ HumanoidImported for Inline/IMPORT (or else USE='hanim_JinLOA1' if copy of original HAnimHumanoid is embedded in this model) }
-{ METHOD .Fd.Value }
-SFNode141.Value := HAnimHumanoid119;
-{ METHOD .AddSFNode }
-X3DPrototype138.AddSFNode([SFNode141]);
-SFInt32143 := TSFInt32.CreateUndefined(X3DPrototype138, false, 'loa');
-SFInt32143.Value := '1';
+X3DPrototype117.AddMFNode([MFNode124]);
+SFTime141 := TSFTime.CreateUndefined(X3DPrototype117, false, 'transitionDuration');
 end;
 
 procedure InitHAnimPosePrototypePart9;
 begin
 
-{ METHOD .AddSFInt32 }
-X3DPrototype138.AddSFInt32([SFInt32143]);
-SFString144 := TSFString.CreateUndefined(X3DPrototype138, false, 'description');
-SFString144.Value := 'arms and legs stretched outward providing a TouchDown gesture';
+SFTime141.Value := '1.2';
+{ METHOD .AddSFTime }
+X3DPrototype117.AddSFTime([SFTime141]);
+SFBool142 := TSFBool.CreateUndefined(X3DPrototype117, false, 'traceEnabled');
+SFBool142.Value := 'true';
+{ METHOD .AddSFBool }
+X3DPrototype117.AddSFBool([SFBool142]);
+{ METHOD .AddX3DPrototype }
+Group42.AddX3DPrototype([X3DPrototype117]);
+X3DPrototype143 := TX3DPrototypeNode;
+SFString144 := TSFString.CreateUndefined(X3DPrototype143, false, 'name');
+SFString144.Value := 'I';
 { METHOD .AddSFString }
-X3DPrototype138.AddSFString([SFString144]);
-MFNode145 := TMFNode.CreateUndefined(X3DPrototype138, false, 'children');
-HAnimJoint146 := THAnimJointNode.Create;
-HAnimJoint146.Rotation := Vector4(0,1,0,-0.698132);
-{ METHOD .AddHAnimJoint }
-MFNode145.AddHAnimJoint([HAnimJoint146]);
-HAnimJoint147 := THAnimJointNode.Create;
-HAnimJoint147.Rotation := Vector4(-1,1,1,1);
-{ METHOD .AddHAnimJoint }
-MFNode145.AddHAnimJoint([HAnimJoint147]);
-HAnimJoint148 := THAnimJointNode.Create;
-HAnimJoint148.Rotation := Vector4(1,0,0,1);
-{ METHOD .AddHAnimJoint }
-MFNode145.AddHAnimJoint([HAnimJoint148]);
-HAnimJoint149 := THAnimJointNode.Create;
-HAnimJoint149.Rotation := Vector4(-0.2,0,0.1,0.225);
-{ METHOD .AddHAnimJoint }
-MFNode145.AddHAnimJoint([HAnimJoint149]);
-HAnimJoint150 := THAnimJointNode.Create;
-HAnimJoint150.Rotation := Vector4(-1,-1,-1,1);
-{ METHOD .AddHAnimJoint }
-MFNode145.AddHAnimJoint([HAnimJoint150]);
-HAnimJoint151 := THAnimJointNode.Create;
-HAnimJoint151.Rotation := Vector4(1,0,0,1);
-{ METHOD .AddHAnimJoint }
-MFNode145.AddHAnimJoint([HAnimJoint151]);
-HAnimJoint152 := THAnimJointNode.Create;
-HAnimJoint152.Rotation := Vector4(-0.2,0,0.1,0.25);
-{ METHOD .AddHAnimJoint }
-MFNode145.AddHAnimJoint([HAnimJoint152]);
-HAnimJoint153 := THAnimJointNode.Create;
-HAnimJoint153.Rotation := Vector4(0,0,0.01,0.2);
-{ METHOD .AddHAnimJoint }
-MFNode145.AddHAnimJoint([HAnimJoint153]);
-HAnimJoint154 := THAnimJointNode.Create;
-HAnimJoint154.Rotation := Vector4(0,0,0.01,0.1);
-{ METHOD .AddHAnimJoint }
-MFNode145.AddHAnimJoint([HAnimJoint154]);
-HAnimJoint155 := THAnimJointNode.Create;
-HAnimJoint155.Rotation := Vector4(0,0,-0.01,0.15);
-{ METHOD .AddHAnimJoint }
-MFNode145.AddHAnimJoint([HAnimJoint155]);
-HAnimJoint156 := THAnimJointNode.Create;
-HAnimJoint156.Rotation := Vector4(-1,0.5,1,2);
-{ METHOD .AddHAnimJoint }
-MFNode145.AddHAnimJoint([HAnimJoint156]);
-HAnimJoint157 := THAnimJointNode.Create;
-HAnimJoint157.Rotation := Vector4(-1,0,0,1);
+X3DPrototype143.AddSFString([SFString144]);
+SFBool145 := TSFBool.CreateUndefined(X3DPrototype143, false, 'enabled');
+SFBool145.Value := 'true';
+{ METHOD .AddSFBool }
+X3DPrototype143.AddSFBool([SFBool145]);
+SFNode146 := TSFNode.CreateUndefined(X3DPrototype143, false, 'parentHAnimHumanoid');
+{ HumanoidImported for Inline/IMPORT (or else USE='hanim_JinLOA1' if copy of original HAnimHumanoid is embedded in this model) }
+{ METHOD .Fd.Value }
+SFNode146.Value := HAnimHumanoid98;
+{ METHOD .AddSFNode }
+X3DPrototype143.AddSFNode([SFNode146]);
+SFInt32148 := TSFInt32.CreateUndefined(X3DPrototype143, false, 'loa');
+SFInt32148.Value := '1';
+{ METHOD .AddSFInt32 }
+X3DPrototype143.AddSFInt32([SFInt32148]);
+SFString149 := TSFString.CreateUndefined(X3DPrototype143, false, 'description');
+SFString149.Value := 'arms and legs straight down default binding pose for baseline Humanoid';
+{ METHOD .AddSFString }
+X3DPrototype143.AddSFString([SFString149]);
+MFNode150 := TMFNode.CreateUndefined(X3DPrototype143, false, 'children');
+{ not defining any children equals the default "I" pose }
+{ METHOD .AddMFNode }
+X3DPrototype143.AddMFNode([MFNode150]);
+SFTime151 := TSFTime.CreateUndefined(X3DPrototype143, false, 'transitionDuration');
+SFTime151.Value := '1.5';
+{ METHOD .AddSFTime }
+X3DPrototype143.AddSFTime([SFTime151]);
+SFBool152 := TSFBool.CreateUndefined(X3DPrototype143, false, 'traceEnabled');
+SFBool152.Value := 'true';
+{ METHOD .AddSFBool }
+X3DPrototype143.AddSFBool([SFBool152]);
+{ METHOD .AddX3DPrototype }
+Group42.AddX3DPrototype([X3DPrototype143]);
+X3DPrototype153 := TX3DPrototypeNode;
+SFString154 := TSFString.CreateUndefined(X3DPrototype153, false, 'name');
+SFString154.Value := 'H';
+{ METHOD .AddSFString }
+X3DPrototype153.AddSFString([SFString154]);
+SFBool155 := TSFBool.CreateUndefined(X3DPrototype153, false, 'enabled');
+SFBool155.Value := 'false';
+{ METHOD .AddSFBool }
+X3DPrototype153.AddSFBool([SFBool155]);
+SFString156 := TSFString.CreateUndefined(X3DPrototype153, false, 'description');
+SFString156.Value := 'TODO experimental pose not yet implemented';
 end;
 
 procedure InitHAnimPosePrototypePart10;
 begin
 
-{ METHOD .AddHAnimJoint }
-MFNode145.AddHAnimJoint([HAnimJoint157]);
-HAnimJoint158 := THAnimJointNode.Create;
-{ METHOD .AddHAnimJoint }
-MFNode145.AddHAnimJoint([HAnimJoint158]);
-HAnimJoint159 := THAnimJointNode.Create;
-HAnimJoint159.Rotation := Vector4(-1,-0.5,-1,2.6);
-{ METHOD .AddHAnimJoint }
-MFNode145.AddHAnimJoint([HAnimJoint159]);
-HAnimJoint160 := THAnimJointNode.Create;
-HAnimJoint160.Rotation := Vector4(-1,0,0,1);
-{ METHOD .AddHAnimJoint }
-MFNode145.AddHAnimJoint([HAnimJoint160]);
-HAnimJoint161 := THAnimJointNode.Create;
-{ METHOD .AddHAnimJoint }
-MFNode145.AddHAnimJoint([HAnimJoint161]);
-{ METHOD .AddMFNode }
-X3DPrototype138.AddMFNode([MFNode145]);
-SFTime162 := TSFTime.CreateUndefined(X3DPrototype138, false, 'transitionDuration');
-SFTime162.Value := '1.2';
-{ METHOD .AddSFTime }
-X3DPrototype138.AddSFTime([SFTime162]);
-SFBool163 := TSFBool.CreateUndefined(X3DPrototype138, false, 'traceEnabled');
-SFBool163.Value := 'true';
-{ METHOD .AddSFBool }
-X3DPrototype138.AddSFBool([SFBool163]);
-{ METHOD .AddX3DPrototype }
-Group42.AddX3DPrototype([X3DPrototype138]);
-X3DPrototype164 := TX3DPrototypeNode.Create;
-SFString165 := TSFString.CreateUndefined(X3DPrototype164, false, 'name');
-SFString165.Value := 'I';
 { METHOD .AddSFString }
-X3DPrototype164.AddSFString([SFString165]);
-SFBool166 := TSFBool.CreateUndefined(X3DPrototype164, false, 'enabled');
-SFBool166.Value := 'true';
+X3DPrototype153.AddSFString([SFString156]);
+SFTime157 := TSFTime.CreateUndefined(X3DPrototype153, false, 'transitionDuration');
+SFTime157.Value := '1.4';
+{ METHOD .AddSFTime }
+X3DPrototype153.AddSFTime([SFTime157]);
+SFBool158 := TSFBool.CreateUndefined(X3DPrototype153, false, 'traceEnabled');
+SFBool158.Value := 'true';
 { METHOD .AddSFBool }
-X3DPrototype164.AddSFBool([SFBool166]);
-SFNode167 := TSFNode.CreateUndefined(X3DPrototype164, false, 'parentHAnimHumanoid');
+X3DPrototype153.AddSFBool([SFBool158]);
+{ <fieldValue name='loa' value='1'/> }
+{ METHOD .AddX3DPrototype }
+Group42.AddX3DPrototype([X3DPrototype153]);
+X3DPrototype159 := TX3DPrototypeNode;
+SFString160 := TSFString.CreateUndefined(X3DPrototype159, false, 'name');
+SFString160.Value := 'FaceLeft';
+{ METHOD .AddSFString }
+X3DPrototype159.AddSFString([SFString160]);
+SFBool161 := TSFBool.CreateUndefined(X3DPrototype159, false, 'enabled');
+SFBool161.Value := 'true';
+{ METHOD .AddSFBool }
+X3DPrototype159.AddSFBool([SFBool161]);
+SFNode162 := TSFNode.CreateUndefined(X3DPrototype159, false, 'parentHAnimHumanoid');
 { HumanoidImported for Inline/IMPORT (or else USE='hanim_JinLOA1' if copy of original HAnimHumanoid is embedded in this model) }
 { METHOD .Fd.Value }
-SFNode167.Value := HAnimHumanoid119;
+SFNode162.Value := HAnimHumanoid98;
 { METHOD .AddSFNode }
-X3DPrototype164.AddSFNode([SFNode167]);
-SFInt32169 := TSFInt32.CreateUndefined(X3DPrototype164, false, 'loa');
-SFInt32169.Value := '1';
+X3DPrototype159.AddSFNode([SFNode162]);
+SFInt32164 := TSFInt32.CreateUndefined(X3DPrototype159, false, 'loa');
+SFInt32164.Value := '0';
 { METHOD .AddSFInt32 }
-X3DPrototype164.AddSFInt32([SFInt32169]);
-SFString170 := TSFString.CreateUndefined(X3DPrototype164, false, 'description');
-SFString170.Value := 'arms and legs straight down default binding pose for baseline Humanoid';
+X3DPrototype159.AddSFInt32([SFInt32164]);
+SFString165 := TSFString.CreateUndefined(X3DPrototype159, false, 'description');
+SFString165.Value := 'Only modify humanoid_root Joint node to face left';
 { METHOD .AddSFString }
-X3DPrototype164.AddSFString([SFString170]);
-MFNode171 := TMFNode.CreateUndefined(X3DPrototype164, false, 'children');
-{ not defining any children equals the default "I" pose }
+X3DPrototype159.AddSFString([SFString165]);
+MFNode166 := TMFNode.CreateUndefined(X3DPrototype159, false, 'children');
+HAnimJoint167 := THAnimJointNode.Create;;
+HAnimJoint167.Description := 'Only rotate the model';
+HAnimJoint167.Rotation := Vector4(0,1,0,1.570796);
+{ METHOD .AddHAnimJoint }
+MFNode166.AddHAnimJoint([HAnimJoint167]);
 { METHOD .AddMFNode }
-X3DPrototype164.AddMFNode([MFNode171]);
-SFTime172 := TSFTime.CreateUndefined(X3DPrototype164, false, 'transitionDuration');
-SFTime172.Value := '1.5';
+X3DPrototype159.AddMFNode([MFNode166]);
+SFTime168 := TSFTime.CreateUndefined(X3DPrototype159, false, 'transitionDuration');
+SFTime168.Value := '1.1';
 { METHOD .AddSFTime }
-X3DPrototype164.AddSFTime([SFTime172]);
+X3DPrototype159.AddSFTime([SFTime168]);
+SFBool169 := TSFBool.CreateUndefined(X3DPrototype159, false, 'traceEnabled');
+SFBool169.Value := 'true';
+{ METHOD .AddSFBool }
+X3DPrototype159.AddSFBool([SFBool169]);
+{ METHOD .AddX3DPrototype }
+Group42.AddX3DPrototype([X3DPrototype159]);
+X3DPrototype170 := TX3DPrototypeNode;
+SFString171 := TSFString.CreateUndefined(X3DPrototype170, false, 'name');
 end;
 
 procedure InitHAnimPosePrototypePart11;
 begin
 
-SFBool173 := TSFBool.CreateUndefined(X3DPrototype164, false, 'traceEnabled');
-SFBool173.Value := 'true';
-{ METHOD .AddSFBool }
-X3DPrototype164.AddSFBool([SFBool173]);
-{ METHOD .AddX3DPrototype }
-Group42.AddX3DPrototype([X3DPrototype164]);
-X3DPrototype174 := TX3DPrototypeNode.Create;
-SFString175 := TSFString.CreateUndefined(X3DPrototype174, false, 'name');
-SFString175.Value := 'H';
+SFString171.Value := 'FaceRight';
 { METHOD .AddSFString }
-X3DPrototype174.AddSFString([SFString175]);
-SFBool176 := TSFBool.CreateUndefined(X3DPrototype174, false, 'enabled');
-SFBool176.Value := 'false';
+X3DPrototype170.AddSFString([SFString171]);
+SFBool172 := TSFBool.CreateUndefined(X3DPrototype170, false, 'enabled');
+SFBool172.Value := 'true';
 { METHOD .AddSFBool }
-X3DPrototype174.AddSFBool([SFBool176]);
-SFString177 := TSFString.CreateUndefined(X3DPrototype174, false, 'description');
-SFString177.Value := 'TODO experimental pose not yet implemented';
-{ METHOD .AddSFString }
-X3DPrototype174.AddSFString([SFString177]);
-SFTime178 := TSFTime.CreateUndefined(X3DPrototype174, false, 'transitionDuration');
-SFTime178.Value := '1.4';
-{ METHOD .AddSFTime }
-X3DPrototype174.AddSFTime([SFTime178]);
-SFBool179 := TSFBool.CreateUndefined(X3DPrototype174, false, 'traceEnabled');
-SFBool179.Value := 'true';
-{ METHOD .AddSFBool }
-X3DPrototype174.AddSFBool([SFBool179]);
-{ <fieldValue name='loa' value='1'/> }
-{ METHOD .AddX3DPrototype }
-Group42.AddX3DPrototype([X3DPrototype174]);
-X3DPrototype180 := TX3DPrototypeNode.Create;
-SFString181 := TSFString.CreateUndefined(X3DPrototype180, false, 'name');
-SFString181.Value := 'FaceLeft';
-{ METHOD .AddSFString }
-X3DPrototype180.AddSFString([SFString181]);
-SFBool182 := TSFBool.CreateUndefined(X3DPrototype180, false, 'enabled');
-SFBool182.Value := 'true';
-{ METHOD .AddSFBool }
-X3DPrototype180.AddSFBool([SFBool182]);
-SFNode183 := TSFNode.CreateUndefined(X3DPrototype180, false, 'parentHAnimHumanoid');
+X3DPrototype170.AddSFBool([SFBool172]);
+SFNode173 := TSFNode.CreateUndefined(X3DPrototype170, false, 'parentHAnimHumanoid');
 { HumanoidImported for Inline/IMPORT (or else USE='hanim_JinLOA1' if copy of original HAnimHumanoid is embedded in this model) }
 { METHOD .Fd.Value }
-SFNode183.Value := HAnimHumanoid119;
+SFNode173.Value := HAnimHumanoid98;
 { METHOD .AddSFNode }
-X3DPrototype180.AddSFNode([SFNode183]);
-SFInt32185 := TSFInt32.CreateUndefined(X3DPrototype180, false, 'loa');
-SFInt32185.Value := '0';
+X3DPrototype170.AddSFNode([SFNode173]);
+SFInt32175 := TSFInt32.CreateUndefined(X3DPrototype170, false, 'loa');
+SFInt32175.Value := '0';
 { METHOD .AddSFInt32 }
-X3DPrototype180.AddSFInt32([SFInt32185]);
-SFString186 := TSFString.CreateUndefined(X3DPrototype180, false, 'description');
-SFString186.Value := 'Only modify humanoid_root Joint node to face left';
+X3DPrototype170.AddSFInt32([SFInt32175]);
+SFString176 := TSFString.CreateUndefined(X3DPrototype170, false, 'description');
+SFString176.Value := 'Only modify humanoid_root Joint node to face right';
 { METHOD .AddSFString }
-X3DPrototype180.AddSFString([SFString186]);
-MFNode187 := TMFNode.CreateUndefined(X3DPrototype180, false, 'children');
-HAnimJoint188 := THAnimJointNode.Create;
-HAnimJoint188.Description := 'Only rotate the model';
+X3DPrototype170.AddSFString([SFString176]);
+MFNode177 := TMFNode.CreateUndefined(X3DPrototype170, false, 'children');
+HAnimJoint178 := THAnimJointNode.Create;;
+HAnimJoint178.Description := 'Only rotate the model';
+HAnimJoint178.Rotation := Vector4(0,1,0,-1.570796);
+{ METHOD .AddHAnimJoint }
+MFNode177.AddHAnimJoint([HAnimJoint178]);
+{ METHOD .AddMFNode }
+X3DPrototype170.AddMFNode([MFNode177]);
+SFTime179 := TSFTime.CreateUndefined(X3DPrototype170, false, 'transitionDuration');
+SFTime179.Value := '1.1';
+{ METHOD .AddSFTime }
+X3DPrototype170.AddSFTime([SFTime179]);
+SFBool180 := TSFBool.CreateUndefined(X3DPrototype170, false, 'traceEnabled');
+SFBool180.Value := 'true';
+{ METHOD .AddSFBool }
+X3DPrototype170.AddSFBool([SFBool180]);
+{ METHOD .AddX3DPrototype }
+Group42.AddX3DPrototype([X3DPrototype170]);
+Group181 := TGroupNode.Create;;
+Transform182 := TTransformNode.Create;;
+Transform182.Translation := Vector3(0,2,0);
+Shape183 := TShapeNode.Create;;
+Text184 := TTextNode.Create;;
+Text184.SetText(['HAnimPosePrototype example implementation']);
+FontStyle185 := TFontStyleNode.Create;;
 end;
 
 procedure InitHAnimPosePrototypePart12;
 begin
 
-HAnimJoint188.Rotation := Vector4(0,1,0,1.570796);
-{ METHOD .AddHAnimJoint }
-MFNode187.AddHAnimJoint([HAnimJoint188]);
-{ METHOD .AddMFNode }
-X3DPrototype180.AddMFNode([MFNode187]);
-SFTime189 := TSFTime.CreateUndefined(X3DPrototype180, false, 'transitionDuration');
-SFTime189.Value := '1.1';
-{ METHOD .AddSFTime }
-X3DPrototype180.AddSFTime([SFTime189]);
-SFBool190 := TSFBool.CreateUndefined(X3DPrototype180, false, 'traceEnabled');
-SFBool190.Value := 'true';
-{ METHOD .AddSFBool }
-X3DPrototype180.AddSFBool([SFBool190]);
-{ METHOD .AddX3DPrototype }
-Group42.AddX3DPrototype([X3DPrototype180]);
-X3DPrototype191 := TX3DPrototypeNode.Create;
-SFString192 := TSFString.CreateUndefined(X3DPrototype191, false, 'name');
-SFString192.Value := 'FaceRight';
-{ METHOD .AddSFString }
-X3DPrototype191.AddSFString([SFString192]);
-SFBool193 := TSFBool.CreateUndefined(X3DPrototype191, false, 'enabled');
-SFBool193.Value := 'true';
-{ METHOD .AddSFBool }
-X3DPrototype191.AddSFBool([SFBool193]);
-SFNode194 := TSFNode.CreateUndefined(X3DPrototype191, false, 'parentHAnimHumanoid');
-{ HumanoidImported for Inline/IMPORT (or else USE='hanim_JinLOA1' if copy of original HAnimHumanoid is embedded in this model) }
-{ METHOD .Fd.Value }
-SFNode194.Value := HAnimHumanoid119;
-{ METHOD .AddSFNode }
-X3DPrototype191.AddSFNode([SFNode194]);
-SFInt32196 := TSFInt32.CreateUndefined(X3DPrototype191, false, 'loa');
-SFInt32196.Value := '0';
-{ METHOD .AddSFInt32 }
-X3DPrototype191.AddSFInt32([SFInt32196]);
-SFString197 := TSFString.CreateUndefined(X3DPrototype191, false, 'description');
-SFString197.Value := 'Only modify humanoid_root Joint node to face right';
-{ METHOD .AddSFString }
-X3DPrototype191.AddSFString([SFString197]);
-MFNode198 := TMFNode.CreateUndefined(X3DPrototype191, false, 'children');
-HAnimJoint199 := THAnimJointNode.Create;
-HAnimJoint199.Description := 'Only rotate the model';
-HAnimJoint199.Rotation := Vector4(0,1,0,-1.570796);
-{ METHOD .AddHAnimJoint }
-MFNode198.AddHAnimJoint([HAnimJoint199]);
-{ METHOD .AddMFNode }
-X3DPrototype191.AddMFNode([MFNode198]);
-SFTime200 := TSFTime.CreateUndefined(X3DPrototype191, false, 'transitionDuration');
-SFTime200.Value := '1.1';
-{ METHOD .AddSFTime }
-X3DPrototype191.AddSFTime([SFTime200]);
-SFBool201 := TSFBool.CreateUndefined(X3DPrototype191, false, 'traceEnabled');
-SFBool201.Value := 'true';
-{ METHOD .AddSFBool }
-X3DPrototype191.AddSFBool([SFBool201]);
-{ METHOD .AddX3DPrototype }
-Group42.AddX3DPrototype([X3DPrototype191]);
-Group202 := TGroupNode.Create;
+FontStyle185.Family := ffSANS;
+FontStyle185.Justify := fjMIDDLE;
+FontStyle185.JustifyMinor := fjMIDDLE;
+FontStyle185.Size := 0.15;
+FontStyle185.Style := fsBOLD;
+{ METHOD .FontStyle }
+{ METHOD.SET .FontStyle }
+Text184.FontStyle := FontStyle185;
+{ METHOD .Geometry }
+{ METHOD.SET .Geometry }
+Shape183.Geometry := Text184;
+Appearance186 := TAppearanceNode.Create;;
+Material187 := TMaterialNode.Create;;
+Material187.DiffuseColor := Vector3(0.1,0.5,0.3);
+{ METHOD .SetMaterial }
+Appearance186.Material := Material187;
+{ METHOD .Appearance }
+{ METHOD.SET .Appearance }
+Shape183.Appearance := Appearance186;
+{ METHOD .FdChildren.Add }
+Transform182.FdChildren.Add(Shape183);
+{ METHOD .FdChildren.Add }
+Group181.FdChildren.Add(Transform182);
+Transform188 := TTransformNode.Create;;
+Transform188.Translation := Vector3(-1.5,1.5,0);
+Shape189 := TShapeNode.Create;;
+Text190 := TTextNode.Create;;
+Text190.SetText(['"T" Pose']);
+FontStyle191 := TFontStyleNode.Create;;
+FontStyle191.Family := ffSANS;
+FontStyle191.Justify := fjMIDDLE;
+FontStyle191.JustifyMinor := fjMIDDLE;
+FontStyle191.Size := 0.1;
+FontStyle191.Style := fsBOLD;
+{ METHOD .FontStyle }
+{ METHOD.SET .FontStyle }
+Text190.FontStyle := FontStyle191;
+{ METHOD .Geometry }
+{ METHOD.SET .Geometry }
+Shape189.Geometry := Text190;
+{ METHOD .Appearance }
+{ METHOD.SET .Appearance }
+Shape189.Appearance := Appearance186;
+{ METHOD .FdChildren.Add }
+Transform188.FdChildren.Add(Shape189);
+Shape193 := TShapeNode.Create;;
+Appearance194 := TAppearanceNode.Create;;
+Material195 := TMaterialNode.Create;
 end;
 
 procedure InitHAnimPosePrototypePart13;
 begin
-
-Transform203 := TTransformNode.Create;
-Transform203.Translation := Vector3(0,2,0);
-Shape204 := TShapeNode.Create;
-Text205 := TTextNode.Create;
-Text205.SetText(['HAnimPosePrototype example implementation']);
-FontStyle206 := TFontStyleNode.Create;
-FontStyle206.Family := ffSANS;
-FontStyle206.Justify := fjMIDDLE;
-FontStyle206.JustifyMinor := fjMIDDLE;
-FontStyle206.Size := 0.15;
-FontStyle206.Style := fsBOLD;
-{ METHOD .FontStyle }
-Text205.FontStyle := FontStyle206;
-{ METHOD .Geometry }
-Shape204.Geometry := Text205;
-Appearance207 := TAppearanceNode.Create;
-Material208 := TMaterialNode.Create;
-Material208.DiffuseColor := Vector3(0.1,0.5,0.3);
+;
+Material195.Transparency := 0.8;
 { METHOD .SetMaterial }
-Appearance207.Material := Material208;
+Appearance194.Material := Material195;
 { METHOD .Appearance }
-Shape204.Appearance := Appearance207;
-{ METHOD .FdChildren.Add }
-Transform203.FdChildren.Add(Shape204);
-{ METHOD .FdChildren.Add }
-Group202.FdChildren.Add(Transform203);
-Transform209 := TTransformNode.Create;
-Transform209.Translation := Vector3(-1.5,1.5,0);
-Shape210 := TShapeNode.Create;
-Text211 := TTextNode.Create;
-Text211.SetText(['"T" Pose']);
-FontStyle212 := TFontStyleNode.Create;
-FontStyle212.Family := ffSANS;
-FontStyle212.Justify := fjMIDDLE;
-FontStyle212.JustifyMinor := fjMIDDLE;
-FontStyle212.Size := 0.1;
-FontStyle212.Style := fsBOLD;
-{ METHOD .FontStyle }
-Text211.FontStyle := FontStyle212;
+{ METHOD.SET .Appearance }
+Shape193.Appearance := Appearance194;
+Box196 := TBoxNode.Create;;
+Box196.Size := Vector3(0.45,0.2,0.001);
 { METHOD .Geometry }
-Shape210.Geometry := Text211;
-{ METHOD .Appearance }
-Shape210.Appearance := Appearance207;
+{ METHOD.SET .Geometry }
+Shape193.Geometry := Box196;
 { METHOD .FdChildren.Add }
-Transform209.FdChildren.Add(Shape210);
-Shape214 := TShapeNode.Create;
-Appearance215 := TAppearanceNode.Create;
-Material216 := TMaterialNode.Create;
-Material216.Transparency := 0.8;
-{ METHOD .SetMaterial }
-Appearance215.Material := Material216;
+Transform188.FdChildren.Add(Shape193);
+TouchSensor197 := TTouchSensorNode.Create;;
+TouchSensor197.Description := 'select to move shoulders to \"T\" pose, leave other joints unchanged';
+{ METHOD .FdChildren.Add }
+Transform188.FdChildren.Add(TouchSensor197);
+{ Original "T_PoseTouchSensor.EventIsActive TO T_Pose.commencePose }
+{ Sample T_PoseTouchSensor.EventIsActive TO T_Pose.commencePose}
+Transform188.AddRoute(TouchSensor197.EventIsActive, X3DPrototype94.commencePose);
+{ METHOD .AddX3DROUTE }
+{ METHOD .FdChildren.Add }
+Group181.FdChildren.Add(Transform188);
+Transform199 := TTransformNode.Create;;
+Transform199.Translation := Vector3(-1.5,1,0);
+Shape200 := TShapeNode.Create;;
+Text201 := TTextNode.Create;;
+Text201.SetText(['"A" Pose']);
+{ METHOD .FontStyle }
+{ METHOD.SET .FontStyle }
+Text201.FontStyle := FontStyle191;
+{ METHOD .Geometry }
+{ METHOD.SET .Geometry }
+Shape200.Geometry := Text201;
+{ METHOD .Appearance }
+{ METHOD.SET .Appearance }
+Shape200.Appearance := Appearance186;
+{ METHOD .FdChildren.Add }
+Transform199.FdChildren.Add(Shape200);
+Shape204 := TShapeNode.Create;;
+{ Selectable Text transparent Box for easy user selection }
+{ METHOD .Appearance }
+{ METHOD.SET .Appearance }
+Shape204.Appearance := Appearance194;
+Box206 := TBoxNode.Create;;
+Box206.Size := Vector3(0.45,0.2,0.001);
+{ METHOD .Geometry }
+{ METHOD.SET .Geometry }
+Shape204.Geometry := Box206;
+{ METHOD .FdChildren.Add }
+Transform199.FdChildren.Add(Shape204);
+TouchSensor207 := TTouchSensorNode.Create;;
+TouchSensor207.Description := 'select to move shoulders to \"A\" pose, leave other joints unchanged';
+{ METHOD .FdChildren.Add }
+Transform199.FdChildren.Add(TouchSensor207);
+{ Original "A_PoseTouchSensor.EventIsActive TO A_Pose.commencePose }
+{ Sample A_PoseTouchSensor.EventIsActive TO A_Pose.commencePose}
+Transform199.AddRoute(TouchSensor207.EventIsActive, X3DPrototype105.commencePose);
 end;
 
 procedure InitHAnimPosePrototypePart14;
 begin
 
-{ METHOD .Appearance }
-Shape214.Appearance := Appearance215;
-Box217 := TBoxNode.Create;
-Box217.Size := Vector3(0.45,0.2,0.001);
-{ METHOD .Geometry }
-Shape214.Geometry := Box217;
-{ METHOD .FdChildren.Add }
-Transform209.FdChildren.Add(Shape214);
-TouchSensor218 := TTouchSensorNode.Create;
-TouchSensor218.Description := 'select to move shoulders to \"T\" pose, leave other joints unchanged';
-{ METHOD .FdChildren.Add }
-Transform209.FdChildren.Add(TouchSensor218);
-{ Original "T_PoseTouchSensor.EventIsActive TO T_Pose.commencePose }
-{ Sample T_PoseTouchSensor.EventIsActive TO T_Pose.commencePose}
-Transform209.AddRoute(TouchSensor218.EventIsActive, X3DPrototype115.commencePose);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
-Group202.FdChildren.Add(Transform209);
-Transform220 := TTransformNode.Create;
-Transform220.Translation := Vector3(-1.5,1,0);
-Shape221 := TShapeNode.Create;
-Text222 := TTextNode.Create;
-Text222.SetText(['"A" Pose']);
+Group181.FdChildren.Add(Transform199);
+Transform209 := TTransformNode.Create;;
+Transform209.Translation := Vector3(-1.5,0.5,0);
+Shape210 := TShapeNode.Create;;
+Text211 := TTextNode.Create;;
+Text211.SetText(['TouchDown Pose']);
 { METHOD .FontStyle }
-Text222.FontStyle := FontStyle212;
+{ METHOD.SET .FontStyle }
+Text211.FontStyle := FontStyle191;
 { METHOD .Geometry }
-Shape221.Geometry := Text222;
+{ METHOD.SET .Geometry }
+Shape210.Geometry := Text211;
 { METHOD .Appearance }
-Shape221.Appearance := Appearance207;
+{ METHOD.SET .Appearance }
+Shape210.Appearance := Appearance186;
 { METHOD .FdChildren.Add }
-Transform220.FdChildren.Add(Shape221);
-Shape225 := TShapeNode.Create;
+Transform209.FdChildren.Add(Shape210);
+Shape214 := TShapeNode.Create;;
 { Selectable Text transparent Box for easy user selection }
 { METHOD .Appearance }
-Shape225.Appearance := Appearance215;
-Box227 := TBoxNode.Create;
-Box227.Size := Vector3(0.45,0.2,0.001);
+{ METHOD.SET .Appearance }
+Shape214.Appearance := Appearance194;
+Box216 := TBoxNode.Create;;
+Box216.Size := Vector3(0.85,0.2,0.001);
 { METHOD .Geometry }
-Shape225.Geometry := Box227;
+{ METHOD.SET .Geometry }
+Shape214.Geometry := Box216;
 { METHOD .FdChildren.Add }
-Transform220.FdChildren.Add(Shape225);
-TouchSensor228 := TTouchSensorNode.Create;
-TouchSensor228.Description := 'select to move shoulders to \"A\" pose, leave other joints unchanged';
+Transform209.FdChildren.Add(Shape214);
+TouchSensor217 := TTouchSensorNode.Create;;
+TouchSensor217.Description := 'select to transition all joints to TouchDown pose';
 { METHOD .FdChildren.Add }
-Transform220.FdChildren.Add(TouchSensor228);
-{ Original "A_PoseTouchSensor.EventIsActive TO A_Pose.commencePose }
-{ Sample A_PoseTouchSensor.EventIsActive TO A_Pose.commencePose}
-Transform220.AddRoute(TouchSensor228.EventIsActive, X3DPrototype126.commencePose);
+Transform209.FdChildren.Add(TouchSensor217);
+{ Original "TouchDown_PoseTouchSensor.EventIsActive TO TouchDown_Pose.commencePose }
+{ Sample TouchDown_PoseTouchSensor.EventIsActive TO TouchDown_Pose.commencePose}
+Transform209.AddRoute(TouchSensor217.EventIsActive, X3DPrototype117.commencePose);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
-Group202.FdChildren.Add(Transform220);
-Transform230 := TTransformNode.Create;
-Transform230.Translation := Vector3(-1.5,0.5,0);
-Shape231 := TShapeNode.Create;
-Text232 := TTextNode.Create;
-Text232.SetText(['TouchDown Pose']);
+Group181.FdChildren.Add(Transform209);
+Transform219 := TTransformNode.Create;;
+Transform219.Translation := Vector3(-1.5,0,0);
+Shape220 := TShapeNode.Create;;
+Text221 := TTextNode.Create;;
+Text221.SetText(['"I" Pose']);
 { METHOD .FontStyle }
-Text232.FontStyle := FontStyle212;
+{ METHOD.SET .FontStyle }
+Text221.FontStyle := FontStyle191;
 { METHOD .Geometry }
-Shape231.Geometry := Text232;
+{ METHOD.SET .Geometry }
+Shape220.Geometry := Text221;
 { METHOD .Appearance }
-Shape231.Appearance := Appearance207;
+{ METHOD.SET .Appearance }
+Shape220.Appearance := Appearance186;
 { METHOD .FdChildren.Add }
-Transform230.FdChildren.Add(Shape231);
-Shape235 := TShapeNode.Create;
+Transform219.FdChildren.Add(Shape220);
+Shape224 := TShapeNode.Create;
 end;
 
 procedure InitHAnimPosePrototypePart15;
 begin
-
+;
 { Selectable Text transparent Box for easy user selection }
 { METHOD .Appearance }
-Shape235.Appearance := Appearance215;
-Box237 := TBoxNode.Create;
-Box237.Size := Vector3(0.85,0.2,0.001);
+{ METHOD.SET .Appearance }
+Shape224.Appearance := Appearance194;
+Box226 := TBoxNode.Create;;
+Box226.Size := Vector3(0.45,0.2,0.001);
 { METHOD .Geometry }
-Shape235.Geometry := Box237;
+{ METHOD.SET .Geometry }
+Shape224.Geometry := Box226;
 { METHOD .FdChildren.Add }
-Transform230.FdChildren.Add(Shape235);
-TouchSensor238 := TTouchSensorNode.Create;
-TouchSensor238.Description := 'select to transition all joints to TouchDown pose';
+Transform219.FdChildren.Add(Shape224);
+TouchSensor227 := TTouchSensorNode.Create;;
+TouchSensor227.Description := 'select to transition all joints to \"I\" pose';
 { METHOD .FdChildren.Add }
-Transform230.FdChildren.Add(TouchSensor238);
-{ Original "TouchDown_PoseTouchSensor.EventIsActive TO TouchDown_Pose.commencePose }
-{ Sample TouchDown_PoseTouchSensor.EventIsActive TO TouchDown_Pose.commencePose}
-Transform230.AddRoute(TouchSensor238.EventIsActive, X3DPrototype138.commencePose);
-{ METHOD .AddX3DROUTE }
-{ METHOD .FdChildren.Add }
-Group202.FdChildren.Add(Transform230);
-Transform240 := TTransformNode.Create;
-Transform240.Translation := Vector3(-1.5,0,0);
-Shape241 := TShapeNode.Create;
-Text242 := TTextNode.Create;
-Text242.SetText(['"I" Pose']);
-{ METHOD .FontStyle }
-Text242.FontStyle := FontStyle212;
-{ METHOD .Geometry }
-Shape241.Geometry := Text242;
-{ METHOD .Appearance }
-Shape241.Appearance := Appearance207;
-{ METHOD .FdChildren.Add }
-Transform240.FdChildren.Add(Shape241);
-Shape245 := TShapeNode.Create;
-{ Selectable Text transparent Box for easy user selection }
-{ METHOD .Appearance }
-Shape245.Appearance := Appearance215;
-Box247 := TBoxNode.Create;
-Box247.Size := Vector3(0.45,0.2,0.001);
-{ METHOD .Geometry }
-Shape245.Geometry := Box247;
-{ METHOD .FdChildren.Add }
-Transform240.FdChildren.Add(Shape245);
-TouchSensor248 := TTouchSensorNode.Create;
-TouchSensor248.Description := 'select to transition all joints to \"I\" pose';
-{ METHOD .FdChildren.Add }
-Transform240.FdChildren.Add(TouchSensor248);
+Transform219.FdChildren.Add(TouchSensor227);
 { Original "I_PoseTouchSensor.EventIsActive TO I_Pose.commencePose }
 { Sample I_PoseTouchSensor.EventIsActive TO I_Pose.commencePose}
-Transform240.AddRoute(TouchSensor248.EventIsActive, X3DPrototype164.commencePose);
+Transform219.AddRoute(TouchSensor227.EventIsActive, X3DPrototype143.commencePose);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
-Group202.FdChildren.Add(Transform240);
-Transform250 := TTransformNode.Create;
-Transform250.Translation := Vector3(1.5,1.5,0);
-Shape251 := TShapeNode.Create;
-Text252 := TTextNode.Create;
-Text252.SetText(['Face Left Pose']);
+Group181.FdChildren.Add(Transform219);
+Transform229 := TTransformNode.Create;;
+Transform229.Translation := Vector3(1.5,1.5,0);
+Shape230 := TShapeNode.Create;;
+Text231 := TTextNode.Create;;
+Text231.SetText(['Face Left Pose']);
 { METHOD .FontStyle }
-Text252.FontStyle := FontStyle212;
+{ METHOD.SET .FontStyle }
+Text231.FontStyle := FontStyle191;
 { METHOD .Geometry }
-Shape251.Geometry := Text252;
+{ METHOD.SET .Geometry }
+Shape230.Geometry := Text231;
 { METHOD .Appearance }
-Shape251.Appearance := Appearance207;
+{ METHOD.SET .Appearance }
+Shape230.Appearance := Appearance186;
 { METHOD .FdChildren.Add }
-Transform250.FdChildren.Add(Shape251);
-Shape255 := TShapeNode.Create;
+Transform229.FdChildren.Add(Shape230);
+Shape234 := TShapeNode.Create;;
+{ METHOD .Appearance }
+{ METHOD.SET .Appearance }
+Shape234.Appearance := Appearance194;
+Box236 := TBoxNode.Create;;
+Box236.Size := Vector3(0.9,0.2,0.001);
+{ METHOD .Geometry }
+{ METHOD.SET .Geometry }
+Shape234.Geometry := Box236;
+{ METHOD .FdChildren.Add }
+Transform229.FdChildren.Add(Shape234);
+TouchSensor237 := TTouchSensorNode.Create;;
+TouchSensor237.Description := 'select to rotate body and Face Left, leave other joints unchanged';
+{ METHOD .FdChildren.Add }
+Transform229.FdChildren.Add(TouchSensor237);
+{ Original "FaceLeftTouchSensor.EventIsActive TO FaceLeft_Pose.commencePose }
+{ Sample FaceLeftTouchSensor.EventIsActive TO FaceLeft_Pose.commencePose}
+Transform229.AddRoute(TouchSensor237.EventIsActive, X3DPrototype159.commencePose);
+{ METHOD .AddX3DROUTE }
+{ METHOD .FdChildren.Add }
+Group181.FdChildren.Add(Transform229);
+Transform239 := TTransformNode.Create;
 end;
 
 procedure InitHAnimPosePrototypePart16;
 begin
-
-{ METHOD .Appearance }
-Shape255.Appearance := Appearance215;
-Box257 := TBoxNode.Create;
-Box257.Size := Vector3(0.9,0.2,0.001);
-{ METHOD .Geometry }
-Shape255.Geometry := Box257;
-{ METHOD .FdChildren.Add }
-Transform250.FdChildren.Add(Shape255);
-TouchSensor258 := TTouchSensorNode.Create;
-TouchSensor258.Description := 'select to rotate body and Face Left, leave other joints unchanged';
-{ METHOD .FdChildren.Add }
-Transform250.FdChildren.Add(TouchSensor258);
-{ Original "FaceLeftTouchSensor.EventIsActive TO FaceLeft_Pose.commencePose }
-{ Sample FaceLeftTouchSensor.EventIsActive TO FaceLeft_Pose.commencePose}
-Transform250.AddRoute(TouchSensor258.EventIsActive, X3DPrototype180.commencePose);
-{ METHOD .AddX3DROUTE }
-{ METHOD .FdChildren.Add }
-Group202.FdChildren.Add(Transform250);
-Transform260 := TTransformNode.Create;
-Transform260.Translation := Vector3(1.5,1,0);
-Shape261 := TShapeNode.Create;
-Text262 := TTextNode.Create;
-Text262.SetText(['Face Right Pose']);
+;
+Transform239.Translation := Vector3(1.5,1,0);
+Shape240 := TShapeNode.Create;;
+Text241 := TTextNode.Create;;
+Text241.SetText(['Face Right Pose']);
 { METHOD .FontStyle }
-Text262.FontStyle := FontStyle212;
+{ METHOD.SET .FontStyle }
+Text241.FontStyle := FontStyle191;
 { METHOD .Geometry }
-Shape261.Geometry := Text262;
+{ METHOD.SET .Geometry }
+Shape240.Geometry := Text241;
 { METHOD .Appearance }
-Shape261.Appearance := Appearance207;
+{ METHOD.SET .Appearance }
+Shape240.Appearance := Appearance186;
 { METHOD .FdChildren.Add }
-Transform260.FdChildren.Add(Shape261);
-Shape265 := TShapeNode.Create;
+Transform239.FdChildren.Add(Shape240);
+Shape244 := TShapeNode.Create;;
 { Selectable Text transparent Box for easy user selection }
 { METHOD .Appearance }
-Shape265.Appearance := Appearance215;
-Box267 := TBoxNode.Create;
-Box267.Size := Vector3(0.9,0.2,0.001);
+{ METHOD.SET .Appearance }
+Shape244.Appearance := Appearance194;
+Box246 := TBoxNode.Create;;
+Box246.Size := Vector3(0.9,0.2,0.001);
 { METHOD .Geometry }
-Shape265.Geometry := Box267;
+{ METHOD.SET .Geometry }
+Shape244.Geometry := Box246;
 { METHOD .FdChildren.Add }
-Transform260.FdChildren.Add(Shape265);
-TouchSensor268 := TTouchSensorNode.Create;
-TouchSensor268.Description := 'select to rotate body and Face Right, leave other joints unchanged';
+Transform239.FdChildren.Add(Shape244);
+TouchSensor247 := TTouchSensorNode.Create;;
+TouchSensor247.Description := 'select to rotate body and Face Right, leave other joints unchanged';
 { METHOD .FdChildren.Add }
-Transform260.FdChildren.Add(TouchSensor268);
+Transform239.FdChildren.Add(TouchSensor247);
 { Original "FaceRightTouchSensor.EventIsActive TO FaceRight_Pose.commencePose }
 { Sample FaceRightTouchSensor.EventIsActive TO FaceRight_Pose.commencePose}
-Transform260.AddRoute(TouchSensor268.EventIsActive, X3DPrototype191.commencePose);
+Transform239.AddRoute(TouchSensor247.EventIsActive, X3DPrototype170.commencePose);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
-Group202.FdChildren.Add(Transform260);
-Transform270 := TTransformNode.Create;
-Transform270.Translation := Vector3(1.5,0.5,0);
-Shape271 := TShapeNode.Create;
-Text272 := TTextNode.Create;
-Text272.SetText(['Direct animation','to, from "I" Pose']);
+Group181.FdChildren.Add(Transform239);
+Transform249 := TTransformNode.Create;;
+Transform249.Translation := Vector3(1.5,0.5,0);
+Shape250 := TShapeNode.Create;;
+Text251 := TTextNode.Create;;
+Text251.SetText(['Direct animation','to, from "I" Pose']);
 { METHOD .FontStyle }
-Text272.FontStyle := FontStyle212;
+{ METHOD.SET .FontStyle }
+Text251.FontStyle := FontStyle191;
 { METHOD .Geometry }
-Shape271.Geometry := Text272;
-Appearance274 := TAppearanceNode.Create;
-Material275 := TMaterialNode.Create;
-Material275.DiffuseColor := Vector3(0.1,0.2,0.3);
+{ METHOD.SET .Geometry }
+Shape250.Geometry := Text251;
+Appearance253 := TAppearanceNode.Create;;
+Material254 := TMaterialNode.Create;;
+Material254.DiffuseColor := Vector3(0.1,0.2,0.3);
 end;
 
 procedure InitHAnimPosePrototypePart17;
 begin
 
 { METHOD .SetMaterial }
-Appearance274.Material := Material275;
+Appearance253.Material := Material254;
 { METHOD .Appearance }
-Shape271.Appearance := Appearance274;
+{ METHOD.SET .Appearance }
+Shape250.Appearance := Appearance253;
 { METHOD .FdChildren.Add }
-Transform270.FdChildren.Add(Shape271);
-Shape276 := TShapeNode.Create;
+Transform249.FdChildren.Add(Shape250);
+Shape255 := TShapeNode.Create;;
 { Selectable Text transparent Box for easy user selection }
 { METHOD .Appearance }
-Shape276.Appearance := Appearance215;
-Box278 := TBoxNode.Create;
-Box278.Size := Vector3(0.9,0.25,0.001);
+{ METHOD.SET .Appearance }
+Shape255.Appearance := Appearance194;
+Box257 := TBoxNode.Create;;
+Box257.Size := Vector3(0.9,0.25,0.001);
 { METHOD .Geometry }
-Shape276.Geometry := Box278;
+{ METHOD.SET .Geometry }
+Shape255.Geometry := Box257;
 { METHOD .FdChildren.Add }
-Transform270.FdChildren.Add(Shape276);
-TouchSensor279 := TTouchSensorNode.Create;
-TouchSensor279.Description := 'select to animate current pose to \"I\" pose, then back to original pose, using TimeSensor events';
+Transform249.FdChildren.Add(Shape255);
+TouchSensor258 := TTouchSensorNode.Create;;
+TouchSensor258.Description := 'select to animate current pose to \"I\" pose, then back to original pose, using TimeSensor events';
 { METHOD .FdChildren.Add }
-Transform270.FdChildren.Add(TouchSensor279);
+Transform249.FdChildren.Add(TouchSensor258);
 { cycleInterval=4 also hard-coded in script execution message }
-TimeSensor280 := TTimeSensorNode.Create;
-TimeSensor280.CycleInterval := 4;
-TimeSensor280.Description := 'directly animate several poses';
+TimeSensor259 := TTimeSensorNode.Create;;
+TimeSensor259.CycleInterval := 4;
+TimeSensor259.Description := 'directly animate several poses';
 { METHOD .FdChildren.Add }
-Transform270.FdChildren.Add(TimeSensor280);
-ScalarInterpolator281 := TScalarInterpolatorNode.Create;
-ScalarInterpolator281.SetKey([0,0.05,0.45,0.55,0.95,1]);
-ScalarInterpolator281.SetKeyValue([0,0,1,1,0,0]);
+Transform249.FdChildren.Add(TimeSensor259);
+ScalarInterpolator260 := TScalarInterpolatorNode.Create;;
+ScalarInterpolator260.SetKey([0,0.05,0.45,0.55,0.95,1]);
+ScalarInterpolator260.SetKeyValue([0,0,1,1,0,0]);
 { METHOD .FdChildren.Add }
-Transform270.FdChildren.Add(ScalarInterpolator281);
-{ Original "AnimatePosesTouchSensor.EventTouchTime TO AnimatePosesClock.startTime }
-{ Sample AnimatePosesTouchSensor.EventTouchTime TO AnimatePosesClock.startTime}
-Transform270.AddRoute(TouchSensor279.EventTouchTime, TimeSensor280.startTime);
+Transform249.FdChildren.Add(ScalarInterpolator260);
+{ Original "AnimatePosesTouchSensor.EventTouchTime TO AnimatePosesClock.FdStartTime.EventIn }
+{ Sample AnimatePosesTouchSensor.EventTouchTime TO AnimatePosesClock.FdStartTime.EventIn}
+Transform249.AddRoute(TouchSensor258.EventTouchTime, TimeSensor259.FdStartTime.EventIn);
 { METHOD .AddX3DROUTE }
 { Original "AnimatePosesClock.EventFraction_changed TO AnimatePosesLoopInterpolator.EventSet_fraction }
 { Sample AnimatePosesClock.EventFraction_changed TO AnimatePosesLoopInterpolator.EventSet_fraction}
-Transform270.AddRoute(TimeSensor280.EventFraction_changed, ScalarInterpolator281.EventSet_fraction);
+Transform249.AddRoute(TimeSensor259.EventFraction_changed, ScalarInterpolator260.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { Original "AnimatePosesLoopInterpolator.EventValue_changed TO I_Pose.EventSet_fraction }
 { Sample AnimatePosesLoopInterpolator.EventValue_changed TO I_Pose.EventSet_fraction}
-Transform270.AddRoute(ScalarInterpolator281.EventValue_changed, X3DPrototype164.EventSet_fraction);
+Transform249.AddRoute(ScalarInterpolator260.EventValue_changed, X3DPrototype143.EventSet_fraction);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
-Group202.FdChildren.Add(Transform270);
-Transform285 := TTransformNode.Create;
-Transform285.Translation := Vector3(1.5,0,0);
-Shape286 := TShapeNode.Create;
-Text287 := TTextNode.Create;
-Text287.SetText(['Reset All Joints','to Default "I" Pose']);
+Group181.FdChildren.Add(Transform249);
+Transform264 := TTransformNode.Create;;
+Transform264.Translation := Vector3(1.5,0,0);
+Shape265 := TShapeNode.Create;;
+Text266 := TTextNode.Create;;
+Text266.SetText(['Reset All Joints','to Default "I" Pose']);
 { METHOD .FontStyle }
-Text287.FontStyle := FontStyle212;
+{ METHOD.SET .FontStyle }
+Text266.FontStyle := FontStyle191;
 { METHOD .Geometry }
-Shape286.Geometry := Text287;
+{ METHOD.SET .Geometry }
+Shape265.Geometry := Text266;
 { METHOD .Appearance }
-Shape286.Appearance := Appearance274;
-{ METHOD .FdChildren.Add }
-Transform285.FdChildren.Add(Shape286);
-Shape290 := TShapeNode.Create;
-{ Selectable Text transparent Box for easy user selection }
-{ METHOD .Appearance }
-Shape290.Appearance := Appearance215;
-Box292 := TBoxNode.Create;
-Box292.Size := Vector3(0.9,0.25,0.001);
-{ METHOD .Geometry }
-Shape290.Geometry := Box292;
-{ METHOD .FdChildren.Add }
-Transform285.FdChildren.Add(Shape290);
-TouchSensor293 := TTouchSensorNode.Create;
+{ METHOD.SET .Appearance }
+Shape265.Appearance := Appearance253;
 end;
 
 procedure InitHAnimPosePrototypePart18;
 begin
 
-TouchSensor293.Description := 'select to immediately Rezero All Joints (to default \"I\" Pose) by sending resetAllJoints event';
 { METHOD .FdChildren.Add }
-Transform285.FdChildren.Add(TouchSensor293);
+Transform264.FdChildren.Add(Shape265);
+Shape269 := TShapeNode.Create;;
+{ Selectable Text transparent Box for easy user selection }
+{ METHOD .Appearance }
+{ METHOD.SET .Appearance }
+Shape269.Appearance := Appearance194;
+Box271 := TBoxNode.Create;;
+Box271.Size := Vector3(0.9,0.25,0.001);
+{ METHOD .Geometry }
+{ METHOD.SET .Geometry }
+Shape269.Geometry := Box271;
+{ METHOD .FdChildren.Add }
+Transform264.FdChildren.Add(Shape269);
+TouchSensor272 := TTouchSensorNode.Create;;
+TouchSensor272.Description := 'select to immediately Rezero All Joints (to default \"I\" Pose) by sending resetAllJoints event';
+{ METHOD .FdChildren.Add }
+Transform264.FdChildren.Add(TouchSensor272);
 { Original "ResetPoseTouchSensor.EventIsActive TO FaceLeft_Pose.resetAllJoints }
 { Sample ResetPoseTouchSensor.EventIsActive TO FaceLeft_Pose.resetAllJoints}
-Transform285.AddRoute(TouchSensor293.EventIsActive, X3DPrototype180.resetAllJoints);
+Transform264.AddRoute(TouchSensor272.EventIsActive, X3DPrototype159.resetAllJoints);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
-Group202.FdChildren.Add(Transform285);
+Group181.FdChildren.Add(Transform264);
 { METHOD .FdChildren.Add }
-Group42.FdChildren.Add(Group202);
-Group295 := TGroupNode.Create;
+Group42.FdChildren.Add(Group181);
+Group274 := TGroupNode.Create;;
 { Original "HumanoidInlineLoadSensor.EventIsLoaded TO A_Pose.isLoaded }
 { Sample HumanoidInlineLoadSensor.EventIsLoaded TO A_Pose.isLoaded}
-Group295.AddRoute(LoadSensor49.EventIsLoaded, X3DPrototype126.isLoaded);
+Group274.AddRoute(LoadSensor49.EventIsLoaded, X3DPrototype105.isLoaded);
 { METHOD .AddX3DROUTE }
 { Original "HumanoidInlineLoadSensor.EventIsLoaded TO H_Pose.isLoaded }
 { Sample HumanoidInlineLoadSensor.EventIsLoaded TO H_Pose.isLoaded}
-Group295.AddRoute(LoadSensor49.EventIsLoaded, X3DPrototype174.isLoaded);
+Group274.AddRoute(LoadSensor49.EventIsLoaded, X3DPrototype153.isLoaded);
 { METHOD .AddX3DROUTE }
 { Original "HumanoidInlineLoadSensor.EventIsLoaded TO I_Pose.isLoaded }
 { Sample HumanoidInlineLoadSensor.EventIsLoaded TO I_Pose.isLoaded}
-Group295.AddRoute(LoadSensor49.EventIsLoaded, X3DPrototype164.isLoaded);
+Group274.AddRoute(LoadSensor49.EventIsLoaded, X3DPrototype143.isLoaded);
 { METHOD .AddX3DROUTE }
 { Original "HumanoidInlineLoadSensor.EventIsLoaded TO T_Pose.isLoaded }
 { Sample HumanoidInlineLoadSensor.EventIsLoaded TO T_Pose.isLoaded}
-Group295.AddRoute(LoadSensor49.EventIsLoaded, X3DPrototype115.isLoaded);
+Group274.AddRoute(LoadSensor49.EventIsLoaded, X3DPrototype94.isLoaded);
 { METHOD .AddX3DROUTE }
 { Original "HumanoidInlineLoadSensor.EventIsLoaded TO FaceLeft_Pose.isLoaded }
 { Sample HumanoidInlineLoadSensor.EventIsLoaded TO FaceLeft_Pose.isLoaded}
-Group295.AddRoute(LoadSensor49.EventIsLoaded, X3DPrototype180.isLoaded);
+Group274.AddRoute(LoadSensor49.EventIsLoaded, X3DPrototype159.isLoaded);
 { METHOD .AddX3DROUTE }
 { Original "HumanoidInlineLoadSensor.EventIsLoaded TO FaceRight_Pose.isLoaded }
 { Sample HumanoidInlineLoadSensor.EventIsLoaded TO FaceRight_Pose.isLoaded}
-Group295.AddRoute(LoadSensor49.EventIsLoaded, X3DPrototype191.isLoaded);
+Group274.AddRoute(LoadSensor49.EventIsLoaded, X3DPrototype170.isLoaded);
 { METHOD .AddX3DROUTE }
 { Original "HumanoidInlineLoadSensor.EventIsLoaded TO TouchDown_Pose.isLoaded }
 { Sample HumanoidInlineLoadSensor.EventIsLoaded TO TouchDown_Pose.isLoaded}
-Group295.AddRoute(LoadSensor49.EventIsLoaded, X3DPrototype138.isLoaded);
+Group274.AddRoute(LoadSensor49.EventIsLoaded, X3DPrototype117.isLoaded);
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
-Group42.FdChildren.Add(Group295);
-Transform303 := TTransformNode.Create;
-Transform303.Scale := Vector3(0.05,0.05,0.05);
-Inline304 := TInlineNode.Create;
-Inline304.SetUrl(['../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d','../../../Savage/Tools/Authoring/CoordinateAxes.x3d','https://www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d','https://www.web3d.org/x3d/content/examples/Savage/Tools/Authoring/CoordinateAxes.x3d','../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl','../../../Savage/Tools/Authoring/CoordinateAxes.wrl','https://www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl','https://www.web3d.org/x3d/content/examples/Savage/Tools/Authoring/CoordinateAxes.wrl']);
+Group42.FdChildren.Add(Group274);
+Transform282 := TTransformNode.Create;;
+Transform282.Scale := Vector3(0.05,0.05,0.05);
+Inline283 := TInlineNode.Create;;
+Inline283.SetUrl(['../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d','../../../Savage/Tools/Authoring/CoordinateAxes.x3d','https://www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d','https://www.web3d.org/x3d/content/examples/Savage/Tools/Authoring/CoordinateAxes.x3d','../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl','../../../Savage/Tools/Authoring/CoordinateAxes.wrl','https://www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl','https://www.web3d.org/x3d/content/examples/Savage/Tools/Authoring/CoordinateAxes.wrl']);
 { METHOD .FdChildren.Add }
-Transform303.FdChildren.Add(Inline304);
+Transform282.FdChildren.Add(Inline283);
 { METHOD .FdChildren.Add }
-Group42.FdChildren.Add(Transform303);
-Transform305 := TTransformNode.Create;
-Transform305.Translation := Vector3(0,-0.15,0);
-Shape306 := TShapeNode.Create;
-Text307 := TTextNode.Create;
-Text307.SetText(['humanoid','origin']);
-FontStyle308 := TFontStyleNode.Create;
-FontStyle308.Family := ffSANS;
-FontStyle308.Justify := fjMIDDLE;
-FontStyle308.JustifyMinor := fjMIDDLE;
-FontStyle308.Size := 0.05;
-FontStyle308.Style := fsBOLD;
-{ METHOD .FontStyle }
-Text307.FontStyle := FontStyle308;
-{ METHOD .Geometry }
-Shape306.Geometry := Text307;
-Appearance309 := TAppearanceNode.Create;
-Material310 := TMaterialNode.Create;
-Material310.DiffuseColor := Vector3(0.3,0.3,0.3);
-{ METHOD .SetMaterial }
-Appearance309.Material := Material310;
-{ METHOD .Appearance }
-Shape306.Appearance := Appearance309;
-{ METHOD .FdChildren.Add }
-Transform305.FdChildren.Add(Shape306);
-{ METHOD .FdChildren.Add }
-Group42.FdChildren.Add(Transform305);
+Group42.FdChildren.Add(Transform282);
+Transform284 := TTransformNode.Create;;
+Transform284.Translation := Vector3(0,-0.15,0);
+Shape285 := TShapeNode.Create;;
+Text286 := TTextNode.Create;
 end;
 
 procedure InitHAnimPosePrototypePart19;
 begin
-
+;
+Text286.SetText(['humanoid','origin']);
+FontStyle287 := TFontStyleNode.Create;;
+FontStyle287.Family := ffSANS;
+FontStyle287.Justify := fjMIDDLE;
+FontStyle287.JustifyMinor := fjMIDDLE;
+FontStyle287.Size := 0.05;
+FontStyle287.Style := fsBOLD;
+{ METHOD .FontStyle }
+{ METHOD.SET .FontStyle }
+Text286.FontStyle := FontStyle287;
+{ METHOD .Geometry }
+{ METHOD.SET .Geometry }
+Shape285.Geometry := Text286;
+Appearance288 := TAppearanceNode.Create;;
+Material289 := TMaterialNode.Create;;
+Material289.DiffuseColor := Vector3(0.3,0.3,0.3);
+{ METHOD .SetMaterial }
+Appearance288.Material := Material289;
+{ METHOD .Appearance }
+{ METHOD.SET .Appearance }
+Shape285.Appearance := Appearance288;
+{ METHOD .FdChildren.Add }
+Transform284.FdChildren.Add(Shape285);
+{ METHOD .FdChildren.Add }
+Group42.FdChildren.Add(Transform284);
 { METHOD .AddGroup }
 X3D0.AddChildren([Group42]);
 end;

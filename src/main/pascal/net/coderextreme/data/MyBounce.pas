@@ -2,7 +2,7 @@ unit MyBounce;
 
 interface
 
-uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
 
 function CreateMyBounce: TX3DRootNode;
 
@@ -44,28 +44,30 @@ X3D0.Meta['description'] := '3 prismatic spheres';
 X3D0.Meta['identifier'] := 'https://coderextreme.net/X3DJSONLD/src/main/data/SFVec3f.x3d';
 { METHOD .Meta }
 { METHOD .Head }
-Group7 := TGroupNode.Create;
-NavigationInfo8 := TNavigationInfoNode.Create;
+Group7 := TGroupNode.Create;;
+NavigationInfo8 := TNavigationInfoNode.Create;;
 { METHOD .FdChildren.Add }
 Group7.FdChildren.Add(NavigationInfo8);
-Transform9 := TTransformNode.Create;
-Shape10 := TShapeNode.Create;
-Appearance11 := TAppearanceNode.Create;
-Material12 := TMaterialNode.Create;
+Transform9 := TTransformNode.Create;;
+Shape10 := TShapeNode.Create;;
+Appearance11 := TAppearanceNode.Create;;
+Material12 := TMaterialNode.Create;;
 Material12.DiffuseColor := Vector3(0.7,0.7,0.7);
 Material12.SpecularColor := Vector3(0.5,0.5,0.5);
 { METHOD .SetMaterial }
 Appearance11.Material := Material12;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape10.Appearance := Appearance11;
-Sphere13 := TSphereNode.Create;
+Sphere13 := TSphereNode.Create;;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape10.Geometry := Sphere13;
 { METHOD .FdChildren.Add }
 Transform9.FdChildren.Add(Shape10);
 { METHOD .FdChildren.Add }
 Group7.FdChildren.Add(Transform9);
-Script14 := TScriptNode.Create;
+Script14 := TScriptNode.Create;;
 SFVec3f15 := TSFVec3f.CreateUndefined(Script14, false, 'set_translation');
 SFVec3f15.Value := '0 0 0';
 { METHOD .Fd.AddCustomField }
@@ -75,6 +77,11 @@ SFVec3f16.Value := '0 0 0';
 { METHOD .Fd.AddCustomField }
 Script14.AddCustomField(SFVec3f16);
 SFVec3f17 := TSFVec3f.CreateUndefined(Script14, false, 'translation');
+end;
+
+procedure InitMyBouncePart1;
+begin
+
 SFVec3f17.Value := '0 0 0';
 { METHOD .Fd.AddCustomField }
 Script14.AddCustomField(SFVec3f17);
@@ -119,7 +126,7 @@ Script14.SetSourceCode('''ecmascript:\n"+
 "			}''');
 { METHOD .FdChildren.Add }
 Group7.FdChildren.Add(Script14);
-TimeSensor20 := TTimeSensorNode.Create;
+TimeSensor20 := TTimeSensorNode.Create;;
 TimeSensor20.CycleInterval := 0.15;
 TimeSensor20.Loop := True;
 { METHOD .FdChildren.Add }
@@ -139,6 +146,7 @@ end;
 function CreateMyBounce: TX3DRootNode;
 begin
 InitMyBouncePart0;
+InitMyBouncePart1;
 Result := X3D0;
 end;
 

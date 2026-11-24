@@ -2,7 +2,7 @@ unit TransformKids;
 
 interface
 
-uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
 
 function CreateTransformKids: TX3DRootNode;
 
@@ -49,49 +49,54 @@ X3D0.Meta['refernce'] := 'https://www.web3d.org/specifications/java/examples/Smo
 X3D0.Meta['license'] := '../license.html';
 { METHOD .Meta }
 { METHOD .Head }
-Group10 := TGroupNode.Create;
-Transform11 := TTransformNode.Create;
+Group10 := TGroupNode.Create;;
+Transform11 := TTransformNode.Create;;
 Transform11.Translation := Vector3(0,1.5,0);
-Shape12 := TShapeNode.Create;
-Appearance13 := TAppearanceNode.Create;
-Material14 := TMaterialNode.Create;
+Shape12 := TShapeNode.Create;;
+Appearance13 := TAppearanceNode.Create;;
+Material14 := TMaterialNode.Create;;
 Material14.DiffuseColor := Vector3(0,1,0);
 { METHOD .SetMaterial }
 Appearance13.Material := Material14;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape12.Appearance := Appearance13;
-Box15 := TBoxNode.Create;
+Box15 := TBoxNode.Create;;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape12.Geometry := Box15;
 { METHOD .FdChildren.Add }
 Transform11.FdChildren.Add(Shape12);
 { METHOD .FdChildren.Add }
 Group10.FdChildren.Add(Transform11);
-MetadataSet16 := TMetadataSetNode.Create;
-MetadataString17 := TMetadataStringNode.Create;
+MetadataSet16 := TMetadataSetNode.Create;;
+MetadataString17 := TMetadataStringNode.Create;;
 MetadataString17.SetValue(['Metadata String']);
 { METHOD .FdValue.Add }
 MetadataSet16.FdValue.Add(MetadataString17);
 { METHOD .Metadata }
+{ METHOD.SET .Metadata }
 Group10.Metadata := MetadataSet16;
-Transform18 := TTransformNode.Create;
-Transform18.Translation := Vector3(0,-1.5,0);
-Shape19 := TShapeNode.Create;
-Appearance20 := TAppearanceNode.Create;
-Material21 := TMaterialNode.Create;
-Material21.DiffuseColor := Vector3(1,0,0);
-{ METHOD .SetMaterial }
-Appearance20.Material := Material21;
-{ METHOD .Appearance }
-Shape19.Appearance := Appearance20;
-Box22 := TBoxNode.Create;
-{ METHOD .Geometry }
-Shape19.Geometry := Box22;
+Transform18 := TTransformNode.Create;;
 end;
 
 procedure InitTransformKidsPart1;
 begin
 
+Transform18.Translation := Vector3(0,-1.5,0);
+Shape19 := TShapeNode.Create;;
+Appearance20 := TAppearanceNode.Create;;
+Material21 := TMaterialNode.Create;;
+Material21.DiffuseColor := Vector3(1,0,0);
+{ METHOD .SetMaterial }
+Appearance20.Material := Material21;
+{ METHOD .Appearance }
+{ METHOD.SET .Appearance }
+Shape19.Appearance := Appearance20;
+Box22 := TBoxNode.Create;;
+{ METHOD .Geometry }
+{ METHOD.SET .Geometry }
+Shape19.Geometry := Box22;
 { METHOD .FdChildren.Add }
 Transform18.FdChildren.Add(Shape19);
 { METHOD .FdChildren.Add }

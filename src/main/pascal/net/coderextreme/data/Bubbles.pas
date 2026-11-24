@@ -2,7 +2,7 @@ unit Bubbles;
 
 interface
 
-uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
 
 function CreateBubbles: TX3DRootNode;
 
@@ -103,264 +103,294 @@ X3D0.Meta['generator'] := 'X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit';
 X3D0.Meta['license'] := '../license.html';
 { METHOD .Meta }
 { METHOD .Head }
-Group10 := TGroupNode.Create;
-WorldInfo11 := TWorldInfoNode.Create;
+Group10 := TGroupNode.Create;;
+WorldInfo11 := TWorldInfoNode.Create;;
 WorldInfo11.Title := 'Bubbles.x3d';
 { METHOD .FdChildren.Add }
 Group10.FdChildren.Add(WorldInfo11);
-Transform12 := TTransformNode.Create;
-Group13 := TGroupNode.Create;
-TimeSensor14 := TTimeSensorNode.Create;
+Transform12 := TTransformNode.Create;;
+Group13 := TGroupNode.Create;;
+TimeSensor14 := TTimeSensorNode.Create;;
 TimeSensor14.CycleInterval := 6;
 TimeSensor14.Loop := True;
 { METHOD .FdChildren.Add }
 Group13.FdChildren.Add(TimeSensor14);
-PositionInterpolator15 := TPositionInterpolatorNode.Create;
+PositionInterpolator15 := TPositionInterpolatorNode.Create;;
 PositionInterpolator15.SetKey([0,0.5,0.8,0.9,1]);
 PositionInterpolator15.SetKeyValue([Vector3(0,0,0),Vector3(0.75,0.75,0.75),Vector3(0.86,0.86,0.86),Vector3(0.99,0.998,0.9876),Vector3(1.272,1.9044,0.9509)]);
 { METHOD .FdChildren.Add }
 Group13.FdChildren.Add(PositionInterpolator15);
-PositionInterpolator16 := TPositionInterpolatorNode.Create;
+PositionInterpolator16 := TPositionInterpolatorNode.Create;;
 PositionInterpolator16.SetKey([0,0.3,0.64,0.85,1]);
 PositionInterpolator16.SetKeyValue([Vector3(0.1,0.1,0.1),Vector3(0.2,0.4,0.25),Vector3(0.3,0.5,0.46),Vector3(0.75,0.5,0.575),Vector3(0.038483478,1.989,1.098373)]);
 { METHOD .FdChildren.Add }
 Group13.FdChildren.Add(PositionInterpolator16);
-PositionInterpolator17 := TPositionInterpolatorNode.Create;
+PositionInterpolator17 := TPositionInterpolatorNode.Create;;
 PositionInterpolator17.SetKey([0,0.1,0.45,0.7,1]);
-PositionInterpolator17.SetKeyValue([Vector3(0.01,0.01,0.01),Vector3(0.25,0.35,0.0045),Vector3(0.55,0.6,0.0055),Vector3(0.66,0.665,0.00655),Vector3(1.555,1.09043,0.005734)]);
-{ METHOD .FdChildren.Add }
-Group13.FdChildren.Add(PositionInterpolator17);
-PositionInterpolator18 := TPositionInterpolatorNode.Create;
-PositionInterpolator18.SetKey([0,0.5,0.6,0.8,1]);
-PositionInterpolator18.SetKeyValue([Vector3(0,0,0),Vector3(0.5,0.5,0.005),Vector3(0.6,0.6,0.006),Vector3(0.75,0.75,0.0075),Vector3(1.948594,1.3983,0.009009349)]);
-{ METHOD .FdChildren.Add }
-Group13.FdChildren.Add(PositionInterpolator18);
-PositionInterpolator19 := TPositionInterpolatorNode.Create;
-PositionInterpolator19.SetKey([0,0.25,0.35,0.65,1]);
 end;
 
 procedure InitBubblesPart1;
 begin
 
+PositionInterpolator17.SetKeyValue([Vector3(0.01,0.01,0.01),Vector3(0.25,0.35,0.0045),Vector3(0.55,0.6,0.0055),Vector3(0.66,0.665,0.00655),Vector3(1.555,1.09043,0.005734)]);
+{ METHOD .FdChildren.Add }
+Group13.FdChildren.Add(PositionInterpolator17);
+PositionInterpolator18 := TPositionInterpolatorNode.Create;;
+PositionInterpolator18.SetKey([0,0.5,0.6,0.8,1]);
+PositionInterpolator18.SetKeyValue([Vector3(0,0,0),Vector3(0.5,0.5,0.005),Vector3(0.6,0.6,0.006),Vector3(0.75,0.75,0.0075),Vector3(1.948594,1.3983,0.009009349)]);
+{ METHOD .FdChildren.Add }
+Group13.FdChildren.Add(PositionInterpolator18);
+PositionInterpolator19 := TPositionInterpolatorNode.Create;;
+PositionInterpolator19.SetKey([0,0.25,0.35,0.65,1]);
 PositionInterpolator19.SetKeyValue([Vector3(0,0,0),Vector3(0.5,0.5,0.005),Vector3(0.6,0.6,0.006),Vector3(0.75,0.75,0.0075),Vector3(1.84444,1.22222,0.1)]);
 { METHOD .FdChildren.Add }
 Group13.FdChildren.Add(PositionInterpolator19);
-PositionInterpolator20 := TPositionInterpolatorNode.Create;
+PositionInterpolator20 := TPositionInterpolatorNode.Create;;
 PositionInterpolator20.SetKey([0,0.15,0.22235,0.55565,1]);
 PositionInterpolator20.SetKeyValue([Vector3(0,0,0),Vector3(0.235,0.3455,0.0055),Vector3(0.356,0.676,0.00456),Vector3(0.5675,0.75,0.0074565),Vector3(1.098,1.0343,0.14)]);
 { METHOD .FdChildren.Add }
 Group13.FdChildren.Add(PositionInterpolator20);
-PositionInterpolator21 := TPositionInterpolatorNode.Create;
+PositionInterpolator21 := TPositionInterpolatorNode.Create;;
 PositionInterpolator21.SetKey([0,0.2425,0.4535,0.6775,1]);
 PositionInterpolator21.SetKeyValue([Vector3(0,0,0),Vector3(0.12345,0.2225,0.00335),Vector3(0.786,0.456,0.00666),Vector3(0.74555,0.7335,0.00234575),Vector3(0.08787,1.022,0.12)]);
 { METHOD .FdChildren.Add }
 Group13.FdChildren.Add(PositionInterpolator21);
-PositionInterpolator22 := TPositionInterpolatorNode.Create;
+PositionInterpolator22 := TPositionInterpolatorNode.Create;;
 PositionInterpolator22.SetKey([0,0.1125,0.5535,0.97865,1]);
 PositionInterpolator22.SetKeyValue([Vector3(0,0,0),Vector3(0.1235,0.05,0.00125),Vector3(0.5666,0.4346,0.005556),Vector3(0.8975,0.34575,0.0098775),Vector3(1.8787,1.686,0.86)]);
 { METHOD .FdChildren.Add }
 Group13.FdChildren.Add(PositionInterpolator22);
-PositionInterpolator23 := TPositionInterpolatorNode.Create;
+PositionInterpolator23 := TPositionInterpolatorNode.Create;;
 PositionInterpolator23.SetKey([0,0.0025,0.035,0.65,1]);
 PositionInterpolator23.SetKeyValue([Vector3(0,0,0),Vector3(0.522,0.5445,0.0057),Vector3(0.6543,0.226,0.0055),Vector3(0.45575,0.4375,0.0067),Vector3(1.8787,2,0.1545)]);
 { METHOD .FdChildren.Add }
 Group13.FdChildren.Add(PositionInterpolator23);
-PositionInterpolator24 := TPositionInterpolatorNode.Create;
+PositionInterpolator24 := TPositionInterpolatorNode.Create;;
 PositionInterpolator24.SetKey([0,0.00025,0.035,0.6895,1]);
 PositionInterpolator24.SetKeyValue([Vector3(0,0,0),Vector3(0.8765,0.445,0.00335),Vector3(0.3336,0.4446,0.005556),Vector3(0.765,0.75,0.0075),Vector3(1,1,0.1)]);
 { METHOD .FdChildren.Add }
 Group13.FdChildren.Add(PositionInterpolator24);
-Transform25 := TTransformNode.Create;
+Transform25 := TTransformNode.Create;;
 Transform26 := TTransformNode.Create;
-Shape27 := TShapeNode.Create;
-Appearance28 := TAppearanceNode.Create;
-Material29 := TMaterialNode.Create;
+end;
+
+procedure InitBubblesPart2;
+begin
+;
+Shape27 := TShapeNode.Create;;
+Appearance28 := TAppearanceNode.Create;;
+Material29 := TMaterialNode.Create;;
 Material29.DiffuseColor := Vector3(1,1,1);
 Material29.Transparency := 0.8;
 { METHOD .SetMaterial }
 Appearance28.Material := Material29;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape27.Appearance := Appearance28;
-Sphere30 := TSphereNode.Create;
+Sphere30 := TSphereNode.Create;;
 Sphere30.Radius := 0.025;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape27.Geometry := Sphere30;
 { METHOD .FdChildren.Add }
 Transform26.FdChildren.Add(Shape27);
 { METHOD .FdChildren.Add }
 Transform25.FdChildren.Add(Transform26);
-Transform31 := TTransformNode.Create;
-Shape32 := TShapeNode.Create;
-Appearance33 := TAppearanceNode.Create;
-Material34 := TMaterialNode.Create;
-end;
-
-procedure InitBubblesPart2;
-begin
-
+Transform31 := TTransformNode.Create;;
+Shape32 := TShapeNode.Create;;
+Appearance33 := TAppearanceNode.Create;;
+Material34 := TMaterialNode.Create;;
 Material34.DiffuseColor := Vector3(1,1,1);
 Material34.Transparency := 0.8;
 { METHOD .SetMaterial }
 Appearance33.Material := Material34;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape32.Appearance := Appearance33;
-Sphere35 := TSphereNode.Create;
+Sphere35 := TSphereNode.Create;;
 Sphere35.Radius := 0.055;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape32.Geometry := Sphere35;
 { METHOD .FdChildren.Add }
 Transform31.FdChildren.Add(Shape32);
 { METHOD .FdChildren.Add }
 Transform25.FdChildren.Add(Transform31);
-Transform36 := TTransformNode.Create;
-Shape37 := TShapeNode.Create;
+Transform36 := TTransformNode.Create;;
+Shape37 := TShapeNode.Create;;
 Appearance38 := TAppearanceNode.Create;
-Material39 := TMaterialNode.Create;
+end;
+
+procedure InitBubblesPart3;
+begin
+;
+Material39 := TMaterialNode.Create;;
 Material39.DiffuseColor := Vector3(1,1,1);
 Material39.Transparency := 0.8;
 { METHOD .SetMaterial }
 Appearance38.Material := Material39;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape37.Appearance := Appearance38;
-Sphere40 := TSphereNode.Create;
+Sphere40 := TSphereNode.Create;;
 Sphere40.Radius := 0.065;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape37.Geometry := Sphere40;
 { METHOD .FdChildren.Add }
 Transform36.FdChildren.Add(Shape37);
 { METHOD .FdChildren.Add }
 Transform25.FdChildren.Add(Transform36);
-Transform41 := TTransformNode.Create;
-Shape42 := TShapeNode.Create;
-Appearance43 := TAppearanceNode.Create;
-Material44 := TMaterialNode.Create;
+Transform41 := TTransformNode.Create;;
+Shape42 := TShapeNode.Create;;
+Appearance43 := TAppearanceNode.Create;;
+Material44 := TMaterialNode.Create;;
 Material44.DiffuseColor := Vector3(1,1,1);
 Material44.Transparency := 0.8;
 { METHOD .SetMaterial }
 Appearance43.Material := Material44;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape42.Appearance := Appearance43;
-Sphere45 := TSphereNode.Create;
+Sphere45 := TSphereNode.Create;;
 Sphere45.Radius := 0.015;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape42.Geometry := Sphere45;
 { METHOD .FdChildren.Add }
 Transform41.FdChildren.Add(Shape42);
 { METHOD .FdChildren.Add }
 Transform25.FdChildren.Add(Transform41);
-Transform46 := TTransformNode.Create;
-Shape47 := TShapeNode.Create;
-Appearance48 := TAppearanceNode.Create;
-Material49 := TMaterialNode.Create;
+Transform46 := TTransformNode.Create;;
+Shape47 := TShapeNode.Create;;
+Appearance48 := TAppearanceNode.Create;;
+Material49 := TMaterialNode.Create;;
 Material49.DiffuseColor := Vector3(1,1,1);
 end;
 
-procedure InitBubblesPart3;
+procedure InitBubblesPart4;
 begin
 
 Material49.Transparency := 0.8;
 { METHOD .SetMaterial }
 Appearance48.Material := Material49;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape47.Appearance := Appearance48;
-Sphere50 := TSphereNode.Create;
+Sphere50 := TSphereNode.Create;;
 Sphere50.Radius := 0.075;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape47.Geometry := Sphere50;
 { METHOD .FdChildren.Add }
 Transform46.FdChildren.Add(Shape47);
 { METHOD .FdChildren.Add }
 Transform25.FdChildren.Add(Transform46);
-Transform51 := TTransformNode.Create;
-Shape52 := TShapeNode.Create;
-Appearance53 := TAppearanceNode.Create;
-Material54 := TMaterialNode.Create;
+Transform51 := TTransformNode.Create;;
+Shape52 := TShapeNode.Create;;
+Appearance53 := TAppearanceNode.Create;;
+Material54 := TMaterialNode.Create;;
 Material54.DiffuseColor := Vector3(1,1,1);
 Material54.Transparency := 0.8;
 { METHOD .SetMaterial }
 Appearance53.Material := Material54;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape52.Appearance := Appearance53;
-Sphere55 := TSphereNode.Create;
+Sphere55 := TSphereNode.Create;;
 Sphere55.Radius := 0.005;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape52.Geometry := Sphere55;
 { METHOD .FdChildren.Add }
 Transform51.FdChildren.Add(Shape52);
 { METHOD .FdChildren.Add }
 Transform25.FdChildren.Add(Transform51);
-Transform56 := TTransformNode.Create;
-Shape57 := TShapeNode.Create;
-Appearance58 := TAppearanceNode.Create;
-Material59 := TMaterialNode.Create;
+Transform56 := TTransformNode.Create;;
+Shape57 := TShapeNode.Create;;
+Appearance58 := TAppearanceNode.Create;;
+Material59 := TMaterialNode.Create;;
 Material59.DiffuseColor := Vector3(1,1,1);
 Material59.Transparency := 0.8;
 { METHOD .SetMaterial }
 Appearance58.Material := Material59;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape57.Appearance := Appearance58;
 Sphere60 := TSphereNode.Create;
+end;
+
+procedure InitBubblesPart5;
+begin
+;
 Sphere60.Radius := 0.035;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape57.Geometry := Sphere60;
 { METHOD .FdChildren.Add }
 Transform56.FdChildren.Add(Shape57);
 { METHOD .FdChildren.Add }
 Transform25.FdChildren.Add(Transform56);
-Transform61 := TTransformNode.Create;
-Shape62 := TShapeNode.Create;
-Appearance63 := TAppearanceNode.Create;
-Material64 := TMaterialNode.Create;
+Transform61 := TTransformNode.Create;;
+Shape62 := TShapeNode.Create;;
+Appearance63 := TAppearanceNode.Create;;
+Material64 := TMaterialNode.Create;;
 Material64.DiffuseColor := Vector3(1,1,1);
 Material64.Transparency := 0.8;
-end;
-
-procedure InitBubblesPart4;
-begin
-
 { METHOD .SetMaterial }
 Appearance63.Material := Material64;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape62.Appearance := Appearance63;
-Sphere65 := TSphereNode.Create;
+Sphere65 := TSphereNode.Create;;
 Sphere65.Radius := 0.05;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape62.Geometry := Sphere65;
 { METHOD .FdChildren.Add }
 Transform61.FdChildren.Add(Shape62);
 { METHOD .FdChildren.Add }
 Transform25.FdChildren.Add(Transform61);
-Transform66 := TTransformNode.Create;
-Shape67 := TShapeNode.Create;
-Appearance68 := TAppearanceNode.Create;
-Material69 := TMaterialNode.Create;
+Transform66 := TTransformNode.Create;;
+Shape67 := TShapeNode.Create;;
+Appearance68 := TAppearanceNode.Create;;
+Material69 := TMaterialNode.Create;;
 Material69.DiffuseColor := Vector3(1,1,1);
 Material69.Transparency := 0.8;
 { METHOD .SetMaterial }
 Appearance68.Material := Material69;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape67.Appearance := Appearance68;
-Sphere70 := TSphereNode.Create;
+Sphere70 := TSphereNode.Create;;
 Sphere70.Radius := 0.045;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape67.Geometry := Sphere70;
 { METHOD .FdChildren.Add }
 Transform66.FdChildren.Add(Shape67);
+end;
+
+procedure InitBubblesPart6;
+begin
+
 { METHOD .FdChildren.Add }
 Transform25.FdChildren.Add(Transform66);
-Transform71 := TTransformNode.Create;
-Shape72 := TShapeNode.Create;
-Appearance73 := TAppearanceNode.Create;
-Material74 := TMaterialNode.Create;
+Transform71 := TTransformNode.Create;;
+Shape72 := TShapeNode.Create;;
+Appearance73 := TAppearanceNode.Create;;
+Material74 := TMaterialNode.Create;;
 Material74.DiffuseColor := Vector3(1,1,1);
 Material74.Transparency := 0.8;
 { METHOD .SetMaterial }
 Appearance73.Material := Material74;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape72.Appearance := Appearance73;
-Sphere75 := TSphereNode.Create;
+Sphere75 := TSphereNode.Create;;
 Sphere75.Radius := 0.035;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape72.Geometry := Sphere75;
 { METHOD .FdChildren.Add }
 Transform71.FdChildren.Add(Shape72);
@@ -393,11 +423,6 @@ Transform25.AddRoute(TimeSensor14.EventFraction_changed, PositionInterpolator20.
 { Original "BubbleClock.EventFraction_changed TO BubblePath7.EventSet_fraction }
 { Sample BubbleClock.EventFraction_changed TO BubblePath7.EventSet_fraction}
 Transform25.AddRoute(TimeSensor14.EventFraction_changed, PositionInterpolator21.EventSet_fraction);
-end;
-
-procedure InitBubblesPart5;
-begin
-
 { METHOD .AddX3DROUTE }
 { Original "BubbleClock.EventFraction_changed TO BubblePath8.EventSet_fraction }
 { Sample BubbleClock.EventFraction_changed TO BubblePath8.EventSet_fraction}
@@ -453,11 +478,16 @@ Transform25.AddRoute(PositionInterpolator24.EventValue_changed, Transform71.FdTr
 { METHOD .AddX3DROUTE }
 { METHOD .FdChildren.Add }
 Group13.FdChildren.Add(Transform25);
+end;
+
+procedure InitBubblesPart7;
+begin
+
 { METHOD .FdChildren.Add }
 Transform12.FdChildren.Add(Group13);
 { METHOD .FdChildren.Add }
 Group10.FdChildren.Add(Transform12);
-Background96 := TBackgroundNode.Create;
+Background96 := TBackgroundNode.Create;;
 Background96.SetSkyColor([Vector3(0,0,0.6)]);
 { METHOD .FdChildren.Add }
 Group10.FdChildren.Add(Background96);
@@ -473,6 +503,8 @@ InitBubblesPart2;
 InitBubblesPart3;
 InitBubblesPart4;
 InitBubblesPart5;
+InitBubblesPart6;
+InitBubblesPart7;
 Result := X3D0;
 end;
 

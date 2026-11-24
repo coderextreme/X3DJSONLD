@@ -2,7 +2,7 @@ unit jumpcut_loadurl;
 
 interface
 
-uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
 
 function Createjumpcut_loadurl: TX3DRootNode;
 
@@ -64,56 +64,58 @@ X3D0.Meta['generator'] := 'X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit';
 X3D0.Meta['license'] := '../../license.html';
 { METHOD .Meta }
 { METHOD .Head }
-Group16 := TGroupNode.Create;
-WorldInfo17 := TWorldInfoNode.Create;
+Group16 := TGroupNode.Create;;
+WorldInfo17 := TWorldInfoNode.Create;;
 WorldInfo17.Title := 'jumpcut_loadurl.x3d';
 { METHOD .FdChildren.Add }
 Group16.FdChildren.Add(WorldInfo17);
-Background18 := TBackgroundNode.Create;
+Background18 := TBackgroundNode.Create;;
 Background18.SetGroundAngle([1.57]);
 Background18.SetGroundColor([Vector3(0,0.5,0),Vector3(0,0.5,0)]);
 Background18.SetSkyColor([Vector3(0,0,1)]);
 { METHOD .FdChildren.Add }
 Group16.FdChildren.Add(Background18);
-NavigationInfo19 := TNavigationInfoNode.Create;
+NavigationInfo19 := TNavigationInfoNode.Create;;
 NavigationInfo19.SetType(['EXAMINE','WALK','FLY','ANY']);
 { METHOD .FdChildren.Add }
 Group16.FdChildren.Add(NavigationInfo19);
-Viewpoint20 := TViewpointNode.Create;
+Viewpoint20 := TViewpointNode.Create;;
 Viewpoint20.Description := 'Front View';
 { METHOD .FdChildren.Add }
 Group16.FdChildren.Add(Viewpoint20);
-Viewpoint21 := TViewpointNode.Create;
-Viewpoint21.Description := 'Top View';
-Viewpoint21.Orientation := Vector4(1,0,0,-1.57);
-Viewpoint21.Position := Vector3(0,10,0);
-{ METHOD .FdChildren.Add }
-Group16.FdChildren.Add(Viewpoint21);
-TouchSensor22 := TTouchSensorNode.Create;
-TouchSensor22.Description := 'touch to activate';
+Viewpoint21 := TViewpointNode.Create;;
 end;
 
 procedure Initjumpcut_loadurlPart1;
 begin
 
+Viewpoint21.Description := 'Top View';
+Viewpoint21.Orientation := Vector4(1,0,0,-1.57);
+Viewpoint21.Position := Vector3(0,10,0);
+{ METHOD .FdChildren.Add }
+Group16.FdChildren.Add(Viewpoint21);
+TouchSensor22 := TTouchSensorNode.Create;;
+TouchSensor22.Description := 'touch to activate';
 { METHOD .FdChildren.Add }
 Group16.FdChildren.Add(TouchSensor22);
-Transform23 := TTransformNode.Create;
-Shape24 := TShapeNode.Create;
-Appearance25 := TAppearanceNode.Create;
-Material26 := TMaterialNode.Create;
+Transform23 := TTransformNode.Create;;
+Shape24 := TShapeNode.Create;;
+Appearance25 := TAppearanceNode.Create;;
+Material26 := TMaterialNode.Create;;
 { METHOD .SetMaterial }
 Appearance25.Material := Material26;
 { METHOD .Appearance }
+{ METHOD.SET .Appearance }
 Shape24.Appearance := Appearance25;
-Box27 := TBoxNode.Create;
+Box27 := TBoxNode.Create;;
 { METHOD .Geometry }
+{ METHOD.SET .Geometry }
 Shape24.Geometry := Box27;
 { METHOD .FdChildren.Add }
 Transform23.FdChildren.Add(Shape24);
 { METHOD .FdChildren.Add }
 Group16.FdChildren.Add(Transform23);
-Script28 := TScriptNode.Create;
+Script28 := TScriptNode.Create;;
 Script28.SetUrl(['jumpcut_loadurl.js','https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.js']);
 MFString29 := TMFString.CreateUndefined(Script28, false, 'myParameter');
 MFString29.Value := '\"Top_View\"';
