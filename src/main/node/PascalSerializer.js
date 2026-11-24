@@ -5,7 +5,6 @@ const FLOAT_SUFFIX = '';
 
 export default function PascalSerializer () {
 this.code = [];
-this.codeno = 0;
 this.preno = 0;
 this.DEFs = {};
 this.DEFnumbers = {};
@@ -16,39 +15,36 @@ this.maxStatementsPerProc = 40;
 this.maxCharsPerProc = 12000;
 }
 
+const getAttribute = function (node, attributeName) {
+	for (const attr of node.attributes) {
+		if (attr.nodeName === attributeName) {
+			return attr.nodeValue;
+		}
+	}
+	return null;
+}
+
 const upperCaseFirst = function (str) {
 	return str.charAt(0).toUpperCase()+str.slice(1);
 }
 
 const getDeclarations = function(node) {
 	let ns = [];
-	if (typeof node.getAttribute === 'function') {
-		if (node.getAttribute("name")) {
-			ns.push(node.getAttribute("name"));
-		}
-		if (node.getAttribute("DEF")) {
-			ns.push(node.getAttribute("DEF"));
-		}
-	} else {
-		console.log("ERROR: GD node.getAtttribute is not a function");
-		if (node.nodeName) {
-			ns.push(node.nodeName);
-		}
-		if (node.name) {
-			ns.push(node.name);
-		}
+	if (getAttribute(node, "name")) {
+		ns.push(getAttribute(node, "name"));
+	}
+	if (getAttribute(node, "DEF")) {
+		ns.push(getAttribute(node, "DEF"));
+	}
+	if (getAttribute(node, "USE")) {
+		ns.push(getAttribute(node, "USE"));
 	}
 	// console.log("=============INFO, Proto names", ns);
 	return ns;
 }
 
 const getDeclaration = function(node) {
-	if (typeof node.getAttribute === 'function') {
-		return (node.getAttribute("name") || node.getAttribute("DEF"));
-	} else {
-		console.log("ERROR: GD node.getAtttribute is not a function");
-		return (node.nodeName || node.name);
-	}
+	return (getAttribute(node, "name") || getAttribute(node, "DEF") || getAttribute(node, "USE"));
 }
 
 const getFieldName = function(field) {
@@ -57,35 +53,20 @@ const getFieldName = function(field) {
 
 const getNames = function(node) {
 	let ns = [];
-	if (typeof node.getAttribute === 'function') {
-		if (node.getAttribute("name")) {
-			ns.push(node.getAttribute("name"));
-		}
-		if (node.getAttribute("USE")) {
-			ns.push(node.getAttribute("USE"));
-		}
-		if (node.getAttribute("DEF")) {
-			ns.push(node.getAttribute("DEF"));
-		}
-	} else {
-		console.log("ERROR: GAN node.getAtttribute is not a function,", typeof node);
-		if (node.nodeName) {
-			ns.push(node.nodeName);
-		}
-		if (node.name) {
-			ns.push(node.name);
-		}
+	if (getAttribute(name, "name")) {
+		ns.push(getAttribute(name, "name"));
+	}
+	if (getAttribute(name, "USE")) {
+		ns.push(getAttribute(name, "USE"));
+	}
+	if (getAttribute("DEF")) {
+		ns.push(getAttribute(name, "DEF"));
 	}
 	return ns;
 }
 
 const getAName = function(node) {
-	if (typeof node.getAttribute === 'function') {
-		return (node.getAttribute("name") || node.getAttribute("USE") || node.getAttribute("DEF"));
-	} else {
-		console.log("ERROR: GAN node.getAtttribute is not a function");
-		return (node.nodeName || node.node.name);
-	}
+	return (getAttribute(node, "name") || getAttribute(node, "USE") || getAttribute(node, "DEF"));
 }
 
 const stackname = function (element, override) {
@@ -151,7 +132,6 @@ PascalSerializer.prototype = {
 	},
 	serializeToString : function(json, element, clazz, mapToMethod, fieldTypes) {
 		this.code = [];
-		this.codeno = 0;
 		this.preno = 0;
 		this.DEFs = {};
 		this.DEFnumbers = {};
@@ -178,7 +158,7 @@ PascalSerializer.prototype = {
 		let str = "";
 		str += "unit "+clazz+";\n\n";
 		str += "interface\n\n";
-		str += "uses X3DNodes, CastleInternalNodesUnsupported, X3DFields;\n\n";
+		str += "uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;\n\n";
 		str += "function Create"+clazz+": TX3DRootNode;\n\n";
 		str += "implementation\n\n";
 		str += "uses CastleVectors;\n\n";
@@ -233,7 +213,7 @@ PascalSerializer.prototype = {
 			return newObject;
 		}
 	},
-	printSubArray : function (attrType, type, values, co, j, lead, trail, numpersub, attr) {
+	printSubArray : function (attrType, type, values, j, lead, trail, numpersub, attr) {
 		let MFLead = "(";
 		let MFTrail = ")";
 		if (numpersub > 1 && attrType.startsWith("MF")) {
@@ -350,7 +330,7 @@ PascalSerializer.prototype = {
 
 		let method = node.nodeName;
 		if (!method) {
-			console.log("dotted", oldNodeName, method);
+			// console.log("dotted", oldNodeName, method);
 			method = oldNodeName;
 		}
 		if (typeof mapToMethod[element.nodeName] === 'object') {
@@ -362,7 +342,7 @@ PascalSerializer.prototype = {
 			method = mapToMethod[element.nodeName].slice(3);
 			addpre = "";
 		}
-		let containerField = node.getAttribute("containerField");
+		let containerField = getAttribute(node, "containerField");
 		if (containerField !== null) {
 			method = containerField;
 			addpre = "Set";
@@ -395,6 +375,10 @@ PascalSerializer.prototype = {
 		}
 		if (addpre+method === "SetJoints") {
 			method = "Joints"
+			addpre = "Add";
+		}
+		if (addpre+method === "SetViewpoints") {
+			method = "Viewpoints"
 			addpre = "Add";
 		}
 		if (addpre+method === "SetSegments") {
@@ -451,6 +435,7 @@ PascalSerializer.prototype = {
 		if (element.nodeName === 'HAnimHumanoid' &&
 			  (method === "Joints" ||
 			   method === "Skeleton" ||
+			   method === "Viewpoints" ||
 			   method === "Segments")
 		) {
 			method = method+".Add"
@@ -458,6 +443,11 @@ PascalSerializer.prototype = {
 		}
 		if (element.nodeName === 'HAnimHumanoid' &&
 			  method === "SkinCoord") {
+			method = method+".Set"
+			addpre = "Fd";
+		}
+		if (element.nodeName === 'ComposedCubeMapTexture' &&
+			  method.endsWith("Texture")) {
 			method = method+".Set"
 			addpre = "Fd";
 		}
@@ -500,7 +490,7 @@ PascalSerializer.prototype = {
 		} else if (attrType === "SFTime") {
 			strval = nodeValue+DOUBLE_SUFFIX;
 		} else if (attrType === "MFTime") {
-			strval = this.printSubArray(attrType, "double", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, DOUBLE_SUFFIX+',', '', DOUBLE_SUFFIX, 1, attr);
+			strval = this.printSubArray(attrType, "double", nodeValue.split(/[ ,\t\r\n]+/), DOUBLE_SUFFIX+',', '', DOUBLE_SUFFIX, 1, attr);
 		} else if (attrType === "MFString") {
 			nodeValue = nodeValue.replace(/^ *(.*) *$/, "$1");
 			strval = this.printSubArray(attrType, "java.lang.String",
@@ -519,58 +509,58 @@ PascalSerializer.prototype = {
 						// console.log("PascalSerializer Replacing "+x+" with "+y);
 					}
 					return y;
-				}), this.codeno, "','", "'", "'", 1, attr);
+				}), "','", "'", "'", 1, attr);
 		} else if (
 			attrType === "MFInt32"||
 			attrType === "MFImage"||
 			attrType === "SFImage") {
-			strval = this.printSubArray(attrType, "int", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, ',', '', '', 1, attr);
+			strval = this.printSubArray(attrType, "int", nodeValue.split(/[ ,\t\r\n]+/), ',', '', '', 1, attr);
 		} else if (
 			attrType === "MFColor") {
-			strval = this.printSubArray(attrType, "float", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, FLOAT_SUFFIX+',', '', FLOAT_SUFFIX, 3, attr);
+			strval = this.printSubArray(attrType, "float", nodeValue.split(/[ ,\t\r\n]+/), FLOAT_SUFFIX+',', '', FLOAT_SUFFIX, 3, attr);
 		} else if (
 			attrType === "MFColorRGBA") {
-			strval = this.printSubArray(attrType, "float", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, FLOAT_SUFFIX+',', '', FLOAT_SUFFIX, 4, attr);
+			strval = this.printSubArray(attrType, "float", nodeValue.split(/[ ,\t\r\n]+/), FLOAT_SUFFIX+',', '', FLOAT_SUFFIX, 4, attr);
 		} else if (
 			attrType === "SFVec3f"||
 			attrType === "SFColor") {
 			if (nodeValue === null || typeof nodeValue === 'undefined') {
 				strval = "(0, 0, 0); { "+nodeValue+" }";
 			} else {
-				strval = this.printSubArray(attrType, "float", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, FLOAT_SUFFIX+',', '', FLOAT_SUFFIX, 1, attr);
+				strval = this.printSubArray(attrType, "float", nodeValue.split(/[ ,\t\r\n]+/), FLOAT_SUFFIX+',', '', FLOAT_SUFFIX, 1, attr);
 			}
 			strval  =  "Vector3"+strval;
 		} else if (
 			attrType === "SFVec4f"||
 			attrType === "SFRotation"||
 			attrType === "SFColorRGBA") {
-			strval = this.printSubArray(attrType, "float", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, FLOAT_SUFFIX+',', '', FLOAT_SUFFIX, 1, attr);
+			strval = this.printSubArray(attrType, "float", nodeValue.split(/[ ,\t\r\n]+/), FLOAT_SUFFIX+',', '', FLOAT_SUFFIX, 1, attr);
 			strval  =  "Vector4"+strval;
 		} else if (
 			attrType === "SFVec2f") {
-			strval = this.printSubArray(attrType, "float", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, FLOAT_SUFFIX+',', '', FLOAT_SUFFIX, 1, attr);
+			strval = this.printSubArray(attrType, "float", nodeValue.split(/[ ,\t\r\n]+/), FLOAT_SUFFIX+',', '', FLOAT_SUFFIX, 1, attr);
 			strval  =  "Vector2"+strval;
 		} else if (
 			attrType === "MFVec2f") {
-			strval = this.printSubArray(attrType, "float", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, FLOAT_SUFFIX+',', '', FLOAT_SUFFIX, 2, attr);
+			strval = this.printSubArray(attrType, "float", nodeValue.split(/[ ,\t\r\n]+/), FLOAT_SUFFIX+',', '', FLOAT_SUFFIX, 2, attr);
 		} else if (
 			attrType === "MFVec3f") {
-			strval = this.printSubArray(attrType, "float", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, FLOAT_SUFFIX+',', '', FLOAT_SUFFIX, 3, attr);
+			strval = this.printSubArray(attrType, "float", nodeValue.split(/[ ,\t\r\n]+/), FLOAT_SUFFIX+',', '', FLOAT_SUFFIX, 3, attr);
 		} else if (
 			attrType === "MFRotation"||
 			attrType === "MFVec4f") {
-			strval = this.printSubArray(attrType, "float", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, FLOAT_SUFFIX+',', '', FLOAT_SUFFIX, 4, attr);
+			strval = this.printSubArray(attrType, "float", nodeValue.split(/[ ,\t\r\n]+/), FLOAT_SUFFIX+',', '', FLOAT_SUFFIX, 4, attr);
 		} else if (
 			attrType === "MFFloat") {
-			strval = this.printSubArray(attrType, "float", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, FLOAT_SUFFIX+',', '', FLOAT_SUFFIX, 1, attr);
+			strval = this.printSubArray(attrType, "float", nodeValue.split(/[ ,\t\r\n]+/), FLOAT_SUFFIX+',', '', FLOAT_SUFFIX, 1, attr);
 		} else if (
 			attrType === "SFMatrix3f"||
 			attrType === "MFMatrix3f") {
-			strval = this.printSubArray(attrType, "float", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, FLOAT_SUFFIX+',', '', FLOAT_SUFFIX, 9, attr);
+			strval = this.printSubArray(attrType, "float", nodeValue.split(/[ ,\t\r\n]+/), FLOAT_SUFFIX+',', '', FLOAT_SUFFIX, 9, attr);
 		} else if (
 			attrType === "MFMatrix4f"||
 			attrType === "SFMatrix4f") {
-			strval = this.printSubArray(attrType, "float", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, FLOAT_SUFFIX+',', '', FLOAT_SUFFIX, 16, attr);
+			strval = this.printSubArray(attrType, "float", nodeValue.split(/[ ,\t\r\n]+/), FLOAT_SUFFIX+',', '', FLOAT_SUFFIX, 16, attr);
 		} else if (
 			attrType === "SFVec2d"||
 			attrType === "SFVec3d"||
@@ -579,7 +569,7 @@ PascalSerializer.prototype = {
 			attrType === "MFVec3d"||
 			attrType === "MFVec4d"||
 			attrType === "MFDouble") {
-			strval = this.printSubArray(attrType, "double", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, DOUBLE_SUFFIX+',', '', DOUBLE_SUFFIX, 1, attr);
+			strval = this.printSubArray(attrType, "double", nodeValue.split(/[ ,\t\r\n]+/), DOUBLE_SUFFIX+',', '', DOUBLE_SUFFIX, 1, attr);
 			switch (attrType) {
 				case "SFVec2d":
 					strval  =  "Vector2Double"+strval;
@@ -597,13 +587,13 @@ PascalSerializer.prototype = {
 		} else if (
 			attrType === "SFMatrix3d"||
 			attrType === "MFMatrix3d") {
-			strval = this.printSubArray(attrType, "double", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, FLOAT_SUFFIX+',', '', FLOAT_SUFFIX, 9, attr);
+			strval = this.printSubArray(attrType, "double", nodeValue.split(/[ ,\t\r\n]+/), FLOAT_SUFFIX+',', '', FLOAT_SUFFIX, 9, attr);
 		} else if (
 			attrType === "SFMatrix4d"||
 			attrType === "MFMatrix4d") {
-			strval = this.printSubArray(attrType, "double", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, FLOAT_SUFFIX+',', '', FLOAT_SUFFIX, 16, attr);
+			strval = this.printSubArray(attrType, "double", nodeValue.split(/[ ,\t\r\n]+/), FLOAT_SUFFIX+',', '', FLOAT_SUFFIX, 16, attr);
 		} else if (attrType === "MFBool") {
-			strval = this.printSubArray(attrType, "boolean", nodeValue.split(/[ ,\t\r\n]+/), this.codeno, ',', '', '', 1, attr);
+			strval = this.printSubArray(attrType, "boolean", nodeValue.split(/[ ,\t\r\n]+/), ',', '', '', 1, attr);
 		} else {
 			strval = "'"+nodeValue.replace(/\n/g, '\\\\n').replace(/\\?"/g, "\\'")+"'";
 		}
@@ -694,76 +684,397 @@ PascalSerializer.prototype = {
 		return value;
 		*/
 	},
+	getInterfaceType(instanceName, fieldName) {
+		let instance = this.protos[instanceName];
+		let intf = instance["$copies$"][0];
+		return intf[fieldName]["$type$"];
+	},
+	getInterfaceField(instanceName, fieldName) {
+		console.log("FieldInterface parameters", instanceName, fieldName);
+		console.log("FieldInterfaceField HEY2");
+		let instance = this.protos[instanceName];
+		console.log("FieldInterface copies instance", typeof instance);
+		console.log("FieldInterface copies", typeof instance["$copies$"]);
+		console.log("FieldInterface copies length", instance["$copies$"].length);
+		console.log("FieldInterface #0", instance["$copies$"][0]);
+		let intf = instance["$copies$"][0];
+		console.log("FieldInterface is", typeof intf);
+		console.log("FieldInterface object is", intf[fieldName]);
+		console.log("FieldInterface returning", typeof intf[fieldName]["$field$"]);
+		return intf[fieldName]["$field$"];
+	},
+	// interface is $copy$ = 0;
+	// 
+	// I don't want to pass interfaceStatement here
+	createCopy : function(instanceName, interfaceStatement) {
+	        // let declaration = this.DEFs[instanceName];
+	        // let interfaceStatement = declaration["$interface$"];
+		// console.log("**************", instanceName);
+		if (typeof this.protos[instanceName] === 'undefined') {
+			this.protos[instanceName] = {};
+		}	
+		let instance = this.protos[instanceName];
+		// console.log("instance 1", instance);
+		if (typeof instance === 'undefined' || instance === null || Object.keys(instance).length === 0) {
+			this.protos[instanceName] = {};
+			instance = this.protos[instanceName];
+			instance["$copies$"] = [];
+			console.log("FieldInterface instance 2", instance);
+			console.log("FieldInterface copies 0", instance["$copies$"]);
+		}
+		console.log("copies 1", instance["$copies$"]);
+		if (typeof instance["$copies$"] === 'undefined' || instance["$copies$"] === null) {
+			instance["$copies$"] === [];
+			// console.log("copies 2", instance["$copies$"]);
+		}
+		let newItem = 0;
+		try {
+			newItem = instance["$copies$"].length;
+		} catch (e) {
+			newItem = 0;
+		}
+		console.log("copies", instance["$copies$"]);
+		instance["$copies$"][newItem] = {};
+		instance["$copy$"] = instance["$copies$"][newItem];
+		let inst = instance["$copy$"];
+		if (newItem > 0) {
+			let intf = instance["$copies$"][0];
+			for (let fieldStatement in interfaceStatement.childNodes) {
+				let field = interfaceStatement.childNodes[fieldStatement];
+				let field_name = field.nodeName;
+				// let field_name = field.nodeName;
+				if (field_name && intf[field_name]) {
+					console.log("Fieldinterface defaults", field_name, typeof intf[field_name]["$field$"]);
+					inst[field_name]["$type$"] = intf[field_name]["$type$"];
+					inst[field_name]["$accessType$"] = intf[field_name]["$accessType$"];
+					inst[field_name]["$name$"] = intf[field_name]["$name$"];
+					inst[field_name]["$field$"] = intf[field_name]["$field$"];
+					inst[field_name]["$value$"] = intf[field_name]["$value$"];
+					// TODO deep clone
+					inst[field_name]["$children$"] = intf[field_name]["$children$"];
+				} else {
+					console.log("Field not defined", field_name);
+				}
+			}
+		}
+		return inst;
+	},
+	setBody : function(body, protoName) {
+		return body;
+	},
 	setProto : function(protoStatement) {
+		var node = null;
 		for (const protoName of getDeclarations(protoStatement)) {
 			for (let cn in protoStatement.childNodes) {
 				// console.log("protoName", protoName);
-				let proto = this.protos[protoName];
-				if (typeof proto === 'undefined') {
-					proto = {};
-					this.protos[protoName] = proto;
-				}	
 				// looking for ProtoInterface and ProtoBody
 				var node = protoStatement.childNodes[cn];
 				if (protoStatement.nodeName === "ProtoDeclare" && node.nodeName === 'ProtoInterface') {
-					console.log("=============INFO, ProtoDeclare name", protoName);
-					this.setInterface(node, protoName);
+					// console.log("=============INFO, ProtoDeclare name", protoName);
+					protoStatement["$interface$"] = this.setInterface(node, protoName);
+				}
+				if (protoStatement.nodeName === "ProtoDeclare" && node.nodeName === 'ProtoBody') {
+					protoStatement["$body$"] = this.setBody(node, protoName);
 				}
 			}
 			if (protoStatement.nodeName === "ExternProtoDeclare") {
-				console.log("=============INFO, ExternProtoDeclare name", protoName);
-				this.setInterface(protoStatement, protoName);
+				// console.log("=============INFO, ExternProtoDeclare name", protoName);
+				protoStatement["$interface$"] = this.setInterface(protoStatement, protoName);
 			}
 			if (protoStatement.nodeName && protoStatement.nodeName.endsWith("Script")) {
-				console.log("=============INFO, Script name", protoName);
+				// console.log("=============INFO, Script name", protoName);
 				let scriptName = protoName;
 				// console.log("scriptName", scriptName);
-				this.protos[scriptName]["id"] = Object.keys(this.protos).length;
-				this.setInterface(protoStatement, scriptName)
+				protoStatement["$interface$"] = this.setInterface(protoStatement, protoName);
+			}
+			if (protoStatement.nodeName && protoStatement.nodeName.endsWith("ComposedShader")) {
+				// console.log("=============INFO, shader name", protoName);
+				let shaderName = protoName;
+				// console.log("shaderName", shaderName);
+				protoStatement["$interface$"] = this.setInterface(protoStatement, protoName);
 			}
 		}
 	},
 	setInterface : function(interfaceStatement, protoName) {
+		if (protoName === null) {
+			console.log("=============ERROR 0, protoName null", protoName);
+			return;
+		}
+		let intf = this.createCopy(protoName, interfaceStatement);
 		for (let fieldStatement in interfaceStatement.childNodes) {
 			let field = interfaceStatement.childNodes[fieldStatement]
 			// TDDO IS in a field
 			if (field.nodeName === "field" && field.nodeType === 1) {
+				console.log("SetInterface", field.nodeName, field.nodeType);
 				const allAttributesString = Array.from(field.attributes)
 				  .map(attr => `${attr.name}="${attr.value}"`)
 				  .join(" ");
-				// console.log("=============INFO 2, ProtoInstance name", protoName);
-				// console.log(allAttributesString)
-				if (protoName === null) {
-					console.log("=============ERROR 1, protoName null", protoName);
-				} else if (typeof protoName === 'undefined') {
-					console.log("=============ERROR 2, protoName undefined", protoName);
-				} else if (typeof this.protos === 'undefined') {
-					console.log("=============ERROR 3, this.protos undefined", this.protos);
-				} else if (typeof this.protos[protoName] === 'undefined') {
-					console.log("=============ERROR 4, this.protos[protoName] undefined", protoName, this.protos[protoName]);
-				} else if (typeof field.getAttribute !== 'function') {
-					console.log("=============ERROR 5, field.getAttribute not a function", field.getAttribute);
-				} else {
-					let name = field.getAttribute('name');
-					let type = field.getAttribute('type');
-					let valu = field.getAttribute('value');
-					let acce = field.getAttribute('accessType');
-					this.protos[protoName][name] = {};
-					this.protos[protoName][name]["name"] = name;
-					this.protos[protoName][name]["field"] = field;
-					this.protos[protoName][name]["type"] = type;
-					this.protos[protoName][name]["accessType"] = acce;
-					if (type === null) {
-						console.log("=============ERROR 0, no type for", protoName, ", field:", allAttributesString);
-					}
-					if (type && !type.endsWith("Node")) {
-						this.protos[protoName][name]["default_value"] = valu;
-					} else {
-						this.protos[protoName][name]["children"] = field.childNodes;
-					}
+				let field_name = getAttribute(field, 'name');
+				let field_type = getAttribute(field, 'type');
+				// console.log("dotted type =", field_type);
+				let field_valu = getAttribute(field, 'value');
+				let field_acce = getAttribute(field, 'accessType');
+				intf[field_name] = {};
+				intf[field_name]["$name$"] = field_name;
+				console.log("FieldInterface setting", field_name, "to its $field$,", getAttribute(field, "name"));
+				intf[field_name]["$field$"] = field;
+				// console.log("FieldInterface set", field_name, "to its $field$,", getAttribute(field, "name"), "interface", intf[field_name]);
+				// TODO deep clone this
+				intf[field_name]["$children$"] = field.childNodes;
+				intf[field_name]["$type$"] = field_type;
+				intf[field_name]["$accessType$"] = field_acce;
+				intf[field_name]["$value$"] = field_valu;
+				console.log("CC intf[", field_name, "]", "$type$", intf[field_name]["$type$"]);
+				console.log("CC intf[", field_name, "]", "$name$", intf[field_name]["$name$"]);
+				console.log("CC intf[", field_name, "]", "$field$", intf[field_name]["$field$"]);
+				if (field_name === null) {
+					console.log("ERROR 1, no name for", protoName, ", field:", allAttributesString);
+				}
+				if (field_type === null) {
+					console.log("ERROR 2, no type for", protoName, ", field:", allAttributesString);
+				}
+				if (field_acce === null) {
+					console.log("ERROR 3, no accessType for", protoName, ", field:", allAttributesString);
+				}
+				if (field_acce === null) {
+					console.log("ERROR 4, no field for", protoName, ", field:", allAttributesString);
 				}
 			}
 		}
+		return interfaceStatement;
+	},
+	createPascalProto : function(node) {
+		let instanceName = null;
+		for (const name of getNames(node)) {
+			if (name) {
+				instanceName = name;
+				break;
+			}
+		}
+	        let declaration = this.DEFs[instanceName];
+	        let interfaceStatement = declaration["$interface$"];
+		let instance = this.createCopy(instanceName, interfaceStatement);
+
+		let pascal = `
+uses
+  SysUtils, Classes,
+  CastleVectors, X3DNodes, X3DFields;
+
+function BuildInstance: TX3DRootNode;
+var
+  Proto${stackname(node)}: TX3DPrototype;
+  Decl${stackname(node)}: TX3DInterfaceDeclaration;
+  Instance${stackname(node)}: TX3DPrototypeNodel; { Instance1: TX3DPrototypeNode; }
+  `;
+		for (const field_name in instance) {
+			let field_instance = instance[field_name];
+			pascal += `
+  ${field_instance["$name$"]}Field: T${field_instance["$type$"]}; { ColorField: TSFColor; }
+  Inst${stackname(field_instance["$field$"])}Field: T${field_instance["$type$"]}; { Inst1ColorField: TSFColor; }
+  		`
+		}
+		pascal += `
+  
+  BodyTransform: TTransformNode;
+  BodyShape: TShapeNode;
+  BodyMat: TMaterialNode;
+  BodyBox: TBoxNode;
+
+begin
+  Result := TX3DRootNode.Create;
+
+  Proto${stackname(node)} := TX3DPrototype.Create;
+  Proto${stackname(node)}.X3DName := 'ColoredBox';
+  Result.AddPrototype(Proto${stackname(node)});
+`;
+		for (const field_name in instance) {
+			let field_instance = instance[field_name];
+			pascal += `
+  ${field_instance["$name$"]}Field := T${field_instance["$type$"]}.Create(nil, true, ${field_instance["$name$"]}, ${field_instance["$value$"]});
+  Decl${stackname(node)} := TX3DInterfaceDeclaration.Create(nil);
+  Decl${stackname(node)}.AccessType := atInputOutput;
+  Decl${stackname(node)}.FieldOrEvent := ${field_instance["$name$"]}Field;
+  Proto${stackname(node)}.InterfaceDeclarations.Add(Decl${stackname(node)});
+  		`;
+		}
+		pascal += `
+
+  BodyMat := TMaterialNode.Create;
+  // Connect internal Material.diffuseColor to the interface's ${field_instance["$name$"]} (IS statement)
+  BodyMat.FdDiffuseColor.IsClauseNamesAdd('{field_instance["$name$"]}');
+
+  BodyBox := TBoxNode.Create;
+
+  BodyShape := TShapeNode.Create;
+  BodyShape.Material := BodyMat;
+  BodyShape.Geometry := BodyBox;
+
+  BodyTransform := TTransformNode.Create;
+  BodyTransform.AddChildren([BodyShape]);
+
+  Proto${stackname(node)}.Body.Add(BodyTransform);
+
+  Instance${stackname(node)} := Proto${stackname(node)}.CreatePrototypeNode;
+`;
+		for (const field_name in instance) {
+			let field_instance = instance[field_name];
+			pascal += `
+  Inst${stackname(field_instance["$name$"])}Field := Instance${stackname(node)}.Field({stackname(field_instance["$field$"])}') as T${field_instance["$type$"]};
+
+  Inst${stackname(field_instance["$name$"])}Field.Value := ${field_instance["$value$"]};
+`;
+		}
+			pascal += `
+  Instance${stackname(node)}.Instantiate;
+  Result.AddChildren([Instance${stackname(node)}]);
+end;
+			`;
+		return pascal;
+	},
+	setProtoInstance : function(node) {
+		let params = "";
+		let isNode = "Node";
+		if (node.nodeName === "ProtoInstance") {
+			node.nodeName = "X3DPrototype";
+		}
+		params = "";
+		return [ isNode, params ];
+	},
+	setFieldOrFieldValue : function(element, node) {
+	    let params = "";
+	    let isNode = "";
+	    let strval = "";
+	    let aTYPE = null;
+	    let fieldName = getAttribute(node, 'name');
+	    if (fieldName === null) {
+		    throw "fieldName is null, see "+element.nodeName+"="+getDeclaration(element)+"/"+node.nodeName+"="+getDeclaration(node);
+	    }
+	    let parentName = getDeclaration(element);
+	    if (node.nodeName === "fieldValue") {
+		// to look up type, find the interface for the instance
+		aTYPE = this.getInterfaceType(parentName, fieldName);
+	    }
+	    if (aTYPE === null) {
+		aTYPE = getAttribute(node, "type")
+	    }
+	    if (aTYPE === null) {
+		 console.log("No type, using nodeName", node.nodeName, "for", fieldName);
+		 node.nodeName = upperCaseFirst(node.nodeName);
+	    } else {
+		 node.nodeName = aTYPE;
+	    }
+	    // if (!node.nodeName.startsWith("SF") && !node.nodeName.startsWith("MF")) {
+		params += "Undefined";
+	    // }
+	    params += "("+stackname(element)+", false, '"+fieldName+"')";
+	    // get the type of the node from the interface
+	    if (typeof this.protos !== 'undefined' &&
+		typeof this.protos[parentName] !== 'undefined' &&
+		typeof this.protos[parentName][fieldName] !== 'undefined' &&
+		typeof this.protos[parentName][fieldName]['type'] !== 'undefined') {
+		let fieldType = this.protos[parentName][fieldName]["type"] || aTYPE;
+		node.nodeName = fieldType;
+		if (fieldType && fieldType.endsWith("Node")) {
+			// console.log("Getting children of", parentName, fieldName);
+			let nodeList = [];
+			for (const child of this.protos[parentName][fieldName]['$children$']) {
+				if (child.nodeName.toString() !== '#text') {
+stackname(child, this.DEFnumbers["'"+getAName(child)+"'"]);
+nodeList.push(stackname(child));
+				}
+			}
+			strval = nodeList.join(", ");
+			strval = "(["+strval+"]);";
+		} else {
+			let fieldValue = getAttribute(node, 'value') || this.protos[parentName][fieldName]['$value$'];
+			if (fieldValue !== null) {
+				strval = this.stringValue(fieldValue, fieldName, fieldType);
+			} else {
+				strval = "nil";
+			}
+		}
+		let field = this.protos[parentName][fieldName]["field"]
+		strval += ";\n"+stackname(node)+".FieldOrEvent := "+stackname(field)+";\n";
+		strval += stackname(element)+".InterfaceDeclarations.Add("+stackname(node)+");\n"
+	    }
+	    return [ isNode, params+strval ];
+	},
+	getParams :function(element, node) {
+		let isNode = "";
+	        let params = "";
+		let strval = "";
+		switch (node.nodeName) {
+		case "ROUTE":
+			isNode = "";
+			node.nodeName = "X3D"+node.nodeName.toUpperCase();
+			params = isNode+".Create;";
+			break;
+		case "fieldValue":
+			[ isNode, params ] = this.setFieldOrFieldValue(element, node);
+			params = isNode+".Create"+params;
+			break;
+		case "field":
+			[ isNode, params ] = this.setFieldOrFieldValue(element, node);
+			params = isNode+".Create"+params;
+			break;
+		case "Scene":
+			isNode = "Node";
+			node.nodeName = "Group";
+			stackname(node, node.stacknumber);
+			params = isNode+".Create;";
+			break;
+		case "Light":
+			isNode = "";
+			isCastle = "Castle";
+			params = isNode+".Create"+"(nil);";
+			break;
+		case "ProtoDeclare":
+			isNode = "";
+			this.setProto(node);
+			node.nodeName = "X3DPrototype";
+			params = isNode+".Create;";
+			break;
+		case "ProtoBody":
+			isNode = "";
+			node.nodeName = "X3DPrototype";
+			this.setBody(node, getDeclaration(node.parentNode));
+			params = isNode+".Create;";
+			break;
+				/*
+		case "IS":
+			isNode = "";
+			params = isNode+".Create;";
+			break;
+		case "connect":
+			isNode = "";;
+			params = isNode+".Create;";
+			break;
+			*/
+		case "ProtoInterface":
+			isNode = "";
+			node.nodeName = "X3DInterfaceDeclaration";
+			params = isNode+".Create"+"(nil);";
+			break;
+		case "ExternProtoDeclare":
+			isNode = "";
+			this.setProto(node);
+			node.nodeName = "X3DExternalPrototype";
+			params = isNode+".Create;";
+			break;
+		case "ProtoInstance":
+			[ isNode, params] = this.setProtoInstance(node);
+			break;
+		case "Script":
+			this.setProto(node); // it's similar to ProtoInterface
+			isNode = "Node";
+			params = isNode+".Create;";
+			break;
+		default:
+			isNode = "Node";
+			params = isNode+".Create;";
+			break;
+		}
+		return [ isNode, params ];
 	},
 	subSerializeToString : function(element, mapToMethod, fieldTypes, n, stack, parent_name) {
 		let str = "";
@@ -914,8 +1225,14 @@ PascalSerializer.prototype = {
 							if ( ToField === "set_scale") {
 								ToField = "scale";
 							}
+							if ( ToField === "stopTime") {
+								ToField = "FdStopTime.EventIn";
+							}
 							if ( ToField === "set_stopTime") {
 								ToField = "FdStopTime.EventIn";
+							}
+							if ( ToField === "startTime") {
+								ToField = "FdStartTime.EventIn";
 							}
 							if ( ToField === "set_startTime") {
 								ToField = "FdStartTime.EventIn";
@@ -1081,19 +1398,32 @@ PascalSerializer.prototype = {
 		}
 		if (element.nodeName === "X3DROUTE") {
 			str += `{ Original "${FromNode}.${FromField} TO ${ToNode}.${ToField} }\n`;
-			console.log("ROUTE dotted before", FromNode, FromField, ToNode, ToField);
+			// console.log("FieldInterface ROUTE dotted before", FromNode, FromField, ToNode, ToField);
 			// ToNode = ToNode.replace(/^'|'$/g, '');
 			// let tof = this.protos[ToNode][ToField];
 		        let ton = ToDEF;
-			console.log("TO ton dotted", ton, ToField);
+			// console.log("TO ton dotted", ton, ToField);
 			let tofsn = ton+"."+ToField;
 			try {
-				let tof = this.protos[ToNode][ToField];
-				tofsn = stackname(tof.field);
+				console.log("FieldInterfaceField parameters call", ToNode, ToField);
+				console.log("FieldInterfaceField HEY1");
+				let tof = this.getInterfaceField(ToNode, ToField);
+				console.log("FieldInterfaceField protos typeof ", typeof tof);
+				console.log("FieldInterfaceField protos field node ", tof);
+				console.log("FieldInterfaceField protos", typeof this.protos);
+				console.log("FieldInterfaceField protos ToNode", typeof this.protos[ToNode]);
+				console.log("FieldInterfaceField protos ToNode ToField ", typeof this.protos[ToNode][ToField]);
+				if (tof === null) {
+					tof = this.protos[ToNode][ToField];
+				}
+				// TODO, maybe add ton+ at some time
+				tofsn = stackname(tof);
+				console.log("dotted successful lookup", tofsn);
 			} catch(e) {
 				tofsn = ton+"."+ToField;
+				console.log("dotted failed lookup", e, tofsn);
 			}
-			console.log("TO tofsn dotted", tofsn);
+			// console.log("TO tofsn dotted", tofsn);
 
 			let fromn = null;
 			let fromf = null;
@@ -1136,15 +1466,15 @@ PascalSerializer.prototype = {
 				if (this.protos[FromNode]) {
 					fromf = this.protos[FromNode][FromField];
 				} else {
-					console.log("FIELD dotted", FromNode, FromField);
+					// console.log("FIELD dotted", FromNode, FromField);
 					fromf = FromField;
 				}
 			}
 			fromfsn = fromn+"."+fromf;
 			str += `{ Sample ${FromNode}.${FromField} TO ${ToNode}.${ToField}}\n`;
 
-			// console.log("ROUTE after", FromNode, FromField, ToNode, ToField);
-			console.log(parent_name+".AddRoute("+fromfsn+", "+tofsn+");\n");
+			// console.log("ROUTE after not before", FromNode, FromField, ToNode, ToField);
+			console.log("addRoute dotted", parent_name+".AddRoute("+fromfsn+", "+tofsn+");\n");
 			str += parent_name+".AddRoute("+fromfsn+", "+tofsn+");\n";
 		}
 		for (var cn in element.childNodes) {
@@ -1155,178 +1485,26 @@ PascalSerializer.prototype = {
 				stackname(node, stack[0]);
 				this.preno++;
 				let ch = "";
-				if (node.nodeName !== "meta" && node.nodeName != "component" && node.nodeName != "head") {
-					let isNode = "Node";
-					let isCastle = "";
-					let params = "";
-					if (node.nodeName === "ROUTE") {
-						isNode = "";
-						node.nodeName = "X3D"+node.nodeName.toUpperCase();
-					}
-					if (node.nodeName === "fieldValue" ||
-					    node.nodeName === "field") {
-						let fieldName = node.getAttribute('name');
-						params = "Undefined("+stackname(element)+", false, '"+fieldName+"')";
-						isNode = "";
-						let strval = "nil";
-						let instanceName = getDeclaration(element);
-						let aTYPE = node.getAttribute("type")
-						if (aTYPE !== "") {
-							node.nodeName = aTYPE;
-						} else {
-							node.nodeName = upperCaseFirst(node.nodeName);
-							console.log("No type, using nodeName", node.nodeName);
-						}
-						// get the type of the node from the interface
-						// console.log("field", fieldName, node.nodeName, instanceName, fieldName);
-						if (typeof this.protos !== 'undefined' &&
-							typeof this.protos[instanceName] !== 'undefined' &&
-							typeof this.protos[instanceName][fieldName] !== 'undefined' &&
-							typeof this.protos[instanceName][fieldName]['type'] !== 'undefined') {
-							let fieldType = this.protos[instanceName][fieldName]["type"];
-							let instanceIndex = this.protos[instanceName]["id"];
-							node.nodeName = fieldType;
-							if (fieldType && fieldType.endsWith("Node")) {
-								// console.log("Getting children of", instanceName, fieldName);
-								let nodeList = [];
-								for (const child of this.protos[instanceName][fieldName]['children']) {
-									if (child.nodeName.toString() !== '#text') {
-stackname(child, this.DEFnumbers["'"+getAName(child)+"'"]);
-nodeList.push(stackname(child));
-									}
-								}
-								strval = nodeList.join(", ");
-								strval = "(["+strval+"])";
-							} else {
-								let fieldValue = node.getAttribute('value') || this.protos[instanceName][fieldName]['default_value'];
-								if (fieldValue !== null) {
-									strval = this.stringValue(fieldValue, fieldName, fieldType);
-								} else {
-									strval = "nil";
-								}
-							}
-							// let fieldVar = stackname(node);
-							// params = "Undefined("+stackname(element)+", false, '"+fieldName+"')";
-						}
-						console.log("params", params);
-					}
-					/*
-					if (node.nodeName === "Color") {
-						isNode = "";
-						node.nodeName = "CastleColorRGBPersistent"
-					}
-					*/
-					if (node.nodeName === "Scene") {
-						node.nodeName = "Group";
-						stackname(node, node.stacknumber);
-						params = "";
-					}
-					if (node.nodeName && node.nodeName.endsWith("Light")) {
-						// isNode = "";
-						// isCastle = "Castle";
-						// params = "(nil)";
-					}
-					if (node.nodeName === "ProtoDeclare") {
-						isNode = "";
-						this.setProto(node);
-						node.nodeName = "X3DPrototype";
-					}
-					if (node.nodeName === "ProtoInstance") {
-						isNode = "Node";
-						node.nodeName = "X3DPrototype";
-						const allAttributesString = Array.from(node.attributes)
-						  .map(attr => `${attr.name}="${attr.value}"`)
-						  .join(" ");
-						if (typeof node.getAttribute !== 'function') {
-							console.log("=============ERROR 9, field.getAttribute not a function", node.getAttribute);
-						}
-						for (const instanceName of getNames(node)) {
-							if (typeof this.protos === 'undefined') {
-								console.log("=============ERROR 6, this.protos undefined", this.protos);
-							} else if (typeof instanceName === 'undefined') {
-								console.log("=============ERROR 7, instanceName undefined", instanceName);
-							} else if (typeof this.protos[instanceName] === 'undefined') {
-								console.log("=============ERROR 8, this.protos[instanceName] undefined", instanceName, getDeclaration(node), this.protos[instanceName]);
-								console.log("ERROR", allAttributesString)
-							} else {
-
-								this.protos[instanceName]["id"] = Object.keys(this.protos).length;
-								break;
-							}
-						}
-					}
-					if (node.nodeName === "ProtoBody") {
-						isNode = "";
-						node.nodeName = "X3DPrototype";
-					}
-					if (node.nodeName === "IS") {
-						isNode = "";
-					}
-					if (node.nodeName === "connect") {
-						isNode = "";
-					}
-					if (node.nodeName === "ProtoInterface") {
-						isNode = "";
-						params = "(nil)";
-						node.nodeName = "X3DInterfaceDeclaration";
-					}
-					if (node.nodeName === "ExternProtoDeclare") {
-						isNode = "";
-						this.setProto(node);
-						node.nodeName = "X3DExternalPrototype";
-					}
-					if (node.nodeName === "Script") {
-						this.setProto(node); // it's similar to ProtoInterface
-					}
-					if ( node.nodeName !== "X3DROUTE") {
+				let isCastle = "";
+				let isNode = "";
+				let params = "";
+				[ isNode, params ] = this.getParams(element, node);
+				if (node.nodeName != "IS" &&
+				    node.nodeName != "connect") {
+					if (node.nodeName !== "meta" &&
+					    node.nodeName != "component" &&
+					    node.nodeName != "head" &&
+					    node.nodeName !== "X3DROUTE") {
 						if (!node.hasAttribute("USE")) {
-							ch += stackname(node)+" := T"+isCastle+node.nodeName+isNode+".Create"+params+";\n";
+							ch += stackname(node)+" := T"+isCastle+node.nodeName+isNode+params+";\n"
+							ch = ch.replace(/NodeNode.Create/, "Node.Create");
 						}
 						this.code.push(stackname(node)+": T"+isCastle+node.nodeName+isNode+";");
 					}
-				}
-				var bodystr = this.subSerializeToString(node, mapToMethod, fieldTypes, n+1, stack, stackname(element));
-				ch += bodystr;
-				let method = this.printParentChild(element, node, mapToMethod, n, oldNodeName);
-				ch += '{ METHOD '+method+' }\n';
-				if (node.nodeName !== "Scene" &&
-					node.nodeName !== "meta" &&
-					node.nodeName !== "component" &&
-					node.nodeName !== "head" &&
-					node.nodeName !== "X3DROUTE") {
-					if ( element.nodeName === "CastleScene") {
-						method = ".AddRootNode";
-					}
-					if ( method === ".AddGroup" ) {
-						method = ".AddChildren";
-					}
-
-					if ( method === ".AddRootNode" ) {
-						method = ".SetRootNode";
-					}
-					if ( method.startsWith(".Fd.AddCustomField")||
-						method === ".Fd.Add") {
-						ch += stackname(element)+method.slice(3)+"("+stackname(node)+");\n";
-					} else if ( method === ".Fd.Value") {
-						ch += stackname(element)+method.slice(3)+" := "+stackname(node)+";\n";
-					} else if ( method.startsWith(".Fd")) {
-						ch += stackname(element)+method+"("+stackname(node)+");\n";
-					} else	if (node.nodeName === "LayerSet") {
-						ch += "X3D0.FdChildren.Add("+stackname(node)+");\n";
-					} else if (method.endsWith(".Add")) {
-						console.log('{ METHOD.ADD '+method+' }');
-						ch += stackname(element)+method+"(["+stackname(node)+"]);\n";
-					} else if ( method.startsWith(".Add")) {
-						ch += stackname(element)+method+"(["+stackname(node)+"]);\n";
-
-					} else if ( method === ".SetSkinCoord") {
-						ch += stackname(element)+method+"("+stackname(node)+");\n";
-					} else if ( method.startsWith(".Set")) {
-						ch += stackname(element)+"."+method.slice(4)+" := "+stackname(node)+";\n";
-					} else {
-						// console.log('{ METHOD.SET '+method+' }');
-						ch += stackname(element)+method+" := "+stackname(node)+";\n";
-					}
+					var bodystr = this.subSerializeToString(node, mapToMethod, fieldTypes, n+1, stack, stackname(element));
+					ch += bodystr;
+					let method = this.printParentChild(element, node, mapToMethod, n, oldNodeName);
+					ch += this.dealWithMethod(element, node, method);
 				}
 				str += ch;
 				stack.shift();
@@ -1354,5 +1532,48 @@ nodeList.push(stackname(child));
 	        		
 		}
 		return str;
+	},
+	dealWithMethod(element, node, method) {
+		let ch = '{ METHOD '+method+' }\n';
+		if (node.nodeName !== "Scene" &&
+			node.nodeName !== "meta" &&
+			node.nodeName !== "component" &&
+			node.nodeName !== "head" &&
+			node.nodeName !== "X3DROUTE") {
+			if ( element.nodeName === "CastleScene") {
+				method = ".AddRootNode";
+			}
+			if ( method === ".AddGroup" ) {
+				method = ".AddChildren";
+			}
+
+			if ( method === ".AddRootNode" ) {
+				method = ".SetRootNode";
+			}
+			if ( method.startsWith(".Fd.AddCustomField")||
+				method === ".Fd.Add") {
+				ch += stackname(element)+method.slice(3)+"("+stackname(node)+");\n";
+			} else if ( method === ".Fd.Value") {
+				ch += stackname(element)+method.slice(3)+" := "+stackname(node)+";\n";
+			} else if ( method.startsWith(".Fd")) {
+				ch += stackname(element)+method+"("+stackname(node)+");\n";
+			} else	if (node.nodeName === "LayerSet") {
+				ch += "X3D0.FdChildren.Add("+stackname(node)+");\n";
+			} else if (method.endsWith(".Add")) {
+				ch += '{ METHOD.ADD '+method+' }\n';
+				ch += stackname(element)+method+"(["+stackname(node)+"]);\n";
+			} else if ( method.startsWith(".Add")) {
+				ch += stackname(element)+method+"(["+stackname(node)+"]);\n";
+
+			} else if ( method === ".SetSkinCoord") {
+				ch += stackname(element)+method+"("+stackname(node)+");\n";
+			} else if ( method.startsWith(".Set")) {
+				ch += stackname(element)+"."+method.slice(4)+" := "+stackname(node)+";\n";
+			} else {
+				ch += '{ METHOD.SET '+method+' }\n';
+				ch += stackname(element)+method+" := "+stackname(node)+";\n";
+			}
+		}
+		return ch;
 	}
 };
