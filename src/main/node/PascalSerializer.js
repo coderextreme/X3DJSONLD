@@ -1305,11 +1305,22 @@ PascalSerializer.prototype = {
 					const fvName = getAttribute(node, "name");
 					const protoName = getAttribute(element, "name") || getDeclaration(element);
 					const fvType = protoName && fvName ? this.getInterfaceType(protoName, fvName) : null;
+					let fvCleared = false;
 					for (const fvChild of Array.from(node.childNodes || [])) {
 						if (fvChild.nodeType === 1) {
 							this.instantiateChildElement(node, fvChild, mapToMethod, fieldTypes, n, stack);
 							if (fvName && fvType) {
 								const instVar = this.stackname(element);
+								// A <fieldValue> containing nodes REPLACES the field's default
+								// value (X3D spec). TMFNode.Add only appends, so the PROTO's
+								// default nodes (e.g. a default Sphere) would stay alongside
+								// the supplied ones. Clear the default first, once per field.
+								if (fvType !== "SFNode" && !fvCleared) {
+									this.statements.push(
+										"(" + instVar + ".Field(" + escapePascalString(fvName) + ") as TMFNode).Clear;\n"
+									);
+									fvCleared = true;
+								}
 								let fvChildVar = this.stackname(fvChild);
 								if (fvChild.nodeName === "ProtoInstance" && !this.getMeta(fvChild).isUse) {
 									fvChildVar = fvChildVar + ".Instantiate";
