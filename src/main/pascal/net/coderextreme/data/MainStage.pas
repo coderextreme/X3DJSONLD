@@ -11,49 +11,41 @@ implementation
 uses CastleVectors;
 
 var
-X3D0: TX3DRootNode;
-Group13: TGroupNode;
-WorldInfo14: TWorldInfoNode;
-NavigationInfo15: TNavigationInfoNode;
-DirectionalLight16: TDirectionalLightNode;
-DirectionalLight17: TDirectionalLightNode;
-DirectionalLight18: TDirectionalLightNode;
-Viewpoint19: TViewpointNode;
-Viewpoint20: TViewpointNode;
-Viewpoint21: TViewpointNode;
-Viewpoint22: TViewpointNode;
-Viewpoint23: TViewpointNode;
-Viewpoint24: TViewpointNode;
-Group25: TGroupNode;
-Transform26: TTransformNode;
-Inline27: TInlineNode;
-Transform28: TTransformNode;
-Shape29: TShapeNode;
-Appearance30: TAppearanceNode;
-Material31: TMaterialNode;
-Box32: TBoxNode;
-Transform33: TTransformNode;
-Shape34: TShapeNode;
-Appearance35: TAppearanceNode;
-Material36: TMaterialNode;
-IndexedLineSet37: TIndexedLineSetNode;
-Coordinate38: TCoordinateNode;
-Transform39: TTransformNode;
-Shape40: TShapeNode;
-Appearance41: TAppearanceNode;
-IndexedLineSet42: TIndexedLineSetNode;
-Transform43: TTransformNode;
-Shape44: TShapeNode;
-Appearance45: TAppearanceNode;
-IndexedLineSet46: TIndexedLineSetNode;
-Transform47: TTransformNode;
-Shape48: TShapeNode;
-Appearance49: TAppearanceNode;
-IndexedLineSet50: TIndexedLineSetNode;
-Transform51: TTransformNode;
-Shape52: TShapeNode;
-Appearance53: TAppearanceNode;
-IndexedLineSet54: TIndexedLineSetNode;
+  X3D0: TX3DRootNode;
+  Group13: TGroupNode;
+  WorldInfo14: TWorldInfoNode;
+  NavigationInfo15: TNavigationInfoNode;
+  DirectionalLight16: TDirectionalLightNode;
+  DirectionalLight17: TDirectionalLightNode;
+  DirectionalLight18: TDirectionalLightNode;
+  Viewpoint19: TViewpointNode;
+  Viewpoint20: TViewpointNode;
+  Viewpoint21: TViewpointNode;
+  Viewpoint22: TViewpointNode;
+  Viewpoint23: TViewpointNode;
+  Viewpoint24: TViewpointNode;
+  Group25: TGroupNode;
+  Transform26: TTransformNode;
+  Inline27: TInlineNode;
+  Transform28: TTransformNode;
+  Shape29: TShapeNode;
+  Appearance30: TAppearanceNode;
+  Material31: TMaterialNode;
+  Box32: TBoxNode;
+  Transform33: TTransformNode;
+  Shape34: TShapeNode;
+  Appearance35: TAppearanceNode;
+  Material36: TMaterialNode;
+  IndexedLineSet37: TIndexedLineSetNode;
+  Coordinate38: TCoordinateNode;
+  Transform39: TTransformNode;
+  Shape40: TShapeNode;
+  Transform43: TTransformNode;
+  Shape44: TShapeNode;
+  Transform47: TTransformNode;
+  Shape48: TShapeNode;
+  Transform51: TTransformNode;
+  Shape52: TShapeNode;
 
 procedure InitMainStagePart0;
 begin
@@ -62,235 +54,175 @@ X3D0.Profile := 'Interchange';
 X3D0.ForceVersion.Major := 4;
 X3D0.ForceVersion.Minor := 0;
 X3D0.Components['HAnim'] := 1;
-{ METHOD .Component }
 X3D0.Meta['title'] := 'MainStage.x3d';
-{ METHOD .Meta }
 X3D0.Meta['description'] := 'Main stage for HAnim scene Winter and Spring.';
-{ METHOD .Meta }
 X3D0.Meta['creator'] := 'Joe Williams';
-{ METHOD .Meta }
 X3D0.Meta['translator'] := 'Joe Williams and Don Brutzman';
-{ METHOD .Meta }
 X3D0.Meta['created'] := '25 May 2023';
-{ METHOD .Meta }
 X3D0.Meta['modified'] := '27 May 2023';
-{ METHOD .Meta }
 X3D0.Meta['reference'] := 'originals/0MainStageScene0525.x3dv';
-{ METHOD .Meta }
 X3D0.Meta['identifier'] := 'https://www.web3d.org/x3d/content/examples/HumanoidAnimation/WinterAndSpring/MainStage.x3d';
-{ METHOD .Meta }
 X3D0.Meta['generator'] := 'X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit';
-{ METHOD .Meta }
 X3D0.Meta['license'] := '../license.html';
-{ METHOD .Meta }
-{ METHOD .Head }
-Group13 := TGroupNode.Create;;
-WorldInfo14 := TWorldInfoNode.Create;;
+Group13 := TGroupNode.Create;
+WorldInfo14 := TWorldInfoNode.Create;
 WorldInfo14.Title := 'MainStage.x3d';
-{ METHOD .FdChildren.Add }
 Group13.FdChildren.Add(WorldInfo14);
-NavigationInfo15 := TNavigationInfoNode.Create;;
+NavigationInfo15 := TNavigationInfoNode.Create;
 NavigationInfo15.Headlight := False;
-{ METHOD .FdChildren.Add }
 Group13.FdChildren.Add(NavigationInfo15);
-DirectionalLight16 := TDirectionalLightNode.Create;;
+DirectionalLight16 := TDirectionalLightNode.Create;
 DirectionalLight16.AmbientIntensity := 1;
-DirectionalLight16.Direction := Vector3(-0.5,-0.5,-0.5);
+DirectionalLight16.Direction := Vector3(-0.5, -0.5, -0.5);
 DirectionalLight16.Global := True;
-{ METHOD .FdChildren.Add }
 Group13.FdChildren.Add(DirectionalLight16);
-DirectionalLight17 := TDirectionalLightNode.Create;;
+DirectionalLight17 := TDirectionalLightNode.Create;
 DirectionalLight17.AmbientIntensity := 1;
-DirectionalLight17.Direction := Vector3(-1,-1,-1);
+DirectionalLight17.Direction := Vector3(-1, -1, -1);
 DirectionalLight17.Global := True;
-{ METHOD .FdChildren.Add }
 Group13.FdChildren.Add(DirectionalLight17);
-DirectionalLight18 := TDirectionalLightNode.Create;;
+DirectionalLight18 := TDirectionalLightNode.Create;
 DirectionalLight18.AmbientIntensity := 1;
+DirectionalLight18.Direction := Vector3(1, 1, -1);
+DirectionalLight18.Global := True;
+DirectionalLight18.Intensity := 0.5;
+Group13.FdChildren.Add(DirectionalLight18);
+Viewpoint19 := TViewpointNode.Create;
+Viewpoint19.X3DName := 'Scene_StageFrontViewFar';
 end;
 
 procedure InitMainStagePart1;
 begin
-
-DirectionalLight18.Direction := Vector3(1,1,-1);
-DirectionalLight18.Global := True;
-DirectionalLight18.Intensity := 0.5;
-{ METHOD .FdChildren.Add }
-Group13.FdChildren.Add(DirectionalLight18);
-Viewpoint19 := TViewpointNode.Create;;
 Viewpoint19.Description := 'hanim_Stage Front View';
-Viewpoint19.Orientation := Vector4(1,0,0,-0.449999988);
-Viewpoint19.Position := Vector3(0,4,10);
-{ METHOD .FdChildren.Add }
+Viewpoint19.Orientation := Vector4(1, 0, 0, -0.449999988);
+Viewpoint19.Position := Vector3(0, 4, 10);
 Group13.FdChildren.Add(Viewpoint19);
-Viewpoint20 := TViewpointNode.Create;;
+Viewpoint20 := TViewpointNode.Create;
+Viewpoint20.X3DName := 'Scene_InclinedView';
 Viewpoint20.Description := 'hanim_Inclined View';
-Viewpoint20.Orientation := Vector4(-0.112999998,0.992999971,0.034699999,0.671000004);
-Viewpoint20.Position := Vector3(2.619999886,1.049999952,4.059999943);
-{ METHOD .FdChildren.Add }
+Viewpoint20.Orientation := Vector4(-0.112999998, 0.992999971, 0.034699999, 0.671000004);
+Viewpoint20.Position := Vector3(2.619999886, 1.049999952, 4.059999943);
 Group13.FdChildren.Add(Viewpoint20);
-Viewpoint21 := TViewpointNode.Create;;
+Viewpoint21 := TViewpointNode.Create;
+Viewpoint21.X3DName := 'Scene_StageFrontView';
 Viewpoint21.Description := 'hanim_Stage Front View';
-Viewpoint21.Position := Vector3(0,1,5);
-{ METHOD .FdChildren.Add }
+Viewpoint21.Position := Vector3(0, 1, 5);
 Group13.FdChildren.Add(Viewpoint21);
-Viewpoint22 := TViewpointNode.Create;;
+Viewpoint22 := TViewpointNode.Create;
+Viewpoint22.X3DName := 'Scene_FeetStageBottomView';
 Viewpoint22.Description := 'hanim_feet View';
-Viewpoint22.Orientation := Vector4(1,0,0,1.570000052);
-Viewpoint22.Position := Vector3(0,-10,0);
-{ METHOD .FdChildren.Add }
+Viewpoint22.Orientation := Vector4(1, 0, 0, 1.570000052);
+Viewpoint22.Position := Vector3(0, -10, 0);
 Group13.FdChildren.Add(Viewpoint22);
-Viewpoint23 := TViewpointNode.Create;;
+Viewpoint23 := TViewpointNode.Create;
+Viewpoint23.X3DName := 'Scene_HeadTopView';
 Viewpoint23.Description := 'hanim_Head Top View';
-Viewpoint23.Orientation := Vector4(1,0,0,-1.570000052);
-Viewpoint23.Position := Vector3(0,15,0);
-{ METHOD .FdChildren.Add }
+Viewpoint23.Orientation := Vector4(1, 0, 0, -1.570000052);
+Viewpoint23.Position := Vector3(0, 15, 0);
 Group13.FdChildren.Add(Viewpoint23);
-Viewpoint24 := TViewpointNode.Create;;
+Viewpoint24 := TViewpointNode.Create;
+Viewpoint24.X3DName := 'Scene_TopFrontCloseView';
 Viewpoint24.Description := 'hanim_Head Top View';
-Viewpoint24.Orientation := Vector4(1,0,0,-1.100000024);
-Viewpoint24.Position := Vector3(0,8,3);
-{ METHOD .FdChildren.Add }
+Viewpoint24.Orientation := Vector4(1, 0, 0, -1.100000024);
+Viewpoint24.Position := Vector3(0, 8, 3);
 Group13.FdChildren.Add(Viewpoint24);
 Group25 := TGroupNode.Create;
+Group25.X3DName := 'HAnimStage';
+Transform26 := TTransformNode.Create;
+Transform26.X3DName := 'cordsysfloor';
+Transform26.Scale := Vector3(0.174999997, 0.174999997, 0.174999997);
+Inline27 := TInlineNode.Create;
+Inline27.SetUrl(['JointCoordinateAxes.x3dv']);
 end;
 
 procedure InitMainStagePart2;
 begin
-;
-Transform26 := TTransformNode.Create;;
-Transform26.Scale := Vector3(0.174999997,0.174999997,0.174999997);
-Inline27 := TInlineNode.Create;;
-Inline27.SetUrl(['JointCoordinateAxes.x3dv']);
-{ METHOD .FdChildren.Add }
 Transform26.FdChildren.Add(Inline27);
-{ METHOD .FdChildren.Add }
 Group25.FdChildren.Add(Transform26);
-Transform28 := TTransformNode.Create;;
-Transform28.Scale := Vector3(1,0.01,1);
-Transform28.Translation := Vector3(0,-0.01,0);
-Shape29 := TShapeNode.Create;;
-Appearance30 := TAppearanceNode.Create;;
-Material31 := TMaterialNode.Create;;
+Transform28 := TTransformNode.Create;
+Transform28.X3DName := 'StageGeometry';
+Transform28.Scale := Vector3(1, 0.01, 1);
+Transform28.Translation := Vector3(0, -0.01, 0);
+Shape29 := TShapeNode.Create;
+Appearance30 := TAppearanceNode.Create;
+Material31 := TMaterialNode.Create;
 Material31.Transparency := 0.6;
-{ METHOD .SetMaterial }
 Appearance30.Material := Material31;
-{ METHOD .Appearance }
-{ METHOD.SET .Appearance }
 Shape29.Appearance := Appearance30;
-Box32 := TBoxNode.Create;;
-Box32.Size := Vector3(9,1,9);
-{ METHOD .Geometry }
-{ METHOD.SET .Geometry }
+Box32 := TBoxNode.Create;
+Box32.Size := Vector3(9, 1, 9);
 Shape29.Geometry := Box32;
-{ METHOD .FdChildren.Add }
 Transform28.FdChildren.Add(Shape29);
-Transform33 := TTransformNode.Create;;
-Shape34 := TShapeNode.Create;;
-Appearance35 := TAppearanceNode.Create;;
-Material36 := TMaterialNode.Create;;
+Transform33 := TTransformNode.Create;
+Transform33.X3DName := 'Circle0';
+Shape34 := TShapeNode.Create;
+Appearance35 := TAppearanceNode.Create;
+Appearance35.X3DName := 'LineColor';
+Material36 := TMaterialNode.Create;
 Material36.AmbientIntensity := 1;
-Material36.DiffuseColor := Vector3(0.699999988,0,0.899999976);
-Material36.EmissiveColor := Vector3(0.449999988,0.449999988,1);
+Material36.DiffuseColor := Vector3(0.699999988, 0, 0.899999976);
+Material36.EmissiveColor := Vector3(0.449999988, 0.449999988, 1);
 Material36.Shininess := 1;
-Material36.SpecularColor := Vector3(0,0,1);
+Material36.SpecularColor := Vector3(0, 0, 1);
+Appearance35.Material := Material36;
+Shape34.Appearance := Appearance35;
+IndexedLineSet37 := TIndexedLineSetNode.Create;
+IndexedLineSet37.X3DName := 'Orbit1';
+IndexedLineSet37.SetCoordIndex([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, -1]);
+Coordinate38 := TCoordinateNode.Create;
+Coordinate38.SetPoint([Vector3(1, 0, 0), Vector3(0.995000005, 0, -0.104999997), Vector3(0.978999972, 0, -0.208000004), Vector3(0.950999975, 0, -0.308999985), Vector3(0.913999975, 0, -0.407000005), Vector3(0.865999997, 0, -0.5), Vector3(0.809000015, 0, -0.588), Vector3(0.742999971, 0, -0.66900003), Vector3(0.66900003, 0, -0.742999971), Vector3(0.588, 0, -0.809000015), Vector3(0.5, 0, -0.865999997), Vector3(0.407000005, 0, -0.913999975), Vector3(0.308999985, 0, -0.950999975), Vector3(0.208000004, 0, -0.977999985), Vector3(0.104999997, 0, -0.995000005), Vector3(0, 0, -1), Vector3(-0.104999997, 0, -0.994521976), Vector3(-0.208000004, 0, -0.977999985), Vector3(-0.308999985, 0, -0.950999975), Vector3(-0.407000005, 0, -0.913999975), Vector3(-0.5, 0, -0.865999997), Vector3(-0.588, 0, -0.809000015), Vector3(-0.66900003, 0, -0.742999971), Vector3(-0.742999971, 0, -0.66900003), Vector3(-0.809000015, 0, -0.588), Vector3(-0.865999997, 0, -0.5), Vector3(-0.913999975, 0, -0.407000005), Vector3(-0.950999975, 0, -0.308999985), Vector3(-0.977999985, 0, -0.208000004), Vector3(-0.995000005, 0, -0.104999997), Vector3(-1, 0, 0), Vector3(-0.995000005, 0, 0.104999997), Vector3(-0.977999985, 0, 0.208000004), Vector3(-0.950999975, 0, 0.308999985), Vector3(-0.913999975, 0, 0.407000005), Vector3(-0.865999997, 0, 0.5), Vector3(-0.809000015, 0, 0.588), Vector3(-0.742999971, 0, 0.66900003), Vector3(-0.66900003, 0, 0.742999971), Vector3(-0.588, 0, 0.809000015), Vector3(-0.5, 0, 0.865999997), Vector3(-0.407000005, 0, 0.913999975), Vector3(-0.308999985, 0, 0.950999975), Vector3(-0.208000004, 0, 0.977999985), Vector3(-0.104999997, 0, 0.995000005), Vector3(0, 0, 1), Vector3(0.104999997, 0, 0.995000005), Vector3(0.208000004, 0, 0.977999985), Vector3(0.308999985, 0, 0.950999975), Vector3(0.407000005, 0, 0.913999975), Vector3(0.5, 0, 0.865999997), Vector3(0.588, 0, 0.809000015), Vector3(0.66900003, 0, 0.742999971), Vector3(0.742999971, 0, 0.66900003), Vector3(0.809000015, 0, 0.588), Vector3(0.865999997, 0, 0.5), Vector3(0.913999975, 0, 0.407000005), Vector3(0.950999975, 0, 0.308999985), Vector3(0.977999985, 0, 0.208000004), Vector3(0.995000005, 0, 0.104000002), Vector3(1, 0, 0)]);
+IndexedLineSet37.Coord := Coordinate38;
+Shape34.Geometry := IndexedLineSet37;
+Transform33.FdChildren.Add(Shape34);
+Transform28.FdChildren.Add(Transform33);
+Transform39 := TTransformNode.Create;
+Transform39.X3DName := 'Circle1';
 end;
 
 procedure InitMainStagePart3;
 begin
-
-{ METHOD .SetMaterial }
-Appearance35.Material := Material36;
-{ METHOD .Appearance }
-{ METHOD.SET .Appearance }
-Shape34.Appearance := Appearance35;
-IndexedLineSet37 := TIndexedLineSetNode.Create;;
-IndexedLineSet37.SetCoordIndex([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,-1]);
-Coordinate38 := TCoordinateNode.Create;;
-Coordinate38.SetPoint([Vector3(1,0,0),Vector3(0.995000005,0,-0.104999997),Vector3(0.978999972,0,-0.208000004),Vector3(0.950999975,0,-0.308999985),Vector3(0.913999975,0,-0.407000005),Vector3(0.865999997,0,-0.5),Vector3(0.809000015,0,-0.588),Vector3(0.742999971,0,-0.66900003),Vector3(0.66900003,0,-0.742999971),Vector3(0.588,0,-0.809000015),Vector3(0.5,0,-0.865999997),Vector3(0.407000005,0,-0.913999975),Vector3(0.308999985,0,-0.950999975),Vector3(0.208000004,0,-0.977999985),Vector3(0.104999997,0,-0.995000005),Vector3(0,0,-1),Vector3(-0.104999997,0,-0.994521976),Vector3(-0.208000004,0,-0.977999985),Vector3(-0.308999985,0,-0.950999975),Vector3(-0.407000005,0,-0.913999975),Vector3(-0.5,0,-0.865999997),Vector3(-0.588,0,-0.809000015),Vector3(-0.66900003,0,-0.742999971),Vector3(-0.742999971,0,-0.66900003),Vector3(-0.809000015,0,-0.588),Vector3(-0.865999997,0,-0.5),Vector3(-0.913999975,0,-0.407000005),Vector3(-0.950999975,0,-0.308999985),Vector3(-0.977999985,0,-0.208000004),Vector3(-0.995000005,0,-0.104999997),Vector3(-1,0,0),Vector3(-0.995000005,0,0.104999997),Vector3(-0.977999985,0,0.208000004),Vector3(-0.950999975,0,0.308999985),Vector3(-0.913999975,0,0.407000005),Vector3(-0.865999997,0,0.5),Vector3(-0.809000015,0,0.588),Vector3(-0.742999971,0,0.66900003),Vector3(-0.66900003,0,0.742999971),Vector3(-0.588,0,0.809000015),Vector3(-0.5,0,0.865999997),Vector3(-0.407000005,0,0.913999975),Vector3(-0.308999985,0,0.950999975),Vector3(-0.208000004,0,0.977999985),Vector3(-0.104999997,0,0.995000005),Vector3(0,0,1),Vector3(0.104999997,0,0.995000005),Vector3(0.208000004,0,0.977999985),Vector3(0.308999985,0,0.950999975),Vector3(0.407000005,0,0.913999975),Vector3(0.5,0,0.865999997),Vector3(0.588,0,0.809000015),Vector3(0.66900003,0,0.742999971),Vector3(0.742999971,0,0.66900003),Vector3(0.809000015,0,0.588),Vector3(0.865999997,0,0.5),Vector3(0.913999975,0,0.407000005),Vector3(0.950999975,0,0.308999985),Vector3(0.977999985,0,0.208000004),Vector3(0.995000005,0,0.104000002),Vector3(1,0,0)]);
-{ METHOD .Coord }
-{ METHOD.SET .Coord }
-IndexedLineSet37.Coord := Coordinate38;
-{ METHOD .Geometry }
-{ METHOD.SET .Geometry }
-Shape34.Geometry := IndexedLineSet37;
-{ METHOD .FdChildren.Add }
-Transform33.FdChildren.Add(Shape34);
-{ METHOD .FdChildren.Add }
-Transform28.FdChildren.Add(Transform33);
-Transform39 := TTransformNode.Create;;
-Transform39.Scale := Vector3(0.5,1,0.5);
-Shape40 := TShapeNode.Create;;
-{ METHOD .Appearance }
-{ METHOD.SET .Appearance }
+Transform39.Scale := Vector3(0.5, 1, 0.5);
+Shape40 := TShapeNode.Create;
 Shape40.Appearance := Appearance35;
-{ METHOD .Geometry }
-{ METHOD.SET .Geometry }
 Shape40.Geometry := IndexedLineSet37;
-{ METHOD .FdChildren.Add }
 Transform39.FdChildren.Add(Shape40);
-{ METHOD .FdChildren.Add }
 Transform28.FdChildren.Add(Transform39);
-Transform43 := TTransformNode.Create;;
-Transform43.Scale := Vector3(0.25,1,0.25);
-Shape44 := TShapeNode.Create;;
-{ METHOD .Appearance }
-{ METHOD.SET .Appearance }
+Transform43 := TTransformNode.Create;
+Transform43.X3DName := 'Circle2';
+Transform43.Scale := Vector3(0.25, 1, 0.25);
+Shape44 := TShapeNode.Create;
 Shape44.Appearance := Appearance35;
-{ METHOD .Geometry }
-{ METHOD.SET .Geometry }
 Shape44.Geometry := IndexedLineSet37;
-{ METHOD .FdChildren.Add }
 Transform43.FdChildren.Add(Shape44);
-{ METHOD .FdChildren.Add }
 Transform28.FdChildren.Add(Transform43);
-Transform47 := TTransformNode.Create;;
-Transform47.Scale := Vector3(2,1,2);
-Shape48 := TShapeNode.Create;;
-{ METHOD .Appearance }
-{ METHOD.SET .Appearance }
+Transform47 := TTransformNode.Create;
+Transform47.X3DName := 'Circle3';
+Transform47.Scale := Vector3(2, 1, 2);
+Shape48 := TShapeNode.Create;
 Shape48.Appearance := Appearance35;
-{ METHOD .Geometry }
-{ METHOD.SET .Geometry }
 Shape48.Geometry := IndexedLineSet37;
-{ METHOD .FdChildren.Add }
 Transform47.FdChildren.Add(Shape48);
-{ METHOD .FdChildren.Add }
 Transform28.FdChildren.Add(Transform47);
 Transform51 := TTransformNode.Create;
-end;
-
-procedure InitMainStagePart4;
-begin
-;
-Transform51.Scale := Vector3(3,1,3);
-Shape52 := TShapeNode.Create;;
-{ METHOD .Appearance }
-{ METHOD.SET .Appearance }
+Transform51.X3DName := 'Circle4';
+Transform51.Scale := Vector3(3, 1, 3);
+Shape52 := TShapeNode.Create;
 Shape52.Appearance := Appearance35;
-{ METHOD .Geometry }
-{ METHOD.SET .Geometry }
 Shape52.Geometry := IndexedLineSet37;
-{ METHOD .FdChildren.Add }
 Transform51.FdChildren.Add(Shape52);
-{ METHOD .FdChildren.Add }
 Transform28.FdChildren.Add(Transform51);
-{ METHOD .FdChildren.Add }
 Group25.FdChildren.Add(Transform28);
-{ METHOD .FdChildren.Add }
 Group13.FdChildren.Add(Group25);
-{ METHOD .AddGroup }
 X3D0.AddChildren([Group13]);
 end;
 
 function CreateMainStage: TX3DRootNode;
 begin
-InitMainStagePart0;
-InitMainStagePart1;
-InitMainStagePart2;
-InitMainStagePart3;
-InitMainStagePart4;
-Result := X3D0;
+  InitMainStagePart0;
+  InitMainStagePart1;
+  InitMainStagePart2;
+  InitMainStagePart3;
+  Result := X3D0;
 end;
 
 begin

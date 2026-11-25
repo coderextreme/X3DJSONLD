@@ -11,54 +11,49 @@ implementation
 uses CastleVectors;
 
 var
-X3D0: TX3DRootNode;
-Group10: TGroupNode;
-WorldInfo11: TWorldInfoNode;
-Transform12: TTransformNode;
-Transform13: TTransformNode;
-Shape14: TShapeNode;
-Appearance15: TAppearanceNode;
-Material16: TMaterialNode;
-Cylinder17: TCylinderNode;
-Transform18: TTransformNode;
-Shape19: TShapeNode;
-Appearance20: TAppearanceNode;
-Material21: TMaterialNode;
-Sphere22: TSphereNode;
-Transform23: TTransformNode;
-Shape24: TShapeNode;
-Appearance25: TAppearanceNode;
-Material26: TMaterialNode;
-Cylinder27: TCylinderNode;
-Group28: TGroupNode;
-Transform29: TTransformNode;
-Transform30: TTransformNode;
-Shape31: TShapeNode;
-Appearance32: TAppearanceNode;
-Material33: TMaterialNode;
-Cylinder34: TCylinderNode;
-Transform35: TTransformNode;
-Shape36: TShapeNode;
-Appearance37: TAppearanceNode;
-Material38: TMaterialNode;
-Cylinder39: TCylinderNode;
-Transform40: TTransformNode;
-Transform41: TTransformNode;
-Shape42: TShapeNode;
-Appearance43: TAppearanceNode;
-Material44: TMaterialNode;
-Cylinder45: TCylinderNode;
-Transform46: TTransformNode;
-Shape47: TShapeNode;
-Appearance48: TAppearanceNode;
-Material49: TMaterialNode;
-Cylinder50: TCylinderNode;
-Transform51: TTransformNode;
-Shape52: TShapeNode;
-Appearance53: TAppearanceNode;
-Material54: TMaterialNode;
-Cylinder55: TCylinderNode;
-Background56: TBackgroundNode;
+  X3D0: TX3DRootNode;
+  Group10: TGroupNode;
+  WorldInfo11: TWorldInfoNode;
+  Transform12: TTransformNode;
+  Transform13: TTransformNode;
+  Shape14: TShapeNode;
+  Appearance15: TAppearanceNode;
+  Material16: TMaterialNode;
+  Cylinder17: TCylinderNode;
+  Transform18: TTransformNode;
+  Shape19: TShapeNode;
+  Appearance20: TAppearanceNode;
+  Sphere22: TSphereNode;
+  Transform23: TTransformNode;
+  Shape24: TShapeNode;
+  Appearance25: TAppearanceNode;
+  Material26: TMaterialNode;
+  Cylinder27: TCylinderNode;
+  Group28: TGroupNode;
+  Transform29: TTransformNode;
+  Transform30: TTransformNode;
+  Shape31: TShapeNode;
+  Appearance32: TAppearanceNode;
+  Material33: TMaterialNode;
+  Cylinder34: TCylinderNode;
+  Transform35: TTransformNode;
+  Shape36: TShapeNode;
+  Appearance37: TAppearanceNode;
+  Cylinder39: TCylinderNode;
+  Transform40: TTransformNode;
+  Transform41: TTransformNode;
+  Shape42: TShapeNode;
+  Appearance43: TAppearanceNode;
+  Cylinder45: TCylinderNode;
+  Transform46: TTransformNode;
+  Shape47: TShapeNode;
+  Appearance48: TAppearanceNode;
+  Cylinder50: TCylinderNode;
+  Transform51: TTransformNode;
+  Shape52: TShapeNode;
+  Appearance53: TAppearanceNode;
+  Cylinder55: TCylinderNode;
+  Background56: TBackgroundNode;
 
 procedure InitScubaTankPart0;
 begin
@@ -67,239 +62,169 @@ X3D0.Profile := 'Interchange';
 X3D0.ForceVersion.Major := 4;
 X3D0.ForceVersion.Minor := 0;
 X3D0.Meta['title'] := 'ScubaTank.x3d';
-{ METHOD .Meta }
 X3D0.Meta['description'] := 'Scuba gear used by Nancy Diving example.';
-{ METHOD .Meta }
 X3D0.Meta['creator'] := 'Etsuko Lippi';
-{ METHOD .Meta }
 X3D0.Meta['created'] := '24 January 2001';
-{ METHOD .Meta }
 X3D0.Meta['modified'] := '23 May 2020';
-{ METHOD .Meta }
 X3D0.Meta['identifier'] := 'https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/ScubaTank.x3d';
-{ METHOD .Meta }
 X3D0.Meta['generator'] := 'X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit';
-{ METHOD .Meta }
 X3D0.Meta['license'] := '../license.html';
-{ METHOD .Meta }
-{ METHOD .Head }
-Group10 := TGroupNode.Create;;
-WorldInfo11 := TWorldInfoNode.Create;;
+Group10 := TGroupNode.Create;
+WorldInfo11 := TWorldInfoNode.Create;
 WorldInfo11.Title := 'ScubaTank.x3d';
-{ METHOD .FdChildren.Add }
 Group10.FdChildren.Add(WorldInfo11);
-Transform12 := TTransformNode.Create;;
-Transform13 := TTransformNode.Create;;
-Shape14 := TShapeNode.Create;;
-Appearance15 := TAppearanceNode.Create;;
-Material16 := TMaterialNode.Create;;
+Transform12 := TTransformNode.Create;
+Transform12.X3DName := 'ScubaTank';
+Transform13 := TTransformNode.Create;
+Shape14 := TShapeNode.Create;
+Appearance15 := TAppearanceNode.Create;
+Material16 := TMaterialNode.Create;
+Material16.X3DName := 'tank';
 Material16.AmbientIntensity := 0.3;
-Material16.DiffuseColor := Vector3(0.3,0.3,0.5);
+Material16.DiffuseColor := Vector3(0.3, 0.3, 0.5);
 Material16.Shininess := 0.1;
-Material16.SpecularColor := Vector3(0.7,0.7,0.8);
-{ METHOD .SetMaterial }
+Material16.SpecularColor := Vector3(0.7, 0.7, 0.8);
 Appearance15.Material := Material16;
-{ METHOD .Appearance }
-{ METHOD.SET .Appearance }
 Shape14.Appearance := Appearance15;
-Cylinder17 := TCylinderNode.Create;;
+Cylinder17 := TCylinderNode.Create;
 Cylinder17.Height := 0.7;
 Cylinder17.Radius := 0.1;
-{ METHOD .Geometry }
-{ METHOD.SET .Geometry }
 Shape14.Geometry := Cylinder17;
-{ METHOD .FdChildren.Add }
 Transform13.FdChildren.Add(Shape14);
+Transform12.FdChildren.Add(Transform13);
+Transform18 := TTransformNode.Create;
+Transform18.Translation := Vector3(0, 0.35, 0);
+Shape19 := TShapeNode.Create;
+Appearance20 := TAppearanceNode.Create;
+Appearance20.Material := Material16;
 end;
 
 procedure InitScubaTankPart1;
 begin
-
-{ METHOD .FdChildren.Add }
-Transform12.FdChildren.Add(Transform13);
-Transform18 := TTransformNode.Create;;
-Transform18.Translation := Vector3(0,0.35,0);
-Shape19 := TShapeNode.Create;;
-Appearance20 := TAppearanceNode.Create;;
-{ METHOD .SetMaterial }
-Appearance20.Material := Material16;
-{ METHOD .Appearance }
-{ METHOD.SET .Appearance }
 Shape19.Appearance := Appearance20;
-Sphere22 := TSphereNode.Create;;
+Sphere22 := TSphereNode.Create;
 Sphere22.Radius := 0.098;
-{ METHOD .Geometry }
-{ METHOD.SET .Geometry }
 Shape19.Geometry := Sphere22;
-{ METHOD .FdChildren.Add }
 Transform18.FdChildren.Add(Shape19);
-{ METHOD .FdChildren.Add }
 Transform12.FdChildren.Add(Transform18);
-Transform23 := TTransformNode.Create;;
-Transform23.Translation := Vector3(0,-0.35,0);
-Shape24 := TShapeNode.Create;;
-Appearance25 := TAppearanceNode.Create;;
-Material26 := TMaterialNode.Create;;
+Transform23 := TTransformNode.Create;
+Transform23.Translation := Vector3(0, -0.35, 0);
+Shape24 := TShapeNode.Create;
+Shape24.X3DName := 'tankBottom';
+Appearance25 := TAppearanceNode.Create;
+Material26 := TMaterialNode.Create;
+Material26.X3DName := 'black';
 Material26.AmbientIntensity := 0.3;
-Material26.DiffuseColor := Vector3(0,0,0);
-{ METHOD .SetMaterial }
+Material26.DiffuseColor := Vector3(0, 0, 0);
 Appearance25.Material := Material26;
-{ METHOD .Appearance }
-{ METHOD.SET .Appearance }
 Shape24.Appearance := Appearance25;
-Cylinder27 := TCylinderNode.Create;;
+Cylinder27 := TCylinderNode.Create;
 Cylinder27.Height := 0.06;
 Cylinder27.Radius := 0.115;
-{ METHOD .Geometry }
-{ METHOD.SET .Geometry }
 Shape24.Geometry := Cylinder27;
-{ METHOD .FdChildren.Add }
 Transform23.FdChildren.Add(Shape24);
-{ METHOD .FdChildren.Add }
 Transform12.FdChildren.Add(Transform23);
-Group28 := TGroupNode.Create;;
-Transform29 := TTransformNode.Create;;
+Group28 := TGroupNode.Create;
+Group28.X3DName := 'tankNozzle';
+Transform29 := TTransformNode.Create;
+Transform30 := TTransformNode.Create;
+Transform30.Translation := Vector3(0, 0.45, 0);
+Shape31 := TShapeNode.Create;
+Shape31.X3DName := 'pressure';
+Appearance32 := TAppearanceNode.Create;
+Material33 := TMaterialNode.Create;
+Material33.X3DName := 'pressureColor';
+Material33.AmbientIntensity := 0.4;
+Material33.DiffuseColor := Vector3(0.91, 0.91, 0.91);
+Material33.Shininess := 0.16;
+Material33.SpecularColor := Vector3(0.91, 0.9, 0.91);
+Appearance32.Material := Material33;
+Shape31.Appearance := Appearance32;
+Cylinder34 := TCylinderNode.Create;
 end;
 
 procedure InitScubaTankPart2;
 begin
-
-Transform30 := TTransformNode.Create;;
-Transform30.Translation := Vector3(0,0.45,0);
-Shape31 := TShapeNode.Create;;
-Appearance32 := TAppearanceNode.Create;;
-Material33 := TMaterialNode.Create;;
-Material33.AmbientIntensity := 0.4;
-Material33.DiffuseColor := Vector3(0.91,0.91,0.91);
-Material33.Shininess := 0.16;
-Material33.SpecularColor := Vector3(0.91,0.9,0.91);
-{ METHOD .SetMaterial }
-Appearance32.Material := Material33;
-{ METHOD .Appearance }
-{ METHOD.SET .Appearance }
-Shape31.Appearance := Appearance32;
-Cylinder34 := TCylinderNode.Create;;
 Cylinder34.Height := 0.1;
 Cylinder34.Radius := 0.015;
-{ METHOD .Geometry }
-{ METHOD.SET .Geometry }
 Shape31.Geometry := Cylinder34;
-{ METHOD .FdChildren.Add }
 Transform30.FdChildren.Add(Shape31);
-{ METHOD .FdChildren.Add }
 Transform29.FdChildren.Add(Transform30);
-Transform35 := TTransformNode.Create;;
-Transform35.Translation := Vector3(0,0.5,0);
-Shape36 := TShapeNode.Create;;
-Appearance37 := TAppearanceNode.Create;;
-{ METHOD .SetMaterial }
+Transform35 := TTransformNode.Create;
+Transform35.Translation := Vector3(0, 0.5, 0);
+Shape36 := TShapeNode.Create;
+Shape36.X3DName := 'pressureTop';
+Appearance37 := TAppearanceNode.Create;
 Appearance37.Material := Material26;
-{ METHOD .Appearance }
-{ METHOD.SET .Appearance }
 Shape36.Appearance := Appearance37;
-Cylinder39 := TCylinderNode.Create;;
+Cylinder39 := TCylinderNode.Create;
 Cylinder39.Height := 0.02;
 Cylinder39.Radius := 0.025;
-{ METHOD .Geometry }
-{ METHOD.SET .Geometry }
 Shape36.Geometry := Cylinder39;
-{ METHOD .FdChildren.Add }
 Transform35.FdChildren.Add(Shape36);
-{ METHOD .FdChildren.Add }
 Transform29.FdChildren.Add(Transform35);
-Transform40 := TTransformNode.Create;;
+Transform40 := TTransformNode.Create;
+Transform40.Rotation := Vector4(0, 0, 1, 1.57);
+Transform40.Translation := Vector3(-0.028, 0.462, 0);
+Transform41 := TTransformNode.Create;
+Shape42 := TShapeNode.Create;
+Shape42.X3DName := 'connectorToRegulator';
+Appearance43 := TAppearanceNode.Create;
+Appearance43.Material := Material33;
+Shape42.Appearance := Appearance43;
+Cylinder45 := TCylinderNode.Create;
+Cylinder45.Height := 0.03;
+Cylinder45.Radius := 0.01;
+Shape42.Geometry := Cylinder45;
+Transform41.FdChildren.Add(Shape42);
+Transform40.FdChildren.Add(Transform41);
+Transform46 := TTransformNode.Create;
+Transform46.Translation := Vector3(0, 0.02, 0);
+Shape47 := TShapeNode.Create;
+Shape47.X3DName := 'connectorToRegulatorTop';
+Appearance48 := TAppearanceNode.Create;
+Appearance48.Material := Material26;
+Shape47.Appearance := Appearance48;
 end;
 
 procedure InitScubaTankPart3;
 begin
-
-Transform40.Rotation := Vector4(0,0,1,1.57);
-Transform40.Translation := Vector3(-0.028,0.462,0);
-Transform41 := TTransformNode.Create;;
-Shape42 := TShapeNode.Create;;
-Appearance43 := TAppearanceNode.Create;;
-{ METHOD .SetMaterial }
-Appearance43.Material := Material33;
-{ METHOD .Appearance }
-{ METHOD.SET .Appearance }
-Shape42.Appearance := Appearance43;
-Cylinder45 := TCylinderNode.Create;;
-Cylinder45.Height := 0.03;
-Cylinder45.Radius := 0.01;
-{ METHOD .Geometry }
-{ METHOD.SET .Geometry }
-Shape42.Geometry := Cylinder45;
-{ METHOD .FdChildren.Add }
-Transform41.FdChildren.Add(Shape42);
-{ METHOD .FdChildren.Add }
-Transform40.FdChildren.Add(Transform41);
-Transform46 := TTransformNode.Create;;
-Transform46.Translation := Vector3(0,0.02,0);
-Shape47 := TShapeNode.Create;;
-Appearance48 := TAppearanceNode.Create;;
-{ METHOD .SetMaterial }
-Appearance48.Material := Material26;
-{ METHOD .Appearance }
-{ METHOD.SET .Appearance }
-Shape47.Appearance := Appearance48;
-Cylinder50 := TCylinderNode.Create;;
+Cylinder50 := TCylinderNode.Create;
 Cylinder50.Height := 0.02;
 Cylinder50.Radius := 0.02;
-{ METHOD .Geometry }
-{ METHOD.SET .Geometry }
 Shape47.Geometry := Cylinder50;
-{ METHOD .FdChildren.Add }
 Transform46.FdChildren.Add(Shape47);
-{ METHOD .FdChildren.Add }
 Transform40.FdChildren.Add(Transform46);
-{ METHOD .FdChildren.Add }
 Transform29.FdChildren.Add(Transform40);
-{ METHOD .FdChildren.Add }
 Group28.FdChildren.Add(Transform29);
-{ METHOD .FdChildren.Add }
 Transform12.FdChildren.Add(Group28);
-Transform51 := TTransformNode.Create;;
-Transform51.Translation := Vector3(0,0.2,0);
+Transform51 := TTransformNode.Create;
+Transform51.Translation := Vector3(0, 0.2, 0);
 Shape52 := TShapeNode.Create;
-end;
-
-procedure InitScubaTankPart4;
-begin
-;
-Appearance53 := TAppearanceNode.Create;;
-{ METHOD .SetMaterial }
+Shape52.X3DName := 'tankHoldBelt';
+Appearance53 := TAppearanceNode.Create;
 Appearance53.Material := Material26;
-{ METHOD .Appearance }
-{ METHOD.SET .Appearance }
 Shape52.Appearance := Appearance53;
-Cylinder55 := TCylinderNode.Create;;
+Cylinder55 := TCylinderNode.Create;
 Cylinder55.Height := 0.1;
 Cylinder55.Radius := 0.115;
-{ METHOD .Geometry }
-{ METHOD.SET .Geometry }
 Shape52.Geometry := Cylinder55;
-{ METHOD .FdChildren.Add }
 Transform51.FdChildren.Add(Shape52);
-{ METHOD .FdChildren.Add }
 Transform12.FdChildren.Add(Transform51);
-{ METHOD .FdChildren.Add }
 Group10.FdChildren.Add(Transform12);
-Background56 := TBackgroundNode.Create;;
-Background56.SetSkyColor([Vector3(0.6,0.6,0.6)]);
-{ METHOD .FdChildren.Add }
+Background56 := TBackgroundNode.Create;
+Background56.SetSkyColor([Vector3(0.6, 0.6, 0.6)]);
 Group10.FdChildren.Add(Background56);
-{ METHOD .AddGroup }
 X3D0.AddChildren([Group10]);
 end;
 
 function CreateScubaTank: TX3DRootNode;
 begin
-InitScubaTankPart0;
-InitScubaTankPart1;
-InitScubaTankPart2;
-InitScubaTankPart3;
-InitScubaTankPart4;
-Result := X3D0;
+  InitScubaTankPart0;
+  InitScubaTankPart1;
+  InitScubaTankPart2;
+  InitScubaTankPart3;
+  Result := X3D0;
 end;
 
 begin

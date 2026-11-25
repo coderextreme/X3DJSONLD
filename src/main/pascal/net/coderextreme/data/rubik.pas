@@ -8,57 +8,67 @@ function Createrubik: TX3DRootNode;
 
 implementation
 
-uses CastleVectors;
+uses Classes, SysUtils, X3DLoad, CastleVectors;
+
+function CreateEmptyPrototype(const AName: String): TX3DPrototype;
+var
+  Stream: TStringStream;
+  TempRoot: TX3DRootNode;
+  CopyState: TX3DNodeDeepCopyState;
+begin
+  Stream := TStringStream.Create('#X3D V4.0 utf8' + LineEnding + 'PROTO ' + AName + ' [] {}');
+  try
+    TempRoot := LoadNode(Stream, '', 'model/x3d+vrml');
+    try
+      CopyState := TX3DNodeDeepCopyState.Create;
+      try
+        Result := TempRoot.Prototypes[0].DeepCopy(CopyState) as TX3DPrototype;
+      finally
+        FreeAndNil(CopyState);
+      end;
+    finally
+      FreeAndNil(TempRoot);
+    end;
+  finally
+    FreeAndNil(Stream);
+  end;
+end;
 
 var
-X3D0: TX3DRootNode;
-Group7: TGroupNode;
-NavigationInfo8: TNavigationInfoNode;
-Viewpoint9: TViewpointNode;
-X3DPrototype10: TX3DPrototype;
-X3DInterfaceDeclaration11: TX3DInterfaceDeclaration;
-SFVec3f12: TSFVec3f;
-X3DPrototype13: TX3DPrototype;
-Transform14: TTransformNode;
-Shape16: TShapeNode;
-Sphere17: TSphereNode;
-Appearance18: TAppearanceNode;
-Material19: TMaterialNode;
-X3DPrototype20: TX3DPrototype;
-X3DInterfaceDeclaration21: TX3DInterfaceDeclaration;
-SFVec3f22: TSFVec3f;
-X3DPrototype23: TX3DPrototype;
-Transform24: TTransformNode;
-X3DPrototype26: TX3DPrototypeNode;
-SFVec3f27: TSFVec3f;
-X3DPrototype28: TX3DPrototypeNode;
-SFVec3f29: TSFVec3f;
-X3DPrototype30: TX3DPrototypeNode;
-SFVec3f31: TSFVec3f;
-X3DPrototype32: TX3DPrototype;
-X3DInterfaceDeclaration33: TX3DInterfaceDeclaration;
-SFVec3f34: TSFVec3f;
-X3DPrototype35: TX3DPrototype;
-Transform36: TTransformNode;
-X3DPrototype38: TX3DPrototypeNode;
-SFVec3f39: TSFVec3f;
-X3DPrototype40: TX3DPrototypeNode;
-SFVec3f41: TSFVec3f;
-X3DPrototype42: TX3DPrototypeNode;
-SFVec3f43: TSFVec3f;
-X3DPrototype44: TX3DPrototype;
-X3DInterfaceDeclaration45: TX3DInterfaceDeclaration;
-SFVec3f46: TSFVec3f;
-X3DPrototype47: TX3DPrototype;
-Transform48: TTransformNode;
-X3DPrototype50: TX3DPrototypeNode;
-SFVec3f51: TSFVec3f;
-X3DPrototype52: TX3DPrototypeNode;
-SFVec3f53: TSFVec3f;
-X3DPrototype54: TX3DPrototypeNode;
-SFVec3f55: TSFVec3f;
-X3DPrototype56: TX3DPrototypeNode;
-SFVec3f57: TSFVec3f;
+  X3D0: TX3DRootNode;
+  Group7: TGroupNode;
+  NavigationInfo8: TNavigationInfoNode;
+  Viewpoint9: TViewpointNode;
+  ProtoDeclare10: TX3DPrototype;
+  FieldDecl12: TX3DInterfaceDeclaration;
+  FieldVal12: TSFVec3f;
+  Transform14: TTransformNode;
+  Shape15: TShapeNode;
+  Sphere16: TSphereNode;
+  Appearance17: TAppearanceNode;
+  Material18: TMaterialNode;
+  ProtoDeclare19: TX3DPrototype;
+  FieldDecl21: TX3DInterfaceDeclaration;
+  FieldVal21: TSFVec3f;
+  Transform23: TTransformNode;
+  ProtoInstance24: TX3DPrototypeNode;
+  ProtoInstance26: TX3DPrototypeNode;
+  ProtoInstance28: TX3DPrototypeNode;
+  ProtoDeclare30: TX3DPrototype;
+  FieldDecl32: TX3DInterfaceDeclaration;
+  FieldVal32: TSFVec3f;
+  Transform34: TTransformNode;
+  ProtoInstance35: TX3DPrototypeNode;
+  ProtoInstance37: TX3DPrototypeNode;
+  ProtoInstance39: TX3DPrototypeNode;
+  ProtoDeclare41: TX3DPrototype;
+  FieldDecl43: TX3DInterfaceDeclaration;
+  FieldVal43: TSFVec3f;
+  Transform45: TTransformNode;
+  ProtoInstance46: TX3DPrototypeNode;
+  ProtoInstance48: TX3DPrototypeNode;
+  ProtoInstance50: TX3DPrototypeNode;
+  ProtoInstance52: TX3DPrototypeNode;
 
 procedure InitrubikPart0;
 begin
@@ -67,201 +77,118 @@ X3D0.Profile := 'Immersive';
 X3D0.ForceVersion.Major := 4;
 X3D0.ForceVersion.Minor := 0;
 X3D0.Meta['title'] := 'rubik.x3d';
-{ METHOD .Meta }
 X3D0.Meta['creator'] := 'John Carlson';
-{ METHOD .Meta }
 X3D0.Meta['generator'] := 'manual';
-{ METHOD .Meta }
 X3D0.Meta['identifier'] := 'https://coderextreme.net/X3DJSONLD/src/main/data/rubik.x3d';
-{ METHOD .Meta }
 X3D0.Meta['description'] := 'a kind of rubik cube with spheres';
-{ METHOD .Meta }
-{ METHOD .Head }
-Group7 := TGroupNode.Create;;
-NavigationInfo8 := TNavigationInfoNode.Create;;
-NavigationInfo8.SetType(['ANY','EXAMINE','WALK','FLY','LOOKAT']);
-{ METHOD .FdChildren.Add }
+Group7 := TGroupNode.Create;
+NavigationInfo8 := TNavigationInfoNode.Create;
+NavigationInfo8.SetType(['ANY', 'EXAMINE', 'WALK', 'FLY', 'LOOKAT']);
 Group7.FdChildren.Add(NavigationInfo8);
-Viewpoint9 := TViewpointNode.Create;;
+Viewpoint9 := TViewpointNode.Create;
 Viewpoint9.Description := 'Rubiks Cube';
-Viewpoint9.Position := Vector3(0,0,12);
-{ METHOD .FdChildren.Add }
+Viewpoint9.Position := Vector3(0, 0, 12);
 Group7.FdChildren.Add(Viewpoint9);
-X3DPrototype10 := TX3DPrototype.Create;;
-X3DInterfaceDeclaration11 := TX3DInterfaceDeclaration.Create(nil);;
-SFVec3f12 := TSFVec3f.CreateUndefined(X3DInterfaceDeclaration11, false, 'xtranslation');
-SFVec3f12.Value := '0 0 0';
-{ METHOD .AddSFVec3f }
-X3DInterfaceDeclaration11.AddSFVec3f([SFVec3f12]);
-{ METHOD .AddX3DInterfaceDeclaration }
-X3DPrototype10.AddX3DInterfaceDeclaration([X3DInterfaceDeclaration11]);
-X3DPrototype13 := TX3DPrototype.Create;;
-Transform14 := TTransformNode.Create;;
-Shape16 := TShapeNode.Create;;
-Sphere17 := TSphereNode.Create;;
-{ METHOD .Geometry }
-{ METHOD.SET .Geometry }
-Shape16.Geometry := Sphere17;
-Appearance18 := TAppearanceNode.Create;;
-Material19 := TMaterialNode.Create;
+ProtoDeclare10 := CreateEmptyPrototype('sphereproto');
+ProtoDeclare10.X3DName := 'sphereproto';
+FieldVal12 := TSFVec3f.Create(nil, True, 'xtranslation', Vector3(0, 0, 0));
+FieldDecl12 := TX3DInterfaceDeclaration.Create(nil);
+FieldDecl12.FieldOrEvent := FieldVal12;
+FieldVal12.ParentInterfaceDeclaration := FieldDecl12;
+ProtoDeclare10.InterfaceDeclarations.Add(FieldDecl12);
+Transform14 := TTransformNode.Create;
+Transform14.FieldOrEvent('translation', True).IsClauseNamesAdd('xtranslation');
+Shape15 := TShapeNode.Create;
+Sphere16 := TSphereNode.Create;
+Shape15.Geometry := Sphere16;
+Appearance17 := TAppearanceNode.Create;
+Material18 := TMaterialNode.Create;
+Material18.DiffuseColor := Vector3(1, 1, 1);
+Appearance17.Material := Material18;
+Shape15.Appearance := Appearance17;
+Transform14.FdChildren.Add(Shape15);
+ProtoDeclare10.Node.AddChildren([Transform14]);
+X3D0.AddPrototype(ProtoDeclare10);
+ProtoDeclare19 := CreateEmptyPrototype('three');
+ProtoDeclare19.X3DName := 'three';
+FieldVal21 := TSFVec3f.Create(nil, True, 'ytranslation', Vector3(0, 0, 0));
 end;
 
 procedure InitrubikPart1;
 begin
-;
-Material19.DiffuseColor := Vector3(1,1,1);
-{ METHOD .SetMaterial }
-Appearance18.Material := Material19;
-{ METHOD .Appearance }
-{ METHOD.SET .Appearance }
-Shape16.Appearance := Appearance18;
-{ METHOD .FdChildren.Add }
-Transform14.FdChildren.Add(Shape16);
-{ METHOD .AddTransform }
-X3DPrototype13.AddTransform([Transform14]);
-{ METHOD .AddX3DPrototype }
-X3DPrototype10.AddX3DPrototype([X3DPrototype13]);
-{ METHOD .AddX3DPrototype }
-Group7.AddX3DPrototype([X3DPrototype10]);
-X3DPrototype20 := TX3DPrototype.Create;;
-X3DInterfaceDeclaration21 := TX3DInterfaceDeclaration.Create(nil);;
-SFVec3f22 := TSFVec3f.CreateUndefined(X3DInterfaceDeclaration21, false, 'ytranslation');
-SFVec3f22.Value := '0 0 0';
-{ METHOD .AddSFVec3f }
-X3DInterfaceDeclaration21.AddSFVec3f([SFVec3f22]);
-{ METHOD .AddX3DInterfaceDeclaration }
-X3DPrototype20.AddX3DInterfaceDeclaration([X3DInterfaceDeclaration21]);
-X3DPrototype23 := TX3DPrototype.Create;;
-Transform24 := TTransformNode.Create;;
-X3DPrototype26 := TX3DPrototypeNode;
-SFVec3f27 := TSFVec3f.CreateUndefined(X3DPrototype26, false, 'xtranslation');
-SFVec3f27.Value := '0 0 0';
-{ METHOD .AddSFVec3f }
-X3DPrototype26.AddSFVec3f([SFVec3f27]);
-{ METHOD .AddX3DPrototype }
-Transform24.AddX3DPrototype([X3DPrototype26]);
-X3DPrototype28 := TX3DPrototypeNode;
-SFVec3f29 := TSFVec3f.CreateUndefined(X3DPrototype28, false, 'xtranslation');
-SFVec3f29.Value := '2 0 0';
-{ METHOD .AddSFVec3f }
-X3DPrototype28.AddSFVec3f([SFVec3f29]);
-{ METHOD .AddX3DPrototype }
-Transform24.AddX3DPrototype([X3DPrototype28]);
-X3DPrototype30 := TX3DPrototypeNode;
-SFVec3f31 := TSFVec3f.CreateUndefined(X3DPrototype30, false, 'xtranslation');
-SFVec3f31.Value := '-2 0 0';
-{ METHOD .AddSFVec3f }
-X3DPrototype30.AddSFVec3f([SFVec3f31]);
-{ METHOD .AddX3DPrototype }
-Transform24.AddX3DPrototype([X3DPrototype30]);
-{ METHOD .AddTransform }
-X3DPrototype23.AddTransform([Transform24]);
-{ METHOD .AddX3DPrototype }
-X3DPrototype20.AddX3DPrototype([X3DPrototype23]);
-{ METHOD .AddX3DPrototype }
-Group7.AddX3DPrototype([X3DPrototype20]);
-X3DPrototype32 := TX3DPrototype.Create;;
+FieldDecl21 := TX3DInterfaceDeclaration.Create(nil);
+FieldDecl21.FieldOrEvent := FieldVal21;
+FieldVal21.ParentInterfaceDeclaration := FieldDecl21;
+ProtoDeclare19.InterfaceDeclarations.Add(FieldDecl21);
+Transform23 := TTransformNode.Create;
+Transform23.FieldOrEvent('translation', True).IsClauseNamesAdd('ytranslation');
+ProtoInstance24 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare10);
+(ProtoInstance24.Field('xtranslation') as TSFVec3f).Value := Vector3(0, 0, 0);
+Transform23.FdChildren.Add(ProtoInstance24.Instantiate);
+ProtoInstance26 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare10);
+(ProtoInstance26.Field('xtranslation') as TSFVec3f).Value := Vector3(2, 0, 0);
+Transform23.FdChildren.Add(ProtoInstance26.Instantiate);
+ProtoInstance28 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare10);
+(ProtoInstance28.Field('xtranslation') as TSFVec3f).Value := Vector3(-2, 0, 0);
+Transform23.FdChildren.Add(ProtoInstance28.Instantiate);
+ProtoDeclare19.Node.AddChildren([Transform23]);
+X3D0.AddPrototype(ProtoDeclare19);
+ProtoDeclare30 := CreateEmptyPrototype('nine');
+ProtoDeclare30.X3DName := 'nine';
+FieldVal32 := TSFVec3f.Create(nil, True, 'ztranslation', Vector3(0, 0, 0));
+FieldDecl32 := TX3DInterfaceDeclaration.Create(nil);
+FieldDecl32.FieldOrEvent := FieldVal32;
+FieldVal32.ParentInterfaceDeclaration := FieldDecl32;
+ProtoDeclare30.InterfaceDeclarations.Add(FieldDecl32);
+Transform34 := TTransformNode.Create;
+Transform34.FieldOrEvent('translation', True).IsClauseNamesAdd('ztranslation');
+ProtoInstance35 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare19);
+(ProtoInstance35.Field('ytranslation') as TSFVec3f).Value := Vector3(0, 0, 0);
+Transform34.FdChildren.Add(ProtoInstance35.Instantiate);
+ProtoInstance37 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare19);
+(ProtoInstance37.Field('ytranslation') as TSFVec3f).Value := Vector3(0, 2, 0);
+Transform34.FdChildren.Add(ProtoInstance37.Instantiate);
+ProtoInstance39 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare19);
+(ProtoInstance39.Field('ytranslation') as TSFVec3f).Value := Vector3(0, -2, 0);
+Transform34.FdChildren.Add(ProtoInstance39.Instantiate);
+ProtoDeclare30.Node.AddChildren([Transform34]);
+X3D0.AddPrototype(ProtoDeclare30);
+ProtoDeclare41 := CreateEmptyPrototype('twentyseven');
+ProtoDeclare41.X3DName := 'twentyseven';
+FieldVal43 := TSFVec3f.Create(nil, True, 'ttranslation', Vector3(0, 0, 0));
 end;
 
 procedure InitrubikPart2;
 begin
-
-X3DInterfaceDeclaration33 := TX3DInterfaceDeclaration.Create(nil);;
-SFVec3f34 := TSFVec3f.CreateUndefined(X3DInterfaceDeclaration33, false, 'ztranslation');
-SFVec3f34.Value := '0 0 0';
-{ METHOD .AddSFVec3f }
-X3DInterfaceDeclaration33.AddSFVec3f([SFVec3f34]);
-{ METHOD .AddX3DInterfaceDeclaration }
-X3DPrototype32.AddX3DInterfaceDeclaration([X3DInterfaceDeclaration33]);
-X3DPrototype35 := TX3DPrototype.Create;;
-Transform36 := TTransformNode.Create;;
-X3DPrototype38 := TX3DPrototypeNode;
-SFVec3f39 := TSFVec3f.CreateUndefined(X3DPrototype38, false, 'ytranslation');
-SFVec3f39.Value := '0 0 0';
-{ METHOD .AddSFVec3f }
-X3DPrototype38.AddSFVec3f([SFVec3f39]);
-{ METHOD .AddX3DPrototype }
-Transform36.AddX3DPrototype([X3DPrototype38]);
-X3DPrototype40 := TX3DPrototypeNode;
-SFVec3f41 := TSFVec3f.CreateUndefined(X3DPrototype40, false, 'ytranslation');
-SFVec3f41.Value := '0 2 0';
-{ METHOD .AddSFVec3f }
-X3DPrototype40.AddSFVec3f([SFVec3f41]);
-{ METHOD .AddX3DPrototype }
-Transform36.AddX3DPrototype([X3DPrototype40]);
-X3DPrototype42 := TX3DPrototypeNode;
-SFVec3f43 := TSFVec3f.CreateUndefined(X3DPrototype42, false, 'ytranslation');
-SFVec3f43.Value := '0 -2 0';
-{ METHOD .AddSFVec3f }
-X3DPrototype42.AddSFVec3f([SFVec3f43]);
-{ METHOD .AddX3DPrototype }
-Transform36.AddX3DPrototype([X3DPrototype42]);
-{ METHOD .AddTransform }
-X3DPrototype35.AddTransform([Transform36]);
-{ METHOD .AddX3DPrototype }
-X3DPrototype32.AddX3DPrototype([X3DPrototype35]);
-{ METHOD .AddX3DPrototype }
-Group7.AddX3DPrototype([X3DPrototype32]);
-X3DPrototype44 := TX3DPrototype.Create;;
-X3DInterfaceDeclaration45 := TX3DInterfaceDeclaration.Create(nil);;
-SFVec3f46 := TSFVec3f.CreateUndefined(X3DInterfaceDeclaration45, false, 'ttranslation');
-SFVec3f46.Value := '0 0 0';
-{ METHOD .AddSFVec3f }
-X3DInterfaceDeclaration45.AddSFVec3f([SFVec3f46]);
-{ METHOD .AddX3DInterfaceDeclaration }
-X3DPrototype44.AddX3DInterfaceDeclaration([X3DInterfaceDeclaration45]);
-X3DPrototype47 := TX3DPrototype.Create;;
-Transform48 := TTransformNode.Create;;
-end;
-
-procedure InitrubikPart3;
-begin
-
-X3DPrototype50 := TX3DPrototypeNode;
-SFVec3f51 := TSFVec3f.CreateUndefined(X3DPrototype50, false, 'ztranslation');
-SFVec3f51.Value := '0 0 0';
-{ METHOD .AddSFVec3f }
-X3DPrototype50.AddSFVec3f([SFVec3f51]);
-{ METHOD .AddX3DPrototype }
-Transform48.AddX3DPrototype([X3DPrototype50]);
-X3DPrototype52 := TX3DPrototypeNode;
-SFVec3f53 := TSFVec3f.CreateUndefined(X3DPrototype52, false, 'ztranslation');
-SFVec3f53.Value := '0 0 2';
-{ METHOD .AddSFVec3f }
-X3DPrototype52.AddSFVec3f([SFVec3f53]);
-{ METHOD .AddX3DPrototype }
-Transform48.AddX3DPrototype([X3DPrototype52]);
-X3DPrototype54 := TX3DPrototypeNode;
-SFVec3f55 := TSFVec3f.CreateUndefined(X3DPrototype54, false, 'ztranslation');
-SFVec3f55.Value := '0 0 -2';
-{ METHOD .AddSFVec3f }
-X3DPrototype54.AddSFVec3f([SFVec3f55]);
-{ METHOD .AddX3DPrototype }
-Transform48.AddX3DPrototype([X3DPrototype54]);
-{ METHOD .AddTransform }
-X3DPrototype47.AddTransform([Transform48]);
-{ METHOD .AddX3DPrototype }
-X3DPrototype44.AddX3DPrototype([X3DPrototype47]);
-{ METHOD .AddX3DPrototype }
-Group7.AddX3DPrototype([X3DPrototype44]);
-X3DPrototype56 := TX3DPrototypeNode;
-SFVec3f57 := TSFVec3f.CreateUndefined(X3DPrototype56, false, 'ttranslation');
-SFVec3f57.Value := '0 0 0';
-{ METHOD .AddSFVec3f }
-X3DPrototype56.AddSFVec3f([SFVec3f57]);
-{ METHOD .AddX3DPrototype }
-Group7.AddX3DPrototype([X3DPrototype56]);
-{ METHOD .AddGroup }
+FieldDecl43 := TX3DInterfaceDeclaration.Create(nil);
+FieldDecl43.FieldOrEvent := FieldVal43;
+FieldVal43.ParentInterfaceDeclaration := FieldDecl43;
+ProtoDeclare41.InterfaceDeclarations.Add(FieldDecl43);
+Transform45 := TTransformNode.Create;
+Transform45.FieldOrEvent('translation', True).IsClauseNamesAdd('ttranslation');
+ProtoInstance46 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare30);
+(ProtoInstance46.Field('ztranslation') as TSFVec3f).Value := Vector3(0, 0, 0);
+Transform45.FdChildren.Add(ProtoInstance46.Instantiate);
+ProtoInstance48 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare30);
+(ProtoInstance48.Field('ztranslation') as TSFVec3f).Value := Vector3(0, 0, 2);
+Transform45.FdChildren.Add(ProtoInstance48.Instantiate);
+ProtoInstance50 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare30);
+(ProtoInstance50.Field('ztranslation') as TSFVec3f).Value := Vector3(0, 0, -2);
+Transform45.FdChildren.Add(ProtoInstance50.Instantiate);
+ProtoDeclare41.Node.AddChildren([Transform45]);
+X3D0.AddPrototype(ProtoDeclare41);
+ProtoInstance52 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare41);
+(ProtoInstance52.Field('ttranslation') as TSFVec3f).Value := Vector3(0, 0, 0);
+Group7.FdChildren.Add(ProtoInstance52.Instantiate);
 X3D0.AddChildren([Group7]);
 end;
 
 function Createrubik: TX3DRootNode;
 begin
-InitrubikPart0;
-InitrubikPart1;
-InitrubikPart2;
-InitrubikPart3;
-Result := X3D0;
+  InitrubikPart0;
+  InitrubikPart1;
+  InitrubikPart2;
+  Result := X3D0;
 end;
 
 begin

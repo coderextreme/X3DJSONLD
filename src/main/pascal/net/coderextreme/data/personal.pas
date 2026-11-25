@@ -11,11 +11,11 @@ implementation
 uses CastleVectors;
 
 var
-X3D0: TX3DRootNode;
-Group6: TGroupNode;
-Viewpoint7: TViewpointNode;
-Switch8: TSwitchNode;
-Inline9: TInlineNode;
+  X3D0: TX3DRootNode;
+  Group6: TGroupNode;
+  Viewpoint7: TViewpointNode;
+  Switch8: TSwitchNode;
+  Inline9: TInlineNode;
 
 procedure InitpersonalPart0;
 begin
@@ -24,21 +24,16 @@ X3D0.Profile := 'Full';
 X3D0.ForceVersion.Major := 4;
 X3D0.ForceVersion.Minor := 0;
 X3D0.Meta['title'] := 'personal.x3d';
-{ METHOD .Meta }
 X3D0.Meta['identifier'] := 'https://someAddress/somePath/personal.x3d';
-{ METHOD .Meta }
-X3D0.Meta['description'] := 'Johns Portfolio';
-{ METHOD .Meta }
+X3D0.Meta['description'] := 'John''s Portfolio';
 X3D0.Meta['generator'] := 'vim and X3D-Edit, https://savage.nps.edu/X3D-Edit';
-{ METHOD .Meta }
-{ METHOD .Head }
-Group6 := TGroupNode.Create;;
-Viewpoint7 := TViewpointNode.Create;;
+Group6 := TGroupNode.Create;
+Viewpoint7 := TViewpointNode.Create;
 Viewpoint7.Description := 'Tour Views';
-Viewpoint7.Position := Vector3(0,0,12);
-{ METHOD .FdChildren.Add }
+Viewpoint7.Position := Vector3(0, 0, 12);
 Group6.FdChildren.Add(Viewpoint7);
-Switch8 := TSwitchNode.Create;;
+Switch8 := TSwitchNode.Create;
+Switch8.X3DName := 'SceneSwitcher';
 Switch8.WhichChoice := 0;
 { <Inline url='"../data/myextrusion.x3d" "https://coderextreme.net/X3DJSONLD/src/main/data/myextrusion.x3d"'/> }
 { <Inline url='"../data/ballx_ite.x3d" "https://coderextreme.net/X3DJSONLD/src/main/data/ballx_ite.x3d"'/> }
@@ -48,11 +43,9 @@ Switch8.WhichChoice := 0;
 { <Inline url='"../data/flowers2.x3d" "https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d"'/> }
 { <Inline url='"../data/flowers4.x3d" "https://coderextreme.net/X3DJSONLD/src/main/data/flowers4.x3d"'/> }
 { <Inline url='"../data/flowers7.x3d" "https://coderextreme.net/X3DJSONLD/src/main/data/flowers7.x3d"'/> }
-Inline9 := TInlineNode.Create;;
-Inline9.SetUrl(['../data/force-tidy.x3d','https://coderextreme.net/X3DJSONLD/src/main/data/force-tidy.x3d']);
-{ METHOD .FdChildren.Add }
+Inline9 := TInlineNode.Create;
+Inline9.SetUrl(['../data/force-tidy.x3d', 'https://coderextreme.net/X3DJSONLD/src/main/data/force-tidy.x3d']);
 Switch8.FdChildren.Add(Inline9);
-{ METHOD .FdChildren.Add }
 Group6.FdChildren.Add(Switch8);
 { <Script DEF="Choice0"> }
 { <field name="touchTime" type="SFTime" accessType="inputOnly"/> }
@@ -66,6 +59,10 @@ Group6.FdChildren.Add(Switch8);
 { <Material diffuseColor="1 1 1"/> }
 { </Appearance> }
 { <Text string='"Ball Prism"'> }
+end;
+
+procedure InitpersonalPart1;
+begin
 { <FontStyle size="2.4" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/> }
 { </Text> }
 { </Shape> }
@@ -106,6 +103,10 @@ Group6.FdChildren.Add(Switch8);
 { </Transform> }
 { <ROUTE fromNode="FloatingExtrusion_Sensor" fromField="touchTime" toNode="Choice1" toField="touchTime"/> }
 { <ROUTE fromNode="Choice1" fromField="choice" toNode="SceneSwitcher" toField="whichChoice"/> }
+end;
+
+procedure InitpersonalPart2;
+begin
 { <Script DEF="Choice2"> }
 { <field name="touchTime" type="SFTime" accessType="inputOnly"/> }
 { <field name="choice" type="SFInt32" accessType="outputOnly"/> }
@@ -146,6 +147,10 @@ Group6.FdChildren.Add(Switch8);
 { <Text string='"Flower 3"'> }
 { <FontStyle size="2.4" spacing="1.2" justify='"MIDDLE" "MIDDLE"'/> }
 { </Text> }
+end;
+
+procedure InitpersonalPart3;
+begin
 { </Shape> }
 { <Shape> }
 { <Appearance> }
@@ -186,6 +191,10 @@ Group6.FdChildren.Add(Switch8);
 { <ROUTE fromNode="Choice4" fromField="choice" toNode="SceneSwitcher" toField="whichChoice"/> }
 { <Script DEF="Choice5"> }
 { <field name="touchTime" type="SFTime" accessType="inputOnly"/> }
+end;
+
+procedure InitpersonalPart4;
+begin
 { <field name="choice" type="SFInt32" accessType="outputOnly"/> }
 (* <![CDATA[ ecmascript: function set_touchTime(value) { choice = 5; } function touchTime(value) { choice = 5; } ]]> *)
 { </Script> }
@@ -226,6 +235,10 @@ Group6.FdChildren.Add(Switch8);
 { </Text> }
 { </Shape> }
 { <Shape> }
+end;
+
+procedure InitpersonalPart5;
+begin
 { <Appearance> }
 { <Material diffuseColor="0 0 1"/> }
 { </Appearance> }
@@ -266,6 +279,10 @@ Group6.FdChildren.Add(Switch8);
 { <field name="touchTime" type="SFTime" accessType="inputOnly"/> }
 { <field name="choice" type="SFInt32" accessType="outputOnly"/> }
 (* <![CDATA[ ecmascript: function set_touchTime(value) { choice = 8; } function touchTime(value) { choice = 8; } ]]> *)
+end;
+
+procedure InitpersonalPart6;
+begin
 { </Script> }
 { <Transform translation="0 -4 0"> }
 { <TouchSensor description="Force" DEF="Force_Sensor"/> }
@@ -288,14 +305,19 @@ Group6.FdChildren.Add(Switch8);
 { </Transform> }
 { <ROUTE fromNode="Force_Sensor" fromField="touchTime" toNode="Choice8" toField="touchTime"/> }
 { <ROUTE fromNode="Choice8" fromField="choice" toNode="SceneSwitcher" toField="whichChoice"/> }
-{ METHOD .AddGroup }
 X3D0.AddChildren([Group6]);
 end;
 
 function Createpersonal: TX3DRootNode;
 begin
-InitpersonalPart0;
-Result := X3D0;
+  InitpersonalPart0;
+  InitpersonalPart1;
+  InitpersonalPart2;
+  InitpersonalPart3;
+  InitpersonalPart4;
+  InitpersonalPart5;
+  InitpersonalPart6;
+  Result := X3D0;
 end;
 
 begin

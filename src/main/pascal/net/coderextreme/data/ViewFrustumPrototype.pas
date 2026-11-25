@@ -8,61 +8,88 @@ function CreateViewFrustumPrototype: TX3DRootNode;
 
 implementation
 
-uses CastleVectors;
+uses Classes, SysUtils, X3DLoad, CastleVectors;
+
+function CreateEmptyPrototype(const AName: String): TX3DPrototype;
+var
+  Stream: TStringStream;
+  TempRoot: TX3DRootNode;
+  CopyState: TX3DNodeDeepCopyState;
+begin
+  Stream := TStringStream.Create('#X3D V4.0 utf8' + LineEnding + 'PROTO ' + AName + ' [] {}');
+  try
+    TempRoot := LoadNode(Stream, '', 'model/x3d+vrml');
+    try
+      CopyState := TX3DNodeDeepCopyState.Create;
+      try
+        Result := TempRoot.Prototypes[0].DeepCopy(CopyState) as TX3DPrototype;
+      finally
+        FreeAndNil(CopyState);
+      end;
+    finally
+      FreeAndNil(TempRoot);
+    end;
+  finally
+    FreeAndNil(Stream);
+  end;
+end;
 
 var
-X3D0: TX3DRootNode;
-Group15: TGroupNode;
-WorldInfo16: TWorldInfoNode;
-X3DPrototype17: TX3DPrototype;
-X3DInterfaceDeclaration18: TX3DInterfaceDeclaration;
-SFNode19: TSFNode;
-SFNode20: TSFNode;
-SFBool21: TSFBool;
-SFColor22: TSFColor;
-SFColor23: TSFColor;
-SFFloat24: TSFFloat;
-SFFloat25: TSFFloat;
-SFBool26: TSFBool;
-X3DPrototype27: TX3DPrototype;
-Switch28: TSwitchNode;
-Transform29: TTransformNode;
-Transform30: TTransformNode;
-Shape31: TShapeNode;
-IndexedLineSet32: TIndexedLineSetNode;
-Coordinate33: TCoordinateNode;
-Appearance34: TAppearanceNode;
-Material35: TMaterialNode;
-Shape37: TShapeNode;
-Extrusion38: TExtrusionNode;
-Appearance39: TAppearanceNode;
-Material40: TMaterialNode;
-Shape42: TShapeNode;
-Sphere43: TSphereNode;
-Appearance44: TAppearanceNode;
-Script45: TScriptNode;
-SFBool46: TSFBool;
-SFInt3247: TSFInt32;
-SFNode48: TSFNode;
-SFNode49: TSFNode;
-SFNode50: TSFNode;
-Coordinate51: TCoordinateNode;
-SFNode52: TSFNode;
-Extrusion53: TExtrusionNode;
-SFBool54: TSFBool;
-SFFloat55: TSFFloat;
-SFVec3f56: TSFVec3f;
-SFRotation57: TSFRotation;
-MFVec3f58: TMFVec3f;
-MFVec2f59: TMFVec2f;
-MFVec3f60: TMFVec3f;
-SFBool61: TSFBool;
-Anchor69: TAnchorNode;
-Shape70: TShapeNode;
-Appearance71: TAppearanceNode;
-Material72: TMaterialNode;
-Text73: TTextNode;
-FontStyle74: TFontStyleNode;
+  X3D0: TX3DRootNode;
+  Group15: TGroupNode;
+  WorldInfo16: TWorldInfoNode;
+  ProtoDeclare17: TX3DPrototype;
+  FieldDecl19: TX3DInterfaceDeclaration;
+  FieldVal19: TSFNode;
+  FieldDecl20: TX3DInterfaceDeclaration;
+  FieldVal20: TSFNode;
+  FieldDecl21: TX3DInterfaceDeclaration;
+  FieldVal21: TSFBool;
+  FieldDecl22: TX3DInterfaceDeclaration;
+  FieldVal22: TSFColor;
+  FieldDecl23: TX3DInterfaceDeclaration;
+  FieldVal23: TSFColor;
+  FieldDecl24: TX3DInterfaceDeclaration;
+  FieldVal24: TSFFloat;
+  FieldDecl25: TX3DInterfaceDeclaration;
+  FieldVal25: TSFFloat;
+  FieldDecl26: TX3DInterfaceDeclaration;
+  FieldVal26: TSFBool;
+  Switch28: TSwitchNode;
+  Transform29: TTransformNode;
+  Transform30: TTransformNode;
+  Shape31: TShapeNode;
+  IndexedLineSet32: TIndexedLineSetNode;
+  Coordinate33: TCoordinateNode;
+  Appearance34: TAppearanceNode;
+  Material35: TMaterialNode;
+  Shape36: TShapeNode;
+  Extrusion37: TExtrusionNode;
+  Appearance38: TAppearanceNode;
+  Material39: TMaterialNode;
+  Shape40: TShapeNode;
+  Sphere41: TSphereNode;
+  Script43: TScriptNode;
+  FieldVal44: TSFBool;
+  FieldVal45: TX3DEvent;
+  FieldVal46: TSFNode;
+  FieldVal47: TSFNode;
+  FieldVal48: TSFNode;
+  FieldVal50: TSFNode;
+  FieldVal52: TX3DEvent;
+  FieldVal53: TSFFloat;
+  FieldVal54: TX3DEvent;
+  FieldVal55: TX3DEvent;
+  FieldVal56: TX3DEvent;
+  FieldVal57: TX3DEvent;
+  FieldVal58: TX3DEvent;
+  FieldVal59: TSFBool;
+  Anchor66: TAnchorNode;
+  Shape67: TShapeNode;
+  Appearance68: TAppearanceNode;
+  Material69: TMaterialNode;
+  Text70: TTextNode;
+  FontStyle71: TFontStyleNode;
 
 procedure InitViewFrustumPrototypePart0;
 begin
@@ -71,284 +98,209 @@ X3D0.Profile := 'Immersive';
 X3D0.ForceVersion.Major := 4;
 X3D0.ForceVersion.Minor := 0;
 X3D0.Meta['title'] := 'ViewFrustumPrototype.x3d';
-{ METHOD .Meta }
 X3D0.Meta['description'] := 'Define a view frustum associated with a given pair of Viewpoint and NavigationInfo nodes, provided as a reusable prototype.';
-{ METHOD .Meta }
 X3D0.Meta['creator'] := 'Don Brutzman';
-{ METHOD .Meta }
 X3D0.Meta['translated'] := '16 August 2008';
-{ METHOD .Meta }
 X3D0.Meta['modified'] := '20 October 2019';
-{ METHOD .Meta }
 X3D0.Meta['reference'] := 'ViewFrustumExample.x3d';
-{ METHOD .Meta }
 X3D0.Meta['drawing'] := 'ViewFrustumComputation.png';
-{ METHOD .Meta }
 X3D0.Meta['Image'] := 'ViewFrustumOverheadView.png';
-{ METHOD .Meta }
 X3D0.Meta['Image'] := 'ViewFrustumObliqueView.png';
-{ METHOD .Meta }
 X3D0.Meta['subject'] := 'view culling frustum';
-{ METHOD .Meta }
 X3D0.Meta['identifier'] := 'https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d';
-{ METHOD .Meta }
 X3D0.Meta['generator'] := 'X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit';
-{ METHOD .Meta }
 X3D0.Meta['license'] := '../license.html';
-{ METHOD .Meta }
-{ METHOD .Head }
-Group15 := TGroupNode.Create;;
-WorldInfo16 := TWorldInfoNode.Create;;
+Group15 := TGroupNode.Create;
+WorldInfo16 := TWorldInfoNode.Create;
 WorldInfo16.Title := 'ViewFrustumPrototype.x3d';
-{ METHOD .FdChildren.Add }
 Group15.FdChildren.Add(WorldInfo16);
-X3DPrototype17 := TX3DPrototype.Create;;
-X3DPrototype17.Appinfo := 'Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes';
-X3DInterfaceDeclaration18 := TX3DInterfaceDeclaration.Create(nil);;
-SFNode19 := TSFNode.CreateUndefined(X3DInterfaceDeclaration18, false, 'ViewpointNode');
-SFNode19.Appinfo := 'required: insert Viewpoint DEF or USE node for view of interest';
-{ NULL node, ProtoInstance must provide }
-{ METHOD .AddSFNode }
-X3DInterfaceDeclaration18.AddSFNode([SFNode19]);
-SFNode20 := TSFNode.CreateUndefined(X3DInterfaceDeclaration18, false, 'NavigationInfoNode');
-SFNode20.Appinfo := 'required: insert NavigationInfo DEF or USE node of interest';
-{ NULL node, ProtoInstance must provide }
-{ METHOD .AddSFNode }
-X3DInterfaceDeclaration18.AddSFNode([SFNode20]);
-SFBool21 := TSFBool.CreateUndefined(X3DInterfaceDeclaration18, false, 'visible');
-SFBool21.Appinfo := 'whether or not frustum geometry is rendered';
-SFBool21.Value := 'true';
-{ METHOD .AddSFBool }
-X3DInterfaceDeclaration18.AddSFBool([SFBool21]);
-SFColor22 := TSFColor.CreateUndefined(X3DInterfaceDeclaration18, false, 'lineColor');
-SFColor22.Appinfo := 'RGB color of ViewFrustum outline, default value 0.9 0.9 0.9';
+ProtoDeclare17 := CreateEmptyPrototype('ViewFrustum');
+ProtoDeclare17.X3DName := 'ViewFrustum';
+ProtoDeclare17.Appinfo := 'Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes';
+FieldVal19 := TSFNode.CreateUndefined(nil, False, 'ViewpointNode');
+FieldDecl19 := TX3DInterfaceDeclaration.Create(nil);
+FieldDecl19.FieldOrEvent := FieldVal19;
+FieldVal19.ParentInterfaceDeclaration := FieldDecl19;
+ProtoDeclare17.InterfaceDeclarations.Add(FieldDecl19);
+FieldVal20 := TSFNode.CreateUndefined(nil, False, 'NavigationInfoNode');
+FieldDecl20 := TX3DInterfaceDeclaration.Create(nil);
+FieldDecl20.FieldOrEvent := FieldVal20;
+FieldVal20.ParentInterfaceDeclaration := FieldDecl20;
+ProtoDeclare17.InterfaceDeclarations.Add(FieldDecl20);
+FieldVal21 := TSFBool.Create(nil, True, 'visible', True);
+FieldDecl21 := TX3DInterfaceDeclaration.Create(nil);
+FieldDecl21.FieldOrEvent := FieldVal21;
+FieldVal21.ParentInterfaceDeclaration := FieldDecl21;
+ProtoDeclare17.InterfaceDeclarations.Add(FieldDecl21);
+FieldVal22 := TSFColor.Create(nil, True, 'lineColor', Vector3(0.9, 0.9, 0.9));
 end;
 
 procedure InitViewFrustumPrototypePart1;
 begin
-
-SFColor22.Value := '0.9 0.9 0.9';
-{ METHOD .AddSFColor }
-X3DInterfaceDeclaration18.AddSFColor([SFColor22]);
-SFColor23 := TSFColor.CreateUndefined(X3DInterfaceDeclaration18, false, 'frustumColor');
-SFColor23.Appinfo := 'RGB color of ViewFrustum hull geometry, default value 0.8 0.8 0.8';
-SFColor23.Value := '0.8 0.8 0.8';
-{ METHOD .AddSFColor }
-X3DInterfaceDeclaration18.AddSFColor([SFColor23]);
-SFFloat24 := TSFFloat.CreateUndefined(X3DInterfaceDeclaration18, false, 'transparency');
-SFFloat24.Appinfo := 'transparency of ViewFrustum hull geometry, default value 0.5';
-SFFloat24.Value := '0.5';
-{ METHOD .AddSFFloat }
-X3DInterfaceDeclaration18.AddSFFloat([SFFloat24]);
-SFFloat25 := TSFFloat.CreateUndefined(X3DInterfaceDeclaration18, false, 'aspectRatio');
-SFFloat25.Appinfo := 'assumed ratio height/width, default value 0.75';
-SFFloat25.Value := '0.75';
-{ METHOD .AddSFFloat }
-X3DInterfaceDeclaration18.AddSFFloat([SFFloat25]);
-SFBool26 := TSFBool.CreateUndefined(X3DInterfaceDeclaration18, false, 'trace');
-SFBool26.Appinfo := 'debug support, default false';
-SFBool26.Value := 'false';
-{ METHOD .AddSFBool }
-X3DInterfaceDeclaration18.AddSFBool([SFBool26]);
-{ METHOD .AddX3DInterfaceDeclaration }
-X3DPrototype17.AddX3DInterfaceDeclaration([X3DInterfaceDeclaration18]);
-X3DPrototype27 := TX3DPrototype.Create;;
-Switch28 := TSwitchNode.Create;;
+FieldDecl22 := TX3DInterfaceDeclaration.Create(nil);
+FieldDecl22.FieldOrEvent := FieldVal22;
+FieldVal22.ParentInterfaceDeclaration := FieldDecl22;
+ProtoDeclare17.InterfaceDeclarations.Add(FieldDecl22);
+FieldVal23 := TSFColor.Create(nil, True, 'frustumColor', Vector3(0.8, 0.8, 0.8));
+FieldDecl23 := TX3DInterfaceDeclaration.Create(nil);
+FieldDecl23.FieldOrEvent := FieldVal23;
+FieldVal23.ParentInterfaceDeclaration := FieldDecl23;
+ProtoDeclare17.InterfaceDeclarations.Add(FieldDecl23);
+FieldVal24 := TSFFloat.Create(nil, True, 'transparency', 0.5);
+FieldDecl24 := TX3DInterfaceDeclaration.Create(nil);
+FieldDecl24.FieldOrEvent := FieldVal24;
+FieldVal24.ParentInterfaceDeclaration := FieldDecl24;
+ProtoDeclare17.InterfaceDeclarations.Add(FieldDecl24);
+FieldVal25 := TSFFloat.Create(nil, True, 'aspectRatio', 0.75);
+FieldDecl25 := TX3DInterfaceDeclaration.Create(nil);
+FieldDecl25.FieldOrEvent := FieldVal25;
+FieldVal25.ParentInterfaceDeclaration := FieldDecl25;
+ProtoDeclare17.InterfaceDeclarations.Add(FieldDecl25);
+FieldVal26 := TSFBool.Create(nil, False, 'trace', False);
+FieldDecl26 := TX3DInterfaceDeclaration.Create(nil);
+FieldDecl26.FieldOrEvent := FieldVal26;
+FieldVal26.ParentInterfaceDeclaration := FieldDecl26;
+ProtoDeclare17.InterfaceDeclarations.Add(FieldDecl26);
+Switch28 := TSwitchNode.Create;
+Switch28.X3DName := 'VisibilitySwitch';
 Switch28.WhichChoice := -1;
-Transform29 := TTransformNode.Create;;
-Transform29.Rotation := Vector4(0,1,0,3.14159);
-Transform30 := TTransformNode.Create;;
-Shape31 := TShapeNode.Create;;
-IndexedLineSet32 := TIndexedLineSetNode.Create;;
-IndexedLineSet32.SetCoordIndex([0,1,2,3,0,-1,4,5,6,7,4,-1,0,4,-1,1,5,-1,2,6,-1,3,7,-1]);
-Coordinate33 := TCoordinateNode.Create;;
-Coordinate33.SetPoint([Vector3(0,0,0),Vector3(0,0,0),Vector3(0,0,0),Vector3(0,0,0),Vector3(0,0,0),Vector3(0,0,0),Vector3(0,0,0),Vector3(0,0,0)]);
-{ METHOD .Coord }
-{ METHOD.SET .Coord }
+Transform29 := TTransformNode.Create;
+Transform29.X3DName := 'PositionTransform';
+Transform29.Rotation := Vector4(0, 1, 0, 3.14159);
+Transform30 := TTransformNode.Create;
+Transform30.X3DName := 'OrientationTransform';
+Shape31 := TShapeNode.Create;
+IndexedLineSet32 := TIndexedLineSetNode.Create;
+IndexedLineSet32.X3DName := 'FrustumLines';
+IndexedLineSet32.SetCoordIndex([0, 1, 2, 3, 0, -1, 4, 5, 6, 7, 4, -1, 0, 4, -1, 1, 5, -1, 2, 6, -1, 3, 7, -1]);
+Coordinate33 := TCoordinateNode.Create;
+Coordinate33.X3DName := 'FrustumCoordinate';
+Coordinate33.SetPoint([Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]);
 IndexedLineSet32.Coord := Coordinate33;
-{ METHOD .Geometry }
-{ METHOD.SET .Geometry }
-Shape31.Geometry := IndexedLineSet32;
-Appearance34 := TAppearanceNode.Create;
 end;
 
 procedure InitViewFrustumPrototypePart2;
 begin
-;
-Material35 := TMaterialNode.Create;;
-{ METHOD .SetMaterial }
+Shape31.Geometry := IndexedLineSet32;
+Appearance34 := TAppearanceNode.Create;
+Material35 := TMaterialNode.Create;
+Material35.FieldOrEvent('emissiveColor', True).IsClauseNamesAdd('lineColor');
 Appearance34.Material := Material35;
-{ METHOD .Appearance }
-{ METHOD.SET .Appearance }
 Shape31.Appearance := Appearance34;
-{ METHOD .FdChildren.Add }
 Transform30.FdChildren.Add(Shape31);
-Shape37 := TShapeNode.Create;;
-Extrusion38 := TExtrusionNode.Create;;
-{ METHOD .Geometry }
-{ METHOD.SET .Geometry }
-Shape37.Geometry := Extrusion38;
-Appearance39 := TAppearanceNode.Create;;
-Material40 := TMaterialNode.Create;;
-{ METHOD .SetMaterial }
-Appearance39.Material := Material40;
-{ METHOD .Appearance }
-{ METHOD.SET .Appearance }
-Shape37.Appearance := Appearance39;
-{ METHOD .FdChildren.Add }
-Transform30.FdChildren.Add(Shape37);
-Shape42 := TShapeNode.Create;;
-Sphere43 := TSphereNode.Create;;
-Sphere43.Radius := 0.08;
-{ METHOD .Geometry }
-{ METHOD.SET .Geometry }
-Shape42.Geometry := Sphere43;
-{ METHOD .Appearance }
-{ METHOD.SET .Appearance }
-Shape42.Appearance := Appearance39;
-{ METHOD .FdChildren.Add }
-Transform30.FdChildren.Add(Shape42);
-{ METHOD .FdChildren.Add }
+Shape36 := TShapeNode.Create;
+Extrusion37 := TExtrusionNode.Create;
+Extrusion37.X3DName := 'FrustumExtrusion';
+Shape36.Geometry := Extrusion37;
+Appearance38 := TAppearanceNode.Create;
+Appearance38.X3DName := 'FrustumAppearance';
+Material39 := TMaterialNode.Create;
+Material39.FieldOrEvent('diffuseColor', True).IsClauseNamesAdd('frustumColor');
+Material39.FieldOrEvent('transparency', True).IsClauseNamesAdd('transparency');
+Appearance38.Material := Material39;
+Shape36.Appearance := Appearance38;
+Transform30.FdChildren.Add(Shape36);
+Shape40 := TShapeNode.Create;
+Sphere41 := TSphereNode.Create;
+Sphere41.Radius := 0.08;
+Shape40.Geometry := Sphere41;
+Shape40.Appearance := Appearance38;
+Transform30.FdChildren.Add(Shape40);
 Transform29.FdChildren.Add(Transform30);
-{ METHOD .FdChildren.Add }
 Switch28.FdChildren.Add(Transform29);
-{ METHOD .AddSwitch }
-X3DPrototype27.AddSwitch([Switch28]);
-Script45 := TScriptNode.Create;;
-Script45.DirectOutput := True;
-Script45.SetUrl(['ViewFrustumPrototypeScript.js']);
-SFBool46 := TSFBool.CreateUndefined(Script45, false, 'visible');
-SFBool46.Appinfo := 'Whether or not frustum geometry is rendered';
-{ METHOD .Fd.AddCustomField }
-Script45.AddCustomField(SFBool46);
-SFInt3247 := TSFInt32.CreateUndefined(Script45, false, 'visibilitySwitchSelection');
-SFInt3247.Appinfo := 'Adjust Switch selection to make geometry visible or not';
-{ METHOD .Fd.AddCustomField }
-Script45.AddCustomField(SFInt3247);
-SFNode48 := TSFNode.CreateUndefined(Script45, false, 'ViewpointNode');
+ProtoDeclare17.Node.AddChildren([Switch28]);
+Script43 := TScriptNode.Create;
+Script43.X3DName := 'GeometryComputationScript';
+Script43.DirectOutput := True;
+Script43.SetUrl(['ViewFrustumPrototypeScript.js']);
+FieldVal44 := TSFBool.CreateUndefined(Script43, True, 'visible');
+Script43.AddCustomFieldOrEvent(FieldVal44);
+FieldVal45 := TSFInt32.CreateEvent(Script43, 'visibilitySwitchSelection', False);
+Script43.AddCustomFieldOrEvent(FieldVal45);
+FieldVal46 := TSFNode.CreateUndefined(Script43, False, 'ViewpointNode');
+Script43.AddCustomFieldOrEvent(FieldVal46);
+FieldVal47 := TSFNode.CreateUndefined(Script43, False, 'NavigationInfoNode');
+Script43.AddCustomFieldOrEvent(FieldVal47);
 end;
 
 procedure InitViewFrustumPrototypePart3;
 begin
-
-{ initialization node (if any) goes here }
-{ METHOD .Fd.AddCustomField }
-Script45.AddCustomField(SFNode48);
-SFNode49 := TSFNode.CreateUndefined(Script45, false, 'NavigationInfoNode');
-{ initialization node (if any) goes here }
-{ METHOD .Fd.AddCustomField }
-Script45.AddCustomField(SFNode49);
-SFNode50 := TSFNode.CreateUndefined(Script45, false, 'FrustumCoordinate');
-{ METHOD .Fd.Value }
-SFNode50.Value := Coordinate33;
-{ METHOD .Fd.AddCustomField }
-Script45.AddCustomField(SFNode50);
-SFNode52 := TSFNode.CreateUndefined(Script45, false, 'FrustumExtrusion');
-{ METHOD .AddExtrusion }
-SFNode52.AddExtrusion([Extrusion38]);
-{ METHOD .Fd.AddCustomField }
-Script45.AddCustomField(SFNode52);
-SFBool54 := TSFBool.CreateUndefined(Script45, false, 'recompute');
-{ METHOD .Fd.AddCustomField }
-Script45.AddCustomField(SFBool54);
-SFFloat55 := TSFFloat.CreateUndefined(Script45, false, 'aspectRatio');
-SFFloat55.Appinfo := 'assumed ratio height/width';
-{ METHOD .Fd.AddCustomField }
-Script45.AddCustomField(SFFloat55);
-SFVec3f56 := TSFVec3f.CreateUndefined(Script45, false, 'position_changed');
-{ METHOD .Fd.AddCustomField }
-Script45.AddCustomField(SFVec3f56);
-SFRotation57 := TSFRotation.CreateUndefined(Script45, false, 'orientation_changed');
-{ METHOD .Fd.AddCustomField }
-Script45.AddCustomField(SFRotation57);
-MFVec3f58 := TMFVec3f.CreateUndefined(Script45, false, 'spine_changed');
-{ METHOD .Fd.AddCustomField }
-Script45.AddCustomField(MFVec3f58);
-MFVec2f59 := TMFVec2f.CreateUndefined(Script45, false, 'scale_changed');
-{ METHOD .Fd.AddCustomField }
-Script45.AddCustomField(MFVec2f59);
-MFVec3f60 := TMFVec3f.CreateUndefined(Script45, false, 'point_changed');
-{ METHOD .Fd.AddCustomField }
-Script45.AddCustomField(MFVec3f60);
-SFBool61 := TSFBool.CreateUndefined(Script45, false, 'trace');
-{ METHOD .Fd.AddCustomField }
-Script45.AddCustomField(SFBool61);
-{ METHOD .AddScript }
-X3DPrototype27.AddScript([Script45]);
-{ Original "GeometryComputationScript.EventVisibilitySwitchSelection TO VisibilitySwitch.whichChoice }
-{ Sample GeometryComputationScript.EventVisibilitySwitchSelection TO VisibilitySwitch.whichChoice}
-X3DPrototype27.AddRoute(Script45.EventVisibilitySwitchSelection, Switch28.whichChoice);
-{ METHOD .AddX3DROUTE }
-{ Original "GeometryComputationScript.EventPosition_changed TO PositionTransform.translation }
-{ Sample GeometryComputationScript.EventPosition_changed TO PositionTransform.translation}
-X3DPrototype27.AddRoute(Script45.EventPosition_changed, Transform29.translation);
-{ METHOD .AddX3DROUTE }
-{ Original "GeometryComputationScript.EventOrientation_changed TO OrientationTransform.rotation }
-{ Sample GeometryComputationScript.EventOrientation_changed TO OrientationTransform.rotation}
-X3DPrototype27.AddRoute(Script45.EventOrientation_changed, Transform30.rotation);
-{ METHOD .AddX3DROUTE }
-{ Original "GeometryComputationScript.EventSpine_changed TO FrustumExtrusion.EventSet_spine }
-{ Sample GeometryComputationScript.EventSpine_changed TO FrustumExtrusion.EventSet_spine}
-X3DPrototype27.AddRoute(Script45.EventSpine_changed, Extrusion38.EventSet_spine);
-{ METHOD .AddX3DROUTE }
-{ Original "GeometryComputationScript.EventScale_changed TO FrustumExtrusion.scale }
-{ Sample GeometryComputationScript.EventScale_changed TO FrustumExtrusion.scale}
-X3DPrototype27.AddRoute(Script45.EventScale_changed, Extrusion38.scale);
-{ METHOD .AddX3DROUTE }
-{ Original "GeometryComputationScript.EventPoint_changed TO FrustumCoordinate.point }
-{ Sample GeometryComputationScript.EventPoint_changed TO FrustumCoordinate.point}
-X3DPrototype27.AddRoute(Script45.EventPoint_changed, Coordinate33.point);
-{ METHOD .AddX3DROUTE }
-{ METHOD .AddX3DPrototype }
-X3DPrototype17.AddX3DPrototype([X3DPrototype27]);
-{ METHOD .AddX3DPrototype }
-Group15.AddX3DPrototype([X3DPrototype17]);
-{ Example use is in separate scene }
-Anchor69 := TAnchorNode.Create;;
-Anchor69.Description := 'ViewFrustum Example';
-Anchor69.SetUrl(['ViewFrustumExample.x3d']);
-Shape70 := TShapeNode.Create;
+FieldVal48 := TSFNode.CreateUndefined(Script43, False, 'FrustumCoordinate');
+Script43.AddCustomFieldOrEvent(FieldVal48);
+FieldVal48.Value := Coordinate33;
+FieldVal50 := TSFNode.CreateUndefined(Script43, False, 'FrustumExtrusion');
+Script43.AddCustomFieldOrEvent(FieldVal50);
+FieldVal50.Value := Extrusion37;
+FieldVal52 := TSFBool.CreateEvent(Script43, 'recompute', True);
+Script43.AddCustomFieldOrEvent(FieldVal52);
+FieldVal53 := TSFFloat.CreateUndefined(Script43, True, 'aspectRatio');
+Script43.AddCustomFieldOrEvent(FieldVal53);
+FieldVal54 := TSFVec3f.CreateEvent(Script43, 'position_changed', False);
+Script43.AddCustomFieldOrEvent(FieldVal54);
+FieldVal55 := TSFRotation.CreateEvent(Script43, 'orientation_changed', False);
+Script43.AddCustomFieldOrEvent(FieldVal55);
+FieldVal56 := TMFVec3f.CreateEvent(Script43, 'spine_changed', False);
+Script43.AddCustomFieldOrEvent(FieldVal56);
+FieldVal57 := TMFVec2f.CreateEvent(Script43, 'scale_changed', False);
+Script43.AddCustomFieldOrEvent(FieldVal57);
+FieldVal58 := TMFVec3f.CreateEvent(Script43, 'point_changed', False);
+Script43.AddCustomFieldOrEvent(FieldVal58);
+FieldVal59 := TSFBool.CreateUndefined(Script43, False, 'trace');
+Script43.AddCustomFieldOrEvent(FieldVal59);
+Script43.FieldOrEvent('visible', True).IsClauseNamesAdd('visible');
+Script43.FieldOrEvent('ViewpointNode', True).IsClauseNamesAdd('ViewpointNode');
+Script43.FieldOrEvent('NavigationInfoNode', True).IsClauseNamesAdd('NavigationInfoNode');
+Script43.FieldOrEvent('aspectRatio', True).IsClauseNamesAdd('aspectRatio');
+Script43.FieldOrEvent('trace', True).IsClauseNamesAdd('trace');
+ProtoDeclare17.Node.AddChildren([Script43]);
+{ ROUTE GeometryComputationScript.visibilitySwitchSelection TO VisibilitySwitch.whichChoice }
+ProtoBody27.AddRoute(FieldVal45, Switch28.whichChoice);
+{ ROUTE GeometryComputationScript.position_changed TO PositionTransform.translation }
+ProtoBody27.AddRoute(FieldVal54, Transform29.translation);
+{ ROUTE GeometryComputationScript.orientation_changed TO OrientationTransform.rotation }
+ProtoBody27.AddRoute(FieldVal55, Transform30.rotation);
+{ ROUTE GeometryComputationScript.spine_changed TO FrustumExtrusion.set_spine }
+ProtoBody27.AddRoute(FieldVal56, Extrusion37.EventSet_spine);
+{ ROUTE GeometryComputationScript.scale_changed TO FrustumExtrusion.set_scale }
+ProtoBody27.AddRoute(FieldVal57, Extrusion37.scale);
+{ ROUTE GeometryComputationScript.point_changed TO FrustumCoordinate.point }
+ProtoBody27.AddRoute(FieldVal58, Coordinate33.point);
 end;
 
 procedure InitViewFrustumPrototypePart4;
 begin
-;
-Appearance71 := TAppearanceNode.Create;;
-Material72 := TMaterialNode.Create;;
-Material72.DiffuseColor := Vector3(0.8,0.4,0);
-{ METHOD .SetMaterial }
-Appearance71.Material := Material72;
-{ METHOD .Appearance }
-{ METHOD.SET .Appearance }
-Shape70.Appearance := Appearance71;
-Text73 := TTextNode.Create;;
-Text73.SetText(['ViewFrustumPrototype.x3d','is a Prototype declaration file.','For an example scene using the prototype,','click this text and view','ViewFrustumExample.x3d']);
-FontStyle74 := TFontStyleNode.Create;;
-FontStyle74.Justify := fjMIDDLE;
-FontStyle74.JustifyMinor := fjMIDDLE;
-FontStyle74.Size := 0.8;
-{ METHOD .FontStyle }
-{ METHOD.SET .FontStyle }
-Text73.FontStyle := FontStyle74;
-{ METHOD .Geometry }
-{ METHOD.SET .Geometry }
-Shape70.Geometry := Text73;
-{ METHOD .FdChildren.Add }
-Anchor69.FdChildren.Add(Shape70);
-{ METHOD .FdChildren.Add }
-Group15.FdChildren.Add(Anchor69);
-{ METHOD .AddGroup }
+X3D0.AddPrototype(ProtoDeclare17);
+{ Example use is in separate scene }
+Anchor66 := TAnchorNode.Create;
+Anchor66.Description := 'ViewFrustum Example';
+Anchor66.SetUrl(['ViewFrustumExample.x3d']);
+Shape67 := TShapeNode.Create;
+Appearance68 := TAppearanceNode.Create;
+Material69 := TMaterialNode.Create;
+Material69.DiffuseColor := Vector3(0.8, 0.4, 0);
+Appearance68.Material := Material69;
+Shape67.Appearance := Appearance68;
+Text70 := TTextNode.Create;
+Text70.SetText(['ViewFrustumPrototype.x3d', 'is a Prototype declaration file.', 'For an example scene using the prototype,', 'click this text and view', 'ViewFrustumExample.x3d']);
+FontStyle71 := TFontStyleNode.Create;
+FontStyle71.Justify := fjMiddle;
+FontStyle71.JustifyMinor := fjMiddle;
+FontStyle71.Size := 0.8;
+Text70.FontStyle := FontStyle71;
+Shape67.Geometry := Text70;
+Anchor66.FdChildren.Add(Shape67);
+Group15.FdChildren.Add(Anchor66);
 X3D0.AddChildren([Group15]);
 end;
 
 function CreateViewFrustumPrototype: TX3DRootNode;
 begin
-InitViewFrustumPrototypePart0;
-InitViewFrustumPrototypePart1;
-InitViewFrustumPrototypePart2;
-InitViewFrustumPrototypePart3;
-InitViewFrustumPrototypePart4;
-Result := X3D0;
+  InitViewFrustumPrototypePart0;
+  InitViewFrustumPrototypePart1;
+  InitViewFrustumPrototypePart2;
+  InitViewFrustumPrototypePart3;
+  InitViewFrustumPrototypePart4;
+  Result := X3D0;
 end;
 
 begin

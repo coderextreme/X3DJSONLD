@@ -11,52 +11,51 @@ implementation
 uses CastleVectors;
 
 var
-X3D0: TX3DRootNode;
-Group14: TGroupNode;
-WorldInfo15: TWorldInfoNode;
-NavigationInfo16: TNavigationInfoNode;
-Background17: TBackgroundNode;
-Viewpoint18: TViewpointNode;
-TimeSensor19: TTimeSensorNode;
-PositionInterpolator20: TPositionInterpolatorNode;
-OrientationInterpolator21: TOrientationInterpolatorNode;
-Transform26: TTransformNode;
-Shape27: TShapeNode;
-Appearance28: TAppearanceNode;
-Material29: TMaterialNode;
-Box30: TBoxNode;
-Transform31: TTransformNode;
-Shape32: TShapeNode;
-Appearance33: TAppearanceNode;
-Material34: TMaterialNode;
-Sphere35: TSphereNode;
-Billboard36: TBillboardNode;
-Transform37: TTransformNode;
-Shape38: TShapeNode;
-Appearance39: TAppearanceNode;
-Material40: TMaterialNode;
-Text41: TTextNode;
-FontStyle42: TFontStyleNode;
-Transform43: TTransformNode;
-Shape44: TShapeNode;
-Appearance45: TAppearanceNode;
-Material46: TMaterialNode;
-Sphere47: TSphereNode;
-Billboard48: TBillboardNode;
-Transform49: TTransformNode;
-Shape50: TShapeNode;
-Appearance51: TAppearanceNode;
-Material52: TMaterialNode;
-Text53: TTextNode;
-FontStyle54: TFontStyleNode;
-ListenerPointSource55: TListenerPointSourceNode;
-StreamAudioDestination56: TStreamAudioDestinationNode;
-SpatialSound57: TSpatialSoundNode;
-Gain58: TGainNode;
-AudioClip59: TAudioClipNode;
-SpatialSound60: TSpatialSoundNode;
-Gain61: TGainNode;
-AudioClip62: TAudioClipNode;
+  X3D0: TX3DRootNode;
+  Group14: TGroupNode;
+  WorldInfo15: TWorldInfoNode;
+  NavigationInfo16: TNavigationInfoNode;
+  Background17: TBackgroundNode;
+  Viewpoint18: TViewpointNode;
+  TimeSensor19: TTimeSensorNode;
+  PositionInterpolator20: TPositionInterpolatorNode;
+  OrientationInterpolator21: TOrientationInterpolatorNode;
+  Transform26: TTransformNode;
+  Shape27: TShapeNode;
+  Appearance28: TAppearanceNode;
+  Material29: TMaterialNode;
+  Box30: TBoxNode;
+  Transform31: TTransformNode;
+  Shape32: TShapeNode;
+  Appearance33: TAppearanceNode;
+  Material34: TMaterialNode;
+  Sphere35: TSphereNode;
+  Billboard36: TBillboardNode;
+  Transform37: TTransformNode;
+  Shape38: TShapeNode;
+  Appearance39: TAppearanceNode;
+  Material40: TMaterialNode;
+  Text41: TTextNode;
+  FontStyle42: TFontStyleNode;
+  Transform43: TTransformNode;
+  Shape44: TShapeNode;
+  Appearance45: TAppearanceNode;
+  Material46: TMaterialNode;
+  Sphere47: TSphereNode;
+  Billboard48: TBillboardNode;
+  Transform49: TTransformNode;
+  Shape50: TShapeNode;
+  Appearance51: TAppearanceNode;
+  Material52: TMaterialNode;
+  Text53: TTextNode;
+  ListenerPointSource55: TListenerPointSourceNode;
+  StreamAudioDestination56: TStreamAudioDestinationNode;
+  SpatialSound57: TSpatialSoundNode;
+  Gain58: TGainNode;
+  AudioClip59: TAudioClipNode;
+  SpatialSound60: TSpatialSoundNode;
+  Gain61: TGainNode;
+  AudioClip62: TAudioClipNode;
 
 procedure InitSpatialAudioCameraAnimationPart0;
 begin
@@ -65,277 +64,204 @@ X3D0.Profile := 'Full';
 X3D0.ForceVersion.Major := 4;
 X3D0.ForceVersion.Minor := 0;
 X3D0.Meta['title'] := 'SpatialAudioCameraAnimation.x3d';
-{ METHOD .Meta }
 X3D0.Meta['description'] := 'In the last demo, there are two sound sources in different positions. Through the immersion in the X3D scene the user could attend a rational navigation. Whenever the camera moves in the direction of an existing sound source, the strength of this source increases, while the sound strength of the other (the second one) decreases and vice versa. Through this process, great realism of the scene is achieved, since it emulates the spatial sound in real world.';
-{ METHOD .Meta }
 X3D0.Meta['info'] := 'This work presents an innovative solution of the spatial sound in X3DOM framework, that based on a combinational methodology. Specifically, we suggested the enrichment of X3DOM with spatial sound features, using both the X3D sound nodes and the structure of Web Audio API.';
-{ METHOD .Meta }
 X3D0.Meta['creator'] := 'Efi Lakka, Athanasios Malamos, Dick Puk, Don Brutzman';
-{ METHOD .Meta }
 X3D0.Meta['created'] := '28 October 2020';
-{ METHOD .Meta }
 X3D0.Meta['modified'] := '5 December 2021';
-{ METHOD .Meta }
 X3D0.Meta['reference'] := 'CHANGELOG.txt';
-{ METHOD .Meta }
 X3D0.Meta['TODO'] := 'credit for audio files';
-{ METHOD .Meta }
 X3D0.Meta['reference'] := 'https://www.medialab.hmu.gr/minipages/x3domAudio';
-{ METHOD .Meta }
 X3D0.Meta['identifier'] := 'https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/SpatialAudioCameraAnimation.x3d';
-{ METHOD .Meta }
 X3D0.Meta['generator'] := 'X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit';
-{ METHOD .Meta }
 X3D0.Meta['license'] := '../license.html';
-{ METHOD .Meta }
-{ METHOD .Head }
-Group14 := TGroupNode.Create;;
-WorldInfo15 := TWorldInfoNode.Create;;
+Group14 := TGroupNode.Create;
+WorldInfo15 := TWorldInfoNode.Create;
 WorldInfo15.Title := 'SpatialAudioCameraAnimation.x3d';
-{ METHOD .FdChildren.Add }
 Group14.FdChildren.Add(WorldInfo15);
-NavigationInfo16 := TNavigationInfoNode.Create;;
-{ METHOD .FdChildren.Add }
+NavigationInfo16 := TNavigationInfoNode.Create;
 Group14.FdChildren.Add(NavigationInfo16);
-Background17 := TBackgroundNode.Create;;
-Background17.SetBackUrl(['images/generic/BK1.png','https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/BK1.png']);
-Background17.SetBottomUrl(['images/generic/DN1.png','https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/DN1.png']);
-Background17.SetFrontUrl(['images/generic/FR1.png','https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/FR1.png']);
-Background17.SetLeftUrl(['images/generic/LF1.png','https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/LF1.png']);
-Background17.SetRightUrl(['images/generic/RT1.png','https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/RT1.png']);
-Background17.SetTopUrl(['images/generic/UP1.png','https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/UP1.png']);
-{ METHOD .FdChildren.Add }
+Background17 := TBackgroundNode.Create;
+Background17.SetBackUrl(['images/generic/BK1.png', 'https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/BK1.png']);
+Background17.SetBottomUrl(['images/generic/DN1.png', 'https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/DN1.png']);
+Background17.SetFrontUrl(['images/generic/FR1.png', 'https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/FR1.png']);
+Background17.SetLeftUrl(['images/generic/LF1.png', 'https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/LF1.png']);
+Background17.SetRightUrl(['images/generic/RT1.png', 'https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/RT1.png']);
+Background17.SetTopUrl(['images/generic/UP1.png', 'https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/UP1.png']);
 Group14.FdChildren.Add(Background17);
-Viewpoint18 := TViewpointNode.Create;;
-Viewpoint18.Description := 'Viewpoint is like camera, prepositioned in locations (and directions) of interest. In this example the camera is the \"ears of the user\". So, if the trackCurrentView field from ListenerPointSource is TRUE then position and orientation matches the users current view';
-Viewpoint18.Orientation := Vector4(1,0,0,-0.523599);
-Viewpoint18.Position := Vector3(0,2000,3500);
-{ METHOD .FdChildren.Add }
+Viewpoint18 := TViewpointNode.Create;
+Viewpoint18.X3DName := 'Camera001';
+Viewpoint18.Description := 'Viewpoint is like camera, prepositioned in locations (and directions) of interest. In this example the camera is the "ears of the user". So, if the trackCurrentView field from ListenerPointSource is TRUE then position and orientation matches the users current view';
+Viewpoint18.Orientation := Vector4(1, 0, 0, -0.523599);
+Viewpoint18.Position := Vector3(0, 2000, 3500);
 Group14.FdChildren.Add(Viewpoint18);
+TimeSensor19 := TTimeSensorNode.Create;
+TimeSensor19.X3DName := 'TIMER';
+TimeSensor19.CycleInterval := 33.333332;
+TimeSensor19.Loop := True;
 end;
 
 procedure InitSpatialAudioCameraAnimationPart1;
 begin
-
-TimeSensor19 := TTimeSensorNode.Create;;
-TimeSensor19.CycleInterval := 33.333332;
-TimeSensor19.Loop := True;
-{ METHOD .FdChildren.Add }
 Group14.FdChildren.Add(TimeSensor19);
-PositionInterpolator20 := TPositionInterpolatorNode.Create;;
-PositionInterpolator20.SetKey([0,0.25,0.5,0.75,1]);
-PositionInterpolator20.SetKeyValue([Vector3(0,2000,3500),Vector3(0,2000,0),Vector3(0,2000,-3500),Vector3(0,2000,0),Vector3(0,2000,3500)]);
-{ METHOD .FdChildren.Add }
+PositionInterpolator20 := TPositionInterpolatorNode.Create;
+PositionInterpolator20.X3DName := 'Camera001-POS-INTERP';
+PositionInterpolator20.SetKey([0, 0.25, 0.5, 0.75, 1]);
+PositionInterpolator20.SetKeyValue([Vector3(0, 2000, 3500), Vector3(0, 2000, 0), Vector3(0, 2000, -3500), Vector3(0, 2000, 0), Vector3(0, 2000, 3500)]);
 Group14.FdChildren.Add(PositionInterpolator20);
-OrientationInterpolator21 := TOrientationInterpolatorNode.Create;;
-OrientationInterpolator21.SetKey([0,0.25,0.5,0.75,1]);
-OrientationInterpolator21.SetKeyValue([Vector4(1,0,0,-0.523599),Vector4(0.99999,0.003554,0.002727,-1.309007),Vector4(0,-0.965926,-0.258819,-3.141593),Vector4(0.002282,-0.793351,-0.60876,-3.135645),Vector4(1,-0.000001,0,-0.523599)]);
-{ METHOD .FdChildren.Add }
+OrientationInterpolator21 := TOrientationInterpolatorNode.Create;
+OrientationInterpolator21.X3DName := 'Camera001-ROT-INTERP';
+OrientationInterpolator21.SetKey([0, 0.25, 0.5, 0.75, 1]);
+OrientationInterpolator21.SetKeyValue([Vector4(1, 0, 0, -0.523599), Vector4(0.99999, 0.003554, 0.002727, -1.309007), Vector4(0, -0.965926, -0.258819, -3.141593), Vector4(0.002282, -0.793351, -0.60876, -3.135645), Vector4(1, -0.000001, 0, -0.523599)]);
 Group14.FdChildren.Add(OrientationInterpolator21);
-{ Original "TIMER.EventFraction_changed TO Camera001-POS-INTERP.EventSet_fraction }
-{ Sample TIMER.EventFraction_changed TO Camera001-POS-INTERP.EventSet_fraction}
+{ ROUTE TIMER.fraction_changed TO Camera001-POS-INTERP.set_fraction }
 Group14.AddRoute(TimeSensor19.EventFraction_changed, PositionInterpolator20.EventSet_fraction);
-{ METHOD .AddX3DROUTE }
-{ Original "Camera001-POS-INTERP.EventValue_changed TO Camera001.EventSet_position }
-{ Sample Camera001-POS-INTERP.EventValue_changed TO Camera001.EventSet_position}
+{ ROUTE Camera001-POS-INTERP.value_changed TO Camera001.set_position }
 Group14.AddRoute(PositionInterpolator20.EventValue_changed, Viewpoint18.EventSet_position);
-{ METHOD .AddX3DROUTE }
-{ Original "TIMER.EventFraction_changed TO Camera001-ROT-INTERP.EventSet_fraction }
-{ Sample TIMER.EventFraction_changed TO Camera001-ROT-INTERP.EventSet_fraction}
+{ ROUTE TIMER.fraction_changed TO Camera001-ROT-INTERP.set_fraction }
 Group14.AddRoute(TimeSensor19.EventFraction_changed, OrientationInterpolator21.EventSet_fraction);
-{ METHOD .AddX3DROUTE }
-{ Original "Camera001-ROT-INTERP.EventValue_changed TO Camera001.EventSet_orientation }
-{ Sample Camera001-ROT-INTERP.EventValue_changed TO Camera001.EventSet_orientation}
+{ ROUTE Camera001-ROT-INTERP.value_changed TO Camera001.set_orientation }
 Group14.AddRoute(OrientationInterpolator21.EventValue_changed, Viewpoint18.EventSet_orientation);
-{ METHOD .AddX3DROUTE }
-Transform26 := TTransformNode.Create;;
-Transform26.Translation := Vector3(1.241,0,0.358);
-Shape27 := TShapeNode.Create;;
-Appearance28 := TAppearanceNode.Create;;
-Material29 := TMaterialNode.Create;;
-Material29.DiffuseColor := Vector3(0.122,0.114,0.125);
-{ METHOD .SetMaterial }
+Transform26 := TTransformNode.Create;
+Transform26.X3DName := 'Floor';
+Transform26.Translation := Vector3(1.241, 0, 0.358);
+Shape27 := TShapeNode.Create;
+Appearance28 := TAppearanceNode.Create;
+Appearance28.X3DName := 'WireColor';
+Material29 := TMaterialNode.Create;
+Material29.DiffuseColor := Vector3(0.122, 0.114, 0.125);
 Appearance28.Material := Material29;
-{ METHOD .Appearance }
-{ METHOD.SET .Appearance }
 Shape27.Appearance := Appearance28;
-Box30 := TBoxNode.Create;;
-Box30.Size := Vector3(2000,1,2000);
-{ METHOD .Geometry }
-{ METHOD.SET .Geometry }
+Box30 := TBoxNode.Create;
+Box30.Size := Vector3(2000, 1, 2000);
 Shape27.Geometry := Box30;
-{ METHOD .FdChildren.Add }
 Transform26.FdChildren.Add(Shape27);
-{ METHOD .FdChildren.Add }
 Group14.FdChildren.Add(Transform26);
-Transform31 := TTransformNode.Create;;
-Transform31.Translation := Vector3(-933.123474,0,-926.253235);
+Transform31 := TTransformNode.Create;
+Transform31.X3DName := 'TransformAudio1';
+Transform31.Translation := Vector3(-933.123474, 0, -926.253235);
+Shape32 := TShapeNode.Create;
+Appearance33 := TAppearanceNode.Create;
+Appearance33.X3DName := 'WireColor_1';
 end;
 
 procedure InitSpatialAudioCameraAnimationPart2;
 begin
-
-Shape32 := TShapeNode.Create;;
-Appearance33 := TAppearanceNode.Create;;
-Material34 := TMaterialNode.Create;;
-Material34.DiffuseColor := Vector3(0.690196,0.101961,0.101961);
-{ METHOD .SetMaterial }
+Material34 := TMaterialNode.Create;
+Material34.DiffuseColor := Vector3(0.690196, 0.101961, 0.101961);
 Appearance33.Material := Material34;
-{ METHOD .Appearance }
-{ METHOD.SET .Appearance }
 Shape32.Appearance := Appearance33;
-Sphere35 := TSphereNode.Create;;
+Sphere35 := TSphereNode.Create;
 Sphere35.Radius := 100;
-{ METHOD .Geometry }
-{ METHOD.SET .Geometry }
 Shape32.Geometry := Sphere35;
-{ METHOD .FdChildren.Add }
 Transform31.FdChildren.Add(Shape32);
-Billboard36 := TBillboardNode.Create;;
-Transform37 := TTransformNode.Create;;
-Transform37.Rotation := Vector4(1,0,0,-0.5);
-Transform37.Scale := Vector3(100,100,100);
-Transform37.Translation := Vector3(0,100,0);
-Shape38 := TShapeNode.Create;;
-Appearance39 := TAppearanceNode.Create;;
-Material40 := TMaterialNode.Create;;
+Billboard36 := TBillboardNode.Create;
+Transform37 := TTransformNode.Create;
+Transform37.X3DName := 'violin';
+Transform37.Rotation := Vector4(1, 0, 0, -0.5);
+Transform37.Scale := Vector3(100, 100, 100);
+Transform37.Translation := Vector3(0, 100, 0);
+Shape38 := TShapeNode.Create;
+Appearance39 := TAppearanceNode.Create;
+Material40 := TMaterialNode.Create;
 Material40.AmbientIntensity := 0.0933;
-Material40.DiffuseColor := Vector3(1,1,1);
+Material40.DiffuseColor := Vector3(1, 1, 1);
 Material40.Shininess := 0.51;
-Material40.SpecularColor := Vector3(0.46,0.46,0.46);
-{ METHOD .SetMaterial }
+Material40.SpecularColor := Vector3(0.46, 0.46, 0.46);
 Appearance39.Material := Material40;
-{ METHOD .Appearance }
-{ METHOD.SET .Appearance }
 Shape38.Appearance := Appearance39;
-Text41 := TTextNode.Create;;
+Text41 := TTextNode.Create;
 Text41.SetText(['Violin']);
-FontStyle42 := TFontStyleNode.Create;;
-FontStyle42.Style := fsBOLD;
-{ METHOD .FontStyle }
-{ METHOD.SET .FontStyle }
+FontStyle42 := TFontStyleNode.Create;
+FontStyle42.X3DName := 'ModelFontStyle';
+FontStyle42.Style := fsBold;
 Text41.FontStyle := FontStyle42;
+Shape38.Geometry := Text41;
+Transform37.FdChildren.Add(Shape38);
+Billboard36.FdChildren.Add(Transform37);
+Transform31.FdChildren.Add(Billboard36);
+Group14.FdChildren.Add(Transform31);
+Transform43 := TTransformNode.Create;
+Transform43.X3DName := 'TransformAudio2';
+Transform43.Translation := Vector3(933.475586, 0, 924.423218);
+Shape44 := TShapeNode.Create;
+Appearance45 := TAppearanceNode.Create;
+Appearance45.X3DName := 'WireColor_2';
 end;
 
 procedure InitSpatialAudioCameraAnimationPart3;
 begin
-
-{ METHOD .Geometry }
-{ METHOD.SET .Geometry }
-Shape38.Geometry := Text41;
-{ METHOD .FdChildren.Add }
-Transform37.FdChildren.Add(Shape38);
-{ METHOD .FdChildren.Add }
-Billboard36.FdChildren.Add(Transform37);
-{ METHOD .FdChildren.Add }
-Transform31.FdChildren.Add(Billboard36);
-{ METHOD .FdChildren.Add }
-Group14.FdChildren.Add(Transform31);
-Transform43 := TTransformNode.Create;;
-Transform43.Translation := Vector3(933.475586,0,924.423218);
-Shape44 := TShapeNode.Create;;
-Appearance45 := TAppearanceNode.Create;;
-Material46 := TMaterialNode.Create;;
-Material46.DiffuseColor := Vector3(0.105882,0.694118,0.580392);
-{ METHOD .SetMaterial }
+Material46 := TMaterialNode.Create;
+Material46.DiffuseColor := Vector3(0.105882, 0.694118, 0.580392);
 Appearance45.Material := Material46;
-{ METHOD .Appearance }
-{ METHOD.SET .Appearance }
 Shape44.Appearance := Appearance45;
-Sphere47 := TSphereNode.Create;;
+Sphere47 := TSphereNode.Create;
 Sphere47.Radius := 100;
-{ METHOD .Geometry }
-{ METHOD.SET .Geometry }
 Shape44.Geometry := Sphere47;
-{ METHOD .FdChildren.Add }
 Transform43.FdChildren.Add(Shape44);
-Billboard48 := TBillboardNode.Create;;
-Transform49 := TTransformNode.Create;;
-Transform49.Rotation := Vector4(1,0,0,-0.5);
-Transform49.Scale := Vector3(100,100,100);
-Transform49.Translation := Vector3(0,100,0);
-Shape50 := TShapeNode.Create;;
-Appearance51 := TAppearanceNode.Create;;
-Material52 := TMaterialNode.Create;;
+Billboard48 := TBillboardNode.Create;
+Transform49 := TTransformNode.Create;
+Transform49.X3DName := 'saxophone';
+Transform49.Rotation := Vector4(1, 0, 0, -0.5);
+Transform49.Scale := Vector3(100, 100, 100);
+Transform49.Translation := Vector3(0, 100, 0);
+Shape50 := TShapeNode.Create;
+Appearance51 := TAppearanceNode.Create;
+Material52 := TMaterialNode.Create;
 Material52.AmbientIntensity := 0.0933;
-Material52.DiffuseColor := Vector3(1,1,1);
+Material52.DiffuseColor := Vector3(1, 1, 1);
 Material52.Shininess := 0.51;
-Material52.SpecularColor := Vector3(0.46,0.46,0.46);
-{ METHOD .SetMaterial }
+Material52.SpecularColor := Vector3(0.46, 0.46, 0.46);
 Appearance51.Material := Material52;
+Shape50.Appearance := Appearance51;
+Text53 := TTextNode.Create;
+Text53.SetText(['Saxophone']);
+Text53.FontStyle := FontStyle42;
+Shape50.Geometry := Text53;
+Transform49.FdChildren.Add(Shape50);
+Billboard48.FdChildren.Add(Transform49);
+Transform43.FdChildren.Add(Billboard48);
+Group14.FdChildren.Add(Transform43);
+ListenerPointSource55 := TListenerPointSourceNode.Create;
+ListenerPointSource55.TrackCurrentView := True;
+Group14.FdChildren.Add(ListenerPointSource55);
+StreamAudioDestination56 := TStreamAudioDestinationNode.Create;
+SpatialSound57 := TSpatialSoundNode.Create;
+SpatialSound57.X3DName := 'Audio1';
+Gain58 := TGainNode.Create;
+AudioClip59 := TAudioClipNode.Create;
+AudioClip59.Description := 'Violin';
 end;
 
 procedure InitSpatialAudioCameraAnimationPart4;
 begin
-
-{ METHOD .Appearance }
-{ METHOD.SET .Appearance }
-Shape50.Appearance := Appearance51;
-Text53 := TTextNode.Create;;
-Text53.SetText(['Saxophone']);
-{ METHOD .FontStyle }
-{ METHOD.SET .FontStyle }
-Text53.FontStyle := FontStyle42;
-{ METHOD .Geometry }
-{ METHOD.SET .Geometry }
-Shape50.Geometry := Text53;
-{ METHOD .FdChildren.Add }
-Transform49.FdChildren.Add(Shape50);
-{ METHOD .FdChildren.Add }
-Billboard48.FdChildren.Add(Transform49);
-{ METHOD .FdChildren.Add }
-Transform43.FdChildren.Add(Billboard48);
-{ METHOD .FdChildren.Add }
-Group14.FdChildren.Add(Transform43);
-ListenerPointSource55 := TListenerPointSourceNode.Create;;
-ListenerPointSource55.TrackCurrentView := True;
-{ METHOD .FdChildren.Add }
-Group14.FdChildren.Add(ListenerPointSource55);
-StreamAudioDestination56 := TStreamAudioDestinationNode.Create;;
-SpatialSound57 := TSpatialSoundNode.Create;;
-Gain58 := TGainNode.Create;;
-AudioClip59 := TAudioClipNode.Create;;
-AudioClip59.Description := 'Violin';
 AudioClip59.Loop := True;
-AudioClip59.SetUrl(['sound/violin.mp3','https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3']);
-{ METHOD .FdChildren.Add }
+AudioClip59.SetUrl(['sound/violin.mp3', 'https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3']);
 Gain58.FdChildren.Add(AudioClip59);
-{ METHOD .FdChildren.Add }
 SpatialSound57.FdChildren.Add(Gain58);
-{ METHOD .FdChildren.Add }
 StreamAudioDestination56.FdChildren.Add(SpatialSound57);
-SpatialSound60 := TSpatialSoundNode.Create;;
-Gain61 := TGainNode.Create;;
-AudioClip62 := TAudioClipNode.Create;;
+SpatialSound60 := TSpatialSoundNode.Create;
+SpatialSound60.X3DName := 'Audio2';
+Gain61 := TGainNode.Create;
+AudioClip62 := TAudioClipNode.Create;
 AudioClip62.Description := 'Saxophone';
 AudioClip62.Loop := True;
-AudioClip62.SetUrl(['sound/saxophone.mp3','https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3']);
-{ METHOD .FdChildren.Add }
+AudioClip62.SetUrl(['sound/saxophone.mp3', 'https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3']);
 Gain61.FdChildren.Add(AudioClip62);
-{ METHOD .FdChildren.Add }
 SpatialSound60.FdChildren.Add(Gain61);
-{ METHOD .FdChildren.Add }
 StreamAudioDestination56.FdChildren.Add(SpatialSound60);
-end;
-
-procedure InitSpatialAudioCameraAnimationPart5;
-begin
-
-{ METHOD .FdChildren.Add }
 Group14.FdChildren.Add(StreamAudioDestination56);
-{ METHOD .AddGroup }
 X3D0.AddChildren([Group14]);
 end;
 
 function CreateSpatialAudioCameraAnimation: TX3DRootNode;
 begin
-InitSpatialAudioCameraAnimationPart0;
-InitSpatialAudioCameraAnimationPart1;
-InitSpatialAudioCameraAnimationPart2;
-InitSpatialAudioCameraAnimationPart3;
-InitSpatialAudioCameraAnimationPart4;
-InitSpatialAudioCameraAnimationPart5;
-Result := X3D0;
+  InitSpatialAudioCameraAnimationPart0;
+  InitSpatialAudioCameraAnimationPart1;
+  InitSpatialAudioCameraAnimationPart2;
+  InitSpatialAudioCameraAnimationPart3;
+  InitSpatialAudioCameraAnimationPart4;
+  Result := X3D0;
 end;
 
 begin

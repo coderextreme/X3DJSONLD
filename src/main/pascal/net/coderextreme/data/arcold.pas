@@ -8,94 +8,97 @@ function Createarcold: TX3DRootNode;
 
 implementation
 
-uses CastleVectors;
+uses Classes, SysUtils, X3DLoad, CastleVectors;
+
+function CreateEmptyPrototype(const AName: String): TX3DPrototype;
+var
+  Stream: TStringStream;
+  TempRoot: TX3DRootNode;
+  CopyState: TX3DNodeDeepCopyState;
+begin
+  Stream := TStringStream.Create('#X3D V4.0 utf8' + LineEnding + 'PROTO ' + AName + ' [] {}');
+  try
+    TempRoot := LoadNode(Stream, '', 'model/x3d+vrml');
+    try
+      CopyState := TX3DNodeDeepCopyState.Create;
+      try
+        Result := TempRoot.Prototypes[0].DeepCopy(CopyState) as TX3DPrototype;
+      finally
+        FreeAndNil(CopyState);
+      end;
+    finally
+      FreeAndNil(TempRoot);
+    end;
+  finally
+    FreeAndNil(Stream);
+  end;
+end;
 
 var
-X3D0: TX3DRootNode;
-Group7: TGroupNode;
-Viewpoint8: TViewpointNode;
-Background9: TBackgroundNode;
-Transform10: TTransformNode;
-Transform11: TTransformNode;
-Shape12: TShapeNode;
-Appearance13: TAppearanceNode;
-Material14: TMaterialNode;
-Cylinder15: TCylinderNode;
-Transform16: TTransformNode;
-Transform17: TTransformNode;
-Shape18: TShapeNode;
-Appearance19: TAppearanceNode;
-Material20: TMaterialNode;
-Cylinder21: TCylinderNode;
-Transform22: TTransformNode;
-Transform23: TTransformNode;
-Shape24: TShapeNode;
-Appearance25: TAppearanceNode;
-Material26: TMaterialNode;
-Cylinder27: TCylinderNode;
-X3DPrototype28: TX3DPrototype;
-X3DInterfaceDeclaration29: TX3DInterfaceDeclaration;
-SFVec3f30: TSFVec3f;
-X3DPrototype31: TX3DPrototype;
-Transform32: TTransformNode;
-Shape34: TShapeNode;
-Sphere35: TSphereNode;
-Appearance36: TAppearanceNode;
-Material37: TMaterialNode;
-PositionInterpolator38: TPositionInterpolatorNode;
-Script39: TScriptNode;
-SFVec3f40: TSFVec3f;
-SFVec3f41: TSFVec3f;
-SFTime42: TSFTime;
-MFVec3f43: TMFVec3f;
-TimeSensor44: TTimeSensorNode;
-X3DPrototype49: TX3DPrototype;
-X3DInterfaceDeclaration50: TX3DInterfaceDeclaration;
-SFNode51: TSFNode;
-SFNode52: TSFNode;
-SFNode53: TSFNode;
-SFNode54: TSFNode;
-SFVec3f55: TSFVec3f;
-SFVec3f56: TSFVec3f;
-X3DPrototype57: TX3DPrototype;
-Script58: TScriptNode;
-SFNode59: TSFNode;
-SFNode60: TSFNode;
-SFNode61: TSFNode;
-SFNode62: TSFNode;
-SFVec3f63: TSFVec3f;
-SFVec3f64: TSFVec3f;
-X3DPrototype66: TX3DPrototypeNode;
-X3DPrototype67: TX3DPrototypeNode;
-X3DPrototype68: TX3DPrototypeNode;
-X3DPrototype69: TX3DPrototypeNode;
-X3DPrototype70: TX3DPrototypeNode;
-SFNode71: TSFNode;
-X3DPrototype72: TX3DPrototypeNode;
-SFNode73: TSFNode;
-X3DPrototype74: TX3DPrototypeNode;
-SFNode75: TSFNode;
-Transform76: TTransformNode;
-SFNode77: TSFNode;
-Transform78: TTransformNode;
-X3DPrototype79: TX3DPrototypeNode;
-SFNode80: TSFNode;
-X3DPrototype81: TX3DPrototypeNode;
-SFNode82: TSFNode;
-X3DPrototype83: TX3DPrototypeNode;
-SFNode84: TSFNode;
-Transform85: TTransformNode;
-SFNode86: TSFNode;
-Transform87: TTransformNode;
-X3DPrototype88: TX3DPrototypeNode;
-SFNode89: TSFNode;
-X3DPrototype90: TX3DPrototypeNode;
-SFNode91: TSFNode;
-X3DPrototype92: TX3DPrototypeNode;
-SFNode93: TSFNode;
-Transform94: TTransformNode;
-SFNode95: TSFNode;
-Transform96: TTransformNode;
+  X3D0: TX3DRootNode;
+  Group7: TGroupNode;
+  Viewpoint8: TViewpointNode;
+  Background9: TBackgroundNode;
+  Transform10: TTransformNode;
+  Transform11: TTransformNode;
+  Shape12: TShapeNode;
+  Appearance13: TAppearanceNode;
+  Material14: TMaterialNode;
+  Cylinder15: TCylinderNode;
+  Transform16: TTransformNode;
+  Transform17: TTransformNode;
+  Shape18: TShapeNode;
+  Appearance19: TAppearanceNode;
+  Material20: TMaterialNode;
+  Cylinder21: TCylinderNode;
+  Transform22: TTransformNode;
+  Transform23: TTransformNode;
+  Shape24: TShapeNode;
+  Appearance25: TAppearanceNode;
+  Material26: TMaterialNode;
+  Cylinder27: TCylinderNode;
+  ProtoDeclare28: TX3DPrototype;
+  FieldDecl30: TX3DInterfaceDeclaration;
+  FieldVal30: TSFVec3f;
+  Transform32: TTransformNode;
+  Shape33: TShapeNode;
+  Sphere34: TSphereNode;
+  Appearance35: TAppearanceNode;
+  Material36: TMaterialNode;
+  PositionInterpolator37: TPositionInterpolatorNode;
+  Script38: TScriptNode;
+  FieldVal39: TSFVec3f;
+  FieldVal40: TSFVec3f;
+  FieldVal41: TX3DEvent;
+  FieldVal42: TX3DEvent;
+  TimeSensor43: TTimeSensorNode;
+  ProtoDeclare48: TX3DPrototype;
+  FieldDecl50: TX3DInterfaceDeclaration;
+  FieldVal50: TSFNode;
+  FieldDecl51: TX3DInterfaceDeclaration;
+  FieldVal51: TSFNode;
+  FieldDecl52: TX3DInterfaceDeclaration;
+  FieldVal52: TSFNode;
+  FieldDecl53: TX3DInterfaceDeclaration;
+  FieldVal53: TSFNode;
+  FieldDecl54: TX3DInterfaceDeclaration;
+  FieldVal54: TX3DEvent;
+  FieldDecl55: TX3DInterfaceDeclaration;
+  FieldVal55: TX3DEvent;
+  Script57: TScriptNode;
+  FieldVal58: TSFNode;
+  FieldVal59: TSFNode;
+  FieldVal60: TSFNode;
+  FieldVal61: TSFNode;
+  FieldVal62: TX3DEvent;
+  FieldVal63: TX3DEvent;
+  ProtoInstance64: TX3DPrototypeNode;
+  ProtoInstance65: TX3DPrototypeNode;
+  ProtoInstance66: TX3DPrototypeNode;
+  ProtoInstance67: TX3DPrototypeNode;
+  ProtoInstance68: TX3DPrototypeNode;
+  ProtoInstance77: TX3DPrototypeNode;
+  ProtoInstance86: TX3DPrototypeNode;
 
 procedure InitarcoldPart0;
 begin
@@ -104,375 +107,275 @@ X3D0.Profile := 'Immersive';
 X3D0.ForceVersion.Major := 4;
 X3D0.ForceVersion.Minor := 0;
 X3D0.Meta['title'] := 'arcold.x3d';
-{ METHOD .Meta }
 X3D0.Meta['creator'] := 'John Carlson';
-{ METHOD .Meta }
 X3D0.Meta['generator'] := 'manual';
-{ METHOD .Meta }
 X3D0.Meta['identifier'] := 'https://coderextreme.net/X3DJSONLD/src/main/data/arc.x3d';
-{ METHOD .Meta }
 X3D0.Meta['description'] := 'an attempt to implement an arc in a graph';
-{ METHOD .Meta }
-{ METHOD .Head }
-Group7 := TGroupNode.Create;;
-Viewpoint8 := TViewpointNode.Create;;
-Viewpoint8.Position := Vector3(0,0,5);
+Group7 := TGroupNode.Create;
+Viewpoint8 := TViewpointNode.Create;
+Viewpoint8.Position := Vector3(0, 0, 5);
 Viewpoint8.Description := 'a moving graph';
-{ METHOD .FdChildren.Add }
 Group7.FdChildren.Add(Viewpoint8);
-Background9 := TBackgroundNode.Create;;
-Background9.SetSkyColor([Vector3(0.4,0.4,0.4)]);
-{ METHOD .FdChildren.Add }
+Background9 := TBackgroundNode.Create;
+Background9.SetSkyColor([Vector3(0.4, 0.4, 0.4)]);
 Group7.FdChildren.Add(Background9);
-Transform10 := TTransformNode.Create;;
-Transform11 := TTransformNode.Create;;
-Shape12 := TShapeNode.Create;;
-Appearance13 := TAppearanceNode.Create;;
-Material14 := TMaterialNode.Create;;
-Material14.DiffuseColor := Vector3(0.2,0.7,0.7);
-{ METHOD .SetMaterial }
+Transform10 := TTransformNode.Create;
+Transform10.X3DName := 'trans1';
+Transform11 := TTransformNode.Create;
+Transform11.X3DName := 'rotscale1';
+Shape12 := TShapeNode.Create;
+Appearance13 := TAppearanceNode.Create;
+Material14 := TMaterialNode.Create;
+Material14.DiffuseColor := Vector3(0.2, 0.7, 0.7);
 Appearance13.Material := Material14;
-{ METHOD .Appearance }
-{ METHOD.SET .Appearance }
 Shape12.Appearance := Appearance13;
-Cylinder15 := TCylinderNode.Create;;
+Cylinder15 := TCylinderNode.Create;
 Cylinder15.Radius := 0.1;
-{ METHOD .Geometry }
-{ METHOD.SET .Geometry }
 Shape12.Geometry := Cylinder15;
-{ METHOD .FdChildren.Add }
 Transform11.FdChildren.Add(Shape12);
-{ METHOD .FdChildren.Add }
 Transform10.FdChildren.Add(Transform11);
-{ METHOD .FdChildren.Add }
 Group7.FdChildren.Add(Transform10);
+Transform16 := TTransformNode.Create;
+Transform16.X3DName := 'trans2';
+Transform17 := TTransformNode.Create;
+Transform17.X3DName := 'rotscale2';
+Shape18 := TShapeNode.Create;
+Appearance19 := TAppearanceNode.Create;
+Material20 := TMaterialNode.Create;
 end;
 
 procedure InitarcoldPart1;
 begin
-
-Transform16 := TTransformNode.Create;;
-Transform17 := TTransformNode.Create;;
-Shape18 := TShapeNode.Create;;
-Appearance19 := TAppearanceNode.Create;;
-Material20 := TMaterialNode.Create;;
-Material20.DiffuseColor := Vector3(0.2,0.7,0.7);
-{ METHOD .SetMaterial }
+Material20.DiffuseColor := Vector3(0.2, 0.7, 0.7);
 Appearance19.Material := Material20;
-{ METHOD .Appearance }
-{ METHOD.SET .Appearance }
 Shape18.Appearance := Appearance19;
-Cylinder21 := TCylinderNode.Create;;
+Cylinder21 := TCylinderNode.Create;
 Cylinder21.Radius := 0.1;
-{ METHOD .Geometry }
-{ METHOD.SET .Geometry }
 Shape18.Geometry := Cylinder21;
-{ METHOD .FdChildren.Add }
 Transform17.FdChildren.Add(Shape18);
-{ METHOD .FdChildren.Add }
 Transform16.FdChildren.Add(Transform17);
-{ METHOD .FdChildren.Add }
 Group7.FdChildren.Add(Transform16);
-Transform22 := TTransformNode.Create;;
-Transform23 := TTransformNode.Create;;
-Shape24 := TShapeNode.Create;;
-Appearance25 := TAppearanceNode.Create;;
-Material26 := TMaterialNode.Create;;
-Material26.DiffuseColor := Vector3(0.2,0.7,0.7);
-{ METHOD .SetMaterial }
+Transform22 := TTransformNode.Create;
+Transform22.X3DName := 'trans3';
+Transform23 := TTransformNode.Create;
+Transform23.X3DName := 'rotscale3';
+Shape24 := TShapeNode.Create;
+Appearance25 := TAppearanceNode.Create;
+Material26 := TMaterialNode.Create;
+Material26.DiffuseColor := Vector3(0.2, 0.7, 0.7);
 Appearance25.Material := Material26;
-{ METHOD .Appearance }
-{ METHOD.SET .Appearance }
 Shape24.Appearance := Appearance25;
-Cylinder27 := TCylinderNode.Create;;
+Cylinder27 := TCylinderNode.Create;
 Cylinder27.Radius := 0.1;
-{ METHOD .Geometry }
-{ METHOD.SET .Geometry }
 Shape24.Geometry := Cylinder27;
-{ METHOD .FdChildren.Add }
 Transform23.FdChildren.Add(Shape24);
-{ METHOD .FdChildren.Add }
 Transform22.FdChildren.Add(Transform23);
-{ METHOD .FdChildren.Add }
 Group7.FdChildren.Add(Transform22);
+ProtoDeclare28 := CreateEmptyPrototype('point');
+ProtoDeclare28.X3DName := 'point';
+FieldVal30 := TSFVec3f.Create(nil, True, 'translation', Vector3(0, 0, 0));
+FieldDecl30 := TX3DInterfaceDeclaration.Create(nil);
+FieldDecl30.FieldOrEvent := FieldVal30;
+FieldVal30.ParentInterfaceDeclaration := FieldDecl30;
+ProtoDeclare28.InterfaceDeclarations.Add(FieldDecl30);
+Transform32 := TTransformNode.Create;
+Transform32.X3DName := 'node';
+Transform32.FieldOrEvent('translation', True).IsClauseNamesAdd('translation');
+Shape33 := TShapeNode.Create;
+Sphere34 := TSphereNode.Create;
+Sphere34.Radius := 0.1;
+Shape33.Geometry := Sphere34;
+Appearance35 := TAppearanceNode.Create;
 end;
 
 procedure InitarcoldPart2;
 begin
-
-X3DPrototype28 := TX3DPrototype.Create;;
-X3DInterfaceDeclaration29 := TX3DInterfaceDeclaration.Create(nil);;
-SFVec3f30 := TSFVec3f.CreateUndefined(X3DInterfaceDeclaration29, false, 'translation');
-SFVec3f30.Value := '0 0 0';
-{ METHOD .AddSFVec3f }
-X3DInterfaceDeclaration29.AddSFVec3f([SFVec3f30]);
-{ METHOD .AddX3DInterfaceDeclaration }
-X3DPrototype28.AddX3DInterfaceDeclaration([X3DInterfaceDeclaration29]);
-X3DPrototype31 := TX3DPrototype.Create;;
-Transform32 := TTransformNode.Create;;
-Shape34 := TShapeNode.Create;;
-Sphere35 := TSphereNode.Create;;
-Sphere35.Radius := 0.1;
-{ METHOD .Geometry }
-{ METHOD.SET .Geometry }
-Shape34.Geometry := Sphere35;
-Appearance36 := TAppearanceNode.Create;;
-Material37 := TMaterialNode.Create;;
-Material37.DiffuseColor := Vector3(1,0,0);
-{ METHOD .SetMaterial }
-Appearance36.Material := Material37;
-{ METHOD .Appearance }
-{ METHOD.SET .Appearance }
-Shape34.Appearance := Appearance36;
-{ METHOD .FdChildren.Add }
-Transform32.FdChildren.Add(Shape34);
-PositionInterpolator38 := TPositionInterpolatorNode.Create;;
-PositionInterpolator38.SetKey([0,1]);
-PositionInterpolator38.SetKeyValue([Vector3(0,0,0),Vector3(0,5,0)]);
-{ METHOD .FdChildren.Add }
-Transform32.FdChildren.Add(PositionInterpolator38);
-Script39 := TScriptNode.Create;;
-SFVec3f40 := TSFVec3f.CreateUndefined(Script39, false, 'translation');
-SFVec3f40.Value := '50 50 0';
-{ METHOD .Fd.AddCustomField }
-Script39.AddCustomField(SFVec3f40);
-SFVec3f41 := TSFVec3f.CreateUndefined(Script39, false, 'old');
-SFVec3f41.Value := '0 0 0';
-{ METHOD .Fd.AddCustomField }
-Script39.AddCustomField(SFVec3f41);
-SFTime42 := TSFTime.CreateUndefined(Script39, false, 'set_location');
+Material36 := TMaterialNode.Create;
+Material36.DiffuseColor := Vector3(1, 0, 0);
+Appearance35.Material := Material36;
+Shape33.Appearance := Appearance35;
+Transform32.FdChildren.Add(Shape33);
+PositionInterpolator37 := TPositionInterpolatorNode.Create;
+PositionInterpolator37.X3DName := 'PI1';
+PositionInterpolator37.SetKey([0, 1]);
+PositionInterpolator37.SetKeyValue([Vector3(0, 0, 0), Vector3(0, 5, 0)]);
+Transform32.FdChildren.Add(PositionInterpolator37);
+Script38 := TScriptNode.Create;
+Script38.X3DName := 'MB1';
+FieldVal39 := TSFVec3f.Create(Script38, True, 'translation', Vector3(50, 50, 0));
+Script38.AddCustomFieldOrEvent(FieldVal39);
+FieldVal40 := TSFVec3f.Create(Script38, True, 'old', Vector3(0, 0, 0));
+Script38.AddCustomFieldOrEvent(FieldVal40);
+FieldVal41 := TSFTime.CreateEvent(Script38, 'set_location', True);
+Script38.AddCustomFieldOrEvent(FieldVal41);
+FieldVal42 := TMFVec3f.CreateEvent(Script38, 'keyValue', False);
+Script38.AddCustomFieldOrEvent(FieldVal42);
+Script38.SetSourceCode('ecmascript:' + LineEnding +
+  '		function set_location(value) {' + LineEnding +
+  '                    old = translation;' + LineEnding +
+  '		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);' + LineEnding +
+  '                    keyValue = new MFVec3f([old, translation]);' + LineEnding +
+  '		    // Browser.println(translation);' + LineEnding +
+  '		}');
+Transform32.FdChildren.Add(Script38);
+TimeSensor43 := TTimeSensorNode.Create;
+TimeSensor43.X3DName := 'CL1';
+TimeSensor43.CycleInterval := 3;
+TimeSensor43.Loop := True;
+Transform32.FdChildren.Add(TimeSensor43);
+{ ROUTE CL1.cycleTime TO MB1.set_location }
+Transform32.AddRoute(TimeSensor43.EventCycleTime, FieldVal41);
+{ ROUTE CL1.fraction_changed TO PI1.set_fraction }
+Transform32.AddRoute(TimeSensor43.EventFraction_changed, PositionInterpolator37.EventSet_fraction);
+{ ROUTE MB1.keyValue TO PI1.keyValue }
+Transform32.AddRoute(FieldVal42, PositionInterpolator37.keyValue);
+{ ROUTE PI1.value_changed TO node.set_translation }
+Transform32.AddRoute(PositionInterpolator37.EventValue_changed, Transform32.FdTranslation.EventIn);
+ProtoDeclare28.Node.AddChildren([Transform32]);
+X3D0.AddPrototype(ProtoDeclare28);
+{ from doug sanden }
+ProtoDeclare48 := CreateEmptyPrototype('x3dconnector');
+ProtoDeclare48.X3DName := 'x3dconnector';
 end;
 
 procedure InitarcoldPart3;
 begin
+FieldVal50 := TSFNode.CreateUndefined(nil, True, 'startnode');
+FieldDecl50 := TX3DInterfaceDeclaration.Create(nil);
+FieldDecl50.FieldOrEvent := FieldVal50;
+FieldVal50.ParentInterfaceDeclaration := FieldDecl50;
+ProtoDeclare48.InterfaceDeclarations.Add(FieldDecl50);
+FieldVal51 := TSFNode.CreateUndefined(nil, True, 'endnode');
+FieldDecl51 := TX3DInterfaceDeclaration.Create(nil);
+FieldDecl51.FieldOrEvent := FieldVal51;
+FieldVal51.ParentInterfaceDeclaration := FieldDecl51;
+ProtoDeclare48.InterfaceDeclarations.Add(FieldDecl51);
+FieldVal52 := TSFNode.CreateUndefined(nil, True, 'transnode');
+FieldDecl52 := TX3DInterfaceDeclaration.Create(nil);
+FieldDecl52.FieldOrEvent := FieldVal52;
+FieldVal52.ParentInterfaceDeclaration := FieldDecl52;
+ProtoDeclare48.InterfaceDeclarations.Add(FieldDecl52);
+FieldVal53 := TSFNode.CreateUndefined(nil, True, 'rotscalenode');
+FieldDecl53 := TX3DInterfaceDeclaration.Create(nil);
+FieldDecl53.FieldOrEvent := FieldVal53;
+FieldVal53.ParentInterfaceDeclaration := FieldDecl53;
+ProtoDeclare48.InterfaceDeclarations.Add(FieldDecl53);
+FieldVal54 := TSFVec3f.CreateEvent(nil, 'set_startpoint', True);
+FieldDecl54 := TX3DInterfaceDeclaration.Create(nil);
+FieldDecl54.FieldOrEvent := FieldVal54;
+FieldVal54.ParentInterfaceDeclaration := FieldDecl54;
+ProtoDeclare48.InterfaceDeclarations.Add(FieldDecl54);
+FieldVal55 := TSFVec3f.CreateEvent(nil, 'set_endpoint', True);
+FieldDecl55 := TX3DInterfaceDeclaration.Create(nil);
+FieldDecl55.FieldOrEvent := FieldVal55;
+FieldVal55.ParentInterfaceDeclaration := FieldDecl55;
+ProtoDeclare48.InterfaceDeclarations.Add(FieldDecl55);
+Script57 := TScriptNode.Create;
+Script57.X3DName := 'S1';
+FieldVal58 := TSFNode.CreateUndefined(Script57, True, 'startnode');
+Script57.AddCustomFieldOrEvent(FieldVal58);
+FieldVal59 := TSFNode.CreateUndefined(Script57, True, 'endnode');
+Script57.AddCustomFieldOrEvent(FieldVal59);
+FieldVal60 := TSFNode.CreateUndefined(Script57, True, 'transnode');
+Script57.AddCustomFieldOrEvent(FieldVal60);
+FieldVal61 := TSFNode.CreateUndefined(Script57, True, 'rotscalenode');
+Script57.AddCustomFieldOrEvent(FieldVal61);
+end;
 
-{ METHOD .Fd.AddCustomField }
-Script39.AddCustomField(SFTime42);
-MFVec3f43 := TMFVec3f.CreateUndefined(Script39, false, 'keyValue');
-{ METHOD .Fd.AddCustomField }
-Script39.AddCustomField(MFVec3f43);
+procedure InitarcoldPart4;
+begin
+FieldVal62 := TSFVec3f.CreateEvent(Script57, 'set_startpoint', True);
+Script57.AddCustomFieldOrEvent(FieldVal62);
+FieldVal63 := TSFVec3f.CreateEvent(Script57, 'set_endpoint', True);
+Script57.AddCustomFieldOrEvent(FieldVal63);
+Script57.FieldOrEvent('startnode', True).IsClauseNamesAdd('startnode');
+Script57.FieldOrEvent('endnode', True).IsClauseNamesAdd('endnode');
+Script57.FieldOrEvent('transnode', True).IsClauseNamesAdd('transnode');
+Script57.FieldOrEvent('rotscalenode', True).IsClauseNamesAdd('rotscalenode');
+Script57.FieldOrEvent('set_startpoint', True).IsClauseNamesAdd('set_startpoint');
+Script57.FieldOrEvent('set_endpoint', True).IsClauseNamesAdd('set_endpoint');
+Script57.SetSourceCode('ecmascript:' + LineEnding +
+  '        function recompute(startpoint,endpoint){' + LineEnding +
+  '	    if (typeof endpoint === ''undefined'') {\n		return;\n	    }\n            var dif = endpoint.subtract(startpoint);\n            var dist = dif.length()*0.5;\n            var dif2 = dif.multiply(0.5);\n            var norm = dif.normalize();\n            var transl = startpoint.add(dif2);\n	    if (typeof Quaternion !== ''undefined'') {\n		    return {\n			    scale : new SFVec3f(1.0,dist,1.0),\n			    translation : transl,\n			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)\n		    };\n	    } else {\n		    return {\n			    scale : new SFVec3f(1.0,dist,1.0),\n			    translation : transl,\n			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)\n		    };\n	    }\n	}\n	function recompute_and_route(startpoint, endpoint) {\n		var trafo = recompute(startpoint, endpoint);\n		if (typeof trafo !== ''undefined'') {' + LineEnding +
+  '			transnode.translation = trafo.translation;' + LineEnding +
+  '			rotscalenode.rotation = trafo.rotation;' + LineEnding +
+  '			rotscalenode.scale = trafo.scale;' + LineEnding +
+  '		} else {' + LineEnding +
+  '			Browser.print("recompute returned undefined");' + LineEnding +
+  '		}' + LineEnding +
+  '	}' + LineEnding +
+  '        function initialize(){' + LineEnding +
+  '            recompute_and_route(startnode.translation,endnode.translation);' + LineEnding +
+  '        }' + LineEnding +
+  '        function set_startpoint(val,t){' + LineEnding +
+  '            recompute_and_route(val || startnode.translation,endnode.translation);' + LineEnding +
+  '        }' + LineEnding +
+  '        function set_endpoint(val,t){' + LineEnding +
+  '            recompute_and_route(startnode.translation,val || endnode.translation);' + LineEnding +
+  '        }');
+ProtoDeclare48.Node.AddChildren([Script57]);
+X3D0.AddPrototype(ProtoDeclare48);
+ProtoInstance64 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare28);
+ProtoInstance64.X3DName := 'G1';
+Group7.FdChildren.Add(ProtoInstance64.Instantiate);
+ProtoInstance65 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare28);
+ProtoInstance65.X3DName := 'G2';
+Group7.FdChildren.Add(ProtoInstance65.Instantiate);
+ProtoInstance66 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare28);
+ProtoInstance66.X3DName := 'G3';
+Group7.FdChildren.Add(ProtoInstance66.Instantiate);
+ProtoInstance67 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare28);
+ProtoInstance67.X3DName := 'G4';
+Group7.FdChildren.Add(ProtoInstance67.Instantiate);
+ProtoInstance68 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare48);
+ProtoInstance68.X3DName := 'connector1';
+(ProtoInstance68.Field('startnode') as TSFNode).Value := ProtoInstance64;
+(ProtoInstance68.Field('endnode') as TSFNode).Value := ProtoInstance65;
+(ProtoInstance68.Field('transnode') as TSFNode).Value := Transform10;
+(ProtoInstance68.Field('rotscalenode') as TSFNode).Value := Transform11;
+Group7.FdChildren.Add(ProtoInstance68.Instantiate);
+ProtoInstance77 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare48);
+ProtoInstance77.X3DName := 'connector2';
+(ProtoInstance77.Field('startnode') as TSFNode).Value := ProtoInstance64;
+(ProtoInstance77.Field('endnode') as TSFNode).Value := ProtoInstance66;
+(ProtoInstance77.Field('transnode') as TSFNode).Value := Transform16;
+(ProtoInstance77.Field('rotscalenode') as TSFNode).Value := Transform17;
+Group7.FdChildren.Add(ProtoInstance77.Instantiate);
+ProtoInstance86 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare48);
+end;
 
-Script39.SetSourceCode('''ecmascript:\n"+
-"		function set_location(value) {\n"+
-"                    old = translation;\n"+
-"		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);\n"+
-"                    keyValue = new MFVec3f([old, translation]);\n"+
-"		    // Browser.println(translation);\n"+
-"		}''');
-{ METHOD .FdChildren.Add }
-Transform32.FdChildren.Add(Script39);
-TimeSensor44 := TTimeSensorNode.Create;;
-TimeSensor44.CycleInterval := 3;
-TimeSensor44.Loop := True;
-{ METHOD .FdChildren.Add }
-Transform32.FdChildren.Add(TimeSensor44);
-{ Original "CL1.EventCycleTime TO MB1.EventSet_location }
-{ Sample CL1.EventCycleTime TO MB1.EventSet_location}
-Transform32.AddRoute(TimeSensor44.EventCycleTime, Script39.EventSet_location);
-{ METHOD .AddX3DROUTE }
-{ Original "CL1.EventFraction_changed TO PI1.EventSet_fraction }
-{ Sample CL1.EventFraction_changed TO PI1.EventSet_fraction}
-Transform32.AddRoute(TimeSensor44.EventFraction_changed, PositionInterpolator38.EventSet_fraction);
-{ METHOD .AddX3DROUTE }
-{ Original "MB1.EventKeyValue TO PI1.keyValue }
-{ Sample MB1.EventKeyValue TO PI1.keyValue}
-Transform32.AddRoute(Script39.EventKeyValue, PositionInterpolator38.keyValue);
-{ METHOD .AddX3DROUTE }
-{ Original "PI1.EventValue_changed TO node.FdTranslation.EventIn }
-{ Sample PI1.EventValue_changed TO node.FdTranslation.EventIn}
-Transform32.AddRoute(PositionInterpolator38.EventValue_changed, Transform32.FdTranslation.EventIn);
-{ METHOD .AddX3DROUTE }
-{ METHOD .AddTransform }
-X3DPrototype31.AddTransform([Transform32]);
-{ METHOD .AddX3DPrototype }
-X3DPrototype28.AddX3DPrototype([X3DPrototype31]);
-{ METHOD .AddX3DPrototype }
-Group7.AddX3DPrototype([X3DPrototype28]);
-{ from doug sanden }
-X3DPrototype49 := TX3DPrototype.Create;;
-X3DInterfaceDeclaration50 := TX3DInterfaceDeclaration.Create(nil);;
-SFNode51 := TSFNode.CreateUndefined(X3DInterfaceDeclaration50, false, 'startnode');
-{ METHOD .AddSFNode }
-X3DInterfaceDeclaration50.AddSFNode([SFNode51]);
-SFNode52 := TSFNode.CreateUndefined(X3DInterfaceDeclaration50, false, 'endnode');
-{ METHOD .AddSFNode }
-X3DInterfaceDeclaration50.AddSFNode([SFNode52]);
-SFNode53 := TSFNode.CreateUndefined(X3DInterfaceDeclaration50, false, 'transnode');
-{ METHOD .AddSFNode }
-X3DInterfaceDeclaration50.AddSFNode([SFNode53]);
-SFNode54 := TSFNode.CreateUndefined(X3DInterfaceDeclaration50, false, 'rotscalenode');
-{ METHOD .AddSFNode }
-X3DInterfaceDeclaration50.AddSFNode([SFNode54]);
-SFVec3f55 := TSFVec3f.CreateUndefined(X3DInterfaceDeclaration50, false, 'set_startpoint');
-{ METHOD .AddSFVec3f }
-X3DInterfaceDeclaration50.AddSFVec3f([SFVec3f55]);
-SFVec3f56 := TSFVec3f.CreateUndefined(X3DInterfaceDeclaration50, false, 'set_endpoint');
-{ METHOD .AddSFVec3f }
-X3DInterfaceDeclaration50.AddSFVec3f([SFVec3f56]);
-{ METHOD .AddX3DInterfaceDeclaration }
-X3DPrototype49.AddX3DInterfaceDeclaration([X3DInterfaceDeclaration50]);
-X3DPrototype57 := TX3DPrototype.Create;;
-Script58 := TScriptNode.Create;;
-SFNode59 := TSFNode.CreateUndefined(Script58, false, 'startnode');
-{ METHOD .Fd.AddCustomField }
-Script58.AddCustomField(SFNode59);
-SFNode60 := TSFNode.CreateUndefined(Script58, false, 'endnode');
-{ METHOD .Fd.AddCustomField }
-Script58.AddCustomField(SFNode60);
-SFNode61 := TSFNode.CreateUndefined(Script58, false, 'transnode');
-{ METHOD .Fd.AddCustomField }
-Script58.AddCustomField(SFNode61);
-SFNode62 := TSFNode.CreateUndefined(Script58, false, 'rotscalenode');
-{ METHOD .Fd.AddCustomField }
-Script58.AddCustomField(SFNode62);
-SFVec3f63 := TSFVec3f.CreateUndefined(Script58, false, 'set_startpoint');
-{ METHOD .Fd.AddCustomField }
-Script58.AddCustomField(SFVec3f63);
-SFVec3f64 := TSFVec3f.CreateUndefined(Script58, false, 'set_endpoint');
-{ METHOD .Fd.AddCustomField }
-Script58.AddCustomField(SFVec3f64);
-
-Script58.SetSourceCode('''ecmascript:\n"+
-"        function recompute(startpoint,endpoint){\n"+
-"	    if (typeof endpoint === 'undefined') {\\n		return;\\n	    }\\n            var dif = endpoint.subtract(startpoint);\\n            var dist = dif.length()*0.5;\\n            var dif2 = dif.multiply(0.5);\\n            var norm = dif.normalize();\\n            var transl = startpoint.add(dif2);\\n	    if (typeof Quaternion !== 'undefined') {\\n		    return {\\n			    scale : new SFVec3f(1.0,dist,1.0),\\n			    translation : transl,\\n			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)\\n		    };\\n	    } else {\\n		    return {\\n			    scale : new SFVec3f(1.0,dist,1.0),\\n			    translation : transl,\\n			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)\\n		    };\\n	    }\\n	}\\n	function recompute_and_route(startpoint, endpoint) {\\n		var trafo = recompute(startpoint, endpoint);\\n		if (typeof trafo !== 'undefined') {\n"+
-"			transnode.translation = trafo.translation;\n"+
-"			rotscalenode.rotation = trafo.rotation;\n"+
-"			rotscalenode.scale = trafo.scale;\n"+
-"		} else {\n"+
-"			Browser.print(\"recompute returned undefined\");\n"+
-"		}\n"+
-"	}\n"+
-"        function initialize(){\n"+
-"            recompute_and_route(startnode.translation,endnode.translation);\n"+
-"        }\n"+
-"        function set_startpoint(val,t){\n"+
-"            recompute_and_route(val || startnode.translation,endnode.translation);\n"+
-"        }\n"+
-"        function set_endpoint(val,t){\n"+
-"            recompute_and_route(startnode.translation,val || endnode.translation);\n"+
-"        }''');
-{ METHOD .AddScript }
-X3DPrototype57.AddScript([Script58]);
-{ METHOD .AddX3DPrototype }
-X3DPrototype49.AddX3DPrototype([X3DPrototype57]);
-{ METHOD .AddX3DPrototype }
-Group7.AddX3DPrototype([X3DPrototype49]);
-X3DPrototype66 := TX3DPrototypeNode;
-{ METHOD .AddX3DPrototype }
-Group7.AddX3DPrototype([X3DPrototype66]);
-X3DPrototype67 := TX3DPrototypeNode;
-{ METHOD .AddX3DPrototype }
-Group7.AddX3DPrototype([X3DPrototype67]);
-X3DPrototype68 := TX3DPrototypeNode;
-{ METHOD .AddX3DPrototype }
-Group7.AddX3DPrototype([X3DPrototype68]);
-X3DPrototype69 := TX3DPrototypeNode;
-{ METHOD .AddX3DPrototype }
-Group7.AddX3DPrototype([X3DPrototype69]);
-X3DPrototype70 := TX3DPrototypeNode;
-SFNode71 := TSFNode.CreateUndefined(X3DPrototype70, false, 'startnode');
-{ METHOD .AddX3DPrototype }
-SFNode71.AddX3DPrototype([X3DPrototype66]);
-{ METHOD .AddSFNode }
-X3DPrototype70.AddSFNode([SFNode71]);
-SFNode73 := TSFNode.CreateUndefined(X3DPrototype70, false, 'endnode');
-{ METHOD .AddX3DPrototype }
-SFNode73.AddX3DPrototype([X3DPrototype67]);
-{ METHOD .AddSFNode }
-X3DPrototype70.AddSFNode([SFNode73]);
-SFNode75 := TSFNode.CreateUndefined(X3DPrototype70, false, 'transnode');
-{ METHOD .Fd.Value }
-SFNode75.Value := Transform10;
-{ METHOD .AddSFNode }
-X3DPrototype70.AddSFNode([SFNode75]);
-SFNode77 := TSFNode.CreateUndefined(X3DPrototype70, false, 'rotscalenode');
-{ METHOD .Fd.Value }
-SFNode77.Value := Transform11;
-{ METHOD .AddSFNode }
-X3DPrototype70.AddSFNode([SFNode77]);
-{ METHOD .AddX3DPrototype }
-Group7.AddX3DPrototype([X3DPrototype70]);
-X3DPrototype79 := TX3DPrototypeNode;
-SFNode80 := TSFNode.CreateUndefined(X3DPrototype79, false, 'startnode');
-{ METHOD .AddX3DPrototype }
-SFNode80.AddX3DPrototype([X3DPrototype66]);
-{ METHOD .AddSFNode }
-X3DPrototype79.AddSFNode([SFNode80]);
-SFNode82 := TSFNode.CreateUndefined(X3DPrototype79, false, 'endnode');
-{ METHOD .AddX3DPrototype }
-SFNode82.AddX3DPrototype([X3DPrototype68]);
-{ METHOD .AddSFNode }
-X3DPrototype79.AddSFNode([SFNode82]);
-SFNode84 := TSFNode.CreateUndefined(X3DPrototype79, false, 'transnode');
-{ METHOD .Fd.Value }
-SFNode84.Value := Transform16;
-{ METHOD .AddSFNode }
-X3DPrototype79.AddSFNode([SFNode84]);
-SFNode86 := TSFNode.CreateUndefined(X3DPrototype79, false, 'rotscalenode');
-{ METHOD .Fd.Value }
-SFNode86.Value := Transform17;
-{ METHOD .AddSFNode }
-X3DPrototype79.AddSFNode([SFNode86]);
-{ METHOD .AddX3DPrototype }
-Group7.AddX3DPrototype([X3DPrototype79]);
-X3DPrototype88 := TX3DPrototypeNode;
-SFNode89 := TSFNode.CreateUndefined(X3DPrototype88, false, 'startnode');
-{ METHOD .AddX3DPrototype }
-SFNode89.AddX3DPrototype([X3DPrototype66]);
-{ METHOD .AddSFNode }
-X3DPrototype88.AddSFNode([SFNode89]);
-SFNode91 := TSFNode.CreateUndefined(X3DPrototype88, false, 'endnode');
-{ METHOD .AddX3DPrototype }
-SFNode91.AddX3DPrototype([X3DPrototype69]);
-{ METHOD .AddSFNode }
-X3DPrototype88.AddSFNode([SFNode91]);
-SFNode93 := TSFNode.CreateUndefined(X3DPrototype88, false, 'transnode');
-{ METHOD .Fd.Value }
-SFNode93.Value := Transform22;
-{ METHOD .AddSFNode }
-X3DPrototype88.AddSFNode([SFNode93]);
-SFNode95 := TSFNode.CreateUndefined(X3DPrototype88, false, 'rotscalenode');
-{ METHOD .Fd.Value }
-SFNode95.Value := Transform23;
-{ METHOD .AddSFNode }
-X3DPrototype88.AddSFNode([SFNode95]);
-{ METHOD .AddX3DPrototype }
-Group7.AddX3DPrototype([X3DPrototype88]);
-{ Original "G1.EventTranslation_changed TO connector1.EventSet_startpoint }
-{ Sample G1.EventTranslation_changed TO connector1.EventSet_startpoint}
-Group7.AddRoute(X3DPrototype66.EventTranslation_changed, X3DPrototype70.EventSet_startpoint);
-{ METHOD .AddX3DROUTE }
-{ Original "G2.EventTranslation_changed TO connector1.EventSet_endpoint }
-{ Sample G2.EventTranslation_changed TO connector1.EventSet_endpoint}
-Group7.AddRoute(X3DPrototype67.EventTranslation_changed, X3DPrototype70.EventSet_endpoint);
-{ METHOD .AddX3DROUTE }
-{ Original "G1.EventTranslation_changed TO connector2.EventSet_startpoint }
-{ Sample G1.EventTranslation_changed TO connector2.EventSet_startpoint}
-Group7.AddRoute(X3DPrototype66.EventTranslation_changed, X3DPrototype79.EventSet_startpoint);
-{ METHOD .AddX3DROUTE }
-{ Original "G3.EventTranslation_changed TO connector2.EventSet_endpoint }
-{ Sample G3.EventTranslation_changed TO connector2.EventSet_endpoint}
-Group7.AddRoute(X3DPrototype68.EventTranslation_changed, X3DPrototype79.EventSet_endpoint);
-{ METHOD .AddX3DROUTE }
-{ Original "G1.EventTranslation_changed TO connector3.EventSet_startpoint }
-{ Sample G1.EventTranslation_changed TO connector3.EventSet_startpoint}
-Group7.AddRoute(X3DPrototype66.EventTranslation_changed, X3DPrototype88.EventSet_startpoint);
-{ METHOD .AddX3DROUTE }
-{ Original "G4.EventTranslation_changed TO connector3.EventSet_endpoint }
-{ Sample G4.EventTranslation_changed TO connector3.EventSet_endpoint}
-Group7.AddRoute(X3DPrototype69.EventTranslation_changed, X3DPrototype88.EventSet_endpoint);
-{ METHOD .AddX3DROUTE }
-{ METHOD .AddGroup }
+procedure InitarcoldPart5;
+begin
+ProtoInstance86.X3DName := 'connector3';
+(ProtoInstance86.Field('startnode') as TSFNode).Value := ProtoInstance64;
+(ProtoInstance86.Field('endnode') as TSFNode).Value := ProtoInstance67;
+(ProtoInstance86.Field('transnode') as TSFNode).Value := Transform22;
+(ProtoInstance86.Field('rotscalenode') as TSFNode).Value := Transform23;
+Group7.FdChildren.Add(ProtoInstance86.Instantiate);
+{ ROUTE G1.translation_changed TO connector1.set_startpoint }
+Group7.AddRoute(ProtoInstance64.EventTranslation_changed, ProtoInstance68.EventSet_startpoint);
+{ ROUTE G2.translation_changed TO connector1.set_endpoint }
+Group7.AddRoute(ProtoInstance65.EventTranslation_changed, ProtoInstance68.EventSet_endpoint);
+{ ROUTE G1.translation_changed TO connector2.set_startpoint }
+Group7.AddRoute(ProtoInstance64.EventTranslation_changed, ProtoInstance77.EventSet_startpoint);
+{ ROUTE G3.translation_changed TO connector2.set_endpoint }
+Group7.AddRoute(ProtoInstance66.EventTranslation_changed, ProtoInstance77.EventSet_endpoint);
+{ ROUTE G1.translation_changed TO connector3.set_startpoint }
+Group7.AddRoute(ProtoInstance64.EventTranslation_changed, ProtoInstance86.EventSet_startpoint);
+{ ROUTE G4.translation_changed TO connector3.set_endpoint }
+Group7.AddRoute(ProtoInstance67.EventTranslation_changed, ProtoInstance86.EventSet_endpoint);
 X3D0.AddChildren([Group7]);
 end;
 
 function Createarcold: TX3DRootNode;
 begin
-InitarcoldPart0;
-InitarcoldPart1;
-InitarcoldPart2;
-InitarcoldPart3;
-Result := X3D0;
+  InitarcoldPart0;
+  InitarcoldPart1;
+  InitarcoldPart2;
+  InitarcoldPart3;
+  InitarcoldPart4;
+  InitarcoldPart5;
+  Result := X3D0;
 end;
 
 begin

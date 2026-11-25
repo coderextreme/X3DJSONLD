@@ -8,48 +8,66 @@ function CreateBoxEm: TX3DRootNode;
 
 implementation
 
-uses CastleVectors;
+uses Classes, SysUtils, X3DLoad, CastleVectors;
+
+function CreateEmptyPrototype(const AName: String): TX3DPrototype;
+var
+  Stream: TStringStream;
+  TempRoot: TX3DRootNode;
+  CopyState: TX3DNodeDeepCopyState;
+begin
+  Stream := TStringStream.Create('#X3D V4.0 utf8' + LineEnding + 'PROTO ' + AName + ' [] {}');
+  try
+    TempRoot := LoadNode(Stream, '', 'model/x3d+vrml');
+    try
+      CopyState := TX3DNodeDeepCopyState.Create;
+      try
+        Result := TempRoot.Prototypes[0].DeepCopy(CopyState) as TX3DPrototype;
+      finally
+        FreeAndNil(CopyState);
+      end;
+    finally
+      FreeAndNil(TempRoot);
+    end;
+  finally
+    FreeAndNil(Stream);
+  end;
+end;
 
 var
-X3D0: TX3DRootNode;
-Group7: TGroupNode;
-NavigationInfo8: TNavigationInfoNode;
-Viewpoint9: TViewpointNode;
-X3DPrototype10: TX3DPrototype;
-X3DInterfaceDeclaration11: TX3DInterfaceDeclaration;
-SFVec3f12: TSFVec3f;
-MFNode13: TMFNode;
-Shape14: TShapeNode;
-Sphere15: TSphereNode;
-Appearance16: TAppearanceNode;
-Material17: TMaterialNode;
-X3DPrototype18: TX3DPrototype;
-Transform19: TTransformNode;
-X3DPrototype21: TX3DPrototype;
-X3DInterfaceDeclaration22: TX3DInterfaceDeclaration;
-SFVec3f23: TSFVec3f;
-MFNode24: TMFNode;
-Shape25: TShapeNode;
-Cylinder26: TCylinderNode;
-Appearance27: TAppearanceNode;
-Material28: TMaterialNode;
-X3DPrototype29: TX3DPrototype;
-Transform30: TTransformNode;
-X3DPrototype32: TX3DPrototypeNode;
-SFVec3f33: TSFVec3f;
-X3DPrototype35: TX3DPrototypeNode;
-SFVec3f36: TSFVec3f;
-X3DPrototype38: TX3DPrototypeNode;
-SFVec3f39: TSFVec3f;
-X3DPrototype41: TX3DPrototypeNode;
-SFVec3f42: TSFVec3f;
-MFNode43: TMFNode;
-Shape44: TShapeNode;
-Box45: TBoxNode;
-Appearance46: TAppearanceNode;
-Material47: TMaterialNode;
-Transform48: TTransformNode;
-Shape49: TShapeNode;
+  X3D0: TX3DRootNode;
+  Group7: TGroupNode;
+  NavigationInfo8: TNavigationInfoNode;
+  Viewpoint9: TViewpointNode;
+  ProtoDeclare10: TX3DPrototype;
+  FieldDecl12: TX3DInterfaceDeclaration;
+  FieldVal12: TSFVec3f;
+  FieldDecl13: TX3DInterfaceDeclaration;
+  FieldVal13: TMFNode;
+  Shape14: TShapeNode;
+  Sphere15: TSphereNode;
+  Appearance16: TAppearanceNode;
+  Material17: TMaterialNode;
+  Transform19: TTransformNode;
+  ProtoDeclare20: TX3DPrototype;
+  FieldDecl22: TX3DInterfaceDeclaration;
+  FieldVal22: TSFVec3f;
+  FieldDecl23: TX3DInterfaceDeclaration;
+  FieldVal23: TMFNode;
+  Shape24: TShapeNode;
+  Cylinder25: TCylinderNode;
+  Appearance26: TAppearanceNode;
+  Material27: TMaterialNode;
+  Transform29: TTransformNode;
+  ProtoInstance30: TX3DPrototypeNode;
+  ProtoInstance32: TX3DPrototypeNode;
+  ProtoInstance34: TX3DPrototypeNode;
+  ProtoInstance36: TX3DPrototypeNode;
+  Shape39: TShapeNode;
+  Box40: TBoxNode;
+  Appearance41: TAppearanceNode;
+  Material42: TMaterialNode;
+  Transform43: TTransformNode;
 
 procedure InitBoxEmPart0;
 begin
@@ -58,173 +76,117 @@ X3D0.Profile := 'Immersive';
 X3D0.ForceVersion.Major := 4;
 X3D0.ForceVersion.Minor := 0;
 X3D0.Meta['title'] := 'BoxEm.x3d';
-{ METHOD .Meta }
 X3D0.Meta['creator'] := 'John Carlson';
-{ METHOD .Meta }
 X3D0.Meta['generator'] := 'manual';
-{ METHOD .Meta }
 X3D0.Meta['identifier'] := 'https://coderextreme.net/X3DJSONLD/src/main/data/box.x3d';
-{ METHOD .Meta }
 X3D0.Meta['description'] := '3 boxes';
-{ METHOD .Meta }
-{ METHOD .Head }
-Group7 := TGroupNode.Create;;
-NavigationInfo8 := TNavigationInfoNode.Create;;
+Group7 := TGroupNode.Create;
+NavigationInfo8 := TNavigationInfoNode.Create;
 NavigationInfo8.SetType(['EXAMINE']);
-{ METHOD .FdChildren.Add }
 Group7.FdChildren.Add(NavigationInfo8);
-Viewpoint9 := TViewpointNode.Create;;
+Viewpoint9 := TViewpointNode.Create;
 Viewpoint9.Description := 'Cubes on Fire';
-Viewpoint9.Position := Vector3(0,0,12);
-{ METHOD .FdChildren.Add }
+Viewpoint9.Position := Vector3(0, 0, 12);
 Group7.FdChildren.Add(Viewpoint9);
-X3DPrototype10 := TX3DPrototype.Create;;
-X3DInterfaceDeclaration11 := TX3DInterfaceDeclaration.Create(nil);;
-SFVec3f12 := TSFVec3f.CreateUndefined(X3DInterfaceDeclaration11, false, 'xtranslation');
-SFVec3f12.Value := '0 0 0';
-{ METHOD .AddSFVec3f }
-X3DInterfaceDeclaration11.AddSFVec3f([SFVec3f12]);
-MFNode13 := TMFNode.CreateUndefined(X3DInterfaceDeclaration11, false, 'myShape');
-Shape14 := TShapeNode.Create;;
-Sphere15 := TSphereNode.Create;;
-{ METHOD .Geometry }
-{ METHOD.SET .Geometry }
+ProtoDeclare10 := CreateEmptyPrototype('anyShape');
+ProtoDeclare10.X3DName := 'anyShape';
+FieldVal12 := TSFVec3f.Create(nil, True, 'xtranslation', Vector3(0, 0, 0));
+FieldDecl12 := TX3DInterfaceDeclaration.Create(nil);
+FieldDecl12.FieldOrEvent := FieldVal12;
+FieldVal12.ParentInterfaceDeclaration := FieldDecl12;
+ProtoDeclare10.InterfaceDeclarations.Add(FieldDecl12);
+FieldVal13 := TMFNode.CreateUndefined(nil, True, 'myShape');
+FieldDecl13 := TX3DInterfaceDeclaration.Create(nil);
+FieldDecl13.FieldOrEvent := FieldVal13;
+FieldVal13.ParentInterfaceDeclaration := FieldDecl13;
+ProtoDeclare10.InterfaceDeclarations.Add(FieldDecl13);
+Shape14 := TShapeNode.Create;
+Sphere15 := TSphereNode.Create;
 Shape14.Geometry := Sphere15;
-Appearance16 := TAppearanceNode.Create;;
-Material17 := TMaterialNode.Create;;
-Material17.DiffuseColor := Vector3(1,1,1);
-{ METHOD .SetMaterial }
+Appearance16 := TAppearanceNode.Create;
+Material17 := TMaterialNode.Create;
+Material17.DiffuseColor := Vector3(1, 1, 1);
 Appearance16.Material := Material17;
-{ METHOD .Appearance }
-{ METHOD.SET .Appearance }
 Shape14.Appearance := Appearance16;
+FieldVal13.Add(Shape14);
+Transform19 := TTransformNode.Create;
+Transform19.FieldOrEvent('translation', True).IsClauseNamesAdd('xtranslation');
 end;
 
 procedure InitBoxEmPart1;
 begin
-
-{ METHOD .AddShape }
-MFNode13.AddShape([Shape14]);
-{ METHOD .AddMFNode }
-X3DInterfaceDeclaration11.AddMFNode([MFNode13]);
-{ METHOD .AddX3DInterfaceDeclaration }
-X3DPrototype10.AddX3DInterfaceDeclaration([X3DInterfaceDeclaration11]);
-X3DPrototype18 := TX3DPrototype.Create;;
-Transform19 := TTransformNode.Create;;
-{ METHOD .AddTransform }
-X3DPrototype18.AddTransform([Transform19]);
-{ METHOD .AddX3DPrototype }
-X3DPrototype10.AddX3DPrototype([X3DPrototype18]);
-{ METHOD .AddX3DPrototype }
-Group7.AddX3DPrototype([X3DPrototype10]);
-X3DPrototype21 := TX3DPrototype.Create;;
-X3DInterfaceDeclaration22 := TX3DInterfaceDeclaration.Create(nil);;
-SFVec3f23 := TSFVec3f.CreateUndefined(X3DInterfaceDeclaration22, false, 'ytranslation');
-SFVec3f23.Value := '0 0 0';
-{ METHOD .AddSFVec3f }
-X3DInterfaceDeclaration22.AddSFVec3f([SFVec3f23]);
-MFNode24 := TMFNode.CreateUndefined(X3DInterfaceDeclaration22, false, 'myShape');
-Shape25 := TShapeNode.Create;;
-Cylinder26 := TCylinderNode.Create;;
-{ METHOD .Geometry }
-{ METHOD.SET .Geometry }
-Shape25.Geometry := Cylinder26;
-Appearance27 := TAppearanceNode.Create;;
-Material28 := TMaterialNode.Create;;
-Material28.DiffuseColor := Vector3(1,1,1);
-{ METHOD .SetMaterial }
-Appearance27.Material := Material28;
-{ METHOD .Appearance }
-{ METHOD.SET .Appearance }
-Shape25.Appearance := Appearance27;
-{ METHOD .AddShape }
-MFNode24.AddShape([Shape25]);
-{ METHOD .AddMFNode }
-X3DInterfaceDeclaration22.AddMFNode([MFNode24]);
-{ METHOD .AddX3DInterfaceDeclaration }
-X3DPrototype21.AddX3DInterfaceDeclaration([X3DInterfaceDeclaration22]);
-X3DPrototype29 := TX3DPrototype.Create;;
-Transform30 := TTransformNode.Create;;
-X3DPrototype32 := TX3DPrototypeNode;
-SFVec3f33 := TSFVec3f.CreateUndefined(X3DPrototype32, false, 'xtranslation');
-SFVec3f33.Value := '0 0 0';
+Transform19.FieldOrEvent('children', True).IsClauseNamesAdd('myShape');
+ProtoDeclare10.Node.AddChildren([Transform19]);
+X3D0.AddPrototype(ProtoDeclare10);
+ProtoDeclare20 := CreateEmptyPrototype('three');
+ProtoDeclare20.X3DName := 'three';
+FieldVal22 := TSFVec3f.Create(nil, True, 'ytranslation', Vector3(0, 0, 0));
+FieldDecl22 := TX3DInterfaceDeclaration.Create(nil);
+FieldDecl22.FieldOrEvent := FieldVal22;
+FieldVal22.ParentInterfaceDeclaration := FieldDecl22;
+ProtoDeclare20.InterfaceDeclarations.Add(FieldDecl22);
+FieldVal23 := TMFNode.CreateUndefined(nil, True, 'myShape');
+FieldDecl23 := TX3DInterfaceDeclaration.Create(nil);
+FieldDecl23.FieldOrEvent := FieldVal23;
+FieldVal23.ParentInterfaceDeclaration := FieldDecl23;
+ProtoDeclare20.InterfaceDeclarations.Add(FieldDecl23);
+Shape24 := TShapeNode.Create;
+Cylinder25 := TCylinderNode.Create;
+Shape24.Geometry := Cylinder25;
+Appearance26 := TAppearanceNode.Create;
+Material27 := TMaterialNode.Create;
+Material27.DiffuseColor := Vector3(1, 1, 1);
+Appearance26.Material := Material27;
+Shape24.Appearance := Appearance26;
+FieldVal23.Add(Shape24);
+Transform29 := TTransformNode.Create;
+Transform29.FieldOrEvent('translation', True).IsClauseNamesAdd('ytranslation');
+ProtoInstance30 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare10);
+(ProtoInstance30.Field('xtranslation') as TSFVec3f).Value := Vector3(0, 0, 0);
+ProtoInstance30.FieldOrEvent('myShape', True).IsClauseNamesAdd('myShape');
+Transform29.FdChildren.Add(ProtoInstance30.Instantiate);
+ProtoInstance32 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare10);
+(ProtoInstance32.Field('xtranslation') as TSFVec3f).Value := Vector3(2, 0, 0);
+ProtoInstance32.FieldOrEvent('myShape', True).IsClauseNamesAdd('myShape');
+Transform29.FdChildren.Add(ProtoInstance32.Instantiate);
+ProtoInstance34 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare10);
+(ProtoInstance34.Field('xtranslation') as TSFVec3f).Value := Vector3(-2, 0, 0);
+ProtoInstance34.FieldOrEvent('myShape', True).IsClauseNamesAdd('myShape');
+Transform29.FdChildren.Add(ProtoInstance34.Instantiate);
+ProtoDeclare20.Node.AddChildren([Transform29]);
+X3D0.AddPrototype(ProtoDeclare20);
 end;
 
 procedure InitBoxEmPart2;
 begin
-
-{ METHOD .AddSFVec3f }
-X3DPrototype32.AddSFVec3f([SFVec3f33]);
-{ METHOD .AddX3DPrototype }
-Transform30.AddX3DPrototype([X3DPrototype32]);
-X3DPrototype35 := TX3DPrototypeNode;
-SFVec3f36 := TSFVec3f.CreateUndefined(X3DPrototype35, false, 'xtranslation');
-SFVec3f36.Value := '2 0 0';
-{ METHOD .AddSFVec3f }
-X3DPrototype35.AddSFVec3f([SFVec3f36]);
-{ METHOD .AddX3DPrototype }
-Transform30.AddX3DPrototype([X3DPrototype35]);
-X3DPrototype38 := TX3DPrototypeNode;
-SFVec3f39 := TSFVec3f.CreateUndefined(X3DPrototype38, false, 'xtranslation');
-SFVec3f39.Value := '-2 0 0';
-{ METHOD .AddSFVec3f }
-X3DPrototype38.AddSFVec3f([SFVec3f39]);
-{ METHOD .AddX3DPrototype }
-Transform30.AddX3DPrototype([X3DPrototype38]);
-{ METHOD .AddTransform }
-X3DPrototype29.AddTransform([Transform30]);
-{ METHOD .AddX3DPrototype }
-X3DPrototype21.AddX3DPrototype([X3DPrototype29]);
-{ METHOD .AddX3DPrototype }
-Group7.AddX3DPrototype([X3DPrototype21]);
-X3DPrototype41 := TX3DPrototypeNode;
-SFVec3f42 := TSFVec3f.CreateUndefined(X3DPrototype41, false, 'ytranslation');
-SFVec3f42.Value := '0 0 0';
-{ METHOD .AddSFVec3f }
-X3DPrototype41.AddSFVec3f([SFVec3f42]);
-MFNode43 := TMFNode.CreateUndefined(X3DPrototype41, false, 'myShape');
-Shape44 := TShapeNode.Create;;
-Box45 := TBoxNode.Create;;
-Box45.Size := Vector3(1,1,1);
-{ METHOD .Geometry }
-{ METHOD.SET .Geometry }
-Shape44.Geometry := Box45;
-Appearance46 := TAppearanceNode.Create;;
-Material47 := TMaterialNode.Create;;
-Material47.DiffuseColor := Vector3(0,1,0);
-{ METHOD .SetMaterial }
-Appearance46.Material := Material47;
-{ METHOD .Appearance }
-{ METHOD.SET .Appearance }
-Shape44.Appearance := Appearance46;
-{ METHOD .AddShape }
-MFNode43.AddShape([Shape44]);
-{ METHOD .AddMFNode }
-X3DPrototype41.AddMFNode([MFNode43]);
-{ METHOD .AddX3DPrototype }
-Group7.AddX3DPrototype([X3DPrototype41]);
-Transform48 := TTransformNode.Create;;
-Transform48.Translation := Vector3(0,2,0);
-{ METHOD .FdChildren.Add }
-Transform48.FdChildren.Add(Shape44);
-end;
-
-procedure InitBoxEmPart3;
-begin
-
-{ METHOD .FdChildren.Add }
-Group7.FdChildren.Add(Transform48);
-{ METHOD .AddGroup }
+ProtoInstance36 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare20);
+ProtoInstance36.X3DName := 'threepi';
+(ProtoInstance36.Field('ytranslation') as TSFVec3f).Value := Vector3(0, 0, 0);
+Shape39 := TShapeNode.Create;
+Shape39.X3DName := 'box';
+Box40 := TBoxNode.Create;
+Box40.Size := Vector3(1, 1, 1);
+Shape39.Geometry := Box40;
+Appearance41 := TAppearanceNode.Create;
+Material42 := TMaterialNode.Create;
+Material42.DiffuseColor := Vector3(0, 1, 0);
+Appearance41.Material := Material42;
+Shape39.Appearance := Appearance41;
+(ProtoInstance36.Field('myShape') as TMFNode).Add(Shape39);
+Group7.FdChildren.Add(ProtoInstance36.Instantiate);
+Transform43 := TTransformNode.Create;
+Transform43.Translation := Vector3(0, 2, 0);
+Transform43.FdChildren.Add(Shape39);
+Group7.FdChildren.Add(Transform43);
 X3D0.AddChildren([Group7]);
 end;
 
 function CreateBoxEm: TX3DRootNode;
 begin
-InitBoxEmPart0;
-InitBoxEmPart1;
-InitBoxEmPart2;
-InitBoxEmPart3;
-Result := X3D0;
+  InitBoxEmPart0;
+  InitBoxEmPart1;
+  InitBoxEmPart2;
+  Result := X3D0;
 end;
 
 begin
