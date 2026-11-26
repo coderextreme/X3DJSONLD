@@ -904,6 +904,9 @@ function inferExprType(expr) {
 		const t = X3D_TYPE_TO_PASCAL[expr.callee.name];
 		if (t) return t;
 	}
+	if (expr.type === "Member" && expr.property === "length") {
+		return "Integer";
+	}
 	if (expr.type === "Call" && expr.callee && expr.callee.type === "Member") {
 		const obj = expr.callee.object;
 		const prop = expr.callee.property;
@@ -936,6 +939,16 @@ function collectLocals(node, locals, assigned) {
 	} else if (node.type === "ForInOf") {
 		if (!locals.has(node.leftVar)) {
 			locals.set(node.leftVar, node.op === "in" ? "Integer" : "Single");
+		}
+	} else if (node.type === "For") {
+		const simple = isSimpleForLoop(node);
+		if (
+			simple &&
+			simple.endNode &&
+			simple.endNode.type === "Identifier" &&
+			locals.get(simple.endNode.name) === "Single"
+		) {
+			locals.set(simple.endNode.name, "Integer");
 		}
 	} else if (node.type === "Assign") {
 		const rootId = getRootIdent(node.left);
@@ -1167,6 +1180,24 @@ export function convertECMAScriptToPascal(source, options = {}) {
 				return fieldMap.get(expr.name).pascalType;
 			}
 		}
+		if (expr.type === "Index") {
+			const objType = inferPascalType(expr.object, localScope, curParamTypeMap);
+			if (objType.startsWith("array of ")) {
+				return objType.slice("array of ".length);
+			}
+		}
+		if (expr.type === "Member") {
+			if (expr.property === "length") return "Integer";
+			if (["x", "y", "z", "w", "r", "g", "b", "a"].includes(expr.property)) {
+				return "Single";
+			}
+			if (
+				expr.property === "metadata" &&
+				inferPascalType(expr.object, localScope, curParamTypeMap) === "TX3DNode"
+			) {
+				return "TX3DNode";
+			}
+		}
 		if (expr.type === "Unary") {
 			if (expr.op === "!") return "Boolean";
 			return inferPascalType(expr.arg, localScope, curParamTypeMap);
@@ -1198,6 +1229,31 @@ export function convertECMAScriptToPascal(source, options = {}) {
 		if (t === "TX3DNode") return "((" + code + ") <> nil)";
 		if (t === "String") return "((" + code + ") <> '')";
 		return "((" + code + ") <> 0)";
+	};
+
+	const toStringCode = (expr, code, localScope, curParamTypeMap) => {
+		const t = inferPascalType(expr, localScope, curParamTypeMap);
+		if (t === "String") return code;
+		if (t === "Integer" || t === "Int32") return "IntToStr(" + code + ")";
+		if (t === "Single" || t === "Double") return "FloatToStr(" + code + ")";
+		if (t === "Boolean") return "BoolToStr(" + code + ", True)";
+		if (
+			t === "TVector2" ||
+			t === "TVector3" ||
+			t === "TVector4" ||
+			t === "TVector2Double" ||
+			t === "TVector3Double" ||
+			t === "TVector4Double"
+		) {
+			const needsParens =
+				expr && (expr.type === "Binary" || expr.type === "Unary" || expr.type === "Conditional");
+			return (needsParens ? "(" + code + ")" : code) + ".ToString";
+		}
+		if (t === "TX3DNode") {
+			usedSendHelpers.add("NodeToStr");
+			return "NodeToStr(" + code + ")";
+		}
+		return code;
 	};
 
 	const emitIdent = (name, localScope, curParamMap) => {
@@ -1261,6 +1317,13 @@ export function convertECMAScriptToPascal(source, options = {}) {
 				if (prop === "b") return objCode + ".Z";
 				if (prop === "a") return objCode + ".W";
 				if (prop === "length") return "Length(" + objCode + ")";
+				if (
+					prop === "metadata" &&
+					inferPascalType(obj, localScope, curParamTypeMap) === "TX3DNode"
+				) {
+					usedSendHelpers.add("GetNodeSFNode");
+					return "GetNodeSFNode(" + objCode + ", 'metadata')";
+				}
 				return objCode + "." + prop;
 			}
 
@@ -1315,6 +1378,17 @@ export function convertECMAScriptToPascal(source, options = {}) {
 				const pPrec = JS_BIN_PREC[expr.op] || 0;
 				let l = emitExpr(expr.left, localScope, curParamMap, curParamTypeMap, fx);
 				let r = emitExpr(expr.right, localScope, curParamMap, curParamTypeMap, fx);
+				if (expr.op === "+") {
+					const lt = inferPascalType(expr.left, localScope, curParamTypeMap);
+					const rt = inferPascalType(expr.right, localScope, curParamTypeMap);
+					if (lt === "String" || rt === "String") {
+						return (
+							toStringCode(expr.left, l, localScope, curParamTypeMap) +
+							" + " +
+							toStringCode(expr.right, r, localScope, curParamTypeMap)
+						);
+					}
+				}
 				if (expr.op === "&&" || expr.op === "||") {
 					const opKw = expr.op === "&&" ? "and" : "or";
 					const lb = toBoolCode(expr.left, l, localScope, curParamTypeMap);
@@ -1376,6 +1450,16 @@ export function convertECMAScriptToPascal(source, options = {}) {
 				const args = expr.args.map((a) =>
 					emitExpr(a, localScope, curParamMap, curParamTypeMap, fx)
 				);
+				const formatWriteLnArgs = () =>
+					expr.args
+						.map((a, idx) => {
+							const t = inferPascalType(a, localScope, curParamTypeMap);
+							if (t === "TX3DNode" || t.startsWith("TVector")) {
+								return toStringCode(a, args[idx], localScope, curParamTypeMap);
+							}
+							return args[idx];
+						})
+						.join(", ");
 				if (c && c.type === "Member") {
 					if (c.object && c.object.type === "Identifier" && c.object.name === "Math") {
 						const mathMap = {
@@ -1407,7 +1491,7 @@ export function convertECMAScriptToPascal(source, options = {}) {
 							(c.object.name === "console" &&
 								["log", "info", "warn", "error"].includes(c.property)))
 					) {
-						return "WriteLn(" + args.join(", ") + ")";
+						return "WriteLn(" + formatWriteLnArgs() + ")";
 					}
 					const objCode = emitExpr(c.object, localScope, curParamMap, curParamTypeMap, fx);
 					if (c.property === "normalize") return objCode + ".Normalize";
@@ -1418,7 +1502,7 @@ export function convertECMAScriptToPascal(source, options = {}) {
 				}
 				if (c && c.type === "Identifier") {
 					if (c.name === "print") {
-						return "WriteLn(" + args.join(", ") + ")";
+						return "WriteLn(" + formatWriteLnArgs() + ")";
 					}
 					if (functions.has(c.name)) {
 						const mName = methodNames.get(c.name);
@@ -2105,11 +2189,6 @@ export function convertECMAScriptToPascal(source, options = {}) {
 				curParamMap.set(fn.params[1], "Time.Seconds");
 				curParamTypeMap.set(fn.params[1], "Double");
 			}
-			const localVarLines = [];
-			for (const [vName, vType] of locals.entries()) {
-				if (skippedBrowserVars.has(vName)) continue;
-				localVarLines.push("  " + sanitizeId(vName) + ": " + vType + ";");
-			}
 
 			const bodyLines = [];
 			if (fnName === "initialize") {
@@ -2153,6 +2232,12 @@ export function convertECMAScriptToPascal(source, options = {}) {
 				bodyLines.push("  FlushOutputs(Time);");
 			}
 
+			const localVarLines = [];
+			for (const [vName, vType] of locals.entries()) {
+				if (skippedBrowserVars.has(vName)) continue;
+				localVarLines.push("  " + sanitizeId(vName) + ": " + vType + ";");
+			}
+
 			methodImpls.push(
 				"procedure " + className + "." + mName + "(Value: TX3DField; const Time: TX3DTime);",
 				...(localVarLines.length > 0 ? ["var", ...localVarLines] : []),
@@ -2194,15 +2279,17 @@ export function convertECMAScriptToPascal(source, options = {}) {
 			const sig = "procedure " + mName + "(" + sigParams.join("; ") + ");";
 			methodDecls.push(sig);
 
+			const bodyLines = [];
+			for (const s of fn.body.body) {
+				emitStmt(s, 1, locals, curParamMap, curParamTypeMap, bodyLines);
+			}
+
 			const localVarLines = [];
 			for (const [vName, vType] of locals.entries()) {
 				if (skippedBrowserVars.has(vName)) continue;
 				localVarLines.push("  " + sanitizeId(vName) + ": " + vType + ";");
 			}
-			const bodyLines = [];
-			for (const s of fn.body.body) {
-				emitStmt(s, 1, locals, curParamMap, curParamTypeMap, bodyLines);
-			}
+
 			methodImpls.push(
 				"procedure " + className + "." + mName + "(" + sigParams.join("; ") + ");",
 				...(localVarLines.length > 0 ? ["var", ...localVarLines] : []),
@@ -2357,6 +2444,35 @@ export function convertECMAScriptToPascal(source, options = {}) {
 				"    TSFRotationEvent(E).Send(Val, Time)",
 				"  else if E is TSFColorRGBAEvent then",
 				"    TSFColorRGBAEvent(E).Send(Val, Time);",
+				"end;",
+				""
+			]
+		},
+		GetNodeSFNode: {
+			decl: "function GetNodeSFNode(const Node: TX3DNode; const FieldName: String): TX3DNode;",
+			impl: [
+				"function " + className + ".GetNodeSFNode(const Node: TX3DNode; const FieldName: String): TX3DNode;",
+				"var",
+				"  FOE: TX3DFieldOrEvent;",
+				"begin",
+				"  Result := nil;",
+				"  if Node = nil then Exit;",
+				"  FOE := Node.FieldOrEvent(FieldName);",
+				"  if FOE is TSFNode then",
+				"    Result := TSFNode(FOE).Value;",
+				"end;",
+				""
+			]
+		},
+		NodeToStr: {
+			decl: "function NodeToStr(const Node: TX3DNode): String;",
+			impl: [
+				"function " + className + ".NodeToStr(const Node: TX3DNode): String;",
+				"begin",
+				"  if Node = nil then",
+				"    Result := 'nil'",
+				"  else",
+				"    Result := Node.X3DName;",
 				"end;",
 				""
 			]

@@ -377,34 +377,14 @@ PascalSerializer.prototype = {
 		str += "uses " + implUses.join(", ") + ";\n\n";
 
 		if (this.usesPrototypes) {
-			str += [
-				"function CreateEmptyPrototype(const AName: String): TX3DPrototype;",
-				"var",
-				"  Stream: TStringStream;",
-				"  TempRoot: TX3DRootNode;",
-				"  CopyState: TX3DNodeDeepCopyState;",
-				"begin",
-				"  Stream := TStringStream.Create('#X3D V4.0 utf8' + LineEnding + 'PROTO ' + AName + ' [] {}');",
-				"  try",
-				"    TempRoot := LoadNode(Stream, '', 'model/x3d+vrml');",
-				"    try",
-				"      CopyState := TX3DNodeDeepCopyState.Create;",
-				"      try",
-				"        Result := TempRoot.Prototypes[0].DeepCopy(CopyState) as TX3DPrototype;",
-				"      finally",
-				"        FreeAndNil(CopyState);",
-				"      end;",
-				"    finally",
-				"      FreeAndNil(TempRoot);",
-				"    end;",
-				"  finally",
-				"    FreeAndNil(Stream);",
-				"  end;",
-				"end;",
-				""
-			].join("\n") + "\n";
-		}
-
+ 			str += [
+ 				"function CreateEmptyPrototype(const AName: String): TX3DPrototype;",
+				"  Result := TX3DPrototype.Create;",
+				"  Result.PrototypeName := AName;",
+ 				"end;",
+ 				""
+ 			].join("\n") + "\n";
+ 		}
 		if (hasCompiledScripts || hasExtrusionHelper) {
 			str += "type\n";
 			for (const cs of this.compiledScripts) {
@@ -812,19 +792,25 @@ PascalSerializer.prototype = {
 			addpre = "Fd";
 		}
 		if (
+ 			parentName === "HAnimHumanoid" &&
+ 			(method === "Joints" ||
+ 				method === "Skeleton" ||
+ 				method === "Viewpoints" ||
+				method === "Segments" ||
+				method === "Skin" ||
+				method === "Motions" ||
+				method === "Sites")
+ 		) {
+ 			method = method + ".Add";
+ 			addpre = "Fd";
+ 		}
+		if (
 			parentName === "HAnimHumanoid" &&
-			(method === "Joints" ||
-				method === "Skeleton" ||
-				method === "Viewpoints" ||
-				method === "Segments")
+			(method === "SkinCoord" || method === "SkinNormal")
 		) {
-			method = method + ".Add";
-			addpre = "Fd";
-		}
-		if (parentName === "HAnimHumanoid" && method === "SkinCoord") {
-			method = method + ".Set";
-			addpre = "Fd";
-		}
+			method = method + ".Value";
+ 			addpre = "Fd";
+ 		}
 		if ( (parentName === "HAnimHumanoid" ||
  			parentName === "HAnimJoint" ||
  			parentName === "HAnimSegment" ||
@@ -1412,8 +1398,6 @@ PascalSerializer.prototype = {
 				this.statements.push(elVar + ".FdMagnificationFilter.Value := " + strval + ";\n");
 			} else if (elName === "ParticleSystem" && attr === "geometryType") {
 				this.statements.push(elVar + ".FdGeometryType.Value := " + strval + ";\n");
-			} else if (elName === "ParticleSystem" && attr === "geometryType") {
-				this.statements.push(elVar + ".FdGeometryType.Value := " + strval + ";\n");
 			} else if (attrType === "MFString" && attr === "justify") {
 				const parts = strval.split(", ");
 				this.statements.push(elVar + "." + method + " := " + parts[0] + ";\n");
@@ -1731,8 +1715,28 @@ PascalSerializer.prototype = {
 
 		const fromTarget = this.DEFretrieve(FromNode);
 		const toTarget = this.DEFretrieve(ToNode);
-		const FromDEF = fromTarget ? this.stackname(fromTarget) : this.DEFvars[FromNode] || FromNode;
-		const ToDEF = toTarget ? this.stackname(toTarget) : this.DEFvars[ToNode] || ToNode;
+		const FromDEF = fromTarget ? this.stackname(fromTarget) : this.DEFvars[FromNode];
+		const ToDEF = toTarget ? this.stackname(toTarget) : this.DEFvars[ToNode];
+
+		if (!FromDEF || !ToDEF) {
+			const missing = [!FromDEF ? FromNode : null, !ToDEF ? ToNode : null]
+				.filter(Boolean)
+				.join(", ");
+			this.statements.push(
+				"{ Skipped ROUTE " +
+					FromNode +
+					"." +
+					rawFromField +
+					" TO " +
+					ToNode +
+					"." +
+					rawToField +
+					" (missing DEF: " +
+					missing +
+					") }\n"
+			);
+			return;
+		}
 
 		const routeParentVar =
 			element.parentNode && this.effectiveNodeName(element.parentNode) === "ProtoBody"
@@ -1774,16 +1778,15 @@ PascalSerializer.prototype = {
 		} else if (isCustomFieldOwner(fromTarget)) {
 			fromExpr = resolveCustomFieldExpr(FromNode, rawFromField, true);
 		}
-		if (!fromExpr) {
-			const eventOutFields = new Set([
-				"isOver", "finalText", "addedEntities", "removedEntities",
-				"translation", "rotation", "fraction", "enteredText",
-				"isLoaded", "isActive", "enabled", "keyValue",
-				"visibilitySwitchSelection", "inputNegate", "inputFalse",
-				"inputTrue", "values", "choice", "spine", "orientation",
-				"enterTime", "pauseTime", "resumeTime", "startTime",
-				"stopTime", "cycleTime", "triggerTime", "touchTime"
-			]);
+ 		if (!fromExpr) {
+ 			const eventOutFields = new Set([
+ 				"isOver", "finalText", "addedEntities", "removedEntities",
+				"fraction", "enteredText",
+				"isLoaded", "isActive",
+ 				"visibilitySwitchSelection", "inputNegate", "inputFalse",
+				"inputTrue", "values", "choice",
+				"enterTime", "exitTime", "cycleTime", "triggerTime", "touchTime"
+ 			]);
 			if (FromField.endsWith("_changed") || eventOutFields.has(FromField)) {
 				fromExpr = FromDEF + ".Event" + upperCaseFirst(FromField);
 			} else if (FromField.startsWith("Fd") || FromField.startsWith("Event")) {
@@ -1801,10 +1804,11 @@ PascalSerializer.prototype = {
 		}
 		if (!toExpr) {
 			const inputOnlyEvents = new Set([
-				"set_fraction", "set_bind", "set_coordIndex", "set_colorIndex",
-				"set_normalIndex", "set_texCoordIndex", "next", "previous",
-				"addChildren", "removeChildren"
-			]);
+				"set_fraction", "set_bind", "set_boolean",
+				"set_coordIndex", "set_colorIndex",
+ 				"set_normalIndex", "set_texCoordIndex", "next", "previous",
+ 				"addChildren", "removeChildren"
+ 			]);
 			const isExtrusionInputOnly =
 				toTarget &&
 				toTarget.nodeName === "Extrusion" &&
@@ -1870,6 +1874,8 @@ PascalSerializer.prototype = {
 			this.statements.push(elVar + method.slice(3) + "(" + nodeVar + ");\n");
 		} else if (method === ".Fd.Value") {
 			this.statements.push(elVar + method.slice(3) + " := " + nodeVar + ";\n");
+		} else if (method.startsWith(".Fd") && method.endsWith(".Value")) {
+			this.statements.push(elVar + method + " := " + nodeVar + ";\n");
 		} else if (method.startsWith(".Fd")) {
 			this.statements.push(elVar + method + "(" + nodeVar + ");\n");
 		} else if (nodeName === "LayerSet") {
