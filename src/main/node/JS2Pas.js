@@ -1078,6 +1078,63 @@ export function convertECMAScriptToPascal(source, options = {}) {
 		return false;
 	};
 
+	const exprMentionsIdent = (node, name) => {
+		if (!node || typeof node !== "object") return false;
+		if (node.type === "Identifier" && node.name === name) return true;
+		for (const k of Object.keys(node)) {
+			const child = node[k];
+			if (Array.isArray(child)) {
+				if (child.some((c) => exprMentionsIdent(c, name))) return true;
+			} else if (child && typeof child === "object") {
+				if (exprMentionsIdent(child, name)) return true;
+			}
+		}
+		return false;
+	};
+
+	const usesAsInteger = (node, paramName) => {
+		if (!node || typeof node !== "object") return false;
+		if (node.type === "For") {
+			const simple = isSimpleForLoop(node);
+			if (
+				simple &&
+				(exprMentionsIdent(simple.endNode, paramName) ||
+					exprMentionsIdent(simple.startExpr, paramName))
+			) {
+				return true;
+			}
+		}
+		if (node.type === "Index" && exprMentionsIdent(node.index, paramName)) {
+			return true;
+		}
+		if (
+			node.type === "Binary" &&
+			["%", "<<", ">>", ">>>", "&", "|", "^"].includes(node.op) &&
+			(exprMentionsIdent(node.left, paramName) || exprMentionsIdent(node.right, paramName))
+		) {
+			return true;
+		}
+		for (const k of Object.keys(node)) {
+			const child = node[k];
+			if (Array.isArray(child)) {
+				if (child.some((c) => usesAsInteger(c, paramName))) return true;
+			} else if (child && typeof child === "object" && child.type !== "FunctionDecl") {
+				if (usesAsInteger(child, paramName)) return true;
+			}
+		}
+		return false;
+	};
+
+	const helperParamTypes = new Map();
+	for (const [fnName, fn] of functions.entries()) {
+		if (!isHandlerName(fnName)) {
+			helperParamTypes.set(
+				fnName,
+				fn.params.map((p) => (usesAsInteger(fn.body, p) ? "Integer" : "Single"))
+			);
+		}
+	}
+
 	const methodNames = new Map();
 	for (const fnName of functions.keys()) {
 		methodNames.set(fnName, upperCaseFirst(sanitizeId(fnName)));
@@ -1289,8 +1346,9 @@ export function convertECMAScriptToPascal(source, options = {}) {
 							return mName + "(nil, Time)";
 						}
 						const fnDecl = functions.get(c.name);
+						const pTypes = helperParamTypes.get(c.name) || [];
 						const padded = fnDecl.params.map((_, idx) =>
-							idx < args.length ? args[idx] : "0.0"
+							idx < args.length ? args[idx] : (pTypes[idx] === "Integer" ? "0" : "0.0")
 						);
 						padded.push("Time");
 						return mName + "(" + padded.join(", ") + ")";
@@ -1645,9 +1703,28 @@ export function convertECMAScriptToPascal(source, options = {}) {
 			);
 		} else if (fm.accessType === "inputOutput") {
 			classFields.push("FField_" + fm.name + ": T" + fm.type + ";");
+			classFields.push("FBack_" + fm.name + ": T" + fm.type + ";");
 			classFields.push("FDirty_" + fm.name + ": Boolean;");
 			ctorLines.push("FField_" + fm.name + " := nil;");
+			if (fm.isMF) {
+				ctorLines.push(
+					"FBack_" + fm.name + " := T" + fm.type + ".CreateUndefined(nil, False, " + escapePascalString(fm.name) + ");"
+				);
+			} else {
+				ctorLines.push(
+					"FBack_" +
+						fm.name +
+						" := T" +
+						fm.type +
+						".Create(nil, False, " +
+						escapePascalString(fm.name) +
+						", " +
+						fm.defaultVal +
+						");"
+				);
+			}
 			ctorLines.push("FDirty_" + fm.name + " := False;");
+			dtorLines.push("FreeAndNil(FBack_" + fm.name + ");");
 			if (fm.type === "MFNode") {
 				flushNeedsLoopIdx = true;
 				flushLines.push(
@@ -1657,9 +1734,38 @@ export function convertECMAScriptToPascal(source, options = {}) {
 					"    if FField_" + fm.name + " <> nil then",
 					"    begin",
 					"      FField_" + fm.name + ".Clear;",
+					"      FBack_" + fm.name + ".Clear;",
 					"      for _i := 0 to High(F" + fm.name + ") do",
+					"      begin",
 					"        FField_" + fm.name + ".Add(F" + fm.name + "[_i]);",
-					"      FField_" + fm.name + ".Changed;",
+					"        FBack_" + fm.name + ".Add(F" + fm.name + "[_i]);",
+					"      end;",
+					"      if (FField_" + fm.name + ".ParentNode is TX3DNode) and (TX3DNode(FField_" + fm.name + ".ParentNode).Scene <> nil) then",
+					"        FField_" + fm.name + ".EventOut.Send(FBack_" + fm.name + ", TX3DNode(FField_" + fm.name + ".ParentNode).Scene.NextEventTime)",
+					"      else",
+					"        FField_" + fm.name + ".EventOut.Send(FBack_" + fm.name + ", Time);",
+					"    end;",
+					"  end;"
+				);
+			} else if (fm.isMF) {
+				flushNeedsLoopIdx = true;
+				flushLines.push(
+					"  if FDirty_" + fm.name + " then",
+					"  begin",
+					"    FDirty_" + fm.name + " := False;",
+					"    if FField_" + fm.name + " <> nil then",
+					"    begin",
+					"      FField_" + fm.name + ".Items.Clear;",
+					"      FBack_" + fm.name + ".Items.Clear;",
+					"      for _i := 0 to High(F" + fm.name + ") do",
+					"      begin",
+					"        FField_" + fm.name + ".Items.Add(F" + fm.name + "[_i]);",
+					"        FBack_" + fm.name + ".Items.Add(F" + fm.name + "[_i]);",
+					"      end;",
+					"      if (FField_" + fm.name + ".ParentNode is TX3DNode) and (TX3DNode(FField_" + fm.name + ".ParentNode).Scene <> nil) then",
+					"        FField_" + fm.name + ".EventOut.Send(FBack_" + fm.name + ", TX3DNode(FField_" + fm.name + ".ParentNode).Scene.NextEventTime)",
+					"      else",
+					"        FField_" + fm.name + ".EventOut.Send(FBack_" + fm.name + ", Time);",
 					"    end;",
 					"  end;"
 				);
@@ -1669,7 +1775,14 @@ export function convertECMAScriptToPascal(source, options = {}) {
 					"  begin",
 					"    FDirty_" + fm.name + " := False;",
 					"    if FField_" + fm.name + " <> nil then",
-					"      FField_" + fm.name + ".Send(F" + fm.name + ");",
+					"    begin",
+					"      FField_" + fm.name + ".Value := F" + fm.name + ";",
+					"      FBack_" + fm.name + ".Value := F" + fm.name + ";",
+					"      if (FField_" + fm.name + ".ParentNode is TX3DNode) and (TX3DNode(FField_" + fm.name + ".ParentNode).Scene <> nil) then",
+					"        FField_" + fm.name + ".EventOut.Send(FBack_" + fm.name + ", TX3DNode(FField_" + fm.name + ".ParentNode).Scene.NextEventTime)",
+					"      else",
+					"        FField_" + fm.name + ".EventOut.Send(FBack_" + fm.name + ", Time);",
+					"    end;",
 					"  end;"
 				);
 			}
@@ -1763,6 +1876,7 @@ export function convertECMAScriptToPascal(source, options = {}) {
 	}
 
 	const hasInitialize = functions.has("initialize");
+	const registeredKeys = new Set();
 
 	for (const [fnName, fn] of functions.entries()) {
 		const mName = methodNames.get(fnName);
@@ -1793,6 +1907,37 @@ export function convertECMAScriptToPascal(source, options = {}) {
 			if (fnName === "initialize") {
 				bodyLines.push("  FInitialized := True;");
 			}
+
+			// Fallback direct EventIn notification for inputOutput fields added via AddCustomFieldOrEvent
+			if (fInfo && fInfo.accessType === "inputOutput") {
+				const lastTimeVar = "FLastTime_" + sanitizeId(fnName);
+				const notifName = "OnNotif_" + sanitizeId(fnName);
+				classFields.push(lastTimeVar + ": TX3DTime;");
+				ctorLines.push(lastTimeVar + " := TX3DTime.Oldest;");
+				bindAssigns.push(
+					"  if FField_" + fInfo.name + " <> nil then",
+					"    FField_" + fInfo.name + ".EventIn.AddNotification({$ifdef FPC}@{$endif}" + notifName + ");"
+				);
+				dtorLines.unshift(
+					"if FField_" + fInfo.name + " <> nil then",
+					"  FField_" + fInfo.name + ".EventIn.RemoveNotification({$ifdef FPC}@{$endif}" + notifName + ");"
+				);
+				methodDecls.push(
+					"procedure " + notifName + "(const Event: TX3DEvent; const Value: TX3DField; const Time: TX3DTime);"
+				);
+				methodImpls.push(
+					"procedure " + className + "." + notifName + "(const Event: TX3DEvent; const Value: TX3DField; const Time: TX3DTime);",
+					"begin",
+					"  " + mName + "(Value, Time);",
+					"end;",
+					""
+				);
+				bodyLines.push(
+					"  if (Time.Seconds = " + lastTimeVar + ".Seconds) and (Time.PlusTicks = " + lastTimeVar + ".PlusTicks) then Exit;",
+					"  " + lastTimeVar + " := Time;"
+				);
+			}
+
 			for (const s of fn.body.body) {
 				emitStmt(s, 1, locals, curParamMap, bodyLines);
 			}
@@ -1809,21 +1954,32 @@ export function convertECMAScriptToPascal(source, options = {}) {
 				""
 			);
 
-			const compiledKey = scriptName + "_" + fnName;
-			compiledEntries.push(fnName + "=" + compiledKey);
-			handlerFnNames.push(fnName);
-			registerLines.push(
-				"  Scene.RegisterCompiledScript(FHandlerPrefix + " +
-					escapePascalString(fnName) +
-					", {$ifdef FPC}@{$endif}" +
-					mName +
-					");"
-			);
+			const keysToRegister = [fnName];
+			if (fInfo && fInfo.accessType === "inputOutput") {
+				const baseName = fInfo.name;
+				const setAlias = "set_" + baseName;
+				if (!keysToRegister.includes(baseName)) keysToRegister.push(baseName);
+				if (!keysToRegister.includes(setAlias)) keysToRegister.push(setAlias);
+			}
+			for (const regKey of keysToRegister) {
+				if (registeredKeys.has(regKey)) continue;
+				registeredKeys.add(regKey);
+				compiledEntries.push(regKey + "=" + scriptName + "_" + regKey);
+				handlerFnNames.push(regKey);
+				registerLines.push(
+					"  Scene.RegisterCompiledScript(FHandlerPrefix + " +
+						escapePascalString(regKey) +
+						", {$ifdef FPC}@{$endif}" +
+						mName +
+						");"
+				);
+			}
 		} else {
-			const sigParams = [
-				...fn.params.map((p) => "const " + sanitizeId(p) + ": Single"),
-				"const Time: TX3DTime"
-			];
+			const pTypes = helperParamTypes.get(fnName) || [];
+			const sigParams = fn.params.map(
+				(p, idx) => "const " + sanitizeId(p) + ": " + (pTypes[idx] || "Single")
+			);
+			sigParams.push("const Time: TX3DTime");
 			const sig = "procedure " + mName + "(" + sigParams.join("; ") + ");";
 			methodDecls.push(sig);
 

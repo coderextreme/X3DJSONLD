@@ -6,6 +6,7 @@ const DOUBLE_SUFFIX = "";
 const FLOAT_SUFFIX = "";
 
 export default function PascalSerializer() {
+	this.usesShaderParts = false;
 	this.code = [];
 	this.preno = 0;
 	this.DEFs = {};
@@ -15,6 +16,7 @@ export default function PascalSerializer() {
 	this.nodeMeta = new WeakMap();
 	this.statements = [];
 	this.compiledScripts = [];
+	this.usesExtrusionSpineRoute = false;
 	this.rootVarName = "X3D0";
 	this.usesPrototypes = false;
 	this.enableCompiledECMAScript = true;
@@ -308,6 +310,7 @@ PascalSerializer.prototype = {
 		this.nodeMeta = new WeakMap();
 		this.statements = [];
 		this.compiledScripts = [];
+		this.usesExtrusionSpineRoute = false;
 		this.usesPrototypes = false;
 
 		const unitName = sanitizeIdentifier(clazz);
@@ -334,7 +337,14 @@ PascalSerializer.prototype = {
 		);
 		const procName = (k) => "Init" + unitName + "Part" + k;
 		const hasCompiledScripts = this.compiledScripts.length > 0;
+		const hasExtrusionHelper = this.usesExtrusionSpineRoute;
 		const binderClassName = "T" + unitName + "ScriptBinder";
+		const extrusionHelperClass = "T" + unitName + "ExtrusionHelper";
+		const extrusionHelperVar = "Compiled" + unitName + "ExtrusionHelper";
+
+		if (hasExtrusionHelper) {
+			this.code.push(extrusionHelperVar + ": " + extrusionHelperClass + ";");
+		}
 
 		let str = "";
 		str += "unit " + unitName + ";\n\n";
@@ -353,11 +363,16 @@ PascalSerializer.prototype = {
 		if (this.usesPrototypes) {
 			implUses.push("Classes", "SysUtils", "X3DLoad", "CastleVectors");
 		} else {
-			if (hasCompiledScripts) implUses.push("SysUtils");
+			if (hasCompiledScripts || hasExtrusionHelper) implUses.push("SysUtils");
 			implUses.push("CastleVectors");
 		}
 		if (hasCompiledScripts) {
 			implUses.push("Math", "X3DTime");
+		} else if (hasExtrusionHelper) {
+			implUses.push("X3DTime");
+		}
+		if (this.usesShaderParts) {
+			implUses.push("CastleRenderOptions");
 		}
 		str += "uses " + implUses.join(", ") + ";\n\n";
 
@@ -390,7 +405,7 @@ PascalSerializer.prototype = {
 			].join("\n") + "\n";
 		}
 
-		if (hasCompiledScripts) {
+		if (hasCompiledScripts || hasExtrusionHelper) {
 			str += "type\n";
 			for (const cs of this.compiledScripts) {
 				str +=
@@ -399,10 +414,19 @@ PascalSerializer.prototype = {
 						.map((l) => "  " + l)
 						.join("\n") + "\n\n";
 			}
-			str += "  " + binderClassName + " = class\n";
-			str += "  public\n";
-			str += "    procedure BindNode(Node: TX3DNode);\n";
-			str += "  end;\n\n";
+			if (hasCompiledScripts) {
+				str += "  " + binderClassName + " = class\n";
+				str += "  public\n";
+				str += "    procedure BindNode(Node: TX3DNode);\n";
+				str += "  end;\n\n";
+			}
+			if (hasExtrusionHelper) {
+				str += "  " + extrusionHelperClass + " = class\n";
+				str += "  public\n";
+				str += "    procedure BindNode(Node: TX3DNode);\n";
+				str += "    procedure SpineReceive(const Event: TX3DEvent; const Value: TX3DField; const Time: TX3DTime);\n";
+				str += "  end;\n\n";
+			}
 		}
 
 		if (this.code.length > 0) {
@@ -444,6 +468,26 @@ PascalSerializer.prototype = {
 			str += "end;\n\n";
 		}
 
+		if (hasExtrusionHelper) {
+			str += "procedure " + extrusionHelperClass + ".BindNode(Node: TX3DNode);\n";
+			str += "begin\n";
+			str += "  (Node as TExtrusionNode).EventSet_spine.AddNotification({$ifdef FPC}@{$endif}SpineReceive);\n";
+			str += "end;\n\n";
+			str += "procedure " + extrusionHelperClass + ".SpineReceive(const Event: TX3DEvent; const Value: TX3DField; const Time: TX3DTime);\n";
+			str += "var\n";
+			str += "  Ext: TExtrusionNode;\n";
+			str += "  NewSpine: TMFVec3f;\n";
+			str += "begin\n";
+			str += "  Ext := Event.ParentNode as TExtrusionNode;\n";
+			str += "  NewSpine := Value as TMFVec3f;\n";
+			str += "  if not Ext.FdSpine.Equals(NewSpine) then\n";
+			str += "  begin\n";
+			str += "    Ext.FdSpine.AssignValue(NewSpine);\n";
+			str += "    Ext.FdSpine.Changed;\n";
+			str += "  end;\n";
+			str += "end;\n\n";
+		}
+
 		for (let k = 0; k < chunks.length; k++) {
 			str += "procedure " + procName(k) + ";\n";
 			str += "begin\n";
@@ -479,6 +523,11 @@ PascalSerializer.prototype = {
 			str += "    FreeAndNil(Binder);\n";
 			str += "  end;\n";
 		}
+		if (hasExtrusionHelper) {
+			str += "  FreeAndNil(" + extrusionHelperVar + ");\n";
+			str += "  " + extrusionHelperVar + " := " + extrusionHelperClass + ".Create;\n";
+			str += "  " + this.rootVarName + ".EnumerateNodes(TExtrusionNode, {$ifdef FPC}@{$endif}" + extrusionHelperVar + ".BindNode, False);\n";
+		}
 		str += "  Result := " + this.rootVarName + ";\n";
 		str += "end;\n\n";
 
@@ -499,7 +548,9 @@ PascalSerializer.prototype = {
 				str += "  end;\n";
 			}
 			str += "end;\n\n";
+		}
 
+		if (hasCompiledScripts || hasExtrusionHelper) {
 			str += "finalization\n";
 			for (const cs of this.compiledScripts) {
 				str += "  while Length(" + cs.listVar + ") > 0 do\n";
@@ -507,6 +558,9 @@ PascalSerializer.prototype = {
 				str += "    FreeAndNil(" + cs.listVar + "[High(" + cs.listVar + ")]);\n";
 				str += "    SetLength(" + cs.listVar + ", Length(" + cs.listVar + ") - 1);\n";
 				str += "  end;\n";
+			}
+			if (hasExtrusionHelper) {
+				str += "  FreeAndNil(" + extrusionHelperVar + ");\n";
 			}
 			str += "end.\n";
 		} else {
@@ -750,6 +804,9 @@ PascalSerializer.prototype = {
 		if (parentName === "HAnimHumanoid" && method === "SkinCoord") {
 			method = method + ".Set";
 			addpre = "Fd";
+		}
+		if (parentName === "ComposedCubeMapTexture" && method.endsWith("Texture")) {
+			method = method.slice(0, -"Texture".length);
 		}
 
 		addpre = upperCaseFirst(addpre);
@@ -996,11 +1053,17 @@ PascalSerializer.prototype = {
 			"inputOutput";
 		const rawValue = getAttribute(fieldNode, "value");
 
+		const hasNodeChildren = Array.from(fieldNode.childNodes || []).some(
+			(c) => c.nodeType === 1
+		);
+		const isEvent =
+			(accessType === "inputOnly" || accessType === "outputOnly") &&
+			!(hasNodeChildren && (fieldType === "SFNode" || fieldType === "MFNode"));
+
 		const stackId = this.getMeta(fieldNode).stacknumber;
 		const declVar = "FieldDecl" + stackId;
 		const valVar = "FieldVal" + stackId;
 		const pascalFieldType = "T" + fieldType;
-		const isEvent = accessType === "inputOnly" || accessType === "outputOnly";
 		const varType = isEvent ? "TX3DEvent" : pascalFieldType;
 
 		if (isPrototype) {
@@ -1010,16 +1073,16 @@ PascalSerializer.prototype = {
 		this.code.push(valVar + ": " + varType + ";");
 		this.getMeta(fieldNode).fieldVarName = valVar;
 
-		if (accessType === "inputOnly") {
+		if (isEvent && accessType === "inputOnly") {
 			this.statements.push(
 				valVar + " := " + pascalFieldType + ".CreateEvent(" + fieldParentArg + ", " + escapePascalString(fieldName) + ", True);\n"
 			);
-		} else if (accessType === "outputOnly") {
+		} else if (isEvent && accessType === "outputOnly") {
 			this.statements.push(
 				valVar + " := " + pascalFieldType + ".CreateEvent(" + fieldParentArg + ", " + escapePascalString(fieldName) + ", False);\n"
 			);
 		} else {
-			const exposed = accessType === "inputOutput" ? "True" : "False";
+			const exposed = accessType === "inputOutput" || accessType === "inputOnly" ? "True" : "False";
 			if (fieldType === "SFNode" || fieldType === "MFNode" || rawValue === null) {
 				this.statements.push(
 					valVar + " := " + pascalFieldType + ".CreateUndefined(" + fieldParentArg + ", " + exposed + ", " + escapePascalString(fieldName) + ");\n"
@@ -1287,6 +1350,7 @@ PascalSerializer.prototype = {
 			} else if (attr === "bboxCenter") {
 				this.statements.push(elVar + ".FdBBoxCenter.Value := " + strval + ";\n");
 			} else if (attr === "type" && (elName === "ShaderPart" || elName === "EffectPart")) {
+				this.usesShaderParts = true;
 				const shaderTypeMap = {
 					VERTEX: "stVertex",
 					FRAGMENT: "stFragment",
@@ -1712,6 +1776,12 @@ PascalSerializer.prototype = {
 				toTarget &&
 				toTarget.nodeName === "Extrusion" &&
 				["set_crossSection", "set_spine", "set_orientation", "set_scale"].includes(ToField);
+
+			if (isExtrusionInputOnly && ToField === "set_spine") {
+				this.usesExtrusionSpineRoute = true;
+			} else if (toTarget && toTarget.nodeName === "Extrusion" && ToField === "spine") {
+				this.usesExtrusionSpineRoute = true;
+			}
 
 			if (ToField === "weight") {
 				toExpr = ToDEF + ".FWeight";
