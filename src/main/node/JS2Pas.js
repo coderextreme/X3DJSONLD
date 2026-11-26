@@ -1,0 +1,1399 @@
+"use strict";
+
+/**
+ * JS2Pas.js
+ * Converts X3D ECMAScript (<Script> CDATA / ecmascript:...) into
+ * Castle Game Engine Object Pascal handlers using the `compiled:` script protocol.
+ */
+
+const PASCAL_KEYWORDS = new Set([
+	"and", "array", "as", "asm", "begin", "case", "class", "const", "constructor",
+	"destructor", "dispinterface", "div", "do", "downto", "else", "end", "except",
+	"exports", "file", "finalization", "finally", "for", "function", "goto", "if",
+	"implementation", "in", "inherited", "initialization", "inline", "interface",
+	"is", "label", "library", "mod", "nil", "not", "object", "of", "or", "out",
+	"packed", "procedure", "program", "property", "raise", "record", "repeat",
+	"resourcestring", "result", "set", "shl", "shr", "string", "then",
+	"threadvar", "to", "try", "type", "unit", "until", "uses", "var", "while",
+	"with", "xor", "true", "false"
+]);
+
+const upperCaseFirst = (str) =>
+	str ? str.charAt(0).toUpperCase() + str.slice(1) : "";
+
+const sanitizeId = (name, fallback = "GeneratedScript") => {
+	let id = String(name || fallback).replace(/[^A-Za-z0-9_]/g, "_");
+	if (!/^[A-Za-z_]/.test(id)) {
+		id = "S_" + id;
+	}
+	return PASCAL_KEYWORDS.has(id.toLowerCase()) ? "L_" + id : id;
+};
+
+const escapePascalString = (str) =>
+	"'" + String(str).replace(/'/g, "''") + "'";
+
+const X3D_TYPE_TO_PASCAL = {
+	SFBool: "Boolean",
+	SFInt32: "Int32",
+	SFFloat: "Single",
+	SFDouble: "Double",
+	SFTime: "Double",
+	SFString: "String",
+	SFVec2f: "TVector2",
+	SFVec3f: "TVector3",
+	SFVec4f: "TVector4",
+	SFRotation: "TVector4",
+	SFColor: "TVector3",
+	SFColorRGBA: "TVector4",
+	SFVec2d: "TVector2Double",
+	SFVec3d: "TVector3Double",
+	SFVec4d: "TVector4Double",
+	SFNode: "TX3DNode",
+	MFBool: "array of Boolean",
+	MFInt32: "array of Int32",
+	MFFloat: "array of Single",
+	MFDouble: "array of Double",
+	MFTime: "array of Double",
+	MFString: "array of String",
+	MFVec2f: "array of TVector2",
+	MFVec3f: "array of TVector3",
+	MFVec4f: "array of TVector4",
+	MFRotation: "array of TVector4",
+	MFColor: "array of TVector3",
+	MFColorRGBA: "array of TVector4",
+	MFNode: "array of TX3DNode"
+};
+
+const X3D_DEFAULT_VALUE = {
+	SFBool: "False",
+	SFInt32: "0",
+	SFFloat: "0.0",
+	SFDouble: "0.0",
+	SFTime: "0.0",
+	SFString: "''",
+	SFVec2f: "Vector2(0, 0)",
+	SFVec3f: "Vector3(0, 0, 0)",
+	SFVec4f: "Vector4(0, 0, 0, 0)",
+	SFRotation: "Vector4(0, 0, 1, 0)",
+	SFColor: "Vector3(0, 0, 0)",
+	SFColorRGBA: "Vector4(0, 0, 0, 1)",
+	SFVec2d: "Vector2Double(0, 0)",
+	SFVec3d: "Vector3Double(0, 0, 0)",
+	SFVec4d: "Vector4Double(0, 0, 0, 0)",
+	SFNode: "nil"
+};
+
+/* -------------------------------------------------------------------------- */
+/* Tokenizer                                                                  */
+/* -------------------------------------------------------------------------- */
+
+const MULTI_OPS = [
+	"===", "!==", ">>>", "<<=", ">>=",
+	"==", "!=", "<=", ">=", "&&", "||",
+	"++", "--", "+=", "-=", "*=", "/=", "%=", "<<", ">>"
+];
+
+function tokenize(source) {
+	const tokens = [];
+	let i = 0;
+	const n = source.length;
+
+	while (i < n) {
+		const ch = source[i];
+
+		if (/\s/.test(ch)) {
+			i++;
+			continue;
+		}
+		// Line comment
+		if (ch === "/" && source[i + 1] === "/") {
+			i += 2;
+			while (i < n && source[i] !== "\n") i++;
+			continue;
+		}
+		// Block comment
+		if (ch === "/" && source[i + 1] === "*") {
+			i += 2;
+			while (i < n && !(source[i] === "*" && source[i + 1] === "/")) i++;
+			i += 2;
+			continue;
+		}
+		// String literal
+		if (ch === "'" || ch === '"') {
+			const quote = ch;
+			let val = "";
+			i++;
+			while (i < n && source[i] !== quote) {
+				if (source[i] === "\\" && i + 1 < n) {
+					const esc = source[i + 1];
+					if (esc === "n") val += "\n";
+					else if (esc === "r") val += "\r";
+					else if (esc === "t") val += "\t";
+					else val += esc;
+					i += 2;
+				} else {
+					val += source[i++];
+				}
+			}
+			i++;
+			tokens.push({ type: "string", value: val });
+			continue;
+		}
+		// Number literal
+		if (/[0-9]/.test(ch) || (ch === "." && /[0-9]/.test(source[i + 1] || ""))) {
+			const start = i;
+			if (ch === "0" && (source[i + 1] === "x" || source[i + 1] === "X")) {
+				i += 2;
+				while (i < n && /[0-9a-fA-F]/.test(source[i])) i++;
+			} else {
+				while (i < n && /[0-9]/.test(source[i])) i++;
+				if (source[i] === ".") {
+					i++;
+					while (i < n && /[0-9]/.test(source[i])) i++;
+				}
+				if (source[i] === "e" || source[i] === "E") {
+					i++;
+					if (source[i] === "+" || source[i] === "-") i++;
+					while (i < n && /[0-9]/.test(source[i])) i++;
+				}
+			}
+			tokens.push({ type: "number", value: source.slice(start, i) });
+			continue;
+		}
+		// Identifier / keyword
+		if (/[A-Za-z_$]/.test(ch)) {
+			const start = i;
+			while (i < n && /[A-Za-z0-9_$]/.test(source[i])) i++;
+			const word = source.slice(start, i);
+			tokens.push({ type: "ident", value: word });
+			continue;
+		}
+		// Multi-char operators
+		let matched = null;
+		for (const op of MULTI_OPS) {
+			if (source.startsWith(op, i)) {
+				matched = op;
+				break;
+			}
+		}
+		if (matched) {
+			tokens.push({ type: "punct", value: matched });
+			i += matched.length;
+			continue;
+		}
+		// Single-char punctuator
+		tokens.push({ type: "punct", value: ch });
+		i++;
+	}
+
+	tokens.push({ type: "eof", value: "" });
+	return tokens;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Recursive-Descent Parser                                                   */
+/* -------------------------------------------------------------------------- */
+
+function Parser(tokens) {
+	this.tokens = tokens;
+	this.pos = 0;
+}
+
+Parser.prototype = {
+	peek: function (offset = 0) {
+		return this.tokens[Math.min(this.pos + offset, this.tokens.length - 1)];
+	},
+	consume: function () {
+		return this.tokens[this.pos++];
+	},
+	match: function (type, value) {
+		const t = this.peek();
+		if (t.type === type && (value === undefined || t.value === value)) {
+			this.pos++;
+			return t;
+		}
+		return null;
+	},
+	expect: function (type, value) {
+		const t = this.peek();
+		if (t.type !== type || (value !== undefined && t.value !== value)) {
+			throw new Error(
+				"JS2Pas parse error: expected " +
+					(value || type) +
+					" but got " +
+					t.type +
+					" '" +
+					t.value +
+					"'"
+			);
+		}
+		return this.consume();
+	},
+
+	parseProgram: function () {
+		const body = [];
+		while (this.peek().type !== "eof") {
+			body.push(this.parseStatement());
+		}
+		return { type: "Program", body };
+	},
+
+	parseStatement: function () {
+		const t = this.peek();
+		if (t.type === "punct" && t.value === ";") {
+			this.consume();
+			return { type: "Empty" };
+		}
+		if (t.type === "punct" && t.value === "{") {
+			return this.parseBlock();
+		}
+		if (t.type === "ident") {
+			switch (t.value) {
+				case "function":
+					return this.parseFunctionDecl();
+				case "var":
+				case "let":
+				case "const":
+					return this.parseVarDecl(true);
+				case "if":
+					return this.parseIf();
+				case "while":
+					return this.parseWhile();
+				case "do":
+					return this.parseDoWhile();
+				case "for":
+					return this.parseFor();
+				case "switch":
+					return this.parseSwitch();
+				case "break":
+					this.consume();
+					this.match("punct", ";");
+					return { type: "Break" };
+				case "continue":
+					this.consume();
+					this.match("punct", ";");
+					return { type: "Continue" };
+				case "return":
+					return this.parseReturn();
+			}
+		}
+		const expr = this.parseExpression();
+		this.match("punct", ";");
+		return { type: "ExprStmt", expr };
+	},
+
+	parseBlock: function () {
+		this.expect("punct", "{");
+		const body = [];
+		while (!(this.peek().type === "punct" && this.peek().value === "}") && this.peek().type !== "eof") {
+			body.push(this.parseStatement());
+		}
+		this.expect("punct", "}");
+		return { type: "Block", body };
+	},
+
+	parseFunctionDecl: function () {
+		this.expect("ident", "function");
+		const name = this.expect("ident").value;
+		this.expect("punct", "(");
+		const params = [];
+		while (!(this.peek().type === "punct" && this.peek().value === ")")) {
+			params.push(this.expect("ident").value);
+			if (!this.match("punct", ",")) break;
+		}
+		this.expect("punct", ")");
+		const body = this.parseBlock();
+		return { type: "FunctionDecl", name, params, body };
+	},
+
+	parseVarDecl: function (consumeSemi) {
+		const kind = this.consume().value;
+		const decls = [];
+		while (true) {
+			const name = this.expect("ident").value;
+			let init = null;
+			if (this.match("punct", "=")) {
+				init = this.parseAssignment();
+			}
+			decls.push({ name, init });
+			if (!this.match("punct", ",")) break;
+		}
+		if (consumeSemi) {
+			this.match("punct", ";");
+		}
+		return { type: "VarDecl", kind, decls };
+	},
+
+	parseIf: function () {
+		this.expect("ident", "if");
+		this.expect("punct", "(");
+		const test = this.parseExpression();
+		this.expect("punct", ")");
+		const consequent = this.parseStatement();
+		let alternate = null;
+		if (this.match("ident", "else")) {
+			alternate = this.parseStatement();
+		}
+		return { type: "If", test, consequent, alternate };
+	},
+
+	parseWhile: function () {
+		this.expect("ident", "while");
+		this.expect("punct", "(");
+		const test = this.parseExpression();
+		this.expect("punct", ")");
+		const body = this.parseStatement();
+		return { type: "While", test, body };
+	},
+
+	parseDoWhile: function () {
+		this.expect("ident", "do");
+		const body = this.parseStatement();
+		this.expect("ident", "while");
+		this.expect("punct", "(");
+		const test = this.parseExpression();
+		this.expect("punct", ")");
+		this.match("punct", ";");
+		return { type: "DoWhile", test, body };
+	},
+
+	parseFor: function () {
+		this.expect("ident", "for");
+		this.expect("punct", "(");
+		let init = null;
+		if (!(this.peek().type === "punct" && this.peek().value === ";")) {
+			const pk = this.peek();
+			if (pk.type === "ident" && (pk.value === "var" || pk.value === "let" || pk.value === "const")) {
+				init = this.parseVarDecl(false);
+			} else {
+				init = { type: "ExprStmt", expr: this.parseExpression() };
+			}
+		}
+		this.expect("punct", ";");
+		let test = null;
+		if (!(this.peek().type === "punct" && this.peek().value === ";")) {
+			test = this.parseExpression();
+		}
+		this.expect("punct", ";");
+		let update = null;
+		if (!(this.peek().type === "punct" && this.peek().value === ")")) {
+			update = this.parseExpression();
+		}
+		this.expect("punct", ")");
+		const body = this.parseStatement();
+		return { type: "For", init, test, update, body };
+	},
+
+	parseSwitch: function () {
+		this.expect("ident", "switch");
+		this.expect("punct", "(");
+		const discriminant = this.parseExpression();
+		this.expect("punct", ")");
+		this.expect("punct", "{");
+		const cases = [];
+		while (!(this.peek().type === "punct" && this.peek().value === "}") && this.peek().type !== "eof") {
+			let test = null;
+			if (this.match("ident", "case")) {
+				test = this.parseExpression();
+				this.expect("punct", ":");
+			} else if (this.match("ident", "default")) {
+				this.expect("punct", ":");
+			} else {
+				break;
+			}
+			const consequent = [];
+			while (
+				!(this.peek().type === "punct" && this.peek().value === "}") &&
+				!(this.peek().type === "ident" && (this.peek().value === "case" || this.peek().value === "default")) &&
+				this.peek().type !== "eof"
+			) {
+				consequent.push(this.parseStatement());
+			}
+			cases.push({ test, consequent });
+		}
+		this.expect("punct", "}");
+		return { type: "Switch", discriminant, cases };
+	},
+
+	parseReturn: function () {
+		this.expect("ident", "return");
+		let arg = null;
+		if (!(this.peek().type === "punct" && (this.peek().value === ";" || this.peek().value === "}"))) {
+			arg = this.parseExpression();
+		}
+		this.match("punct", ";");
+		return { type: "Return", arg };
+	},
+
+	parseExpression: function () {
+		return this.parseAssignment();
+	},
+
+	parseAssignment: function () {
+		const left = this.parseConditional();
+		const t = this.peek();
+		if (
+			t.type === "punct" &&
+			(t.value === "=" ||
+				t.value === "+=" ||
+				t.value === "-=" ||
+				t.value === "*=" ||
+				t.value === "/=" ||
+				t.value === "%=")
+		) {
+			const op = this.consume().value;
+			const right = this.parseAssignment();
+			return { type: "Assign", op, left, right };
+		}
+		return left;
+	},
+
+	parseConditional: function () {
+		const test = this.parseLogicalOr();
+		if (this.match("punct", "?")) {
+			const consequent = this.parseAssignment();
+			this.expect("punct", ":");
+			const alternate = this.parseAssignment();
+			return { type: "Conditional", test, consequent, alternate };
+		}
+		return test;
+	},
+
+	parseLogicalOr: function () {
+		let left = this.parseLogicalAnd();
+		while (this.match("punct", "||")) {
+			left = { type: "Binary", op: "||", left, right: this.parseLogicalAnd() };
+		}
+		return left;
+	},
+
+	parseLogicalAnd: function () {
+		let left = this.parseEquality();
+		while (this.match("punct", "&&")) {
+			left = { type: "Binary", op: "&&", left, right: this.parseEquality() };
+		}
+		return left;
+	},
+
+	parseEquality: function () {
+		let left = this.parseRelational();
+		while (
+			this.peek().type === "punct" &&
+			["==", "!=", "===", "!=="].includes(this.peek().value)
+		) {
+			const op = this.consume().value;
+			left = { type: "Binary", op, left, right: this.parseRelational() };
+		}
+		return left;
+	},
+
+	parseRelational: function () {
+		let left = this.parseAdditive();
+		while (
+			this.peek().type === "punct" &&
+			["<", ">", "<=", ">="].includes(this.peek().value)
+		) {
+			const op = this.consume().value;
+			left = { type: "Binary", op, left, right: this.parseAdditive() };
+		}
+		return left;
+	},
+
+	parseAdditive: function () {
+		let left = this.parseMultiplicative();
+		while (
+			this.peek().type === "punct" &&
+			(this.peek().value === "+" || this.peek().value === "-")
+		) {
+			const op = this.consume().value;
+			left = { type: "Binary", op, left, right: this.parseMultiplicative() };
+		}
+		return left;
+	},
+
+	parseMultiplicative: function () {
+		let left = this.parseUnary();
+		while (
+			this.peek().type === "punct" &&
+			(this.peek().value === "*" || this.peek().value === "/" || this.peek().value === "%")
+		) {
+			const op = this.consume().value;
+			left = { type: "Binary", op, left, right: this.parseUnary() };
+		}
+		return left;
+	},
+
+	parseUnary: function () {
+		const t = this.peek();
+		if (t.type === "punct" && (t.value === "!" || t.value === "-" || t.value === "+")) {
+			const op = this.consume().value;
+			return { type: "Unary", op, arg: this.parseUnary() };
+		}
+		if (t.type === "punct" && (t.value === "++" || t.value === "--")) {
+			const op = this.consume().value;
+			return { type: "Update", op, prefix: true, arg: this.parseUnary() };
+		}
+		if (t.type === "ident" && t.value === "new") {
+			this.consume();
+			const callee = this.parseMemberChain(false);
+			let args = [];
+			if (this.match("punct", "(")) {
+				args = this.parseArgList();
+			}
+			return { type: "New", callee, args };
+		}
+		return this.parsePostfix();
+	},
+
+	parsePostfix: function () {
+		const expr = this.parseMemberChain(true);
+		const t = this.peek();
+		if (t.type === "punct" && (t.value === "++" || t.value === "--")) {
+			const op = this.consume().value;
+			return { type: "Update", op, prefix: false, arg: expr };
+		}
+		return expr;
+	},
+
+	parseArgList: function () {
+		const args = [];
+		while (!(this.peek().type === "punct" && this.peek().value === ")")) {
+			args.push(this.parseAssignment());
+			if (!this.match("punct", ",")) break;
+		}
+		this.expect("punct", ")");
+		return args;
+	},
+
+	parseMemberChain: function (allowCalls) {
+		let expr = this.parsePrimary();
+		while (true) {
+			if (this.match("punct", ".")) {
+				const prop = this.expect("ident").value;
+				expr = { type: "Member", object: expr, property: prop };
+			} else if (this.match("punct", "[")) {
+				const index = this.parseExpression();
+				this.expect("punct", "]");
+				expr = { type: "Index", object: expr, index };
+			} else if (allowCalls && this.match("punct", "(")) {
+				const args = this.parseArgList();
+				expr = { type: "Call", callee: expr, args };
+			} else {
+				break;
+			}
+		}
+		return expr;
+	},
+
+	parsePrimary: function () {
+		const t = this.peek();
+		if (t.type === "number") {
+			this.consume();
+			return { type: "Literal", kind: "number", value: t.value };
+		}
+		if (t.type === "string") {
+			this.consume();
+			return { type: "Literal", kind: "string", value: t.value };
+		}
+		if (t.type === "ident") {
+			this.consume();
+			if (t.value === "true") return { type: "Literal", kind: "boolean", value: true };
+			if (t.value === "false") return { type: "Literal", kind: "boolean", value: false };
+			if (t.value === "null") return { type: "Literal", kind: "null", value: null };
+			return { type: "Identifier", name: t.value };
+		}
+		if (this.match("punct", "(")) {
+			const expr = this.parseExpression();
+			this.expect("punct", ")");
+			return expr;
+		}
+		if (this.match("punct", "[")) {
+			const elements = [];
+			while (!(this.peek().type === "punct" && this.peek().value === "]")) {
+				elements.push(this.parseAssignment());
+				if (!this.match("punct", ",")) break;
+			}
+			this.expect("punct", "]");
+			return { type: "ArrayLiteral", elements };
+		}
+		throw new Error("JS2Pas unexpected token: " + t.type + " '" + t.value + "'");
+	}
+};
+
+/* -------------------------------------------------------------------------- */
+/* Pascal Code Generator for Castle Game Engine `compiled:` Scripts           */
+/* -------------------------------------------------------------------------- */
+
+function stripScriptProtocol(source) {
+	return String(source || "").replace(/^\s*(ecmascript|javascript|vrmlscript):[ \t]*\r?\n?/i, "");
+}
+
+function collectLocals(node, locals, assigned) {
+	if (!node || typeof node !== "object") return;
+	if (node.type === "VarDecl") {
+		for (const d of node.decls) {
+			if (!locals.has(d.name)) {
+				locals.set(d.name, inferExprType(d.init));
+			}
+		}
+	} else if (node.type === "Assign") {
+		const rootId = getRootIdent(node.left);
+		if (rootId) assigned.add(rootId);
+	} else if (node.type === "Update") {
+		const rootId = getRootIdent(node.arg);
+		if (rootId) assigned.add(rootId);
+	}
+	for (const k of Object.keys(node)) {
+		const child = node[k];
+		if (Array.isArray(child)) {
+			child.forEach((c) => {
+				if (c && typeof c === "object" && c.type !== "FunctionDecl") {
+					collectLocals(c, locals, assigned);
+				}
+			});
+		} else if (child && typeof child === "object" && child.type !== "FunctionDecl") {
+			collectLocals(child, locals, assigned);
+		}
+	}
+}
+
+function getRootIdent(expr) {
+	if (!expr) return null;
+	if (expr.type === "Identifier") return expr.name;
+	if (expr.type === "Member" || expr.type === "Index") return getRootIdent(expr.object);
+	return null;
+}
+
+function inferExprType(expr) {
+	if (!expr) return "Single";
+	if (expr.type === "Literal") {
+		if (expr.kind === "boolean") return "Boolean";
+		if (expr.kind === "string") return "String";
+		if (expr.kind === "number") {
+			return /[eE.]/.test(expr.value) ? "Single" : "Integer";
+		}
+	}
+	if (expr.type === "New" && expr.callee && expr.callee.type === "Identifier") {
+		const t = X3D_TYPE_TO_PASCAL[expr.callee.name];
+		if (t) return t;
+	}
+	if (expr.type === "Call" && expr.callee && expr.callee.type === "Member") {
+		const obj = expr.callee.object;
+		const prop = expr.callee.property;
+		if (obj && obj.type === "Identifier" && obj.name === "Math") {
+			if (prop === "floor" || prop === "ceil" || prop === "round") return "Integer";
+			return "Single";
+		}
+	}
+	if (expr.type === "Binary") {
+		if (["==", "!=", "===", "!==", "<", ">", "<=", ">=", "&&", "||"].includes(expr.op)) {
+			return "Boolean";
+		}
+	}
+	return "Single";
+}
+
+function isSimpleForLoop(stmt) {
+	if (!stmt || stmt.type !== "For" || !stmt.init || !stmt.test || !stmt.update) {
+		return null;
+	}
+	let loopVar = null;
+	let startExpr = null;
+	if (stmt.init.type === "VarDecl" && stmt.init.decls.length === 1 && stmt.init.decls[0].init) {
+		loopVar = stmt.init.decls[0].name;
+		startExpr = stmt.init.decls[0].init;
+	} else if (stmt.init.type === "ExprStmt" && stmt.init.expr.type === "Assign" && stmt.init.expr.op === "=" && stmt.init.expr.left.type === "Identifier") {
+		loopVar = stmt.init.expr.left.name;
+		startExpr = stmt.init.expr.right;
+	}
+	if (!loopVar) return null;
+
+	const u = stmt.update;
+	let stepDir = null;
+	if (u.type === "Update" && u.arg.type === "Identifier" && u.arg.name === loopVar) {
+		stepDir = u.op === "++" ? "to" : "downto";
+	} else if (u.type === "Assign" && u.left.type === "Identifier" && u.left.name === loopVar && u.right.type === "Literal" && u.right.value === "1") {
+		if (u.op === "+=") stepDir = "to";
+		else if (u.op === "-=") stepDir = "downto";
+	}
+	if (!stepDir) return null;
+
+	const t = stmt.test;
+	if (t.type !== "Binary" || t.left.type !== "Identifier" || t.left.name !== loopVar) {
+		return null;
+	}
+	let endNode = t.right;
+	if (stepDir === "to") {
+		if (t.op === "<=") return { loopVar, startExpr, dir: "to", endNode, adjust: 0 };
+		if (t.op === "<") return { loopVar, startExpr, dir: "to", endNode, adjust: -1 };
+	} else {
+		if (t.op === ">=") return { loopVar, startExpr, dir: "downto", endNode, adjust: 0 };
+		if (t.op === ">") return { loopVar, startExpr, dir: "downto", endNode, adjust: 1 };
+	}
+	return null;
+}
+
+export function convertECMAScriptToPascal(source, options = {}) {
+	const scriptName = sanitizeId(options.scriptName || "X3DScript", "X3DScript");
+	const className = "T" + upperCaseFirst(scriptName) + "Script";
+	const unitName = sanitizeId(options.unitName || scriptName + "ScriptUnit");
+	const fields = Array.isArray(options.fields) ? options.fields : [];
+
+	const cleanSource = stripScriptProtocol(source);
+	const tokens = tokenize(cleanSource);
+	const ast = new Parser(tokens).parseProgram();
+
+	const fieldMap = new Map();
+	for (const f of fields) {
+		if (f && f.name) {
+			fieldMap.set(f.name, {
+				name: f.name,
+				type: f.type || "SFFloat",
+				accessType: f.accessType || "inputOutput",
+				varName: f.varName || null,
+				pascalType: X3D_TYPE_TO_PASCAL[f.type] || "Single",
+				defaultVal: X3D_DEFAULT_VALUE[f.type] || "0"
+			});
+		}
+	}
+
+	const functions = new Map();
+	const topStatements = [];
+	for (const stmt of ast.body) {
+		if (stmt.type === "FunctionDecl") {
+			functions.set(stmt.name, stmt);
+		} else if (stmt.type !== "Empty") {
+			topStatements.push(stmt);
+		}
+	}
+
+	// Determine which functions are X3D event handlers (initialize, shutdown, or inputOnly/inputOutput field names)
+	const isHandlerName = (fnName) => {
+		if (fnName === "initialize" || fnName === "shutdown") return true;
+		const f = fieldMap.get(fnName);
+		if (f && (f.accessType === "inputOnly" || f.accessType === "inputOutput")) {
+			return true;
+		}
+		if (fnName.startsWith("set_")) {
+			const base = fieldMap.get(fnName.slice(4));
+			if (base && base.accessType === "inputOutput") return true;
+		}
+		return false;
+	};
+
+	const methodNames = new Map();
+	for (const fnName of functions.keys()) {
+		methodNames.set(fnName, upperCaseFirst(sanitizeId(fnName)));
+	}
+
+	const emitIdent = (name, localScope, curParamMap) => {
+		if (curParamMap && curParamMap.has(name)) {
+			return curParamMap.get(name);
+		}
+		if (localScope && localScope.has(name)) {
+			return sanitizeId(name);
+		}
+		if (fieldMap.has(name)) {
+			return "F" + name;
+		}
+		return sanitizeId(name);
+	};
+
+	const emitExpr = (expr, localScope, curParamMap) => {
+		if (!expr) return "0";
+		switch (expr.type) {
+			case "Literal":
+				if (expr.kind === "number") return expr.value;
+				if (expr.kind === "string") return escapePascalString(expr.value);
+				if (expr.kind === "boolean") return expr.value ? "True" : "False";
+				if (expr.kind === "null") return "nil";
+				return "0";
+
+			case "Identifier":
+				return emitIdent(expr.name, localScope, curParamMap);
+
+			case "ArrayLiteral":
+				return "[" + expr.elements.map((e) => emitExpr(e, localScope, curParamMap)).join(", ") + "]";
+
+			case "Member": {
+				const obj = expr.object;
+				const prop = expr.property;
+				if (obj.type === "Identifier" && obj.name === "Math") {
+					if (prop === "PI") return "Pi";
+					if (prop === "E") return "Exp(1.0)";
+					if (prop === "SQRT2") return "Sqrt(2.0)";
+				}
+				const objCode = emitExpr(obj, localScope, curParamMap);
+				if (["x", "y", "z", "w"].includes(prop)) {
+					return objCode + "." + prop.toUpperCase();
+				}
+				if (prop === "r") return objCode + ".X";
+				if (prop === "g") return objCode + ".Y";
+				if (prop === "b") return objCode + ".Z";
+				if (prop === "a") return objCode + ".W";
+				if (prop === "length") return "Length(" + objCode + ")";
+				return objCode + "." + prop;
+			}
+
+			case "Index":
+				return (
+					emitExpr(expr.object, localScope, curParamMap) +
+					"[" +
+					emitExpr(expr.index, localScope, curParamMap) +
+					"]"
+				);
+
+			case "New": {
+				const cname = expr.callee && expr.callee.type === "Identifier" ? expr.callee.name : "";
+				const args = expr.args.map((a) => emitExpr(a, localScope, curParamMap));
+				switch (cname) {
+					case "SFVec2f":
+						return "Vector2(" + args.join(", ") + ")";
+					case "SFVec3f":
+					case "SFColor":
+						return "Vector3(" + args.join(", ") + ")";
+					case "SFVec4f":
+					case "SFRotation":
+					case "SFColorRGBA":
+						return "Vector4(" + args.join(", ") + ")";
+					case "SFVec2d":
+						return "Vector2Double(" + args.join(", ") + ")";
+					case "SFVec3d":
+						return "Vector3Double(" + args.join(", ") + ")";
+					case "SFVec4d":
+						return "Vector4Double(" + args.join(", ") + ")";
+					default:
+						return "[" + args.join(", ") + "]";
+				}
+			}
+
+			case "Unary": {
+				const argCode = emitExpr(expr.arg, localScope, curParamMap);
+				if (expr.op === "!") return "not (" + argCode + ")";
+				if (expr.op === "+") return argCode;
+				return "-" + argCode;
+			}
+
+			case "Binary": {
+				const l = emitExpr(expr.left, localScope, curParamMap);
+				const r = emitExpr(expr.right, localScope, curParamMap);
+				const opMap = {
+					"===": "=",
+					"==": "=",
+					"!==": "<>",
+					"!=": "<>",
+					"&&": "and",
+					"||": "or",
+					"%": "mod"
+				};
+				const op = opMap[expr.op] || expr.op;
+				if (op === "and" || op === "or") {
+					return "(" + l + ") " + op + " (" + r + ")";
+				}
+				return l + " " + op + " " + r;
+			}
+
+			case "Conditional":
+				return (
+					"IfThen(" +
+					emitExpr(expr.test, localScope, curParamMap) +
+					", " +
+					emitExpr(expr.consequent, localScope, curParamMap) +
+					", " +
+					emitExpr(expr.alternate, localScope, curParamMap) +
+					")"
+				);
+
+			case "Call": {
+				const c = expr.callee;
+				const args = expr.args.map((a) => emitExpr(a, localScope, curParamMap));
+				if (c.type === "Member" && c.object.type === "Identifier" && c.object.name === "Math") {
+					const mathMap = {
+						random: () => "Random",
+						floor: () => "Floor(" + args[0] + ")",
+						ceil: () => "Ceil(" + args[0] + ")",
+						round: () => "Round(" + args[0] + ")",
+						abs: () => "Abs(" + args[0] + ")",
+						sin: () => "Sin(" + args[0] + ")",
+						cos: () => "Cos(" + args[0] + ")",
+						tan: () => "Tan(" + args[0] + ")",
+						asin: () => "ArcSin(" + args[0] + ")",
+						acos: () => "ArcCos(" + args[0] + ")",
+						atan: () => "ArcTan(" + args[0] + ")",
+						atan2: () => "ArcTan2(" + args[0] + ", " + args[1] + ")",
+						sqrt: () => "Sqrt(" + args[0] + ")",
+						pow: () => "Power(" + args[0] + ", " + args[1] + ")",
+						exp: () => "Exp(" + args[0] + ")",
+						log: () => "Ln(" + args[0] + ")",
+						min: () => "Min(" + args[0] + ", " + args[1] + ")",
+						max: () => "Max(" + args[0] + ", " + args[1] + ")"
+					};
+					if (mathMap[c.property]) return mathMap[c.property]();
+				}
+				if (c.type === "Member") {
+					const objCode = emitExpr(c.object, localScope, curParamMap);
+					if (c.property === "normalize") return objCode + ".Normalize";
+					if (c.property === "length") return objCode + ".Length";
+					if (c.property === "dot") return "TVector3.DotProduct(" + objCode + ", " + args[0] + ")";
+					if (c.property === "cross") return "TVector3.CrossProduct(" + objCode + ", " + args[0] + ")";
+					if (c.object.type === "Identifier" && (c.object.name === "Browser" || c.object.name === "console")) {
+						return "WriteLn(" + args.join(", ") + ")";
+					}
+					return objCode + "." + c.property + "(" + args.join(", ") + ")";
+				}
+				if (c.type === "Identifier") {
+					if (c.name === "print") {
+						return "WriteLn(" + args.join(", ") + ")";
+					}
+					if (functions.has(c.name)) {
+						const mName = methodNames.get(c.name);
+						if (isHandlerName(c.name)) {
+							return mName + "(nil, Time)";
+						}
+						const fnDecl = functions.get(c.name);
+						const padded = fnDecl.params.map((_, idx) =>
+							idx < args.length ? args[idx] : "0.0"
+						);
+						padded.push("Time");
+						return mName + "(" + padded.join(", ") + ")";
+					}
+				}
+				return emitExpr(c, localScope, curParamMap) + "(" + args.join(", ") + ")";
+			}
+
+			case "Assign": {
+				const lhs = emitExpr(expr.left, localScope, curParamMap);
+				const rhs = emitExpr(expr.right, localScope, curParamMap);
+				const rootId = getRootIdent(expr.left);
+				let stmt = "";
+				if (expr.op === "=") {
+					stmt = lhs + " := " + rhs;
+				} else {
+					const baseOp = expr.op.slice(0, -1);
+					stmt = lhs + " := " + lhs + " + (" + rhs + ")";
+					if (baseOp !== "+") {
+						stmt = lhs + " := " + lhs + " " + baseOp + " (" + rhs + ")";
+					}
+				}
+				if (rootId && fieldMap.has(rootId)) {
+					const fm = fieldMap.get(rootId);
+					if (fm.accessType === "outputOnly" || fm.accessType === "inputOutput") {
+						return stmt + "; FDirty_" + rootId + " := True";
+					}
+				}
+				return stmt;
+			}
+
+			case "Update": {
+				const target = emitExpr(expr.arg, localScope, curParamMap);
+				const deltaOp = expr.op === "++" ? "+" : "-";
+				const rootId = getRootIdent(expr.arg);
+				const stmt = target + " := " + target + " " + deltaOp + " 1";
+				if (rootId && fieldMap.has(rootId)) {
+					const fm = fieldMap.get(rootId);
+					if (fm.accessType === "outputOnly" || fm.accessType === "inputOutput") {
+						return stmt + "; FDirty_" + rootId + " := True";
+					}
+				}
+				return stmt;
+			}
+
+			default:
+				return "0";
+		}
+	};
+
+	const emitStmt = (stmt, indent, localScope, curParamMap, lines) => {
+		const pad = "  ".repeat(indent);
+		if (!stmt || stmt.type === "Empty") return;
+
+		switch (stmt.type) {
+			case "Block":
+				lines.push(pad + "begin");
+				for (const s of stmt.body) {
+					emitStmt(s, indent + 1, localScope, curParamMap, lines);
+				}
+				lines.push(pad + "end;");
+				break;
+
+			case "VarDecl":
+				for (const d of stmt.decls) {
+					if (d.init) {
+						lines.push(
+							pad +
+								sanitizeId(d.name) +
+								" := " +
+								emitExpr(d.init, localScope, curParamMap) +
+								";"
+						);
+					}
+				}
+				break;
+
+			case "ExprStmt":
+				lines.push(pad + emitExpr(stmt.expr, localScope, curParamMap) + ";");
+				break;
+
+			case "If": {
+				lines.push(pad + "if " + emitExpr(stmt.test, localScope, curParamMap) + " then");
+				if (stmt.consequent.type === "Block") {
+					lines.push(pad + "begin");
+					for (const s of stmt.consequent.body) {
+						emitStmt(s, indent + 1, localScope, curParamMap, lines);
+					}
+					if (stmt.alternate) {
+						lines.push(pad + "end");
+					} else {
+						lines.push(pad + "end;");
+					}
+				} else {
+					emitStmt(stmt.consequent, indent + 1, localScope, curParamMap, lines);
+				}
+				if (stmt.alternate) {
+					if (stmt.alternate.type === "If") {
+						const altLines = [];
+						emitStmt(stmt.alternate, indent, localScope, curParamMap, altLines);
+						altLines[0] = pad + "else " + altLines[0].trimStart();
+						lines.push(...altLines);
+					} else if (stmt.alternate.type === "Block") {
+						lines.push(pad + "else");
+						lines.push(pad + "begin");
+						for (const s of stmt.alternate.body) {
+							emitStmt(s, indent + 1, localScope, curParamMap, lines);
+						}
+						lines.push(pad + "end;");
+					} else {
+						lines.push(pad + "else");
+						emitStmt(stmt.alternate, indent + 1, localScope, curParamMap, lines);
+					}
+				}
+				break;
+			}
+
+			case "While":
+				lines.push(pad + "while " + emitExpr(stmt.test, localScope, curParamMap) + " do");
+				if (stmt.body.type === "Block") {
+					emitStmt(stmt.body, indent, localScope, curParamMap, lines);
+				} else {
+					lines.push(pad + "begin");
+					emitStmt(stmt.body, indent + 1, localScope, curParamMap, lines);
+					lines.push(pad + "end;");
+				}
+				break;
+
+			case "DoWhile":
+				lines.push(pad + "repeat");
+				if (stmt.body.type === "Block") {
+					for (const s of stmt.body.body) {
+						emitStmt(s, indent + 1, localScope, curParamMap, lines);
+					}
+				} else {
+					emitStmt(stmt.body, indent + 1, localScope, curParamMap, lines);
+				}
+				lines.push(pad + "until not (" + emitExpr(stmt.test, localScope, curParamMap) + ");");
+				break;
+
+			case "For": {
+				const simple = isSimpleForLoop(stmt);
+				if (simple) {
+					const vName = sanitizeId(simple.loopVar);
+					const startCode = emitExpr(simple.startExpr, localScope, curParamMap);
+					let endCode = emitExpr(simple.endNode, localScope, curParamMap);
+					if (simple.adjust === -1) endCode = "(" + endCode + ") - 1";
+					else if (simple.adjust === 1) endCode = "(" + endCode + ") + 1";
+					lines.push(
+						pad + "for " + vName + " := " + startCode + " " + simple.dir + " " + endCode + " do"
+					);
+					if (stmt.body.type === "Block") {
+						emitStmt(stmt.body, indent, localScope, curParamMap, lines);
+					} else {
+						lines.push(pad + "begin");
+						emitStmt(stmt.body, indent + 1, localScope, curParamMap, lines);
+						lines.push(pad + "end;");
+					}
+				} else {
+					if (stmt.init) emitStmt(stmt.init, indent, localScope, curParamMap, lines);
+					const cond = stmt.test ? emitExpr(stmt.test, localScope, curParamMap) : "True";
+					lines.push(pad + "while " + cond + " do");
+					lines.push(pad + "begin");
+					if (stmt.body.type === "Block") {
+						for (const s of stmt.body.body) {
+							emitStmt(s, indent + 1, localScope, curParamMap, lines);
+						}
+					} else {
+						emitStmt(stmt.body, indent + 1, localScope, curParamMap, lines);
+					}
+					if (stmt.update) {
+						lines.push(pad + "  " + emitExpr(stmt.update, localScope, curParamMap) + ";");
+					}
+					lines.push(pad + "end;");
+				}
+				break;
+			}
+
+			case "Switch": {
+				lines.push(pad + "case " + emitExpr(stmt.discriminant, localScope, curParamMap) + " of");
+				for (const c of stmt.cases) {
+					const bodyStmts = c.consequent.filter((s) => s.type !== "Break");
+					if (c.test) {
+						lines.push(pad + "  " + emitExpr(c.test, localScope, curParamMap) + ":");
+					} else {
+						lines.push(pad + "  else");
+					}
+					lines.push(pad + "  begin");
+					for (const s of bodyStmts) {
+						emitStmt(s, indent + 2, localScope, curParamMap, lines);
+					}
+					lines.push(pad + "  end;");
+				}
+				lines.push(pad + "end;");
+				break;
+			}
+
+			case "Break":
+				lines.push(pad + "Break;");
+				break;
+
+			case "Continue":
+				lines.push(pad + "Continue;");
+				break;
+
+			case "Return":
+				if (stmt.arg) {
+					lines.push(pad + "Result := " + emitExpr(stmt.arg, localScope, curParamMap) + ";");
+				}
+				lines.push(pad + "Exit;");
+				break;
+		}
+	};
+
+	// Build class interface & implementation
+	const classFields = [];
+	const ctorLines = [];
+	const dtorLines = [];
+	const flushLines = [];
+	const methodDecls = [];
+	const methodImpls = [];
+	const compiledEntries = [];
+	const registerLines = [];
+
+	for (const fm of fieldMap.values()) {
+		if (fm.accessType === "inputOnly") continue;
+		classFields.push("F" + fm.name + ": " + fm.pascalType + ";");
+		ctorLines.push("F" + fm.name + " := " + fm.defaultVal + ";");
+
+		if (fm.accessType === "inputOutput") {
+			classFields.push("FField_" + fm.name + ": T" + fm.type + ";");
+			classFields.push("FDirty_" + fm.name + ": Boolean;");
+			ctorLines.push("FField_" + fm.name + " := nil;");
+			ctorLines.push("FDirty_" + fm.name + " := False;");
+			flushLines.push(
+				"  if FDirty_" + fm.name + " then",
+				"  begin",
+				"    FDirty_" + fm.name + " := False;",
+				"    if FField_" + fm.name + " <> nil then",
+				"      FField_" + fm.name + ".Send(F" + fm.name + ", Time);",
+				"  end;"
+			);
+		} else if (fm.accessType === "outputOnly") {
+			classFields.push("FEvent_" + fm.name + ": TX3DEvent;");
+			classFields.push("FBack_" + fm.name + ": T" + fm.type + ";");
+			classFields.push("FDirty_" + fm.name + ": Boolean;");
+			ctorLines.push("FEvent_" + fm.name + " := nil;");
+			ctorLines.push("FBack_" + fm.name + " := T" + fm.type + ".Create(nil, False, " + escapePascalString(fm.name) + ", " + fm.defaultVal + ");");
+			ctorLines.push("FDirty_" + fm.name + " := False;");
+			dtorLines.push("FreeAndNil(FBack_" + fm.name + ");");
+			flushLines.push(
+				"  if FDirty_" + fm.name + " then",
+				"  begin",
+				"    FDirty_" + fm.name + " := False;",
+				"    if FEvent_" + fm.name + " <> nil then",
+				"    begin",
+				"      FBack_" + fm.name + ".Value := F" + fm.name + ";",
+				"      FEvent_" + fm.name + ".Send(FBack_" + fm.name + ", Time);",
+				"    end;",
+				"  end;"
+			);
+		}
+	}
+
+	// Constructor params to bind TX3DField / TX3DEvent references
+	const bindParams = [];
+	const bindAssigns = [];
+	for (const fm of fieldMap.values()) {
+		if (fm.accessType === "inputOutput") {
+			const pName = "AField_" + fm.name;
+			bindParams.push("const " + pName + ": T" + fm.type);
+			bindAssigns.push("  FField_" + fm.name + " := " + pName + ";");
+			bindAssigns.push("  if " + pName + " <> nil then F" + fm.name + " := " + pName + ".Value;");
+		} else if (fm.accessType === "outputOnly") {
+			const pName = "AEvent_" + fm.name;
+			bindParams.push("const " + pName + ": TX3DEvent");
+			bindAssigns.push("  FEvent_" + fm.name + " := " + pName + ";");
+		}
+	}
+
+	// Generate each function
+	for (const [fnName, fn] of functions.entries()) {
+		const mName = methodNames.get(fnName);
+		const isHandler = isHandlerName(fnName);
+
+		const locals = new Map();
+		const assigned = new Set();
+		collectLocals(fn.body, locals, assigned);
+
+		const curParamMap = new Map();
+		if (isHandler) {
+			const sig = "procedure " + mName + "(Value: TX3DField; const Time: TX3DTime);";
+			methodDecls.push(sig);
+
+			const fInfo = fieldMap.get(fnName) || (fnName.startsWith("set_") ? fieldMap.get(fnName.slice(4)) : null);
+			if (fn.params.length > 0 && fInfo) {
+				const pType = "T" + fInfo.type;
+				curParamMap.set(fn.params[0], "(Value as " + pType + ").Value");
+			}
+			const localVarLines = [];
+			for (const [vName, vType] of locals.entries()) {
+				localVarLines.push("  " + sanitizeId(vName) + ": " + vType + ";");
+			}
+
+			const bodyLines = [];
+			for (const s of fn.body.body) {
+				emitStmt(s, 1, locals, curParamMap, bodyLines);
+			}
+			if (flushLines.length > 0) {
+				bodyLines.push("  FlushOutputs(Time);");
+			}
+
+			methodImpls.push(
+				"procedure " + className + "." + mName + "(Value: TX3DField; const Time: TX3DTime);",
+				...(localVarLines.length > 0 ? ["var", ...localVarLines] : []),
+				"begin",
+				...bodyLines,
+				"end;",
+				""
+			);
+
+			const compiledKey = scriptName + "_" + fnName;
+			compiledEntries.push(fnName + "=" + compiledKey);
+			registerLines.push(
+				"  Scene.RegisterCompiledScript(" +
+					escapePascalString(compiledKey) +
+					", {$ifdef FPC}@{$endif}" +
+					mName +
+					");"
+			);
+		} else {
+			const helperParams = fn.params.map((p) => "const " + sanitizeId(p) + ": Single = 0.0");
+			helperParams.push("const Time: TX3DTime");
+			// Note: in Pascal, parameters without defaults cannot follow parameters with defaults,
+			// so put `Time` first if there are defaulted params, OR omit defaults if all callers are padded.
+			const sigParams = [
+				...fn.params.map((p) => "const " + sanitizeId(p) + ": Single"),
+				"const Time: TX3DTime"
+			];
+			const sig = "procedure " + mName + "(" + sigParams.join("; ") + ");";
+			methodDecls.push(sig);
+
+			const localVarLines = [];
+			for (const [vName, vType] of locals.entries()) {
+				localVarLines.push("  " + sanitizeId(vName) + ": " + vType + ";");
+			}
+			const bodyLines = [];
+			for (const s of fn.body.body) {
+				emitStmt(s, 1, locals, curParamMap, bodyLines);
+			}
+			methodImpls.push(
+				"procedure " + className + "." + mName + "(" + sigParams.join("; ") + ");",
+				...(localVarLines.length > 0 ? ["var", ...localVarLines] : []),
+				"begin",
+				...bodyLines,
+				"end;",
+				""
+			);
+		}
+	}
+
+	const classInterface = [
+		className + " = class",
+		"private",
+		...classFields.map((l) => "  " + l),
+		"  procedure FlushOutputs(const Time: TX3DTime);",
+		"public",
+		"  constructor Create" + (bindParams.length > 0 ? "(" + bindParams.join("; ") + ")" : "") + ";",
+		"  destructor Destroy; override;",
+		"  procedure RegisterHandlers(const Scene: TCastleSceneCore);",
+		...methodDecls.map((l) => "  " + l),
+		"end;"
+	].join("\n");
+
+	const classImplementation = [
+		"constructor " +
+			className +
+			".Create" +
+			(bindParams.length > 0 ? "(" + bindParams.join("; ") + ")" : "") +
+			";",
+		"begin",
+		"  inherited Create;",
+		...ctorLines.map((l) => "  " + l),
+		...bindAssigns,
+		"end;",
+		"",
+		"destructor " + className + ".Destroy;",
+		"begin",
+		...dtorLines.map((l) => "  " + l),
+		"  inherited Destroy;",
+		"end;",
+		"",
+		"procedure " + className + ".FlushOutputs(const Time: TX3DTime);",
+		"begin",
+		...flushLines,
+		"end;",
+		"",
+		"procedure " + className + ".RegisterHandlers(const Scene: TCastleSceneCore);",
+		"begin",
+		...registerLines,
+		"end;",
+		"",
+		...methodImpls
+	].join("\n");
+
+	const pascalUnit = [
+		"unit " + unitName + ";",
+		"",
+		"{$ifdef FPC}{$mode objfpc}{$H+}{$endif}",
+		"",
+		"interface",
+		"",
+		"uses",
+		"  SysUtils, Math, CastleVectors, CastleSceneCore, X3DFields, X3DNodes, X3DTime;",
+		"",
+		"type",
+		classInterface
+			.split("\n")
+			.map((l) => "  " + l)
+			.join("\n"),
+		"",
+		"implementation",
+		"",
+		classImplementation,
+		"end.",
+		""
+	].join("\n");
+
+	const compiledUrl = "compiled:\n" + compiledEntries.join("\n");
+
+	return {
+		unitName,
+		className,
+		compiledUrl,
+		compiledEntries,
+		classInterface,
+		classImplementation,
+		pascalUnit
+	};
+}
+
+export default function JS2Pas() {
+	this.convert = convertECMAScriptToPascal;
+}
