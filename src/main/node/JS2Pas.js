@@ -859,9 +859,15 @@ function getRootIdent(expr) {
 	return null;
 }
 
-function isUnsupportedBrowserDomExpr(node) {
+function isUnsupportedBrowserDomExpr(node, skippedVars) {
 	if (!node || typeof node !== "object") return false;
 	if (node.type === "ObjectLiteral" || node.type === "FunctionExpr") return true;
+	if (
+		node.type === "Identifier" &&
+		(node.name === "Browser" || (skippedVars && skippedVars.has(node.name)))
+	) {
+		return true;
+	}
 	if (node.type === "Call" && node.callee && node.callee.type === "Member") {
 		const obj = node.callee.object;
 		const prop = node.callee.property;
@@ -869,18 +875,17 @@ function isUnsupportedBrowserDomExpr(node) {
 			obj &&
 			obj.type === "Identifier" &&
 			obj.name === "Browser" &&
-			prop !== "print" &&
-			prop !== "println"
+			(prop === "print" || prop === "println")
 		) {
-			return true;
+			return node.args.some((a) => isUnsupportedBrowserDomExpr(a, skippedVars));
 		}
 	}
 	for (const k of Object.keys(node)) {
 		const child = node[k];
 		if (Array.isArray(child)) {
-			if (child.some((c) => isUnsupportedBrowserDomExpr(c))) return true;
+			if (child.some((c) => isUnsupportedBrowserDomExpr(c, skippedVars))) return true;
 		} else if (child && typeof child === "object") {
-			if (isUnsupportedBrowserDomExpr(child)) return true;
+			if (isUnsupportedBrowserDomExpr(child, skippedVars)) return true;
 		}
 	}
 	return false;
@@ -1140,6 +1145,61 @@ export function convertECMAScriptToPascal(source, options = {}) {
 		methodNames.set(fnName, upperCaseFirst(sanitizeId(fnName)));
 	}
 
+	const usedSendHelpers = new Set();
+	const skippedBrowserVars = new Set();
+
+	const inferPascalType = (expr, localScope, curParamTypeMap) => {
+		if (!expr || !expr.type) return "Single";
+		if (expr.type === "Literal") {
+			if (expr.kind === "boolean") return "Boolean";
+			if (expr.kind === "string") return "String";
+			if (expr.kind === "null") return "TX3DNode";
+			if (expr.kind === "number") return /[eE.]/.test(expr.value) ? "Single" : "Integer";
+		}
+		if (expr.type === "Identifier") {
+			if (curParamTypeMap && curParamTypeMap.has(expr.name)) {
+				return curParamTypeMap.get(expr.name);
+			}
+			if (localScope && localScope.has(expr.name)) {
+				return localScope.get(expr.name);
+			}
+			if (fieldMap.has(expr.name)) {
+				return fieldMap.get(expr.name).pascalType;
+			}
+		}
+		if (expr.type === "Unary") {
+			if (expr.op === "!") return "Boolean";
+			return inferPascalType(expr.arg, localScope, curParamTypeMap);
+		}
+		if (expr.type === "Binary") {
+			if (
+				["==", "!=", "===", "!==", "<", ">", "<=", ">=", "&&", "||", "in", "instanceof"].includes(
+					expr.op
+				)
+			) {
+				return "Boolean";
+			}
+			if (expr.op === "+") {
+				const lt = inferPascalType(expr.left, localScope, curParamTypeMap);
+				const rt = inferPascalType(expr.right, localScope, curParamTypeMap);
+				if (lt === "String" || rt === "String") return "String";
+			}
+		}
+		if (expr.type === "New" && expr.callee && expr.callee.type === "Identifier") {
+			const t = X3D_TYPE_TO_PASCAL[expr.callee.name];
+			if (t) return t;
+		}
+		return inferExprType(expr);
+	};
+
+	const toBoolCode = (expr, code, localScope, curParamTypeMap) => {
+		const t = inferPascalType(expr, localScope, curParamTypeMap);
+		if (t === "Boolean") return code;
+		if (t === "TX3DNode") return "((" + code + ") <> nil)";
+		if (t === "String") return "((" + code + ") <> '')";
+		return "((" + code + ") <> 0)";
+	};
+
 	const emitIdent = (name, localScope, curParamMap) => {
 		if (curParamMap && curParamMap.has(name)) {
 			return curParamMap.get(name);
@@ -1162,7 +1222,7 @@ export function convertECMAScriptToPascal(source, options = {}) {
 		}
 	};
 
-	const emitExpr = (expr, localScope, curParamMap, fx) => {
+	const emitExpr = (expr, localScope, curParamMap, curParamTypeMap, fx) => {
 		if (!expr || !expr.type) return "0";
 		switch (expr.type) {
 			case "Literal":
@@ -1176,7 +1236,13 @@ export function convertECMAScriptToPascal(source, options = {}) {
 				return emitIdent(expr.name, localScope, curParamMap);
 
 			case "ArrayLiteral":
-				return "[" + expr.elements.map((e) => emitExpr(e, localScope, curParamMap, fx)).join(", ") + "]";
+				return (
+					"[" +
+					expr.elements
+						.map((e) => emitExpr(e, localScope, curParamMap, curParamTypeMap, fx))
+						.join(", ") +
+					"]"
+				);
 
 			case "Member": {
 				const obj = expr.object;
@@ -1186,7 +1252,7 @@ export function convertECMAScriptToPascal(source, options = {}) {
 					if (prop === "E") return "Exp(1.0)";
 					if (prop === "SQRT2") return "Sqrt(2.0)";
 				}
-				const objCode = emitExpr(obj, localScope, curParamMap, fx);
+				const objCode = emitExpr(obj, localScope, curParamMap, curParamTypeMap, fx);
 				if (["x", "y", "z", "w"].includes(prop)) {
 					return objCode + "." + prop.toUpperCase();
 				}
@@ -1200,15 +1266,17 @@ export function convertECMAScriptToPascal(source, options = {}) {
 
 			case "Index":
 				return (
-					emitExpr(expr.object, localScope, curParamMap, fx) +
+					emitExpr(expr.object, localScope, curParamMap, curParamTypeMap, fx) +
 					"[" +
-					emitExpr(expr.index, localScope, curParamMap, fx) +
+					emitExpr(expr.index, localScope, curParamMap, curParamTypeMap, fx) +
 					"]"
 				);
 
 			case "New": {
 				const cname = expr.callee && expr.callee.type === "Identifier" ? expr.callee.name : "";
-				const args = expr.args.map((a) => emitExpr(a, localScope, curParamMap, fx));
+				const args = expr.args.map((a) =>
+					emitExpr(a, localScope, curParamMap, curParamTypeMap, fx)
+				);
 				switch (cname) {
 					case "SFVec2f":
 						return "Vector2(" + args.join(", ") + ")";
@@ -1231,10 +1299,13 @@ export function convertECMAScriptToPascal(source, options = {}) {
 			}
 
 			case "Unary": {
-				const argCode = emitExpr(expr.arg, localScope, curParamMap, fx);
+				const argCode = emitExpr(expr.arg, localScope, curParamMap, curParamTypeMap, fx);
 				const needsParens = expr.arg && expr.arg.type === "Binary";
 				const wrapped = needsParens ? "(" + argCode + ")" : argCode;
-				if (expr.op === "!" || expr.op === "~") return "not (" + argCode + ")";
+				if (expr.op === "!") {
+					return "not (" + toBoolCode(expr.arg, argCode, localScope, curParamTypeMap) + ")";
+				}
+				if (expr.op === "~") return "not (" + argCode + ")";
 				if (expr.op === "+") return wrapped;
 				if (expr.op === "-") return "-" + wrapped;
 				return wrapped;
@@ -1242,8 +1313,14 @@ export function convertECMAScriptToPascal(source, options = {}) {
 
 			case "Binary": {
 				const pPrec = JS_BIN_PREC[expr.op] || 0;
-				let l = emitExpr(expr.left, localScope, curParamMap, fx);
-				let r = emitExpr(expr.right, localScope, curParamMap, fx);
+				let l = emitExpr(expr.left, localScope, curParamMap, curParamTypeMap, fx);
+				let r = emitExpr(expr.right, localScope, curParamMap, curParamTypeMap, fx);
+				if (expr.op === "&&" || expr.op === "||") {
+					const opKw = expr.op === "&&" ? "and" : "or";
+					const lb = toBoolCode(expr.left, l, localScope, curParamTypeMap);
+					const rb = toBoolCode(expr.right, r, localScope, curParamTypeMap);
+					return "(" + lb + ") " + opKw + " (" + rb + ")";
+				}
 				if (expr.left && expr.left.type === "Binary") {
 					const lPrec = JS_BIN_PREC[expr.left.op] || 0;
 					if (lPrec < pPrec || pPrec <= 6) {
@@ -1265,8 +1342,6 @@ export function convertECMAScriptToPascal(source, options = {}) {
 					"==": "=",
 					"!==": "<>",
 					"!=": "<>",
-					"&&": "and",
-					"||": "or",
 					"&": "and",
 					"|": "or",
 					"^": "xor",
@@ -1282,20 +1357,25 @@ export function convertECMAScriptToPascal(source, options = {}) {
 				return l + " " + op + " " + r;
 			}
 
-			case "Conditional":
+			case "Conditional": {
+				const rawTest = emitExpr(expr.test, localScope, curParamMap, curParamTypeMap, fx);
+				const boolTest = toBoolCode(expr.test, rawTest, localScope, curParamTypeMap);
 				return (
 					"IfThen(" +
-					emitExpr(expr.test, localScope, curParamMap, fx) +
+					boolTest +
 					", " +
-					emitExpr(expr.consequent, localScope, curParamMap, fx) +
+					emitExpr(expr.consequent, localScope, curParamMap, curParamTypeMap, fx) +
 					", " +
-					emitExpr(expr.alternate, localScope, curParamMap, fx) +
+					emitExpr(expr.alternate, localScope, curParamMap, curParamTypeMap, fx) +
 					")"
 				);
+			}
 
 			case "Call": {
 				const c = expr.callee;
-				const args = expr.args.map((a) => emitExpr(a, localScope, curParamMap, fx));
+				const args = expr.args.map((a) =>
+					emitExpr(a, localScope, curParamMap, curParamTypeMap, fx)
+				);
 				if (c && c.type === "Member") {
 					if (c.object && c.object.type === "Identifier" && c.object.name === "Math") {
 						const mathMap = {
@@ -1329,7 +1409,7 @@ export function convertECMAScriptToPascal(source, options = {}) {
 					) {
 						return "WriteLn(" + args.join(", ") + ")";
 					}
-					const objCode = emitExpr(c.object, localScope, curParamMap, fx);
+					const objCode = emitExpr(c.object, localScope, curParamMap, curParamTypeMap, fx);
 					if (c.property === "normalize") return objCode + ".Normalize";
 					if (c.property === "length") return objCode + ".Length";
 					if (c.property === "dot") return "TVector3.DotProduct(" + objCode + ", " + args[0] + ")";
@@ -1348,28 +1428,72 @@ export function convertECMAScriptToPascal(source, options = {}) {
 						const fnDecl = functions.get(c.name);
 						const pTypes = helperParamTypes.get(c.name) || [];
 						const padded = fnDecl.params.map((_, idx) =>
-							idx < args.length ? args[idx] : (pTypes[idx] === "Integer" ? "0" : "0.0")
+							idx < args.length ? args[idx] : pTypes[idx] === "Integer" ? "0" : "0.0"
 						);
 						padded.push("Time");
 						return mName + "(" + padded.join(", ") + ")";
 					}
 				}
-				return emitExpr(c, localScope, curParamMap, fx) + "(" + args.join(", ") + ")";
+				return (
+					emitExpr(c, localScope, curParamMap, curParamTypeMap, fx) + "(" + args.join(", ") + ")"
+				);
 			}
 
 			case "Assign": {
+				if (
+					expr.op === "=" &&
+					expr.left &&
+					expr.left.type === "Member" &&
+					!["x", "y", "z", "w", "r", "g", "b", "a"].includes(expr.left.property) &&
+					inferPascalType(expr.left.object, localScope, curParamTypeMap) === "TX3DNode"
+				) {
+					const objCode = emitExpr(
+						expr.left.object,
+						localScope,
+						curParamMap,
+						curParamTypeMap,
+						fx
+					);
+					const rhsCode = emitExpr(expr.right, localScope, curParamMap, curParamTypeMap, fx);
+					const rhsType = inferPascalType(expr.right, localScope, curParamTypeMap);
+					let helper = "SendNodeFloat";
+					if (rhsType === "Boolean") helper = "SendNodeBool";
+					else if (rhsType === "String") helper = "SendNodeString";
+					else if (rhsType === "TVector2") helper = "SendNodeVec2";
+					else if (rhsType === "TVector3") helper = "SendNodeVec3";
+					else if (rhsType === "TVector4") helper = "SendNodeVec4";
+					usedSendHelpers.add(helper);
+					return (
+						helper +
+						"(" +
+						objCode +
+						", " +
+						escapePascalString(expr.left.property) +
+						", " +
+						rhsCode +
+						", Time)"
+					);
+				}
 				let lhs;
 				if (expr.left && expr.left.type === "Index") {
-					const arrCode = emitExpr(expr.left.object, localScope, curParamMap, fx);
-					const idxCode = emitExpr(expr.left.index, localScope, curParamMap, fx);
+					const arrCode = emitExpr(expr.left.object, localScope, curParamMap, curParamTypeMap, fx);
+					const idxCode = emitExpr(expr.left.index, localScope, curParamMap, curParamTypeMap, fx);
 					fx.pre.push(
-						"if (" + idxCode + ") >= Length(" + arrCode + ") then SetLength(" + arrCode + ", (" + idxCode + ") + 1);"
+						"if (" +
+							idxCode +
+							") >= Length(" +
+							arrCode +
+							") then SetLength(" +
+							arrCode +
+							", (" +
+							idxCode +
+							") + 1);"
 					);
 					lhs = arrCode + "[" + idxCode + "]";
 				} else {
-					lhs = emitExpr(expr.left, localScope, curParamMap, fx);
+					lhs = emitExpr(expr.left, localScope, curParamMap, curParamTypeMap, fx);
 				}
-				const rhs = emitExpr(expr.right, localScope, curParamMap, fx);
+				const rhs = emitExpr(expr.right, localScope, curParamMap, curParamTypeMap, fx);
 				const rootId = getRootIdent(expr.left);
 				markDirtyIfField(rootId, fx);
 				if (expr.op === "=") {
@@ -1380,7 +1504,7 @@ export function convertECMAScriptToPascal(source, options = {}) {
 			}
 
 			case "Update": {
-				const target = emitExpr(expr.arg, localScope, curParamMap, fx);
+				const target = emitExpr(expr.arg, localScope, curParamMap, curParamTypeMap, fx);
 				const deltaOp = expr.op === "++" ? "+" : "-";
 				const rootId = getRootIdent(expr.arg);
 				const updStmt = target + " := " + target + " " + deltaOp + " 1;";
@@ -1398,14 +1522,14 @@ export function convertECMAScriptToPascal(source, options = {}) {
 		}
 	};
 
-	const emitExprWithFx = (expr, localScope, curParamMap, pad, lines) => {
+	const emitExprWithFx = (expr, localScope, curParamMap, curParamTypeMap, pad, lines) => {
 		const fx = { pre: [], post: [] };
-		const code = emitExpr(expr, localScope, curParamMap, fx);
+		const code = emitExpr(expr, localScope, curParamMap, curParamTypeMap, fx);
 		for (const p of fx.pre) lines.push(pad + p);
 		return { code, post: fx.post };
 	};
 
-	const emitStmt = (stmt, indent, localScope, curParamMap, lines) => {
+	const emitStmt = (stmt, indent, localScope, curParamMap, curParamTypeMap, lines) => {
 		const pad = "  ".repeat(indent);
 		if (!stmt || stmt.type === "Empty") return;
 
@@ -1413,7 +1537,7 @@ export function convertECMAScriptToPascal(source, options = {}) {
 			case "Block":
 				lines.push(pad + "begin");
 				for (const s of stmt.body) {
-					emitStmt(s, indent + 1, localScope, curParamMap, lines);
+					emitStmt(s, indent + 1, localScope, curParamMap, curParamTypeMap, lines);
 				}
 				lines.push(pad + "end;");
 				break;
@@ -1421,10 +1545,20 @@ export function convertECMAScriptToPascal(source, options = {}) {
 			case "VarDecl":
 				for (const d of stmt.decls) {
 					if (d.init) {
-						if (isUnsupportedBrowserDomExpr(d.init)) {
-							lines.push(pad + "{ Skipped unsupported JS Browser/DOM initializer for " + sanitizeId(d.name) + " }");
+						if (isUnsupportedBrowserDomExpr(d.init, skippedBrowserVars)) {
+							skippedBrowserVars.add(d.name);
+							lines.push(
+								pad + "{ Skipped unsupported JS Browser/DOM initializer for " + sanitizeId(d.name) + " }"
+							);
 						} else {
-							const { code, post } = emitExprWithFx(d.init, localScope, curParamMap, pad, lines);
+							const { code, post } = emitExprWithFx(
+								d.init,
+								localScope,
+								curParamMap,
+								curParamTypeMap,
+								pad,
+								lines
+							);
 							lines.push(pad + sanitizeId(d.name) + " := " + code + ";");
 							for (const p of post) lines.push(pad + p);
 						}
@@ -1433,51 +1567,74 @@ export function convertECMAScriptToPascal(source, options = {}) {
 				break;
 
 			case "ExprStmt":
-				if (isUnsupportedBrowserDomExpr(stmt.expr)) {
+				if (isUnsupportedBrowserDomExpr(stmt.expr, skippedBrowserVars)) {
+					if (
+						stmt.expr &&
+						stmt.expr.type === "Assign" &&
+						stmt.expr.left &&
+						stmt.expr.left.type === "Identifier"
+					) {
+						skippedBrowserVars.add(stmt.expr.left.name);
+					}
 					lines.push(pad + "{ Skipped unsupported JS Browser/DOM statement }");
 				} else if (stmt.expr && stmt.expr.type === "Update") {
 					const fx = { pre: [], post: [] };
-					const target = emitExpr(stmt.expr.arg, localScope, curParamMap, fx);
+					const target = emitExpr(stmt.expr.arg, localScope, curParamMap, curParamTypeMap, fx);
 					const deltaOp = stmt.expr.op === "++" ? "+" : "-";
 					for (const p of fx.pre) lines.push(pad + p);
 					lines.push(pad + target + " := " + target + " " + deltaOp + " 1;");
 					markDirtyIfField(getRootIdent(stmt.expr.arg), fx);
 					for (const p of fx.post) lines.push(pad + p);
 				} else {
-					const { code, post } = emitExprWithFx(stmt.expr, localScope, curParamMap, pad, lines);
+					const { code, post } = emitExprWithFx(
+						stmt.expr,
+						localScope,
+						curParamMap,
+						curParamTypeMap,
+						pad,
+						lines
+					);
 					lines.push(pad + code + ";");
 					for (const p of post) lines.push(pad + p);
 				}
 				break;
 
 			case "If": {
-				const { code: testCode, post } = emitExprWithFx(stmt.test, localScope, curParamMap, pad, lines);
+				const { code: rawTestCode, post } = emitExprWithFx(
+					stmt.test,
+					localScope,
+					curParamMap,
+					curParamTypeMap,
+					pad,
+					lines
+				);
+				const testCode = toBoolCode(stmt.test, rawTestCode, localScope, curParamTypeMap);
 				lines.push(pad + "if " + testCode + " then");
 				if (stmt.consequent.type === "Block") {
 					lines.push(pad + "begin");
 					for (const s of stmt.consequent.body) {
-						emitStmt(s, indent + 1, localScope, curParamMap, lines);
+						emitStmt(s, indent + 1, localScope, curParamMap, curParamTypeMap, lines);
 					}
 					lines.push(stmt.alternate ? pad + "end" : pad + "end;");
 				} else {
-					emitStmt(stmt.consequent, indent + 1, localScope, curParamMap, lines);
+					emitStmt(stmt.consequent, indent + 1, localScope, curParamMap, curParamTypeMap, lines);
 				}
 				if (stmt.alternate) {
 					if (stmt.alternate.type === "If") {
 						const altLines = [];
-						emitStmt(stmt.alternate, indent, localScope, curParamMap, altLines);
+						emitStmt(stmt.alternate, indent, localScope, curParamMap, curParamTypeMap, altLines);
 						altLines[0] = pad + "else " + altLines[0].trimStart();
 						lines.push(...altLines);
 					} else if (stmt.alternate.type === "Block") {
 						lines.push(pad + "else");
 						lines.push(pad + "begin");
 						for (const s of stmt.alternate.body) {
-							emitStmt(s, indent + 1, localScope, curParamMap, lines);
+							emitStmt(s, indent + 1, localScope, curParamMap, curParamTypeMap, lines);
 						}
 						lines.push(pad + "end;");
 					} else {
 						lines.push(pad + "else");
-						emitStmt(stmt.alternate, indent + 1, localScope, curParamMap, lines);
+						emitStmt(stmt.alternate, indent + 1, localScope, curParamMap, curParamTypeMap, lines);
 					}
 				}
 				for (const p of post) lines.push(pad + p);
@@ -1486,13 +1643,14 @@ export function convertECMAScriptToPascal(source, options = {}) {
 
 			case "While": {
 				const fx = { pre: [], post: [] };
-				const testCode = emitExpr(stmt.test, localScope, curParamMap, fx);
+				const rawTest = emitExpr(stmt.test, localScope, curParamMap, curParamTypeMap, fx);
+				const testCode = toBoolCode(stmt.test, rawTest, localScope, curParamTypeMap);
 				lines.push(pad + "while " + testCode + " do");
 				if (stmt.body.type === "Block") {
-					emitStmt(stmt.body, indent, localScope, curParamMap, lines);
+					emitStmt(stmt.body, indent, localScope, curParamMap, curParamTypeMap, lines);
 				} else {
 					lines.push(pad + "begin");
-					emitStmt(stmt.body, indent + 1, localScope, curParamMap, lines);
+					emitStmt(stmt.body, indent + 1, localScope, curParamMap, curParamTypeMap, lines);
 					lines.push(pad + "end;");
 				}
 				break;
@@ -1500,14 +1658,15 @@ export function convertECMAScriptToPascal(source, options = {}) {
 
 			case "DoWhile": {
 				const fx = { pre: [], post: [] };
-				const testCode = emitExpr(stmt.test, localScope, curParamMap, fx);
+				const rawTest = emitExpr(stmt.test, localScope, curParamMap, curParamTypeMap, fx);
+				const testCode = toBoolCode(stmt.test, rawTest, localScope, curParamTypeMap);
 				lines.push(pad + "repeat");
 				if (stmt.body.type === "Block") {
 					for (const s of stmt.body.body) {
-						emitStmt(s, indent + 1, localScope, curParamMap, lines);
+						emitStmt(s, indent + 1, localScope, curParamMap, curParamTypeMap, lines);
 					}
 				} else {
-					emitStmt(stmt.body, indent + 1, localScope, curParamMap, lines);
+					emitStmt(stmt.body, indent + 1, localScope, curParamMap, curParamTypeMap, lines);
 				}
 				lines.push(pad + "until not (" + testCode + ");");
 				break;
@@ -1518,35 +1677,51 @@ export function convertECMAScriptToPascal(source, options = {}) {
 				if (simple) {
 					const fx = { pre: [], post: [] };
 					const vName = sanitizeId(simple.loopVar);
-					const startCode = emitExpr(simple.startExpr, localScope, curParamMap, fx);
-					let endCode = emitExpr(simple.endNode, localScope, curParamMap, fx);
+					const startCode = emitExpr(simple.startExpr, localScope, curParamMap, curParamTypeMap, fx);
+					let endCode = emitExpr(simple.endNode, localScope, curParamMap, curParamTypeMap, fx);
 					if (simple.adjust === -1) endCode = "(" + endCode + ") - 1";
 					else if (simple.adjust === 1) endCode = "(" + endCode + ") + 1";
 					lines.push(
 						pad + "for " + vName + " := " + startCode + " " + simple.dir + " " + endCode + " do"
 					);
 					if (stmt.body.type === "Block") {
-						emitStmt(stmt.body, indent, localScope, curParamMap, lines);
+						emitStmt(stmt.body, indent, localScope, curParamMap, curParamTypeMap, lines);
 					} else {
 						lines.push(pad + "begin");
-						emitStmt(stmt.body, indent + 1, localScope, curParamMap, lines);
+						emitStmt(stmt.body, indent + 1, localScope, curParamMap, curParamTypeMap, lines);
 						lines.push(pad + "end;");
 					}
 				} else {
-					if (stmt.init) emitStmt(stmt.init, indent, localScope, curParamMap, lines);
+					if (stmt.init) {
+						emitStmt(stmt.init, indent, localScope, curParamMap, curParamTypeMap, lines);
+					}
 					const fx = { pre: [], post: [] };
-					const cond = stmt.test ? emitExpr(stmt.test, localScope, curParamMap, fx) : "True";
+					const cond = stmt.test
+						? toBoolCode(
+								stmt.test,
+								emitExpr(stmt.test, localScope, curParamMap, curParamTypeMap, fx),
+								localScope,
+								curParamTypeMap
+							)
+						: "True";
 					lines.push(pad + "while " + cond + " do");
 					lines.push(pad + "begin");
 					if (stmt.body.type === "Block") {
 						for (const s of stmt.body.body) {
-							emitStmt(s, indent + 1, localScope, curParamMap, lines);
+							emitStmt(s, indent + 1, localScope, curParamMap, curParamTypeMap, lines);
 						}
 					} else {
-						emitStmt(stmt.body, indent + 1, localScope, curParamMap, lines);
+						emitStmt(stmt.body, indent + 1, localScope, curParamMap, curParamTypeMap, lines);
 					}
 					if (stmt.update) {
-						emitStmt({ type: "ExprStmt", expr: stmt.update }, indent + 1, localScope, curParamMap, lines);
+						emitStmt(
+							{ type: "ExprStmt", expr: stmt.update },
+							indent + 1,
+							localScope,
+							curParamMap,
+							curParamTypeMap,
+							lines
+						);
 					}
 					lines.push(pad + "end;");
 				}
@@ -1556,36 +1731,48 @@ export function convertECMAScriptToPascal(source, options = {}) {
 			case "ForInOf": {
 				const fx = { pre: [], post: [] };
 				const vName = sanitizeId(stmt.leftVar);
-				const rightCode = emitExpr(stmt.right, localScope, curParamMap, fx);
+				const rightCode = emitExpr(stmt.right, localScope, curParamMap, curParamTypeMap, fx);
 				if (stmt.op === "in") {
 					lines.push(pad + "for " + vName + " := 0 to High(" + rightCode + ") do");
 				} else {
 					lines.push(pad + "for " + vName + " in " + rightCode + " do");
 				}
 				if (stmt.body.type === "Block") {
-					emitStmt(stmt.body, indent, localScope, curParamMap, lines);
+					emitStmt(stmt.body, indent, localScope, curParamMap, curParamTypeMap, lines);
 				} else {
 					lines.push(pad + "begin");
-					emitStmt(stmt.body, indent + 1, localScope, curParamMap, lines);
+					emitStmt(stmt.body, indent + 1, localScope, curParamMap, curParamTypeMap, lines);
 					lines.push(pad + "end;");
 				}
 				break;
 			}
 
 			case "Switch": {
-				const { code: discCode, post } = emitExprWithFx(stmt.discriminant, localScope, curParamMap, pad, lines);
+				const { code: discCode, post } = emitExprWithFx(
+					stmt.discriminant,
+					localScope,
+					curParamMap,
+					curParamTypeMap,
+					pad,
+					lines
+				);
 				lines.push(pad + "case " + discCode + " of");
 				for (const c of stmt.cases) {
 					const bodyStmts = c.consequent.filter((s) => s.type !== "Break");
 					if (c.test) {
 						const fxTest = { pre: [], post: [] };
-						lines.push(pad + "  " + emitExpr(c.test, localScope, curParamMap, fxTest) + ":");
+						lines.push(
+							pad +
+								"  " +
+								emitExpr(c.test, localScope, curParamMap, curParamTypeMap, fxTest) +
+								":"
+						);
 					} else {
 						lines.push(pad + "  else");
 					}
 					lines.push(pad + "  begin");
 					for (const s of bodyStmts) {
-						emitStmt(s, indent + 2, localScope, curParamMap, lines);
+						emitStmt(s, indent + 2, localScope, curParamMap, curParamTypeMap, lines);
 					}
 					lines.push(pad + "  end;");
 				}
@@ -1597,25 +1784,32 @@ export function convertECMAScriptToPascal(source, options = {}) {
 			case "Try":
 				lines.push(pad + "try");
 				for (const s of stmt.block.body) {
-					emitStmt(s, indent + 1, localScope, curParamMap, lines);
+					emitStmt(s, indent + 1, localScope, curParamMap, curParamTypeMap, lines);
 				}
 				if (stmt.handler) {
 					lines.push(pad + "except");
 					for (const s of stmt.handler.body.body) {
-						emitStmt(s, indent + 1, localScope, curParamMap, lines);
+						emitStmt(s, indent + 1, localScope, curParamMap, curParamTypeMap, lines);
 					}
 				}
 				if (stmt.finalizer) {
 					lines.push(pad + "finally");
 					for (const s of stmt.finalizer.body) {
-						emitStmt(s, indent + 1, localScope, curParamMap, lines);
+						emitStmt(s, indent + 1, localScope, curParamMap, curParamTypeMap, lines);
 					}
 				}
 				lines.push(pad + "end;");
 				break;
 
 			case "Throw": {
-				const { code, post } = emitExprWithFx(stmt.arg, localScope, curParamMap, pad, lines);
+				const { code, post } = emitExprWithFx(
+					stmt.arg,
+					localScope,
+					curParamMap,
+					curParamTypeMap,
+					pad,
+					lines
+				);
 				lines.push(pad + "raise Exception.Create(" + code + ");");
 				for (const p of post) lines.push(pad + p);
 				break;
@@ -1631,7 +1825,14 @@ export function convertECMAScriptToPascal(source, options = {}) {
 
 			case "Return":
 				if (stmt.arg) {
-					const { code, post } = emitExprWithFx(stmt.arg, localScope, curParamMap, pad, lines);
+					const { code, post } = emitExprWithFx(
+						stmt.arg,
+						localScope,
+						curParamMap,
+						curParamTypeMap,
+						pad,
+						lines
+					);
 					lines.push(pad + "Result := " + code + ";");
 					for (const p of post) lines.push(pad + p);
 				}
@@ -1706,7 +1907,7 @@ export function convertECMAScriptToPascal(source, options = {}) {
 			classFields.push("FBack_" + fm.name + ": T" + fm.type + ";");
 			classFields.push("FDirty_" + fm.name + ": Boolean;");
 			ctorLines.push("FField_" + fm.name + " := nil;");
-			if (fm.isMF) {
+			if (fm.isMF || fm.type === "SFNode") {
 				ctorLines.push(
 					"FBack_" + fm.name + " := T" + fm.type + ".CreateUndefined(nil, False, " + escapePascalString(fm.name) + ");"
 				);
@@ -1803,7 +2004,7 @@ export function convertECMAScriptToPascal(source, options = {}) {
 			classFields.push("FBack_" + fm.name + ": T" + fm.type + ";");
 			classFields.push("FDirty_" + fm.name + ": Boolean;");
 			ctorLines.push("FEvent_" + fm.name + " := nil;");
-			if (fm.isMF) {
+			if (fm.isMF || fm.type === "SFNode") {
 				ctorLines.push(
 					"FBack_" + fm.name + " := T" + fm.type + ".CreateUndefined(nil, False, " + escapePascalString(fm.name) + ");"
 				);
@@ -1887,6 +2088,7 @@ export function convertECMAScriptToPascal(source, options = {}) {
 		collectLocals(fn.body, locals, assigned);
 
 		const curParamMap = new Map();
+		const curParamTypeMap = new Map();
 		if (isHandler) {
 			const sig = "procedure " + mName + "(Value: TX3DField; const Time: TX3DTime);";
 			methodDecls.push(sig);
@@ -1897,9 +2099,15 @@ export function convertECMAScriptToPascal(source, options = {}) {
 			if (fn.params.length > 0 && fInfo && !fInfo.isMF) {
 				const pType = "T" + fInfo.type;
 				curParamMap.set(fn.params[0], "(Value as " + pType + ").Value");
+				curParamTypeMap.set(fn.params[0], fInfo.pascalType);
+			}
+			if (fn.params.length > 1 && fnName !== "initialize" && fnName !== "shutdown") {
+				curParamMap.set(fn.params[1], "Time.Seconds");
+				curParamTypeMap.set(fn.params[1], "Double");
 			}
 			const localVarLines = [];
 			for (const [vName, vType] of locals.entries()) {
+				if (skippedBrowserVars.has(vName)) continue;
 				localVarLines.push("  " + sanitizeId(vName) + ": " + vType + ";");
 			}
 
@@ -1939,7 +2147,7 @@ export function convertECMAScriptToPascal(source, options = {}) {
 			}
 
 			for (const s of fn.body.body) {
-				emitStmt(s, 1, locals, curParamMap, bodyLines);
+				emitStmt(s, 1, locals, curParamMap, curParamTypeMap, bodyLines);
 			}
 			if (flushLines.length > 0) {
 				bodyLines.push("  FlushOutputs(Time);");
@@ -1979,17 +2187,21 @@ export function convertECMAScriptToPascal(source, options = {}) {
 			const sigParams = fn.params.map(
 				(p, idx) => "const " + sanitizeId(p) + ": " + (pTypes[idx] || "Single")
 			);
+			fn.params.forEach((p, idx) => {
+				curParamTypeMap.set(p, pTypes[idx] || "Single");
+			});
 			sigParams.push("const Time: TX3DTime");
 			const sig = "procedure " + mName + "(" + sigParams.join("; ") + ");";
 			methodDecls.push(sig);
 
 			const localVarLines = [];
 			for (const [vName, vType] of locals.entries()) {
+				if (skippedBrowserVars.has(vName)) continue;
 				localVarLines.push("  " + sanitizeId(vName) + ": " + vType + ";");
 			}
 			const bodyLines = [];
 			for (const s of fn.body.body) {
-				emitStmt(s, 1, locals, curParamMap, bodyLines);
+				emitStmt(s, 1, locals, curParamMap, curParamTypeMap, bodyLines);
 			}
 			methodImpls.push(
 				"procedure " + className + "." + mName + "(" + sigParams.join("; ") + ");",
@@ -2002,11 +2214,171 @@ export function convertECMAScriptToPascal(source, options = {}) {
 		}
 	}
 
+	const sendHelperDefs = {
+		SendNodeFloat: {
+			decl: "procedure SendNodeFloat(const Node: TX3DNode; const EventName: String; const Val: Double; const Time: TX3DTime);",
+			impl: [
+				"procedure " + className + ".SendNodeFloat(const Node: TX3DNode; const EventName: String; const Val: Double; const Time: TX3DTime);",
+				"var",
+				"  FOE: TX3DFieldOrEvent;",
+				"  E: TX3DEvent;",
+				"begin",
+				"  if Node = nil then Exit;",
+				"  FOE := Node.FieldOrEvent(EventName);",
+				"  if (FOE is TX3DField) and TX3DField(FOE).Exposed then",
+				"    E := TX3DField(FOE).EventIn",
+				"  else if FOE is TX3DEvent then",
+				"    E := TX3DEvent(FOE)",
+				"  else",
+				"    Exit;",
+				"  if E is TSFFloatEvent then",
+				"    TSFFloatEvent(E).Send(Val, Time)",
+				"  else if E is TSFDoubleEvent then",
+				"    TSFDoubleEvent(E).Send(Val, Time)",
+				"  else if E is TSFTimeEvent then",
+				"    TSFTimeEvent(E).Send(Val, Time)",
+				"  else if E is TSFInt32Event then",
+				"    TSFInt32Event(E).Send(Round(Val), Time)",
+				"  else if E is TSFBoolEvent then",
+				"    TSFBoolEvent(E).Send(Val <> 0, Time);",
+				"end;",
+				""
+			]
+		},
+		SendNodeBool: {
+			decl: "procedure SendNodeBool(const Node: TX3DNode; const EventName: String; const Val: Boolean; const Time: TX3DTime);",
+			impl: [
+				"procedure " + className + ".SendNodeBool(const Node: TX3DNode; const EventName: String; const Val: Boolean; const Time: TX3DTime);",
+				"var",
+				"  FOE: TX3DFieldOrEvent;",
+				"  E: TX3DEvent;",
+				"begin",
+				"  if Node = nil then Exit;",
+				"  FOE := Node.FieldOrEvent(EventName);",
+				"  if (FOE is TX3DField) and TX3DField(FOE).Exposed then",
+				"    E := TX3DField(FOE).EventIn",
+				"  else if FOE is TX3DEvent then",
+				"    E := TX3DEvent(FOE)",
+				"  else",
+				"    Exit;",
+				"  if E is TSFBoolEvent then",
+				"    TSFBoolEvent(E).Send(Val, Time);",
+				"end;",
+				""
+			]
+		},
+		SendNodeString: {
+			decl: "procedure SendNodeString(const Node: TX3DNode; const EventName: String; const Val: String; const Time: TX3DTime);",
+			impl: [
+				"procedure " + className + ".SendNodeString(const Node: TX3DNode; const EventName: String; const Val: String; const Time: TX3DTime);",
+				"var",
+				"  FOE: TX3DFieldOrEvent;",
+				"  E: TX3DEvent;",
+				"begin",
+				"  if Node = nil then Exit;",
+				"  FOE := Node.FieldOrEvent(EventName);",
+				"  if (FOE is TX3DField) and TX3DField(FOE).Exposed then",
+				"    E := TX3DField(FOE).EventIn",
+				"  else if FOE is TX3DEvent then",
+				"    E := TX3DEvent(FOE)",
+				"  else",
+				"    Exit;",
+				"  if E is TSFStringEvent then",
+				"    TSFStringEvent(E).Send(Val, Time);",
+				"end;",
+				""
+			]
+		},
+		SendNodeVec2: {
+			decl: "procedure SendNodeVec2(const Node: TX3DNode; const EventName: String; const Val: TVector2; const Time: TX3DTime);",
+			impl: [
+				"procedure " + className + ".SendNodeVec2(const Node: TX3DNode; const EventName: String; const Val: TVector2; const Time: TX3DTime);",
+				"var",
+				"  FOE: TX3DFieldOrEvent;",
+				"  E: TX3DEvent;",
+				"begin",
+				"  if Node = nil then Exit;",
+				"  FOE := Node.FieldOrEvent(EventName);",
+				"  if (FOE is TX3DField) and TX3DField(FOE).Exposed then",
+				"    E := TX3DField(FOE).EventIn",
+				"  else if FOE is TX3DEvent then",
+				"    E := TX3DEvent(FOE)",
+				"  else",
+				"    Exit;",
+				"  if E is TSFVec2fEvent then",
+				"    TSFVec2fEvent(E).Send(Val, Time);",
+				"end;",
+				""
+			]
+		},
+		SendNodeVec3: {
+			decl: "procedure SendNodeVec3(const Node: TX3DNode; const EventName: String; const Val: TVector3; const Time: TX3DTime);",
+			impl: [
+				"procedure " + className + ".SendNodeVec3(const Node: TX3DNode; const EventName: String; const Val: TVector3; const Time: TX3DTime);",
+				"var",
+				"  FOE: TX3DFieldOrEvent;",
+				"  E: TX3DEvent;",
+				"begin",
+				"  if Node = nil then Exit;",
+				"  FOE := Node.FieldOrEvent(EventName);",
+				"  if (FOE is TX3DField) and TX3DField(FOE).Exposed then",
+				"    E := TX3DField(FOE).EventIn",
+				"  else if FOE is TX3DEvent then",
+				"    E := TX3DEvent(FOE)",
+				"  else",
+				"    Exit;",
+				"  if E is TSFVec3fEvent then",
+				"    TSFVec3fEvent(E).Send(Val, Time)",
+				"  else if E is TSFColorEvent then",
+				"    TSFColorEvent(E).Send(Val, Time);",
+				"end;",
+				""
+			]
+		},
+		SendNodeVec4: {
+			decl: "procedure SendNodeVec4(const Node: TX3DNode; const EventName: String; const Val: TVector4; const Time: TX3DTime);",
+			impl: [
+				"procedure " + className + ".SendNodeVec4(const Node: TX3DNode; const EventName: String; const Val: TVector4; const Time: TX3DTime);",
+				"var",
+				"  FOE: TX3DFieldOrEvent;",
+				"  E: TX3DEvent;",
+				"begin",
+				"  if Node = nil then Exit;",
+				"  FOE := Node.FieldOrEvent(EventName);",
+				"  if (FOE is TX3DField) and TX3DField(FOE).Exposed then",
+				"    E := TX3DField(FOE).EventIn",
+				"  else if FOE is TX3DEvent then",
+				"    E := TX3DEvent(FOE)",
+				"  else",
+				"    Exit;",
+				"  if E is TSFVec4fEvent then",
+				"    TSFVec4fEvent(E).Send(Val, Time)",
+				"  else if E is TSFRotationEvent then",
+				"    TSFRotationEvent(E).Send(Val, Time)",
+				"  else if E is TSFColorRGBAEvent then",
+				"    TSFColorRGBAEvent(E).Send(Val, Time);",
+				"end;",
+				""
+			]
+		}
+	};
+
+	const helperDecls = [];
+	const helperImpls = [];
+	for (const helperName of usedSendHelpers) {
+		const def = sendHelperDefs[helperName];
+		if (def) {
+			helperDecls.push(def.decl);
+			helperImpls.push(...def.impl);
+		}
+	}
+
 	const classInterface = [
 		className + " = class",
 		"private",
 		...classFields.map((l) => "  " + l),
 		"  procedure FlushOutputs(const Time: TX3DTime);",
+		...helperDecls.map((l) => "  " + l),
 		"public",
 		"  constructor Create(" + bindParams.join("; ") + ");",
 		"  class function CreateForNode(const AScriptNode: TScriptNode; const AHandlerPrefix: String): " + className + ";",
@@ -2043,6 +2415,7 @@ export function convertECMAScriptToPascal(source, options = {}) {
 		...flushLines,
 		"end;",
 		"",
+		...helperImpls,
 		"procedure " + className + ".RegisterHandlers(const Scene: TCastleSceneCore);",
 		"begin",
 		...registerLines,

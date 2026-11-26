@@ -753,11 +753,31 @@ PascalSerializer.prototype = {
 			addpre = "Add";
 		}
 		if (
-			(parentName === "MultiTextureTransform" && method.slice(3) === "TextureTransform") ||
-			(parentName === "MultiTexture" && method.slice(3) === "Texture") ||
-			(parentName === "MultiTextureCoordinate" && method.slice(3) === "TexCoord")
+			parentName === "MultiTextureTransform" &&
+			(method === "TextureTransform" || childName.endsWith("TextureTransform"))
 		) {
-			method = method.slice(3) + ".Add";
+			method = "TextureTransform.Add";
+			addpre = "Fd";
+		}
+		if (
+			parentName === "MultiTexture" &&
+			(method === "Texture" || (childName.includes("Texture") && method !== "Metadata"))
+		) {
+			method = "Texture.Add";
+			addpre = "Fd";
+		}
+		if (
+			parentName === "MultiTextureCoordinate" &&
+			(method === "TexCoord" || (childName.includes("TextureCoordinate") && method !== "Metadata"))
+		) {
+			method = "TexCoord.Add";
+			addpre = "Fd";
+		}
+		if (
+			parentName === "ParticleSystem" &&
+			(method === "Physics" || childName.endsWith("PhysicsModel"))
+		) {
+			method = "Physics.Add";
 			addpre = "Fd";
 		}
 		if (parentName === "MetadataSet") {
@@ -803,6 +823,15 @@ PascalSerializer.prototype = {
 		}
 		if (parentName === "HAnimHumanoid" && method === "SkinCoord") {
 			method = method + ".Set";
+			addpre = "Fd";
+		}
+		if ( (parentName === "HAnimHumanoid" ||
+ 			parentName === "HAnimJoint" ||
+ 			parentName === "HAnimSegment" ||
+ 			parentName === "HAnimSite") &&
+ 			(method === "Displacers" || childName === "HAnimDisplacer")
+		) {
+			method = "Displacers.Add";
 			addpre = "Fd";
 		}
 		if (parentName === "ComposedCubeMapTexture" && method.endsWith("Texture")) {
@@ -1381,6 +1410,10 @@ PascalSerializer.prototype = {
 				this.statements.push(elVar + ".FdMinificationFilter.Value := " + strval + ";\n");
 			} else if (attr === "magnificationFilter" && attrType === "SFString") {
 				this.statements.push(elVar + ".FdMagnificationFilter.Value := " + strval + ";\n");
+			} else if (elName === "ParticleSystem" && attr === "geometryType") {
+				this.statements.push(elVar + ".FdGeometryType.Value := " + strval + ";\n");
+			} else if (elName === "ParticleSystem" && attr === "geometryType") {
+				this.statements.push(elVar + ".FdGeometryType.Value := " + strval + ";\n");
 			} else if (attrType === "MFString" && attr === "justify") {
 				const parts = strval.split(", ");
 				this.statements.push(elVar + "." + method + " := " + parts[0] + ";\n");
@@ -1783,9 +1816,7 @@ PascalSerializer.prototype = {
 				this.usesExtrusionSpineRoute = true;
 			}
 
-			if (ToField === "weight") {
-				toExpr = ToDEF + ".FWeight";
-			} else if (inputOnlyEvents.has(ToField) || isExtrusionInputOnly) {
+			if (inputOnlyEvents.has(ToField) || isExtrusionInputOnly) {
 				toExpr = ToDEF + ".Event" + upperCaseFirst(ToField);
 			} else if (ToField.startsWith("set_")) {
 				toExpr = ToDEF + ".Fd" + upperCaseFirst(ToField.slice(4)) + ".EventIn";
