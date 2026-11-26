@@ -65,10 +65,9 @@
 		  <field name='variations' type='MFFloat' accessType='inputOutput' value='0.2 0.1 0.3 0.3 0.01 0.01'></field>
 		  <field name='lastframe' type='SFFloat' accessType='inputOutput' value='0'></field>
 		  <field name='updaterate' type='SFFloat' accessType='inputOutput' value='0.1'></field>
-<![CDATA[
-ecmascript:
+<![CDATA[ecmascript:
 			function set_fraction(f, tm) {
-			    if (lastframe + updaterate < tm) {
+			    if (lastframe + updaterate &lt; tm) {
 			  	lastframe = tm;
 				for (let v in values) {
 					values[v] = values[v] + (2 * Math.random() - 1) * variations[v];

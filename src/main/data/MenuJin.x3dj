@@ -20,7 +20,7 @@
           },
           {
             "@name":"translated",
-            "@content":"14 November 2026"
+            "@content":"26 November 2026"
           },
           {
             "@name":"generator",
@@ -70,7 +70,6 @@
                                 ],
                                 "#sourceCode":[
 "",
-"",
 "      ecmascript:",
 "      function set_touchTime(value) {",
 "          choice = 0;",
@@ -111,7 +110,6 @@
                                   }
                                 ],
                                 "#sourceCode":[
-"",
 "",
 "      ecmascript:",
 "      function set_touchTime(value) {",
@@ -154,7 +152,6 @@
                                 ],
                                 "#sourceCode":[
 "",
-"",
 "      ecmascript:",
 "      function set_touchTime(value) {",
 "          choice = 2;",
@@ -195,7 +192,6 @@
                                   }
                                 ],
                                 "#sourceCode":[
-"",
 "",
 "      ecmascript:",
 "      function set_touchTime(value) {",
@@ -238,7 +234,6 @@
                                 ],
                                 "#sourceCode":[
 "",
-"",
 "      ecmascript:",
 "      function set_touchTime(value) {",
 "          choice = 4;",
@@ -279,7 +274,6 @@
                                   }
                                 ],
                                 "#sourceCode":[
-"",
 "",
 "      ecmascript:",
 "      function set_touchTime(value) {",
@@ -322,7 +316,6 @@
                                 ],
                                 "#sourceCode":[
 "",
-"",
 "      ecmascript:",
 "      function set_touchTime(value) {",
 "          choice = 6;",
@@ -363,7 +356,6 @@
                                   }
                                 ],
                                 "#sourceCode":[
-"",
 "",
 "      ecmascript:",
 "      function set_touchTime(value) {",
@@ -406,7 +398,6 @@
                                 ],
                                 "#sourceCode":[
 "",
-"",
 "      ecmascript:",
 "      function set_touchTime(value) {",
 "          choice = 8;",
@@ -447,7 +438,6 @@
                                   }
                                 ],
                                 "#sourceCode":[
-"",
 "",
 "      ecmascript:",
 "      function set_touchTime(value) {",
@@ -490,7 +480,6 @@
                                 ],
                                 "#sourceCode":[
 "",
-"",
 "      ecmascript:",
 "      function set_touchTime(value) {",
 "          choice = 10;",
@@ -531,7 +520,6 @@
                                   }
                                 ],
                                 "#sourceCode":[
-"",
 "",
 "      ecmascript:",
 "      function set_touchTime(value) {",
@@ -574,7 +562,6 @@
                                 ],
                                 "#sourceCode":[
 "",
-"",
 "      ecmascript:",
 "      function set_touchTime(value) {",
 "          choice = 12;",
@@ -615,7 +602,6 @@
                                   }
                                 ],
                                 "#sourceCode":[
-"",
 "",
 "      ecmascript:",
 "      function set_touchTime(value) {",
@@ -658,7 +644,6 @@
                                 ],
                                 "#sourceCode":[
 "",
-"",
 "      ecmascript:",
 "      function set_touchTime(value) {",
 "          choice = 14;",
@@ -699,7 +684,6 @@
                                   }
                                 ],
                                 "#sourceCode":[
-"",
 "",
 "      ecmascript:",
 "      function set_touchTime(value) {",
@@ -742,7 +726,6 @@
                                 ],
                                 "#sourceCode":[
 "",
-"",
 "      ecmascript:",
 "      function set_touchTime(value) {",
 "          choice = 16;",
@@ -783,7 +766,6 @@
                                   }
                                 ],
                                 "#sourceCode":[
-"",
 "",
 "      ecmascript:",
 "      function set_touchTime(value) {",
@@ -826,7 +808,6 @@
                                 ],
                                 "#sourceCode":[
 "",
-"",
 "      ecmascript:",
 "      function set_touchTime(value) {",
 "          choice = 18;",
@@ -867,7 +848,6 @@
                                   }
                                 ],
                                 "#sourceCode":[
-"",
 "",
 "      ecmascript:",
 "      function set_touchTime(value) {",
@@ -910,7 +890,6 @@
                                 ],
                                 "#sourceCode":[
 "",
-"",
 "      ecmascript:",
 "      function set_touchTime(value) {",
 "          choice = 20;",
@@ -951,7 +930,6 @@
                                   }
                                 ],
                                 "#sourceCode":[
-"",
 "",
 "      ecmascript:",
 "      function set_touchTime(value) {",
@@ -994,7 +972,6 @@
                                 ],
                                 "#sourceCode":[
 "",
-"",
 "      ecmascript:",
 "      function set_touchTime(value) {",
 "          choice = 22;",
@@ -1035,7 +1012,6 @@
                                   }
                                 ],
                                 "#sourceCode":[
-"",
 "",
 "      ecmascript:",
 "      function set_touchTime(value) {",
@@ -1078,7 +1054,6 @@
                                 ],
                                 "#sourceCode":[
 "",
-"",
 "      ecmascript:",
 "      function set_touchTime(value) {",
 "          choice = 24;",
@@ -1119,7 +1094,6 @@
                                   }
                                 ],
                                 "#sourceCode":[
-"",
 "",
 "      ecmascript:",
 "      function set_touchTime(value) {",
@@ -1162,7 +1136,6 @@
                                 ],
                                 "#sourceCode":[
 "",
-"",
 "      ecmascript:",
 "      function set_touchTime(value) {",
 "          choice = 26;",
@@ -1203,7 +1176,6 @@
                                   }
                                 ],
                                 "#sourceCode":[
-"",
 "",
 "      ecmascript:",
 "      function set_touchTime(value) {",
@@ -1246,7 +1218,6 @@
                                 ],
                                 "#sourceCode":[
 "",
-"",
 "      ecmascript:",
 "      function set_touchTime(value) {",
 "          choice = 28;",
@@ -1287,7 +1258,6 @@
                                   }
                                 ],
                                 "#sourceCode":[
-"",
 "",
 "      ecmascript:",
 "      function set_touchTime(value) {",

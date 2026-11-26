@@ -2,13 +2,14 @@ unit sliders;
 
 interface
 
-uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported, CastleSceneCore;
 
 function Createsliders: TX3DRootNode;
+procedure RegisterslidersScripts(const Scene: TCastleSceneCore);
 
 implementation
 
-uses Classes, SysUtils, X3DLoad, CastleVectors;
+uses Classes, SysUtils, X3DLoad, CastleVectors, Math, X3DTime;
 
 function CreateEmptyPrototype(const AName: String): TX3DPrototype;
 var
@@ -33,6 +34,82 @@ begin
     FreeAndNil(Stream);
   end;
 end;
+
+type
+  TScript60Script = class
+  private
+    Fcoordinates: array of TVector3;
+    FField_coordinates: TMFVec3f;
+    FDirty_coordinates: Boolean;
+    FcoordIndexes: array of Int32;
+    FField_coordIndexes: TMFInt32;
+    FDirty_coordIndexes: Boolean;
+    Fa: Single;
+    FField_a: TSFFloat;
+    FDirty_a: Boolean;
+    Fb: Single;
+    FField_b: TSFFloat;
+    FDirty_b: Boolean;
+    Fc: Single;
+    FField_c: TSFFloat;
+    FDirty_c: Boolean;
+    Fd: Single;
+    FField_d: TSFFloat;
+    FDirty_d: Boolean;
+    Fpdelta: Single;
+    FField_pdelta: TSFFloat;
+    FDirty_pdelta: Boolean;
+    Ftdelta: Single;
+    FField_tdelta: TSFFloat;
+    FDirty_tdelta: Boolean;
+    Fresolution: Int32;
+    FField_resolution: TSFInt32;
+    FDirty_resolution: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AField_coordinates: TMFVec3f; const AField_coordIndexes: TMFInt32; const AField_a: TSFFloat; const AField_b: TSFFloat; const AField_c: TSFFloat; const AField_d: TSFFloat; const AField_pdelta: TSFFloat; const AField_tdelta: TSFFloat; const AField_resolution: TSFInt32);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Initialize(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_a(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_b(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_c(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_d(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_pdelta(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_tdelta(Value: TX3DField; const Time: TX3DTime);
+    procedure Resolution(Value: TX3DField; const Time: TX3DTime);
+    procedure GenerateCoordinates(const Time: TX3DTime);
+  end;
+
+  TScript107Script = class
+  private
+    FprotoScale: Single;
+    FField_protoScale: TSFFloat;
+    FDirty_protoScale: Boolean;
+    FprotoParameterName: String;
+    FField_protoParameterName: TSFString;
+    FDirty_protoParameterName: Boolean;
+    FprotoScript: TX3DNode;
+    FField_protoScript: TSFNode;
+    FDirty_protoScript: Boolean;
+    FprotoValue: Single;
+    FField_protoValue: TSFFloat;
+    FDirty_protoValue: Boolean;
+    FprotoText: array of String;
+    FField_protoText: TMFString;
+    FDirty_protoText: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AField_protoScale: TSFFloat; const AField_protoParameterName: TSFString; const AField_protoScript: TSFNode; const AField_protoValue: TSFFloat; const AField_protoText: TMFString);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Set_protoScale(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_protoParameterName(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_protoScript(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_protoValue(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_protoText(Value: TX3DField; const Time: TX3DTime);
+    procedure NewTranslation(Value: TX3DField; const Time: TX3DTime);
+  end;
 
 var
   X3D0: TX3DRootNode;
@@ -84,6 +161,7 @@ var
   FieldVal67: TSFFloat;
   FieldVal68: TSFFloat;
   FieldVal69: TSFInt32;
+  CompiledScript60: TScript60Script;
   LayoutLayer72: TLayoutLayerNode;
   Layout73: TLayoutNode;
   Viewport74: TViewportNode;
@@ -129,6 +207,7 @@ var
   FieldVal111: TSFNode;
   FieldVal112: TSFFloat;
   FieldVal113: TMFString;
+  CompiledScript107: TScript107Script;
   ProtoInstance117: TX3DPrototypeNode;
   ProtoInstance124: TX3DPrototypeNode;
   ProtoInstance131: TX3DPrototypeNode;
@@ -137,6 +216,345 @@ var
   ProtoInstance152: TX3DPrototypeNode;
   Layer159: TLayerNode;
   Viewpoint160: TViewpointNode;
+
+constructor TScript60Script.Create(const AField_coordinates: TMFVec3f; const AField_coordIndexes: TMFInt32; const AField_a: TSFFloat; const AField_b: TSFFloat; const AField_c: TSFFloat; const AField_d: TSFFloat; const AField_pdelta: TSFFloat; const AField_tdelta: TSFFloat; const AField_resolution: TSFInt32);
+begin
+  inherited Create;
+  Fcoordinates := 0;
+  FField_coordinates := nil;
+  FDirty_coordinates := False;
+  FcoordIndexes := 0;
+  FField_coordIndexes := nil;
+  FDirty_coordIndexes := False;
+  Fa := 0.0;
+  FField_a := nil;
+  FDirty_a := False;
+  Fb := 0.0;
+  FField_b := nil;
+  FDirty_b := False;
+  Fc := 0.0;
+  FField_c := nil;
+  FDirty_c := False;
+  Fd := 0.0;
+  FField_d := nil;
+  FDirty_d := False;
+  Fpdelta := 0.0;
+  FField_pdelta := nil;
+  FDirty_pdelta := False;
+  Ftdelta := 0.0;
+  FField_tdelta := nil;
+  FDirty_tdelta := False;
+  Fresolution := 0;
+  FField_resolution := nil;
+  FDirty_resolution := False;
+  FField_coordinates := AField_coordinates;
+  if AField_coordinates <> nil then Fcoordinates := AField_coordinates.Value;
+  FField_coordIndexes := AField_coordIndexes;
+  if AField_coordIndexes <> nil then FcoordIndexes := AField_coordIndexes.Value;
+  FField_a := AField_a;
+  if AField_a <> nil then Fa := AField_a.Value;
+  FField_b := AField_b;
+  if AField_b <> nil then Fb := AField_b.Value;
+  FField_c := AField_c;
+  if AField_c <> nil then Fc := AField_c.Value;
+  FField_d := AField_d;
+  if AField_d <> nil then Fd := AField_d.Value;
+  FField_pdelta := AField_pdelta;
+  if AField_pdelta <> nil then Fpdelta := AField_pdelta.Value;
+  FField_tdelta := AField_tdelta;
+  if AField_tdelta <> nil then Ftdelta := AField_tdelta.Value;
+  FField_resolution := AField_resolution;
+  if AField_resolution <> nil then Fresolution := AField_resolution.Value;
+end;
+
+destructor TScript60Script.Destroy;
+begin
+  inherited Destroy;
+end;
+
+procedure TScript60Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_coordinates then
+  begin
+    FDirty_coordinates := False;
+    if FField_coordinates <> nil then
+      FField_coordinates.Send(Fcoordinates, Time);
+  end;
+  if FDirty_coordIndexes then
+  begin
+    FDirty_coordIndexes := False;
+    if FField_coordIndexes <> nil then
+      FField_coordIndexes.Send(FcoordIndexes, Time);
+  end;
+  if FDirty_a then
+  begin
+    FDirty_a := False;
+    if FField_a <> nil then
+      FField_a.Send(Fa, Time);
+  end;
+  if FDirty_b then
+  begin
+    FDirty_b := False;
+    if FField_b <> nil then
+      FField_b.Send(Fb, Time);
+  end;
+  if FDirty_c then
+  begin
+    FDirty_c := False;
+    if FField_c <> nil then
+      FField_c.Send(Fc, Time);
+  end;
+  if FDirty_d then
+  begin
+    FDirty_d := False;
+    if FField_d <> nil then
+      FField_d.Send(Fd, Time);
+  end;
+  if FDirty_pdelta then
+  begin
+    FDirty_pdelta := False;
+    if FField_pdelta <> nil then
+      FField_pdelta.Send(Fpdelta, Time);
+  end;
+  if FDirty_tdelta then
+  begin
+    FDirty_tdelta := False;
+    if FField_tdelta <> nil then
+      FField_tdelta.Send(Ftdelta, Time);
+  end;
+  if FDirty_resolution then
+  begin
+    FDirty_resolution := False;
+    if FField_resolution <> nil then
+      FField_resolution.Send(Fresolution, Time);
+  end;
+end;
+
+procedure TScript60Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script60_initialize', {$ifdef FPC}@{$endif}Initialize);
+  Scene.RegisterCompiledScript('Script60_set_a', {$ifdef FPC}@{$endif}Set_a);
+  Scene.RegisterCompiledScript('Script60_set_b', {$ifdef FPC}@{$endif}Set_b);
+  Scene.RegisterCompiledScript('Script60_set_c', {$ifdef FPC}@{$endif}Set_c);
+  Scene.RegisterCompiledScript('Script60_set_d', {$ifdef FPC}@{$endif}Set_d);
+  Scene.RegisterCompiledScript('Script60_set_pdelta', {$ifdef FPC}@{$endif}Set_pdelta);
+  Scene.RegisterCompiledScript('Script60_set_tdelta', {$ifdef FPC}@{$endif}Set_tdelta);
+  Scene.RegisterCompiledScript('Script60_resolution', {$ifdef FPC}@{$endif}Resolution);
+end;
+
+procedure TScript60Script.Initialize(Value: TX3DField; const Time: TX3DTime);
+var
+  arrIndex: Integer;
+  i: Integer;
+  j: Integer;
+begin
+  GenerateCoordinates(Time);
+  arrIndex := 0;
+  for i := 0 to (Fresolution - 1) - 1 do
+  begin
+    for j := 0 to (Fresolution - 1) - 1 do
+    begin
+      FcoordIndexes[arrIndex := arrIndex + 1] := i * Fresolution + j; FDirty_coordIndexes := True;
+      FcoordIndexes[arrIndex := arrIndex + 1] := i * Fresolution + j + 1; FDirty_coordIndexes := True;
+      FcoordIndexes[arrIndex := arrIndex + 1] := i + 1 * Fresolution + j + 1; FDirty_coordIndexes := True;
+      FcoordIndexes[arrIndex := arrIndex + 1] := i + 1 * Fresolution + j; FDirty_coordIndexes := True;
+      FcoordIndexes[arrIndex := arrIndex + 1] := -1; FDirty_coordIndexes := True;
+    end;
+  end;
+  FlushOutputs(Time);
+end;
+
+procedure TScript60Script.Set_a(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fa := (Value as TSFFloat).Value; FDirty_a := True;
+  GenerateCoordinates(Time);
+  FlushOutputs(Time);
+end;
+
+procedure TScript60Script.Set_b(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fb := (Value as TSFFloat).Value; FDirty_b := True;
+  GenerateCoordinates(Time);
+  FlushOutputs(Time);
+end;
+
+procedure TScript60Script.Set_c(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fc := (Value as TSFFloat).Value; FDirty_c := True;
+  GenerateCoordinates(Time);
+  FlushOutputs(Time);
+end;
+
+procedure TScript60Script.Set_d(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fd := (Value as TSFFloat).Value; FDirty_d := True;
+  GenerateCoordinates(Time);
+  FlushOutputs(Time);
+end;
+
+procedure TScript60Script.Set_pdelta(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fpdelta := (Value as TSFFloat).Value; FDirty_pdelta := True;
+  GenerateCoordinates(Time);
+  FlushOutputs(Time);
+end;
+
+procedure TScript60Script.Set_tdelta(Value: TX3DField; const Time: TX3DTime);
+begin
+  Ftdelta := (Value as TSFFloat).Value; FDirty_tdelta := True;
+  GenerateCoordinates(Time);
+  FlushOutputs(Time);
+end;
+
+procedure TScript60Script.Resolution(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fresolution := (Value as TSFInt32).Value; FDirty_resolution := True;
+  Initialize(nil, Time);
+  FlushOutputs(Time);
+end;
+
+procedure TScript60Script.GenerateCoordinates(const Time: TX3DTime);
+var
+  theta: Single;
+  phi: Single;
+  delta: Single;
+  arrIndex: Integer;
+  i: Integer;
+  j: Integer;
+  rho: Single;
+begin
+  theta := 0.0;
+  phi := 0.0;
+  delta := 2 * 3.141592653 / Fresolution - 1;
+  arrIndex := 0;
+  for i := 0 to (Fresolution) - 1 do
+  begin
+    for j := 0 to (Fresolution) - 1 do
+    begin
+      rho := Fa + Fb * Cos(Fc * theta + Ftdelta) * Cos(Fd * phi + Fpdelta);
+      Fcoordinates[arrIndex := arrIndex + 1] := Vector3(rho * Cos(phi) * Cos(theta), rho * Cos(phi) * Sin(theta), rho * Sin(phi)); FDirty_coordinates := True;
+      theta := theta + (delta);
+    end;
+    phi := phi + (delta);
+  end;
+end;
+
+constructor TScript107Script.Create(const AField_protoScale: TSFFloat; const AField_protoParameterName: TSFString; const AField_protoScript: TSFNode; const AField_protoValue: TSFFloat; const AField_protoText: TMFString);
+begin
+  inherited Create;
+  FprotoScale := 0.0;
+  FField_protoScale := nil;
+  FDirty_protoScale := False;
+  FprotoParameterName := '';
+  FField_protoParameterName := nil;
+  FDirty_protoParameterName := False;
+  FprotoScript := nil;
+  FField_protoScript := nil;
+  FDirty_protoScript := False;
+  FprotoValue := 0.0;
+  FField_protoValue := nil;
+  FDirty_protoValue := False;
+  FprotoText := 0;
+  FField_protoText := nil;
+  FDirty_protoText := False;
+  FField_protoScale := AField_protoScale;
+  if AField_protoScale <> nil then FprotoScale := AField_protoScale.Value;
+  FField_protoParameterName := AField_protoParameterName;
+  if AField_protoParameterName <> nil then FprotoParameterName := AField_protoParameterName.Value;
+  FField_protoScript := AField_protoScript;
+  if AField_protoScript <> nil then FprotoScript := AField_protoScript.Value;
+  FField_protoValue := AField_protoValue;
+  if AField_protoValue <> nil then FprotoValue := AField_protoValue.Value;
+  FField_protoText := AField_protoText;
+  if AField_protoText <> nil then FprotoText := AField_protoText.Value;
+end;
+
+destructor TScript107Script.Destroy;
+begin
+  inherited Destroy;
+end;
+
+procedure TScript107Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_protoScale then
+  begin
+    FDirty_protoScale := False;
+    if FField_protoScale <> nil then
+      FField_protoScale.Send(FprotoScale, Time);
+  end;
+  if FDirty_protoParameterName then
+  begin
+    FDirty_protoParameterName := False;
+    if FField_protoParameterName <> nil then
+      FField_protoParameterName.Send(FprotoParameterName, Time);
+  end;
+  if FDirty_protoScript then
+  begin
+    FDirty_protoScript := False;
+    if FField_protoScript <> nil then
+      FField_protoScript.Send(FprotoScript, Time);
+  end;
+  if FDirty_protoValue then
+  begin
+    FDirty_protoValue := False;
+    if FField_protoValue <> nil then
+      FField_protoValue.Send(FprotoValue, Time);
+  end;
+  if FDirty_protoText then
+  begin
+    FDirty_protoText := False;
+    if FField_protoText <> nil then
+      FField_protoText.Send(FprotoText, Time);
+  end;
+end;
+
+procedure TScript107Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script107_set_protoScale', {$ifdef FPC}@{$endif}Set_protoScale);
+  Scene.RegisterCompiledScript('Script107_set_protoParameterName', {$ifdef FPC}@{$endif}Set_protoParameterName);
+  Scene.RegisterCompiledScript('Script107_set_protoScript', {$ifdef FPC}@{$endif}Set_protoScript);
+  Scene.RegisterCompiledScript('Script107_set_protoValue', {$ifdef FPC}@{$endif}Set_protoValue);
+  Scene.RegisterCompiledScript('Script107_set_protoText', {$ifdef FPC}@{$endif}Set_protoText);
+  Scene.RegisterCompiledScript('Script107_newTranslation', {$ifdef FPC}@{$endif}NewTranslation);
+end;
+
+procedure TScript107Script.Set_protoScale(Value: TX3DField; const Time: TX3DTime);
+begin
+  FprotoScale := (Value as TSFFloat).Value; FDirty_protoScale := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript107Script.Set_protoParameterName(Value: TX3DField; const Time: TX3DTime);
+begin
+  FprotoParameterName := (Value as TSFString).Value; FDirty_protoParameterName := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript107Script.Set_protoScript(Value: TX3DField; const Time: TX3DTime);
+begin
+  FprotoScript := (Value as TSFNode).Value; FDirty_protoScript := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript107Script.Set_protoValue(Value: TX3DField; const Time: TX3DTime);
+begin
+  FprotoValue := (Value as TSFFloat).Value; FDirty_protoValue := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript107Script.Set_protoText(Value: TX3DField; const Time: TX3DTime);
+begin
+  FprotoText := (Value as TMFString).Value; FDirty_protoText := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript107Script.NewTranslation(Value: TX3DField; const Time: TX3DTime);
+begin
+  Set_protoValue(nil, Time);
+  Set_protoText(nil, Time);
+  FprotoScript[FprotoParameterName] := FprotoValue; FDirty_protoScript := True;
+  FlushOutputs(Time);
+end;
 
 procedure InitslidersPart0;
 begin
@@ -322,78 +740,22 @@ FieldVal68 := TSFFloat.Create(Script60, True, 'tdelta', 0);
 Script60.AddCustomFieldOrEvent(FieldVal68);
 FieldVal69 := TSFInt32.Create(Script60, True, 'resolution', 50);
 Script60.AddCustomFieldOrEvent(FieldVal69);
-Script60.SetSourceCode('ecmascript:' + LineEnding +
-  '			function initialize() {' + LineEnding +
-  '			     generateCoordinates();' + LineEnding +
-  '			     var arrIndex = 0;' + LineEnding +
-  '			     for (var i = 0; i < resolution-1; i++) {' + LineEnding +
-  '				for (var j = 0; j < resolution-1; j++) {' + LineEnding +
-  '				     coordIndexes[arrIndex++] = i*resolution+j;' + LineEnding +
-  '				     coordIndexes[arrIndex++] = i*resolution+j+1;' + LineEnding +
-  '				     coordIndexes[arrIndex++] = (i+1)*resolution+j+1;' + LineEnding +
-  '				     coordIndexes[arrIndex++] = (i+1)*resolution+j;' + LineEnding +
-  '				     coordIndexes[arrIndex++] = -1;' + LineEnding +
-  '				}' + LineEnding +
-  '			    }' + LineEnding +
-  '			}' + LineEnding +
-  '			function set_a(value) {' + LineEnding +
-  '				a = value;' + LineEnding +
-  '				generateCoordinates();' + LineEnding +
-  '			}' + LineEnding +
-  '' + LineEnding +
-  '			function set_b(value) {' + LineEnding +
-  '				b = value;' + LineEnding +
-  '				generateCoordinates();' + LineEnding +
-  '			}' + LineEnding +
-  '' + LineEnding +
-  '			function set_c(value) {' + LineEnding +
-  '				c = value;' + LineEnding +
-  '				generateCoordinates();' + LineEnding +
-  '			}' + LineEnding +
-  '' + LineEnding +
-  '			function set_d(value) {' + LineEnding +
-  '				d = value;' + LineEnding +
-  '				generateCoordinates();' + LineEnding +
-  '			}' + LineEnding +
-  '' + LineEnding +
-  '			function set_pdelta(value) {' + LineEnding +
-  '				pdelta = value;' + LineEnding +
-  '				generateCoordinates();' + LineEnding +
-  '			}' + LineEnding +
-  '' + LineEnding +
-  '			function set_tdelta(value) {' + LineEnding +
-  '				tdelta = value;' + LineEnding +
-  '				generateCoordinates();' + LineEnding +
-  '			}' + LineEnding +
-  '' + LineEnding +
-  '			function resolution(value) {' + LineEnding +
-  '				resolution = value;' + LineEnding +
-  '				initialize();' + LineEnding +
-  '			}' + LineEnding +
-  '' + LineEnding +
-  '			function generateCoordinates() {' + LineEnding +
-  '			     var theta = 0.0;' + LineEnding +
-  '			     var phi = 0.0;' + LineEnding +
-  '			     var delta = (2 * 3.141592653) / (resolution-1);' + LineEnding +
-  '			     var arrIndex = 0;' + LineEnding +
-  '			     for (var i = 0; i < resolution; i++) {' + LineEnding +
-  '				for (var j = 0; j < resolution; j++) {' + LineEnding +
-  '					var rho = a + b * Math.cos(c * theta + tdelta) * Math.cos(d * phi + pdelta);' + LineEnding +
-  '					coordinates[arrIndex++] = new SFVec3f(' + LineEnding +
-  '						rho * Math.cos(phi) * Math.cos(theta),' + LineEnding +
-  '						rho * Math.cos(phi) * Math.sin(theta),' + LineEnding +
-  '						rho * Math.sin(phi)' + LineEnding +
-  '					);' + LineEnding +
-  '					theta += delta;' + LineEnding +
-  '				}' + LineEnding +
-  '				phi += delta;' + LineEnding +
-  '			     }' + LineEnding +
-  '			}');
+FreeAndNil(CompiledScript60);
+CompiledScript60 := TScript60Script.Create(FieldVal61, FieldVal62, FieldVal63, FieldVal64, FieldVal65, FieldVal66, FieldVal67, FieldVal68, FieldVal69);
+Script60.SetUrl(['compiled:' + LineEnding +
+  'initialize=Script60_initialize' + LineEnding +
+  'set_a=Script60_set_a' + LineEnding +
+  'set_b=Script60_set_b' + LineEnding +
+  'set_c=Script60_set_c' + LineEnding +
+  'set_d=Script60_set_d' + LineEnding +
+  'set_pdelta=Script60_set_pdelta' + LineEnding +
+  'set_tdelta=Script60_set_tdelta' + LineEnding +
+  'resolution=Script60_resolution']);
 Layer17.FdChildren.Add(Script60);
 { ROUTE OrbitScript.coordIndexes TO Orbit.set_coordIndex }
-Layer17.AddRoute(FieldVal62, IndexedFaceSet56.EventSet_coordIndex);
+Layer17.AddRoute(FieldVal62.EventOut, IndexedFaceSet56.EventSet_coordIndex);
 { ROUTE OrbitScript.coordinates TO OrbitCoordinates.set_point }
-Layer17.AddRoute(FieldVal61, Coordinate57.EventSet_point);
+Layer17.AddRoute(FieldVal61.EventOut, Coordinate57.EventSet_point);
 LayerSet16.FdLayers.Add(Layer17);
 LayoutLayer72 := TLayoutLayerNode.Create;
 LayoutLayer72.Pickable := True;
@@ -420,12 +782,12 @@ Box79.Size := Vector3(100, 100, 0.02);
 Shape76.Geometry := Box79;
 Transform75.FdChildren.Add(Shape76);
 LayoutLayer72.FdChildren.Add(Transform75);
-Transform80 := TTransformNode.Create;
-Transform80.X3DName := 'equationTransform';
 end;
 
 procedure InitslidersPart5;
 begin
+Transform80 := TTransformNode.Create;
+Transform80.X3DName := 'equationTransform';
 Transform81 := TTransformNode.Create;
 Transform81.Translation := Vector3(0, 0, -20);
 Shape82 := TShapeNode.Create;
@@ -452,7 +814,7 @@ FieldDecl89 := TX3DInterfaceDeclaration.Create(nil);
 FieldDecl89.FieldOrEvent := FieldVal89;
 FieldVal89.ParentInterfaceDeclaration := FieldDecl89;
 ProtoDeclare87.InterfaceDeclarations.Add(FieldDecl89);
-FieldVal90 := TMFString.Create(nil, True, 'textString', (['x=']));
+FieldVal90 := TMFString.Create(nil, True, 'textString', ['x=']);
 FieldDecl90 := TX3DInterfaceDeclaration.Create(nil);
 FieldDecl90.FieldOrEvent := FieldVal90;
 FieldVal90.ParentInterfaceDeclaration := FieldDecl90;
@@ -464,12 +826,12 @@ FieldVal91.ParentInterfaceDeclaration := FieldDecl91;
 ProtoDeclare87.InterfaceDeclarations.Add(FieldDecl91);
 FieldVal92 := TSFString.Create(nil, True, 'parameterName', 'x');
 FieldDecl92 := TX3DInterfaceDeclaration.Create(nil);
-FieldDecl92.FieldOrEvent := FieldVal92;
-FieldVal92.ParentInterfaceDeclaration := FieldDecl92;
 end;
 
 procedure InitslidersPart6;
 begin
+FieldDecl92.FieldOrEvent := FieldVal92;
+FieldVal92.ParentInterfaceDeclaration := FieldDecl92;
 ProtoDeclare87.InterfaceDeclarations.Add(FieldDecl92);
 FieldVal93 := TSFNode.CreateUndefined(nil, True, 'orbScript');
 FieldDecl93 := TX3DInterfaceDeclaration.Create(nil);
@@ -508,12 +870,12 @@ FontStyle104.Size := 0.23;
 Text103.FontStyle := FontStyle104;
 Shape102.Geometry := Text103;
 Appearance105 := TAppearanceNode.Create;
-Material106 := TMaterialNode.Create;
-Appearance105.Material := Material106;
 end;
 
 procedure InitslidersPart7;
 begin
+Material106 := TMaterialNode.Create;
+Appearance105.Material := Material106;
 Shape102.Appearance := Appearance105;
 Transform101.FdChildren.Add(Shape102);
 Transform97.FdChildren.Add(Transform101);
@@ -531,58 +893,41 @@ FieldVal111 := TSFNode.CreateUndefined(Script107, True, 'protoScript');
 Script107.AddCustomFieldOrEvent(FieldVal111);
 FieldVal112 := TSFFloat.Create(Script107, True, 'protoValue', 1);
 Script107.AddCustomFieldOrEvent(FieldVal112);
-FieldVal113 := TMFString.Create(Script107, True, 'protoText', (['1.0']));
+FieldVal113 := TMFString.Create(Script107, True, 'protoText', ['1.0']);
 Script107.AddCustomFieldOrEvent(FieldVal113);
 Script107.FieldOrEvent('protoScale', True).IsClauseNamesAdd('parameterScale');
 Script107.FieldOrEvent('protoParameterName', True).IsClauseNamesAdd('parameterName');
 Script107.FieldOrEvent('protoScript', True).IsClauseNamesAdd('orbScript');
-Script107.SetSourceCode('ecmascript:' + LineEnding +
-  'function set_protoScale(value) {' + LineEnding +
-  '	protoScale = value;' + LineEnding +
-  '}' + LineEnding +
-  '' + LineEnding +
-  'function set_protoParameterName(value) {' + LineEnding +
-  '	protoParameterName = value;' + LineEnding +
-  '}' + LineEnding +
-  '' + LineEnding +
-  'function set_protoScript(value) {' + LineEnding +
-  '	protoScript = value;' + LineEnding +
-  '}' + LineEnding +
-  '' + LineEnding +
-  'function set_protoValue(value) {' + LineEnding +
-  '	protoValue = value;' + LineEnding +
-  '}' + LineEnding +
-  '' + LineEnding +
-  'function set_protoText(value) {' + LineEnding +
-  '	protoText = value;' + LineEnding +
-  '}' + LineEnding +
-  '' + LineEnding +
-  'function newTranslation(value) {' + LineEnding +
-  '       	set_protoValue(value.x * protoScale);' + LineEnding +
-  '       	set_protoText(new MFString(protoParameterName+''=''+protoValue.toFixed(2)));' + LineEnding +
-  '	protoScript[protoParameterName] = protoValue;' + LineEnding +
-  '};');
+FreeAndNil(CompiledScript107);
+CompiledScript107 := TScript107Script.Create(FieldVal108, FieldVal109, FieldVal111, FieldVal112, FieldVal113);
+Script107.SetUrl(['compiled:' + LineEnding +
+  'set_protoScale=Script107_set_protoScale' + LineEnding +
+  'set_protoParameterName=Script107_set_protoParameterName' + LineEnding +
+  'set_protoScript=Script107_set_protoScript' + LineEnding +
+  'set_protoValue=Script107_set_protoValue' + LineEnding +
+  'set_protoText=Script107_set_protoText' + LineEnding +
+  'newTranslation=Script107_newTranslation']);
 Group95.FdChildren.Add(Script107);
 { ROUTE protoSensor.translation_changed TO protoTransform.set_translation }
 Group95.AddRoute(PlaneSensor98.EventTranslation_changed, Transform97.FdTranslation.EventIn);
 { ROUTE protoSensor.translation_changed TO protoValueTransformerScript.newTranslation }
 Group95.AddRoute(PlaneSensor98.EventTranslation_changed, FieldVal110);
 { ROUTE protoValueTransformerScript.protoText TO protoText.string }
-Group95.AddRoute(FieldVal113, Text103.string);
+Group95.AddRoute(FieldVal113.EventOut, Text103.string);
 ProtoDeclare87.Node.AddChildren([Group95]);
 X3D0.AddPrototype(ProtoDeclare87);
 ProtoInstance117 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare87);
 ProtoInstance117.X3DName := 'aPI';
 (ProtoInstance117.Field('sliderTranslation') as TSFVec3f).Value := Vector3(0, 0.7, 0);
 (ProtoInstance117.Field('textString') as TMFString).Send(['a=']);
-(ProtoInstance117.Field('parameterScale') as TSFFloat).Value := 30;
-(ProtoInstance117.Field('parameterName') as TSFString).Value := 'a';
-(ProtoInstance117.Field('orbScript') as TSFNode).Value := Script60;
-LayoutLayer72.FdChildren.Add(ProtoInstance117.Instantiate);
 end;
 
 procedure InitslidersPart8;
 begin
+(ProtoInstance117.Field('parameterScale') as TSFFloat).Value := 30;
+(ProtoInstance117.Field('parameterName') as TSFString).Value := 'a';
+(ProtoInstance117.Field('orbScript') as TSFNode).Value := Script60;
+LayoutLayer72.FdChildren.Add(ProtoInstance117.Instantiate);
 ProtoInstance124 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare87);
 ProtoInstance124.X3DName := 'bPI';
 (ProtoInstance124.Field('sliderTranslation') as TSFVec3f).Value := Vector3(0, 0.4, 0);
@@ -619,14 +964,14 @@ ProtoInstance152 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare87
 ProtoInstance152.X3DName := 'pdeltaPI';
 (ProtoInstance152.Field('sliderTranslation') as TSFVec3f).Value := Vector3(0, -0.8, 0);
 (ProtoInstance152.Field('textString') as TMFString).Send(['pdelta=']);
-(ProtoInstance152.Field('parameterScale') as TSFFloat).Value := 6.28;
-(ProtoInstance152.Field('parameterName') as TSFString).Value := 'pdelta';
-(ProtoInstance152.Field('orbScript') as TSFNode).Value := Script60;
-LayoutLayer72.FdChildren.Add(ProtoInstance152.Instantiate);
 end;
 
 procedure InitslidersPart9;
 begin
+(ProtoInstance152.Field('parameterScale') as TSFFloat).Value := 6.28;
+(ProtoInstance152.Field('parameterName') as TSFString).Value := 'pdelta';
+(ProtoInstance152.Field('orbScript') as TSFNode).Value := Script60;
+LayoutLayer72.FdChildren.Add(ProtoInstance152.Instantiate);
 LayerSet16.FdLayers.Add(LayoutLayer72);
 Layer159 := TLayerNode.Create;
 Layer159.Pickable := True;
@@ -656,5 +1001,15 @@ begin
   Result := X3D0;
 end;
 
+procedure RegisterslidersScripts(const Scene: TCastleSceneCore);
 begin
+  if CompiledScript60 <> nil then
+    CompiledScript60.RegisterHandlers(Scene);
+  if CompiledScript107 <> nil then
+    CompiledScript107.RegisterHandlers(Scene);
+end;
+
+finalization
+  FreeAndNil(CompiledScript60);
+  FreeAndNil(CompiledScript107);
 end.

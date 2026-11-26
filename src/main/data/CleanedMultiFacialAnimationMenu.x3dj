@@ -38,7 +38,7 @@
           },
           {
             "@name":"translated",
-            "@content":"14 November 2026"
+            "@content":"26 November 2026"
           },
           {
             "@name":"generator",
@@ -7957,8 +7957,7 @@
                                   ]
                               },
                               "#sourceCode":[
-"",
-"        ecmascript:",
+"ecmascript:",
 "        function inTime(value) {",
 "            // Browser.print(\"in\", diffuseColor.g, diffuseColor.b);",
 "            if (value) {",

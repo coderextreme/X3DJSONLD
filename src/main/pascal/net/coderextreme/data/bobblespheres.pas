@@ -2,13 +2,40 @@ unit bobblespheres;
 
 interface
 
-uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported, CastleSceneCore;
 
 function Createbobblespheres: TX3DRootNode;
+procedure RegisterbobblespheresScripts(const Scene: TCastleSceneCore);
 
 implementation
 
-uses CastleVectors;
+uses SysUtils, CastleVectors, Math, X3DTime;
+
+type
+  TScript41Script = class
+  private
+    FtargetMaterial: TX3DNode;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AField_targetMaterial: TSFNode);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Initialize(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_color(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_roughness(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript60Script = class
+  private
+    FtargetMaterial: TX3DNode;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AField_targetMaterial: TSFNode);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Initialize(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_roughness(Value: TX3DField; const Time: TX3DTime);
+  end;
 
 var
   X3D0: TX3DRootNode;
@@ -51,6 +78,7 @@ var
   FieldVal42: TX3DEvent;
   FieldVal43: TX3DEvent;
   FieldVal44: TSFNode;
+  CompiledScript41: TScript41Script;
   Transform52: TTransformNode;
   Shape53: TShapeNode;
   Appearance54: TAppearanceNode;
@@ -62,6 +90,7 @@ var
   Script60: TScriptNode;
   FieldVal61: TX3DEvent;
   FieldVal62: TSFNode;
+  CompiledScript60: TScript60Script;
   Transform68: TTransformNode;
   Shape69: TShapeNode;
   Appearance70: TAppearanceNode;
@@ -80,6 +109,85 @@ var
   TimeSensor87: TTimeSensorNode;
   PositionInterpolator88: TPositionInterpolatorNode;
   ScalarInterpolator89: TScalarInterpolatorNode;
+
+constructor TScript41Script.Create(const AField_targetMaterial: TSFNode);
+begin
+  inherited Create;
+  FtargetMaterial := nil;
+  if AField_targetMaterial <> nil then FtargetMaterial := AField_targetMaterial.Value;
+end;
+
+destructor TScript41Script.Destroy;
+begin
+  inherited Destroy;
+end;
+
+procedure TScript41Script.FlushOutputs(const Time: TX3DTime);
+begin
+end;
+
+procedure TScript41Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script41_initialize', {$ifdef FPC}@{$endif}Initialize);
+  Scene.RegisterCompiledScript('Script41_set_color', {$ifdef FPC}@{$endif}Set_color);
+  Scene.RegisterCompiledScript('Script41_set_roughness', {$ifdef FPC}@{$endif}Set_roughness);
+end;
+
+procedure TScript41Script.Initialize(Value: TX3DField; const Time: TX3DTime);
+begin
+  matNode := FtargetMaterial.value;
+end;
+
+procedure TScript41Script.Set_color(Value: TX3DField; const Time: TX3DTime);
+begin
+  if matNode then
+  begin
+    matNode.baseColor := (Value as TSFColor).Value;
+  end;
+end;
+
+procedure TScript41Script.Set_roughness(Value: TX3DField; const Time: TX3DTime);
+begin
+  if matNode then
+  begin
+    matNode.roughness := (Value as TSFFloat).Value;
+  end;
+end;
+
+constructor TScript60Script.Create(const AField_targetMaterial: TSFNode);
+begin
+  inherited Create;
+  FtargetMaterial := nil;
+  if AField_targetMaterial <> nil then FtargetMaterial := AField_targetMaterial.Value;
+end;
+
+destructor TScript60Script.Destroy;
+begin
+  inherited Destroy;
+end;
+
+procedure TScript60Script.FlushOutputs(const Time: TX3DTime);
+begin
+end;
+
+procedure TScript60Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script60_initialize', {$ifdef FPC}@{$endif}Initialize);
+  Scene.RegisterCompiledScript('Script60_set_roughness', {$ifdef FPC}@{$endif}Set_roughness);
+end;
+
+procedure TScript60Script.Initialize(Value: TX3DField; const Time: TX3DTime);
+begin
+  matNode := FtargetMaterial.value;
+end;
+
+procedure TScript60Script.Set_roughness(Value: TX3DField; const Time: TX3DTime);
+begin
+  if matNode then
+  begin
+    matNode.roughness := (Value as TSFFloat).Value;
+  end;
+end;
 
 procedure InitbobblespheresPart0;
 begin
@@ -226,25 +334,12 @@ Script41.AddCustomFieldOrEvent(FieldVal43);
 FieldVal44 := TSFNode.CreateUndefined(Script41, False, 'targetMaterial');
 Script41.AddCustomFieldOrEvent(FieldVal44);
 FieldVal44.Value := PhysicalMaterial35;
-Script41.SetSourceCode('ecmascript:' + LineEnding +
-  '        var matNode = null; // Variable to hold the material node reference' + LineEnding +
-  '' + LineEnding +
-  '        function initialize() {' + LineEnding +
-  '          // This function runs AFTER the targetMaterial field is connected.' + LineEnding +
-  '          // We safely store the reference to the actual material node.' + LineEnding +
-  '          matNode = targetMaterial.value;' + LineEnding +
-  '        }' + LineEnding +
-  '' + LineEnding +
-  '        function set_color(value, timestamp) {' + LineEnding +
-  '          if (matNode) { // Check if the node reference was stored' + LineEnding +
-  '            matNode.baseColor = value;' + LineEnding +
-  '          }' + LineEnding +
-  '        }' + LineEnding +
-  '        function set_roughness(value, timestamp) {' + LineEnding +
-  '          if (matNode) {' + LineEnding +
-  '            matNode.roughness = value;' + LineEnding +
-  '          }' + LineEnding +
-  '        }');
+FreeAndNil(CompiledScript41);
+CompiledScript41 := TScript41Script.Create(FieldVal44);
+Script41.SetUrl(['compiled:' + LineEnding +
+  'initialize=Script41_initialize' + LineEnding +
+  'set_color=Script41_set_color' + LineEnding +
+  'set_roughness=Script41_set_roughness']);
 Group6.FdChildren.Add(Script41);
 { ROUTE C_0.fraction_changed TO PI_0.set_fraction }
 Group6.AddRoute(TimeSensor37.EventFraction_changed, PositionInterpolator38.EventSet_fraction);
@@ -271,12 +366,12 @@ PhysicalMaterial55.Roughness := 0.2;
 Appearance54.Material := PhysicalMaterial55;
 Shape53.Appearance := Appearance54;
 Sphere56 := TSphereNode.Create;
-Sphere56.Radius := 0.2;
-Shape53.Geometry := Sphere56;
 end;
 
 procedure InitbobblespheresPart4;
 begin
+Sphere56.Radius := 0.2;
+Shape53.Geometry := Sphere56;
 Transform52.FdChildren.Add(Shape53);
 Group6.FdChildren.Add(Transform52);
 TimeSensor57 := TTimeSensorNode.Create;
@@ -301,18 +396,11 @@ Script60.AddCustomFieldOrEvent(FieldVal61);
 FieldVal62 := TSFNode.CreateUndefined(Script60, False, 'targetMaterial');
 Script60.AddCustomFieldOrEvent(FieldVal62);
 FieldVal62.Value := PhysicalMaterial55;
-Script60.SetSourceCode('ecmascript:' + LineEnding +
-  '        var matNode = null;' + LineEnding +
-  '' + LineEnding +
-  '        function initialize() {' + LineEnding +
-  '          matNode = targetMaterial.value;' + LineEnding +
-  '        }' + LineEnding +
-  '' + LineEnding +
-  '        function set_roughness(value, timestamp) {' + LineEnding +
-  '          if (matNode) {' + LineEnding +
-  '            matNode.roughness = value;' + LineEnding +
-  '          }' + LineEnding +
-  '        }');
+FreeAndNil(CompiledScript60);
+CompiledScript60 := TScript60Script.Create(FieldVal62);
+Script60.SetUrl(['compiled:' + LineEnding +
+  'initialize=Script60_initialize' + LineEnding +
+  'set_roughness=Script60_set_roughness']);
 Group6.FdChildren.Add(Script60);
 { ROUTE C_1.fraction_changed TO PI_1.set_fraction }
 Group6.AddRoute(TimeSensor57.EventFraction_changed, PositionInterpolator58.EventSet_fraction);
@@ -324,14 +412,14 @@ Group6.AddRoute(TimeSensor57.EventFraction_changed, ScalarInterpolator59.EventSe
 Group6.AddRoute(ScalarInterpolator59.EventValue_changed, FieldVal61);
 { The extension-based spheres were already correct and need no changes }
 Transform68 := TTransformNode.Create;
-Transform68.X3DName := 'T_2';
-Transform68.Translation := Vector3(-10.155, 0.2, -8.324);
-Shape69 := TShapeNode.Create;
-Appearance70 := TAppearanceNode.Create;
 end;
 
 procedure InitbobblespheresPart5;
 begin
+Transform68.X3DName := 'T_2';
+Transform68.Translation := Vector3(-10.155, 0.2, -8.324);
+Shape69 := TShapeNode.Create;
+Appearance70 := TAppearanceNode.Create;
 PhysicalMaterial71 := TPhysicalMaterialNode.Create;
 PhysicalMaterial71.TransmissionFactor := '0.95';
 PhysicalMaterial71.Roughness := 0.05;
@@ -368,14 +456,14 @@ Group6.AddRoute(PositionInterpolator75.EventValue_changed, Transform68.FdTransla
 { ROUTE C_2.fraction_changed TO SI_2.set_fraction }
 Group6.AddRoute(TimeSensor74.EventFraction_changed, ScalarInterpolator76.EventSet_fraction);
 { ROUTE SI_2.value_changed TO IOR_2.set_indexOfRefraction }
-Group6.AddRoute(ScalarInterpolator76.EventValue_changed, IORMaterialExtension72.EventSet_indexOfRefraction);
-Transform81 := TTransformNode.Create;
-Transform81.X3DName := 'T_3';
-Transform81.Translation := Vector3(-10.518, 0.2, -7.283);
 end;
 
 procedure InitbobblespheresPart6;
 begin
+Group6.AddRoute(ScalarInterpolator76.EventValue_changed, IORMaterialExtension72.EventSet_indexOfRefraction);
+Transform81 := TTransformNode.Create;
+Transform81.X3DName := 'T_3';
+Transform81.Translation := Vector3(-10.518, 0.2, -7.283);
 Shape82 := TShapeNode.Create;
 Appearance83 := TAppearanceNode.Create;
 PhysicalMaterial84 := TPhysicalMaterialNode.Create;
@@ -412,14 +500,14 @@ ScalarInterpolator89.SetKeyValue([100, 700, 100]);
 Group6.FdChildren.Add(ScalarInterpolator89);
 { ROUTE C_3.fraction_changed TO PI_3.set_fraction }
 Group6.AddRoute(TimeSensor87.EventFraction_changed, PositionInterpolator88.EventSet_fraction);
-{ ROUTE PI_3.value_changed TO T_3.set_translation }
-Group6.AddRoute(PositionInterpolator88.EventValue_changed, Transform81.FdTranslation.EventIn);
-{ ROUTE C_3.fraction_changed TO SI_3.set_fraction }
-Group6.AddRoute(TimeSensor87.EventFraction_changed, ScalarInterpolator89.EventSet_fraction);
 end;
 
 procedure InitbobblespheresPart7;
 begin
+{ ROUTE PI_3.value_changed TO T_3.set_translation }
+Group6.AddRoute(PositionInterpolator88.EventValue_changed, Transform81.FdTranslation.EventIn);
+{ ROUTE C_3.fraction_changed TO SI_3.set_fraction }
+Group6.AddRoute(TimeSensor87.EventFraction_changed, ScalarInterpolator89.EventSet_fraction);
 { ROUTE SI_3.value_changed TO IRI_3.set_iridescenceThicknessMaximum }
 Group6.AddRoute(ScalarInterpolator89.EventValue_changed, IridescenceMaterialExtension85.EventSet_iridescenceThicknessMaximum);
 X3D0.AddChildren([Group6]);
@@ -438,5 +526,15 @@ begin
   Result := X3D0;
 end;
 
+procedure RegisterbobblespheresScripts(const Scene: TCastleSceneCore);
 begin
+  if CompiledScript41 <> nil then
+    CompiledScript41.RegisterHandlers(Scene);
+  if CompiledScript60 <> nil then
+    CompiledScript60.RegisterHandlers(Scene);
+end;
+
+finalization
+  FreeAndNil(CompiledScript41);
+  FreeAndNil(CompiledScript60);
 end.

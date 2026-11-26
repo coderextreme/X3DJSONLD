@@ -254,17 +254,17 @@ Script43.FieldOrEvent('aspectRatio', True).IsClauseNamesAdd('aspectRatio');
 Script43.FieldOrEvent('trace', True).IsClauseNamesAdd('trace');
 ProtoDeclare17.Node.AddChildren([Script43]);
 { ROUTE GeometryComputationScript.visibilitySwitchSelection TO VisibilitySwitch.whichChoice }
-ProtoBody27.AddRoute(FieldVal45, Switch28.whichChoice);
+ProtoDeclare17.Node.AddRoute(FieldVal45, Switch28.whichChoice);
 { ROUTE GeometryComputationScript.position_changed TO PositionTransform.translation }
-ProtoBody27.AddRoute(FieldVal54, Transform29.translation);
+ProtoDeclare17.Node.AddRoute(FieldVal54, Transform29.translation);
 { ROUTE GeometryComputationScript.orientation_changed TO OrientationTransform.rotation }
-ProtoBody27.AddRoute(FieldVal55, Transform30.rotation);
+ProtoDeclare17.Node.AddRoute(FieldVal55, Transform30.rotation);
 { ROUTE GeometryComputationScript.spine_changed TO FrustumExtrusion.set_spine }
-ProtoBody27.AddRoute(FieldVal56, Extrusion37.EventSet_spine);
+ProtoDeclare17.Node.AddRoute(FieldVal56, Extrusion37.EventSet_spine);
 { ROUTE GeometryComputationScript.scale_changed TO FrustumExtrusion.set_scale }
-ProtoBody27.AddRoute(FieldVal57, Extrusion37.scale);
+ProtoDeclare17.Node.AddRoute(FieldVal57, Extrusion37.scale);
 { ROUTE GeometryComputationScript.point_changed TO FrustumCoordinate.point }
-ProtoBody27.AddRoute(FieldVal58, Coordinate33.point);
+ProtoDeclare17.Node.AddRoute(FieldVal58, Coordinate33.point);
 end;
 
 procedure InitViewFrustumPrototypePart4;

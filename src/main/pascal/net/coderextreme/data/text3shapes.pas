@@ -2,13 +2,25 @@ unit text3shapes;
 
 interface
 
-uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported, CastleSceneCore;
 
 function Createtext3shapes: TX3DRootNode;
+procedure Registertext3shapesScripts(const Scene: TCastleSceneCore);
 
 implementation
 
-uses CastleVectors;
+uses SysUtils, CastleVectors, Math, X3DTime;
+
+type
+  TScript25Script = class
+  private
+    FfrontUrls: array of String;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AField_frontUrls: TMFString);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+  end;
 
 var
   X3D0: TX3DRootNode;
@@ -31,6 +43,27 @@ var
   Material24: TMaterialNode;
   Script25: TScriptNode;
   FieldVal26: TMFString;
+  CompiledScript25: TScript25Script;
+
+constructor TScript25Script.Create(const AField_frontUrls: TMFString);
+begin
+  inherited Create;
+  FfrontUrls := 0;
+  if AField_frontUrls <> nil then FfrontUrls := AField_frontUrls.Value;
+end;
+
+destructor TScript25Script.Destroy;
+begin
+  inherited Destroy;
+end;
+
+procedure TScript25Script.FlushOutputs(const Time: TX3DTime);
+begin
+end;
+
+procedure TScript25Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+end;
 
 procedure Inittext3shapesPart0;
 begin
@@ -84,10 +117,12 @@ Appearance23.Material := Material24;
 Shape20.Appearance := Appearance23;
 Transform9.FdChildren.Add(Shape20);
 Script25 := TScriptNode.Create;
-FieldVal26 := TMFString.Create(Script25, False, 'frontUrls', (['rnl_front.png', 'uffizi_front.png']));
+FieldVal26 := TMFString.Create(Script25, False, 'frontUrls', ['rnl_front.png', 'uffizi_front.png']);
 Script25.AddCustomFieldOrEvent(FieldVal26);
-Script25.SetSourceCode('ecmascript:' + LineEnding +
-  '			    var me = ''"1" ""2" "\n3"'';');
+FreeAndNil(CompiledScript25);
+CompiledScript25 := TScript25Script.Create(FieldVal26);
+Script25.SetUrl(['compiled:' + LineEnding +
+  '']);
 Transform9.FdChildren.Add(Script25);
 Group8.FdChildren.Add(Transform9);
 X3D0.AddChildren([Group8]);
@@ -100,5 +135,12 @@ begin
   Result := X3D0;
 end;
 
+procedure Registertext3shapesScripts(const Scene: TCastleSceneCore);
 begin
+  if CompiledScript25 <> nil then
+    CompiledScript25.RegisterHandlers(Scene);
+end;
+
+finalization
+  FreeAndNil(CompiledScript25);
 end.

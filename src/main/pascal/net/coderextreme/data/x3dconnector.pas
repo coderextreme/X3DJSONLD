@@ -2,13 +2,14 @@ unit x3dconnector;
 
 interface
 
-uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported, CastleSceneCore;
 
 function Createx3dconnector: TX3DRootNode;
+procedure Registerx3dconnectorScripts(const Scene: TCastleSceneCore);
 
 implementation
 
-uses Classes, SysUtils, X3DLoad, CastleVectors;
+uses Classes, SysUtils, X3DLoad, CastleVectors, Math, X3DTime;
 
 function CreateEmptyPrototype(const AName: String): TX3DPrototype;
 var
@@ -33,6 +34,25 @@ begin
     FreeAndNil(Stream);
   end;
 end;
+
+type
+  TScript39Script = class
+  private
+    Fstartnode: TX3DNode;
+    Fendnode: TX3DNode;
+    Ftransnode: TX3DNode;
+    Frotscalenode: TX3DNode;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AField_startnode: TSFNode; const AField_endnode: TSFNode; const AField_transnode: TSFNode; const AField_rotscalenode: TSFNode);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Recompute(const startpoint: Single; const endpoint: Single; const Time: TX3DTime);
+    procedure Recompute_and_route(const startpoint: Single; const endpoint: Single; const Time: TX3DTime);
+    procedure Initialize(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_startpoint(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_endpoint(Value: TX3DField; const Time: TX3DTime);
+  end;
 
 var
   X3D0: TX3DRootNode;
@@ -77,7 +97,94 @@ var
   FieldVal43: TSFNode;
   FieldVal44: TX3DEvent;
   FieldVal45: TX3DEvent;
+  CompiledScript39: TScript39Script;
   ProtoInstance46: TX3DPrototypeNode;
+
+constructor TScript39Script.Create(const AField_startnode: TSFNode; const AField_endnode: TSFNode; const AField_transnode: TSFNode; const AField_rotscalenode: TSFNode);
+begin
+  inherited Create;
+  Fstartnode := nil;
+  Fendnode := nil;
+  Ftransnode := nil;
+  Frotscalenode := nil;
+  if AField_startnode <> nil then Fstartnode := AField_startnode.Value;
+  if AField_endnode <> nil then Fendnode := AField_endnode.Value;
+  if AField_transnode <> nil then Ftransnode := AField_transnode.Value;
+  if AField_rotscalenode <> nil then Frotscalenode := AField_rotscalenode.Value;
+end;
+
+destructor TScript39Script.Destroy;
+begin
+  inherited Destroy;
+end;
+
+procedure TScript39Script.FlushOutputs(const Time: TX3DTime);
+begin
+end;
+
+procedure TScript39Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script39_initialize', {$ifdef FPC}@{$endif}Initialize);
+  Scene.RegisterCompiledScript('Script39_set_startpoint', {$ifdef FPC}@{$endif}Set_startpoint);
+  Scene.RegisterCompiledScript('Script39_set_endpoint', {$ifdef FPC}@{$endif}Set_endpoint);
+end;
+
+procedure TScript39Script.Recompute(const startpoint: Single; const endpoint: Single; const Time: TX3DTime);
+var
+  dif: Single;
+  dist: Single;
+  dif2: Single;
+  norm: Single;
+  transl: Single;
+begin
+  if endpoint = 'undefined' then
+  begin
+    Exit;
+  end;
+  dif := endpoint.subtract(startpoint);
+  dist := dif.Length * 0.5;
+  dif2 := dif.multiply(0.5);
+  norm := dif.Normalize;
+  transl := startpoint.add(dif2);
+  if Quaternion <> 'undefined' then
+  begin
+    Result := 0;
+    Exit;
+  end
+  else
+  begin
+    Result := 0;
+    Exit;
+  end;
+end;
+
+procedure TScript39Script.Recompute_and_route(const startpoint: Single; const endpoint: Single; const Time: TX3DTime);
+var
+  trafo: Single;
+begin
+  trafo := Recompute(startpoint, endpoint, Time);
+  if trafo then
+  begin
+    Ftransnode.translation := trafo.translation;
+    Frotscalenode.rotation := trafo.rotation;
+    Frotscalenode.scale := trafo.scale;
+  end;
+end;
+
+procedure TScript39Script.Initialize(Value: TX3DField; const Time: TX3DTime);
+begin
+  Recompute_and_route(Fstartnode.translation, Fendnode.translation, Time);
+end;
+
+procedure TScript39Script.Set_startpoint(Value: TX3DField; const Time: TX3DTime);
+begin
+  Recompute_and_route((Value as TSFVec3f).Value, Fendnode.translation, Time);
+end;
+
+procedure TScript39Script.Set_endpoint(Value: TX3DField; const Time: TX3DTime);
+begin
+  Recompute_and_route(Fstartnode.translation, (Value as TSFVec3f).Value, Time);
+end;
 
 procedure Initx3dconnectorPart0;
 begin
@@ -219,39 +326,12 @@ Script39.FieldOrEvent('transnode', True).IsClauseNamesAdd('transnode');
 Script39.FieldOrEvent('rotscalenode', True).IsClauseNamesAdd('rotscalenode');
 Script39.FieldOrEvent('set_startpoint', True).IsClauseNamesAdd('set_startpoint');
 Script39.FieldOrEvent('set_endpoint', True).IsClauseNamesAdd('set_endpoint');
-Script39.SetSourceCode('ecmascript:' + LineEnding +
-  '        function recompute(startpoint,endpoint){' + LineEnding +
-  '	    if (typeof endpoint === ''undefined'') {\n		return;\n	    }\n            var dif = endpoint.subtract(startpoint);\n            var dist = dif.length()*0.5;\n            var dif2 = dif.multiply(0.5);\n            var norm = dif.normalize();\n            var transl = startpoint.add(dif2);\n	    if (typeof Quaternion !== ''undefined'') {' + LineEnding +
-  '		    return {' + LineEnding +
-  '			    scale : new SFVec3f(1.0,dist,1.0),' + LineEnding +
-  '			    translation : transl,' + LineEnding +
-  '			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)' + LineEnding +
-  '		    };' + LineEnding +
-  '	    } else {' + LineEnding +
-  '		    return {' + LineEnding +
-  '			    scale : new SFVec3f(1.0,dist,1.0),' + LineEnding +
-  '			    translation : transl,' + LineEnding +
-  '			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)' + LineEnding +
-  '		    };' + LineEnding +
-  '	    }' + LineEnding +
-  '	}' + LineEnding +
-  '	function recompute_and_route(startpoint, endpoint) {' + LineEnding +
-  '	      var trafo = recompute(startpoint, endpoint);' + LineEnding +
-  '	      if (trafo) {' + LineEnding +
-  '		      transnode.translation = trafo.translation;' + LineEnding +
-  '		      rotscalenode.rotation = trafo.rotation;' + LineEnding +
-  '		      rotscalenode.scale = trafo.scale;' + LineEnding +
-  '	      }' + LineEnding +
-  '	}' + LineEnding +
-  '        function initialize(){' + LineEnding +
-  '            recompute_and_route(startnode.translation,endnode.translation);' + LineEnding +
-  '        }' + LineEnding +
-  '        function set_startpoint(val,t){' + LineEnding +
-  '            recompute_and_route(val,endnode.translation);' + LineEnding +
-  '        }' + LineEnding +
-  '        function set_endpoint(val,t){' + LineEnding +
-  '            recompute_and_route(startnode.translation,val);' + LineEnding +
-  '        }');
+FreeAndNil(CompiledScript39);
+CompiledScript39 := TScript39Script.Create(FieldVal40, FieldVal41, FieldVal42, FieldVal43);
+Script39.SetUrl(['compiled:' + LineEnding +
+  'initialize=Script39_initialize' + LineEnding +
+  'set_startpoint=Script39_set_startpoint' + LineEnding +
+  'set_endpoint=Script39_set_endpoint']);
 ProtoDeclare30.Node.AddChildren([Script39]);
 X3D0.AddPrototype(ProtoDeclare30);
 ProtoInstance46 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare30);
@@ -281,5 +361,12 @@ begin
   Result := X3D0;
 end;
 
+procedure Registerx3dconnectorScripts(const Scene: TCastleSceneCore);
 begin
+  if CompiledScript39 <> nil then
+    CompiledScript39.RegisterHandlers(Scene);
+end;
+
+finalization
+  FreeAndNil(CompiledScript39);
 end.

@@ -2,13 +2,465 @@ unit MenuJin;
 
 interface
 
-uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported, CastleSceneCore;
 
 function CreateMenuJin: TX3DRootNode;
+procedure RegisterMenuJinScripts(const Scene: TCastleSceneCore);
 
 implementation
 
-uses CastleVectors;
+uses SysUtils, CastleVectors, Math, X3DTime;
+
+type
+  TScript10Script = class
+  private
+    Fchoice: Int32;
+    FEvent_choice: TX3DEvent;
+    FBack_choice: TSFInt32;
+    FDirty_choice: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_choice: TX3DEvent);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Set_touchTime(const value: Single; const Time: TX3DTime);
+    procedure TouchTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript15Script = class
+  private
+    Fchoice: Int32;
+    FEvent_choice: TX3DEvent;
+    FBack_choice: TSFInt32;
+    FDirty_choice: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_choice: TX3DEvent);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Set_touchTime(const value: Single; const Time: TX3DTime);
+    procedure TouchTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript20Script = class
+  private
+    Fchoice: Int32;
+    FEvent_choice: TX3DEvent;
+    FBack_choice: TSFInt32;
+    FDirty_choice: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_choice: TX3DEvent);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Set_touchTime(const value: Single; const Time: TX3DTime);
+    procedure TouchTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript25Script = class
+  private
+    Fchoice: Int32;
+    FEvent_choice: TX3DEvent;
+    FBack_choice: TSFInt32;
+    FDirty_choice: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_choice: TX3DEvent);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Set_touchTime(const value: Single; const Time: TX3DTime);
+    procedure TouchTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript30Script = class
+  private
+    Fchoice: Int32;
+    FEvent_choice: TX3DEvent;
+    FBack_choice: TSFInt32;
+    FDirty_choice: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_choice: TX3DEvent);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Set_touchTime(const value: Single; const Time: TX3DTime);
+    procedure TouchTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript35Script = class
+  private
+    Fchoice: Int32;
+    FEvent_choice: TX3DEvent;
+    FBack_choice: TSFInt32;
+    FDirty_choice: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_choice: TX3DEvent);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Set_touchTime(const value: Single; const Time: TX3DTime);
+    procedure TouchTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript40Script = class
+  private
+    Fchoice: Int32;
+    FEvent_choice: TX3DEvent;
+    FBack_choice: TSFInt32;
+    FDirty_choice: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_choice: TX3DEvent);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Set_touchTime(const value: Single; const Time: TX3DTime);
+    procedure TouchTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript45Script = class
+  private
+    Fchoice: Int32;
+    FEvent_choice: TX3DEvent;
+    FBack_choice: TSFInt32;
+    FDirty_choice: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_choice: TX3DEvent);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Set_touchTime(const value: Single; const Time: TX3DTime);
+    procedure TouchTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript50Script = class
+  private
+    Fchoice: Int32;
+    FEvent_choice: TX3DEvent;
+    FBack_choice: TSFInt32;
+    FDirty_choice: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_choice: TX3DEvent);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Set_touchTime(const value: Single; const Time: TX3DTime);
+    procedure TouchTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript55Script = class
+  private
+    Fchoice: Int32;
+    FEvent_choice: TX3DEvent;
+    FBack_choice: TSFInt32;
+    FDirty_choice: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_choice: TX3DEvent);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Set_touchTime(const value: Single; const Time: TX3DTime);
+    procedure TouchTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript60Script = class
+  private
+    Fchoice: Int32;
+    FEvent_choice: TX3DEvent;
+    FBack_choice: TSFInt32;
+    FDirty_choice: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_choice: TX3DEvent);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Set_touchTime(const value: Single; const Time: TX3DTime);
+    procedure TouchTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript65Script = class
+  private
+    Fchoice: Int32;
+    FEvent_choice: TX3DEvent;
+    FBack_choice: TSFInt32;
+    FDirty_choice: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_choice: TX3DEvent);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Set_touchTime(const value: Single; const Time: TX3DTime);
+    procedure TouchTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript70Script = class
+  private
+    Fchoice: Int32;
+    FEvent_choice: TX3DEvent;
+    FBack_choice: TSFInt32;
+    FDirty_choice: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_choice: TX3DEvent);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Set_touchTime(const value: Single; const Time: TX3DTime);
+    procedure TouchTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript75Script = class
+  private
+    Fchoice: Int32;
+    FEvent_choice: TX3DEvent;
+    FBack_choice: TSFInt32;
+    FDirty_choice: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_choice: TX3DEvent);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Set_touchTime(const value: Single; const Time: TX3DTime);
+    procedure TouchTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript80Script = class
+  private
+    Fchoice: Int32;
+    FEvent_choice: TX3DEvent;
+    FBack_choice: TSFInt32;
+    FDirty_choice: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_choice: TX3DEvent);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Set_touchTime(const value: Single; const Time: TX3DTime);
+    procedure TouchTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript85Script = class
+  private
+    Fchoice: Int32;
+    FEvent_choice: TX3DEvent;
+    FBack_choice: TSFInt32;
+    FDirty_choice: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_choice: TX3DEvent);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Set_touchTime(const value: Single; const Time: TX3DTime);
+    procedure TouchTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript90Script = class
+  private
+    Fchoice: Int32;
+    FEvent_choice: TX3DEvent;
+    FBack_choice: TSFInt32;
+    FDirty_choice: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_choice: TX3DEvent);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Set_touchTime(const value: Single; const Time: TX3DTime);
+    procedure TouchTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript95Script = class
+  private
+    Fchoice: Int32;
+    FEvent_choice: TX3DEvent;
+    FBack_choice: TSFInt32;
+    FDirty_choice: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_choice: TX3DEvent);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Set_touchTime(const value: Single; const Time: TX3DTime);
+    procedure TouchTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript100Script = class
+  private
+    Fchoice: Int32;
+    FEvent_choice: TX3DEvent;
+    FBack_choice: TSFInt32;
+    FDirty_choice: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_choice: TX3DEvent);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Set_touchTime(const value: Single; const Time: TX3DTime);
+    procedure TouchTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript105Script = class
+  private
+    Fchoice: Int32;
+    FEvent_choice: TX3DEvent;
+    FBack_choice: TSFInt32;
+    FDirty_choice: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_choice: TX3DEvent);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Set_touchTime(const value: Single; const Time: TX3DTime);
+    procedure TouchTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript110Script = class
+  private
+    Fchoice: Int32;
+    FEvent_choice: TX3DEvent;
+    FBack_choice: TSFInt32;
+    FDirty_choice: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_choice: TX3DEvent);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Set_touchTime(const value: Single; const Time: TX3DTime);
+    procedure TouchTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript115Script = class
+  private
+    Fchoice: Int32;
+    FEvent_choice: TX3DEvent;
+    FBack_choice: TSFInt32;
+    FDirty_choice: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_choice: TX3DEvent);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Set_touchTime(const value: Single; const Time: TX3DTime);
+    procedure TouchTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript120Script = class
+  private
+    Fchoice: Int32;
+    FEvent_choice: TX3DEvent;
+    FBack_choice: TSFInt32;
+    FDirty_choice: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_choice: TX3DEvent);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Set_touchTime(const value: Single; const Time: TX3DTime);
+    procedure TouchTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript125Script = class
+  private
+    Fchoice: Int32;
+    FEvent_choice: TX3DEvent;
+    FBack_choice: TSFInt32;
+    FDirty_choice: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_choice: TX3DEvent);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Set_touchTime(const value: Single; const Time: TX3DTime);
+    procedure TouchTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript130Script = class
+  private
+    Fchoice: Int32;
+    FEvent_choice: TX3DEvent;
+    FBack_choice: TSFInt32;
+    FDirty_choice: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_choice: TX3DEvent);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Set_touchTime(const value: Single; const Time: TX3DTime);
+    procedure TouchTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript135Script = class
+  private
+    Fchoice: Int32;
+    FEvent_choice: TX3DEvent;
+    FBack_choice: TSFInt32;
+    FDirty_choice: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_choice: TX3DEvent);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Set_touchTime(const value: Single; const Time: TX3DTime);
+    procedure TouchTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript140Script = class
+  private
+    Fchoice: Int32;
+    FEvent_choice: TX3DEvent;
+    FBack_choice: TSFInt32;
+    FDirty_choice: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_choice: TX3DEvent);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Set_touchTime(const value: Single; const Time: TX3DTime);
+    procedure TouchTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript145Script = class
+  private
+    Fchoice: Int32;
+    FEvent_choice: TX3DEvent;
+    FBack_choice: TSFInt32;
+    FDirty_choice: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_choice: TX3DEvent);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Set_touchTime(const value: Single; const Time: TX3DTime);
+    procedure TouchTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript150Script = class
+  private
+    Fchoice: Int32;
+    FEvent_choice: TX3DEvent;
+    FBack_choice: TSFInt32;
+    FDirty_choice: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_choice: TX3DEvent);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Set_touchTime(const value: Single; const Time: TX3DTime);
+    procedure TouchTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript155Script = class
+  private
+    Fchoice: Int32;
+    FEvent_choice: TX3DEvent;
+    FBack_choice: TSFInt32;
+    FDirty_choice: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_choice: TX3DEvent);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Set_touchTime(const value: Single; const Time: TX3DTime);
+    procedure TouchTime(Value: TX3DField; const Time: TX3DTime);
+  end;
 
 var
   X3D0: TX3DRootNode;
@@ -20,151 +472,181 @@ var
   Script10: TScriptNode;
   FieldVal11: TX3DEvent;
   FieldVal12: TX3DEvent;
+  CompiledScript10: TScript10Script;
   Inline13: TInlineNode;
   Group14: TGroupNode;
   Script15: TScriptNode;
   FieldVal16: TX3DEvent;
   FieldVal17: TX3DEvent;
+  CompiledScript15: TScript15Script;
   Inline18: TInlineNode;
   Group19: TGroupNode;
   Script20: TScriptNode;
   FieldVal21: TX3DEvent;
   FieldVal22: TX3DEvent;
+  CompiledScript20: TScript20Script;
   Inline23: TInlineNode;
   Group24: TGroupNode;
   Script25: TScriptNode;
   FieldVal26: TX3DEvent;
   FieldVal27: TX3DEvent;
+  CompiledScript25: TScript25Script;
   Inline28: TInlineNode;
   Group29: TGroupNode;
   Script30: TScriptNode;
   FieldVal31: TX3DEvent;
   FieldVal32: TX3DEvent;
+  CompiledScript30: TScript30Script;
   Inline33: TInlineNode;
   Group34: TGroupNode;
   Script35: TScriptNode;
   FieldVal36: TX3DEvent;
   FieldVal37: TX3DEvent;
+  CompiledScript35: TScript35Script;
   Inline38: TInlineNode;
   Group39: TGroupNode;
   Script40: TScriptNode;
   FieldVal41: TX3DEvent;
   FieldVal42: TX3DEvent;
+  CompiledScript40: TScript40Script;
   Inline43: TInlineNode;
   Group44: TGroupNode;
   Script45: TScriptNode;
   FieldVal46: TX3DEvent;
   FieldVal47: TX3DEvent;
+  CompiledScript45: TScript45Script;
   Inline48: TInlineNode;
   Group49: TGroupNode;
   Script50: TScriptNode;
   FieldVal51: TX3DEvent;
   FieldVal52: TX3DEvent;
+  CompiledScript50: TScript50Script;
   Inline53: TInlineNode;
   Group54: TGroupNode;
   Script55: TScriptNode;
   FieldVal56: TX3DEvent;
   FieldVal57: TX3DEvent;
+  CompiledScript55: TScript55Script;
   Inline58: TInlineNode;
   Group59: TGroupNode;
   Script60: TScriptNode;
   FieldVal61: TX3DEvent;
   FieldVal62: TX3DEvent;
+  CompiledScript60: TScript60Script;
   Inline63: TInlineNode;
   Group64: TGroupNode;
   Script65: TScriptNode;
   FieldVal66: TX3DEvent;
   FieldVal67: TX3DEvent;
+  CompiledScript65: TScript65Script;
   Inline68: TInlineNode;
   Group69: TGroupNode;
   Script70: TScriptNode;
   FieldVal71: TX3DEvent;
   FieldVal72: TX3DEvent;
+  CompiledScript70: TScript70Script;
   Inline73: TInlineNode;
   Group74: TGroupNode;
   Script75: TScriptNode;
   FieldVal76: TX3DEvent;
   FieldVal77: TX3DEvent;
+  CompiledScript75: TScript75Script;
   Inline78: TInlineNode;
   Group79: TGroupNode;
   Script80: TScriptNode;
   FieldVal81: TX3DEvent;
   FieldVal82: TX3DEvent;
+  CompiledScript80: TScript80Script;
   Inline83: TInlineNode;
   Group84: TGroupNode;
   Script85: TScriptNode;
   FieldVal86: TX3DEvent;
   FieldVal87: TX3DEvent;
+  CompiledScript85: TScript85Script;
   Inline88: TInlineNode;
   Group89: TGroupNode;
   Script90: TScriptNode;
   FieldVal91: TX3DEvent;
   FieldVal92: TX3DEvent;
+  CompiledScript90: TScript90Script;
   Inline93: TInlineNode;
   Group94: TGroupNode;
   Script95: TScriptNode;
   FieldVal96: TX3DEvent;
   FieldVal97: TX3DEvent;
+  CompiledScript95: TScript95Script;
   Inline98: TInlineNode;
   Group99: TGroupNode;
   Script100: TScriptNode;
   FieldVal101: TX3DEvent;
   FieldVal102: TX3DEvent;
+  CompiledScript100: TScript100Script;
   Inline103: TInlineNode;
   Group104: TGroupNode;
   Script105: TScriptNode;
   FieldVal106: TX3DEvent;
   FieldVal107: TX3DEvent;
+  CompiledScript105: TScript105Script;
   Inline108: TInlineNode;
   Group109: TGroupNode;
   Script110: TScriptNode;
   FieldVal111: TX3DEvent;
   FieldVal112: TX3DEvent;
+  CompiledScript110: TScript110Script;
   Inline113: TInlineNode;
   Group114: TGroupNode;
   Script115: TScriptNode;
   FieldVal116: TX3DEvent;
   FieldVal117: TX3DEvent;
+  CompiledScript115: TScript115Script;
   Inline118: TInlineNode;
   Group119: TGroupNode;
   Script120: TScriptNode;
   FieldVal121: TX3DEvent;
   FieldVal122: TX3DEvent;
+  CompiledScript120: TScript120Script;
   Inline123: TInlineNode;
   Group124: TGroupNode;
   Script125: TScriptNode;
   FieldVal126: TX3DEvent;
   FieldVal127: TX3DEvent;
+  CompiledScript125: TScript125Script;
   Inline128: TInlineNode;
   Group129: TGroupNode;
   Script130: TScriptNode;
   FieldVal131: TX3DEvent;
   FieldVal132: TX3DEvent;
+  CompiledScript130: TScript130Script;
   Inline133: TInlineNode;
   Group134: TGroupNode;
   Script135: TScriptNode;
   FieldVal136: TX3DEvent;
   FieldVal137: TX3DEvent;
+  CompiledScript135: TScript135Script;
   Inline138: TInlineNode;
   Group139: TGroupNode;
   Script140: TScriptNode;
   FieldVal141: TX3DEvent;
   FieldVal142: TX3DEvent;
+  CompiledScript140: TScript140Script;
   Inline143: TInlineNode;
   Group144: TGroupNode;
   Script145: TScriptNode;
   FieldVal146: TX3DEvent;
   FieldVal147: TX3DEvent;
+  CompiledScript145: TScript145Script;
   Inline148: TInlineNode;
   Group149: TGroupNode;
   Script150: TScriptNode;
   FieldVal151: TX3DEvent;
   FieldVal152: TX3DEvent;
+  CompiledScript150: TScript150Script;
   Inline153: TInlineNode;
   Group154: TGroupNode;
   Script155: TScriptNode;
   FieldVal156: TX3DEvent;
   FieldVal157: TX3DEvent;
+  CompiledScript155: TScript155Script;
   Inline158: TInlineNode;
   Transform159: TTransformNode;
   TouchSensor160: TTouchSensorNode;
@@ -527,6 +1009,1356 @@ var
   IndexedFaceSet575: TIndexedFaceSetNode;
   Coordinate576: TCoordinateNode;
 
+constructor TScript10Script.Create(const AEvent_choice: TX3DEvent);
+begin
+  inherited Create;
+  Fchoice := 0;
+  FEvent_choice := nil;
+  FBack_choice := TSFInt32.Create(nil, False, 'choice', 0);
+  FDirty_choice := False;
+  FEvent_choice := AEvent_choice;
+end;
+
+destructor TScript10Script.Destroy;
+begin
+  FreeAndNil(FBack_choice);
+  inherited Destroy;
+end;
+
+procedure TScript10Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_choice then
+  begin
+    FDirty_choice := False;
+    if FEvent_choice <> nil then
+    begin
+      FBack_choice.Value := Fchoice;
+      FEvent_choice.Send(FBack_choice, Time);
+    end;
+  end;
+end;
+
+procedure TScript10Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script10_touchTime', {$ifdef FPC}@{$endif}TouchTime);
+end;
+
+procedure TScript10Script.Set_touchTime(const value: Single; const Time: TX3DTime);
+begin
+  Fchoice := 0; FDirty_choice := True;
+end;
+
+procedure TScript10Script.TouchTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fchoice := 0; FDirty_choice := True;
+  FlushOutputs(Time);
+end;
+
+constructor TScript15Script.Create(const AEvent_choice: TX3DEvent);
+begin
+  inherited Create;
+  Fchoice := 0;
+  FEvent_choice := nil;
+  FBack_choice := TSFInt32.Create(nil, False, 'choice', 0);
+  FDirty_choice := False;
+  FEvent_choice := AEvent_choice;
+end;
+
+destructor TScript15Script.Destroy;
+begin
+  FreeAndNil(FBack_choice);
+  inherited Destroy;
+end;
+
+procedure TScript15Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_choice then
+  begin
+    FDirty_choice := False;
+    if FEvent_choice <> nil then
+    begin
+      FBack_choice.Value := Fchoice;
+      FEvent_choice.Send(FBack_choice, Time);
+    end;
+  end;
+end;
+
+procedure TScript15Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script15_touchTime', {$ifdef FPC}@{$endif}TouchTime);
+end;
+
+procedure TScript15Script.Set_touchTime(const value: Single; const Time: TX3DTime);
+begin
+  Fchoice := 1; FDirty_choice := True;
+end;
+
+procedure TScript15Script.TouchTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fchoice := 1; FDirty_choice := True;
+  FlushOutputs(Time);
+end;
+
+constructor TScript20Script.Create(const AEvent_choice: TX3DEvent);
+begin
+  inherited Create;
+  Fchoice := 0;
+  FEvent_choice := nil;
+  FBack_choice := TSFInt32.Create(nil, False, 'choice', 0);
+  FDirty_choice := False;
+  FEvent_choice := AEvent_choice;
+end;
+
+destructor TScript20Script.Destroy;
+begin
+  FreeAndNil(FBack_choice);
+  inherited Destroy;
+end;
+
+procedure TScript20Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_choice then
+  begin
+    FDirty_choice := False;
+    if FEvent_choice <> nil then
+    begin
+      FBack_choice.Value := Fchoice;
+      FEvent_choice.Send(FBack_choice, Time);
+    end;
+  end;
+end;
+
+procedure TScript20Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script20_touchTime', {$ifdef FPC}@{$endif}TouchTime);
+end;
+
+procedure TScript20Script.Set_touchTime(const value: Single; const Time: TX3DTime);
+begin
+  Fchoice := 2; FDirty_choice := True;
+end;
+
+procedure TScript20Script.TouchTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fchoice := 2; FDirty_choice := True;
+  FlushOutputs(Time);
+end;
+
+constructor TScript25Script.Create(const AEvent_choice: TX3DEvent);
+begin
+  inherited Create;
+  Fchoice := 0;
+  FEvent_choice := nil;
+  FBack_choice := TSFInt32.Create(nil, False, 'choice', 0);
+  FDirty_choice := False;
+  FEvent_choice := AEvent_choice;
+end;
+
+destructor TScript25Script.Destroy;
+begin
+  FreeAndNil(FBack_choice);
+  inherited Destroy;
+end;
+
+procedure TScript25Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_choice then
+  begin
+    FDirty_choice := False;
+    if FEvent_choice <> nil then
+    begin
+      FBack_choice.Value := Fchoice;
+      FEvent_choice.Send(FBack_choice, Time);
+    end;
+  end;
+end;
+
+procedure TScript25Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script25_touchTime', {$ifdef FPC}@{$endif}TouchTime);
+end;
+
+procedure TScript25Script.Set_touchTime(const value: Single; const Time: TX3DTime);
+begin
+  Fchoice := 3; FDirty_choice := True;
+end;
+
+procedure TScript25Script.TouchTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fchoice := 3; FDirty_choice := True;
+  FlushOutputs(Time);
+end;
+
+constructor TScript30Script.Create(const AEvent_choice: TX3DEvent);
+begin
+  inherited Create;
+  Fchoice := 0;
+  FEvent_choice := nil;
+  FBack_choice := TSFInt32.Create(nil, False, 'choice', 0);
+  FDirty_choice := False;
+  FEvent_choice := AEvent_choice;
+end;
+
+destructor TScript30Script.Destroy;
+begin
+  FreeAndNil(FBack_choice);
+  inherited Destroy;
+end;
+
+procedure TScript30Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_choice then
+  begin
+    FDirty_choice := False;
+    if FEvent_choice <> nil then
+    begin
+      FBack_choice.Value := Fchoice;
+      FEvent_choice.Send(FBack_choice, Time);
+    end;
+  end;
+end;
+
+procedure TScript30Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script30_touchTime', {$ifdef FPC}@{$endif}TouchTime);
+end;
+
+procedure TScript30Script.Set_touchTime(const value: Single; const Time: TX3DTime);
+begin
+  Fchoice := 4; FDirty_choice := True;
+end;
+
+procedure TScript30Script.TouchTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fchoice := 4; FDirty_choice := True;
+  FlushOutputs(Time);
+end;
+
+constructor TScript35Script.Create(const AEvent_choice: TX3DEvent);
+begin
+  inherited Create;
+  Fchoice := 0;
+  FEvent_choice := nil;
+  FBack_choice := TSFInt32.Create(nil, False, 'choice', 0);
+  FDirty_choice := False;
+  FEvent_choice := AEvent_choice;
+end;
+
+destructor TScript35Script.Destroy;
+begin
+  FreeAndNil(FBack_choice);
+  inherited Destroy;
+end;
+
+procedure TScript35Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_choice then
+  begin
+    FDirty_choice := False;
+    if FEvent_choice <> nil then
+    begin
+      FBack_choice.Value := Fchoice;
+      FEvent_choice.Send(FBack_choice, Time);
+    end;
+  end;
+end;
+
+procedure TScript35Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script35_touchTime', {$ifdef FPC}@{$endif}TouchTime);
+end;
+
+procedure TScript35Script.Set_touchTime(const value: Single; const Time: TX3DTime);
+begin
+  Fchoice := 5; FDirty_choice := True;
+end;
+
+procedure TScript35Script.TouchTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fchoice := 5; FDirty_choice := True;
+  FlushOutputs(Time);
+end;
+
+constructor TScript40Script.Create(const AEvent_choice: TX3DEvent);
+begin
+  inherited Create;
+  Fchoice := 0;
+  FEvent_choice := nil;
+  FBack_choice := TSFInt32.Create(nil, False, 'choice', 0);
+  FDirty_choice := False;
+  FEvent_choice := AEvent_choice;
+end;
+
+destructor TScript40Script.Destroy;
+begin
+  FreeAndNil(FBack_choice);
+  inherited Destroy;
+end;
+
+procedure TScript40Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_choice then
+  begin
+    FDirty_choice := False;
+    if FEvent_choice <> nil then
+    begin
+      FBack_choice.Value := Fchoice;
+      FEvent_choice.Send(FBack_choice, Time);
+    end;
+  end;
+end;
+
+procedure TScript40Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script40_touchTime', {$ifdef FPC}@{$endif}TouchTime);
+end;
+
+procedure TScript40Script.Set_touchTime(const value: Single; const Time: TX3DTime);
+begin
+  Fchoice := 6; FDirty_choice := True;
+end;
+
+procedure TScript40Script.TouchTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fchoice := 6; FDirty_choice := True;
+  FlushOutputs(Time);
+end;
+
+constructor TScript45Script.Create(const AEvent_choice: TX3DEvent);
+begin
+  inherited Create;
+  Fchoice := 0;
+  FEvent_choice := nil;
+  FBack_choice := TSFInt32.Create(nil, False, 'choice', 0);
+  FDirty_choice := False;
+  FEvent_choice := AEvent_choice;
+end;
+
+destructor TScript45Script.Destroy;
+begin
+  FreeAndNil(FBack_choice);
+  inherited Destroy;
+end;
+
+procedure TScript45Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_choice then
+  begin
+    FDirty_choice := False;
+    if FEvent_choice <> nil then
+    begin
+      FBack_choice.Value := Fchoice;
+      FEvent_choice.Send(FBack_choice, Time);
+    end;
+  end;
+end;
+
+procedure TScript45Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script45_touchTime', {$ifdef FPC}@{$endif}TouchTime);
+end;
+
+procedure TScript45Script.Set_touchTime(const value: Single; const Time: TX3DTime);
+begin
+  Fchoice := 7; FDirty_choice := True;
+end;
+
+procedure TScript45Script.TouchTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fchoice := 7; FDirty_choice := True;
+  FlushOutputs(Time);
+end;
+
+constructor TScript50Script.Create(const AEvent_choice: TX3DEvent);
+begin
+  inherited Create;
+  Fchoice := 0;
+  FEvent_choice := nil;
+  FBack_choice := TSFInt32.Create(nil, False, 'choice', 0);
+  FDirty_choice := False;
+  FEvent_choice := AEvent_choice;
+end;
+
+destructor TScript50Script.Destroy;
+begin
+  FreeAndNil(FBack_choice);
+  inherited Destroy;
+end;
+
+procedure TScript50Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_choice then
+  begin
+    FDirty_choice := False;
+    if FEvent_choice <> nil then
+    begin
+      FBack_choice.Value := Fchoice;
+      FEvent_choice.Send(FBack_choice, Time);
+    end;
+  end;
+end;
+
+procedure TScript50Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script50_touchTime', {$ifdef FPC}@{$endif}TouchTime);
+end;
+
+procedure TScript50Script.Set_touchTime(const value: Single; const Time: TX3DTime);
+begin
+  Fchoice := 8; FDirty_choice := True;
+end;
+
+procedure TScript50Script.TouchTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fchoice := 8; FDirty_choice := True;
+  FlushOutputs(Time);
+end;
+
+constructor TScript55Script.Create(const AEvent_choice: TX3DEvent);
+begin
+  inherited Create;
+  Fchoice := 0;
+  FEvent_choice := nil;
+  FBack_choice := TSFInt32.Create(nil, False, 'choice', 0);
+  FDirty_choice := False;
+  FEvent_choice := AEvent_choice;
+end;
+
+destructor TScript55Script.Destroy;
+begin
+  FreeAndNil(FBack_choice);
+  inherited Destroy;
+end;
+
+procedure TScript55Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_choice then
+  begin
+    FDirty_choice := False;
+    if FEvent_choice <> nil then
+    begin
+      FBack_choice.Value := Fchoice;
+      FEvent_choice.Send(FBack_choice, Time);
+    end;
+  end;
+end;
+
+procedure TScript55Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script55_touchTime', {$ifdef FPC}@{$endif}TouchTime);
+end;
+
+procedure TScript55Script.Set_touchTime(const value: Single; const Time: TX3DTime);
+begin
+  Fchoice := 9; FDirty_choice := True;
+end;
+
+procedure TScript55Script.TouchTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fchoice := 9; FDirty_choice := True;
+  FlushOutputs(Time);
+end;
+
+constructor TScript60Script.Create(const AEvent_choice: TX3DEvent);
+begin
+  inherited Create;
+  Fchoice := 0;
+  FEvent_choice := nil;
+  FBack_choice := TSFInt32.Create(nil, False, 'choice', 0);
+  FDirty_choice := False;
+  FEvent_choice := AEvent_choice;
+end;
+
+destructor TScript60Script.Destroy;
+begin
+  FreeAndNil(FBack_choice);
+  inherited Destroy;
+end;
+
+procedure TScript60Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_choice then
+  begin
+    FDirty_choice := False;
+    if FEvent_choice <> nil then
+    begin
+      FBack_choice.Value := Fchoice;
+      FEvent_choice.Send(FBack_choice, Time);
+    end;
+  end;
+end;
+
+procedure TScript60Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script60_touchTime', {$ifdef FPC}@{$endif}TouchTime);
+end;
+
+procedure TScript60Script.Set_touchTime(const value: Single; const Time: TX3DTime);
+begin
+  Fchoice := 10; FDirty_choice := True;
+end;
+
+procedure TScript60Script.TouchTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fchoice := 10; FDirty_choice := True;
+  FlushOutputs(Time);
+end;
+
+constructor TScript65Script.Create(const AEvent_choice: TX3DEvent);
+begin
+  inherited Create;
+  Fchoice := 0;
+  FEvent_choice := nil;
+  FBack_choice := TSFInt32.Create(nil, False, 'choice', 0);
+  FDirty_choice := False;
+  FEvent_choice := AEvent_choice;
+end;
+
+destructor TScript65Script.Destroy;
+begin
+  FreeAndNil(FBack_choice);
+  inherited Destroy;
+end;
+
+procedure TScript65Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_choice then
+  begin
+    FDirty_choice := False;
+    if FEvent_choice <> nil then
+    begin
+      FBack_choice.Value := Fchoice;
+      FEvent_choice.Send(FBack_choice, Time);
+    end;
+  end;
+end;
+
+procedure TScript65Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script65_touchTime', {$ifdef FPC}@{$endif}TouchTime);
+end;
+
+procedure TScript65Script.Set_touchTime(const value: Single; const Time: TX3DTime);
+begin
+  Fchoice := 11; FDirty_choice := True;
+end;
+
+procedure TScript65Script.TouchTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fchoice := 11; FDirty_choice := True;
+  FlushOutputs(Time);
+end;
+
+constructor TScript70Script.Create(const AEvent_choice: TX3DEvent);
+begin
+  inherited Create;
+  Fchoice := 0;
+  FEvent_choice := nil;
+  FBack_choice := TSFInt32.Create(nil, False, 'choice', 0);
+  FDirty_choice := False;
+  FEvent_choice := AEvent_choice;
+end;
+
+destructor TScript70Script.Destroy;
+begin
+  FreeAndNil(FBack_choice);
+  inherited Destroy;
+end;
+
+procedure TScript70Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_choice then
+  begin
+    FDirty_choice := False;
+    if FEvent_choice <> nil then
+    begin
+      FBack_choice.Value := Fchoice;
+      FEvent_choice.Send(FBack_choice, Time);
+    end;
+  end;
+end;
+
+procedure TScript70Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script70_touchTime', {$ifdef FPC}@{$endif}TouchTime);
+end;
+
+procedure TScript70Script.Set_touchTime(const value: Single; const Time: TX3DTime);
+begin
+  Fchoice := 12; FDirty_choice := True;
+end;
+
+procedure TScript70Script.TouchTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fchoice := 12; FDirty_choice := True;
+  FlushOutputs(Time);
+end;
+
+constructor TScript75Script.Create(const AEvent_choice: TX3DEvent);
+begin
+  inherited Create;
+  Fchoice := 0;
+  FEvent_choice := nil;
+  FBack_choice := TSFInt32.Create(nil, False, 'choice', 0);
+  FDirty_choice := False;
+  FEvent_choice := AEvent_choice;
+end;
+
+destructor TScript75Script.Destroy;
+begin
+  FreeAndNil(FBack_choice);
+  inherited Destroy;
+end;
+
+procedure TScript75Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_choice then
+  begin
+    FDirty_choice := False;
+    if FEvent_choice <> nil then
+    begin
+      FBack_choice.Value := Fchoice;
+      FEvent_choice.Send(FBack_choice, Time);
+    end;
+  end;
+end;
+
+procedure TScript75Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script75_touchTime', {$ifdef FPC}@{$endif}TouchTime);
+end;
+
+procedure TScript75Script.Set_touchTime(const value: Single; const Time: TX3DTime);
+begin
+  Fchoice := 13; FDirty_choice := True;
+end;
+
+procedure TScript75Script.TouchTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fchoice := 13; FDirty_choice := True;
+  FlushOutputs(Time);
+end;
+
+constructor TScript80Script.Create(const AEvent_choice: TX3DEvent);
+begin
+  inherited Create;
+  Fchoice := 0;
+  FEvent_choice := nil;
+  FBack_choice := TSFInt32.Create(nil, False, 'choice', 0);
+  FDirty_choice := False;
+  FEvent_choice := AEvent_choice;
+end;
+
+destructor TScript80Script.Destroy;
+begin
+  FreeAndNil(FBack_choice);
+  inherited Destroy;
+end;
+
+procedure TScript80Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_choice then
+  begin
+    FDirty_choice := False;
+    if FEvent_choice <> nil then
+    begin
+      FBack_choice.Value := Fchoice;
+      FEvent_choice.Send(FBack_choice, Time);
+    end;
+  end;
+end;
+
+procedure TScript80Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script80_touchTime', {$ifdef FPC}@{$endif}TouchTime);
+end;
+
+procedure TScript80Script.Set_touchTime(const value: Single; const Time: TX3DTime);
+begin
+  Fchoice := 14; FDirty_choice := True;
+end;
+
+procedure TScript80Script.TouchTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fchoice := 14; FDirty_choice := True;
+  FlushOutputs(Time);
+end;
+
+constructor TScript85Script.Create(const AEvent_choice: TX3DEvent);
+begin
+  inherited Create;
+  Fchoice := 0;
+  FEvent_choice := nil;
+  FBack_choice := TSFInt32.Create(nil, False, 'choice', 0);
+  FDirty_choice := False;
+  FEvent_choice := AEvent_choice;
+end;
+
+destructor TScript85Script.Destroy;
+begin
+  FreeAndNil(FBack_choice);
+  inherited Destroy;
+end;
+
+procedure TScript85Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_choice then
+  begin
+    FDirty_choice := False;
+    if FEvent_choice <> nil then
+    begin
+      FBack_choice.Value := Fchoice;
+      FEvent_choice.Send(FBack_choice, Time);
+    end;
+  end;
+end;
+
+procedure TScript85Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script85_touchTime', {$ifdef FPC}@{$endif}TouchTime);
+end;
+
+procedure TScript85Script.Set_touchTime(const value: Single; const Time: TX3DTime);
+begin
+  Fchoice := 15; FDirty_choice := True;
+end;
+
+procedure TScript85Script.TouchTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fchoice := 15; FDirty_choice := True;
+  FlushOutputs(Time);
+end;
+
+constructor TScript90Script.Create(const AEvent_choice: TX3DEvent);
+begin
+  inherited Create;
+  Fchoice := 0;
+  FEvent_choice := nil;
+  FBack_choice := TSFInt32.Create(nil, False, 'choice', 0);
+  FDirty_choice := False;
+  FEvent_choice := AEvent_choice;
+end;
+
+destructor TScript90Script.Destroy;
+begin
+  FreeAndNil(FBack_choice);
+  inherited Destroy;
+end;
+
+procedure TScript90Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_choice then
+  begin
+    FDirty_choice := False;
+    if FEvent_choice <> nil then
+    begin
+      FBack_choice.Value := Fchoice;
+      FEvent_choice.Send(FBack_choice, Time);
+    end;
+  end;
+end;
+
+procedure TScript90Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script90_touchTime', {$ifdef FPC}@{$endif}TouchTime);
+end;
+
+procedure TScript90Script.Set_touchTime(const value: Single; const Time: TX3DTime);
+begin
+  Fchoice := 16; FDirty_choice := True;
+end;
+
+procedure TScript90Script.TouchTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fchoice := 16; FDirty_choice := True;
+  FlushOutputs(Time);
+end;
+
+constructor TScript95Script.Create(const AEvent_choice: TX3DEvent);
+begin
+  inherited Create;
+  Fchoice := 0;
+  FEvent_choice := nil;
+  FBack_choice := TSFInt32.Create(nil, False, 'choice', 0);
+  FDirty_choice := False;
+  FEvent_choice := AEvent_choice;
+end;
+
+destructor TScript95Script.Destroy;
+begin
+  FreeAndNil(FBack_choice);
+  inherited Destroy;
+end;
+
+procedure TScript95Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_choice then
+  begin
+    FDirty_choice := False;
+    if FEvent_choice <> nil then
+    begin
+      FBack_choice.Value := Fchoice;
+      FEvent_choice.Send(FBack_choice, Time);
+    end;
+  end;
+end;
+
+procedure TScript95Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script95_touchTime', {$ifdef FPC}@{$endif}TouchTime);
+end;
+
+procedure TScript95Script.Set_touchTime(const value: Single; const Time: TX3DTime);
+begin
+  Fchoice := 17; FDirty_choice := True;
+end;
+
+procedure TScript95Script.TouchTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fchoice := 17; FDirty_choice := True;
+  FlushOutputs(Time);
+end;
+
+constructor TScript100Script.Create(const AEvent_choice: TX3DEvent);
+begin
+  inherited Create;
+  Fchoice := 0;
+  FEvent_choice := nil;
+  FBack_choice := TSFInt32.Create(nil, False, 'choice', 0);
+  FDirty_choice := False;
+  FEvent_choice := AEvent_choice;
+end;
+
+destructor TScript100Script.Destroy;
+begin
+  FreeAndNil(FBack_choice);
+  inherited Destroy;
+end;
+
+procedure TScript100Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_choice then
+  begin
+    FDirty_choice := False;
+    if FEvent_choice <> nil then
+    begin
+      FBack_choice.Value := Fchoice;
+      FEvent_choice.Send(FBack_choice, Time);
+    end;
+  end;
+end;
+
+procedure TScript100Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script100_touchTime', {$ifdef FPC}@{$endif}TouchTime);
+end;
+
+procedure TScript100Script.Set_touchTime(const value: Single; const Time: TX3DTime);
+begin
+  Fchoice := 18; FDirty_choice := True;
+end;
+
+procedure TScript100Script.TouchTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fchoice := 18; FDirty_choice := True;
+  FlushOutputs(Time);
+end;
+
+constructor TScript105Script.Create(const AEvent_choice: TX3DEvent);
+begin
+  inherited Create;
+  Fchoice := 0;
+  FEvent_choice := nil;
+  FBack_choice := TSFInt32.Create(nil, False, 'choice', 0);
+  FDirty_choice := False;
+  FEvent_choice := AEvent_choice;
+end;
+
+destructor TScript105Script.Destroy;
+begin
+  FreeAndNil(FBack_choice);
+  inherited Destroy;
+end;
+
+procedure TScript105Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_choice then
+  begin
+    FDirty_choice := False;
+    if FEvent_choice <> nil then
+    begin
+      FBack_choice.Value := Fchoice;
+      FEvent_choice.Send(FBack_choice, Time);
+    end;
+  end;
+end;
+
+procedure TScript105Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script105_touchTime', {$ifdef FPC}@{$endif}TouchTime);
+end;
+
+procedure TScript105Script.Set_touchTime(const value: Single; const Time: TX3DTime);
+begin
+  Fchoice := 19; FDirty_choice := True;
+end;
+
+procedure TScript105Script.TouchTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fchoice := 19; FDirty_choice := True;
+  FlushOutputs(Time);
+end;
+
+constructor TScript110Script.Create(const AEvent_choice: TX3DEvent);
+begin
+  inherited Create;
+  Fchoice := 0;
+  FEvent_choice := nil;
+  FBack_choice := TSFInt32.Create(nil, False, 'choice', 0);
+  FDirty_choice := False;
+  FEvent_choice := AEvent_choice;
+end;
+
+destructor TScript110Script.Destroy;
+begin
+  FreeAndNil(FBack_choice);
+  inherited Destroy;
+end;
+
+procedure TScript110Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_choice then
+  begin
+    FDirty_choice := False;
+    if FEvent_choice <> nil then
+    begin
+      FBack_choice.Value := Fchoice;
+      FEvent_choice.Send(FBack_choice, Time);
+    end;
+  end;
+end;
+
+procedure TScript110Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script110_touchTime', {$ifdef FPC}@{$endif}TouchTime);
+end;
+
+procedure TScript110Script.Set_touchTime(const value: Single; const Time: TX3DTime);
+begin
+  Fchoice := 20; FDirty_choice := True;
+end;
+
+procedure TScript110Script.TouchTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fchoice := 20; FDirty_choice := True;
+  FlushOutputs(Time);
+end;
+
+constructor TScript115Script.Create(const AEvent_choice: TX3DEvent);
+begin
+  inherited Create;
+  Fchoice := 0;
+  FEvent_choice := nil;
+  FBack_choice := TSFInt32.Create(nil, False, 'choice', 0);
+  FDirty_choice := False;
+  FEvent_choice := AEvent_choice;
+end;
+
+destructor TScript115Script.Destroy;
+begin
+  FreeAndNil(FBack_choice);
+  inherited Destroy;
+end;
+
+procedure TScript115Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_choice then
+  begin
+    FDirty_choice := False;
+    if FEvent_choice <> nil then
+    begin
+      FBack_choice.Value := Fchoice;
+      FEvent_choice.Send(FBack_choice, Time);
+    end;
+  end;
+end;
+
+procedure TScript115Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script115_touchTime', {$ifdef FPC}@{$endif}TouchTime);
+end;
+
+procedure TScript115Script.Set_touchTime(const value: Single; const Time: TX3DTime);
+begin
+  Fchoice := 21; FDirty_choice := True;
+end;
+
+procedure TScript115Script.TouchTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fchoice := 21; FDirty_choice := True;
+  FlushOutputs(Time);
+end;
+
+constructor TScript120Script.Create(const AEvent_choice: TX3DEvent);
+begin
+  inherited Create;
+  Fchoice := 0;
+  FEvent_choice := nil;
+  FBack_choice := TSFInt32.Create(nil, False, 'choice', 0);
+  FDirty_choice := False;
+  FEvent_choice := AEvent_choice;
+end;
+
+destructor TScript120Script.Destroy;
+begin
+  FreeAndNil(FBack_choice);
+  inherited Destroy;
+end;
+
+procedure TScript120Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_choice then
+  begin
+    FDirty_choice := False;
+    if FEvent_choice <> nil then
+    begin
+      FBack_choice.Value := Fchoice;
+      FEvent_choice.Send(FBack_choice, Time);
+    end;
+  end;
+end;
+
+procedure TScript120Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script120_touchTime', {$ifdef FPC}@{$endif}TouchTime);
+end;
+
+procedure TScript120Script.Set_touchTime(const value: Single; const Time: TX3DTime);
+begin
+  Fchoice := 22; FDirty_choice := True;
+end;
+
+procedure TScript120Script.TouchTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fchoice := 22; FDirty_choice := True;
+  FlushOutputs(Time);
+end;
+
+constructor TScript125Script.Create(const AEvent_choice: TX3DEvent);
+begin
+  inherited Create;
+  Fchoice := 0;
+  FEvent_choice := nil;
+  FBack_choice := TSFInt32.Create(nil, False, 'choice', 0);
+  FDirty_choice := False;
+  FEvent_choice := AEvent_choice;
+end;
+
+destructor TScript125Script.Destroy;
+begin
+  FreeAndNil(FBack_choice);
+  inherited Destroy;
+end;
+
+procedure TScript125Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_choice then
+  begin
+    FDirty_choice := False;
+    if FEvent_choice <> nil then
+    begin
+      FBack_choice.Value := Fchoice;
+      FEvent_choice.Send(FBack_choice, Time);
+    end;
+  end;
+end;
+
+procedure TScript125Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script125_touchTime', {$ifdef FPC}@{$endif}TouchTime);
+end;
+
+procedure TScript125Script.Set_touchTime(const value: Single; const Time: TX3DTime);
+begin
+  Fchoice := 23; FDirty_choice := True;
+end;
+
+procedure TScript125Script.TouchTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fchoice := 23; FDirty_choice := True;
+  FlushOutputs(Time);
+end;
+
+constructor TScript130Script.Create(const AEvent_choice: TX3DEvent);
+begin
+  inherited Create;
+  Fchoice := 0;
+  FEvent_choice := nil;
+  FBack_choice := TSFInt32.Create(nil, False, 'choice', 0);
+  FDirty_choice := False;
+  FEvent_choice := AEvent_choice;
+end;
+
+destructor TScript130Script.Destroy;
+begin
+  FreeAndNil(FBack_choice);
+  inherited Destroy;
+end;
+
+procedure TScript130Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_choice then
+  begin
+    FDirty_choice := False;
+    if FEvent_choice <> nil then
+    begin
+      FBack_choice.Value := Fchoice;
+      FEvent_choice.Send(FBack_choice, Time);
+    end;
+  end;
+end;
+
+procedure TScript130Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script130_touchTime', {$ifdef FPC}@{$endif}TouchTime);
+end;
+
+procedure TScript130Script.Set_touchTime(const value: Single; const Time: TX3DTime);
+begin
+  Fchoice := 24; FDirty_choice := True;
+end;
+
+procedure TScript130Script.TouchTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fchoice := 24; FDirty_choice := True;
+  FlushOutputs(Time);
+end;
+
+constructor TScript135Script.Create(const AEvent_choice: TX3DEvent);
+begin
+  inherited Create;
+  Fchoice := 0;
+  FEvent_choice := nil;
+  FBack_choice := TSFInt32.Create(nil, False, 'choice', 0);
+  FDirty_choice := False;
+  FEvent_choice := AEvent_choice;
+end;
+
+destructor TScript135Script.Destroy;
+begin
+  FreeAndNil(FBack_choice);
+  inherited Destroy;
+end;
+
+procedure TScript135Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_choice then
+  begin
+    FDirty_choice := False;
+    if FEvent_choice <> nil then
+    begin
+      FBack_choice.Value := Fchoice;
+      FEvent_choice.Send(FBack_choice, Time);
+    end;
+  end;
+end;
+
+procedure TScript135Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script135_touchTime', {$ifdef FPC}@{$endif}TouchTime);
+end;
+
+procedure TScript135Script.Set_touchTime(const value: Single; const Time: TX3DTime);
+begin
+  Fchoice := 25; FDirty_choice := True;
+end;
+
+procedure TScript135Script.TouchTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fchoice := 25; FDirty_choice := True;
+  FlushOutputs(Time);
+end;
+
+constructor TScript140Script.Create(const AEvent_choice: TX3DEvent);
+begin
+  inherited Create;
+  Fchoice := 0;
+  FEvent_choice := nil;
+  FBack_choice := TSFInt32.Create(nil, False, 'choice', 0);
+  FDirty_choice := False;
+  FEvent_choice := AEvent_choice;
+end;
+
+destructor TScript140Script.Destroy;
+begin
+  FreeAndNil(FBack_choice);
+  inherited Destroy;
+end;
+
+procedure TScript140Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_choice then
+  begin
+    FDirty_choice := False;
+    if FEvent_choice <> nil then
+    begin
+      FBack_choice.Value := Fchoice;
+      FEvent_choice.Send(FBack_choice, Time);
+    end;
+  end;
+end;
+
+procedure TScript140Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script140_touchTime', {$ifdef FPC}@{$endif}TouchTime);
+end;
+
+procedure TScript140Script.Set_touchTime(const value: Single; const Time: TX3DTime);
+begin
+  Fchoice := 26; FDirty_choice := True;
+end;
+
+procedure TScript140Script.TouchTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fchoice := 26; FDirty_choice := True;
+  FlushOutputs(Time);
+end;
+
+constructor TScript145Script.Create(const AEvent_choice: TX3DEvent);
+begin
+  inherited Create;
+  Fchoice := 0;
+  FEvent_choice := nil;
+  FBack_choice := TSFInt32.Create(nil, False, 'choice', 0);
+  FDirty_choice := False;
+  FEvent_choice := AEvent_choice;
+end;
+
+destructor TScript145Script.Destroy;
+begin
+  FreeAndNil(FBack_choice);
+  inherited Destroy;
+end;
+
+procedure TScript145Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_choice then
+  begin
+    FDirty_choice := False;
+    if FEvent_choice <> nil then
+    begin
+      FBack_choice.Value := Fchoice;
+      FEvent_choice.Send(FBack_choice, Time);
+    end;
+  end;
+end;
+
+procedure TScript145Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script145_touchTime', {$ifdef FPC}@{$endif}TouchTime);
+end;
+
+procedure TScript145Script.Set_touchTime(const value: Single; const Time: TX3DTime);
+begin
+  Fchoice := 27; FDirty_choice := True;
+end;
+
+procedure TScript145Script.TouchTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fchoice := 27; FDirty_choice := True;
+  FlushOutputs(Time);
+end;
+
+constructor TScript150Script.Create(const AEvent_choice: TX3DEvent);
+begin
+  inherited Create;
+  Fchoice := 0;
+  FEvent_choice := nil;
+  FBack_choice := TSFInt32.Create(nil, False, 'choice', 0);
+  FDirty_choice := False;
+  FEvent_choice := AEvent_choice;
+end;
+
+destructor TScript150Script.Destroy;
+begin
+  FreeAndNil(FBack_choice);
+  inherited Destroy;
+end;
+
+procedure TScript150Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_choice then
+  begin
+    FDirty_choice := False;
+    if FEvent_choice <> nil then
+    begin
+      FBack_choice.Value := Fchoice;
+      FEvent_choice.Send(FBack_choice, Time);
+    end;
+  end;
+end;
+
+procedure TScript150Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script150_touchTime', {$ifdef FPC}@{$endif}TouchTime);
+end;
+
+procedure TScript150Script.Set_touchTime(const value: Single; const Time: TX3DTime);
+begin
+  Fchoice := 28; FDirty_choice := True;
+end;
+
+procedure TScript150Script.TouchTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fchoice := 28; FDirty_choice := True;
+  FlushOutputs(Time);
+end;
+
+constructor TScript155Script.Create(const AEvent_choice: TX3DEvent);
+begin
+  inherited Create;
+  Fchoice := 0;
+  FEvent_choice := nil;
+  FBack_choice := TSFInt32.Create(nil, False, 'choice', 0);
+  FDirty_choice := False;
+  FEvent_choice := AEvent_choice;
+end;
+
+destructor TScript155Script.Destroy;
+begin
+  FreeAndNil(FBack_choice);
+  inherited Destroy;
+end;
+
+procedure TScript155Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_choice then
+  begin
+    FDirty_choice := False;
+    if FEvent_choice <> nil then
+    begin
+      FBack_choice.Value := Fchoice;
+      FEvent_choice.Send(FBack_choice, Time);
+    end;
+  end;
+end;
+
+procedure TScript155Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script155_touchTime', {$ifdef FPC}@{$endif}TouchTime);
+end;
+
+procedure TScript155Script.Set_touchTime(const value: Single; const Time: TX3DTime);
+begin
+  Fchoice := 29; FDirty_choice := True;
+end;
+
+procedure TScript155Script.TouchTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fchoice := 29; FDirty_choice := True;
+  FlushOutputs(Time);
+end;
+
 procedure InitMenuJinPart0;
 begin
 X3D0 := TX3DRootNode.Create;
@@ -552,13 +2384,10 @@ FieldVal11 := TSFTime.CreateEvent(Script10, 'touchTime', True);
 Script10.AddCustomFieldOrEvent(FieldVal11);
 FieldVal12 := TSFInt32.CreateEvent(Script10, 'choice', False);
 Script10.AddCustomFieldOrEvent(FieldVal12);
-Script10.SetSourceCode('ecmascript:' + LineEnding +
-  '      function set_touchTime(value) {' + LineEnding +
-  '          choice = 0;' + LineEnding +
-  '      }' + LineEnding +
-  '      function touchTime(value) {' + LineEnding +
-  '          choice = 0;' + LineEnding +
-  '      }');
+FreeAndNil(CompiledScript10);
+CompiledScript10 := TScript10Script.Create(FieldVal12);
+Script10.SetUrl(['compiled:' + LineEnding +
+  'touchTime=Script10_touchTime']);
 Group9.FdChildren.Add(Script10);
 Inline13 := TInlineNode.Create;
 Inline13.X3DName := 'JinBlink';
@@ -572,19 +2401,16 @@ FieldVal16 := TSFTime.CreateEvent(Script15, 'touchTime', True);
 Script15.AddCustomFieldOrEvent(FieldVal16);
 FieldVal17 := TSFInt32.CreateEvent(Script15, 'choice', False);
 Script15.AddCustomFieldOrEvent(FieldVal17);
-Script15.SetSourceCode('ecmascript:' + LineEnding +
-  '      function set_touchTime(value) {' + LineEnding +
-  '          choice = 1;' + LineEnding +
-  '      }' + LineEnding +
-  '      function touchTime(value) {' + LineEnding +
-  '          choice = 1;' + LineEnding +
-  '      }');
-Group14.FdChildren.Add(Script15);
-Inline18 := TInlineNode.Create;
+FreeAndNil(CompiledScript15);
 end;
 
 procedure InitMenuJinPart1;
 begin
+CompiledScript15 := TScript15Script.Create(FieldVal17);
+Script15.SetUrl(['compiled:' + LineEnding +
+  'touchTime=Script15_touchTime']);
+Group14.FdChildren.Add(Script15);
+Inline18 := TInlineNode.Create;
 Inline18.X3DName := 'JinBrowLowerer';
 Inline18.SetUrl(['../resources/JinBrowLowerer.x3d', 'JinBrowLowerer.x3d']);
 Group14.FdChildren.Add(Inline18);
@@ -596,13 +2422,10 @@ FieldVal21 := TSFTime.CreateEvent(Script20, 'touchTime', True);
 Script20.AddCustomFieldOrEvent(FieldVal21);
 FieldVal22 := TSFInt32.CreateEvent(Script20, 'choice', False);
 Script20.AddCustomFieldOrEvent(FieldVal22);
-Script20.SetSourceCode('ecmascript:' + LineEnding +
-  '      function set_touchTime(value) {' + LineEnding +
-  '          choice = 2;' + LineEnding +
-  '      }' + LineEnding +
-  '      function touchTime(value) {' + LineEnding +
-  '          choice = 2;' + LineEnding +
-  '      }');
+FreeAndNil(CompiledScript20);
+CompiledScript20 := TScript20Script.Create(FieldVal22);
+Script20.SetUrl(['compiled:' + LineEnding +
+  'touchTime=Script20_touchTime']);
 Group19.FdChildren.Add(Script20);
 Inline23 := TInlineNode.Create;
 Inline23.X3DName := 'JinCheekPuffer';
@@ -616,19 +2439,20 @@ FieldVal26 := TSFTime.CreateEvent(Script25, 'touchTime', True);
 Script25.AddCustomFieldOrEvent(FieldVal26);
 FieldVal27 := TSFInt32.CreateEvent(Script25, 'choice', False);
 Script25.AddCustomFieldOrEvent(FieldVal27);
-Script25.SetSourceCode('ecmascript:' + LineEnding +
-  '      function set_touchTime(value) {' + LineEnding +
-  '          choice = 3;' + LineEnding +
-  '      }' + LineEnding +
-  '      function touchTime(value) {' + LineEnding +
-  '          choice = 3;' + LineEnding +
-  '      }');
+FreeAndNil(CompiledScript25);
+CompiledScript25 := TScript25Script.Create(FieldVal27);
+Script25.SetUrl(['compiled:' + LineEnding +
+  'touchTime=Script25_touchTime']);
 Group24.FdChildren.Add(Script25);
 Inline28 := TInlineNode.Create;
 Inline28.X3DName := 'JinCheekRaiser';
 Inline28.SetUrl(['../resources/JinCheekRaiser.x3d', 'JinCheekRaiser.x3d']);
 Group24.FdChildren.Add(Inline28);
 Switch8.FdChildren.Add(Group24);
+end;
+
+procedure InitMenuJinPart2;
+begin
 Group29 := TGroupNode.Create;
 Script30 := TScriptNode.Create;
 Script30.X3DName := 'Choice4';
@@ -636,17 +2460,10 @@ FieldVal31 := TSFTime.CreateEvent(Script30, 'touchTime', True);
 Script30.AddCustomFieldOrEvent(FieldVal31);
 FieldVal32 := TSFInt32.CreateEvent(Script30, 'choice', False);
 Script30.AddCustomFieldOrEvent(FieldVal32);
-Script30.SetSourceCode('ecmascript:' + LineEnding +
-  '      function set_touchTime(value) {' + LineEnding +
-  '          choice = 4;' + LineEnding +
-  '      }' + LineEnding +
-  '      function touchTime(value) {' + LineEnding +
-  '          choice = 4;' + LineEnding +
-  '      }');
-end;
-
-procedure InitMenuJinPart2;
-begin
+FreeAndNil(CompiledScript30);
+CompiledScript30 := TScript30Script.Create(FieldVal32);
+Script30.SetUrl(['compiled:' + LineEnding +
+  'touchTime=Script30_touchTime']);
 Group29.FdChildren.Add(Script30);
 Inline33 := TInlineNode.Create;
 Inline33.X3DName := 'JinChinRaiser';
@@ -660,13 +2477,10 @@ FieldVal36 := TSFTime.CreateEvent(Script35, 'touchTime', True);
 Script35.AddCustomFieldOrEvent(FieldVal36);
 FieldVal37 := TSFInt32.CreateEvent(Script35, 'choice', False);
 Script35.AddCustomFieldOrEvent(FieldVal37);
-Script35.SetSourceCode('ecmascript:' + LineEnding +
-  '      function set_touchTime(value) {' + LineEnding +
-  '          choice = 5;' + LineEnding +
-  '      }' + LineEnding +
-  '      function touchTime(value) {' + LineEnding +
-  '          choice = 5;' + LineEnding +
-  '      }');
+FreeAndNil(CompiledScript35);
+CompiledScript35 := TScript35Script.Create(FieldVal37);
+Script35.SetUrl(['compiled:' + LineEnding +
+  'touchTime=Script35_touchTime']);
 Group34.FdChildren.Add(Script35);
 Inline38 := TInlineNode.Create;
 Inline38.X3DName := 'JinDimpler';
@@ -680,13 +2494,14 @@ FieldVal41 := TSFTime.CreateEvent(Script40, 'touchTime', True);
 Script40.AddCustomFieldOrEvent(FieldVal41);
 FieldVal42 := TSFInt32.CreateEvent(Script40, 'choice', False);
 Script40.AddCustomFieldOrEvent(FieldVal42);
-Script40.SetSourceCode('ecmascript:' + LineEnding +
-  '      function set_touchTime(value) {' + LineEnding +
-  '          choice = 6;' + LineEnding +
-  '      }' + LineEnding +
-  '      function touchTime(value) {' + LineEnding +
-  '          choice = 6;' + LineEnding +
-  '      }');
+FreeAndNil(CompiledScript40);
+end;
+
+procedure InitMenuJinPart3;
+begin
+CompiledScript40 := TScript40Script.Create(FieldVal42);
+Script40.SetUrl(['compiled:' + LineEnding +
+  'touchTime=Script40_touchTime']);
 Group39.FdChildren.Add(Script40);
 Inline43 := TInlineNode.Create;
 Inline43.X3DName := 'JinEyesClosed';
@@ -699,18 +2514,11 @@ Script45.X3DName := 'Choice7';
 FieldVal46 := TSFTime.CreateEvent(Script45, 'touchTime', True);
 Script45.AddCustomFieldOrEvent(FieldVal46);
 FieldVal47 := TSFInt32.CreateEvent(Script45, 'choice', False);
-end;
-
-procedure InitMenuJinPart3;
-begin
 Script45.AddCustomFieldOrEvent(FieldVal47);
-Script45.SetSourceCode('ecmascript:' + LineEnding +
-  '      function set_touchTime(value) {' + LineEnding +
-  '          choice = 7;' + LineEnding +
-  '      }' + LineEnding +
-  '      function touchTime(value) {' + LineEnding +
-  '          choice = 7;' + LineEnding +
-  '      }');
+FreeAndNil(CompiledScript45);
+CompiledScript45 := TScript45Script.Create(FieldVal47);
+Script45.SetUrl(['compiled:' + LineEnding +
+  'touchTime=Script45_touchTime']);
 Group44.FdChildren.Add(Script45);
 Inline48 := TInlineNode.Create;
 Inline48.X3DName := 'JinInnerBrowRaiser';
@@ -724,19 +2532,20 @@ FieldVal51 := TSFTime.CreateEvent(Script50, 'touchTime', True);
 Script50.AddCustomFieldOrEvent(FieldVal51);
 FieldVal52 := TSFInt32.CreateEvent(Script50, 'choice', False);
 Script50.AddCustomFieldOrEvent(FieldVal52);
-Script50.SetSourceCode('ecmascript:' + LineEnding +
-  '      function set_touchTime(value) {' + LineEnding +
-  '          choice = 8;' + LineEnding +
-  '      }' + LineEnding +
-  '      function touchTime(value) {' + LineEnding +
-  '          choice = 8;' + LineEnding +
-  '      }');
+FreeAndNil(CompiledScript50);
+CompiledScript50 := TScript50Script.Create(FieldVal52);
+Script50.SetUrl(['compiled:' + LineEnding +
+  'touchTime=Script50_touchTime']);
 Group49.FdChildren.Add(Script50);
 Inline53 := TInlineNode.Create;
 Inline53.X3DName := 'JinJawDrop';
 Inline53.SetUrl(['../resources/JinJawDrop.x3d', 'JinJawDrop.x3d']);
 Group49.FdChildren.Add(Inline53);
 Switch8.FdChildren.Add(Group49);
+end;
+
+procedure InitMenuJinPart4;
+begin
 Group54 := TGroupNode.Create;
 Script55 := TScriptNode.Create;
 Script55.X3DName := 'Choice9';
@@ -744,13 +2553,10 @@ FieldVal56 := TSFTime.CreateEvent(Script55, 'touchTime', True);
 Script55.AddCustomFieldOrEvent(FieldVal56);
 FieldVal57 := TSFInt32.CreateEvent(Script55, 'choice', False);
 Script55.AddCustomFieldOrEvent(FieldVal57);
-Script55.SetSourceCode('ecmascript:' + LineEnding +
-  '      function set_touchTime(value) {' + LineEnding +
-  '          choice = 9;' + LineEnding +
-  '      }' + LineEnding +
-  '      function touchTime(value) {' + LineEnding +
-  '          choice = 9;' + LineEnding +
-  '      }');
+FreeAndNil(CompiledScript55);
+CompiledScript55 := TScript55Script.Create(FieldVal57);
+Script55.SetUrl(['compiled:' + LineEnding +
+  'touchTime=Script55_touchTime']);
 Group54.FdChildren.Add(Script55);
 Inline58 := TInlineNode.Create;
 Inline58.X3DName := 'JinLidDroop';
@@ -761,20 +2567,13 @@ Group59 := TGroupNode.Create;
 Script60 := TScriptNode.Create;
 Script60.X3DName := 'Choice10';
 FieldVal61 := TSFTime.CreateEvent(Script60, 'touchTime', True);
-end;
-
-procedure InitMenuJinPart4;
-begin
 Script60.AddCustomFieldOrEvent(FieldVal61);
 FieldVal62 := TSFInt32.CreateEvent(Script60, 'choice', False);
 Script60.AddCustomFieldOrEvent(FieldVal62);
-Script60.SetSourceCode('ecmascript:' + LineEnding +
-  '      function set_touchTime(value) {' + LineEnding +
-  '          choice = 10;' + LineEnding +
-  '      }' + LineEnding +
-  '      function touchTime(value) {' + LineEnding +
-  '          choice = 10;' + LineEnding +
-  '      }');
+FreeAndNil(CompiledScript60);
+CompiledScript60 := TScript60Script.Create(FieldVal62);
+Script60.SetUrl(['compiled:' + LineEnding +
+  'touchTime=Script60_touchTime']);
 Group59.FdChildren.Add(Script60);
 Inline63 := TInlineNode.Create;
 Inline63.X3DName := 'JinLidTightener';
@@ -788,13 +2587,14 @@ FieldVal66 := TSFTime.CreateEvent(Script65, 'touchTime', True);
 Script65.AddCustomFieldOrEvent(FieldVal66);
 FieldVal67 := TSFInt32.CreateEvent(Script65, 'choice', False);
 Script65.AddCustomFieldOrEvent(FieldVal67);
-Script65.SetSourceCode('ecmascript:' + LineEnding +
-  '      function set_touchTime(value) {' + LineEnding +
-  '          choice = 11;' + LineEnding +
-  '      }' + LineEnding +
-  '      function touchTime(value) {' + LineEnding +
-  '          choice = 11;' + LineEnding +
-  '      }');
+FreeAndNil(CompiledScript65);
+end;
+
+procedure InitMenuJinPart5;
+begin
+CompiledScript65 := TScript65Script.Create(FieldVal67);
+Script65.SetUrl(['compiled:' + LineEnding +
+  'touchTime=Script65_touchTime']);
 Group64.FdChildren.Add(Script65);
 Inline68 := TInlineNode.Create;
 Inline68.X3DName := 'JinLipCornerDepressor';
@@ -808,13 +2608,10 @@ FieldVal71 := TSFTime.CreateEvent(Script70, 'touchTime', True);
 Script70.AddCustomFieldOrEvent(FieldVal71);
 FieldVal72 := TSFInt32.CreateEvent(Script70, 'choice', False);
 Script70.AddCustomFieldOrEvent(FieldVal72);
-Script70.SetSourceCode('ecmascript:' + LineEnding +
-  '      function set_touchTime(value) {' + LineEnding +
-  '          choice = 12;' + LineEnding +
-  '      }' + LineEnding +
-  '      function touchTime(value) {' + LineEnding +
-  '          choice = 12;' + LineEnding +
-  '      }');
+FreeAndNil(CompiledScript70);
+CompiledScript70 := TScript70Script.Create(FieldVal72);
+Script70.SetUrl(['compiled:' + LineEnding +
+  'touchTime=Script70_touchTime']);
 Group69.FdChildren.Add(Script70);
 Inline73 := TInlineNode.Create;
 Inline73.X3DName := 'JinLipCornerPuller';
@@ -823,28 +2620,25 @@ Group69.FdChildren.Add(Inline73);
 Switch8.FdChildren.Add(Group69);
 Group74 := TGroupNode.Create;
 Script75 := TScriptNode.Create;
-end;
-
-procedure InitMenuJinPart5;
-begin
 Script75.X3DName := 'Choice13';
 FieldVal76 := TSFTime.CreateEvent(Script75, 'touchTime', True);
 Script75.AddCustomFieldOrEvent(FieldVal76);
 FieldVal77 := TSFInt32.CreateEvent(Script75, 'choice', False);
 Script75.AddCustomFieldOrEvent(FieldVal77);
-Script75.SetSourceCode('ecmascript:' + LineEnding +
-  '      function set_touchTime(value) {' + LineEnding +
-  '          choice = 13;' + LineEnding +
-  '      }' + LineEnding +
-  '      function touchTime(value) {' + LineEnding +
-  '          choice = 13;' + LineEnding +
-  '      }');
+FreeAndNil(CompiledScript75);
+CompiledScript75 := TScript75Script.Create(FieldVal77);
+Script75.SetUrl(['compiled:' + LineEnding +
+  'touchTime=Script75_touchTime']);
 Group74.FdChildren.Add(Script75);
 Inline78 := TInlineNode.Create;
 Inline78.X3DName := 'JinLipFunneler';
 Inline78.SetUrl(['../resources/JinLipFunneler.x3d', 'JinLipFunneler.x3d']);
 Group74.FdChildren.Add(Inline78);
 Switch8.FdChildren.Add(Group74);
+end;
+
+procedure InitMenuJinPart6;
+begin
 Group79 := TGroupNode.Create;
 Script80 := TScriptNode.Create;
 Script80.X3DName := 'Choice14';
@@ -852,13 +2646,10 @@ FieldVal81 := TSFTime.CreateEvent(Script80, 'touchTime', True);
 Script80.AddCustomFieldOrEvent(FieldVal81);
 FieldVal82 := TSFInt32.CreateEvent(Script80, 'choice', False);
 Script80.AddCustomFieldOrEvent(FieldVal82);
-Script80.SetSourceCode('ecmascript:' + LineEnding +
-  '      function set_touchTime(value) {' + LineEnding +
-  '          choice = 14;' + LineEnding +
-  '      }' + LineEnding +
-  '      function touchTime(value) {' + LineEnding +
-  '          choice = 14;' + LineEnding +
-  '      }');
+FreeAndNil(CompiledScript80);
+CompiledScript80 := TScript80Script.Create(FieldVal82);
+Script80.SetUrl(['compiled:' + LineEnding +
+  'touchTime=Script80_touchTime']);
 Group79.FdChildren.Add(Script80);
 Inline83 := TInlineNode.Create;
 Inline83.X3DName := 'JinLipPressor';
@@ -872,23 +2663,16 @@ FieldVal86 := TSFTime.CreateEvent(Script85, 'touchTime', True);
 Script85.AddCustomFieldOrEvent(FieldVal86);
 FieldVal87 := TSFInt32.CreateEvent(Script85, 'choice', False);
 Script85.AddCustomFieldOrEvent(FieldVal87);
-Script85.SetSourceCode('ecmascript:' + LineEnding +
-  '      function set_touchTime(value) {' + LineEnding +
-  '          choice = 15;' + LineEnding +
-  '      }' + LineEnding +
-  '      function touchTime(value) {' + LineEnding +
-  '          choice = 15;' + LineEnding +
-  '      }');
+FreeAndNil(CompiledScript85);
+CompiledScript85 := TScript85Script.Create(FieldVal87);
+Script85.SetUrl(['compiled:' + LineEnding +
+  'touchTime=Script85_touchTime']);
 Group84.FdChildren.Add(Script85);
 Inline88 := TInlineNode.Create;
 Inline88.X3DName := 'JinLipPuckerer';
 Inline88.SetUrl(['../resources/JinLipPuckerer.x3d', 'JinLipPuckerer.x3d']);
 Group84.FdChildren.Add(Inline88);
 Switch8.FdChildren.Add(Group84);
-end;
-
-procedure InitMenuJinPart6;
-begin
 Group89 := TGroupNode.Create;
 Script90 := TScriptNode.Create;
 Script90.X3DName := 'Choice16';
@@ -896,13 +2680,14 @@ FieldVal91 := TSFTime.CreateEvent(Script90, 'touchTime', True);
 Script90.AddCustomFieldOrEvent(FieldVal91);
 FieldVal92 := TSFInt32.CreateEvent(Script90, 'choice', False);
 Script90.AddCustomFieldOrEvent(FieldVal92);
-Script90.SetSourceCode('ecmascript:' + LineEnding +
-  '      function set_touchTime(value) {' + LineEnding +
-  '          choice = 16;' + LineEnding +
-  '      }' + LineEnding +
-  '      function touchTime(value) {' + LineEnding +
-  '          choice = 16;' + LineEnding +
-  '      }');
+FreeAndNil(CompiledScript90);
+end;
+
+procedure InitMenuJinPart7;
+begin
+CompiledScript90 := TScript90Script.Create(FieldVal92);
+Script90.SetUrl(['compiled:' + LineEnding +
+  'touchTime=Script90_touchTime']);
 Group89.FdChildren.Add(Script90);
 Inline93 := TInlineNode.Create;
 Inline93.X3DName := 'JinLipsPart';
@@ -916,13 +2701,10 @@ FieldVal96 := TSFTime.CreateEvent(Script95, 'touchTime', True);
 Script95.AddCustomFieldOrEvent(FieldVal96);
 FieldVal97 := TSFInt32.CreateEvent(Script95, 'choice', False);
 Script95.AddCustomFieldOrEvent(FieldVal97);
-Script95.SetSourceCode('ecmascript:' + LineEnding +
-  '      function set_touchTime(value) {' + LineEnding +
-  '          choice = 17;' + LineEnding +
-  '      }' + LineEnding +
-  '      function touchTime(value) {' + LineEnding +
-  '          choice = 17;' + LineEnding +
-  '      }');
+FreeAndNil(CompiledScript95);
+CompiledScript95 := TScript95Script.Create(FieldVal97);
+Script95.SetUrl(['compiled:' + LineEnding +
+  'touchTime=Script95_touchTime']);
 Group94.FdChildren.Add(Script95);
 Inline98 := TInlineNode.Create;
 Inline98.X3DName := 'JinLipStretcher';
@@ -936,23 +2718,20 @@ FieldVal101 := TSFTime.CreateEvent(Script100, 'touchTime', True);
 Script100.AddCustomFieldOrEvent(FieldVal101);
 FieldVal102 := TSFInt32.CreateEvent(Script100, 'choice', False);
 Script100.AddCustomFieldOrEvent(FieldVal102);
-Script100.SetSourceCode('ecmascript:' + LineEnding +
-  '      function set_touchTime(value) {' + LineEnding +
-  '          choice = 18;' + LineEnding +
-  '      }' + LineEnding +
-  '      function touchTime(value) {' + LineEnding +
-  '          choice = 18;' + LineEnding +
-  '      }');
+FreeAndNil(CompiledScript100);
+CompiledScript100 := TScript100Script.Create(FieldVal102);
+Script100.SetUrl(['compiled:' + LineEnding +
+  'touchTime=Script100_touchTime']);
 Group99.FdChildren.Add(Script100);
 Inline103 := TInlineNode.Create;
 Inline103.X3DName := 'JinLipSuck';
 Inline103.SetUrl(['../resources/JinLipSuck.x3d', 'JinLipSuck.x3d']);
-end;
-
-procedure InitMenuJinPart7;
-begin
 Group99.FdChildren.Add(Inline103);
 Switch8.FdChildren.Add(Group99);
+end;
+
+procedure InitMenuJinPart8;
+begin
 Group104 := TGroupNode.Create;
 Script105 := TScriptNode.Create;
 Script105.X3DName := 'Choice19';
@@ -960,13 +2739,10 @@ FieldVal106 := TSFTime.CreateEvent(Script105, 'touchTime', True);
 Script105.AddCustomFieldOrEvent(FieldVal106);
 FieldVal107 := TSFInt32.CreateEvent(Script105, 'choice', False);
 Script105.AddCustomFieldOrEvent(FieldVal107);
-Script105.SetSourceCode('ecmascript:' + LineEnding +
-  '      function set_touchTime(value) {' + LineEnding +
-  '          choice = 19;' + LineEnding +
-  '      }' + LineEnding +
-  '      function touchTime(value) {' + LineEnding +
-  '          choice = 19;' + LineEnding +
-  '      }');
+FreeAndNil(CompiledScript105);
+CompiledScript105 := TScript105Script.Create(FieldVal107);
+Script105.SetUrl(['compiled:' + LineEnding +
+  'touchTime=Script105_touchTime']);
 Group104.FdChildren.Add(Script105);
 Inline108 := TInlineNode.Create;
 Inline108.X3DName := 'JinLipTightener';
@@ -980,13 +2756,10 @@ FieldVal111 := TSFTime.CreateEvent(Script110, 'touchTime', True);
 Script110.AddCustomFieldOrEvent(FieldVal111);
 FieldVal112 := TSFInt32.CreateEvent(Script110, 'choice', False);
 Script110.AddCustomFieldOrEvent(FieldVal112);
-Script110.SetSourceCode('ecmascript:' + LineEnding +
-  '      function set_touchTime(value) {' + LineEnding +
-  '          choice = 20;' + LineEnding +
-  '      }' + LineEnding +
-  '      function touchTime(value) {' + LineEnding +
-  '          choice = 20;' + LineEnding +
-  '      }');
+FreeAndNil(CompiledScript110);
+CompiledScript110 := TScript110Script.Create(FieldVal112);
+Script110.SetUrl(['compiled:' + LineEnding +
+  'touchTime=Script110_touchTime']);
 Group109.FdChildren.Add(Script110);
 Inline113 := TInlineNode.Create;
 Inline113.X3DName := 'JinLowerLipDepressor';
@@ -1000,19 +2773,16 @@ FieldVal116 := TSFTime.CreateEvent(Script115, 'touchTime', True);
 Script115.AddCustomFieldOrEvent(FieldVal116);
 FieldVal117 := TSFInt32.CreateEvent(Script115, 'choice', False);
 Script115.AddCustomFieldOrEvent(FieldVal117);
-Script115.SetSourceCode('ecmascript:' + LineEnding +
-  '      function set_touchTime(value) {' + LineEnding +
-  '          choice = 21;' + LineEnding +
-  '      }' + LineEnding +
-  '      function touchTime(value) {' + LineEnding +
-  '          choice = 21;' + LineEnding +
-  '      }');
-Group114.FdChildren.Add(Script115);
-Inline118 := TInlineNode.Create;
+FreeAndNil(CompiledScript115);
 end;
 
-procedure InitMenuJinPart8;
+procedure InitMenuJinPart9;
 begin
+CompiledScript115 := TScript115Script.Create(FieldVal117);
+Script115.SetUrl(['compiled:' + LineEnding +
+  'touchTime=Script115_touchTime']);
+Group114.FdChildren.Add(Script115);
+Inline118 := TInlineNode.Create;
 Inline118.X3DName := 'JinMouthStretch';
 Inline118.SetUrl(['../resources/JinMouthStretch.x3d', 'JinMouthStretch.x3d']);
 Group114.FdChildren.Add(Inline118);
@@ -1024,13 +2794,10 @@ FieldVal121 := TSFTime.CreateEvent(Script120, 'touchTime', True);
 Script120.AddCustomFieldOrEvent(FieldVal121);
 FieldVal122 := TSFInt32.CreateEvent(Script120, 'choice', False);
 Script120.AddCustomFieldOrEvent(FieldVal122);
-Script120.SetSourceCode('ecmascript:' + LineEnding +
-  '      function set_touchTime(value) {' + LineEnding +
-  '          choice = 22;' + LineEnding +
-  '      }' + LineEnding +
-  '      function touchTime(value) {' + LineEnding +
-  '          choice = 22;' + LineEnding +
-  '      }');
+FreeAndNil(CompiledScript120);
+CompiledScript120 := TScript120Script.Create(FieldVal122);
+Script120.SetUrl(['compiled:' + LineEnding +
+  'touchTime=Script120_touchTime']);
 Group119.FdChildren.Add(Script120);
 Inline123 := TInlineNode.Create;
 Inline123.X3DName := 'JinNasolabialDeepener';
@@ -1044,19 +2811,20 @@ FieldVal126 := TSFTime.CreateEvent(Script125, 'touchTime', True);
 Script125.AddCustomFieldOrEvent(FieldVal126);
 FieldVal127 := TSFInt32.CreateEvent(Script125, 'choice', False);
 Script125.AddCustomFieldOrEvent(FieldVal127);
-Script125.SetSourceCode('ecmascript:' + LineEnding +
-  '      function set_touchTime(value) {' + LineEnding +
-  '          choice = 23;' + LineEnding +
-  '      }' + LineEnding +
-  '      function touchTime(value) {' + LineEnding +
-  '          choice = 23;' + LineEnding +
-  '      }');
+FreeAndNil(CompiledScript125);
+CompiledScript125 := TScript125Script.Create(FieldVal127);
+Script125.SetUrl(['compiled:' + LineEnding +
+  'touchTime=Script125_touchTime']);
 Group124.FdChildren.Add(Script125);
 Inline128 := TInlineNode.Create;
 Inline128.X3DName := 'JinNoseWrinkler';
 Inline128.SetUrl(['../resources/JinNoseWrinkler.x3d', 'JinNoseWrinkler.x3d']);
 Group124.FdChildren.Add(Inline128);
 Switch8.FdChildren.Add(Group124);
+end;
+
+procedure InitMenuJinPart10;
+begin
 Group129 := TGroupNode.Create;
 Script130 := TScriptNode.Create;
 Script130.X3DName := 'Choice24';
@@ -1064,17 +2832,10 @@ FieldVal131 := TSFTime.CreateEvent(Script130, 'touchTime', True);
 Script130.AddCustomFieldOrEvent(FieldVal131);
 FieldVal132 := TSFInt32.CreateEvent(Script130, 'choice', False);
 Script130.AddCustomFieldOrEvent(FieldVal132);
-Script130.SetSourceCode('ecmascript:' + LineEnding +
-  '      function set_touchTime(value) {' + LineEnding +
-  '          choice = 24;' + LineEnding +
-  '      }' + LineEnding +
-  '      function touchTime(value) {' + LineEnding +
-  '          choice = 24;' + LineEnding +
-  '      }');
-end;
-
-procedure InitMenuJinPart9;
-begin
+FreeAndNil(CompiledScript130);
+CompiledScript130 := TScript130Script.Create(FieldVal132);
+Script130.SetUrl(['compiled:' + LineEnding +
+  'touchTime=Script130_touchTime']);
 Group129.FdChildren.Add(Script130);
 Inline133 := TInlineNode.Create;
 Inline133.X3DName := 'JinOuterBrowRaiser';
@@ -1088,13 +2849,10 @@ FieldVal136 := TSFTime.CreateEvent(Script135, 'touchTime', True);
 Script135.AddCustomFieldOrEvent(FieldVal136);
 FieldVal137 := TSFInt32.CreateEvent(Script135, 'choice', False);
 Script135.AddCustomFieldOrEvent(FieldVal137);
-Script135.SetSourceCode('ecmascript:' + LineEnding +
-  '      function set_touchTime(value) {' + LineEnding +
-  '          choice = 25;' + LineEnding +
-  '      }' + LineEnding +
-  '      function touchTime(value) {' + LineEnding +
-  '          choice = 25;' + LineEnding +
-  '      }');
+FreeAndNil(CompiledScript135);
+CompiledScript135 := TScript135Script.Create(FieldVal137);
+Script135.SetUrl(['compiled:' + LineEnding +
+  'touchTime=Script135_touchTime']);
 Group134.FdChildren.Add(Script135);
 Inline138 := TInlineNode.Create;
 Inline138.X3DName := 'JinSlit';
@@ -1108,13 +2866,14 @@ FieldVal141 := TSFTime.CreateEvent(Script140, 'touchTime', True);
 Script140.AddCustomFieldOrEvent(FieldVal141);
 FieldVal142 := TSFInt32.CreateEvent(Script140, 'choice', False);
 Script140.AddCustomFieldOrEvent(FieldVal142);
-Script140.SetSourceCode('ecmascript:' + LineEnding +
-  '      function set_touchTime(value) {' + LineEnding +
-  '          choice = 26;' + LineEnding +
-  '      }' + LineEnding +
-  '      function touchTime(value) {' + LineEnding +
-  '          choice = 26;' + LineEnding +
-  '      }');
+FreeAndNil(CompiledScript140);
+end;
+
+procedure InitMenuJinPart11;
+begin
+CompiledScript140 := TScript140Script.Create(FieldVal142);
+Script140.SetUrl(['compiled:' + LineEnding +
+  'touchTime=Script140_touchTime']);
 Group139.FdChildren.Add(Script140);
 Inline143 := TInlineNode.Create;
 Inline143.X3DName := 'JinSquint';
@@ -1127,18 +2886,11 @@ Script145.X3DName := 'Choice27';
 FieldVal146 := TSFTime.CreateEvent(Script145, 'touchTime', True);
 Script145.AddCustomFieldOrEvent(FieldVal146);
 FieldVal147 := TSFInt32.CreateEvent(Script145, 'choice', False);
-end;
-
-procedure InitMenuJinPart10;
-begin
 Script145.AddCustomFieldOrEvent(FieldVal147);
-Script145.SetSourceCode('ecmascript:' + LineEnding +
-  '      function set_touchTime(value) {' + LineEnding +
-  '          choice = 27;' + LineEnding +
-  '      }' + LineEnding +
-  '      function touchTime(value) {' + LineEnding +
-  '          choice = 27;' + LineEnding +
-  '      }');
+FreeAndNil(CompiledScript145);
+CompiledScript145 := TScript145Script.Create(FieldVal147);
+Script145.SetUrl(['compiled:' + LineEnding +
+  'touchTime=Script145_touchTime']);
 Group144.FdChildren.Add(Script145);
 Inline148 := TInlineNode.Create;
 Inline148.X3DName := 'JinUpperLidRaiser';
@@ -1152,19 +2904,20 @@ FieldVal151 := TSFTime.CreateEvent(Script150, 'touchTime', True);
 Script150.AddCustomFieldOrEvent(FieldVal151);
 FieldVal152 := TSFInt32.CreateEvent(Script150, 'choice', False);
 Script150.AddCustomFieldOrEvent(FieldVal152);
-Script150.SetSourceCode('ecmascript:' + LineEnding +
-  '      function set_touchTime(value) {' + LineEnding +
-  '          choice = 28;' + LineEnding +
-  '      }' + LineEnding +
-  '      function touchTime(value) {' + LineEnding +
-  '          choice = 28;' + LineEnding +
-  '      }');
+FreeAndNil(CompiledScript150);
+CompiledScript150 := TScript150Script.Create(FieldVal152);
+Script150.SetUrl(['compiled:' + LineEnding +
+  'touchTime=Script150_touchTime']);
 Group149.FdChildren.Add(Script150);
 Inline153 := TInlineNode.Create;
 Inline153.X3DName := 'JinUpperLipRaiser';
 Inline153.SetUrl(['../resources/JinUpperLipRaiser.x3d', 'JinUpperLipRaiser.x3d']);
 Group149.FdChildren.Add(Inline153);
 Switch8.FdChildren.Add(Group149);
+end;
+
+procedure InitMenuJinPart12;
+begin
 Group154 := TGroupNode.Create;
 Script155 := TScriptNode.Create;
 Script155.X3DName := 'Choice29';
@@ -1172,13 +2925,10 @@ FieldVal156 := TSFTime.CreateEvent(Script155, 'touchTime', True);
 Script155.AddCustomFieldOrEvent(FieldVal156);
 FieldVal157 := TSFInt32.CreateEvent(Script155, 'choice', False);
 Script155.AddCustomFieldOrEvent(FieldVal157);
-Script155.SetSourceCode('ecmascript:' + LineEnding +
-  '      function set_touchTime(value) {' + LineEnding +
-  '          choice = 29;' + LineEnding +
-  '      }' + LineEnding +
-  '      function touchTime(value) {' + LineEnding +
-  '          choice = 29;' + LineEnding +
-  '      }');
+FreeAndNil(CompiledScript155);
+CompiledScript155 := TScript155Script.Create(FieldVal157);
+Script155.SetUrl(['compiled:' + LineEnding +
+  'touchTime=Script155_touchTime']);
 Group154.FdChildren.Add(Script155);
 Inline158 := TInlineNode.Create;
 Inline158.X3DName := 'JinWink';
@@ -1189,10 +2939,6 @@ Group7.FdChildren.Add(Switch8);
 Transform159 := TTransformNode.Create;
 Transform159.Translation := Vector3(48, 63.4, 0);
 TouchSensor160 := TTouchSensorNode.Create;
-end;
-
-procedure InitMenuJinPart11;
-begin
 TouchSensor160.Description := 'TSJinBlink';
 TouchSensor160.X3DName := 'JinBlink_Sensor';
 Transform159.FdChildren.Add(TouchSensor160);
@@ -1213,6 +2959,10 @@ Text164.FontStyle := FontStyle165;
 Shape161.Geometry := Text164;
 Transform159.FdChildren.Add(Shape161);
 Shape166 := TShapeNode.Create;
+end;
+
+procedure InitMenuJinPart13;
+begin
 Appearance167 := TAppearanceNode.Create;
 Material168 := TMaterialNode.Create;
 Material168.DiffuseColor := Vector3(0, 0, 1);
@@ -1233,10 +2983,6 @@ Group7.AddRoute(FieldVal12, Switch8.whichChoice);
 Transform173 := TTransformNode.Create;
 Transform173.Translation := Vector3(48, 60.4, 0);
 TouchSensor174 := TTouchSensorNode.Create;
-end;
-
-procedure InitMenuJinPart12;
-begin
 TouchSensor174.Description := 'TSJinBrowLowerer';
 TouchSensor174.X3DName := 'JinBrowLowerer_Sensor';
 Transform173.FdChildren.Add(TouchSensor174);
@@ -1257,6 +3003,10 @@ Text178.FontStyle := FontStyle179;
 Shape175.Geometry := Text178;
 Transform173.FdChildren.Add(Shape175);
 Shape180 := TShapeNode.Create;
+end;
+
+procedure InitMenuJinPart14;
+begin
 Appearance181 := TAppearanceNode.Create;
 Material182 := TMaterialNode.Create;
 Material182.DiffuseColor := Vector3(0, 0, 1);
@@ -1277,10 +3027,6 @@ Group7.AddRoute(FieldVal17, Switch8.whichChoice);
 Transform187 := TTransformNode.Create;
 Transform187.Translation := Vector3(48, 57.39999999999999, 0);
 TouchSensor188 := TTouchSensorNode.Create;
-end;
-
-procedure InitMenuJinPart13;
-begin
 TouchSensor188.Description := 'TSJinCheekPuffer';
 TouchSensor188.X3DName := 'JinCheekPuffer_Sensor';
 Transform187.FdChildren.Add(TouchSensor188);
@@ -1301,6 +3047,10 @@ Text192.FontStyle := FontStyle193;
 Shape189.Geometry := Text192;
 Transform187.FdChildren.Add(Shape189);
 Shape194 := TShapeNode.Create;
+end;
+
+procedure InitMenuJinPart15;
+begin
 Appearance195 := TAppearanceNode.Create;
 Material196 := TMaterialNode.Create;
 Material196.DiffuseColor := Vector3(0, 0, 1);
@@ -1321,10 +3071,6 @@ Group7.AddRoute(FieldVal22, Switch8.whichChoice);
 Transform201 := TTransformNode.Create;
 Transform201.Translation := Vector3(48, 54.39999999999999, 0);
 TouchSensor202 := TTouchSensorNode.Create;
-end;
-
-procedure InitMenuJinPart14;
-begin
 TouchSensor202.Description := 'TSJinCheekRaiser';
 TouchSensor202.X3DName := 'JinCheekRaiser_Sensor';
 Transform201.FdChildren.Add(TouchSensor202);
@@ -1345,6 +3091,10 @@ Text206.FontStyle := FontStyle207;
 Shape203.Geometry := Text206;
 Transform201.FdChildren.Add(Shape203);
 Shape208 := TShapeNode.Create;
+end;
+
+procedure InitMenuJinPart16;
+begin
 Appearance209 := TAppearanceNode.Create;
 Material210 := TMaterialNode.Create;
 Material210.DiffuseColor := Vector3(0, 0, 1);
@@ -1365,10 +3115,6 @@ Group7.AddRoute(FieldVal27, Switch8.whichChoice);
 Transform215 := TTransformNode.Create;
 Transform215.Translation := Vector3(48, 51.39999999999999, 0);
 TouchSensor216 := TTouchSensorNode.Create;
-end;
-
-procedure InitMenuJinPart15;
-begin
 TouchSensor216.Description := 'TSJinChinRaiser';
 TouchSensor216.X3DName := 'JinChinRaiser_Sensor';
 Transform215.FdChildren.Add(TouchSensor216);
@@ -1389,6 +3135,10 @@ Text220.FontStyle := FontStyle221;
 Shape217.Geometry := Text220;
 Transform215.FdChildren.Add(Shape217);
 Shape222 := TShapeNode.Create;
+end;
+
+procedure InitMenuJinPart17;
+begin
 Appearance223 := TAppearanceNode.Create;
 Material224 := TMaterialNode.Create;
 Material224.DiffuseColor := Vector3(0, 0, 1);
@@ -1409,10 +3159,6 @@ Group7.AddRoute(FieldVal32, Switch8.whichChoice);
 Transform229 := TTransformNode.Create;
 Transform229.Translation := Vector3(48, 48.39999999999999, 0);
 TouchSensor230 := TTouchSensorNode.Create;
-end;
-
-procedure InitMenuJinPart16;
-begin
 TouchSensor230.Description := 'TSJinDimpler';
 TouchSensor230.X3DName := 'JinDimpler_Sensor';
 Transform229.FdChildren.Add(TouchSensor230);
@@ -1433,6 +3179,10 @@ Text234.FontStyle := FontStyle235;
 Shape231.Geometry := Text234;
 Transform229.FdChildren.Add(Shape231);
 Shape236 := TShapeNode.Create;
+end;
+
+procedure InitMenuJinPart18;
+begin
 Appearance237 := TAppearanceNode.Create;
 Material238 := TMaterialNode.Create;
 Material238.DiffuseColor := Vector3(0, 0, 1);
@@ -1453,10 +3203,6 @@ Group7.AddRoute(FieldVal37, Switch8.whichChoice);
 Transform243 := TTransformNode.Create;
 Transform243.Translation := Vector3(48, 45.39999999999999, 0);
 TouchSensor244 := TTouchSensorNode.Create;
-end;
-
-procedure InitMenuJinPart17;
-begin
 TouchSensor244.Description := 'TSJinEyesClosed';
 TouchSensor244.X3DName := 'JinEyesClosed_Sensor';
 Transform243.FdChildren.Add(TouchSensor244);
@@ -1477,6 +3223,10 @@ Text248.FontStyle := FontStyle249;
 Shape245.Geometry := Text248;
 Transform243.FdChildren.Add(Shape245);
 Shape250 := TShapeNode.Create;
+end;
+
+procedure InitMenuJinPart19;
+begin
 Appearance251 := TAppearanceNode.Create;
 Material252 := TMaterialNode.Create;
 Material252.DiffuseColor := Vector3(0, 0, 1);
@@ -1497,10 +3247,6 @@ Group7.AddRoute(FieldVal42, Switch8.whichChoice);
 Transform257 := TTransformNode.Create;
 Transform257.Translation := Vector3(48, 42.39999999999999, 0);
 TouchSensor258 := TTouchSensorNode.Create;
-end;
-
-procedure InitMenuJinPart18;
-begin
 TouchSensor258.Description := 'TSJinInnerBrowRaiser';
 TouchSensor258.X3DName := 'JinInnerBrowRaiser_Sensor';
 Transform257.FdChildren.Add(TouchSensor258);
@@ -1521,6 +3267,10 @@ Text262.FontStyle := FontStyle263;
 Shape259.Geometry := Text262;
 Transform257.FdChildren.Add(Shape259);
 Shape264 := TShapeNode.Create;
+end;
+
+procedure InitMenuJinPart20;
+begin
 Appearance265 := TAppearanceNode.Create;
 Material266 := TMaterialNode.Create;
 Material266.DiffuseColor := Vector3(0, 0, 1);
@@ -1541,10 +3291,6 @@ Group7.AddRoute(FieldVal47, Switch8.whichChoice);
 Transform271 := TTransformNode.Create;
 Transform271.Translation := Vector3(48, 39.39999999999999, 0);
 TouchSensor272 := TTouchSensorNode.Create;
-end;
-
-procedure InitMenuJinPart19;
-begin
 TouchSensor272.Description := 'TSJinJawDrop';
 TouchSensor272.X3DName := 'JinJawDrop_Sensor';
 Transform271.FdChildren.Add(TouchSensor272);
@@ -1565,6 +3311,10 @@ Text276.FontStyle := FontStyle277;
 Shape273.Geometry := Text276;
 Transform271.FdChildren.Add(Shape273);
 Shape278 := TShapeNode.Create;
+end;
+
+procedure InitMenuJinPart21;
+begin
 Appearance279 := TAppearanceNode.Create;
 Material280 := TMaterialNode.Create;
 Material280.DiffuseColor := Vector3(0, 0, 1);
@@ -1585,10 +3335,6 @@ Group7.AddRoute(FieldVal52, Switch8.whichChoice);
 Transform285 := TTransformNode.Create;
 Transform285.Translation := Vector3(48, 36.39999999999999, 0);
 TouchSensor286 := TTouchSensorNode.Create;
-end;
-
-procedure InitMenuJinPart20;
-begin
 TouchSensor286.Description := 'TSJinLidDroop';
 TouchSensor286.X3DName := 'JinLidDroop_Sensor';
 Transform285.FdChildren.Add(TouchSensor286);
@@ -1609,6 +3355,10 @@ Text290.FontStyle := FontStyle291;
 Shape287.Geometry := Text290;
 Transform285.FdChildren.Add(Shape287);
 Shape292 := TShapeNode.Create;
+end;
+
+procedure InitMenuJinPart22;
+begin
 Appearance293 := TAppearanceNode.Create;
 Material294 := TMaterialNode.Create;
 Material294.DiffuseColor := Vector3(0, 0, 1);
@@ -1629,10 +3379,6 @@ Group7.AddRoute(FieldVal57, Switch8.whichChoice);
 Transform299 := TTransformNode.Create;
 Transform299.Translation := Vector3(48, 33.39999999999999, 0);
 TouchSensor300 := TTouchSensorNode.Create;
-end;
-
-procedure InitMenuJinPart21;
-begin
 TouchSensor300.Description := 'TSJinLidTightener';
 TouchSensor300.X3DName := 'JinLidTightener_Sensor';
 Transform299.FdChildren.Add(TouchSensor300);
@@ -1653,6 +3399,10 @@ Text304.FontStyle := FontStyle305;
 Shape301.Geometry := Text304;
 Transform299.FdChildren.Add(Shape301);
 Shape306 := TShapeNode.Create;
+end;
+
+procedure InitMenuJinPart23;
+begin
 Appearance307 := TAppearanceNode.Create;
 Material308 := TMaterialNode.Create;
 Material308.DiffuseColor := Vector3(0, 0, 1);
@@ -1673,10 +3423,6 @@ Group7.AddRoute(FieldVal62, Switch8.whichChoice);
 Transform313 := TTransformNode.Create;
 Transform313.Translation := Vector3(48, 30.399999999999995, 0);
 TouchSensor314 := TTouchSensorNode.Create;
-end;
-
-procedure InitMenuJinPart22;
-begin
 TouchSensor314.Description := 'TSJinLipCornerDepressor';
 TouchSensor314.X3DName := 'JinLipCornerDepressor_Sensor';
 Transform313.FdChildren.Add(TouchSensor314);
@@ -1697,6 +3443,10 @@ Text318.FontStyle := FontStyle319;
 Shape315.Geometry := Text318;
 Transform313.FdChildren.Add(Shape315);
 Shape320 := TShapeNode.Create;
+end;
+
+procedure InitMenuJinPart24;
+begin
 Appearance321 := TAppearanceNode.Create;
 Material322 := TMaterialNode.Create;
 Material322.DiffuseColor := Vector3(0, 0, 1);
@@ -1717,10 +3467,6 @@ Group7.AddRoute(FieldVal67, Switch8.whichChoice);
 Transform327 := TTransformNode.Create;
 Transform327.Translation := Vector3(48, 27.399999999999995, 0);
 TouchSensor328 := TTouchSensorNode.Create;
-end;
-
-procedure InitMenuJinPart23;
-begin
 TouchSensor328.Description := 'TSJinLipCornerPuller';
 TouchSensor328.X3DName := 'JinLipCornerPuller_Sensor';
 Transform327.FdChildren.Add(TouchSensor328);
@@ -1741,6 +3487,10 @@ Text332.FontStyle := FontStyle333;
 Shape329.Geometry := Text332;
 Transform327.FdChildren.Add(Shape329);
 Shape334 := TShapeNode.Create;
+end;
+
+procedure InitMenuJinPart25;
+begin
 Appearance335 := TAppearanceNode.Create;
 Material336 := TMaterialNode.Create;
 Material336.DiffuseColor := Vector3(0, 0, 1);
@@ -1761,10 +3511,6 @@ Group7.AddRoute(FieldVal72, Switch8.whichChoice);
 Transform341 := TTransformNode.Create;
 Transform341.Translation := Vector3(48, 24.399999999999995, 0);
 TouchSensor342 := TTouchSensorNode.Create;
-end;
-
-procedure InitMenuJinPart24;
-begin
 TouchSensor342.Description := 'TSJinLipFunneler';
 TouchSensor342.X3DName := 'JinLipFunneler_Sensor';
 Transform341.FdChildren.Add(TouchSensor342);
@@ -1785,6 +3531,10 @@ Text346.FontStyle := FontStyle347;
 Shape343.Geometry := Text346;
 Transform341.FdChildren.Add(Shape343);
 Shape348 := TShapeNode.Create;
+end;
+
+procedure InitMenuJinPart26;
+begin
 Appearance349 := TAppearanceNode.Create;
 Material350 := TMaterialNode.Create;
 Material350.DiffuseColor := Vector3(0, 0, 1);
@@ -1805,10 +3555,6 @@ Group7.AddRoute(FieldVal77, Switch8.whichChoice);
 Transform355 := TTransformNode.Create;
 Transform355.Translation := Vector3(48, 21.399999999999995, 0);
 TouchSensor356 := TTouchSensorNode.Create;
-end;
-
-procedure InitMenuJinPart25;
-begin
 TouchSensor356.Description := 'TSJinLipPressor';
 TouchSensor356.X3DName := 'JinLipPressor_Sensor';
 Transform355.FdChildren.Add(TouchSensor356);
@@ -1829,6 +3575,10 @@ Text360.FontStyle := FontStyle361;
 Shape357.Geometry := Text360;
 Transform355.FdChildren.Add(Shape357);
 Shape362 := TShapeNode.Create;
+end;
+
+procedure InitMenuJinPart27;
+begin
 Appearance363 := TAppearanceNode.Create;
 Material364 := TMaterialNode.Create;
 Material364.DiffuseColor := Vector3(0, 0, 1);
@@ -1849,10 +3599,6 @@ Group7.AddRoute(FieldVal82, Switch8.whichChoice);
 Transform369 := TTransformNode.Create;
 Transform369.Translation := Vector3(48, 18.4, 0);
 TouchSensor370 := TTouchSensorNode.Create;
-end;
-
-procedure InitMenuJinPart26;
-begin
 TouchSensor370.Description := 'TSJinLipPuckerer';
 TouchSensor370.X3DName := 'JinLipPuckerer_Sensor';
 Transform369.FdChildren.Add(TouchSensor370);
@@ -1873,6 +3619,10 @@ Text374.FontStyle := FontStyle375;
 Shape371.Geometry := Text374;
 Transform369.FdChildren.Add(Shape371);
 Shape376 := TShapeNode.Create;
+end;
+
+procedure InitMenuJinPart28;
+begin
 Appearance377 := TAppearanceNode.Create;
 Material378 := TMaterialNode.Create;
 Material378.DiffuseColor := Vector3(0, 0, 1);
@@ -1893,10 +3643,6 @@ Group7.AddRoute(FieldVal87, Switch8.whichChoice);
 Transform383 := TTransformNode.Create;
 Transform383.Translation := Vector3(48, 15.399999999999997, 0);
 TouchSensor384 := TTouchSensorNode.Create;
-end;
-
-procedure InitMenuJinPart27;
-begin
 TouchSensor384.Description := 'TSJinLipsPart';
 TouchSensor384.X3DName := 'JinLipsPart_Sensor';
 Transform383.FdChildren.Add(TouchSensor384);
@@ -1917,6 +3663,10 @@ Text388.FontStyle := FontStyle389;
 Shape385.Geometry := Text388;
 Transform383.FdChildren.Add(Shape385);
 Shape390 := TShapeNode.Create;
+end;
+
+procedure InitMenuJinPart29;
+begin
 Appearance391 := TAppearanceNode.Create;
 Material392 := TMaterialNode.Create;
 Material392.DiffuseColor := Vector3(0, 0, 1);
@@ -1937,10 +3687,6 @@ Group7.AddRoute(FieldVal92, Switch8.whichChoice);
 Transform397 := TTransformNode.Create;
 Transform397.Translation := Vector3(48, 12.399999999999999, 0);
 TouchSensor398 := TTouchSensorNode.Create;
-end;
-
-procedure InitMenuJinPart28;
-begin
 TouchSensor398.Description := 'TSJinLipStretcher';
 TouchSensor398.X3DName := 'JinLipStretcher_Sensor';
 Transform397.FdChildren.Add(TouchSensor398);
@@ -1961,6 +3707,10 @@ Text402.FontStyle := FontStyle403;
 Shape399.Geometry := Text402;
 Transform397.FdChildren.Add(Shape399);
 Shape404 := TShapeNode.Create;
+end;
+
+procedure InitMenuJinPart30;
+begin
 Appearance405 := TAppearanceNode.Create;
 Material406 := TMaterialNode.Create;
 Material406.DiffuseColor := Vector3(0, 0, 1);
@@ -1981,10 +3731,6 @@ Group7.AddRoute(FieldVal97, Switch8.whichChoice);
 Transform411 := TTransformNode.Create;
 Transform411.Translation := Vector3(48, 9.399999999999999, 0);
 TouchSensor412 := TTouchSensorNode.Create;
-end;
-
-procedure InitMenuJinPart29;
-begin
 TouchSensor412.Description := 'TSJinLipSuck';
 TouchSensor412.X3DName := 'JinLipSuck_Sensor';
 Transform411.FdChildren.Add(TouchSensor412);
@@ -2005,6 +3751,10 @@ Text416.FontStyle := FontStyle417;
 Shape413.Geometry := Text416;
 Transform411.FdChildren.Add(Shape413);
 Shape418 := TShapeNode.Create;
+end;
+
+procedure InitMenuJinPart31;
+begin
 Appearance419 := TAppearanceNode.Create;
 Material420 := TMaterialNode.Create;
 Material420.DiffuseColor := Vector3(0, 0, 1);
@@ -2025,10 +3775,6 @@ Group7.AddRoute(FieldVal102, Switch8.whichChoice);
 Transform425 := TTransformNode.Create;
 Transform425.Translation := Vector3(48, 6.399999999999999, 0);
 TouchSensor426 := TTouchSensorNode.Create;
-end;
-
-procedure InitMenuJinPart30;
-begin
 TouchSensor426.Description := 'TSJinLipTightener';
 TouchSensor426.X3DName := 'JinLipTightener_Sensor';
 Transform425.FdChildren.Add(TouchSensor426);
@@ -2049,6 +3795,10 @@ Text430.FontStyle := FontStyle431;
 Shape427.Geometry := Text430;
 Transform425.FdChildren.Add(Shape427);
 Shape432 := TShapeNode.Create;
+end;
+
+procedure InitMenuJinPart32;
+begin
 Appearance433 := TAppearanceNode.Create;
 Material434 := TMaterialNode.Create;
 Material434.DiffuseColor := Vector3(0, 0, 1);
@@ -2069,10 +3819,6 @@ Group7.AddRoute(FieldVal107, Switch8.whichChoice);
 Transform439 := TTransformNode.Create;
 Transform439.Translation := Vector3(48, 3.399999999999995, 0);
 TouchSensor440 := TTouchSensorNode.Create;
-end;
-
-procedure InitMenuJinPart31;
-begin
 TouchSensor440.Description := 'TSJinLowerLipDepressor';
 TouchSensor440.X3DName := 'JinLowerLipDepressor_Sensor';
 Transform439.FdChildren.Add(TouchSensor440);
@@ -2093,6 +3839,10 @@ Text444.FontStyle := FontStyle445;
 Shape441.Geometry := Text444;
 Transform439.FdChildren.Add(Shape441);
 Shape446 := TShapeNode.Create;
+end;
+
+procedure InitMenuJinPart33;
+begin
 Appearance447 := TAppearanceNode.Create;
 Material448 := TMaterialNode.Create;
 Material448.DiffuseColor := Vector3(0, 0, 1);
@@ -2113,10 +3863,6 @@ Group7.AddRoute(FieldVal112, Switch8.whichChoice);
 Transform453 := TTransformNode.Create;
 Transform453.Translation := Vector3(48, 0.399999999999995, 0);
 TouchSensor454 := TTouchSensorNode.Create;
-end;
-
-procedure InitMenuJinPart32;
-begin
 TouchSensor454.Description := 'TSJinMouthStretch';
 TouchSensor454.X3DName := 'JinMouthStretch_Sensor';
 Transform453.FdChildren.Add(TouchSensor454);
@@ -2137,6 +3883,10 @@ Text458.FontStyle := FontStyle459;
 Shape455.Geometry := Text458;
 Transform453.FdChildren.Add(Shape455);
 Shape460 := TShapeNode.Create;
+end;
+
+procedure InitMenuJinPart34;
+begin
 Appearance461 := TAppearanceNode.Create;
 Material462 := TMaterialNode.Create;
 Material462.DiffuseColor := Vector3(0, 0, 1);
@@ -2157,10 +3907,6 @@ Group7.AddRoute(FieldVal117, Switch8.whichChoice);
 Transform467 := TTransformNode.Create;
 Transform467.Translation := Vector3(48, -2.6000000000000085, 0);
 TouchSensor468 := TTouchSensorNode.Create;
-end;
-
-procedure InitMenuJinPart33;
-begin
 TouchSensor468.Description := 'TSJinNasolabialDeepener';
 TouchSensor468.X3DName := 'JinNasolabialDeepener_Sensor';
 Transform467.FdChildren.Add(TouchSensor468);
@@ -2181,6 +3927,10 @@ Text472.FontStyle := FontStyle473;
 Shape469.Geometry := Text472;
 Transform467.FdChildren.Add(Shape469);
 Shape474 := TShapeNode.Create;
+end;
+
+procedure InitMenuJinPart35;
+begin
 Appearance475 := TAppearanceNode.Create;
 Material476 := TMaterialNode.Create;
 Material476.DiffuseColor := Vector3(0, 0, 1);
@@ -2201,10 +3951,6 @@ Group7.AddRoute(FieldVal122, Switch8.whichChoice);
 Transform481 := TTransformNode.Create;
 Transform481.Translation := Vector3(48, -5.6000000000000085, 0);
 TouchSensor482 := TTouchSensorNode.Create;
-end;
-
-procedure InitMenuJinPart34;
-begin
 TouchSensor482.Description := 'TSJinNoseWrinkler';
 TouchSensor482.X3DName := 'JinNoseWrinkler_Sensor';
 Transform481.FdChildren.Add(TouchSensor482);
@@ -2225,6 +3971,10 @@ Text486.FontStyle := FontStyle487;
 Shape483.Geometry := Text486;
 Transform481.FdChildren.Add(Shape483);
 Shape488 := TShapeNode.Create;
+end;
+
+procedure InitMenuJinPart36;
+begin
 Appearance489 := TAppearanceNode.Create;
 Material490 := TMaterialNode.Create;
 Material490.DiffuseColor := Vector3(0, 0, 1);
@@ -2245,10 +3995,6 @@ Group7.AddRoute(FieldVal127, Switch8.whichChoice);
 Transform495 := TTransformNode.Create;
 Transform495.Translation := Vector3(48, -8.600000000000009, 0);
 TouchSensor496 := TTouchSensorNode.Create;
-end;
-
-procedure InitMenuJinPart35;
-begin
 TouchSensor496.Description := 'TSJinOuterBrowRaiser';
 TouchSensor496.X3DName := 'JinOuterBrowRaiser_Sensor';
 Transform495.FdChildren.Add(TouchSensor496);
@@ -2269,6 +4015,10 @@ Text500.FontStyle := FontStyle501;
 Shape497.Geometry := Text500;
 Transform495.FdChildren.Add(Shape497);
 Shape502 := TShapeNode.Create;
+end;
+
+procedure InitMenuJinPart37;
+begin
 Appearance503 := TAppearanceNode.Create;
 Material504 := TMaterialNode.Create;
 Material504.DiffuseColor := Vector3(0, 0, 1);
@@ -2289,10 +4039,6 @@ Group7.AddRoute(FieldVal132, Switch8.whichChoice);
 Transform509 := TTransformNode.Create;
 Transform509.Translation := Vector3(48, -11.600000000000009, 0);
 TouchSensor510 := TTouchSensorNode.Create;
-end;
-
-procedure InitMenuJinPart36;
-begin
 TouchSensor510.Description := 'TSJinSlit';
 TouchSensor510.X3DName := 'JinSlit_Sensor';
 Transform509.FdChildren.Add(TouchSensor510);
@@ -2313,6 +4059,10 @@ Text514.FontStyle := FontStyle515;
 Shape511.Geometry := Text514;
 Transform509.FdChildren.Add(Shape511);
 Shape516 := TShapeNode.Create;
+end;
+
+procedure InitMenuJinPart38;
+begin
 Appearance517 := TAppearanceNode.Create;
 Material518 := TMaterialNode.Create;
 Material518.DiffuseColor := Vector3(0, 0, 1);
@@ -2333,10 +4083,6 @@ Group7.AddRoute(FieldVal137, Switch8.whichChoice);
 Transform523 := TTransformNode.Create;
 Transform523.Translation := Vector3(48, -14.600000000000001, 0);
 TouchSensor524 := TTouchSensorNode.Create;
-end;
-
-procedure InitMenuJinPart37;
-begin
 TouchSensor524.Description := 'TSJinSquint';
 TouchSensor524.X3DName := 'JinSquint_Sensor';
 Transform523.FdChildren.Add(TouchSensor524);
@@ -2357,6 +4103,10 @@ Text528.FontStyle := FontStyle529;
 Shape525.Geometry := Text528;
 Transform523.FdChildren.Add(Shape525);
 Shape530 := TShapeNode.Create;
+end;
+
+procedure InitMenuJinPart39;
+begin
 Appearance531 := TAppearanceNode.Create;
 Material532 := TMaterialNode.Create;
 Material532.DiffuseColor := Vector3(0, 0, 1);
@@ -2377,10 +4127,6 @@ Group7.AddRoute(FieldVal142, Switch8.whichChoice);
 Transform537 := TTransformNode.Create;
 Transform537.Translation := Vector3(48, -17.6, 0);
 TouchSensor538 := TTouchSensorNode.Create;
-end;
-
-procedure InitMenuJinPart38;
-begin
 TouchSensor538.Description := 'TSJinUpperLidRaiser';
 TouchSensor538.X3DName := 'JinUpperLidRaiser_Sensor';
 Transform537.FdChildren.Add(TouchSensor538);
@@ -2401,6 +4147,10 @@ Text542.FontStyle := FontStyle543;
 Shape539.Geometry := Text542;
 Transform537.FdChildren.Add(Shape539);
 Shape544 := TShapeNode.Create;
+end;
+
+procedure InitMenuJinPart40;
+begin
 Appearance545 := TAppearanceNode.Create;
 Material546 := TMaterialNode.Create;
 Material546.DiffuseColor := Vector3(0, 0, 1);
@@ -2421,10 +4171,6 @@ Group7.AddRoute(FieldVal147, Switch8.whichChoice);
 Transform551 := TTransformNode.Create;
 Transform551.Translation := Vector3(48, -20.6, 0);
 TouchSensor552 := TTouchSensorNode.Create;
-end;
-
-procedure InitMenuJinPart39;
-begin
 TouchSensor552.Description := 'TSJinUpperLipRaiser';
 TouchSensor552.X3DName := 'JinUpperLipRaiser_Sensor';
 Transform551.FdChildren.Add(TouchSensor552);
@@ -2445,6 +4191,10 @@ Text556.FontStyle := FontStyle557;
 Shape553.Geometry := Text556;
 Transform551.FdChildren.Add(Shape553);
 Shape558 := TShapeNode.Create;
+end;
+
+procedure InitMenuJinPart41;
+begin
 Appearance559 := TAppearanceNode.Create;
 Material560 := TMaterialNode.Create;
 Material560.DiffuseColor := Vector3(0, 0, 1);
@@ -2465,10 +4215,6 @@ Group7.AddRoute(FieldVal152, Switch8.whichChoice);
 Transform565 := TTransformNode.Create;
 Transform565.Translation := Vector3(48, -23.599999999999994, 0);
 TouchSensor566 := TTouchSensorNode.Create;
-end;
-
-procedure InitMenuJinPart40;
-begin
 TouchSensor566.Description := 'TSJinWink';
 TouchSensor566.X3DName := 'JinWink_Sensor';
 Transform565.FdChildren.Add(TouchSensor566);
@@ -2489,6 +4235,10 @@ Text570.FontStyle := FontStyle571;
 Shape567.Geometry := Text570;
 Transform565.FdChildren.Add(Shape567);
 Shape572 := TShapeNode.Create;
+end;
+
+procedure InitMenuJinPart42;
+begin
 Appearance573 := TAppearanceNode.Create;
 Material574 := TMaterialNode.Create;
 Material574.DiffuseColor := Vector3(0, 0, 1);
@@ -2553,8 +4303,104 @@ begin
   InitMenuJinPart38;
   InitMenuJinPart39;
   InitMenuJinPart40;
+  InitMenuJinPart41;
+  InitMenuJinPart42;
   Result := X3D0;
 end;
 
+procedure RegisterMenuJinScripts(const Scene: TCastleSceneCore);
 begin
+  if CompiledScript10 <> nil then
+    CompiledScript10.RegisterHandlers(Scene);
+  if CompiledScript15 <> nil then
+    CompiledScript15.RegisterHandlers(Scene);
+  if CompiledScript20 <> nil then
+    CompiledScript20.RegisterHandlers(Scene);
+  if CompiledScript25 <> nil then
+    CompiledScript25.RegisterHandlers(Scene);
+  if CompiledScript30 <> nil then
+    CompiledScript30.RegisterHandlers(Scene);
+  if CompiledScript35 <> nil then
+    CompiledScript35.RegisterHandlers(Scene);
+  if CompiledScript40 <> nil then
+    CompiledScript40.RegisterHandlers(Scene);
+  if CompiledScript45 <> nil then
+    CompiledScript45.RegisterHandlers(Scene);
+  if CompiledScript50 <> nil then
+    CompiledScript50.RegisterHandlers(Scene);
+  if CompiledScript55 <> nil then
+    CompiledScript55.RegisterHandlers(Scene);
+  if CompiledScript60 <> nil then
+    CompiledScript60.RegisterHandlers(Scene);
+  if CompiledScript65 <> nil then
+    CompiledScript65.RegisterHandlers(Scene);
+  if CompiledScript70 <> nil then
+    CompiledScript70.RegisterHandlers(Scene);
+  if CompiledScript75 <> nil then
+    CompiledScript75.RegisterHandlers(Scene);
+  if CompiledScript80 <> nil then
+    CompiledScript80.RegisterHandlers(Scene);
+  if CompiledScript85 <> nil then
+    CompiledScript85.RegisterHandlers(Scene);
+  if CompiledScript90 <> nil then
+    CompiledScript90.RegisterHandlers(Scene);
+  if CompiledScript95 <> nil then
+    CompiledScript95.RegisterHandlers(Scene);
+  if CompiledScript100 <> nil then
+    CompiledScript100.RegisterHandlers(Scene);
+  if CompiledScript105 <> nil then
+    CompiledScript105.RegisterHandlers(Scene);
+  if CompiledScript110 <> nil then
+    CompiledScript110.RegisterHandlers(Scene);
+  if CompiledScript115 <> nil then
+    CompiledScript115.RegisterHandlers(Scene);
+  if CompiledScript120 <> nil then
+    CompiledScript120.RegisterHandlers(Scene);
+  if CompiledScript125 <> nil then
+    CompiledScript125.RegisterHandlers(Scene);
+  if CompiledScript130 <> nil then
+    CompiledScript130.RegisterHandlers(Scene);
+  if CompiledScript135 <> nil then
+    CompiledScript135.RegisterHandlers(Scene);
+  if CompiledScript140 <> nil then
+    CompiledScript140.RegisterHandlers(Scene);
+  if CompiledScript145 <> nil then
+    CompiledScript145.RegisterHandlers(Scene);
+  if CompiledScript150 <> nil then
+    CompiledScript150.RegisterHandlers(Scene);
+  if CompiledScript155 <> nil then
+    CompiledScript155.RegisterHandlers(Scene);
+end;
+
+finalization
+  FreeAndNil(CompiledScript10);
+  FreeAndNil(CompiledScript15);
+  FreeAndNil(CompiledScript20);
+  FreeAndNil(CompiledScript25);
+  FreeAndNil(CompiledScript30);
+  FreeAndNil(CompiledScript35);
+  FreeAndNil(CompiledScript40);
+  FreeAndNil(CompiledScript45);
+  FreeAndNil(CompiledScript50);
+  FreeAndNil(CompiledScript55);
+  FreeAndNil(CompiledScript60);
+  FreeAndNil(CompiledScript65);
+  FreeAndNil(CompiledScript70);
+  FreeAndNil(CompiledScript75);
+  FreeAndNil(CompiledScript80);
+  FreeAndNil(CompiledScript85);
+  FreeAndNil(CompiledScript90);
+  FreeAndNil(CompiledScript95);
+  FreeAndNil(CompiledScript100);
+  FreeAndNil(CompiledScript105);
+  FreeAndNil(CompiledScript110);
+  FreeAndNil(CompiledScript115);
+  FreeAndNil(CompiledScript120);
+  FreeAndNil(CompiledScript125);
+  FreeAndNil(CompiledScript130);
+  FreeAndNil(CompiledScript135);
+  FreeAndNil(CompiledScript140);
+  FreeAndNil(CompiledScript145);
+  FreeAndNil(CompiledScript150);
+  FreeAndNil(CompiledScript155);
 end.

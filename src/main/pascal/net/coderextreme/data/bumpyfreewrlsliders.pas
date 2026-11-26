@@ -2,13 +2,14 @@ unit bumpyfreewrlsliders;
 
 interface
 
-uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported, CastleSceneCore;
 
 function Createbumpyfreewrlsliders: TX3DRootNode;
+procedure RegisterbumpyfreewrlslidersScripts(const Scene: TCastleSceneCore);
 
 implementation
 
-uses Classes, SysUtils, X3DLoad, CastleVectors;
+uses Classes, SysUtils, X3DLoad, CastleVectors, Math, X3DTime;
 
 function CreateEmptyPrototype(const AName: String): TX3DPrototype;
 var
@@ -33,6 +34,34 @@ begin
     FreeAndNil(Stream);
   end;
 end;
+
+type
+  TScript134Script = class
+  private
+    FprotoScale: Single;
+    FField_protoScale: TSFFloat;
+    FDirty_protoScale: Boolean;
+    Fshader: TX3DNode;
+    FField_shader: TSFNode;
+    FDirty_shader: Boolean;
+    FnewTranslation: TVector3;
+    FField_newTranslation: TSFVec3f;
+    FDirty_newTranslation: Boolean;
+    FprotoValue_changed: Single;
+    FField_protoValue_changed: TSFFloat;
+    FDirty_protoValue_changed: Boolean;
+    FprotoNumber_changed: array of String;
+    FField_protoNumber_changed: TMFString;
+    FDirty_protoNumber_changed: Boolean;
+    FprotoParameterName: String;
+    FField_protoParameterName: TSFString;
+    FDirty_protoParameterName: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AField_protoScale: TSFFloat; const AField_shader: TSFNode; const AField_newTranslation: TSFVec3f; const AField_protoValue_changed: TSFFloat; const AField_protoNumber_changed: TMFString; const AField_protoParameterName: TSFString);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+  end;
 
 var
   X3D0: TX3DRootNode;
@@ -157,6 +186,7 @@ var
   FieldVal138: TSFFloat;
   FieldVal139: TMFString;
   FieldVal140: TSFString;
+  CompiledScript134: TScript134Script;
   ProtoInstance144: TX3DPrototypeNode;
   ProtoInstance154: TX3DPrototypeNode;
   ProtoInstance164: TX3DPrototypeNode;
@@ -165,6 +195,90 @@ var
   ProtoInstance194: TX3DPrototypeNode;
   Layout204: TLayoutNode;
   Viewport205: TViewportNode;
+
+constructor TScript134Script.Create(const AField_protoScale: TSFFloat; const AField_shader: TSFNode; const AField_newTranslation: TSFVec3f; const AField_protoValue_changed: TSFFloat; const AField_protoNumber_changed: TMFString; const AField_protoParameterName: TSFString);
+begin
+  inherited Create;
+  FprotoScale := 0.0;
+  FField_protoScale := nil;
+  FDirty_protoScale := False;
+  Fshader := nil;
+  FField_shader := nil;
+  FDirty_shader := False;
+  FnewTranslation := Vector3(0, 0, 0);
+  FField_newTranslation := nil;
+  FDirty_newTranslation := False;
+  FprotoValue_changed := 0.0;
+  FField_protoValue_changed := nil;
+  FDirty_protoValue_changed := False;
+  FprotoNumber_changed := 0;
+  FField_protoNumber_changed := nil;
+  FDirty_protoNumber_changed := False;
+  FprotoParameterName := '';
+  FField_protoParameterName := nil;
+  FDirty_protoParameterName := False;
+  FField_protoScale := AField_protoScale;
+  if AField_protoScale <> nil then FprotoScale := AField_protoScale.Value;
+  FField_shader := AField_shader;
+  if AField_shader <> nil then Fshader := AField_shader.Value;
+  FField_newTranslation := AField_newTranslation;
+  if AField_newTranslation <> nil then FnewTranslation := AField_newTranslation.Value;
+  FField_protoValue_changed := AField_protoValue_changed;
+  if AField_protoValue_changed <> nil then FprotoValue_changed := AField_protoValue_changed.Value;
+  FField_protoNumber_changed := AField_protoNumber_changed;
+  if AField_protoNumber_changed <> nil then FprotoNumber_changed := AField_protoNumber_changed.Value;
+  FField_protoParameterName := AField_protoParameterName;
+  if AField_protoParameterName <> nil then FprotoParameterName := AField_protoParameterName.Value;
+end;
+
+destructor TScript134Script.Destroy;
+begin
+  inherited Destroy;
+end;
+
+procedure TScript134Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_protoScale then
+  begin
+    FDirty_protoScale := False;
+    if FField_protoScale <> nil then
+      FField_protoScale.Send(FprotoScale, Time);
+  end;
+  if FDirty_shader then
+  begin
+    FDirty_shader := False;
+    if FField_shader <> nil then
+      FField_shader.Send(Fshader, Time);
+  end;
+  if FDirty_newTranslation then
+  begin
+    FDirty_newTranslation := False;
+    if FField_newTranslation <> nil then
+      FField_newTranslation.Send(FnewTranslation, Time);
+  end;
+  if FDirty_protoValue_changed then
+  begin
+    FDirty_protoValue_changed := False;
+    if FField_protoValue_changed <> nil then
+      FField_protoValue_changed.Send(FprotoValue_changed, Time);
+  end;
+  if FDirty_protoNumber_changed then
+  begin
+    FDirty_protoNumber_changed := False;
+    if FField_protoNumber_changed <> nil then
+      FField_protoNumber_changed.Send(FprotoNumber_changed, Time);
+  end;
+  if FDirty_protoParameterName then
+  begin
+    FDirty_protoParameterName := False;
+    if FField_protoParameterName <> nil then
+      FField_protoParameterName.Send(FprotoParameterName, Time);
+  end;
+end;
+
+procedure TScript134Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+end;
 
 procedure InitbumpyfreewrlslidersPart0;
 begin
@@ -346,26 +460,26 @@ procedure InitbumpyfreewrlslidersPart4;
 begin
 ImageTexture63 := TImageTextureNode.Create;
 ImageTexture63.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_back.png', 'https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png']);
-ComposedCubeMapTexture62.FdBackTexture.Set(ImageTexture63);
+ComposedCubeMapTexture62.BackTexture := ImageTexture63;
 ImageTexture64 := TImageTextureNode.Create;
 ImageTexture64.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_bottom.png', 'https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png']);
-ComposedCubeMapTexture62.FdBottomTexture.Set(ImageTexture64);
+ComposedCubeMapTexture62.BottomTexture := ImageTexture64;
 ImageTexture65 := TImageTextureNode.Create;
 ImageTexture65.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_front.png', 'https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png']);
-ComposedCubeMapTexture62.FdFrontTexture.Set(ImageTexture65);
+ComposedCubeMapTexture62.FrontTexture := ImageTexture65;
 ImageTexture66 := TImageTextureNode.Create;
 ImageTexture66.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_left.png', 'https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png']);
-ComposedCubeMapTexture62.FdLeftTexture.Set(ImageTexture66);
+ComposedCubeMapTexture62.LeftTexture := ImageTexture66;
 ImageTexture67 := TImageTextureNode.Create;
 ImageTexture67.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_right.png', 'https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png']);
-ComposedCubeMapTexture62.FdRightTexture.Set(ImageTexture67);
+ComposedCubeMapTexture62.RightTexture := ImageTexture67;
 ImageTexture68 := TImageTextureNode.Create;
 ImageTexture68.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_top.png', 'https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png']);
-ComposedCubeMapTexture62.FdTopTexture.Set(ImageTexture68);
+ComposedCubeMapTexture62.TopTexture := ImageTexture68;
 Appearance60.Texture := ComposedCubeMapTexture62;
 ComposedShader69 := TComposedShaderNode.Create;
 ComposedShader69.X3DName := 'freewrlShader';
-ComposedShader69.Language := 'GLSL';
+ComposedShader69.Language := slGLSL;
 FieldVal70 := TSFInt32.Create(ComposedShader69, True, 'fw_textureCoordGenType', 0);
 ComposedShader69.AddCustomFieldOrEvent(FieldVal70);
 FieldVal71 := TSFVec3f.Create(ComposedShader69, False, 'chromaticDispertion', Vector3(0.98, 1, 1.033));
@@ -396,14 +510,14 @@ ComposedShader69.AddCustomFieldOrEvent(FieldVal80);
 { <ComposedCubeMapTexture USE="texture"/> }
 { </field> }
 ShaderPart81 := TShaderPartNode.Create;
-ShaderPart81.FdType.Value := 'VERTEX';
+ShaderPart81.ShaderType := stVertex;
 ShaderPart81.FieldOrEvent('url', True).IsClauseNamesAdd('vertex');
-ComposedShader69.Parts := ShaderPart81;
+ComposedShader69.FdParts.Add(ShaderPart81);
 ShaderPart82 := TShaderPartNode.Create;
-ShaderPart82.FdType.Value := 'FRAGMENT';
+ShaderPart82.ShaderType := stFragment;
 ShaderPart82.FieldOrEvent('url', True).IsClauseNamesAdd('fragment');
-ComposedShader69.Parts := ShaderPart82;
-Appearance60.AddChildren([ComposedShader69]);
+ComposedShader69.FdParts.Add(ShaderPart82);
+Appearance60.FdShaders.Add(ComposedShader69);
 { <ComposedShader DEF="freewrlShader" language="GLSL"> }
 { <field name='fw_textureCoordGenType' accessType='inputOutput' type='SFInt32' value='0'></field> }
 { <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field> }
@@ -552,7 +666,7 @@ FieldDecl110 := TX3DInterfaceDeclaration.Create(nil);
 FieldDecl110.FieldOrEvent := FieldVal110;
 FieldVal110.ParentInterfaceDeclaration := FieldDecl110;
 ProtoDeclare105.InterfaceDeclarations.Add(FieldDecl110);
-FieldVal111 := TMFString.Create(nil, True, 'textString', (['a=']));
+FieldVal111 := TMFString.Create(nil, True, 'textString', ['a=']);
 FieldDecl111 := TX3DInterfaceDeclaration.Create(nil);
 FieldDecl111.FieldOrEvent := FieldVal111;
 FieldVal111.ParentInterfaceDeclaration := FieldDecl111;
@@ -647,7 +761,7 @@ FieldVal137 := TSFVec3f.Create(Script134, True, 'newTranslation', Vector3(1, 1, 
 Script134.AddCustomFieldOrEvent(FieldVal137);
 FieldVal138 := TSFFloat.Create(Script134, True, 'protoValue_changed', 1);
 Script134.AddCustomFieldOrEvent(FieldVal138);
-FieldVal139 := TMFString.Create(Script134, True, 'protoNumber_changed', (['0.0']));
+FieldVal139 := TMFString.Create(Script134, True, 'protoNumber_changed', ['0.0']);
 end;
 
 procedure InitbumpyfreewrlslidersPart11;
@@ -658,26 +772,17 @@ Script134.AddCustomFieldOrEvent(FieldVal140);
 Script134.FieldOrEvent('protoScale', True).IsClauseNamesAdd('parameterScale');
 Script134.FieldOrEvent('protoParameterName', True).IsClauseNamesAdd('parameterName');
 Script134.FieldOrEvent('shader', True).IsClauseNamesAdd('shaderNode');
-Script134.SetSourceCode('ecmascript:' + LineEnding +
-  '	const newTranslation = function(Value) {' + LineEnding +
-  '	    protoValue_changed = Value[0] * protoScale;' + LineEnding +
-  '	    protoNumber_changed = new MFString(protoValue_changed.toFixed(2).toString());' + LineEnding +
-  '	    Browser.println("In newTranslation:");' + LineEnding +
-  '	    Browser.println(shader);' + LineEnding +
-  '	    Browser.println(Value[0]);' + LineEnding +
-  '	    Browser.println(Value.x);' + LineEnding +
-  '	    Browser.println(protoScale);' + LineEnding +
-  '	    Browser.println(Value[0] * protoScale);' + LineEnding +
-  '	    Browser.println(protoParameterName);' + LineEnding +
-  '					// shader[protoParameterName] = Value[0] * protoScale;' + LineEnding +
-  '	};');
+FreeAndNil(CompiledScript134);
+CompiledScript134 := TScript134Script.Create(FieldVal135, FieldVal136, FieldVal137, FieldVal138, FieldVal139, FieldVal140);
+Script134.SetUrl(['compiled:' + LineEnding +
+  '']);
 Group116.FdChildren.Add(Script134);
 { ROUTE protoSensor.translation_changed TO protoTransform.set_translation }
 Group116.AddRoute(PlaneSensor119.EventTranslation_changed, Transform118.FdTranslation.EventIn);
 { ROUTE protoSensor.translation_changed TO protoValueTransformerScript.newTranslation }
-Group116.AddRoute(PlaneSensor119.EventTranslation_changed, FieldVal137);
+Group116.AddRoute(PlaneSensor119.EventTranslation_changed, FieldVal137.EventIn);
 { ROUTE protoValueTransformerScript.protoNumber_changed TO protoNumber.string }
-Group116.AddRoute(FieldVal139, Text130.string);
+Group116.AddRoute(FieldVal139.EventOut, Text130.string);
 ProtoDeclare105.Node.AddChildren([Group116]);
 X3D0.AddPrototype(ProtoDeclare105);
 ProtoInstance144 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare105);
@@ -702,12 +807,12 @@ ProtoInstance154.X3DName := 'bPI';
 (ProtoInstance154.Field('parameterScale') as TSFFloat).Value := 30;
 (ProtoInstance154.Field('shaderNode') as TSFNode).Value := ComposedShader69;
 LayoutLayer92.FdChildren.Add(ProtoInstance154.Instantiate);
-ProtoInstance164 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare105);
-ProtoInstance164.X3DName := 'cPI';
 end;
 
 procedure InitbumpyfreewrlslidersPart12;
 begin
+ProtoInstance164 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare105);
+ProtoInstance164.X3DName := 'cPI';
 (ProtoInstance164.Field('sliderTranslation') as TSFVec3f).Value := Vector3(0, 0.1, 0);
 (ProtoInstance164.Field('transformTranslation') as TSFVec3f).Value := Vector3(0, 0, 0.1);
 (ProtoInstance164.Field('sensorTranslation') as TSFVec3f).Value := Vector3(0, 0, 0);
@@ -746,12 +851,12 @@ ProtoInstance194.X3DName := 'pdeltaPI';
 (ProtoInstance194.Field('sensorTranslation') as TSFVec3f).Value := Vector3(0, 0, 0);
 (ProtoInstance194.Field('numberTranslation') as TSFVec3f).Value := Vector3(0.8, 0, 0);
 (ProtoInstance194.Field('textString') as TMFString).Send(['pdelta=']);
-(ProtoInstance194.Field('parameterName') as TSFString).Value := 'pdelta';
-(ProtoInstance194.Field('parameterScale') as TSFFloat).Value := 6.28;
 end;
 
 procedure InitbumpyfreewrlslidersPart13;
 begin
+(ProtoInstance194.Field('parameterName') as TSFString).Value := 'pdelta';
+(ProtoInstance194.Field('parameterScale') as TSFFloat).Value := 6.28;
 (ProtoInstance194.Field('shaderNode') as TSFNode).Value := ComposedShader69;
 LayoutLayer92.FdChildren.Add(ProtoInstance194.Instantiate);
 Layout204 := TLayoutNode.Create;
@@ -784,5 +889,12 @@ begin
   Result := X3D0;
 end;
 
+procedure RegisterbumpyfreewrlslidersScripts(const Scene: TCastleSceneCore);
 begin
+  if CompiledScript134 <> nil then
+    CompiledScript134.RegisterHandlers(Scene);
+end;
+
+finalization
+  FreeAndNil(CompiledScript134);
 end.

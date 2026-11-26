@@ -2,13 +2,14 @@ unit pp3;
 
 interface
 
-uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported, CastleSceneCore;
 
 function Createpp3: TX3DRootNode;
+procedure Registerpp3Scripts(const Scene: TCastleSceneCore);
 
 implementation
 
-uses Classes, SysUtils, X3DLoad, CastleVectors;
+uses Classes, SysUtils, X3DLoad, CastleVectors, Math, X3DTime;
 
 function CreateEmptyPrototype(const AName: String): TX3DPrototype;
 var
@@ -33,6 +34,52 @@ begin
     FreeAndNil(Stream);
   end;
 end;
+
+type
+  TScript60Script = class
+  private
+    Frightlines: array of String;
+    FEvent_rightlines: TX3DEvent;
+    FBack_rightlines: TMFString;
+    FDirty_rightlines: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_rightlines: TX3DEvent);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Initialize(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_rightstring(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript63Script = class
+  private
+    Fuplines: array of String;
+    FEvent_uplines: TX3DEvent;
+    FBack_uplines: TMFString;
+    FDirty_uplines: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_uplines: TX3DEvent);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Initialize(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_upstring(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript66Script = class
+  private
+    Fcenterlines: array of String;
+    FEvent_centerlines: TX3DEvent;
+    FBack_centerlines: TMFString;
+    FDirty_centerlines: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_centerlines: TX3DEvent);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Initialize(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_centerstring(Value: TX3DField; const Time: TX3DTime);
+  end;
 
 var
   X3D0: TX3DRootNode;
@@ -86,12 +133,15 @@ var
   Script60: TScriptNode;
   FieldVal61: TX3DEvent;
   FieldVal62: TX3DEvent;
+  CompiledScript60: TScript60Script;
   Script63: TScriptNode;
   FieldVal64: TX3DEvent;
   FieldVal65: TX3DEvent;
+  CompiledScript63: TScript63Script;
   Script66: TScriptNode;
   FieldVal67: TX3DEvent;
   FieldVal68: TX3DEvent;
+  CompiledScript66: TScript66Script;
   NavigationInfo78: TNavigationInfoNode;
   Viewpoint79: TViewpointNode;
   Transform80: TTransformNode;
@@ -100,6 +150,147 @@ var
   ProtoInstance83: TX3DPrototypeNode;
   Transform84: TTransformNode;
   ProtoInstance85: TX3DPrototypeNode;
+
+constructor TScript60Script.Create(const AEvent_rightlines: TX3DEvent);
+begin
+  inherited Create;
+  Frightlines := 0;
+  FEvent_rightlines := nil;
+  FBack_rightlines := TMFString.Create(nil, False, 'rightlines', 0);
+  FDirty_rightlines := False;
+  FEvent_rightlines := AEvent_rightlines;
+end;
+
+destructor TScript60Script.Destroy;
+begin
+  FreeAndNil(FBack_rightlines);
+  inherited Destroy;
+end;
+
+procedure TScript60Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_rightlines then
+  begin
+    FDirty_rightlines := False;
+    if FEvent_rightlines <> nil then
+    begin
+      FBack_rightlines.Value := Frightlines;
+      FEvent_rightlines.Send(FBack_rightlines, Time);
+    end;
+  end;
+end;
+
+procedure TScript60Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script60_initialize', {$ifdef FPC}@{$endif}Initialize);
+  Scene.RegisterCompiledScript('Script60_set_rightstring', {$ifdef FPC}@{$endif}Set_rightstring);
+end;
+
+procedure TScript60Script.Initialize(Value: TX3DField; const Time: TX3DTime);
+begin
+  Frightlines := ['']; FDirty_rightlines := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript60Script.Set_rightstring(Value: TX3DField; const Time: TX3DTime);
+begin
+  Frightlines := [(Value as TSFString).Value]; FDirty_rightlines := True;
+  FlushOutputs(Time);
+end;
+
+constructor TScript63Script.Create(const AEvent_uplines: TX3DEvent);
+begin
+  inherited Create;
+  Fuplines := 0;
+  FEvent_uplines := nil;
+  FBack_uplines := TMFString.Create(nil, False, 'uplines', 0);
+  FDirty_uplines := False;
+  FEvent_uplines := AEvent_uplines;
+end;
+
+destructor TScript63Script.Destroy;
+begin
+  FreeAndNil(FBack_uplines);
+  inherited Destroy;
+end;
+
+procedure TScript63Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_uplines then
+  begin
+    FDirty_uplines := False;
+    if FEvent_uplines <> nil then
+    begin
+      FBack_uplines.Value := Fuplines;
+      FEvent_uplines.Send(FBack_uplines, Time);
+    end;
+  end;
+end;
+
+procedure TScript63Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script63_initialize', {$ifdef FPC}@{$endif}Initialize);
+  Scene.RegisterCompiledScript('Script63_set_upstring', {$ifdef FPC}@{$endif}Set_upstring);
+end;
+
+procedure TScript63Script.Initialize(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fuplines := ['']; FDirty_uplines := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript63Script.Set_upstring(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fuplines := [(Value as TSFString).Value]; FDirty_uplines := True;
+  FlushOutputs(Time);
+end;
+
+constructor TScript66Script.Create(const AEvent_centerlines: TX3DEvent);
+begin
+  inherited Create;
+  Fcenterlines := 0;
+  FEvent_centerlines := nil;
+  FBack_centerlines := TMFString.Create(nil, False, 'centerlines', 0);
+  FDirty_centerlines := False;
+  FEvent_centerlines := AEvent_centerlines;
+end;
+
+destructor TScript66Script.Destroy;
+begin
+  FreeAndNil(FBack_centerlines);
+  inherited Destroy;
+end;
+
+procedure TScript66Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_centerlines then
+  begin
+    FDirty_centerlines := False;
+    if FEvent_centerlines <> nil then
+    begin
+      FBack_centerlines.Value := Fcenterlines;
+      FEvent_centerlines.Send(FBack_centerlines, Time);
+    end;
+  end;
+end;
+
+procedure TScript66Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script66_initialize', {$ifdef FPC}@{$endif}Initialize);
+  Scene.RegisterCompiledScript('Script66_set_centerstring', {$ifdef FPC}@{$endif}Set_centerstring);
+end;
+
+procedure TScript66Script.Initialize(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fcenterlines := ['']; FDirty_centerlines := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript66Script.Set_centerstring(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fcenterlines := [(Value as TSFString).Value]; FDirty_centerlines := True;
+  FlushOutputs(Time);
+end;
 
 procedure Initpp3Part0;
 begin
@@ -287,15 +478,11 @@ FieldVal61 := TSFString.CreateEvent(Script60, 'set_rightstring', True);
 Script60.AddCustomFieldOrEvent(FieldVal61);
 FieldVal62 := TMFString.CreateEvent(Script60, 'rightlines', False);
 Script60.AddCustomFieldOrEvent(FieldVal62);
-Script60.SetSourceCode('ecmascript:' + LineEnding +
-  '' + LineEnding +
-  'function initialize() {' + LineEnding +
-  '	rightlines = new MFString("");' + LineEnding +
-  '}' + LineEnding +
-  '' + LineEnding +
-  'function set_rightstring(rightstr) {' + LineEnding +
-  '	rightlines = new MFString(rightstr);' + LineEnding +
-  '}');
+FreeAndNil(CompiledScript60);
+CompiledScript60 := TScript60Script.Create(FieldVal62);
+Script60.SetUrl(['compiled:' + LineEnding +
+  'initialize=Script60_initialize' + LineEnding +
+  'set_rightstring=Script60_set_rightstring']);
 ProtoDeclare11.Node.AddChildren([Script60]);
 Script63 := TScriptNode.Create;
 Script63.X3DName := 'UpSingleToMultiString';
@@ -303,15 +490,11 @@ FieldVal64 := TSFString.CreateEvent(Script63, 'set_upstring', True);
 Script63.AddCustomFieldOrEvent(FieldVal64);
 FieldVal65 := TMFString.CreateEvent(Script63, 'uplines', False);
 Script63.AddCustomFieldOrEvent(FieldVal65);
-Script63.SetSourceCode('ecmascript:' + LineEnding +
-  '' + LineEnding +
-  'function initialize() {' + LineEnding +
-  '	uplines = new MFString("");' + LineEnding +
-  '}' + LineEnding +
-  '' + LineEnding +
-  'function set_upstring(upstr) {' + LineEnding +
-  '	uplines = new MFString(upstr);' + LineEnding +
-  '}');
+FreeAndNil(CompiledScript63);
+CompiledScript63 := TScript63Script.Create(FieldVal65);
+Script63.SetUrl(['compiled:' + LineEnding +
+  'initialize=Script63_initialize' + LineEnding +
+  'set_upstring=Script63_set_upstring']);
 ProtoDeclare11.Node.AddChildren([Script63]);
 Script66 := TScriptNode.Create;
 Script66.X3DName := 'CenterSingleToMultiString';
@@ -319,38 +502,34 @@ FieldVal67 := TSFString.CreateEvent(Script66, 'set_centerstring', True);
 Script66.AddCustomFieldOrEvent(FieldVal67);
 FieldVal68 := TMFString.CreateEvent(Script66, 'centerlines', False);
 Script66.AddCustomFieldOrEvent(FieldVal68);
-Script66.SetSourceCode('ecmascript:' + LineEnding +
-  '' + LineEnding +
-  'function initialize() {' + LineEnding +
-  '	centerlines = new MFString("");' + LineEnding +
-  '}' + LineEnding +
-  '' + LineEnding +
-  'function set_centerstring(centerstr) {' + LineEnding +
-  '	centerlines = new MFString(centerstr);' + LineEnding +
-  '}');
+FreeAndNil(CompiledScript66);
+CompiledScript66 := TScript66Script.Create(FieldVal68);
+Script66.SetUrl(['compiled:' + LineEnding +
+  'initialize=Script66_initialize' + LineEnding +
+  'set_centerstring=Script66_set_centerstring']);
 ProtoDeclare11.Node.AddChildren([Script66]);
 { ROUTE CenterSensor.enteredText TO CenterSingleToMultiString.set_centerstring }
-ProtoBody12.AddRoute(StringSensor58.EventEnteredText, FieldVal67);
+ProtoDeclare11.Node.AddRoute(StringSensor58.EventEnteredText, FieldVal67);
 { ROUTE CenterSingleToMultiString.centerlines TO CenterString.set_string }
-ProtoBody12.AddRoute(FieldVal68, Text57.EventSet_string);
+ProtoDeclare11.Node.AddRoute(FieldVal68, Text57.EventSet_string);
 { ROUTE CenterTouch.isOver TO CenterSensor.set_enabled }
-ProtoBody12.AddRoute(TouchSensor59.EventIsOver, StringSensor58.EventSet_enabled);
+ProtoDeclare11.Node.AddRoute(TouchSensor59.EventIsOver, StringSensor58.EventSet_enabled);
 { ROUTE RightSensor.enteredText TO RightSingleToMultiString.set_rightstring }
-ProtoBody12.AddRoute(StringSensor29.EventEnteredText, FieldVal61);
-{ ROUTE RightSingleToMultiString.rightlines TO RightString.set_string }
-ProtoBody12.AddRoute(FieldVal62, Text28.EventSet_string);
-{ ROUTE RightTouch.isOver TO RightSensor.set_enabled }
-ProtoBody12.AddRoute(TouchSensor30.EventIsOver, StringSensor29.EventSet_enabled);
-{ ROUTE UpSensor.enteredText TO UpSingleToMultiString.set_upstring }
-ProtoBody12.AddRoute(StringSensor41.EventEnteredText, FieldVal64);
+ProtoDeclare11.Node.AddRoute(StringSensor29.EventEnteredText, FieldVal61);
 end;
 
 procedure Initpp3Part5;
 begin
+{ ROUTE RightSingleToMultiString.rightlines TO RightString.set_string }
+ProtoDeclare11.Node.AddRoute(FieldVal62, Text28.EventSet_string);
+{ ROUTE RightTouch.isOver TO RightSensor.set_enabled }
+ProtoDeclare11.Node.AddRoute(TouchSensor30.EventIsOver, StringSensor29.EventSet_enabled);
+{ ROUTE UpSensor.enteredText TO UpSingleToMultiString.set_upstring }
+ProtoDeclare11.Node.AddRoute(StringSensor41.EventEnteredText, FieldVal64);
 { ROUTE UpSingleToMultiString.uplines TO UpString.set_string }
-ProtoBody12.AddRoute(FieldVal65, Text40.EventSet_string);
+ProtoDeclare11.Node.AddRoute(FieldVal65, Text40.EventSet_string);
 { ROUTE UpTouch.isOver TO UpSensor.set_enabled }
-ProtoBody12.AddRoute(TouchSensor42.EventIsOver, StringSensor41.EventSet_enabled);
+ProtoDeclare11.Node.AddRoute(TouchSensor42.EventIsOver, StringSensor41.EventSet_enabled);
 X3D0.AddPrototype(ProtoDeclare11);
 NavigationInfo78 := TNavigationInfoNode.Create;
 Group10.FdChildren.Add(NavigationInfo78);
@@ -387,5 +566,18 @@ begin
   Result := X3D0;
 end;
 
+procedure Registerpp3Scripts(const Scene: TCastleSceneCore);
 begin
+  if CompiledScript60 <> nil then
+    CompiledScript60.RegisterHandlers(Scene);
+  if CompiledScript63 <> nil then
+    CompiledScript63.RegisterHandlers(Scene);
+  if CompiledScript66 <> nil then
+    CompiledScript66.RegisterHandlers(Scene);
+end;
+
+finalization
+  FreeAndNil(CompiledScript60);
+  FreeAndNil(CompiledScript63);
+  FreeAndNil(CompiledScript66);
 end.

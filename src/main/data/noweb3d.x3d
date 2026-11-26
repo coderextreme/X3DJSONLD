@@ -81,9 +81,7 @@
             <field accessType='outputOnly' type='SFFloat' name='d'/>
             <field accessType='outputOnly' type='SFFloat' name='tdelta'/>
             <field accessType='outputOnly' type='SFFloat' name='pdelta'/>
-<![CDATA[
-  
-ecmascript:
+<![CDATA[ecmascript:
 			function initialize() {
 			    translation = new SFVec3f(0, 0, 0);
 			    velocity = new SFVec3f(

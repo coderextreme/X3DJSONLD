@@ -2,13 +2,14 @@ unit Menu;
 
 interface
 
-uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported, CastleSceneCore;
 
 function CreateMenu: TX3DRootNode;
+procedure RegisterMenuScripts(const Scene: TCastleSceneCore);
 
 implementation
 
-uses Classes, SysUtils, X3DLoad, CastleVectors;
+uses Classes, SysUtils, X3DLoad, CastleVectors, Math, X3DTime;
 
 function CreateEmptyPrototype(const AName: String): TX3DPrototype;
 var
@@ -33,6 +34,27 @@ begin
     FreeAndNil(Stream);
   end;
 end;
+
+type
+  TScript55Script = class
+  private
+    FmenuItems: array of String;
+    Fselection: Int32;
+    FEvent_selection: TX3DEvent;
+    FBack_selection: TSFInt32;
+    FDirty_selection: Boolean;
+    Fspacing: Single;
+    Fsize: Single;
+    FmenuCenterY: Single;
+    FitemHeight: Single;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AField_menuItems: TMFString; const AEvent_selection: TX3DEvent; const AField_spacing: TSFFloat; const AField_size: TSFFloat; const AField_menuCenterY: TSFFloat; const AField_itemHeight: TSFFloat);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Initialize(Value: TX3DField; const Time: TX3DTime);
+    procedure TouchPoint(Value: TX3DField; const Time: TX3DTime);
+  end;
 
 var
   X3D0: TX3DRootNode;
@@ -93,7 +115,80 @@ var
   FieldVal60: TSFFloat;
   FieldVal61: TSFFloat;
   FieldVal62: TSFFloat;
+  CompiledScript55: TScript55Script;
   ProtoInstance65: TX3DPrototypeNode;
+
+constructor TScript55Script.Create(const AField_menuItems: TMFString; const AEvent_selection: TX3DEvent; const AField_spacing: TSFFloat; const AField_size: TSFFloat; const AField_menuCenterY: TSFFloat; const AField_itemHeight: TSFFloat);
+begin
+  inherited Create;
+  FmenuItems := 0;
+  Fselection := 0;
+  FEvent_selection := nil;
+  FBack_selection := TSFInt32.Create(nil, False, 'selection', 0);
+  FDirty_selection := False;
+  Fspacing := 0.0;
+  Fsize := 0.0;
+  FmenuCenterY := 0.0;
+  FitemHeight := 0.0;
+  if AField_menuItems <> nil then FmenuItems := AField_menuItems.Value;
+  FEvent_selection := AEvent_selection;
+  if AField_spacing <> nil then Fspacing := AField_spacing.Value;
+  if AField_size <> nil then Fsize := AField_size.Value;
+  if AField_menuCenterY <> nil then FmenuCenterY := AField_menuCenterY.Value;
+  if AField_itemHeight <> nil then FitemHeight := AField_itemHeight.Value;
+end;
+
+destructor TScript55Script.Destroy;
+begin
+  FreeAndNil(FBack_selection);
+  inherited Destroy;
+end;
+
+procedure TScript55Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_selection then
+  begin
+    FDirty_selection := False;
+    if FEvent_selection <> nil then
+    begin
+      FBack_selection.Value := Fselection;
+      FEvent_selection.Send(FBack_selection, Time);
+    end;
+  end;
+end;
+
+procedure TScript55Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script55_initialize', {$ifdef FPC}@{$endif}Initialize);
+  Scene.RegisterCompiledScript('Script55_touchPoint', {$ifdef FPC}@{$endif}TouchPoint);
+end;
+
+procedure TScript55Script.Initialize(Value: TX3DField; const Time: TX3DTime);
+var
+  spacingBetweenGlyphs: Single;
+  menuHeight: Single;
+begin
+  Fselection := 0; FDirty_selection := True;
+  spacingBetweenGlyphs := Fsize * Fspacing - Fsize;
+  menuHeight := Fsize + spacingBetweenGlyphs * Length(FmenuItems);
+  FmenuCenterY := menuHeight / 2;
+  FitemHeight := menuHeight / Length(FmenuItems);
+  FlushOutputs(Time);
+end;
+
+procedure TScript55Script.TouchPoint(Value: TX3DField; const Time: TX3DTime);
+var
+  index: Integer;
+begin
+  WriteLn('Hit ' + (Value as TSFVec3f).Value + ' ' + Fselection + #10);
+  index := Floor(FmenuCenterY - (Value as TSFVec3f).Value.Y / FitemHeight - 0.5);
+  Fselection := index - 2; FDirty_selection := True;
+  if (Fselection >= 0) and (Fselection < Length(FmenuItems)) then
+  begin
+    WriteLn('Selected ' + (Value as TSFVec3f).Value + ' ' + Fselection + ' ' + FmenuItems[Fselection] + #10);
+  end;
+  FlushOutputs(Time);
+end;
 
 procedure InitMenuPart0;
 begin
@@ -318,26 +413,11 @@ end;
 procedure InitMenuPart5;
 begin
 Script55.FieldOrEvent('menuItems', True).IsClauseNamesAdd('menuItems');
-Script55.SetSourceCode('ecmascript:' + LineEnding +
-  '        function initialize() {' + LineEnding +
-  '          selection = 0;' + LineEnding +
-  '          var spacingBetweenGlyphs = size * spacing - size; // Spacing calculation' + LineEnding +
-  '          var menuHeight = (size + spacingBetweenGlyphs) * menuItems.length;' + LineEnding +
-  '          menuCenterY = menuHeight / 2;' + LineEnding +
-  '          itemHeight = menuHeight / menuItems.length;' + LineEnding +
-  '        }' + LineEnding +
-  '' + LineEnding +
-  '        function touchPoint(value) {' + LineEnding +
-  '          Browser.print("Hit "+value+" "+selection+"' + LineEnding +
-  '");' + LineEnding +
-  '          var index = Math.floor((menuCenterY - value.y) / itemHeight - 0.5);' + LineEnding +
-  '' + LineEnding +
-  '          selection = index - 2;' + LineEnding +
-  '          if (selection >= 0 && selection < menuItems.length) {' + LineEnding +
-  '            Browser.print("Selected "+value+" "+selection+" "+menuItems[selection]+"' + LineEnding +
-  '");' + LineEnding +
-  '          }' + LineEnding +
-  '        }');
+FreeAndNil(CompiledScript55);
+CompiledScript55 := TScript55Script.Create(FieldVal56, FieldVal57, FieldVal59, FieldVal60, FieldVal61, FieldVal62);
+Script55.SetUrl(['compiled:' + LineEnding +
+  'initialize=Script55_initialize' + LineEnding +
+  'touchPoint=Script55_touchPoint']);
 Group11.FdChildren.Add(Script55);
 { ROUTEs to connect everything }
 { ROUTE MenuTouchSensor.hitPoint_changed TO MenuScript.touchPoint }
@@ -364,5 +444,12 @@ begin
   Result := X3D0;
 end;
 
+procedure RegisterMenuScripts(const Scene: TCastleSceneCore);
 begin
+  if CompiledScript55 <> nil then
+    CompiledScript55.RegisterHandlers(Scene);
+end;
+
+finalization
+  FreeAndNil(CompiledScript55);
 end.

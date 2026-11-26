@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"14 November 2026"
+            "@content":"26 November 2026"
           },
           {
             "@name":"generator",
@@ -118,8 +118,6 @@
                             }
                           ],
                           "#sourceCode":[
-"",
-"",
 "",
 "ecmascript:",
 "               function set_location(value) {",
@@ -251,8 +249,6 @@
                             }
                           ],
                           "#sourceCode":[
-"",
-"",
 "",
 "ecmascript:",
 "               function set_location(value) {",
@@ -420,8 +416,7 @@
               ],
               "#sourceCode":[
 "",
-"",
-"            ecmascript:",
+"ecmascript:",
 "        function recompute(startpoint,endpoint){",
 "\t    if (typeof endpoint === 'undefined') {",
 "\t\treturn;",

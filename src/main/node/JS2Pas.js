@@ -29,8 +29,31 @@ const sanitizeId = (name, fallback = "GeneratedScript") => {
 	return PASCAL_KEYWORDS.has(id.toLowerCase()) ? "L_" + id : id;
 };
 
-const escapePascalString = (str) =>
-	"'" + String(str).replace(/'/g, "''") + "'";
+const escapePascalString = (str) => {
+	const s = String(str);
+	let out = "";
+	let inQuotes = false;
+	for (let i = 0; i < s.length; i++) {
+		const code = s.charCodeAt(i);
+		if (code < 32 || code === 127) {
+			if (inQuotes) {
+				out += "'";
+				inQuotes = false;
+			}
+			out += "#" + code;
+		} else {
+			if (!inQuotes) {
+				out += "'";
+				inQuotes = true;
+			}
+			out += s[i] === "'" ? "''" : s[i];
+		}
+	}
+	if (inQuotes) {
+		out += "'";
+	}
+	return out || "''";
+};
 
 const X3D_TYPE_TO_PASCAL = {
 	SFBool: "Boolean",
@@ -84,88 +107,120 @@ const X3D_DEFAULT_VALUE = {
 };
 
 /* -------------------------------------------------------------------------- */
-/* Tokenizer                                                                  */
+/* Tokenizer with 1-based Line & Column Tracking                              */
 /* -------------------------------------------------------------------------- */
 
 const MULTI_OPS = [
-	"===", "!==", ">>>", "<<=", ">>=",
+	"===", "!==", ">>>=", ">>>", "<<=", ">>=",
 	"==", "!=", "<=", ">=", "&&", "||",
-	"++", "--", "+=", "-=", "*=", "/=", "%=", "<<", ">>"
+	"++", "--", "+=", "-=", "*=", "/=", "%=", "&=", "|=", "^=", "<<", ">>", "=>"
 ];
 
-function tokenize(source) {
+function tokenize(source, lineOffset = 0) {
 	const tokens = [];
 	let i = 0;
+	let line = 1 + lineOffset;
+	let col = 1;
 	const n = source.length;
+
+	const advance = (count = 1) => {
+		for (let k = 0; k < count; k++) {
+			if (source[i] === "\n") {
+				line++;
+				col = 1;
+			} else {
+				col++;
+			}
+			i++;
+		}
+	};
 
 	while (i < n) {
 		const ch = source[i];
 
 		if (/\s/.test(ch)) {
-			i++;
+			advance(1);
 			continue;
 		}
 		// Line comment
 		if (ch === "/" && source[i + 1] === "/") {
-			i += 2;
-			while (i < n && source[i] !== "\n") i++;
+			advance(2);
+			while (i < n && source[i] !== "\n") advance(1);
 			continue;
 		}
 		// Block comment
 		if (ch === "/" && source[i + 1] === "*") {
-			i += 2;
-			while (i < n && !(source[i] === "*" && source[i + 1] === "/")) i++;
-			i += 2;
+			const startLine = line;
+			const startCol = col;
+			advance(2);
+			while (i < n && !(source[i] === "*" && source[i + 1] === "/")) {
+				advance(1);
+			}
+			if (i >= n) {
+				throw new Error("JS2Pas lex error at line " + startLine + ", col " + startCol + ": unterminated block comment");
+			}
+			advance(2);
 			continue;
 		}
 		// String literal
 		if (ch === "'" || ch === '"') {
 			const quote = ch;
+			const startLine = line;
+			const startCol = col;
 			let val = "";
-			i++;
+			advance(1);
 			while (i < n && source[i] !== quote) {
 				if (source[i] === "\\" && i + 1 < n) {
 					const esc = source[i + 1];
 					if (esc === "n") val += "\n";
 					else if (esc === "r") val += "\r";
 					else if (esc === "t") val += "\t";
+					else if (esc === "\n") { /* line continuation */ }
+					else if (esc === "\r" && source[i + 2] === "\n") { advance(1); }
 					else val += esc;
-					i += 2;
+					advance(2);
 				} else {
-					val += source[i++];
+					val += source[i];
+					advance(1);
 				}
 			}
-			i++;
-			tokens.push({ type: "string", value: val });
+			if (i >= n) {
+				throw new Error("JS2Pas lex error at line " + startLine + ", col " + startCol + ": unterminated string literal");
+			}
+			advance(1);
+			tokens.push({ type: "string", value: val, line: startLine, col: startCol });
 			continue;
 		}
 		// Number literal
 		if (/[0-9]/.test(ch) || (ch === "." && /[0-9]/.test(source[i + 1] || ""))) {
 			const start = i;
+			const startLine = line;
+			const startCol = col;
 			if (ch === "0" && (source[i + 1] === "x" || source[i + 1] === "X")) {
-				i += 2;
-				while (i < n && /[0-9a-fA-F]/.test(source[i])) i++;
+				advance(2);
+				while (i < n && /[0-9a-fA-F]/.test(source[i])) advance(1);
 			} else {
-				while (i < n && /[0-9]/.test(source[i])) i++;
+				while (i < n && /[0-9]/.test(source[i])) advance(1);
 				if (source[i] === ".") {
-					i++;
-					while (i < n && /[0-9]/.test(source[i])) i++;
+					advance(1);
+					while (i < n && /[0-9]/.test(source[i])) advance(1);
 				}
 				if (source[i] === "e" || source[i] === "E") {
-					i++;
-					if (source[i] === "+" || source[i] === "-") i++;
-					while (i < n && /[0-9]/.test(source[i])) i++;
+					advance(1);
+					if (source[i] === "+" || source[i] === "-") advance(1);
+					while (i < n && /[0-9]/.test(source[i])) advance(1);
 				}
 			}
-			tokens.push({ type: "number", value: source.slice(start, i) });
+			tokens.push({ type: "number", value: source.slice(start, i), line: startLine, col: startCol });
 			continue;
 		}
 		// Identifier / keyword
 		if (/[A-Za-z_$]/.test(ch)) {
 			const start = i;
-			while (i < n && /[A-Za-z0-9_$]/.test(source[i])) i++;
-			const word = source.slice(start, i);
-			tokens.push({ type: "ident", value: word });
+			const startLine = line;
+			const startCol = col;
+			while (i < n && /[A-Za-z0-9_$]/.test(source[i])) advance(1);
+			tokens.push({ type: "ident", value: source.slice(start, i), line: startLine, col: startCol });
 			continue;
 		}
 		// Multi-char operators
@@ -177,16 +232,16 @@ function tokenize(source) {
 			}
 		}
 		if (matched) {
-			tokens.push({ type: "punct", value: matched });
-			i += matched.length;
+			tokens.push({ type: "punct", value: matched, line, col });
+			advance(matched.length);
 			continue;
 		}
 		// Single-char punctuator
-		tokens.push({ type: "punct", value: ch });
-		i++;
+		tokens.push({ type: "punct", value: ch, line, col });
+		advance(1);
 	}
 
-	tokens.push({ type: "eof", value: "" });
+	tokens.push({ type: "eof", value: "", line, col });
 	return tokens;
 }
 
@@ -194,12 +249,34 @@ function tokenize(source) {
 /* Recursive-Descent Parser                                                   */
 /* -------------------------------------------------------------------------- */
 
-function Parser(tokens) {
+function Parser(tokens, rawLines, scriptLabel) {
 	this.tokens = tokens;
+	this.rawLines = rawLines || [];
+	this.scriptLabel = scriptLabel || "Script";
 	this.pos = 0;
 }
 
 Parser.prototype = {
+	formatError: function (msg, token) {
+		const t = token || this.peek();
+		const lineNum = t.line || 1;
+		const colNum = t.col || 1;
+		const srcLine = this.rawLines[lineNum - 1];
+		let out =
+			"JS2Pas parse error in " +
+			this.scriptLabel +
+			" at line " +
+			lineNum +
+			", col " +
+			colNum +
+			": " +
+			msg;
+		if (srcLine !== undefined) {
+			const caret = " ".repeat(Math.max(0, colNum - 1)) + "^";
+			out += "\n  " + lineNum + " | " + srcLine + "\n" + " ".repeat(String(lineNum).length + 5) + caret;
+		}
+		return new Error(out);
+	},
 	peek: function (offset = 0) {
 		return this.tokens[Math.min(this.pos + offset, this.tokens.length - 1)];
 	},
@@ -217,14 +294,9 @@ Parser.prototype = {
 	expect: function (type, value) {
 		const t = this.peek();
 		if (t.type !== type || (value !== undefined && t.value !== value)) {
-			throw new Error(
-				"JS2Pas parse error: expected " +
-					(value || type) +
-					" but got " +
-					t.type +
-					" '" +
-					t.value +
-					"'"
+			throw this.formatError(
+				"expected " + (value || type) + " but got " + t.type + " '" + t.value + "'",
+				t
 			);
 		}
 		return this.consume();
@@ -265,6 +337,13 @@ Parser.prototype = {
 					return this.parseFor();
 				case "switch":
 					return this.parseSwitch();
+				case "try":
+					return this.parseTry();
+				case "throw":
+					this.consume();
+					const arg = this.parseExpression();
+					this.match("punct", ";");
+					return { type: "Throw", arg };
 				case "break":
 					this.consume();
 					this.match("punct", ";");
@@ -361,14 +440,55 @@ Parser.prototype = {
 		this.expect("ident", "for");
 		this.expect("punct", "(");
 		let init = null;
-		if (!(this.peek().type === "punct" && this.peek().value === ";")) {
-			const pk = this.peek();
-			if (pk.type === "ident" && (pk.value === "var" || pk.value === "let" || pk.value === "const")) {
-				init = this.parseVarDecl(false);
-			} else {
-				init = { type: "ExprStmt", expr: this.parseExpression() };
+		const pk = this.peek();
+		const pk1 = this.peek(1);
+
+		if (
+			pk.type === "ident" &&
+			(pk.value === "var" || pk.value === "let" || pk.value === "const")
+		) {
+			const kind = this.consume().value;
+			const firstName = this.expect("ident").value;
+			if (
+				this.peek().type === "ident" &&
+				(this.peek().value === "in" || this.peek().value === "of")
+			) {
+				const op = this.consume().value;
+				const right = this.parseExpression();
+				this.expect("punct", ")");
+				const body = this.parseStatement();
+				return { type: "ForInOf", op, declKind: kind, leftVar: firstName, right, body };
 			}
+			const decls = [];
+			let firstInit = null;
+			if (this.match("punct", "=")) {
+				firstInit = this.parseAssignment();
+			}
+			decls.push({ name: firstName, init: firstInit });
+			while (this.match("punct", ",")) {
+				const name = this.expect("ident").value;
+				let varInit = null;
+				if (this.match("punct", "=")) {
+					varInit = this.parseAssignment();
+				}
+				decls.push({ name, init: varInit });
+			}
+			init = { type: "VarDecl", kind, decls };
+		} else if (
+			pk.type === "ident" &&
+			pk1.type === "ident" &&
+			(pk1.value === "in" || pk1.value === "of")
+		) {
+			const leftVar = this.consume().value;
+			const op = this.consume().value;
+			const right = this.parseExpression();
+			this.expect("punct", ")");
+			const body = this.parseStatement();
+			return { type: "ForInOf", op, declKind: null, leftVar, right, body };
+		} else if (!(pk.type === "punct" && pk.value === ";")) {
+			init = { type: "ExprStmt", expr: this.parseExpression() };
 		}
+
 		this.expect("punct", ";");
 		let test = null;
 		if (!(this.peek().type === "punct" && this.peek().value === ";")) {
@@ -415,6 +535,26 @@ Parser.prototype = {
 		return { type: "Switch", discriminant, cases };
 	},
 
+	parseTry: function () {
+		this.expect("ident", "try");
+		const block = this.parseBlock();
+		let handler = null;
+		if (this.match("ident", "catch")) {
+			let param = null;
+			if (this.match("punct", "(")) {
+				param = this.expect("ident").value;
+				this.expect("punct", ")");
+			}
+			const body = this.parseBlock();
+			handler = { param, body };
+		}
+		let finalizer = null;
+		if (this.match("ident", "finally")) {
+			finalizer = this.parseBlock();
+		}
+		return { type: "Try", block, handler, finalizer };
+	},
+
 	parseReturn: function () {
 		this.expect("ident", "return");
 		let arg = null;
@@ -426,7 +566,11 @@ Parser.prototype = {
 	},
 
 	parseExpression: function () {
-		return this.parseAssignment();
+		let expr = this.parseAssignment();
+		while (this.match("punct", ",")) {
+			expr = { type: "Sequence", left: expr, right: this.parseAssignment() };
+		}
+		return expr;
 	},
 
 	parseAssignment: function () {
@@ -434,12 +578,7 @@ Parser.prototype = {
 		const t = this.peek();
 		if (
 			t.type === "punct" &&
-			(t.value === "=" ||
-				t.value === "+=" ||
-				t.value === "-=" ||
-				t.value === "*=" ||
-				t.value === "/=" ||
-				t.value === "%=")
+			["=", "+=", "-=", "*=", "/=", "%=", "&=", "|=", "^=", "<<=", ">>=", ">>>="].includes(t.value)
 		) {
 			const op = this.consume().value;
 			const right = this.parseAssignment();
@@ -468,9 +607,33 @@ Parser.prototype = {
 	},
 
 	parseLogicalAnd: function () {
-		let left = this.parseEquality();
+		let left = this.parseBitwiseOr();
 		while (this.match("punct", "&&")) {
-			left = { type: "Binary", op: "&&", left, right: this.parseEquality() };
+			left = { type: "Binary", op: "&&", left, right: this.parseBitwiseOr() };
+		}
+		return left;
+	},
+
+	parseBitwiseOr: function () {
+		let left = this.parseBitwiseXor();
+		while (this.match("punct", "|")) {
+			left = { type: "Binary", op: "|", left, right: this.parseBitwiseXor() };
+		}
+		return left;
+	},
+
+	parseBitwiseXor: function () {
+		let left = this.parseBitwiseAnd();
+		while (this.match("punct", "^")) {
+			left = { type: "Binary", op: "^", left, right: this.parseBitwiseAnd() };
+		}
+		return left;
+	},
+
+	parseBitwiseAnd: function () {
+		let left = this.parseEquality();
+		while (this.match("punct", "&")) {
+			left = { type: "Binary", op: "&", left, right: this.parseEquality() };
 		}
 		return left;
 	},
@@ -488,11 +651,20 @@ Parser.prototype = {
 	},
 
 	parseRelational: function () {
-		let left = this.parseAdditive();
+		let left = this.parseShift();
 		while (
-			this.peek().type === "punct" &&
-			["<", ">", "<=", ">="].includes(this.peek().value)
+			(this.peek().type === "punct" && ["<", ">", "<=", ">="].includes(this.peek().value)) ||
+			(this.peek().type === "ident" && (this.peek().value === "in" || this.peek().value === "instanceof"))
 		) {
+			const op = this.consume().value;
+			left = { type: "Binary", op, left, right: this.parseShift() };
+		}
+		return left;
+	},
+
+	parseShift: function () {
+		let left = this.parseAdditive();
+		while (this.peek().type === "punct" && ["<<", ">>", ">>>"].includes(this.peek().value)) {
 			const op = this.consume().value;
 			left = { type: "Binary", op, left, right: this.parseAdditive() };
 		}
@@ -525,7 +697,11 @@ Parser.prototype = {
 
 	parseUnary: function () {
 		const t = this.peek();
-		if (t.type === "punct" && (t.value === "!" || t.value === "-" || t.value === "+")) {
+		if (t.type === "punct" && ["!", "-", "+", "~"].includes(t.value)) {
+			const op = this.consume().value;
+			return { type: "Unary", op, arg: this.parseUnary() };
+		}
+		if (t.type === "ident" && ["typeof", "void", "delete"].includes(t.value)) {
 			const op = this.consume().value;
 			return { type: "Unary", op, arg: this.parseUnary() };
 		}
@@ -596,10 +772,26 @@ Parser.prototype = {
 			return { type: "Literal", kind: "string", value: t.value };
 		}
 		if (t.type === "ident") {
+			if (t.value === "function") {
+				this.consume();
+				let name = null;
+				if (this.peek().type === "ident") name = this.consume().value;
+				this.expect("punct", "(");
+				const params = [];
+				while (!(this.peek().type === "punct" && this.peek().value === ")")) {
+					params.push(this.expect("ident").value);
+					if (!this.match("punct", ",")) break;
+				}
+				this.expect("punct", ")");
+				const body = this.parseBlock();
+				return { type: "FunctionExpr", name, params, body };
+			}
 			this.consume();
 			if (t.value === "true") return { type: "Literal", kind: "boolean", value: true };
 			if (t.value === "false") return { type: "Literal", kind: "boolean", value: false };
-			if (t.value === "null") return { type: "Literal", kind: "null", value: null };
+			if (t.value === "null" || t.value === "undefined") {
+				return { type: "Literal", kind: "null", value: null };
+			}
 			return { type: "Identifier", name: t.value };
 		}
 		if (this.match("punct", "(")) {
@@ -616,7 +808,25 @@ Parser.prototype = {
 			this.expect("punct", "]");
 			return { type: "ArrayLiteral", elements };
 		}
-		throw new Error("JS2Pas unexpected token: " + t.type + " '" + t.value + "'");
+		if (this.match("punct", "{")) {
+			const props = [];
+			while (!(this.peek().type === "punct" && this.peek().value === "}")) {
+				const kTok = this.peek();
+				let key;
+				if (kTok.type === "ident" || kTok.type === "string" || kTok.type === "number") {
+					key = this.consume().value;
+				} else {
+					throw this.formatError("expected object property key", kTok);
+				}
+				this.expect("punct", ":");
+				const value = this.parseAssignment();
+				props.push({ key, value });
+				if (!this.match("punct", ",")) break;
+			}
+			this.expect("punct", "}");
+			return { type: "ObjectLiteral", props };
+		}
+		throw this.formatError("unexpected token " + t.type + " '" + t.value + "'", t);
 	}
 };
 
@@ -625,36 +835,14 @@ Parser.prototype = {
 /* -------------------------------------------------------------------------- */
 
 function stripScriptProtocol(source) {
-	return String(source || "").replace(/^\s*(ecmascript|javascript|vrmlscript):[ \t]*\r?\n?/i, "");
-}
-
-function collectLocals(node, locals, assigned) {
-	if (!node || typeof node !== "object") return;
-	if (node.type === "VarDecl") {
-		for (const d of node.decls) {
-			if (!locals.has(d.name)) {
-				locals.set(d.name, inferExprType(d.init));
-			}
-		}
-	} else if (node.type === "Assign") {
-		const rootId = getRootIdent(node.left);
-		if (rootId) assigned.add(rootId);
-	} else if (node.type === "Update") {
-		const rootId = getRootIdent(node.arg);
-		if (rootId) assigned.add(rootId);
+	const raw = String(source || "");
+	const match = raw.match(/^\s*(ecmascript|javascript|vrmlscript):[ \t]*\r?\n?/i);
+	if (!match) {
+		return { code: raw, lineOffset: 0 };
 	}
-	for (const k of Object.keys(node)) {
-		const child = node[k];
-		if (Array.isArray(child)) {
-			child.forEach((c) => {
-				if (c && typeof c === "object" && c.type !== "FunctionDecl") {
-					collectLocals(c, locals, assigned);
-				}
-			});
-		} else if (child && typeof child === "object" && child.type !== "FunctionDecl") {
-			collectLocals(child, locals, assigned);
-		}
-	}
+	const prefix = match[0];
+	const lineOffset = (prefix.match(/\n/g) || []).length;
+	return { code: raw.slice(prefix.length), lineOffset };
 }
 
 function getRootIdent(expr) {
@@ -689,8 +877,46 @@ function inferExprType(expr) {
 		if (["==", "!=", "===", "!==", "<", ">", "<=", ">=", "&&", "||"].includes(expr.op)) {
 			return "Boolean";
 		}
+		if (expr.op === "+") {
+			const lt = inferExprType(expr.left);
+			const rt = inferExprType(expr.right);
+			if (lt === "String" || rt === "String") return "String";
+		}
 	}
 	return "Single";
+}
+
+function collectLocals(node, locals, assigned) {
+	if (!node || typeof node !== "object") return;
+	if (node.type === "VarDecl") {
+		for (const d of node.decls) {
+			if (!locals.has(d.name)) {
+				locals.set(d.name, inferExprType(d.init));
+			}
+		}
+	} else if (node.type === "ForInOf") {
+		if (!locals.has(node.leftVar)) {
+			locals.set(node.leftVar, node.op === "in" ? "Integer" : "Single");
+		}
+	} else if (node.type === "Assign") {
+		const rootId = getRootIdent(node.left);
+		if (rootId) assigned.add(rootId);
+	} else if (node.type === "Update") {
+		const rootId = getRootIdent(node.arg);
+		if (rootId) assigned.add(rootId);
+	}
+	for (const k of Object.keys(node)) {
+		const child = node[k];
+		if (Array.isArray(child)) {
+			child.forEach((c) => {
+				if (c && typeof c === "object" && c.type !== "FunctionDecl") {
+					collectLocals(c, locals, assigned);
+				}
+			});
+		} else if (child && typeof child === "object" && child.type !== "FunctionDecl") {
+			collectLocals(child, locals, assigned);
+		}
+	}
 }
 
 function isSimpleForLoop(stmt) {
@@ -702,7 +928,12 @@ function isSimpleForLoop(stmt) {
 	if (stmt.init.type === "VarDecl" && stmt.init.decls.length === 1 && stmt.init.decls[0].init) {
 		loopVar = stmt.init.decls[0].name;
 		startExpr = stmt.init.decls[0].init;
-	} else if (stmt.init.type === "ExprStmt" && stmt.init.expr.type === "Assign" && stmt.init.expr.op === "=" && stmt.init.expr.left.type === "Identifier") {
+	} else if (
+		stmt.init.type === "ExprStmt" &&
+		stmt.init.expr.type === "Assign" &&
+		stmt.init.expr.op === "=" &&
+		stmt.init.expr.left.type === "Identifier"
+	) {
 		loopVar = stmt.init.expr.left.name;
 		startExpr = stmt.init.expr.right;
 	}
@@ -712,7 +943,13 @@ function isSimpleForLoop(stmt) {
 	let stepDir = null;
 	if (u.type === "Update" && u.arg.type === "Identifier" && u.arg.name === loopVar) {
 		stepDir = u.op === "++" ? "to" : "downto";
-	} else if (u.type === "Assign" && u.left.type === "Identifier" && u.left.name === loopVar && u.right.type === "Literal" && u.right.value === "1") {
+	} else if (
+		u.type === "Assign" &&
+		u.left.type === "Identifier" &&
+		u.left.name === loopVar &&
+		u.right.type === "Literal" &&
+		u.right.value === "1"
+	) {
 		if (u.op === "+=") stepDir = "to";
 		else if (u.op === "-=") stepDir = "downto";
 	}
@@ -722,7 +959,7 @@ function isSimpleForLoop(stmt) {
 	if (t.type !== "Binary" || t.left.type !== "Identifier" || t.left.name !== loopVar) {
 		return null;
 	}
-	let endNode = t.right;
+	const endNode = t.right;
 	if (stepDir === "to") {
 		if (t.op === "<=") return { loopVar, startExpr, dir: "to", endNode, adjust: 0 };
 		if (t.op === "<") return { loopVar, startExpr, dir: "to", endNode, adjust: -1 };
@@ -735,13 +972,15 @@ function isSimpleForLoop(stmt) {
 
 export function convertECMAScriptToPascal(source, options = {}) {
 	const scriptName = sanitizeId(options.scriptName || "X3DScript", "X3DScript");
+	const scriptLabel = options.scriptDef ? 'Script "' + options.scriptDef + '"' : scriptName;
 	const className = "T" + upperCaseFirst(scriptName) + "Script";
 	const unitName = sanitizeId(options.unitName || scriptName + "ScriptUnit");
 	const fields = Array.isArray(options.fields) ? options.fields : [];
 
-	const cleanSource = stripScriptProtocol(source);
-	const tokens = tokenize(cleanSource);
-	const ast = new Parser(tokens).parseProgram();
+	const rawLines = String(source || "").split(/\r?\n/);
+	const { code: cleanSource, lineOffset } = stripScriptProtocol(source);
+	const tokens = tokenize(cleanSource, lineOffset);
+	const ast = new Parser(tokens, rawLines, scriptLabel).parseProgram();
 
 	const fieldMap = new Map();
 	for (const f of fields) {
@@ -758,16 +997,12 @@ export function convertECMAScriptToPascal(source, options = {}) {
 	}
 
 	const functions = new Map();
-	const topStatements = [];
 	for (const stmt of ast.body) {
 		if (stmt.type === "FunctionDecl") {
 			functions.set(stmt.name, stmt);
-		} else if (stmt.type !== "Empty") {
-			topStatements.push(stmt);
 		}
 	}
 
-	// Determine which functions are X3D event handlers (initialize, shutdown, or inputOnly/inputOutput field names)
 	const isHandlerName = (fnName) => {
 		if (fnName === "initialize" || fnName === "shutdown") return true;
 		const f = fieldMap.get(fnName);
@@ -870,8 +1105,10 @@ export function convertECMAScriptToPascal(source, options = {}) {
 			case "Unary": {
 				const argCode = emitExpr(expr.arg, localScope, curParamMap);
 				if (expr.op === "!") return "not (" + argCode + ")";
+				if (expr.op === "~") return "not (" + argCode + ")";
 				if (expr.op === "+") return argCode;
-				return "-" + argCode;
+				if (expr.op === "-") return "-" + argCode;
+				return argCode;
 			}
 
 			case "Binary": {
@@ -884,10 +1121,16 @@ export function convertECMAScriptToPascal(source, options = {}) {
 					"!=": "<>",
 					"&&": "and",
 					"||": "or",
+					"&": "and",
+					"|": "or",
+					"^": "xor",
+					"<<": "shl",
+					">>": "shr",
+					">>>": "shr",
 					"%": "mod"
 				};
 				const op = opMap[expr.op] || expr.op;
-				if (op === "and" || op === "or") {
+				if (op === "and" || op === "or" || op === "xor") {
 					return "(" + l + ") " + op + " (" + r + ")";
 				}
 				return l + " " + op + " " + r;
@@ -970,10 +1213,7 @@ export function convertECMAScriptToPascal(source, options = {}) {
 					stmt = lhs + " := " + rhs;
 				} else {
 					const baseOp = expr.op.slice(0, -1);
-					stmt = lhs + " := " + lhs + " + (" + rhs + ")";
-					if (baseOp !== "+") {
-						stmt = lhs + " := " + lhs + " " + baseOp + " (" + rhs + ")";
-					}
+					stmt = lhs + " := " + lhs + " " + baseOp + " (" + rhs + ")";
 				}
 				if (rootId && fieldMap.has(rootId)) {
 					const fm = fieldMap.get(rootId);
@@ -1041,11 +1281,7 @@ export function convertECMAScriptToPascal(source, options = {}) {
 					for (const s of stmt.consequent.body) {
 						emitStmt(s, indent + 1, localScope, curParamMap, lines);
 					}
-					if (stmt.alternate) {
-						lines.push(pad + "end");
-					} else {
-						lines.push(pad + "end;");
-					}
+					lines.push(stmt.alternate ? pad + "end" : pad + "end;");
 				} else {
 					emitStmt(stmt.consequent, indent + 1, localScope, curParamMap, lines);
 				}
@@ -1130,6 +1366,23 @@ export function convertECMAScriptToPascal(source, options = {}) {
 				}
 				break;
 			}
+                        case "ForInOf": {
+				const vName = sanitizeId(stmt.leftVar);
+				const rightCode = emitExpr(stmt.right, localScope, curParamMap);
+				if (stmt.op === "in") {
+					lines.push(pad + "for " + vName + " := 0 to High(" + rightCode + ") do");
+				} else {
+					lines.push(pad + "for " + vName + " in " + rightCode + " do");
+				}
+				if (stmt.body.type === "Block") {
+					emitStmt(stmt.body, indent, localScope, curParamMap, lines);
+				} else {
+					lines.push(pad + "begin");
+					emitStmt(stmt.body, indent + 1, localScope, curParamMap, lines);
+					lines.push(pad + "end;");
+				}
+				break;
+			}
 
 			case "Switch": {
 				lines.push(pad + "case " + emitExpr(stmt.discriminant, localScope, curParamMap) + " of");
@@ -1150,6 +1403,30 @@ export function convertECMAScriptToPascal(source, options = {}) {
 				break;
 			}
 
+			case "Try":
+				lines.push(pad + "try");
+				for (const s of stmt.block.body) {
+					emitStmt(s, indent + 1, localScope, curParamMap, lines);
+				}
+				if (stmt.handler) {
+					lines.push(pad + "except");
+					for (const s of stmt.handler.body.body) {
+						emitStmt(s, indent + 1, localScope, curParamMap, lines);
+					}
+				}
+				if (stmt.finalizer) {
+					lines.push(pad + "finally");
+					for (const s of stmt.finalizer.body) {
+						emitStmt(s, indent + 1, localScope, curParamMap, lines);
+					}
+				}
+				lines.push(pad + "end;");
+				break;
+
+			case "Throw":
+				lines.push(pad + "raise Exception.Create(" + emitExpr(stmt.arg, localScope, curParamMap) + ");");
+				break;
+
 			case "Break":
 				lines.push(pad + "Break;");
 				break;
@@ -1167,7 +1444,6 @@ export function convertECMAScriptToPascal(source, options = {}) {
 		}
 	};
 
-	// Build class interface & implementation
 	const classFields = [];
 	const ctorLines = [];
 	const dtorLines = [];
@@ -1176,13 +1452,21 @@ export function convertECMAScriptToPascal(source, options = {}) {
 	const methodImpls = [];
 	const compiledEntries = [];
 	const registerLines = [];
+	const bindParams = [];
+	const bindAssigns = [];
+	const fieldBindArgs = [];
 
 	for (const fm of fieldMap.values()) {
 		if (fm.accessType === "inputOnly") continue;
 		classFields.push("F" + fm.name + ": " + fm.pascalType + ";");
 		ctorLines.push("F" + fm.name + " := " + fm.defaultVal + ";");
 
-		if (fm.accessType === "inputOutput") {
+		if (fm.accessType === "initializeOnly" && fm.varName) {
+			const pName = "AField_" + fm.name;
+			bindParams.push("const " + pName + ": T" + fm.type);
+			bindAssigns.push("  if " + pName + " <> nil then F" + fm.name + " := " + pName + ".Value;");
+			fieldBindArgs.push(fm.varName);
+		} else if (fm.accessType === "inputOutput") {
 			classFields.push("FField_" + fm.name + ": T" + fm.type + ";");
 			classFields.push("FDirty_" + fm.name + ": Boolean;");
 			ctorLines.push("FField_" + fm.name + " := nil;");
@@ -1195,12 +1479,27 @@ export function convertECMAScriptToPascal(source, options = {}) {
 				"      FField_" + fm.name + ".Send(F" + fm.name + ", Time);",
 				"  end;"
 			);
+			const pName = "AField_" + fm.name;
+			bindParams.push("const " + pName + ": T" + fm.type);
+			bindAssigns.push("  FField_" + fm.name + " := " + pName + ";");
+			bindAssigns.push("  if " + pName + " <> nil then F" + fm.name + " := " + pName + ".Value;");
+			fieldBindArgs.push(fm.varName || "nil");
 		} else if (fm.accessType === "outputOnly") {
 			classFields.push("FEvent_" + fm.name + ": TX3DEvent;");
 			classFields.push("FBack_" + fm.name + ": T" + fm.type + ";");
 			classFields.push("FDirty_" + fm.name + ": Boolean;");
 			ctorLines.push("FEvent_" + fm.name + " := nil;");
-			ctorLines.push("FBack_" + fm.name + " := T" + fm.type + ".Create(nil, False, " + escapePascalString(fm.name) + ", " + fm.defaultVal + ");");
+			ctorLines.push(
+				"FBack_" +
+					fm.name +
+					" := T" +
+					fm.type +
+					".Create(nil, False, " +
+					escapePascalString(fm.name) +
+					", " +
+					fm.defaultVal +
+					");"
+			);
 			ctorLines.push("FDirty_" + fm.name + " := False;");
 			dtorLines.push("FreeAndNil(FBack_" + fm.name + ");");
 			flushLines.push(
@@ -1214,26 +1513,13 @@ export function convertECMAScriptToPascal(source, options = {}) {
 				"    end;",
 				"  end;"
 			);
-		}
-	}
-
-	// Constructor params to bind TX3DField / TX3DEvent references
-	const bindParams = [];
-	const bindAssigns = [];
-	for (const fm of fieldMap.values()) {
-		if (fm.accessType === "inputOutput") {
-			const pName = "AField_" + fm.name;
-			bindParams.push("const " + pName + ": T" + fm.type);
-			bindAssigns.push("  FField_" + fm.name + " := " + pName + ";");
-			bindAssigns.push("  if " + pName + " <> nil then F" + fm.name + " := " + pName + ".Value;");
-		} else if (fm.accessType === "outputOnly") {
 			const pName = "AEvent_" + fm.name;
 			bindParams.push("const " + pName + ": TX3DEvent");
 			bindAssigns.push("  FEvent_" + fm.name + " := " + pName + ";");
+			fieldBindArgs.push(fm.varName || "nil");
 		}
 	}
 
-	// Generate each function
 	for (const [fnName, fn] of functions.entries()) {
 		const mName = methodNames.get(fnName);
 		const isHandler = isHandlerName(fnName);
@@ -1247,7 +1533,9 @@ export function convertECMAScriptToPascal(source, options = {}) {
 			const sig = "procedure " + mName + "(Value: TX3DField; const Time: TX3DTime);";
 			methodDecls.push(sig);
 
-			const fInfo = fieldMap.get(fnName) || (fnName.startsWith("set_") ? fieldMap.get(fnName.slice(4)) : null);
+			const fInfo =
+				fieldMap.get(fnName) ||
+				(fnName.startsWith("set_") ? fieldMap.get(fnName.slice(4)) : null);
 			if (fn.params.length > 0 && fInfo) {
 				const pType = "T" + fInfo.type;
 				curParamMap.set(fn.params[0], "(Value as " + pType + ").Value");
@@ -1284,10 +1572,6 @@ export function convertECMAScriptToPascal(source, options = {}) {
 					");"
 			);
 		} else {
-			const helperParams = fn.params.map((p) => "const " + sanitizeId(p) + ": Single = 0.0");
-			helperParams.push("const Time: TX3DTime");
-			// Note: in Pascal, parameters without defaults cannot follow parameters with defaults,
-			// so put `Time` first if there are defaulted params, OR omit defaults if all callers are padded.
 			const sigParams = [
 				...fn.params.map((p) => "const " + sanitizeId(p) + ": Single"),
 				"const Time: TX3DTime"
@@ -1388,6 +1672,7 @@ export function convertECMAScriptToPascal(source, options = {}) {
 		className,
 		compiledUrl,
 		compiledEntries,
+		fieldBindArgs,
 		classInterface,
 		classImplementation,
 		pascalUnit

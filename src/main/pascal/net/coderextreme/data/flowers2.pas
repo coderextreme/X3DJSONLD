@@ -2,13 +2,14 @@ unit flowers2;
 
 interface
 
-uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported, CastleSceneCore;
 
 function Createflowers2: TX3DRootNode;
+procedure Registerflowers2Scripts(const Scene: TCastleSceneCore);
 
 implementation
 
-uses Classes, SysUtils, X3DLoad, CastleVectors;
+uses Classes, SysUtils, X3DLoad, CastleVectors, Math, X3DTime;
 
 function CreateEmptyPrototype(const AName: String): TX3DPrototype;
 var
@@ -33,6 +34,40 @@ begin
     FreeAndNil(Stream);
   end;
 end;
+
+type
+  TScript32Script = class
+  private
+    Fcoordinates: array of TVector3;
+    FField_coordinates: TMFVec3f;
+    FDirty_coordinates: Boolean;
+    FcoordIndexes: array of Int32;
+    FField_coordIndexes: TMFInt32;
+    FDirty_coordIndexes: Boolean;
+    Fe: Single;
+    FField_e: TSFFloat;
+    FDirty_e: Boolean;
+    Ff: Single;
+    FField_f: TSFFloat;
+    FDirty_f: Boolean;
+    Fg: Single;
+    FField_g: TSFFloat;
+    FDirty_g: Boolean;
+    Fh: Single;
+    FField_h: TSFFloat;
+    FDirty_h: Boolean;
+    Fresolution: Int32;
+    FField_resolution: TSFInt32;
+    FDirty_resolution: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AField_coordinates: TMFVec3f; const AField_coordIndexes: TMFInt32; const AField_e: TSFFloat; const AField_f: TSFFloat; const AField_g: TSFFloat; const AField_h: TSFFloat; const AField_resolution: TSFInt32);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Initialize(Value: TX3DField; const Time: TX3DTime);
+    procedure GenerateCoordinates(const Time: TX3DTime);
+    procedure Set_fraction(Value: TX3DField; const Time: TX3DTime);
+  end;
 
 var
   X3D0: TX3DRootNode;
@@ -68,8 +103,197 @@ var
   FieldVal38: TSFFloat;
   FieldVal39: TSFFloat;
   FieldVal40: TSFInt32;
+  CompiledScript32: TScript32Script;
   ProtoInstance46: TX3DPrototypeNode;
   ProtoInstance51: TX3DPrototypeNode;
+
+constructor TScript32Script.Create(const AField_coordinates: TMFVec3f; const AField_coordIndexes: TMFInt32; const AField_e: TSFFloat; const AField_f: TSFFloat; const AField_g: TSFFloat; const AField_h: TSFFloat; const AField_resolution: TSFInt32);
+begin
+  inherited Create;
+  Fcoordinates := 0;
+  FField_coordinates := nil;
+  FDirty_coordinates := False;
+  FcoordIndexes := 0;
+  FField_coordIndexes := nil;
+  FDirty_coordIndexes := False;
+  Fe := 0.0;
+  FField_e := nil;
+  FDirty_e := False;
+  Ff := 0.0;
+  FField_f := nil;
+  FDirty_f := False;
+  Fg := 0.0;
+  FField_g := nil;
+  FDirty_g := False;
+  Fh := 0.0;
+  FField_h := nil;
+  FDirty_h := False;
+  Fresolution := 0;
+  FField_resolution := nil;
+  FDirty_resolution := False;
+  FField_coordinates := AField_coordinates;
+  if AField_coordinates <> nil then Fcoordinates := AField_coordinates.Value;
+  FField_coordIndexes := AField_coordIndexes;
+  if AField_coordIndexes <> nil then FcoordIndexes := AField_coordIndexes.Value;
+  FField_e := AField_e;
+  if AField_e <> nil then Fe := AField_e.Value;
+  FField_f := AField_f;
+  if AField_f <> nil then Ff := AField_f.Value;
+  FField_g := AField_g;
+  if AField_g <> nil then Fg := AField_g.Value;
+  FField_h := AField_h;
+  if AField_h <> nil then Fh := AField_h.Value;
+  FField_resolution := AField_resolution;
+  if AField_resolution <> nil then Fresolution := AField_resolution.Value;
+end;
+
+destructor TScript32Script.Destroy;
+begin
+  inherited Destroy;
+end;
+
+procedure TScript32Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_coordinates then
+  begin
+    FDirty_coordinates := False;
+    if FField_coordinates <> nil then
+      FField_coordinates.Send(Fcoordinates, Time);
+  end;
+  if FDirty_coordIndexes then
+  begin
+    FDirty_coordIndexes := False;
+    if FField_coordIndexes <> nil then
+      FField_coordIndexes.Send(FcoordIndexes, Time);
+  end;
+  if FDirty_e then
+  begin
+    FDirty_e := False;
+    if FField_e <> nil then
+      FField_e.Send(Fe, Time);
+  end;
+  if FDirty_f then
+  begin
+    FDirty_f := False;
+    if FField_f <> nil then
+      FField_f.Send(Ff, Time);
+  end;
+  if FDirty_g then
+  begin
+    FDirty_g := False;
+    if FField_g <> nil then
+      FField_g.Send(Fg, Time);
+  end;
+  if FDirty_h then
+  begin
+    FDirty_h := False;
+    if FField_h <> nil then
+      FField_h.Send(Fh, Time);
+  end;
+  if FDirty_resolution then
+  begin
+    FDirty_resolution := False;
+    if FField_resolution <> nil then
+      FField_resolution.Send(Fresolution, Time);
+  end;
+end;
+
+procedure TScript32Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script32_initialize', {$ifdef FPC}@{$endif}Initialize);
+  Scene.RegisterCompiledScript('Script32_set_fraction', {$ifdef FPC}@{$endif}Set_fraction);
+end;
+
+procedure TScript32Script.Initialize(Value: TX3DField; const Time: TX3DTime);
+var
+  arrIndex: Integer;
+  i: Integer;
+  j: Integer;
+begin
+  GenerateCoordinates(Time);
+  arrIndex := 0;
+  for i := 0 to (Fresolution - 1) - 1 do
+  begin
+    for j := 0 to (Fresolution - 1) - 1 do
+    begin
+      FcoordIndexes[arrIndex := arrIndex + 1] := i * Fresolution + j; FDirty_coordIndexes := True;
+      FcoordIndexes[arrIndex := arrIndex + 1] := i * Fresolution + j + 1; FDirty_coordIndexes := True;
+      FcoordIndexes[arrIndex := arrIndex + 1] := i + 1 * Fresolution + j + 1; FDirty_coordIndexes := True;
+      FcoordIndexes[arrIndex := arrIndex + 1] := i + 1 * Fresolution + j; FDirty_coordIndexes := True;
+      FcoordIndexes[arrIndex := arrIndex + 1] := -1; FDirty_coordIndexes := True;
+    end;
+  end;
+  FlushOutputs(Time);
+end;
+
+procedure TScript32Script.GenerateCoordinates(const Time: TX3DTime);
+var
+  theta: Single;
+  phi: Single;
+  delta: Single;
+  arrIndex: Integer;
+  i: Integer;
+  j: Integer;
+  rho: Single;
+begin
+  theta := 0.0;
+  phi := 0.0;
+  delta := 2 * 3.141592653 / Fresolution - 1;
+  arrIndex := 0;
+  for i := 0 to (Fresolution) - 1 do
+  begin
+    for j := 0 to (Fresolution) - 1 do
+    begin
+      rho := Fe + Ff * Cos(Fg * theta) * Cos(Fh * phi);
+      Fcoordinates[arrIndex := arrIndex + 1] := Vector3(rho * Cos(phi) * Cos(theta), rho * Cos(phi) * Sin(theta), rho * Sin(phi)); FDirty_coordinates := True;
+      theta := theta + (delta);
+    end;
+    phi := phi + (delta);
+  end;
+end;
+
+procedure TScript32Script.Set_fraction(Value: TX3DField; const Time: TX3DTime);
+var
+  choice: Integer;
+begin
+  choice := Floor(Random * 4);
+  case choice of
+    0:
+    begin
+      Fe := Fe + (Floor(Random * 2) * 2 - 1); FDirty_e := True;
+    end;
+    1:
+    begin
+      Ff := Ff + (Floor(Random * 2) * 2 - 1); FDirty_f := True;
+    end;
+    2:
+    begin
+      Fg := Fg + (Floor(Random * 2) * 2 - 1); FDirty_g := True;
+    end;
+    3:
+    begin
+      Fh := Fh + (Floor(Random * 2) * 2 - 1); FDirty_h := True;
+    end;
+  end;
+  if Fe < 1 then
+  begin
+    Ff := 10; FDirty_f := True;
+  end;
+  if Ff < 1 then
+  begin
+    Ff := 10; FDirty_f := True;
+  end;
+  if Fg < 1 then
+  begin
+    Fg := 4; FDirty_g := True;
+  end;
+  if Fh < 1 then
+  begin
+    Fh := 4; FDirty_h := True;
+  end;
+  GenerateCoordinates(Time);
+  FlushOutputs(Time);
+end;
 
 procedure Initflowers2Part0;
 begin
@@ -182,76 +406,16 @@ FieldVal39 := TSFFloat.Create(Script32, True, 'h', 5);
 Script32.AddCustomFieldOrEvent(FieldVal39);
 FieldVal40 := TSFInt32.Create(Script32, True, 'resolution', 50);
 Script32.AddCustomFieldOrEvent(FieldVal40);
-Script32.SetSourceCode('ecmascript:' + LineEnding +
-  '' + LineEnding +
-  '			function initialize() {' + LineEnding +
-  '			     generateCoordinates();' + LineEnding +
-  '			     var arrIndex = 0;' + LineEnding +
-  '			     for (var i = 0; i < resolution-1; i++) {' + LineEnding +
-  '				for (var j = 0; j < resolution-1; j++) {' + LineEnding +
-  '				     coordIndexes[arrIndex++] = i*resolution+j;' + LineEnding +
-  '				     coordIndexes[arrIndex++] = i*resolution+j+1;' + LineEnding +
-  '				     coordIndexes[arrIndex++] = (i+1)*resolution+j+1;' + LineEnding +
-  '				     coordIndexes[arrIndex++] = (i+1)*resolution+j;' + LineEnding +
-  '				     coordIndexes[arrIndex++] = -1;' + LineEnding +
-  '				}' + LineEnding +
-  '			    }' + LineEnding +
-  '			}' + LineEnding +
-  '' + LineEnding +
-  '			function generateCoordinates() {' + LineEnding +
-  '			     var theta = 0.0;' + LineEnding +
-  '			     var phi = 0.0;' + LineEnding +
-  '			     var delta = (2 * 3.141592653) / (resolution-1);' + LineEnding +
-  '			     var arrIndex = 0;' + LineEnding +
-  '			     for (var i = 0; i < resolution; i++) {' + LineEnding +
-  '				for (var j = 0; j < resolution; j++) {' + LineEnding +
-  '					var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);' + LineEnding +
-  '					coordinates[arrIndex++] = new SFVec3f(' + LineEnding +
-  '						rho * Math.cos(phi) * Math.cos(theta),' + LineEnding +
-  '						rho * Math.cos(phi) * Math.sin(theta),' + LineEnding +
-  '						rho * Math.sin(phi)' + LineEnding +
-  '					);' + LineEnding +
-  '					theta += delta;' + LineEnding +
-  '				}' + LineEnding +
-  '				phi += delta;' + LineEnding +
-  '			     }' + LineEnding +
-  '			}' + LineEnding +
-  '' + LineEnding +
-  '			function set_fraction(fraction, eventTime) {' + LineEnding +
-  '				var choice = Math.floor(Math.random() * 4);' + LineEnding +
-  '				switch (choice) {' + LineEnding +
-  '				case 0:' + LineEnding +
-  '					e += Math.floor(Math.random() * 2) * 2 - 1;' + LineEnding +
-  '					break;' + LineEnding +
-  '				case 1:' + LineEnding +
-  '					f += Math.floor(Math.random() * 2) * 2 - 1;' + LineEnding +
-  '					break;' + LineEnding +
-  '				case 2:' + LineEnding +
-  '					g += Math.floor(Math.random() * 2) * 2 - 1;' + LineEnding +
-  '					break;' + LineEnding +
-  '				case 3:' + LineEnding +
-  '					h += Math.floor(Math.random() * 2) * 2 - 1;' + LineEnding +
-  '					break;' + LineEnding +
-  '				}' + LineEnding +
-  '				if (e < 1) {' + LineEnding +
-  '					f = 10;' + LineEnding +
-  '				}' + LineEnding +
-  '				if (f < 1) {' + LineEnding +
-  '					f = 10;' + LineEnding +
-  '				}' + LineEnding +
-  '				if (g < 1) {' + LineEnding +
-  '					g = 4;' + LineEnding +
-  '				}' + LineEnding +
-  '				if (h < 1) {' + LineEnding +
-  '					h = 4;' + LineEnding +
-  '				}' + LineEnding +
-  '				generateCoordinates();' + LineEnding +
-  '			}');
+FreeAndNil(CompiledScript32);
+CompiledScript32 := TScript32Script.Create(FieldVal34, FieldVal35, FieldVal36, FieldVal37, FieldVal38, FieldVal39, FieldVal40);
+Script32.SetUrl(['compiled:' + LineEnding +
+  'initialize=Script32_initialize' + LineEnding +
+  'set_fraction=Script32_set_fraction']);
 Group23.FdChildren.Add(Script32);
 { ROUTE OrbitScript.coordIndexes TO Orbit.set_coordIndex }
-Group23.AddRoute(FieldVal35, IndexedFaceSet30.EventSet_coordIndex);
+Group23.AddRoute(FieldVal35.EventOut, IndexedFaceSet30.EventSet_coordIndex);
 { ROUTE OrbitScript.coordinates TO OrbitCoordinates.point }
-Group23.AddRoute(FieldVal34, Coordinate31.point);
+Group23.AddRoute(FieldVal34.EventOut, Coordinate31.point);
 { ROUTE Clock.fraction_changed TO OrbitScript.set_fraction }
 Group23.AddRoute(TimeSensor24.EventFraction_changed, FieldVal33);
 { ROUTE OrbitPath.value_changed TO OrbitTransform.rotation }
@@ -263,12 +427,12 @@ X3D0.AddPrototype(ProtoDeclare16);
 ProtoInstance46 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare16);
 (ProtoInstance46.Field('translation') as TSFVec3f).Value := Vector3(-8, 0, 0);
 (ProtoInstance46.Field('diffuseColor') as TSFColor).Value := Vector3(1, 0.5, 0);
-(ProtoInstance46.Field('specularColor') as TSFColor).Value := Vector3(1, 0.5, 0);
-(ProtoInstance46.Field('transparency') as TSFFloat).Value := 0.75;
 end;
 
 procedure Initflowers2Part3;
 begin
+(ProtoInstance46.Field('specularColor') as TSFColor).Value := Vector3(1, 0.5, 0);
+(ProtoInstance46.Field('transparency') as TSFFloat).Value := 0.75;
 Group14.FdChildren.Add(ProtoInstance46.Instantiate);
 ProtoInstance51 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare16);
 (ProtoInstance51.Field('translation') as TSFVec3f).Value := Vector3(8, 0, 0);
@@ -289,5 +453,12 @@ begin
   Result := X3D0;
 end;
 
+procedure Registerflowers2Scripts(const Scene: TCastleSceneCore);
 begin
+  if CompiledScript32 <> nil then
+    CompiledScript32.RegisterHandlers(Scene);
+end;
+
+finalization
+  FreeAndNil(CompiledScript32);
 end.

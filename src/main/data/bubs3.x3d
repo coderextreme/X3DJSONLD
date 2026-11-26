@@ -19,8 +19,7 @@
 <field name="velocity" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 <field name="scalvel" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 <field name="set_fraction" accessType="inputOnly" type="SFFloat"></field>
-<![CDATA[ 
-ecmascript:
+<![CDATA[ecmascript:
 function initialize() {
     velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
 
@@ -76,8 +75,7 @@ function set_fraction(value) {
 <field name="velocity" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 <field name="scalvel" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 <field name="set_fraction" accessType="inputOnly" type="SFFloat"></field>
-<![CDATA[ 
-ecmascript:
+<![CDATA[ecmascript:
 function initialize() {
     velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
 
@@ -133,8 +131,7 @@ function set_fraction(value) {
 <field name="velocity" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 <field name="scalvel" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 <field name="set_fraction" accessType="inputOnly" type="SFFloat"></field>
-<![CDATA[ 
-ecmascript:
+<![CDATA[ecmascript:
 function initialize() {
     velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
 
@@ -190,8 +187,7 @@ function set_fraction(value) {
 <field name="velocity" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 <field name="scalvel" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 <field name="set_fraction" accessType="inputOnly" type="SFFloat"></field>
-<![CDATA[ 
-ecmascript:
+<![CDATA[ecmascript:
 function initialize() {
     velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
 

@@ -92,22 +92,22 @@ ComposedCubeMapTexture24 := TComposedCubeMapTextureNode.Create;
 ComposedCubeMapTexture24.X3DName := 'texture';
 ImageTexture25 := TImageTextureNode.Create;
 ImageTexture25.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_back.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png']);
-ComposedCubeMapTexture24.FdBackTexture.Set(ImageTexture25);
+ComposedCubeMapTexture24.BackTexture := ImageTexture25;
 ImageTexture26 := TImageTextureNode.Create;
 ImageTexture26.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_bottom.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png']);
-ComposedCubeMapTexture24.FdBottomTexture.Set(ImageTexture26);
+ComposedCubeMapTexture24.BottomTexture := ImageTexture26;
 ImageTexture27 := TImageTextureNode.Create;
 ImageTexture27.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_front.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png']);
-ComposedCubeMapTexture24.FdFrontTexture.Set(ImageTexture27);
+ComposedCubeMapTexture24.FrontTexture := ImageTexture27;
 ImageTexture28 := TImageTextureNode.Create;
 ImageTexture28.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_left.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png']);
-ComposedCubeMapTexture24.FdLeftTexture.Set(ImageTexture28);
+ComposedCubeMapTexture24.LeftTexture := ImageTexture28;
 ImageTexture29 := TImageTextureNode.Create;
 ImageTexture29.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_right.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png']);
-ComposedCubeMapTexture24.FdRightTexture.Set(ImageTexture29);
+ComposedCubeMapTexture24.RightTexture := ImageTexture29;
 ImageTexture30 := TImageTextureNode.Create;
 ImageTexture30.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_top.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png']);
-ComposedCubeMapTexture24.FdTopTexture.Set(ImageTexture30);
+ComposedCubeMapTexture24.TopTexture := ImageTexture30;
 Appearance22.Texture := ComposedCubeMapTexture24;
 { <ProgramShader DEF='ProgramShader' containerField='shaders' language='GLSL'> }
 { <ShaderProgram url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs"' containerField='programs'> }
@@ -180,7 +180,7 @@ begin
 { <ShaderPart USE="commonfs"></ShaderPart> }
 { </ComposedShader> }
 ComposedShader31 := TComposedShaderNode.Create;
-ComposedShader31.Language := 'GLSL';
+ComposedShader31.Language := slGLSL;
 FieldVal32 := TSFVec3f.Create(ComposedShader31, False, 'chromaticDispertion', Vector3(0.98, 1, 1.033));
 ComposedShader31.AddCustomFieldOrEvent(FieldVal32);
 FieldVal33 := TSFNode.CreateUndefined(ComposedShader31, False, 'cube');
@@ -194,15 +194,15 @@ FieldVal37 := TSFFloat.Create(ComposedShader31, False, 'power', 2);
 ComposedShader31.AddCustomFieldOrEvent(FieldVal37);
 ShaderPart38 := TShaderPartNode.Create;
 ShaderPart38.SetUrl(['https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs']);
-ShaderPart38.FdType.Value := 'VERTEX';
-ComposedShader31.Parts := ShaderPart38;
+ShaderPart38.ShaderType := stVertex;
+ComposedShader31.FdParts.Add(ShaderPart38);
 ShaderPart39 := TShaderPartNode.Create;
 ShaderPart39.X3DName := 'commonfs';
 ShaderPart39.SetUrl(['https://coderextreme.net/X3DJSONLD/src/main/shaders/commonnew.fs']);
-ShaderPart39.FdType.Value := 'FRAGMENT';
-ComposedShader31.Parts := ShaderPart39;
+ShaderPart39.ShaderType := stFragment;
+ComposedShader31.FdParts.Add(ShaderPart39);
 { <ShaderPart USE="commonfs"></ShaderPart> }
-Appearance22.AddChildren([ComposedShader31]);
+Appearance22.FdShaders.Add(ComposedShader31);
 Shape20.Appearance := Appearance22;
 Transform19.FdChildren.Add(Shape20);
 Group14.FdChildren.Add(Transform19);

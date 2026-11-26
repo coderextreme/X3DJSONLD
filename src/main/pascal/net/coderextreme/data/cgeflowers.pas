@@ -125,12 +125,12 @@ X3D0.Meta['generator'] := 'Sunrize X3D Editor V2.6.6, https://create3000.github.
 Group14 := TGroupNode.Create;
 ProtoDeclare15 := CreateEmptyPrototype('FlowerProto');
 ProtoDeclare15.X3DName := 'FlowerProto';
-FieldVal17 := TMFString.Create(nil, True, 'vertex', (['../shaders/x_ite_flowers_chromatic.vs', 'https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs']));
+FieldVal17 := TMFString.Create(nil, True, 'vertex', ['../shaders/x_ite_flowers_chromatic.vs', 'https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs']);
 FieldDecl17 := TX3DInterfaceDeclaration.Create(nil);
 FieldDecl17.FieldOrEvent := FieldVal17;
 FieldVal17.ParentInterfaceDeclaration := FieldDecl17;
 ProtoDeclare15.InterfaceDeclarations.Add(FieldDecl17);
-FieldVal18 := TMFString.Create(nil, True, 'fragment', (['../shaders/x_ite.fs', 'https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs']));
+FieldVal18 := TMFString.Create(nil, True, 'fragment', ['../shaders/x_ite.fs', 'https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs']);
 FieldDecl18 := TX3DInterfaceDeclaration.Create(nil);
 FieldDecl18.FieldOrEvent := FieldVal18;
 FieldVal18.ParentInterfaceDeclaration := FieldDecl18;
@@ -151,26 +151,26 @@ end;
 procedure InitcgeflowersPart1;
 begin
 ImageTexture25.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_front.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png']);
-ComposedCubeMapTexture24.FdFrontTexture.Set(ImageTexture25);
+ComposedCubeMapTexture24.FrontTexture := ImageTexture25;
 ImageTexture26 := TImageTextureNode.Create;
 ImageTexture26.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_back.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png']);
-ComposedCubeMapTexture24.FdBackTexture.Set(ImageTexture26);
+ComposedCubeMapTexture24.BackTexture := ImageTexture26;
 ImageTexture27 := TImageTextureNode.Create;
 ImageTexture27.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_left.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png']);
-ComposedCubeMapTexture24.FdLeftTexture.Set(ImageTexture27);
+ComposedCubeMapTexture24.LeftTexture := ImageTexture27;
 ImageTexture28 := TImageTextureNode.Create;
 ImageTexture28.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_right.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png']);
-ComposedCubeMapTexture24.FdRightTexture.Set(ImageTexture28);
+ComposedCubeMapTexture24.RightTexture := ImageTexture28;
 ImageTexture29 := TImageTextureNode.Create;
 ImageTexture29.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_top.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png']);
-ComposedCubeMapTexture24.FdTopTexture.Set(ImageTexture29);
+ComposedCubeMapTexture24.TopTexture := ImageTexture29;
 ImageTexture30 := TImageTextureNode.Create;
 ImageTexture30.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_bottom.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png']);
-ComposedCubeMapTexture24.FdBottomTexture.Set(ImageTexture30);
+ComposedCubeMapTexture24.BottomTexture := ImageTexture30;
 Appearance22.Texture := ComposedCubeMapTexture24;
 ComposedShader31 := TComposedShaderNode.Create;
 ComposedShader31.X3DName := 'shader';
-ComposedShader31.Language := 'GLSL';
+ComposedShader31.Language := slGLSL;
 FieldVal32 := TSFNode.CreateEvent(ComposedShader31, 'cube', True);
 ComposedShader31.AddCustomFieldOrEvent(FieldVal32);
 FieldVal33 := TSFVec3f.Create(ComposedShader31, False, 'chromaticDispertion', Vector3(0.98, 1, 1.033));
@@ -198,14 +198,14 @@ ComposedShader31.AddCustomFieldOrEvent(FieldVal41);
 FieldVal42 := TSFFloat.CreateEvent(ComposedShader31, 'pdelta', True);
 ComposedShader31.AddCustomFieldOrEvent(FieldVal42);
 ShaderPart43 := TShaderPartNode.Create;
-ShaderPart43.FdType.Value := 'VERTEX';
+ShaderPart43.ShaderType := stVertex;
 ShaderPart43.FieldOrEvent('url', True).IsClauseNamesAdd('vertex');
-ComposedShader31.Parts := ShaderPart43;
+ComposedShader31.FdParts.Add(ShaderPart43);
 ShaderPart44 := TShaderPartNode.Create;
-ShaderPart44.FdType.Value := 'FRAGMENT';
+ShaderPart44.ShaderType := stFragment;
 ShaderPart44.FieldOrEvent('url', True).IsClauseNamesAdd('fragment');
-ComposedShader31.Parts := ShaderPart44;
-Appearance22.AddChildren([ComposedShader31]);
+ComposedShader31.FdParts.Add(ShaderPart44);
+Appearance22.FdShaders.Add(ComposedShader31);
 Shape21.Appearance := Appearance22;
 Sphere45 := TSphereNode.Create;
 Shape21.Geometry := Sphere45;
@@ -238,7 +238,7 @@ end;
 
 procedure InitcgeflowersPart3;
 begin
-Script46.SetSourceCode('castlescript:' + LineEnding +
+Script46.SetUrl(['castlescript:' + LineEnding +
   '' + LineEnding +
   '{ CastleScript cannot call user-defined functions, only built-ins,' + LineEnding +
   '  so everything is inlined into the two event handlers. }' + LineEnding +
@@ -287,7 +287,7 @@ Script46.SetSourceCode('castlescript:' + LineEnding +
   '  when(d < 1, d := 4);' + LineEnding +
   '  when(c > 10, c := 4);' + LineEnding +
   '  when(d > 10, d := 4)' + LineEnding +
-  '  )');
+  '  )']);
 Transform20.FdChildren.Add(Script46);
 TimeSensor58 := TTimeSensorNode.Create;
 TimeSensor58.X3DName := 'TourTime';
@@ -296,21 +296,21 @@ TimeSensor58.Loop := True;
 Transform20.FdChildren.Add(TimeSensor58);
 ProtoDeclare15.Node.AddChildren([Transform20]);
 { ROUTE TourTime.fraction_changed TO Animate.set_fraction }
-ProtoBody19.AddRoute(TimeSensor58.EventFraction_changed, FieldVal51);
+ProtoDeclare15.Node.AddRoute(TimeSensor58.EventFraction_changed, FieldVal51);
 { ROUTE Animate.translation_changed TO transform.set_translation }
-ProtoBody19.AddRoute(Script46.EventTranslation_changed, Transform20.FdTranslation.EventIn);
+ProtoDeclare15.Node.AddRoute(FieldVal47.EventOut, Transform20.FdTranslation.EventIn);
 { ROUTE Animate.a TO shader.a }
-ProtoBody19.AddRoute(FieldVal52, ComposedShader31.a);
+ProtoDeclare15.Node.AddRoute(FieldVal52, FieldVal37);
 { ROUTE Animate.b TO shader.b }
-ProtoBody19.AddRoute(FieldVal53, ComposedShader31.b);
+ProtoDeclare15.Node.AddRoute(FieldVal53, FieldVal38);
 { ROUTE Animate.c TO shader.c }
-ProtoBody19.AddRoute(FieldVal54, ComposedShader31.c);
+ProtoDeclare15.Node.AddRoute(FieldVal54, FieldVal39);
 { ROUTE Animate.d TO shader.d }
-ProtoBody19.AddRoute(FieldVal55, ComposedShader31.d);
+ProtoDeclare15.Node.AddRoute(FieldVal55, FieldVal40);
 { ROUTE Animate.tdelta TO shader.tdelta }
-ProtoBody19.AddRoute(FieldVal56, ComposedShader31.tdelta);
+ProtoDeclare15.Node.AddRoute(FieldVal56, FieldVal41);
 { ROUTE Animate.pdelta TO shader.pdelta }
-ProtoBody19.AddRoute(FieldVal57, ComposedShader31.pdelta);
+ProtoDeclare15.Node.AddRoute(FieldVal57, FieldVal42);
 X3D0.AddPrototype(ProtoDeclare15);
 NavigationInfo67 := TNavigationInfoNode.Create;
 Group14.FdChildren.Add(NavigationInfo67);

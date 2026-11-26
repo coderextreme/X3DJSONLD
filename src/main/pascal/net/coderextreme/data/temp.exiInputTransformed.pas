@@ -2,13 +2,14 @@ unit temp;
 
 interface
 
-uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported, CastleSceneCore;
 
 function Createtemp: TX3DRootNode;
+procedure RegistertempScripts(const Scene: TCastleSceneCore);
 
 implementation
 
-uses Classes, SysUtils, X3DLoad, CastleVectors;
+uses Classes, SysUtils, X3DLoad, CastleVectors, Math, X3DTime;
 
 function CreateEmptyPrototype(const AName: String): TX3DPrototype;
 var
@@ -33,6 +34,52 @@ begin
     FreeAndNil(Stream);
   end;
 end;
+
+type
+  TScript77Script = class
+  private
+    FcolorsOutput: array of TVector3;
+    FEvent_colorsOutput: TX3DEvent;
+    FBack_colorsOutput: TMFColor;
+    FDirty_colorsOutput: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_colorsOutput: TX3DEvent);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure ColorInput(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript121Script = class
+  private
+    Fenabled: Boolean;
+    FField_enabled: TSFBool;
+    FDirty_enabled: Boolean;
+    FdiffuseColor: TVector3;
+    FField_diffuseColor: TSFColor;
+    FDirty_diffuseColor: Boolean;
+    FnewColor: TVector3;
+    FEvent_newColor: TX3DEvent;
+    FBack_newColor: TSFColor;
+    FDirty_newColor: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AField_enabled: TSFBool; const AField_diffuseColor: TSFColor; const AEvent_newColor: TX3DEvent);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Initialize(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_enabled(Value: TX3DField; const Time: TX3DTime);
+    procedure ClockTrigger(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript190Script = class
+  private
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create;
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+  end;
 
 var
   X3D0: TX3DRootNode;
@@ -77,6 +124,7 @@ var
   Script77: TScriptNode;
   FieldVal78: TX3DEvent;
   FieldVal79: TX3DEvent;
+  CompiledScript77: TScript77Script;
   ColorInterpolator80: TColorInterpolatorNode;
   TimeSensor81: TTimeSensorNode;
   ProtoDeclare85: TX3DPrototype;
@@ -122,6 +170,7 @@ var
   FieldVal123: TSFColor;
   FieldVal124: TX3DEvent;
   FieldVal125: TX3DEvent;
+  CompiledScript121: TScript121Script;
   Group126: TGroupNode;
   Shape127: TShapeNode;
   MetadataString128: TMetadataStringNode;
@@ -182,10 +231,154 @@ var
   ImageTexture188: TImageTextureNode;
   MovieTexture189: TMovieTextureNode;
   Script190: TScriptNode;
+  CompiledScript190: TScript190Script;
   PackagedShader191: TPackagedShaderNode;
   ShaderPart192: TShaderPartNode;
   ShaderProgram193: TShaderProgramNode;
   OrthoViewpoint194: TOrthoViewpointNode;
+
+constructor TScript77Script.Create(const AEvent_colorsOutput: TX3DEvent);
+begin
+  inherited Create;
+  FcolorsOutput := 0;
+  FEvent_colorsOutput := nil;
+  FBack_colorsOutput := TMFColor.Create(nil, False, 'colorsOutput', 0);
+  FDirty_colorsOutput := False;
+  FEvent_colorsOutput := AEvent_colorsOutput;
+end;
+
+destructor TScript77Script.Destroy;
+begin
+  FreeAndNil(FBack_colorsOutput);
+  inherited Destroy;
+end;
+
+procedure TScript77Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_colorsOutput then
+  begin
+    FDirty_colorsOutput := False;
+    if FEvent_colorsOutput <> nil then
+    begin
+      FBack_colorsOutput.Value := FcolorsOutput;
+      FEvent_colorsOutput.Send(FBack_colorsOutput, Time);
+    end;
+  end;
+end;
+
+procedure TScript77Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script77_colorInput', {$ifdef FPC}@{$endif}ColorInput);
+end;
+
+procedure TScript77Script.ColorInput(Value: TX3DField; const Time: TX3DTime);
+begin
+  FcolorsOutput := [(Value as TSFColor).Value]; FDirty_colorsOutput := True;
+  FlushOutputs(Time);
+end;
+
+constructor TScript121Script.Create(const AField_enabled: TSFBool; const AField_diffuseColor: TSFColor; const AEvent_newColor: TX3DEvent);
+begin
+  inherited Create;
+  Fenabled := False;
+  FField_enabled := nil;
+  FDirty_enabled := False;
+  FdiffuseColor := Vector3(0, 0, 0);
+  FField_diffuseColor := nil;
+  FDirty_diffuseColor := False;
+  FnewColor := Vector3(0, 0, 0);
+  FEvent_newColor := nil;
+  FBack_newColor := TSFColor.Create(nil, False, 'newColor', Vector3(0, 0, 0));
+  FDirty_newColor := False;
+  FField_enabled := AField_enabled;
+  if AField_enabled <> nil then Fenabled := AField_enabled.Value;
+  FField_diffuseColor := AField_diffuseColor;
+  if AField_diffuseColor <> nil then FdiffuseColor := AField_diffuseColor.Value;
+  FEvent_newColor := AEvent_newColor;
+end;
+
+destructor TScript121Script.Destroy;
+begin
+  FreeAndNil(FBack_newColor);
+  inherited Destroy;
+end;
+
+procedure TScript121Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_enabled then
+  begin
+    FDirty_enabled := False;
+    if FField_enabled <> nil then
+      FField_enabled.Send(Fenabled, Time);
+  end;
+  if FDirty_diffuseColor then
+  begin
+    FDirty_diffuseColor := False;
+    if FField_diffuseColor <> nil then
+      FField_diffuseColor.Send(FdiffuseColor, Time);
+  end;
+  if FDirty_newColor then
+  begin
+    FDirty_newColor := False;
+    if FEvent_newColor <> nil then
+    begin
+      FBack_newColor.Value := FnewColor;
+      FEvent_newColor.Send(FBack_newColor, Time);
+    end;
+  end;
+end;
+
+procedure TScript121Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script121_initialize', {$ifdef FPC}@{$endif}Initialize);
+  Scene.RegisterCompiledScript('Script121_set_enabled', {$ifdef FPC}@{$endif}Set_enabled);
+  Scene.RegisterCompiledScript('Script121_clockTrigger', {$ifdef FPC}@{$endif}ClockTrigger);
+end;
+
+procedure TScript121Script.Initialize(Value: TX3DField; const Time: TX3DTime);
+begin
+  FnewColor := FdiffuseColor; FDirty_newColor := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript121Script.Set_enabled(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fenabled := (Value as TSFBool).Value; FDirty_enabled := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript121Script.ClockTrigger(Value: TX3DField; const Time: TX3DTime);
+begin
+  if not (Fenabled) then
+    Exit;
+  red := FnewColor.X;
+  green := FnewColor.Y;
+  blue := FnewColor.Z;
+  FnewColor := Vector3(red + 0.02 mod 1, green + 0.03 mod 1, blue + 0.04 mod 1); FDirty_newColor := True;
+  if Fenabled then
+  begin
+    WriteLn('diffuseColor=(' + red + ',' + green + ',' + blue + ') newColor=' + FnewColor.toString() + #10);
+  end;
+  FlushOutputs(Time);
+end;
+
+constructor TScript190Script.Create;
+begin
+  inherited Create;
+end;
+
+destructor TScript190Script.Destroy;
+begin
+  inherited Destroy;
+end;
+
+procedure TScript190Script.FlushOutputs(const Time: TX3DTime);
+begin
+end;
+
+procedure TScript190Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+end;
 
 procedure InittempPart0;
 begin
@@ -432,14 +625,10 @@ FieldVal78 := TSFColor.CreateEvent(Script77, 'colorInput', True);
 Script77.AddCustomFieldOrEvent(FieldVal78);
 FieldVal79 := TMFColor.CreateEvent(Script77, 'colorsOutput', False);
 Script77.AddCustomFieldOrEvent(FieldVal79);
-Script77.SetSourceCode('ecmascript:' + LineEnding +
-  '' + LineEnding +
-  'function colorInput (eventValue) // Example source code' + LineEnding +
-  '{' + LineEnding +
-  '   colorsOutput = new MFColor(eventValue); // assigning value sends output event' + LineEnding +
-  '// Browser.print(''colorInput='' + eventValue + '',\n//                colorsOutput='' + colorsOutput + ''\n'');' + LineEnding +
-  '// TODO check line wrapping when exporting/converting' + LineEnding +
-  '}');
+FreeAndNil(CompiledScript77);
+CompiledScript77 := TScript77Script.Create(FieldVal79);
+Script77.SetUrl(['compiled:' + LineEnding +
+  'colorInput=Script77_colorInput']);
 Group75.FdChildren.Add(Script77);
 ColorInterpolator80 := TColorInterpolatorNode.Create;
 ColorInterpolator80.X3DName := 'ColorAnimator';
@@ -454,12 +643,12 @@ TimeSensor81.PauseTime := 0;
 TimeSensor81.ResumeTime := 0;
 TimeSensor81.StartTime := 0;
 TimeSensor81.StopTime := 0;
-Group75.FdChildren.Add(TimeSensor81);
-{ ROUTE colorTypeConversionScript.colorsOutput TO GradualBackground.skyColor }
 end;
 
 procedure InittempPart6;
 begin
+Group75.FdChildren.Add(TimeSensor81);
+{ ROUTE colorTypeConversionScript.colorsOutput TO GradualBackground.skyColor }
 Group75.AddRoute(FieldVal79, Background76.skyColor);
 { ROUTE ColorAnimator.value_changed TO colorTypeConversionScript.colorInput }
 Group75.AddRoute(ColorInterpolator80.EventValue_changed, FieldVal78);
@@ -498,12 +687,12 @@ X3DExternalPrototype92 := TX3DExternalPrototype.Create;
 X3DExternalPrototype92.X3DName := 'ArtDeco02';
 X3DExternalPrototype92.Appinfo := 'this is a different Material node';
 X3DExternalPrototype92.Url := '"https://www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02" "https://www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02"';
-FieldVal93 := TSFString.CreateUndefined(X3DExternalPrototype92, True, 'description');
-X3DExternalPrototype92.AddCustomFieldOrEvent(FieldVal93);
 end;
 
 procedure InittempPart7;
 begin
+FieldVal93 := TSFString.CreateUndefined(X3DExternalPrototype92, True, 'description');
+X3DExternalPrototype92.AddCustomFieldOrEvent(FieldVal93);
 Group32.AddX3DExternalPrototype([X3DExternalPrototype92]);
 Shape94 := TShapeNode.Create;
 Shape94.X3DName := 'TestShape1';
@@ -542,12 +731,12 @@ Shape103.Appearance := Appearance104;
 Cylinder106 := TCylinderNode.Create;
 Cylinder106.Height := 0.001;
 Cylinder106.Radius := 0.001;
-Shape103.Geometry := Cylinder106;
-Group32.FdChildren.Add(Shape103);
 end;
 
 procedure InittempPart8;
 begin
+Shape103.Geometry := Cylinder106;
+Group32.FdChildren.Add(Shape103);
 Inline107 := TInlineNode.Create;
 Inline107.X3DName := 'inlineScene';
 Inline107.AutoRefresh := 0;
@@ -586,12 +775,12 @@ FieldVal115.ParentInterfaceDeclaration := FieldDecl115;
 ProtoDeclare110.InterfaceDeclarations.Add(FieldDecl115);
 FieldVal116 := TSFFloat.Create(nil, True, 'transparency', 0);
 FieldDecl116 := TX3DInterfaceDeclaration.Create(nil);
-FieldDecl116.FieldOrEvent := FieldVal116;
-FieldVal116.ParentInterfaceDeclaration := FieldDecl116;
 end;
 
 procedure InittempPart9;
 begin
+FieldDecl116.FieldOrEvent := FieldVal116;
+FieldVal116.ParentInterfaceDeclaration := FieldDecl116;
 ProtoDeclare110.InterfaceDeclarations.Add(FieldDecl116);
 FieldVal117 := TSFFloat.Create(nil, True, 'shininess', 0);
 FieldDecl117 := TX3DInterfaceDeclaration.Create(nil);
@@ -630,34 +819,17 @@ Script121.AddCustomFieldOrEvent(FieldVal124);
 FieldVal125 := TSFTime.CreateEvent(Script121, 'clockTrigger', True);
 Script121.AddCustomFieldOrEvent(FieldVal125);
 Script121.FieldOrEvent('enabled', True).IsClauseNamesAdd('enabled');
-Script121.FieldOrEvent('diffuseColor', True).IsClauseNamesAdd('diffuseColor');
-Script121.SetSourceCode('ecmascript:' + LineEnding +
-  'function initialize ()' + LineEnding +
-  '{' + LineEnding +
-  '    newColor = diffuseColor; // start with correct color' + LineEnding +
-  '}' + LineEnding +
-  'function set_enabled (newValue)' + LineEnding +
-  '{' + LineEnding +
-  '	enabled = newValue;' + LineEnding +
-  '}' + LineEnding +
-  'function clockTrigger (timeValue)' + LineEnding +
-  '{' + LineEnding +
-  '    if (!enabled) return;' + LineEnding +
-  '    red   = newColor.r;' + LineEnding +
-  '    green = newColor.g;' + LineEnding +
-  '    blue  = newColor.b;' + LineEnding +
-  '' + LineEnding +
-  '    // note different modulation rates for each color component, % is modulus operator' + LineEnding +
-  '    newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1);' + LineEnding +
-  '	if (enabled)' + LineEnding +
-  '	{' + LineEnding +
-  '		Browser.print (''diffuseColor=('' + red + '','' + green + '','' + blue + '') newColor='' + newColor.toString() + ''\n'');' + LineEnding +
-  '	}' + LineEnding +
-  '}');
 end;
 
 procedure InittempPart10;
 begin
+Script121.FieldOrEvent('diffuseColor', True).IsClauseNamesAdd('diffuseColor');
+FreeAndNil(CompiledScript121);
+CompiledScript121 := TScript121Script.Create(FieldVal122, FieldVal123, FieldVal124);
+Script121.SetUrl(['compiled:' + LineEnding +
+  'initialize=Script121_initialize' + LineEnding +
+  'set_enabled=Script121_set_enabled' + LineEnding +
+  'clockTrigger=Script121_clockTrigger']);
 ProtoDeclare110.Node.AddChildren([Script121]);
 X3D0.AddPrototype(ProtoDeclare110);
 Group126 := TGroupNode.Create;
@@ -694,14 +866,14 @@ Sound133.MinBack := 1;
 Sound133.MinFront := 1;
 Sound133.Priority := 0;
 AudioClip134 := TAudioClipNode.Create;
-AudioClip134.AutoRefresh := 0;
-AudioClip134.AutoRefreshTimeLimit := 3600;
-AudioClip134.Description := 'chimes';
-AudioClip134.Gain := 1;
 end;
 
 procedure InittempPart11;
 begin
+AudioClip134.AutoRefresh := 0;
+AudioClip134.AutoRefreshTimeLimit := 3600;
+AudioClip134.Description := 'chimes';
+AudioClip134.Gain := 1;
 AudioClip134.PauseTime := 0;
 AudioClip134.Pitch := 1;
 AudioClip134.ResumeTime := 0;
@@ -738,14 +910,14 @@ Appearance138.X3DName := 'TransparentAppearance';
 Appearance138.AlphaCutoff := 0.5;
 Material139 := TMaterialNode.Create;
 Material139.AmbientIntensity := 0.2;
-Material139.NormalScale := 1;
-Material139.OcclusionStrength := 1;
-Material139.Shininess := 0.2;
-Material139.Transparency := 1;
 end;
 
 procedure InittempPart12;
 begin
+Material139.NormalScale := 1;
+Material139.OcclusionStrength := 1;
+Material139.Shininess := 0.2;
+Material139.Transparency := 1;
 Appearance138.Material := Material139;
 Shape137.Appearance := Appearance138;
 Extrusion140 := TExtrusionNode.Create;
@@ -782,14 +954,14 @@ ProtoDeclare152 := CreateEmptyPrototype('ShaderProto');
 ProtoDeclare152.X3DName := 'ShaderProto';
 ProgramShader154 := TProgramShaderNode.Create;
 ProtoDeclare152.Node.AddChildren([ProgramShader154]);
-X3D0.AddPrototype(ProtoDeclare152);
-Shape155 := TShapeNode.Create;
-Appearance156 := TAppearanceNode.Create;
-Appearance156.AlphaCutoff := 0.5;
 end;
 
 procedure InittempPart13;
 begin
+X3D0.AddPrototype(ProtoDeclare152);
+Shape155 := TShapeNode.Create;
+Appearance156 := TAppearanceNode.Create;
+Appearance156.AlphaCutoff := 0.5;
 ProgramShader157 := TProgramShaderNode.Create;
 ProgramShader157.X3DName := 'TestShader1';
 ShaderProgram158 := TShaderProgramNode.Create;
@@ -797,19 +969,19 @@ ShaderProgram158.X3DName := 'TestShader2';
 ShaderProgram158.AutoRefresh := 0;
 ShaderProgram158.AutoRefreshTimeLimit := 3600;
 ProgramShader157.Programs := ShaderProgram158;
-Appearance156.AddChildren([ProgramShader157]);
+Appearance156.FdShaders.Add(ProgramShader157);
 ProtoInstance159 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare152);
 ProtoInstance159.X3DName := 'TestShader3';
-Appearance156.AddChildren([ProtoInstance159.Instantiate]);
+Appearance156.FdShaders.Add(ProtoInstance159.Instantiate);
 ComposedShader160 := TComposedShaderNode.Create;
 ComposedShader160.X3DName := 'TestShader4';
 ShaderPart161 := TShaderPartNode.Create;
 ShaderPart161.X3DName := 'TestShader5';
 ShaderPart161.AutoRefresh := 0;
 ShaderPart161.AutoRefreshTimeLimit := 3600;
-ShaderPart161.FdType.Value := 'VERTEX';
-ComposedShader160.Parts := ShaderPart161;
-Appearance156.AddChildren([ComposedShader160]);
+ShaderPart161.ShaderType := stVertex;
+ComposedShader160.FdParts.Add(ShaderPart161);
+Appearance156.FdShaders.Add(ComposedShader160);
 Shape155.Appearance := Appearance156;
 Group32.FdChildren.Add(Shape155);
 Transform162 := TTransformNode.Create;
@@ -826,14 +998,14 @@ EspduTransform167 := TEspduTransformNode.Create;
 EspduTransform167.FiringRange := 0;
 EspduTransform167.ReadInterval := 0.1;
 EspduTransform167.WriteInterval := 1;
-Transform162.FdChildren.Add(EspduTransform167);
-ReceiverPdu168 := TReceiverPduNode.Create;
-ReceiverPdu168.ReadInterval := 0.1;
-ReceiverPdu168.ReceivedPower := 0;
 end;
 
 procedure InittempPart14;
 begin
+Transform162.FdChildren.Add(EspduTransform167);
+ReceiverPdu168 := TReceiverPduNode.Create;
+ReceiverPdu168.ReadInterval := 0.1;
+ReceiverPdu168.ReceivedPower := 0;
 ReceiverPdu168.WriteInterval := 1;
 Transform162.FdChildren.Add(ReceiverPdu168);
 SignalPdu169 := TSignalPduNode.Create;
@@ -870,14 +1042,14 @@ SignalPdu176.ReadInterval := 0.1;
 SignalPdu176.WriteInterval := 1;
 Group32.FdChildren.Add(SignalPdu176);
 TransmitterPdu177 := TTransmitterPduNode.Create;
-TransmitterPdu177.Power := 0;
-TransmitterPdu177.ReadInterval := 0.1;
-TransmitterPdu177.TransmitFrequencyBandwidth := 0;
-TransmitterPdu177.WriteInterval := 1;
 end;
 
 procedure InittempPart15;
 begin
+TransmitterPdu177.Power := 0;
+TransmitterPdu177.ReadInterval := 0.1;
+TransmitterPdu177.TransmitFrequencyBandwidth := 0;
+TransmitterPdu177.WriteInterval := 1;
 Group32.FdChildren.Add(TransmitterPdu177);
 DISEntityManager178 := TDISEntityManagerNode.Create;
 DISEntityTypeMapping179 := TDISEntityTypeMappingNode.Create;
@@ -914,14 +1086,14 @@ LoadSensor180.FdChildren.Add(ImageCubeMapTexture186);
 ImageTexture3D187 := TImageTexture3DNode.Create;
 ImageTexture3D187.AutoRefresh := 0;
 ImageTexture3D187.AutoRefreshTimeLimit := 3600;
-LoadSensor180.FdChildren.Add(ImageTexture3D187);
-ImageTexture188 := TImageTextureNode.Create;
-ImageTexture188.AutoRefresh := 0;
-ImageTexture188.AutoRefreshTimeLimit := 3600;
 end;
 
 procedure InittempPart16;
 begin
+LoadSensor180.FdChildren.Add(ImageTexture3D187);
+ImageTexture188 := TImageTextureNode.Create;
+ImageTexture188.AutoRefresh := 0;
+ImageTexture188.AutoRefreshTimeLimit := 3600;
 LoadSensor180.FdChildren.Add(ImageTexture188);
 MovieTexture189 := TMovieTextureNode.Create;
 MovieTexture189.AutoRefresh := 0;
@@ -937,8 +1109,10 @@ Script190 := TScriptNode.Create;
 Script190.X3DName := 'DummyScript';
 Script190.AutoRefresh := 0;
 Script190.AutoRefreshTimeLimit := 3600;
-Script190.SetSourceCode('ecmascript:' + LineEnding +
-  '/* dummy test source code */');
+FreeAndNil(CompiledScript190);
+CompiledScript190 := TScript190Script.Create;
+Script190.SetUrl(['compiled:' + LineEnding +
+  '']);
 LoadSensor180.FdChildren.Add(Script190);
 PackagedShader191 := TPackagedShaderNode.Create;
 PackagedShader191.AutoRefresh := 0;
@@ -947,7 +1121,7 @@ LoadSensor180.FdChildren.Add(PackagedShader191);
 ShaderPart192 := TShaderPartNode.Create;
 ShaderPart192.AutoRefresh := 0;
 ShaderPart192.AutoRefreshTimeLimit := 3600;
-ShaderPart192.FdType.Value := 'VERTEX';
+ShaderPart192.ShaderType := stVertex;
 LoadSensor180.FdChildren.Add(ShaderPart192);
 ShaderProgram193 := TShaderProgramNode.Create;
 ShaderProgram193.AutoRefresh := 0;
@@ -957,6 +1131,10 @@ Group32.FdChildren.Add(LoadSensor180);
 OrthoViewpoint194 := TOrthoViewpointNode.Create;
 OrthoViewpoint194.X3DName := 'SpecialTestOrthoViewpoint';
 OrthoViewpoint194.FarDistance := -1;
+end;
+
+procedure InittempPart17;
+begin
 OrthoViewpoint194.SetFieldOfView([1, 3, 2, 4]);
 OrthoViewpoint194.NearDistance := -1;
 Group32.FdChildren.Add(OrthoViewpoint194);
@@ -982,8 +1160,22 @@ begin
   InittempPart14;
   InittempPart15;
   InittempPart16;
+  InittempPart17;
   Result := X3D0;
 end;
 
+procedure RegistertempScripts(const Scene: TCastleSceneCore);
 begin
+  if CompiledScript77 <> nil then
+    CompiledScript77.RegisterHandlers(Scene);
+  if CompiledScript121 <> nil then
+    CompiledScript121.RegisterHandlers(Scene);
+  if CompiledScript190 <> nil then
+    CompiledScript190.RegisterHandlers(Scene);
+end;
+
+finalization
+  FreeAndNil(CompiledScript77);
+  FreeAndNil(CompiledScript121);
+  FreeAndNil(CompiledScript190);
 end.

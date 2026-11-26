@@ -277,6 +277,7 @@ Material74 := TMaterialNode.Create;
 Material74.DiffuseColor := Vector3(0, 1, 0);
 Appearance73.Material := Material74;
 Shape71.Appearance := Appearance73;
+(ProtoInstance68.Field('myShape') as TMFNode).Clear;
 (ProtoInstance68.Field('myShape') as TMFNode).Add(Shape71);
 Group7.FdChildren.Add(ProtoInstance68.Instantiate);
 X3D0.AddChildren([Group7]);

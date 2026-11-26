@@ -32,8 +32,7 @@
                     <field name='old' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
                     <field name='set_location' accessType='inputOnly' type='SFTime'/>
                     <field name='keyValue' accessType='inputOutput' type='MFVec3f' value="0 0 0 0 5 0"/>
-<![CDATA[
-ecmascript:
+<![CDATA[ecmascript:
                function set_location(value) {
                     old = translation;
                     translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);

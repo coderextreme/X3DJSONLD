@@ -77,8 +77,7 @@
 	    <field name='bottom_changed' type='MFString' accessType='outputOnly'/> 
 	    <field name='set_fraction' type='SFFloat' accessType='inputOnly'/> 
 	    <field name='old' type='SFInt32' accessType='inputOutput' value='-1'/> 
-<![CDATA[
-ecmascript:
+<![CDATA[ecmascript:
         function set_fraction( f, tm ) {
 	    var side = Math.floor(f*frontUrls.length);
 	    if (side > frontUrls.length-1) {

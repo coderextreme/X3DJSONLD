@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"14 November 2026"
+            "@content":"26 November 2026"
           },
           {
             "@name":"generator",
@@ -125,7 +125,6 @@
                       }
                     ],
                     "#sourceCode":[
-"",
 "",
 "ecmascript:",
 "function initialize() {",
@@ -268,7 +267,6 @@
                     ],
                     "#sourceCode":[
 "",
-"",
 "ecmascript:",
 "function initialize() {",
 "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);",
@@ -410,7 +408,6 @@
                     ],
                     "#sourceCode":[
 "",
-"",
 "ecmascript:",
 "function initialize() {",
 "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);",
@@ -551,7 +548,6 @@
                       }
                     ],
                     "#sourceCode":[
-"",
 "",
 "ecmascript:",
 "function initialize() {",

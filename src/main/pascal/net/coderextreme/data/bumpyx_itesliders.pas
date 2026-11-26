@@ -2,13 +2,14 @@ unit bumpyx_itesliders;
 
 interface
 
-uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported, CastleSceneCore;
 
 function Createbumpyx_itesliders: TX3DRootNode;
+procedure Registerbumpyx_iteslidersScripts(const Scene: TCastleSceneCore);
 
 implementation
 
-uses Classes, SysUtils, X3DLoad, CastleVectors;
+uses Classes, SysUtils, X3DLoad, CastleVectors, Math, X3DTime;
 
 function CreateEmptyPrototype(const AName: String): TX3DPrototype;
 var
@@ -33,6 +34,42 @@ begin
     FreeAndNil(Stream);
   end;
 end;
+
+type
+  TScript84Script = class
+  private
+    Fcoordinates: array of TVector3;
+    FField_coordinates: TMFVec3f;
+    FDirty_coordinates: Boolean;
+    FcoordIndexes: array of Int32;
+    FEvent_coordIndexes: TX3DEvent;
+    FBack_coordIndexes: TMFInt32;
+    FDirty_coordIndexes: Boolean;
+    Fa: Single;
+    FField_a: TSFFloat;
+    FDirty_a: Boolean;
+    Fb: Single;
+    FField_b: TSFFloat;
+    FDirty_b: Boolean;
+    Fc: Single;
+    FField_c: TSFFloat;
+    FDirty_c: Boolean;
+    Fd: Single;
+    FField_d: TSFFloat;
+    FDirty_d: Boolean;
+    Fpdelta: Single;
+    FField_pdelta: TSFFloat;
+    FDirty_pdelta: Boolean;
+    Ftdelta: Single;
+    FField_tdelta: TSFFloat;
+    FDirty_tdelta: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AField_coordinates: TMFVec3f; const AEvent_coordIndexes: TX3DEvent; const AField_a: TSFFloat; const AField_b: TSFFloat; const AField_c: TSFFloat; const AField_d: TSFFloat; const AField_pdelta: TSFFloat; const AField_tdelta: TSFFloat);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Initialize(Value: TX3DField; const Time: TX3DTime);
+  end;
 
 var
   X3D0: TX3DRootNode;
@@ -105,6 +142,7 @@ var
   FieldVal90: TSFFloat;
   FieldVal91: TSFFloat;
   FieldVal92: TSFFloat;
+  CompiledScript84: TScript84Script;
   LayoutLayer95: TLayoutLayerNode;
   Layout96: TLayoutNode;
   Viewport97: TViewportNode;
@@ -168,6 +206,159 @@ var
   Script206: TScriptNode;
   Group207: TGroupNode;
   Group208: TGroupNode;
+
+constructor TScript84Script.Create(const AField_coordinates: TMFVec3f; const AEvent_coordIndexes: TX3DEvent; const AField_a: TSFFloat; const AField_b: TSFFloat; const AField_c: TSFFloat; const AField_d: TSFFloat; const AField_pdelta: TSFFloat; const AField_tdelta: TSFFloat);
+begin
+  inherited Create;
+  Fcoordinates := 0;
+  FField_coordinates := nil;
+  FDirty_coordinates := False;
+  FcoordIndexes := 0;
+  FEvent_coordIndexes := nil;
+  FBack_coordIndexes := TMFInt32.Create(nil, False, 'coordIndexes', 0);
+  FDirty_coordIndexes := False;
+  Fa := 0.0;
+  FField_a := nil;
+  FDirty_a := False;
+  Fb := 0.0;
+  FField_b := nil;
+  FDirty_b := False;
+  Fc := 0.0;
+  FField_c := nil;
+  FDirty_c := False;
+  Fd := 0.0;
+  FField_d := nil;
+  FDirty_d := False;
+  Fpdelta := 0.0;
+  FField_pdelta := nil;
+  FDirty_pdelta := False;
+  Ftdelta := 0.0;
+  FField_tdelta := nil;
+  FDirty_tdelta := False;
+  FField_coordinates := AField_coordinates;
+  if AField_coordinates <> nil then Fcoordinates := AField_coordinates.Value;
+  FEvent_coordIndexes := AEvent_coordIndexes;
+  FField_a := AField_a;
+  if AField_a <> nil then Fa := AField_a.Value;
+  FField_b := AField_b;
+  if AField_b <> nil then Fb := AField_b.Value;
+  FField_c := AField_c;
+  if AField_c <> nil then Fc := AField_c.Value;
+  FField_d := AField_d;
+  if AField_d <> nil then Fd := AField_d.Value;
+  FField_pdelta := AField_pdelta;
+  if AField_pdelta <> nil then Fpdelta := AField_pdelta.Value;
+  FField_tdelta := AField_tdelta;
+  if AField_tdelta <> nil then Ftdelta := AField_tdelta.Value;
+end;
+
+destructor TScript84Script.Destroy;
+begin
+  FreeAndNil(FBack_coordIndexes);
+  inherited Destroy;
+end;
+
+procedure TScript84Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_coordinates then
+  begin
+    FDirty_coordinates := False;
+    if FField_coordinates <> nil then
+      FField_coordinates.Send(Fcoordinates, Time);
+  end;
+  if FDirty_coordIndexes then
+  begin
+    FDirty_coordIndexes := False;
+    if FEvent_coordIndexes <> nil then
+    begin
+      FBack_coordIndexes.Value := FcoordIndexes;
+      FEvent_coordIndexes.Send(FBack_coordIndexes, Time);
+    end;
+  end;
+  if FDirty_a then
+  begin
+    FDirty_a := False;
+    if FField_a <> nil then
+      FField_a.Send(Fa, Time);
+  end;
+  if FDirty_b then
+  begin
+    FDirty_b := False;
+    if FField_b <> nil then
+      FField_b.Send(Fb, Time);
+  end;
+  if FDirty_c then
+  begin
+    FDirty_c := False;
+    if FField_c <> nil then
+      FField_c.Send(Fc, Time);
+  end;
+  if FDirty_d then
+  begin
+    FDirty_d := False;
+    if FField_d <> nil then
+      FField_d.Send(Fd, Time);
+  end;
+  if FDirty_pdelta then
+  begin
+    FDirty_pdelta := False;
+    if FField_pdelta <> nil then
+      FField_pdelta.Send(Fpdelta, Time);
+  end;
+  if FDirty_tdelta then
+  begin
+    FDirty_tdelta := False;
+    if FField_tdelta <> nil then
+      FField_tdelta.Send(Ftdelta, Time);
+  end;
+end;
+
+procedure TScript84Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script84_initialize', {$ifdef FPC}@{$endif}Initialize);
+end;
+
+procedure TScript84Script.Initialize(Value: TX3DField; const Time: TX3DTime);
+var
+  resolution: Integer;
+  theta: Single;
+  phi: Single;
+  delta: Single;
+  crds: array of TVector3;
+  rho: Single;
+  cis: array of Int32;
+begin
+  resolution := 300;
+  theta := 0.0;
+  phi := 0.0;
+  delta := 2 * 3.141592653 / resolution - 1;
+  crds := [];
+  for i := 0 to (resolution) - 1 do
+  begin
+    for j := 0 to (resolution) - 1 do
+    begin
+      rho := Fa + Fb * Cos(Fc * theta + Ftdelta) * Cos(Fd * phi + Fpdelta);
+      crds.push(Vector3(rho * Cos(phi) * Cos(theta), rho * Cos(phi) * Sin(theta), rho * Sin(phi)));
+      theta := theta + (delta);
+    end;
+    phi := phi + (delta);
+  end;
+  Fcoordinates := crds; FDirty_coordinates := True;
+  cis := [];
+  for i := 0 to (resolution - 1) - 1 do
+  begin
+    for j := 0 to (resolution - 1) - 1 do
+    begin
+      cis.push(i * resolution + j);
+      cis.push(i * resolution + j + 1);
+      cis.push(i + 1 * resolution + j + 1);
+      cis.push(i + 1 * resolution + j);
+      cis.push(-1);
+    end;
+  end;
+  FcoordIndexes := cis; FDirty_coordIndexes := True;
+  FlushOutputs(Time);
+end;
 
 procedure Initbumpyx_iteslidersPart0;
 begin
@@ -353,26 +544,26 @@ ComposedCubeMapTexture62 := TComposedCubeMapTextureNode.Create;
 ComposedCubeMapTexture62.X3DName := 'texture';
 ImageTexture63 := TImageTextureNode.Create;
 ImageTexture63.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_back.png', 'https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png']);
-ComposedCubeMapTexture62.FdBackTexture.Set(ImageTexture63);
+ComposedCubeMapTexture62.BackTexture := ImageTexture63;
 ImageTexture64 := TImageTextureNode.Create;
 ImageTexture64.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_bottom.png', 'https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png']);
-ComposedCubeMapTexture62.FdBottomTexture.Set(ImageTexture64);
+ComposedCubeMapTexture62.BottomTexture := ImageTexture64;
 ImageTexture65 := TImageTextureNode.Create;
 ImageTexture65.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_front.png', 'https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png']);
-ComposedCubeMapTexture62.FdFrontTexture.Set(ImageTexture65);
+ComposedCubeMapTexture62.FrontTexture := ImageTexture65;
 ImageTexture66 := TImageTextureNode.Create;
 ImageTexture66.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_left.png', 'https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png']);
-ComposedCubeMapTexture62.FdLeftTexture.Set(ImageTexture66);
+ComposedCubeMapTexture62.LeftTexture := ImageTexture66;
 ImageTexture67 := TImageTextureNode.Create;
 ImageTexture67.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_right.png', 'https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png']);
-ComposedCubeMapTexture62.FdRightTexture.Set(ImageTexture67);
+ComposedCubeMapTexture62.RightTexture := ImageTexture67;
 ImageTexture68 := TImageTextureNode.Create;
 ImageTexture68.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_top.png', 'https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png']);
-ComposedCubeMapTexture62.FdTopTexture.Set(ImageTexture68);
+ComposedCubeMapTexture62.TopTexture := ImageTexture68;
 Appearance60.Texture := ComposedCubeMapTexture62;
 ComposedShader69 := TComposedShaderNode.Create;
 ComposedShader69.X3DName := 'x_iteShader';
-ComposedShader69.Language := 'GLSL';
+ComposedShader69.Language := slGLSL;
 FieldVal70 := TSFVec3f.CreateEvent(ComposedShader69, 'chromaticDispertion', True);
 ComposedShader69.AddCustomFieldOrEvent(FieldVal70);
 FieldVal71 := TSFNode.CreateEvent(ComposedShader69, 'cube', True);
@@ -402,16 +593,16 @@ FieldVal81 := TSFFloat.Create(ComposedShader69, True, 'pdelta', 0);
 ComposedShader69.AddCustomFieldOrEvent(FieldVal81);
 ShaderPart82 := TShaderPartNode.Create;
 ShaderPart82.SetUrl(['../shaders/x_ite_flowers_chromatic.vs', 'https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs']);
-ShaderPart82.FdType.Value := 'VERTEX';
-ComposedShader69.Parts := ShaderPart82;
+ShaderPart82.ShaderType := stVertex;
+ComposedShader69.FdParts.Add(ShaderPart82);
 ShaderPart83 := TShaderPartNode.Create;
 ShaderPart83.SetUrl(['../shaders/x_ite.fs', 'https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs']);
-ShaderPart83.FdType.Value := 'FRAGMENT';
-ComposedShader69.Parts := ShaderPart83;
+ShaderPart83.ShaderType := stFragment;
+ComposedShader69.FdParts.Add(ShaderPart83);
 { TO CONVERT TO A SPHERE }
 { <ShaderPart url='"../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"' type="VERTEX" containerField='parts'></ShaderPart> }
 { <ShaderPart url='"../shaders/x_itebubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/xite_bubbles.fs"' containerField='parts' type='FRAGMENT'></ShaderPart> }
-Appearance60.AddChildren([ComposedShader69]);
+Appearance60.FdShaders.Add(ComposedShader69);
 Shape57.Appearance := Appearance60;
 Transform56.FdChildren.Add(Shape57);
 Transform54.FdChildren.Add(Transform56);
@@ -438,45 +629,15 @@ begin
 Script84.AddCustomFieldOrEvent(FieldVal91);
 FieldVal92 := TSFFloat.Create(Script84, True, 'tdelta', 0);
 Script84.AddCustomFieldOrEvent(FieldVal92);
-Script84.SetSourceCode('ecmascript:' + LineEnding +
-  'function initialize() {' + LineEnding +
-  '     var resolution = 300;' + LineEnding +
-  '     var theta = 0.0;' + LineEnding +
-  '     var phi = 0.0;' + LineEnding +
-  '     var delta = (2 * 3.141592653) / (resolution-1);' + LineEnding +
-  '     var crds = new MFVec3f();' + LineEnding +
-  '     for ( i = 0; i < resolution; i++) {' + LineEnding +
-  '     	for ( j = 0; j < resolution; j++) {' + LineEnding +
-  '		var rho = a + b * Math.cos(c * theta + tdelta) * Math.cos(d * phi + pdelta);' + LineEnding +
-  '		crds.push(new SFVec3f(' + LineEnding +
-  '			rho * Math.cos(phi) * Math.cos(theta),' + LineEnding +
-  '			rho * Math.cos(phi) * Math.sin(theta),' + LineEnding +
-  '			rho * Math.sin(phi)' + LineEnding +
-  '		));' + LineEnding +
-  '		theta += delta;' + LineEnding +
-  '	}' + LineEnding +
-  '	phi += delta;' + LineEnding +
-  '     }' + LineEnding +
-  '     coordinates = crds;' + LineEnding +
-  '' + LineEnding +
-  '' + LineEnding +
-  '     var cis = new MFInt32();' + LineEnding +
-  '     for ( i = 0; i < resolution-1; i++) {' + LineEnding +
-  '     	for ( j = 0; j < resolution-1; j++) {' + LineEnding +
-  '	     cis.push(i*resolution+j);' + LineEnding +
-  '	     cis.push(i*resolution+j+1);' + LineEnding +
-  '	     cis.push((i+1)*resolution+j+1);' + LineEnding +
-  '	     cis.push((i+1)*resolution+j);' + LineEnding +
-  '	     cis.push(-1);' + LineEnding +
-  '	}' + LineEnding +
-  '    }' + LineEnding +
-  '    coordIndexes = cis;' + LineEnding +
-  '}');
+FreeAndNil(CompiledScript84);
+CompiledScript84 := TScript84Script.Create(FieldVal85, FieldVal86, FieldVal87, FieldVal88, FieldVal89, FieldVal90, FieldVal91, FieldVal92);
+Script84.SetUrl(['compiled:' + LineEnding +
+  'initialize=Script84_initialize']);
 Layer18.FdChildren.Add(Script84);
 { ROUTE OrbitScript.coordIndexes TO Orbit.set_coordIndex }
 Layer18.AddRoute(FieldVal86, IndexedFaceSet58.EventSet_coordIndex);
 { ROUTE OrbitScript.coordinates TO OrbitCoordinates.set_point }
-Layer18.AddRoute(FieldVal85, Coordinate59.EventSet_point);
+Layer18.AddRoute(FieldVal85.EventOut, Coordinate59.EventSet_point);
 LayerSet17.FdLayers.Add(Layer18);
 LayoutLayer95 := TLayoutLayerNode.Create;
 LayoutLayer95.Pickable := True;
@@ -506,12 +667,12 @@ LayoutLayer95.FdChildren.Add(Transform98);
 Transform103 := TTransformNode.Create;
 Transform103.X3DName := 'equationTransform';
 Transform104 := TTransformNode.Create;
-Transform104.Translation := Vector3(0, 0, -20);
-Shape105 := TShapeNode.Create;
 end;
 
 procedure Initbumpyx_iteslidersPart7;
 begin
+Transform104.Translation := Vector3(0, 0, -20);
+Shape105 := TShapeNode.Create;
 Text106 := TTextNode.Create;
 Text106.X3DName := 'equation';
 Text106.SetText(['r = a + b * cos(c * theta + tdelta) * cos (d * phi + pdelta)']);
@@ -544,18 +705,18 @@ FieldDecl114 := TX3DInterfaceDeclaration.Create(nil);
 FieldDecl114.FieldOrEvent := FieldVal114;
 FieldVal114.ParentInterfaceDeclaration := FieldDecl114;
 ProtoDeclare110.InterfaceDeclarations.Add(FieldDecl114);
-FieldVal115 := TMFString.Create(nil, True, 'textString', (['a=']));
+FieldVal115 := TMFString.Create(nil, True, 'textString', ['a=']);
 FieldDecl115 := TX3DInterfaceDeclaration.Create(nil);
 FieldDecl115.FieldOrEvent := FieldVal115;
 FieldVal115.ParentInterfaceDeclaration := FieldDecl115;
 ProtoDeclare110.InterfaceDeclarations.Add(FieldDecl115);
 FieldVal116 := TSFFloat.Create(nil, True, 'parameterScale', 30);
-FieldDecl116 := TX3DInterfaceDeclaration.Create(nil);
-FieldDecl116.FieldOrEvent := FieldVal116;
 end;
 
 procedure Initbumpyx_iteslidersPart8;
 begin
+FieldDecl116 := TX3DInterfaceDeclaration.Create(nil);
+FieldDecl116.FieldOrEvent := FieldVal116;
 FieldVal116.ParentInterfaceDeclaration := FieldDecl116;
 ProtoDeclare110.InterfaceDeclarations.Add(FieldDecl116);
 FieldVal117 := TSFString.Create(nil, True, 'parameterName', 'a');
@@ -594,12 +755,12 @@ TouchSensor126.X3DName := 'protoTS';
 Transform125.FdChildren.Add(TouchSensor126);
 Transform123.FdChildren.Add(Transform125);
 Transform127 := TTransformNode.Create;
-Shape128 := TShapeNode.Create;
-Text129 := TTextNode.Create;
 end;
 
 procedure Initbumpyx_iteslidersPart9;
 begin
+Shape128 := TShapeNode.Create;
+Text129 := TTextNode.Create;
 Text129.X3DName := 'protoText';
 Text129.SetText(['a=']);
 Text129.FieldOrEvent('string', True).IsClauseNamesAdd('textString');
@@ -638,12 +799,12 @@ Script133.FieldOrEvent('protoScale', True).IsClauseNamesAdd('parameterScale');
 Script133.FieldOrEvent('petNames', True).IsClauseNamesAdd('petNames');
 Script133.FieldOrEvent('protoParameterName', True).IsClauseNamesAdd('parameterName');
 Script133.FieldOrEvent('shader', True).IsClauseNamesAdd('shaderNode');
-Group121.FdChildren.Add(Script133);
-{ ROUTE protoSensor.translation_changed TO protoTransform.set_translation }
 end;
 
 procedure Initbumpyx_iteslidersPart10;
 begin
+Group121.FdChildren.Add(Script133);
+{ ROUTE protoSensor.translation_changed TO protoTransform.set_translation }
 Group121.AddRoute(PlaneSensor124.EventTranslation_changed, Transform123.FdTranslation.EventIn);
 { ROUTE protoSensor.translation_changed TO protoValueTransformerScript.newTranslation }
 Group121.AddRoute(PlaneSensor124.EventTranslation_changed, FieldVal138);
@@ -682,12 +843,12 @@ ProtoInstance164.X3DName := 'cPI';
 (ProtoInstance164.Field('parameterScale') as TSFFloat).Value := 20;
 (ProtoInstance164.Field('parameterName') as TSFString).Value := 'c';
 (ProtoInstance164.Field('petNames') as TMFString).Send(['yottzumm', 'yottzumm2', 'group1-petname']);
-(ProtoInstance164.Field('shaderNode') as TSFNode).Value := ComposedShader69;
-LayoutLayer95.FdChildren.Add(ProtoInstance164.Instantiate);
 end;
 
 procedure Initbumpyx_iteslidersPart11;
 begin
+(ProtoInstance164.Field('shaderNode') as TSFNode).Value := ComposedShader69;
+LayoutLayer95.FdChildren.Add(ProtoInstance164.Instantiate);
 ProtoInstance174 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare110);
 ProtoInstance174.X3DName := 'dPI';
 (ProtoInstance174.Field('sliderTranslation') as TSFVec3f).Value := Vector3(0, -0.2, 0);
@@ -726,12 +887,12 @@ Layer204 := TLayerNode.Create;
 Layer204.Pickable := True;
 Layer204.SetObjectType(['ALL']);
 Viewpoint205 := TViewpointNode.Create;
-Viewpoint205.Description := 'My Humanoids';
-Viewpoint205.FieldOfView := 1.570796;
 end;
 
 procedure Initbumpyx_iteslidersPart12;
 begin
+Viewpoint205.Description := 'My Humanoids';
+Viewpoint205.FieldOfView := 1.570796;
 Viewpoint205.Position := Vector3(0, 1.75, 80);
 Layer204.FdChildren.Add(Viewpoint205);
 Script206 := TScriptNode.Create;
@@ -768,5 +929,12 @@ begin
   Result := X3D0;
 end;
 
+procedure Registerbumpyx_iteslidersScripts(const Scene: TCastleSceneCore);
 begin
+  if CompiledScript84 <> nil then
+    CompiledScript84.RegisterHandlers(Scene);
+end;
+
+finalization
+  FreeAndNil(CompiledScript84);
 end.

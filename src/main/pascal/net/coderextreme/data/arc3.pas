@@ -2,13 +2,75 @@ unit arc3;
 
 interface
 
-uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported, CastleSceneCore;
 
 function Createarc3: TX3DRootNode;
+procedure Registerarc3Scripts(const Scene: TCastleSceneCore);
 
 implementation
 
-uses CastleVectors;
+uses SysUtils, CastleVectors, Math, X3DTime;
+
+type
+  TScript16Script = class
+  private
+    Ftranslation: TVector3;
+    FField_translation: TSFVec3f;
+    FDirty_translation: Boolean;
+    Fold: TVector3;
+    FField_old: TSFVec3f;
+    FDirty_old: Boolean;
+    FkeyValue: array of TVector3;
+    FField_keyValue: TMFVec3f;
+    FDirty_keyValue: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AField_translation: TSFVec3f; const AField_old: TSFVec3f; const AField_keyValue: TMFVec3f);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Set_location(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript32Script = class
+  private
+    Ftranslation: TVector3;
+    FField_translation: TSFVec3f;
+    FDirty_translation: Boolean;
+    Fold: TVector3;
+    FField_old: TSFVec3f;
+    FDirty_old: Boolean;
+    FkeyValue: array of TVector3;
+    FField_keyValue: TMFVec3f;
+    FDirty_keyValue: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AField_translation: TSFVec3f; const AField_old: TSFVec3f; const AField_keyValue: TMFVec3f);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Set_location(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript49Script = class
+  private
+    Fstartnode: TX3DNode;
+    Fendnode: TX3DNode;
+    Fposition: TX3DNode;
+    FField_position: TSFNode;
+    FDirty_position: Boolean;
+    Frotscale: TX3DNode;
+    FField_rotscale: TSFNode;
+    FDirty_rotscale: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AField_startnode: TSFNode; const AField_endnode: TSFNode; const AField_position: TSFNode; const AField_rotscale: TSFNode);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Recompute(const startpoint: Single; const endpoint: Single; const Time: TX3DTime);
+    procedure Recompute_and_route(const startpoint: Single; const endpoint: Single; const Time: TX3DTime);
+    procedure Initialize(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_startpoint(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_endpoint(Value: TX3DField; const Time: TX3DTime);
+  end;
 
 var
   X3D0: TX3DRootNode;
@@ -26,6 +88,7 @@ var
   FieldVal18: TSFVec3f;
   FieldVal19: TX3DEvent;
   FieldVal20: TMFVec3f;
+  CompiledScript16: TScript16Script;
   TimeSensor21: TTimeSensorNode;
   Transform26: TTransformNode;
   Shape27: TShapeNode;
@@ -38,6 +101,7 @@ var
   FieldVal34: TSFVec3f;
   FieldVal35: TX3DEvent;
   FieldVal36: TMFVec3f;
+  CompiledScript32: TScript32Script;
   TimeSensor37: TTimeSensorNode;
   Group42: TGroupNode;
   Transform43: TTransformNode;
@@ -53,6 +117,239 @@ var
   FieldVal56: TSFNode;
   FieldVal58: TX3DEvent;
   FieldVal59: TX3DEvent;
+  CompiledScript49: TScript49Script;
+
+constructor TScript16Script.Create(const AField_translation: TSFVec3f; const AField_old: TSFVec3f; const AField_keyValue: TMFVec3f);
+begin
+  inherited Create;
+  Ftranslation := Vector3(0, 0, 0);
+  FField_translation := nil;
+  FDirty_translation := False;
+  Fold := Vector3(0, 0, 0);
+  FField_old := nil;
+  FDirty_old := False;
+  FkeyValue := 0;
+  FField_keyValue := nil;
+  FDirty_keyValue := False;
+  FField_translation := AField_translation;
+  if AField_translation <> nil then Ftranslation := AField_translation.Value;
+  FField_old := AField_old;
+  if AField_old <> nil then Fold := AField_old.Value;
+  FField_keyValue := AField_keyValue;
+  if AField_keyValue <> nil then FkeyValue := AField_keyValue.Value;
+end;
+
+destructor TScript16Script.Destroy;
+begin
+  inherited Destroy;
+end;
+
+procedure TScript16Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_translation then
+  begin
+    FDirty_translation := False;
+    if FField_translation <> nil then
+      FField_translation.Send(Ftranslation, Time);
+  end;
+  if FDirty_old then
+  begin
+    FDirty_old := False;
+    if FField_old <> nil then
+      FField_old.Send(Fold, Time);
+  end;
+  if FDirty_keyValue then
+  begin
+    FDirty_keyValue := False;
+    if FField_keyValue <> nil then
+      FField_keyValue.Send(FkeyValue, Time);
+  end;
+end;
+
+procedure TScript16Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script16_set_location', {$ifdef FPC}@{$endif}Set_location);
+end;
+
+procedure TScript16Script.Set_location(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fold := Ftranslation; FDirty_old := True;
+  Ftranslation := Vector3(Random * 10 - 5, Random * 10 - 5, Random * 10 - 5); FDirty_translation := True;
+  FkeyValue := [[Fold, Ftranslation]]; FDirty_keyValue := True;
+  FlushOutputs(Time);
+end;
+
+constructor TScript32Script.Create(const AField_translation: TSFVec3f; const AField_old: TSFVec3f; const AField_keyValue: TMFVec3f);
+begin
+  inherited Create;
+  Ftranslation := Vector3(0, 0, 0);
+  FField_translation := nil;
+  FDirty_translation := False;
+  Fold := Vector3(0, 0, 0);
+  FField_old := nil;
+  FDirty_old := False;
+  FkeyValue := 0;
+  FField_keyValue := nil;
+  FDirty_keyValue := False;
+  FField_translation := AField_translation;
+  if AField_translation <> nil then Ftranslation := AField_translation.Value;
+  FField_old := AField_old;
+  if AField_old <> nil then Fold := AField_old.Value;
+  FField_keyValue := AField_keyValue;
+  if AField_keyValue <> nil then FkeyValue := AField_keyValue.Value;
+end;
+
+destructor TScript32Script.Destroy;
+begin
+  inherited Destroy;
+end;
+
+procedure TScript32Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_translation then
+  begin
+    FDirty_translation := False;
+    if FField_translation <> nil then
+      FField_translation.Send(Ftranslation, Time);
+  end;
+  if FDirty_old then
+  begin
+    FDirty_old := False;
+    if FField_old <> nil then
+      FField_old.Send(Fold, Time);
+  end;
+  if FDirty_keyValue then
+  begin
+    FDirty_keyValue := False;
+    if FField_keyValue <> nil then
+      FField_keyValue.Send(FkeyValue, Time);
+  end;
+end;
+
+procedure TScript32Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script32_set_location', {$ifdef FPC}@{$endif}Set_location);
+end;
+
+procedure TScript32Script.Set_location(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fold := Ftranslation; FDirty_old := True;
+  Ftranslation := Vector3(Random * 10 - 5, Random * 10 - 5, Random * 10 - 5); FDirty_translation := True;
+  FkeyValue := [[Fold, Ftranslation]]; FDirty_keyValue := True;
+  FlushOutputs(Time);
+end;
+
+constructor TScript49Script.Create(const AField_startnode: TSFNode; const AField_endnode: TSFNode; const AField_position: TSFNode; const AField_rotscale: TSFNode);
+begin
+  inherited Create;
+  Fstartnode := nil;
+  Fendnode := nil;
+  Fposition := nil;
+  FField_position := nil;
+  FDirty_position := False;
+  Frotscale := nil;
+  FField_rotscale := nil;
+  FDirty_rotscale := False;
+  if AField_startnode <> nil then Fstartnode := AField_startnode.Value;
+  if AField_endnode <> nil then Fendnode := AField_endnode.Value;
+  FField_position := AField_position;
+  if AField_position <> nil then Fposition := AField_position.Value;
+  FField_rotscale := AField_rotscale;
+  if AField_rotscale <> nil then Frotscale := AField_rotscale.Value;
+end;
+
+destructor TScript49Script.Destroy;
+begin
+  inherited Destroy;
+end;
+
+procedure TScript49Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_position then
+  begin
+    FDirty_position := False;
+    if FField_position <> nil then
+      FField_position.Send(Fposition, Time);
+  end;
+  if FDirty_rotscale then
+  begin
+    FDirty_rotscale := False;
+    if FField_rotscale <> nil then
+      FField_rotscale.Send(Frotscale, Time);
+  end;
+end;
+
+procedure TScript49Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script49_initialize', {$ifdef FPC}@{$endif}Initialize);
+  Scene.RegisterCompiledScript('Script49_set_startpoint', {$ifdef FPC}@{$endif}Set_startpoint);
+  Scene.RegisterCompiledScript('Script49_set_endpoint', {$ifdef FPC}@{$endif}Set_endpoint);
+end;
+
+procedure TScript49Script.Recompute(const startpoint: Single; const endpoint: Single; const Time: TX3DTime);
+var
+  dif: Single;
+  dist: Single;
+  dif2: Single;
+  norm: Single;
+  transl: Single;
+begin
+  if endpoint = 'undefined' then
+  begin
+    Exit;
+  end;
+  dif := endpoint.subtract(startpoint);
+  dist := dif.Length * 0.5;
+  dif2 := dif.multiply(0.5);
+  norm := dif.Normalize;
+  transl := startpoint.add(dif2);
+  if Quaternion <> 'undefined' then
+  begin
+    Result := 0;
+    Exit;
+  end
+  else if SFRotation <> 'undefined' then
+  begin
+    Result := 0;
+    Exit;
+  end
+  else
+  begin
+    Result := 0;
+    Exit;
+  end;
+end;
+
+procedure TScript49Script.Recompute_and_route(const startpoint: Single; const endpoint: Single; const Time: TX3DTime);
+var
+  trafo: Single;
+begin
+  trafo := Recompute(startpoint, endpoint, Time);
+  if trafo then
+  begin
+    Fposition.translation := trafo.translation; FDirty_position := True;
+    Frotscale.rotation := trafo.rotation; FDirty_rotscale := True;
+    Frotscale.scale := trafo.scale; FDirty_rotscale := True;
+  end;
+end;
+
+procedure TScript49Script.Initialize(Value: TX3DField; const Time: TX3DTime);
+begin
+  Recompute_and_route(Fstartnode.translation, Fendnode.translation, Time);
+  FlushOutputs(Time);
+end;
+
+procedure TScript49Script.Set_startpoint(Value: TX3DField; const Time: TX3DTime);
+begin
+  Recompute_and_route((Value as TSFVec3f).Value, Fendnode.translation, Time);
+  FlushOutputs(Time);
+end;
+
+procedure TScript49Script.Set_endpoint(Value: TX3DField; const Time: TX3DTime);
+begin
+  Recompute_and_route(Fstartnode.translation, (Value as TSFVec3f).Value, Time);
+  FlushOutputs(Time);
+end;
 
 procedure Initarc3Part0;
 begin
@@ -102,15 +399,12 @@ procedure Initarc3Part1;
 begin
 FieldVal19 := TSFTime.CreateEvent(Script16, 'set_location', True);
 Script16.AddCustomFieldOrEvent(FieldVal19);
-FieldVal20 := TMFVec3f.Create(Script16, True, 'keyValue', ([Vector3(0, 0, 0), Vector3(0, 5, 0)]));
+FieldVal20 := TMFVec3f.Create(Script16, True, 'keyValue', [Vector3(0, 0, 0), Vector3(0, 5, 0)]);
 Script16.AddCustomFieldOrEvent(FieldVal20);
-Script16.SetSourceCode('ecmascript:' + LineEnding +
-  '		function set_location(value) {' + LineEnding +
-  '                    old = translation;' + LineEnding +
-  '		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);' + LineEnding +
-  '                    keyValue = new MFVec3f([old, translation]);' + LineEnding +
-  '		    // Browser.println(keyValue);' + LineEnding +
-  '		}');
+FreeAndNil(CompiledScript16);
+CompiledScript16 := TScript16Script.Create(FieldVal17, FieldVal18, FieldVal20);
+Script16.SetUrl(['compiled:' + LineEnding +
+  'set_location=Script16_set_location']);
 Transform10.FdChildren.Add(Script16);
 TimeSensor21 := TTimeSensorNode.Create;
 TimeSensor21.X3DName := 'DECLpoint_G1_CL1';
@@ -122,7 +416,7 @@ Transform10.AddRoute(TimeSensor21.EventCycleTime, FieldVal19);
 { ROUTE DECLpoint_G1_CL1.fraction_changed TO DECLpoint_G1_PI1.set_fraction }
 Transform10.AddRoute(TimeSensor21.EventFraction_changed, PositionInterpolator15.EventSet_fraction);
 { ROUTE DECLpoint_G1_MB1.keyValue TO DECLpoint_G1_PI1.keyValue }
-Transform10.AddRoute(FieldVal20, PositionInterpolator15.keyValue);
+Transform10.AddRoute(FieldVal20.EventOut, PositionInterpolator15.keyValue);
 { ROUTE DECLpoint_G1_PI1.value_changed TO DECLpoint_G1_node.set_translation }
 Transform10.AddRoute(PositionInterpolator15.EventValue_changed, Transform10.FdTranslation.EventIn);
 Group7.FdChildren.Add(Transform10);
@@ -144,26 +438,23 @@ PositionInterpolator31.SetKey([0, 1]);
 PositionInterpolator31.SetKeyValue([Vector3(0, 0, 0), Vector3(0, 5, 0)]);
 Transform26.FdChildren.Add(PositionInterpolator31);
 Script32 := TScriptNode.Create;
-Script32.X3DName := 'DECLpoint_G2_MB1';
-FieldVal33 := TSFVec3f.Create(Script32, True, 'translation', Vector3(0, 0, 0));
 end;
 
 procedure Initarc3Part2;
 begin
+Script32.X3DName := 'DECLpoint_G2_MB1';
+FieldVal33 := TSFVec3f.Create(Script32, True, 'translation', Vector3(0, 0, 0));
 Script32.AddCustomFieldOrEvent(FieldVal33);
 FieldVal34 := TSFVec3f.Create(Script32, True, 'old', Vector3(0, 0, 0));
 Script32.AddCustomFieldOrEvent(FieldVal34);
 FieldVal35 := TSFTime.CreateEvent(Script32, 'set_location', True);
 Script32.AddCustomFieldOrEvent(FieldVal35);
-FieldVal36 := TMFVec3f.Create(Script32, True, 'keyValue', ([Vector3(0, 0, 0), Vector3(0, 5, 0)]));
+FieldVal36 := TMFVec3f.Create(Script32, True, 'keyValue', [Vector3(0, 0, 0), Vector3(0, 5, 0)]);
 Script32.AddCustomFieldOrEvent(FieldVal36);
-Script32.SetSourceCode('ecmascript:' + LineEnding +
-  '		function set_location(value) {' + LineEnding +
-  '                    old = translation;' + LineEnding +
-  '		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);' + LineEnding +
-  '                    keyValue = new MFVec3f([old, translation]);' + LineEnding +
-  '		    // Browser.println(keyValue);' + LineEnding +
-  '		}');
+FreeAndNil(CompiledScript32);
+CompiledScript32 := TScript32Script.Create(FieldVal33, FieldVal34, FieldVal36);
+Script32.SetUrl(['compiled:' + LineEnding +
+  'set_location=Script32_set_location']);
 Transform26.FdChildren.Add(Script32);
 TimeSensor37 := TTimeSensorNode.Create;
 TimeSensor37.X3DName := 'DECLpoint_G2_CL1';
@@ -175,7 +466,7 @@ Transform26.AddRoute(TimeSensor37.EventCycleTime, FieldVal35);
 { ROUTE DECLpoint_G2_CL1.fraction_changed TO DECLpoint_G2_PI1.set_fraction }
 Transform26.AddRoute(TimeSensor37.EventFraction_changed, PositionInterpolator31.EventSet_fraction);
 { ROUTE DECLpoint_G2_MB1.keyValue TO DECLpoint_G2_PI1.keyValue }
-Transform26.AddRoute(FieldVal36, PositionInterpolator31.keyValue);
+Transform26.AddRoute(FieldVal36.EventOut, PositionInterpolator31.keyValue);
 { ROUTE DECLpoint_G2_PI1.value_changed TO DECLpoint_G2_node.set_translation }
 Transform26.AddRoute(PositionInterpolator31.EventValue_changed, Transform26.FdTranslation.EventIn);
 Group7.FdChildren.Add(Transform26);
@@ -192,14 +483,14 @@ Material47.Transparency := 0.5;
 Appearance46.Material := Material47;
 Shape45.Appearance := Appearance46;
 Cylinder48 := TCylinderNode.Create;
-Cylinder48.Radius := 0.05;
-Shape45.Geometry := Cylinder48;
-Transform44.FdChildren.Add(Shape45);
-Transform43.FdChildren.Add(Transform44);
 end;
 
 procedure Initarc3Part3;
 begin
+Cylinder48.Radius := 0.05;
+Shape45.Geometry := Cylinder48;
+Transform44.FdChildren.Add(Shape45);
+Transform43.FdChildren.Add(Transform44);
 Group42.FdChildren.Add(Transform43);
 Script49 := TScriptNode.Create;
 Script49.X3DName := 'DECLx3dconnector_connector1_S1';
@@ -219,38 +510,12 @@ FieldVal58 := TSFVec3f.CreateEvent(Script49, 'set_startpoint', True);
 Script49.AddCustomFieldOrEvent(FieldVal58);
 FieldVal59 := TSFVec3f.CreateEvent(Script49, 'set_endpoint', True);
 Script49.AddCustomFieldOrEvent(FieldVal59);
-Script49.SetSourceCode('ecmascript:' + LineEnding +
-  '        function recompute(startpoint,endpoint){' + LineEnding +
-  '	    if (typeof endpoint === ''undefined'') {\n		return;\n	    }\n            var dif = endpoint.subtract(startpoint);\n            var dist = dif.length()*0.5;\n            var dif2 = dif.multiply(0.5);\n            var norm = dif.normalize();\n            var transl = startpoint.add(dif2);\n	    if (typeof Quaternion !== ''undefined'') {\n		    return {\n			    scale : new SFVec3f(1.0,dist,1.0),\n			    translation : transl,\n			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)\n		    };\n	    } else if (typeof SFRotation !== ''undefined'') {' + LineEnding +
-  '		    return {' + LineEnding +
-  '			    scale : new SFVec3f(1.0,dist,1.0),' + LineEnding +
-  '			    translation : transl,' + LineEnding +
-  '			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)' + LineEnding +
-  '		    };' + LineEnding +
-  '	    } else {' + LineEnding +
-  '		    return {' + LineEnding +
-  '			    scale : new SFVec3f(1.0,dist,1.0),' + LineEnding +
-  '			    translation : transl' + LineEnding +
-  '		    };' + LineEnding +
-  '	    }' + LineEnding +
-  '	}' + LineEnding +
-  '	function recompute_and_route(startpoint, endpoint) {' + LineEnding +
-  '	      var trafo = recompute(startpoint, endpoint);' + LineEnding +
-  '	      if (trafo) {' + LineEnding +
-  '		      position.translation = trafo.translation;' + LineEnding +
-  '		      rotscale.rotation = trafo.rotation;' + LineEnding +
-  '		      rotscale.scale = trafo.scale;' + LineEnding +
-  '	      }' + LineEnding +
-  '	}' + LineEnding +
-  '        function initialize(){' + LineEnding +
-  '            recompute_and_route(startnode.translation,endnode.translation);' + LineEnding +
-  '        }' + LineEnding +
-  '        function set_startpoint(val,t){' + LineEnding +
-  '            recompute_and_route(val,endnode.translation);' + LineEnding +
-  '        }' + LineEnding +
-  '        function set_endpoint(val,t){' + LineEnding +
-  '            recompute_and_route(startnode.translation,val);' + LineEnding +
-  '        }');
+FreeAndNil(CompiledScript49);
+CompiledScript49 := TScript49Script.Create(FieldVal50, FieldVal52, FieldVal54, FieldVal56);
+Script49.SetUrl(['compiled:' + LineEnding +
+  'initialize=Script49_initialize' + LineEnding +
+  'set_startpoint=Script49_set_startpoint' + LineEnding +
+  'set_endpoint=Script49_set_endpoint']);
 Group42.FdChildren.Add(Script49);
 Group7.FdChildren.Add(Group42);
 { ROUTE DECLpoint_G1_node.translation TO DECLx3dconnector_connector1_S1.set_startpoint }
@@ -269,5 +534,18 @@ begin
   Result := X3D0;
 end;
 
+procedure Registerarc3Scripts(const Scene: TCastleSceneCore);
 begin
+  if CompiledScript16 <> nil then
+    CompiledScript16.RegisterHandlers(Scene);
+  if CompiledScript32 <> nil then
+    CompiledScript32.RegisterHandlers(Scene);
+  if CompiledScript49 <> nil then
+    CompiledScript49.RegisterHandlers(Scene);
+end;
+
+finalization
+  FreeAndNil(CompiledScript16);
+  FreeAndNil(CompiledScript32);
+  FreeAndNil(CompiledScript49);
 end.

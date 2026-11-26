@@ -172,6 +172,7 @@ Material42 := TMaterialNode.Create;
 Material42.DiffuseColor := Vector3(0, 1, 0);
 Appearance41.Material := Material42;
 Shape39.Appearance := Appearance41;
+(ProtoInstance36.Field('myShape') as TMFNode).Clear;
 (ProtoInstance36.Field('myShape') as TMFNode).Add(Shape39);
 Group7.FdChildren.Add(ProtoInstance36.Instantiate);
 Transform43 := TTransformNode.Create;

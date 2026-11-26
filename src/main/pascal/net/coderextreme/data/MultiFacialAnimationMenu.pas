@@ -2,13 +2,14 @@ unit MultiFacialAnimationMenu;
 
 interface
 
-uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported, CastleSceneCore;
 
 function CreateMultiFacialAnimationMenu: TX3DRootNode;
+procedure RegisterMultiFacialAnimationMenuScripts(const Scene: TCastleSceneCore);
 
 implementation
 
-uses Classes, SysUtils, X3DLoad, CastleVectors;
+uses Classes, SysUtils, X3DLoad, CastleVectors, Math, X3DTime;
 
 function CreateEmptyPrototype(const AName: String): TX3DPrototype;
 var
@@ -33,6 +34,29 @@ begin
     FreeAndNil(Stream);
   end;
 end;
+
+type
+  TScript3011Script = class
+  private
+    Ffraction: Single;
+    FField_fraction: TSFFloat;
+    FDirty_fraction: Boolean;
+    FdiffuseColor: TVector3;
+    FField_diffuseColor: TSFColor;
+    FDirty_diffuseColor: Boolean;
+    Fchecked: Boolean;
+    FField_checked: TSFBool;
+    FDirty_checked: Boolean;
+    Fadapters: array of TX3DNode;
+    FField_adapters: TMFNode;
+    FDirty_adapters: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool; const AField_adapters: TMFNode);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure InTime(Value: TX3DField; const Time: TX3DTime);
+  end;
 
 var
   X3D0: TX3DRootNode;
@@ -1673,6 +1697,7 @@ var
   FieldVal3014: TSFColor;
   FieldVal3015: TSFBool;
   FieldVal3016: TMFNode;
+  CompiledScript3011: TScript3011Script;
   ProtoInstance3021: TX3DPrototypeNode;
   ProtoInstance3031: TX3DPrototypeNode;
   ProtoInstance3041: TX3DPrototypeNode;
@@ -1710,6 +1735,108 @@ var
   ProtoInstance3373: TX3DPrototypeNode;
   ProtoInstance3386: TX3DPrototypeNode;
   ProtoInstance3398: TX3DPrototypeNode;
+
+constructor TScript3011Script.Create(const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool; const AField_adapters: TMFNode);
+begin
+  inherited Create;
+  Ffraction := 0.0;
+  FField_fraction := nil;
+  FDirty_fraction := False;
+  FdiffuseColor := Vector3(0, 0, 0);
+  FField_diffuseColor := nil;
+  FDirty_diffuseColor := False;
+  Fchecked := False;
+  FField_checked := nil;
+  FDirty_checked := False;
+  Fadapters := 0;
+  FField_adapters := nil;
+  FDirty_adapters := False;
+  FField_fraction := AField_fraction;
+  if AField_fraction <> nil then Ffraction := AField_fraction.Value;
+  FField_diffuseColor := AField_diffuseColor;
+  if AField_diffuseColor <> nil then FdiffuseColor := AField_diffuseColor.Value;
+  FField_checked := AField_checked;
+  if AField_checked <> nil then Fchecked := AField_checked.Value;
+  FField_adapters := AField_adapters;
+  if AField_adapters <> nil then Fadapters := AField_adapters.Value;
+end;
+
+destructor TScript3011Script.Destroy;
+begin
+  inherited Destroy;
+end;
+
+procedure TScript3011Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_fraction then
+  begin
+    FDirty_fraction := False;
+    if FField_fraction <> nil then
+      FField_fraction.Send(Ffraction, Time);
+  end;
+  if FDirty_diffuseColor then
+  begin
+    FDirty_diffuseColor := False;
+    if FField_diffuseColor <> nil then
+      FField_diffuseColor.Send(FdiffuseColor, Time);
+  end;
+  if FDirty_checked then
+  begin
+    FDirty_checked := False;
+    if FField_checked <> nil then
+      FField_checked.Send(Fchecked, Time);
+  end;
+  if FDirty_adapters then
+  begin
+    FDirty_adapters := False;
+    if FField_adapters <> nil then
+      FField_adapters.Send(Fadapters, Time);
+  end;
+end;
+
+procedure TScript3011Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script3011_inTime', {$ifdef FPC}@{$endif}InTime);
+end;
+
+procedure TScript3011Script.InTime(Value: TX3DField; const Time: TX3DTime);
+var
+  num_adapters: Single;
+  adapter: Integer;
+begin
+  if (Value as TSFTime).Value then
+  begin
+    Fchecked := not (Fchecked); FDirty_checked := True;
+  end;
+  scene := Browser.currentScene;
+  num_adapters := Length(Fadapters);
+  WriteLn('in', Fchecked, num_adapters, FdiffuseColor.Y, FdiffuseColor.Z);
+  for adapter := 0 to (num_adapters) - 1 do
+  begin
+    WriteLn('adapter', adapter, Fadapters[adapter].metadata);
+  end;
+  if Fchecked then
+  begin
+    for adapter := 0 to (num_adapters) - 1 do
+    begin
+      WriteLn(scene.getNamedNode('Main_Clock'), 'fraction_changed', Fadapters[adapter], 'set_fraction');
+      Fadapters[adapter].set_fraction := 0; FDirty_adapters := True;
+    end;
+    FdiffuseColor.Y := 1; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 0; FDirty_diffuseColor := True;
+  end
+  else
+  begin
+    for adapter := 0 to (num_adapters) - 1 do
+    begin
+      WriteLn(scene.getNamedNode('Main_Clock'), 'fraction_changed', Fadapters[adapter], 'set_fraction');
+      Fadapters[adapter].set_fraction := 0; FDirty_adapters := True;
+    end;
+    FdiffuseColor.Y := 0; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 1; FDirty_diffuseColor := True;
+  end;
+  FlushOutputs(Time);
+end;
 
 procedure InitMultiFacialAnimationMenuPart0;
 begin
@@ -12627,32 +12754,17 @@ Script3011.AddCustomFieldOrEvent(FieldVal3015);
 FieldVal3016 := TMFNode.CreateUndefined(Script3011, True, 'adapters');
 Script3011.AddCustomFieldOrEvent(FieldVal3016);
 Script3011.FieldOrEvent('adapters', True).IsClauseNamesAdd('adapters');
-Script3011.SetSourceCode('ecmascript:' + LineEnding +
-  '        function inTime(value) {' + LineEnding +
-  '            if (value) {' + LineEnding +
-  '                checked = !checked;' + LineEnding +
-  '            }' + LineEnding +
-  '            scene = Browser.currentScene;' + LineEnding +
-  '            var num_adapters = adapters.length;' + LineEnding +
-  '            Browser.print("in", checked, num_adapters, diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '            for (var adapter = 0; adapter < num_adapters; adapter++) {' + LineEnding +
-  '                Browser.print("adapter", adapter, adapters[adapter].metadata)' + LineEnding +
-  '            }' + LineEnding +
-  '            if (checked) {' + LineEnding +
-  '                for (var adapter = 0; adapter < num_adapters; adapter++) {' + LineEnding +
-  '                    Browser.addRoute(scene.getNamedNode("Main_Clock"), ''fraction_changed'', adapters[adapter], ''set_fraction'');\n                    adapters[adapter].set_fraction = 0;\n                }\n                diffuseColor.g = 1;\n                diffuseColor.b = 0;\n            } else {\n                for (var adapter = 0; adapter < num_adapters; adapter++) {\n                    Browser.deleteRoute(scene.getNamedNode("Main_Clock"), ''fraction_changed'', adapters[adapter], ''set_fraction'');' + LineEnding +
-  '                    adapters[adapter].set_fraction = 0;' + LineEnding +
-  '                }' + LineEnding +
-  '                diffuseColor.g = 0;' + LineEnding +
-  '                diffuseColor.b = 1;' + LineEnding +
-  '            }                                                                                                                                                                                 }');
+FreeAndNil(CompiledScript3011);
+CompiledScript3011 := TScript3011Script.Create(FieldVal3013, FieldVal3014, FieldVal3015, FieldVal3016);
+Script3011.SetUrl(['compiled:' + LineEnding +
+  'inTime=Script3011_inTime']);
 Group2996.FdChildren.Add(Script3011);
 { ROUTE StartStopAnimationUnit_Sensor.touchTime TO ScriptToggle.inTime }
 Group2996.AddRoute(TouchSensor2999.EventTouchTime, FieldVal3012);
 { ROUTE MenuBackground_Material.diffuseColor TO ScriptToggle.diffuseColor }
-Group2996.AddRoute(Material3009.diffuseColor, FieldVal3014);
+Group2996.AddRoute(Material3009.diffuseColor, FieldVal3014.EventIn);
 { ROUTE ScriptToggle.diffuseColor TO MenuBackground_Material.diffuseColor }
-Group2996.AddRoute(FieldVal3014, Material3009.diffuseColor);
+Group2996.AddRoute(FieldVal3014.EventOut, Material3009.diffuseColor);
 { ROUTE StartStopAnimationUnit_Sensor.touchTime TO Main_Clock.startTime }
 Group2996.AddRoute(TouchSensor2999.EventTouchTime, TimeSensor2997.FdStartTime.EventIn);
 ProtoDeclare2985.Node.AddChildren([Group2996]);
@@ -12665,6 +12777,7 @@ ProtoInstance3021 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2
 (ProtoInstance3021.Field('size') as TSFVec2f).Value := Vector2(40, 3);
 (ProtoInstance3021.Field('fontSize') as TSFFloat).Value := 2.4;
 (ProtoInstance3021.Field('spacing') as TSFFloat).Value := 1.2;
+(ProtoInstance3021.Field('adapters') as TMFNode).Clear;
 (ProtoInstance3021.Field('adapters') as TMFNode).Add(ScalarInterpolator10);
 Group9.FdChildren.Add(ProtoInstance3021.Instantiate);
 ProtoInstance3031 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2985);
@@ -12673,13 +12786,14 @@ ProtoInstance3031 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2
 (ProtoInstance3031.Field('description') as TSFString).Value := 'Jin Brow Lowerer';
 (ProtoInstance3031.Field('menuItemString') as TMFString).Send(['JinBrowLowerer']);
 (ProtoInstance3031.Field('size') as TSFVec2f).Value := Vector2(40, 3);
-(ProtoInstance3031.Field('fontSize') as TSFFloat).Value := 2.4;
-(ProtoInstance3031.Field('spacing') as TSFFloat).Value := 1.2;
-(ProtoInstance3031.Field('adapters') as TMFNode).Add(ScalarInterpolator11);
 end;
 
 procedure InitMultiFacialAnimationMenuPart265;
 begin
+(ProtoInstance3031.Field('fontSize') as TSFFloat).Value := 2.4;
+(ProtoInstance3031.Field('spacing') as TSFFloat).Value := 1.2;
+(ProtoInstance3031.Field('adapters') as TMFNode).Clear;
+(ProtoInstance3031.Field('adapters') as TMFNode).Add(ScalarInterpolator11);
 Group9.FdChildren.Add(ProtoInstance3031.Instantiate);
 ProtoInstance3041 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2985);
 (ProtoInstance3041.Field('translation') as TSFVec3f).Value := Vector3(24, 57.39999999999999, 0);
@@ -12689,6 +12803,7 @@ ProtoInstance3041 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2
 (ProtoInstance3041.Field('size') as TSFVec2f).Value := Vector2(40, 3);
 (ProtoInstance3041.Field('fontSize') as TSFFloat).Value := 2.4;
 (ProtoInstance3041.Field('spacing') as TSFFloat).Value := 1.2;
+(ProtoInstance3041.Field('adapters') as TMFNode).Clear;
 (ProtoInstance3041.Field('adapters') as TMFNode).Add(ScalarInterpolator12);
 Group9.FdChildren.Add(ProtoInstance3041.Instantiate);
 ProtoInstance3051 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2985);
@@ -12699,6 +12814,7 @@ ProtoInstance3051 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2
 (ProtoInstance3051.Field('size') as TSFVec2f).Value := Vector2(40, 3);
 (ProtoInstance3051.Field('fontSize') as TSFFloat).Value := 2.4;
 (ProtoInstance3051.Field('spacing') as TSFFloat).Value := 1.2;
+(ProtoInstance3051.Field('adapters') as TMFNode).Clear;
 (ProtoInstance3051.Field('adapters') as TMFNode).Add(ScalarInterpolator13);
 Group9.FdChildren.Add(ProtoInstance3051.Instantiate);
 ProtoInstance3061 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2985);
@@ -12709,21 +12825,23 @@ ProtoInstance3061 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2
 (ProtoInstance3061.Field('size') as TSFVec2f).Value := Vector2(40, 3);
 (ProtoInstance3061.Field('fontSize') as TSFFloat).Value := 2.4;
 (ProtoInstance3061.Field('spacing') as TSFFloat).Value := 1.2;
+(ProtoInstance3061.Field('adapters') as TMFNode).Clear;
 (ProtoInstance3061.Field('adapters') as TMFNode).Add(ScalarInterpolator14);
 Group9.FdChildren.Add(ProtoInstance3061.Instantiate);
 ProtoInstance3071 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2985);
 (ProtoInstance3071.Field('translation') as TSFVec3f).Value := Vector3(24, 48.39999999999999, 0);
+end;
+
+procedure InitMultiFacialAnimationMenuPart266;
+begin
 (ProtoInstance3071.Field('textTranslation') as TSFVec3f).Value := Vector3(0, 0, 0);
 (ProtoInstance3071.Field('description') as TSFString).Value := 'Jin Dimpler';
 (ProtoInstance3071.Field('menuItemString') as TMFString).Send(['JinDimpler']);
 (ProtoInstance3071.Field('size') as TSFVec2f).Value := Vector2(40, 3);
 (ProtoInstance3071.Field('fontSize') as TSFFloat).Value := 2.4;
 (ProtoInstance3071.Field('spacing') as TSFFloat).Value := 1.2;
+(ProtoInstance3071.Field('adapters') as TMFNode).Clear;
 (ProtoInstance3071.Field('adapters') as TMFNode).Add(ScalarInterpolator15);
-end;
-
-procedure InitMultiFacialAnimationMenuPart266;
-begin
 Group9.FdChildren.Add(ProtoInstance3071.Instantiate);
 ProtoInstance3081 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2985);
 (ProtoInstance3081.Field('translation') as TSFVec3f).Value := Vector3(24, 45.39999999999999, 0);
@@ -12733,6 +12851,7 @@ ProtoInstance3081 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2
 (ProtoInstance3081.Field('size') as TSFVec2f).Value := Vector2(40, 3);
 (ProtoInstance3081.Field('fontSize') as TSFFloat).Value := 2.4;
 (ProtoInstance3081.Field('spacing') as TSFFloat).Value := 1.2;
+(ProtoInstance3081.Field('adapters') as TMFNode).Clear;
 (ProtoInstance3081.Field('adapters') as TMFNode).Add(ScalarInterpolator16);
 Group9.FdChildren.Add(ProtoInstance3081.Instantiate);
 ProtoInstance3091 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2985);
@@ -12743,6 +12862,7 @@ ProtoInstance3091 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2
 (ProtoInstance3091.Field('size') as TSFVec2f).Value := Vector2(40, 3);
 (ProtoInstance3091.Field('fontSize') as TSFFloat).Value := 2.4;
 (ProtoInstance3091.Field('spacing') as TSFFloat).Value := 1.2;
+(ProtoInstance3091.Field('adapters') as TMFNode).Clear;
 (ProtoInstance3091.Field('adapters') as TMFNode).Add(ScalarInterpolator17);
 Group9.FdChildren.Add(ProtoInstance3091.Instantiate);
 ProtoInstance3101 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2985);
@@ -12753,6 +12873,11 @@ ProtoInstance3101 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2
 (ProtoInstance3101.Field('size') as TSFVec2f).Value := Vector2(40, 3);
 (ProtoInstance3101.Field('fontSize') as TSFFloat).Value := 2.4;
 (ProtoInstance3101.Field('spacing') as TSFFloat).Value := 1.2;
+(ProtoInstance3101.Field('adapters') as TMFNode).Clear;
+end;
+
+procedure InitMultiFacialAnimationMenuPart267;
+begin
 (ProtoInstance3101.Field('adapters') as TMFNode).Add(ScalarInterpolator18);
 Group9.FdChildren.Add(ProtoInstance3101.Instantiate);
 ProtoInstance3111 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2985);
@@ -12763,11 +12888,8 @@ ProtoInstance3111 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2
 (ProtoInstance3111.Field('size') as TSFVec2f).Value := Vector2(40, 3);
 (ProtoInstance3111.Field('fontSize') as TSFFloat).Value := 2.4;
 (ProtoInstance3111.Field('spacing') as TSFFloat).Value := 1.2;
+(ProtoInstance3111.Field('adapters') as TMFNode).Clear;
 (ProtoInstance3111.Field('adapters') as TMFNode).Add(ScalarInterpolator19);
-end;
-
-procedure InitMultiFacialAnimationMenuPart267;
-begin
 Group9.FdChildren.Add(ProtoInstance3111.Instantiate);
 ProtoInstance3121 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2985);
 (ProtoInstance3121.Field('translation') as TSFVec3f).Value := Vector3(24, 33.39999999999999, 0);
@@ -12777,6 +12899,7 @@ ProtoInstance3121 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2
 (ProtoInstance3121.Field('size') as TSFVec2f).Value := Vector2(40, 3);
 (ProtoInstance3121.Field('fontSize') as TSFFloat).Value := 2.4;
 (ProtoInstance3121.Field('spacing') as TSFFloat).Value := 1.2;
+(ProtoInstance3121.Field('adapters') as TMFNode).Clear;
 (ProtoInstance3121.Field('adapters') as TMFNode).Add(ScalarInterpolator20);
 Group9.FdChildren.Add(ProtoInstance3121.Instantiate);
 ProtoInstance3131 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2985);
@@ -12787,6 +12910,7 @@ ProtoInstance3131 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2
 (ProtoInstance3131.Field('size') as TSFVec2f).Value := Vector2(40, 3);
 (ProtoInstance3131.Field('fontSize') as TSFFloat).Value := 2.4;
 (ProtoInstance3131.Field('spacing') as TSFFloat).Value := 1.2;
+(ProtoInstance3131.Field('adapters') as TMFNode).Clear;
 (ProtoInstance3131.Field('adapters') as TMFNode).Add(ScalarInterpolator21);
 Group9.FdChildren.Add(ProtoInstance3131.Instantiate);
 ProtoInstance3141 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2985);
@@ -12794,9 +12918,14 @@ ProtoInstance3141 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2
 (ProtoInstance3141.Field('textTranslation') as TSFVec3f).Value := Vector3(0, 0, 0);
 (ProtoInstance3141.Field('description') as TSFString).Value := 'Jin Lip Corner Puller';
 (ProtoInstance3141.Field('menuItemString') as TMFString).Send(['JinLipCornerPuller']);
+end;
+
+procedure InitMultiFacialAnimationMenuPart268;
+begin
 (ProtoInstance3141.Field('size') as TSFVec2f).Value := Vector2(40, 3);
 (ProtoInstance3141.Field('fontSize') as TSFFloat).Value := 2.4;
 (ProtoInstance3141.Field('spacing') as TSFFloat).Value := 1.2;
+(ProtoInstance3141.Field('adapters') as TMFNode).Clear;
 (ProtoInstance3141.Field('adapters') as TMFNode).Add(ScalarInterpolator22);
 Group9.FdChildren.Add(ProtoInstance3141.Instantiate);
 ProtoInstance3151 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2985);
@@ -12807,11 +12936,8 @@ ProtoInstance3151 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2
 (ProtoInstance3151.Field('size') as TSFVec2f).Value := Vector2(40, 3);
 (ProtoInstance3151.Field('fontSize') as TSFFloat).Value := 2.4;
 (ProtoInstance3151.Field('spacing') as TSFFloat).Value := 1.2;
+(ProtoInstance3151.Field('adapters') as TMFNode).Clear;
 (ProtoInstance3151.Field('adapters') as TMFNode).Add(ScalarInterpolator23);
-end;
-
-procedure InitMultiFacialAnimationMenuPart268;
-begin
 Group9.FdChildren.Add(ProtoInstance3151.Instantiate);
 ProtoInstance3161 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2985);
 (ProtoInstance3161.Field('translation') as TSFVec3f).Value := Vector3(24, 21.399999999999995, 0);
@@ -12821,6 +12947,7 @@ ProtoInstance3161 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2
 (ProtoInstance3161.Field('size') as TSFVec2f).Value := Vector2(40, 3);
 (ProtoInstance3161.Field('fontSize') as TSFFloat).Value := 2.4;
 (ProtoInstance3161.Field('spacing') as TSFFloat).Value := 1.2;
+(ProtoInstance3161.Field('adapters') as TMFNode).Clear;
 (ProtoInstance3161.Field('adapters') as TMFNode).Add(ScalarInterpolator24);
 Group9.FdChildren.Add(ProtoInstance3161.Instantiate);
 ProtoInstance3171 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2985);
@@ -12831,9 +12958,14 @@ ProtoInstance3171 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2
 (ProtoInstance3171.Field('size') as TSFVec2f).Value := Vector2(40, 3);
 (ProtoInstance3171.Field('fontSize') as TSFFloat).Value := 2.4;
 (ProtoInstance3171.Field('spacing') as TSFFloat).Value := 1.2;
+(ProtoInstance3171.Field('adapters') as TMFNode).Clear;
 (ProtoInstance3171.Field('adapters') as TMFNode).Add(ScalarInterpolator25);
 Group9.FdChildren.Add(ProtoInstance3171.Instantiate);
 ProtoInstance3181 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2985);
+end;
+
+procedure InitMultiFacialAnimationMenuPart269;
+begin
 (ProtoInstance3181.Field('translation') as TSFVec3f).Value := Vector3(24, 15.399999999999997, 0);
 (ProtoInstance3181.Field('textTranslation') as TSFVec3f).Value := Vector3(0, 0, 0);
 (ProtoInstance3181.Field('description') as TSFString).Value := 'Jin Lips Part';
@@ -12841,6 +12973,7 @@ ProtoInstance3181 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2
 (ProtoInstance3181.Field('size') as TSFVec2f).Value := Vector2(40, 3);
 (ProtoInstance3181.Field('fontSize') as TSFFloat).Value := 2.4;
 (ProtoInstance3181.Field('spacing') as TSFFloat).Value := 1.2;
+(ProtoInstance3181.Field('adapters') as TMFNode).Clear;
 (ProtoInstance3181.Field('adapters') as TMFNode).Add(ScalarInterpolator26);
 Group9.FdChildren.Add(ProtoInstance3181.Instantiate);
 ProtoInstance3191 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2985);
@@ -12851,11 +12984,8 @@ ProtoInstance3191 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2
 (ProtoInstance3191.Field('size') as TSFVec2f).Value := Vector2(40, 3);
 (ProtoInstance3191.Field('fontSize') as TSFFloat).Value := 2.4;
 (ProtoInstance3191.Field('spacing') as TSFFloat).Value := 1.2;
+(ProtoInstance3191.Field('adapters') as TMFNode).Clear;
 (ProtoInstance3191.Field('adapters') as TMFNode).Add(ScalarInterpolator27);
-end;
-
-procedure InitMultiFacialAnimationMenuPart269;
-begin
 Group9.FdChildren.Add(ProtoInstance3191.Instantiate);
 ProtoInstance3201 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2985);
 (ProtoInstance3201.Field('translation') as TSFVec3f).Value := Vector3(24, 9.399999999999999, 0);
@@ -12865,6 +12995,7 @@ ProtoInstance3201 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2
 (ProtoInstance3201.Field('size') as TSFVec2f).Value := Vector2(40, 3);
 (ProtoInstance3201.Field('fontSize') as TSFFloat).Value := 2.4;
 (ProtoInstance3201.Field('spacing') as TSFFloat).Value := 1.2;
+(ProtoInstance3201.Field('adapters') as TMFNode).Clear;
 (ProtoInstance3201.Field('adapters') as TMFNode).Add(ScalarInterpolator28);
 Group9.FdChildren.Add(ProtoInstance3201.Instantiate);
 ProtoInstance3211 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2985);
@@ -12875,6 +13006,11 @@ ProtoInstance3211 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2
 (ProtoInstance3211.Field('size') as TSFVec2f).Value := Vector2(40, 3);
 (ProtoInstance3211.Field('fontSize') as TSFFloat).Value := 2.4;
 (ProtoInstance3211.Field('spacing') as TSFFloat).Value := 1.2;
+end;
+
+procedure InitMultiFacialAnimationMenuPart270;
+begin
+(ProtoInstance3211.Field('adapters') as TMFNode).Clear;
 (ProtoInstance3211.Field('adapters') as TMFNode).Add(ScalarInterpolator29);
 Group9.FdChildren.Add(ProtoInstance3211.Instantiate);
 ProtoInstance3221 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2985);
@@ -12885,6 +13021,7 @@ ProtoInstance3221 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2
 (ProtoInstance3221.Field('size') as TSFVec2f).Value := Vector2(40, 3);
 (ProtoInstance3221.Field('fontSize') as TSFFloat).Value := 2.4;
 (ProtoInstance3221.Field('spacing') as TSFFloat).Value := 1.2;
+(ProtoInstance3221.Field('adapters') as TMFNode).Clear;
 (ProtoInstance3221.Field('adapters') as TMFNode).Add(ScalarInterpolator30);
 Group9.FdChildren.Add(ProtoInstance3221.Instantiate);
 ProtoInstance3231 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2985);
@@ -12895,11 +13032,8 @@ ProtoInstance3231 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2
 (ProtoInstance3231.Field('size') as TSFVec2f).Value := Vector2(40, 3);
 (ProtoInstance3231.Field('fontSize') as TSFFloat).Value := 2.4;
 (ProtoInstance3231.Field('spacing') as TSFFloat).Value := 1.2;
+(ProtoInstance3231.Field('adapters') as TMFNode).Clear;
 (ProtoInstance3231.Field('adapters') as TMFNode).Add(ScalarInterpolator31);
-end;
-
-procedure InitMultiFacialAnimationMenuPart270;
-begin
 Group9.FdChildren.Add(ProtoInstance3231.Instantiate);
 ProtoInstance3241 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2985);
 (ProtoInstance3241.Field('translation') as TSFVec3f).Value := Vector3(24, -2.6000000000000085, 0);
@@ -12909,16 +13043,22 @@ ProtoInstance3241 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2
 (ProtoInstance3241.Field('size') as TSFVec2f).Value := Vector2(40, 3);
 (ProtoInstance3241.Field('fontSize') as TSFFloat).Value := 2.4;
 (ProtoInstance3241.Field('spacing') as TSFFloat).Value := 1.2;
+(ProtoInstance3241.Field('adapters') as TMFNode).Clear;
 (ProtoInstance3241.Field('adapters') as TMFNode).Add(ScalarInterpolator32);
 Group9.FdChildren.Add(ProtoInstance3241.Instantiate);
 ProtoInstance3251 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2985);
 (ProtoInstance3251.Field('translation') as TSFVec3f).Value := Vector3(24, -5.6000000000000085, 0);
 (ProtoInstance3251.Field('textTranslation') as TSFVec3f).Value := Vector3(0, 0, 0);
 (ProtoInstance3251.Field('description') as TSFString).Value := 'Jin Nose Wrinkler';
+end;
+
+procedure InitMultiFacialAnimationMenuPart271;
+begin
 (ProtoInstance3251.Field('menuItemString') as TMFString).Send(['JinNoseWrinkler']);
 (ProtoInstance3251.Field('size') as TSFVec2f).Value := Vector2(40, 3);
 (ProtoInstance3251.Field('fontSize') as TSFFloat).Value := 2.4;
 (ProtoInstance3251.Field('spacing') as TSFFloat).Value := 1.2;
+(ProtoInstance3251.Field('adapters') as TMFNode).Clear;
 (ProtoInstance3251.Field('adapters') as TMFNode).Add(ScalarInterpolator33);
 Group9.FdChildren.Add(ProtoInstance3251.Instantiate);
 ProtoInstance3261 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2985);
@@ -12929,6 +13069,7 @@ ProtoInstance3261 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2
 (ProtoInstance3261.Field('size') as TSFVec2f).Value := Vector2(40, 3);
 (ProtoInstance3261.Field('fontSize') as TSFFloat).Value := 2.4;
 (ProtoInstance3261.Field('spacing') as TSFFloat).Value := 1.2;
+(ProtoInstance3261.Field('adapters') as TMFNode).Clear;
 (ProtoInstance3261.Field('adapters') as TMFNode).Add(ScalarInterpolator34);
 Group9.FdChildren.Add(ProtoInstance3261.Instantiate);
 ProtoInstance3271 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2985);
@@ -12939,11 +13080,8 @@ ProtoInstance3271 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2
 (ProtoInstance3271.Field('size') as TSFVec2f).Value := Vector2(40, 3);
 (ProtoInstance3271.Field('fontSize') as TSFFloat).Value := 2.4;
 (ProtoInstance3271.Field('spacing') as TSFFloat).Value := 1.2;
+(ProtoInstance3271.Field('adapters') as TMFNode).Clear;
 (ProtoInstance3271.Field('adapters') as TMFNode).Add(ScalarInterpolator35);
-end;
-
-procedure InitMultiFacialAnimationMenuPart271;
-begin
 Group9.FdChildren.Add(ProtoInstance3271.Instantiate);
 ProtoInstance3281 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2985);
 (ProtoInstance3281.Field('translation') as TSFVec3f).Value := Vector3(24, -14.600000000000001, 0);
@@ -12953,8 +13091,13 @@ ProtoInstance3281 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2
 (ProtoInstance3281.Field('size') as TSFVec2f).Value := Vector2(40, 3);
 (ProtoInstance3281.Field('fontSize') as TSFFloat).Value := 2.4;
 (ProtoInstance3281.Field('spacing') as TSFFloat).Value := 1.2;
+(ProtoInstance3281.Field('adapters') as TMFNode).Clear;
 (ProtoInstance3281.Field('adapters') as TMFNode).Add(ScalarInterpolator36);
 Group9.FdChildren.Add(ProtoInstance3281.Instantiate);
+end;
+
+procedure InitMultiFacialAnimationMenuPart272;
+begin
 ProtoInstance3291 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2985);
 (ProtoInstance3291.Field('translation') as TSFVec3f).Value := Vector3(24, -17.6, 0);
 (ProtoInstance3291.Field('textTranslation') as TSFVec3f).Value := Vector3(0, 0, 0);
@@ -12963,6 +13106,7 @@ ProtoInstance3291 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2
 (ProtoInstance3291.Field('size') as TSFVec2f).Value := Vector2(40, 3);
 (ProtoInstance3291.Field('fontSize') as TSFFloat).Value := 2.4;
 (ProtoInstance3291.Field('spacing') as TSFFloat).Value := 1.2;
+(ProtoInstance3291.Field('adapters') as TMFNode).Clear;
 (ProtoInstance3291.Field('adapters') as TMFNode).Add(ScalarInterpolator37);
 Group9.FdChildren.Add(ProtoInstance3291.Instantiate);
 ProtoInstance3301 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2985);
@@ -12973,6 +13117,7 @@ ProtoInstance3301 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2
 (ProtoInstance3301.Field('size') as TSFVec2f).Value := Vector2(40, 3);
 (ProtoInstance3301.Field('fontSize') as TSFFloat).Value := 2.4;
 (ProtoInstance3301.Field('spacing') as TSFFloat).Value := 1.2;
+(ProtoInstance3301.Field('adapters') as TMFNode).Clear;
 (ProtoInstance3301.Field('adapters') as TMFNode).Add(ScalarInterpolator38);
 Group9.FdChildren.Add(ProtoInstance3301.Instantiate);
 ProtoInstance3311 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2985);
@@ -12983,11 +13128,8 @@ ProtoInstance3311 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2
 (ProtoInstance3311.Field('size') as TSFVec2f).Value := Vector2(40, 3);
 (ProtoInstance3311.Field('fontSize') as TSFFloat).Value := 2.4;
 (ProtoInstance3311.Field('spacing') as TSFFloat).Value := 1.2;
+(ProtoInstance3311.Field('adapters') as TMFNode).Clear;
 (ProtoInstance3311.Field('adapters') as TMFNode).Add(ScalarInterpolator39);
-end;
-
-procedure InitMultiFacialAnimationMenuPart272;
-begin
 Group9.FdChildren.Add(ProtoInstance3311.Instantiate);
 ProtoInstance3321 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2985);
 (ProtoInstance3321.Field('translation') as TSFVec3f).Value := Vector3(65, 63.4, 0);
@@ -12996,7 +13138,12 @@ ProtoInstance3321 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2
 (ProtoInstance3321.Field('menuItemString') as TMFString).Send(['Happiness/Joy']);
 (ProtoInstance3321.Field('size') as TSFVec2f).Value := Vector2(40, 3);
 (ProtoInstance3321.Field('fontSize') as TSFFloat).Value := 2.4;
+end;
+
+procedure InitMultiFacialAnimationMenuPart273;
+begin
 (ProtoInstance3321.Field('spacing') as TSFFloat).Value := 1.2;
+(ProtoInstance3321.Field('adapters') as TMFNode).Clear;
 (ProtoInstance3321.Field('adapters') as TMFNode).Add(ScalarInterpolator13);
 (ProtoInstance3321.Field('adapters') as TMFNode).Add(ScalarInterpolator22);
 Group9.FdChildren.Add(ProtoInstance3321.Instantiate);
@@ -13008,6 +13155,7 @@ ProtoInstance3332 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2
 (ProtoInstance3332.Field('size') as TSFVec2f).Value := Vector2(40, 3);
 (ProtoInstance3332.Field('fontSize') as TSFFloat).Value := 2.4;
 (ProtoInstance3332.Field('spacing') as TSFFloat).Value := 1.2;
+(ProtoInstance3332.Field('adapters') as TMFNode).Clear;
 (ProtoInstance3332.Field('adapters') as TMFNode).Add(ScalarInterpolator17);
 (ProtoInstance3332.Field('adapters') as TMFNode).Add(ScalarInterpolator11);
 (ProtoInstance3332.Field('adapters') as TMFNode).Add(ScalarInterpolator21);
@@ -13020,6 +13168,7 @@ ProtoInstance3344 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2
 (ProtoInstance3344.Field('size') as TSFVec2f).Value := Vector2(40, 3);
 (ProtoInstance3344.Field('fontSize') as TSFFloat).Value := 2.4;
 (ProtoInstance3344.Field('spacing') as TSFFloat).Value := 1.2;
+(ProtoInstance3344.Field('adapters') as TMFNode).Clear;
 (ProtoInstance3344.Field('adapters') as TMFNode).Add(ScalarInterpolator17);
 (ProtoInstance3344.Field('adapters') as TMFNode).Add(ScalarInterpolator34);
 (ProtoInstance3344.Field('adapters') as TMFNode).Add(ScalarInterpolator37);
@@ -13028,15 +13177,16 @@ Group9.FdChildren.Add(ProtoInstance3344.Instantiate);
 ProtoInstance3357 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2985);
 (ProtoInstance3357.Field('translation') as TSFVec3f).Value := Vector3(65, 55.05, 0);
 (ProtoInstance3357.Field('textTranslation') as TSFVec3f).Value := Vector3(0, 0, 0);
-end;
-
-procedure InitMultiFacialAnimationMenuPart273;
-begin
 (ProtoInstance3357.Field('description') as TSFString).Value := 'Fear';
 (ProtoInstance3357.Field('menuItemString') as TMFString).Send(['Fear']);
 (ProtoInstance3357.Field('size') as TSFVec2f).Value := Vector2(40, 3);
 (ProtoInstance3357.Field('fontSize') as TSFFloat).Value := 2.4;
 (ProtoInstance3357.Field('spacing') as TSFFloat).Value := 1.2;
+end;
+
+procedure InitMultiFacialAnimationMenuPart274;
+begin
+(ProtoInstance3357.Field('adapters') as TMFNode).Clear;
 (ProtoInstance3357.Field('adapters') as TMFNode).Add(ScalarInterpolator17);
 (ProtoInstance3357.Field('adapters') as TMFNode).Add(ScalarInterpolator34);
 (ProtoInstance3357.Field('adapters') as TMFNode).Add(ScalarInterpolator11);
@@ -13053,6 +13203,7 @@ ProtoInstance3373 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2
 (ProtoInstance3373.Field('size') as TSFVec2f).Value := Vector2(40, 3);
 (ProtoInstance3373.Field('fontSize') as TSFFloat).Value := 2.4;
 (ProtoInstance3373.Field('spacing') as TSFFloat).Value := 1.2;
+(ProtoInstance3373.Field('adapters') as TMFNode).Clear;
 (ProtoInstance3373.Field('adapters') as TMFNode).Add(ScalarInterpolator11);
 (ProtoInstance3373.Field('adapters') as TMFNode).Add(ScalarInterpolator37);
 (ProtoInstance3373.Field('adapters') as TMFNode).Add(ScalarInterpolator20);
@@ -13066,22 +13217,24 @@ ProtoInstance3386 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2
 (ProtoInstance3386.Field('size') as TSFVec2f).Value := Vector2(40, 3);
 (ProtoInstance3386.Field('fontSize') as TSFFloat).Value := 2.4;
 (ProtoInstance3386.Field('spacing') as TSFFloat).Value := 1.2;
+(ProtoInstance3386.Field('adapters') as TMFNode).Clear;
 (ProtoInstance3386.Field('adapters') as TMFNode).Add(ScalarInterpolator33);
 (ProtoInstance3386.Field('adapters') as TMFNode).Add(ScalarInterpolator21);
 (ProtoInstance3386.Field('adapters') as TMFNode).Add(ScalarInterpolator30);
 Group9.FdChildren.Add(ProtoInstance3386.Instantiate);
 ProtoInstance3398 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare2985);
 (ProtoInstance3398.Field('translation') as TSFVec3f).Value := Vector3(65, 46.69999999999999, 0);
-end;
-
-procedure InitMultiFacialAnimationMenuPart274;
-begin
 (ProtoInstance3398.Field('textTranslation') as TSFVec3f).Value := Vector3(0, 0, 0);
 (ProtoInstance3398.Field('description') as TSFString).Value := 'Contempt';
+end;
+
+procedure InitMultiFacialAnimationMenuPart275;
+begin
 (ProtoInstance3398.Field('menuItemString') as TMFString).Send(['Contempt']);
 (ProtoInstance3398.Field('size') as TSFVec2f).Value := Vector2(40, 3);
 (ProtoInstance3398.Field('fontSize') as TSFFloat).Value := 2.4;
 (ProtoInstance3398.Field('spacing') as TSFFloat).Value := 1.2;
+(ProtoInstance3398.Field('adapters') as TMFNode).Clear;
 (ProtoInstance3398.Field('adapters') as TMFNode).Add(ScalarInterpolator22);
 (ProtoInstance3398.Field('adapters') as TMFNode).Add(ScalarInterpolator15);
 Group9.FdChildren.Add(ProtoInstance3398.Instantiate);
@@ -13365,8 +13518,16 @@ begin
   InitMultiFacialAnimationMenuPart272;
   InitMultiFacialAnimationMenuPart273;
   InitMultiFacialAnimationMenuPart274;
+  InitMultiFacialAnimationMenuPart275;
   Result := X3D0;
 end;
 
+procedure RegisterMultiFacialAnimationMenuScripts(const Scene: TCastleSceneCore);
 begin
+  if CompiledScript3011 <> nil then
+    CompiledScript3011.RegisterHandlers(Scene);
+end;
+
+finalization
+  FreeAndNil(CompiledScript3011);
 end.

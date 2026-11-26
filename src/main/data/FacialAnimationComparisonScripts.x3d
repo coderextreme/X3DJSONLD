@@ -1273,8 +1273,7 @@
         <field name="fraction" type="SFFloat" accessType="inputOutput" value="0" />
         <field name="diffuseColor" type="SFColor" accessType="inputOutput" value="0 0 1" />
         <field name="checked" type="SFBool" accessType="inputOutput" value="false" />
-        <field name="adapter" type="SFNode" accessType="inputOutput" /><![CDATA[
-        ecmascript:
+        <field name="adapter" type="SFNode" accessType="inputOutput" /><![CDATA[ecmascript:
         function inTime(value) {
             // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {

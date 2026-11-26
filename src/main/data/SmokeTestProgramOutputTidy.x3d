@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Full' version='4.0' class='x3dModel.class' id='x3dModel.id' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'
+<X3D profile='Full' version='4.0' class='x3dModel.class' id='x3dModel.id' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'
 style='x3dModel.style'>
 <!-- X3D model top-level comment -->
 <head>
@@ -24,7 +24,7 @@ style='x3dModel.style'>
 <meta content='https://www.web3d.org/specifications/java/X3DJSAIL.html' name='reference'/>
 <meta content='SmokeTestProgramOutput.java' name='generator'/>
 <meta content='6 September 2016' name='created'/>
-<meta content='27 September 2026' name='modified'/>
+<meta content='31 October 2026' name='modified'/>
 <meta content='X3D Java Scene Access Interface Library (X3DJSAIL)' name='generator'/>
 <meta content='https://www.web3d.org/specifications/java/examples/SmokeTestProgram.java' name='generator'/>
 <meta content='Netbeans https://www.netbeans.org' name='generator'/>

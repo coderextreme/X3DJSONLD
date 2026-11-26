@@ -2,13 +2,28 @@ unit myextrusion;
 
 interface
 
-uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported, CastleSceneCore;
 
 function Createmyextrusion: TX3DRootNode;
+procedure RegistermyextrusionScripts(const Scene: TCastleSceneCore);
 
 implementation
 
-uses CastleVectors;
+uses SysUtils, CastleVectors, Math, X3DTime;
+
+type
+  TScript16Script = class
+  private
+    Fspine: array of TVector3;
+    FField_spine: TMFVec3f;
+    FDirty_spine: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AField_spine: TMFVec3f);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Set_cycle(Value: TX3DField; const Time: TX3DTime);
+  end;
 
 var
   X3D0: TX3DRootNode;
@@ -22,6 +37,53 @@ var
   Script16: TScriptNode;
   FieldVal17: TX3DEvent;
   FieldVal18: TMFVec3f;
+  CompiledScript16: TScript16Script;
+
+constructor TScript16Script.Create(const AField_spine: TMFVec3f);
+begin
+  inherited Create;
+  Fspine := 0;
+  FField_spine := nil;
+  FDirty_spine := False;
+  FField_spine := AField_spine;
+  if AField_spine <> nil then Fspine := AField_spine.Value;
+end;
+
+destructor TScript16Script.Destroy;
+begin
+  inherited Destroy;
+end;
+
+procedure TScript16Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_spine then
+  begin
+    FDirty_spine := False;
+    if FField_spine <> nil then
+      FField_spine.Send(Fspine, Time);
+  end;
+end;
+
+procedure TScript16Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script16_set_cycle', {$ifdef FPC}@{$endif}Set_cycle);
+end;
+
+procedure TScript16Script.Set_cycle(Value: TX3DField; const Time: TX3DTime);
+var
+  endA: TVector3;
+  endB: TVector3;
+  tmpspine: array of TVector3;
+begin
+  WriteLn((Value as TSFTime).Value);
+  endA := Vector3(Fspine[0].X * Random * 2, Fspine[0].Y * Random * 2, Fspine[0].Z * Random * 2);
+  endB := Vector3(Fspine[1].X * Random * 2, Fspine[1].Y * Random * 2, Fspine[1].Z * Random * 2);
+  tmpspine := [];
+  tmpspine[0] := endA;
+  tmpspine[1] := endB;
+  Fspine := tmpspine; FDirty_spine := True;
+  FlushOutputs(Time);
+end;
 
 procedure InitmyextrusionPart0;
 begin
@@ -59,28 +121,21 @@ Script16 := TScriptNode.Create;
 Script16.X3DName := 'MoveCylinder';
 FieldVal17 := TSFTime.CreateEvent(Script16, 'set_cycle', True);
 Script16.AddCustomFieldOrEvent(FieldVal17);
-FieldVal18 := TMFVec3f.Create(Script16, True, 'spine', ([Vector3(-50, -50, 0), Vector3(50, 50, 0)]));
+FieldVal18 := TMFVec3f.Create(Script16, True, 'spine', [Vector3(-50, -50, 0), Vector3(50, 50, 0)]);
 Script16.AddCustomFieldOrEvent(FieldVal18);
-Script16.SetSourceCode('ecmascript:' + LineEnding +
-  '' + LineEnding +
-  '                function set_cycle(value) {' + LineEnding +
-  '                        Browser.print(value);' + LineEnding +
-  '                        var endA = new SFVec3f(spine[0].x*Math.random()*2, spine[0].y*Math.random()*2, spine[0].z*Math.random()*2);' + LineEnding +
-  '                        var endB = new SFVec3f(spine[1].x*Math.random()*2, spine[1].y*Math.random()*2, spine[1].z*Math.random()*2);' + LineEnding +
-  '                        var tmpspine = new MFVec3f();' + LineEnding +
-  '			tmpspine[0] = endA;' + LineEnding +
-  '			tmpspine[1] = endB;' + LineEnding +
-  '                        spine = tmpspine;' + LineEnding +
-  '                }');
+FreeAndNil(CompiledScript16);
+CompiledScript16 := TScript16Script.Create(FieldVal18);
+Script16.SetUrl(['compiled:' + LineEnding +
+  'set_cycle=Script16_set_cycle']);
 Group10.FdChildren.Add(Script16);
-{ ROUTE TourTime.cycleTime TO MoveCylinder.set_cycle }
-Group10.AddRoute(TimeSensor15.EventCycleTime, FieldVal17);
 end;
 
 procedure InitmyextrusionPart1;
 begin
+{ ROUTE TourTime.cycleTime TO MoveCylinder.set_cycle }
+Group10.AddRoute(TimeSensor15.EventCycleTime, FieldVal17);
 { ROUTE MoveCylinder.spine_changed TO myextrusion.set_spine }
-Group10.AddRoute(Script16.EventSpine_changed, Extrusion12.EventSet_spine);
+Group10.AddRoute(FieldVal18.EventOut, Extrusion12.EventSet_spine);
 Group9.FdChildren.Add(Group10);
 X3D0.AddChildren([Group9]);
 end;
@@ -92,5 +147,12 @@ begin
   Result := X3D0;
 end;
 
+procedure RegistermyextrusionScripts(const Scene: TCastleSceneCore);
 begin
+  if CompiledScript16 <> nil then
+    CompiledScript16.RegisterHandlers(Scene);
+end;
+
+finalization
+  FreeAndNil(CompiledScript16);
 end.

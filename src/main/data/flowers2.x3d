@@ -61,8 +61,7 @@
 				<field accessType="inputOutput" name="g" type="SFFloat" value="5"/>
 				<field accessType="inputOutput" name="h" type="SFFloat" value="5"/>
 				<field accessType="inputOutput" name="resolution" type="SFInt32" value="50"/>
-			<![CDATA[
-			ecmascript:
+			<![CDATA[ecmascript:
 
 			function initialize() {
 			     generateCoordinates();

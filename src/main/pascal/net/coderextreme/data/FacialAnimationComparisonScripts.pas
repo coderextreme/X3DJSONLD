@@ -2,13 +2,14 @@ unit FacialAnimationComparisonScripts;
 
 interface
 
-uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported, CastleSceneCore;
 
 function CreateFacialAnimationComparisonScripts: TX3DRootNode;
+procedure RegisterFacialAnimationComparisonScriptsScripts(const Scene: TCastleSceneCore);
 
 implementation
 
-uses Classes, SysUtils, X3DLoad, CastleVectors;
+uses Classes, SysUtils, X3DLoad, CastleVectors, Math, X3DTime;
 
 function CreateEmptyPrototype(const AName: String): TX3DPrototype;
 var
@@ -33,6 +34,29 @@ begin
     FreeAndNil(Stream);
   end;
 end;
+
+type
+  TScript1043Script = class
+  private
+    Ffraction: Single;
+    FField_fraction: TSFFloat;
+    FDirty_fraction: Boolean;
+    FdiffuseColor: TVector3;
+    FField_diffuseColor: TSFColor;
+    FDirty_diffuseColor: Boolean;
+    Fchecked: Boolean;
+    FField_checked: TSFBool;
+    FDirty_checked: Boolean;
+    Fadapter: TX3DNode;
+    FField_adapter: TSFNode;
+    FDirty_adapter: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool; const AField_adapter: TSFNode);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure InTime(Value: TX3DField; const Time: TX3DTime);
+  end;
 
 var
   X3D0: TX3DRootNode;
@@ -689,6 +713,7 @@ var
   FieldVal1046: TSFColor;
   FieldVal1047: TSFBool;
   FieldVal1048: TSFNode;
+  CompiledScript1043: TScript1043Script;
   ProtoInstance1053: TX3DPrototypeNode;
   ProtoInstance1063: TX3DPrototypeNode;
   ProtoInstance1073: TX3DPrototypeNode;
@@ -815,6 +840,93 @@ var
   ScalarInterpolator1822: TScalarInterpolatorNode;
   ProtoInstance1823: TX3DPrototypeNode;
   ScalarInterpolator1832: TScalarInterpolatorNode;
+
+constructor TScript1043Script.Create(const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool; const AField_adapter: TSFNode);
+begin
+  inherited Create;
+  Ffraction := 0.0;
+  FField_fraction := nil;
+  FDirty_fraction := False;
+  FdiffuseColor := Vector3(0, 0, 0);
+  FField_diffuseColor := nil;
+  FDirty_diffuseColor := False;
+  Fchecked := False;
+  FField_checked := nil;
+  FDirty_checked := False;
+  Fadapter := nil;
+  FField_adapter := nil;
+  FDirty_adapter := False;
+  FField_fraction := AField_fraction;
+  if AField_fraction <> nil then Ffraction := AField_fraction.Value;
+  FField_diffuseColor := AField_diffuseColor;
+  if AField_diffuseColor <> nil then FdiffuseColor := AField_diffuseColor.Value;
+  FField_checked := AField_checked;
+  if AField_checked <> nil then Fchecked := AField_checked.Value;
+  FField_adapter := AField_adapter;
+  if AField_adapter <> nil then Fadapter := AField_adapter.Value;
+end;
+
+destructor TScript1043Script.Destroy;
+begin
+  inherited Destroy;
+end;
+
+procedure TScript1043Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_fraction then
+  begin
+    FDirty_fraction := False;
+    if FField_fraction <> nil then
+      FField_fraction.Send(Ffraction, Time);
+  end;
+  if FDirty_diffuseColor then
+  begin
+    FDirty_diffuseColor := False;
+    if FField_diffuseColor <> nil then
+      FField_diffuseColor.Send(FdiffuseColor, Time);
+  end;
+  if FDirty_checked then
+  begin
+    FDirty_checked := False;
+    if FField_checked <> nil then
+      FField_checked.Send(Fchecked, Time);
+  end;
+  if FDirty_adapter then
+  begin
+    FDirty_adapter := False;
+    if FField_adapter <> nil then
+      FField_adapter.Send(Fadapter, Time);
+  end;
+end;
+
+procedure TScript1043Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script1043_inTime', {$ifdef FPC}@{$endif}InTime);
+end;
+
+procedure TScript1043Script.InTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  if (Value as TSFTime).Value then
+  begin
+    Fchecked := not (Fchecked); FDirty_checked := True;
+  end;
+  scene := Browser.currentScene;
+  if Fchecked then
+  begin
+    WriteLn(scene.getNamedNode('Main_Clock'), 'fraction_changed', Fadapter, 'set_fraction');
+    FdiffuseColor.Y := 1; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 0; FDirty_diffuseColor := True;
+    Fadapter.set_fraction := 0; FDirty_adapter := True;
+  end
+  else
+  begin
+    WriteLn(scene.getNamedNode('Main_Clock'), 'fraction_changed', Fadapter, 'set_fraction');
+    FdiffuseColor.Y := 0; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 1; FDirty_diffuseColor := True;
+    Fadapter.set_fraction := 0; FDirty_adapter := True;
+  end;
+  FlushOutputs(Time);
+end;
 
 procedure InitFacialAnimationComparisonScriptsPart0;
 begin
@@ -5243,27 +5355,17 @@ Script1043.AddCustomFieldOrEvent(FieldVal1047);
 FieldVal1048 := TSFNode.CreateUndefined(Script1043, True, 'adapter');
 Script1043.AddCustomFieldOrEvent(FieldVal1048);
 Script1043.FieldOrEvent('adapter', True).IsClauseNamesAdd('adapter');
-Script1043.SetSourceCode('ecmascript:' + LineEnding +
-  '        function inTime(value) {' + LineEnding +
-  '            // Browser.print("in", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '            if (value) {' + LineEnding +
-  '                checked = !checked;' + LineEnding +
-  '            }' + LineEnding +
-  '            scene = Browser.currentScene;' + LineEnding +
-  '            if (checked) {' + LineEnding +
-  '                Browser.addRoute(scene.getNamedNode("Main_Clock"), ''fraction_changed'', adapter, ''set_fraction'');\n                diffuseColor.g = 1;\n                diffuseColor.b = 0;\n                adapter.set_fraction = 0;\n            } else {\n                Browser.deleteRoute(scene.getNamedNode("Main_Clock"), ''fraction_changed'', adapter, ''set_fraction'');' + LineEnding +
-  '                diffuseColor.g = 0;' + LineEnding +
-  '                diffuseColor.b = 1;' + LineEnding +
-  '                adapter.set_fraction = 0;' + LineEnding +
-  '            }' + LineEnding +
-  '        }');
+FreeAndNil(CompiledScript1043);
+CompiledScript1043 := TScript1043Script.Create(FieldVal1045, FieldVal1046, FieldVal1047, FieldVal1048);
+Script1043.SetUrl(['compiled:' + LineEnding +
+  'inTime=Script1043_inTime']);
 Group1028.FdChildren.Add(Script1043);
 { ROUTE StartStopAnimationUnit_Sensor.touchTime TO ScriptToggle.inTime }
 Group1028.AddRoute(TouchSensor1031.EventTouchTime, FieldVal1044);
 { ROUTE MenuBackground_Material.diffuseColor TO ScriptToggle.diffuseColor }
-Group1028.AddRoute(Material1041.diffuseColor, FieldVal1046);
+Group1028.AddRoute(Material1041.diffuseColor, FieldVal1046.EventIn);
 { ROUTE ScriptToggle.diffuseColor TO MenuBackground_Material.diffuseColor }
-Group1028.AddRoute(FieldVal1046, Material1041.diffuseColor);
+Group1028.AddRoute(FieldVal1046.EventOut, Material1041.diffuseColor);
 { ROUTE StartStopAnimationUnit_Sensor.touchTime TO Main_Clock.startTime }
 Group1028.AddRoute(TouchSensor1031.EventTouchTime, TimeSensor1029.FdStartTime.EventIn);
 ProtoDeclare1017.Node.AddChildren([Group1028]);
@@ -5278,12 +5380,12 @@ ProtoInstance1053 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1
 (ProtoInstance1053.Field('spacing') as TSFFloat).Value := 1.2;
 (ProtoInstance1053.Field('adapter') as TSFNode).Value := ScalarInterpolator10;
 Group9.FdChildren.Add(ProtoInstance1053.Instantiate);
-ProtoInstance1063 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1017);
-(ProtoInstance1063.Field('translation') as TSFVec3f).Value := Vector3(24, 60.4, 0);
 end;
 
 procedure InitFacialAnimationComparisonScriptsPart119;
 begin
+ProtoInstance1063 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1017);
+(ProtoInstance1063.Field('translation') as TSFVec3f).Value := Vector3(24, 60.4, 0);
 (ProtoInstance1063.Field('textTranslation') as TSFVec3f).Value := Vector3(0, 0, 0);
 (ProtoInstance1063.Field('description') as TSFString).Value := 'Jin Brow Lowerer';
 (ProtoInstance1063.Field('menuItemString') as TMFString).Send(['JinBrowLowerer']);
@@ -5322,12 +5424,12 @@ ProtoInstance1093 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1
 (ProtoInstance1093.Field('spacing') as TSFFloat).Value := 1.2;
 (ProtoInstance1093.Field('adapter') as TSFNode).Value := ScalarInterpolator14;
 Group9.FdChildren.Add(ProtoInstance1093.Instantiate);
-ProtoInstance1103 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1017);
-(ProtoInstance1103.Field('translation') as TSFVec3f).Value := Vector3(24, 48.39999999999999, 0);
 end;
 
 procedure InitFacialAnimationComparisonScriptsPart120;
 begin
+ProtoInstance1103 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1017);
+(ProtoInstance1103.Field('translation') as TSFVec3f).Value := Vector3(24, 48.39999999999999, 0);
 (ProtoInstance1103.Field('textTranslation') as TSFVec3f).Value := Vector3(0, 0, 0);
 (ProtoInstance1103.Field('description') as TSFString).Value := 'Jin Dimpler';
 (ProtoInstance1103.Field('menuItemString') as TMFString).Send(['JinDimpler']);
@@ -5366,12 +5468,12 @@ ProtoInstance1133 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1
 (ProtoInstance1133.Field('spacing') as TSFFloat).Value := 1.2;
 (ProtoInstance1133.Field('adapter') as TSFNode).Value := ScalarInterpolator18;
 Group9.FdChildren.Add(ProtoInstance1133.Instantiate);
-ProtoInstance1143 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1017);
-(ProtoInstance1143.Field('translation') as TSFVec3f).Value := Vector3(24, 36.39999999999999, 0);
 end;
 
 procedure InitFacialAnimationComparisonScriptsPart121;
 begin
+ProtoInstance1143 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1017);
+(ProtoInstance1143.Field('translation') as TSFVec3f).Value := Vector3(24, 36.39999999999999, 0);
 (ProtoInstance1143.Field('textTranslation') as TSFVec3f).Value := Vector3(0, 0, 0);
 (ProtoInstance1143.Field('description') as TSFString).Value := 'Jin Lid Droop';
 (ProtoInstance1143.Field('menuItemString') as TMFString).Send(['JinLidDroop']);
@@ -5410,12 +5512,12 @@ ProtoInstance1173 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1
 (ProtoInstance1173.Field('spacing') as TSFFloat).Value := 1.2;
 (ProtoInstance1173.Field('adapter') as TSFNode).Value := ScalarInterpolator22;
 Group9.FdChildren.Add(ProtoInstance1173.Instantiate);
-ProtoInstance1183 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1017);
-(ProtoInstance1183.Field('translation') as TSFVec3f).Value := Vector3(24, 24.399999999999995, 0);
 end;
 
 procedure InitFacialAnimationComparisonScriptsPart122;
 begin
+ProtoInstance1183 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1017);
+(ProtoInstance1183.Field('translation') as TSFVec3f).Value := Vector3(24, 24.399999999999995, 0);
 (ProtoInstance1183.Field('textTranslation') as TSFVec3f).Value := Vector3(0, 0, 0);
 (ProtoInstance1183.Field('description') as TSFString).Value := 'Jin Lip Funneler';
 (ProtoInstance1183.Field('menuItemString') as TMFString).Send(['JinLipFunneler']);
@@ -5454,12 +5556,12 @@ ProtoInstance1213 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1
 (ProtoInstance1213.Field('spacing') as TSFFloat).Value := 1.2;
 (ProtoInstance1213.Field('adapter') as TSFNode).Value := ScalarInterpolator26;
 Group9.FdChildren.Add(ProtoInstance1213.Instantiate);
-ProtoInstance1223 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1017);
-(ProtoInstance1223.Field('translation') as TSFVec3f).Value := Vector3(24, 12.399999999999999, 0);
 end;
 
 procedure InitFacialAnimationComparisonScriptsPart123;
 begin
+ProtoInstance1223 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1017);
+(ProtoInstance1223.Field('translation') as TSFVec3f).Value := Vector3(24, 12.399999999999999, 0);
 (ProtoInstance1223.Field('textTranslation') as TSFVec3f).Value := Vector3(0, 0, 0);
 (ProtoInstance1223.Field('description') as TSFString).Value := 'Jin Lip Stretcher';
 (ProtoInstance1223.Field('menuItemString') as TMFString).Send(['JinLipStretcher']);
@@ -5498,12 +5600,12 @@ ProtoInstance1253 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1
 (ProtoInstance1253.Field('spacing') as TSFFloat).Value := 1.2;
 (ProtoInstance1253.Field('adapter') as TSFNode).Value := ScalarInterpolator30;
 Group9.FdChildren.Add(ProtoInstance1253.Instantiate);
-ProtoInstance1263 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1017);
-(ProtoInstance1263.Field('translation') as TSFVec3f).Value := Vector3(24, 0.399999999999995, 0);
 end;
 
 procedure InitFacialAnimationComparisonScriptsPart124;
 begin
+ProtoInstance1263 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1017);
+(ProtoInstance1263.Field('translation') as TSFVec3f).Value := Vector3(24, 0.399999999999995, 0);
 (ProtoInstance1263.Field('textTranslation') as TSFVec3f).Value := Vector3(0, 0, 0);
 (ProtoInstance1263.Field('description') as TSFString).Value := 'Jin Mouth Stretch';
 (ProtoInstance1263.Field('menuItemString') as TMFString).Send(['JinMouthStretch']);
@@ -5542,12 +5644,12 @@ ProtoInstance1293 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1
 (ProtoInstance1293.Field('spacing') as TSFFloat).Value := 1.2;
 (ProtoInstance1293.Field('adapter') as TSFNode).Value := ScalarInterpolator34;
 Group9.FdChildren.Add(ProtoInstance1293.Instantiate);
-ProtoInstance1303 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1017);
-(ProtoInstance1303.Field('translation') as TSFVec3f).Value := Vector3(24, -11.600000000000009, 0);
 end;
 
 procedure InitFacialAnimationComparisonScriptsPart125;
 begin
+ProtoInstance1303 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1017);
+(ProtoInstance1303.Field('translation') as TSFVec3f).Value := Vector3(24, -11.600000000000009, 0);
 (ProtoInstance1303.Field('textTranslation') as TSFVec3f).Value := Vector3(0, 0, 0);
 (ProtoInstance1303.Field('description') as TSFString).Value := 'Jin Slit';
 (ProtoInstance1303.Field('menuItemString') as TMFString).Send(['JinSlit']);
@@ -5586,12 +5688,12 @@ ProtoInstance1333 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1
 (ProtoInstance1333.Field('spacing') as TSFFloat).Value := 1.2;
 (ProtoInstance1333.Field('adapter') as TSFNode).Value := ScalarInterpolator38;
 Group9.FdChildren.Add(ProtoInstance1333.Instantiate);
-ProtoInstance1343 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1017);
-(ProtoInstance1343.Field('translation') as TSFVec3f).Value := Vector3(24, -23.599999999999994, 0);
 end;
 
 procedure InitFacialAnimationComparisonScriptsPart126;
 begin
+ProtoInstance1343 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1017);
+(ProtoInstance1343.Field('translation') as TSFVec3f).Value := Vector3(24, -23.599999999999994, 0);
 (ProtoInstance1343.Field('textTranslation') as TSFVec3f).Value := Vector3(0, 0, 0);
 (ProtoInstance1343.Field('description') as TSFString).Value := 'Jin Wink';
 (ProtoInstance1343.Field('menuItemString') as TMFString).Send(['JinWink']);
@@ -5630,12 +5732,12 @@ ProtoInstance1373 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1
 (ProtoInstance1373.Field('description') as TSFString).Value := '__0';
 (ProtoInstance1373.Field('menuItemString') as TMFString).Send(['__0']);
 (ProtoInstance1373.Field('size') as TSFVec2f).Value := Vector2(40, 2);
-(ProtoInstance1373.Field('fontSize') as TSFFloat).Value := 1.6;
-(ProtoInstance1373.Field('spacing') as TSFFloat).Value := 0.8;
 end;
 
 procedure InitFacialAnimationComparisonScriptsPart127;
 begin
+(ProtoInstance1373.Field('fontSize') as TSFFloat).Value := 1.6;
+(ProtoInstance1373.Field('spacing') as TSFFloat).Value := 0.8;
 ScalarInterpolator1382 := TScalarInterpolatorNode.Create;
 ScalarInterpolator1382.X3DName := 'AnimationAdapter___0';
 (ProtoInstance1373.Field('adapter') as TSFNode).Value := ScalarInterpolator1382;
@@ -5674,12 +5776,12 @@ ProtoInstance1403 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1
 (ProtoInstance1403.Field('spacing') as TSFFloat).Value := 0.8;
 ScalarInterpolator1412 := TScalarInterpolatorNode.Create;
 ScalarInterpolator1412.X3DName := 'AnimationAdapter_Center_lower_vermillion_lip';
-(ProtoInstance1403.Field('adapter') as TSFNode).Value := ScalarInterpolator1412;
-Group9.FdChildren.Add(ProtoInstance1403.Instantiate);
 end;
 
 procedure InitFacialAnimationComparisonScriptsPart128;
 begin
+(ProtoInstance1403.Field('adapter') as TSFNode).Value := ScalarInterpolator1412;
+Group9.FdChildren.Add(ProtoInstance1403.Instantiate);
 ProtoInstance1413 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1017);
 (ProtoInstance1413.Field('translation') as TSFVec3f).Value := Vector3(65, 52.266666666666666, 0);
 (ProtoInstance1413.Field('textTranslation') as TSFVec3f).Value := Vector3(0, -0.07, 0);
@@ -5718,12 +5820,12 @@ ScalarInterpolator1442.X3DName := 'AnimationAdapter_Left_bulbar_conjunctiva';
 Group9.FdChildren.Add(ProtoInstance1433.Instantiate);
 ProtoInstance1443 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1017);
 (ProtoInstance1443.Field('translation') as TSFVec3f).Value := Vector3(65, 46.69999999999999, 0);
-(ProtoInstance1443.Field('textTranslation') as TSFVec3f).Value := Vector3(0, -0.07, 0);
-(ProtoInstance1443.Field('description') as TSFString).Value := 'Left_cheek';
 end;
 
 procedure InitFacialAnimationComparisonScriptsPart129;
 begin
+(ProtoInstance1443.Field('textTranslation') as TSFVec3f).Value := Vector3(0, -0.07, 0);
+(ProtoInstance1443.Field('description') as TSFString).Value := 'Left_cheek';
 (ProtoInstance1443.Field('menuItemString') as TMFString).Send(['Left_cheek']);
 (ProtoInstance1443.Field('size') as TSFVec2f).Value := Vector2(40, 2);
 (ProtoInstance1443.Field('fontSize') as TSFFloat).Value := 1.6;
@@ -5762,12 +5864,12 @@ ProtoInstance1473 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1
 (ProtoInstance1473.Field('description') as TSFString).Value := 'Left_eyebrow';
 (ProtoInstance1473.Field('menuItemString') as TMFString).Send(['Left_eyebrow']);
 (ProtoInstance1473.Field('size') as TSFVec2f).Value := Vector2(40, 2);
-(ProtoInstance1473.Field('fontSize') as TSFFloat).Value := 1.6;
-(ProtoInstance1473.Field('spacing') as TSFFloat).Value := 0.8;
 end;
 
 procedure InitFacialAnimationComparisonScriptsPart130;
 begin
+(ProtoInstance1473.Field('fontSize') as TSFFloat).Value := 1.6;
+(ProtoInstance1473.Field('spacing') as TSFFloat).Value := 0.8;
 ScalarInterpolator1482 := TScalarInterpolatorNode.Create;
 ScalarInterpolator1482.X3DName := 'AnimationAdapter_Left_eyebrow';
 (ProtoInstance1473.Field('adapter') as TSFNode).Value := ScalarInterpolator1482;
@@ -5806,12 +5908,12 @@ ProtoInstance1503 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1
 (ProtoInstance1503.Field('spacing') as TSFFloat).Value := 0.8;
 ScalarInterpolator1512 := TScalarInterpolatorNode.Create;
 ScalarInterpolator1512.X3DName := 'AnimationAdapter_Left_lower_vermillion_lip';
-(ProtoInstance1503.Field('adapter') as TSFNode).Value := ScalarInterpolator1512;
-Group9.FdChildren.Add(ProtoInstance1503.Instantiate);
 end;
 
 procedure InitFacialAnimationComparisonScriptsPart131;
 begin
+(ProtoInstance1503.Field('adapter') as TSFNode).Value := ScalarInterpolator1512;
+Group9.FdChildren.Add(ProtoInstance1503.Instantiate);
 ProtoInstance1513 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1017);
 (ProtoInstance1513.Field('translation') as TSFVec3f).Value := Vector3(65, 33.7111111111111, 0);
 (ProtoInstance1513.Field('textTranslation') as TSFVec3f).Value := Vector3(0, -0.07, 0);
@@ -5850,12 +5952,12 @@ ScalarInterpolator1542.X3DName := 'AnimationAdapter_Left_pupil';
 Group9.FdChildren.Add(ProtoInstance1533.Instantiate);
 ProtoInstance1543 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1017);
 (ProtoInstance1543.Field('translation') as TSFVec3f).Value := Vector3(65, 28.144444444444435, 0);
-(ProtoInstance1543.Field('textTranslation') as TSFVec3f).Value := Vector3(0, -0.07, 0);
-(ProtoInstance1543.Field('description') as TSFString).Value := 'Left_temple';
 end;
 
 procedure InitFacialAnimationComparisonScriptsPart132;
 begin
+(ProtoInstance1543.Field('textTranslation') as TSFVec3f).Value := Vector3(0, -0.07, 0);
+(ProtoInstance1543.Field('description') as TSFString).Value := 'Left_temple';
 (ProtoInstance1543.Field('menuItemString') as TMFString).Send(['Left_temple']);
 (ProtoInstance1543.Field('size') as TSFVec2f).Value := Vector2(40, 2);
 (ProtoInstance1543.Field('fontSize') as TSFFloat).Value := 1.6;
@@ -5894,12 +5996,12 @@ ProtoInstance1573 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1
 (ProtoInstance1573.Field('description') as TSFString).Value := 'Left_upper_vermillion_lip';
 (ProtoInstance1573.Field('menuItemString') as TMFString).Send(['Left_upper_vermillion_lip']);
 (ProtoInstance1573.Field('size') as TSFVec2f).Value := Vector2(40, 2);
-(ProtoInstance1573.Field('fontSize') as TSFFloat).Value := 1.6;
-(ProtoInstance1573.Field('spacing') as TSFFloat).Value := 0.8;
 end;
 
 procedure InitFacialAnimationComparisonScriptsPart133;
 begin
+(ProtoInstance1573.Field('fontSize') as TSFFloat).Value := 1.6;
+(ProtoInstance1573.Field('spacing') as TSFFloat).Value := 0.8;
 ScalarInterpolator1582 := TScalarInterpolatorNode.Create;
 ScalarInterpolator1582.X3DName := 'AnimationAdapter_Left_upper_vermillion_lip';
 (ProtoInstance1573.Field('adapter') as TSFNode).Value := ScalarInterpolator1582;
@@ -5938,12 +6040,12 @@ ProtoInstance1603 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1
 (ProtoInstance1603.Field('spacing') as TSFFloat).Value := 0.8;
 ScalarInterpolator1612 := TScalarInterpolatorNode.Create;
 ScalarInterpolator1612.X3DName := 'AnimationAdapter_Mid_nasal_dorsum';
-(ProtoInstance1603.Field('adapter') as TSFNode).Value := ScalarInterpolator1612;
-Group9.FdChildren.Add(ProtoInstance1603.Instantiate);
 end;
 
 procedure InitFacialAnimationComparisonScriptsPart134;
 begin
+(ProtoInstance1603.Field('adapter') as TSFNode).Value := ScalarInterpolator1612;
+Group9.FdChildren.Add(ProtoInstance1603.Instantiate);
 ProtoInstance1613 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1017);
 (ProtoInstance1613.Field('translation') as TSFVec3f).Value := Vector3(65, 15.155555555555546, 0);
 (ProtoInstance1613.Field('textTranslation') as TSFVec3f).Value := Vector3(0, -0.07, 0);
@@ -5982,12 +6084,12 @@ ScalarInterpolator1642.X3DName := 'AnimationAdapter_Neck';
 Group9.FdChildren.Add(ProtoInstance1633.Instantiate);
 ProtoInstance1643 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1017);
 (ProtoInstance1643.Field('translation') as TSFVec3f).Value := Vector3(65, 9.588888888888878, 0);
-(ProtoInstance1643.Field('textTranslation') as TSFVec3f).Value := Vector3(0, -0.07, 0);
-(ProtoInstance1643.Field('description') as TSFString).Value := 'Occipital_scalp';
 end;
 
 procedure InitFacialAnimationComparisonScriptsPart135;
 begin
+(ProtoInstance1643.Field('textTranslation') as TSFVec3f).Value := Vector3(0, -0.07, 0);
+(ProtoInstance1643.Field('description') as TSFString).Value := 'Occipital_scalp';
 (ProtoInstance1643.Field('menuItemString') as TMFString).Send(['Occipital_scalp']);
 (ProtoInstance1643.Field('size') as TSFVec2f).Value := Vector2(40, 2);
 (ProtoInstance1643.Field('fontSize') as TSFFloat).Value := 1.6;
@@ -6026,12 +6128,12 @@ ProtoInstance1673 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1
 (ProtoInstance1673.Field('description') as TSFString).Value := 'Right_cheek';
 (ProtoInstance1673.Field('menuItemString') as TMFString).Send(['Right_cheek']);
 (ProtoInstance1673.Field('size') as TSFVec2f).Value := Vector2(40, 2);
-(ProtoInstance1673.Field('fontSize') as TSFFloat).Value := 1.6;
-(ProtoInstance1673.Field('spacing') as TSFFloat).Value := 0.8;
 end;
 
 procedure InitFacialAnimationComparisonScriptsPart136;
 begin
+(ProtoInstance1673.Field('fontSize') as TSFFloat).Value := 1.6;
+(ProtoInstance1673.Field('spacing') as TSFFloat).Value := 0.8;
 ScalarInterpolator1682 := TScalarInterpolatorNode.Create;
 ScalarInterpolator1682.X3DName := 'AnimationAdapter_Right_cheek';
 (ProtoInstance1673.Field('adapter') as TSFNode).Value := ScalarInterpolator1682;
@@ -6070,12 +6172,12 @@ ProtoInstance1703 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1
 (ProtoInstance1703.Field('spacing') as TSFFloat).Value := 0.8;
 ScalarInterpolator1712 := TScalarInterpolatorNode.Create;
 ScalarInterpolator1712.X3DName := 'AnimationAdapter_Right_eyebrow';
-(ProtoInstance1703.Field('adapter') as TSFNode).Value := ScalarInterpolator1712;
-Group9.FdChildren.Add(ProtoInstance1703.Instantiate);
 end;
 
 procedure InitFacialAnimationComparisonScriptsPart137;
 begin
+(ProtoInstance1703.Field('adapter') as TSFNode).Value := ScalarInterpolator1712;
+Group9.FdChildren.Add(ProtoInstance1703.Instantiate);
 ProtoInstance1713 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1017);
 (ProtoInstance1713.Field('translation') as TSFVec3f).Value := Vector3(65, -3.400000000000013, 0);
 (ProtoInstance1713.Field('textTranslation') as TSFVec3f).Value := Vector3(0, -0.07, 0);
@@ -6114,12 +6216,12 @@ ScalarInterpolator1742.X3DName := 'AnimationAdapter_Right_lower_vermillion_lip';
 Group9.FdChildren.Add(ProtoInstance1733.Instantiate);
 ProtoInstance1743 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1017);
 (ProtoInstance1743.Field('translation') as TSFVec3f).Value := Vector3(65, -8.966666666666683, 0);
-(ProtoInstance1743.Field('textTranslation') as TSFVec3f).Value := Vector3(0, -0.07, 0);
-(ProtoInstance1743.Field('description') as TSFString).Value := 'Right_nasolabial_cheek';
 end;
 
 procedure InitFacialAnimationComparisonScriptsPart138;
 begin
+(ProtoInstance1743.Field('textTranslation') as TSFVec3f).Value := Vector3(0, -0.07, 0);
+(ProtoInstance1743.Field('description') as TSFString).Value := 'Right_nasolabial_cheek';
 (ProtoInstance1743.Field('menuItemString') as TMFString).Send(['Right_nasolabial_cheek']);
 (ProtoInstance1743.Field('size') as TSFVec2f).Value := Vector2(40, 2);
 (ProtoInstance1743.Field('fontSize') as TSFFloat).Value := 1.6;
@@ -6158,12 +6260,12 @@ ProtoInstance1773 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1
 (ProtoInstance1773.Field('description') as TSFString).Value := 'Right_temple';
 (ProtoInstance1773.Field('menuItemString') as TMFString).Send(['Right_temple']);
 (ProtoInstance1773.Field('size') as TSFVec2f).Value := Vector2(40, 2);
-(ProtoInstance1773.Field('fontSize') as TSFFloat).Value := 1.6;
-(ProtoInstance1773.Field('spacing') as TSFFloat).Value := 0.8;
 end;
 
 procedure InitFacialAnimationComparisonScriptsPart139;
 begin
+(ProtoInstance1773.Field('fontSize') as TSFFloat).Value := 1.6;
+(ProtoInstance1773.Field('spacing') as TSFFloat).Value := 0.8;
 ScalarInterpolator1782 := TScalarInterpolatorNode.Create;
 ScalarInterpolator1782.X3DName := 'AnimationAdapter_Right_temple';
 (ProtoInstance1773.Field('adapter') as TSFNode).Value := ScalarInterpolator1782;
@@ -6202,12 +6304,12 @@ ProtoInstance1803 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1
 (ProtoInstance1803.Field('spacing') as TSFFloat).Value := 0.8;
 ScalarInterpolator1812 := TScalarInterpolatorNode.Create;
 ScalarInterpolator1812.X3DName := 'AnimationAdapter_Right_upper_vermillion_lip';
-(ProtoInstance1803.Field('adapter') as TSFNode).Value := ScalarInterpolator1812;
-Group9.FdChildren.Add(ProtoInstance1803.Instantiate);
 end;
 
 procedure InitFacialAnimationComparisonScriptsPart140;
 begin
+(ProtoInstance1803.Field('adapter') as TSFNode).Value := ScalarInterpolator1812;
+Group9.FdChildren.Add(ProtoInstance1803.Instantiate);
 ProtoInstance1813 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1017);
 (ProtoInstance1813.Field('translation') as TSFVec3f).Value := Vector3(65, -21.955555555555577, 0);
 (ProtoInstance1813.Field('textTranslation') as TSFVec3f).Value := Vector3(0, -0.07, 0);
@@ -6381,5 +6483,12 @@ begin
   Result := X3D0;
 end;
 
+procedure RegisterFacialAnimationComparisonScriptsScripts(const Scene: TCastleSceneCore);
 begin
+  if CompiledScript1043 <> nil then
+    CompiledScript1043.RegisterHandlers(Scene);
+end;
+
+finalization
+  FreeAndNil(CompiledScript1043);
 end.

@@ -553,9 +553,13 @@ PascalSerializer.prototype = {
 			method = method + ".Add";
 			addpre = "Fd";
 		}
-		if (method === "Shaders") {
-			method = "Children";
-			addpre = "Add";
+		if (parentName === "Appearance" && method === "Shaders") {
+			method = "Shaders.Add";
+			addpre = "Fd";
+		}
+		if ((parentName === "ComposedShader" || parentName === "Effect") && method === "Parts") {
+			method = "Parts.Add";
+			addpre = "Fd";
 		}
 		if (parentName === "ProtoBody") {
 			method = "Children";
@@ -623,10 +627,6 @@ PascalSerializer.prototype = {
 			addpre = "Fd";
 		}
 		if (parentName === "HAnimHumanoid" && method === "SkinCoord") {
-			method = method + ".Set";
-			addpre = "Fd";
-		}
-		if (parentName === "ComposedCubeMapTexture" && method.endsWith("Texture")) {
 			method = method + ".Set";
 			addpre = "Fd";
 		}
@@ -812,7 +812,10 @@ PascalSerializer.prototype = {
 				protoStatement.nodeName === "ExternProtoDeclare" ||
 				(protoStatement.nodeName &&
 					(protoStatement.nodeName.endsWith("Script") ||
-						protoStatement.nodeName.endsWith("ComposedShader")))
+						protoStatement.nodeName.endsWith("ComposedShader") ||
+						protoStatement.nodeName === "Effect" ||
+						protoStatement.nodeName === "PackagedShader" ||
+						protoStatement.nodeName === "ShaderProgram"))
 			) {
 				protoStatement["$interface$"] = this.setInterface(protoStatement, protoName);
 			}
@@ -901,7 +904,10 @@ PascalSerializer.prototype = {
 					valVar + " := " + pascalFieldType + ".CreateUndefined(" + fieldParentArg + ", " + exposed + ", " + escapePascalString(fieldName) + ");\n"
 				);
 			} else {
-				const sv = this.stringValue(rawValue, fieldName, fieldType);
+				let sv = this.stringValue(rawValue, fieldName, fieldType);
+				if (fieldType.startsWith("MF") && sv.startsWith("(") && sv.endsWith(")")) {
+					sv = sv.slice(1, -1);
+				}
 				this.statements.push(
 					valVar + " := " + pascalFieldType + ".Create(" + fieldParentArg + ", " + exposed + ", " + escapePascalString(fieldName) + ", " + sv + ");\n"
 				);
@@ -1009,6 +1015,10 @@ PascalSerializer.prototype = {
 				}
 				break;
 			case "Script":
+			case "ComposedShader":
+			case "Effect":
+			case "PackagedShader":
+			case "ShaderProgram":
 				this.setProto(node);
 				isNode = "Node";
 				params = ".Create;";
@@ -1155,8 +1165,23 @@ PascalSerializer.prototype = {
 				this.statements.push(elVar + ".FdBBoxSize.Value := " + strval + ";\n");
 			} else if (attr === "bboxCenter") {
 				this.statements.push(elVar + ".FdBBoxCenter.Value := " + strval + ";\n");
-			} else if (attr === "type" && elName === "ShaderPart") {
-				this.statements.push(elVar + ".FdType.Value := " + strval + ";\n");
+			} else if (attr === "type" && (elName === "ShaderPart" || elName === "EffectPart")) {
+				const shaderTypeMap = {
+					VERTEX: "stVertex",
+					FRAGMENT: "stFragment",
+					GEOMETRY: "stGeometry"
+				};
+				const stEnum = shaderTypeMap[rawVal.trim().toUpperCase()] || "stVertex";
+				this.statements.push(elVar + ".ShaderType := " + stEnum + ";\n");
+			} else if (attr === "language" && (elName === "ComposedShader" || elName === "Effect")) {
+				const langMap = {
+					GLSL: "slGLSL",
+					CG: "slCG",
+					HLSL: "slHLSL",
+					DEFAULT: "slDefault"
+				};
+				const langEnum = langMap[rawVal.trim().toUpperCase()] || "slDefault";
+				this.statements.push(elVar + ".Language := " + langEnum + ";\n");
 			} else if (attr === "image" && attrType === "SFImage") {
 				this.statements.push(elVar + ".FdImage.Value := " + strval + ";\n");
 			} else if (attr === "alphaMode" && attrType === "SFString") {
@@ -1383,9 +1408,14 @@ PascalSerializer.prototype = {
 					this.statements.push("// " + comment.replace(/[\r\n]+/g, " ") + "\n");
 				}
 			} else if (node.nodeType === 4) {
-				this.statements.push(
-					elVar + ".SetSourceCode(" + toPascalStringLiteral(node.nodeValue || "") + ");\n"
-				);
+				const cdataLit = toPascalStringLiteral(node.nodeValue || "");
+				if (elName === "ShaderPart" || elName === "EffectPart") {
+					this.statements.push(elVar + ".Contents := " + cdataLit + ";\n");
+				} else if (getAttribute(element, "url") !== null) {
+					this.statements.push(elVar + ".FdUrl.Items.Add(" + cdataLit + ");\n");
+				} else {
+					this.statements.push(elVar + ".SetUrl([" + cdataLit + "]);\n");
+				}
 			}
 		}
 	},
@@ -1428,7 +1458,8 @@ PascalSerializer.prototype = {
 			);
 		}
 	},
-emitRoute: function (element, parentName) {
+
+	emitRoute: function (element, parentName) {
 		const FromNode = getAttribute(element, "fromNode") || "";
 		const rawFromField = getAttribute(element, "fromField") || "";
 		const ToNode = getAttribute(element, "toNode") || "";
@@ -1442,15 +1473,43 @@ emitRoute: function (element, parentName) {
 		const FromDEF = fromTarget ? this.stackname(fromTarget) : this.DEFvars[FromNode] || FromNode;
 		const ToDEF = toTarget ? this.stackname(toTarget) : this.DEFvars[ToNode] || ToNode;
 
+		const routeParentVar =
+			element.parentNode && this.effectiveNodeName(element.parentNode) === "ProtoBody"
+				? this.stackname(element.parentNode.parentNode) + ".Node"
+				: parentName;
+
 		const isCustomFieldOwner = (target) =>
-			target && (target.nodeName === "Script" || target.nodeName === "ComposedShader");
+			target &&
+			(target.nodeName === "Script" ||
+				target.nodeName === "ComposedShader" ||
+				target.nodeName === "Effect" ||
+				target.nodeName === "PackagedShader" ||
+				target.nodeName === "ShaderProgram");
+
+		const resolveCustomFieldExpr = (ownerName, rawField, isSource) => {
+			let fieldKey = rawField;
+			let fNode = this.getInterfaceField(ownerName, fieldKey);
+			if (!fNode && isSource && fieldKey.endsWith("_changed")) {
+				fieldKey = fieldKey.slice(0, -"_changed".length);
+				fNode = this.getInterfaceField(ownerName, fieldKey);
+			} else if (!fNode && !isSource && fieldKey.startsWith("set_")) {
+				fieldKey = fieldKey.slice("set_".length);
+				fNode = this.getInterfaceField(ownerName, fieldKey);
+			}
+			if (!fNode || !this.nodeMeta.has(fNode)) {
+				return null;
+			}
+			const varName = this.getMeta(fNode).fieldVarName || this.stackname(fNode);
+			const accessType = this.getInterfaceAccessType(ownerName, fieldKey) || "inputOutput";
+			if (accessType === "inputOnly" || accessType === "outputOnly") {
+				return varName;
+			}
+			return varName + (isSource ? ".EventOut" : ".EventIn");
+		};
 
 		let fromExpr = null;
 		if (isCustomFieldOwner(fromTarget)) {
-			const fromf = this.getInterfaceField(FromNode, rawFromField);
-			if (fromf && this.nodeMeta.has(fromf)) {
-				fromExpr = this.getMeta(fromf).fieldVarName || this.stackname(fromf);
-			}
+			fromExpr = resolveCustomFieldExpr(FromNode, rawFromField, true);
 		}
 		if (!fromExpr) {
 			const eventOutFields = new Set([
@@ -1470,10 +1529,7 @@ emitRoute: function (element, parentName) {
 
 		let toExpr = null;
 		if (isCustomFieldOwner(toTarget)) {
-			const tof = this.getInterfaceField(ToNode, rawToField);
-			if (tof && this.nodeMeta.has(tof)) {
-				toExpr = this.getMeta(tof).fieldVarName || this.stackname(tof);
-			}
+			toExpr = resolveCustomFieldExpr(ToNode, rawToField, false);
 		}
 		if (!toExpr) {
 			if (ToField === "set_rotation") ToField = "FdRotation.EventIn";
@@ -1489,7 +1545,7 @@ emitRoute: function (element, parentName) {
 		}
 
 		this.statements.push("{ ROUTE " + FromNode + "." + rawFromField + " TO " + ToNode + "." + rawToField + " }\n");
-		this.statements.push(parentName + ".AddRoute(" + fromExpr + ", " + toExpr + ");\n");
+		this.statements.push(routeParentVar + ".AddRoute(" + fromExpr + ", " + toExpr + ");\n");
 	},
 
 	dealWithMethod: function (element, node, method) {

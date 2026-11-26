@@ -298,6 +298,7 @@ Color79.SetColor([Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(
 IndexedLineSet77.Color := Color79;
 Shape76.Geometry := IndexedLineSet77;
 Group71.FdChildren.Add(Shape76);
+(ProtoInstance68.Field('myShape') as TMFNode).Clear;
 (ProtoInstance68.Field('myShape') as TMFNode).Add(Group71);
 Group7.FdChildren.Add(ProtoInstance68.Instantiate);
 X3D0.AddChildren([Group7]);

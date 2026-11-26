@@ -27,9 +27,7 @@
 
              accessType='initializeOnly' />
 
-      <![CDATA[
-
-      ecmascript:
+      <![CDATA[ecmascript:
 
       function combinationEntered (value) {
 

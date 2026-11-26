@@ -2,13 +2,89 @@ unit Trebuchet;
 
 interface
 
-uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported, CastleSceneCore;
 
 function CreateTrebuchet: TX3DRootNode;
+procedure RegisterTrebuchetScripts(const Scene: TCastleSceneCore);
 
 implementation
 
-uses CastleVectors;
+uses SysUtils, CastleVectors, Math, X3DTime;
+
+type
+  TScript333Script = class
+  private
+    Fwhichchoice: Int32;
+    FEvent_whichchoice: TX3DEvent;
+    FBack_whichchoice: TSFInt32;
+    FDirty_whichchoice: Boolean;
+    FCounterWeight: Single;
+    FEvent_CounterWeight: TX3DEvent;
+    FBack_CounterWeight: TSFFloat;
+    FDirty_CounterWeight: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_whichchoice: TX3DEvent; const AEvent_CounterWeight: TX3DEvent);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Initialize(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_boolean(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript337Script = class
+  private
+    Fwhichchoice: Int32;
+    FEvent_whichchoice: TX3DEvent;
+    FBack_whichchoice: TSFInt32;
+    FDirty_whichchoice: Boolean;
+    FProjectileWeight: Single;
+    FEvent_ProjectileWeight: TX3DEvent;
+    FBack_ProjectileWeight: TSFFloat;
+    FDirty_ProjectileWeight: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_whichchoice: TX3DEvent; const AEvent_ProjectileWeight: TX3DEvent);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Set_boolean(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript341Script = class
+  private
+    Fwhichchoice: Int32;
+    FEvent_whichchoice: TX3DEvent;
+    FBack_whichchoice: TSFInt32;
+    FDirty_whichchoice: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_whichchoice: TX3DEvent);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Set_boolean(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript344Script = class
+  private
+    FMassCounterWeight: Single;
+    FMassProjectileWeight: Single;
+    Ftransparent: TVector3;
+    FEvent_transparent: TX3DEvent;
+    FBack_transparent: TSFVec3f;
+    FDirty_transparent: Boolean;
+    Fvalue_changed: TVector3;
+    FEvent_value_changed: TX3DEvent;
+    FBack_value_changed: TSFVec3f;
+    FDirty_value_changed: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AField_MassCounterWeight: TSFFloat; const AField_MassProjectileWeight: TSFFloat; const AEvent_transparent: TX3DEvent; const AEvent_value_changed: TX3DEvent);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Initialize(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_MassProjectileWeight(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_MassCounterWeight(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_fraction(Value: TX3DField; const Time: TX3DTime);
+  end;
 
 var
   X3D0: TX3DRootNode;
@@ -268,13 +344,16 @@ var
   FieldVal334: TX3DEvent;
   FieldVal335: TX3DEvent;
   FieldVal336: TX3DEvent;
+  CompiledScript333: TScript333Script;
   Script337: TScriptNode;
   FieldVal338: TX3DEvent;
   FieldVal339: TX3DEvent;
   FieldVal340: TX3DEvent;
+  CompiledScript337: TScript337Script;
   Script341: TScriptNode;
   FieldVal342: TX3DEvent;
   FieldVal343: TX3DEvent;
+  CompiledScript341: TScript341Script;
   Script344: TScriptNode;
   FieldVal345: TX3DEvent;
   FieldVal346: TX3DEvent;
@@ -283,12 +362,316 @@ var
   FieldVal349: TSFFloat;
   FieldVal350: TX3DEvent;
   FieldVal351: TX3DEvent;
+  CompiledScript344: TScript344Script;
   TimeSensor352: TTimeSensorNode;
   PositionInterpolator353: TPositionInterpolatorNode;
   OrientationInterpolator354: TOrientationInterpolatorNode;
   PositionInterpolator355: TPositionInterpolatorNode;
   OrientationInterpolator356: TOrientationInterpolatorNode;
   PositionInterpolator357: TPositionInterpolatorNode;
+
+constructor TScript333Script.Create(const AEvent_whichchoice: TX3DEvent; const AEvent_CounterWeight: TX3DEvent);
+begin
+  inherited Create;
+  Fwhichchoice := 0;
+  FEvent_whichchoice := nil;
+  FBack_whichchoice := TSFInt32.Create(nil, False, 'whichchoice', 0);
+  FDirty_whichchoice := False;
+  FCounterWeight := 0.0;
+  FEvent_CounterWeight := nil;
+  FBack_CounterWeight := TSFFloat.Create(nil, False, 'CounterWeight', 0.0);
+  FDirty_CounterWeight := False;
+  FEvent_whichchoice := AEvent_whichchoice;
+  FEvent_CounterWeight := AEvent_CounterWeight;
+end;
+
+destructor TScript333Script.Destroy;
+begin
+  FreeAndNil(FBack_whichchoice);
+  FreeAndNil(FBack_CounterWeight);
+  inherited Destroy;
+end;
+
+procedure TScript333Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_whichchoice then
+  begin
+    FDirty_whichchoice := False;
+    if FEvent_whichchoice <> nil then
+    begin
+      FBack_whichchoice.Value := Fwhichchoice;
+      FEvent_whichchoice.Send(FBack_whichchoice, Time);
+    end;
+  end;
+  if FDirty_CounterWeight then
+  begin
+    FDirty_CounterWeight := False;
+    if FEvent_CounterWeight <> nil then
+    begin
+      FBack_CounterWeight.Value := FCounterWeight;
+      FEvent_CounterWeight.Send(FBack_CounterWeight, Time);
+    end;
+  end;
+end;
+
+procedure TScript333Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script333_initialize', {$ifdef FPC}@{$endif}Initialize);
+  Scene.RegisterCompiledScript('Script333_set_boolean', {$ifdef FPC}@{$endif}Set_boolean);
+end;
+
+procedure TScript333Script.Initialize(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fwhichchoice := 0; FDirty_whichchoice := True;
+  FCounterWeight := 100; FDirty_CounterWeight := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript333Script.Set_boolean(Value: TX3DField; const Time: TX3DTime);
+begin
+  if (Value as TSFBool).Value = False then
+  begin
+    Exit;
+  end;
+  Fwhichchoice := Fwhichchoice + 1; FDirty_whichchoice := True;
+  if Fwhichchoice = 0 then
+    FCounterWeight := 50.00; FDirty_CounterWeight := True;
+  if Fwhichchoice = 1 then
+    FCounterWeight := 500.00; FDirty_CounterWeight := True;
+  if Fwhichchoice = 2 then
+    FCounterWeight := 1000.00; FDirty_CounterWeight := True;
+  if Fwhichchoice = 3 then
+    FCounterWeight := 10000.00; FDirty_CounterWeight := True;
+  if Fwhichchoice = 4 then
+  begin
+    Fwhichchoice := 0; FDirty_whichchoice := True;
+    FCounterWeight := 50; FDirty_CounterWeight := True;
+  end;
+  WriteLn('CounterWeight =' + FCounterWeight);
+  FlushOutputs(Time);
+end;
+
+constructor TScript337Script.Create(const AEvent_whichchoice: TX3DEvent; const AEvent_ProjectileWeight: TX3DEvent);
+begin
+  inherited Create;
+  Fwhichchoice := 0;
+  FEvent_whichchoice := nil;
+  FBack_whichchoice := TSFInt32.Create(nil, False, 'whichchoice', 0);
+  FDirty_whichchoice := False;
+  FProjectileWeight := 0.0;
+  FEvent_ProjectileWeight := nil;
+  FBack_ProjectileWeight := TSFFloat.Create(nil, False, 'ProjectileWeight', 0.0);
+  FDirty_ProjectileWeight := False;
+  FEvent_whichchoice := AEvent_whichchoice;
+  FEvent_ProjectileWeight := AEvent_ProjectileWeight;
+end;
+
+destructor TScript337Script.Destroy;
+begin
+  FreeAndNil(FBack_whichchoice);
+  FreeAndNil(FBack_ProjectileWeight);
+  inherited Destroy;
+end;
+
+procedure TScript337Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_whichchoice then
+  begin
+    FDirty_whichchoice := False;
+    if FEvent_whichchoice <> nil then
+    begin
+      FBack_whichchoice.Value := Fwhichchoice;
+      FEvent_whichchoice.Send(FBack_whichchoice, Time);
+    end;
+  end;
+  if FDirty_ProjectileWeight then
+  begin
+    FDirty_ProjectileWeight := False;
+    if FEvent_ProjectileWeight <> nil then
+    begin
+      FBack_ProjectileWeight.Value := FProjectileWeight;
+      FEvent_ProjectileWeight.Send(FBack_ProjectileWeight, Time);
+    end;
+  end;
+end;
+
+procedure TScript337Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script337_set_boolean', {$ifdef FPC}@{$endif}Set_boolean);
+end;
+
+procedure TScript337Script.Set_boolean(Value: TX3DField; const Time: TX3DTime);
+begin
+  if (Value as TSFBool).Value = False then
+  begin
+    Exit;
+  end;
+  Fwhichchoice := Fwhichchoice + 1; FDirty_whichchoice := True;
+  if Fwhichchoice = 0 then
+    FProjectileWeight := 10.00; FDirty_ProjectileWeight := True;
+  if Fwhichchoice = 1 then
+    FProjectileWeight := 1000.00; FDirty_ProjectileWeight := True;
+  if Fwhichchoice = 2 then
+    FProjectileWeight := 5; FDirty_ProjectileWeight := True;
+  if Fwhichchoice = 3 then
+  begin
+    Fwhichchoice := 0; FDirty_whichchoice := True;
+    FProjectileWeight := 10.00; FDirty_ProjectileWeight := True;
+  end;
+  WriteLn('Projectile Weight' + FProjectileWeight);
+  FlushOutputs(Time);
+end;
+
+constructor TScript341Script.Create(const AEvent_whichchoice: TX3DEvent);
+begin
+  inherited Create;
+  Fwhichchoice := 0;
+  FEvent_whichchoice := nil;
+  FBack_whichchoice := TSFInt32.Create(nil, False, 'whichchoice', 0);
+  FDirty_whichchoice := False;
+  FEvent_whichchoice := AEvent_whichchoice;
+end;
+
+destructor TScript341Script.Destroy;
+begin
+  FreeAndNil(FBack_whichchoice);
+  inherited Destroy;
+end;
+
+procedure TScript341Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_whichchoice then
+  begin
+    FDirty_whichchoice := False;
+    if FEvent_whichchoice <> nil then
+    begin
+      FBack_whichchoice.Value := Fwhichchoice;
+      FEvent_whichchoice.Send(FBack_whichchoice, Time);
+    end;
+  end;
+end;
+
+procedure TScript341Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script341_set_boolean', {$ifdef FPC}@{$endif}Set_boolean);
+end;
+
+procedure TScript341Script.Set_boolean(Value: TX3DField; const Time: TX3DTime);
+begin
+  if (Value as TSFBool).Value = False then
+  begin
+    Exit;
+  end;
+  Fwhichchoice := Fwhichchoice + 1; FDirty_whichchoice := True;
+  if Fwhichchoice = 2 then
+    Fwhichchoice := 0; FDirty_whichchoice := True;
+  FlushOutputs(Time);
+end;
+
+constructor TScript344Script.Create(const AField_MassCounterWeight: TSFFloat; const AField_MassProjectileWeight: TSFFloat; const AEvent_transparent: TX3DEvent; const AEvent_value_changed: TX3DEvent);
+begin
+  inherited Create;
+  FMassCounterWeight := 0.0;
+  FMassProjectileWeight := 0.0;
+  Ftransparent := Vector3(0, 0, 0);
+  FEvent_transparent := nil;
+  FBack_transparent := TSFVec3f.Create(nil, False, 'transparent', Vector3(0, 0, 0));
+  FDirty_transparent := False;
+  Fvalue_changed := Vector3(0, 0, 0);
+  FEvent_value_changed := nil;
+  FBack_value_changed := TSFVec3f.Create(nil, False, 'value_changed', Vector3(0, 0, 0));
+  FDirty_value_changed := False;
+  if AField_MassCounterWeight <> nil then FMassCounterWeight := AField_MassCounterWeight.Value;
+  if AField_MassProjectileWeight <> nil then FMassProjectileWeight := AField_MassProjectileWeight.Value;
+  FEvent_transparent := AEvent_transparent;
+  FEvent_value_changed := AEvent_value_changed;
+end;
+
+destructor TScript344Script.Destroy;
+begin
+  FreeAndNil(FBack_transparent);
+  FreeAndNil(FBack_value_changed);
+  inherited Destroy;
+end;
+
+procedure TScript344Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_transparent then
+  begin
+    FDirty_transparent := False;
+    if FEvent_transparent <> nil then
+    begin
+      FBack_transparent.Value := Ftransparent;
+      FEvent_transparent.Send(FBack_transparent, Time);
+    end;
+  end;
+  if FDirty_value_changed then
+  begin
+    FDirty_value_changed := False;
+    if FEvent_value_changed <> nil then
+    begin
+      FBack_value_changed.Value := Fvalue_changed;
+      FEvent_value_changed.Send(FBack_value_changed, Time);
+    end;
+  end;
+end;
+
+procedure TScript344Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script344_initialize', {$ifdef FPC}@{$endif}Initialize);
+  Scene.RegisterCompiledScript('Script344_set_MassProjectileWeight', {$ifdef FPC}@{$endif}Set_MassProjectileWeight);
+  Scene.RegisterCompiledScript('Script344_set_MassCounterWeight', {$ifdef FPC}@{$endif}Set_MassCounterWeight);
+  Scene.RegisterCompiledScript('Script344_set_fraction', {$ifdef FPC}@{$endif}Set_fraction);
+end;
+
+procedure TScript344Script.Initialize(Value: TX3DField; const Time: TX3DTime);
+begin
+  FMassCounterWeight := 100;
+  FMassProjectileWeight := 10;
+  WriteLn('MassCounterWeight =' + FMassCounterWeight);
+  WriteLn('MassProjectileWeight =' + FMassProjectileWeight);
+  FlushOutputs(Time);
+end;
+
+procedure TScript344Script.Set_MassProjectileWeight(Value: TX3DField; const Time: TX3DTime);
+begin
+  FMassProjectileWeight := (Value as TSFFloat).Value;
+  WriteLn('new MassProjectileWeight =' + FMassProjectileWeight);
+  FlushOutputs(Time);
+end;
+
+procedure TScript344Script.Set_MassCounterWeight(Value: TX3DField; const Time: TX3DTime);
+begin
+  FMassCounterWeight := (Value as TSFFloat).Value;
+  WriteLn('new MassCounterWeight =' + FMassCounterWeight);
+  FlushOutputs(Time);
+end;
+
+procedure TScript344Script.Set_fraction(Value: TX3DField; const Time: TX3DTime);
+var
+  TrebuchetHeight: Integer;
+  Height: Integer;
+  x: Single;
+  y: Single;
+  z: Integer;
+begin
+  TrebuchetHeight := 45;
+  Height := 25;
+  x := 2 * FMassCounterWeight / FMassProjectileWeight * Height * (Value as TSFFloat).Value - .5 * TrebuchetHeight;
+  y := FMassCounterWeight / FMassProjectileWeight * Height * Sin((Value as TSFFloat).Value * 3.14);
+  z := 0;
+  Ftransparent := Vector3(1, 1, 1); FDirty_transparent := True;
+  if y < 1.5 * TrebuchetHeight then
+    if x < TrebuchetHeight then
+    begin
+      x := x - 10;
+      y := y + 1;
+      Ftransparent := Vector3(.01, .01, .01); FDirty_transparent := True;
+    end;
+  Fvalue_changed := Vector3(x, y, z); FDirty_value_changed := True;
+  WriteLn('x=' + Fvalue_changed[0] + ' y=' + Fvalue_changed[1] + ' z=' + Fvalue_changed[2]);
+  FlushOutputs(Time);
+end;
 
 procedure InitTrebuchetPart0;
 begin
@@ -1309,29 +1692,11 @@ FieldVal335 := TSFInt32.CreateEvent(Script333, 'whichchoice', False);
 Script333.AddCustomFieldOrEvent(FieldVal335);
 FieldVal336 := TSFFloat.CreateEvent(Script333, 'CounterWeight', False);
 Script333.AddCustomFieldOrEvent(FieldVal336);
-Script333.SetSourceCode('ecmascript:' + LineEnding +
-  '' + LineEnding +
-  '' + LineEnding +
-  'function initialize ()' + LineEnding +
-  '{' + LineEnding +
-  '	whichchoice =0;' + LineEnding +
-  '	CounterWeight=100;' + LineEnding +
-  '}' + LineEnding +
-  '' + LineEnding +
-  'function set_boolean ( boolean_input, eventTime)' + LineEnding +
-  '{' + LineEnding +
-  '' + LineEnding +
-  '	if ( boolean_input== false ) { return; } // ignore the unclick' + LineEnding +
-  '        whichchoice = whichchoice +1;' + LineEnding +
-  '	if (whichchoice == 0)CounterWeight=50.00;' + LineEnding +
-  '	if (whichchoice == 1)CounterWeight=500.00;' + LineEnding +
-  '	if (whichchoice == 2)CounterWeight=1000.00;' + LineEnding +
-  '	if (whichchoice == 3)CounterWeight=10000.00;' + LineEnding +
-  '        if ( whichchoice ==4 ) { whichchoice = 0; CounterWeight=50; }' + LineEnding +
-  '' + LineEnding +
-  '' + LineEnding +
-  '        Browser.println (''CounterWeight =''+CounterWeight);' + LineEnding +
-  '}');
+FreeAndNil(CompiledScript333);
+CompiledScript333 := TScript333Script.Create(FieldVal335, FieldVal336);
+Script333.SetUrl(['compiled:' + LineEnding +
+  'initialize=Script333_initialize' + LineEnding +
+  'set_boolean=Script333_set_boolean']);
 Transform291.FdChildren.Add(Script333);
 Script337 := TScriptNode.Create;
 Script337.X3DName := 'LauncheeScript';
@@ -1341,19 +1706,10 @@ FieldVal339 := TSFInt32.CreateEvent(Script337, 'whichchoice', False);
 Script337.AddCustomFieldOrEvent(FieldVal339);
 FieldVal340 := TSFFloat.CreateEvent(Script337, 'ProjectileWeight', False);
 Script337.AddCustomFieldOrEvent(FieldVal340);
-Script337.SetSourceCode('ecmascript:' + LineEnding +
-  '' + LineEnding +
-  'function set_boolean (boolean_input, eventTime)' + LineEnding +
-  '{' + LineEnding +
-  '	if ( boolean_input== false ) { return; } // ignore unclick' + LineEnding +
-  '        whichchoice = whichchoice +1;' + LineEnding +
-  '        if (whichchoice == 0)ProjectileWeight=10.00;' + LineEnding +
-  '        if (whichchoice == 1)ProjectileWeight=1000.00;' + LineEnding +
-  '	if (whichchoice == 2)ProjectileWeight=5;' + LineEnding +
-  '' + LineEnding +
-  '	if ( whichchoice ==3 ) { whichchoice = 0; ProjectileWeight=10.00; }' + LineEnding +
-  '	Browser.println (''Projectile Weight''+ProjectileWeight);' + LineEnding +
-  '}');
+FreeAndNil(CompiledScript337);
+CompiledScript337 := TScript337Script.Create(FieldVal339, FieldVal340);
+Script337.SetUrl(['compiled:' + LineEnding +
+  'set_boolean=Script337_set_boolean']);
 Transform291.FdChildren.Add(Script337);
 Script341 := TScriptNode.Create;
 Script341.X3DName := 'PigdogMonkScript';
@@ -1361,18 +1717,10 @@ FieldVal342 := TSFBool.CreateEvent(Script341, 'set_boolean', True);
 Script341.AddCustomFieldOrEvent(FieldVal342);
 FieldVal343 := TSFInt32.CreateEvent(Script341, 'whichchoice', False);
 Script341.AddCustomFieldOrEvent(FieldVal343);
-Script341.SetSourceCode('ecmascript:' + LineEnding +
-  '' + LineEnding +
-  'function set_boolean (boolean_input, eventTime)' + LineEnding +
-  '{' + LineEnding +
-  '	if ( boolean_input== false ) { return; } // ignore unclick' + LineEnding +
-  '' + LineEnding +
-  '        whichchoice = whichchoice +1;' + LineEnding +
-  '' + LineEnding +
-  '        if ( whichchoice ==2 )  whichchoice = 0;' + LineEnding +
-  '' + LineEnding +
-  '' + LineEnding +
-  '}');
+FreeAndNil(CompiledScript341);
+CompiledScript341 := TScript341Script.Create(FieldVal343);
+Script341.SetUrl(['compiled:' + LineEnding +
+  'set_boolean=Script341_set_boolean']);
 Transform291.FdChildren.Add(Script341);
 Script344 := TScriptNode.Create;
 Script344.X3DName := 'Mover';
@@ -1383,25 +1731,24 @@ Script344.AddCustomFieldOrEvent(FieldVal346);
 FieldVal347 := TSFFloat.CreateEvent(Script344, 'set_MassProjectileWeight', True);
 Script344.AddCustomFieldOrEvent(FieldVal347);
 FieldVal348 := TSFFloat.Create(Script344, False, 'MassCounterWeight', 1);
+end;
+
+procedure InitTrebuchetPart24;
+begin
 Script344.AddCustomFieldOrEvent(FieldVal348);
 FieldVal349 := TSFFloat.Create(Script344, False, 'MassProjectileWeight', 1);
 Script344.AddCustomFieldOrEvent(FieldVal349);
 FieldVal350 := TSFVec3f.CreateEvent(Script344, 'transparent', False);
 Script344.AddCustomFieldOrEvent(FieldVal350);
 FieldVal351 := TSFVec3f.CreateEvent(Script344, 'value_changed', False);
-end;
-
-procedure InitTrebuchetPart24;
-begin
 Script344.AddCustomFieldOrEvent(FieldVal351);
-Script344.SetSourceCode('ecmascript:' + LineEnding +
-  '' + LineEnding +
-  'function initialize ()' + LineEnding +
-  '{' + LineEnding +
-  '	MassCounterWeight=100;' + LineEnding +
-  '	MassProjectileWeight=10;' + LineEnding +
-  '	Browser.println (''MassCounterWeight ='' + MassCounterWeight);\n	Browser.println (''MassProjectileWeight ='' + MassProjectileWeight);\n}\n\nfunction set_MassProjectileWeight (value, timestamp)\n{\n	MassProjectileWeight = value;\n	Browser.println (''new MassProjectileWeight ='' + MassProjectileWeight);\n}\nfunction set_MassCounterWeight (value2, timestamp)\n{\n	MassCounterWeight = value2;\n	Browser.println (''new MassCounterWeight ='' + MassCounterWeight);\n}\n\n\nfunction set_fraction ( fraction, eventTime )\n{\n	var TrebuchetHeight=45;\n	var Height =25;\n      	var x = (2*(MassCounterWeight/MassProjectileWeight)*Height*fraction)-.5*TrebuchetHeight;\n	// start at TrebuchetHeight and keep along z axis (z=zero)\n	var y =  (MassCounterWeight/MassProjectileWeight)*Height*Math.sin(fraction*3.14);\n        var z = 0;\n        transparent = new SFVec3f (1,1,1);\n     if (y <1.5*TrebuchetHeight  )if (x<TrebuchetHeight)\n		{\n		x=x-10;\n		y=y+1;\n		transparent = new SFVec3f(.01, .01, .01);\n			}\n\n	value_changed = new SFVec3f (x, y, z);\n	Browser.println (''x='' + value_changed[0] + '' y='' + value_changed[1] + '' z='' + value_changed[2]);' + LineEnding +
-  '}');
+FreeAndNil(CompiledScript344);
+CompiledScript344 := TScript344Script.Create(FieldVal348, FieldVal349, FieldVal350, FieldVal351);
+Script344.SetUrl(['compiled:' + LineEnding +
+  'initialize=Script344_initialize' + LineEnding +
+  'set_MassProjectileWeight=Script344_set_MassProjectileWeight' + LineEnding +
+  'set_MassCounterWeight=Script344_set_MassCounterWeight' + LineEnding +
+  'set_fraction=Script344_set_fraction']);
 Transform291.FdChildren.Add(Script344);
 Transform104.FdChildren.Add(Transform291);
 Group17.FdChildren.Add(Transform104);
@@ -1432,6 +1779,10 @@ Group17.FdChildren.Add(OrientationInterpolator356);
 PositionInterpolator357 := TPositionInterpolatorNode.Create;
 PositionInterpolator357.X3DName := 'invisiable';
 PositionInterpolator357.SetKey([0, 0.2, 0.98, 0.99]);
+end;
+
+procedure InitTrebuchetPart25;
+begin
 PositionInterpolator357.SetKeyValue([Vector3(1, 1, 1), Vector3(0.01, 0.01, 0.01), Vector3(0.01, 0.01, 0.01), Vector3(1, 1, 1)]);
 Group17.FdChildren.Add(PositionInterpolator357);
 { ROUTE clock.fraction_changed TO invisiable.set_fraction }
@@ -1440,10 +1791,6 @@ Group17.AddRoute(TimeSensor352.EventFraction_changed, PositionInterpolator357.Ev
 Group17.AddRoute(PositionInterpolator357.EventValue_changed, Transform208.scale);
 { ROUTE WeightScript.CounterWeight TO Mover.set_MassCounterWeight }
 Group17.AddRoute(FieldVal336, FieldVal346);
-end;
-
-procedure InitTrebuchetPart25;
-begin
 { ROUTE LauncheeScript.ProjectileWeight TO Mover.set_MassProjectileWeight }
 Group17.AddRoute(FieldVal340, FieldVal347);
 { ROUTE clock.fraction_changed TO Mover.set_fraction }
@@ -1476,6 +1823,10 @@ Group17.AddRoute(FieldVal339, Switch209.whichChoice);
 Group17.AddRoute(FieldVal339, Switch78.whichChoice);
 { ROUTE weightselector.isActive TO WeightScript.set_boolean }
 Group17.AddRoute(TouchSensor50.EventIsActive, FieldVal334);
+end;
+
+procedure InitTrebuchetPart26;
+begin
 { ROUTE WeightScript.whichchoice TO Weight.whichChoice }
 Group17.AddRoute(FieldVal335, Switch33.whichChoice);
 { ROUTE clock.fraction_changed TO flingerangles.set_fraction }
@@ -1484,10 +1835,6 @@ Group17.AddRoute(TimeSensor352.EventFraction_changed, OrientationInterpolator354
 Group17.AddRoute(OrientationInterpolator354.EventValue_changed, Transform129.FdRotation.EventIn);
 { ROUTE clock.fraction_changed TO verticalweightpath.set_fraction }
 Group17.AddRoute(TimeSensor352.EventFraction_changed, PositionInterpolator353.EventSet_fraction);
-end;
-
-procedure InitTrebuchetPart26;
-begin
 { ROUTE verticalweightpath.value_changed TO verticalweight.set_translation }
 Group17.AddRoute(PositionInterpolator353.EventValue_changed, Transform227.FdTranslation.EventIn);
 { ROUTE clock.fraction_changed TO pinpath.set_fraction }
@@ -1529,5 +1876,21 @@ begin
   Result := X3D0;
 end;
 
+procedure RegisterTrebuchetScripts(const Scene: TCastleSceneCore);
 begin
+  if CompiledScript333 <> nil then
+    CompiledScript333.RegisterHandlers(Scene);
+  if CompiledScript337 <> nil then
+    CompiledScript337.RegisterHandlers(Scene);
+  if CompiledScript341 <> nil then
+    CompiledScript341.RegisterHandlers(Scene);
+  if CompiledScript344 <> nil then
+    CompiledScript344.RegisterHandlers(Scene);
+end;
+
+finalization
+  FreeAndNil(CompiledScript333);
+  FreeAndNil(CompiledScript337);
+  FreeAndNil(CompiledScript341);
+  FreeAndNil(CompiledScript344);
 end.

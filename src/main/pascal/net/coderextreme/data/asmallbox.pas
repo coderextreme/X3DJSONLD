@@ -106,6 +106,7 @@ ProtoInstance23 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare15)
 Shape25 := TShapeNode.Create;
 Box26 := TBoxNode.Create;
 Shape25.Geometry := Box26;
+(ProtoInstance23.Field('myShape') as TMFNode).Clear;
 (ProtoInstance23.Field('myShape') as TMFNode).Add(Shape25);
 Group7.FdChildren.Add(ProtoInstance23.Instantiate);
 X3D0.AddChildren([Group7]);

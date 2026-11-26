@@ -42,8 +42,7 @@
       <field name='targetMaterial' type='SFNode' accessType='initializeOnly'>
         <PhysicalMaterial USE='M_0'/>
       </field>
-      <![CDATA[
-        ecmascript:
+      <![CDATA[ecmascript:
         var matNode = null; // Variable to hold the material node reference
 
         function initialize() {
@@ -88,8 +87,7 @@
       <field name='targetMaterial' type='SFNode' accessType='initializeOnly'>
           <PhysicalMaterial USE='M_1'/>
       </field>
-      <![CDATA[
-        ecmascript:
+      <![CDATA[ecmascript:
         var matNode = null;
 
         function initialize() {

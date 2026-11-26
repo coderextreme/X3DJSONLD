@@ -27,7 +27,7 @@ import JavaScriptSerializer from './JavaScriptSerializer.js';
 import JavaScriptSerializerNew from './JavaScriptSerializerNew.js';
 import JavaSerializer from './JavaSerializer.js';
 import NodeSerializer from './NodeSerializer.js';
-import PascalSerializer from './PascalSerializer.js';
+import PascalSerializer from './PascalSerializer_with_JS2Pas.js';
 import PythonSerializer from './PythonSerializer.js';
 import GraalPySerializer from './GraalPySerializer.js';
 import QuarterSerializer from './QuarterSerializer.js';
@@ -86,7 +86,7 @@ export default function convertJSON(options) {
 				continue;
 			}
 			var NS = "https://www.web3d.org/specifications/x3d";
-			console.debug("loading", file, "for conversion");
+			// console.debug("loading", file, "for conversion");
 			// swap around meta and component ordering
 			let m = json.X3D.head.meta;
 			let c = json.X3D.head.component;
@@ -122,7 +122,10 @@ export default function convertJSON(options) {
 					try {
 						str = new actual_serializer().serializeToString(json, element, co, mapToMethod, fieldTypes)
 					} catch (e) {
+						console.log(e);
+						console.log("ERROR OCCURED IN", file);
 						console.error(e);
+						console.error("ERROR OCCURED IN", file);
 					}
 					if (typeof str !== 'undefined') {
 						var outfile = option.folder+basefile+option.extension

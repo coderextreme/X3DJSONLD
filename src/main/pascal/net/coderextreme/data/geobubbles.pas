@@ -2,13 +2,34 @@ unit geobubbles;
 
 interface
 
-uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported, CastleSceneCore;
 
 function Creategeobubbles: TX3DRootNode;
+procedure RegistergeobubblesScripts(const Scene: TCastleSceneCore);
 
 implementation
 
-uses CastleVectors;
+uses SysUtils, CastleVectors, Math, X3DTime;
+
+type
+  TScript18Script = class
+  private
+    Fval: Single;
+    FField_val: TSFFloat;
+    FDirty_val: Boolean;
+    Fpositions: Single;
+    FField_positions: TMFVec3d;
+    FDirty_positions: Boolean;
+    Fposition: Single;
+    FField_position: TMFVec3d;
+    FDirty_position: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AField_val: TSFFloat; const AField_positions: TMFVec3d; const AField_position: TMFVec3d);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Set_cycle(Value: TX3DField; const Time: TX3DTime);
+  end;
 
 var
   X3D0: TX3DRootNode;
@@ -27,6 +48,78 @@ var
   FieldVal20: TSFFloat;
   FieldVal21: TMFVec3d;
   FieldVal22: TMFVec3d;
+  CompiledScript18: TScript18Script;
+
+constructor TScript18Script.Create(const AField_val: TSFFloat; const AField_positions: TMFVec3d; const AField_position: TMFVec3d);
+begin
+  inherited Create;
+  Fval := 0.0;
+  FField_val := nil;
+  FDirty_val := False;
+  Fpositions := 0;
+  FField_positions := nil;
+  FDirty_positions := False;
+  Fposition := 0;
+  FField_position := nil;
+  FDirty_position := False;
+  FField_val := AField_val;
+  if AField_val <> nil then Fval := AField_val.Value;
+  FField_positions := AField_positions;
+  if AField_positions <> nil then Fpositions := AField_positions.Value;
+  FField_position := AField_position;
+  if AField_position <> nil then Fposition := AField_position.Value;
+end;
+
+destructor TScript18Script.Destroy;
+begin
+  inherited Destroy;
+end;
+
+procedure TScript18Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_val then
+  begin
+    FDirty_val := False;
+    if FField_val <> nil then
+      FField_val.Send(Fval, Time);
+  end;
+  if FDirty_positions then
+  begin
+    FDirty_positions := False;
+    if FField_positions <> nil then
+      FField_positions.Send(Fpositions, Time);
+  end;
+  if FDirty_position then
+  begin
+    FDirty_position := False;
+    if FField_position <> nil then
+      FField_position.Send(Fposition, Time);
+  end;
+end;
+
+procedure TScript18Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script18_set_cycle', {$ifdef FPC}@{$endif}Set_cycle);
+end;
+
+procedure TScript18Script.Set_cycle(Value: TX3DField; const Time: TX3DTime);
+var
+  cartesianMult: Single;
+  ov: Single;
+  vc: Single;
+begin
+  cartesianMult := -150;
+  ov := Fval;
+  repeat
+    Fval := Floor(Random * 2); FDirty_val := True;
+    vc := Fval;
+    Fpositions[vc] := Vector3Double(Round(Random * 2) * 0.0015708 * cartesianMult, Round(Random * 2) * 0.0015708 * cartesianMult, 4); FDirty_positions := True;
+  until not (((Fpositions[ov][0] = Fpositions[vc][0]) and (Fpositions[ov][1] = Fpositions[vc][1])) and (Fpositions[ov][2] = Fpositions[vc][2]));
+  Fposition := []; FDirty_position := True;
+  Fposition[0] := Vector3Double(Fpositions[ov][0], Fpositions[ov][1], Fpositions[ov][2]); FDirty_position := True;
+  Fposition[1] := Vector3Double(Fpositions[vc][0], Fpositions[vc][1], Fpositions[vc][2]); FDirty_position := True;
+  FlushOutputs(Time);
+end;
 
 procedure InitgeobubblesPart0;
 begin
@@ -89,32 +182,19 @@ FieldVal19 := TSFTime.CreateEvent(Script18, 'set_cycle', True);
 Script18.AddCustomFieldOrEvent(FieldVal19);
 FieldVal20 := TSFFloat.Create(Script18, True, 'val', 0);
 Script18.AddCustomFieldOrEvent(FieldVal20);
-FieldVal21 := TMFVec3d.Create(Script18, True, 'positions', (0.0015708, 0, 4, 0, 0.0015708, 4));
+FieldVal21 := TMFVec3d.Create(Script18, True, 'positions', 0.0015708, 0, 4, 0, 0.0015708, 4);
 Script18.AddCustomFieldOrEvent(FieldVal21);
-FieldVal22 := TMFVec3d.Create(Script18, True, 'position', (0.0015708, 0, 4, 0, 0.0015708, 4));
+FieldVal22 := TMFVec3d.Create(Script18, True, 'position', 0.0015708, 0, 4, 0, 0.0015708, 4);
 Script18.AddCustomFieldOrEvent(FieldVal22);
-Script18.SetSourceCode('ecmascript:' + LineEnding +
-  '' + LineEnding +
-  '               function set_cycle(value) {' + LineEnding +
-  '                        var cartesianMult = -150;  // -150 if cartesian, 1 if geo' + LineEnding +
-  '                        var ov = val;' + LineEnding +
-  '			// Browser.print(''old ''+ov);' + LineEnding +
-  '                        do {' + LineEnding +
-  '                                val = Math.floor(Math.random()*2);' + LineEnding +
-  '                                var vc = val;' + LineEnding +
-  '                                positions[vc] = new SFVec3d(Math.round(Math.random()*2)*0.0015708*cartesianMult, Math.round(Math.random()*2)*0.0015708*cartesianMult, 4);' + LineEnding +
-  '                        } while ( positions[ov][0] === positions[vc][0] && positions[ov][1] === positions[vc][1] && positions[ov][2] === positions[vc][2]);' + LineEnding +
-  '			// Browser.println(positions[ov]);' + LineEnding +
-  '			// Browser.println(positions[vc]);' + LineEnding +
-  '                        position = new MFVec3d();' + LineEnding +
-  '                        position[0] = new SFVec3d(positions[ov][0],positions[ov][1],positions[ov][2]);' + LineEnding +
-  '                        position[1] = new SFVec3d(positions[vc][0],positions[vc][1],positions[vc][2]);' + LineEnding +
-  '               }');
+FreeAndNil(CompiledScript18);
+CompiledScript18 := TScript18Script.Create(FieldVal20, FieldVal21, FieldVal22);
+Script18.SetUrl(['compiled:' + LineEnding +
+  'set_cycle=Script18_set_cycle']);
 Group8.FdChildren.Add(Script18);
 { ROUTE TourTime.cycleTime TO RandomTourTime.set_cycle }
 Group8.AddRoute(TimeSensor16.EventCycleTime, FieldVal19);
 { ROUTE RandomTourTime.position TO TourPosition.keyValue }
-Group8.AddRoute(FieldVal22, GeoPositionInterpolator17.keyValue);
+Group8.AddRoute(FieldVal22.EventOut, GeoPositionInterpolator17.keyValue);
 { ROUTE TourTime.fraction_changed TO TourPosition.set_fraction }
 Group8.AddRoute(TimeSensor16.EventFraction_changed, GeoPositionInterpolator17.EventSet_fraction);
 { ROUTE TourPosition.geovalue_changed TO Tour.set_position }
@@ -129,5 +209,12 @@ begin
   Result := X3D0;
 end;
 
+procedure RegistergeobubblesScripts(const Scene: TCastleSceneCore);
 begin
+  if CompiledScript18 <> nil then
+    CompiledScript18.RegisterHandlers(Scene);
+end;
+
+finalization
+  FreeAndNil(CompiledScript18);
 end.

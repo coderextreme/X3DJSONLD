@@ -42,7 +42,7 @@
           },
           {
             "@name":"translated",
-            "@content":"14 November 2026"
+            "@content":"26 November 2026"
           },
           {
             "@name":"generator",
@@ -430,8 +430,7 @@
               "#sourceCode":[
 "",
 "",
-"\t",
-"ecmascript:",
+"\tecmascript:",
 "\tfunction add_node(value) {",
 "                // Browser.print('hey ', counter);",
 "                counter = counter++;",

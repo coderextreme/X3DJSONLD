@@ -107,22 +107,22 @@ ComposedCubeMapTexture27 := TComposedCubeMapTextureNode.Create;
 ComposedCubeMapTexture27.X3DName := 'texture';
 ImageTexture28 := TImageTextureNode.Create;
 ImageTexture28.SetUrl(['https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png']);
-ComposedCubeMapTexture27.FdBackTexture.Set(ImageTexture28);
+ComposedCubeMapTexture27.BackTexture := ImageTexture28;
 ImageTexture29 := TImageTextureNode.Create;
 ImageTexture29.SetUrl(['https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png']);
-ComposedCubeMapTexture27.FdBottomTexture.Set(ImageTexture29);
+ComposedCubeMapTexture27.BottomTexture := ImageTexture29;
 ImageTexture30 := TImageTextureNode.Create;
 ImageTexture30.SetUrl(['https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png']);
-ComposedCubeMapTexture27.FdFrontTexture.Set(ImageTexture30);
+ComposedCubeMapTexture27.FrontTexture := ImageTexture30;
 ImageTexture31 := TImageTextureNode.Create;
 ImageTexture31.SetUrl(['https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png']);
-ComposedCubeMapTexture27.FdLeftTexture.Set(ImageTexture31);
+ComposedCubeMapTexture27.LeftTexture := ImageTexture31;
 ImageTexture32 := TImageTextureNode.Create;
 ImageTexture32.SetUrl(['https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png']);
-ComposedCubeMapTexture27.FdRightTexture.Set(ImageTexture32);
+ComposedCubeMapTexture27.RightTexture := ImageTexture32;
 ImageTexture33 := TImageTextureNode.Create;
 ImageTexture33.SetUrl(['https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png']);
-ComposedCubeMapTexture27.FdTopTexture.Set(ImageTexture33);
+ComposedCubeMapTexture27.TopTexture := ImageTexture33;
 Appearance25.Texture := ComposedCubeMapTexture27;
 { <ComposedShader language='GLSL'> }
 { <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'></field> }
@@ -149,7 +149,7 @@ begin
 { <ShaderPart type='FRAGMENT' url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.fs"'/> }
 { </ComposedShader> }
 ComposedShader34 := TComposedShaderNode.Create;
-ComposedShader34.Language := 'GLSL';
+ComposedShader34.Language := slGLSL;
 FieldVal35 := TSFVec3f.Create(ComposedShader34, False, 'chromaticDispertion', Vector3(0.98, 1, 1.033));
 ComposedShader34.AddCustomFieldOrEvent(FieldVal35);
 FieldVal36 := TSFNode.CreateUndefined(ComposedShader34, False, 'cube');
@@ -163,14 +163,14 @@ FieldVal40 := TSFFloat.Create(ComposedShader34, False, 'power', 2);
 ComposedShader34.AddCustomFieldOrEvent(FieldVal40);
 ShaderPart41 := TShaderPartNode.Create;
 ShaderPart41.SetUrl(['../shaders/x_iteparticles.vs', 'https://coderextreme.net/X3DJSONLD/src/main/shaders/x_iteparticles.vs']);
-ShaderPart41.FdType.Value := 'VERTEX';
-ComposedShader34.Parts := ShaderPart41;
+ShaderPart41.ShaderType := stVertex;
+ComposedShader34.FdParts.Add(ShaderPart41);
 ShaderPart42 := TShaderPartNode.Create;
 ShaderPart42.X3DName := 'commonfs';
 ShaderPart42.SetUrl(['https://coderextreme.net/X3DJSONLD/src/main/shaders/commonnew.fs']);
-ShaderPart42.FdType.Value := 'FRAGMENT';
-ComposedShader34.Parts := ShaderPart42;
-Appearance25.AddChildren([ComposedShader34]);
+ShaderPart42.ShaderType := stFragment;
+ComposedShader34.FdParts.Add(ShaderPart42);
+Appearance25.FdShaders.Add(ComposedShader34);
 end;
 
 procedure InitparticleballsPart3;

@@ -118,8 +118,7 @@
 <!-- </field> -->
             <field accessType="inputOnly" name="add_node" value="false" type="SFBool"/>
 
-	<![CDATA[
-ecmascript:
+	<![CDATA[ecmascript:
 	function add_node(value) {
                 // Browser.print('hey ', counter);
                 counter = counter++;

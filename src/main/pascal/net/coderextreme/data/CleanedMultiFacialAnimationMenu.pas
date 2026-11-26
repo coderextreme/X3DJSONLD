@@ -2,13 +2,14 @@ unit CleanedMultiFacialAnimationMenu;
 
 interface
 
-uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported, CastleSceneCore;
 
 function CreateCleanedMultiFacialAnimationMenu: TX3DRootNode;
+procedure RegisterCleanedMultiFacialAnimationMenuScripts(const Scene: TCastleSceneCore);
 
 implementation
 
-uses Classes, SysUtils, X3DLoad, CastleVectors;
+uses Classes, SysUtils, X3DLoad, CastleVectors, Math, X3DTime;
 
 function CreateEmptyPrototype(const AName: String): TX3DPrototype;
 var
@@ -33,6 +34,29 @@ begin
     FreeAndNil(Stream);
   end;
 end;
+
+type
+  TScript1038Script = class
+  private
+    Ffraction: Single;
+    FField_fraction: TSFFloat;
+    FDirty_fraction: Boolean;
+    FdiffuseColor: TVector3;
+    FField_diffuseColor: TSFColor;
+    FDirty_diffuseColor: Boolean;
+    Fchecked: Boolean;
+    FField_checked: TSFBool;
+    FDirty_checked: Boolean;
+    Fadapter: TX3DNode;
+    FField_adapter: TSFNode;
+    FDirty_adapter: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool; const AField_adapter: TSFNode);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure InTime(Value: TX3DField; const Time: TX3DTime);
+  end;
 
 var
   X3D0: TX3DRootNode;
@@ -680,6 +704,7 @@ var
   FieldVal1041: TSFColor;
   FieldVal1042: TSFBool;
   FieldVal1043: TSFNode;
+  CompiledScript1038: TScript1038Script;
   ProtoInstance1048: TX3DPrototypeNode;
   ProtoInstance1054: TX3DPrototypeNode;
   ProtoInstance1060: TX3DPrototypeNode;
@@ -710,6 +735,93 @@ var
   ProtoInstance1210: TX3DPrototypeNode;
   ProtoInstance1216: TX3DPrototypeNode;
   ProtoInstance1222: TX3DPrototypeNode;
+
+constructor TScript1038Script.Create(const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool; const AField_adapter: TSFNode);
+begin
+  inherited Create;
+  Ffraction := 0.0;
+  FField_fraction := nil;
+  FDirty_fraction := False;
+  FdiffuseColor := Vector3(0, 0, 0);
+  FField_diffuseColor := nil;
+  FDirty_diffuseColor := False;
+  Fchecked := False;
+  FField_checked := nil;
+  FDirty_checked := False;
+  Fadapter := nil;
+  FField_adapter := nil;
+  FDirty_adapter := False;
+  FField_fraction := AField_fraction;
+  if AField_fraction <> nil then Ffraction := AField_fraction.Value;
+  FField_diffuseColor := AField_diffuseColor;
+  if AField_diffuseColor <> nil then FdiffuseColor := AField_diffuseColor.Value;
+  FField_checked := AField_checked;
+  if AField_checked <> nil then Fchecked := AField_checked.Value;
+  FField_adapter := AField_adapter;
+  if AField_adapter <> nil then Fadapter := AField_adapter.Value;
+end;
+
+destructor TScript1038Script.Destroy;
+begin
+  inherited Destroy;
+end;
+
+procedure TScript1038Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_fraction then
+  begin
+    FDirty_fraction := False;
+    if FField_fraction <> nil then
+      FField_fraction.Send(Ffraction, Time);
+  end;
+  if FDirty_diffuseColor then
+  begin
+    FDirty_diffuseColor := False;
+    if FField_diffuseColor <> nil then
+      FField_diffuseColor.Send(FdiffuseColor, Time);
+  end;
+  if FDirty_checked then
+  begin
+    FDirty_checked := False;
+    if FField_checked <> nil then
+      FField_checked.Send(Fchecked, Time);
+  end;
+  if FDirty_adapter then
+  begin
+    FDirty_adapter := False;
+    if FField_adapter <> nil then
+      FField_adapter.Send(Fadapter, Time);
+  end;
+end;
+
+procedure TScript1038Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script1038_inTime', {$ifdef FPC}@{$endif}InTime);
+end;
+
+procedure TScript1038Script.InTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  if (Value as TSFTime).Value then
+  begin
+    Fchecked := not (Fchecked); FDirty_checked := True;
+  end;
+  scene := Browser.currentScene;
+  if Fchecked then
+  begin
+    WriteLn(scene.getNamedNode('Main_Clock'), 'fraction_changed', Fadapter, 'set_fraction');
+    FdiffuseColor.Y := 1; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 0; FDirty_diffuseColor := True;
+    Fadapter.set_fraction := 0; FDirty_adapter := True;
+  end
+  else
+  begin
+    WriteLn(scene.getNamedNode('Main_Clock'), 'fraction_changed', Fadapter, 'set_fraction');
+    FdiffuseColor.Y := 0; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 1; FDirty_diffuseColor := True;
+    Fadapter.set_fraction := 0; FDirty_adapter := True;
+  end;
+  FlushOutputs(Time);
+end;
 
 procedure InitCleanedMultiFacialAnimationMenuPart0;
 begin
@@ -5108,31 +5220,21 @@ Script1038.AddCustomFieldOrEvent(FieldVal1042);
 FieldVal1043 := TSFNode.CreateUndefined(Script1038, True, 'adapter');
 Script1038.AddCustomFieldOrEvent(FieldVal1043);
 Script1038.FieldOrEvent('adapter', True).IsClauseNamesAdd('adapter');
-Script1038.SetSourceCode('ecmascript:' + LineEnding +
-  '        function inTime(value) {' + LineEnding +
-  '            // Browser.print("in", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '            if (value) {' + LineEnding +
-  '                checked = !checked;' + LineEnding +
-  '            }' + LineEnding +
-  '            scene = Browser.currentScene;' + LineEnding +
-  '            if (checked) {' + LineEnding +
-  '                Browser.addRoute(scene.getNamedNode("Main_Clock"), ''fraction_changed'', adapter, ''set_fraction'');\n                diffuseColor.g = 1;\n                diffuseColor.b = 0;\n                adapter.set_fraction = 0;\n            } else {\n                Browser.deleteRoute(scene.getNamedNode("Main_Clock"), ''fraction_changed'', adapter, ''set_fraction'');' + LineEnding +
-  '                diffuseColor.g = 0;' + LineEnding +
-  '                diffuseColor.b = 1;' + LineEnding +
-  '                adapter.set_fraction = 0;' + LineEnding +
-  '            }' + LineEnding +
-  '        }');
+FreeAndNil(CompiledScript1038);
+CompiledScript1038 := TScript1038Script.Create(FieldVal1040, FieldVal1041, FieldVal1042, FieldVal1043);
+Script1038.SetUrl(['compiled:' + LineEnding +
+  'inTime=Script1038_inTime']);
 Group1024.FdChildren.Add(Script1038);
 { ROUTE StartStopAnimationUnit_Sensor.touchTime TO ScriptToggle.inTime }
 Group1024.AddRoute(TouchSensor1027.EventTouchTime, FieldVal1039);
 { ROUTE MenuBackground_Material.diffuseColor TO ScriptToggle.diffuseColor }
-Group1024.AddRoute(Material1036.diffuseColor, FieldVal1041);
-{ ROUTE ScriptToggle.diffuseColor TO MenuBackground_Material.diffuseColor }
-Group1024.AddRoute(FieldVal1041, Material1036.diffuseColor);
+Group1024.AddRoute(Material1036.diffuseColor, FieldVal1041.EventIn);
 end;
 
 procedure InitCleanedMultiFacialAnimationMenuPart118;
 begin
+{ ROUTE ScriptToggle.diffuseColor TO MenuBackground_Material.diffuseColor }
+Group1024.AddRoute(FieldVal1041.EventOut, Material1036.diffuseColor);
 { ROUTE StartStopAnimationUnit_Sensor.touchTime TO Main_Clock.startTime }
 Group1024.AddRoute(TouchSensor1027.EventTouchTime, TimeSensor1025.FdStartTime.EventIn);
 ProtoDeclare1017.Node.AddChildren([Group1024]);
@@ -5171,12 +5273,12 @@ ProtoInstance1078 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1
 (ProtoInstance1078.Field('translation') as TSFVec3f).Value := Vector3(48, 48.39999999999999, 0);
 (ProtoInstance1078.Field('description') as TSFString).Value := 'Jin Dimpler';
 (ProtoInstance1078.Field('menuItemString') as TMFString).Send(['JinDimpler']);
-(ProtoInstance1078.Field('adapter') as TSFNode).Value := ScalarInterpolator15;
-Group9.FdChildren.Add(ProtoInstance1078.Instantiate);
 end;
 
 procedure InitCleanedMultiFacialAnimationMenuPart119;
 begin
+(ProtoInstance1078.Field('adapter') as TSFNode).Value := ScalarInterpolator15;
+Group9.FdChildren.Add(ProtoInstance1078.Instantiate);
 ProtoInstance1084 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1017);
 (ProtoInstance1084.Field('translation') as TSFVec3f).Value := Vector3(48, 45.39999999999999, 0);
 (ProtoInstance1084.Field('description') as TSFString).Value := 'Jin Eyes Closed';
@@ -5215,12 +5317,12 @@ ProtoInstance1114 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1
 Group9.FdChildren.Add(ProtoInstance1114.Instantiate);
 ProtoInstance1120 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1017);
 (ProtoInstance1120.Field('translation') as TSFVec3f).Value := Vector3(48, 27.399999999999995, 0);
-(ProtoInstance1120.Field('description') as TSFString).Value := 'Jin Lip Corner Puller';
-(ProtoInstance1120.Field('menuItemString') as TMFString).Send(['JinLipCornerPuller']);
 end;
 
 procedure InitCleanedMultiFacialAnimationMenuPart120;
 begin
+(ProtoInstance1120.Field('description') as TSFString).Value := 'Jin Lip Corner Puller';
+(ProtoInstance1120.Field('menuItemString') as TMFString).Send(['JinLipCornerPuller']);
 (ProtoInstance1120.Field('adapter') as TSFNode).Value := ScalarInterpolator22;
 Group9.FdChildren.Add(ProtoInstance1120.Instantiate);
 ProtoInstance1126 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1017);
@@ -5259,12 +5361,12 @@ ProtoInstance1156 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1
 (ProtoInstance1156.Field('menuItemString') as TMFString).Send(['JinLipSuck']);
 (ProtoInstance1156.Field('adapter') as TSFNode).Value := ScalarInterpolator28;
 Group9.FdChildren.Add(ProtoInstance1156.Instantiate);
-ProtoInstance1162 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1017);
-(ProtoInstance1162.Field('translation') as TSFVec3f).Value := Vector3(48, 6.399999999999999, 0);
 end;
 
 procedure InitCleanedMultiFacialAnimationMenuPart121;
 begin
+ProtoInstance1162 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1017);
+(ProtoInstance1162.Field('translation') as TSFVec3f).Value := Vector3(48, 6.399999999999999, 0);
 (ProtoInstance1162.Field('description') as TSFString).Value := 'Jin Lip Tightener';
 (ProtoInstance1162.Field('menuItemString') as TMFString).Send(['JinLipTightener']);
 (ProtoInstance1162.Field('adapter') as TSFNode).Value := ScalarInterpolator29;
@@ -5303,12 +5405,12 @@ ProtoInstance1198 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1
 (ProtoInstance1198.Field('translation') as TSFVec3f).Value := Vector3(48, -11.600000000000009, 0);
 (ProtoInstance1198.Field('description') as TSFString).Value := 'Jin Slit';
 (ProtoInstance1198.Field('menuItemString') as TMFString).Send(['JinSlit']);
-(ProtoInstance1198.Field('adapter') as TSFNode).Value := ScalarInterpolator35;
-Group9.FdChildren.Add(ProtoInstance1198.Instantiate);
 end;
 
 procedure InitCleanedMultiFacialAnimationMenuPart122;
 begin
+(ProtoInstance1198.Field('adapter') as TSFNode).Value := ScalarInterpolator35;
+Group9.FdChildren.Add(ProtoInstance1198.Instantiate);
 ProtoInstance1204 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare1017);
 (ProtoInstance1204.Field('translation') as TSFVec3f).Value := Vector3(48, -14.600000000000001, 0);
 (ProtoInstance1204.Field('description') as TSFString).Value := 'Jin Squint';
@@ -5464,5 +5566,12 @@ begin
   Result := X3D0;
 end;
 
+procedure RegisterCleanedMultiFacialAnimationMenuScripts(const Scene: TCastleSceneCore);
 begin
+  if CompiledScript1038 <> nil then
+    CompiledScript1038.RegisterHandlers(Scene);
+end;
+
+finalization
+  FreeAndNil(CompiledScript1038);
 end.

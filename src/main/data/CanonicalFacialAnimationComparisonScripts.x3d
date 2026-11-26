@@ -1242,8 +1242,7 @@
             <field accessType='inputOutput' name='diffuseColor' type='SFColor' value='0 0 1'/>
             <field accessType='inputOutput' name='checked' type='SFBool' value='false'/>
             <field accessType='inputOutput' name='adapter' type='SFNode'/>
-            <![CDATA[
-        ecmascript:
+            <![CDATA[ecmascript:
         function inTime(value) {
             // Browser.print("in", diffuseColor.g, diffuseColor.b);
             if (value) {

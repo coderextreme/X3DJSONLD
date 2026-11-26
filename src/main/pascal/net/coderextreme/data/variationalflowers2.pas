@@ -2,13 +2,37 @@ unit variationalflowers2;
 
 interface
 
-uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported, CastleSceneCore;
 
 function Createvariationalflowers2: TX3DRootNode;
+procedure Registervariationalflowers2Scripts(const Scene: TCastleSceneCore);
 
 implementation
 
-uses CastleVectors;
+uses SysUtils, CastleVectors, Math, X3DTime;
+
+type
+  TScript43Script = class
+  private
+    Fvalues: array of Single;
+    FField_values: TMFFloat;
+    FDirty_values: Boolean;
+    Fvariations: array of Single;
+    FField_variations: TMFFloat;
+    FDirty_variations: Boolean;
+    Flastframe: Single;
+    FField_lastframe: TSFFloat;
+    FDirty_lastframe: Boolean;
+    Fupdaterate: Single;
+    FField_updaterate: TSFFloat;
+    FDirty_updaterate: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AField_values: TMFFloat; const AField_variations: TMFFloat; const AField_lastframe: TSFFloat; const AField_updaterate: TSFFloat);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Set_fraction(Value: TX3DField; const Time: TX3DTime);
+  end;
 
 var
   X3D0: TX3DRootNode;
@@ -46,7 +70,86 @@ var
   FieldVal46: TMFFloat;
   FieldVal47: TSFFloat;
   FieldVal48: TSFFloat;
+  CompiledScript43: TScript43Script;
   TimeSensor49: TTimeSensorNode;
+
+constructor TScript43Script.Create(const AField_values: TMFFloat; const AField_variations: TMFFloat; const AField_lastframe: TSFFloat; const AField_updaterate: TSFFloat);
+begin
+  inherited Create;
+  Fvalues := 0;
+  FField_values := nil;
+  FDirty_values := False;
+  Fvariations := 0;
+  FField_variations := nil;
+  FDirty_variations := False;
+  Flastframe := 0.0;
+  FField_lastframe := nil;
+  FDirty_lastframe := False;
+  Fupdaterate := 0.0;
+  FField_updaterate := nil;
+  FDirty_updaterate := False;
+  FField_values := AField_values;
+  if AField_values <> nil then Fvalues := AField_values.Value;
+  FField_variations := AField_variations;
+  if AField_variations <> nil then Fvariations := AField_variations.Value;
+  FField_lastframe := AField_lastframe;
+  if AField_lastframe <> nil then Flastframe := AField_lastframe.Value;
+  FField_updaterate := AField_updaterate;
+  if AField_updaterate <> nil then Fupdaterate := AField_updaterate.Value;
+end;
+
+destructor TScript43Script.Destroy;
+begin
+  inherited Destroy;
+end;
+
+procedure TScript43Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_values then
+  begin
+    FDirty_values := False;
+    if FField_values <> nil then
+      FField_values.Send(Fvalues, Time);
+  end;
+  if FDirty_variations then
+  begin
+    FDirty_variations := False;
+    if FField_variations <> nil then
+      FField_variations.Send(Fvariations, Time);
+  end;
+  if FDirty_lastframe then
+  begin
+    FDirty_lastframe := False;
+    if FField_lastframe <> nil then
+      FField_lastframe.Send(Flastframe, Time);
+  end;
+  if FDirty_updaterate then
+  begin
+    FDirty_updaterate := False;
+    if FField_updaterate <> nil then
+      FField_updaterate.Send(Fupdaterate, Time);
+  end;
+end;
+
+procedure TScript43Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script43_set_fraction', {$ifdef FPC}@{$endif}Set_fraction);
+end;
+
+procedure TScript43Script.Set_fraction(Value: TX3DField; const Time: TX3DTime);
+var
+  v: Integer;
+begin
+  if Flastframe + Fupdaterate < tm then
+  begin
+    Flastframe := tm; FDirty_lastframe := True;
+    for v := 0 to High(Fvalues) do
+    begin
+      Fvalues[v] := Fvalues[v] + 2 * Random - 1 * Fvariations[v]; FDirty_values := True;
+    end;
+  end;
+  FlushOutputs(Time);
+end;
 
 procedure Initvariationalflowers2Part0;
 begin
@@ -114,26 +217,26 @@ ComposedCubeMapTexture26 := TComposedCubeMapTextureNode.Create;
 ComposedCubeMapTexture26.X3DName := 'texture';
 ImageTexture27 := TImageTextureNode.Create;
 ImageTexture27.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_back.png']);
-ComposedCubeMapTexture26.FdBackTexture.Set(ImageTexture27);
+ComposedCubeMapTexture26.BackTexture := ImageTexture27;
 ImageTexture28 := TImageTextureNode.Create;
 ImageTexture28.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_bottom.png']);
-ComposedCubeMapTexture26.FdBottomTexture.Set(ImageTexture28);
+ComposedCubeMapTexture26.BottomTexture := ImageTexture28;
 ImageTexture29 := TImageTextureNode.Create;
 ImageTexture29.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_front.png']);
-ComposedCubeMapTexture26.FdFrontTexture.Set(ImageTexture29);
+ComposedCubeMapTexture26.FrontTexture := ImageTexture29;
 ImageTexture30 := TImageTextureNode.Create;
 ImageTexture30.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_left.png']);
-ComposedCubeMapTexture26.FdLeftTexture.Set(ImageTexture30);
+ComposedCubeMapTexture26.LeftTexture := ImageTexture30;
 ImageTexture31 := TImageTextureNode.Create;
 ImageTexture31.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_right.png']);
-ComposedCubeMapTexture26.FdRightTexture.Set(ImageTexture31);
+ComposedCubeMapTexture26.RightTexture := ImageTexture31;
 ImageTexture32 := TImageTextureNode.Create;
 ImageTexture32.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_top.png']);
-ComposedCubeMapTexture26.FdTopTexture.Set(ImageTexture32);
+ComposedCubeMapTexture26.TopTexture := ImageTexture32;
 Appearance24.Texture := ComposedCubeMapTexture26;
 ComposedShader33 := TComposedShaderNode.Create;
 ComposedShader33.X3DName := 'x_ite';
-ComposedShader33.Language := 'GLSL';
+ComposedShader33.Language := slGLSL;
 end;
 
 procedure Initvariationalflowers2Part2;
@@ -149,54 +252,49 @@ FieldVal38 := TSFFloat.Create(ComposedShader33, False, 'scale', 0.5);
 ComposedShader33.AddCustomFieldOrEvent(FieldVal38);
 FieldVal39 := TSFFloat.Create(ComposedShader33, False, 'power', 2);
 ComposedShader33.AddCustomFieldOrEvent(FieldVal39);
-FieldVal40 := TMFFloat.Create(ComposedShader33, True, 'x3d_ParticleValues', ([2, 1, 4, 4, 0, 0]));
+FieldVal40 := TMFFloat.Create(ComposedShader33, True, 'x3d_ParticleValues', [2, 1, 4, 4, 0, 0]);
 ComposedShader33.AddCustomFieldOrEvent(FieldVal40);
 ShaderPart41 := TShaderPartNode.Create;
 ShaderPart41.SetUrl(['../shaders/x_ite_variations.vs']);
-ShaderPart41.FdType.Value := 'VERTEX';
-ComposedShader33.Parts := ShaderPart41;
+ShaderPart41.ShaderType := stVertex;
+ComposedShader33.FdParts.Add(ShaderPart41);
 ShaderPart42 := TShaderPartNode.Create;
 ShaderPart42.SetUrl(['../shaders/commonnew.fs']);
-ShaderPart42.FdType.Value := 'FRAGMENT';
-ComposedShader33.Parts := ShaderPart42;
-Appearance24.AddChildren([ComposedShader33]);
+ShaderPart42.ShaderType := stFragment;
+ComposedShader33.FdParts.Add(ShaderPart42);
+Appearance24.FdShaders.Add(ComposedShader33);
 ParticleSystem20.Appearance := Appearance24;
 Transform19.FdChildren.Add(ParticleSystem20);
 Script43 := TScriptNode.Create;
 Script43.X3DName := 'Animate';
 FieldVal44 := TSFFloat.CreateEvent(Script43, 'set_fraction', True);
 Script43.AddCustomFieldOrEvent(FieldVal44);
-FieldVal45 := TMFFloat.Create(Script43, True, 'values', ([2, 2, 5, 5, 0, 0]));
+FieldVal45 := TMFFloat.Create(Script43, True, 'values', [2, 2, 5, 5, 0, 0]);
 Script43.AddCustomFieldOrEvent(FieldVal45);
-FieldVal46 := TMFFloat.Create(Script43, True, 'variations', ([0.2, 0.1, 0.3, 0.3, 0.01, 0.01]));
+FieldVal46 := TMFFloat.Create(Script43, True, 'variations', [0.2, 0.1, 0.3, 0.3, 0.01, 0.01]);
 Script43.AddCustomFieldOrEvent(FieldVal46);
 FieldVal47 := TSFFloat.Create(Script43, True, 'lastframe', 0);
 Script43.AddCustomFieldOrEvent(FieldVal47);
 FieldVal48 := TSFFloat.Create(Script43, True, 'updaterate', 0.1);
 Script43.AddCustomFieldOrEvent(FieldVal48);
-Script43.SetSourceCode('ecmascript:' + LineEnding +
-  '			function set_fraction(f, tm) {' + LineEnding +
-  '			    if (lastframe + updaterate < tm) {' + LineEnding +
-  '			  	lastframe = tm;' + LineEnding +
-  '				for (let v in values) {' + LineEnding +
-  '					values[v] = values[v] + (2 * Math.random() - 1) * variations[v];' + LineEnding +
-  '				}' + LineEnding +
-  '			    }' + LineEnding +
-  '			}');
+FreeAndNil(CompiledScript43);
+CompiledScript43 := TScript43Script.Create(FieldVal45, FieldVal46, FieldVal47, FieldVal48);
+Script43.SetUrl(['compiled:' + LineEnding +
+  'set_fraction=Script43_set_fraction']);
 Transform19.FdChildren.Add(Script43);
-TimeSensor49 := TTimeSensorNode.Create;
-TimeSensor49.X3DName := 'TourTime';
 end;
 
 procedure Initvariationalflowers2Part3;
 begin
+TimeSensor49 := TTimeSensorNode.Create;
+TimeSensor49.X3DName := 'TourTime';
 TimeSensor49.CycleInterval := 45;
 TimeSensor49.Loop := True;
 Transform19.FdChildren.Add(TimeSensor49);
 { ROUTE TourTime.fraction_changed TO Animate.set_fraction }
 Transform19.AddRoute(TimeSensor49.EventFraction_changed, FieldVal44);
 { ROUTE Animate.values TO x_ite.x3d_ParticleValues }
-Transform19.AddRoute(FieldVal45, ComposedShader33.x3d_ParticleValues);
+Transform19.AddRoute(FieldVal45.EventOut, FieldVal40.EventIn);
 Group14.FdChildren.Add(Transform19);
 X3D0.AddChildren([Group14]);
 end;
@@ -210,5 +308,12 @@ begin
   Result := X3D0;
 end;
 
+procedure Registervariationalflowers2Scripts(const Scene: TCastleSceneCore);
 begin
+  if CompiledScript43 <> nil then
+    CompiledScript43.RegisterHandlers(Scene);
+end;
+
+finalization
+  FreeAndNil(CompiledScript43);
 end.

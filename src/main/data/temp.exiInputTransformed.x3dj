@@ -137,7 +137,7 @@
           },
           {
             "@name":"translated",
-            "@content":"14 November 2026"
+            "@content":"26 November 2026"
           },
           {
             "@name":"generator",
@@ -497,7 +497,6 @@
                     ],
                     "#sourceCode":[
 "",
-"",
 "ecmascript:",
 "",
 "function colorInput (eventValue) // Example source code",
@@ -509,7 +508,7 @@
 "// TODO check line wrapping when exporting/converting",
 "}",
 "",
-""
+"\t"
 ]
                   }
                 },
@@ -863,7 +862,6 @@
                         },
                         "#sourceCode":[
 "",
-"",
 "ecmascript:",
 "function initialize ()",
 "{",
@@ -888,7 +886,7 @@
 "\t}",
 "}",
 "",
-""
+"\t  "
 ]
                       }
                     }
@@ -1334,7 +1332,7 @@
 "",
 "ecmascript:",
 "/* dummy test source code */",
-"",
+"\t\t",
 ""
 ]
                   }
@@ -1713,7 +1711,6 @@
                     ],
                     "#sourceCode":[
 "",
-"",
 "ecmascript:",
 "",
 "function colorInput (eventValue) // Example source code",
@@ -1725,7 +1722,7 @@
 "// TODO check line wrapping when exporting/converting",
 "}",
 "",
-""
+"\t"
 ]
                   }
                 },
@@ -2079,7 +2076,6 @@
                         },
                         "#sourceCode":[
 "",
-"",
 "ecmascript:",
 "function initialize ()",
 "{",
@@ -2104,7 +2100,7 @@
 "\t}",
 "}",
 "",
-""
+"\t  "
 ]
                       }
                     }
@@ -2550,7 +2546,7 @@
 "",
 "ecmascript:",
 "/* dummy test source code */",
-"",
+"\t\t",
 ""
 ]
                   }

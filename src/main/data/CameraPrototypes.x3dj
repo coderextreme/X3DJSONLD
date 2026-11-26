@@ -64,7 +64,7 @@
           },
           {
             "@name":"translated",
-            "@content":"14 November 2026"
+            "@content":"26 November 2026"
           },
           {
             "@name":"generator",
@@ -728,8 +728,7 @@
                         },
                         "#sourceCode":[
 "",
-"",
-"ecmascript:",
+"          ecmascript:",
 "function initialize () // CameraScript",
 "{",
 "//  tracePrint ('initialize start...');",
@@ -1372,8 +1371,7 @@
                         },
                         "#sourceCode":[
 "",
-"",
-"ecmascript:",
+"          ecmascript:",
 "function initialize () // CameraShotScript",
 "{",
 "//  tracePrint ('initialize start...');",
@@ -1715,8 +1713,7 @@
                         },
                         "#sourceCode":[
 "",
-"",
-"ecmascript:",
+"          ecmascript:",
 "function initialize () // CameraMovementScript",
 "{",
 "//  tracePrint ('initialize start...');",
@@ -2037,8 +2034,7 @@
                         },
                         "#sourceCode":[
 "",
-"",
-"ecmascript:",
+"          ecmascript:",
 "function initialize () // OfflineRenderScript",
 "{",
 "//  tracePrint ('initialize start...');",

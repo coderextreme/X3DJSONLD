@@ -2,13 +2,825 @@ unit SingleMenuJin;
 
 interface
 
-uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported, CastleSceneCore;
 
 function CreateSingleMenuJin: TX3DRootNode;
+procedure RegisterSingleMenuJinScripts(const Scene: TCastleSceneCore);
 
 implementation
 
-uses CastleVectors;
+uses SysUtils, CastleVectors, Math, X3DTime;
+
+type
+  TScript3058Script = class
+  private
+    FresumeTime: Double;
+    FEvent_resumeTime: TX3DEvent;
+    FBack_resumeTime: TSFTime;
+    FDirty_resumeTime: Boolean;
+    FpauseTime: Double;
+    FEvent_pauseTime: TX3DEvent;
+    FBack_pauseTime: TSFTime;
+    FDirty_pauseTime: Boolean;
+    Ffraction: Single;
+    FField_fraction: TSFFloat;
+    FDirty_fraction: Boolean;
+    FdiffuseColor: TVector3;
+    FField_diffuseColor: TSFColor;
+    FDirty_diffuseColor: Boolean;
+    Fchecked: Boolean;
+    FField_checked: TSFBool;
+    FDirty_checked: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure InTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript3085Script = class
+  private
+    FresumeTime: Double;
+    FEvent_resumeTime: TX3DEvent;
+    FBack_resumeTime: TSFTime;
+    FDirty_resumeTime: Boolean;
+    FpauseTime: Double;
+    FEvent_pauseTime: TX3DEvent;
+    FBack_pauseTime: TSFTime;
+    FDirty_pauseTime: Boolean;
+    Ffraction: Single;
+    FField_fraction: TSFFloat;
+    FDirty_fraction: Boolean;
+    FdiffuseColor: TVector3;
+    FField_diffuseColor: TSFColor;
+    FDirty_diffuseColor: Boolean;
+    Fchecked: Boolean;
+    FField_checked: TSFBool;
+    FDirty_checked: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure InTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript3112Script = class
+  private
+    FresumeTime: Double;
+    FEvent_resumeTime: TX3DEvent;
+    FBack_resumeTime: TSFTime;
+    FDirty_resumeTime: Boolean;
+    FpauseTime: Double;
+    FEvent_pauseTime: TX3DEvent;
+    FBack_pauseTime: TSFTime;
+    FDirty_pauseTime: Boolean;
+    Ffraction: Single;
+    FField_fraction: TSFFloat;
+    FDirty_fraction: Boolean;
+    FdiffuseColor: TVector3;
+    FField_diffuseColor: TSFColor;
+    FDirty_diffuseColor: Boolean;
+    Fchecked: Boolean;
+    FField_checked: TSFBool;
+    FDirty_checked: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure InTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript3139Script = class
+  private
+    FresumeTime: Double;
+    FEvent_resumeTime: TX3DEvent;
+    FBack_resumeTime: TSFTime;
+    FDirty_resumeTime: Boolean;
+    FpauseTime: Double;
+    FEvent_pauseTime: TX3DEvent;
+    FBack_pauseTime: TSFTime;
+    FDirty_pauseTime: Boolean;
+    Ffraction: Single;
+    FField_fraction: TSFFloat;
+    FDirty_fraction: Boolean;
+    FdiffuseColor: TVector3;
+    FField_diffuseColor: TSFColor;
+    FDirty_diffuseColor: Boolean;
+    Fchecked: Boolean;
+    FField_checked: TSFBool;
+    FDirty_checked: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure InTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript3166Script = class
+  private
+    FresumeTime: Double;
+    FEvent_resumeTime: TX3DEvent;
+    FBack_resumeTime: TSFTime;
+    FDirty_resumeTime: Boolean;
+    FpauseTime: Double;
+    FEvent_pauseTime: TX3DEvent;
+    FBack_pauseTime: TSFTime;
+    FDirty_pauseTime: Boolean;
+    Ffraction: Single;
+    FField_fraction: TSFFloat;
+    FDirty_fraction: Boolean;
+    FdiffuseColor: TVector3;
+    FField_diffuseColor: TSFColor;
+    FDirty_diffuseColor: Boolean;
+    Fchecked: Boolean;
+    FField_checked: TSFBool;
+    FDirty_checked: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure InTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript3193Script = class
+  private
+    FresumeTime: Double;
+    FEvent_resumeTime: TX3DEvent;
+    FBack_resumeTime: TSFTime;
+    FDirty_resumeTime: Boolean;
+    FpauseTime: Double;
+    FEvent_pauseTime: TX3DEvent;
+    FBack_pauseTime: TSFTime;
+    FDirty_pauseTime: Boolean;
+    Ffraction: Single;
+    FField_fraction: TSFFloat;
+    FDirty_fraction: Boolean;
+    FdiffuseColor: TVector3;
+    FField_diffuseColor: TSFColor;
+    FDirty_diffuseColor: Boolean;
+    Fchecked: Boolean;
+    FField_checked: TSFBool;
+    FDirty_checked: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure InTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript3220Script = class
+  private
+    FresumeTime: Double;
+    FEvent_resumeTime: TX3DEvent;
+    FBack_resumeTime: TSFTime;
+    FDirty_resumeTime: Boolean;
+    FpauseTime: Double;
+    FEvent_pauseTime: TX3DEvent;
+    FBack_pauseTime: TSFTime;
+    FDirty_pauseTime: Boolean;
+    Ffraction: Single;
+    FField_fraction: TSFFloat;
+    FDirty_fraction: Boolean;
+    FdiffuseColor: TVector3;
+    FField_diffuseColor: TSFColor;
+    FDirty_diffuseColor: Boolean;
+    Fchecked: Boolean;
+    FField_checked: TSFBool;
+    FDirty_checked: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure InTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript3247Script = class
+  private
+    FresumeTime: Double;
+    FEvent_resumeTime: TX3DEvent;
+    FBack_resumeTime: TSFTime;
+    FDirty_resumeTime: Boolean;
+    FpauseTime: Double;
+    FEvent_pauseTime: TX3DEvent;
+    FBack_pauseTime: TSFTime;
+    FDirty_pauseTime: Boolean;
+    Ffraction: Single;
+    FField_fraction: TSFFloat;
+    FDirty_fraction: Boolean;
+    FdiffuseColor: TVector3;
+    FField_diffuseColor: TSFColor;
+    FDirty_diffuseColor: Boolean;
+    Fchecked: Boolean;
+    FField_checked: TSFBool;
+    FDirty_checked: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure InTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript3274Script = class
+  private
+    FresumeTime: Double;
+    FEvent_resumeTime: TX3DEvent;
+    FBack_resumeTime: TSFTime;
+    FDirty_resumeTime: Boolean;
+    FpauseTime: Double;
+    FEvent_pauseTime: TX3DEvent;
+    FBack_pauseTime: TSFTime;
+    FDirty_pauseTime: Boolean;
+    Ffraction: Single;
+    FField_fraction: TSFFloat;
+    FDirty_fraction: Boolean;
+    FdiffuseColor: TVector3;
+    FField_diffuseColor: TSFColor;
+    FDirty_diffuseColor: Boolean;
+    Fchecked: Boolean;
+    FField_checked: TSFBool;
+    FDirty_checked: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure InTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript3301Script = class
+  private
+    FresumeTime: Double;
+    FEvent_resumeTime: TX3DEvent;
+    FBack_resumeTime: TSFTime;
+    FDirty_resumeTime: Boolean;
+    FpauseTime: Double;
+    FEvent_pauseTime: TX3DEvent;
+    FBack_pauseTime: TSFTime;
+    FDirty_pauseTime: Boolean;
+    Ffraction: Single;
+    FField_fraction: TSFFloat;
+    FDirty_fraction: Boolean;
+    FdiffuseColor: TVector3;
+    FField_diffuseColor: TSFColor;
+    FDirty_diffuseColor: Boolean;
+    Fchecked: Boolean;
+    FField_checked: TSFBool;
+    FDirty_checked: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure InTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript3328Script = class
+  private
+    FresumeTime: Double;
+    FEvent_resumeTime: TX3DEvent;
+    FBack_resumeTime: TSFTime;
+    FDirty_resumeTime: Boolean;
+    FpauseTime: Double;
+    FEvent_pauseTime: TX3DEvent;
+    FBack_pauseTime: TSFTime;
+    FDirty_pauseTime: Boolean;
+    Ffraction: Single;
+    FField_fraction: TSFFloat;
+    FDirty_fraction: Boolean;
+    FdiffuseColor: TVector3;
+    FField_diffuseColor: TSFColor;
+    FDirty_diffuseColor: Boolean;
+    Fchecked: Boolean;
+    FField_checked: TSFBool;
+    FDirty_checked: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure InTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript3355Script = class
+  private
+    FresumeTime: Double;
+    FEvent_resumeTime: TX3DEvent;
+    FBack_resumeTime: TSFTime;
+    FDirty_resumeTime: Boolean;
+    FpauseTime: Double;
+    FEvent_pauseTime: TX3DEvent;
+    FBack_pauseTime: TSFTime;
+    FDirty_pauseTime: Boolean;
+    Ffraction: Single;
+    FField_fraction: TSFFloat;
+    FDirty_fraction: Boolean;
+    FdiffuseColor: TVector3;
+    FField_diffuseColor: TSFColor;
+    FDirty_diffuseColor: Boolean;
+    Fchecked: Boolean;
+    FField_checked: TSFBool;
+    FDirty_checked: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure InTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript3382Script = class
+  private
+    FresumeTime: Double;
+    FEvent_resumeTime: TX3DEvent;
+    FBack_resumeTime: TSFTime;
+    FDirty_resumeTime: Boolean;
+    FpauseTime: Double;
+    FEvent_pauseTime: TX3DEvent;
+    FBack_pauseTime: TSFTime;
+    FDirty_pauseTime: Boolean;
+    Ffraction: Single;
+    FField_fraction: TSFFloat;
+    FDirty_fraction: Boolean;
+    FdiffuseColor: TVector3;
+    FField_diffuseColor: TSFColor;
+    FDirty_diffuseColor: Boolean;
+    Fchecked: Boolean;
+    FField_checked: TSFBool;
+    FDirty_checked: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure InTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript3409Script = class
+  private
+    FresumeTime: Double;
+    FEvent_resumeTime: TX3DEvent;
+    FBack_resumeTime: TSFTime;
+    FDirty_resumeTime: Boolean;
+    FpauseTime: Double;
+    FEvent_pauseTime: TX3DEvent;
+    FBack_pauseTime: TSFTime;
+    FDirty_pauseTime: Boolean;
+    Ffraction: Single;
+    FField_fraction: TSFFloat;
+    FDirty_fraction: Boolean;
+    FdiffuseColor: TVector3;
+    FField_diffuseColor: TSFColor;
+    FDirty_diffuseColor: Boolean;
+    Fchecked: Boolean;
+    FField_checked: TSFBool;
+    FDirty_checked: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure InTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript3436Script = class
+  private
+    FresumeTime: Double;
+    FEvent_resumeTime: TX3DEvent;
+    FBack_resumeTime: TSFTime;
+    FDirty_resumeTime: Boolean;
+    FpauseTime: Double;
+    FEvent_pauseTime: TX3DEvent;
+    FBack_pauseTime: TSFTime;
+    FDirty_pauseTime: Boolean;
+    Ffraction: Single;
+    FField_fraction: TSFFloat;
+    FDirty_fraction: Boolean;
+    FdiffuseColor: TVector3;
+    FField_diffuseColor: TSFColor;
+    FDirty_diffuseColor: Boolean;
+    Fchecked: Boolean;
+    FField_checked: TSFBool;
+    FDirty_checked: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure InTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript3463Script = class
+  private
+    FresumeTime: Double;
+    FEvent_resumeTime: TX3DEvent;
+    FBack_resumeTime: TSFTime;
+    FDirty_resumeTime: Boolean;
+    FpauseTime: Double;
+    FEvent_pauseTime: TX3DEvent;
+    FBack_pauseTime: TSFTime;
+    FDirty_pauseTime: Boolean;
+    Ffraction: Single;
+    FField_fraction: TSFFloat;
+    FDirty_fraction: Boolean;
+    FdiffuseColor: TVector3;
+    FField_diffuseColor: TSFColor;
+    FDirty_diffuseColor: Boolean;
+    Fchecked: Boolean;
+    FField_checked: TSFBool;
+    FDirty_checked: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure InTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript3490Script = class
+  private
+    FresumeTime: Double;
+    FEvent_resumeTime: TX3DEvent;
+    FBack_resumeTime: TSFTime;
+    FDirty_resumeTime: Boolean;
+    FpauseTime: Double;
+    FEvent_pauseTime: TX3DEvent;
+    FBack_pauseTime: TSFTime;
+    FDirty_pauseTime: Boolean;
+    Ffraction: Single;
+    FField_fraction: TSFFloat;
+    FDirty_fraction: Boolean;
+    FdiffuseColor: TVector3;
+    FField_diffuseColor: TSFColor;
+    FDirty_diffuseColor: Boolean;
+    Fchecked: Boolean;
+    FField_checked: TSFBool;
+    FDirty_checked: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure InTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript3517Script = class
+  private
+    FresumeTime: Double;
+    FEvent_resumeTime: TX3DEvent;
+    FBack_resumeTime: TSFTime;
+    FDirty_resumeTime: Boolean;
+    FpauseTime: Double;
+    FEvent_pauseTime: TX3DEvent;
+    FBack_pauseTime: TSFTime;
+    FDirty_pauseTime: Boolean;
+    Ffraction: Single;
+    FField_fraction: TSFFloat;
+    FDirty_fraction: Boolean;
+    FdiffuseColor: TVector3;
+    FField_diffuseColor: TSFColor;
+    FDirty_diffuseColor: Boolean;
+    Fchecked: Boolean;
+    FField_checked: TSFBool;
+    FDirty_checked: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure InTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript3544Script = class
+  private
+    FresumeTime: Double;
+    FEvent_resumeTime: TX3DEvent;
+    FBack_resumeTime: TSFTime;
+    FDirty_resumeTime: Boolean;
+    FpauseTime: Double;
+    FEvent_pauseTime: TX3DEvent;
+    FBack_pauseTime: TSFTime;
+    FDirty_pauseTime: Boolean;
+    Ffraction: Single;
+    FField_fraction: TSFFloat;
+    FDirty_fraction: Boolean;
+    FdiffuseColor: TVector3;
+    FField_diffuseColor: TSFColor;
+    FDirty_diffuseColor: Boolean;
+    Fchecked: Boolean;
+    FField_checked: TSFBool;
+    FDirty_checked: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure InTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript3571Script = class
+  private
+    FresumeTime: Double;
+    FEvent_resumeTime: TX3DEvent;
+    FBack_resumeTime: TSFTime;
+    FDirty_resumeTime: Boolean;
+    FpauseTime: Double;
+    FEvent_pauseTime: TX3DEvent;
+    FBack_pauseTime: TSFTime;
+    FDirty_pauseTime: Boolean;
+    Ffraction: Single;
+    FField_fraction: TSFFloat;
+    FDirty_fraction: Boolean;
+    FdiffuseColor: TVector3;
+    FField_diffuseColor: TSFColor;
+    FDirty_diffuseColor: Boolean;
+    Fchecked: Boolean;
+    FField_checked: TSFBool;
+    FDirty_checked: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure InTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript3598Script = class
+  private
+    FresumeTime: Double;
+    FEvent_resumeTime: TX3DEvent;
+    FBack_resumeTime: TSFTime;
+    FDirty_resumeTime: Boolean;
+    FpauseTime: Double;
+    FEvent_pauseTime: TX3DEvent;
+    FBack_pauseTime: TSFTime;
+    FDirty_pauseTime: Boolean;
+    Ffraction: Single;
+    FField_fraction: TSFFloat;
+    FDirty_fraction: Boolean;
+    FdiffuseColor: TVector3;
+    FField_diffuseColor: TSFColor;
+    FDirty_diffuseColor: Boolean;
+    Fchecked: Boolean;
+    FField_checked: TSFBool;
+    FDirty_checked: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure InTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript3625Script = class
+  private
+    FresumeTime: Double;
+    FEvent_resumeTime: TX3DEvent;
+    FBack_resumeTime: TSFTime;
+    FDirty_resumeTime: Boolean;
+    FpauseTime: Double;
+    FEvent_pauseTime: TX3DEvent;
+    FBack_pauseTime: TSFTime;
+    FDirty_pauseTime: Boolean;
+    Ffraction: Single;
+    FField_fraction: TSFFloat;
+    FDirty_fraction: Boolean;
+    FdiffuseColor: TVector3;
+    FField_diffuseColor: TSFColor;
+    FDirty_diffuseColor: Boolean;
+    Fchecked: Boolean;
+    FField_checked: TSFBool;
+    FDirty_checked: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure InTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript3652Script = class
+  private
+    FresumeTime: Double;
+    FEvent_resumeTime: TX3DEvent;
+    FBack_resumeTime: TSFTime;
+    FDirty_resumeTime: Boolean;
+    FpauseTime: Double;
+    FEvent_pauseTime: TX3DEvent;
+    FBack_pauseTime: TSFTime;
+    FDirty_pauseTime: Boolean;
+    Ffraction: Single;
+    FField_fraction: TSFFloat;
+    FDirty_fraction: Boolean;
+    FdiffuseColor: TVector3;
+    FField_diffuseColor: TSFColor;
+    FDirty_diffuseColor: Boolean;
+    Fchecked: Boolean;
+    FField_checked: TSFBool;
+    FDirty_checked: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure InTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript3679Script = class
+  private
+    FresumeTime: Double;
+    FEvent_resumeTime: TX3DEvent;
+    FBack_resumeTime: TSFTime;
+    FDirty_resumeTime: Boolean;
+    FpauseTime: Double;
+    FEvent_pauseTime: TX3DEvent;
+    FBack_pauseTime: TSFTime;
+    FDirty_pauseTime: Boolean;
+    Ffraction: Single;
+    FField_fraction: TSFFloat;
+    FDirty_fraction: Boolean;
+    FdiffuseColor: TVector3;
+    FField_diffuseColor: TSFColor;
+    FDirty_diffuseColor: Boolean;
+    Fchecked: Boolean;
+    FField_checked: TSFBool;
+    FDirty_checked: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure InTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript3706Script = class
+  private
+    FresumeTime: Double;
+    FEvent_resumeTime: TX3DEvent;
+    FBack_resumeTime: TSFTime;
+    FDirty_resumeTime: Boolean;
+    FpauseTime: Double;
+    FEvent_pauseTime: TX3DEvent;
+    FBack_pauseTime: TSFTime;
+    FDirty_pauseTime: Boolean;
+    Ffraction: Single;
+    FField_fraction: TSFFloat;
+    FDirty_fraction: Boolean;
+    FdiffuseColor: TVector3;
+    FField_diffuseColor: TSFColor;
+    FDirty_diffuseColor: Boolean;
+    Fchecked: Boolean;
+    FField_checked: TSFBool;
+    FDirty_checked: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure InTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript3733Script = class
+  private
+    FresumeTime: Double;
+    FEvent_resumeTime: TX3DEvent;
+    FBack_resumeTime: TSFTime;
+    FDirty_resumeTime: Boolean;
+    FpauseTime: Double;
+    FEvent_pauseTime: TX3DEvent;
+    FBack_pauseTime: TSFTime;
+    FDirty_pauseTime: Boolean;
+    Ffraction: Single;
+    FField_fraction: TSFFloat;
+    FDirty_fraction: Boolean;
+    FdiffuseColor: TVector3;
+    FField_diffuseColor: TSFColor;
+    FDirty_diffuseColor: Boolean;
+    Fchecked: Boolean;
+    FField_checked: TSFBool;
+    FDirty_checked: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure InTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript3760Script = class
+  private
+    FresumeTime: Double;
+    FEvent_resumeTime: TX3DEvent;
+    FBack_resumeTime: TSFTime;
+    FDirty_resumeTime: Boolean;
+    FpauseTime: Double;
+    FEvent_pauseTime: TX3DEvent;
+    FBack_pauseTime: TSFTime;
+    FDirty_pauseTime: Boolean;
+    Ffraction: Single;
+    FField_fraction: TSFFloat;
+    FDirty_fraction: Boolean;
+    FdiffuseColor: TVector3;
+    FField_diffuseColor: TSFColor;
+    FDirty_diffuseColor: Boolean;
+    Fchecked: Boolean;
+    FField_checked: TSFBool;
+    FDirty_checked: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure InTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript3787Script = class
+  private
+    FresumeTime: Double;
+    FEvent_resumeTime: TX3DEvent;
+    FBack_resumeTime: TSFTime;
+    FDirty_resumeTime: Boolean;
+    FpauseTime: Double;
+    FEvent_pauseTime: TX3DEvent;
+    FBack_pauseTime: TSFTime;
+    FDirty_pauseTime: Boolean;
+    Ffraction: Single;
+    FField_fraction: TSFFloat;
+    FDirty_fraction: Boolean;
+    FdiffuseColor: TVector3;
+    FField_diffuseColor: TSFColor;
+    FDirty_diffuseColor: Boolean;
+    Fchecked: Boolean;
+    FField_checked: TSFBool;
+    FDirty_checked: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure InTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript3814Script = class
+  private
+    FresumeTime: Double;
+    FEvent_resumeTime: TX3DEvent;
+    FBack_resumeTime: TSFTime;
+    FDirty_resumeTime: Boolean;
+    FpauseTime: Double;
+    FEvent_pauseTime: TX3DEvent;
+    FBack_pauseTime: TSFTime;
+    FDirty_pauseTime: Boolean;
+    Ffraction: Single;
+    FField_fraction: TSFFloat;
+    FDirty_fraction: Boolean;
+    FdiffuseColor: TVector3;
+    FField_diffuseColor: TSFColor;
+    FDirty_diffuseColor: Boolean;
+    Fchecked: Boolean;
+    FField_checked: TSFBool;
+    FDirty_checked: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure InTime(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript3841Script = class
+  private
+    FresumeTime: Double;
+    FEvent_resumeTime: TX3DEvent;
+    FBack_resumeTime: TSFTime;
+    FDirty_resumeTime: Boolean;
+    FpauseTime: Double;
+    FEvent_pauseTime: TX3DEvent;
+    FBack_pauseTime: TSFTime;
+    FDirty_pauseTime: Boolean;
+    Ffraction: Single;
+    FField_fraction: TSFFloat;
+    FDirty_fraction: Boolean;
+    FdiffuseColor: TVector3;
+    FField_diffuseColor: TSFColor;
+    FDirty_diffuseColor: Boolean;
+    Fchecked: Boolean;
+    FField_checked: TSFBool;
+    FDirty_checked: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure InTime(Value: TX3DField; const Time: TX3DTime);
+  end;
 
 var
   X3D0: TX3DRootNode;
@@ -1662,6 +2474,7 @@ var
   FieldVal3062: TSFFloat;
   FieldVal3063: TSFColor;
   FieldVal3064: TSFBool;
+  CompiledScript3058: TScript3058Script;
   Transform3073: TTransformNode;
   TouchSensor3074: TTouchSensorNode;
   Shape3075: TShapeNode;
@@ -1681,6 +2494,7 @@ var
   FieldVal3089: TSFFloat;
   FieldVal3090: TSFColor;
   FieldVal3091: TSFBool;
+  CompiledScript3085: TScript3085Script;
   Transform3100: TTransformNode;
   TouchSensor3101: TTouchSensorNode;
   Shape3102: TShapeNode;
@@ -1700,6 +2514,7 @@ var
   FieldVal3116: TSFFloat;
   FieldVal3117: TSFColor;
   FieldVal3118: TSFBool;
+  CompiledScript3112: TScript3112Script;
   Transform3127: TTransformNode;
   TouchSensor3128: TTouchSensorNode;
   Shape3129: TShapeNode;
@@ -1719,6 +2534,7 @@ var
   FieldVal3143: TSFFloat;
   FieldVal3144: TSFColor;
   FieldVal3145: TSFBool;
+  CompiledScript3139: TScript3139Script;
   Transform3154: TTransformNode;
   TouchSensor3155: TTouchSensorNode;
   Shape3156: TShapeNode;
@@ -1738,6 +2554,7 @@ var
   FieldVal3170: TSFFloat;
   FieldVal3171: TSFColor;
   FieldVal3172: TSFBool;
+  CompiledScript3166: TScript3166Script;
   Transform3181: TTransformNode;
   TouchSensor3182: TTouchSensorNode;
   Shape3183: TShapeNode;
@@ -1757,6 +2574,7 @@ var
   FieldVal3197: TSFFloat;
   FieldVal3198: TSFColor;
   FieldVal3199: TSFBool;
+  CompiledScript3193: TScript3193Script;
   Transform3208: TTransformNode;
   TouchSensor3209: TTouchSensorNode;
   Shape3210: TShapeNode;
@@ -1776,6 +2594,7 @@ var
   FieldVal3224: TSFFloat;
   FieldVal3225: TSFColor;
   FieldVal3226: TSFBool;
+  CompiledScript3220: TScript3220Script;
   Transform3235: TTransformNode;
   TouchSensor3236: TTouchSensorNode;
   Shape3237: TShapeNode;
@@ -1795,6 +2614,7 @@ var
   FieldVal3251: TSFFloat;
   FieldVal3252: TSFColor;
   FieldVal3253: TSFBool;
+  CompiledScript3247: TScript3247Script;
   Transform3262: TTransformNode;
   TouchSensor3263: TTouchSensorNode;
   Shape3264: TShapeNode;
@@ -1814,6 +2634,7 @@ var
   FieldVal3278: TSFFloat;
   FieldVal3279: TSFColor;
   FieldVal3280: TSFBool;
+  CompiledScript3274: TScript3274Script;
   Transform3289: TTransformNode;
   TouchSensor3290: TTouchSensorNode;
   Shape3291: TShapeNode;
@@ -1833,6 +2654,7 @@ var
   FieldVal3305: TSFFloat;
   FieldVal3306: TSFColor;
   FieldVal3307: TSFBool;
+  CompiledScript3301: TScript3301Script;
   Transform3316: TTransformNode;
   TouchSensor3317: TTouchSensorNode;
   Shape3318: TShapeNode;
@@ -1852,6 +2674,7 @@ var
   FieldVal3332: TSFFloat;
   FieldVal3333: TSFColor;
   FieldVal3334: TSFBool;
+  CompiledScript3328: TScript3328Script;
   Transform3343: TTransformNode;
   TouchSensor3344: TTouchSensorNode;
   Shape3345: TShapeNode;
@@ -1871,6 +2694,7 @@ var
   FieldVal3359: TSFFloat;
   FieldVal3360: TSFColor;
   FieldVal3361: TSFBool;
+  CompiledScript3355: TScript3355Script;
   Transform3370: TTransformNode;
   TouchSensor3371: TTouchSensorNode;
   Shape3372: TShapeNode;
@@ -1890,6 +2714,7 @@ var
   FieldVal3386: TSFFloat;
   FieldVal3387: TSFColor;
   FieldVal3388: TSFBool;
+  CompiledScript3382: TScript3382Script;
   Transform3397: TTransformNode;
   TouchSensor3398: TTouchSensorNode;
   Shape3399: TShapeNode;
@@ -1909,6 +2734,7 @@ var
   FieldVal3413: TSFFloat;
   FieldVal3414: TSFColor;
   FieldVal3415: TSFBool;
+  CompiledScript3409: TScript3409Script;
   Transform3424: TTransformNode;
   TouchSensor3425: TTouchSensorNode;
   Shape3426: TShapeNode;
@@ -1928,6 +2754,7 @@ var
   FieldVal3440: TSFFloat;
   FieldVal3441: TSFColor;
   FieldVal3442: TSFBool;
+  CompiledScript3436: TScript3436Script;
   Transform3451: TTransformNode;
   TouchSensor3452: TTouchSensorNode;
   Shape3453: TShapeNode;
@@ -1947,6 +2774,7 @@ var
   FieldVal3467: TSFFloat;
   FieldVal3468: TSFColor;
   FieldVal3469: TSFBool;
+  CompiledScript3463: TScript3463Script;
   Transform3478: TTransformNode;
   TouchSensor3479: TTouchSensorNode;
   Shape3480: TShapeNode;
@@ -1966,6 +2794,7 @@ var
   FieldVal3494: TSFFloat;
   FieldVal3495: TSFColor;
   FieldVal3496: TSFBool;
+  CompiledScript3490: TScript3490Script;
   Transform3505: TTransformNode;
   TouchSensor3506: TTouchSensorNode;
   Shape3507: TShapeNode;
@@ -1985,6 +2814,7 @@ var
   FieldVal3521: TSFFloat;
   FieldVal3522: TSFColor;
   FieldVal3523: TSFBool;
+  CompiledScript3517: TScript3517Script;
   Transform3532: TTransformNode;
   TouchSensor3533: TTouchSensorNode;
   Shape3534: TShapeNode;
@@ -2004,6 +2834,7 @@ var
   FieldVal3548: TSFFloat;
   FieldVal3549: TSFColor;
   FieldVal3550: TSFBool;
+  CompiledScript3544: TScript3544Script;
   Transform3559: TTransformNode;
   TouchSensor3560: TTouchSensorNode;
   Shape3561: TShapeNode;
@@ -2023,6 +2854,7 @@ var
   FieldVal3575: TSFFloat;
   FieldVal3576: TSFColor;
   FieldVal3577: TSFBool;
+  CompiledScript3571: TScript3571Script;
   Transform3586: TTransformNode;
   TouchSensor3587: TTouchSensorNode;
   Shape3588: TShapeNode;
@@ -2042,6 +2874,7 @@ var
   FieldVal3602: TSFFloat;
   FieldVal3603: TSFColor;
   FieldVal3604: TSFBool;
+  CompiledScript3598: TScript3598Script;
   Transform3613: TTransformNode;
   TouchSensor3614: TTouchSensorNode;
   Shape3615: TShapeNode;
@@ -2061,6 +2894,7 @@ var
   FieldVal3629: TSFFloat;
   FieldVal3630: TSFColor;
   FieldVal3631: TSFBool;
+  CompiledScript3625: TScript3625Script;
   Transform3640: TTransformNode;
   TouchSensor3641: TTouchSensorNode;
   Shape3642: TShapeNode;
@@ -2080,6 +2914,7 @@ var
   FieldVal3656: TSFFloat;
   FieldVal3657: TSFColor;
   FieldVal3658: TSFBool;
+  CompiledScript3652: TScript3652Script;
   Transform3667: TTransformNode;
   TouchSensor3668: TTouchSensorNode;
   Shape3669: TShapeNode;
@@ -2099,6 +2934,7 @@ var
   FieldVal3683: TSFFloat;
   FieldVal3684: TSFColor;
   FieldVal3685: TSFBool;
+  CompiledScript3679: TScript3679Script;
   Transform3694: TTransformNode;
   TouchSensor3695: TTouchSensorNode;
   Shape3696: TShapeNode;
@@ -2118,6 +2954,7 @@ var
   FieldVal3710: TSFFloat;
   FieldVal3711: TSFColor;
   FieldVal3712: TSFBool;
+  CompiledScript3706: TScript3706Script;
   Transform3721: TTransformNode;
   TouchSensor3722: TTouchSensorNode;
   Shape3723: TShapeNode;
@@ -2137,6 +2974,7 @@ var
   FieldVal3737: TSFFloat;
   FieldVal3738: TSFColor;
   FieldVal3739: TSFBool;
+  CompiledScript3733: TScript3733Script;
   Transform3748: TTransformNode;
   TouchSensor3749: TTouchSensorNode;
   Shape3750: TShapeNode;
@@ -2156,6 +2994,7 @@ var
   FieldVal3764: TSFFloat;
   FieldVal3765: TSFColor;
   FieldVal3766: TSFBool;
+  CompiledScript3760: TScript3760Script;
   Transform3775: TTransformNode;
   TouchSensor3776: TTouchSensorNode;
   Shape3777: TShapeNode;
@@ -2175,6 +3014,7 @@ var
   FieldVal3791: TSFFloat;
   FieldVal3792: TSFColor;
   FieldVal3793: TSFBool;
+  CompiledScript3787: TScript3787Script;
   Transform3802: TTransformNode;
   TouchSensor3803: TTouchSensorNode;
   Shape3804: TShapeNode;
@@ -2194,6 +3034,7 @@ var
   FieldVal3818: TSFFloat;
   FieldVal3819: TSFColor;
   FieldVal3820: TSFBool;
+  CompiledScript3814: TScript3814Script;
   Transform3829: TTransformNode;
   TouchSensor3830: TTouchSensorNode;
   Shape3831: TShapeNode;
@@ -2213,6 +3054,3157 @@ var
   FieldVal3845: TSFFloat;
   FieldVal3846: TSFColor;
   FieldVal3847: TSFBool;
+  CompiledScript3841: TScript3841Script;
+
+constructor TScript3058Script.Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+begin
+  inherited Create;
+  FresumeTime := 0.0;
+  FEvent_resumeTime := nil;
+  FBack_resumeTime := TSFTime.Create(nil, False, 'resumeTime', 0.0);
+  FDirty_resumeTime := False;
+  FpauseTime := 0.0;
+  FEvent_pauseTime := nil;
+  FBack_pauseTime := TSFTime.Create(nil, False, 'pauseTime', 0.0);
+  FDirty_pauseTime := False;
+  Ffraction := 0.0;
+  FField_fraction := nil;
+  FDirty_fraction := False;
+  FdiffuseColor := Vector3(0, 0, 0);
+  FField_diffuseColor := nil;
+  FDirty_diffuseColor := False;
+  Fchecked := False;
+  FField_checked := nil;
+  FDirty_checked := False;
+  FEvent_resumeTime := AEvent_resumeTime;
+  FEvent_pauseTime := AEvent_pauseTime;
+  FField_fraction := AField_fraction;
+  if AField_fraction <> nil then Ffraction := AField_fraction.Value;
+  FField_diffuseColor := AField_diffuseColor;
+  if AField_diffuseColor <> nil then FdiffuseColor := AField_diffuseColor.Value;
+  FField_checked := AField_checked;
+  if AField_checked <> nil then Fchecked := AField_checked.Value;
+end;
+
+destructor TScript3058Script.Destroy;
+begin
+  FreeAndNil(FBack_resumeTime);
+  FreeAndNil(FBack_pauseTime);
+  inherited Destroy;
+end;
+
+procedure TScript3058Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_resumeTime then
+  begin
+    FDirty_resumeTime := False;
+    if FEvent_resumeTime <> nil then
+    begin
+      FBack_resumeTime.Value := FresumeTime;
+      FEvent_resumeTime.Send(FBack_resumeTime, Time);
+    end;
+  end;
+  if FDirty_pauseTime then
+  begin
+    FDirty_pauseTime := False;
+    if FEvent_pauseTime <> nil then
+    begin
+      FBack_pauseTime.Value := FpauseTime;
+      FEvent_pauseTime.Send(FBack_pauseTime, Time);
+    end;
+  end;
+  if FDirty_fraction then
+  begin
+    FDirty_fraction := False;
+    if FField_fraction <> nil then
+      FField_fraction.Send(Ffraction, Time);
+  end;
+  if FDirty_diffuseColor then
+  begin
+    FDirty_diffuseColor := False;
+    if FField_diffuseColor <> nil then
+      FField_diffuseColor.Send(FdiffuseColor, Time);
+  end;
+  if FDirty_checked then
+  begin
+    FDirty_checked := False;
+    if FField_checked <> nil then
+      FField_checked.Send(Fchecked, Time);
+  end;
+end;
+
+procedure TScript3058Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script3058_inTime', {$ifdef FPC}@{$endif}InTime);
+end;
+
+procedure TScript3058Script.InTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  if (Value as TSFTime).Value then
+  begin
+    Fchecked := not (Fchecked); FDirty_checked := True;
+  end;
+  if Fchecked then
+  begin
+    FdiffuseColor.Y := 1; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 0; FDirty_diffuseColor := True;
+    FresumeTime := (Value as TSFTime).Value + 1; FDirty_resumeTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end
+  else
+  begin
+    FdiffuseColor.Y := 0; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 1; FDirty_diffuseColor := True;
+    FpauseTime := (Value as TSFTime).Value + 1; FDirty_pauseTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end;
+  FlushOutputs(Time);
+end;
+
+constructor TScript3085Script.Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+begin
+  inherited Create;
+  FresumeTime := 0.0;
+  FEvent_resumeTime := nil;
+  FBack_resumeTime := TSFTime.Create(nil, False, 'resumeTime', 0.0);
+  FDirty_resumeTime := False;
+  FpauseTime := 0.0;
+  FEvent_pauseTime := nil;
+  FBack_pauseTime := TSFTime.Create(nil, False, 'pauseTime', 0.0);
+  FDirty_pauseTime := False;
+  Ffraction := 0.0;
+  FField_fraction := nil;
+  FDirty_fraction := False;
+  FdiffuseColor := Vector3(0, 0, 0);
+  FField_diffuseColor := nil;
+  FDirty_diffuseColor := False;
+  Fchecked := False;
+  FField_checked := nil;
+  FDirty_checked := False;
+  FEvent_resumeTime := AEvent_resumeTime;
+  FEvent_pauseTime := AEvent_pauseTime;
+  FField_fraction := AField_fraction;
+  if AField_fraction <> nil then Ffraction := AField_fraction.Value;
+  FField_diffuseColor := AField_diffuseColor;
+  if AField_diffuseColor <> nil then FdiffuseColor := AField_diffuseColor.Value;
+  FField_checked := AField_checked;
+  if AField_checked <> nil then Fchecked := AField_checked.Value;
+end;
+
+destructor TScript3085Script.Destroy;
+begin
+  FreeAndNil(FBack_resumeTime);
+  FreeAndNil(FBack_pauseTime);
+  inherited Destroy;
+end;
+
+procedure TScript3085Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_resumeTime then
+  begin
+    FDirty_resumeTime := False;
+    if FEvent_resumeTime <> nil then
+    begin
+      FBack_resumeTime.Value := FresumeTime;
+      FEvent_resumeTime.Send(FBack_resumeTime, Time);
+    end;
+  end;
+  if FDirty_pauseTime then
+  begin
+    FDirty_pauseTime := False;
+    if FEvent_pauseTime <> nil then
+    begin
+      FBack_pauseTime.Value := FpauseTime;
+      FEvent_pauseTime.Send(FBack_pauseTime, Time);
+    end;
+  end;
+  if FDirty_fraction then
+  begin
+    FDirty_fraction := False;
+    if FField_fraction <> nil then
+      FField_fraction.Send(Ffraction, Time);
+  end;
+  if FDirty_diffuseColor then
+  begin
+    FDirty_diffuseColor := False;
+    if FField_diffuseColor <> nil then
+      FField_diffuseColor.Send(FdiffuseColor, Time);
+  end;
+  if FDirty_checked then
+  begin
+    FDirty_checked := False;
+    if FField_checked <> nil then
+      FField_checked.Send(Fchecked, Time);
+  end;
+end;
+
+procedure TScript3085Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script3085_inTime', {$ifdef FPC}@{$endif}InTime);
+end;
+
+procedure TScript3085Script.InTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  if (Value as TSFTime).Value then
+  begin
+    Fchecked := not (Fchecked); FDirty_checked := True;
+  end;
+  if Fchecked then
+  begin
+    FdiffuseColor.Y := 1; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 0; FDirty_diffuseColor := True;
+    FresumeTime := (Value as TSFTime).Value + 1; FDirty_resumeTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end
+  else
+  begin
+    FdiffuseColor.Y := 0; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 1; FDirty_diffuseColor := True;
+    FpauseTime := (Value as TSFTime).Value + 1; FDirty_pauseTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end;
+  FlushOutputs(Time);
+end;
+
+constructor TScript3112Script.Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+begin
+  inherited Create;
+  FresumeTime := 0.0;
+  FEvent_resumeTime := nil;
+  FBack_resumeTime := TSFTime.Create(nil, False, 'resumeTime', 0.0);
+  FDirty_resumeTime := False;
+  FpauseTime := 0.0;
+  FEvent_pauseTime := nil;
+  FBack_pauseTime := TSFTime.Create(nil, False, 'pauseTime', 0.0);
+  FDirty_pauseTime := False;
+  Ffraction := 0.0;
+  FField_fraction := nil;
+  FDirty_fraction := False;
+  FdiffuseColor := Vector3(0, 0, 0);
+  FField_diffuseColor := nil;
+  FDirty_diffuseColor := False;
+  Fchecked := False;
+  FField_checked := nil;
+  FDirty_checked := False;
+  FEvent_resumeTime := AEvent_resumeTime;
+  FEvent_pauseTime := AEvent_pauseTime;
+  FField_fraction := AField_fraction;
+  if AField_fraction <> nil then Ffraction := AField_fraction.Value;
+  FField_diffuseColor := AField_diffuseColor;
+  if AField_diffuseColor <> nil then FdiffuseColor := AField_diffuseColor.Value;
+  FField_checked := AField_checked;
+  if AField_checked <> nil then Fchecked := AField_checked.Value;
+end;
+
+destructor TScript3112Script.Destroy;
+begin
+  FreeAndNil(FBack_resumeTime);
+  FreeAndNil(FBack_pauseTime);
+  inherited Destroy;
+end;
+
+procedure TScript3112Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_resumeTime then
+  begin
+    FDirty_resumeTime := False;
+    if FEvent_resumeTime <> nil then
+    begin
+      FBack_resumeTime.Value := FresumeTime;
+      FEvent_resumeTime.Send(FBack_resumeTime, Time);
+    end;
+  end;
+  if FDirty_pauseTime then
+  begin
+    FDirty_pauseTime := False;
+    if FEvent_pauseTime <> nil then
+    begin
+      FBack_pauseTime.Value := FpauseTime;
+      FEvent_pauseTime.Send(FBack_pauseTime, Time);
+    end;
+  end;
+  if FDirty_fraction then
+  begin
+    FDirty_fraction := False;
+    if FField_fraction <> nil then
+      FField_fraction.Send(Ffraction, Time);
+  end;
+  if FDirty_diffuseColor then
+  begin
+    FDirty_diffuseColor := False;
+    if FField_diffuseColor <> nil then
+      FField_diffuseColor.Send(FdiffuseColor, Time);
+  end;
+  if FDirty_checked then
+  begin
+    FDirty_checked := False;
+    if FField_checked <> nil then
+      FField_checked.Send(Fchecked, Time);
+  end;
+end;
+
+procedure TScript3112Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script3112_inTime', {$ifdef FPC}@{$endif}InTime);
+end;
+
+procedure TScript3112Script.InTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  if (Value as TSFTime).Value then
+  begin
+    Fchecked := not (Fchecked); FDirty_checked := True;
+  end;
+  if Fchecked then
+  begin
+    FdiffuseColor.Y := 1; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 0; FDirty_diffuseColor := True;
+    FresumeTime := (Value as TSFTime).Value + 1; FDirty_resumeTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end
+  else
+  begin
+    FdiffuseColor.Y := 0; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 1; FDirty_diffuseColor := True;
+    FpauseTime := (Value as TSFTime).Value + 1; FDirty_pauseTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end;
+  FlushOutputs(Time);
+end;
+
+constructor TScript3139Script.Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+begin
+  inherited Create;
+  FresumeTime := 0.0;
+  FEvent_resumeTime := nil;
+  FBack_resumeTime := TSFTime.Create(nil, False, 'resumeTime', 0.0);
+  FDirty_resumeTime := False;
+  FpauseTime := 0.0;
+  FEvent_pauseTime := nil;
+  FBack_pauseTime := TSFTime.Create(nil, False, 'pauseTime', 0.0);
+  FDirty_pauseTime := False;
+  Ffraction := 0.0;
+  FField_fraction := nil;
+  FDirty_fraction := False;
+  FdiffuseColor := Vector3(0, 0, 0);
+  FField_diffuseColor := nil;
+  FDirty_diffuseColor := False;
+  Fchecked := False;
+  FField_checked := nil;
+  FDirty_checked := False;
+  FEvent_resumeTime := AEvent_resumeTime;
+  FEvent_pauseTime := AEvent_pauseTime;
+  FField_fraction := AField_fraction;
+  if AField_fraction <> nil then Ffraction := AField_fraction.Value;
+  FField_diffuseColor := AField_diffuseColor;
+  if AField_diffuseColor <> nil then FdiffuseColor := AField_diffuseColor.Value;
+  FField_checked := AField_checked;
+  if AField_checked <> nil then Fchecked := AField_checked.Value;
+end;
+
+destructor TScript3139Script.Destroy;
+begin
+  FreeAndNil(FBack_resumeTime);
+  FreeAndNil(FBack_pauseTime);
+  inherited Destroy;
+end;
+
+procedure TScript3139Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_resumeTime then
+  begin
+    FDirty_resumeTime := False;
+    if FEvent_resumeTime <> nil then
+    begin
+      FBack_resumeTime.Value := FresumeTime;
+      FEvent_resumeTime.Send(FBack_resumeTime, Time);
+    end;
+  end;
+  if FDirty_pauseTime then
+  begin
+    FDirty_pauseTime := False;
+    if FEvent_pauseTime <> nil then
+    begin
+      FBack_pauseTime.Value := FpauseTime;
+      FEvent_pauseTime.Send(FBack_pauseTime, Time);
+    end;
+  end;
+  if FDirty_fraction then
+  begin
+    FDirty_fraction := False;
+    if FField_fraction <> nil then
+      FField_fraction.Send(Ffraction, Time);
+  end;
+  if FDirty_diffuseColor then
+  begin
+    FDirty_diffuseColor := False;
+    if FField_diffuseColor <> nil then
+      FField_diffuseColor.Send(FdiffuseColor, Time);
+  end;
+  if FDirty_checked then
+  begin
+    FDirty_checked := False;
+    if FField_checked <> nil then
+      FField_checked.Send(Fchecked, Time);
+  end;
+end;
+
+procedure TScript3139Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script3139_inTime', {$ifdef FPC}@{$endif}InTime);
+end;
+
+procedure TScript3139Script.InTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  if (Value as TSFTime).Value then
+  begin
+    Fchecked := not (Fchecked); FDirty_checked := True;
+  end;
+  if Fchecked then
+  begin
+    FdiffuseColor.Y := 1; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 0; FDirty_diffuseColor := True;
+    FresumeTime := (Value as TSFTime).Value + 1; FDirty_resumeTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end
+  else
+  begin
+    FdiffuseColor.Y := 0; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 1; FDirty_diffuseColor := True;
+    FpauseTime := (Value as TSFTime).Value + 1; FDirty_pauseTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end;
+  FlushOutputs(Time);
+end;
+
+constructor TScript3166Script.Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+begin
+  inherited Create;
+  FresumeTime := 0.0;
+  FEvent_resumeTime := nil;
+  FBack_resumeTime := TSFTime.Create(nil, False, 'resumeTime', 0.0);
+  FDirty_resumeTime := False;
+  FpauseTime := 0.0;
+  FEvent_pauseTime := nil;
+  FBack_pauseTime := TSFTime.Create(nil, False, 'pauseTime', 0.0);
+  FDirty_pauseTime := False;
+  Ffraction := 0.0;
+  FField_fraction := nil;
+  FDirty_fraction := False;
+  FdiffuseColor := Vector3(0, 0, 0);
+  FField_diffuseColor := nil;
+  FDirty_diffuseColor := False;
+  Fchecked := False;
+  FField_checked := nil;
+  FDirty_checked := False;
+  FEvent_resumeTime := AEvent_resumeTime;
+  FEvent_pauseTime := AEvent_pauseTime;
+  FField_fraction := AField_fraction;
+  if AField_fraction <> nil then Ffraction := AField_fraction.Value;
+  FField_diffuseColor := AField_diffuseColor;
+  if AField_diffuseColor <> nil then FdiffuseColor := AField_diffuseColor.Value;
+  FField_checked := AField_checked;
+  if AField_checked <> nil then Fchecked := AField_checked.Value;
+end;
+
+destructor TScript3166Script.Destroy;
+begin
+  FreeAndNil(FBack_resumeTime);
+  FreeAndNil(FBack_pauseTime);
+  inherited Destroy;
+end;
+
+procedure TScript3166Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_resumeTime then
+  begin
+    FDirty_resumeTime := False;
+    if FEvent_resumeTime <> nil then
+    begin
+      FBack_resumeTime.Value := FresumeTime;
+      FEvent_resumeTime.Send(FBack_resumeTime, Time);
+    end;
+  end;
+  if FDirty_pauseTime then
+  begin
+    FDirty_pauseTime := False;
+    if FEvent_pauseTime <> nil then
+    begin
+      FBack_pauseTime.Value := FpauseTime;
+      FEvent_pauseTime.Send(FBack_pauseTime, Time);
+    end;
+  end;
+  if FDirty_fraction then
+  begin
+    FDirty_fraction := False;
+    if FField_fraction <> nil then
+      FField_fraction.Send(Ffraction, Time);
+  end;
+  if FDirty_diffuseColor then
+  begin
+    FDirty_diffuseColor := False;
+    if FField_diffuseColor <> nil then
+      FField_diffuseColor.Send(FdiffuseColor, Time);
+  end;
+  if FDirty_checked then
+  begin
+    FDirty_checked := False;
+    if FField_checked <> nil then
+      FField_checked.Send(Fchecked, Time);
+  end;
+end;
+
+procedure TScript3166Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script3166_inTime', {$ifdef FPC}@{$endif}InTime);
+end;
+
+procedure TScript3166Script.InTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  if (Value as TSFTime).Value then
+  begin
+    Fchecked := not (Fchecked); FDirty_checked := True;
+  end;
+  if Fchecked then
+  begin
+    FdiffuseColor.Y := 1; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 0; FDirty_diffuseColor := True;
+    FresumeTime := (Value as TSFTime).Value + 1; FDirty_resumeTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end
+  else
+  begin
+    FdiffuseColor.Y := 0; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 1; FDirty_diffuseColor := True;
+    FpauseTime := (Value as TSFTime).Value + 1; FDirty_pauseTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end;
+  FlushOutputs(Time);
+end;
+
+constructor TScript3193Script.Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+begin
+  inherited Create;
+  FresumeTime := 0.0;
+  FEvent_resumeTime := nil;
+  FBack_resumeTime := TSFTime.Create(nil, False, 'resumeTime', 0.0);
+  FDirty_resumeTime := False;
+  FpauseTime := 0.0;
+  FEvent_pauseTime := nil;
+  FBack_pauseTime := TSFTime.Create(nil, False, 'pauseTime', 0.0);
+  FDirty_pauseTime := False;
+  Ffraction := 0.0;
+  FField_fraction := nil;
+  FDirty_fraction := False;
+  FdiffuseColor := Vector3(0, 0, 0);
+  FField_diffuseColor := nil;
+  FDirty_diffuseColor := False;
+  Fchecked := False;
+  FField_checked := nil;
+  FDirty_checked := False;
+  FEvent_resumeTime := AEvent_resumeTime;
+  FEvent_pauseTime := AEvent_pauseTime;
+  FField_fraction := AField_fraction;
+  if AField_fraction <> nil then Ffraction := AField_fraction.Value;
+  FField_diffuseColor := AField_diffuseColor;
+  if AField_diffuseColor <> nil then FdiffuseColor := AField_diffuseColor.Value;
+  FField_checked := AField_checked;
+  if AField_checked <> nil then Fchecked := AField_checked.Value;
+end;
+
+destructor TScript3193Script.Destroy;
+begin
+  FreeAndNil(FBack_resumeTime);
+  FreeAndNil(FBack_pauseTime);
+  inherited Destroy;
+end;
+
+procedure TScript3193Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_resumeTime then
+  begin
+    FDirty_resumeTime := False;
+    if FEvent_resumeTime <> nil then
+    begin
+      FBack_resumeTime.Value := FresumeTime;
+      FEvent_resumeTime.Send(FBack_resumeTime, Time);
+    end;
+  end;
+  if FDirty_pauseTime then
+  begin
+    FDirty_pauseTime := False;
+    if FEvent_pauseTime <> nil then
+    begin
+      FBack_pauseTime.Value := FpauseTime;
+      FEvent_pauseTime.Send(FBack_pauseTime, Time);
+    end;
+  end;
+  if FDirty_fraction then
+  begin
+    FDirty_fraction := False;
+    if FField_fraction <> nil then
+      FField_fraction.Send(Ffraction, Time);
+  end;
+  if FDirty_diffuseColor then
+  begin
+    FDirty_diffuseColor := False;
+    if FField_diffuseColor <> nil then
+      FField_diffuseColor.Send(FdiffuseColor, Time);
+  end;
+  if FDirty_checked then
+  begin
+    FDirty_checked := False;
+    if FField_checked <> nil then
+      FField_checked.Send(Fchecked, Time);
+  end;
+end;
+
+procedure TScript3193Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script3193_inTime', {$ifdef FPC}@{$endif}InTime);
+end;
+
+procedure TScript3193Script.InTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  if (Value as TSFTime).Value then
+  begin
+    Fchecked := not (Fchecked); FDirty_checked := True;
+  end;
+  if Fchecked then
+  begin
+    FdiffuseColor.Y := 1; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 0; FDirty_diffuseColor := True;
+    FresumeTime := (Value as TSFTime).Value + 1; FDirty_resumeTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end
+  else
+  begin
+    FdiffuseColor.Y := 0; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 1; FDirty_diffuseColor := True;
+    FpauseTime := (Value as TSFTime).Value + 1; FDirty_pauseTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end;
+  FlushOutputs(Time);
+end;
+
+constructor TScript3220Script.Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+begin
+  inherited Create;
+  FresumeTime := 0.0;
+  FEvent_resumeTime := nil;
+  FBack_resumeTime := TSFTime.Create(nil, False, 'resumeTime', 0.0);
+  FDirty_resumeTime := False;
+  FpauseTime := 0.0;
+  FEvent_pauseTime := nil;
+  FBack_pauseTime := TSFTime.Create(nil, False, 'pauseTime', 0.0);
+  FDirty_pauseTime := False;
+  Ffraction := 0.0;
+  FField_fraction := nil;
+  FDirty_fraction := False;
+  FdiffuseColor := Vector3(0, 0, 0);
+  FField_diffuseColor := nil;
+  FDirty_diffuseColor := False;
+  Fchecked := False;
+  FField_checked := nil;
+  FDirty_checked := False;
+  FEvent_resumeTime := AEvent_resumeTime;
+  FEvent_pauseTime := AEvent_pauseTime;
+  FField_fraction := AField_fraction;
+  if AField_fraction <> nil then Ffraction := AField_fraction.Value;
+  FField_diffuseColor := AField_diffuseColor;
+  if AField_diffuseColor <> nil then FdiffuseColor := AField_diffuseColor.Value;
+  FField_checked := AField_checked;
+  if AField_checked <> nil then Fchecked := AField_checked.Value;
+end;
+
+destructor TScript3220Script.Destroy;
+begin
+  FreeAndNil(FBack_resumeTime);
+  FreeAndNil(FBack_pauseTime);
+  inherited Destroy;
+end;
+
+procedure TScript3220Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_resumeTime then
+  begin
+    FDirty_resumeTime := False;
+    if FEvent_resumeTime <> nil then
+    begin
+      FBack_resumeTime.Value := FresumeTime;
+      FEvent_resumeTime.Send(FBack_resumeTime, Time);
+    end;
+  end;
+  if FDirty_pauseTime then
+  begin
+    FDirty_pauseTime := False;
+    if FEvent_pauseTime <> nil then
+    begin
+      FBack_pauseTime.Value := FpauseTime;
+      FEvent_pauseTime.Send(FBack_pauseTime, Time);
+    end;
+  end;
+  if FDirty_fraction then
+  begin
+    FDirty_fraction := False;
+    if FField_fraction <> nil then
+      FField_fraction.Send(Ffraction, Time);
+  end;
+  if FDirty_diffuseColor then
+  begin
+    FDirty_diffuseColor := False;
+    if FField_diffuseColor <> nil then
+      FField_diffuseColor.Send(FdiffuseColor, Time);
+  end;
+  if FDirty_checked then
+  begin
+    FDirty_checked := False;
+    if FField_checked <> nil then
+      FField_checked.Send(Fchecked, Time);
+  end;
+end;
+
+procedure TScript3220Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script3220_inTime', {$ifdef FPC}@{$endif}InTime);
+end;
+
+procedure TScript3220Script.InTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  if (Value as TSFTime).Value then
+  begin
+    Fchecked := not (Fchecked); FDirty_checked := True;
+  end;
+  if Fchecked then
+  begin
+    FdiffuseColor.Y := 1; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 0; FDirty_diffuseColor := True;
+    FresumeTime := (Value as TSFTime).Value + 1; FDirty_resumeTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end
+  else
+  begin
+    FdiffuseColor.Y := 0; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 1; FDirty_diffuseColor := True;
+    FpauseTime := (Value as TSFTime).Value + 1; FDirty_pauseTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end;
+  FlushOutputs(Time);
+end;
+
+constructor TScript3247Script.Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+begin
+  inherited Create;
+  FresumeTime := 0.0;
+  FEvent_resumeTime := nil;
+  FBack_resumeTime := TSFTime.Create(nil, False, 'resumeTime', 0.0);
+  FDirty_resumeTime := False;
+  FpauseTime := 0.0;
+  FEvent_pauseTime := nil;
+  FBack_pauseTime := TSFTime.Create(nil, False, 'pauseTime', 0.0);
+  FDirty_pauseTime := False;
+  Ffraction := 0.0;
+  FField_fraction := nil;
+  FDirty_fraction := False;
+  FdiffuseColor := Vector3(0, 0, 0);
+  FField_diffuseColor := nil;
+  FDirty_diffuseColor := False;
+  Fchecked := False;
+  FField_checked := nil;
+  FDirty_checked := False;
+  FEvent_resumeTime := AEvent_resumeTime;
+  FEvent_pauseTime := AEvent_pauseTime;
+  FField_fraction := AField_fraction;
+  if AField_fraction <> nil then Ffraction := AField_fraction.Value;
+  FField_diffuseColor := AField_diffuseColor;
+  if AField_diffuseColor <> nil then FdiffuseColor := AField_diffuseColor.Value;
+  FField_checked := AField_checked;
+  if AField_checked <> nil then Fchecked := AField_checked.Value;
+end;
+
+destructor TScript3247Script.Destroy;
+begin
+  FreeAndNil(FBack_resumeTime);
+  FreeAndNil(FBack_pauseTime);
+  inherited Destroy;
+end;
+
+procedure TScript3247Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_resumeTime then
+  begin
+    FDirty_resumeTime := False;
+    if FEvent_resumeTime <> nil then
+    begin
+      FBack_resumeTime.Value := FresumeTime;
+      FEvent_resumeTime.Send(FBack_resumeTime, Time);
+    end;
+  end;
+  if FDirty_pauseTime then
+  begin
+    FDirty_pauseTime := False;
+    if FEvent_pauseTime <> nil then
+    begin
+      FBack_pauseTime.Value := FpauseTime;
+      FEvent_pauseTime.Send(FBack_pauseTime, Time);
+    end;
+  end;
+  if FDirty_fraction then
+  begin
+    FDirty_fraction := False;
+    if FField_fraction <> nil then
+      FField_fraction.Send(Ffraction, Time);
+  end;
+  if FDirty_diffuseColor then
+  begin
+    FDirty_diffuseColor := False;
+    if FField_diffuseColor <> nil then
+      FField_diffuseColor.Send(FdiffuseColor, Time);
+  end;
+  if FDirty_checked then
+  begin
+    FDirty_checked := False;
+    if FField_checked <> nil then
+      FField_checked.Send(Fchecked, Time);
+  end;
+end;
+
+procedure TScript3247Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script3247_inTime', {$ifdef FPC}@{$endif}InTime);
+end;
+
+procedure TScript3247Script.InTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  if (Value as TSFTime).Value then
+  begin
+    Fchecked := not (Fchecked); FDirty_checked := True;
+  end;
+  if Fchecked then
+  begin
+    FdiffuseColor.Y := 1; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 0; FDirty_diffuseColor := True;
+    FresumeTime := (Value as TSFTime).Value + 1; FDirty_resumeTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end
+  else
+  begin
+    FdiffuseColor.Y := 0; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 1; FDirty_diffuseColor := True;
+    FpauseTime := (Value as TSFTime).Value + 1; FDirty_pauseTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end;
+  FlushOutputs(Time);
+end;
+
+constructor TScript3274Script.Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+begin
+  inherited Create;
+  FresumeTime := 0.0;
+  FEvent_resumeTime := nil;
+  FBack_resumeTime := TSFTime.Create(nil, False, 'resumeTime', 0.0);
+  FDirty_resumeTime := False;
+  FpauseTime := 0.0;
+  FEvent_pauseTime := nil;
+  FBack_pauseTime := TSFTime.Create(nil, False, 'pauseTime', 0.0);
+  FDirty_pauseTime := False;
+  Ffraction := 0.0;
+  FField_fraction := nil;
+  FDirty_fraction := False;
+  FdiffuseColor := Vector3(0, 0, 0);
+  FField_diffuseColor := nil;
+  FDirty_diffuseColor := False;
+  Fchecked := False;
+  FField_checked := nil;
+  FDirty_checked := False;
+  FEvent_resumeTime := AEvent_resumeTime;
+  FEvent_pauseTime := AEvent_pauseTime;
+  FField_fraction := AField_fraction;
+  if AField_fraction <> nil then Ffraction := AField_fraction.Value;
+  FField_diffuseColor := AField_diffuseColor;
+  if AField_diffuseColor <> nil then FdiffuseColor := AField_diffuseColor.Value;
+  FField_checked := AField_checked;
+  if AField_checked <> nil then Fchecked := AField_checked.Value;
+end;
+
+destructor TScript3274Script.Destroy;
+begin
+  FreeAndNil(FBack_resumeTime);
+  FreeAndNil(FBack_pauseTime);
+  inherited Destroy;
+end;
+
+procedure TScript3274Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_resumeTime then
+  begin
+    FDirty_resumeTime := False;
+    if FEvent_resumeTime <> nil then
+    begin
+      FBack_resumeTime.Value := FresumeTime;
+      FEvent_resumeTime.Send(FBack_resumeTime, Time);
+    end;
+  end;
+  if FDirty_pauseTime then
+  begin
+    FDirty_pauseTime := False;
+    if FEvent_pauseTime <> nil then
+    begin
+      FBack_pauseTime.Value := FpauseTime;
+      FEvent_pauseTime.Send(FBack_pauseTime, Time);
+    end;
+  end;
+  if FDirty_fraction then
+  begin
+    FDirty_fraction := False;
+    if FField_fraction <> nil then
+      FField_fraction.Send(Ffraction, Time);
+  end;
+  if FDirty_diffuseColor then
+  begin
+    FDirty_diffuseColor := False;
+    if FField_diffuseColor <> nil then
+      FField_diffuseColor.Send(FdiffuseColor, Time);
+  end;
+  if FDirty_checked then
+  begin
+    FDirty_checked := False;
+    if FField_checked <> nil then
+      FField_checked.Send(Fchecked, Time);
+  end;
+end;
+
+procedure TScript3274Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script3274_inTime', {$ifdef FPC}@{$endif}InTime);
+end;
+
+procedure TScript3274Script.InTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  if (Value as TSFTime).Value then
+  begin
+    Fchecked := not (Fchecked); FDirty_checked := True;
+  end;
+  if Fchecked then
+  begin
+    FdiffuseColor.Y := 1; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 0; FDirty_diffuseColor := True;
+    FresumeTime := (Value as TSFTime).Value + 1; FDirty_resumeTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end
+  else
+  begin
+    FdiffuseColor.Y := 0; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 1; FDirty_diffuseColor := True;
+    FpauseTime := (Value as TSFTime).Value + 1; FDirty_pauseTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end;
+  FlushOutputs(Time);
+end;
+
+constructor TScript3301Script.Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+begin
+  inherited Create;
+  FresumeTime := 0.0;
+  FEvent_resumeTime := nil;
+  FBack_resumeTime := TSFTime.Create(nil, False, 'resumeTime', 0.0);
+  FDirty_resumeTime := False;
+  FpauseTime := 0.0;
+  FEvent_pauseTime := nil;
+  FBack_pauseTime := TSFTime.Create(nil, False, 'pauseTime', 0.0);
+  FDirty_pauseTime := False;
+  Ffraction := 0.0;
+  FField_fraction := nil;
+  FDirty_fraction := False;
+  FdiffuseColor := Vector3(0, 0, 0);
+  FField_diffuseColor := nil;
+  FDirty_diffuseColor := False;
+  Fchecked := False;
+  FField_checked := nil;
+  FDirty_checked := False;
+  FEvent_resumeTime := AEvent_resumeTime;
+  FEvent_pauseTime := AEvent_pauseTime;
+  FField_fraction := AField_fraction;
+  if AField_fraction <> nil then Ffraction := AField_fraction.Value;
+  FField_diffuseColor := AField_diffuseColor;
+  if AField_diffuseColor <> nil then FdiffuseColor := AField_diffuseColor.Value;
+  FField_checked := AField_checked;
+  if AField_checked <> nil then Fchecked := AField_checked.Value;
+end;
+
+destructor TScript3301Script.Destroy;
+begin
+  FreeAndNil(FBack_resumeTime);
+  FreeAndNil(FBack_pauseTime);
+  inherited Destroy;
+end;
+
+procedure TScript3301Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_resumeTime then
+  begin
+    FDirty_resumeTime := False;
+    if FEvent_resumeTime <> nil then
+    begin
+      FBack_resumeTime.Value := FresumeTime;
+      FEvent_resumeTime.Send(FBack_resumeTime, Time);
+    end;
+  end;
+  if FDirty_pauseTime then
+  begin
+    FDirty_pauseTime := False;
+    if FEvent_pauseTime <> nil then
+    begin
+      FBack_pauseTime.Value := FpauseTime;
+      FEvent_pauseTime.Send(FBack_pauseTime, Time);
+    end;
+  end;
+  if FDirty_fraction then
+  begin
+    FDirty_fraction := False;
+    if FField_fraction <> nil then
+      FField_fraction.Send(Ffraction, Time);
+  end;
+  if FDirty_diffuseColor then
+  begin
+    FDirty_diffuseColor := False;
+    if FField_diffuseColor <> nil then
+      FField_diffuseColor.Send(FdiffuseColor, Time);
+  end;
+  if FDirty_checked then
+  begin
+    FDirty_checked := False;
+    if FField_checked <> nil then
+      FField_checked.Send(Fchecked, Time);
+  end;
+end;
+
+procedure TScript3301Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script3301_inTime', {$ifdef FPC}@{$endif}InTime);
+end;
+
+procedure TScript3301Script.InTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  if (Value as TSFTime).Value then
+  begin
+    Fchecked := not (Fchecked); FDirty_checked := True;
+  end;
+  if Fchecked then
+  begin
+    FdiffuseColor.Y := 1; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 0; FDirty_diffuseColor := True;
+    FresumeTime := (Value as TSFTime).Value + 1; FDirty_resumeTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end
+  else
+  begin
+    FdiffuseColor.Y := 0; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 1; FDirty_diffuseColor := True;
+    FpauseTime := (Value as TSFTime).Value + 1; FDirty_pauseTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end;
+  FlushOutputs(Time);
+end;
+
+constructor TScript3328Script.Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+begin
+  inherited Create;
+  FresumeTime := 0.0;
+  FEvent_resumeTime := nil;
+  FBack_resumeTime := TSFTime.Create(nil, False, 'resumeTime', 0.0);
+  FDirty_resumeTime := False;
+  FpauseTime := 0.0;
+  FEvent_pauseTime := nil;
+  FBack_pauseTime := TSFTime.Create(nil, False, 'pauseTime', 0.0);
+  FDirty_pauseTime := False;
+  Ffraction := 0.0;
+  FField_fraction := nil;
+  FDirty_fraction := False;
+  FdiffuseColor := Vector3(0, 0, 0);
+  FField_diffuseColor := nil;
+  FDirty_diffuseColor := False;
+  Fchecked := False;
+  FField_checked := nil;
+  FDirty_checked := False;
+  FEvent_resumeTime := AEvent_resumeTime;
+  FEvent_pauseTime := AEvent_pauseTime;
+  FField_fraction := AField_fraction;
+  if AField_fraction <> nil then Ffraction := AField_fraction.Value;
+  FField_diffuseColor := AField_diffuseColor;
+  if AField_diffuseColor <> nil then FdiffuseColor := AField_diffuseColor.Value;
+  FField_checked := AField_checked;
+  if AField_checked <> nil then Fchecked := AField_checked.Value;
+end;
+
+destructor TScript3328Script.Destroy;
+begin
+  FreeAndNil(FBack_resumeTime);
+  FreeAndNil(FBack_pauseTime);
+  inherited Destroy;
+end;
+
+procedure TScript3328Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_resumeTime then
+  begin
+    FDirty_resumeTime := False;
+    if FEvent_resumeTime <> nil then
+    begin
+      FBack_resumeTime.Value := FresumeTime;
+      FEvent_resumeTime.Send(FBack_resumeTime, Time);
+    end;
+  end;
+  if FDirty_pauseTime then
+  begin
+    FDirty_pauseTime := False;
+    if FEvent_pauseTime <> nil then
+    begin
+      FBack_pauseTime.Value := FpauseTime;
+      FEvent_pauseTime.Send(FBack_pauseTime, Time);
+    end;
+  end;
+  if FDirty_fraction then
+  begin
+    FDirty_fraction := False;
+    if FField_fraction <> nil then
+      FField_fraction.Send(Ffraction, Time);
+  end;
+  if FDirty_diffuseColor then
+  begin
+    FDirty_diffuseColor := False;
+    if FField_diffuseColor <> nil then
+      FField_diffuseColor.Send(FdiffuseColor, Time);
+  end;
+  if FDirty_checked then
+  begin
+    FDirty_checked := False;
+    if FField_checked <> nil then
+      FField_checked.Send(Fchecked, Time);
+  end;
+end;
+
+procedure TScript3328Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script3328_inTime', {$ifdef FPC}@{$endif}InTime);
+end;
+
+procedure TScript3328Script.InTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  if (Value as TSFTime).Value then
+  begin
+    Fchecked := not (Fchecked); FDirty_checked := True;
+  end;
+  if Fchecked then
+  begin
+    FdiffuseColor.Y := 1; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 0; FDirty_diffuseColor := True;
+    FresumeTime := (Value as TSFTime).Value + 1; FDirty_resumeTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end
+  else
+  begin
+    FdiffuseColor.Y := 0; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 1; FDirty_diffuseColor := True;
+    FpauseTime := (Value as TSFTime).Value + 1; FDirty_pauseTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end;
+  FlushOutputs(Time);
+end;
+
+constructor TScript3355Script.Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+begin
+  inherited Create;
+  FresumeTime := 0.0;
+  FEvent_resumeTime := nil;
+  FBack_resumeTime := TSFTime.Create(nil, False, 'resumeTime', 0.0);
+  FDirty_resumeTime := False;
+  FpauseTime := 0.0;
+  FEvent_pauseTime := nil;
+  FBack_pauseTime := TSFTime.Create(nil, False, 'pauseTime', 0.0);
+  FDirty_pauseTime := False;
+  Ffraction := 0.0;
+  FField_fraction := nil;
+  FDirty_fraction := False;
+  FdiffuseColor := Vector3(0, 0, 0);
+  FField_diffuseColor := nil;
+  FDirty_diffuseColor := False;
+  Fchecked := False;
+  FField_checked := nil;
+  FDirty_checked := False;
+  FEvent_resumeTime := AEvent_resumeTime;
+  FEvent_pauseTime := AEvent_pauseTime;
+  FField_fraction := AField_fraction;
+  if AField_fraction <> nil then Ffraction := AField_fraction.Value;
+  FField_diffuseColor := AField_diffuseColor;
+  if AField_diffuseColor <> nil then FdiffuseColor := AField_diffuseColor.Value;
+  FField_checked := AField_checked;
+  if AField_checked <> nil then Fchecked := AField_checked.Value;
+end;
+
+destructor TScript3355Script.Destroy;
+begin
+  FreeAndNil(FBack_resumeTime);
+  FreeAndNil(FBack_pauseTime);
+  inherited Destroy;
+end;
+
+procedure TScript3355Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_resumeTime then
+  begin
+    FDirty_resumeTime := False;
+    if FEvent_resumeTime <> nil then
+    begin
+      FBack_resumeTime.Value := FresumeTime;
+      FEvent_resumeTime.Send(FBack_resumeTime, Time);
+    end;
+  end;
+  if FDirty_pauseTime then
+  begin
+    FDirty_pauseTime := False;
+    if FEvent_pauseTime <> nil then
+    begin
+      FBack_pauseTime.Value := FpauseTime;
+      FEvent_pauseTime.Send(FBack_pauseTime, Time);
+    end;
+  end;
+  if FDirty_fraction then
+  begin
+    FDirty_fraction := False;
+    if FField_fraction <> nil then
+      FField_fraction.Send(Ffraction, Time);
+  end;
+  if FDirty_diffuseColor then
+  begin
+    FDirty_diffuseColor := False;
+    if FField_diffuseColor <> nil then
+      FField_diffuseColor.Send(FdiffuseColor, Time);
+  end;
+  if FDirty_checked then
+  begin
+    FDirty_checked := False;
+    if FField_checked <> nil then
+      FField_checked.Send(Fchecked, Time);
+  end;
+end;
+
+procedure TScript3355Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script3355_inTime', {$ifdef FPC}@{$endif}InTime);
+end;
+
+procedure TScript3355Script.InTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  if (Value as TSFTime).Value then
+  begin
+    Fchecked := not (Fchecked); FDirty_checked := True;
+  end;
+  if Fchecked then
+  begin
+    FdiffuseColor.Y := 1; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 0; FDirty_diffuseColor := True;
+    FresumeTime := (Value as TSFTime).Value + 1; FDirty_resumeTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end
+  else
+  begin
+    FdiffuseColor.Y := 0; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 1; FDirty_diffuseColor := True;
+    FpauseTime := (Value as TSFTime).Value + 1; FDirty_pauseTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end;
+  FlushOutputs(Time);
+end;
+
+constructor TScript3382Script.Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+begin
+  inherited Create;
+  FresumeTime := 0.0;
+  FEvent_resumeTime := nil;
+  FBack_resumeTime := TSFTime.Create(nil, False, 'resumeTime', 0.0);
+  FDirty_resumeTime := False;
+  FpauseTime := 0.0;
+  FEvent_pauseTime := nil;
+  FBack_pauseTime := TSFTime.Create(nil, False, 'pauseTime', 0.0);
+  FDirty_pauseTime := False;
+  Ffraction := 0.0;
+  FField_fraction := nil;
+  FDirty_fraction := False;
+  FdiffuseColor := Vector3(0, 0, 0);
+  FField_diffuseColor := nil;
+  FDirty_diffuseColor := False;
+  Fchecked := False;
+  FField_checked := nil;
+  FDirty_checked := False;
+  FEvent_resumeTime := AEvent_resumeTime;
+  FEvent_pauseTime := AEvent_pauseTime;
+  FField_fraction := AField_fraction;
+  if AField_fraction <> nil then Ffraction := AField_fraction.Value;
+  FField_diffuseColor := AField_diffuseColor;
+  if AField_diffuseColor <> nil then FdiffuseColor := AField_diffuseColor.Value;
+  FField_checked := AField_checked;
+  if AField_checked <> nil then Fchecked := AField_checked.Value;
+end;
+
+destructor TScript3382Script.Destroy;
+begin
+  FreeAndNil(FBack_resumeTime);
+  FreeAndNil(FBack_pauseTime);
+  inherited Destroy;
+end;
+
+procedure TScript3382Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_resumeTime then
+  begin
+    FDirty_resumeTime := False;
+    if FEvent_resumeTime <> nil then
+    begin
+      FBack_resumeTime.Value := FresumeTime;
+      FEvent_resumeTime.Send(FBack_resumeTime, Time);
+    end;
+  end;
+  if FDirty_pauseTime then
+  begin
+    FDirty_pauseTime := False;
+    if FEvent_pauseTime <> nil then
+    begin
+      FBack_pauseTime.Value := FpauseTime;
+      FEvent_pauseTime.Send(FBack_pauseTime, Time);
+    end;
+  end;
+  if FDirty_fraction then
+  begin
+    FDirty_fraction := False;
+    if FField_fraction <> nil then
+      FField_fraction.Send(Ffraction, Time);
+  end;
+  if FDirty_diffuseColor then
+  begin
+    FDirty_diffuseColor := False;
+    if FField_diffuseColor <> nil then
+      FField_diffuseColor.Send(FdiffuseColor, Time);
+  end;
+  if FDirty_checked then
+  begin
+    FDirty_checked := False;
+    if FField_checked <> nil then
+      FField_checked.Send(Fchecked, Time);
+  end;
+end;
+
+procedure TScript3382Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script3382_inTime', {$ifdef FPC}@{$endif}InTime);
+end;
+
+procedure TScript3382Script.InTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  if (Value as TSFTime).Value then
+  begin
+    Fchecked := not (Fchecked); FDirty_checked := True;
+  end;
+  if Fchecked then
+  begin
+    FdiffuseColor.Y := 1; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 0; FDirty_diffuseColor := True;
+    FresumeTime := (Value as TSFTime).Value + 1; FDirty_resumeTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end
+  else
+  begin
+    FdiffuseColor.Y := 0; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 1; FDirty_diffuseColor := True;
+    FpauseTime := (Value as TSFTime).Value + 1; FDirty_pauseTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end;
+  FlushOutputs(Time);
+end;
+
+constructor TScript3409Script.Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+begin
+  inherited Create;
+  FresumeTime := 0.0;
+  FEvent_resumeTime := nil;
+  FBack_resumeTime := TSFTime.Create(nil, False, 'resumeTime', 0.0);
+  FDirty_resumeTime := False;
+  FpauseTime := 0.0;
+  FEvent_pauseTime := nil;
+  FBack_pauseTime := TSFTime.Create(nil, False, 'pauseTime', 0.0);
+  FDirty_pauseTime := False;
+  Ffraction := 0.0;
+  FField_fraction := nil;
+  FDirty_fraction := False;
+  FdiffuseColor := Vector3(0, 0, 0);
+  FField_diffuseColor := nil;
+  FDirty_diffuseColor := False;
+  Fchecked := False;
+  FField_checked := nil;
+  FDirty_checked := False;
+  FEvent_resumeTime := AEvent_resumeTime;
+  FEvent_pauseTime := AEvent_pauseTime;
+  FField_fraction := AField_fraction;
+  if AField_fraction <> nil then Ffraction := AField_fraction.Value;
+  FField_diffuseColor := AField_diffuseColor;
+  if AField_diffuseColor <> nil then FdiffuseColor := AField_diffuseColor.Value;
+  FField_checked := AField_checked;
+  if AField_checked <> nil then Fchecked := AField_checked.Value;
+end;
+
+destructor TScript3409Script.Destroy;
+begin
+  FreeAndNil(FBack_resumeTime);
+  FreeAndNil(FBack_pauseTime);
+  inherited Destroy;
+end;
+
+procedure TScript3409Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_resumeTime then
+  begin
+    FDirty_resumeTime := False;
+    if FEvent_resumeTime <> nil then
+    begin
+      FBack_resumeTime.Value := FresumeTime;
+      FEvent_resumeTime.Send(FBack_resumeTime, Time);
+    end;
+  end;
+  if FDirty_pauseTime then
+  begin
+    FDirty_pauseTime := False;
+    if FEvent_pauseTime <> nil then
+    begin
+      FBack_pauseTime.Value := FpauseTime;
+      FEvent_pauseTime.Send(FBack_pauseTime, Time);
+    end;
+  end;
+  if FDirty_fraction then
+  begin
+    FDirty_fraction := False;
+    if FField_fraction <> nil then
+      FField_fraction.Send(Ffraction, Time);
+  end;
+  if FDirty_diffuseColor then
+  begin
+    FDirty_diffuseColor := False;
+    if FField_diffuseColor <> nil then
+      FField_diffuseColor.Send(FdiffuseColor, Time);
+  end;
+  if FDirty_checked then
+  begin
+    FDirty_checked := False;
+    if FField_checked <> nil then
+      FField_checked.Send(Fchecked, Time);
+  end;
+end;
+
+procedure TScript3409Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script3409_inTime', {$ifdef FPC}@{$endif}InTime);
+end;
+
+procedure TScript3409Script.InTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  if (Value as TSFTime).Value then
+  begin
+    Fchecked := not (Fchecked); FDirty_checked := True;
+  end;
+  if Fchecked then
+  begin
+    FdiffuseColor.Y := 1; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 0; FDirty_diffuseColor := True;
+    FresumeTime := (Value as TSFTime).Value + 1; FDirty_resumeTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end
+  else
+  begin
+    FdiffuseColor.Y := 0; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 1; FDirty_diffuseColor := True;
+    FpauseTime := (Value as TSFTime).Value + 1; FDirty_pauseTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end;
+  FlushOutputs(Time);
+end;
+
+constructor TScript3436Script.Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+begin
+  inherited Create;
+  FresumeTime := 0.0;
+  FEvent_resumeTime := nil;
+  FBack_resumeTime := TSFTime.Create(nil, False, 'resumeTime', 0.0);
+  FDirty_resumeTime := False;
+  FpauseTime := 0.0;
+  FEvent_pauseTime := nil;
+  FBack_pauseTime := TSFTime.Create(nil, False, 'pauseTime', 0.0);
+  FDirty_pauseTime := False;
+  Ffraction := 0.0;
+  FField_fraction := nil;
+  FDirty_fraction := False;
+  FdiffuseColor := Vector3(0, 0, 0);
+  FField_diffuseColor := nil;
+  FDirty_diffuseColor := False;
+  Fchecked := False;
+  FField_checked := nil;
+  FDirty_checked := False;
+  FEvent_resumeTime := AEvent_resumeTime;
+  FEvent_pauseTime := AEvent_pauseTime;
+  FField_fraction := AField_fraction;
+  if AField_fraction <> nil then Ffraction := AField_fraction.Value;
+  FField_diffuseColor := AField_diffuseColor;
+  if AField_diffuseColor <> nil then FdiffuseColor := AField_diffuseColor.Value;
+  FField_checked := AField_checked;
+  if AField_checked <> nil then Fchecked := AField_checked.Value;
+end;
+
+destructor TScript3436Script.Destroy;
+begin
+  FreeAndNil(FBack_resumeTime);
+  FreeAndNil(FBack_pauseTime);
+  inherited Destroy;
+end;
+
+procedure TScript3436Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_resumeTime then
+  begin
+    FDirty_resumeTime := False;
+    if FEvent_resumeTime <> nil then
+    begin
+      FBack_resumeTime.Value := FresumeTime;
+      FEvent_resumeTime.Send(FBack_resumeTime, Time);
+    end;
+  end;
+  if FDirty_pauseTime then
+  begin
+    FDirty_pauseTime := False;
+    if FEvent_pauseTime <> nil then
+    begin
+      FBack_pauseTime.Value := FpauseTime;
+      FEvent_pauseTime.Send(FBack_pauseTime, Time);
+    end;
+  end;
+  if FDirty_fraction then
+  begin
+    FDirty_fraction := False;
+    if FField_fraction <> nil then
+      FField_fraction.Send(Ffraction, Time);
+  end;
+  if FDirty_diffuseColor then
+  begin
+    FDirty_diffuseColor := False;
+    if FField_diffuseColor <> nil then
+      FField_diffuseColor.Send(FdiffuseColor, Time);
+  end;
+  if FDirty_checked then
+  begin
+    FDirty_checked := False;
+    if FField_checked <> nil then
+      FField_checked.Send(Fchecked, Time);
+  end;
+end;
+
+procedure TScript3436Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script3436_inTime', {$ifdef FPC}@{$endif}InTime);
+end;
+
+procedure TScript3436Script.InTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  if (Value as TSFTime).Value then
+  begin
+    Fchecked := not (Fchecked); FDirty_checked := True;
+  end;
+  if Fchecked then
+  begin
+    FdiffuseColor.Y := 1; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 0; FDirty_diffuseColor := True;
+    FresumeTime := (Value as TSFTime).Value + 1; FDirty_resumeTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end
+  else
+  begin
+    FdiffuseColor.Y := 0; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 1; FDirty_diffuseColor := True;
+    FpauseTime := (Value as TSFTime).Value + 1; FDirty_pauseTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end;
+  FlushOutputs(Time);
+end;
+
+constructor TScript3463Script.Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+begin
+  inherited Create;
+  FresumeTime := 0.0;
+  FEvent_resumeTime := nil;
+  FBack_resumeTime := TSFTime.Create(nil, False, 'resumeTime', 0.0);
+  FDirty_resumeTime := False;
+  FpauseTime := 0.0;
+  FEvent_pauseTime := nil;
+  FBack_pauseTime := TSFTime.Create(nil, False, 'pauseTime', 0.0);
+  FDirty_pauseTime := False;
+  Ffraction := 0.0;
+  FField_fraction := nil;
+  FDirty_fraction := False;
+  FdiffuseColor := Vector3(0, 0, 0);
+  FField_diffuseColor := nil;
+  FDirty_diffuseColor := False;
+  Fchecked := False;
+  FField_checked := nil;
+  FDirty_checked := False;
+  FEvent_resumeTime := AEvent_resumeTime;
+  FEvent_pauseTime := AEvent_pauseTime;
+  FField_fraction := AField_fraction;
+  if AField_fraction <> nil then Ffraction := AField_fraction.Value;
+  FField_diffuseColor := AField_diffuseColor;
+  if AField_diffuseColor <> nil then FdiffuseColor := AField_diffuseColor.Value;
+  FField_checked := AField_checked;
+  if AField_checked <> nil then Fchecked := AField_checked.Value;
+end;
+
+destructor TScript3463Script.Destroy;
+begin
+  FreeAndNil(FBack_resumeTime);
+  FreeAndNil(FBack_pauseTime);
+  inherited Destroy;
+end;
+
+procedure TScript3463Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_resumeTime then
+  begin
+    FDirty_resumeTime := False;
+    if FEvent_resumeTime <> nil then
+    begin
+      FBack_resumeTime.Value := FresumeTime;
+      FEvent_resumeTime.Send(FBack_resumeTime, Time);
+    end;
+  end;
+  if FDirty_pauseTime then
+  begin
+    FDirty_pauseTime := False;
+    if FEvent_pauseTime <> nil then
+    begin
+      FBack_pauseTime.Value := FpauseTime;
+      FEvent_pauseTime.Send(FBack_pauseTime, Time);
+    end;
+  end;
+  if FDirty_fraction then
+  begin
+    FDirty_fraction := False;
+    if FField_fraction <> nil then
+      FField_fraction.Send(Ffraction, Time);
+  end;
+  if FDirty_diffuseColor then
+  begin
+    FDirty_diffuseColor := False;
+    if FField_diffuseColor <> nil then
+      FField_diffuseColor.Send(FdiffuseColor, Time);
+  end;
+  if FDirty_checked then
+  begin
+    FDirty_checked := False;
+    if FField_checked <> nil then
+      FField_checked.Send(Fchecked, Time);
+  end;
+end;
+
+procedure TScript3463Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script3463_inTime', {$ifdef FPC}@{$endif}InTime);
+end;
+
+procedure TScript3463Script.InTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  if (Value as TSFTime).Value then
+  begin
+    Fchecked := not (Fchecked); FDirty_checked := True;
+  end;
+  if Fchecked then
+  begin
+    FdiffuseColor.Y := 1; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 0; FDirty_diffuseColor := True;
+    FresumeTime := (Value as TSFTime).Value + 1; FDirty_resumeTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end
+  else
+  begin
+    FdiffuseColor.Y := 0; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 1; FDirty_diffuseColor := True;
+    FpauseTime := (Value as TSFTime).Value + 1; FDirty_pauseTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end;
+  FlushOutputs(Time);
+end;
+
+constructor TScript3490Script.Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+begin
+  inherited Create;
+  FresumeTime := 0.0;
+  FEvent_resumeTime := nil;
+  FBack_resumeTime := TSFTime.Create(nil, False, 'resumeTime', 0.0);
+  FDirty_resumeTime := False;
+  FpauseTime := 0.0;
+  FEvent_pauseTime := nil;
+  FBack_pauseTime := TSFTime.Create(nil, False, 'pauseTime', 0.0);
+  FDirty_pauseTime := False;
+  Ffraction := 0.0;
+  FField_fraction := nil;
+  FDirty_fraction := False;
+  FdiffuseColor := Vector3(0, 0, 0);
+  FField_diffuseColor := nil;
+  FDirty_diffuseColor := False;
+  Fchecked := False;
+  FField_checked := nil;
+  FDirty_checked := False;
+  FEvent_resumeTime := AEvent_resumeTime;
+  FEvent_pauseTime := AEvent_pauseTime;
+  FField_fraction := AField_fraction;
+  if AField_fraction <> nil then Ffraction := AField_fraction.Value;
+  FField_diffuseColor := AField_diffuseColor;
+  if AField_diffuseColor <> nil then FdiffuseColor := AField_diffuseColor.Value;
+  FField_checked := AField_checked;
+  if AField_checked <> nil then Fchecked := AField_checked.Value;
+end;
+
+destructor TScript3490Script.Destroy;
+begin
+  FreeAndNil(FBack_resumeTime);
+  FreeAndNil(FBack_pauseTime);
+  inherited Destroy;
+end;
+
+procedure TScript3490Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_resumeTime then
+  begin
+    FDirty_resumeTime := False;
+    if FEvent_resumeTime <> nil then
+    begin
+      FBack_resumeTime.Value := FresumeTime;
+      FEvent_resumeTime.Send(FBack_resumeTime, Time);
+    end;
+  end;
+  if FDirty_pauseTime then
+  begin
+    FDirty_pauseTime := False;
+    if FEvent_pauseTime <> nil then
+    begin
+      FBack_pauseTime.Value := FpauseTime;
+      FEvent_pauseTime.Send(FBack_pauseTime, Time);
+    end;
+  end;
+  if FDirty_fraction then
+  begin
+    FDirty_fraction := False;
+    if FField_fraction <> nil then
+      FField_fraction.Send(Ffraction, Time);
+  end;
+  if FDirty_diffuseColor then
+  begin
+    FDirty_diffuseColor := False;
+    if FField_diffuseColor <> nil then
+      FField_diffuseColor.Send(FdiffuseColor, Time);
+  end;
+  if FDirty_checked then
+  begin
+    FDirty_checked := False;
+    if FField_checked <> nil then
+      FField_checked.Send(Fchecked, Time);
+  end;
+end;
+
+procedure TScript3490Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script3490_inTime', {$ifdef FPC}@{$endif}InTime);
+end;
+
+procedure TScript3490Script.InTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  if (Value as TSFTime).Value then
+  begin
+    Fchecked := not (Fchecked); FDirty_checked := True;
+  end;
+  if Fchecked then
+  begin
+    FdiffuseColor.Y := 1; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 0; FDirty_diffuseColor := True;
+    FresumeTime := (Value as TSFTime).Value + 1; FDirty_resumeTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end
+  else
+  begin
+    FdiffuseColor.Y := 0; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 1; FDirty_diffuseColor := True;
+    FpauseTime := (Value as TSFTime).Value + 1; FDirty_pauseTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end;
+  FlushOutputs(Time);
+end;
+
+constructor TScript3517Script.Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+begin
+  inherited Create;
+  FresumeTime := 0.0;
+  FEvent_resumeTime := nil;
+  FBack_resumeTime := TSFTime.Create(nil, False, 'resumeTime', 0.0);
+  FDirty_resumeTime := False;
+  FpauseTime := 0.0;
+  FEvent_pauseTime := nil;
+  FBack_pauseTime := TSFTime.Create(nil, False, 'pauseTime', 0.0);
+  FDirty_pauseTime := False;
+  Ffraction := 0.0;
+  FField_fraction := nil;
+  FDirty_fraction := False;
+  FdiffuseColor := Vector3(0, 0, 0);
+  FField_diffuseColor := nil;
+  FDirty_diffuseColor := False;
+  Fchecked := False;
+  FField_checked := nil;
+  FDirty_checked := False;
+  FEvent_resumeTime := AEvent_resumeTime;
+  FEvent_pauseTime := AEvent_pauseTime;
+  FField_fraction := AField_fraction;
+  if AField_fraction <> nil then Ffraction := AField_fraction.Value;
+  FField_diffuseColor := AField_diffuseColor;
+  if AField_diffuseColor <> nil then FdiffuseColor := AField_diffuseColor.Value;
+  FField_checked := AField_checked;
+  if AField_checked <> nil then Fchecked := AField_checked.Value;
+end;
+
+destructor TScript3517Script.Destroy;
+begin
+  FreeAndNil(FBack_resumeTime);
+  FreeAndNil(FBack_pauseTime);
+  inherited Destroy;
+end;
+
+procedure TScript3517Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_resumeTime then
+  begin
+    FDirty_resumeTime := False;
+    if FEvent_resumeTime <> nil then
+    begin
+      FBack_resumeTime.Value := FresumeTime;
+      FEvent_resumeTime.Send(FBack_resumeTime, Time);
+    end;
+  end;
+  if FDirty_pauseTime then
+  begin
+    FDirty_pauseTime := False;
+    if FEvent_pauseTime <> nil then
+    begin
+      FBack_pauseTime.Value := FpauseTime;
+      FEvent_pauseTime.Send(FBack_pauseTime, Time);
+    end;
+  end;
+  if FDirty_fraction then
+  begin
+    FDirty_fraction := False;
+    if FField_fraction <> nil then
+      FField_fraction.Send(Ffraction, Time);
+  end;
+  if FDirty_diffuseColor then
+  begin
+    FDirty_diffuseColor := False;
+    if FField_diffuseColor <> nil then
+      FField_diffuseColor.Send(FdiffuseColor, Time);
+  end;
+  if FDirty_checked then
+  begin
+    FDirty_checked := False;
+    if FField_checked <> nil then
+      FField_checked.Send(Fchecked, Time);
+  end;
+end;
+
+procedure TScript3517Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script3517_inTime', {$ifdef FPC}@{$endif}InTime);
+end;
+
+procedure TScript3517Script.InTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  if (Value as TSFTime).Value then
+  begin
+    Fchecked := not (Fchecked); FDirty_checked := True;
+  end;
+  if Fchecked then
+  begin
+    FdiffuseColor.Y := 1; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 0; FDirty_diffuseColor := True;
+    FresumeTime := (Value as TSFTime).Value + 1; FDirty_resumeTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end
+  else
+  begin
+    FdiffuseColor.Y := 0; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 1; FDirty_diffuseColor := True;
+    FpauseTime := (Value as TSFTime).Value + 1; FDirty_pauseTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end;
+  FlushOutputs(Time);
+end;
+
+constructor TScript3544Script.Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+begin
+  inherited Create;
+  FresumeTime := 0.0;
+  FEvent_resumeTime := nil;
+  FBack_resumeTime := TSFTime.Create(nil, False, 'resumeTime', 0.0);
+  FDirty_resumeTime := False;
+  FpauseTime := 0.0;
+  FEvent_pauseTime := nil;
+  FBack_pauseTime := TSFTime.Create(nil, False, 'pauseTime', 0.0);
+  FDirty_pauseTime := False;
+  Ffraction := 0.0;
+  FField_fraction := nil;
+  FDirty_fraction := False;
+  FdiffuseColor := Vector3(0, 0, 0);
+  FField_diffuseColor := nil;
+  FDirty_diffuseColor := False;
+  Fchecked := False;
+  FField_checked := nil;
+  FDirty_checked := False;
+  FEvent_resumeTime := AEvent_resumeTime;
+  FEvent_pauseTime := AEvent_pauseTime;
+  FField_fraction := AField_fraction;
+  if AField_fraction <> nil then Ffraction := AField_fraction.Value;
+  FField_diffuseColor := AField_diffuseColor;
+  if AField_diffuseColor <> nil then FdiffuseColor := AField_diffuseColor.Value;
+  FField_checked := AField_checked;
+  if AField_checked <> nil then Fchecked := AField_checked.Value;
+end;
+
+destructor TScript3544Script.Destroy;
+begin
+  FreeAndNil(FBack_resumeTime);
+  FreeAndNil(FBack_pauseTime);
+  inherited Destroy;
+end;
+
+procedure TScript3544Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_resumeTime then
+  begin
+    FDirty_resumeTime := False;
+    if FEvent_resumeTime <> nil then
+    begin
+      FBack_resumeTime.Value := FresumeTime;
+      FEvent_resumeTime.Send(FBack_resumeTime, Time);
+    end;
+  end;
+  if FDirty_pauseTime then
+  begin
+    FDirty_pauseTime := False;
+    if FEvent_pauseTime <> nil then
+    begin
+      FBack_pauseTime.Value := FpauseTime;
+      FEvent_pauseTime.Send(FBack_pauseTime, Time);
+    end;
+  end;
+  if FDirty_fraction then
+  begin
+    FDirty_fraction := False;
+    if FField_fraction <> nil then
+      FField_fraction.Send(Ffraction, Time);
+  end;
+  if FDirty_diffuseColor then
+  begin
+    FDirty_diffuseColor := False;
+    if FField_diffuseColor <> nil then
+      FField_diffuseColor.Send(FdiffuseColor, Time);
+  end;
+  if FDirty_checked then
+  begin
+    FDirty_checked := False;
+    if FField_checked <> nil then
+      FField_checked.Send(Fchecked, Time);
+  end;
+end;
+
+procedure TScript3544Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script3544_inTime', {$ifdef FPC}@{$endif}InTime);
+end;
+
+procedure TScript3544Script.InTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  if (Value as TSFTime).Value then
+  begin
+    Fchecked := not (Fchecked); FDirty_checked := True;
+  end;
+  if Fchecked then
+  begin
+    FdiffuseColor.Y := 1; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 0; FDirty_diffuseColor := True;
+    FresumeTime := (Value as TSFTime).Value + 1; FDirty_resumeTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end
+  else
+  begin
+    FdiffuseColor.Y := 0; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 1; FDirty_diffuseColor := True;
+    FpauseTime := (Value as TSFTime).Value + 1; FDirty_pauseTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end;
+  FlushOutputs(Time);
+end;
+
+constructor TScript3571Script.Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+begin
+  inherited Create;
+  FresumeTime := 0.0;
+  FEvent_resumeTime := nil;
+  FBack_resumeTime := TSFTime.Create(nil, False, 'resumeTime', 0.0);
+  FDirty_resumeTime := False;
+  FpauseTime := 0.0;
+  FEvent_pauseTime := nil;
+  FBack_pauseTime := TSFTime.Create(nil, False, 'pauseTime', 0.0);
+  FDirty_pauseTime := False;
+  Ffraction := 0.0;
+  FField_fraction := nil;
+  FDirty_fraction := False;
+  FdiffuseColor := Vector3(0, 0, 0);
+  FField_diffuseColor := nil;
+  FDirty_diffuseColor := False;
+  Fchecked := False;
+  FField_checked := nil;
+  FDirty_checked := False;
+  FEvent_resumeTime := AEvent_resumeTime;
+  FEvent_pauseTime := AEvent_pauseTime;
+  FField_fraction := AField_fraction;
+  if AField_fraction <> nil then Ffraction := AField_fraction.Value;
+  FField_diffuseColor := AField_diffuseColor;
+  if AField_diffuseColor <> nil then FdiffuseColor := AField_diffuseColor.Value;
+  FField_checked := AField_checked;
+  if AField_checked <> nil then Fchecked := AField_checked.Value;
+end;
+
+destructor TScript3571Script.Destroy;
+begin
+  FreeAndNil(FBack_resumeTime);
+  FreeAndNil(FBack_pauseTime);
+  inherited Destroy;
+end;
+
+procedure TScript3571Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_resumeTime then
+  begin
+    FDirty_resumeTime := False;
+    if FEvent_resumeTime <> nil then
+    begin
+      FBack_resumeTime.Value := FresumeTime;
+      FEvent_resumeTime.Send(FBack_resumeTime, Time);
+    end;
+  end;
+  if FDirty_pauseTime then
+  begin
+    FDirty_pauseTime := False;
+    if FEvent_pauseTime <> nil then
+    begin
+      FBack_pauseTime.Value := FpauseTime;
+      FEvent_pauseTime.Send(FBack_pauseTime, Time);
+    end;
+  end;
+  if FDirty_fraction then
+  begin
+    FDirty_fraction := False;
+    if FField_fraction <> nil then
+      FField_fraction.Send(Ffraction, Time);
+  end;
+  if FDirty_diffuseColor then
+  begin
+    FDirty_diffuseColor := False;
+    if FField_diffuseColor <> nil then
+      FField_diffuseColor.Send(FdiffuseColor, Time);
+  end;
+  if FDirty_checked then
+  begin
+    FDirty_checked := False;
+    if FField_checked <> nil then
+      FField_checked.Send(Fchecked, Time);
+  end;
+end;
+
+procedure TScript3571Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script3571_inTime', {$ifdef FPC}@{$endif}InTime);
+end;
+
+procedure TScript3571Script.InTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  if (Value as TSFTime).Value then
+  begin
+    Fchecked := not (Fchecked); FDirty_checked := True;
+  end;
+  if Fchecked then
+  begin
+    FdiffuseColor.Y := 1; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 0; FDirty_diffuseColor := True;
+    FresumeTime := (Value as TSFTime).Value + 1; FDirty_resumeTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end
+  else
+  begin
+    FdiffuseColor.Y := 0; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 1; FDirty_diffuseColor := True;
+    FpauseTime := (Value as TSFTime).Value + 1; FDirty_pauseTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end;
+  FlushOutputs(Time);
+end;
+
+constructor TScript3598Script.Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+begin
+  inherited Create;
+  FresumeTime := 0.0;
+  FEvent_resumeTime := nil;
+  FBack_resumeTime := TSFTime.Create(nil, False, 'resumeTime', 0.0);
+  FDirty_resumeTime := False;
+  FpauseTime := 0.0;
+  FEvent_pauseTime := nil;
+  FBack_pauseTime := TSFTime.Create(nil, False, 'pauseTime', 0.0);
+  FDirty_pauseTime := False;
+  Ffraction := 0.0;
+  FField_fraction := nil;
+  FDirty_fraction := False;
+  FdiffuseColor := Vector3(0, 0, 0);
+  FField_diffuseColor := nil;
+  FDirty_diffuseColor := False;
+  Fchecked := False;
+  FField_checked := nil;
+  FDirty_checked := False;
+  FEvent_resumeTime := AEvent_resumeTime;
+  FEvent_pauseTime := AEvent_pauseTime;
+  FField_fraction := AField_fraction;
+  if AField_fraction <> nil then Ffraction := AField_fraction.Value;
+  FField_diffuseColor := AField_diffuseColor;
+  if AField_diffuseColor <> nil then FdiffuseColor := AField_diffuseColor.Value;
+  FField_checked := AField_checked;
+  if AField_checked <> nil then Fchecked := AField_checked.Value;
+end;
+
+destructor TScript3598Script.Destroy;
+begin
+  FreeAndNil(FBack_resumeTime);
+  FreeAndNil(FBack_pauseTime);
+  inherited Destroy;
+end;
+
+procedure TScript3598Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_resumeTime then
+  begin
+    FDirty_resumeTime := False;
+    if FEvent_resumeTime <> nil then
+    begin
+      FBack_resumeTime.Value := FresumeTime;
+      FEvent_resumeTime.Send(FBack_resumeTime, Time);
+    end;
+  end;
+  if FDirty_pauseTime then
+  begin
+    FDirty_pauseTime := False;
+    if FEvent_pauseTime <> nil then
+    begin
+      FBack_pauseTime.Value := FpauseTime;
+      FEvent_pauseTime.Send(FBack_pauseTime, Time);
+    end;
+  end;
+  if FDirty_fraction then
+  begin
+    FDirty_fraction := False;
+    if FField_fraction <> nil then
+      FField_fraction.Send(Ffraction, Time);
+  end;
+  if FDirty_diffuseColor then
+  begin
+    FDirty_diffuseColor := False;
+    if FField_diffuseColor <> nil then
+      FField_diffuseColor.Send(FdiffuseColor, Time);
+  end;
+  if FDirty_checked then
+  begin
+    FDirty_checked := False;
+    if FField_checked <> nil then
+      FField_checked.Send(Fchecked, Time);
+  end;
+end;
+
+procedure TScript3598Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script3598_inTime', {$ifdef FPC}@{$endif}InTime);
+end;
+
+procedure TScript3598Script.InTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  if (Value as TSFTime).Value then
+  begin
+    Fchecked := not (Fchecked); FDirty_checked := True;
+  end;
+  if Fchecked then
+  begin
+    FdiffuseColor.Y := 1; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 0; FDirty_diffuseColor := True;
+    FresumeTime := (Value as TSFTime).Value + 1; FDirty_resumeTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end
+  else
+  begin
+    FdiffuseColor.Y := 0; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 1; FDirty_diffuseColor := True;
+    FpauseTime := (Value as TSFTime).Value + 1; FDirty_pauseTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end;
+  FlushOutputs(Time);
+end;
+
+constructor TScript3625Script.Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+begin
+  inherited Create;
+  FresumeTime := 0.0;
+  FEvent_resumeTime := nil;
+  FBack_resumeTime := TSFTime.Create(nil, False, 'resumeTime', 0.0);
+  FDirty_resumeTime := False;
+  FpauseTime := 0.0;
+  FEvent_pauseTime := nil;
+  FBack_pauseTime := TSFTime.Create(nil, False, 'pauseTime', 0.0);
+  FDirty_pauseTime := False;
+  Ffraction := 0.0;
+  FField_fraction := nil;
+  FDirty_fraction := False;
+  FdiffuseColor := Vector3(0, 0, 0);
+  FField_diffuseColor := nil;
+  FDirty_diffuseColor := False;
+  Fchecked := False;
+  FField_checked := nil;
+  FDirty_checked := False;
+  FEvent_resumeTime := AEvent_resumeTime;
+  FEvent_pauseTime := AEvent_pauseTime;
+  FField_fraction := AField_fraction;
+  if AField_fraction <> nil then Ffraction := AField_fraction.Value;
+  FField_diffuseColor := AField_diffuseColor;
+  if AField_diffuseColor <> nil then FdiffuseColor := AField_diffuseColor.Value;
+  FField_checked := AField_checked;
+  if AField_checked <> nil then Fchecked := AField_checked.Value;
+end;
+
+destructor TScript3625Script.Destroy;
+begin
+  FreeAndNil(FBack_resumeTime);
+  FreeAndNil(FBack_pauseTime);
+  inherited Destroy;
+end;
+
+procedure TScript3625Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_resumeTime then
+  begin
+    FDirty_resumeTime := False;
+    if FEvent_resumeTime <> nil then
+    begin
+      FBack_resumeTime.Value := FresumeTime;
+      FEvent_resumeTime.Send(FBack_resumeTime, Time);
+    end;
+  end;
+  if FDirty_pauseTime then
+  begin
+    FDirty_pauseTime := False;
+    if FEvent_pauseTime <> nil then
+    begin
+      FBack_pauseTime.Value := FpauseTime;
+      FEvent_pauseTime.Send(FBack_pauseTime, Time);
+    end;
+  end;
+  if FDirty_fraction then
+  begin
+    FDirty_fraction := False;
+    if FField_fraction <> nil then
+      FField_fraction.Send(Ffraction, Time);
+  end;
+  if FDirty_diffuseColor then
+  begin
+    FDirty_diffuseColor := False;
+    if FField_diffuseColor <> nil then
+      FField_diffuseColor.Send(FdiffuseColor, Time);
+  end;
+  if FDirty_checked then
+  begin
+    FDirty_checked := False;
+    if FField_checked <> nil then
+      FField_checked.Send(Fchecked, Time);
+  end;
+end;
+
+procedure TScript3625Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script3625_inTime', {$ifdef FPC}@{$endif}InTime);
+end;
+
+procedure TScript3625Script.InTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  if (Value as TSFTime).Value then
+  begin
+    Fchecked := not (Fchecked); FDirty_checked := True;
+  end;
+  if Fchecked then
+  begin
+    FdiffuseColor.Y := 1; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 0; FDirty_diffuseColor := True;
+    FresumeTime := (Value as TSFTime).Value + 1; FDirty_resumeTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end
+  else
+  begin
+    FdiffuseColor.Y := 0; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 1; FDirty_diffuseColor := True;
+    FpauseTime := (Value as TSFTime).Value + 1; FDirty_pauseTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end;
+  FlushOutputs(Time);
+end;
+
+constructor TScript3652Script.Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+begin
+  inherited Create;
+  FresumeTime := 0.0;
+  FEvent_resumeTime := nil;
+  FBack_resumeTime := TSFTime.Create(nil, False, 'resumeTime', 0.0);
+  FDirty_resumeTime := False;
+  FpauseTime := 0.0;
+  FEvent_pauseTime := nil;
+  FBack_pauseTime := TSFTime.Create(nil, False, 'pauseTime', 0.0);
+  FDirty_pauseTime := False;
+  Ffraction := 0.0;
+  FField_fraction := nil;
+  FDirty_fraction := False;
+  FdiffuseColor := Vector3(0, 0, 0);
+  FField_diffuseColor := nil;
+  FDirty_diffuseColor := False;
+  Fchecked := False;
+  FField_checked := nil;
+  FDirty_checked := False;
+  FEvent_resumeTime := AEvent_resumeTime;
+  FEvent_pauseTime := AEvent_pauseTime;
+  FField_fraction := AField_fraction;
+  if AField_fraction <> nil then Ffraction := AField_fraction.Value;
+  FField_diffuseColor := AField_diffuseColor;
+  if AField_diffuseColor <> nil then FdiffuseColor := AField_diffuseColor.Value;
+  FField_checked := AField_checked;
+  if AField_checked <> nil then Fchecked := AField_checked.Value;
+end;
+
+destructor TScript3652Script.Destroy;
+begin
+  FreeAndNil(FBack_resumeTime);
+  FreeAndNil(FBack_pauseTime);
+  inherited Destroy;
+end;
+
+procedure TScript3652Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_resumeTime then
+  begin
+    FDirty_resumeTime := False;
+    if FEvent_resumeTime <> nil then
+    begin
+      FBack_resumeTime.Value := FresumeTime;
+      FEvent_resumeTime.Send(FBack_resumeTime, Time);
+    end;
+  end;
+  if FDirty_pauseTime then
+  begin
+    FDirty_pauseTime := False;
+    if FEvent_pauseTime <> nil then
+    begin
+      FBack_pauseTime.Value := FpauseTime;
+      FEvent_pauseTime.Send(FBack_pauseTime, Time);
+    end;
+  end;
+  if FDirty_fraction then
+  begin
+    FDirty_fraction := False;
+    if FField_fraction <> nil then
+      FField_fraction.Send(Ffraction, Time);
+  end;
+  if FDirty_diffuseColor then
+  begin
+    FDirty_diffuseColor := False;
+    if FField_diffuseColor <> nil then
+      FField_diffuseColor.Send(FdiffuseColor, Time);
+  end;
+  if FDirty_checked then
+  begin
+    FDirty_checked := False;
+    if FField_checked <> nil then
+      FField_checked.Send(Fchecked, Time);
+  end;
+end;
+
+procedure TScript3652Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script3652_inTime', {$ifdef FPC}@{$endif}InTime);
+end;
+
+procedure TScript3652Script.InTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  if (Value as TSFTime).Value then
+  begin
+    Fchecked := not (Fchecked); FDirty_checked := True;
+  end;
+  if Fchecked then
+  begin
+    FdiffuseColor.Y := 1; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 0; FDirty_diffuseColor := True;
+    FresumeTime := (Value as TSFTime).Value + 1; FDirty_resumeTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end
+  else
+  begin
+    FdiffuseColor.Y := 0; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 1; FDirty_diffuseColor := True;
+    FpauseTime := (Value as TSFTime).Value + 1; FDirty_pauseTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end;
+  FlushOutputs(Time);
+end;
+
+constructor TScript3679Script.Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+begin
+  inherited Create;
+  FresumeTime := 0.0;
+  FEvent_resumeTime := nil;
+  FBack_resumeTime := TSFTime.Create(nil, False, 'resumeTime', 0.0);
+  FDirty_resumeTime := False;
+  FpauseTime := 0.0;
+  FEvent_pauseTime := nil;
+  FBack_pauseTime := TSFTime.Create(nil, False, 'pauseTime', 0.0);
+  FDirty_pauseTime := False;
+  Ffraction := 0.0;
+  FField_fraction := nil;
+  FDirty_fraction := False;
+  FdiffuseColor := Vector3(0, 0, 0);
+  FField_diffuseColor := nil;
+  FDirty_diffuseColor := False;
+  Fchecked := False;
+  FField_checked := nil;
+  FDirty_checked := False;
+  FEvent_resumeTime := AEvent_resumeTime;
+  FEvent_pauseTime := AEvent_pauseTime;
+  FField_fraction := AField_fraction;
+  if AField_fraction <> nil then Ffraction := AField_fraction.Value;
+  FField_diffuseColor := AField_diffuseColor;
+  if AField_diffuseColor <> nil then FdiffuseColor := AField_diffuseColor.Value;
+  FField_checked := AField_checked;
+  if AField_checked <> nil then Fchecked := AField_checked.Value;
+end;
+
+destructor TScript3679Script.Destroy;
+begin
+  FreeAndNil(FBack_resumeTime);
+  FreeAndNil(FBack_pauseTime);
+  inherited Destroy;
+end;
+
+procedure TScript3679Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_resumeTime then
+  begin
+    FDirty_resumeTime := False;
+    if FEvent_resumeTime <> nil then
+    begin
+      FBack_resumeTime.Value := FresumeTime;
+      FEvent_resumeTime.Send(FBack_resumeTime, Time);
+    end;
+  end;
+  if FDirty_pauseTime then
+  begin
+    FDirty_pauseTime := False;
+    if FEvent_pauseTime <> nil then
+    begin
+      FBack_pauseTime.Value := FpauseTime;
+      FEvent_pauseTime.Send(FBack_pauseTime, Time);
+    end;
+  end;
+  if FDirty_fraction then
+  begin
+    FDirty_fraction := False;
+    if FField_fraction <> nil then
+      FField_fraction.Send(Ffraction, Time);
+  end;
+  if FDirty_diffuseColor then
+  begin
+    FDirty_diffuseColor := False;
+    if FField_diffuseColor <> nil then
+      FField_diffuseColor.Send(FdiffuseColor, Time);
+  end;
+  if FDirty_checked then
+  begin
+    FDirty_checked := False;
+    if FField_checked <> nil then
+      FField_checked.Send(Fchecked, Time);
+  end;
+end;
+
+procedure TScript3679Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script3679_inTime', {$ifdef FPC}@{$endif}InTime);
+end;
+
+procedure TScript3679Script.InTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  if (Value as TSFTime).Value then
+  begin
+    Fchecked := not (Fchecked); FDirty_checked := True;
+  end;
+  if Fchecked then
+  begin
+    FdiffuseColor.Y := 1; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 0; FDirty_diffuseColor := True;
+    FresumeTime := (Value as TSFTime).Value + 1; FDirty_resumeTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end
+  else
+  begin
+    FdiffuseColor.Y := 0; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 1; FDirty_diffuseColor := True;
+    FpauseTime := (Value as TSFTime).Value + 1; FDirty_pauseTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end;
+  FlushOutputs(Time);
+end;
+
+constructor TScript3706Script.Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+begin
+  inherited Create;
+  FresumeTime := 0.0;
+  FEvent_resumeTime := nil;
+  FBack_resumeTime := TSFTime.Create(nil, False, 'resumeTime', 0.0);
+  FDirty_resumeTime := False;
+  FpauseTime := 0.0;
+  FEvent_pauseTime := nil;
+  FBack_pauseTime := TSFTime.Create(nil, False, 'pauseTime', 0.0);
+  FDirty_pauseTime := False;
+  Ffraction := 0.0;
+  FField_fraction := nil;
+  FDirty_fraction := False;
+  FdiffuseColor := Vector3(0, 0, 0);
+  FField_diffuseColor := nil;
+  FDirty_diffuseColor := False;
+  Fchecked := False;
+  FField_checked := nil;
+  FDirty_checked := False;
+  FEvent_resumeTime := AEvent_resumeTime;
+  FEvent_pauseTime := AEvent_pauseTime;
+  FField_fraction := AField_fraction;
+  if AField_fraction <> nil then Ffraction := AField_fraction.Value;
+  FField_diffuseColor := AField_diffuseColor;
+  if AField_diffuseColor <> nil then FdiffuseColor := AField_diffuseColor.Value;
+  FField_checked := AField_checked;
+  if AField_checked <> nil then Fchecked := AField_checked.Value;
+end;
+
+destructor TScript3706Script.Destroy;
+begin
+  FreeAndNil(FBack_resumeTime);
+  FreeAndNil(FBack_pauseTime);
+  inherited Destroy;
+end;
+
+procedure TScript3706Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_resumeTime then
+  begin
+    FDirty_resumeTime := False;
+    if FEvent_resumeTime <> nil then
+    begin
+      FBack_resumeTime.Value := FresumeTime;
+      FEvent_resumeTime.Send(FBack_resumeTime, Time);
+    end;
+  end;
+  if FDirty_pauseTime then
+  begin
+    FDirty_pauseTime := False;
+    if FEvent_pauseTime <> nil then
+    begin
+      FBack_pauseTime.Value := FpauseTime;
+      FEvent_pauseTime.Send(FBack_pauseTime, Time);
+    end;
+  end;
+  if FDirty_fraction then
+  begin
+    FDirty_fraction := False;
+    if FField_fraction <> nil then
+      FField_fraction.Send(Ffraction, Time);
+  end;
+  if FDirty_diffuseColor then
+  begin
+    FDirty_diffuseColor := False;
+    if FField_diffuseColor <> nil then
+      FField_diffuseColor.Send(FdiffuseColor, Time);
+  end;
+  if FDirty_checked then
+  begin
+    FDirty_checked := False;
+    if FField_checked <> nil then
+      FField_checked.Send(Fchecked, Time);
+  end;
+end;
+
+procedure TScript3706Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script3706_inTime', {$ifdef FPC}@{$endif}InTime);
+end;
+
+procedure TScript3706Script.InTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  if (Value as TSFTime).Value then
+  begin
+    Fchecked := not (Fchecked); FDirty_checked := True;
+  end;
+  if Fchecked then
+  begin
+    FdiffuseColor.Y := 1; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 0; FDirty_diffuseColor := True;
+    FresumeTime := (Value as TSFTime).Value + 1; FDirty_resumeTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end
+  else
+  begin
+    FdiffuseColor.Y := 0; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 1; FDirty_diffuseColor := True;
+    FpauseTime := (Value as TSFTime).Value + 1; FDirty_pauseTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end;
+  FlushOutputs(Time);
+end;
+
+constructor TScript3733Script.Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+begin
+  inherited Create;
+  FresumeTime := 0.0;
+  FEvent_resumeTime := nil;
+  FBack_resumeTime := TSFTime.Create(nil, False, 'resumeTime', 0.0);
+  FDirty_resumeTime := False;
+  FpauseTime := 0.0;
+  FEvent_pauseTime := nil;
+  FBack_pauseTime := TSFTime.Create(nil, False, 'pauseTime', 0.0);
+  FDirty_pauseTime := False;
+  Ffraction := 0.0;
+  FField_fraction := nil;
+  FDirty_fraction := False;
+  FdiffuseColor := Vector3(0, 0, 0);
+  FField_diffuseColor := nil;
+  FDirty_diffuseColor := False;
+  Fchecked := False;
+  FField_checked := nil;
+  FDirty_checked := False;
+  FEvent_resumeTime := AEvent_resumeTime;
+  FEvent_pauseTime := AEvent_pauseTime;
+  FField_fraction := AField_fraction;
+  if AField_fraction <> nil then Ffraction := AField_fraction.Value;
+  FField_diffuseColor := AField_diffuseColor;
+  if AField_diffuseColor <> nil then FdiffuseColor := AField_diffuseColor.Value;
+  FField_checked := AField_checked;
+  if AField_checked <> nil then Fchecked := AField_checked.Value;
+end;
+
+destructor TScript3733Script.Destroy;
+begin
+  FreeAndNil(FBack_resumeTime);
+  FreeAndNil(FBack_pauseTime);
+  inherited Destroy;
+end;
+
+procedure TScript3733Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_resumeTime then
+  begin
+    FDirty_resumeTime := False;
+    if FEvent_resumeTime <> nil then
+    begin
+      FBack_resumeTime.Value := FresumeTime;
+      FEvent_resumeTime.Send(FBack_resumeTime, Time);
+    end;
+  end;
+  if FDirty_pauseTime then
+  begin
+    FDirty_pauseTime := False;
+    if FEvent_pauseTime <> nil then
+    begin
+      FBack_pauseTime.Value := FpauseTime;
+      FEvent_pauseTime.Send(FBack_pauseTime, Time);
+    end;
+  end;
+  if FDirty_fraction then
+  begin
+    FDirty_fraction := False;
+    if FField_fraction <> nil then
+      FField_fraction.Send(Ffraction, Time);
+  end;
+  if FDirty_diffuseColor then
+  begin
+    FDirty_diffuseColor := False;
+    if FField_diffuseColor <> nil then
+      FField_diffuseColor.Send(FdiffuseColor, Time);
+  end;
+  if FDirty_checked then
+  begin
+    FDirty_checked := False;
+    if FField_checked <> nil then
+      FField_checked.Send(Fchecked, Time);
+  end;
+end;
+
+procedure TScript3733Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script3733_inTime', {$ifdef FPC}@{$endif}InTime);
+end;
+
+procedure TScript3733Script.InTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  if (Value as TSFTime).Value then
+  begin
+    Fchecked := not (Fchecked); FDirty_checked := True;
+  end;
+  if Fchecked then
+  begin
+    FdiffuseColor.Y := 1; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 0; FDirty_diffuseColor := True;
+    FresumeTime := (Value as TSFTime).Value + 1; FDirty_resumeTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end
+  else
+  begin
+    FdiffuseColor.Y := 0; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 1; FDirty_diffuseColor := True;
+    FpauseTime := (Value as TSFTime).Value + 1; FDirty_pauseTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end;
+  FlushOutputs(Time);
+end;
+
+constructor TScript3760Script.Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+begin
+  inherited Create;
+  FresumeTime := 0.0;
+  FEvent_resumeTime := nil;
+  FBack_resumeTime := TSFTime.Create(nil, False, 'resumeTime', 0.0);
+  FDirty_resumeTime := False;
+  FpauseTime := 0.0;
+  FEvent_pauseTime := nil;
+  FBack_pauseTime := TSFTime.Create(nil, False, 'pauseTime', 0.0);
+  FDirty_pauseTime := False;
+  Ffraction := 0.0;
+  FField_fraction := nil;
+  FDirty_fraction := False;
+  FdiffuseColor := Vector3(0, 0, 0);
+  FField_diffuseColor := nil;
+  FDirty_diffuseColor := False;
+  Fchecked := False;
+  FField_checked := nil;
+  FDirty_checked := False;
+  FEvent_resumeTime := AEvent_resumeTime;
+  FEvent_pauseTime := AEvent_pauseTime;
+  FField_fraction := AField_fraction;
+  if AField_fraction <> nil then Ffraction := AField_fraction.Value;
+  FField_diffuseColor := AField_diffuseColor;
+  if AField_diffuseColor <> nil then FdiffuseColor := AField_diffuseColor.Value;
+  FField_checked := AField_checked;
+  if AField_checked <> nil then Fchecked := AField_checked.Value;
+end;
+
+destructor TScript3760Script.Destroy;
+begin
+  FreeAndNil(FBack_resumeTime);
+  FreeAndNil(FBack_pauseTime);
+  inherited Destroy;
+end;
+
+procedure TScript3760Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_resumeTime then
+  begin
+    FDirty_resumeTime := False;
+    if FEvent_resumeTime <> nil then
+    begin
+      FBack_resumeTime.Value := FresumeTime;
+      FEvent_resumeTime.Send(FBack_resumeTime, Time);
+    end;
+  end;
+  if FDirty_pauseTime then
+  begin
+    FDirty_pauseTime := False;
+    if FEvent_pauseTime <> nil then
+    begin
+      FBack_pauseTime.Value := FpauseTime;
+      FEvent_pauseTime.Send(FBack_pauseTime, Time);
+    end;
+  end;
+  if FDirty_fraction then
+  begin
+    FDirty_fraction := False;
+    if FField_fraction <> nil then
+      FField_fraction.Send(Ffraction, Time);
+  end;
+  if FDirty_diffuseColor then
+  begin
+    FDirty_diffuseColor := False;
+    if FField_diffuseColor <> nil then
+      FField_diffuseColor.Send(FdiffuseColor, Time);
+  end;
+  if FDirty_checked then
+  begin
+    FDirty_checked := False;
+    if FField_checked <> nil then
+      FField_checked.Send(Fchecked, Time);
+  end;
+end;
+
+procedure TScript3760Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script3760_inTime', {$ifdef FPC}@{$endif}InTime);
+end;
+
+procedure TScript3760Script.InTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  if (Value as TSFTime).Value then
+  begin
+    Fchecked := not (Fchecked); FDirty_checked := True;
+  end;
+  if Fchecked then
+  begin
+    FdiffuseColor.Y := 1; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 0; FDirty_diffuseColor := True;
+    FresumeTime := (Value as TSFTime).Value + 1; FDirty_resumeTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end
+  else
+  begin
+    FdiffuseColor.Y := 0; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 1; FDirty_diffuseColor := True;
+    FpauseTime := (Value as TSFTime).Value + 1; FDirty_pauseTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end;
+  FlushOutputs(Time);
+end;
+
+constructor TScript3787Script.Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+begin
+  inherited Create;
+  FresumeTime := 0.0;
+  FEvent_resumeTime := nil;
+  FBack_resumeTime := TSFTime.Create(nil, False, 'resumeTime', 0.0);
+  FDirty_resumeTime := False;
+  FpauseTime := 0.0;
+  FEvent_pauseTime := nil;
+  FBack_pauseTime := TSFTime.Create(nil, False, 'pauseTime', 0.0);
+  FDirty_pauseTime := False;
+  Ffraction := 0.0;
+  FField_fraction := nil;
+  FDirty_fraction := False;
+  FdiffuseColor := Vector3(0, 0, 0);
+  FField_diffuseColor := nil;
+  FDirty_diffuseColor := False;
+  Fchecked := False;
+  FField_checked := nil;
+  FDirty_checked := False;
+  FEvent_resumeTime := AEvent_resumeTime;
+  FEvent_pauseTime := AEvent_pauseTime;
+  FField_fraction := AField_fraction;
+  if AField_fraction <> nil then Ffraction := AField_fraction.Value;
+  FField_diffuseColor := AField_diffuseColor;
+  if AField_diffuseColor <> nil then FdiffuseColor := AField_diffuseColor.Value;
+  FField_checked := AField_checked;
+  if AField_checked <> nil then Fchecked := AField_checked.Value;
+end;
+
+destructor TScript3787Script.Destroy;
+begin
+  FreeAndNil(FBack_resumeTime);
+  FreeAndNil(FBack_pauseTime);
+  inherited Destroy;
+end;
+
+procedure TScript3787Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_resumeTime then
+  begin
+    FDirty_resumeTime := False;
+    if FEvent_resumeTime <> nil then
+    begin
+      FBack_resumeTime.Value := FresumeTime;
+      FEvent_resumeTime.Send(FBack_resumeTime, Time);
+    end;
+  end;
+  if FDirty_pauseTime then
+  begin
+    FDirty_pauseTime := False;
+    if FEvent_pauseTime <> nil then
+    begin
+      FBack_pauseTime.Value := FpauseTime;
+      FEvent_pauseTime.Send(FBack_pauseTime, Time);
+    end;
+  end;
+  if FDirty_fraction then
+  begin
+    FDirty_fraction := False;
+    if FField_fraction <> nil then
+      FField_fraction.Send(Ffraction, Time);
+  end;
+  if FDirty_diffuseColor then
+  begin
+    FDirty_diffuseColor := False;
+    if FField_diffuseColor <> nil then
+      FField_diffuseColor.Send(FdiffuseColor, Time);
+  end;
+  if FDirty_checked then
+  begin
+    FDirty_checked := False;
+    if FField_checked <> nil then
+      FField_checked.Send(Fchecked, Time);
+  end;
+end;
+
+procedure TScript3787Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script3787_inTime', {$ifdef FPC}@{$endif}InTime);
+end;
+
+procedure TScript3787Script.InTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  if (Value as TSFTime).Value then
+  begin
+    Fchecked := not (Fchecked); FDirty_checked := True;
+  end;
+  if Fchecked then
+  begin
+    FdiffuseColor.Y := 1; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 0; FDirty_diffuseColor := True;
+    FresumeTime := (Value as TSFTime).Value + 1; FDirty_resumeTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end
+  else
+  begin
+    FdiffuseColor.Y := 0; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 1; FDirty_diffuseColor := True;
+    FpauseTime := (Value as TSFTime).Value + 1; FDirty_pauseTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end;
+  FlushOutputs(Time);
+end;
+
+constructor TScript3814Script.Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+begin
+  inherited Create;
+  FresumeTime := 0.0;
+  FEvent_resumeTime := nil;
+  FBack_resumeTime := TSFTime.Create(nil, False, 'resumeTime', 0.0);
+  FDirty_resumeTime := False;
+  FpauseTime := 0.0;
+  FEvent_pauseTime := nil;
+  FBack_pauseTime := TSFTime.Create(nil, False, 'pauseTime', 0.0);
+  FDirty_pauseTime := False;
+  Ffraction := 0.0;
+  FField_fraction := nil;
+  FDirty_fraction := False;
+  FdiffuseColor := Vector3(0, 0, 0);
+  FField_diffuseColor := nil;
+  FDirty_diffuseColor := False;
+  Fchecked := False;
+  FField_checked := nil;
+  FDirty_checked := False;
+  FEvent_resumeTime := AEvent_resumeTime;
+  FEvent_pauseTime := AEvent_pauseTime;
+  FField_fraction := AField_fraction;
+  if AField_fraction <> nil then Ffraction := AField_fraction.Value;
+  FField_diffuseColor := AField_diffuseColor;
+  if AField_diffuseColor <> nil then FdiffuseColor := AField_diffuseColor.Value;
+  FField_checked := AField_checked;
+  if AField_checked <> nil then Fchecked := AField_checked.Value;
+end;
+
+destructor TScript3814Script.Destroy;
+begin
+  FreeAndNil(FBack_resumeTime);
+  FreeAndNil(FBack_pauseTime);
+  inherited Destroy;
+end;
+
+procedure TScript3814Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_resumeTime then
+  begin
+    FDirty_resumeTime := False;
+    if FEvent_resumeTime <> nil then
+    begin
+      FBack_resumeTime.Value := FresumeTime;
+      FEvent_resumeTime.Send(FBack_resumeTime, Time);
+    end;
+  end;
+  if FDirty_pauseTime then
+  begin
+    FDirty_pauseTime := False;
+    if FEvent_pauseTime <> nil then
+    begin
+      FBack_pauseTime.Value := FpauseTime;
+      FEvent_pauseTime.Send(FBack_pauseTime, Time);
+    end;
+  end;
+  if FDirty_fraction then
+  begin
+    FDirty_fraction := False;
+    if FField_fraction <> nil then
+      FField_fraction.Send(Ffraction, Time);
+  end;
+  if FDirty_diffuseColor then
+  begin
+    FDirty_diffuseColor := False;
+    if FField_diffuseColor <> nil then
+      FField_diffuseColor.Send(FdiffuseColor, Time);
+  end;
+  if FDirty_checked then
+  begin
+    FDirty_checked := False;
+    if FField_checked <> nil then
+      FField_checked.Send(Fchecked, Time);
+  end;
+end;
+
+procedure TScript3814Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script3814_inTime', {$ifdef FPC}@{$endif}InTime);
+end;
+
+procedure TScript3814Script.InTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  if (Value as TSFTime).Value then
+  begin
+    Fchecked := not (Fchecked); FDirty_checked := True;
+  end;
+  if Fchecked then
+  begin
+    FdiffuseColor.Y := 1; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 0; FDirty_diffuseColor := True;
+    FresumeTime := (Value as TSFTime).Value + 1; FDirty_resumeTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end
+  else
+  begin
+    FdiffuseColor.Y := 0; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 1; FDirty_diffuseColor := True;
+    FpauseTime := (Value as TSFTime).Value + 1; FDirty_pauseTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end;
+  FlushOutputs(Time);
+end;
+
+constructor TScript3841Script.Create(const AEvent_resumeTime: TX3DEvent; const AEvent_pauseTime: TX3DEvent; const AField_fraction: TSFFloat; const AField_diffuseColor: TSFColor; const AField_checked: TSFBool);
+begin
+  inherited Create;
+  FresumeTime := 0.0;
+  FEvent_resumeTime := nil;
+  FBack_resumeTime := TSFTime.Create(nil, False, 'resumeTime', 0.0);
+  FDirty_resumeTime := False;
+  FpauseTime := 0.0;
+  FEvent_pauseTime := nil;
+  FBack_pauseTime := TSFTime.Create(nil, False, 'pauseTime', 0.0);
+  FDirty_pauseTime := False;
+  Ffraction := 0.0;
+  FField_fraction := nil;
+  FDirty_fraction := False;
+  FdiffuseColor := Vector3(0, 0, 0);
+  FField_diffuseColor := nil;
+  FDirty_diffuseColor := False;
+  Fchecked := False;
+  FField_checked := nil;
+  FDirty_checked := False;
+  FEvent_resumeTime := AEvent_resumeTime;
+  FEvent_pauseTime := AEvent_pauseTime;
+  FField_fraction := AField_fraction;
+  if AField_fraction <> nil then Ffraction := AField_fraction.Value;
+  FField_diffuseColor := AField_diffuseColor;
+  if AField_diffuseColor <> nil then FdiffuseColor := AField_diffuseColor.Value;
+  FField_checked := AField_checked;
+  if AField_checked <> nil then Fchecked := AField_checked.Value;
+end;
+
+destructor TScript3841Script.Destroy;
+begin
+  FreeAndNil(FBack_resumeTime);
+  FreeAndNil(FBack_pauseTime);
+  inherited Destroy;
+end;
+
+procedure TScript3841Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_resumeTime then
+  begin
+    FDirty_resumeTime := False;
+    if FEvent_resumeTime <> nil then
+    begin
+      FBack_resumeTime.Value := FresumeTime;
+      FEvent_resumeTime.Send(FBack_resumeTime, Time);
+    end;
+  end;
+  if FDirty_pauseTime then
+  begin
+    FDirty_pauseTime := False;
+    if FEvent_pauseTime <> nil then
+    begin
+      FBack_pauseTime.Value := FpauseTime;
+      FEvent_pauseTime.Send(FBack_pauseTime, Time);
+    end;
+  end;
+  if FDirty_fraction then
+  begin
+    FDirty_fraction := False;
+    if FField_fraction <> nil then
+      FField_fraction.Send(Ffraction, Time);
+  end;
+  if FDirty_diffuseColor then
+  begin
+    FDirty_diffuseColor := False;
+    if FField_diffuseColor <> nil then
+      FField_diffuseColor.Send(FdiffuseColor, Time);
+  end;
+  if FDirty_checked then
+  begin
+    FDirty_checked := False;
+    if FField_checked <> nil then
+      FField_checked.Send(Fchecked, Time);
+  end;
+end;
+
+procedure TScript3841Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script3841_inTime', {$ifdef FPC}@{$endif}InTime);
+end;
+
+procedure TScript3841Script.InTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  if (Value as TSFTime).Value then
+  begin
+    Fchecked := not (Fchecked); FDirty_checked := True;
+  end;
+  if Fchecked then
+  begin
+    FdiffuseColor.Y := 1; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 0; FDirty_diffuseColor := True;
+    FresumeTime := (Value as TSFTime).Value + 1; FDirty_resumeTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end
+  else
+  begin
+    FdiffuseColor.Y := 0; FDirty_diffuseColor := True;
+    FdiffuseColor.Z := 1; FDirty_diffuseColor := True;
+    FpauseTime := (Value as TSFTime).Value + 1; FDirty_pauseTime := True;
+    Ffraction := 0; FDirty_fraction := True;
+  end;
+  FlushOutputs(Time);
+end;
 
 procedure InitSingleMenuJinPart0;
 begin
@@ -13337,48 +17329,33 @@ FieldVal3063 := TSFColor.Create(Script3058, True, 'diffuseColor', Vector3(0, 0, 
 Script3058.AddCustomFieldOrEvent(FieldVal3063);
 FieldVal3064 := TSFBool.Create(Script3058, True, 'checked', False);
 Script3058.AddCustomFieldOrEvent(FieldVal3064);
-Script3058.SetSourceCode('ecmascript:' + LineEnding +
-  '        function inTime(value) {' + LineEnding +
-  '            // Browser.print("in", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '            if (value) {' + LineEnding +
-  '                checked = !checked;' + LineEnding +
-  '            }' + LineEnding +
-  '            if (checked) {' + LineEnding +
-  '                diffuseColor.g = 1;' + LineEnding +
-  '                diffuseColor.b = 0;' + LineEnding +
-  '                resumeTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            } else {' + LineEnding +
-  '                diffuseColor.g = 0;' + LineEnding +
-  '                diffuseColor.b = 1;' + LineEnding +
-  '                pauseTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            }' + LineEnding +
-  '            // Browser.print("out", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '        }');
+FreeAndNil(CompiledScript3058);
+CompiledScript3058 := TScript3058Script.Create(FieldVal3060, FieldVal3061, FieldVal3062, FieldVal3063, FieldVal3064);
+Script3058.SetUrl(['compiled:' + LineEnding +
+  'inTime=Script3058_inTime']);
 Transform3046.FdChildren.Add(Script3058);
 { ROUTE JinBlink_Sensor.touchTime TO Script0.inTime }
 Transform3046.AddRoute(TouchSensor3047.EventTouchTime, FieldVal3059);
 { ROUTE JinBlink_Material.diffuseColor TO Script0.diffuseColor }
-Transform3046.AddRoute(Material3055.diffuseColor, FieldVal3063);
+Transform3046.AddRoute(Material3055.diffuseColor, FieldVal3063.EventIn);
 { ROUTE Script0.diffuseColor TO JinBlink_Material.diffuseColor }
-Transform3046.AddRoute(FieldVal3063, Material3055.diffuseColor);
+Transform3046.AddRoute(FieldVal3063.EventOut, Material3055.diffuseColor);
 { ROUTE Script0.checked TO JinBlink_Clock.enabled }
-Transform3046.AddRoute(FieldVal3064, TimeSensor69.enabled);
+Transform3046.AddRoute(FieldVal3064.EventOut, TimeSensor69.enabled);
 { ROUTE Script0.pauseTime TO JinBlink_Clock.pauseTime }
 Transform3046.AddRoute(FieldVal3061, TimeSensor69.pauseTime);
 { ROUTE Script0.resumeTime TO JinBlink_Clock.resumeTime }
 Transform3046.AddRoute(FieldVal3060, TimeSensor69.resumeTime);
 { ROUTE Script0.fraction TO AnimationAdapter_JinBlink.set_fraction }
-Transform3046.AddRoute(FieldVal3062, ScalarInterpolator9.EventSet_fraction);
+Transform3046.AddRoute(FieldVal3062.EventOut, ScalarInterpolator9.EventSet_fraction);
 Group3045.FdChildren.Add(Transform3046);
 { ROUTE JinBlink_Sensor.touchTime TO JinBlink_Clock.startTime }
-Group3045.AddRoute(TouchSensor3047.EventTouchTime, TimeSensor69.FdStartTime.EventIn);
-Transform3073 := TTransformNode.Create;
 end;
 
 procedure InitSingleMenuJinPart269;
 begin
+Group3045.AddRoute(TouchSensor3047.EventTouchTime, TimeSensor69.FdStartTime.EventIn);
+Transform3073 := TTransformNode.Create;
 Transform3073.Translation := Vector3(48, 60.4, 0);
 TouchSensor3074 := TTouchSensorNode.Create;
 TouchSensor3074.Description := 'Jin Brow Lowerer';
@@ -13417,12 +17394,12 @@ Transform3073.FdChildren.Add(Shape3080);
 Script3085 := TScriptNode.Create;
 Script3085.X3DName := 'Script1';
 FieldVal3086 := TSFTime.CreateEvent(Script3085, 'inTime', True);
-Script3085.AddCustomFieldOrEvent(FieldVal3086);
-FieldVal3087 := TSFTime.CreateEvent(Script3085, 'resumeTime', False);
 end;
 
 procedure InitSingleMenuJinPart270;
 begin
+Script3085.AddCustomFieldOrEvent(FieldVal3086);
+FieldVal3087 := TSFTime.CreateEvent(Script3085, 'resumeTime', False);
 Script3085.AddCustomFieldOrEvent(FieldVal3087);
 FieldVal3088 := TSFTime.CreateEvent(Script3085, 'pauseTime', False);
 Script3085.AddCustomFieldOrEvent(FieldVal3088);
@@ -13432,40 +17409,25 @@ FieldVal3090 := TSFColor.Create(Script3085, True, 'diffuseColor', Vector3(0, 0, 
 Script3085.AddCustomFieldOrEvent(FieldVal3090);
 FieldVal3091 := TSFBool.Create(Script3085, True, 'checked', False);
 Script3085.AddCustomFieldOrEvent(FieldVal3091);
-Script3085.SetSourceCode('ecmascript:' + LineEnding +
-  '        function inTime(value) {' + LineEnding +
-  '            // Browser.print("in", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '            if (value) {' + LineEnding +
-  '                checked = !checked;' + LineEnding +
-  '            }' + LineEnding +
-  '            if (checked) {' + LineEnding +
-  '                diffuseColor.g = 1;' + LineEnding +
-  '                diffuseColor.b = 0;' + LineEnding +
-  '                resumeTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            } else {' + LineEnding +
-  '                diffuseColor.g = 0;' + LineEnding +
-  '                diffuseColor.b = 1;' + LineEnding +
-  '                pauseTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            }' + LineEnding +
-  '            // Browser.print("out", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '        }');
+FreeAndNil(CompiledScript3085);
+CompiledScript3085 := TScript3085Script.Create(FieldVal3087, FieldVal3088, FieldVal3089, FieldVal3090, FieldVal3091);
+Script3085.SetUrl(['compiled:' + LineEnding +
+  'inTime=Script3085_inTime']);
 Transform3073.FdChildren.Add(Script3085);
 { ROUTE JinBrowLowerer_Sensor.touchTime TO Script1.inTime }
 Transform3073.AddRoute(TouchSensor3074.EventTouchTime, FieldVal3086);
 { ROUTE JinBrowLowerer_Material.diffuseColor TO Script1.diffuseColor }
-Transform3073.AddRoute(Material3082.diffuseColor, FieldVal3090);
+Transform3073.AddRoute(Material3082.diffuseColor, FieldVal3090.EventIn);
 { ROUTE Script1.diffuseColor TO JinBrowLowerer_Material.diffuseColor }
-Transform3073.AddRoute(FieldVal3090, Material3082.diffuseColor);
+Transform3073.AddRoute(FieldVal3090.EventOut, Material3082.diffuseColor);
 { ROUTE Script1.checked TO JinBrowLowerer_Clock.enabled }
-Transform3073.AddRoute(FieldVal3091, TimeSensor68.enabled);
+Transform3073.AddRoute(FieldVal3091.EventOut, TimeSensor68.enabled);
 { ROUTE Script1.pauseTime TO JinBrowLowerer_Clock.pauseTime }
 Transform3073.AddRoute(FieldVal3088, TimeSensor68.pauseTime);
 { ROUTE Script1.resumeTime TO JinBrowLowerer_Clock.resumeTime }
 Transform3073.AddRoute(FieldVal3087, TimeSensor68.resumeTime);
 { ROUTE Script1.fraction TO AnimationAdapter_JinBrowLowerer.set_fraction }
-Transform3073.AddRoute(FieldVal3089, ScalarInterpolator10.EventSet_fraction);
+Transform3073.AddRoute(FieldVal3089.EventOut, ScalarInterpolator10.EventSet_fraction);
 Group3045.FdChildren.Add(Transform3073);
 { ROUTE JinBrowLowerer_Sensor.touchTime TO JinBrowLowerer_Clock.startTime }
 Group3045.AddRoute(TouchSensor3074.EventTouchTime, TimeSensor68.FdStartTime.EventIn);
@@ -13477,14 +17439,14 @@ TouchSensor3101.X3DName := 'JinCheekPuffer_Sensor';
 Transform3100.FdChildren.Add(TouchSensor3101);
 Shape3102 := TShapeNode.Create;
 Appearance3103 := TAppearanceNode.Create;
-Material3104 := TMaterialNode.Create;
-Material3104.DiffuseColor := Vector3(1, 1, 1);
-Appearance3103.Material := Material3104;
-Shape3102.Appearance := Appearance3103;
 end;
 
 procedure InitSingleMenuJinPart271;
 begin
+Material3104 := TMaterialNode.Create;
+Material3104.DiffuseColor := Vector3(1, 1, 1);
+Appearance3103.Material := Material3104;
+Shape3102.Appearance := Appearance3103;
 Text3105 := TTextNode.Create;
 Text3105.SetText(['JinCheekPuffer']);
 FontStyle3106 := TFontStyleNode.Create;
@@ -13521,46 +17483,31 @@ FieldVal3116 := TSFFloat.Create(Script3112, True, 'fraction', 0);
 Script3112.AddCustomFieldOrEvent(FieldVal3116);
 FieldVal3117 := TSFColor.Create(Script3112, True, 'diffuseColor', Vector3(0, 0, 1));
 Script3112.AddCustomFieldOrEvent(FieldVal3117);
-FieldVal3118 := TSFBool.Create(Script3112, True, 'checked', False);
-Script3112.AddCustomFieldOrEvent(FieldVal3118);
-Script3112.SetSourceCode('ecmascript:' + LineEnding +
-  '        function inTime(value) {' + LineEnding +
-  '            // Browser.print("in", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '            if (value) {' + LineEnding +
-  '                checked = !checked;' + LineEnding +
-  '            }' + LineEnding +
-  '            if (checked) {' + LineEnding +
-  '                diffuseColor.g = 1;' + LineEnding +
-  '                diffuseColor.b = 0;' + LineEnding +
-  '                resumeTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            } else {' + LineEnding +
-  '                diffuseColor.g = 0;' + LineEnding +
-  '                diffuseColor.b = 1;' + LineEnding +
-  '                pauseTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            }' + LineEnding +
-  '            // Browser.print("out", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '        }');
-Transform3100.FdChildren.Add(Script3112);
 end;
 
 procedure InitSingleMenuJinPart272;
 begin
+FieldVal3118 := TSFBool.Create(Script3112, True, 'checked', False);
+Script3112.AddCustomFieldOrEvent(FieldVal3118);
+FreeAndNil(CompiledScript3112);
+CompiledScript3112 := TScript3112Script.Create(FieldVal3114, FieldVal3115, FieldVal3116, FieldVal3117, FieldVal3118);
+Script3112.SetUrl(['compiled:' + LineEnding +
+  'inTime=Script3112_inTime']);
+Transform3100.FdChildren.Add(Script3112);
 { ROUTE JinCheekPuffer_Sensor.touchTime TO Script2.inTime }
 Transform3100.AddRoute(TouchSensor3101.EventTouchTime, FieldVal3113);
 { ROUTE JinCheekPuffer_Material.diffuseColor TO Script2.diffuseColor }
-Transform3100.AddRoute(Material3109.diffuseColor, FieldVal3117);
+Transform3100.AddRoute(Material3109.diffuseColor, FieldVal3117.EventIn);
 { ROUTE Script2.diffuseColor TO JinCheekPuffer_Material.diffuseColor }
-Transform3100.AddRoute(FieldVal3117, Material3109.diffuseColor);
+Transform3100.AddRoute(FieldVal3117.EventOut, Material3109.diffuseColor);
 { ROUTE Script2.checked TO JinCheekPuffer_Clock.enabled }
-Transform3100.AddRoute(FieldVal3118, TimeSensor67.enabled);
+Transform3100.AddRoute(FieldVal3118.EventOut, TimeSensor67.enabled);
 { ROUTE Script2.pauseTime TO JinCheekPuffer_Clock.pauseTime }
 Transform3100.AddRoute(FieldVal3115, TimeSensor67.pauseTime);
 { ROUTE Script2.resumeTime TO JinCheekPuffer_Clock.resumeTime }
 Transform3100.AddRoute(FieldVal3114, TimeSensor67.resumeTime);
 { ROUTE Script2.fraction TO AnimationAdapter_JinCheekPuffer.set_fraction }
-Transform3100.AddRoute(FieldVal3116, ScalarInterpolator11.EventSet_fraction);
+Transform3100.AddRoute(FieldVal3116.EventOut, ScalarInterpolator11.EventSet_fraction);
 Group3045.FdChildren.Add(Transform3100);
 { ROUTE JinCheekPuffer_Sensor.touchTime TO JinCheekPuffer_Clock.startTime }
 Group3045.AddRoute(TouchSensor3101.EventTouchTime, TimeSensor67.FdStartTime.EventIn);
@@ -13581,16 +17528,16 @@ Text3132.SetText(['JinCheekRaiser']);
 FontStyle3133 := TFontStyleNode.Create;
 FontStyle3133.Size := 2.4;
 FontStyle3133.Spacing := 1.2;
+end;
+
+procedure InitSingleMenuJinPart273;
+begin
 FontStyle3133.Justify := fjMiddle;
 FontStyle3133.JustifyMinor := fjMiddle;
 Text3132.FontStyle := FontStyle3133;
 Shape3129.Geometry := Text3132;
 Transform3127.FdChildren.Add(Shape3129);
 Shape3134 := TShapeNode.Create;
-end;
-
-procedure InitSingleMenuJinPart273;
-begin
 Appearance3135 := TAppearanceNode.Create;
 Material3136 := TMaterialNode.Create;
 Material3136.X3DName := 'JinCheekRaiser_Material';
@@ -13618,44 +17565,29 @@ FieldVal3144 := TSFColor.Create(Script3139, True, 'diffuseColor', Vector3(0, 0, 
 Script3139.AddCustomFieldOrEvent(FieldVal3144);
 FieldVal3145 := TSFBool.Create(Script3139, True, 'checked', False);
 Script3139.AddCustomFieldOrEvent(FieldVal3145);
-Script3139.SetSourceCode('ecmascript:' + LineEnding +
-  '        function inTime(value) {' + LineEnding +
-  '            // Browser.print("in", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '            if (value) {' + LineEnding +
-  '                checked = !checked;' + LineEnding +
-  '            }' + LineEnding +
-  '            if (checked) {' + LineEnding +
-  '                diffuseColor.g = 1;' + LineEnding +
-  '                diffuseColor.b = 0;' + LineEnding +
-  '                resumeTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            } else {' + LineEnding +
-  '                diffuseColor.g = 0;' + LineEnding +
-  '                diffuseColor.b = 1;' + LineEnding +
-  '                pauseTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            }' + LineEnding +
-  '            // Browser.print("out", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '        }');
+FreeAndNil(CompiledScript3139);
+CompiledScript3139 := TScript3139Script.Create(FieldVal3141, FieldVal3142, FieldVal3143, FieldVal3144, FieldVal3145);
+Script3139.SetUrl(['compiled:' + LineEnding +
+  'inTime=Script3139_inTime']);
 Transform3127.FdChildren.Add(Script3139);
 { ROUTE JinCheekRaiser_Sensor.touchTime TO Script3.inTime }
 Transform3127.AddRoute(TouchSensor3128.EventTouchTime, FieldVal3140);
 { ROUTE JinCheekRaiser_Material.diffuseColor TO Script3.diffuseColor }
-Transform3127.AddRoute(Material3136.diffuseColor, FieldVal3144);
-{ ROUTE Script3.diffuseColor TO JinCheekRaiser_Material.diffuseColor }
-Transform3127.AddRoute(FieldVal3144, Material3136.diffuseColor);
-{ ROUTE Script3.checked TO JinCheekRaiser_Clock.enabled }
-Transform3127.AddRoute(FieldVal3145, TimeSensor66.enabled);
-{ ROUTE Script3.pauseTime TO JinCheekRaiser_Clock.pauseTime }
-Transform3127.AddRoute(FieldVal3142, TimeSensor66.pauseTime);
-{ ROUTE Script3.resumeTime TO JinCheekRaiser_Clock.resumeTime }
 end;
 
 procedure InitSingleMenuJinPart274;
 begin
+Transform3127.AddRoute(Material3136.diffuseColor, FieldVal3144.EventIn);
+{ ROUTE Script3.diffuseColor TO JinCheekRaiser_Material.diffuseColor }
+Transform3127.AddRoute(FieldVal3144.EventOut, Material3136.diffuseColor);
+{ ROUTE Script3.checked TO JinCheekRaiser_Clock.enabled }
+Transform3127.AddRoute(FieldVal3145.EventOut, TimeSensor66.enabled);
+{ ROUTE Script3.pauseTime TO JinCheekRaiser_Clock.pauseTime }
+Transform3127.AddRoute(FieldVal3142, TimeSensor66.pauseTime);
+{ ROUTE Script3.resumeTime TO JinCheekRaiser_Clock.resumeTime }
 Transform3127.AddRoute(FieldVal3141, TimeSensor66.resumeTime);
 { ROUTE Script3.fraction TO AnimationAdapter_JinCheekRaiser.set_fraction }
-Transform3127.AddRoute(FieldVal3143, ScalarInterpolator12.EventSet_fraction);
+Transform3127.AddRoute(FieldVal3143.EventOut, ScalarInterpolator12.EventSet_fraction);
 Group3045.FdChildren.Add(Transform3127);
 { ROUTE JinCheekRaiser_Sensor.touchTime TO JinCheekRaiser_Clock.startTime }
 Group3045.AddRoute(TouchSensor3128.EventTouchTime, TimeSensor66.FdStartTime.EventIn);
@@ -13685,6 +17617,10 @@ Shape3161 := TShapeNode.Create;
 Appearance3162 := TAppearanceNode.Create;
 Material3163 := TMaterialNode.Create;
 Material3163.X3DName := 'JinChinRaiser_Material';
+end;
+
+procedure InitSingleMenuJinPart275;
+begin
 Material3163.DiffuseColor := Vector3(0, 0, 1);
 Appearance3162.Material := Material3163;
 Shape3161.Appearance := Appearance3162;
@@ -13693,10 +17629,6 @@ IndexedFaceSet3164.SetCoordIndex([0, 1, 2, 3, -1]);
 Coordinate3165 := TCoordinateNode.Create;
 Coordinate3165.SetPoint([Vector3(20, 1.3833333333333333, -0.1), Vector3(-20, 1.3833333333333333, -0.1), Vector3(-20, -1.616666666666667, -0.1), Vector3(20, -1.616666666666667, -0.1)]);
 IndexedFaceSet3164.Coord := Coordinate3165;
-end;
-
-procedure InitSingleMenuJinPart275;
-begin
 Shape3161.Geometry := IndexedFaceSet3164;
 Transform3154.FdChildren.Add(Shape3161);
 Script3166 := TScriptNode.Create;
@@ -13713,40 +17645,29 @@ FieldVal3171 := TSFColor.Create(Script3166, True, 'diffuseColor', Vector3(0, 0, 
 Script3166.AddCustomFieldOrEvent(FieldVal3171);
 FieldVal3172 := TSFBool.Create(Script3166, True, 'checked', False);
 Script3166.AddCustomFieldOrEvent(FieldVal3172);
-Script3166.SetSourceCode('ecmascript:' + LineEnding +
-  '        function inTime(value) {' + LineEnding +
-  '            // Browser.print("in", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '            if (value) {' + LineEnding +
-  '                checked = !checked;' + LineEnding +
-  '            }' + LineEnding +
-  '            if (checked) {' + LineEnding +
-  '                diffuseColor.g = 1;' + LineEnding +
-  '                diffuseColor.b = 0;' + LineEnding +
-  '                resumeTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            } else {' + LineEnding +
-  '                diffuseColor.g = 0;' + LineEnding +
-  '                diffuseColor.b = 1;' + LineEnding +
-  '                pauseTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            }' + LineEnding +
-  '            // Browser.print("out", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '        }');
+FreeAndNil(CompiledScript3166);
+CompiledScript3166 := TScript3166Script.Create(FieldVal3168, FieldVal3169, FieldVal3170, FieldVal3171, FieldVal3172);
+Script3166.SetUrl(['compiled:' + LineEnding +
+  'inTime=Script3166_inTime']);
 Transform3154.FdChildren.Add(Script3166);
 { ROUTE JinChinRaiser_Sensor.touchTime TO Script4.inTime }
 Transform3154.AddRoute(TouchSensor3155.EventTouchTime, FieldVal3167);
 { ROUTE JinChinRaiser_Material.diffuseColor TO Script4.diffuseColor }
-Transform3154.AddRoute(Material3163.diffuseColor, FieldVal3171);
+Transform3154.AddRoute(Material3163.diffuseColor, FieldVal3171.EventIn);
 { ROUTE Script4.diffuseColor TO JinChinRaiser_Material.diffuseColor }
-Transform3154.AddRoute(FieldVal3171, Material3163.diffuseColor);
+Transform3154.AddRoute(FieldVal3171.EventOut, Material3163.diffuseColor);
 { ROUTE Script4.checked TO JinChinRaiser_Clock.enabled }
-Transform3154.AddRoute(FieldVal3172, TimeSensor65.enabled);
+Transform3154.AddRoute(FieldVal3172.EventOut, TimeSensor65.enabled);
 { ROUTE Script4.pauseTime TO JinChinRaiser_Clock.pauseTime }
 Transform3154.AddRoute(FieldVal3169, TimeSensor65.pauseTime);
 { ROUTE Script4.resumeTime TO JinChinRaiser_Clock.resumeTime }
 Transform3154.AddRoute(FieldVal3168, TimeSensor65.resumeTime);
+end;
+
+procedure InitSingleMenuJinPart276;
+begin
 { ROUTE Script4.fraction TO AnimationAdapter_JinChinRaiser.set_fraction }
-Transform3154.AddRoute(FieldVal3170, ScalarInterpolator13.EventSet_fraction);
+Transform3154.AddRoute(FieldVal3170.EventOut, ScalarInterpolator13.EventSet_fraction);
 Group3045.FdChildren.Add(Transform3154);
 { ROUTE JinChinRaiser_Sensor.touchTime TO JinChinRaiser_Clock.startTime }
 Group3045.AddRoute(TouchSensor3155.EventTouchTime, TimeSensor65.FdStartTime.EventIn);
@@ -13755,10 +17676,6 @@ Transform3181.Translation := Vector3(48, 48.39999999999999, 0);
 TouchSensor3182 := TTouchSensorNode.Create;
 TouchSensor3182.Description := 'Jin Dimpler';
 TouchSensor3182.X3DName := 'JinDimpler_Sensor';
-end;
-
-procedure InitSingleMenuJinPart276;
-begin
 Transform3181.FdChildren.Add(TouchSensor3182);
 Shape3183 := TShapeNode.Create;
 Appearance3184 := TAppearanceNode.Create;
@@ -13789,6 +17706,10 @@ Coordinate3192 := TCoordinateNode.Create;
 Coordinate3192.SetPoint([Vector3(20, 1.3833333333333333, -0.1), Vector3(-20, 1.3833333333333333, -0.1), Vector3(-20, -1.616666666666667, -0.1), Vector3(20, -1.616666666666667, -0.1)]);
 IndexedFaceSet3191.Coord := Coordinate3192;
 Shape3188.Geometry := IndexedFaceSet3191;
+end;
+
+procedure InitSingleMenuJinPart277;
+begin
 Transform3181.FdChildren.Add(Shape3188);
 Script3193 := TScriptNode.Create;
 Script3193.X3DName := 'Script5';
@@ -13799,49 +17720,30 @@ Script3193.AddCustomFieldOrEvent(FieldVal3195);
 FieldVal3196 := TSFTime.CreateEvent(Script3193, 'pauseTime', False);
 Script3193.AddCustomFieldOrEvent(FieldVal3196);
 FieldVal3197 := TSFFloat.Create(Script3193, True, 'fraction', 0);
-end;
-
-procedure InitSingleMenuJinPart277;
-begin
 Script3193.AddCustomFieldOrEvent(FieldVal3197);
 FieldVal3198 := TSFColor.Create(Script3193, True, 'diffuseColor', Vector3(0, 0, 1));
 Script3193.AddCustomFieldOrEvent(FieldVal3198);
 FieldVal3199 := TSFBool.Create(Script3193, True, 'checked', False);
 Script3193.AddCustomFieldOrEvent(FieldVal3199);
-Script3193.SetSourceCode('ecmascript:' + LineEnding +
-  '        function inTime(value) {' + LineEnding +
-  '            // Browser.print("in", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '            if (value) {' + LineEnding +
-  '                checked = !checked;' + LineEnding +
-  '            }' + LineEnding +
-  '            if (checked) {' + LineEnding +
-  '                diffuseColor.g = 1;' + LineEnding +
-  '                diffuseColor.b = 0;' + LineEnding +
-  '                resumeTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            } else {' + LineEnding +
-  '                diffuseColor.g = 0;' + LineEnding +
-  '                diffuseColor.b = 1;' + LineEnding +
-  '                pauseTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            }' + LineEnding +
-  '            // Browser.print("out", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '        }');
+FreeAndNil(CompiledScript3193);
+CompiledScript3193 := TScript3193Script.Create(FieldVal3195, FieldVal3196, FieldVal3197, FieldVal3198, FieldVal3199);
+Script3193.SetUrl(['compiled:' + LineEnding +
+  'inTime=Script3193_inTime']);
 Transform3181.FdChildren.Add(Script3193);
 { ROUTE JinDimpler_Sensor.touchTime TO Script5.inTime }
 Transform3181.AddRoute(TouchSensor3182.EventTouchTime, FieldVal3194);
 { ROUTE JinDimpler_Material.diffuseColor TO Script5.diffuseColor }
-Transform3181.AddRoute(Material3190.diffuseColor, FieldVal3198);
+Transform3181.AddRoute(Material3190.diffuseColor, FieldVal3198.EventIn);
 { ROUTE Script5.diffuseColor TO JinDimpler_Material.diffuseColor }
-Transform3181.AddRoute(FieldVal3198, Material3190.diffuseColor);
+Transform3181.AddRoute(FieldVal3198.EventOut, Material3190.diffuseColor);
 { ROUTE Script5.checked TO JinDimpler_Clock.enabled }
-Transform3181.AddRoute(FieldVal3199, TimeSensor64.enabled);
+Transform3181.AddRoute(FieldVal3199.EventOut, TimeSensor64.enabled);
 { ROUTE Script5.pauseTime TO JinDimpler_Clock.pauseTime }
 Transform3181.AddRoute(FieldVal3196, TimeSensor64.pauseTime);
 { ROUTE Script5.resumeTime TO JinDimpler_Clock.resumeTime }
 Transform3181.AddRoute(FieldVal3195, TimeSensor64.resumeTime);
 { ROUTE Script5.fraction TO AnimationAdapter_JinDimpler.set_fraction }
-Transform3181.AddRoute(FieldVal3197, ScalarInterpolator14.EventSet_fraction);
+Transform3181.AddRoute(FieldVal3197.EventOut, ScalarInterpolator14.EventSet_fraction);
 Group3045.FdChildren.Add(Transform3181);
 { ROUTE JinDimpler_Sensor.touchTime TO JinDimpler_Clock.startTime }
 Group3045.AddRoute(TouchSensor3182.EventTouchTime, TimeSensor64.FdStartTime.EventIn);
@@ -13849,6 +17751,10 @@ Transform3208 := TTransformNode.Create;
 Transform3208.Translation := Vector3(48, 45.39999999999999, 0);
 TouchSensor3209 := TTouchSensorNode.Create;
 TouchSensor3209.Description := 'Jin Eyes Closed';
+end;
+
+procedure InitSingleMenuJinPart278;
+begin
 TouchSensor3209.X3DName := 'JinEyesClosed_Sensor';
 Transform3208.FdChildren.Add(TouchSensor3209);
 Shape3210 := TShapeNode.Create;
@@ -13861,10 +17767,6 @@ Text3213 := TTextNode.Create;
 Text3213.SetText(['JinEyesClosed']);
 FontStyle3214 := TFontStyleNode.Create;
 FontStyle3214.Size := 2.4;
-end;
-
-procedure InitSingleMenuJinPart278;
-begin
 FontStyle3214.Spacing := 1.2;
 FontStyle3214.Justify := fjMiddle;
 FontStyle3214.JustifyMinor := fjMiddle;
@@ -13893,50 +17795,35 @@ FieldVal3222 := TSFTime.CreateEvent(Script3220, 'resumeTime', False);
 Script3220.AddCustomFieldOrEvent(FieldVal3222);
 FieldVal3223 := TSFTime.CreateEvent(Script3220, 'pauseTime', False);
 Script3220.AddCustomFieldOrEvent(FieldVal3223);
+end;
+
+procedure InitSingleMenuJinPart279;
+begin
 FieldVal3224 := TSFFloat.Create(Script3220, True, 'fraction', 0);
 Script3220.AddCustomFieldOrEvent(FieldVal3224);
 FieldVal3225 := TSFColor.Create(Script3220, True, 'diffuseColor', Vector3(0, 0, 1));
 Script3220.AddCustomFieldOrEvent(FieldVal3225);
 FieldVal3226 := TSFBool.Create(Script3220, True, 'checked', False);
 Script3220.AddCustomFieldOrEvent(FieldVal3226);
-Script3220.SetSourceCode('ecmascript:' + LineEnding +
-  '        function inTime(value) {' + LineEnding +
-  '            // Browser.print("in", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '            if (value) {' + LineEnding +
-  '                checked = !checked;' + LineEnding +
-  '            }' + LineEnding +
-  '            if (checked) {' + LineEnding +
-  '                diffuseColor.g = 1;' + LineEnding +
-  '                diffuseColor.b = 0;' + LineEnding +
-  '                resumeTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            } else {' + LineEnding +
-  '                diffuseColor.g = 0;' + LineEnding +
-  '                diffuseColor.b = 1;' + LineEnding +
-  '                pauseTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            }' + LineEnding +
-  '            // Browser.print("out", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '        }');
+FreeAndNil(CompiledScript3220);
+CompiledScript3220 := TScript3220Script.Create(FieldVal3222, FieldVal3223, FieldVal3224, FieldVal3225, FieldVal3226);
+Script3220.SetUrl(['compiled:' + LineEnding +
+  'inTime=Script3220_inTime']);
 Transform3208.FdChildren.Add(Script3220);
 { ROUTE JinEyesClosed_Sensor.touchTime TO Script6.inTime }
 Transform3208.AddRoute(TouchSensor3209.EventTouchTime, FieldVal3221);
 { ROUTE JinEyesClosed_Material.diffuseColor TO Script6.diffuseColor }
-Transform3208.AddRoute(Material3217.diffuseColor, FieldVal3225);
-end;
-
-procedure InitSingleMenuJinPart279;
-begin
+Transform3208.AddRoute(Material3217.diffuseColor, FieldVal3225.EventIn);
 { ROUTE Script6.diffuseColor TO JinEyesClosed_Material.diffuseColor }
-Transform3208.AddRoute(FieldVal3225, Material3217.diffuseColor);
+Transform3208.AddRoute(FieldVal3225.EventOut, Material3217.diffuseColor);
 { ROUTE Script6.checked TO JinEyesClosed_Clock.enabled }
-Transform3208.AddRoute(FieldVal3226, TimeSensor63.enabled);
+Transform3208.AddRoute(FieldVal3226.EventOut, TimeSensor63.enabled);
 { ROUTE Script6.pauseTime TO JinEyesClosed_Clock.pauseTime }
 Transform3208.AddRoute(FieldVal3223, TimeSensor63.pauseTime);
 { ROUTE Script6.resumeTime TO JinEyesClosed_Clock.resumeTime }
 Transform3208.AddRoute(FieldVal3222, TimeSensor63.resumeTime);
 { ROUTE Script6.fraction TO AnimationAdapter_JinEyesClosed.set_fraction }
-Transform3208.AddRoute(FieldVal3224, ScalarInterpolator15.EventSet_fraction);
+Transform3208.AddRoute(FieldVal3224.EventOut, ScalarInterpolator15.EventSet_fraction);
 Group3045.FdChildren.Add(Transform3208);
 { ROUTE JinEyesClosed_Sensor.touchTime TO JinEyesClosed_Clock.startTime }
 Group3045.AddRoute(TouchSensor3209.EventTouchTime, TimeSensor63.FdStartTime.EventIn);
@@ -13953,6 +17840,10 @@ Material3239.DiffuseColor := Vector3(1, 1, 1);
 Appearance3238.Material := Material3239;
 Shape3237.Appearance := Appearance3238;
 Text3240 := TTextNode.Create;
+end;
+
+procedure InitSingleMenuJinPart280;
+begin
 Text3240.SetText(['JinInnerBrowRaiser']);
 FontStyle3241 := TFontStyleNode.Create;
 FontStyle3241.Size := 2.4;
@@ -13967,10 +17858,6 @@ Appearance3243 := TAppearanceNode.Create;
 Material3244 := TMaterialNode.Create;
 Material3244.X3DName := 'JinInnerBrowRaiser_Material';
 Material3244.DiffuseColor := Vector3(0, 0, 1);
-end;
-
-procedure InitSingleMenuJinPart280;
-begin
 Appearance3243.Material := Material3244;
 Shape3242.Appearance := Appearance3243;
 IndexedFaceSet3245 := TIndexedFaceSetNode.Create;
@@ -13994,45 +17881,30 @@ FieldVal3252 := TSFColor.Create(Script3247, True, 'diffuseColor', Vector3(0, 0, 
 Script3247.AddCustomFieldOrEvent(FieldVal3252);
 FieldVal3253 := TSFBool.Create(Script3247, True, 'checked', False);
 Script3247.AddCustomFieldOrEvent(FieldVal3253);
-Script3247.SetSourceCode('ecmascript:' + LineEnding +
-  '        function inTime(value) {' + LineEnding +
-  '            // Browser.print("in", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '            if (value) {' + LineEnding +
-  '                checked = !checked;' + LineEnding +
-  '            }' + LineEnding +
-  '            if (checked) {' + LineEnding +
-  '                diffuseColor.g = 1;' + LineEnding +
-  '                diffuseColor.b = 0;' + LineEnding +
-  '                resumeTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            } else {' + LineEnding +
-  '                diffuseColor.g = 0;' + LineEnding +
-  '                diffuseColor.b = 1;' + LineEnding +
-  '                pauseTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            }' + LineEnding +
-  '            // Browser.print("out", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '        }');
+FreeAndNil(CompiledScript3247);
+CompiledScript3247 := TScript3247Script.Create(FieldVal3249, FieldVal3250, FieldVal3251, FieldVal3252, FieldVal3253);
+Script3247.SetUrl(['compiled:' + LineEnding +
+  'inTime=Script3247_inTime']);
+end;
+
+procedure InitSingleMenuJinPart281;
+begin
 Transform3235.FdChildren.Add(Script3247);
 { ROUTE JinInnerBrowRaiser_Sensor.touchTime TO Script7.inTime }
 Transform3235.AddRoute(TouchSensor3236.EventTouchTime, FieldVal3248);
 { ROUTE JinInnerBrowRaiser_Material.diffuseColor TO Script7.diffuseColor }
-Transform3235.AddRoute(Material3244.diffuseColor, FieldVal3252);
+Transform3235.AddRoute(Material3244.diffuseColor, FieldVal3252.EventIn);
 { ROUTE Script7.diffuseColor TO JinInnerBrowRaiser_Material.diffuseColor }
-Transform3235.AddRoute(FieldVal3252, Material3244.diffuseColor);
+Transform3235.AddRoute(FieldVal3252.EventOut, Material3244.diffuseColor);
 { ROUTE Script7.checked TO JinInnerBrowRaiser_Clock.enabled }
-Transform3235.AddRoute(FieldVal3253, TimeSensor62.enabled);
+Transform3235.AddRoute(FieldVal3253.EventOut, TimeSensor62.enabled);
 { ROUTE Script7.pauseTime TO JinInnerBrowRaiser_Clock.pauseTime }
 Transform3235.AddRoute(FieldVal3250, TimeSensor62.pauseTime);
 { ROUTE Script7.resumeTime TO JinInnerBrowRaiser_Clock.resumeTime }
 Transform3235.AddRoute(FieldVal3249, TimeSensor62.resumeTime);
 { ROUTE Script7.fraction TO AnimationAdapter_JinInnerBrowRaiser.set_fraction }
-Transform3235.AddRoute(FieldVal3251, ScalarInterpolator16.EventSet_fraction);
+Transform3235.AddRoute(FieldVal3251.EventOut, ScalarInterpolator16.EventSet_fraction);
 Group3045.FdChildren.Add(Transform3235);
-end;
-
-procedure InitSingleMenuJinPart281;
-begin
 { ROUTE JinInnerBrowRaiser_Sensor.touchTime TO JinInnerBrowRaiser_Clock.startTime }
 Group3045.AddRoute(TouchSensor3236.EventTouchTime, TimeSensor62.FdStartTime.EventIn);
 Transform3262 := TTransformNode.Create;
@@ -14057,6 +17929,10 @@ FontStyle3268.JustifyMinor := fjMiddle;
 Text3267.FontStyle := FontStyle3268;
 Shape3264.Geometry := Text3267;
 Transform3262.FdChildren.Add(Shape3264);
+end;
+
+procedure InitSingleMenuJinPart282;
+begin
 Shape3269 := TShapeNode.Create;
 Appearance3270 := TAppearanceNode.Create;
 Material3271 := TMaterialNode.Create;
@@ -14073,10 +17949,6 @@ Shape3269.Geometry := IndexedFaceSet3272;
 Transform3262.FdChildren.Add(Shape3269);
 Script3274 := TScriptNode.Create;
 Script3274.X3DName := 'Script8';
-end;
-
-procedure InitSingleMenuJinPart282;
-begin
 FieldVal3275 := TSFTime.CreateEvent(Script3274, 'inTime', True);
 Script3274.AddCustomFieldOrEvent(FieldVal3275);
 FieldVal3276 := TSFTime.CreateEvent(Script3274, 'resumeTime', False);
@@ -14089,40 +17961,29 @@ FieldVal3279 := TSFColor.Create(Script3274, True, 'diffuseColor', Vector3(0, 0, 
 Script3274.AddCustomFieldOrEvent(FieldVal3279);
 FieldVal3280 := TSFBool.Create(Script3274, True, 'checked', False);
 Script3274.AddCustomFieldOrEvent(FieldVal3280);
-Script3274.SetSourceCode('ecmascript:' + LineEnding +
-  '        function inTime(value) {' + LineEnding +
-  '            // Browser.print("in", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '            if (value) {' + LineEnding +
-  '                checked = !checked;' + LineEnding +
-  '            }' + LineEnding +
-  '            if (checked) {' + LineEnding +
-  '                diffuseColor.g = 1;' + LineEnding +
-  '                diffuseColor.b = 0;' + LineEnding +
-  '                resumeTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            } else {' + LineEnding +
-  '                diffuseColor.g = 0;' + LineEnding +
-  '                diffuseColor.b = 1;' + LineEnding +
-  '                pauseTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            }' + LineEnding +
-  '            // Browser.print("out", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '        }');
+FreeAndNil(CompiledScript3274);
+CompiledScript3274 := TScript3274Script.Create(FieldVal3276, FieldVal3277, FieldVal3278, FieldVal3279, FieldVal3280);
+Script3274.SetUrl(['compiled:' + LineEnding +
+  'inTime=Script3274_inTime']);
 Transform3262.FdChildren.Add(Script3274);
 { ROUTE JinJawDrop_Sensor.touchTime TO Script8.inTime }
 Transform3262.AddRoute(TouchSensor3263.EventTouchTime, FieldVal3275);
 { ROUTE JinJawDrop_Material.diffuseColor TO Script8.diffuseColor }
-Transform3262.AddRoute(Material3271.diffuseColor, FieldVal3279);
+Transform3262.AddRoute(Material3271.diffuseColor, FieldVal3279.EventIn);
 { ROUTE Script8.diffuseColor TO JinJawDrop_Material.diffuseColor }
-Transform3262.AddRoute(FieldVal3279, Material3271.diffuseColor);
+Transform3262.AddRoute(FieldVal3279.EventOut, Material3271.diffuseColor);
 { ROUTE Script8.checked TO JinJawDrop_Clock.enabled }
-Transform3262.AddRoute(FieldVal3280, TimeSensor61.enabled);
+Transform3262.AddRoute(FieldVal3280.EventOut, TimeSensor61.enabled);
+end;
+
+procedure InitSingleMenuJinPart283;
+begin
 { ROUTE Script8.pauseTime TO JinJawDrop_Clock.pauseTime }
 Transform3262.AddRoute(FieldVal3277, TimeSensor61.pauseTime);
 { ROUTE Script8.resumeTime TO JinJawDrop_Clock.resumeTime }
 Transform3262.AddRoute(FieldVal3276, TimeSensor61.resumeTime);
 { ROUTE Script8.fraction TO AnimationAdapter_JinJawDrop.set_fraction }
-Transform3262.AddRoute(FieldVal3278, ScalarInterpolator17.EventSet_fraction);
+Transform3262.AddRoute(FieldVal3278.EventOut, ScalarInterpolator17.EventSet_fraction);
 Group3045.FdChildren.Add(Transform3262);
 { ROUTE JinJawDrop_Sensor.touchTime TO JinJawDrop_Clock.startTime }
 Group3045.AddRoute(TouchSensor3263.EventTouchTime, TimeSensor61.FdStartTime.EventIn);
@@ -14135,10 +17996,6 @@ Transform3289.FdChildren.Add(TouchSensor3290);
 Shape3291 := TShapeNode.Create;
 Appearance3292 := TAppearanceNode.Create;
 Material3293 := TMaterialNode.Create;
-end;
-
-procedure InitSingleMenuJinPart283;
-begin
 Material3293.DiffuseColor := Vector3(1, 1, 1);
 Appearance3292.Material := Material3293;
 Shape3291.Appearance := Appearance3292;
@@ -14161,6 +18018,10 @@ Appearance3297.Material := Material3298;
 Shape3296.Appearance := Appearance3297;
 IndexedFaceSet3299 := TIndexedFaceSetNode.Create;
 IndexedFaceSet3299.SetCoordIndex([0, 1, 2, 3, -1]);
+end;
+
+procedure InitSingleMenuJinPart284;
+begin
 Coordinate3300 := TCoordinateNode.Create;
 Coordinate3300.SetPoint([Vector3(20, 1.3833333333333333, -0.1), Vector3(-20, 1.3833333333333333, -0.1), Vector3(-20, -1.616666666666667, -0.1), Vector3(20, -1.616666666666667, -0.1)]);
 IndexedFaceSet3299.Coord := Coordinate3300;
@@ -14179,48 +18040,33 @@ Script3301.AddCustomFieldOrEvent(FieldVal3305);
 FieldVal3306 := TSFColor.Create(Script3301, True, 'diffuseColor', Vector3(0, 0, 1));
 Script3301.AddCustomFieldOrEvent(FieldVal3306);
 FieldVal3307 := TSFBool.Create(Script3301, True, 'checked', False);
-end;
-
-procedure InitSingleMenuJinPart284;
-begin
 Script3301.AddCustomFieldOrEvent(FieldVal3307);
-Script3301.SetSourceCode('ecmascript:' + LineEnding +
-  '        function inTime(value) {' + LineEnding +
-  '            // Browser.print("in", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '            if (value) {' + LineEnding +
-  '                checked = !checked;' + LineEnding +
-  '            }' + LineEnding +
-  '            if (checked) {' + LineEnding +
-  '                diffuseColor.g = 1;' + LineEnding +
-  '                diffuseColor.b = 0;' + LineEnding +
-  '                resumeTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            } else {' + LineEnding +
-  '                diffuseColor.g = 0;' + LineEnding +
-  '                diffuseColor.b = 1;' + LineEnding +
-  '                pauseTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            }' + LineEnding +
-  '            // Browser.print("out", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '        }');
+FreeAndNil(CompiledScript3301);
+CompiledScript3301 := TScript3301Script.Create(FieldVal3303, FieldVal3304, FieldVal3305, FieldVal3306, FieldVal3307);
+Script3301.SetUrl(['compiled:' + LineEnding +
+  'inTime=Script3301_inTime']);
 Transform3289.FdChildren.Add(Script3301);
 { ROUTE JinLidDroop_Sensor.touchTime TO Script9.inTime }
 Transform3289.AddRoute(TouchSensor3290.EventTouchTime, FieldVal3302);
 { ROUTE JinLidDroop_Material.diffuseColor TO Script9.diffuseColor }
-Transform3289.AddRoute(Material3298.diffuseColor, FieldVal3306);
+Transform3289.AddRoute(Material3298.diffuseColor, FieldVal3306.EventIn);
 { ROUTE Script9.diffuseColor TO JinLidDroop_Material.diffuseColor }
-Transform3289.AddRoute(FieldVal3306, Material3298.diffuseColor);
+Transform3289.AddRoute(FieldVal3306.EventOut, Material3298.diffuseColor);
 { ROUTE Script9.checked TO JinLidDroop_Clock.enabled }
-Transform3289.AddRoute(FieldVal3307, TimeSensor60.enabled);
+Transform3289.AddRoute(FieldVal3307.EventOut, TimeSensor60.enabled);
 { ROUTE Script9.pauseTime TO JinLidDroop_Clock.pauseTime }
 Transform3289.AddRoute(FieldVal3304, TimeSensor60.pauseTime);
 { ROUTE Script9.resumeTime TO JinLidDroop_Clock.resumeTime }
 Transform3289.AddRoute(FieldVal3303, TimeSensor60.resumeTime);
 { ROUTE Script9.fraction TO AnimationAdapter_JinLidDroop.set_fraction }
-Transform3289.AddRoute(FieldVal3305, ScalarInterpolator18.EventSet_fraction);
+Transform3289.AddRoute(FieldVal3305.EventOut, ScalarInterpolator18.EventSet_fraction);
 Group3045.FdChildren.Add(Transform3289);
 { ROUTE JinLidDroop_Sensor.touchTime TO JinLidDroop_Clock.startTime }
 Group3045.AddRoute(TouchSensor3290.EventTouchTime, TimeSensor60.FdStartTime.EventIn);
+end;
+
+procedure InitSingleMenuJinPart285;
+begin
 Transform3316 := TTransformNode.Create;
 Transform3316.Translation := Vector3(48, 33.39999999999999, 0);
 TouchSensor3317 := TTouchSensorNode.Create;
@@ -14241,10 +18087,6 @@ FontStyle3322.Spacing := 1.2;
 FontStyle3322.Justify := fjMiddle;
 FontStyle3322.JustifyMinor := fjMiddle;
 Text3321.FontStyle := FontStyle3322;
-end;
-
-procedure InitSingleMenuJinPart285;
-begin
 Shape3318.Geometry := Text3321;
 Transform3316.FdChildren.Add(Shape3318);
 Shape3323 := TShapeNode.Create;
@@ -14265,6 +18107,10 @@ Script3328 := TScriptNode.Create;
 Script3328.X3DName := 'Script10';
 FieldVal3329 := TSFTime.CreateEvent(Script3328, 'inTime', True);
 Script3328.AddCustomFieldOrEvent(FieldVal3329);
+end;
+
+procedure InitSingleMenuJinPart286;
+begin
 FieldVal3330 := TSFTime.CreateEvent(Script3328, 'resumeTime', False);
 Script3328.AddCustomFieldOrEvent(FieldVal3330);
 FieldVal3331 := TSFTime.CreateEvent(Script3328, 'pauseTime', False);
@@ -14275,44 +18121,25 @@ FieldVal3333 := TSFColor.Create(Script3328, True, 'diffuseColor', Vector3(0, 0, 
 Script3328.AddCustomFieldOrEvent(FieldVal3333);
 FieldVal3334 := TSFBool.Create(Script3328, True, 'checked', False);
 Script3328.AddCustomFieldOrEvent(FieldVal3334);
-Script3328.SetSourceCode('ecmascript:' + LineEnding +
-  '        function inTime(value) {' + LineEnding +
-  '            // Browser.print("in", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '            if (value) {' + LineEnding +
-  '                checked = !checked;' + LineEnding +
-  '            }' + LineEnding +
-  '            if (checked) {' + LineEnding +
-  '                diffuseColor.g = 1;' + LineEnding +
-  '                diffuseColor.b = 0;' + LineEnding +
-  '                resumeTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            } else {' + LineEnding +
-  '                diffuseColor.g = 0;' + LineEnding +
-  '                diffuseColor.b = 1;' + LineEnding +
-  '                pauseTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            }' + LineEnding +
-  '            // Browser.print("out", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '        }');
+FreeAndNil(CompiledScript3328);
+CompiledScript3328 := TScript3328Script.Create(FieldVal3330, FieldVal3331, FieldVal3332, FieldVal3333, FieldVal3334);
+Script3328.SetUrl(['compiled:' + LineEnding +
+  'inTime=Script3328_inTime']);
 Transform3316.FdChildren.Add(Script3328);
 { ROUTE JinLidTightener_Sensor.touchTime TO Script10.inTime }
 Transform3316.AddRoute(TouchSensor3317.EventTouchTime, FieldVal3329);
 { ROUTE JinLidTightener_Material.diffuseColor TO Script10.diffuseColor }
-Transform3316.AddRoute(Material3325.diffuseColor, FieldVal3333);
+Transform3316.AddRoute(Material3325.diffuseColor, FieldVal3333.EventIn);
 { ROUTE Script10.diffuseColor TO JinLidTightener_Material.diffuseColor }
-Transform3316.AddRoute(FieldVal3333, Material3325.diffuseColor);
+Transform3316.AddRoute(FieldVal3333.EventOut, Material3325.diffuseColor);
 { ROUTE Script10.checked TO JinLidTightener_Clock.enabled }
-Transform3316.AddRoute(FieldVal3334, TimeSensor59.enabled);
-end;
-
-procedure InitSingleMenuJinPart286;
-begin
+Transform3316.AddRoute(FieldVal3334.EventOut, TimeSensor59.enabled);
 { ROUTE Script10.pauseTime TO JinLidTightener_Clock.pauseTime }
 Transform3316.AddRoute(FieldVal3331, TimeSensor59.pauseTime);
 { ROUTE Script10.resumeTime TO JinLidTightener_Clock.resumeTime }
 Transform3316.AddRoute(FieldVal3330, TimeSensor59.resumeTime);
 { ROUTE Script10.fraction TO AnimationAdapter_JinLidTightener.set_fraction }
-Transform3316.AddRoute(FieldVal3332, ScalarInterpolator19.EventSet_fraction);
+Transform3316.AddRoute(FieldVal3332.EventOut, ScalarInterpolator19.EventSet_fraction);
 Group3045.FdChildren.Add(Transform3316);
 { ROUTE JinLidTightener_Sensor.touchTime TO JinLidTightener_Clock.startTime }
 Group3045.AddRoute(TouchSensor3317.EventTouchTime, TimeSensor59.FdStartTime.EventIn);
@@ -14325,6 +18152,10 @@ Transform3343.FdChildren.Add(TouchSensor3344);
 Shape3345 := TShapeNode.Create;
 Appearance3346 := TAppearanceNode.Create;
 Material3347 := TMaterialNode.Create;
+end;
+
+procedure InitSingleMenuJinPart287;
+begin
 Material3347.DiffuseColor := Vector3(1, 1, 1);
 Appearance3346.Material := Material3347;
 Shape3345.Appearance := Appearance3346;
@@ -14347,10 +18178,6 @@ Appearance3351.Material := Material3352;
 Shape3350.Appearance := Appearance3351;
 IndexedFaceSet3353 := TIndexedFaceSetNode.Create;
 IndexedFaceSet3353.SetCoordIndex([0, 1, 2, 3, -1]);
-end;
-
-procedure InitSingleMenuJinPart287;
-begin
 Coordinate3354 := TCoordinateNode.Create;
 Coordinate3354.SetPoint([Vector3(20, 1.3833333333333333, -0.1), Vector3(-20, 1.3833333333333333, -0.1), Vector3(-20, -1.616666666666667, -0.1), Vector3(20, -1.616666666666667, -0.1)]);
 IndexedFaceSet3353.Coord := Coordinate3354;
@@ -14369,50 +18196,35 @@ Script3355.AddCustomFieldOrEvent(FieldVal3359);
 FieldVal3360 := TSFColor.Create(Script3355, True, 'diffuseColor', Vector3(0, 0, 1));
 Script3355.AddCustomFieldOrEvent(FieldVal3360);
 FieldVal3361 := TSFBool.Create(Script3355, True, 'checked', False);
+end;
+
+procedure InitSingleMenuJinPart288;
+begin
 Script3355.AddCustomFieldOrEvent(FieldVal3361);
-Script3355.SetSourceCode('ecmascript:' + LineEnding +
-  '        function inTime(value) {' + LineEnding +
-  '            // Browser.print("in", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '            if (value) {' + LineEnding +
-  '                checked = !checked;' + LineEnding +
-  '            }' + LineEnding +
-  '            if (checked) {' + LineEnding +
-  '                diffuseColor.g = 1;' + LineEnding +
-  '                diffuseColor.b = 0;' + LineEnding +
-  '                resumeTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            } else {' + LineEnding +
-  '                diffuseColor.g = 0;' + LineEnding +
-  '                diffuseColor.b = 1;' + LineEnding +
-  '                pauseTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            }' + LineEnding +
-  '            // Browser.print("out", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '        }');
+FreeAndNil(CompiledScript3355);
+CompiledScript3355 := TScript3355Script.Create(FieldVal3357, FieldVal3358, FieldVal3359, FieldVal3360, FieldVal3361);
+Script3355.SetUrl(['compiled:' + LineEnding +
+  'inTime=Script3355_inTime']);
 Transform3343.FdChildren.Add(Script3355);
 { ROUTE JinLipCornerDepressor_Sensor.touchTime TO Script11.inTime }
 Transform3343.AddRoute(TouchSensor3344.EventTouchTime, FieldVal3356);
 { ROUTE JinLipCornerDepressor_Material.diffuseColor TO Script11.diffuseColor }
-Transform3343.AddRoute(Material3352.diffuseColor, FieldVal3360);
+Transform3343.AddRoute(Material3352.diffuseColor, FieldVal3360.EventIn);
 { ROUTE Script11.diffuseColor TO JinLipCornerDepressor_Material.diffuseColor }
-Transform3343.AddRoute(FieldVal3360, Material3352.diffuseColor);
+Transform3343.AddRoute(FieldVal3360.EventOut, Material3352.diffuseColor);
 { ROUTE Script11.checked TO JinLipCornerDepressor_Clock.enabled }
-Transform3343.AddRoute(FieldVal3361, TimeSensor58.enabled);
+Transform3343.AddRoute(FieldVal3361.EventOut, TimeSensor58.enabled);
 { ROUTE Script11.pauseTime TO JinLipCornerDepressor_Clock.pauseTime }
 Transform3343.AddRoute(FieldVal3358, TimeSensor58.pauseTime);
 { ROUTE Script11.resumeTime TO JinLipCornerDepressor_Clock.resumeTime }
 Transform3343.AddRoute(FieldVal3357, TimeSensor58.resumeTime);
 { ROUTE Script11.fraction TO AnimationAdapter_JinLipCornerDepressor.set_fraction }
-Transform3343.AddRoute(FieldVal3359, ScalarInterpolator20.EventSet_fraction);
+Transform3343.AddRoute(FieldVal3359.EventOut, ScalarInterpolator20.EventSet_fraction);
 Group3045.FdChildren.Add(Transform3343);
 { ROUTE JinLipCornerDepressor_Sensor.touchTime TO JinLipCornerDepressor_Clock.startTime }
 Group3045.AddRoute(TouchSensor3344.EventTouchTime, TimeSensor58.FdStartTime.EventIn);
 Transform3370 := TTransformNode.Create;
 Transform3370.Translation := Vector3(48, 27.399999999999995, 0);
-end;
-
-procedure InitSingleMenuJinPart288;
-begin
 TouchSensor3371 := TTouchSensorNode.Create;
 TouchSensor3371.Description := 'Jin Lip Corner Puller';
 TouchSensor3371.X3DName := 'JinLipCornerPuller_Sensor';
@@ -14429,6 +18241,10 @@ FontStyle3376 := TFontStyleNode.Create;
 FontStyle3376.Size := 2.4;
 FontStyle3376.Spacing := 1.2;
 FontStyle3376.Justify := fjMiddle;
+end;
+
+procedure InitSingleMenuJinPart289;
+begin
 FontStyle3376.JustifyMinor := fjMiddle;
 Text3375.FontStyle := FontStyle3376;
 Shape3372.Geometry := Text3375;
@@ -14453,10 +18269,6 @@ FieldVal3383 := TSFTime.CreateEvent(Script3382, 'inTime', True);
 Script3382.AddCustomFieldOrEvent(FieldVal3383);
 FieldVal3384 := TSFTime.CreateEvent(Script3382, 'resumeTime', False);
 Script3382.AddCustomFieldOrEvent(FieldVal3384);
-end;
-
-procedure InitSingleMenuJinPart289;
-begin
 FieldVal3385 := TSFTime.CreateEvent(Script3382, 'pauseTime', False);
 Script3382.AddCustomFieldOrEvent(FieldVal3385);
 FieldVal3386 := TSFFloat.Create(Script3382, True, 'fraction', 0);
@@ -14465,40 +18277,29 @@ FieldVal3387 := TSFColor.Create(Script3382, True, 'diffuseColor', Vector3(0, 0, 
 Script3382.AddCustomFieldOrEvent(FieldVal3387);
 FieldVal3388 := TSFBool.Create(Script3382, True, 'checked', False);
 Script3382.AddCustomFieldOrEvent(FieldVal3388);
-Script3382.SetSourceCode('ecmascript:' + LineEnding +
-  '        function inTime(value) {' + LineEnding +
-  '            // Browser.print("in", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '            if (value) {' + LineEnding +
-  '                checked = !checked;' + LineEnding +
-  '            }' + LineEnding +
-  '            if (checked) {' + LineEnding +
-  '                diffuseColor.g = 1;' + LineEnding +
-  '                diffuseColor.b = 0;' + LineEnding +
-  '                resumeTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            } else {' + LineEnding +
-  '                diffuseColor.g = 0;' + LineEnding +
-  '                diffuseColor.b = 1;' + LineEnding +
-  '                pauseTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            }' + LineEnding +
-  '            // Browser.print("out", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '        }');
+FreeAndNil(CompiledScript3382);
+CompiledScript3382 := TScript3382Script.Create(FieldVal3384, FieldVal3385, FieldVal3386, FieldVal3387, FieldVal3388);
+Script3382.SetUrl(['compiled:' + LineEnding +
+  'inTime=Script3382_inTime']);
 Transform3370.FdChildren.Add(Script3382);
 { ROUTE JinLipCornerPuller_Sensor.touchTime TO Script12.inTime }
 Transform3370.AddRoute(TouchSensor3371.EventTouchTime, FieldVal3383);
 { ROUTE JinLipCornerPuller_Material.diffuseColor TO Script12.diffuseColor }
-Transform3370.AddRoute(Material3379.diffuseColor, FieldVal3387);
+Transform3370.AddRoute(Material3379.diffuseColor, FieldVal3387.EventIn);
+end;
+
+procedure InitSingleMenuJinPart290;
+begin
 { ROUTE Script12.diffuseColor TO JinLipCornerPuller_Material.diffuseColor }
-Transform3370.AddRoute(FieldVal3387, Material3379.diffuseColor);
+Transform3370.AddRoute(FieldVal3387.EventOut, Material3379.diffuseColor);
 { ROUTE Script12.checked TO JinLipCornerPuller_Clock.enabled }
-Transform3370.AddRoute(FieldVal3388, TimeSensor57.enabled);
+Transform3370.AddRoute(FieldVal3388.EventOut, TimeSensor57.enabled);
 { ROUTE Script12.pauseTime TO JinLipCornerPuller_Clock.pauseTime }
 Transform3370.AddRoute(FieldVal3385, TimeSensor57.pauseTime);
 { ROUTE Script12.resumeTime TO JinLipCornerPuller_Clock.resumeTime }
 Transform3370.AddRoute(FieldVal3384, TimeSensor57.resumeTime);
 { ROUTE Script12.fraction TO AnimationAdapter_JinLipCornerPuller.set_fraction }
-Transform3370.AddRoute(FieldVal3386, ScalarInterpolator21.EventSet_fraction);
+Transform3370.AddRoute(FieldVal3386.EventOut, ScalarInterpolator21.EventSet_fraction);
 Group3045.FdChildren.Add(Transform3370);
 { ROUTE JinLipCornerPuller_Sensor.touchTime TO JinLipCornerPuller_Clock.startTime }
 Group3045.AddRoute(TouchSensor3371.EventTouchTime, TimeSensor57.FdStartTime.EventIn);
@@ -14515,10 +18316,6 @@ Material3401.DiffuseColor := Vector3(1, 1, 1);
 Appearance3400.Material := Material3401;
 Shape3399.Appearance := Appearance3400;
 Text3402 := TTextNode.Create;
-end;
-
-procedure InitSingleMenuJinPart290;
-begin
 Text3402.SetText(['JinLipFunneler']);
 FontStyle3403 := TFontStyleNode.Create;
 FontStyle3403.Size := 2.4;
@@ -14533,6 +18330,10 @@ Appearance3405 := TAppearanceNode.Create;
 Material3406 := TMaterialNode.Create;
 Material3406.X3DName := 'JinLipFunneler_Material';
 Material3406.DiffuseColor := Vector3(0, 0, 1);
+end;
+
+procedure InitSingleMenuJinPart291;
+begin
 Appearance3405.Material := Material3406;
 Shape3404.Appearance := Appearance3405;
 IndexedFaceSet3407 := TIndexedFaceSetNode.Create;
@@ -14556,44 +18357,29 @@ FieldVal3414 := TSFColor.Create(Script3409, True, 'diffuseColor', Vector3(0, 0, 
 Script3409.AddCustomFieldOrEvent(FieldVal3414);
 FieldVal3415 := TSFBool.Create(Script3409, True, 'checked', False);
 Script3409.AddCustomFieldOrEvent(FieldVal3415);
-Script3409.SetSourceCode('ecmascript:' + LineEnding +
-  '        function inTime(value) {' + LineEnding +
-  '            // Browser.print("in", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '            if (value) {' + LineEnding +
-  '                checked = !checked;' + LineEnding +
-  '            }' + LineEnding +
-  '            if (checked) {' + LineEnding +
-  '                diffuseColor.g = 1;' + LineEnding +
-  '                diffuseColor.b = 0;' + LineEnding +
-  '                resumeTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            } else {' + LineEnding +
-  '                diffuseColor.g = 0;' + LineEnding +
-  '                diffuseColor.b = 1;' + LineEnding +
-  '                pauseTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            }' + LineEnding +
-  '            // Browser.print("out", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '        }');
+FreeAndNil(CompiledScript3409);
+CompiledScript3409 := TScript3409Script.Create(FieldVal3411, FieldVal3412, FieldVal3413, FieldVal3414, FieldVal3415);
+Script3409.SetUrl(['compiled:' + LineEnding +
+  'inTime=Script3409_inTime']);
 Transform3397.FdChildren.Add(Script3409);
 { ROUTE JinLipFunneler_Sensor.touchTime TO Script13.inTime }
-end;
-
-procedure InitSingleMenuJinPart291;
-begin
 Transform3397.AddRoute(TouchSensor3398.EventTouchTime, FieldVal3410);
 { ROUTE JinLipFunneler_Material.diffuseColor TO Script13.diffuseColor }
-Transform3397.AddRoute(Material3406.diffuseColor, FieldVal3414);
+Transform3397.AddRoute(Material3406.diffuseColor, FieldVal3414.EventIn);
 { ROUTE Script13.diffuseColor TO JinLipFunneler_Material.diffuseColor }
-Transform3397.AddRoute(FieldVal3414, Material3406.diffuseColor);
+Transform3397.AddRoute(FieldVal3414.EventOut, Material3406.diffuseColor);
 { ROUTE Script13.checked TO JinLipFunneler_Clock.enabled }
-Transform3397.AddRoute(FieldVal3415, TimeSensor56.enabled);
+Transform3397.AddRoute(FieldVal3415.EventOut, TimeSensor56.enabled);
 { ROUTE Script13.pauseTime TO JinLipFunneler_Clock.pauseTime }
 Transform3397.AddRoute(FieldVal3412, TimeSensor56.pauseTime);
 { ROUTE Script13.resumeTime TO JinLipFunneler_Clock.resumeTime }
 Transform3397.AddRoute(FieldVal3411, TimeSensor56.resumeTime);
 { ROUTE Script13.fraction TO AnimationAdapter_JinLipFunneler.set_fraction }
-Transform3397.AddRoute(FieldVal3413, ScalarInterpolator22.EventSet_fraction);
+end;
+
+procedure InitSingleMenuJinPart292;
+begin
+Transform3397.AddRoute(FieldVal3413.EventOut, ScalarInterpolator22.EventSet_fraction);
 Group3045.FdChildren.Add(Transform3397);
 { ROUTE JinLipFunneler_Sensor.touchTime TO JinLipFunneler_Clock.startTime }
 Group3045.AddRoute(TouchSensor3398.EventTouchTime, TimeSensor56.FdStartTime.EventIn);
@@ -14621,10 +18407,6 @@ Shape3426.Geometry := Text3429;
 Transform3424.FdChildren.Add(Shape3426);
 Shape3431 := TShapeNode.Create;
 Appearance3432 := TAppearanceNode.Create;
-end;
-
-procedure InitSingleMenuJinPart292;
-begin
 Material3433 := TMaterialNode.Create;
 Material3433.X3DName := 'JinLipPressor_Material';
 Material3433.DiffuseColor := Vector3(0, 0, 1);
@@ -14637,6 +18419,10 @@ Coordinate3435.SetPoint([Vector3(20, 1.3833333333333333, -0.1), Vector3(-20, 1.3
 IndexedFaceSet3434.Coord := Coordinate3435;
 Shape3431.Geometry := IndexedFaceSet3434;
 Transform3424.FdChildren.Add(Shape3431);
+end;
+
+procedure InitSingleMenuJinPart293;
+begin
 Script3436 := TScriptNode.Create;
 Script3436.X3DName := 'Script14';
 FieldVal3437 := TSFTime.CreateEvent(Script3436, 'inTime', True);
@@ -14651,44 +18437,25 @@ FieldVal3441 := TSFColor.Create(Script3436, True, 'diffuseColor', Vector3(0, 0, 
 Script3436.AddCustomFieldOrEvent(FieldVal3441);
 FieldVal3442 := TSFBool.Create(Script3436, True, 'checked', False);
 Script3436.AddCustomFieldOrEvent(FieldVal3442);
-Script3436.SetSourceCode('ecmascript:' + LineEnding +
-  '        function inTime(value) {' + LineEnding +
-  '            // Browser.print("in", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '            if (value) {' + LineEnding +
-  '                checked = !checked;' + LineEnding +
-  '            }' + LineEnding +
-  '            if (checked) {' + LineEnding +
-  '                diffuseColor.g = 1;' + LineEnding +
-  '                diffuseColor.b = 0;' + LineEnding +
-  '                resumeTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            } else {' + LineEnding +
-  '                diffuseColor.g = 0;' + LineEnding +
-  '                diffuseColor.b = 1;' + LineEnding +
-  '                pauseTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            }' + LineEnding +
-  '            // Browser.print("out", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '        }');
+FreeAndNil(CompiledScript3436);
+CompiledScript3436 := TScript3436Script.Create(FieldVal3438, FieldVal3439, FieldVal3440, FieldVal3441, FieldVal3442);
+Script3436.SetUrl(['compiled:' + LineEnding +
+  'inTime=Script3436_inTime']);
 Transform3424.FdChildren.Add(Script3436);
 { ROUTE JinLipPressor_Sensor.touchTime TO Script14.inTime }
 Transform3424.AddRoute(TouchSensor3425.EventTouchTime, FieldVal3437);
 { ROUTE JinLipPressor_Material.diffuseColor TO Script14.diffuseColor }
-Transform3424.AddRoute(Material3433.diffuseColor, FieldVal3441);
+Transform3424.AddRoute(Material3433.diffuseColor, FieldVal3441.EventIn);
 { ROUTE Script14.diffuseColor TO JinLipPressor_Material.diffuseColor }
-Transform3424.AddRoute(FieldVal3441, Material3433.diffuseColor);
+Transform3424.AddRoute(FieldVal3441.EventOut, Material3433.diffuseColor);
 { ROUTE Script14.checked TO JinLipPressor_Clock.enabled }
-Transform3424.AddRoute(FieldVal3442, TimeSensor55.enabled);
+Transform3424.AddRoute(FieldVal3442.EventOut, TimeSensor55.enabled);
 { ROUTE Script14.pauseTime TO JinLipPressor_Clock.pauseTime }
 Transform3424.AddRoute(FieldVal3439, TimeSensor55.pauseTime);
 { ROUTE Script14.resumeTime TO JinLipPressor_Clock.resumeTime }
 Transform3424.AddRoute(FieldVal3438, TimeSensor55.resumeTime);
-end;
-
-procedure InitSingleMenuJinPart293;
-begin
 { ROUTE Script14.fraction TO AnimationAdapter_JinLipPressor.set_fraction }
-Transform3424.AddRoute(FieldVal3440, ScalarInterpolator23.EventSet_fraction);
+Transform3424.AddRoute(FieldVal3440.EventOut, ScalarInterpolator23.EventSet_fraction);
 Group3045.FdChildren.Add(Transform3424);
 { ROUTE JinLipPressor_Sensor.touchTime TO JinLipPressor_Clock.startTime }
 Group3045.AddRoute(TouchSensor3425.EventTouchTime, TimeSensor55.FdStartTime.EventIn);
@@ -14697,6 +18464,10 @@ Transform3451.Translation := Vector3(48, 18.4, 0);
 TouchSensor3452 := TTouchSensorNode.Create;
 TouchSensor3452.Description := 'Jin Lip Puckerer';
 TouchSensor3452.X3DName := 'JinLipPuckerer_Sensor';
+end;
+
+procedure InitSingleMenuJinPart294;
+begin
 Transform3451.FdChildren.Add(TouchSensor3452);
 Shape3453 := TShapeNode.Create;
 Appearance3454 := TAppearanceNode.Create;
@@ -14727,10 +18498,6 @@ Coordinate3462 := TCoordinateNode.Create;
 Coordinate3462.SetPoint([Vector3(20, 1.3833333333333333, -0.1), Vector3(-20, 1.3833333333333333, -0.1), Vector3(-20, -1.616666666666667, -0.1), Vector3(20, -1.616666666666667, -0.1)]);
 IndexedFaceSet3461.Coord := Coordinate3462;
 Shape3458.Geometry := IndexedFaceSet3461;
-end;
-
-procedure InitSingleMenuJinPart294;
-begin
 Transform3451.FdChildren.Add(Shape3458);
 Script3463 := TScriptNode.Create;
 Script3463.X3DName := 'Script15';
@@ -14741,45 +18508,34 @@ Script3463.AddCustomFieldOrEvent(FieldVal3465);
 FieldVal3466 := TSFTime.CreateEvent(Script3463, 'pauseTime', False);
 Script3463.AddCustomFieldOrEvent(FieldVal3466);
 FieldVal3467 := TSFFloat.Create(Script3463, True, 'fraction', 0);
+end;
+
+procedure InitSingleMenuJinPart295;
+begin
 Script3463.AddCustomFieldOrEvent(FieldVal3467);
 FieldVal3468 := TSFColor.Create(Script3463, True, 'diffuseColor', Vector3(0, 0, 1));
 Script3463.AddCustomFieldOrEvent(FieldVal3468);
 FieldVal3469 := TSFBool.Create(Script3463, True, 'checked', False);
 Script3463.AddCustomFieldOrEvent(FieldVal3469);
-Script3463.SetSourceCode('ecmascript:' + LineEnding +
-  '        function inTime(value) {' + LineEnding +
-  '            // Browser.print("in", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '            if (value) {' + LineEnding +
-  '                checked = !checked;' + LineEnding +
-  '            }' + LineEnding +
-  '            if (checked) {' + LineEnding +
-  '                diffuseColor.g = 1;' + LineEnding +
-  '                diffuseColor.b = 0;' + LineEnding +
-  '                resumeTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            } else {' + LineEnding +
-  '                diffuseColor.g = 0;' + LineEnding +
-  '                diffuseColor.b = 1;' + LineEnding +
-  '                pauseTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            }' + LineEnding +
-  '            // Browser.print("out", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '        }');
+FreeAndNil(CompiledScript3463);
+CompiledScript3463 := TScript3463Script.Create(FieldVal3465, FieldVal3466, FieldVal3467, FieldVal3468, FieldVal3469);
+Script3463.SetUrl(['compiled:' + LineEnding +
+  'inTime=Script3463_inTime']);
 Transform3451.FdChildren.Add(Script3463);
 { ROUTE JinLipPuckerer_Sensor.touchTime TO Script15.inTime }
 Transform3451.AddRoute(TouchSensor3452.EventTouchTime, FieldVal3464);
 { ROUTE JinLipPuckerer_Material.diffuseColor TO Script15.diffuseColor }
-Transform3451.AddRoute(Material3460.diffuseColor, FieldVal3468);
+Transform3451.AddRoute(Material3460.diffuseColor, FieldVal3468.EventIn);
 { ROUTE Script15.diffuseColor TO JinLipPuckerer_Material.diffuseColor }
-Transform3451.AddRoute(FieldVal3468, Material3460.diffuseColor);
+Transform3451.AddRoute(FieldVal3468.EventOut, Material3460.diffuseColor);
 { ROUTE Script15.checked TO JinLipPuckerer_Clock.enabled }
-Transform3451.AddRoute(FieldVal3469, TimeSensor54.enabled);
+Transform3451.AddRoute(FieldVal3469.EventOut, TimeSensor54.enabled);
 { ROUTE Script15.pauseTime TO JinLipPuckerer_Clock.pauseTime }
 Transform3451.AddRoute(FieldVal3466, TimeSensor54.pauseTime);
 { ROUTE Script15.resumeTime TO JinLipPuckerer_Clock.resumeTime }
 Transform3451.AddRoute(FieldVal3465, TimeSensor54.resumeTime);
 { ROUTE Script15.fraction TO AnimationAdapter_JinLipPuckerer.set_fraction }
-Transform3451.AddRoute(FieldVal3467, ScalarInterpolator24.EventSet_fraction);
+Transform3451.AddRoute(FieldVal3467.EventOut, ScalarInterpolator24.EventSet_fraction);
 Group3045.FdChildren.Add(Transform3451);
 { ROUTE JinLipPuckerer_Sensor.touchTime TO JinLipPuckerer_Clock.startTime }
 Group3045.AddRoute(TouchSensor3452.EventTouchTime, TimeSensor54.FdStartTime.EventIn);
@@ -14789,10 +18545,6 @@ TouchSensor3479 := TTouchSensorNode.Create;
 TouchSensor3479.Description := 'Jin Lips Part';
 TouchSensor3479.X3DName := 'JinLipsPart_Sensor';
 Transform3478.FdChildren.Add(TouchSensor3479);
-end;
-
-procedure InitSingleMenuJinPart295;
-begin
 Shape3480 := TShapeNode.Create;
 Appearance3481 := TAppearanceNode.Create;
 Material3482 := TMaterialNode.Create;
@@ -14801,6 +18553,10 @@ Appearance3481.Material := Material3482;
 Shape3480.Appearance := Appearance3481;
 Text3483 := TTextNode.Create;
 Text3483.SetText(['JinLipsPart']);
+end;
+
+procedure InitSingleMenuJinPart296;
+begin
 FontStyle3484 := TFontStyleNode.Create;
 FontStyle3484.Size := 2.4;
 FontStyle3484.Spacing := 1.2;
@@ -14833,48 +18589,33 @@ FieldVal3493 := TSFTime.CreateEvent(Script3490, 'pauseTime', False);
 Script3490.AddCustomFieldOrEvent(FieldVal3493);
 FieldVal3494 := TSFFloat.Create(Script3490, True, 'fraction', 0);
 Script3490.AddCustomFieldOrEvent(FieldVal3494);
-end;
-
-procedure InitSingleMenuJinPart296;
-begin
 FieldVal3495 := TSFColor.Create(Script3490, True, 'diffuseColor', Vector3(0, 0, 1));
 Script3490.AddCustomFieldOrEvent(FieldVal3495);
 FieldVal3496 := TSFBool.Create(Script3490, True, 'checked', False);
 Script3490.AddCustomFieldOrEvent(FieldVal3496);
-Script3490.SetSourceCode('ecmascript:' + LineEnding +
-  '        function inTime(value) {' + LineEnding +
-  '            // Browser.print("in", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '            if (value) {' + LineEnding +
-  '                checked = !checked;' + LineEnding +
-  '            }' + LineEnding +
-  '            if (checked) {' + LineEnding +
-  '                diffuseColor.g = 1;' + LineEnding +
-  '                diffuseColor.b = 0;' + LineEnding +
-  '                resumeTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            } else {' + LineEnding +
-  '                diffuseColor.g = 0;' + LineEnding +
-  '                diffuseColor.b = 1;' + LineEnding +
-  '                pauseTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            }' + LineEnding +
-  '            // Browser.print("out", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '        }');
+FreeAndNil(CompiledScript3490);
+CompiledScript3490 := TScript3490Script.Create(FieldVal3492, FieldVal3493, FieldVal3494, FieldVal3495, FieldVal3496);
+Script3490.SetUrl(['compiled:' + LineEnding +
+  'inTime=Script3490_inTime']);
 Transform3478.FdChildren.Add(Script3490);
+end;
+
+procedure InitSingleMenuJinPart297;
+begin
 { ROUTE JinLipsPart_Sensor.touchTime TO Script16.inTime }
 Transform3478.AddRoute(TouchSensor3479.EventTouchTime, FieldVal3491);
 { ROUTE JinLipsPart_Material.diffuseColor TO Script16.diffuseColor }
-Transform3478.AddRoute(Material3487.diffuseColor, FieldVal3495);
+Transform3478.AddRoute(Material3487.diffuseColor, FieldVal3495.EventIn);
 { ROUTE Script16.diffuseColor TO JinLipsPart_Material.diffuseColor }
-Transform3478.AddRoute(FieldVal3495, Material3487.diffuseColor);
+Transform3478.AddRoute(FieldVal3495.EventOut, Material3487.diffuseColor);
 { ROUTE Script16.checked TO JinLipsPart_Clock.enabled }
-Transform3478.AddRoute(FieldVal3496, TimeSensor53.enabled);
+Transform3478.AddRoute(FieldVal3496.EventOut, TimeSensor53.enabled);
 { ROUTE Script16.pauseTime TO JinLipsPart_Clock.pauseTime }
 Transform3478.AddRoute(FieldVal3493, TimeSensor53.pauseTime);
 { ROUTE Script16.resumeTime TO JinLipsPart_Clock.resumeTime }
 Transform3478.AddRoute(FieldVal3492, TimeSensor53.resumeTime);
 { ROUTE Script16.fraction TO AnimationAdapter_JinLipsPart.set_fraction }
-Transform3478.AddRoute(FieldVal3494, ScalarInterpolator25.EventSet_fraction);
+Transform3478.AddRoute(FieldVal3494.EventOut, ScalarInterpolator25.EventSet_fraction);
 Group3045.FdChildren.Add(Transform3478);
 { ROUTE JinLipsPart_Sensor.touchTime TO JinLipsPart_Clock.startTime }
 Group3045.AddRoute(TouchSensor3479.EventTouchTime, TimeSensor53.FdStartTime.EventIn);
@@ -14895,16 +18636,16 @@ Text3510.SetText(['JinLipStretcher']);
 FontStyle3511 := TFontStyleNode.Create;
 FontStyle3511.Size := 2.4;
 FontStyle3511.Spacing := 1.2;
-end;
-
-procedure InitSingleMenuJinPart297;
-begin
 FontStyle3511.Justify := fjMiddle;
 FontStyle3511.JustifyMinor := fjMiddle;
 Text3510.FontStyle := FontStyle3511;
 Shape3507.Geometry := Text3510;
 Transform3505.FdChildren.Add(Shape3507);
 Shape3512 := TShapeNode.Create;
+end;
+
+procedure InitSingleMenuJinPart298;
+begin
 Appearance3513 := TAppearanceNode.Create;
 Material3514 := TMaterialNode.Create;
 Material3514.X3DName := 'JinLipStretcher_Material';
@@ -14932,44 +18673,29 @@ FieldVal3522 := TSFColor.Create(Script3517, True, 'diffuseColor', Vector3(0, 0, 
 Script3517.AddCustomFieldOrEvent(FieldVal3522);
 FieldVal3523 := TSFBool.Create(Script3517, True, 'checked', False);
 Script3517.AddCustomFieldOrEvent(FieldVal3523);
-Script3517.SetSourceCode('ecmascript:' + LineEnding +
-  '        function inTime(value) {' + LineEnding +
-  '            // Browser.print("in", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '            if (value) {' + LineEnding +
-  '                checked = !checked;' + LineEnding +
-  '            }' + LineEnding +
-  '            if (checked) {' + LineEnding +
-  '                diffuseColor.g = 1;' + LineEnding +
-  '                diffuseColor.b = 0;' + LineEnding +
-  '                resumeTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            } else {' + LineEnding +
-  '                diffuseColor.g = 0;' + LineEnding +
-  '                diffuseColor.b = 1;' + LineEnding +
-  '                pauseTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            }' + LineEnding +
-  '            // Browser.print("out", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '        }');
+FreeAndNil(CompiledScript3517);
+CompiledScript3517 := TScript3517Script.Create(FieldVal3519, FieldVal3520, FieldVal3521, FieldVal3522, FieldVal3523);
+Script3517.SetUrl(['compiled:' + LineEnding +
+  'inTime=Script3517_inTime']);
 Transform3505.FdChildren.Add(Script3517);
 { ROUTE JinLipStretcher_Sensor.touchTime TO Script17.inTime }
 Transform3505.AddRoute(TouchSensor3506.EventTouchTime, FieldVal3518);
 { ROUTE JinLipStretcher_Material.diffuseColor TO Script17.diffuseColor }
-Transform3505.AddRoute(Material3514.diffuseColor, FieldVal3522);
+Transform3505.AddRoute(Material3514.diffuseColor, FieldVal3522.EventIn);
 { ROUTE Script17.diffuseColor TO JinLipStretcher_Material.diffuseColor }
+Transform3505.AddRoute(FieldVal3522.EventOut, Material3514.diffuseColor);
+{ ROUTE Script17.checked TO JinLipStretcher_Clock.enabled }
+Transform3505.AddRoute(FieldVal3523.EventOut, TimeSensor52.enabled);
+{ ROUTE Script17.pauseTime TO JinLipStretcher_Clock.pauseTime }
 end;
 
-procedure InitSingleMenuJinPart298;
+procedure InitSingleMenuJinPart299;
 begin
-Transform3505.AddRoute(FieldVal3522, Material3514.diffuseColor);
-{ ROUTE Script17.checked TO JinLipStretcher_Clock.enabled }
-Transform3505.AddRoute(FieldVal3523, TimeSensor52.enabled);
-{ ROUTE Script17.pauseTime TO JinLipStretcher_Clock.pauseTime }
 Transform3505.AddRoute(FieldVal3520, TimeSensor52.pauseTime);
 { ROUTE Script17.resumeTime TO JinLipStretcher_Clock.resumeTime }
 Transform3505.AddRoute(FieldVal3519, TimeSensor52.resumeTime);
 { ROUTE Script17.fraction TO AnimationAdapter_JinLipStretcher.set_fraction }
-Transform3505.AddRoute(FieldVal3521, ScalarInterpolator26.EventSet_fraction);
+Transform3505.AddRoute(FieldVal3521.EventOut, ScalarInterpolator26.EventSet_fraction);
 Group3045.FdChildren.Add(Transform3505);
 { ROUTE JinLipStretcher_Sensor.touchTime TO JinLipStretcher_Clock.startTime }
 Group3045.AddRoute(TouchSensor3506.EventTouchTime, TimeSensor52.FdStartTime.EventIn);
@@ -15001,14 +18727,14 @@ Material3541 := TMaterialNode.Create;
 Material3541.X3DName := 'JinLipSuck_Material';
 Material3541.DiffuseColor := Vector3(0, 0, 1);
 Appearance3540.Material := Material3541;
-end;
-
-procedure InitSingleMenuJinPart299;
-begin
 Shape3539.Appearance := Appearance3540;
 IndexedFaceSet3542 := TIndexedFaceSetNode.Create;
 IndexedFaceSet3542.SetCoordIndex([0, 1, 2, 3, -1]);
 Coordinate3543 := TCoordinateNode.Create;
+end;
+
+procedure InitSingleMenuJinPart300;
+begin
 Coordinate3543.SetPoint([Vector3(20, 1.3833333333333333, -0.1), Vector3(-20, 1.3833333333333333, -0.1), Vector3(-20, -1.616666666666667, -0.1), Vector3(20, -1.616666666666667, -0.1)]);
 IndexedFaceSet3542.Coord := Coordinate3543;
 Shape3539.Geometry := IndexedFaceSet3542;
@@ -15027,48 +18753,33 @@ FieldVal3549 := TSFColor.Create(Script3544, True, 'diffuseColor', Vector3(0, 0, 
 Script3544.AddCustomFieldOrEvent(FieldVal3549);
 FieldVal3550 := TSFBool.Create(Script3544, True, 'checked', False);
 Script3544.AddCustomFieldOrEvent(FieldVal3550);
-Script3544.SetSourceCode('ecmascript:' + LineEnding +
-  '        function inTime(value) {' + LineEnding +
-  '            // Browser.print("in", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '            if (value) {' + LineEnding +
-  '                checked = !checked;' + LineEnding +
-  '            }' + LineEnding +
-  '            if (checked) {' + LineEnding +
-  '                diffuseColor.g = 1;' + LineEnding +
-  '                diffuseColor.b = 0;' + LineEnding +
-  '                resumeTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            } else {' + LineEnding +
-  '                diffuseColor.g = 0;' + LineEnding +
-  '                diffuseColor.b = 1;' + LineEnding +
-  '                pauseTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            }' + LineEnding +
-  '            // Browser.print("out", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '        }');
+FreeAndNil(CompiledScript3544);
+CompiledScript3544 := TScript3544Script.Create(FieldVal3546, FieldVal3547, FieldVal3548, FieldVal3549, FieldVal3550);
+Script3544.SetUrl(['compiled:' + LineEnding +
+  'inTime=Script3544_inTime']);
 Transform3532.FdChildren.Add(Script3544);
 { ROUTE JinLipSuck_Sensor.touchTime TO Script18.inTime }
 Transform3532.AddRoute(TouchSensor3533.EventTouchTime, FieldVal3545);
 { ROUTE JinLipSuck_Material.diffuseColor TO Script18.diffuseColor }
-Transform3532.AddRoute(Material3541.diffuseColor, FieldVal3549);
+Transform3532.AddRoute(Material3541.diffuseColor, FieldVal3549.EventIn);
 { ROUTE Script18.diffuseColor TO JinLipSuck_Material.diffuseColor }
-Transform3532.AddRoute(FieldVal3549, Material3541.diffuseColor);
+Transform3532.AddRoute(FieldVal3549.EventOut, Material3541.diffuseColor);
 { ROUTE Script18.checked TO JinLipSuck_Clock.enabled }
-Transform3532.AddRoute(FieldVal3550, TimeSensor51.enabled);
+Transform3532.AddRoute(FieldVal3550.EventOut, TimeSensor51.enabled);
 { ROUTE Script18.pauseTime TO JinLipSuck_Clock.pauseTime }
 Transform3532.AddRoute(FieldVal3547, TimeSensor51.pauseTime);
 { ROUTE Script18.resumeTime TO JinLipSuck_Clock.resumeTime }
 Transform3532.AddRoute(FieldVal3546, TimeSensor51.resumeTime);
 { ROUTE Script18.fraction TO AnimationAdapter_JinLipSuck.set_fraction }
-Transform3532.AddRoute(FieldVal3548, ScalarInterpolator27.EventSet_fraction);
+Transform3532.AddRoute(FieldVal3548.EventOut, ScalarInterpolator27.EventSet_fraction);
 Group3045.FdChildren.Add(Transform3532);
 { ROUTE JinLipSuck_Sensor.touchTime TO JinLipSuck_Clock.startTime }
-end;
-
-procedure InitSingleMenuJinPart300;
-begin
 Group3045.AddRoute(TouchSensor3533.EventTouchTime, TimeSensor51.FdStartTime.EventIn);
 Transform3559 := TTransformNode.Create;
+end;
+
+procedure InitSingleMenuJinPart301;
+begin
 Transform3559.Translation := Vector3(48, 6.399999999999999, 0);
 TouchSensor3560 := TTouchSensorNode.Create;
 TouchSensor3560.Description := 'Jin Lip Tightener';
@@ -15107,12 +18818,12 @@ Transform3559.FdChildren.Add(Shape3566);
 Script3571 := TScriptNode.Create;
 Script3571.X3DName := 'Script19';
 FieldVal3572 := TSFTime.CreateEvent(Script3571, 'inTime', True);
-end;
-
-procedure InitSingleMenuJinPart301;
-begin
 Script3571.AddCustomFieldOrEvent(FieldVal3572);
 FieldVal3573 := TSFTime.CreateEvent(Script3571, 'resumeTime', False);
+end;
+
+procedure InitSingleMenuJinPart302;
+begin
 Script3571.AddCustomFieldOrEvent(FieldVal3573);
 FieldVal3574 := TSFTime.CreateEvent(Script3571, 'pauseTime', False);
 Script3571.AddCustomFieldOrEvent(FieldVal3574);
@@ -15122,40 +18833,25 @@ FieldVal3576 := TSFColor.Create(Script3571, True, 'diffuseColor', Vector3(0, 0, 
 Script3571.AddCustomFieldOrEvent(FieldVal3576);
 FieldVal3577 := TSFBool.Create(Script3571, True, 'checked', False);
 Script3571.AddCustomFieldOrEvent(FieldVal3577);
-Script3571.SetSourceCode('ecmascript:' + LineEnding +
-  '        function inTime(value) {' + LineEnding +
-  '            // Browser.print("in", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '            if (value) {' + LineEnding +
-  '                checked = !checked;' + LineEnding +
-  '            }' + LineEnding +
-  '            if (checked) {' + LineEnding +
-  '                diffuseColor.g = 1;' + LineEnding +
-  '                diffuseColor.b = 0;' + LineEnding +
-  '                resumeTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            } else {' + LineEnding +
-  '                diffuseColor.g = 0;' + LineEnding +
-  '                diffuseColor.b = 1;' + LineEnding +
-  '                pauseTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            }' + LineEnding +
-  '            // Browser.print("out", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '        }');
+FreeAndNil(CompiledScript3571);
+CompiledScript3571 := TScript3571Script.Create(FieldVal3573, FieldVal3574, FieldVal3575, FieldVal3576, FieldVal3577);
+Script3571.SetUrl(['compiled:' + LineEnding +
+  'inTime=Script3571_inTime']);
 Transform3559.FdChildren.Add(Script3571);
 { ROUTE JinLipTightener_Sensor.touchTime TO Script19.inTime }
 Transform3559.AddRoute(TouchSensor3560.EventTouchTime, FieldVal3572);
 { ROUTE JinLipTightener_Material.diffuseColor TO Script19.diffuseColor }
-Transform3559.AddRoute(Material3568.diffuseColor, FieldVal3576);
+Transform3559.AddRoute(Material3568.diffuseColor, FieldVal3576.EventIn);
 { ROUTE Script19.diffuseColor TO JinLipTightener_Material.diffuseColor }
-Transform3559.AddRoute(FieldVal3576, Material3568.diffuseColor);
+Transform3559.AddRoute(FieldVal3576.EventOut, Material3568.diffuseColor);
 { ROUTE Script19.checked TO JinLipTightener_Clock.enabled }
-Transform3559.AddRoute(FieldVal3577, TimeSensor50.enabled);
+Transform3559.AddRoute(FieldVal3577.EventOut, TimeSensor50.enabled);
 { ROUTE Script19.pauseTime TO JinLipTightener_Clock.pauseTime }
 Transform3559.AddRoute(FieldVal3574, TimeSensor50.pauseTime);
 { ROUTE Script19.resumeTime TO JinLipTightener_Clock.resumeTime }
 Transform3559.AddRoute(FieldVal3573, TimeSensor50.resumeTime);
 { ROUTE Script19.fraction TO AnimationAdapter_JinLipTightener.set_fraction }
-Transform3559.AddRoute(FieldVal3575, ScalarInterpolator28.EventSet_fraction);
+Transform3559.AddRoute(FieldVal3575.EventOut, ScalarInterpolator28.EventSet_fraction);
 Group3045.FdChildren.Add(Transform3559);
 { ROUTE JinLipTightener_Sensor.touchTime TO JinLipTightener_Clock.startTime }
 Group3045.AddRoute(TouchSensor3560.EventTouchTime, TimeSensor50.FdStartTime.EventIn);
@@ -15171,7 +18867,7 @@ Material3590 := TMaterialNode.Create;
 Material3590.DiffuseColor := Vector3(1, 1, 1);
 end;
 
-procedure InitSingleMenuJinPart302;
+procedure InitSingleMenuJinPart303;
 begin
 Appearance3589.Material := Material3590;
 Shape3588.Appearance := Appearance3589;
@@ -15215,42 +18911,27 @@ FieldVal3604 := TSFBool.Create(Script3598, True, 'checked', False);
 Script3598.AddCustomFieldOrEvent(FieldVal3604);
 end;
 
-procedure InitSingleMenuJinPart303;
+procedure InitSingleMenuJinPart304;
 begin
-Script3598.SetSourceCode('ecmascript:' + LineEnding +
-  '        function inTime(value) {' + LineEnding +
-  '            // Browser.print("in", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '            if (value) {' + LineEnding +
-  '                checked = !checked;' + LineEnding +
-  '            }' + LineEnding +
-  '            if (checked) {' + LineEnding +
-  '                diffuseColor.g = 1;' + LineEnding +
-  '                diffuseColor.b = 0;' + LineEnding +
-  '                resumeTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            } else {' + LineEnding +
-  '                diffuseColor.g = 0;' + LineEnding +
-  '                diffuseColor.b = 1;' + LineEnding +
-  '                pauseTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            }' + LineEnding +
-  '            // Browser.print("out", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '        }');
+FreeAndNil(CompiledScript3598);
+CompiledScript3598 := TScript3598Script.Create(FieldVal3600, FieldVal3601, FieldVal3602, FieldVal3603, FieldVal3604);
+Script3598.SetUrl(['compiled:' + LineEnding +
+  'inTime=Script3598_inTime']);
 Transform3586.FdChildren.Add(Script3598);
 { ROUTE JinLowerLipDepressor_Sensor.touchTime TO Script20.inTime }
 Transform3586.AddRoute(TouchSensor3587.EventTouchTime, FieldVal3599);
 { ROUTE JinLowerLipDepressor_Material.diffuseColor TO Script20.diffuseColor }
-Transform3586.AddRoute(Material3595.diffuseColor, FieldVal3603);
+Transform3586.AddRoute(Material3595.diffuseColor, FieldVal3603.EventIn);
 { ROUTE Script20.diffuseColor TO JinLowerLipDepressor_Material.diffuseColor }
-Transform3586.AddRoute(FieldVal3603, Material3595.diffuseColor);
+Transform3586.AddRoute(FieldVal3603.EventOut, Material3595.diffuseColor);
 { ROUTE Script20.checked TO JinLowerLipDepressor_Clock.enabled }
-Transform3586.AddRoute(FieldVal3604, TimeSensor49.enabled);
+Transform3586.AddRoute(FieldVal3604.EventOut, TimeSensor49.enabled);
 { ROUTE Script20.pauseTime TO JinLowerLipDepressor_Clock.pauseTime }
 Transform3586.AddRoute(FieldVal3601, TimeSensor49.pauseTime);
 { ROUTE Script20.resumeTime TO JinLowerLipDepressor_Clock.resumeTime }
 Transform3586.AddRoute(FieldVal3600, TimeSensor49.resumeTime);
 { ROUTE Script20.fraction TO AnimationAdapter_JinLowerLipDepressor.set_fraction }
-Transform3586.AddRoute(FieldVal3602, ScalarInterpolator29.EventSet_fraction);
+Transform3586.AddRoute(FieldVal3602.EventOut, ScalarInterpolator29.EventSet_fraction);
 Group3045.FdChildren.Add(Transform3586);
 { ROUTE JinLowerLipDepressor_Sensor.touchTime TO JinLowerLipDepressor_Clock.startTime }
 Group3045.AddRoute(TouchSensor3587.EventTouchTime, TimeSensor49.FdStartTime.EventIn);
@@ -15273,12 +18954,12 @@ FontStyle3619.Size := 2.4;
 FontStyle3619.Spacing := 1.2;
 FontStyle3619.Justify := fjMiddle;
 FontStyle3619.JustifyMinor := fjMiddle;
-Text3618.FontStyle := FontStyle3619;
-Shape3615.Geometry := Text3618;
 end;
 
-procedure InitSingleMenuJinPart304;
+procedure InitSingleMenuJinPart305;
 begin
+Text3618.FontStyle := FontStyle3619;
+Shape3615.Geometry := Text3618;
 Transform3613.FdChildren.Add(Shape3615);
 Shape3620 := TShapeNode.Create;
 Appearance3621 := TAppearanceNode.Create;
@@ -15308,44 +18989,29 @@ FieldVal3630 := TSFColor.Create(Script3625, True, 'diffuseColor', Vector3(0, 0, 
 Script3625.AddCustomFieldOrEvent(FieldVal3630);
 FieldVal3631 := TSFBool.Create(Script3625, True, 'checked', False);
 Script3625.AddCustomFieldOrEvent(FieldVal3631);
-Script3625.SetSourceCode('ecmascript:' + LineEnding +
-  '        function inTime(value) {' + LineEnding +
-  '            // Browser.print("in", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '            if (value) {' + LineEnding +
-  '                checked = !checked;' + LineEnding +
-  '            }' + LineEnding +
-  '            if (checked) {' + LineEnding +
-  '                diffuseColor.g = 1;' + LineEnding +
-  '                diffuseColor.b = 0;' + LineEnding +
-  '                resumeTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            } else {' + LineEnding +
-  '                diffuseColor.g = 0;' + LineEnding +
-  '                diffuseColor.b = 1;' + LineEnding +
-  '                pauseTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            }' + LineEnding +
-  '            // Browser.print("out", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '        }');
+FreeAndNil(CompiledScript3625);
+CompiledScript3625 := TScript3625Script.Create(FieldVal3627, FieldVal3628, FieldVal3629, FieldVal3630, FieldVal3631);
+Script3625.SetUrl(['compiled:' + LineEnding +
+  'inTime=Script3625_inTime']);
 Transform3613.FdChildren.Add(Script3625);
 { ROUTE JinMouthStretch_Sensor.touchTime TO Script21.inTime }
 Transform3613.AddRoute(TouchSensor3614.EventTouchTime, FieldVal3626);
 { ROUTE JinMouthStretch_Material.diffuseColor TO Script21.diffuseColor }
-Transform3613.AddRoute(Material3622.diffuseColor, FieldVal3630);
+Transform3613.AddRoute(Material3622.diffuseColor, FieldVal3630.EventIn);
 { ROUTE Script21.diffuseColor TO JinMouthStretch_Material.diffuseColor }
-Transform3613.AddRoute(FieldVal3630, Material3622.diffuseColor);
-{ ROUTE Script21.checked TO JinMouthStretch_Clock.enabled }
-Transform3613.AddRoute(FieldVal3631, TimeSensor48.enabled);
-{ ROUTE Script21.pauseTime TO JinMouthStretch_Clock.pauseTime }
 end;
 
-procedure InitSingleMenuJinPart305;
+procedure InitSingleMenuJinPart306;
 begin
+Transform3613.AddRoute(FieldVal3630.EventOut, Material3622.diffuseColor);
+{ ROUTE Script21.checked TO JinMouthStretch_Clock.enabled }
+Transform3613.AddRoute(FieldVal3631.EventOut, TimeSensor48.enabled);
+{ ROUTE Script21.pauseTime TO JinMouthStretch_Clock.pauseTime }
 Transform3613.AddRoute(FieldVal3628, TimeSensor48.pauseTime);
 { ROUTE Script21.resumeTime TO JinMouthStretch_Clock.resumeTime }
 Transform3613.AddRoute(FieldVal3627, TimeSensor48.resumeTime);
 { ROUTE Script21.fraction TO AnimationAdapter_JinMouthStretch.set_fraction }
-Transform3613.AddRoute(FieldVal3629, ScalarInterpolator30.EventSet_fraction);
+Transform3613.AddRoute(FieldVal3629.EventOut, ScalarInterpolator30.EventSet_fraction);
 Group3045.FdChildren.Add(Transform3613);
 { ROUTE JinMouthStretch_Sensor.touchTime TO JinMouthStretch_Clock.startTime }
 Group3045.AddRoute(TouchSensor3614.EventTouchTime, TimeSensor48.FdStartTime.EventIn);
@@ -15377,14 +19043,14 @@ Material3649 := TMaterialNode.Create;
 Material3649.X3DName := 'JinNasolabialDeepener_Material';
 Material3649.DiffuseColor := Vector3(0, 0, 1);
 Appearance3648.Material := Material3649;
+end;
+
+procedure InitSingleMenuJinPart307;
+begin
 Shape3647.Appearance := Appearance3648;
 IndexedFaceSet3650 := TIndexedFaceSetNode.Create;
 IndexedFaceSet3650.SetCoordIndex([0, 1, 2, 3, -1]);
 Coordinate3651 := TCoordinateNode.Create;
-end;
-
-procedure InitSingleMenuJinPart306;
-begin
 Coordinate3651.SetPoint([Vector3(20, 1.3833333333333333, -0.1), Vector3(-20, 1.3833333333333333, -0.1), Vector3(-20, -1.616666666666667, -0.1), Vector3(20, -1.616666666666667, -0.1)]);
 IndexedFaceSet3650.Coord := Coordinate3651;
 Shape3647.Geometry := IndexedFaceSet3650;
@@ -15403,50 +19069,35 @@ FieldVal3657 := TSFColor.Create(Script3652, True, 'diffuseColor', Vector3(0, 0, 
 Script3652.AddCustomFieldOrEvent(FieldVal3657);
 FieldVal3658 := TSFBool.Create(Script3652, True, 'checked', False);
 Script3652.AddCustomFieldOrEvent(FieldVal3658);
-Script3652.SetSourceCode('ecmascript:' + LineEnding +
-  '        function inTime(value) {' + LineEnding +
-  '            // Browser.print("in", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '            if (value) {' + LineEnding +
-  '                checked = !checked;' + LineEnding +
-  '            }' + LineEnding +
-  '            if (checked) {' + LineEnding +
-  '                diffuseColor.g = 1;' + LineEnding +
-  '                diffuseColor.b = 0;' + LineEnding +
-  '                resumeTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            } else {' + LineEnding +
-  '                diffuseColor.g = 0;' + LineEnding +
-  '                diffuseColor.b = 1;' + LineEnding +
-  '                pauseTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            }' + LineEnding +
-  '            // Browser.print("out", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '        }');
+FreeAndNil(CompiledScript3652);
+CompiledScript3652 := TScript3652Script.Create(FieldVal3654, FieldVal3655, FieldVal3656, FieldVal3657, FieldVal3658);
+Script3652.SetUrl(['compiled:' + LineEnding +
+  'inTime=Script3652_inTime']);
 Transform3640.FdChildren.Add(Script3652);
 { ROUTE JinNasolabialDeepener_Sensor.touchTime TO Script22.inTime }
 Transform3640.AddRoute(TouchSensor3641.EventTouchTime, FieldVal3653);
 { ROUTE JinNasolabialDeepener_Material.diffuseColor TO Script22.diffuseColor }
-Transform3640.AddRoute(Material3649.diffuseColor, FieldVal3657);
+Transform3640.AddRoute(Material3649.diffuseColor, FieldVal3657.EventIn);
 { ROUTE Script22.diffuseColor TO JinNasolabialDeepener_Material.diffuseColor }
-Transform3640.AddRoute(FieldVal3657, Material3649.diffuseColor);
+Transform3640.AddRoute(FieldVal3657.EventOut, Material3649.diffuseColor);
 { ROUTE Script22.checked TO JinNasolabialDeepener_Clock.enabled }
-Transform3640.AddRoute(FieldVal3658, TimeSensor47.enabled);
+Transform3640.AddRoute(FieldVal3658.EventOut, TimeSensor47.enabled);
 { ROUTE Script22.pauseTime TO JinNasolabialDeepener_Clock.pauseTime }
 Transform3640.AddRoute(FieldVal3655, TimeSensor47.pauseTime);
 { ROUTE Script22.resumeTime TO JinNasolabialDeepener_Clock.resumeTime }
 Transform3640.AddRoute(FieldVal3654, TimeSensor47.resumeTime);
 { ROUTE Script22.fraction TO AnimationAdapter_JinNasolabialDeepener.set_fraction }
-Transform3640.AddRoute(FieldVal3656, ScalarInterpolator31.EventSet_fraction);
+Transform3640.AddRoute(FieldVal3656.EventOut, ScalarInterpolator31.EventSet_fraction);
+end;
+
+procedure InitSingleMenuJinPart308;
+begin
 Group3045.FdChildren.Add(Transform3640);
 { ROUTE JinNasolabialDeepener_Sensor.touchTime TO JinNasolabialDeepener_Clock.startTime }
 Group3045.AddRoute(TouchSensor3641.EventTouchTime, TimeSensor47.FdStartTime.EventIn);
 Transform3667 := TTransformNode.Create;
 Transform3667.Translation := Vector3(48, -5.6000000000000085, 0);
 TouchSensor3668 := TTouchSensorNode.Create;
-end;
-
-procedure InitSingleMenuJinPart307;
-begin
 TouchSensor3668.Description := 'Jin Nose Wrinkler';
 TouchSensor3668.X3DName := 'JinNoseWrinkler_Sensor';
 Transform3667.FdChildren.Add(TouchSensor3668);
@@ -15481,16 +19132,16 @@ IndexedFaceSet3677.Coord := Coordinate3678;
 Shape3674.Geometry := IndexedFaceSet3677;
 Transform3667.FdChildren.Add(Shape3674);
 Script3679 := TScriptNode.Create;
+end;
+
+procedure InitSingleMenuJinPart309;
+begin
 Script3679.X3DName := 'Script23';
 FieldVal3680 := TSFTime.CreateEvent(Script3679, 'inTime', True);
 Script3679.AddCustomFieldOrEvent(FieldVal3680);
 FieldVal3681 := TSFTime.CreateEvent(Script3679, 'resumeTime', False);
 Script3679.AddCustomFieldOrEvent(FieldVal3681);
 FieldVal3682 := TSFTime.CreateEvent(Script3679, 'pauseTime', False);
-end;
-
-procedure InitSingleMenuJinPart308;
-begin
 Script3679.AddCustomFieldOrEvent(FieldVal3682);
 FieldVal3683 := TSFFloat.Create(Script3679, True, 'fraction', 0);
 Script3679.AddCustomFieldOrEvent(FieldVal3683);
@@ -15498,40 +19149,25 @@ FieldVal3684 := TSFColor.Create(Script3679, True, 'diffuseColor', Vector3(0, 0, 
 Script3679.AddCustomFieldOrEvent(FieldVal3684);
 FieldVal3685 := TSFBool.Create(Script3679, True, 'checked', False);
 Script3679.AddCustomFieldOrEvent(FieldVal3685);
-Script3679.SetSourceCode('ecmascript:' + LineEnding +
-  '        function inTime(value) {' + LineEnding +
-  '            // Browser.print("in", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '            if (value) {' + LineEnding +
-  '                checked = !checked;' + LineEnding +
-  '            }' + LineEnding +
-  '            if (checked) {' + LineEnding +
-  '                diffuseColor.g = 1;' + LineEnding +
-  '                diffuseColor.b = 0;' + LineEnding +
-  '                resumeTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            } else {' + LineEnding +
-  '                diffuseColor.g = 0;' + LineEnding +
-  '                diffuseColor.b = 1;' + LineEnding +
-  '                pauseTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            }' + LineEnding +
-  '            // Browser.print("out", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '        }');
+FreeAndNil(CompiledScript3679);
+CompiledScript3679 := TScript3679Script.Create(FieldVal3681, FieldVal3682, FieldVal3683, FieldVal3684, FieldVal3685);
+Script3679.SetUrl(['compiled:' + LineEnding +
+  'inTime=Script3679_inTime']);
 Transform3667.FdChildren.Add(Script3679);
 { ROUTE JinNoseWrinkler_Sensor.touchTime TO Script23.inTime }
 Transform3667.AddRoute(TouchSensor3668.EventTouchTime, FieldVal3680);
 { ROUTE JinNoseWrinkler_Material.diffuseColor TO Script23.diffuseColor }
-Transform3667.AddRoute(Material3676.diffuseColor, FieldVal3684);
+Transform3667.AddRoute(Material3676.diffuseColor, FieldVal3684.EventIn);
 { ROUTE Script23.diffuseColor TO JinNoseWrinkler_Material.diffuseColor }
-Transform3667.AddRoute(FieldVal3684, Material3676.diffuseColor);
+Transform3667.AddRoute(FieldVal3684.EventOut, Material3676.diffuseColor);
 { ROUTE Script23.checked TO JinNoseWrinkler_Clock.enabled }
-Transform3667.AddRoute(FieldVal3685, TimeSensor46.enabled);
+Transform3667.AddRoute(FieldVal3685.EventOut, TimeSensor46.enabled);
 { ROUTE Script23.pauseTime TO JinNoseWrinkler_Clock.pauseTime }
 Transform3667.AddRoute(FieldVal3682, TimeSensor46.pauseTime);
 { ROUTE Script23.resumeTime TO JinNoseWrinkler_Clock.resumeTime }
 Transform3667.AddRoute(FieldVal3681, TimeSensor46.resumeTime);
 { ROUTE Script23.fraction TO AnimationAdapter_JinNoseWrinkler.set_fraction }
-Transform3667.AddRoute(FieldVal3683, ScalarInterpolator32.EventSet_fraction);
+Transform3667.AddRoute(FieldVal3683.EventOut, ScalarInterpolator32.EventSet_fraction);
 Group3045.FdChildren.Add(Transform3667);
 { ROUTE JinNoseWrinkler_Sensor.touchTime TO JinNoseWrinkler_Clock.startTime }
 Group3045.AddRoute(TouchSensor3668.EventTouchTime, TimeSensor46.FdStartTime.EventIn);
@@ -15541,6 +19177,10 @@ TouchSensor3695 := TTouchSensorNode.Create;
 TouchSensor3695.Description := 'Jin Outer Brow Raiser';
 TouchSensor3695.X3DName := 'JinOuterBrowRaiser_Sensor';
 Transform3694.FdChildren.Add(TouchSensor3695);
+end;
+
+procedure InitSingleMenuJinPart310;
+begin
 Shape3696 := TShapeNode.Create;
 Appearance3697 := TAppearanceNode.Create;
 Material3698 := TMaterialNode.Create;
@@ -15549,10 +19189,6 @@ Appearance3697.Material := Material3698;
 Shape3696.Appearance := Appearance3697;
 Text3699 := TTextNode.Create;
 Text3699.SetText(['JinOuterBrowRaiser']);
-end;
-
-procedure InitSingleMenuJinPart309;
-begin
 FontStyle3700 := TFontStyleNode.Create;
 FontStyle3700.Size := 2.4;
 FontStyle3700.Spacing := 1.2;
@@ -15585,48 +19221,33 @@ FieldVal3709 := TSFTime.CreateEvent(Script3706, 'pauseTime', False);
 Script3706.AddCustomFieldOrEvent(FieldVal3709);
 FieldVal3710 := TSFFloat.Create(Script3706, True, 'fraction', 0);
 Script3706.AddCustomFieldOrEvent(FieldVal3710);
+end;
+
+procedure InitSingleMenuJinPart311;
+begin
 FieldVal3711 := TSFColor.Create(Script3706, True, 'diffuseColor', Vector3(0, 0, 1));
 Script3706.AddCustomFieldOrEvent(FieldVal3711);
 FieldVal3712 := TSFBool.Create(Script3706, True, 'checked', False);
 Script3706.AddCustomFieldOrEvent(FieldVal3712);
-Script3706.SetSourceCode('ecmascript:' + LineEnding +
-  '        function inTime(value) {' + LineEnding +
-  '            // Browser.print("in", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '            if (value) {' + LineEnding +
-  '                checked = !checked;' + LineEnding +
-  '            }' + LineEnding +
-  '            if (checked) {' + LineEnding +
-  '                diffuseColor.g = 1;' + LineEnding +
-  '                diffuseColor.b = 0;' + LineEnding +
-  '                resumeTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            } else {' + LineEnding +
-  '                diffuseColor.g = 0;' + LineEnding +
-  '                diffuseColor.b = 1;' + LineEnding +
-  '                pauseTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            }' + LineEnding +
-  '            // Browser.print("out", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '        }');
+FreeAndNil(CompiledScript3706);
+CompiledScript3706 := TScript3706Script.Create(FieldVal3708, FieldVal3709, FieldVal3710, FieldVal3711, FieldVal3712);
+Script3706.SetUrl(['compiled:' + LineEnding +
+  'inTime=Script3706_inTime']);
 Transform3694.FdChildren.Add(Script3706);
 { ROUTE JinOuterBrowRaiser_Sensor.touchTime TO Script24.inTime }
 Transform3694.AddRoute(TouchSensor3695.EventTouchTime, FieldVal3707);
-end;
-
-procedure InitSingleMenuJinPart310;
-begin
 { ROUTE JinOuterBrowRaiser_Material.diffuseColor TO Script24.diffuseColor }
-Transform3694.AddRoute(Material3703.diffuseColor, FieldVal3711);
+Transform3694.AddRoute(Material3703.diffuseColor, FieldVal3711.EventIn);
 { ROUTE Script24.diffuseColor TO JinOuterBrowRaiser_Material.diffuseColor }
-Transform3694.AddRoute(FieldVal3711, Material3703.diffuseColor);
+Transform3694.AddRoute(FieldVal3711.EventOut, Material3703.diffuseColor);
 { ROUTE Script24.checked TO JinOuterBrowRaiser_Clock.enabled }
-Transform3694.AddRoute(FieldVal3712, TimeSensor45.enabled);
+Transform3694.AddRoute(FieldVal3712.EventOut, TimeSensor45.enabled);
 { ROUTE Script24.pauseTime TO JinOuterBrowRaiser_Clock.pauseTime }
 Transform3694.AddRoute(FieldVal3709, TimeSensor45.pauseTime);
 { ROUTE Script24.resumeTime TO JinOuterBrowRaiser_Clock.resumeTime }
 Transform3694.AddRoute(FieldVal3708, TimeSensor45.resumeTime);
 { ROUTE Script24.fraction TO AnimationAdapter_JinOuterBrowRaiser.set_fraction }
-Transform3694.AddRoute(FieldVal3710, ScalarInterpolator33.EventSet_fraction);
+Transform3694.AddRoute(FieldVal3710.EventOut, ScalarInterpolator33.EventSet_fraction);
 Group3045.FdChildren.Add(Transform3694);
 { ROUTE JinOuterBrowRaiser_Sensor.touchTime TO JinOuterBrowRaiser_Clock.startTime }
 Group3045.AddRoute(TouchSensor3695.EventTouchTime, TimeSensor45.FdStartTime.EventIn);
@@ -15645,6 +19266,10 @@ Shape3723.Appearance := Appearance3724;
 Text3726 := TTextNode.Create;
 Text3726.SetText(['JinSlit']);
 FontStyle3727 := TFontStyleNode.Create;
+end;
+
+procedure InitSingleMenuJinPart312;
+begin
 FontStyle3727.Size := 2.4;
 FontStyle3727.Spacing := 1.2;
 FontStyle3727.Justify := fjMiddle;
@@ -15655,10 +19280,6 @@ Transform3721.FdChildren.Add(Shape3723);
 Shape3728 := TShapeNode.Create;
 Appearance3729 := TAppearanceNode.Create;
 Material3730 := TMaterialNode.Create;
-end;
-
-procedure InitSingleMenuJinPart311;
-begin
 Material3730.X3DName := 'JinSlit_Material';
 Material3730.DiffuseColor := Vector3(0, 0, 1);
 Appearance3729.Material := Material3730;
@@ -15684,44 +19305,29 @@ FieldVal3738 := TSFColor.Create(Script3733, True, 'diffuseColor', Vector3(0, 0, 
 Script3733.AddCustomFieldOrEvent(FieldVal3738);
 FieldVal3739 := TSFBool.Create(Script3733, True, 'checked', False);
 Script3733.AddCustomFieldOrEvent(FieldVal3739);
-Script3733.SetSourceCode('ecmascript:' + LineEnding +
-  '        function inTime(value) {' + LineEnding +
-  '            // Browser.print("in", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '            if (value) {' + LineEnding +
-  '                checked = !checked;' + LineEnding +
-  '            }' + LineEnding +
-  '            if (checked) {' + LineEnding +
-  '                diffuseColor.g = 1;' + LineEnding +
-  '                diffuseColor.b = 0;' + LineEnding +
-  '                resumeTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            } else {' + LineEnding +
-  '                diffuseColor.g = 0;' + LineEnding +
-  '                diffuseColor.b = 1;' + LineEnding +
-  '                pauseTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            }' + LineEnding +
-  '            // Browser.print("out", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '        }');
+FreeAndNil(CompiledScript3733);
+CompiledScript3733 := TScript3733Script.Create(FieldVal3735, FieldVal3736, FieldVal3737, FieldVal3738, FieldVal3739);
+Script3733.SetUrl(['compiled:' + LineEnding +
+  'inTime=Script3733_inTime']);
 Transform3721.FdChildren.Add(Script3733);
 { ROUTE JinSlit_Sensor.touchTime TO Script25.inTime }
+end;
+
+procedure InitSingleMenuJinPart313;
+begin
 Transform3721.AddRoute(TouchSensor3722.EventTouchTime, FieldVal3734);
 { ROUTE JinSlit_Material.diffuseColor TO Script25.diffuseColor }
-Transform3721.AddRoute(Material3730.diffuseColor, FieldVal3738);
+Transform3721.AddRoute(Material3730.diffuseColor, FieldVal3738.EventIn);
 { ROUTE Script25.diffuseColor TO JinSlit_Material.diffuseColor }
-Transform3721.AddRoute(FieldVal3738, Material3730.diffuseColor);
+Transform3721.AddRoute(FieldVal3738.EventOut, Material3730.diffuseColor);
 { ROUTE Script25.checked TO JinSlit_Clock.enabled }
-Transform3721.AddRoute(FieldVal3739, TimeSensor44.enabled);
+Transform3721.AddRoute(FieldVal3739.EventOut, TimeSensor44.enabled);
 { ROUTE Script25.pauseTime TO JinSlit_Clock.pauseTime }
 Transform3721.AddRoute(FieldVal3736, TimeSensor44.pauseTime);
 { ROUTE Script25.resumeTime TO JinSlit_Clock.resumeTime }
 Transform3721.AddRoute(FieldVal3735, TimeSensor44.resumeTime);
 { ROUTE Script25.fraction TO AnimationAdapter_JinSlit.set_fraction }
-end;
-
-procedure InitSingleMenuJinPart312;
-begin
-Transform3721.AddRoute(FieldVal3737, ScalarInterpolator34.EventSet_fraction);
+Transform3721.AddRoute(FieldVal3737.EventOut, ScalarInterpolator34.EventSet_fraction);
 Group3045.FdChildren.Add(Transform3721);
 { ROUTE JinSlit_Sensor.touchTime TO JinSlit_Clock.startTime }
 Group3045.AddRoute(TouchSensor3722.EventTouchTime, TimeSensor44.FdStartTime.EventIn);
@@ -15749,6 +19355,10 @@ Shape3750.Geometry := Text3753;
 Transform3748.FdChildren.Add(Shape3750);
 Shape3755 := TShapeNode.Create;
 Appearance3756 := TAppearanceNode.Create;
+end;
+
+procedure InitSingleMenuJinPart314;
+begin
 Material3757 := TMaterialNode.Create;
 Material3757.X3DName := 'JinSquint_Material';
 Material3757.DiffuseColor := Vector3(0, 0, 1);
@@ -15761,10 +19371,6 @@ Coordinate3759.SetPoint([Vector3(20, 1.3833333333333333, -0.1), Vector3(-20, 1.3
 IndexedFaceSet3758.Coord := Coordinate3759;
 Shape3755.Geometry := IndexedFaceSet3758;
 Transform3748.FdChildren.Add(Shape3755);
-end;
-
-procedure InitSingleMenuJinPart313;
-begin
 Script3760 := TScriptNode.Create;
 Script3760.X3DName := 'Script26';
 FieldVal3761 := TSFTime.CreateEvent(Script3760, 'inTime', True);
@@ -15779,40 +19385,29 @@ FieldVal3765 := TSFColor.Create(Script3760, True, 'diffuseColor', Vector3(0, 0, 
 Script3760.AddCustomFieldOrEvent(FieldVal3765);
 FieldVal3766 := TSFBool.Create(Script3760, True, 'checked', False);
 Script3760.AddCustomFieldOrEvent(FieldVal3766);
-Script3760.SetSourceCode('ecmascript:' + LineEnding +
-  '        function inTime(value) {' + LineEnding +
-  '            // Browser.print("in", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '            if (value) {' + LineEnding +
-  '                checked = !checked;' + LineEnding +
-  '            }' + LineEnding +
-  '            if (checked) {' + LineEnding +
-  '                diffuseColor.g = 1;' + LineEnding +
-  '                diffuseColor.b = 0;' + LineEnding +
-  '                resumeTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            } else {' + LineEnding +
-  '                diffuseColor.g = 0;' + LineEnding +
-  '                diffuseColor.b = 1;' + LineEnding +
-  '                pauseTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            }' + LineEnding +
-  '            // Browser.print("out", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '        }');
+FreeAndNil(CompiledScript3760);
+CompiledScript3760 := TScript3760Script.Create(FieldVal3762, FieldVal3763, FieldVal3764, FieldVal3765, FieldVal3766);
+Script3760.SetUrl(['compiled:' + LineEnding +
+  'inTime=Script3760_inTime']);
 Transform3748.FdChildren.Add(Script3760);
 { ROUTE JinSquint_Sensor.touchTime TO Script26.inTime }
 Transform3748.AddRoute(TouchSensor3749.EventTouchTime, FieldVal3761);
 { ROUTE JinSquint_Material.diffuseColor TO Script26.diffuseColor }
-Transform3748.AddRoute(Material3757.diffuseColor, FieldVal3765);
+Transform3748.AddRoute(Material3757.diffuseColor, FieldVal3765.EventIn);
 { ROUTE Script26.diffuseColor TO JinSquint_Material.diffuseColor }
-Transform3748.AddRoute(FieldVal3765, Material3757.diffuseColor);
+Transform3748.AddRoute(FieldVal3765.EventOut, Material3757.diffuseColor);
 { ROUTE Script26.checked TO JinSquint_Clock.enabled }
-Transform3748.AddRoute(FieldVal3766, TimeSensor43.enabled);
+Transform3748.AddRoute(FieldVal3766.EventOut, TimeSensor43.enabled);
 { ROUTE Script26.pauseTime TO JinSquint_Clock.pauseTime }
 Transform3748.AddRoute(FieldVal3763, TimeSensor43.pauseTime);
+end;
+
+procedure InitSingleMenuJinPart315;
+begin
 { ROUTE Script26.resumeTime TO JinSquint_Clock.resumeTime }
 Transform3748.AddRoute(FieldVal3762, TimeSensor43.resumeTime);
 { ROUTE Script26.fraction TO AnimationAdapter_JinSquint.set_fraction }
-Transform3748.AddRoute(FieldVal3764, ScalarInterpolator35.EventSet_fraction);
+Transform3748.AddRoute(FieldVal3764.EventOut, ScalarInterpolator35.EventSet_fraction);
 Group3045.FdChildren.Add(Transform3748);
 { ROUTE JinSquint_Sensor.touchTime TO JinSquint_Clock.startTime }
 Group3045.AddRoute(TouchSensor3749.EventTouchTime, TimeSensor43.FdStartTime.EventIn);
@@ -15823,10 +19418,6 @@ TouchSensor3776.Description := 'Jin Upper Lid Raiser';
 TouchSensor3776.X3DName := 'JinUpperLidRaiser_Sensor';
 Transform3775.FdChildren.Add(TouchSensor3776);
 Shape3777 := TShapeNode.Create;
-end;
-
-procedure InitSingleMenuJinPart314;
-begin
 Appearance3778 := TAppearanceNode.Create;
 Material3779 := TMaterialNode.Create;
 Material3779.DiffuseColor := Vector3(1, 1, 1);
@@ -15853,6 +19444,10 @@ IndexedFaceSet3785 := TIndexedFaceSetNode.Create;
 IndexedFaceSet3785.SetCoordIndex([0, 1, 2, 3, -1]);
 Coordinate3786 := TCoordinateNode.Create;
 Coordinate3786.SetPoint([Vector3(20, 1.3833333333333333, -0.1), Vector3(-20, 1.3833333333333333, -0.1), Vector3(-20, -1.616666666666667, -0.1), Vector3(20, -1.616666666666667, -0.1)]);
+end;
+
+procedure InitSingleMenuJinPart316;
+begin
 IndexedFaceSet3785.Coord := Coordinate3786;
 Shape3782.Geometry := IndexedFaceSet3785;
 Transform3775.FdChildren.Add(Shape3782);
@@ -15867,52 +19462,37 @@ Script3787.AddCustomFieldOrEvent(FieldVal3790);
 FieldVal3791 := TSFFloat.Create(Script3787, True, 'fraction', 0);
 Script3787.AddCustomFieldOrEvent(FieldVal3791);
 FieldVal3792 := TSFColor.Create(Script3787, True, 'diffuseColor', Vector3(0, 0, 1));
-end;
-
-procedure InitSingleMenuJinPart315;
-begin
 Script3787.AddCustomFieldOrEvent(FieldVal3792);
 FieldVal3793 := TSFBool.Create(Script3787, True, 'checked', False);
 Script3787.AddCustomFieldOrEvent(FieldVal3793);
-Script3787.SetSourceCode('ecmascript:' + LineEnding +
-  '        function inTime(value) {' + LineEnding +
-  '            // Browser.print("in", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '            if (value) {' + LineEnding +
-  '                checked = !checked;' + LineEnding +
-  '            }' + LineEnding +
-  '            if (checked) {' + LineEnding +
-  '                diffuseColor.g = 1;' + LineEnding +
-  '                diffuseColor.b = 0;' + LineEnding +
-  '                resumeTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            } else {' + LineEnding +
-  '                diffuseColor.g = 0;' + LineEnding +
-  '                diffuseColor.b = 1;' + LineEnding +
-  '                pauseTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            }' + LineEnding +
-  '            // Browser.print("out", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '        }');
+FreeAndNil(CompiledScript3787);
+CompiledScript3787 := TScript3787Script.Create(FieldVal3789, FieldVal3790, FieldVal3791, FieldVal3792, FieldVal3793);
+Script3787.SetUrl(['compiled:' + LineEnding +
+  'inTime=Script3787_inTime']);
 Transform3775.FdChildren.Add(Script3787);
 { ROUTE JinUpperLidRaiser_Sensor.touchTime TO Script27.inTime }
 Transform3775.AddRoute(TouchSensor3776.EventTouchTime, FieldVal3788);
 { ROUTE JinUpperLidRaiser_Material.diffuseColor TO Script27.diffuseColor }
-Transform3775.AddRoute(Material3784.diffuseColor, FieldVal3792);
+Transform3775.AddRoute(Material3784.diffuseColor, FieldVal3792.EventIn);
 { ROUTE Script27.diffuseColor TO JinUpperLidRaiser_Material.diffuseColor }
-Transform3775.AddRoute(FieldVal3792, Material3784.diffuseColor);
+Transform3775.AddRoute(FieldVal3792.EventOut, Material3784.diffuseColor);
 { ROUTE Script27.checked TO JinUpperLidRaiser_Clock.enabled }
-Transform3775.AddRoute(FieldVal3793, TimeSensor42.enabled);
+Transform3775.AddRoute(FieldVal3793.EventOut, TimeSensor42.enabled);
 { ROUTE Script27.pauseTime TO JinUpperLidRaiser_Clock.pauseTime }
 Transform3775.AddRoute(FieldVal3790, TimeSensor42.pauseTime);
 { ROUTE Script27.resumeTime TO JinUpperLidRaiser_Clock.resumeTime }
 Transform3775.AddRoute(FieldVal3789, TimeSensor42.resumeTime);
 { ROUTE Script27.fraction TO AnimationAdapter_JinUpperLidRaiser.set_fraction }
-Transform3775.AddRoute(FieldVal3791, ScalarInterpolator36.EventSet_fraction);
+Transform3775.AddRoute(FieldVal3791.EventOut, ScalarInterpolator36.EventSet_fraction);
 Group3045.FdChildren.Add(Transform3775);
 { ROUTE JinUpperLidRaiser_Sensor.touchTime TO JinUpperLidRaiser_Clock.startTime }
 Group3045.AddRoute(TouchSensor3776.EventTouchTime, TimeSensor42.FdStartTime.EventIn);
 Transform3802 := TTransformNode.Create;
 Transform3802.Translation := Vector3(48, -20.6, 0);
+end;
+
+procedure InitSingleMenuJinPart317;
+begin
 TouchSensor3803 := TTouchSensorNode.Create;
 TouchSensor3803.Description := 'Jin Upper Lip Raiser';
 TouchSensor3803.X3DName := 'JinUpperLipRaiser_Sensor';
@@ -15929,10 +19509,6 @@ FontStyle3808 := TFontStyleNode.Create;
 FontStyle3808.Size := 2.4;
 FontStyle3808.Spacing := 1.2;
 FontStyle3808.Justify := fjMiddle;
-end;
-
-procedure InitSingleMenuJinPart316;
-begin
 FontStyle3808.JustifyMinor := fjMiddle;
 Text3807.FontStyle := FontStyle3808;
 Shape3804.Geometry := Text3807;
@@ -15957,6 +19533,10 @@ FieldVal3815 := TSFTime.CreateEvent(Script3814, 'inTime', True);
 Script3814.AddCustomFieldOrEvent(FieldVal3815);
 FieldVal3816 := TSFTime.CreateEvent(Script3814, 'resumeTime', False);
 Script3814.AddCustomFieldOrEvent(FieldVal3816);
+end;
+
+procedure InitSingleMenuJinPart318;
+begin
 FieldVal3817 := TSFTime.CreateEvent(Script3814, 'pauseTime', False);
 Script3814.AddCustomFieldOrEvent(FieldVal3817);
 FieldVal3818 := TSFFloat.Create(Script3814, True, 'fraction', 0);
@@ -15965,44 +19545,25 @@ FieldVal3819 := TSFColor.Create(Script3814, True, 'diffuseColor', Vector3(0, 0, 
 Script3814.AddCustomFieldOrEvent(FieldVal3819);
 FieldVal3820 := TSFBool.Create(Script3814, True, 'checked', False);
 Script3814.AddCustomFieldOrEvent(FieldVal3820);
-Script3814.SetSourceCode('ecmascript:' + LineEnding +
-  '        function inTime(value) {' + LineEnding +
-  '            // Browser.print("in", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '            if (value) {' + LineEnding +
-  '                checked = !checked;' + LineEnding +
-  '            }' + LineEnding +
-  '            if (checked) {' + LineEnding +
-  '                diffuseColor.g = 1;' + LineEnding +
-  '                diffuseColor.b = 0;' + LineEnding +
-  '                resumeTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            } else {' + LineEnding +
-  '                diffuseColor.g = 0;' + LineEnding +
-  '                diffuseColor.b = 1;' + LineEnding +
-  '                pauseTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            }' + LineEnding +
-  '            // Browser.print("out", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '        }');
+FreeAndNil(CompiledScript3814);
+CompiledScript3814 := TScript3814Script.Create(FieldVal3816, FieldVal3817, FieldVal3818, FieldVal3819, FieldVal3820);
+Script3814.SetUrl(['compiled:' + LineEnding +
+  'inTime=Script3814_inTime']);
 Transform3802.FdChildren.Add(Script3814);
 { ROUTE JinUpperLipRaiser_Sensor.touchTime TO Script28.inTime }
 Transform3802.AddRoute(TouchSensor3803.EventTouchTime, FieldVal3815);
 { ROUTE JinUpperLipRaiser_Material.diffuseColor TO Script28.diffuseColor }
-Transform3802.AddRoute(Material3811.diffuseColor, FieldVal3819);
+Transform3802.AddRoute(Material3811.diffuseColor, FieldVal3819.EventIn);
 { ROUTE Script28.diffuseColor TO JinUpperLipRaiser_Material.diffuseColor }
-Transform3802.AddRoute(FieldVal3819, Material3811.diffuseColor);
-end;
-
-procedure InitSingleMenuJinPart317;
-begin
+Transform3802.AddRoute(FieldVal3819.EventOut, Material3811.diffuseColor);
 { ROUTE Script28.checked TO JinUpperLipRaiser_Clock.enabled }
-Transform3802.AddRoute(FieldVal3820, TimeSensor41.enabled);
+Transform3802.AddRoute(FieldVal3820.EventOut, TimeSensor41.enabled);
 { ROUTE Script28.pauseTime TO JinUpperLipRaiser_Clock.pauseTime }
 Transform3802.AddRoute(FieldVal3817, TimeSensor41.pauseTime);
 { ROUTE Script28.resumeTime TO JinUpperLipRaiser_Clock.resumeTime }
 Transform3802.AddRoute(FieldVal3816, TimeSensor41.resumeTime);
 { ROUTE Script28.fraction TO AnimationAdapter_JinUpperLipRaiser.set_fraction }
-Transform3802.AddRoute(FieldVal3818, ScalarInterpolator37.EventSet_fraction);
+Transform3802.AddRoute(FieldVal3818.EventOut, ScalarInterpolator37.EventSet_fraction);
 Group3045.FdChildren.Add(Transform3802);
 { ROUTE JinUpperLipRaiser_Sensor.touchTime TO JinUpperLipRaiser_Clock.startTime }
 Group3045.AddRoute(TouchSensor3803.EventTouchTime, TimeSensor41.FdStartTime.EventIn);
@@ -16017,6 +19578,10 @@ Appearance3832 := TAppearanceNode.Create;
 Material3833 := TMaterialNode.Create;
 Material3833.DiffuseColor := Vector3(1, 1, 1);
 Appearance3832.Material := Material3833;
+end;
+
+procedure InitSingleMenuJinPart319;
+begin
 Shape3831.Appearance := Appearance3832;
 Text3834 := TTextNode.Create;
 Text3834.SetText(['JinWink']);
@@ -16035,10 +19600,6 @@ Material3838.X3DName := 'JinWink_Material';
 Material3838.DiffuseColor := Vector3(0, 0, 1);
 Appearance3837.Material := Material3838;
 Shape3836.Appearance := Appearance3837;
-end;
-
-procedure InitSingleMenuJinPart318;
-begin
 IndexedFaceSet3839 := TIndexedFaceSetNode.Create;
 IndexedFaceSet3839.SetCoordIndex([0, 1, 2, 3, -1]);
 Coordinate3840 := TCoordinateNode.Create;
@@ -16060,47 +19621,32 @@ FieldVal3846 := TSFColor.Create(Script3841, True, 'diffuseColor', Vector3(0, 0, 
 Script3841.AddCustomFieldOrEvent(FieldVal3846);
 FieldVal3847 := TSFBool.Create(Script3841, True, 'checked', False);
 Script3841.AddCustomFieldOrEvent(FieldVal3847);
-Script3841.SetSourceCode('ecmascript:' + LineEnding +
-  '        function inTime(value) {' + LineEnding +
-  '            // Browser.print("in", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '            if (value) {' + LineEnding +
-  '                checked = !checked;' + LineEnding +
-  '            }' + LineEnding +
-  '            if (checked) {' + LineEnding +
-  '                diffuseColor.g = 1;' + LineEnding +
-  '                diffuseColor.b = 0;' + LineEnding +
-  '                resumeTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            } else {' + LineEnding +
-  '                diffuseColor.g = 0;' + LineEnding +
-  '                diffuseColor.b = 1;' + LineEnding +
-  '                pauseTime = value + 1;' + LineEnding +
-  '                fraction = 0;' + LineEnding +
-  '            }' + LineEnding +
-  '            // Browser.print("out", diffuseColor.g, diffuseColor.b);' + LineEnding +
-  '        }');
+FreeAndNil(CompiledScript3841);
+end;
+
+procedure InitSingleMenuJinPart320;
+begin
+CompiledScript3841 := TScript3841Script.Create(FieldVal3843, FieldVal3844, FieldVal3845, FieldVal3846, FieldVal3847);
+Script3841.SetUrl(['compiled:' + LineEnding +
+  'inTime=Script3841_inTime']);
 Transform3829.FdChildren.Add(Script3841);
 { ROUTE JinWink_Sensor.touchTime TO Script29.inTime }
 Transform3829.AddRoute(TouchSensor3830.EventTouchTime, FieldVal3842);
 { ROUTE JinWink_Material.diffuseColor TO Script29.diffuseColor }
-Transform3829.AddRoute(Material3838.diffuseColor, FieldVal3846);
+Transform3829.AddRoute(Material3838.diffuseColor, FieldVal3846.EventIn);
 { ROUTE Script29.diffuseColor TO JinWink_Material.diffuseColor }
-Transform3829.AddRoute(FieldVal3846, Material3838.diffuseColor);
+Transform3829.AddRoute(FieldVal3846.EventOut, Material3838.diffuseColor);
 { ROUTE Script29.checked TO JinWink_Clock.enabled }
-Transform3829.AddRoute(FieldVal3847, TimeSensor40.enabled);
+Transform3829.AddRoute(FieldVal3847.EventOut, TimeSensor40.enabled);
 { ROUTE Script29.pauseTime TO JinWink_Clock.pauseTime }
 Transform3829.AddRoute(FieldVal3844, TimeSensor40.pauseTime);
 { ROUTE Script29.resumeTime TO JinWink_Clock.resumeTime }
 Transform3829.AddRoute(FieldVal3843, TimeSensor40.resumeTime);
 { ROUTE Script29.fraction TO AnimationAdapter_JinWink.set_fraction }
-Transform3829.AddRoute(FieldVal3845, ScalarInterpolator38.EventSet_fraction);
+Transform3829.AddRoute(FieldVal3845.EventOut, ScalarInterpolator38.EventSet_fraction);
 Group3045.FdChildren.Add(Transform3829);
 { ROUTE JinWink_Sensor.touchTime TO JinWink_Clock.startTime }
 Group3045.AddRoute(TouchSensor3830.EventTouchTime, TimeSensor40.FdStartTime.EventIn);
-end;
-
-procedure InitSingleMenuJinPart319;
-begin
 Group7.FdChildren.Add(Group3045);
 X3D0.AddChildren([Group7]);
 end;
@@ -16427,8 +19973,103 @@ begin
   InitSingleMenuJinPart317;
   InitSingleMenuJinPart318;
   InitSingleMenuJinPart319;
+  InitSingleMenuJinPart320;
   Result := X3D0;
 end;
 
+procedure RegisterSingleMenuJinScripts(const Scene: TCastleSceneCore);
 begin
+  if CompiledScript3058 <> nil then
+    CompiledScript3058.RegisterHandlers(Scene);
+  if CompiledScript3085 <> nil then
+    CompiledScript3085.RegisterHandlers(Scene);
+  if CompiledScript3112 <> nil then
+    CompiledScript3112.RegisterHandlers(Scene);
+  if CompiledScript3139 <> nil then
+    CompiledScript3139.RegisterHandlers(Scene);
+  if CompiledScript3166 <> nil then
+    CompiledScript3166.RegisterHandlers(Scene);
+  if CompiledScript3193 <> nil then
+    CompiledScript3193.RegisterHandlers(Scene);
+  if CompiledScript3220 <> nil then
+    CompiledScript3220.RegisterHandlers(Scene);
+  if CompiledScript3247 <> nil then
+    CompiledScript3247.RegisterHandlers(Scene);
+  if CompiledScript3274 <> nil then
+    CompiledScript3274.RegisterHandlers(Scene);
+  if CompiledScript3301 <> nil then
+    CompiledScript3301.RegisterHandlers(Scene);
+  if CompiledScript3328 <> nil then
+    CompiledScript3328.RegisterHandlers(Scene);
+  if CompiledScript3355 <> nil then
+    CompiledScript3355.RegisterHandlers(Scene);
+  if CompiledScript3382 <> nil then
+    CompiledScript3382.RegisterHandlers(Scene);
+  if CompiledScript3409 <> nil then
+    CompiledScript3409.RegisterHandlers(Scene);
+  if CompiledScript3436 <> nil then
+    CompiledScript3436.RegisterHandlers(Scene);
+  if CompiledScript3463 <> nil then
+    CompiledScript3463.RegisterHandlers(Scene);
+  if CompiledScript3490 <> nil then
+    CompiledScript3490.RegisterHandlers(Scene);
+  if CompiledScript3517 <> nil then
+    CompiledScript3517.RegisterHandlers(Scene);
+  if CompiledScript3544 <> nil then
+    CompiledScript3544.RegisterHandlers(Scene);
+  if CompiledScript3571 <> nil then
+    CompiledScript3571.RegisterHandlers(Scene);
+  if CompiledScript3598 <> nil then
+    CompiledScript3598.RegisterHandlers(Scene);
+  if CompiledScript3625 <> nil then
+    CompiledScript3625.RegisterHandlers(Scene);
+  if CompiledScript3652 <> nil then
+    CompiledScript3652.RegisterHandlers(Scene);
+  if CompiledScript3679 <> nil then
+    CompiledScript3679.RegisterHandlers(Scene);
+  if CompiledScript3706 <> nil then
+    CompiledScript3706.RegisterHandlers(Scene);
+  if CompiledScript3733 <> nil then
+    CompiledScript3733.RegisterHandlers(Scene);
+  if CompiledScript3760 <> nil then
+    CompiledScript3760.RegisterHandlers(Scene);
+  if CompiledScript3787 <> nil then
+    CompiledScript3787.RegisterHandlers(Scene);
+  if CompiledScript3814 <> nil then
+    CompiledScript3814.RegisterHandlers(Scene);
+  if CompiledScript3841 <> nil then
+    CompiledScript3841.RegisterHandlers(Scene);
+end;
+
+finalization
+  FreeAndNil(CompiledScript3058);
+  FreeAndNil(CompiledScript3085);
+  FreeAndNil(CompiledScript3112);
+  FreeAndNil(CompiledScript3139);
+  FreeAndNil(CompiledScript3166);
+  FreeAndNil(CompiledScript3193);
+  FreeAndNil(CompiledScript3220);
+  FreeAndNil(CompiledScript3247);
+  FreeAndNil(CompiledScript3274);
+  FreeAndNil(CompiledScript3301);
+  FreeAndNil(CompiledScript3328);
+  FreeAndNil(CompiledScript3355);
+  FreeAndNil(CompiledScript3382);
+  FreeAndNil(CompiledScript3409);
+  FreeAndNil(CompiledScript3436);
+  FreeAndNil(CompiledScript3463);
+  FreeAndNil(CompiledScript3490);
+  FreeAndNil(CompiledScript3517);
+  FreeAndNil(CompiledScript3544);
+  FreeAndNil(CompiledScript3571);
+  FreeAndNil(CompiledScript3598);
+  FreeAndNil(CompiledScript3625);
+  FreeAndNil(CompiledScript3652);
+  FreeAndNil(CompiledScript3679);
+  FreeAndNil(CompiledScript3706);
+  FreeAndNil(CompiledScript3733);
+  FreeAndNil(CompiledScript3760);
+  FreeAndNil(CompiledScript3787);
+  FreeAndNil(CompiledScript3814);
+  FreeAndNil(CompiledScript3841);
 end.

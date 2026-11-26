@@ -2,13 +2,14 @@ unit flowerprotofreewrl;
 
 interface
 
-uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported, CastleSceneCore;
 
 function Createflowerprotofreewrl: TX3DRootNode;
+procedure RegisterflowerprotofreewrlScripts(const Scene: TCastleSceneCore);
 
 implementation
 
-uses Classes, SysUtils, X3DLoad, CastleVectors;
+uses Classes, SysUtils, X3DLoad, CastleVectors, Math, X3DTime;
 
 function CreateEmptyPrototype(const AName: String): TX3DPrototype;
 var
@@ -33,6 +34,46 @@ begin
     FreeAndNil(Stream);
   end;
 end;
+
+type
+  TScript51Script = class
+  private
+    Ftranslation: TVector3;
+    FField_translation: TSFVec3f;
+    FDirty_translation: Boolean;
+    Fvelocity: TVector3;
+    FField_velocity: TSFVec3f;
+    FDirty_velocity: Boolean;
+    Fset_fraction: Single;
+    FField_set_fraction: TSFFloat;
+    FDirty_set_fraction: Boolean;
+    Fa: Single;
+    FField_a: TSFFloat;
+    FDirty_a: Boolean;
+    Fb: Single;
+    FField_b: TSFFloat;
+    FDirty_b: Boolean;
+    Fc: Single;
+    FField_c: TSFFloat;
+    FDirty_c: Boolean;
+    Fd: Single;
+    FField_d: TSFFloat;
+    FDirty_d: Boolean;
+    Ftdelta: Single;
+    FField_tdelta: TSFFloat;
+    FDirty_tdelta: Boolean;
+    Fpdelta: Single;
+    FField_pdelta: TSFFloat;
+    FDirty_pdelta: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AField_translation: TSFVec3f; const AField_velocity: TSFVec3f; const AField_set_fraction: TSFFloat; const AField_a: TSFFloat; const AField_b: TSFFloat; const AField_c: TSFFloat; const AField_d: TSFFloat; const AField_tdelta: TSFFloat; const AField_pdelta: TSFFloat);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Initialize(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_fraction(Value: TX3DField; const Time: TX3DTime);
+    procedure Animate_flowers(const fraction: Single; const eventTime: Single; const Time: TX3DTime);
+  end;
 
 var
   X3D0: TX3DRootNode;
@@ -81,8 +122,216 @@ var
   FieldVal58: TSFFloat;
   FieldVal59: TSFFloat;
   FieldVal60: TSFFloat;
+  CompiledScript51: TScript51Script;
   TimeSensor61: TTimeSensorNode;
   ProtoInstance70: TX3DPrototypeNode;
+
+constructor TScript51Script.Create(const AField_translation: TSFVec3f; const AField_velocity: TSFVec3f; const AField_set_fraction: TSFFloat; const AField_a: TSFFloat; const AField_b: TSFFloat; const AField_c: TSFFloat; const AField_d: TSFFloat; const AField_tdelta: TSFFloat; const AField_pdelta: TSFFloat);
+begin
+  inherited Create;
+  Ftranslation := Vector3(0, 0, 0);
+  FField_translation := nil;
+  FDirty_translation := False;
+  Fvelocity := Vector3(0, 0, 0);
+  FField_velocity := nil;
+  FDirty_velocity := False;
+  Fset_fraction := 0.0;
+  FField_set_fraction := nil;
+  FDirty_set_fraction := False;
+  Fa := 0.0;
+  FField_a := nil;
+  FDirty_a := False;
+  Fb := 0.0;
+  FField_b := nil;
+  FDirty_b := False;
+  Fc := 0.0;
+  FField_c := nil;
+  FDirty_c := False;
+  Fd := 0.0;
+  FField_d := nil;
+  FDirty_d := False;
+  Ftdelta := 0.0;
+  FField_tdelta := nil;
+  FDirty_tdelta := False;
+  Fpdelta := 0.0;
+  FField_pdelta := nil;
+  FDirty_pdelta := False;
+  FField_translation := AField_translation;
+  if AField_translation <> nil then Ftranslation := AField_translation.Value;
+  FField_velocity := AField_velocity;
+  if AField_velocity <> nil then Fvelocity := AField_velocity.Value;
+  FField_set_fraction := AField_set_fraction;
+  if AField_set_fraction <> nil then Fset_fraction := AField_set_fraction.Value;
+  FField_a := AField_a;
+  if AField_a <> nil then Fa := AField_a.Value;
+  FField_b := AField_b;
+  if AField_b <> nil then Fb := AField_b.Value;
+  FField_c := AField_c;
+  if AField_c <> nil then Fc := AField_c.Value;
+  FField_d := AField_d;
+  if AField_d <> nil then Fd := AField_d.Value;
+  FField_tdelta := AField_tdelta;
+  if AField_tdelta <> nil then Ftdelta := AField_tdelta.Value;
+  FField_pdelta := AField_pdelta;
+  if AField_pdelta <> nil then Fpdelta := AField_pdelta.Value;
+end;
+
+destructor TScript51Script.Destroy;
+begin
+  inherited Destroy;
+end;
+
+procedure TScript51Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_translation then
+  begin
+    FDirty_translation := False;
+    if FField_translation <> nil then
+      FField_translation.Send(Ftranslation, Time);
+  end;
+  if FDirty_velocity then
+  begin
+    FDirty_velocity := False;
+    if FField_velocity <> nil then
+      FField_velocity.Send(Fvelocity, Time);
+  end;
+  if FDirty_set_fraction then
+  begin
+    FDirty_set_fraction := False;
+    if FField_set_fraction <> nil then
+      FField_set_fraction.Send(Fset_fraction, Time);
+  end;
+  if FDirty_a then
+  begin
+    FDirty_a := False;
+    if FField_a <> nil then
+      FField_a.Send(Fa, Time);
+  end;
+  if FDirty_b then
+  begin
+    FDirty_b := False;
+    if FField_b <> nil then
+      FField_b.Send(Fb, Time);
+  end;
+  if FDirty_c then
+  begin
+    FDirty_c := False;
+    if FField_c <> nil then
+      FField_c.Send(Fc, Time);
+  end;
+  if FDirty_d then
+  begin
+    FDirty_d := False;
+    if FField_d <> nil then
+      FField_d.Send(Fd, Time);
+  end;
+  if FDirty_tdelta then
+  begin
+    FDirty_tdelta := False;
+    if FField_tdelta <> nil then
+      FField_tdelta.Send(Ftdelta, Time);
+  end;
+  if FDirty_pdelta then
+  begin
+    FDirty_pdelta := False;
+    if FField_pdelta <> nil then
+      FField_pdelta.Send(Fpdelta, Time);
+  end;
+end;
+
+procedure TScript51Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script51_initialize', {$ifdef FPC}@{$endif}Initialize);
+  Scene.RegisterCompiledScript('Script51_set_fraction', {$ifdef FPC}@{$endif}Set_fraction);
+end;
+
+procedure TScript51Script.Initialize(Value: TX3DField; const Time: TX3DTime);
+begin
+  Ftranslation := Vector3(0, 0, 0); FDirty_translation := True;
+  Fvelocity := Vector3(Random - 0.5, Random - 0.5, Random - 0.5); FDirty_velocity := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript51Script.Set_fraction(Value: TX3DField; const Time: TX3DTime);
+var
+  j: Integer;
+begin
+  Ftranslation := Vector3(Ftranslation.X + Fvelocity.X, Ftranslation.Y + Fvelocity.Y, Ftranslation.Z + Fvelocity.Z); FDirty_translation := True;
+  for j := 0 to 2 do
+  begin
+    if Abs(Ftranslation.X) > 10 then
+    begin
+      Initialize(nil, Time);
+    end
+    else if Abs(Ftranslation.Y) > 10 then
+    begin
+      Initialize(nil, Time);
+    end
+    else if Abs(Ftranslation.Z) > 10 then
+    begin
+      Initialize(nil, Time);
+    end
+    else
+    begin
+      Fvelocity.X := Fvelocity.X + (Random * 0.2 - 0.1); FDirty_velocity := True;
+      Fvelocity.Y := Fvelocity.Y + (Random * 0.2 - 0.1); FDirty_velocity := True;
+      Fvelocity.Z := Fvelocity.Z + (Random * 0.2 - 0.1); FDirty_velocity := True;
+    end;
+  end;
+  Animate_flowers(0.0, 0.0, Time);
+  FlushOutputs(Time);
+end;
+
+procedure TScript51Script.Animate_flowers(const fraction: Single; const eventTime: Single; const Time: TX3DTime);
+var
+  choice: Integer;
+begin
+  choice := Floor(Random * 4);
+  case choice of
+    0:
+    begin
+      Fa := Fa + (Random * 0.2 - 0.1); FDirty_a := True;
+    end;
+    1:
+    begin
+      Fb := Fb + (Random * 0.2 - 0.1); FDirty_b := True;
+    end;
+    2:
+    begin
+      Fc := Fc + (Random * 2 - 1); FDirty_c := True;
+    end;
+    3:
+    begin
+      Fd := Fd + (Random * 2 - 1); FDirty_d := True;
+    end;
+  end;
+  Ftdelta := Ftdelta + (0.5); FDirty_tdelta := True;
+  Fpdelta := Fpdelta + (0.5); FDirty_pdelta := True;
+  if Fa > 1 then
+  begin
+    Fa := 0.5; FDirty_a := True;
+  end;
+  if Fb > 1 then
+  begin
+    Fb := 0.5; FDirty_b := True;
+  end;
+  if Fc < 1 then
+  begin
+    Fc := 4; FDirty_c := True;
+  end;
+  if Fd < 1 then
+  begin
+    Fd := 4; FDirty_d := True;
+  end;
+  if Fc > 10 then
+  begin
+    Fc := 4; FDirty_c := True;
+  end;
+  if Fd > 10 then
+  begin
+    Fd := 4; FDirty_d := True;
+  end;
+end;
 
 procedure InitflowerprotofreewrlPart0;
 begin
@@ -147,26 +396,26 @@ ComposedCubeMapTexture29 := TComposedCubeMapTextureNode.Create;
 ComposedCubeMapTexture29.X3DName := 'texture';
 ImageTexture30 := TImageTextureNode.Create;
 ImageTexture30.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_back.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png']);
-ComposedCubeMapTexture29.FdBackTexture.Set(ImageTexture30);
+ComposedCubeMapTexture29.BackTexture := ImageTexture30;
 ImageTexture31 := TImageTextureNode.Create;
 ImageTexture31.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_bottom.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png']);
-ComposedCubeMapTexture29.FdBottomTexture.Set(ImageTexture31);
+ComposedCubeMapTexture29.BottomTexture := ImageTexture31;
 ImageTexture32 := TImageTextureNode.Create;
 ImageTexture32.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_front.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png']);
-ComposedCubeMapTexture29.FdFrontTexture.Set(ImageTexture32);
+ComposedCubeMapTexture29.FrontTexture := ImageTexture32;
 ImageTexture33 := TImageTextureNode.Create;
 ImageTexture33.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_left.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png']);
-ComposedCubeMapTexture29.FdLeftTexture.Set(ImageTexture33);
+ComposedCubeMapTexture29.LeftTexture := ImageTexture33;
 ImageTexture34 := TImageTextureNode.Create;
 ImageTexture34.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_right.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png']);
-ComposedCubeMapTexture29.FdRightTexture.Set(ImageTexture34);
+ComposedCubeMapTexture29.RightTexture := ImageTexture34;
 ImageTexture35 := TImageTextureNode.Create;
 ImageTexture35.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_top.png', 'https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png']);
-ComposedCubeMapTexture29.FdTopTexture.Set(ImageTexture35);
+ComposedCubeMapTexture29.TopTexture := ImageTexture35;
 Appearance27.Texture := ComposedCubeMapTexture29;
 ComposedShader36 := TComposedShaderNode.Create;
 ComposedShader36.X3DName := 'shader';
-ComposedShader36.Language := 'GLSL';
+ComposedShader36.Language := slGLSL;
 FieldVal37 := TSFInt32.Create(ComposedShader36, True, 'fw_textureCoordGenType', 0);
 ComposedShader36.AddCustomFieldOrEvent(FieldVal37);
 FieldVal38 := TSFVec3f.Create(ComposedShader36, False, 'chromaticDispertion', Vector3(0.98, 1, 1.033));
@@ -197,14 +446,14 @@ ComposedShader36.AddCustomFieldOrEvent(FieldVal47);
 { <ComposedCubeMapTexture USE="texture"/> }
 { </field> }
 ShaderPart48 := TShaderPartNode.Create;
-ShaderPart48.FdType.Value := 'VERTEX';
+ShaderPart48.ShaderType := stVertex;
 ShaderPart48.FieldOrEvent('url', True).IsClauseNamesAdd('vertex');
-ComposedShader36.Parts := ShaderPart48;
+ComposedShader36.FdParts.Add(ShaderPart48);
 ShaderPart49 := TShaderPartNode.Create;
-ShaderPart49.FdType.Value := 'FRAGMENT';
+ShaderPart49.ShaderType := stFragment;
 ShaderPart49.FieldOrEvent('url', True).IsClauseNamesAdd('fragment');
-ComposedShader36.Parts := ShaderPart49;
-Appearance27.AddChildren([ComposedShader36]);
+ComposedShader36.FdParts.Add(ShaderPart49);
+Appearance27.FdShaders.Add(ComposedShader36);
 Shape26.Appearance := Appearance27;
 Sphere50 := TSphereNode.Create;
 Sphere50.Radius := 5;
@@ -235,72 +484,11 @@ FieldVal59 := TSFFloat.Create(Script51, True, 'tdelta', 0.5);
 Script51.AddCustomFieldOrEvent(FieldVal59);
 FieldVal60 := TSFFloat.Create(Script51, True, 'pdelta', 0.5);
 Script51.AddCustomFieldOrEvent(FieldVal60);
-Script51.SetSourceCode('ecmascript:' + LineEnding +
-  '			function initialize() {' + LineEnding +
-  '			    translation = new SFVec3f(0, 0, 0);' + LineEnding +
-  '			    velocity = new SFVec3f(' + LineEnding +
-  '			    	Math.random() - 0.5,' + LineEnding +
-  '				Math.random() - 0.5,' + LineEnding +
-  '				Math.random() - 0.5);' + LineEnding +
-  '			}' + LineEnding +
-  '			function set_fraction() {' + LineEnding +
-  '			    translation = new SFVec3f(' + LineEnding +
-  '			    	translation.x + velocity.x,' + LineEnding +
-  '				translation.y + velocity.y,' + LineEnding +
-  '				translation.z + velocity.z);' + LineEnding +
-  '			    for (var j = 0; j <= 2; j++) {' + LineEnding +
-  '				    if (Math.abs(translation.x) > 10) {' + LineEnding +
-  '					initialize();' + LineEnding +
-  '				    } else if (Math.abs(translation.y) > 10) {' + LineEnding +
-  '					initialize();' + LineEnding +
-  '				    } else if (Math.abs(translation.z) > 10) {' + LineEnding +
-  '					initialize();' + LineEnding +
-  '				    } else {' + LineEnding +
-  '					velocity.x += Math.random() * 0.2 - 0.1;' + LineEnding +
-  '					velocity.y += Math.random() * 0.2 - 0.1;' + LineEnding +
-  '					velocity.z += Math.random() * 0.2 - 0.1;' + LineEnding +
-  '				    }' + LineEnding +
-  '			    }' + LineEnding +
-  '			    animate_flowers();' + LineEnding +
-  '			}' + LineEnding +
-  '' + LineEnding +
-  '			function animate_flowers(fraction, eventTime) {' + LineEnding +
-  '				var choice = Math.floor(Math.random() * 4);' + LineEnding +
-  '				switch (choice) {' + LineEnding +
-  '				case 0:' + LineEnding +
-  '					a += Math.random() * 0.2 - 0.1;' + LineEnding +
-  '					break;' + LineEnding +
-  '				case 1:' + LineEnding +
-  '					b += Math.random() * 0.2 - 0.1;' + LineEnding +
-  '					break;' + LineEnding +
-  '				case 2:' + LineEnding +
-  '					c += Math.random() * 2 - 1;' + LineEnding +
-  '					break;' + LineEnding +
-  '				case 3:' + LineEnding +
-  '					d += Math.random() * 2 - 1;' + LineEnding +
-  '					break;' + LineEnding +
-  '				}' + LineEnding +
-  '				tdelta += 0.5;' + LineEnding +
-  '				pdelta += 0.5;' + LineEnding +
-  '				if (a > 1) {' + LineEnding +
-  '					a =  0.5;' + LineEnding +
-  '				}' + LineEnding +
-  '				if (b > 1) {' + LineEnding +
-  '					b =  0.5;' + LineEnding +
-  '				}' + LineEnding +
-  '				if (c < 1) {' + LineEnding +
-  '					c =  4;' + LineEnding +
-  '				}' + LineEnding +
-  '				if (d < 1) {' + LineEnding +
-  '					d =  4;' + LineEnding +
-  '				}' + LineEnding +
-  '				if (c > 10) {' + LineEnding +
-  '					c = 4;' + LineEnding +
-  '				}' + LineEnding +
-  '				if (d > 10) {' + LineEnding +
-  '					d = 4;' + LineEnding +
-  '				}' + LineEnding +
-  '			}');
+FreeAndNil(CompiledScript51);
+CompiledScript51 := TScript51Script.Create(FieldVal52, FieldVal53, FieldVal54, FieldVal55, FieldVal56, FieldVal57, FieldVal58, FieldVal59, FieldVal60);
+Script51.SetUrl(['compiled:' + LineEnding +
+  'initialize=Script51_initialize' + LineEnding +
+  'set_fraction=Script51_set_fraction']);
 Transform25.FdChildren.Add(Script51);
 TimeSensor61 := TTimeSensorNode.Create;
 TimeSensor61.X3DName := 'TourTime';
@@ -308,25 +496,25 @@ TimeSensor61.CycleInterval := 5;
 TimeSensor61.Loop := True;
 Transform25.FdChildren.Add(TimeSensor61);
 { ROUTE TourTime.fraction_changed TO Animate.set_fraction }
-Transform25.AddRoute(TimeSensor61.EventFraction_changed, FieldVal54);
+Transform25.AddRoute(TimeSensor61.EventFraction_changed, FieldVal54.EventIn);
 { ROUTE Animate.translation_changed TO transform.set_translation }
-Transform25.AddRoute(Script51.EventTranslation_changed, Transform25.FdTranslation.EventIn);
+Transform25.AddRoute(FieldVal52.EventOut, Transform25.FdTranslation.EventIn);
 { ROUTE Animate.a TO shader.a }
-Transform25.AddRoute(FieldVal55, ComposedShader36.a);
+Transform25.AddRoute(FieldVal55.EventOut, FieldVal42.EventIn);
 { ROUTE Animate.b TO shader.b }
-Transform25.AddRoute(FieldVal56, ComposedShader36.b);
+Transform25.AddRoute(FieldVal56.EventOut, FieldVal43.EventIn);
 { ROUTE Animate.c TO shader.c }
-Transform25.AddRoute(FieldVal57, ComposedShader36.c);
+Transform25.AddRoute(FieldVal57.EventOut, FieldVal44.EventIn);
 { ROUTE Animate.d TO shader.d }
-Transform25.AddRoute(FieldVal58, ComposedShader36.d);
+Transform25.AddRoute(FieldVal58.EventOut, FieldVal45.EventIn);
 { ROUTE Animate.tdelta TO shader.tdelta }
-Transform25.AddRoute(FieldVal59, ComposedShader36.tdelta);
-{ ROUTE Animate.pdelta TO shader.pdelta }
-Transform25.AddRoute(FieldVal60, ComposedShader36.pdelta);
+Transform25.AddRoute(FieldVal59.EventOut, FieldVal46.EventIn);
 end;
 
 procedure InitflowerprotofreewrlPart4;
 begin
+{ ROUTE Animate.pdelta TO shader.pdelta }
+Transform25.AddRoute(FieldVal60.EventOut, FieldVal47.EventIn);
 ProtoDeclare20.Node.AddChildren([Transform25]);
 X3D0.AddPrototype(ProtoDeclare20);
 ProtoInstance70 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare20);
@@ -346,5 +534,12 @@ begin
   Result := X3D0;
 end;
 
+procedure RegisterflowerprotofreewrlScripts(const Scene: TCastleSceneCore);
 begin
+  if CompiledScript51 <> nil then
+    CompiledScript51.RegisterHandlers(Scene);
+end;
+
+finalization
+  FreeAndNil(CompiledScript51);
 end.

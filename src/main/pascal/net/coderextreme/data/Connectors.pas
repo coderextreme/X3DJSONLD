@@ -2,13 +2,14 @@ unit Connectors;
 
 interface
 
-uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported, CastleSceneCore;
 
 function CreateConnectors: TX3DRootNode;
+procedure RegisterConnectorsScripts(const Scene: TCastleSceneCore);
 
 implementation
 
-uses Classes, SysUtils, X3DLoad, CastleVectors;
+uses Classes, SysUtils, X3DLoad, CastleVectors, Math, X3DTime;
 
 function CreateEmptyPrototype(const AName: String): TX3DPrototype;
 var
@@ -34,6 +35,52 @@ begin
   end;
 end;
 
+type
+  TScript18Script = class
+  private
+    FcornerDimension: Single;
+    FcornerRadius: Single;
+    Fsize: TVector2;
+    Fgeometry: TX3DNode;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AField_cornerDimension: TSFFloat; const AField_cornerRadius: TSFFloat; const AField_size: TSFVec2f; const AField_geometry: TSFNode);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Initialize(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript62Script = class
+  private
+    Ftranslation: TVector3;
+    FField_translation: TSFVec3f;
+    FDirty_translation: Boolean;
+    Fsensor: TX3DNode;
+    Ftransform: TX3DNode;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AField_translation: TSFVec3f; const AField_sensor: TSFNode; const AField_transform: TSFNode);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Initialize(Value: TX3DField; const Time: TX3DTime);
+  end;
+
+  TScript82Script = class
+  private
+    FrouteDimension: Int32;
+    Foutput: TX3DNode;
+    Finput: TX3DNode;
+    Fgeometry: TX3DNode;
+    Fself: TX3DNode;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AField_routeDimension: TSFInt32; const AField_output: TSFNode; const AField_input: TSFNode; const AField_geometry: TSFNode; const AField_self: TSFNode);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Initialize(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_translation(Value: TX3DField; const Time: TX3DTime);
+  end;
+
 var
   X3D0: TX3DRootNode;
   Group9: TGroupNode;
@@ -51,6 +98,7 @@ var
   FieldVal20: TSFFloat;
   FieldVal21: TSFVec2f;
   FieldVal22: TSFNode;
+  CompiledScript18: TScript18Script;
   ProtoDeclare24: TX3DPrototype;
   FieldDecl26: TX3DInterfaceDeclaration;
   FieldVal26: TSFColor;
@@ -86,6 +134,7 @@ var
   FieldVal63: TSFVec3f;
   FieldVal64: TSFNode;
   FieldVal66: TSFNode;
+  CompiledScript62: TScript62Script;
   ProtoDeclare69: TX3DPrototype;
   FieldDecl71: TX3DInterfaceDeclaration;
   FieldVal71: TSFColor;
@@ -108,6 +157,7 @@ var
   FieldVal86: TSFNode;
   FieldVal87: TSFNode;
   FieldVal89: TSFNode;
+  CompiledScript82: TScript82Script;
   NavigationInfo91: TNavigationInfoNode;
   Background92: TBackgroundNode;
   OrthoViewpoint93: TOrthoViewpointNode;
@@ -131,6 +181,186 @@ var
   ProtoInstance143: TX3DPrototypeNode;
   ProtoInstance147: TX3DPrototypeNode;
   ProtoInstance149: TX3DPrototypeNode;
+
+constructor TScript18Script.Create(const AField_cornerDimension: TSFFloat; const AField_cornerRadius: TSFFloat; const AField_size: TSFVec2f; const AField_geometry: TSFNode);
+begin
+  inherited Create;
+  FcornerDimension := 0.0;
+  FcornerRadius := 0.0;
+  Fsize := Vector2(0, 0);
+  Fgeometry := nil;
+  if AField_cornerDimension <> nil then FcornerDimension := AField_cornerDimension.Value;
+  if AField_cornerRadius <> nil then FcornerRadius := AField_cornerRadius.Value;
+  if AField_size <> nil then Fsize := AField_size.Value;
+  if AField_geometry <> nil then Fgeometry := AField_geometry.Value;
+end;
+
+destructor TScript18Script.Destroy;
+begin
+  inherited Destroy;
+end;
+
+procedure TScript18Script.FlushOutputs(const Time: TX3DTime);
+begin
+end;
+
+procedure TScript18Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script18_initialize', {$ifdef FPC}@{$endif}Initialize);
+end;
+
+procedure TScript18Script.Initialize(Value: TX3DField; const Time: TX3DTime);
+var
+  point: TVector3;
+  startRotation: TVector4;
+  endRotation: TVector4;
+  corner: array of TVector3;
+  coordIndex: array of Int32;
+  points: array of TVector3;
+  i: Integer;
+  translation: TVector3;
+  rotation: TVector4;
+begin
+  point := Vector3(FcornerRadius, 0, 0);
+  startRotation := Vector4();
+  endRotation := Vector4(0, 0, 1, Pi / 2);
+  corner := [];
+  coordIndex := [];
+  points := [];
+  for i := 0 to (FcornerDimension * 4) - 1 do
+  begin
+    coordIndex[Length(coordIndex)] := i;
+  end;
+  Fgeometry.coordIndex := coordIndex;
+  for i := 0 to (FcornerDimension) - 1 do
+  begin
+    corner[i] := startRotation.slerp(endRotation, i / FcornerDimension - 1).multVec(point);
+  end;
+  translation := Vector3(Fsize.X / 2 - FcornerRadius, Fsize.Y / 2 - FcornerRadius, 0);
+  for i := 0 to (FcornerDimension) - 1 do
+  begin
+    points[Length(points)] := corner[i].add(translation);
+  end;
+  translation := Vector3(-Fsize.X / 2 + FcornerRadius, Fsize.Y / 2 - FcornerRadius, 0);
+  rotation := Vector4(0, 0, 1, Pi * 0.5);
+  for i := 0 to (FcornerDimension) - 1 do
+  begin
+    points[Length(points)] := rotation.multVec(corner[i]).add(translation);
+  end;
+  translation := Vector3(-Fsize.X / 2 + FcornerRadius, -Fsize.Y / 2 + FcornerRadius, 0);
+  rotation := Vector4(0, 0, 1, Pi);
+  for i := 0 to (FcornerDimension) - 1 do
+  begin
+    points[Length(points)] := rotation.multVec(corner[i]).add(translation);
+  end;
+  translation := Vector3(Fsize.X / 2 - FcornerRadius, -Fsize.Y / 2 + FcornerRadius, 0);
+  rotation := Vector4(0, 0, 1, Pi * 1.5);
+  for i := 0 to (FcornerDimension) - 1 do
+  begin
+    points[Length(points)] := rotation.multVec(corner[i]).add(translation);
+  end;
+  Fgeometry.coord.point := points;
+end;
+
+constructor TScript62Script.Create(const AField_translation: TSFVec3f; const AField_sensor: TSFNode; const AField_transform: TSFNode);
+begin
+  inherited Create;
+  Ftranslation := Vector3(0, 0, 0);
+  FField_translation := nil;
+  FDirty_translation := False;
+  Fsensor := nil;
+  Ftransform := nil;
+  FField_translation := AField_translation;
+  if AField_translation <> nil then Ftranslation := AField_translation.Value;
+  if AField_sensor <> nil then Fsensor := AField_sensor.Value;
+  if AField_transform <> nil then Ftransform := AField_transform.Value;
+end;
+
+destructor TScript62Script.Destroy;
+begin
+  inherited Destroy;
+end;
+
+procedure TScript62Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_translation then
+  begin
+    FDirty_translation := False;
+    if FField_translation <> nil then
+      FField_translation.Send(Ftranslation, Time);
+  end;
+end;
+
+procedure TScript62Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script62_initialize', {$ifdef FPC}@{$endif}Initialize);
+end;
+
+procedure TScript62Script.Initialize(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fsensor.offset := Ftranslation;
+  FlushOutputs(Time);
+end;
+
+constructor TScript82Script.Create(const AField_routeDimension: TSFInt32; const AField_output: TSFNode; const AField_input: TSFNode; const AField_geometry: TSFNode; const AField_self: TSFNode);
+begin
+  inherited Create;
+  FrouteDimension := 0;
+  Foutput := nil;
+  Finput := nil;
+  Fgeometry := nil;
+  Fself := nil;
+  if AField_routeDimension <> nil then FrouteDimension := AField_routeDimension.Value;
+  if AField_output <> nil then Foutput := AField_output.Value;
+  if AField_input <> nil then Finput := AField_input.Value;
+  if AField_geometry <> nil then Fgeometry := AField_geometry.Value;
+  if AField_self <> nil then Fself := AField_self.Value;
+end;
+
+destructor TScript82Script.Destroy;
+begin
+  inherited Destroy;
+end;
+
+procedure TScript82Script.FlushOutputs(const Time: TX3DTime);
+begin
+end;
+
+procedure TScript82Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script82_initialize', {$ifdef FPC}@{$endif}Initialize);
+  Scene.RegisterCompiledScript('Script82_set_translation', {$ifdef FPC}@{$endif}Set_translation);
+end;
+
+procedure TScript82Script.Initialize(Value: TX3DField; const Time: TX3DTime);
+begin
+  WriteLn(Foutput, 'translation_changed', Fself, 'set_translation');
+  WriteLn(Finput, 'translation_changed', Fself, 'set_translation');
+  Set_translation(nil, Time);
+end;
+
+procedure TScript82Script.Set_translation(Value: TX3DField; const Time: TX3DTime);
+var
+  outPoint: Single;
+  inPoint: Single;
+  w: Single;
+  h: Single;
+  i: Integer;
+  t: Single;
+  y: Single;
+begin
+  Fgeometry.vertexCount[0] := FrouteDimension;
+  outPoint := Foutput.translation.add(Vector3(1, 0, 0));
+  inPoint := Finput.translation.add(Vector3(-1, 0, 0));
+  w := inPoint.X - outPoint.X;
+  h := outPoint.Y - inPoint.Y;
+  for i := 0 to (FrouteDimension) - 1 do
+  begin
+    t := i / FrouteDimension - 1;
+    y := h / 2 * Cos(t * Pi) - 1;
+    Fgeometry.coord.point[i] := outPoint.add(Vector3(t * w, y, 0));
+  end;
+end;
 
 procedure InitConnectorsPart0;
 begin
@@ -187,50 +417,10 @@ Script18.AddCustomFieldOrEvent(FieldVal22);
 FieldVal22.Value := IndexedFaceSet16;
 Script18.FieldOrEvent('cornerRadius', True).IsClauseNamesAdd('cornerRadius');
 Script18.FieldOrEvent('size', True).IsClauseNamesAdd('size');
-Script18.SetSourceCode('ecmascript:' + LineEnding +
-  '' + LineEnding +
-  'function initialize ()' + LineEnding +
-  '{' + LineEnding +
-  '	var point         = new SFVec3f (cornerRadius, 0, 0);' + LineEnding +
-  '	var startRotation = new SFRotation ();' + LineEnding +
-  '	var endRotation   = new SFRotation (0, 0, 1, Math .PI / 2);' + LineEnding +
-  '	var corner        = new MFVec3f ();' + LineEnding +
-  '	var coordIndex    = new MFInt32 ();' + LineEnding +
-  '	var points        = new MFVec3f ();' + LineEnding +
-  '' + LineEnding +
-  '	for (var i = 0; i < cornerDimension * 4; ++ i)' + LineEnding +
-  '		coordIndex [coordIndex .length] = i;' + LineEnding +
-  '' + LineEnding +
-  '	geometry .coordIndex = coordIndex;' + LineEnding +
-  '' + LineEnding +
-  '	for (var i = 0; i < cornerDimension; ++i)' + LineEnding +
-  '		corner [i] = startRotation .slerp (endRotation, i / (cornerDimension - 1)) .multVec (point);' + LineEnding +
-  '' + LineEnding +
-  '	var translation = new SFVec3f (size .x / 2 - cornerRadius, size .y / 2 - cornerRadius, 0);' + LineEnding +
-  '' + LineEnding +
-  '	for (var i = 0; i < cornerDimension; ++ i)' + LineEnding +
-  '		points [points .length] = corner [i] .add (translation);' + LineEnding +
-  '' + LineEnding +
-  '	var translation = new SFVec3f (-size .x / 2 + cornerRadius, size .y / 2 - cornerRadius, 0);' + LineEnding +
-  '	var rotation    = new SFRotation (0, 0, 1, Math .PI * 0.5);' + LineEnding +
-  '' + LineEnding +
-  '	for (var i = 0; i < cornerDimension; ++ i)' + LineEnding +
-  '		points [points .length] = rotation .multVec (corner [i]) .add (translation);' + LineEnding +
-  '' + LineEnding +
-  '	var translation = new SFVec3f (-size .x / 2 + cornerRadius, -size .y / 2 + cornerRadius, 0);' + LineEnding +
-  '	var rotation    = new SFRotation (0, 0, 1, Math .PI);' + LineEnding +
-  '' + LineEnding +
-  '	for (var i = 0; i < cornerDimension; ++ i)' + LineEnding +
-  '		points [points .length] = rotation .multVec (corner [i]) .add (translation);' + LineEnding +
-  '' + LineEnding +
-  '	var translation = new SFVec3f (size .x / 2 - cornerRadius, -size .y / 2 + cornerRadius, 0);' + LineEnding +
-  '	var rotation    = new SFRotation (0, 0, 1, Math .PI * 1.5);' + LineEnding +
-  '' + LineEnding +
-  '	for (var i = 0; i < cornerDimension; ++ i)' + LineEnding +
-  '		points [points .length] = rotation .multVec (corner [i]) .add (translation);' + LineEnding +
-  '' + LineEnding +
-  '	geometry .coord .point = points;' + LineEnding +
-  '}');
+FreeAndNil(CompiledScript18);
+CompiledScript18 := TScript18Script.Create(FieldVal19, FieldVal20, FieldVal21, FieldVal22);
+Script18.SetUrl(['compiled:' + LineEnding +
+  'initialize=Script18_initialize']);
 ProtoDeclare10.Node.AddChildren([Script18]);
 X3D0.AddPrototype(ProtoDeclare10);
 ProtoDeclare24 := CreateEmptyPrototype('Widget');
@@ -259,12 +449,12 @@ Transform31 := TTransformNode.Create;
 Transform31.X3DName := 'Shape';
 Shape32 := TShapeNode.Create;
 Shape32.FieldOrEvent('geometry', True).IsClauseNamesAdd('geometry');
-Appearance33 := TAppearanceNode.Create;
-Material34 := TMaterialNode.Create;
 end;
 
 procedure InitConnectorsPart2;
 begin
+Appearance33 := TAppearanceNode.Create;
+Material34 := TMaterialNode.Create;
 Material34.FieldOrEvent('diffuseColor', True).IsClauseNamesAdd('fillColor');
 Appearance33.Material := Material34;
 Shape32.Appearance := Appearance33;
@@ -303,12 +493,12 @@ Transform46.X3DName := 'Node';
 Transform46.FieldOrEvent('translation', True).IsClauseNamesAdd('translation');
 ProtoInstance47 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare24);
 ProtoInstance49 := TX3DPrototypeNode.CreatePrototypeNode('', '', Script18);
-(ProtoInstance49.Field('cornerRadius') as TSFFloat).Value := 0.12;
-(ProtoInstance49.Field('size') as TSFVec2f).Value := Vector2(2, 1);
 end;
 
 procedure InitConnectorsPart3;
 begin
+(ProtoInstance49.Field('cornerRadius') as TSFFloat).Value := 0.12;
+(ProtoInstance49.Field('size') as TSFVec2f).Value := Vector2(2, 1);
 (ProtoInstance47.Field('geometry') as TSFNode).Value := ProtoInstance49.Instantiate;
 Transform46.FdChildren.Add(ProtoInstance47.Instantiate);
 Transform52 := TTransformNode.Create;
@@ -343,20 +533,19 @@ FieldVal66 := TSFNode.CreateUndefined(Script62, False, 'transform');
 Script62.AddCustomFieldOrEvent(FieldVal66);
 FieldVal66.Value := Script62;
 Script62.FieldOrEvent('translation', True).IsClauseNamesAdd('translation');
-Script62.SetSourceCode('ecmascript:' + LineEnding +
-  'function initialize ()' + LineEnding +
-  '{' + LineEnding +
-  '	sensor .offset = translation;' + LineEnding +
-  '}');
+FreeAndNil(CompiledScript62);
+CompiledScript62 := TScript62Script.Create(FieldVal63, FieldVal64, FieldVal66);
+Script62.SetUrl(['compiled:' + LineEnding +
+  'initialize=Script62_initialize']);
 ProtoDeclare40.Node.AddChildren([Script62]);
-{ ROUTE PlaneSensor.translation_changed TO Node.set_translation }
-ProtoBody43.AddRoute(PlaneSensor45.EventTranslation_changed, Script62.FdTranslation.EventIn);
-X3D0.AddPrototype(ProtoDeclare40);
-ProtoDeclare69 := CreateEmptyPrototype('Route');
 end;
 
 procedure InitConnectorsPart4;
 begin
+{ ROUTE PlaneSensor.translation_changed TO Node.set_translation }
+ProtoDeclare40.Node.AddRoute(PlaneSensor45.EventTranslation_changed, FieldVal42.EventIn);
+X3D0.AddPrototype(ProtoDeclare40);
+ProtoDeclare69 := CreateEmptyPrototype('Route');
 ProtoDeclare69.X3DName := 'Route';
 FieldVal71 := TSFColor.Create(nil, True, 'lineColor', Vector3(0.43, 0.43, 0.98));
 FieldDecl71 := TX3DInterfaceDeclaration.Create(nil);
@@ -393,14 +582,14 @@ LineSet80.X3DName := 'Geometry_1';
 LineSet80.SetVertexCount([2]);
 Coordinate81 := TCoordinateNode.Create;
 Coordinate81.SetPoint([Vector3(-1, 0, 0), Vector3(1, 0, 0)]);
-LineSet80.Coord := Coordinate81;
-Shape76.Geometry := LineSet80;
-ProtoDeclare69.Node.AddChildren([Shape76]);
-Script82 := TScriptNode.Create;
 end;
 
 procedure InitConnectorsPart5;
 begin
+LineSet80.Coord := Coordinate81;
+Shape76.Geometry := LineSet80;
+ProtoDeclare69.Node.AddChildren([Shape76]);
+Script82 := TScriptNode.Create;
 Script82.X3DName := 'Route';
 Script82.DirectOutput := True;
 FieldVal83 := TSFVec3f.CreateEvent(Script82, 'set_translation', True);
@@ -419,32 +608,11 @@ Script82.AddCustomFieldOrEvent(FieldVal89);
 FieldVal89.Value := Script82;
 Script82.FieldOrEvent('output', True).IsClauseNamesAdd('output');
 Script82.FieldOrEvent('input', True).IsClauseNamesAdd('input');
-Script82.SetSourceCode('ecmascript:' + LineEnding +
-  'function initialize ()' + LineEnding +
-  '{' + LineEnding +
-  '	Browser .addRoute (output, ''translation_changed'', self, ''set_translation'');\n	Browser .addRoute (input,  ''translation_changed'', self, ''set_translation'');' + LineEnding +
-  '' + LineEnding +
-  '	set_translation ();' + LineEnding +
-  '}' + LineEnding +
-  '' + LineEnding +
-  'function set_translation ()' + LineEnding +
-  '{' + LineEnding +
-  '	geometry .vertexCount [0] = routeDimension;' + LineEnding +
-  '' + LineEnding +
-  '	var outPoint = output .translation .add (new SFVec3f ( 1, 0, 0));' + LineEnding +
-  '	var inPoint  = input  .translation .add (new SFVec3f (-1, 0, 0));' + LineEnding +
-  '' + LineEnding +
-  '	var w = inPoint .x - outPoint .x;' + LineEnding +
-  '	var h = outPoint .y - inPoint .y;' + LineEnding +
-  '' + LineEnding +
-  '	for (var i = 0; i < routeDimension; ++ i)' + LineEnding +
-  '	{' + LineEnding +
-  '		var t = i / (routeDimension - 1);' + LineEnding +
-  '		var y = h / 2 * (Math .cos (t * Math .PI) - 1);' + LineEnding +
-  '' + LineEnding +
-  '		geometry .coord .point [i] = outPoint .add (new SFVec3f (t * w, y, 0));' + LineEnding +
-  '	}' + LineEnding +
-  '}');
+FreeAndNil(CompiledScript82);
+CompiledScript82 := TScript82Script.Create(FieldVal84, FieldVal85, FieldVal86, FieldVal87, FieldVal89);
+Script82.SetUrl(['compiled:' + LineEnding +
+  'initialize=Script82_initialize' + LineEnding +
+  'set_translation=Script82_set_translation']);
 ProtoDeclare69.Node.AddChildren([Script82]);
 X3D0.AddPrototype(ProtoDeclare69);
 NavigationInfo91 := TNavigationInfoNode.Create;
@@ -460,16 +628,16 @@ OrthoViewpoint93.CenterOfRotation := Vector3(-3.13496, -4.19776, 0);
 OrthoViewpoint93.SetFieldOfView([0, 0, 10, 10]);
 Group9.FdChildren.Add(OrthoViewpoint93);
 Viewpoint94 := TViewpointNode.Create;
+end;
+
+procedure InitConnectorsPart6;
+begin
 Viewpoint94.Description := 'Viewpoint';
 Group9.FdChildren.Add(Viewpoint94);
 Transform95 := TTransformNode.Create;
 Transform95.X3DName := 'Connectors';
 ProtoInstance96 := TX3DPrototypeNode.CreatePrototypeNode('', '', Script82);
 ProtoInstance98 := TX3DPrototypeNode.CreatePrototypeNode('', '', Script62);
-end;
-
-procedure InitConnectorsPart6;
-begin
 ProtoInstance98.X3DName := 'N1';
 (ProtoInstance98.Field('translation') as TSFVec3f).Value := Vector3(-3.98323, 2.88948, 0);
 (ProtoInstance96.Field('output') as TSFNode).Value := ProtoInstance98.Instantiate;
@@ -504,16 +672,16 @@ ProtoInstance121 := TX3DPrototypeNode.CreatePrototypeNode('', '', Script82);
 ProtoInstance125 := TX3DPrototypeNode.CreatePrototypeNode('', '', Script62);
 ProtoInstance125.X3DName := 'N6';
 (ProtoInstance125.Field('translation') as TSFVec3f).Value := Vector3(3.55694, 2.4116, 0);
+end;
+
+procedure InitConnectorsPart7;
+begin
 (ProtoInstance121.Field('input') as TSFNode).Value := ProtoInstance125.Instantiate;
 Transform95.FdChildren.Add(ProtoInstance121.Instantiate);
 ProtoInstance127 := TX3DPrototypeNode.CreatePrototypeNode('', '', Script82);
 (ProtoInstance127.Field('output') as TSFNode).Value := ProtoInstance107;
 (ProtoInstance127.Field('input') as TSFNode).Value := ProtoInstance125;
 Transform95.FdChildren.Add(ProtoInstance127.Instantiate);
-end;
-
-procedure InitConnectorsPart7;
-begin
 ProtoInstance132 := TX3DPrototypeNode.CreatePrototypeNode('', '', Script82);
 (ProtoInstance132.Field('output') as TSFNode).Value := ProtoInstance113;
 ProtoInstance136 := TX3DPrototypeNode.CreatePrototypeNode('', '', Script62);
@@ -561,5 +729,18 @@ begin
   Result := X3D0;
 end;
 
+procedure RegisterConnectorsScripts(const Scene: TCastleSceneCore);
 begin
+  if CompiledScript18 <> nil then
+    CompiledScript18.RegisterHandlers(Scene);
+  if CompiledScript62 <> nil then
+    CompiledScript62.RegisterHandlers(Scene);
+  if CompiledScript82 <> nil then
+    CompiledScript82.RegisterHandlers(Scene);
+end;
+
+finalization
+  FreeAndNil(CompiledScript18);
+  FreeAndNil(CompiledScript62);
+  FreeAndNil(CompiledScript82);
 end.

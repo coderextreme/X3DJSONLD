@@ -2,13 +2,14 @@ unit CameraPrototypes;
 
 interface
 
-uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported, CastleSceneCore;
 
 function CreateCameraPrototypes: TX3DRootNode;
+procedure RegisterCameraPrototypesScripts(const Scene: TCastleSceneCore);
 
 implementation
 
-uses Classes, SysUtils, X3DLoad, CastleVectors;
+uses Classes, SysUtils, X3DLoad, CastleVectors, Math, X3DTime;
 
 function CreateEmptyPrototype(const AName: String): TX3DPrototype;
 var
@@ -33,6 +34,280 @@ begin
     FreeAndNil(Stream);
   end;
 end;
+
+type
+  TScript50Script = class
+  private
+    Fdescription: String;
+    FField_description: TSFString;
+    FDirty_description: Boolean;
+    Fposition: TVector3;
+    FField_position: TSFVec3f;
+    FDirty_position: Boolean;
+    Forientation: TVector4;
+    FField_orientation: TSFRotation;
+    FDirty_orientation: Boolean;
+    FfieldOfView: Single;
+    FField_fieldOfView: TSFFloat;
+    FDirty_fieldOfView: Boolean;
+    FnearClipPlane: Single;
+    FField_nearClipPlane: TSFFloat;
+    FDirty_nearClipPlane: Boolean;
+    FfarClipPlane: Single;
+    FField_farClipPlane: TSFFloat;
+    FDirty_farClipPlane: Boolean;
+    Fshots: array of TX3DNode;
+    FField_shots: TMFNode;
+    FDirty_shots: Boolean;
+    FfilterColor: TVector3;
+    FField_filterColor: TSFColor;
+    FDirty_filterColor: Boolean;
+    FfilterTransparency: Single;
+    FField_filterTransparency: TSFFloat;
+    FDirty_filterTransparency: Boolean;
+    FupVector: TVector3;
+    FField_upVector: TSFVec3f;
+    FDirty_upVector: Boolean;
+    FfStop: Single;
+    FField_fStop: TSFFloat;
+    FDirty_fStop: Boolean;
+    FfocusDistance: Single;
+    FField_focusDistance: TSFFloat;
+    FDirty_focusDistance: Boolean;
+    FisActive: Boolean;
+    FEvent_isActive: TX3DEvent;
+    FBack_isActive: TSFBool;
+    FDirty_isActive: Boolean;
+    FtotalDuration: Double;
+    FEvent_totalDuration: TX3DEvent;
+    FBack_totalDuration: TSFTime;
+    FDirty_totalDuration: Boolean;
+    FofflineRender: TX3DNode;
+    FField_offlineRender: TSFNode;
+    FDirty_offlineRender: Boolean;
+    FViewpointNode: TX3DNode;
+    FNavInfoNode: TX3DNode;
+    FCameraPI: TX3DNode;
+    FCameraOI: TX3DNode;
+    Fkey: array of Single;
+    FField_key: TMFFloat;
+    FDirty_key: Boolean;
+    FkeyValuePosition: array of TVector3;
+    FField_keyValuePosition: TMFVec3f;
+    FDirty_keyValuePosition: Boolean;
+    FkeyValueOrientation: array of TVector4;
+    FField_keyValueOrientation: TMFRotation;
+    FDirty_keyValueOrientation: Boolean;
+    Fanimated: Boolean;
+    FField_animated: TSFBool;
+    FDirty_animated: Boolean;
+    Finitialized: Boolean;
+    FshotCount: Int32;
+    FmovesCount: Int32;
+    FframeCount: Single;
+    FstartTime: Double;
+    FpriorTraceTime: Double;
+    FtraceEnabled: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AField_description: TSFString; const AField_position: TSFVec3f; const AField_orientation: TSFRotation; const AField_fieldOfView: TSFFloat; const AField_nearClipPlane: TSFFloat; const AField_farClipPlane: TSFFloat; const AField_shots: TMFNode; const AField_filterColor: TSFColor; const AField_filterTransparency: TSFFloat; const AField_upVector: TSFVec3f; const AField_fStop: TSFFloat; const AField_focusDistance: TSFFloat; const AEvent_isActive: TX3DEvent; const AEvent_totalDuration: TX3DEvent; const AField_offlineRender: TSFNode; const AField_ViewpointNode: TSFNode; const AField_NavInfoNode: TSFNode; const AField_CameraPI: TSFNode; const AField_CameraOI: TSFNode; const AField_key: TMFFloat; const AField_keyValuePosition: TMFVec3f; const AField_keyValueOrientation: TMFRotation; const AField_animated: TSFBool; const AField_initialized: TSFBool; const AField_shotCount: TSFInt32; const AField_movesCount: TSFInt32; const AField_frameCount: TSFFloat; const AField_startTime: TSFTime; const AField_priorTraceTime: TSFTime; const AField_traceEnabled: TSFBool);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Initialize(Value: TX3DField; const Time: TX3DTime);
+    procedure CheckShots(const eventValue: Single; const Time: TX3DTime);
+    procedure StripBrackets(const fieldArray: Single; const Time: TX3DTime);
+    procedure Set_fraction(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_bind(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_description(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_position(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_orientation(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_fieldOfView(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_nearClipPlane(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_farClipPlane(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_shots(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_filterColor(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_filterTransparency(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_upVector(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_fStop(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_focusDistance(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_offlineRender(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_key(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_keyValuePosition(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_keyValueOrientation(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_animated(Value: TX3DField; const Time: TX3DTime);
+    procedure TracePrint(const outputValue: Single; const Time: TX3DTime);
+    procedure AlwaysPrint(const outputValue: Single; const Time: TX3DTime);
+  end;
+
+  TScript107Script = class
+  private
+    Fdescription: String;
+    FField_description: TSFString;
+    FDirty_description: Boolean;
+    Fenabled: Boolean;
+    FField_enabled: TSFBool;
+    FDirty_enabled: Boolean;
+    Fmoves: array of TX3DNode;
+    FField_moves: TMFNode;
+    FDirty_moves: Boolean;
+    FinitialPosition: TVector3;
+    FField_initialPosition: TSFVec3f;
+    FDirty_initialPosition: Boolean;
+    FinitialOrientation: TVector4;
+    FField_initialOrientation: TSFRotation;
+    FDirty_initialOrientation: Boolean;
+    FinitialAimPoint: TVector3;
+    FField_initialAimPoint: TSFVec3f;
+    FDirty_initialAimPoint: Boolean;
+    FinitialFieldOfView: Single;
+    FField_initialFieldOfView: TSFFloat;
+    FDirty_initialFieldOfView: Boolean;
+    FinitialFStop: Single;
+    FField_initialFStop: TSFFloat;
+    FDirty_initialFStop: Boolean;
+    FinitialFocusDistance: Single;
+    FField_initialFocusDistance: TSFFloat;
+    FDirty_initialFocusDistance: Boolean;
+    FshotDuration: Double;
+    FEvent_shotDuration: TX3DEvent;
+    FBack_shotDuration: TSFTime;
+    FDirty_shotDuration: Boolean;
+    FisActive: Boolean;
+    FEvent_isActive: TX3DEvent;
+    FBack_isActive: TSFBool;
+    FDirty_isActive: Boolean;
+    FtraceEnabled: Boolean;
+    Fkey: array of Single;
+    FField_key: TMFFloat;
+    FDirty_key: Boolean;
+    FkeyValuePosition: array of TVector3;
+    FField_keyValuePosition: TMFVec3f;
+    FDirty_keyValuePosition: Boolean;
+    FkeyValueOrientation: array of TVector4;
+    FField_keyValueOrientation: TMFRotation;
+    FDirty_keyValueOrientation: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AField_description: TSFString; const AField_enabled: TSFBool; const AField_moves: TMFNode; const AField_initialPosition: TSFVec3f; const AField_initialOrientation: TSFRotation; const AField_initialAimPoint: TSFVec3f; const AField_initialFieldOfView: TSFFloat; const AField_initialFStop: TSFFloat; const AField_initialFocusDistance: TSFFloat; const AEvent_shotDuration: TX3DEvent; const AEvent_isActive: TX3DEvent; const AField_traceEnabled: TSFBool; const AField_key: TMFFloat; const AField_keyValuePosition: TMFVec3f; const AField_keyValueOrientation: TMFRotation);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Initialize(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_description(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_enabled(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_moves(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_initialPosition(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_initialOrientation(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_initialAimPoint(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_initialFieldOfView(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_initialFStop(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_initialFocusDistance(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_key(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_keyValuePosition(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_keyValueOrientation(Value: TX3DField; const Time: TX3DTime);
+    procedure TracePrint(const outputValue: Single; const Time: TX3DTime);
+    procedure AlwaysPrint(const outputValue: Single; const Time: TX3DTime);
+  end;
+
+  TScript138Script = class
+  private
+    Fdescription: String;
+    FField_description: TSFString;
+    FDirty_description: Boolean;
+    Fenabled: Boolean;
+    FField_enabled: TSFBool;
+    FDirty_enabled: Boolean;
+    Fduration: Single;
+    FField_duration: TSFFloat;
+    FDirty_duration: Boolean;
+    FgoalPosition: TVector3;
+    FField_goalPosition: TSFVec3f;
+    FDirty_goalPosition: Boolean;
+    FgoalOrientation: TVector4;
+    FField_goalOrientation: TSFRotation;
+    FDirty_goalOrientation: Boolean;
+    Ftracking: Boolean;
+    FField_tracking: TSFBool;
+    FDirty_tracking: Boolean;
+    FgoalAimPoint: TVector3;
+    FField_goalAimPoint: TSFVec3f;
+    FDirty_goalAimPoint: Boolean;
+    FgoalFieldOfView: Single;
+    FField_goalFieldOfView: TSFFloat;
+    FDirty_goalFieldOfView: Boolean;
+    FgoalFStop: Single;
+    FField_goalFStop: TSFFloat;
+    FDirty_goalFStop: Boolean;
+    FgoalFocusDistance: Single;
+    FField_goalFocusDistance: TSFFloat;
+    FDirty_goalFocusDistance: Boolean;
+    FisActive: Boolean;
+    FEvent_isActive: TX3DEvent;
+    FBack_isActive: TSFBool;
+    FDirty_isActive: Boolean;
+    FtraceEnabled: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AField_description: TSFString; const AField_enabled: TSFBool; const AField_duration: TSFFloat; const AField_goalPosition: TSFVec3f; const AField_goalOrientation: TSFRotation; const AField_tracking: TSFBool; const AField_goalAimPoint: TSFVec3f; const AField_goalFieldOfView: TSFFloat; const AField_goalFStop: TSFFloat; const AField_goalFocusDistance: TSFFloat; const AEvent_isActive: TX3DEvent; const AField_traceEnabled: TSFBool);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Initialize(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_goalAimPoint(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_description(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_enabled(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_duration(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_goalPosition(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_goalOrientation(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_tracking(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_goalFieldOfView(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_goalFStop(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_goalFocusDistance(Value: TX3DField; const Time: TX3DTime);
+    procedure TracePrint(const outputValue: Single; const Time: TX3DTime);
+    procedure AlwaysPrint(const outputValue: Single; const Time: TX3DTime);
+  end;
+
+  TScript165Script = class
+  private
+    Fdescription: String;
+    FField_description: TSFString;
+    FDirty_description: Boolean;
+    Fenabled: Boolean;
+    FField_enabled: TSFBool;
+    FDirty_enabled: Boolean;
+    FframeRate: Single;
+    FField_frameRate: TSFFloat;
+    FDirty_frameRate: Boolean;
+    FframeSize: TVector2;
+    FField_frameSize: TSFVec2f;
+    FDirty_frameSize: Boolean;
+    FpixelAspectRatio: Single;
+    FField_pixelAspectRatio: TSFFloat;
+    FDirty_pixelAspectRatio: Boolean;
+    Fprogress: Single;
+    FEvent_progress: TX3DEvent;
+    FBack_progress: TSFFloat;
+    FDirty_progress: Boolean;
+    FrenderCompleteTime: Double;
+    FEvent_renderCompleteTime: TX3DEvent;
+    FBack_renderCompleteTime: TSFTime;
+    FDirty_renderCompleteTime: Boolean;
+    FmovieFormat: array of String;
+    FimageFormat: array of String;
+    FtraceEnabled: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AField_description: TSFString; const AField_enabled: TSFBool; const AField_frameRate: TSFFloat; const AField_frameSize: TSFVec2f; const AField_pixelAspectRatio: TSFFloat; const AEvent_progress: TX3DEvent; const AEvent_renderCompleteTime: TX3DEvent; const AField_movieFormat: TMFString; const AField_imageFormat: TMFString; const AField_traceEnabled: TSFBool);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Initialize(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_description(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_enabled(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_frameRate(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_frameSize(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_pixelAspectRatio(Value: TX3DField; const Time: TX3DTime);
+    procedure Set_startTime(Value: TX3DField; const Time: TX3DTime);
+    procedure TracePrint(const outputValue: Single; const Time: TX3DTime);
+    procedure AlwaysPrint(const outputValue: Single; const Time: TX3DTime);
+  end;
 
 var
   X3D0: TX3DRootNode;
@@ -122,6 +397,7 @@ var
   FieldVal84: TSFTime;
   FieldVal85: TSFTime;
   FieldVal86: TSFBool;
+  CompiledScript50: TScript50Script;
   ProtoDeclare92: TX3DPrototype;
   FieldDecl94: TX3DInterfaceDeclaration;
   FieldVal94: TSFString;
@@ -163,6 +439,7 @@ var
   FieldVal120: TMFFloat;
   FieldVal121: TMFVec3f;
   FieldVal122: TMFRotation;
+  CompiledScript107: TScript107Script;
   ProtoDeclare123: TX3DPrototype;
   FieldDecl125: TX3DInterfaceDeclaration;
   FieldVal125: TSFString;
@@ -201,6 +478,7 @@ var
   FieldVal148: TSFFloat;
   FieldVal149: TX3DEvent;
   FieldVal150: TSFBool;
+  CompiledScript138: TScript138Script;
   ProtoDeclare151: TX3DPrototype;
   FieldDecl153: TX3DInterfaceDeclaration;
   FieldVal153: TSFString;
@@ -236,6 +514,7 @@ var
   FieldVal174: TMFString;
   FieldVal175: TMFString;
   FieldVal176: TSFBool;
+  CompiledScript165: TScript165Script;
   Background177: TBackgroundNode;
   Anchor178: TAnchorNode;
   Transform179: TTransformNode;
@@ -244,6 +523,1333 @@ var
   FontStyle182: TFontStyleNode;
   Appearance183: TAppearanceNode;
   Material184: TMaterialNode;
+
+constructor TScript50Script.Create(const AField_description: TSFString; const AField_position: TSFVec3f; const AField_orientation: TSFRotation; const AField_fieldOfView: TSFFloat; const AField_nearClipPlane: TSFFloat; const AField_farClipPlane: TSFFloat; const AField_shots: TMFNode; const AField_filterColor: TSFColor; const AField_filterTransparency: TSFFloat; const AField_upVector: TSFVec3f; const AField_fStop: TSFFloat; const AField_focusDistance: TSFFloat; const AEvent_isActive: TX3DEvent; const AEvent_totalDuration: TX3DEvent; const AField_offlineRender: TSFNode; const AField_ViewpointNode: TSFNode; const AField_NavInfoNode: TSFNode; const AField_CameraPI: TSFNode; const AField_CameraOI: TSFNode; const AField_key: TMFFloat; const AField_keyValuePosition: TMFVec3f; const AField_keyValueOrientation: TMFRotation; const AField_animated: TSFBool; const AField_initialized: TSFBool; const AField_shotCount: TSFInt32; const AField_movesCount: TSFInt32; const AField_frameCount: TSFFloat; const AField_startTime: TSFTime; const AField_priorTraceTime: TSFTime; const AField_traceEnabled: TSFBool);
+begin
+  inherited Create;
+  Fdescription := '';
+  FField_description := nil;
+  FDirty_description := False;
+  Fposition := Vector3(0, 0, 0);
+  FField_position := nil;
+  FDirty_position := False;
+  Forientation := Vector4(0, 0, 1, 0);
+  FField_orientation := nil;
+  FDirty_orientation := False;
+  FfieldOfView := 0.0;
+  FField_fieldOfView := nil;
+  FDirty_fieldOfView := False;
+  FnearClipPlane := 0.0;
+  FField_nearClipPlane := nil;
+  FDirty_nearClipPlane := False;
+  FfarClipPlane := 0.0;
+  FField_farClipPlane := nil;
+  FDirty_farClipPlane := False;
+  Fshots := 0;
+  FField_shots := nil;
+  FDirty_shots := False;
+  FfilterColor := Vector3(0, 0, 0);
+  FField_filterColor := nil;
+  FDirty_filterColor := False;
+  FfilterTransparency := 0.0;
+  FField_filterTransparency := nil;
+  FDirty_filterTransparency := False;
+  FupVector := Vector3(0, 0, 0);
+  FField_upVector := nil;
+  FDirty_upVector := False;
+  FfStop := 0.0;
+  FField_fStop := nil;
+  FDirty_fStop := False;
+  FfocusDistance := 0.0;
+  FField_focusDistance := nil;
+  FDirty_focusDistance := False;
+  FisActive := False;
+  FEvent_isActive := nil;
+  FBack_isActive := TSFBool.Create(nil, False, 'isActive', False);
+  FDirty_isActive := False;
+  FtotalDuration := 0.0;
+  FEvent_totalDuration := nil;
+  FBack_totalDuration := TSFTime.Create(nil, False, 'totalDuration', 0.0);
+  FDirty_totalDuration := False;
+  FofflineRender := nil;
+  FField_offlineRender := nil;
+  FDirty_offlineRender := False;
+  FViewpointNode := nil;
+  FNavInfoNode := nil;
+  FCameraPI := nil;
+  FCameraOI := nil;
+  Fkey := 0;
+  FField_key := nil;
+  FDirty_key := False;
+  FkeyValuePosition := 0;
+  FField_keyValuePosition := nil;
+  FDirty_keyValuePosition := False;
+  FkeyValueOrientation := 0;
+  FField_keyValueOrientation := nil;
+  FDirty_keyValueOrientation := False;
+  Fanimated := False;
+  FField_animated := nil;
+  FDirty_animated := False;
+  Finitialized := False;
+  FshotCount := 0;
+  FmovesCount := 0;
+  FframeCount := 0.0;
+  FstartTime := 0.0;
+  FpriorTraceTime := 0.0;
+  FtraceEnabled := False;
+  FField_description := AField_description;
+  if AField_description <> nil then Fdescription := AField_description.Value;
+  FField_position := AField_position;
+  if AField_position <> nil then Fposition := AField_position.Value;
+  FField_orientation := AField_orientation;
+  if AField_orientation <> nil then Forientation := AField_orientation.Value;
+  FField_fieldOfView := AField_fieldOfView;
+  if AField_fieldOfView <> nil then FfieldOfView := AField_fieldOfView.Value;
+  FField_nearClipPlane := AField_nearClipPlane;
+  if AField_nearClipPlane <> nil then FnearClipPlane := AField_nearClipPlane.Value;
+  FField_farClipPlane := AField_farClipPlane;
+  if AField_farClipPlane <> nil then FfarClipPlane := AField_farClipPlane.Value;
+  FField_shots := AField_shots;
+  if AField_shots <> nil then Fshots := AField_shots.Value;
+  FField_filterColor := AField_filterColor;
+  if AField_filterColor <> nil then FfilterColor := AField_filterColor.Value;
+  FField_filterTransparency := AField_filterTransparency;
+  if AField_filterTransparency <> nil then FfilterTransparency := AField_filterTransparency.Value;
+  FField_upVector := AField_upVector;
+  if AField_upVector <> nil then FupVector := AField_upVector.Value;
+  FField_fStop := AField_fStop;
+  if AField_fStop <> nil then FfStop := AField_fStop.Value;
+  FField_focusDistance := AField_focusDistance;
+  if AField_focusDistance <> nil then FfocusDistance := AField_focusDistance.Value;
+  FEvent_isActive := AEvent_isActive;
+  FEvent_totalDuration := AEvent_totalDuration;
+  FField_offlineRender := AField_offlineRender;
+  if AField_offlineRender <> nil then FofflineRender := AField_offlineRender.Value;
+  if AField_ViewpointNode <> nil then FViewpointNode := AField_ViewpointNode.Value;
+  if AField_NavInfoNode <> nil then FNavInfoNode := AField_NavInfoNode.Value;
+  if AField_CameraPI <> nil then FCameraPI := AField_CameraPI.Value;
+  if AField_CameraOI <> nil then FCameraOI := AField_CameraOI.Value;
+  FField_key := AField_key;
+  if AField_key <> nil then Fkey := AField_key.Value;
+  FField_keyValuePosition := AField_keyValuePosition;
+  if AField_keyValuePosition <> nil then FkeyValuePosition := AField_keyValuePosition.Value;
+  FField_keyValueOrientation := AField_keyValueOrientation;
+  if AField_keyValueOrientation <> nil then FkeyValueOrientation := AField_keyValueOrientation.Value;
+  FField_animated := AField_animated;
+  if AField_animated <> nil then Fanimated := AField_animated.Value;
+  if AField_initialized <> nil then Finitialized := AField_initialized.Value;
+  if AField_shotCount <> nil then FshotCount := AField_shotCount.Value;
+  if AField_movesCount <> nil then FmovesCount := AField_movesCount.Value;
+  if AField_frameCount <> nil then FframeCount := AField_frameCount.Value;
+  if AField_startTime <> nil then FstartTime := AField_startTime.Value;
+  if AField_priorTraceTime <> nil then FpriorTraceTime := AField_priorTraceTime.Value;
+  if AField_traceEnabled <> nil then FtraceEnabled := AField_traceEnabled.Value;
+end;
+
+destructor TScript50Script.Destroy;
+begin
+  FreeAndNil(FBack_isActive);
+  FreeAndNil(FBack_totalDuration);
+  inherited Destroy;
+end;
+
+procedure TScript50Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_description then
+  begin
+    FDirty_description := False;
+    if FField_description <> nil then
+      FField_description.Send(Fdescription, Time);
+  end;
+  if FDirty_position then
+  begin
+    FDirty_position := False;
+    if FField_position <> nil then
+      FField_position.Send(Fposition, Time);
+  end;
+  if FDirty_orientation then
+  begin
+    FDirty_orientation := False;
+    if FField_orientation <> nil then
+      FField_orientation.Send(Forientation, Time);
+  end;
+  if FDirty_fieldOfView then
+  begin
+    FDirty_fieldOfView := False;
+    if FField_fieldOfView <> nil then
+      FField_fieldOfView.Send(FfieldOfView, Time);
+  end;
+  if FDirty_nearClipPlane then
+  begin
+    FDirty_nearClipPlane := False;
+    if FField_nearClipPlane <> nil then
+      FField_nearClipPlane.Send(FnearClipPlane, Time);
+  end;
+  if FDirty_farClipPlane then
+  begin
+    FDirty_farClipPlane := False;
+    if FField_farClipPlane <> nil then
+      FField_farClipPlane.Send(FfarClipPlane, Time);
+  end;
+  if FDirty_shots then
+  begin
+    FDirty_shots := False;
+    if FField_shots <> nil then
+      FField_shots.Send(Fshots, Time);
+  end;
+  if FDirty_filterColor then
+  begin
+    FDirty_filterColor := False;
+    if FField_filterColor <> nil then
+      FField_filterColor.Send(FfilterColor, Time);
+  end;
+  if FDirty_filterTransparency then
+  begin
+    FDirty_filterTransparency := False;
+    if FField_filterTransparency <> nil then
+      FField_filterTransparency.Send(FfilterTransparency, Time);
+  end;
+  if FDirty_upVector then
+  begin
+    FDirty_upVector := False;
+    if FField_upVector <> nil then
+      FField_upVector.Send(FupVector, Time);
+  end;
+  if FDirty_fStop then
+  begin
+    FDirty_fStop := False;
+    if FField_fStop <> nil then
+      FField_fStop.Send(FfStop, Time);
+  end;
+  if FDirty_focusDistance then
+  begin
+    FDirty_focusDistance := False;
+    if FField_focusDistance <> nil then
+      FField_focusDistance.Send(FfocusDistance, Time);
+  end;
+  if FDirty_isActive then
+  begin
+    FDirty_isActive := False;
+    if FEvent_isActive <> nil then
+    begin
+      FBack_isActive.Value := FisActive;
+      FEvent_isActive.Send(FBack_isActive, Time);
+    end;
+  end;
+  if FDirty_totalDuration then
+  begin
+    FDirty_totalDuration := False;
+    if FEvent_totalDuration <> nil then
+    begin
+      FBack_totalDuration.Value := FtotalDuration;
+      FEvent_totalDuration.Send(FBack_totalDuration, Time);
+    end;
+  end;
+  if FDirty_offlineRender then
+  begin
+    FDirty_offlineRender := False;
+    if FField_offlineRender <> nil then
+      FField_offlineRender.Send(FofflineRender, Time);
+  end;
+  if FDirty_key then
+  begin
+    FDirty_key := False;
+    if FField_key <> nil then
+      FField_key.Send(Fkey, Time);
+  end;
+  if FDirty_keyValuePosition then
+  begin
+    FDirty_keyValuePosition := False;
+    if FField_keyValuePosition <> nil then
+      FField_keyValuePosition.Send(FkeyValuePosition, Time);
+  end;
+  if FDirty_keyValueOrientation then
+  begin
+    FDirty_keyValueOrientation := False;
+    if FField_keyValueOrientation <> nil then
+      FField_keyValueOrientation.Send(FkeyValueOrientation, Time);
+  end;
+  if FDirty_animated then
+  begin
+    FDirty_animated := False;
+    if FField_animated <> nil then
+      FField_animated.Send(Fanimated, Time);
+  end;
+end;
+
+procedure TScript50Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script50_initialize', {$ifdef FPC}@{$endif}Initialize);
+  Scene.RegisterCompiledScript('Script50_set_fraction', {$ifdef FPC}@{$endif}Set_fraction);
+  Scene.RegisterCompiledScript('Script50_set_bind', {$ifdef FPC}@{$endif}Set_bind);
+  Scene.RegisterCompiledScript('Script50_set_description', {$ifdef FPC}@{$endif}Set_description);
+  Scene.RegisterCompiledScript('Script50_set_position', {$ifdef FPC}@{$endif}Set_position);
+  Scene.RegisterCompiledScript('Script50_set_orientation', {$ifdef FPC}@{$endif}Set_orientation);
+  Scene.RegisterCompiledScript('Script50_set_fieldOfView', {$ifdef FPC}@{$endif}Set_fieldOfView);
+  Scene.RegisterCompiledScript('Script50_set_nearClipPlane', {$ifdef FPC}@{$endif}Set_nearClipPlane);
+  Scene.RegisterCompiledScript('Script50_set_farClipPlane', {$ifdef FPC}@{$endif}Set_farClipPlane);
+  Scene.RegisterCompiledScript('Script50_set_shots', {$ifdef FPC}@{$endif}Set_shots);
+  Scene.RegisterCompiledScript('Script50_set_filterColor', {$ifdef FPC}@{$endif}Set_filterColor);
+  Scene.RegisterCompiledScript('Script50_set_filterTransparency', {$ifdef FPC}@{$endif}Set_filterTransparency);
+  Scene.RegisterCompiledScript('Script50_set_upVector', {$ifdef FPC}@{$endif}Set_upVector);
+  Scene.RegisterCompiledScript('Script50_set_fStop', {$ifdef FPC}@{$endif}Set_fStop);
+  Scene.RegisterCompiledScript('Script50_set_focusDistance', {$ifdef FPC}@{$endif}Set_focusDistance);
+  Scene.RegisterCompiledScript('Script50_set_offlineRender', {$ifdef FPC}@{$endif}Set_offlineRender);
+  Scene.RegisterCompiledScript('Script50_set_key', {$ifdef FPC}@{$endif}Set_key);
+  Scene.RegisterCompiledScript('Script50_set_keyValuePosition', {$ifdef FPC}@{$endif}Set_keyValuePosition);
+  Scene.RegisterCompiledScript('Script50_set_keyValueOrientation', {$ifdef FPC}@{$endif}Set_keyValueOrientation);
+  Scene.RegisterCompiledScript('Script50_set_animated', {$ifdef FPC}@{$endif}Set_animated);
+end;
+
+procedure TScript50Script.Initialize(Value: TX3DField; const Time: TX3DTime);
+begin
+  FNavInfoNode.avatarSize[0] := FnearClipPlane;
+  AlwaysPrint('initialize complete', Time);
+  FlushOutputs(Time);
+end;
+
+procedure TScript50Script.CheckShots(const eventValue: Single; const Time: TX3DTime);
+var
+  k: Integer;
+  durationFloat: Single;
+  shotVector: Single;
+begin
+  TracePrint('checkShots() method should only occur after initialize() methods in all other Scripts are complete', Time);
+  FtotalDuration := 0; FDirty_totalDuration := True;
+  FshotCount := Length(Fshots);
+  FmovesCount := 0;
+  for i := 0 to (FshotCount) - 1 do
+  begin
+    TracePrint('shots[' + i + '].moves.length=' + Length(Fshots[i].moves), Time);
+    FmovesCount := FmovesCount + (Length(Fshots[i].moves));
+    FtotalDuration := FtotalDuration + Fshots[i].shotDuration; FDirty_totalDuration := True;
+    if Length(Fshots[i].moves) = 0 then
+    begin
+      AlwaysPrint('warning: CameraShot[' + i + '][' + Fshots[i].description + '] has no contained CameraMove nodes', Time);
+    end;
+  end;
+  if FshotCount = 0 then
+  begin
+    AlwaysPrint('warning: no CameraShot nodes found for the shots, nothing to do!', Time);
+    Exit;
+  end
+  else if FmovesCount = 0 then
+  begin
+    AlwaysPrint('warning: no CameraMove nodes found for the shots, nothing to do!', Time);
+    Exit;
+  end
+  else if FtotalDuration = 0 then
+  begin
+    AlwaysPrint('warning: totalDuration = 0 seconds, nothing to do!', Time);
+    Exit;
+  end;
+  TracePrint('number of contained CameraShot nodes=' + FshotCount, Time);
+  TracePrint('number of contained CameraMove nodes=' + FmovesCount, Time);
+  TracePrint('totalDuration=' + FtotalDuration + ' seconds for all shots and moves', Time);
+  k := 0;
+  for i := 0 to (FshotCount) - 1 do
+  begin
+    if i = 0 then
+    begin
+      Fkey[0] := 0.0; FDirty_key := True;
+      FkeyValuePosition[0] := Fshots[i].initialPosition; FDirty_keyValuePosition := True;
+      FkeyValueOrientation[0] := Fshots[i].initialOrientation; FDirty_keyValueOrientation := True;
+    end
+    else
+    begin
+      Fkey[k + 1] := Fkey[k]; FDirty_key := True;
+      FkeyValuePosition[k + 1] := Fshots[i].initialPosition; FDirty_keyValuePosition := True;
+      FkeyValueOrientation[k + 1] := Fshots[i].initialOrientation; FDirty_keyValueOrientation := True;
+      k := k + 1;
+    end;
+    TracePrint(Fshots[i].description, Time);
+    TracePrint('shots[i].moves.length=' + Length(Fshots[i].moves), Time);
+    for j := 0 to (Length(Fshots[i].moves)) - 1 do
+    begin
+      durationFloat := Fshots[i].moves[j].duration;
+      Fkey[k + 1] := Fkey[k] + durationFloat / FtotalDuration; FDirty_key := True;
+      FkeyValuePosition[k + 1] := Fshots[i].moves[j].goalPosition; FDirty_keyValuePosition := True;
+      if not (Fanimated) then
+      begin
+        FkeyValueOrientation[k + 1] := Fshots[i].moves[j].goalOrientation; FDirty_keyValueOrientation := True;
+      end
+      else
+      begin
+        shotVector := FViewpointNode.position.subtract(Fshots[i].moves[j].goalAimPoint).Normalize;
+        if shotVector.Length >= 0 then
+        begin
+          Fshots[i].moves[j].goalOrientation := Vector4(Vector3(0, 0, 1), shotVector); FDirty_shots := True;
+          FkeyValueOrientation[k + 1] := Fshots[i].moves[j].goalOrientation; FDirty_keyValueOrientation := True;
+        end
+        else
+        begin
+          FkeyValueOrientation[k + 1] := FkeyValueOrientation[k]; FDirty_keyValueOrientation := True;
+        end;
+        TracePrint('shots[' + i + '].moves[' + j + '].goalAimPoint=' + Fshots[i].moves[j].goalAimPoint.toString(), Time);
+        TracePrint('        ViewpointNode.position=' + FViewpointNode.position.toString(), Time);
+        TracePrint('          shotVector     delta=' + FViewpointNode.position.subtract(Fshots[i].moves[j].goalAimPoint).toString(), Time);
+        TracePrint('          shotVector normalize=' + FViewpointNode.position.subtract(Fshots[i].moves[j].goalAimPoint).Normalize.toString(), Time);
+        TracePrint('               goalOrientation=' + Fshots[i].moves[j].goalOrientation.toString(), Time);
+        TracePrint('      keyValueOrientation[k+1]=' + FkeyValueOrientation[k + 1].toString() + #10, Time);
+      end;
+      k := k + 1;
+      if not (Fanimated) then
+        Fanimated := Fshots[i].moves[j].tracking; FDirty_animated := True;
+      TracePrint('                key=' + Fkey, Time);
+      TracePrint('   keyValuePosition=' + FkeyValuePosition, Time);
+      TracePrint('keyValueOrientation=' + FkeyValueOrientation, Time);
+      TracePrint('- ' + Fshots[i].moves[j].description, Time);
+    end;
+  end;
+  TracePrint('                key=' + Fkey, Time);
+  TracePrint('   keyValuePosition=' + FkeyValuePosition, Time);
+  TracePrint('keyValueOrientation=' + FkeyValueOrientation, Time);
+  if Length(Fkey) <> Length(FkeyValuePosition) then
+  begin
+    AlwaysPrint('warning: internal error during array construction, ' + 'key.length=' + Length(Fkey) + ' must equal ' + 'keyValuePosition.length=' + Length(FkeyValuePosition), Time);
+  end;
+  if Length(Fkey) <> Length(FkeyValueOrientation) then
+  begin
+    AlwaysPrint('warning: internal error during array construction, ' + 'key.length=' + Length(Fkey) + ' must equal ' + 'keyValueOrientation.length=' + Length(FkeyValueOrientation), Time);
+  end;
+  if Length(Fkey) <> FshotCount + FmovesCount then
+  begin
+    AlwaysPrint('warning: internal error during array construction, ' + 'key.length=' + Length(Fkey) + ' must equal ' + '(shotCount + movesCount)=' + FshotCount + FmovesCount, Time);
+  end;
+  TracePrint('           animated=' + Fanimated, Time);
+  FCameraPI.key := Fkey;
+  FCameraOI.key := Fkey;
+  FCameraPI.keyValue := FkeyValuePosition;
+  FCameraOI.keyValue := FkeyValueOrientation;
+  if not (Fanimated) then
+  begin
+    TracePrint('<PositionInterpolator    DEF=''CameraPositionInterpolator''    key=''' + StripBrackets(FCameraPI.key, Time) + ''' keyValue=''' + StripBrackets(FCameraPI.keyValue, Time) + '''/>', Time);
+    TracePrint('<OrientationInterpolator DEF=''CameraOrientationInterpolator'' key=''' + StripBrackets(FCameraOI.key, Time) + ''' keyValue=''' + StripBrackets(FCameraOI.keyValue, Time) + '''/>', Time);
+  end;
+  TracePrint('checkShots() complete', Time);
+end;
+
+procedure TScript50Script.StripBrackets(const fieldArray: Single; const Time: TX3DTime);
+begin
+  outputString := '';
+  for i := 0 to (Length(fieldArray)) - 1 do
+  begin
+    outputString := outputString + (fieldArray[i].toString());
+    if i < Length(fieldArray) - 1 then
+      outputString := outputString + (' ');
+  end;
+  Result := outputString;
+  Exit;
+end;
+
+procedure TScript50Script.Set_fraction(Value: TX3DField; const Time: TX3DTime);
+begin
+  if Fanimated then
+    CheckShots(True, Time);
+  if FframeCount = 0 then
+  begin
+    AlwaysPrint('Animation loop commencing, timestamp=' + timestamp, Time);
+    FstartTime := timestamp;
+    FpriorTraceTime := timestamp;
+    AlwaysPrint('shotClock=' + timestamp - FstartTime + ' seconds, frameCount=' + FframeCount + ', fraction=' + (Value as TSFFloat).Value + ', position=' + FViewpointNode.position.toString() + ', orientation=' + FViewpointNode.orientation.toString(), Time);
+    if Fanimated then
+    begin
+      TracePrint('  <PositionInterpolator    DEF=''CameraPositionInterpolator''    key=''' + StripBrackets(FCameraPI.key, Time) + ''' keyValue=''' + StripBrackets(FCameraPI.keyValue, Time) + '''/>', Time);
+      TracePrint('  <OrientationInterpolator DEF=''CameraOrientationInterpolator'' key=''' + StripBrackets(FCameraOI.key, Time) + ''' keyValue=''' + StripBrackets(FCameraOI.keyValue, Time) + '''/>', Time);
+    end;
+  end
+  else if timestamp - FpriorTraceTime >= 1.0 then
+  begin
+    AlwaysPrint('shotClock=' + timestamp - FstartTime + ' seconds, frameCount=' + FframeCount + ', fraction=' + (Value as TSFFloat).Value + ', position=' + FViewpointNode.position.toString() + ', orientation=' + FViewpointNode.orientation.toString(), Time);
+    FpriorTraceTime := timestamp;
+    if Fanimated then
+    begin
+      TracePrint('  <PositionInterpolator    DEF=''CameraPositionInterpolator''    key=''' + StripBrackets(FCameraPI.key, Time) + ''' keyValue=''' + StripBrackets(FCameraPI.keyValue, Time) + '''/>', Time);
+      AlwaysPrint('  <OrientationInterpolator DEF=''CameraOrientationInterpolator'' key=''' + StripBrackets(FCameraOI.key, Time) + ''' keyValue=''' + StripBrackets(FCameraOI.keyValue, Time) + '''/>', Time);
+    end;
+  end;
+  if (Value as TSFFloat).Value = 0 then
+  begin
+    FframeCount := FframeCount + 1;
+  end
+  else if (Value as TSFFloat).Value = 1 then
+  begin
+    AlwaysPrint('shotClock=' + timestamp - FstartTime + ', frameCount=' + FframeCount + ', fraction=' + (Value as TSFFloat).Value + ', position=' + FViewpointNode.position.toString() + ', orientation=' + FViewpointNode.orientation.toString(), Time);
+    if Fanimated then
+    begin
+    end;
+    AlwaysPrint('Animation loop complete.', Time);
+  end
+  else
+  begin
+    FframeCount := FframeCount + 1;
+  end;
+  FlushOutputs(Time);
+end;
+
+procedure TScript50Script.Set_bind(Value: TX3DField; const Time: TX3DTime);
+begin
+  if Finitialized = False then
+  begin
+    CheckShots(True, Time);
+    Finitialized := True;
+  end;
+  if (Value as TSFBool).Value then
+  begin
+    TracePrint('Camera has been bound', Time);
+  end
+  else
+  begin
+    TracePrint('Camera has been unbound', Time);
+  end;
+  FlushOutputs(Time);
+end;
+
+procedure TScript50Script.Set_description(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fdescription := (Value as TSFString).Value; FDirty_description := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript50Script.Set_position(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fposition := (Value as TSFVec3f).Value; FDirty_position := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript50Script.Set_orientation(Value: TX3DField; const Time: TX3DTime);
+begin
+  Forientation := (Value as TSFRotation).Value; FDirty_orientation := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript50Script.Set_fieldOfView(Value: TX3DField; const Time: TX3DTime);
+begin
+  FfieldOfView := (Value as TSFFloat).Value; FDirty_fieldOfView := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript50Script.Set_nearClipPlane(Value: TX3DField; const Time: TX3DTime);
+begin
+  FnearClipPlane := (Value as TSFFloat).Value; FDirty_nearClipPlane := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript50Script.Set_farClipPlane(Value: TX3DField; const Time: TX3DTime);
+begin
+  FfarClipPlane := (Value as TSFFloat).Value; FDirty_farClipPlane := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript50Script.Set_shots(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fshots := (Value as TMFNode).Value; FDirty_shots := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript50Script.Set_filterColor(Value: TX3DField; const Time: TX3DTime);
+begin
+  FfilterColor := (Value as TSFColor).Value; FDirty_filterColor := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript50Script.Set_filterTransparency(Value: TX3DField; const Time: TX3DTime);
+begin
+  FfilterTransparency := (Value as TSFFloat).Value; FDirty_filterTransparency := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript50Script.Set_upVector(Value: TX3DField; const Time: TX3DTime);
+begin
+  FupVector := (Value as TSFVec3f).Value; FDirty_upVector := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript50Script.Set_fStop(Value: TX3DField; const Time: TX3DTime);
+begin
+  FfStop := (Value as TSFFloat).Value; FDirty_fStop := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript50Script.Set_focusDistance(Value: TX3DField; const Time: TX3DTime);
+begin
+  FfocusDistance := (Value as TSFFloat).Value; FDirty_focusDistance := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript50Script.Set_offlineRender(Value: TX3DField; const Time: TX3DTime);
+begin
+  FofflineRender := (Value as TSFNode).Value; FDirty_offlineRender := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript50Script.Set_key(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fkey := (Value as TMFFloat).Value; FDirty_key := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript50Script.Set_keyValuePosition(Value: TX3DField; const Time: TX3DTime);
+begin
+  FkeyValuePosition := (Value as TMFVec3f).Value; FDirty_keyValuePosition := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript50Script.Set_keyValueOrientation(Value: TX3DField; const Time: TX3DTime);
+begin
+  FkeyValueOrientation := (Value as TMFRotation).Value; FDirty_keyValueOrientation := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript50Script.Set_animated(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fanimated := (Value as TSFBool).Value; FDirty_animated := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript50Script.TracePrint(const outputValue: Single; const Time: TX3DTime);
+begin
+  if FtraceEnabled then
+    AlwaysPrint(outputValue, Time);
+end;
+
+procedure TScript50Script.AlwaysPrint(const outputValue: Single; const Time: TX3DTime);
+var
+  outputString: Single;
+begin
+  outputString := outputValue.toString();
+  if outputString = nil then
+    outputString := outputValue;
+  if Length(Fdescription) > 0 then
+    WriteLn('[Camera: ' + Fdescription + '] ' + outputString + #10);
+  else
+    WriteLn('[Camera] ' + outputString + #10);
+end;
+
+constructor TScript107Script.Create(const AField_description: TSFString; const AField_enabled: TSFBool; const AField_moves: TMFNode; const AField_initialPosition: TSFVec3f; const AField_initialOrientation: TSFRotation; const AField_initialAimPoint: TSFVec3f; const AField_initialFieldOfView: TSFFloat; const AField_initialFStop: TSFFloat; const AField_initialFocusDistance: TSFFloat; const AEvent_shotDuration: TX3DEvent; const AEvent_isActive: TX3DEvent; const AField_traceEnabled: TSFBool; const AField_key: TMFFloat; const AField_keyValuePosition: TMFVec3f; const AField_keyValueOrientation: TMFRotation);
+begin
+  inherited Create;
+  Fdescription := '';
+  FField_description := nil;
+  FDirty_description := False;
+  Fenabled := False;
+  FField_enabled := nil;
+  FDirty_enabled := False;
+  Fmoves := 0;
+  FField_moves := nil;
+  FDirty_moves := False;
+  FinitialPosition := Vector3(0, 0, 0);
+  FField_initialPosition := nil;
+  FDirty_initialPosition := False;
+  FinitialOrientation := Vector4(0, 0, 1, 0);
+  FField_initialOrientation := nil;
+  FDirty_initialOrientation := False;
+  FinitialAimPoint := Vector3(0, 0, 0);
+  FField_initialAimPoint := nil;
+  FDirty_initialAimPoint := False;
+  FinitialFieldOfView := 0.0;
+  FField_initialFieldOfView := nil;
+  FDirty_initialFieldOfView := False;
+  FinitialFStop := 0.0;
+  FField_initialFStop := nil;
+  FDirty_initialFStop := False;
+  FinitialFocusDistance := 0.0;
+  FField_initialFocusDistance := nil;
+  FDirty_initialFocusDistance := False;
+  FshotDuration := 0.0;
+  FEvent_shotDuration := nil;
+  FBack_shotDuration := TSFTime.Create(nil, False, 'shotDuration', 0.0);
+  FDirty_shotDuration := False;
+  FisActive := False;
+  FEvent_isActive := nil;
+  FBack_isActive := TSFBool.Create(nil, False, 'isActive', False);
+  FDirty_isActive := False;
+  FtraceEnabled := False;
+  Fkey := 0;
+  FField_key := nil;
+  FDirty_key := False;
+  FkeyValuePosition := 0;
+  FField_keyValuePosition := nil;
+  FDirty_keyValuePosition := False;
+  FkeyValueOrientation := 0;
+  FField_keyValueOrientation := nil;
+  FDirty_keyValueOrientation := False;
+  FField_description := AField_description;
+  if AField_description <> nil then Fdescription := AField_description.Value;
+  FField_enabled := AField_enabled;
+  if AField_enabled <> nil then Fenabled := AField_enabled.Value;
+  FField_moves := AField_moves;
+  if AField_moves <> nil then Fmoves := AField_moves.Value;
+  FField_initialPosition := AField_initialPosition;
+  if AField_initialPosition <> nil then FinitialPosition := AField_initialPosition.Value;
+  FField_initialOrientation := AField_initialOrientation;
+  if AField_initialOrientation <> nil then FinitialOrientation := AField_initialOrientation.Value;
+  FField_initialAimPoint := AField_initialAimPoint;
+  if AField_initialAimPoint <> nil then FinitialAimPoint := AField_initialAimPoint.Value;
+  FField_initialFieldOfView := AField_initialFieldOfView;
+  if AField_initialFieldOfView <> nil then FinitialFieldOfView := AField_initialFieldOfView.Value;
+  FField_initialFStop := AField_initialFStop;
+  if AField_initialFStop <> nil then FinitialFStop := AField_initialFStop.Value;
+  FField_initialFocusDistance := AField_initialFocusDistance;
+  if AField_initialFocusDistance <> nil then FinitialFocusDistance := AField_initialFocusDistance.Value;
+  FEvent_shotDuration := AEvent_shotDuration;
+  FEvent_isActive := AEvent_isActive;
+  if AField_traceEnabled <> nil then FtraceEnabled := AField_traceEnabled.Value;
+  FField_key := AField_key;
+  if AField_key <> nil then Fkey := AField_key.Value;
+  FField_keyValuePosition := AField_keyValuePosition;
+  if AField_keyValuePosition <> nil then FkeyValuePosition := AField_keyValuePosition.Value;
+  FField_keyValueOrientation := AField_keyValueOrientation;
+  if AField_keyValueOrientation <> nil then FkeyValueOrientation := AField_keyValueOrientation.Value;
+end;
+
+destructor TScript107Script.Destroy;
+begin
+  FreeAndNil(FBack_shotDuration);
+  FreeAndNil(FBack_isActive);
+  inherited Destroy;
+end;
+
+procedure TScript107Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_description then
+  begin
+    FDirty_description := False;
+    if FField_description <> nil then
+      FField_description.Send(Fdescription, Time);
+  end;
+  if FDirty_enabled then
+  begin
+    FDirty_enabled := False;
+    if FField_enabled <> nil then
+      FField_enabled.Send(Fenabled, Time);
+  end;
+  if FDirty_moves then
+  begin
+    FDirty_moves := False;
+    if FField_moves <> nil then
+      FField_moves.Send(Fmoves, Time);
+  end;
+  if FDirty_initialPosition then
+  begin
+    FDirty_initialPosition := False;
+    if FField_initialPosition <> nil then
+      FField_initialPosition.Send(FinitialPosition, Time);
+  end;
+  if FDirty_initialOrientation then
+  begin
+    FDirty_initialOrientation := False;
+    if FField_initialOrientation <> nil then
+      FField_initialOrientation.Send(FinitialOrientation, Time);
+  end;
+  if FDirty_initialAimPoint then
+  begin
+    FDirty_initialAimPoint := False;
+    if FField_initialAimPoint <> nil then
+      FField_initialAimPoint.Send(FinitialAimPoint, Time);
+  end;
+  if FDirty_initialFieldOfView then
+  begin
+    FDirty_initialFieldOfView := False;
+    if FField_initialFieldOfView <> nil then
+      FField_initialFieldOfView.Send(FinitialFieldOfView, Time);
+  end;
+  if FDirty_initialFStop then
+  begin
+    FDirty_initialFStop := False;
+    if FField_initialFStop <> nil then
+      FField_initialFStop.Send(FinitialFStop, Time);
+  end;
+  if FDirty_initialFocusDistance then
+  begin
+    FDirty_initialFocusDistance := False;
+    if FField_initialFocusDistance <> nil then
+      FField_initialFocusDistance.Send(FinitialFocusDistance, Time);
+  end;
+  if FDirty_shotDuration then
+  begin
+    FDirty_shotDuration := False;
+    if FEvent_shotDuration <> nil then
+    begin
+      FBack_shotDuration.Value := FshotDuration;
+      FEvent_shotDuration.Send(FBack_shotDuration, Time);
+    end;
+  end;
+  if FDirty_isActive then
+  begin
+    FDirty_isActive := False;
+    if FEvent_isActive <> nil then
+    begin
+      FBack_isActive.Value := FisActive;
+      FEvent_isActive.Send(FBack_isActive, Time);
+    end;
+  end;
+  if FDirty_key then
+  begin
+    FDirty_key := False;
+    if FField_key <> nil then
+      FField_key.Send(Fkey, Time);
+  end;
+  if FDirty_keyValuePosition then
+  begin
+    FDirty_keyValuePosition := False;
+    if FField_keyValuePosition <> nil then
+      FField_keyValuePosition.Send(FkeyValuePosition, Time);
+  end;
+  if FDirty_keyValueOrientation then
+  begin
+    FDirty_keyValueOrientation := False;
+    if FField_keyValueOrientation <> nil then
+      FField_keyValueOrientation.Send(FkeyValueOrientation, Time);
+  end;
+end;
+
+procedure TScript107Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script107_initialize', {$ifdef FPC}@{$endif}Initialize);
+  Scene.RegisterCompiledScript('Script107_set_description', {$ifdef FPC}@{$endif}Set_description);
+  Scene.RegisterCompiledScript('Script107_set_enabled', {$ifdef FPC}@{$endif}Set_enabled);
+  Scene.RegisterCompiledScript('Script107_set_moves', {$ifdef FPC}@{$endif}Set_moves);
+  Scene.RegisterCompiledScript('Script107_set_initialPosition', {$ifdef FPC}@{$endif}Set_initialPosition);
+  Scene.RegisterCompiledScript('Script107_set_initialOrientation', {$ifdef FPC}@{$endif}Set_initialOrientation);
+  Scene.RegisterCompiledScript('Script107_set_initialAimPoint', {$ifdef FPC}@{$endif}Set_initialAimPoint);
+  Scene.RegisterCompiledScript('Script107_set_initialFieldOfView', {$ifdef FPC}@{$endif}Set_initialFieldOfView);
+  Scene.RegisterCompiledScript('Script107_set_initialFStop', {$ifdef FPC}@{$endif}Set_initialFStop);
+  Scene.RegisterCompiledScript('Script107_set_initialFocusDistance', {$ifdef FPC}@{$endif}Set_initialFocusDistance);
+  Scene.RegisterCompiledScript('Script107_set_key', {$ifdef FPC}@{$endif}Set_key);
+  Scene.RegisterCompiledScript('Script107_set_keyValuePosition', {$ifdef FPC}@{$endif}Set_keyValuePosition);
+  Scene.RegisterCompiledScript('Script107_set_keyValueOrientation', {$ifdef FPC}@{$endif}Set_keyValueOrientation);
+end;
+
+procedure TScript107Script.Initialize(Value: TX3DField; const Time: TX3DTime);
+begin
+  FshotDuration := 0; FDirty_shotDuration := True;
+  for i := 0 to (Length(Fmoves)) - 1 do
+  begin
+    FshotDuration := FshotDuration + Fmoves[i].duration; FDirty_shotDuration := True;
+  end;
+  AlwaysPrint('number of contained CameraMove nodes=' + Length(Fmoves) + ', shotDuration=' + FshotDuration + ' seconds', Time);
+  FlushOutputs(Time);
+end;
+
+procedure TScript107Script.Set_description(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fdescription := (Value as TSFString).Value; FDirty_description := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript107Script.Set_enabled(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fenabled := (Value as TSFBool).Value; FDirty_enabled := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript107Script.Set_moves(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fmoves := (Value as TMFNode).Value; FDirty_moves := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript107Script.Set_initialPosition(Value: TX3DField; const Time: TX3DTime);
+begin
+  FinitialPosition := (Value as TSFVec3f).Value; FDirty_initialPosition := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript107Script.Set_initialOrientation(Value: TX3DField; const Time: TX3DTime);
+begin
+  FinitialOrientation := (Value as TSFRotation).Value; FDirty_initialOrientation := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript107Script.Set_initialAimPoint(Value: TX3DField; const Time: TX3DTime);
+begin
+  FinitialAimPoint := (Value as TSFVec3f).Value; FDirty_initialAimPoint := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript107Script.Set_initialFieldOfView(Value: TX3DField; const Time: TX3DTime);
+begin
+  FinitialFieldOfView := (Value as TSFFloat).Value; FDirty_initialFieldOfView := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript107Script.Set_initialFStop(Value: TX3DField; const Time: TX3DTime);
+begin
+  FinitialFStop := (Value as TSFFloat).Value; FDirty_initialFStop := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript107Script.Set_initialFocusDistance(Value: TX3DField; const Time: TX3DTime);
+begin
+  FinitialFocusDistance := (Value as TSFFloat).Value; FDirty_initialFocusDistance := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript107Script.Set_key(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fkey := (Value as TMFFloat).Value; FDirty_key := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript107Script.Set_keyValuePosition(Value: TX3DField; const Time: TX3DTime);
+begin
+  FkeyValuePosition := (Value as TMFVec3f).Value; FDirty_keyValuePosition := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript107Script.Set_keyValueOrientation(Value: TX3DField; const Time: TX3DTime);
+begin
+  FkeyValueOrientation := (Value as TMFRotation).Value; FDirty_keyValueOrientation := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript107Script.TracePrint(const outputValue: Single; const Time: TX3DTime);
+begin
+  if FtraceEnabled then
+    AlwaysPrint(outputValue, Time);
+end;
+
+procedure TScript107Script.AlwaysPrint(const outputValue: Single; const Time: TX3DTime);
+var
+  outputString: Single;
+begin
+  outputString := outputValue.toString();
+  if outputString = nil then
+    outputString := outputValue;
+  if Length(Fdescription) > 0 then
+    WriteLn('[CameraShot: ' + Fdescription + '] ' + outputString + #10);
+  else
+    WriteLn('[CameraShot] ' + outputString + #10);
+end;
+
+constructor TScript138Script.Create(const AField_description: TSFString; const AField_enabled: TSFBool; const AField_duration: TSFFloat; const AField_goalPosition: TSFVec3f; const AField_goalOrientation: TSFRotation; const AField_tracking: TSFBool; const AField_goalAimPoint: TSFVec3f; const AField_goalFieldOfView: TSFFloat; const AField_goalFStop: TSFFloat; const AField_goalFocusDistance: TSFFloat; const AEvent_isActive: TX3DEvent; const AField_traceEnabled: TSFBool);
+begin
+  inherited Create;
+  Fdescription := '';
+  FField_description := nil;
+  FDirty_description := False;
+  Fenabled := False;
+  FField_enabled := nil;
+  FDirty_enabled := False;
+  Fduration := 0.0;
+  FField_duration := nil;
+  FDirty_duration := False;
+  FgoalPosition := Vector3(0, 0, 0);
+  FField_goalPosition := nil;
+  FDirty_goalPosition := False;
+  FgoalOrientation := Vector4(0, 0, 1, 0);
+  FField_goalOrientation := nil;
+  FDirty_goalOrientation := False;
+  Ftracking := False;
+  FField_tracking := nil;
+  FDirty_tracking := False;
+  FgoalAimPoint := Vector3(0, 0, 0);
+  FField_goalAimPoint := nil;
+  FDirty_goalAimPoint := False;
+  FgoalFieldOfView := 0.0;
+  FField_goalFieldOfView := nil;
+  FDirty_goalFieldOfView := False;
+  FgoalFStop := 0.0;
+  FField_goalFStop := nil;
+  FDirty_goalFStop := False;
+  FgoalFocusDistance := 0.0;
+  FField_goalFocusDistance := nil;
+  FDirty_goalFocusDistance := False;
+  FisActive := False;
+  FEvent_isActive := nil;
+  FBack_isActive := TSFBool.Create(nil, False, 'isActive', False);
+  FDirty_isActive := False;
+  FtraceEnabled := False;
+  FField_description := AField_description;
+  if AField_description <> nil then Fdescription := AField_description.Value;
+  FField_enabled := AField_enabled;
+  if AField_enabled <> nil then Fenabled := AField_enabled.Value;
+  FField_duration := AField_duration;
+  if AField_duration <> nil then Fduration := AField_duration.Value;
+  FField_goalPosition := AField_goalPosition;
+  if AField_goalPosition <> nil then FgoalPosition := AField_goalPosition.Value;
+  FField_goalOrientation := AField_goalOrientation;
+  if AField_goalOrientation <> nil then FgoalOrientation := AField_goalOrientation.Value;
+  FField_tracking := AField_tracking;
+  if AField_tracking <> nil then Ftracking := AField_tracking.Value;
+  FField_goalAimPoint := AField_goalAimPoint;
+  if AField_goalAimPoint <> nil then FgoalAimPoint := AField_goalAimPoint.Value;
+  FField_goalFieldOfView := AField_goalFieldOfView;
+  if AField_goalFieldOfView <> nil then FgoalFieldOfView := AField_goalFieldOfView.Value;
+  FField_goalFStop := AField_goalFStop;
+  if AField_goalFStop <> nil then FgoalFStop := AField_goalFStop.Value;
+  FField_goalFocusDistance := AField_goalFocusDistance;
+  if AField_goalFocusDistance <> nil then FgoalFocusDistance := AField_goalFocusDistance.Value;
+  FEvent_isActive := AEvent_isActive;
+  if AField_traceEnabled <> nil then FtraceEnabled := AField_traceEnabled.Value;
+end;
+
+destructor TScript138Script.Destroy;
+begin
+  FreeAndNil(FBack_isActive);
+  inherited Destroy;
+end;
+
+procedure TScript138Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_description then
+  begin
+    FDirty_description := False;
+    if FField_description <> nil then
+      FField_description.Send(Fdescription, Time);
+  end;
+  if FDirty_enabled then
+  begin
+    FDirty_enabled := False;
+    if FField_enabled <> nil then
+      FField_enabled.Send(Fenabled, Time);
+  end;
+  if FDirty_duration then
+  begin
+    FDirty_duration := False;
+    if FField_duration <> nil then
+      FField_duration.Send(Fduration, Time);
+  end;
+  if FDirty_goalPosition then
+  begin
+    FDirty_goalPosition := False;
+    if FField_goalPosition <> nil then
+      FField_goalPosition.Send(FgoalPosition, Time);
+  end;
+  if FDirty_goalOrientation then
+  begin
+    FDirty_goalOrientation := False;
+    if FField_goalOrientation <> nil then
+      FField_goalOrientation.Send(FgoalOrientation, Time);
+  end;
+  if FDirty_tracking then
+  begin
+    FDirty_tracking := False;
+    if FField_tracking <> nil then
+      FField_tracking.Send(Ftracking, Time);
+  end;
+  if FDirty_goalAimPoint then
+  begin
+    FDirty_goalAimPoint := False;
+    if FField_goalAimPoint <> nil then
+      FField_goalAimPoint.Send(FgoalAimPoint, Time);
+  end;
+  if FDirty_goalFieldOfView then
+  begin
+    FDirty_goalFieldOfView := False;
+    if FField_goalFieldOfView <> nil then
+      FField_goalFieldOfView.Send(FgoalFieldOfView, Time);
+  end;
+  if FDirty_goalFStop then
+  begin
+    FDirty_goalFStop := False;
+    if FField_goalFStop <> nil then
+      FField_goalFStop.Send(FgoalFStop, Time);
+  end;
+  if FDirty_goalFocusDistance then
+  begin
+    FDirty_goalFocusDistance := False;
+    if FField_goalFocusDistance <> nil then
+      FField_goalFocusDistance.Send(FgoalFocusDistance, Time);
+  end;
+  if FDirty_isActive then
+  begin
+    FDirty_isActive := False;
+    if FEvent_isActive <> nil then
+    begin
+      FBack_isActive.Value := FisActive;
+      FEvent_isActive.Send(FBack_isActive, Time);
+    end;
+  end;
+end;
+
+procedure TScript138Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script138_initialize', {$ifdef FPC}@{$endif}Initialize);
+  Scene.RegisterCompiledScript('Script138_set_goalAimPoint', {$ifdef FPC}@{$endif}Set_goalAimPoint);
+  Scene.RegisterCompiledScript('Script138_set_description', {$ifdef FPC}@{$endif}Set_description);
+  Scene.RegisterCompiledScript('Script138_set_enabled', {$ifdef FPC}@{$endif}Set_enabled);
+  Scene.RegisterCompiledScript('Script138_set_duration', {$ifdef FPC}@{$endif}Set_duration);
+  Scene.RegisterCompiledScript('Script138_set_goalPosition', {$ifdef FPC}@{$endif}Set_goalPosition);
+  Scene.RegisterCompiledScript('Script138_set_goalOrientation', {$ifdef FPC}@{$endif}Set_goalOrientation);
+  Scene.RegisterCompiledScript('Script138_set_tracking', {$ifdef FPC}@{$endif}Set_tracking);
+  Scene.RegisterCompiledScript('Script138_set_goalFieldOfView', {$ifdef FPC}@{$endif}Set_goalFieldOfView);
+  Scene.RegisterCompiledScript('Script138_set_goalFStop', {$ifdef FPC}@{$endif}Set_goalFStop);
+  Scene.RegisterCompiledScript('Script138_set_goalFocusDistance', {$ifdef FPC}@{$endif}Set_goalFocusDistance);
+end;
+
+procedure TScript138Script.Initialize(Value: TX3DField; const Time: TX3DTime);
+begin
+  AlwaysPrint('initialize goalPosition=' + FgoalPosition.toString() + ', goalOrientation=' + FgoalOrientation.toString() + ', goalAimPoint=' + FgoalAimPoint.toString(), Time);
+  if Fduration < 0 then
+  begin
+    AlwaysPrint('error: negative duration=' + Fduration + ', reset to 0 and ignored', Time);
+    Fduration := 0; FDirty_duration := True;
+  end
+  else if Fduration = 0 then
+  begin
+    AlwaysPrint('warning: duration=0, nothing to do!', Time);
+  end;
+  TracePrint('... initialize complete', Time);
+  FlushOutputs(Time);
+end;
+
+procedure TScript138Script.Set_goalAimPoint(Value: TX3DField; const Time: TX3DTime);
+begin
+  goalAimPoint_changed := (Value as TSFVec3f).Value;
+  TracePrint('goalAimPoint=' + FgoalAimPoint.toString(), Time);
+  FlushOutputs(Time);
+end;
+
+procedure TScript138Script.Set_description(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fdescription := (Value as TSFString).Value; FDirty_description := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript138Script.Set_enabled(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fenabled := (Value as TSFBool).Value; FDirty_enabled := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript138Script.Set_duration(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fduration := (Value as TSFFloat).Value; FDirty_duration := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript138Script.Set_goalPosition(Value: TX3DField; const Time: TX3DTime);
+begin
+  FgoalPosition := (Value as TSFVec3f).Value; FDirty_goalPosition := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript138Script.Set_goalOrientation(Value: TX3DField; const Time: TX3DTime);
+begin
+  FgoalOrientation := (Value as TSFRotation).Value; FDirty_goalOrientation := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript138Script.Set_tracking(Value: TX3DField; const Time: TX3DTime);
+begin
+  Ftracking := (Value as TSFBool).Value; FDirty_tracking := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript138Script.Set_goalFieldOfView(Value: TX3DField; const Time: TX3DTime);
+begin
+  FgoalFieldOfView := (Value as TSFFloat).Value; FDirty_goalFieldOfView := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript138Script.Set_goalFStop(Value: TX3DField; const Time: TX3DTime);
+begin
+  FgoalFStop := (Value as TSFFloat).Value; FDirty_goalFStop := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript138Script.Set_goalFocusDistance(Value: TX3DField; const Time: TX3DTime);
+begin
+  FgoalFocusDistance := (Value as TSFFloat).Value; FDirty_goalFocusDistance := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript138Script.TracePrint(const outputValue: Single; const Time: TX3DTime);
+begin
+  if FtraceEnabled then
+    AlwaysPrint(outputValue, Time);
+end;
+
+procedure TScript138Script.AlwaysPrint(const outputValue: Single; const Time: TX3DTime);
+var
+  outputString: Single;
+begin
+  outputString := outputValue.toString();
+  if outputString = nil then
+    outputString := outputValue;
+  if Length(Fdescription) > 0 then
+    WriteLn('[CameraMovement: ' + Fdescription + '] ' + outputString + #10);
+  else
+    WriteLn('[CameraMovement] ' + outputString + #10);
+end;
+
+constructor TScript165Script.Create(const AField_description: TSFString; const AField_enabled: TSFBool; const AField_frameRate: TSFFloat; const AField_frameSize: TSFVec2f; const AField_pixelAspectRatio: TSFFloat; const AEvent_progress: TX3DEvent; const AEvent_renderCompleteTime: TX3DEvent; const AField_movieFormat: TMFString; const AField_imageFormat: TMFString; const AField_traceEnabled: TSFBool);
+begin
+  inherited Create;
+  Fdescription := '';
+  FField_description := nil;
+  FDirty_description := False;
+  Fenabled := False;
+  FField_enabled := nil;
+  FDirty_enabled := False;
+  FframeRate := 0.0;
+  FField_frameRate := nil;
+  FDirty_frameRate := False;
+  FframeSize := Vector2(0, 0);
+  FField_frameSize := nil;
+  FDirty_frameSize := False;
+  FpixelAspectRatio := 0.0;
+  FField_pixelAspectRatio := nil;
+  FDirty_pixelAspectRatio := False;
+  Fprogress := 0.0;
+  FEvent_progress := nil;
+  FBack_progress := TSFFloat.Create(nil, False, 'progress', 0.0);
+  FDirty_progress := False;
+  FrenderCompleteTime := 0.0;
+  FEvent_renderCompleteTime := nil;
+  FBack_renderCompleteTime := TSFTime.Create(nil, False, 'renderCompleteTime', 0.0);
+  FDirty_renderCompleteTime := False;
+  FmovieFormat := 0;
+  FimageFormat := 0;
+  FtraceEnabled := False;
+  FField_description := AField_description;
+  if AField_description <> nil then Fdescription := AField_description.Value;
+  FField_enabled := AField_enabled;
+  if AField_enabled <> nil then Fenabled := AField_enabled.Value;
+  FField_frameRate := AField_frameRate;
+  if AField_frameRate <> nil then FframeRate := AField_frameRate.Value;
+  FField_frameSize := AField_frameSize;
+  if AField_frameSize <> nil then FframeSize := AField_frameSize.Value;
+  FField_pixelAspectRatio := AField_pixelAspectRatio;
+  if AField_pixelAspectRatio <> nil then FpixelAspectRatio := AField_pixelAspectRatio.Value;
+  FEvent_progress := AEvent_progress;
+  FEvent_renderCompleteTime := AEvent_renderCompleteTime;
+  if AField_movieFormat <> nil then FmovieFormat := AField_movieFormat.Value;
+  if AField_imageFormat <> nil then FimageFormat := AField_imageFormat.Value;
+  if AField_traceEnabled <> nil then FtraceEnabled := AField_traceEnabled.Value;
+end;
+
+destructor TScript165Script.Destroy;
+begin
+  FreeAndNil(FBack_progress);
+  FreeAndNil(FBack_renderCompleteTime);
+  inherited Destroy;
+end;
+
+procedure TScript165Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_description then
+  begin
+    FDirty_description := False;
+    if FField_description <> nil then
+      FField_description.Send(Fdescription, Time);
+  end;
+  if FDirty_enabled then
+  begin
+    FDirty_enabled := False;
+    if FField_enabled <> nil then
+      FField_enabled.Send(Fenabled, Time);
+  end;
+  if FDirty_frameRate then
+  begin
+    FDirty_frameRate := False;
+    if FField_frameRate <> nil then
+      FField_frameRate.Send(FframeRate, Time);
+  end;
+  if FDirty_frameSize then
+  begin
+    FDirty_frameSize := False;
+    if FField_frameSize <> nil then
+      FField_frameSize.Send(FframeSize, Time);
+  end;
+  if FDirty_pixelAspectRatio then
+  begin
+    FDirty_pixelAspectRatio := False;
+    if FField_pixelAspectRatio <> nil then
+      FField_pixelAspectRatio.Send(FpixelAspectRatio, Time);
+  end;
+  if FDirty_progress then
+  begin
+    FDirty_progress := False;
+    if FEvent_progress <> nil then
+    begin
+      FBack_progress.Value := Fprogress;
+      FEvent_progress.Send(FBack_progress, Time);
+    end;
+  end;
+  if FDirty_renderCompleteTime then
+  begin
+    FDirty_renderCompleteTime := False;
+    if FEvent_renderCompleteTime <> nil then
+    begin
+      FBack_renderCompleteTime.Value := FrenderCompleteTime;
+      FEvent_renderCompleteTime.Send(FBack_renderCompleteTime, Time);
+    end;
+  end;
+end;
+
+procedure TScript165Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script165_initialize', {$ifdef FPC}@{$endif}Initialize);
+  Scene.RegisterCompiledScript('Script165_set_description', {$ifdef FPC}@{$endif}Set_description);
+  Scene.RegisterCompiledScript('Script165_set_enabled', {$ifdef FPC}@{$endif}Set_enabled);
+  Scene.RegisterCompiledScript('Script165_set_frameRate', {$ifdef FPC}@{$endif}Set_frameRate);
+  Scene.RegisterCompiledScript('Script165_set_frameSize', {$ifdef FPC}@{$endif}Set_frameSize);
+  Scene.RegisterCompiledScript('Script165_set_pixelAspectRatio', {$ifdef FPC}@{$endif}Set_pixelAspectRatio);
+  Scene.RegisterCompiledScript('Script165_set_startTime', {$ifdef FPC}@{$endif}Set_startTime);
+end;
+
+procedure TScript165Script.Initialize(Value: TX3DField; const Time: TX3DTime);
+begin
+  TracePrint('... initialize complete', Time);
+  FlushOutputs(Time);
+end;
+
+procedure TScript165Script.Set_description(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fdescription := (Value as TSFString).Value; FDirty_description := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript165Script.Set_enabled(Value: TX3DField; const Time: TX3DTime);
+begin
+  Fenabled := (Value as TSFBool).Value; FDirty_enabled := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript165Script.Set_frameRate(Value: TX3DField; const Time: TX3DTime);
+begin
+  FframeRate := (Value as TSFFloat).Value; FDirty_frameRate := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript165Script.Set_frameSize(Value: TX3DField; const Time: TX3DTime);
+begin
+  FframeSize := (Value as TSFVec2f).Value; FDirty_frameSize := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript165Script.Set_pixelAspectRatio(Value: TX3DField; const Time: TX3DTime);
+begin
+  FpixelAspectRatio := (Value as TSFFloat).Value; FDirty_pixelAspectRatio := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript165Script.Set_startTime(Value: TX3DField; const Time: TX3DTime);
+begin
+  FlushOutputs(Time);
+end;
+
+procedure TScript165Script.TracePrint(const outputValue: Single; const Time: TX3DTime);
+begin
+  if FtraceEnabled then
+    AlwaysPrint(outputValue, Time);
+end;
+
+procedure TScript165Script.AlwaysPrint(const outputValue: Single; const Time: TX3DTime);
+var
+  outputString: Single;
+begin
+  outputString := outputValue.toString();
+  if outputString = nil then
+    outputString := outputValue;
+  if Length(Fdescription) > 0 then
+    WriteLn('[OfflineRender: ' + Fdescription + '] ' + outputString + #10);
+  else
+    WriteLn('[OfflineRender] ' + outputString + #10);
+end;
 
 procedure InitCameraPrototypesPart0;
 begin
@@ -441,9 +2047,9 @@ OrientationInterpolator47.SetKeyValue([Vector4(0, 1, 0, 0), Vector4(0, 1, 0, 0)]
 OrientationInterpolator47.FieldOrEvent('set_fraction', True).IsClauseNamesAdd('set_fraction');
 ProtoDeclare17.Node.AddChildren([OrientationInterpolator47]);
 { ROUTE CameraPositionInterpolator.value_changed TO CameraViewpoint.position }
-ProtoBody42.AddRoute(PositionInterpolator46.EventValue_changed, Viewpoint43.position);
+ProtoDeclare17.Node.AddRoute(PositionInterpolator46.EventValue_changed, Viewpoint43.position);
 { ROUTE CameraOrientationInterpolator.value_changed TO CameraViewpoint.orientation }
-ProtoBody42.AddRoute(OrientationInterpolator47.EventValue_changed, Viewpoint43.orientation);
+ProtoDeclare17.Node.AddRoute(OrientationInterpolator47.EventValue_changed, Viewpoint43.orientation);
 Script50 := TScriptNode.Create;
 Script50.X3DName := 'CameraScript';
 Script50.DirectOutput := True;
@@ -543,30 +2149,44 @@ Script50.FieldOrEvent('isActive', True).IsClauseNamesAdd('isActive');
 Script50.FieldOrEvent('totalDuration', True).IsClauseNamesAdd('totalDuration');
 Script50.FieldOrEvent('offlineRender', True).IsClauseNamesAdd('offlineRender');
 Script50.FieldOrEvent('traceEnabled', True).IsClauseNamesAdd('traceEnabled');
+FreeAndNil(CompiledScript50);
+CompiledScript50 := TScript50Script.Create(FieldVal51, FieldVal52, FieldVal53, FieldVal56, FieldVal57, FieldVal58, FieldVal59, FieldVal60, FieldVal61, FieldVal62, FieldVal63, FieldVal64, FieldVal65, FieldVal66, FieldVal67, FieldVal68, FieldVal70, FieldVal72, FieldVal74, FieldVal76, FieldVal77, FieldVal78, FieldVal79, FieldVal80, FieldVal81, FieldVal82, FieldVal83, FieldVal84, FieldVal85, FieldVal86);
+Script50.SetUrl(['compiled:' + LineEnding +
+  'initialize=Script50_initialize' + LineEnding +
+  'set_fraction=Script50_set_fraction' + LineEnding +
+  'set_bind=Script50_set_bind' + LineEnding +
+  'set_description=Script50_set_description' + LineEnding +
+  'set_position=Script50_set_position' + LineEnding +
+  'set_orientation=Script50_set_orientation' + LineEnding +
+  'set_fieldOfView=Script50_set_fieldOfView' + LineEnding +
+  'set_nearClipPlane=Script50_set_nearClipPlane' + LineEnding +
+  'set_farClipPlane=Script50_set_farClipPlane' + LineEnding +
+  'set_shots=Script50_set_shots' + LineEnding +
+  'set_filterColor=Script50_set_filterColor' + LineEnding +
+  'set_filterTransparency=Script50_set_filterTransparency' + LineEnding +
+  'set_upVector=Script50_set_upVector' + LineEnding +
+  'set_fStop=Script50_set_fStop' + LineEnding +
+  'set_focusDistance=Script50_set_focusDistance' + LineEnding +
+  'set_offlineRender=Script50_set_offlineRender' + LineEnding +
+  'set_key=Script50_set_key' + LineEnding +
+  'set_keyValuePosition=Script50_set_keyValuePosition' + LineEnding +
+  'set_keyValueOrientation=Script50_set_keyValueOrientation' + LineEnding +
+  'set_animated=Script50_set_animated']);
+ProtoDeclare17.Node.AddChildren([Script50]);
+{ ROUTE CameraScript.position TO CameraViewpoint.position }
+ProtoDeclare17.Node.AddRoute(FieldVal52.EventOut, Viewpoint43.position);
+{ ROUTE CameraScript.orientation TO CameraViewpoint.orientation }
+ProtoDeclare17.Node.AddRoute(FieldVal53.EventOut, Viewpoint43.orientation);
 end;
 
 procedure InitCameraPrototypesPart7;
 begin
-Script50.SetSourceCode('ecmascript:' + LineEnding +
-  'function initialize () // CameraScript' + LineEnding +
-  '{' + LineEnding +
-  '//  tracePrint (''initialize start...'');\n\n    NavInfoNode.avatarSize[0]   = nearClipPlane;\n\n    // remaining setups deferred to invocation of checkShots() method\n    // thanks to Yvonne Jung Fraunhofer for diagnosing better approach to function initialization\n    alwaysPrint (''initialize complete'');\n}\n\nfunction checkShots (eventValue)\n{\n    tracePrint (''checkShots() method should only occur after initialize() methods in all other Scripts are complete'');\n\n    // compute totalDuration by summing durations from contained CameraShot and CameraMovement nodes\n    totalDuration= 0;\n    shotCount  = shots.length;\n    movesCount = 0;\n    for (i = 0; i < shotCount; i++) // shots index\n    {\n       tracePrint (''shots['' + i + ''].moves.length='' + shots[i].moves.length);\n       movesCount   += shots[i].moves.length;\n       totalDuration = totalDuration + shots[i].shotDuration;\n       if (shots[i].moves.length == 0)\n       {\n          alwaysPrint (''warning: CameraShot['' + i + '']['' + shots[i].description + ''] has no contained CameraMove nodes'');\n       }\n    }\n    // size checks before proceeding\n    if (shotCount == 0)\n    {\n       alwaysPrint (''warning: no CameraShot nodes found for the shots, nothing to do!'');\n       return;\n    }\n    else if (movesCount == 0)\n    {\n       alwaysPrint (''warning: no CameraMove nodes found for the shots, nothing to do!'');\n       return;\n    }\n    else if (totalDuration == 0)\n    {\n       alwaysPrint (''warning: totalDuration = 0 seconds, nothing to do!'');\n       return;\n    }\n    tracePrint (''number of contained CameraShot nodes='' + shotCount);\n    tracePrint (''number of contained CameraMove nodes='' + movesCount);\n    tracePrint (''totalDuration='' + totalDuration + '' seconds for all shots and moves'');\n\n    // compute interpolators\n    var k = 0; // index for latest key, keyValuePosition, keyValueOrientation\n    for (i = 0; i < shotCount; i++) // shots index\n    {\n        if (i==0) // initial entries\n        {\n           key[0]                   = 0.0; // no previous move\n           keyValuePosition[0]      = shots[i].initialPosition;\n           keyValueOrientation[0]   = shots[i].initialOrientation;\n        }\n        else     // new shot repositions, reorients camera as clean break from preceding shot/move\n        {\n           key[k+1]                 = key[k]; // start from end from previous move\n           keyValuePosition[k+1]    = shots[i].initialPosition;\n           keyValueOrientation[k+1] = shots[i].initialOrientation;\n           k++;\n        }\n        tracePrint (shots[i].description);\n        tracePrint (''shots[i].moves.length='' + shots[i].moves.length);\n\n        for (j = 0; j < shots[i].moves.length; j++) // moves index\n        {\n            var durationFloat =              shots[i].moves[j].duration;  // implicit type conversion from SFTime\n            //  durationFloat = new SFFloat (shots[i].moves[j].duration); // explicit type conversion from SFTime\n            //  tracePrint (''durationFloat='' + durationFloat);\n            key[k+1]               = key[k] + (durationFloat / totalDuration);\n            keyValuePosition[k+1]  = shots[i].moves[j].goalPosition;\n            if (!animated)\n            {\n                 keyValueOrientation[k+1] = shots[i].moves[j].goalOrientation;\n            }\n            else\n            {\n                // using constructor SFRotation (SFVec3f fromVector, SFVec3f toVector)\n                // see X3D ECMAScript binding Table 7.18 — SFRotation instance creation functions\n\n                // test if difference vector is zero, if so maintain previous rotation\n                var shotVector = ViewpointNode.position.subtract(shots[i].moves[j].goalAimPoint).normalize();\n                if (shotVector.length() >= 0)\n                {\n                    // default view direction is along -Z axis\n                    shots[i].moves[j].goalOrientation = new SFRotation (new SFVec3f (0, 0, 1), shotVector);\n                    keyValueOrientation[k+1] = shots[i].moves[j].goalOrientation;\n                }\n                else // note (k > 0)\n                {\n                    keyValueOrientation[k+1] = keyValueOrientation[k];  // no change\n                }\n\n                tracePrint (''shots['' + i + ''].moves['' + j + ''].goalAimPoint='' + shots[i].moves[j].goalAimPoint.toString());\n                tracePrint (''        ViewpointNode.position='' + ViewpointNode.position.toString());\n                tracePrint (''          shotVector     delta='' + ViewpointNode.position.subtract(shots[i].moves[j].goalAimPoint).toString());\n                tracePrint (''          shotVector normalize='' + ViewpointNode.position.subtract(shots[i].moves[j].goalAimPoint).normalize().toString());\n                tracePrint (''               goalOrientation='' + shots[i].moves[j].goalOrientation.toString());\n                tracePrint (''      keyValueOrientation[k+1]='' + keyValueOrientation[k+1].toString() + ''\n'');\n            }\n            k++; // update index to match latest key, keyValuePosition, keyValueOrientation\n\n            // check animated parameter:  set true if any of moves are tracking moves\n            if (!animated)  animated = shots[i].moves[j].tracking; // once true, remains true\n         // tracePrint (''shots['' + i + ''].moves['' + j + ''].tracking='' + shots[i].moves[j].tracking + '', animated='' + animated);\n\n            // intermediate trace\n            tracePrint (''                key='' + key);\n            tracePrint (''   keyValuePosition='' + keyValuePosition);\n            tracePrint (''keyValueOrientation='' + keyValueOrientation);\n            tracePrint (''- '' + shots[i].moves[j].description);\n        }\n    }\n    tracePrint (''                key='' + key);\n    tracePrint (''   keyValuePosition='' + keyValuePosition);\n    tracePrint (''keyValueOrientation='' + keyValueOrientation);\n    if (key.length != keyValuePosition.length)\n    {\n      alwaysPrint (''warning: internal error during array construction, '' +\n                  ''key.length='' + key.length + '' must equal '' +\n                  ''keyValuePosition.length='' + keyValuePosition.length);\n    }\n    if (key.length != keyValueOrientation.length)\n    {\n      alwaysPrint (''warning: internal error during array construction, '' +\n                  ''key.length='' + key.length + '' must equal '' +\n                  ''keyValueOrientation.length='' + keyValueOrientation.length);\n    }\n    if (key.length != (shotCount + movesCount))\n    {\n      alwaysPrint (''warning: internal error during array construction, '' +\n                  ''key.length='' + key.length + '' must equal '' +\n                  ''(shotCount + movesCount)='' + (shotCount + movesCount));\n    }\n    tracePrint (''           animated='' + animated);\n    // set node values\n    CameraPI.key      = key;\n    CameraOI.key      = key;\n    CameraPI.keyValue = keyValuePosition;\n    CameraOI.keyValue = keyValueOrientation;\n\n    if (!animated) // output results\n    {\n        tracePrint (''<PositionInterpolator    DEF=\''CameraPositionInterpolator\''    key=\'''' + stripBrackets(CameraPI.key) + ''\'' keyValue=\'''' + stripBrackets(CameraPI.keyValue) + ''\''/>'');\n        tracePrint (''<OrientationInterpolator DEF=\''CameraOrientationInterpolator\'' key=\'''' + stripBrackets(CameraOI.key) + ''\'' keyValue=\'''' + stripBrackets(CameraOI.keyValue) + ''\''/>'');\n    }\n    tracePrint (''checkShots() complete'');\n}\n\nfunction stripBrackets (fieldArray)\n{\n    // some browsers add brackets to array output strings, this function strips them\n    outputString = '''';\n    for (i = 0; i < fieldArray.length; i++)\n    {\n       outputString += fieldArray[i].toString();\n       if (i < fieldArray.length - 1) outputString += '' '';\n    }\n    return outputString;\n}\n\nfunction set_fraction (eventValue, timestamp) // input event received for inputOnly field\n{\n   // traceEnabled = false;  // for testing purposes\n\n   // if Camera is being animated, immediately recompute interpolator settings\n   if (animated) checkShots (true);\n\n   // trace progress on console with reduced output frequency\n   if (frameCount == 0)\n   {\n      alwaysPrint (''Animation loop commencing, timestamp='' + timestamp);\n      startTime      = timestamp;\n      priorTraceTime = timestamp;\n      alwaysPrint (''shotClock='' + (timestamp - startTime) + '' seconds, frameCount='' + frameCount + '', fraction='' + eventValue + '', position='' + ViewpointNode.position.toString() + '', orientation='' + ViewpointNode.orientation.toString());\n\n      if (animated) // output results\n      {\n        // TODO how to report or speed up response?  alwaysPrint (''  aimPoint='' + aimPoint.toString());\n        tracePrint (''  <PositionInterpolator    DEF=\''CameraPositionInterpolator\''    key=\'''' + stripBrackets(CameraPI.key) + ''\'' keyValue=\'''' + stripBrackets(CameraPI.keyValue) + ''\''/>'');\n        tracePrint (''  <OrientationInterpolator DEF=\''CameraOrientationInterpolator\'' key=\'''' + stripBrackets(CameraOI.key) + ''\'' keyValue=\'''' + stripBrackets(CameraOI.keyValue) + ''\''/>'');\n      }\n   }\n   else if ((timestamp - priorTraceTime) >= 1.0) // 1 second trace interval\n   {\n      alwaysPrint (''shotClock='' + (timestamp - startTime) + '' seconds, frameCount='' + frameCount + '', fraction='' + eventValue + '', position='' + ViewpointNode.position.toString() + '', orientation='' + ViewpointNode.orientation.toString());\n      priorTraceTime = timestamp;\n\n      if (animated) // output results\n      {\n        // TODO how to report or speed up response?  alwaysPrint (''  aimPoint='' + aimPoint.toString());\n        tracePrint (''  <PositionInterpolator    DEF=\''CameraPositionInterpolator\''    key=\'''' + stripBrackets(CameraPI.key) + ''\'' keyValue=\'''' + stripBrackets(CameraPI.keyValue) + ''\''/>'');\n        alwaysPrint (''  <OrientationInterpolator DEF=\''CameraOrientationInterpolator\'' key=\'''' + stripBrackets(CameraOI.key) + ''\'' keyValue=\'''' + stripBrackets(CameraOI.keyValue) + ''\''/>'');\n      }\n   }\n   if (eventValue == 0)\n   {\n      // note that zero value is not necessarily sent first by TimeSensor, so otherwise ignored\n      frameCount++;\n   }\n   else if (eventValue == 1)\n   {\n      alwaysPrint (''shotClock='' + (timestamp - startTime) + '', frameCount='' + frameCount + '', fraction='' + eventValue + '', position='' + ViewpointNode.position.toString() + '', orientation='' + ViewpointNode.orientation.toString());\n      if (animated) // output results\n      {\n        // TODO how to report or speed up response?  alwaysPrint (''  aimPoint='' + aimPoint.toString());\n      }\n      alwaysPrint (''Animation loop complete.'');\n      // do not unbind the Viewpoint and NavigationInfo nodes, let that be controlled externally\n   }\n   else\n   {\n      frameCount++;\n   }\n}\n\nfunction set_bind (eventValue) // input event received for inputOnly field\n{\n   // need to ensure CameraShot nodes are properly initialized\n   if (initialized == false)\n   {\n      checkShots (true);\n      initialized = true;\n   }\n   if (eventValue)\n   {\n       tracePrint (''Camera has been bound'');\n   }\n   else\n   {\n       tracePrint (''Camera has been unbound'');\n   }\n}\n\nfunction set_description (eventValue) // input event received for inputOutput field\n{\n    description = eventValue;\n}\n\nfunction set_position (eventValue) // input event received for inputOutput field\n{\n    position = eventValue;\n}\n\nfunction set_orientation (eventValue) // input event received for inputOutput field\n{\n    orientation = eventValue;\n}\n\nfunction set_fieldOfView (eventValue) // input event received for inputOutput field\n{\n    fieldOfView = eventValue;\n}\n\nfunction set_nearClipPlane (eventValue) // input event received for inputOutput field\n{\n    nearClipPlane = eventValue;\n}\n\nfunction set_farClipPlane (eventValue) // input event received for inputOutput field\n{\n    farClipPlane = eventValue;\n}\n\nfunction set_shots (eventValue) // input event received for inputOutput field\n{\n    shots = eventValue;\n}\n\nfunction set_filterColor (eventValue) // input event received for inputOutput field\n{\n    filterColor = eventValue;\n}\n\nfunction set_filterTransparency (eventValue) // input event received for inputOutput field\n{\n    filterTransparency = eventValue;\n}\n\nfunction set_upVector (eventValue) // input event received for inputOutput field\n{\n    upVector = eventValue;\n}\n\nfunction set_fStop (eventValue) // input event received for inputOutput field\n{\n    fStop = eventValue;\n}\n\nfunction set_focusDistance (eventValue) // input event received for inputOutput field\n{\n    focusDistance = eventValue;\n}\n\nfunction set_offlineRender (eventValue) // input event received for inputOutput field\n{\n    offlineRender = eventValue;\n}\n\nfunction set_key (eventValue) // input event received for inputOutput field\n{\n    key = eventValue;\n}\n\nfunction set_keyValuePosition (eventValue) // input event received for inputOutput field\n{\n    keyValuePosition = eventValue;\n}\n\nfunction set_keyValueOrientation (eventValue) // input event received for inputOutput field\n{\n    keyValueOrientation = eventValue;\n}\n\nfunction set_animated (eventValue) // input event received for inputOutput field\n{\n    animated = eventValue;\n}\n\nfunction tracePrint (outputValue)\n{\n	if (traceEnabled) alwaysPrint (outputValue);\n}\nfunction alwaysPrint (outputValue)\n{\n    // try to ensure outputValue is converted to string despite Browser.println idiosyncracies\n    var outputString = outputValue.toString(); // utility function according to spec\n    if (outputString == null) outputString = outputValue; // direct cast\n\n    if  (description.length > 0)\n         Browser.print (''[Camera: '' + description + ''] '' + outputString + ''\n'');\n    else\n         Browser.print (''[Camera] '' + outputString + ''\n'');' + LineEnding +
-  '}');
-end;
-
-procedure InitCameraPrototypesPart8;
-begin
-ProtoDeclare17.Node.AddChildren([Script50]);
-{ ROUTE CameraScript.position TO CameraViewpoint.position }
-ProtoBody42.AddRoute(FieldVal52, Viewpoint43.position);
-{ ROUTE CameraScript.orientation TO CameraViewpoint.orientation }
-ProtoBody42.AddRoute(FieldVal53, Viewpoint43.orientation);
 { ROUTE CameraScript.isActive TO CameraViewpoint.set_bind }
-ProtoBody42.AddRoute(FieldVal65, Viewpoint43.EventSet_bind);
+ProtoDeclare17.Node.AddRoute(FieldVal65, Viewpoint43.EventSet_bind);
 { ROUTE CameraScript.isActive TO CameraNavInfo.set_bind }
-ProtoBody42.AddRoute(FieldVal65, NavigationInfo44.EventSet_bind);
+ProtoDeclare17.Node.AddRoute(FieldVal65, NavigationInfo44.EventSet_bind);
 { ROUTE CameraScript.isActive TO CameraDirectionalLight.on }
-ProtoBody42.AddRoute(FieldVal65, DirectionalLight45.on);
+ProtoDeclare17.Node.AddRoute(FieldVal65, DirectionalLight45.on);
 X3D0.AddPrototype(ProtoDeclare17);
 { =============== CameraShot ============== }
 ProtoDeclare92 := CreateEmptyPrototype('CameraShot');
@@ -596,15 +2216,15 @@ FieldVal98 := TSFRotation.Create(nil, True, 'initialOrientation', Vector4(0, 0, 
 FieldDecl98 := TX3DInterfaceDeclaration.Create(nil);
 FieldDecl98.FieldOrEvent := FieldVal98;
 FieldVal98.ParentInterfaceDeclaration := FieldDecl98;
-end;
-
-procedure InitCameraPrototypesPart9;
-begin
 ProtoDeclare92.InterfaceDeclarations.Add(FieldDecl98);
 FieldVal99 := TSFVec3f.Create(nil, True, 'initialAimPoint', Vector3(0, 0, 0));
 FieldDecl99 := TX3DInterfaceDeclaration.Create(nil);
 FieldDecl99.FieldOrEvent := FieldVal99;
 FieldVal99.ParentInterfaceDeclaration := FieldDecl99;
+end;
+
+procedure InitCameraPrototypesPart8;
+begin
 ProtoDeclare92.InterfaceDeclarations.Add(FieldDecl99);
 FieldVal100 := TSFFloat.Create(nil, True, 'initialFieldOfView', 0.7854);
 FieldDecl100 := TX3DInterfaceDeclaration.Create(nil);
@@ -640,15 +2260,15 @@ Script107 := TScriptNode.Create;
 Script107.X3DName := 'CameraShotScript';
 Script107.DirectOutput := True;
 Script107.MustEvaluate := True;
-end;
-
-procedure InitCameraPrototypesPart10;
-begin
 FieldVal108 := TSFString.CreateUndefined(Script107, True, 'description');
 Script107.AddCustomFieldOrEvent(FieldVal108);
 FieldVal109 := TSFBool.CreateUndefined(Script107, True, 'enabled');
 Script107.AddCustomFieldOrEvent(FieldVal109);
 FieldVal110 := TMFNode.CreateUndefined(Script107, True, 'moves');
+end;
+
+procedure InitCameraPrototypesPart9;
+begin
 Script107.AddCustomFieldOrEvent(FieldVal110);
 FieldVal111 := TSFVec3f.CreateUndefined(Script107, True, 'initialPosition');
 Script107.AddCustomFieldOrEvent(FieldVal111);
@@ -684,17 +2304,28 @@ Script107.FieldOrEvent('initialFieldOfView', True).IsClauseNamesAdd('initialFiel
 Script107.FieldOrEvent('initialFStop', True).IsClauseNamesAdd('initialFStop');
 Script107.FieldOrEvent('initialFocusDistance', True).IsClauseNamesAdd('initialFocusDistance');
 Script107.FieldOrEvent('shotDuration', True).IsClauseNamesAdd('shotDuration');
-end;
-
-procedure InitCameraPrototypesPart11;
-begin
 Script107.FieldOrEvent('isActive', True).IsClauseNamesAdd('isActive');
 Script107.FieldOrEvent('traceEnabled', True).IsClauseNamesAdd('traceEnabled');
-Script107.SetSourceCode('ecmascript:' + LineEnding +
-  'function initialize () // CameraShotScript' + LineEnding +
-  '{' + LineEnding +
-  '//  tracePrint (''initialize start...'');\n\n    // compute shotDuration by summing durations from contained CameraMovement nodes\n    shotDuration = 0;\n    for (i = 0; i < moves.length; i++)\n    {\n        shotDuration = shotDuration + moves[i].duration;\n    }\n    alwaysPrint (''number of contained CameraMove nodes='' + moves.length + '', shotDuration='' + shotDuration + '' seconds'');\n\n//  tracePrint (''... initialize() complete'');\n}\n\nfunction set_description (eventValue) // input event received for inputOutput field\n{\n    description = eventValue;\n}\n\nfunction set_enabled (eventValue) // input event received for inputOutput field\n{\n    enabled = eventValue;\n}\n\nfunction set_moves (eventValue) // input event received for inputOutput field\n{\n    moves = eventValue;\n}\n\nfunction set_initialPosition (eventValue) // input event received for inputOutput field\n{\n    initialPosition = eventValue;\n}\n\nfunction set_initialOrientation (eventValue) // input event received for inputOutput field\n{\n    initialOrientation = eventValue;\n}\n\nfunction set_initialAimPoint (eventValue) // input event received for inputOutput field\n{\n    initialAimPoint = eventValue;\n}\n\nfunction set_initialFieldOfView (eventValue) // input event received for inputOutput field\n{\n    initialFieldOfView = eventValue;\n}\n\nfunction set_initialFStop (eventValue) // input event received for inputOutput field\n{\n    initialFStop = eventValue;\n}\n\nfunction set_initialFocusDistance (eventValue) // input event received for inputOutput field\n{\n    initialFocusDistance = eventValue;\n}\n\nfunction set_key (eventValue) // input event received for inputOutput field\n{\n    key = eventValue;\n}\n\nfunction set_keyValuePosition (eventValue) // input event received for inputOutput field\n{\n    keyValuePosition = eventValue;\n}\n\nfunction set_keyValueOrientation (eventValue) // input event received for inputOutput field\n{\n    keyValueOrientation = eventValue;\n}\n\n// TODO consider method set_active for constructed Camera node BooleanSequencer to send isActive\n\nfunction tracePrint (outputValue)\n{\n	if (traceEnabled) alwaysPrint (outputValue);\n}\nfunction alwaysPrint (outputValue)\n{\n	// try to ensure outputValue is converted to string despite browser idiosyncracies\n    var outputString = outputValue.toString(); // utility function according to spec\n    if (outputString == null) outputString = outputValue; // direct cast\n\n    if  (description.length > 0)\n         Browser.print (''[CameraShot: '' + description + ''] '' + outputString + ''\n'');\n    else\n         Browser.print (''[CameraShot] '' + outputString + ''\n'');' + LineEnding +
-  '}');
+FreeAndNil(CompiledScript107);
+CompiledScript107 := TScript107Script.Create(FieldVal108, FieldVal109, FieldVal110, FieldVal111, FieldVal112, FieldVal113, FieldVal114, FieldVal115, FieldVal116, FieldVal117, FieldVal118, FieldVal119, FieldVal120, FieldVal121, FieldVal122);
+Script107.SetUrl(['compiled:' + LineEnding +
+  'initialize=Script107_initialize' + LineEnding +
+  'set_description=Script107_set_description' + LineEnding +
+  'set_enabled=Script107_set_enabled' + LineEnding +
+  'set_moves=Script107_set_moves' + LineEnding +
+  'set_initialPosition=Script107_set_initialPosition' + LineEnding +
+  'set_initialOrientation=Script107_set_initialOrientation' + LineEnding +
+  'set_initialAimPoint=Script107_set_initialAimPoint' + LineEnding +
+  'set_initialFieldOfView=Script107_set_initialFieldOfView' + LineEnding +
+  'set_initialFStop=Script107_set_initialFStop' + LineEnding +
+  'set_initialFocusDistance=Script107_set_initialFocusDistance' + LineEnding +
+  'set_key=Script107_set_key' + LineEnding +
+  'set_keyValuePosition=Script107_set_keyValuePosition' + LineEnding +
+  'set_keyValueOrientation=Script107_set_keyValueOrientation']);
+end;
+
+procedure InitCameraPrototypesPart10;
+begin
 ProtoDeclare92.Node.AddChildren([Script107]);
 { Add any ROUTEs here, going from Script to other nodes within ProtoBody }
 X3D0.AddPrototype(ProtoDeclare92);
@@ -732,13 +2363,13 @@ FieldDecl130 := TX3DInterfaceDeclaration.Create(nil);
 FieldDecl130.FieldOrEvent := FieldVal130;
 FieldVal130.ParentInterfaceDeclaration := FieldDecl130;
 ProtoDeclare123.InterfaceDeclarations.Add(FieldDecl130);
-end;
-
-procedure InitCameraPrototypesPart12;
-begin
 FieldVal131 := TSFVec3f.Create(nil, True, 'goalAimPoint', Vector3(0, 0, 0));
 FieldDecl131 := TX3DInterfaceDeclaration.Create(nil);
 FieldDecl131.FieldOrEvent := FieldVal131;
+end;
+
+procedure InitCameraPrototypesPart11;
+begin
 FieldVal131.ParentInterfaceDeclaration := FieldDecl131;
 ProtoDeclare123.InterfaceDeclarations.Add(FieldDecl131);
 FieldVal132 := TSFFloat.Create(nil, True, 'goalFieldOfView', 0.7854);
@@ -776,13 +2407,13 @@ Script138.MustEvaluate := True;
 FieldVal139 := TSFString.CreateUndefined(Script138, True, 'description');
 Script138.AddCustomFieldOrEvent(FieldVal139);
 FieldVal140 := TSFBool.CreateUndefined(Script138, True, 'enabled');
-end;
-
-procedure InitCameraPrototypesPart13;
-begin
 Script138.AddCustomFieldOrEvent(FieldVal140);
 FieldVal141 := TSFFloat.CreateUndefined(Script138, True, 'duration');
 Script138.AddCustomFieldOrEvent(FieldVal141);
+end;
+
+procedure InitCameraPrototypesPart12;
+begin
 FieldVal142 := TSFVec3f.CreateUndefined(Script138, True, 'goalPosition');
 Script138.AddCustomFieldOrEvent(FieldVal142);
 FieldVal143 := TSFRotation.CreateUndefined(Script138, True, 'goalOrientation');
@@ -813,22 +2444,31 @@ Script138.FieldOrEvent('goalFStop', True).IsClauseNamesAdd('goalFStop');
 Script138.FieldOrEvent('goalFocusDistance', True).IsClauseNamesAdd('goalFocusDistance');
 Script138.FieldOrEvent('isActive', True).IsClauseNamesAdd('isActive');
 Script138.FieldOrEvent('traceEnabled', True).IsClauseNamesAdd('traceEnabled');
-Script138.SetSourceCode('ecmascript:' + LineEnding +
-  'function initialize () // CameraMovementScript' + LineEnding +
-  '{' + LineEnding +
-  '//  tracePrint (''initialize start...'');\n    alwaysPrint (''initialize goalPosition='' + goalPosition.toString() + '', goalOrientation='' + goalOrientation.toString() +\n                           '', goalAimPoint='' + goalAimPoint.toString() // + '', tracking='' + tracking.toString()\n                           );\n    if (duration < 0)\n    {\n       alwaysPrint (''error: negative duration='' + duration + '', reset to 0 and ignored'');\n       duration = 0;\n    }\n    else if (duration == 0)\n    {\n       alwaysPrint (''warning: duration=0, nothing to do!'');\n    }\n    tracePrint (''... initialize complete'');\n}\n\nfunction set_goalAimPoint (eventValue) // input event received for inputOutput field\n{\n    goalAimPoint_changed = eventValue;\n    tracePrint (''goalAimPoint='' + goalAimPoint.toString());\n\n    // updated goalOrientation tracking is handled by Camera recomputing the OrientationInterpolator\n}\n\nfunction set_description (eventValue) // input event received for inputOutput field\n{\n    description = eventValue;\n}\n\nfunction set_enabled (eventValue) // input event received for inputOutput field\n{\n    enabled = eventValue;\n}\n\nfunction set_duration (eventValue) // input event received for inputOutput field\n{\n    duration = eventValue;\n}\n\nfunction set_goalPosition (eventValue) // input event received for inputOutput field\n{\n    goalPosition = eventValue;\n}\n\nfunction set_goalOrientation (eventValue) // input event received for inputOutput field\n{\n    goalOrientation = eventValue;\n}\n\nfunction set_tracking (eventValue) // input event received for inputOutput field\n{\n    tracking = eventValue;\n}\n\nfunction set_goalFieldOfView (eventValue) // input event received for inputOutput field\n{\n    goalFieldOfView = eventValue;\n}\n\nfunction set_goalFStop (eventValue) // input event received for inputOutput field\n{\n    goalFStop = eventValue;\n}\n\nfunction set_goalFocusDistance (eventValue) // input event received for inputOutput field\n{\n    goalFocusDistance = eventValue;\n}\n\n// TODO consider method set_active for constructed Camera node BooleanSequencer to send isActive\n\nfunction tracePrint (outputValue)\n{\n	if (traceEnabled) alwaysPrint (outputValue);\n}\n\nfunction alwaysPrint (outputValue)\n{\n	// try to ensure outputValue is converted to string despite browser idiosyncracies\n    var outputString = outputValue.toString(); // utility function according to spec\n    if (outputString == null) outputString = outputValue; // direct cast\n\n    if  (description.length > 0)\n         Browser.print (''[CameraMovement: '' + description + ''] '' + outputString + ''\n'');\n    else\n         Browser.print (''[CameraMovement] '' + outputString + ''\n'');' + LineEnding +
-  '}');
+FreeAndNil(CompiledScript138);
+CompiledScript138 := TScript138Script.Create(FieldVal139, FieldVal140, FieldVal141, FieldVal142, FieldVal143, FieldVal144, FieldVal145, FieldVal146, FieldVal147, FieldVal148, FieldVal149, FieldVal150);
+Script138.SetUrl(['compiled:' + LineEnding +
+  'initialize=Script138_initialize' + LineEnding +
+  'set_goalAimPoint=Script138_set_goalAimPoint' + LineEnding +
+  'set_description=Script138_set_description' + LineEnding +
+  'set_enabled=Script138_set_enabled' + LineEnding +
+  'set_duration=Script138_set_duration' + LineEnding +
+  'set_goalPosition=Script138_set_goalPosition' + LineEnding +
+  'set_goalOrientation=Script138_set_goalOrientation' + LineEnding +
+  'set_tracking=Script138_set_tracking' + LineEnding +
+  'set_goalFieldOfView=Script138_set_goalFieldOfView' + LineEnding +
+  'set_goalFStop=Script138_set_goalFStop' + LineEnding +
+  'set_goalFocusDistance=Script138_set_goalFocusDistance']);
 ProtoDeclare123.Node.AddChildren([Script138]);
 { Add any ROUTEs here, going from Script to other nodes within ProtoBody }
 X3D0.AddPrototype(ProtoDeclare123);
 { =============== OfflineRender ============== }
 ProtoDeclare151 := CreateEmptyPrototype('OfflineRender');
 ProtoDeclare151.X3DName := 'OfflineRender';
+ProtoDeclare151.Appinfo := 'OfflineRender defines a parameters for offline rendering of Camera animation output to a movie file (or possibly a still shot).';
 end;
 
-procedure InitCameraPrototypesPart14;
+procedure InitCameraPrototypesPart13;
 begin
-ProtoDeclare151.Appinfo := 'OfflineRender defines a parameters for offline rendering of Camera animation output to a movie file (or possibly a still shot).';
 FieldVal153 := TSFString.CreateUndefined(nil, True, 'description');
 FieldDecl153 := TX3DInterfaceDeclaration.Create(nil);
 FieldDecl153.FieldOrEvent := FieldVal153;
@@ -868,17 +2508,17 @@ FieldVal160 := TSFTime.CreateEvent(nil, 'renderCompleteTime', False);
 FieldDecl160 := TX3DInterfaceDeclaration.Create(nil);
 FieldDecl160.FieldOrEvent := FieldVal160;
 FieldVal160.ParentInterfaceDeclaration := FieldDecl160;
+ProtoDeclare151.InterfaceDeclarations.Add(FieldDecl160);
 end;
 
-procedure InitCameraPrototypesPart15;
+procedure InitCameraPrototypesPart14;
 begin
-ProtoDeclare151.InterfaceDeclarations.Add(FieldDecl160);
-FieldVal161 := TMFString.Create(nil, False, 'movieFormat', (['mpeg']));
+FieldVal161 := TMFString.Create(nil, False, 'movieFormat', ['mpeg']);
 FieldDecl161 := TX3DInterfaceDeclaration.Create(nil);
 FieldDecl161.FieldOrEvent := FieldVal161;
 FieldVal161.ParentInterfaceDeclaration := FieldDecl161;
 ProtoDeclare151.InterfaceDeclarations.Add(FieldDecl161);
-FieldVal162 := TMFString.Create(nil, False, 'imageFormat', (['png']));
+FieldVal162 := TMFString.Create(nil, False, 'imageFormat', ['png']);
 FieldDecl162 := TX3DInterfaceDeclaration.Create(nil);
 FieldDecl162.FieldOrEvent := FieldVal162;
 FieldVal162.ParentInterfaceDeclaration := FieldDecl162;
@@ -912,11 +2552,11 @@ Script165.AddCustomFieldOrEvent(FieldVal173);
 FieldVal174 := TMFString.CreateUndefined(Script165, False, 'movieFormat');
 Script165.AddCustomFieldOrEvent(FieldVal174);
 FieldVal175 := TMFString.CreateUndefined(Script165, False, 'imageFormat');
+Script165.AddCustomFieldOrEvent(FieldVal175);
 end;
 
-procedure InitCameraPrototypesPart16;
+procedure InitCameraPrototypesPart15;
 begin
-Script165.AddCustomFieldOrEvent(FieldVal175);
 FieldVal176 := TSFBool.CreateUndefined(Script165, False, 'traceEnabled');
 Script165.AddCustomFieldOrEvent(FieldVal176);
 Script165.FieldOrEvent('description', True).IsClauseNamesAdd('description');
@@ -930,11 +2570,16 @@ Script165.FieldOrEvent('renderCompleteTime', True).IsClauseNamesAdd('renderCompl
 Script165.FieldOrEvent('movieFormat', True).IsClauseNamesAdd('movieFormat');
 Script165.FieldOrEvent('imageFormat', True).IsClauseNamesAdd('imageFormat');
 Script165.FieldOrEvent('traceEnabled', True).IsClauseNamesAdd('traceEnabled');
-Script165.SetSourceCode('ecmascript:' + LineEnding +
-  'function initialize () // OfflineRenderScript' + LineEnding +
-  '{' + LineEnding +
-  '//  tracePrint (''initialize start...'');\n\n    tracePrint (''... initialize complete'');\n}\n\nfunction set_description (eventValue) // input event received for inputOutput field\n{\n    description = eventValue;\n}\n\nfunction set_enabled (eventValue) // input event received for inputOutput field\n{\n    enabled = eventValue;\n}\n\nfunction set_frameRate (eventValue) // input event received for inputOutput field\n{\n    frameRate = eventValue;\n}\n\nfunction set_frameSize (eventValue) // input event received for inputOutput field\n{\n    frameSize = eventValue;\n}\n\nfunction set_pixelAspectRatio (eventValue) // input event received for inputOutput field\n{\n    pixelAspectRatio = eventValue;\n}\n\nfunction set_startTime (eventValue) // input event received for inputOnly field\n{\n   // do something with input eventValue;\n}\n\nfunction tracePrint (outputValue)\n{\n	if (traceEnabled) alwaysPrint (outputValue);\n}\n\nfunction alwaysPrint (outputValue)\n{\n	// try to ensure outputValue is converted to string despite browser idiosyncracies\n    var outputString = outputValue.toString(); // utility function according to spec\n    if (outputString == null) outputString = outputValue; // direct cast\n\n    if  (description.length > 0)\n         Browser.print (''[OfflineRender: '' + description + ''] '' + outputString + ''\n'');\n    else\n         Browser.print (''[OfflineRender] '' + outputString + ''\n'');' + LineEnding +
-  '}');
+FreeAndNil(CompiledScript165);
+CompiledScript165 := TScript165Script.Create(FieldVal166, FieldVal167, FieldVal168, FieldVal169, FieldVal170, FieldVal172, FieldVal173, FieldVal174, FieldVal175, FieldVal176);
+Script165.SetUrl(['compiled:' + LineEnding +
+  'initialize=Script165_initialize' + LineEnding +
+  'set_description=Script165_set_description' + LineEnding +
+  'set_enabled=Script165_set_enabled' + LineEnding +
+  'set_frameRate=Script165_set_frameRate' + LineEnding +
+  'set_frameSize=Script165_set_frameSize' + LineEnding +
+  'set_pixelAspectRatio=Script165_set_pixelAspectRatio' + LineEnding +
+  'set_startTime=Script165_set_startTime']);
 ProtoDeclare151.Node.AddChildren([Script165]);
 { Add any ROUTEs here, going from Script to other nodes within ProtoBody }
 X3D0.AddPrototype(ProtoDeclare151);
@@ -959,11 +2604,11 @@ Material184 := TMaterialNode.Create;
 Material184.DiffuseColor := Vector3(1, 1, 0.2);
 Appearance183.Material := Material184;
 Shape180.Appearance := Appearance183;
-Transform179.FdChildren.Add(Shape180);
 end;
 
-procedure InitCameraPrototypesPart17;
+procedure InitCameraPrototypesPart16;
 begin
+Transform179.FdChildren.Add(Shape180);
 Anchor178.FdChildren.Add(Transform179);
 Group16.FdChildren.Add(Anchor178);
 X3D0.AddChildren([Group16]);
@@ -988,9 +2633,24 @@ begin
   InitCameraPrototypesPart14;
   InitCameraPrototypesPart15;
   InitCameraPrototypesPart16;
-  InitCameraPrototypesPart17;
   Result := X3D0;
 end;
 
+procedure RegisterCameraPrototypesScripts(const Scene: TCastleSceneCore);
 begin
+  if CompiledScript50 <> nil then
+    CompiledScript50.RegisterHandlers(Scene);
+  if CompiledScript107 <> nil then
+    CompiledScript107.RegisterHandlers(Scene);
+  if CompiledScript138 <> nil then
+    CompiledScript138.RegisterHandlers(Scene);
+  if CompiledScript165 <> nil then
+    CompiledScript165.RegisterHandlers(Scene);
+end;
+
+finalization
+  FreeAndNil(CompiledScript50);
+  FreeAndNil(CompiledScript107);
+  FreeAndNil(CompiledScript138);
+  FreeAndNil(CompiledScript165);
 end.

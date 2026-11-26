@@ -452,6 +452,7 @@ procedure InitCaliforniaCampusesPart8;
 begin
 (ProtoInstance88.Field('enabled') as TSFBool).Value := True;
 (ProtoInstance88.Field('toggleMessage') as TMFString).Send(['ViewpointSequencer tour']);
+(ProtoInstance88.Field('viewpoints') as TMFNode).Clear;
 (ProtoInstance88.Field('viewpoints') as TMFNode).Add(GeoViewpoint26);
 (ProtoInstance88.Field('viewpoints') as TMFNode).Add(GeoViewpoint27);
 (ProtoInstance88.Field('viewpoints') as TMFNode).Add(GeoViewpoint28);
@@ -489,11 +490,11 @@ begin
 (ProtoInstance88.Field('viewpoints') as TMFNode).Add(GeoViewpoint60);
 Viewpoint128 := TViewpointNode.Create;
 Viewpoint128.X3DName := 'View4';
-Viewpoint128.Description := 'View four (-X axis)';
 end;
 
 procedure InitCaliforniaCampusesPart9;
 begin
+Viewpoint128.Description := 'View four (-X axis)';
 Viewpoint128.Orientation := Vector4(0, 1, 0, -1.57);
 Viewpoint128.Position := Vector3(-10, 0, 0);
 (ProtoInstance88.Field('viewpoints') as TMFNode).Add(Viewpoint128);
@@ -533,11 +534,11 @@ GeoLocation129.FdChildren.Add(BooleanToggle137);
 GeoLocation129.AddRoute(TouchSensor136.EventIsActive, BooleanToggle137.EventSet_boolean);
 { ROUTE TourToggle.toggle TO ViewpointTour.set_enabled }
 GeoLocation129.AddRoute(BooleanToggle137.toggle, ProtoInstance88.EventSet_enabled);
-Group20.FdChildren.Add(GeoLocation129);
 end;
 
 procedure InitCaliforniaCampusesPart10;
 begin
+Group20.FdChildren.Add(GeoLocation129);
 { ==================== }
 X3DExternalPrototype140 := TX3DExternalPrototype.Create;
 X3DExternalPrototype140.X3DName := 'ViewPositionOrientation';

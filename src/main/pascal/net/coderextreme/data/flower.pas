@@ -2,13 +2,35 @@ unit flower;
 
 interface
 
-uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported, CastleSceneCore;
 
 function Createflower: TX3DRootNode;
+procedure RegisterflowerScripts(const Scene: TCastleSceneCore);
 
 implementation
 
-uses CastleVectors;
+uses SysUtils, CastleVectors, Math, X3DTime;
+
+type
+  TScript18Script = class
+  private
+    Fcoordinates: array of TVector3;
+    FEvent_coordinates: TX3DEvent;
+    FBack_coordinates: TMFVec3f;
+    FDirty_coordinates: Boolean;
+    FcoordIndexes: array of Int32;
+    FEvent_coordIndexes: TX3DEvent;
+    FBack_coordIndexes: TMFInt32;
+    FDirty_coordIndexes: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AEvent_coordinates: TX3DEvent; const AEvent_coordIndexes: TX3DEvent);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Initialize(Value: TX3DField; const Time: TX3DTime);
+    procedure GenerateCoordinates(const resolution: Single; const Time: TX3DTime);
+    procedure Set_fraction(Value: TX3DField; const Time: TX3DTime);
+  end;
 
 var
   X3D0: TX3DRootNode;
@@ -27,7 +49,153 @@ var
   FieldVal19: TX3DEvent;
   FieldVal20: TX3DEvent;
   FieldVal21: TX3DEvent;
+  CompiledScript18: TScript18Script;
   TimeSensor22: TTimeSensorNode;
+
+constructor TScript18Script.Create(const AEvent_coordinates: TX3DEvent; const AEvent_coordIndexes: TX3DEvent);
+begin
+  inherited Create;
+  Fcoordinates := 0;
+  FEvent_coordinates := nil;
+  FBack_coordinates := TMFVec3f.Create(nil, False, 'coordinates', 0);
+  FDirty_coordinates := False;
+  FcoordIndexes := 0;
+  FEvent_coordIndexes := nil;
+  FBack_coordIndexes := TMFInt32.Create(nil, False, 'coordIndexes', 0);
+  FDirty_coordIndexes := False;
+  FEvent_coordinates := AEvent_coordinates;
+  FEvent_coordIndexes := AEvent_coordIndexes;
+end;
+
+destructor TScript18Script.Destroy;
+begin
+  FreeAndNil(FBack_coordinates);
+  FreeAndNil(FBack_coordIndexes);
+  inherited Destroy;
+end;
+
+procedure TScript18Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_coordinates then
+  begin
+    FDirty_coordinates := False;
+    if FEvent_coordinates <> nil then
+    begin
+      FBack_coordinates.Value := Fcoordinates;
+      FEvent_coordinates.Send(FBack_coordinates, Time);
+    end;
+  end;
+  if FDirty_coordIndexes then
+  begin
+    FDirty_coordIndexes := False;
+    if FEvent_coordIndexes <> nil then
+    begin
+      FBack_coordIndexes.Value := FcoordIndexes;
+      FEvent_coordIndexes.Send(FBack_coordIndexes, Time);
+    end;
+  end;
+end;
+
+procedure TScript18Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script18_initialize', {$ifdef FPC}@{$endif}Initialize);
+  Scene.RegisterCompiledScript('Script18_set_fraction', {$ifdef FPC}@{$endif}Set_fraction);
+end;
+
+procedure TScript18Script.Initialize(Value: TX3DField; const Time: TX3DTime);
+var
+  localci: array of Int32;
+  arrIndex: Integer;
+  i: Integer;
+  j: Integer;
+begin
+  GenerateCoordinates(resolution, Time);
+  localci := [];
+  arrIndex := 0;
+  for i := 0 to (resolution - 1) - 1 do
+  begin
+    for j := 0 to (resolution - 1) - 1 do
+    begin
+      localci[arrIndex := arrIndex + 1] := i * resolution + j;
+      localci[arrIndex := arrIndex + 1] := i * resolution + j + 1;
+      localci[arrIndex := arrIndex + 1] := i + 1 * resolution + j + 1;
+      localci[arrIndex := arrIndex + 1] := i + 1 * resolution + j;
+      localci[arrIndex := arrIndex + 1] := -1;
+    end;
+  end;
+  FcoordIndexes := localci; FDirty_coordIndexes := True;
+  FlushOutputs(Time);
+end;
+
+procedure TScript18Script.GenerateCoordinates(const resolution: Single; const Time: TX3DTime);
+var
+  theta: Single;
+  phi: Single;
+  delta: Single;
+  localc: array of TVector3;
+  arrIndex: Integer;
+  i: Integer;
+  j: Integer;
+  rho: Single;
+begin
+  theta := 0.0;
+  phi := 0.0;
+  delta := 2 * 3.141592653 / resolution - 1;
+  localc := [];
+  arrIndex := 0;
+  for i := 0 to (resolution) - 1 do
+  begin
+    for j := 0 to (resolution) - 1 do
+    begin
+      rho := e + f * Cos(g * theta) * Cos(h * phi);
+      localc[arrIndex := arrIndex + 1] := Vector3(rho * Cos(phi) * Cos(theta), rho * Cos(phi) * Sin(theta), rho * Sin(phi));
+      theta := theta + (delta);
+    end;
+    phi := phi + (delta);
+  end;
+  Fcoordinates := localc; FDirty_coordinates := True;
+end;
+
+procedure TScript18Script.Set_fraction(Value: TX3DField; const Time: TX3DTime);
+var
+  choice: Integer;
+begin
+  t := t + (0.5);
+  p := p + (0.5);
+  choice := Floor(Random * 4);
+  case choice of
+    0:
+    begin
+      e := e + (Floor(Random * 2) * 2 - 1);
+    end;
+    1:
+    begin
+      f := f + (Floor(Random * 2) * 2 - 1);
+    end;
+    2:
+    begin
+      g := g + (Floor(Random * 2) * 2 - 1);
+    end;
+    3:
+    begin
+      h := h + (Floor(Random * 2) * 2 - 1);
+    end;
+  end;
+  if f < 1 then
+  begin
+    f := 10;
+  end;
+  if g < 1 then
+  begin
+    g := 4;
+  end;
+  if h < 1 then
+  begin
+    h := 4;
+  end;
+  GenerateCoordinates(resolution, Time);
+  FlushOutputs(Time);
+end;
 
 procedure InitflowerPart0;
 begin
@@ -98,82 +266,11 @@ Script18.AddCustomFieldOrEvent(FieldVal21);
 { <field accessType="inputOutput" name="t" type="SFFloat" value="0"/> }
 { <field accessType="inputOutput" name="p" type="SFFloat" value="0"/> }
 { <field accessType="inputOutput" name="resolution" type="SFInt32" value="150"/> }
-Script18.SetSourceCode('ecmascript:' + LineEnding +
-  '' + LineEnding +
-  'var e = 5;' + LineEnding +
-  'var f = 5;' + LineEnding +
-  'var g = 5;' + LineEnding +
-  'var h = 5;' + LineEnding +
-  'var resolution = 100;' + LineEnding +
-  'var t = 0;' + LineEnding +
-  'var p = 0;' + LineEnding +
-  '' + LineEnding +
-  'function initialize() {' + LineEnding +
-  '     generateCoordinates(resolution);' + LineEnding +
-  '     var localci = new MFInt32();' + LineEnding +
-  '     var arrIndex = 0;' + LineEnding +
-  '     for (var i = 0; i < resolution-1; i++) {' + LineEnding +
-  '     	for (var j = 0; j < resolution-1; j++) {' + LineEnding +
-  '	     localci[arrIndex++] = i*resolution+j;' + LineEnding +
-  '	     localci[arrIndex++] = i*resolution+j+1;' + LineEnding +
-  '	     localci[arrIndex++] = (i+1)*resolution+j+1;' + LineEnding +
-  '	     localci[arrIndex++] = (i+1)*resolution+j;' + LineEnding +
-  '	     localci[arrIndex++] = -1;' + LineEnding +
-  '	}' + LineEnding +
-  '    }' + LineEnding +
-  '    coordIndexes = localci;' + LineEnding +
-  '}' + LineEnding +
-  '' + LineEnding +
-  'function generateCoordinates(resolution) {' + LineEnding +
-  '     var theta = 0.0;' + LineEnding +
-  '     var phi = 0.0;' + LineEnding +
-  '     var delta = (2 * 3.141592653) / (resolution-1);' + LineEnding +
-  '     var localc = new MFVec3f();' + LineEnding +
-  '     var arrIndex = 0;' + LineEnding +
-  '     for (var i = 0; i < resolution; i++) {' + LineEnding +
-  '     	for (var j = 0; j < resolution; j++) {' + LineEnding +
-  '		var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);' + LineEnding +
-  '		localc[arrIndex++] = new SFVec3f(' + LineEnding +
-  '			rho * Math.cos(phi) * Math.cos(theta),' + LineEnding +
-  '			rho * Math.cos(phi) * Math.sin(theta),' + LineEnding +
-  '			rho * Math.sin(phi)' + LineEnding +
-  '		);' + LineEnding +
-  '		theta += delta;' + LineEnding +
-  '	}' + LineEnding +
-  '	phi += delta;' + LineEnding +
-  '     }' + LineEnding +
-  '     coordinates = localc;' + LineEnding +
-  '}' + LineEnding +
-  '' + LineEnding +
-  'function set_fraction(fraction, eventTime) {' + LineEnding +
-  '	t += 0.5;' + LineEnding +
-  '	p += 0.5;' + LineEnding +
-  '	var choice = Math.floor(Math.random() * 4);' + LineEnding +
-  '	switch (choice) {' + LineEnding +
-  '	case 0:' + LineEnding +
-  '		e += Math.floor(Math.random() * 2) * 2 - 1;' + LineEnding +
-  '		break;' + LineEnding +
-  '	case 1:' + LineEnding +
-  '		f += Math.floor(Math.random() * 2) * 2 - 1;' + LineEnding +
-  '		break;' + LineEnding +
-  '	case 2:' + LineEnding +
-  '		g += Math.floor(Math.random() * 2) * 2 - 1;' + LineEnding +
-  '		break;' + LineEnding +
-  '	case 3:' + LineEnding +
-  '		h += Math.floor(Math.random() * 2) * 2 - 1;' + LineEnding +
-  '		break;' + LineEnding +
-  '	}' + LineEnding +
-  '	if (f < 1) {' + LineEnding +
-  '		f = 10;' + LineEnding +
-  '	}' + LineEnding +
-  '	if (g < 1) {' + LineEnding +
-  '		g = 4;' + LineEnding +
-  '	}' + LineEnding +
-  '	if (h < 1) {' + LineEnding +
-  '		h = 4;' + LineEnding +
-  '	}' + LineEnding +
-  '	generateCoordinates(resolution);' + LineEnding +
-  '}');
+FreeAndNil(CompiledScript18);
+CompiledScript18 := TScript18Script.Create(FieldVal20, FieldVal21);
+Script18.SetUrl(['compiled:' + LineEnding +
+  'initialize=Script18_initialize' + LineEnding +
+  'set_fraction=Script18_set_fraction']);
 Group7.FdChildren.Add(Script18);
 TimeSensor22 := TTimeSensorNode.Create;
 TimeSensor22.X3DName := 'Clock';
@@ -196,5 +293,12 @@ begin
   Result := X3D0;
 end;
 
+procedure RegisterflowerScripts(const Scene: TCastleSceneCore);
 begin
+  if CompiledScript18 <> nil then
+    CompiledScript18.RegisterHandlers(Scene);
+end;
+
+finalization
+  FreeAndNil(CompiledScript18);
 end.

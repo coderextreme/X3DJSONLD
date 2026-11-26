@@ -4696,7 +4696,7 @@ begin
 PositionInterpolator606.FieldOrEvent('value_changed', True).IsClauseNamesAdd('HumanoidRoot_translation_changed');
 ProtoDeclare20.Node.AddChildren([PositionInterpolator606]);
 { ROUTE BehaviorClock.fraction_changed TO HumanoidRootPI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, PositionInterpolator606.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, PositionInterpolator606.EventSet_fraction);
 OrientationInterpolator608 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator608.X3DName := 'HumanoidRootOI';
 OrientationInterpolator608.FieldOrEvent('key', True).IsClauseNamesAdd('HumanoidRoot_rotation_key');
@@ -4704,7 +4704,7 @@ OrientationInterpolator608.FieldOrEvent('keyValue', True).IsClauseNamesAdd('Huma
 OrientationInterpolator608.FieldOrEvent('value_changed', True).IsClauseNamesAdd('HumanoidRoot_rotation_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator608]);
 { ROUTE BehaviorClock.fraction_changed TO HumanoidRootOI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator608.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator608.EventSet_fraction);
 OrientationInterpolator610 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator610.X3DName := 'c1_OI';
 OrientationInterpolator610.FieldOrEvent('key', True).IsClauseNamesAdd('c1_key');
@@ -4712,7 +4712,7 @@ OrientationInterpolator610.FieldOrEvent('keyValue', True).IsClauseNamesAdd('c1_k
 OrientationInterpolator610.FieldOrEvent('value_changed', True).IsClauseNamesAdd('c1_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator610]);
 { ROUTE BehaviorClock.fraction_changed TO c1_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator610.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator610.EventSet_fraction);
 OrientationInterpolator612 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator612.X3DName := 'c2_OI';
 OrientationInterpolator612.FieldOrEvent('key', True).IsClauseNamesAdd('c2_key');
@@ -4720,7 +4720,7 @@ OrientationInterpolator612.FieldOrEvent('keyValue', True).IsClauseNamesAdd('c2_k
 OrientationInterpolator612.FieldOrEvent('value_changed', True).IsClauseNamesAdd('c2_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator612]);
 { ROUTE BehaviorClock.fraction_changed TO c2_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator612.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator612.EventSet_fraction);
 OrientationInterpolator614 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator614.X3DName := 'c3_OI';
 OrientationInterpolator614.FieldOrEvent('key', True).IsClauseNamesAdd('c3_key');
@@ -4728,7 +4728,7 @@ OrientationInterpolator614.FieldOrEvent('keyValue', True).IsClauseNamesAdd('c3_k
 OrientationInterpolator614.FieldOrEvent('value_changed', True).IsClauseNamesAdd('c3_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator614]);
 { ROUTE BehaviorClock.fraction_changed TO c3_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator614.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator614.EventSet_fraction);
 OrientationInterpolator616 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator616.X3DName := 'c4_OI';
 OrientationInterpolator616.FieldOrEvent('key', True).IsClauseNamesAdd('c4_key');
@@ -4740,7 +4740,7 @@ begin
 OrientationInterpolator616.FieldOrEvent('value_changed', True).IsClauseNamesAdd('c4_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator616]);
 { ROUTE BehaviorClock.fraction_changed TO c4_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator616.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator616.EventSet_fraction);
 OrientationInterpolator618 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator618.X3DName := 'c5_OI';
 OrientationInterpolator618.FieldOrEvent('key', True).IsClauseNamesAdd('c5_key');
@@ -4748,7 +4748,7 @@ OrientationInterpolator618.FieldOrEvent('keyValue', True).IsClauseNamesAdd('c5_k
 OrientationInterpolator618.FieldOrEvent('value_changed', True).IsClauseNamesAdd('c5_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator618]);
 { ROUTE BehaviorClock.fraction_changed TO c5_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator618.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator618.EventSet_fraction);
 OrientationInterpolator620 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator620.X3DName := 'c6_OI';
 OrientationInterpolator620.FieldOrEvent('key', True).IsClauseNamesAdd('c6_key');
@@ -4756,7 +4756,7 @@ OrientationInterpolator620.FieldOrEvent('keyValue', True).IsClauseNamesAdd('c6_k
 OrientationInterpolator620.FieldOrEvent('value_changed', True).IsClauseNamesAdd('c6_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator620]);
 { ROUTE BehaviorClock.fraction_changed TO c6_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator620.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator620.EventSet_fraction);
 OrientationInterpolator622 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator622.X3DName := 'c7_OI';
 OrientationInterpolator622.FieldOrEvent('key', True).IsClauseNamesAdd('c7_key');
@@ -4764,7 +4764,7 @@ OrientationInterpolator622.FieldOrEvent('keyValue', True).IsClauseNamesAdd('c7_k
 OrientationInterpolator622.FieldOrEvent('value_changed', True).IsClauseNamesAdd('c7_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator622]);
 { ROUTE BehaviorClock.fraction_changed TO c7_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator622.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator622.EventSet_fraction);
 OrientationInterpolator624 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator624.X3DName := 'jaw_OI';
 OrientationInterpolator624.FieldOrEvent('key', True).IsClauseNamesAdd('jaw_key');
@@ -4772,7 +4772,7 @@ OrientationInterpolator624.FieldOrEvent('keyValue', True).IsClauseNamesAdd('jaw_
 OrientationInterpolator624.FieldOrEvent('value_changed', True).IsClauseNamesAdd('jaw_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator624]);
 { ROUTE BehaviorClock.fraction_changed TO jaw_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator624.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator624.EventSet_fraction);
 OrientationInterpolator626 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator626.X3DName := 'l1_OI';
 OrientationInterpolator626.FieldOrEvent('key', True).IsClauseNamesAdd('l1_key');
@@ -4784,7 +4784,7 @@ begin
 OrientationInterpolator626.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l1_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator626]);
 { ROUTE BehaviorClock.fraction_changed TO l1_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator626.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator626.EventSet_fraction);
 OrientationInterpolator628 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator628.X3DName := 'l2_OI';
 OrientationInterpolator628.FieldOrEvent('key', True).IsClauseNamesAdd('l2_key');
@@ -4792,7 +4792,7 @@ OrientationInterpolator628.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l2_k
 OrientationInterpolator628.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l2_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator628]);
 { ROUTE BehaviorClock.fraction_changed TO l2_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator628.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator628.EventSet_fraction);
 OrientationInterpolator630 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator630.X3DName := 'l3_OI';
 OrientationInterpolator630.FieldOrEvent('key', True).IsClauseNamesAdd('l3_key');
@@ -4800,7 +4800,7 @@ OrientationInterpolator630.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l3_k
 OrientationInterpolator630.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l3_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator630]);
 { ROUTE BehaviorClock.fraction_changed TO l3_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator630.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator630.EventSet_fraction);
 OrientationInterpolator632 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator632.X3DName := 'l4_OI';
 OrientationInterpolator632.FieldOrEvent('key', True).IsClauseNamesAdd('l4_key');
@@ -4808,7 +4808,7 @@ OrientationInterpolator632.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l4_k
 OrientationInterpolator632.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l4_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator632]);
 { ROUTE BehaviorClock.fraction_changed TO l4_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator632.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator632.EventSet_fraction);
 OrientationInterpolator634 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator634.X3DName := 'l5_OI';
 OrientationInterpolator634.FieldOrEvent('key', True).IsClauseNamesAdd('l5_key');
@@ -4816,7 +4816,7 @@ OrientationInterpolator634.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l5_k
 OrientationInterpolator634.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l5_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator634]);
 { ROUTE BehaviorClock.fraction_changed TO l5_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator634.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator634.EventSet_fraction);
 OrientationInterpolator636 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator636.X3DName := 'l_acromioclavicular_OI';
 OrientationInterpolator636.FieldOrEvent('key', True).IsClauseNamesAdd('l_acromioclavicular_key');
@@ -4828,7 +4828,7 @@ begin
 OrientationInterpolator636.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_acromioclavicular_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator636]);
 { ROUTE BehaviorClock.fraction_changed TO l_acromioclavicular_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator636.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator636.EventSet_fraction);
 OrientationInterpolator638 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator638.X3DName := 'l_ankle_OI';
 OrientationInterpolator638.FieldOrEvent('key', True).IsClauseNamesAdd('l_ankle_key');
@@ -4836,7 +4836,7 @@ OrientationInterpolator638.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_an
 OrientationInterpolator638.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_ankle_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator638]);
 { ROUTE BehaviorClock.fraction_changed TO l_ankle_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator638.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator638.EventSet_fraction);
 OrientationInterpolator640 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator640.X3DName := 'l_calf_OI';
 OrientationInterpolator640.FieldOrEvent('key', True).IsClauseNamesAdd('l_calf_key');
@@ -4844,7 +4844,7 @@ OrientationInterpolator640.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_ca
 OrientationInterpolator640.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_calf_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator640]);
 { ROUTE BehaviorClock.fraction_changed TO l_calf_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator640.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator640.EventSet_fraction);
 OrientationInterpolator642 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator642.X3DName := 'l_clavicle_OI';
 OrientationInterpolator642.FieldOrEvent('key', True).IsClauseNamesAdd('l_clavicle_key');
@@ -4852,7 +4852,7 @@ OrientationInterpolator642.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_cl
 OrientationInterpolator642.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_clavicle_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator642]);
 { ROUTE BehaviorClock.fraction_changed TO l_clavicle_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator642.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator642.EventSet_fraction);
 OrientationInterpolator644 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator644.X3DName := 'l_elbow_OI';
 OrientationInterpolator644.FieldOrEvent('key', True).IsClauseNamesAdd('l_elbow_key');
@@ -4860,7 +4860,7 @@ OrientationInterpolator644.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_el
 OrientationInterpolator644.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_elbow_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator644]);
 { ROUTE BehaviorClock.fraction_changed TO l_elbow_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator644.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator644.EventSet_fraction);
 OrientationInterpolator646 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator646.X3DName := 'l_eyeball_OI';
 OrientationInterpolator646.FieldOrEvent('key', True).IsClauseNamesAdd('l_eyeball_key');
@@ -4872,7 +4872,7 @@ begin
 OrientationInterpolator646.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_eyeball_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator646]);
 { ROUTE BehaviorClock.fraction_changed TO l_eyeball_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator646.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator646.EventSet_fraction);
 OrientationInterpolator648 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator648.X3DName := 'l_eyeball_joint_OI';
 OrientationInterpolator648.FieldOrEvent('key', True).IsClauseNamesAdd('l_eyeball_joint_key');
@@ -4880,7 +4880,7 @@ OrientationInterpolator648.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_ey
 OrientationInterpolator648.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_eyeball_joint_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator648]);
 { ROUTE BehaviorClock.fraction_changed TO l_eyeball_joint_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator648.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator648.EventSet_fraction);
 OrientationInterpolator650 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator650.X3DName := 'l_eyebrow_OI';
 OrientationInterpolator650.FieldOrEvent('key', True).IsClauseNamesAdd('l_eyebrow_key');
@@ -4888,7 +4888,7 @@ OrientationInterpolator650.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_ey
 OrientationInterpolator650.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_eyebrow_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator650]);
 { ROUTE BehaviorClock.fraction_changed TO l_eyebrow_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator650.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator650.EventSet_fraction);
 OrientationInterpolator652 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator652.X3DName := 'l_eyebrow_joint_OI';
 OrientationInterpolator652.FieldOrEvent('key', True).IsClauseNamesAdd('l_eyebrow_joint_key');
@@ -4896,7 +4896,7 @@ OrientationInterpolator652.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_ey
 OrientationInterpolator652.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_eyebrow_joint_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator652]);
 { ROUTE BehaviorClock.fraction_changed TO l_eyebrow_joint_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator652.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator652.EventSet_fraction);
 OrientationInterpolator654 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator654.X3DName := 'l_eyelid_OI';
 OrientationInterpolator654.FieldOrEvent('key', True).IsClauseNamesAdd('l_eyelid_key');
@@ -4904,7 +4904,7 @@ OrientationInterpolator654.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_ey
 OrientationInterpolator654.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_eyelid_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator654]);
 { ROUTE BehaviorClock.fraction_changed TO l_eyelid_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator654.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator654.EventSet_fraction);
 OrientationInterpolator656 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator656.X3DName := 'l_eyelid_joint_OI';
 OrientationInterpolator656.FieldOrEvent('key', True).IsClauseNamesAdd('l_eyelid_joint_key');
@@ -4916,7 +4916,7 @@ begin
 OrientationInterpolator656.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_eyelid_joint_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator656]);
 { ROUTE BehaviorClock.fraction_changed TO l_eyelid_joint_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator656.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator656.EventSet_fraction);
 OrientationInterpolator658 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator658.X3DName := 'l_forearm_OI';
 OrientationInterpolator658.FieldOrEvent('key', True).IsClauseNamesAdd('l_forearm_key');
@@ -4924,7 +4924,7 @@ OrientationInterpolator658.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_fo
 OrientationInterpolator658.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_forearm_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator658]);
 { ROUTE BehaviorClock.fraction_changed TO l_forearm_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator658.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator658.EventSet_fraction);
 OrientationInterpolator660 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator660.X3DName := 'l_forefoot_OI';
 OrientationInterpolator660.FieldOrEvent('key', True).IsClauseNamesAdd('l_forefoot_key');
@@ -4932,7 +4932,7 @@ OrientationInterpolator660.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_fo
 OrientationInterpolator660.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_forefoot_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator660]);
 { ROUTE BehaviorClock.fraction_changed TO l_forefoot_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator660.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator660.EventSet_fraction);
 OrientationInterpolator662 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator662.X3DName := 'l_hand_OI';
 OrientationInterpolator662.FieldOrEvent('key', True).IsClauseNamesAdd('l_hand_key');
@@ -4940,7 +4940,7 @@ OrientationInterpolator662.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_ha
 OrientationInterpolator662.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_hand_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator662]);
 { ROUTE BehaviorClock.fraction_changed TO l_hand_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator662.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator662.EventSet_fraction);
 OrientationInterpolator664 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator664.X3DName := 'l_hindfoot_OI';
 OrientationInterpolator664.FieldOrEvent('key', True).IsClauseNamesAdd('l_hindfoot_key');
@@ -4948,7 +4948,7 @@ OrientationInterpolator664.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_hi
 OrientationInterpolator664.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_hindfoot_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator664]);
 { ROUTE BehaviorClock.fraction_changed TO l_hindfoot_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator664.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator664.EventSet_fraction);
 OrientationInterpolator666 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator666.X3DName := 'l_hip_OI';
 OrientationInterpolator666.FieldOrEvent('key', True).IsClauseNamesAdd('l_hip_key');
@@ -4960,7 +4960,7 @@ begin
 OrientationInterpolator666.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_hip_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator666]);
 { ROUTE BehaviorClock.fraction_changed TO l_hip_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator666.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator666.EventSet_fraction);
 OrientationInterpolator668 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator668.X3DName := 'l_index0_OI';
 OrientationInterpolator668.FieldOrEvent('key', True).IsClauseNamesAdd('l_index0_key');
@@ -4968,7 +4968,7 @@ OrientationInterpolator668.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_in
 OrientationInterpolator668.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_index0_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator668]);
 { ROUTE BehaviorClock.fraction_changed TO l_index0_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator668.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator668.EventSet_fraction);
 OrientationInterpolator670 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator670.X3DName := 'l_index1_OI';
 OrientationInterpolator670.FieldOrEvent('key', True).IsClauseNamesAdd('l_index1_key');
@@ -4976,7 +4976,7 @@ OrientationInterpolator670.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_in
 OrientationInterpolator670.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_index1_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator670]);
 { ROUTE BehaviorClock.fraction_changed TO l_index1_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator670.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator670.EventSet_fraction);
 OrientationInterpolator672 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator672.X3DName := 'l_index2_OI';
 OrientationInterpolator672.FieldOrEvent('key', True).IsClauseNamesAdd('l_index2_key');
@@ -4984,7 +4984,7 @@ OrientationInterpolator672.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_in
 OrientationInterpolator672.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_index2_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator672]);
 { ROUTE BehaviorClock.fraction_changed TO l_index2_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator672.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator672.EventSet_fraction);
 OrientationInterpolator674 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator674.X3DName := 'l_index3_OI';
 OrientationInterpolator674.FieldOrEvent('key', True).IsClauseNamesAdd('l_index3_key');
@@ -4992,7 +4992,7 @@ OrientationInterpolator674.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_in
 OrientationInterpolator674.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_index3_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator674]);
 { ROUTE BehaviorClock.fraction_changed TO l_index3_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator674.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator674.EventSet_fraction);
 OrientationInterpolator676 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator676.X3DName := 'l_index_distal_OI';
 OrientationInterpolator676.FieldOrEvent('key', True).IsClauseNamesAdd('l_index_distal_key');
@@ -5004,7 +5004,7 @@ begin
 OrientationInterpolator676.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_index_distal_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator676]);
 { ROUTE BehaviorClock.fraction_changed TO l_index_distal_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator676.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator676.EventSet_fraction);
 OrientationInterpolator678 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator678.X3DName := 'l_index_metacarpal_OI';
 OrientationInterpolator678.FieldOrEvent('key', True).IsClauseNamesAdd('l_index_metacarpal_key');
@@ -5012,7 +5012,7 @@ OrientationInterpolator678.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_in
 OrientationInterpolator678.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_index_metacarpal_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator678]);
 { ROUTE BehaviorClock.fraction_changed TO l_index_metacarpal_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator678.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator678.EventSet_fraction);
 OrientationInterpolator680 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator680.X3DName := 'l_index_middle_OI';
 OrientationInterpolator680.FieldOrEvent('key', True).IsClauseNamesAdd('l_index_middle_key');
@@ -5020,7 +5020,7 @@ OrientationInterpolator680.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_in
 OrientationInterpolator680.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_index_middle_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator680]);
 { ROUTE BehaviorClock.fraction_changed TO l_index_middle_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator680.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator680.EventSet_fraction);
 OrientationInterpolator682 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator682.X3DName := 'l_index_proximal_OI';
 OrientationInterpolator682.FieldOrEvent('key', True).IsClauseNamesAdd('l_index_proximal_key');
@@ -5028,7 +5028,7 @@ OrientationInterpolator682.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_in
 OrientationInterpolator682.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_index_proximal_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator682]);
 { ROUTE BehaviorClock.fraction_changed TO l_index_proximal_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator682.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator682.EventSet_fraction);
 OrientationInterpolator684 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator684.X3DName := 'l_knee_OI';
 OrientationInterpolator684.FieldOrEvent('key', True).IsClauseNamesAdd('l_knee_key');
@@ -5036,7 +5036,7 @@ OrientationInterpolator684.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_kn
 OrientationInterpolator684.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_knee_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator684]);
 { ROUTE BehaviorClock.fraction_changed TO l_knee_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator684.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator684.EventSet_fraction);
 OrientationInterpolator686 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator686.X3DName := 'l_metatarsal_OI';
 OrientationInterpolator686.FieldOrEvent('key', True).IsClauseNamesAdd('l_metatarsal_key');
@@ -5048,7 +5048,7 @@ begin
 OrientationInterpolator686.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_metatarsal_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator686]);
 { ROUTE BehaviorClock.fraction_changed TO l_metatarsal_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator686.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator686.EventSet_fraction);
 OrientationInterpolator688 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator688.X3DName := 'l_middistal_OI';
 OrientationInterpolator688.FieldOrEvent('key', True).IsClauseNamesAdd('l_middistal_key');
@@ -5056,7 +5056,7 @@ OrientationInterpolator688.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_mi
 OrientationInterpolator688.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_middistal_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator688]);
 { ROUTE BehaviorClock.fraction_changed TO l_middistal_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator688.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator688.EventSet_fraction);
 OrientationInterpolator690 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator690.X3DName := 'l_middle0_OI';
 OrientationInterpolator690.FieldOrEvent('key', True).IsClauseNamesAdd('l_middle0_key');
@@ -5064,7 +5064,7 @@ OrientationInterpolator690.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_mi
 OrientationInterpolator690.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_middle0_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator690]);
 { ROUTE BehaviorClock.fraction_changed TO l_middle0_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator690.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator690.EventSet_fraction);
 OrientationInterpolator692 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator692.X3DName := 'l_middle1_OI';
 OrientationInterpolator692.FieldOrEvent('key', True).IsClauseNamesAdd('l_middle1_key');
@@ -5072,7 +5072,7 @@ OrientationInterpolator692.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_mi
 OrientationInterpolator692.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_middle1_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator692]);
 { ROUTE BehaviorClock.fraction_changed TO l_middle1_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator692.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator692.EventSet_fraction);
 OrientationInterpolator694 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator694.X3DName := 'l_middle2_OI';
 OrientationInterpolator694.FieldOrEvent('key', True).IsClauseNamesAdd('l_middle2_key');
@@ -5080,7 +5080,7 @@ OrientationInterpolator694.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_mi
 OrientationInterpolator694.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_middle2_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator694]);
 { ROUTE BehaviorClock.fraction_changed TO l_middle2_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator694.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator694.EventSet_fraction);
 OrientationInterpolator696 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator696.X3DName := 'l_middle3_OI';
 OrientationInterpolator696.FieldOrEvent('key', True).IsClauseNamesAdd('l_middle3_key');
@@ -5092,7 +5092,7 @@ begin
 OrientationInterpolator696.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_middle3_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator696]);
 { ROUTE BehaviorClock.fraction_changed TO l_middle3_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator696.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator696.EventSet_fraction);
 OrientationInterpolator698 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator698.X3DName := 'l_middle_distal_OI';
 OrientationInterpolator698.FieldOrEvent('key', True).IsClauseNamesAdd('l_middle_distal_key');
@@ -5100,7 +5100,7 @@ OrientationInterpolator698.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_mi
 OrientationInterpolator698.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_middle_distal_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator698]);
 { ROUTE BehaviorClock.fraction_changed TO l_middle_distal_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator698.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator698.EventSet_fraction);
 OrientationInterpolator700 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator700.X3DName := 'l_middle_metacarpal_OI';
 OrientationInterpolator700.FieldOrEvent('key', True).IsClauseNamesAdd('l_middle_metacarpal_key');
@@ -5108,7 +5108,7 @@ OrientationInterpolator700.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_mi
 OrientationInterpolator700.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_middle_metacarpal_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator700]);
 { ROUTE BehaviorClock.fraction_changed TO l_middle_metacarpal_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator700.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator700.EventSet_fraction);
 OrientationInterpolator702 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator702.X3DName := 'l_middle_middle_OI';
 OrientationInterpolator702.FieldOrEvent('key', True).IsClauseNamesAdd('l_middle_middle_key');
@@ -5116,7 +5116,7 @@ OrientationInterpolator702.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_mi
 OrientationInterpolator702.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_middle_middle_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator702]);
 { ROUTE BehaviorClock.fraction_changed TO l_middle_middle_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator702.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator702.EventSet_fraction);
 OrientationInterpolator704 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator704.X3DName := 'l_middle_proximal_OI';
 OrientationInterpolator704.FieldOrEvent('key', True).IsClauseNamesAdd('l_middle_proximal_key');
@@ -5124,7 +5124,7 @@ OrientationInterpolator704.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_mi
 OrientationInterpolator704.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_middle_proximal_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator704]);
 { ROUTE BehaviorClock.fraction_changed TO l_middle_proximal_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator704.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator704.EventSet_fraction);
 OrientationInterpolator706 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator706.X3DName := 'l_midproximal_OI';
 OrientationInterpolator706.FieldOrEvent('key', True).IsClauseNamesAdd('l_midproximal_key');
@@ -5136,7 +5136,7 @@ begin
 OrientationInterpolator706.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_midproximal_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator706]);
 { ROUTE BehaviorClock.fraction_changed TO l_midproximal_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator706.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator706.EventSet_fraction);
 OrientationInterpolator708 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator708.X3DName := 'l_midtarsal_OI';
 OrientationInterpolator708.FieldOrEvent('key', True).IsClauseNamesAdd('l_midtarsal_key');
@@ -5144,7 +5144,7 @@ OrientationInterpolator708.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_mi
 OrientationInterpolator708.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_midtarsal_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator708]);
 { ROUTE BehaviorClock.fraction_changed TO l_midtarsal_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator708.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator708.EventSet_fraction);
 OrientationInterpolator710 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator710.X3DName := 'l_pinky0_OI';
 OrientationInterpolator710.FieldOrEvent('key', True).IsClauseNamesAdd('l_pinky0_key');
@@ -5152,7 +5152,7 @@ OrientationInterpolator710.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_pi
 OrientationInterpolator710.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_pinky0_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator710]);
 { ROUTE BehaviorClock.fraction_changed TO l_pinky0_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator710.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator710.EventSet_fraction);
 OrientationInterpolator712 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator712.X3DName := 'l_pinky1_OI';
 OrientationInterpolator712.FieldOrEvent('key', True).IsClauseNamesAdd('l_pinky1_key');
@@ -5160,7 +5160,7 @@ OrientationInterpolator712.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_pi
 OrientationInterpolator712.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_pinky1_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator712]);
 { ROUTE BehaviorClock.fraction_changed TO l_pinky1_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator712.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator712.EventSet_fraction);
 OrientationInterpolator714 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator714.X3DName := 'l_pinky2_OI';
 OrientationInterpolator714.FieldOrEvent('key', True).IsClauseNamesAdd('l_pinky2_key');
@@ -5168,7 +5168,7 @@ OrientationInterpolator714.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_pi
 OrientationInterpolator714.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_pinky2_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator714]);
 { ROUTE BehaviorClock.fraction_changed TO l_pinky2_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator714.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator714.EventSet_fraction);
 OrientationInterpolator716 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator716.X3DName := 'l_pinky3_OI';
 OrientationInterpolator716.FieldOrEvent('key', True).IsClauseNamesAdd('l_pinky3_key');
@@ -5180,7 +5180,7 @@ begin
 OrientationInterpolator716.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_pinky3_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator716]);
 { ROUTE BehaviorClock.fraction_changed TO l_pinky3_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator716.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator716.EventSet_fraction);
 OrientationInterpolator718 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator718.X3DName := 'l_pinky_distal_OI';
 OrientationInterpolator718.FieldOrEvent('key', True).IsClauseNamesAdd('l_pinky_distal_key');
@@ -5188,7 +5188,7 @@ OrientationInterpolator718.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_pi
 OrientationInterpolator718.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_pinky_distal_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator718]);
 { ROUTE BehaviorClock.fraction_changed TO l_pinky_distal_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator718.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator718.EventSet_fraction);
 OrientationInterpolator720 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator720.X3DName := 'l_pinky_metacarpal_OI';
 OrientationInterpolator720.FieldOrEvent('key', True).IsClauseNamesAdd('l_pinky_metacarpal_key');
@@ -5196,7 +5196,7 @@ OrientationInterpolator720.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_pi
 OrientationInterpolator720.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_pinky_metacarpal_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator720]);
 { ROUTE BehaviorClock.fraction_changed TO l_pinky_metacarpal_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator720.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator720.EventSet_fraction);
 OrientationInterpolator722 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator722.X3DName := 'l_pinky_middle_OI';
 OrientationInterpolator722.FieldOrEvent('key', True).IsClauseNamesAdd('l_pinky_middle_key');
@@ -5204,7 +5204,7 @@ OrientationInterpolator722.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_pi
 OrientationInterpolator722.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_pinky_middle_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator722]);
 { ROUTE BehaviorClock.fraction_changed TO l_pinky_middle_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator722.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator722.EventSet_fraction);
 OrientationInterpolator724 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator724.X3DName := 'l_pinky_proximal_OI';
 OrientationInterpolator724.FieldOrEvent('key', True).IsClauseNamesAdd('l_pinky_proximal_key');
@@ -5212,7 +5212,7 @@ OrientationInterpolator724.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_pi
 OrientationInterpolator724.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_pinky_proximal_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator724]);
 { ROUTE BehaviorClock.fraction_changed TO l_pinky_proximal_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator724.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator724.EventSet_fraction);
 OrientationInterpolator726 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator726.X3DName := 'l_ring0_OI';
 OrientationInterpolator726.FieldOrEvent('key', True).IsClauseNamesAdd('l_ring0_key');
@@ -5224,7 +5224,7 @@ begin
 OrientationInterpolator726.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_ring0_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator726]);
 { ROUTE BehaviorClock.fraction_changed TO l_ring0_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator726.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator726.EventSet_fraction);
 OrientationInterpolator728 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator728.X3DName := 'l_ring1_OI';
 OrientationInterpolator728.FieldOrEvent('key', True).IsClauseNamesAdd('l_ring1_key');
@@ -5232,7 +5232,7 @@ OrientationInterpolator728.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_ri
 OrientationInterpolator728.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_ring1_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator728]);
 { ROUTE BehaviorClock.fraction_changed TO l_ring1_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator728.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator728.EventSet_fraction);
 OrientationInterpolator730 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator730.X3DName := 'l_ring2_OI';
 OrientationInterpolator730.FieldOrEvent('key', True).IsClauseNamesAdd('l_ring2_key');
@@ -5240,7 +5240,7 @@ OrientationInterpolator730.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_ri
 OrientationInterpolator730.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_ring2_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator730]);
 { ROUTE BehaviorClock.fraction_changed TO l_ring2_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator730.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator730.EventSet_fraction);
 OrientationInterpolator732 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator732.X3DName := 'l_ring3_OI';
 OrientationInterpolator732.FieldOrEvent('key', True).IsClauseNamesAdd('l_ring3_key');
@@ -5248,7 +5248,7 @@ OrientationInterpolator732.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_ri
 OrientationInterpolator732.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_ring3_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator732]);
 { ROUTE BehaviorClock.fraction_changed TO l_ring3_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator732.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator732.EventSet_fraction);
 OrientationInterpolator734 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator734.X3DName := 'l_ring_distal_OI';
 OrientationInterpolator734.FieldOrEvent('key', True).IsClauseNamesAdd('l_ring_distal_key');
@@ -5256,7 +5256,7 @@ OrientationInterpolator734.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_ri
 OrientationInterpolator734.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_ring_distal_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator734]);
 { ROUTE BehaviorClock.fraction_changed TO l_ring_distal_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator734.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator734.EventSet_fraction);
 OrientationInterpolator736 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator736.X3DName := 'l_ring_metacarpal_OI';
 OrientationInterpolator736.FieldOrEvent('key', True).IsClauseNamesAdd('l_ring_metacarpal_key');
@@ -5268,7 +5268,7 @@ begin
 OrientationInterpolator736.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_ring_metacarpal_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator736]);
 { ROUTE BehaviorClock.fraction_changed TO l_ring_metacarpal_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator736.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator736.EventSet_fraction);
 OrientationInterpolator738 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator738.X3DName := 'l_ring_middle_OI';
 OrientationInterpolator738.FieldOrEvent('key', True).IsClauseNamesAdd('l_ring_middle_key');
@@ -5276,7 +5276,7 @@ OrientationInterpolator738.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_ri
 OrientationInterpolator738.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_ring_middle_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator738]);
 { ROUTE BehaviorClock.fraction_changed TO l_ring_middle_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator738.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator738.EventSet_fraction);
 OrientationInterpolator740 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator740.X3DName := 'l_ring_proximal_OI';
 OrientationInterpolator740.FieldOrEvent('key', True).IsClauseNamesAdd('l_ring_proximal_key');
@@ -5284,7 +5284,7 @@ OrientationInterpolator740.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_ri
 OrientationInterpolator740.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_ring_proximal_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator740]);
 { ROUTE BehaviorClock.fraction_changed TO l_ring_proximal_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator740.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator740.EventSet_fraction);
 OrientationInterpolator742 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator742.X3DName := 'l_scapula_OI';
 OrientationInterpolator742.FieldOrEvent('key', True).IsClauseNamesAdd('l_scapula_key');
@@ -5292,7 +5292,7 @@ OrientationInterpolator742.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_sc
 OrientationInterpolator742.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_scapula_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator742]);
 { ROUTE BehaviorClock.fraction_changed TO l_scapula_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator742.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator742.EventSet_fraction);
 OrientationInterpolator744 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator744.X3DName := 'l_shoulder_OI';
 OrientationInterpolator744.FieldOrEvent('key', True).IsClauseNamesAdd('l_shoulder_key');
@@ -5300,7 +5300,7 @@ OrientationInterpolator744.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_sh
 OrientationInterpolator744.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_shoulder_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator744]);
 { ROUTE BehaviorClock.fraction_changed TO l_shoulder_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator744.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator744.EventSet_fraction);
 OrientationInterpolator746 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator746.X3DName := 'l_sternoclavicular_OI';
 OrientationInterpolator746.FieldOrEvent('key', True).IsClauseNamesAdd('l_sternoclavicular_key');
@@ -5312,7 +5312,7 @@ begin
 OrientationInterpolator746.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_sternoclavicular_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator746]);
 { ROUTE BehaviorClock.fraction_changed TO l_sternoclavicular_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator746.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator746.EventSet_fraction);
 OrientationInterpolator748 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator748.X3DName := 'l_subtalar_OI';
 OrientationInterpolator748.FieldOrEvent('key', True).IsClauseNamesAdd('l_subtalar_key');
@@ -5320,7 +5320,7 @@ OrientationInterpolator748.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_su
 OrientationInterpolator748.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_subtalar_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator748]);
 { ROUTE BehaviorClock.fraction_changed TO l_subtalar_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator748.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator748.EventSet_fraction);
 OrientationInterpolator750 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator750.X3DName := 'l_thigh_OI';
 OrientationInterpolator750.FieldOrEvent('key', True).IsClauseNamesAdd('l_thigh_key');
@@ -5328,7 +5328,7 @@ OrientationInterpolator750.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_th
 OrientationInterpolator750.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_thigh_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator750]);
 { ROUTE BehaviorClock.fraction_changed TO l_thigh_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator750.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator750.EventSet_fraction);
 OrientationInterpolator752 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator752.X3DName := 'l_thumb1_OI';
 OrientationInterpolator752.FieldOrEvent('key', True).IsClauseNamesAdd('l_thumb1_key');
@@ -5336,7 +5336,7 @@ OrientationInterpolator752.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_th
 OrientationInterpolator752.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_thumb1_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator752]);
 { ROUTE BehaviorClock.fraction_changed TO l_thumb1_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator752.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator752.EventSet_fraction);
 OrientationInterpolator754 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator754.X3DName := 'l_thumb2_OI';
 OrientationInterpolator754.FieldOrEvent('key', True).IsClauseNamesAdd('l_thumb2_key');
@@ -5344,7 +5344,7 @@ OrientationInterpolator754.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_th
 OrientationInterpolator754.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_thumb2_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator754]);
 { ROUTE BehaviorClock.fraction_changed TO l_thumb2_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator754.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator754.EventSet_fraction);
 OrientationInterpolator756 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator756.X3DName := 'l_thumb3_OI';
 OrientationInterpolator756.FieldOrEvent('key', True).IsClauseNamesAdd('l_thumb3_key');
@@ -5356,7 +5356,7 @@ begin
 OrientationInterpolator756.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_thumb3_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator756]);
 { ROUTE BehaviorClock.fraction_changed TO l_thumb3_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator756.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator756.EventSet_fraction);
 OrientationInterpolator758 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator758.X3DName := 'l_thumb_distal_OI';
 OrientationInterpolator758.FieldOrEvent('key', True).IsClauseNamesAdd('l_thumb_distal_key');
@@ -5364,7 +5364,7 @@ OrientationInterpolator758.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_th
 OrientationInterpolator758.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_thumb_distal_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator758]);
 { ROUTE BehaviorClock.fraction_changed TO l_thumb_distal_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator758.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator758.EventSet_fraction);
 OrientationInterpolator760 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator760.X3DName := 'l_thumb_metacarpal_OI';
 OrientationInterpolator760.FieldOrEvent('key', True).IsClauseNamesAdd('l_thumb_metacarpal_key');
@@ -5372,7 +5372,7 @@ OrientationInterpolator760.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_th
 OrientationInterpolator760.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_thumb_metacarpal_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator760]);
 { ROUTE BehaviorClock.fraction_changed TO l_thumb_metacarpal_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator760.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator760.EventSet_fraction);
 OrientationInterpolator762 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator762.X3DName := 'l_thumb_proximal_OI';
 OrientationInterpolator762.FieldOrEvent('key', True).IsClauseNamesAdd('l_thumb_proximal_key');
@@ -5380,7 +5380,7 @@ OrientationInterpolator762.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_th
 OrientationInterpolator762.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_thumb_proximal_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator762]);
 { ROUTE BehaviorClock.fraction_changed TO l_thumb_proximal_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator762.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator762.EventSet_fraction);
 OrientationInterpolator764 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator764.X3DName := 'l_upperarm_OI';
 OrientationInterpolator764.FieldOrEvent('key', True).IsClauseNamesAdd('l_upperarm_key');
@@ -5388,7 +5388,7 @@ OrientationInterpolator764.FieldOrEvent('keyValue', True).IsClauseNamesAdd('l_up
 OrientationInterpolator764.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_upperarm_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator764]);
 { ROUTE BehaviorClock.fraction_changed TO l_upperarm_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator764.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator764.EventSet_fraction);
 OrientationInterpolator766 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator766.X3DName := 'l_wrist_OI';
 OrientationInterpolator766.FieldOrEvent('key', True).IsClauseNamesAdd('l_wrist_key');
@@ -5400,7 +5400,7 @@ begin
 OrientationInterpolator766.FieldOrEvent('value_changed', True).IsClauseNamesAdd('l_wrist_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator766]);
 { ROUTE BehaviorClock.fraction_changed TO l_wrist_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator766.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator766.EventSet_fraction);
 OrientationInterpolator768 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator768.X3DName := 'pelvis_OI';
 OrientationInterpolator768.FieldOrEvent('key', True).IsClauseNamesAdd('pelvis_key');
@@ -5408,7 +5408,7 @@ OrientationInterpolator768.FieldOrEvent('keyValue', True).IsClauseNamesAdd('pelv
 OrientationInterpolator768.FieldOrEvent('value_changed', True).IsClauseNamesAdd('pelvis_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator768]);
 { ROUTE BehaviorClock.fraction_changed TO pelvis_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator768.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator768.EventSet_fraction);
 OrientationInterpolator770 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator770.X3DName := 'r_acromioclavicular_OI';
 OrientationInterpolator770.FieldOrEvent('key', True).IsClauseNamesAdd('r_acromioclavicular_key');
@@ -5416,7 +5416,7 @@ OrientationInterpolator770.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_ac
 OrientationInterpolator770.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_acromioclavicular_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator770]);
 { ROUTE BehaviorClock.fraction_changed TO r_acromioclavicular_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator770.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator770.EventSet_fraction);
 OrientationInterpolator772 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator772.X3DName := 'r_ankle_OI';
 OrientationInterpolator772.FieldOrEvent('key', True).IsClauseNamesAdd('r_ankle_key');
@@ -5424,7 +5424,7 @@ OrientationInterpolator772.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_an
 OrientationInterpolator772.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_ankle_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator772]);
 { ROUTE BehaviorClock.fraction_changed TO r_ankle_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator772.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator772.EventSet_fraction);
 OrientationInterpolator774 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator774.X3DName := 'r_calf_OI';
 OrientationInterpolator774.FieldOrEvent('key', True).IsClauseNamesAdd('r_calf_key');
@@ -5432,7 +5432,7 @@ OrientationInterpolator774.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_ca
 OrientationInterpolator774.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_calf_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator774]);
 { ROUTE BehaviorClock.fraction_changed TO r_calf_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator774.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator774.EventSet_fraction);
 OrientationInterpolator776 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator776.X3DName := 'r_clavicle_OI';
 OrientationInterpolator776.FieldOrEvent('key', True).IsClauseNamesAdd('r_clavicle_key');
@@ -5444,7 +5444,7 @@ begin
 OrientationInterpolator776.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_clavicle_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator776]);
 { ROUTE BehaviorClock.fraction_changed TO r_clavicle_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator776.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator776.EventSet_fraction);
 OrientationInterpolator778 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator778.X3DName := 'r_elbow_OI';
 OrientationInterpolator778.FieldOrEvent('key', True).IsClauseNamesAdd('r_elbow_key');
@@ -5452,7 +5452,7 @@ OrientationInterpolator778.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_el
 OrientationInterpolator778.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_elbow_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator778]);
 { ROUTE BehaviorClock.fraction_changed TO r_elbow_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator778.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator778.EventSet_fraction);
 OrientationInterpolator780 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator780.X3DName := 'r_eyeball_OI';
 OrientationInterpolator780.FieldOrEvent('key', True).IsClauseNamesAdd('r_eyeball_key');
@@ -5460,7 +5460,7 @@ OrientationInterpolator780.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_ey
 OrientationInterpolator780.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_eyeball_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator780]);
 { ROUTE BehaviorClock.fraction_changed TO r_eyeball_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator780.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator780.EventSet_fraction);
 OrientationInterpolator782 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator782.X3DName := 'r_eyeball_joint_OI';
 OrientationInterpolator782.FieldOrEvent('key', True).IsClauseNamesAdd('r_eyeball_joint_key');
@@ -5468,7 +5468,7 @@ OrientationInterpolator782.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_ey
 OrientationInterpolator782.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_eyeball_joint_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator782]);
 { ROUTE BehaviorClock.fraction_changed TO r_eyeball_joint_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator782.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator782.EventSet_fraction);
 OrientationInterpolator784 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator784.X3DName := 'r_eyebrow_OI';
 OrientationInterpolator784.FieldOrEvent('key', True).IsClauseNamesAdd('r_eyebrow_key');
@@ -5476,7 +5476,7 @@ OrientationInterpolator784.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_ey
 OrientationInterpolator784.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_eyebrow_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator784]);
 { ROUTE BehaviorClock.fraction_changed TO r_eyebrow_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator784.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator784.EventSet_fraction);
 OrientationInterpolator786 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator786.X3DName := 'r_eyebrow_joint_OI';
 OrientationInterpolator786.FieldOrEvent('key', True).IsClauseNamesAdd('r_eyebrow_joint_key');
@@ -5488,7 +5488,7 @@ begin
 OrientationInterpolator786.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_eyebrow_joint_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator786]);
 { ROUTE BehaviorClock.fraction_changed TO r_eyebrow_joint_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator786.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator786.EventSet_fraction);
 OrientationInterpolator788 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator788.X3DName := 'r_eyelid_OI';
 OrientationInterpolator788.FieldOrEvent('key', True).IsClauseNamesAdd('r_eyelid_key');
@@ -5496,7 +5496,7 @@ OrientationInterpolator788.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_ey
 OrientationInterpolator788.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_eyelid_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator788]);
 { ROUTE BehaviorClock.fraction_changed TO r_eyelid_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator788.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator788.EventSet_fraction);
 OrientationInterpolator790 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator790.X3DName := 'r_eyelid_joint_OI';
 OrientationInterpolator790.FieldOrEvent('key', True).IsClauseNamesAdd('r_eyelid_joint_key');
@@ -5504,7 +5504,7 @@ OrientationInterpolator790.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_ey
 OrientationInterpolator790.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_eyelid_joint_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator790]);
 { ROUTE BehaviorClock.fraction_changed TO r_eyelid_joint_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator790.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator790.EventSet_fraction);
 OrientationInterpolator792 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator792.X3DName := 'r_forearm_OI';
 OrientationInterpolator792.FieldOrEvent('key', True).IsClauseNamesAdd('r_forearm_key');
@@ -5512,7 +5512,7 @@ OrientationInterpolator792.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_fo
 OrientationInterpolator792.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_forearm_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator792]);
 { ROUTE BehaviorClock.fraction_changed TO r_forearm_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator792.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator792.EventSet_fraction);
 OrientationInterpolator794 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator794.X3DName := 'r_forefoot_OI';
 OrientationInterpolator794.FieldOrEvent('key', True).IsClauseNamesAdd('r_forefoot_key');
@@ -5520,7 +5520,7 @@ OrientationInterpolator794.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_fo
 OrientationInterpolator794.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_forefoot_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator794]);
 { ROUTE BehaviorClock.fraction_changed TO r_forefoot_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator794.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator794.EventSet_fraction);
 OrientationInterpolator796 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator796.X3DName := 'r_hand_OI';
 OrientationInterpolator796.FieldOrEvent('key', True).IsClauseNamesAdd('r_hand_key');
@@ -5532,7 +5532,7 @@ begin
 OrientationInterpolator796.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_hand_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator796]);
 { ROUTE BehaviorClock.fraction_changed TO r_hand_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator796.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator796.EventSet_fraction);
 OrientationInterpolator798 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator798.X3DName := 'r_hindfoot_OI';
 OrientationInterpolator798.FieldOrEvent('key', True).IsClauseNamesAdd('r_hindfoot_key');
@@ -5540,7 +5540,7 @@ OrientationInterpolator798.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_hi
 OrientationInterpolator798.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_hindfoot_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator798]);
 { ROUTE BehaviorClock.fraction_changed TO r_hindfoot_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator798.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator798.EventSet_fraction);
 OrientationInterpolator800 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator800.X3DName := 'r_hip_OI';
 OrientationInterpolator800.FieldOrEvent('key', True).IsClauseNamesAdd('r_hip_key');
@@ -5548,7 +5548,7 @@ OrientationInterpolator800.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_hi
 OrientationInterpolator800.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_hip_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator800]);
 { ROUTE BehaviorClock.fraction_changed TO r_hip_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator800.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator800.EventSet_fraction);
 OrientationInterpolator802 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator802.X3DName := 'r_index0_OI';
 OrientationInterpolator802.FieldOrEvent('key', True).IsClauseNamesAdd('r_index0_key');
@@ -5556,7 +5556,7 @@ OrientationInterpolator802.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_in
 OrientationInterpolator802.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_index0_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator802]);
 { ROUTE BehaviorClock.fraction_changed TO r_index0_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator802.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator802.EventSet_fraction);
 OrientationInterpolator804 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator804.X3DName := 'r_index1_OI';
 OrientationInterpolator804.FieldOrEvent('key', True).IsClauseNamesAdd('r_index1_key');
@@ -5564,7 +5564,7 @@ OrientationInterpolator804.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_in
 OrientationInterpolator804.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_index1_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator804]);
 { ROUTE BehaviorClock.fraction_changed TO r_index1_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator804.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator804.EventSet_fraction);
 OrientationInterpolator806 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator806.X3DName := 'r_index2_OI';
 OrientationInterpolator806.FieldOrEvent('key', True).IsClauseNamesAdd('r_index2_key');
@@ -5576,7 +5576,7 @@ begin
 OrientationInterpolator806.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_index2_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator806]);
 { ROUTE BehaviorClock.fraction_changed TO r_index2_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator806.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator806.EventSet_fraction);
 OrientationInterpolator808 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator808.X3DName := 'r_index3_OI';
 OrientationInterpolator808.FieldOrEvent('key', True).IsClauseNamesAdd('r_index3_key');
@@ -5584,7 +5584,7 @@ OrientationInterpolator808.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_in
 OrientationInterpolator808.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_index3_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator808]);
 { ROUTE BehaviorClock.fraction_changed TO r_index3_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator808.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator808.EventSet_fraction);
 OrientationInterpolator810 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator810.X3DName := 'r_index_distal_OI';
 OrientationInterpolator810.FieldOrEvent('key', True).IsClauseNamesAdd('r_index_distal_key');
@@ -5592,7 +5592,7 @@ OrientationInterpolator810.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_in
 OrientationInterpolator810.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_index_distal_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator810]);
 { ROUTE BehaviorClock.fraction_changed TO r_index_distal_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator810.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator810.EventSet_fraction);
 OrientationInterpolator812 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator812.X3DName := 'r_index_metacarpal_OI';
 OrientationInterpolator812.FieldOrEvent('key', True).IsClauseNamesAdd('r_index_metacarpal_key');
@@ -5600,7 +5600,7 @@ OrientationInterpolator812.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_in
 OrientationInterpolator812.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_index_metacarpal_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator812]);
 { ROUTE BehaviorClock.fraction_changed TO r_index_metacarpal_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator812.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator812.EventSet_fraction);
 OrientationInterpolator814 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator814.X3DName := 'r_index_middle_OI';
 OrientationInterpolator814.FieldOrEvent('key', True).IsClauseNamesAdd('r_index_middle_key');
@@ -5608,7 +5608,7 @@ OrientationInterpolator814.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_in
 OrientationInterpolator814.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_index_middle_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator814]);
 { ROUTE BehaviorClock.fraction_changed TO r_index_middle_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator814.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator814.EventSet_fraction);
 OrientationInterpolator816 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator816.X3DName := 'r_index_proximal_OI';
 OrientationInterpolator816.FieldOrEvent('key', True).IsClauseNamesAdd('r_index_proximal_key');
@@ -5620,7 +5620,7 @@ begin
 OrientationInterpolator816.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_index_proximal_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator816]);
 { ROUTE BehaviorClock.fraction_changed TO r_index_proximal_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator816.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator816.EventSet_fraction);
 OrientationInterpolator818 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator818.X3DName := 'r_knee_OI';
 OrientationInterpolator818.FieldOrEvent('key', True).IsClauseNamesAdd('r_knee_key');
@@ -5628,7 +5628,7 @@ OrientationInterpolator818.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_kn
 OrientationInterpolator818.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_knee_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator818]);
 { ROUTE BehaviorClock.fraction_changed TO r_knee_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator818.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator818.EventSet_fraction);
 OrientationInterpolator820 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator820.X3DName := 'r_metatarsal_OI';
 OrientationInterpolator820.FieldOrEvent('key', True).IsClauseNamesAdd('r_metatarsal_key');
@@ -5636,7 +5636,7 @@ OrientationInterpolator820.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_me
 OrientationInterpolator820.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_metatarsal_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator820]);
 { ROUTE BehaviorClock.fraction_changed TO r_metatarsal_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator820.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator820.EventSet_fraction);
 OrientationInterpolator822 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator822.X3DName := 'r_middistal_OI';
 OrientationInterpolator822.FieldOrEvent('key', True).IsClauseNamesAdd('r_middistal_key');
@@ -5644,7 +5644,7 @@ OrientationInterpolator822.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_mi
 OrientationInterpolator822.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_middistal_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator822]);
 { ROUTE BehaviorClock.fraction_changed TO r_middistal_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator822.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator822.EventSet_fraction);
 OrientationInterpolator824 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator824.X3DName := 'r_middle0_OI';
 OrientationInterpolator824.FieldOrEvent('key', True).IsClauseNamesAdd('r_middle0_key');
@@ -5652,7 +5652,7 @@ OrientationInterpolator824.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_mi
 OrientationInterpolator824.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_middle0_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator824]);
 { ROUTE BehaviorClock.fraction_changed TO r_middle0_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator824.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator824.EventSet_fraction);
 OrientationInterpolator826 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator826.X3DName := 'r_middle1_OI';
 OrientationInterpolator826.FieldOrEvent('key', True).IsClauseNamesAdd('r_middle1_key');
@@ -5664,7 +5664,7 @@ begin
 OrientationInterpolator826.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_middle1_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator826]);
 { ROUTE BehaviorClock.fraction_changed TO r_middle1_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator826.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator826.EventSet_fraction);
 OrientationInterpolator828 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator828.X3DName := 'r_middle2_OI';
 OrientationInterpolator828.FieldOrEvent('key', True).IsClauseNamesAdd('r_middle2_key');
@@ -5672,7 +5672,7 @@ OrientationInterpolator828.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_mi
 OrientationInterpolator828.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_middle2_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator828]);
 { ROUTE BehaviorClock.fraction_changed TO r_middle2_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator828.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator828.EventSet_fraction);
 OrientationInterpolator830 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator830.X3DName := 'r_middle3_OI';
 OrientationInterpolator830.FieldOrEvent('key', True).IsClauseNamesAdd('r_middle3_key');
@@ -5680,7 +5680,7 @@ OrientationInterpolator830.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_mi
 OrientationInterpolator830.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_middle3_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator830]);
 { ROUTE BehaviorClock.fraction_changed TO r_middle3_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator830.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator830.EventSet_fraction);
 OrientationInterpolator832 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator832.X3DName := 'r_middle_distal_OI';
 OrientationInterpolator832.FieldOrEvent('key', True).IsClauseNamesAdd('r_middle_distal_key');
@@ -5688,7 +5688,7 @@ OrientationInterpolator832.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_mi
 OrientationInterpolator832.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_middle_distal_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator832]);
 { ROUTE BehaviorClock.fraction_changed TO r_middle_distal_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator832.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator832.EventSet_fraction);
 OrientationInterpolator834 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator834.X3DName := 'r_middle_metacarpal_OI';
 OrientationInterpolator834.FieldOrEvent('key', True).IsClauseNamesAdd('r_middle_metacarpal_key');
@@ -5696,7 +5696,7 @@ OrientationInterpolator834.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_mi
 OrientationInterpolator834.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_middle_metacarpal_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator834]);
 { ROUTE BehaviorClock.fraction_changed TO r_middle_metacarpal_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator834.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator834.EventSet_fraction);
 OrientationInterpolator836 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator836.X3DName := 'r_middle_middle_OI';
 OrientationInterpolator836.FieldOrEvent('key', True).IsClauseNamesAdd('r_middle_middle_key');
@@ -5708,7 +5708,7 @@ begin
 OrientationInterpolator836.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_middle_middle_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator836]);
 { ROUTE BehaviorClock.fraction_changed TO r_middle_middle_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator836.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator836.EventSet_fraction);
 OrientationInterpolator838 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator838.X3DName := 'r_middle_proximal_OI';
 OrientationInterpolator838.FieldOrEvent('key', True).IsClauseNamesAdd('r_middle_proximal_key');
@@ -5716,7 +5716,7 @@ OrientationInterpolator838.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_mi
 OrientationInterpolator838.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_middle_proximal_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator838]);
 { ROUTE BehaviorClock.fraction_changed TO r_middle_proximal_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator838.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator838.EventSet_fraction);
 OrientationInterpolator840 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator840.X3DName := 'r_midproximal_OI';
 OrientationInterpolator840.FieldOrEvent('key', True).IsClauseNamesAdd('r_midproximal_key');
@@ -5724,7 +5724,7 @@ OrientationInterpolator840.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_mi
 OrientationInterpolator840.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_midproximal_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator840]);
 { ROUTE BehaviorClock.fraction_changed TO r_midproximal_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator840.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator840.EventSet_fraction);
 OrientationInterpolator842 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator842.X3DName := 'r_midtarsal_OI';
 OrientationInterpolator842.FieldOrEvent('key', True).IsClauseNamesAdd('r_midtarsal_key');
@@ -5732,7 +5732,7 @@ OrientationInterpolator842.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_mi
 OrientationInterpolator842.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_midtarsal_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator842]);
 { ROUTE BehaviorClock.fraction_changed TO r_midtarsal_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator842.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator842.EventSet_fraction);
 OrientationInterpolator844 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator844.X3DName := 'r_pinky0_OI';
 OrientationInterpolator844.FieldOrEvent('key', True).IsClauseNamesAdd('r_pinky0_key');
@@ -5740,7 +5740,7 @@ OrientationInterpolator844.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_pi
 OrientationInterpolator844.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_pinky0_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator844]);
 { ROUTE BehaviorClock.fraction_changed TO r_pinky0_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator844.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator844.EventSet_fraction);
 OrientationInterpolator846 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator846.X3DName := 'r_pinky1_OI';
 OrientationInterpolator846.FieldOrEvent('key', True).IsClauseNamesAdd('r_pinky1_key');
@@ -5752,7 +5752,7 @@ begin
 OrientationInterpolator846.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_pinky1_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator846]);
 { ROUTE BehaviorClock.fraction_changed TO r_pinky1_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator846.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator846.EventSet_fraction);
 OrientationInterpolator848 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator848.X3DName := 'r_pinky2_OI';
 OrientationInterpolator848.FieldOrEvent('key', True).IsClauseNamesAdd('r_pinky2_key');
@@ -5760,7 +5760,7 @@ OrientationInterpolator848.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_pi
 OrientationInterpolator848.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_pinky2_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator848]);
 { ROUTE BehaviorClock.fraction_changed TO r_pinky2_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator848.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator848.EventSet_fraction);
 OrientationInterpolator850 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator850.X3DName := 'r_pinky3_OI';
 OrientationInterpolator850.FieldOrEvent('key', True).IsClauseNamesAdd('r_pinky3_key');
@@ -5768,7 +5768,7 @@ OrientationInterpolator850.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_pi
 OrientationInterpolator850.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_pinky3_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator850]);
 { ROUTE BehaviorClock.fraction_changed TO r_pinky3_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator850.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator850.EventSet_fraction);
 OrientationInterpolator852 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator852.X3DName := 'r_pinky_distal_OI';
 OrientationInterpolator852.FieldOrEvent('key', True).IsClauseNamesAdd('r_pinky_distal_key');
@@ -5776,7 +5776,7 @@ OrientationInterpolator852.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_pi
 OrientationInterpolator852.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_pinky_distal_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator852]);
 { ROUTE BehaviorClock.fraction_changed TO r_pinky_distal_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator852.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator852.EventSet_fraction);
 OrientationInterpolator854 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator854.X3DName := 'r_pinky_metacarpal_OI';
 OrientationInterpolator854.FieldOrEvent('key', True).IsClauseNamesAdd('r_pinky_metacarpal_key');
@@ -5784,7 +5784,7 @@ OrientationInterpolator854.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_pi
 OrientationInterpolator854.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_pinky_metacarpal_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator854]);
 { ROUTE BehaviorClock.fraction_changed TO r_pinky_metacarpal_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator854.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator854.EventSet_fraction);
 OrientationInterpolator856 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator856.X3DName := 'r_pinky_middle_OI';
 OrientationInterpolator856.FieldOrEvent('key', True).IsClauseNamesAdd('r_pinky_middle_key');
@@ -5796,7 +5796,7 @@ begin
 OrientationInterpolator856.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_pinky_middle_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator856]);
 { ROUTE BehaviorClock.fraction_changed TO r_pinky_middle_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator856.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator856.EventSet_fraction);
 OrientationInterpolator858 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator858.X3DName := 'r_pinky_proximal_OI';
 OrientationInterpolator858.FieldOrEvent('key', True).IsClauseNamesAdd('r_pinky_proximal_key');
@@ -5804,7 +5804,7 @@ OrientationInterpolator858.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_pi
 OrientationInterpolator858.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_pinky_proximal_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator858]);
 { ROUTE BehaviorClock.fraction_changed TO r_pinky_proximal_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator858.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator858.EventSet_fraction);
 OrientationInterpolator860 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator860.X3DName := 'r_ring0_OI';
 OrientationInterpolator860.FieldOrEvent('key', True).IsClauseNamesAdd('r_ring0_key');
@@ -5812,7 +5812,7 @@ OrientationInterpolator860.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_ri
 OrientationInterpolator860.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_ring0_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator860]);
 { ROUTE BehaviorClock.fraction_changed TO r_ring0_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator860.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator860.EventSet_fraction);
 OrientationInterpolator862 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator862.X3DName := 'r_ring1_OI';
 OrientationInterpolator862.FieldOrEvent('key', True).IsClauseNamesAdd('r_ring1_key');
@@ -5820,7 +5820,7 @@ OrientationInterpolator862.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_ri
 OrientationInterpolator862.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_ring1_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator862]);
 { ROUTE BehaviorClock.fraction_changed TO r_ring1_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator862.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator862.EventSet_fraction);
 OrientationInterpolator864 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator864.X3DName := 'r_ring2_OI';
 OrientationInterpolator864.FieldOrEvent('key', True).IsClauseNamesAdd('r_ring2_key');
@@ -5828,7 +5828,7 @@ OrientationInterpolator864.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_ri
 OrientationInterpolator864.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_ring2_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator864]);
 { ROUTE BehaviorClock.fraction_changed TO r_ring2_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator864.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator864.EventSet_fraction);
 OrientationInterpolator866 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator866.X3DName := 'r_ring3_OI';
 OrientationInterpolator866.FieldOrEvent('key', True).IsClauseNamesAdd('r_ring3_key');
@@ -5840,7 +5840,7 @@ begin
 OrientationInterpolator866.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_ring3_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator866]);
 { ROUTE BehaviorClock.fraction_changed TO r_ring3_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator866.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator866.EventSet_fraction);
 OrientationInterpolator868 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator868.X3DName := 'r_ring_distal_OI';
 OrientationInterpolator868.FieldOrEvent('key', True).IsClauseNamesAdd('r_ring_distal_key');
@@ -5848,7 +5848,7 @@ OrientationInterpolator868.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_ri
 OrientationInterpolator868.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_ring_distal_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator868]);
 { ROUTE BehaviorClock.fraction_changed TO r_ring_distal_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator868.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator868.EventSet_fraction);
 OrientationInterpolator870 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator870.X3DName := 'r_ring_metacarpal_OI';
 OrientationInterpolator870.FieldOrEvent('key', True).IsClauseNamesAdd('r_ring_metacarpal_key');
@@ -5856,7 +5856,7 @@ OrientationInterpolator870.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_ri
 OrientationInterpolator870.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_ring_metacarpal_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator870]);
 { ROUTE BehaviorClock.fraction_changed TO r_ring_metacarpal_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator870.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator870.EventSet_fraction);
 OrientationInterpolator872 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator872.X3DName := 'r_ring_middle_OI';
 OrientationInterpolator872.FieldOrEvent('key', True).IsClauseNamesAdd('r_ring_middle_key');
@@ -5864,7 +5864,7 @@ OrientationInterpolator872.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_ri
 OrientationInterpolator872.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_ring_middle_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator872]);
 { ROUTE BehaviorClock.fraction_changed TO r_ring_middle_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator872.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator872.EventSet_fraction);
 OrientationInterpolator874 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator874.X3DName := 'r_ring_proximal_OI';
 OrientationInterpolator874.FieldOrEvent('key', True).IsClauseNamesAdd('r_ring_proximal_key');
@@ -5872,7 +5872,7 @@ OrientationInterpolator874.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_ri
 OrientationInterpolator874.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_ring_proximal_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator874]);
 { ROUTE BehaviorClock.fraction_changed TO r_ring_proximal_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator874.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator874.EventSet_fraction);
 OrientationInterpolator876 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator876.X3DName := 'r_scapula_OI';
 OrientationInterpolator876.FieldOrEvent('key', True).IsClauseNamesAdd('r_scapula_key');
@@ -5884,7 +5884,7 @@ begin
 OrientationInterpolator876.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_scapula_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator876]);
 { ROUTE BehaviorClock.fraction_changed TO r_scapula_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator876.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator876.EventSet_fraction);
 OrientationInterpolator878 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator878.X3DName := 'r_shoulder_OI';
 OrientationInterpolator878.FieldOrEvent('key', True).IsClauseNamesAdd('r_shoulder_key');
@@ -5892,7 +5892,7 @@ OrientationInterpolator878.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_sh
 OrientationInterpolator878.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_shoulder_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator878]);
 { ROUTE BehaviorClock.fraction_changed TO r_shoulder_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator878.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator878.EventSet_fraction);
 OrientationInterpolator880 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator880.X3DName := 'r_sternoclavicular_OI';
 OrientationInterpolator880.FieldOrEvent('key', True).IsClauseNamesAdd('r_sternoclavicular_key');
@@ -5900,7 +5900,7 @@ OrientationInterpolator880.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_st
 OrientationInterpolator880.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_sternoclavicular_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator880]);
 { ROUTE BehaviorClock.fraction_changed TO r_sternoclavicular_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator880.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator880.EventSet_fraction);
 OrientationInterpolator882 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator882.X3DName := 'r_subtalar_OI';
 OrientationInterpolator882.FieldOrEvent('key', True).IsClauseNamesAdd('r_subtalar_key');
@@ -5908,7 +5908,7 @@ OrientationInterpolator882.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_su
 OrientationInterpolator882.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_subtalar_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator882]);
 { ROUTE BehaviorClock.fraction_changed TO r_subtalar_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator882.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator882.EventSet_fraction);
 OrientationInterpolator884 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator884.X3DName := 'r_thigh_OI';
 OrientationInterpolator884.FieldOrEvent('key', True).IsClauseNamesAdd('r_thigh_key');
@@ -5916,7 +5916,7 @@ OrientationInterpolator884.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_th
 OrientationInterpolator884.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_thigh_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator884]);
 { ROUTE BehaviorClock.fraction_changed TO r_thigh_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator884.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator884.EventSet_fraction);
 OrientationInterpolator886 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator886.X3DName := 'r_thumb1_OI';
 OrientationInterpolator886.FieldOrEvent('key', True).IsClauseNamesAdd('r_thumb1_key');
@@ -5928,7 +5928,7 @@ begin
 OrientationInterpolator886.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_thumb1_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator886]);
 { ROUTE BehaviorClock.fraction_changed TO r_thumb1_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator886.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator886.EventSet_fraction);
 OrientationInterpolator888 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator888.X3DName := 'r_thumb2_OI';
 OrientationInterpolator888.FieldOrEvent('key', True).IsClauseNamesAdd('r_thumb2_key');
@@ -5936,7 +5936,7 @@ OrientationInterpolator888.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_th
 OrientationInterpolator888.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_thumb2_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator888]);
 { ROUTE BehaviorClock.fraction_changed TO r_thumb2_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator888.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator888.EventSet_fraction);
 OrientationInterpolator890 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator890.X3DName := 'r_thumb3_OI';
 OrientationInterpolator890.FieldOrEvent('key', True).IsClauseNamesAdd('r_thumb3_key');
@@ -5944,7 +5944,7 @@ OrientationInterpolator890.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_th
 OrientationInterpolator890.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_thumb3_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator890]);
 { ROUTE BehaviorClock.fraction_changed TO r_thumb3_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator890.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator890.EventSet_fraction);
 OrientationInterpolator892 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator892.X3DName := 'r_thumb_distal_OI';
 OrientationInterpolator892.FieldOrEvent('key', True).IsClauseNamesAdd('r_thumb_distal_key');
@@ -5952,7 +5952,7 @@ OrientationInterpolator892.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_th
 OrientationInterpolator892.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_thumb_distal_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator892]);
 { ROUTE BehaviorClock.fraction_changed TO r_thumb_distal_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator892.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator892.EventSet_fraction);
 OrientationInterpolator894 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator894.X3DName := 'r_thumb_metacarpal_OI';
 OrientationInterpolator894.FieldOrEvent('key', True).IsClauseNamesAdd('r_thumb_metacarpal_key');
@@ -5960,7 +5960,7 @@ OrientationInterpolator894.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_th
 OrientationInterpolator894.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_thumb_metacarpal_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator894]);
 { ROUTE BehaviorClock.fraction_changed TO r_thumb_metacarpal_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator894.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator894.EventSet_fraction);
 OrientationInterpolator896 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator896.X3DName := 'r_thumb_proximal_OI';
 OrientationInterpolator896.FieldOrEvent('key', True).IsClauseNamesAdd('r_thumb_proximal_key');
@@ -5972,7 +5972,7 @@ begin
 OrientationInterpolator896.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_thumb_proximal_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator896]);
 { ROUTE BehaviorClock.fraction_changed TO r_thumb_proximal_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator896.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator896.EventSet_fraction);
 OrientationInterpolator898 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator898.X3DName := 'r_upperarm_OI';
 OrientationInterpolator898.FieldOrEvent('key', True).IsClauseNamesAdd('r_upperarm_key');
@@ -5980,7 +5980,7 @@ OrientationInterpolator898.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_up
 OrientationInterpolator898.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_upperarm_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator898]);
 { ROUTE BehaviorClock.fraction_changed TO r_upperarm_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator898.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator898.EventSet_fraction);
 OrientationInterpolator900 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator900.X3DName := 'r_wrist_OI';
 OrientationInterpolator900.FieldOrEvent('key', True).IsClauseNamesAdd('r_wrist_key');
@@ -5988,7 +5988,7 @@ OrientationInterpolator900.FieldOrEvent('keyValue', True).IsClauseNamesAdd('r_wr
 OrientationInterpolator900.FieldOrEvent('value_changed', True).IsClauseNamesAdd('r_wrist_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator900]);
 { ROUTE BehaviorClock.fraction_changed TO r_wrist_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator900.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator900.EventSet_fraction);
 OrientationInterpolator902 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator902.X3DName := 'sacroiliac_OI';
 OrientationInterpolator902.FieldOrEvent('key', True).IsClauseNamesAdd('sacroiliac_key');
@@ -5996,7 +5996,7 @@ OrientationInterpolator902.FieldOrEvent('keyValue', True).IsClauseNamesAdd('sacr
 OrientationInterpolator902.FieldOrEvent('value_changed', True).IsClauseNamesAdd('sacroiliac_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator902]);
 { ROUTE BehaviorClock.fraction_changed TO sacroiliac_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator902.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator902.EventSet_fraction);
 OrientationInterpolator904 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator904.X3DName := 'sacrum_OI';
 OrientationInterpolator904.FieldOrEvent('key', True).IsClauseNamesAdd('sacrum_key');
@@ -6004,7 +6004,7 @@ OrientationInterpolator904.FieldOrEvent('keyValue', True).IsClauseNamesAdd('sacr
 OrientationInterpolator904.FieldOrEvent('value_changed', True).IsClauseNamesAdd('sacrum_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator904]);
 { ROUTE BehaviorClock.fraction_changed TO sacrum_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator904.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator904.EventSet_fraction);
 OrientationInterpolator906 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator906.X3DName := 'skull_OI';
 OrientationInterpolator906.FieldOrEvent('key', True).IsClauseNamesAdd('skull_key');
@@ -6016,7 +6016,7 @@ begin
 OrientationInterpolator906.FieldOrEvent('value_changed', True).IsClauseNamesAdd('skull_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator906]);
 { ROUTE BehaviorClock.fraction_changed TO skull_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator906.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator906.EventSet_fraction);
 OrientationInterpolator908 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator908.X3DName := 'skullbase_OI';
 OrientationInterpolator908.FieldOrEvent('key', True).IsClauseNamesAdd('skullbase_key');
@@ -6024,7 +6024,7 @@ OrientationInterpolator908.FieldOrEvent('keyValue', True).IsClauseNamesAdd('skul
 OrientationInterpolator908.FieldOrEvent('value_changed', True).IsClauseNamesAdd('skullbase_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator908]);
 { ROUTE BehaviorClock.fraction_changed TO skullbase_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator908.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator908.EventSet_fraction);
 OrientationInterpolator910 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator910.X3DName := 't1_OI';
 OrientationInterpolator910.FieldOrEvent('key', True).IsClauseNamesAdd('t1_key');
@@ -6032,7 +6032,7 @@ OrientationInterpolator910.FieldOrEvent('keyValue', True).IsClauseNamesAdd('t1_k
 OrientationInterpolator910.FieldOrEvent('value_changed', True).IsClauseNamesAdd('t1_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator910]);
 { ROUTE BehaviorClock.fraction_changed TO t1_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator910.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator910.EventSet_fraction);
 OrientationInterpolator912 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator912.X3DName := 't2_OI';
 OrientationInterpolator912.FieldOrEvent('key', True).IsClauseNamesAdd('t2_key');
@@ -6040,7 +6040,7 @@ OrientationInterpolator912.FieldOrEvent('keyValue', True).IsClauseNamesAdd('t2_k
 OrientationInterpolator912.FieldOrEvent('value_changed', True).IsClauseNamesAdd('t2_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator912]);
 { ROUTE BehaviorClock.fraction_changed TO t2_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator912.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator912.EventSet_fraction);
 OrientationInterpolator914 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator914.X3DName := 't3_OI';
 OrientationInterpolator914.FieldOrEvent('key', True).IsClauseNamesAdd('t3_key');
@@ -6048,7 +6048,7 @@ OrientationInterpolator914.FieldOrEvent('keyValue', True).IsClauseNamesAdd('t3_k
 OrientationInterpolator914.FieldOrEvent('value_changed', True).IsClauseNamesAdd('t3_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator914]);
 { ROUTE BehaviorClock.fraction_changed TO t3_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator914.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator914.EventSet_fraction);
 OrientationInterpolator916 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator916.X3DName := 't4_OI';
 OrientationInterpolator916.FieldOrEvent('key', True).IsClauseNamesAdd('t4_key');
@@ -6060,7 +6060,7 @@ begin
 OrientationInterpolator916.FieldOrEvent('value_changed', True).IsClauseNamesAdd('t4_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator916]);
 { ROUTE BehaviorClock.fraction_changed TO t4_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator916.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator916.EventSet_fraction);
 OrientationInterpolator918 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator918.X3DName := 't5_OI';
 OrientationInterpolator918.FieldOrEvent('key', True).IsClauseNamesAdd('t5_key');
@@ -6068,7 +6068,7 @@ OrientationInterpolator918.FieldOrEvent('keyValue', True).IsClauseNamesAdd('t5_k
 OrientationInterpolator918.FieldOrEvent('value_changed', True).IsClauseNamesAdd('t5_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator918]);
 { ROUTE BehaviorClock.fraction_changed TO t5_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator918.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator918.EventSet_fraction);
 OrientationInterpolator920 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator920.X3DName := 't6_OI';
 OrientationInterpolator920.FieldOrEvent('key', True).IsClauseNamesAdd('t6_key');
@@ -6076,7 +6076,7 @@ OrientationInterpolator920.FieldOrEvent('keyValue', True).IsClauseNamesAdd('t6_k
 OrientationInterpolator920.FieldOrEvent('value_changed', True).IsClauseNamesAdd('t6_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator920]);
 { ROUTE BehaviorClock.fraction_changed TO t6_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator920.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator920.EventSet_fraction);
 OrientationInterpolator922 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator922.X3DName := 't7_OI';
 OrientationInterpolator922.FieldOrEvent('key', True).IsClauseNamesAdd('t7_key');
@@ -6084,7 +6084,7 @@ OrientationInterpolator922.FieldOrEvent('keyValue', True).IsClauseNamesAdd('t7_k
 OrientationInterpolator922.FieldOrEvent('value_changed', True).IsClauseNamesAdd('t7_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator922]);
 { ROUTE BehaviorClock.fraction_changed TO t7_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator922.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator922.EventSet_fraction);
 OrientationInterpolator924 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator924.X3DName := 't8_OI';
 OrientationInterpolator924.FieldOrEvent('key', True).IsClauseNamesAdd('t8_key');
@@ -6092,7 +6092,7 @@ OrientationInterpolator924.FieldOrEvent('keyValue', True).IsClauseNamesAdd('t8_k
 OrientationInterpolator924.FieldOrEvent('value_changed', True).IsClauseNamesAdd('t8_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator924]);
 { ROUTE BehaviorClock.fraction_changed TO t8_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator924.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator924.EventSet_fraction);
 OrientationInterpolator926 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator926.X3DName := 't9_OI';
 OrientationInterpolator926.FieldOrEvent('key', True).IsClauseNamesAdd('t9_key');
@@ -6104,7 +6104,7 @@ begin
 OrientationInterpolator926.FieldOrEvent('value_changed', True).IsClauseNamesAdd('t9_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator926]);
 { ROUTE BehaviorClock.fraction_changed TO t9_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator926.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator926.EventSet_fraction);
 OrientationInterpolator928 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator928.X3DName := 't10_OI';
 OrientationInterpolator928.FieldOrEvent('key', True).IsClauseNamesAdd('t10_key');
@@ -6112,7 +6112,7 @@ OrientationInterpolator928.FieldOrEvent('keyValue', True).IsClauseNamesAdd('t10_
 OrientationInterpolator928.FieldOrEvent('value_changed', True).IsClauseNamesAdd('t10_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator928]);
 { ROUTE BehaviorClock.fraction_changed TO t10_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator928.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator928.EventSet_fraction);
 OrientationInterpolator930 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator930.X3DName := 't11_OI';
 OrientationInterpolator930.FieldOrEvent('key', True).IsClauseNamesAdd('t11_key');
@@ -6120,7 +6120,7 @@ OrientationInterpolator930.FieldOrEvent('keyValue', True).IsClauseNamesAdd('t11_
 OrientationInterpolator930.FieldOrEvent('value_changed', True).IsClauseNamesAdd('t11_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator930]);
 { ROUTE BehaviorClock.fraction_changed TO t11_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator930.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator930.EventSet_fraction);
 OrientationInterpolator932 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator932.X3DName := 't12_OI';
 OrientationInterpolator932.FieldOrEvent('key', True).IsClauseNamesAdd('t12_key');
@@ -6128,7 +6128,7 @@ OrientationInterpolator932.FieldOrEvent('keyValue', True).IsClauseNamesAdd('t12_
 OrientationInterpolator932.FieldOrEvent('value_changed', True).IsClauseNamesAdd('t12_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator932]);
 { ROUTE BehaviorClock.fraction_changed TO t12_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator932.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator932.EventSet_fraction);
 OrientationInterpolator934 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator934.X3DName := 'temporomandibular_OI';
 OrientationInterpolator934.FieldOrEvent('key', True).IsClauseNamesAdd('temporomandibular_key');
@@ -6136,7 +6136,7 @@ OrientationInterpolator934.FieldOrEvent('keyValue', True).IsClauseNamesAdd('temp
 OrientationInterpolator934.FieldOrEvent('value_changed', True).IsClauseNamesAdd('temporomandibular_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator934]);
 { ROUTE BehaviorClock.fraction_changed TO temporomandibular_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator934.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator934.EventSet_fraction);
 OrientationInterpolator936 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator936.X3DName := 'vc1_OI';
 OrientationInterpolator936.FieldOrEvent('key', True).IsClauseNamesAdd('vc1_key');
@@ -6148,7 +6148,7 @@ begin
 OrientationInterpolator936.FieldOrEvent('value_changed', True).IsClauseNamesAdd('vc1_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator936]);
 { ROUTE BehaviorClock.fraction_changed TO vc1_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator936.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator936.EventSet_fraction);
 OrientationInterpolator938 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator938.X3DName := 'vc2_OI';
 OrientationInterpolator938.FieldOrEvent('key', True).IsClauseNamesAdd('vc2_key');
@@ -6156,7 +6156,7 @@ OrientationInterpolator938.FieldOrEvent('keyValue', True).IsClauseNamesAdd('vc2_
 OrientationInterpolator938.FieldOrEvent('value_changed', True).IsClauseNamesAdd('vc2_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator938]);
 { ROUTE BehaviorClock.fraction_changed TO vc2_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator938.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator938.EventSet_fraction);
 OrientationInterpolator940 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator940.X3DName := 'vc3_OI';
 OrientationInterpolator940.FieldOrEvent('key', True).IsClauseNamesAdd('vc3_key');
@@ -6164,7 +6164,7 @@ OrientationInterpolator940.FieldOrEvent('keyValue', True).IsClauseNamesAdd('vc3_
 OrientationInterpolator940.FieldOrEvent('value_changed', True).IsClauseNamesAdd('vc3_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator940]);
 { ROUTE BehaviorClock.fraction_changed TO vc3_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator940.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator940.EventSet_fraction);
 OrientationInterpolator942 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator942.X3DName := 'vc4_OI';
 OrientationInterpolator942.FieldOrEvent('key', True).IsClauseNamesAdd('vc4_key');
@@ -6172,7 +6172,7 @@ OrientationInterpolator942.FieldOrEvent('keyValue', True).IsClauseNamesAdd('vc4_
 OrientationInterpolator942.FieldOrEvent('value_changed', True).IsClauseNamesAdd('vc4_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator942]);
 { ROUTE BehaviorClock.fraction_changed TO vc4_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator942.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator942.EventSet_fraction);
 OrientationInterpolator944 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator944.X3DName := 'vc5_OI';
 OrientationInterpolator944.FieldOrEvent('key', True).IsClauseNamesAdd('vc5_key');
@@ -6180,7 +6180,7 @@ OrientationInterpolator944.FieldOrEvent('keyValue', True).IsClauseNamesAdd('vc5_
 OrientationInterpolator944.FieldOrEvent('value_changed', True).IsClauseNamesAdd('vc5_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator944]);
 { ROUTE BehaviorClock.fraction_changed TO vc5_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator944.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator944.EventSet_fraction);
 OrientationInterpolator946 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator946.X3DName := 'vc6_OI';
 OrientationInterpolator946.FieldOrEvent('key', True).IsClauseNamesAdd('vc6_key');
@@ -6192,7 +6192,7 @@ begin
 OrientationInterpolator946.FieldOrEvent('value_changed', True).IsClauseNamesAdd('vc6_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator946]);
 { ROUTE BehaviorClock.fraction_changed TO vc6_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator946.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator946.EventSet_fraction);
 OrientationInterpolator948 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator948.X3DName := 'vc7_OI';
 OrientationInterpolator948.FieldOrEvent('key', True).IsClauseNamesAdd('vc7_key');
@@ -6200,7 +6200,7 @@ OrientationInterpolator948.FieldOrEvent('keyValue', True).IsClauseNamesAdd('vc7_
 OrientationInterpolator948.FieldOrEvent('value_changed', True).IsClauseNamesAdd('vc7_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator948]);
 { ROUTE BehaviorClock.fraction_changed TO vc7_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator948.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator948.EventSet_fraction);
 OrientationInterpolator950 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator950.X3DName := 'vl1_OI';
 OrientationInterpolator950.FieldOrEvent('key', True).IsClauseNamesAdd('vl1_key');
@@ -6208,7 +6208,7 @@ OrientationInterpolator950.FieldOrEvent('keyValue', True).IsClauseNamesAdd('vl1_
 OrientationInterpolator950.FieldOrEvent('value_changed', True).IsClauseNamesAdd('vl1_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator950]);
 { ROUTE BehaviorClock.fraction_changed TO vl1_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator950.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator950.EventSet_fraction);
 OrientationInterpolator952 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator952.X3DName := 'vl2_OI';
 OrientationInterpolator952.FieldOrEvent('key', True).IsClauseNamesAdd('vl2_key');
@@ -6216,7 +6216,7 @@ OrientationInterpolator952.FieldOrEvent('keyValue', True).IsClauseNamesAdd('vl2_
 OrientationInterpolator952.FieldOrEvent('value_changed', True).IsClauseNamesAdd('vl2_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator952]);
 { ROUTE BehaviorClock.fraction_changed TO vl2_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator952.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator952.EventSet_fraction);
 OrientationInterpolator954 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator954.X3DName := 'vl3_OI';
 OrientationInterpolator954.FieldOrEvent('key', True).IsClauseNamesAdd('vl3_key');
@@ -6224,7 +6224,7 @@ OrientationInterpolator954.FieldOrEvent('keyValue', True).IsClauseNamesAdd('vl3_
 OrientationInterpolator954.FieldOrEvent('value_changed', True).IsClauseNamesAdd('vl3_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator954]);
 { ROUTE BehaviorClock.fraction_changed TO vl3_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator954.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator954.EventSet_fraction);
 OrientationInterpolator956 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator956.X3DName := 'vl4_OI';
 OrientationInterpolator956.FieldOrEvent('key', True).IsClauseNamesAdd('vl4_key');
@@ -6236,7 +6236,7 @@ begin
 OrientationInterpolator956.FieldOrEvent('value_changed', True).IsClauseNamesAdd('vl4_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator956]);
 { ROUTE BehaviorClock.fraction_changed TO vl4_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator956.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator956.EventSet_fraction);
 OrientationInterpolator958 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator958.X3DName := 'vl5_OI';
 OrientationInterpolator958.FieldOrEvent('key', True).IsClauseNamesAdd('vl5_key');
@@ -6244,7 +6244,7 @@ OrientationInterpolator958.FieldOrEvent('keyValue', True).IsClauseNamesAdd('vl5_
 OrientationInterpolator958.FieldOrEvent('value_changed', True).IsClauseNamesAdd('vl5_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator958]);
 { ROUTE BehaviorClock.fraction_changed TO vl5_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator958.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator958.EventSet_fraction);
 OrientationInterpolator960 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator960.X3DName := 'vt1_OI';
 OrientationInterpolator960.FieldOrEvent('key', True).IsClauseNamesAdd('vt1_key');
@@ -6252,7 +6252,7 @@ OrientationInterpolator960.FieldOrEvent('keyValue', True).IsClauseNamesAdd('vt1_
 OrientationInterpolator960.FieldOrEvent('value_changed', True).IsClauseNamesAdd('vt1_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator960]);
 { ROUTE BehaviorClock.fraction_changed TO vt1_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator960.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator960.EventSet_fraction);
 OrientationInterpolator962 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator962.X3DName := 'vt2_OI';
 OrientationInterpolator962.FieldOrEvent('key', True).IsClauseNamesAdd('vt2_key');
@@ -6260,7 +6260,7 @@ OrientationInterpolator962.FieldOrEvent('keyValue', True).IsClauseNamesAdd('vt2_
 OrientationInterpolator962.FieldOrEvent('value_changed', True).IsClauseNamesAdd('vt2_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator962]);
 { ROUTE BehaviorClock.fraction_changed TO vt2_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator962.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator962.EventSet_fraction);
 OrientationInterpolator964 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator964.X3DName := 'vt3_OI';
 OrientationInterpolator964.FieldOrEvent('key', True).IsClauseNamesAdd('vt3_key');
@@ -6268,7 +6268,7 @@ OrientationInterpolator964.FieldOrEvent('keyValue', True).IsClauseNamesAdd('vt3_
 OrientationInterpolator964.FieldOrEvent('value_changed', True).IsClauseNamesAdd('vt3_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator964]);
 { ROUTE BehaviorClock.fraction_changed TO vt3_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator964.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator964.EventSet_fraction);
 OrientationInterpolator966 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator966.X3DName := 'vt4_OI';
 OrientationInterpolator966.FieldOrEvent('key', True).IsClauseNamesAdd('vt4_key');
@@ -6280,7 +6280,7 @@ begin
 OrientationInterpolator966.FieldOrEvent('value_changed', True).IsClauseNamesAdd('vt4_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator966]);
 { ROUTE BehaviorClock.fraction_changed TO vt4_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator966.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator966.EventSet_fraction);
 OrientationInterpolator968 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator968.X3DName := 'vt5_OI';
 OrientationInterpolator968.FieldOrEvent('key', True).IsClauseNamesAdd('vt5_key');
@@ -6288,7 +6288,7 @@ OrientationInterpolator968.FieldOrEvent('keyValue', True).IsClauseNamesAdd('vt5_
 OrientationInterpolator968.FieldOrEvent('value_changed', True).IsClauseNamesAdd('vt5_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator968]);
 { ROUTE BehaviorClock.fraction_changed TO vt5_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator968.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator968.EventSet_fraction);
 OrientationInterpolator970 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator970.X3DName := 'vt6_OI';
 OrientationInterpolator970.FieldOrEvent('key', True).IsClauseNamesAdd('vt6_key');
@@ -6296,7 +6296,7 @@ OrientationInterpolator970.FieldOrEvent('keyValue', True).IsClauseNamesAdd('vt6_
 OrientationInterpolator970.FieldOrEvent('value_changed', True).IsClauseNamesAdd('vt6_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator970]);
 { ROUTE BehaviorClock.fraction_changed TO vt6_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator970.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator970.EventSet_fraction);
 OrientationInterpolator972 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator972.X3DName := 'vt7_OI';
 OrientationInterpolator972.FieldOrEvent('key', True).IsClauseNamesAdd('vt7_key');
@@ -6304,7 +6304,7 @@ OrientationInterpolator972.FieldOrEvent('keyValue', True).IsClauseNamesAdd('vt7_
 OrientationInterpolator972.FieldOrEvent('value_changed', True).IsClauseNamesAdd('vt7_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator972]);
 { ROUTE BehaviorClock.fraction_changed TO vt7_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator972.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator972.EventSet_fraction);
 OrientationInterpolator974 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator974.X3DName := 'vt8_OI';
 OrientationInterpolator974.FieldOrEvent('key', True).IsClauseNamesAdd('vt8_key');
@@ -6312,7 +6312,7 @@ OrientationInterpolator974.FieldOrEvent('keyValue', True).IsClauseNamesAdd('vt8_
 OrientationInterpolator974.FieldOrEvent('value_changed', True).IsClauseNamesAdd('vt8_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator974]);
 { ROUTE BehaviorClock.fraction_changed TO vt8_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator974.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator974.EventSet_fraction);
 OrientationInterpolator976 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator976.X3DName := 'vt9_OI';
 OrientationInterpolator976.FieldOrEvent('key', True).IsClauseNamesAdd('vt9_key');
@@ -6324,7 +6324,7 @@ begin
 OrientationInterpolator976.FieldOrEvent('value_changed', True).IsClauseNamesAdd('vt9_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator976]);
 { ROUTE BehaviorClock.fraction_changed TO vt9_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator976.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator976.EventSet_fraction);
 OrientationInterpolator978 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator978.X3DName := 'vt10_OI';
 OrientationInterpolator978.FieldOrEvent('key', True).IsClauseNamesAdd('vt10_key');
@@ -6332,7 +6332,7 @@ OrientationInterpolator978.FieldOrEvent('keyValue', True).IsClauseNamesAdd('vt10
 OrientationInterpolator978.FieldOrEvent('value_changed', True).IsClauseNamesAdd('vt10_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator978]);
 { ROUTE BehaviorClock.fraction_changed TO vt10_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator978.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator978.EventSet_fraction);
 OrientationInterpolator980 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator980.X3DName := 'vt11_OI';
 OrientationInterpolator980.FieldOrEvent('key', True).IsClauseNamesAdd('vt11_key');
@@ -6340,7 +6340,7 @@ OrientationInterpolator980.FieldOrEvent('keyValue', True).IsClauseNamesAdd('vt11
 OrientationInterpolator980.FieldOrEvent('value_changed', True).IsClauseNamesAdd('vt11_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator980]);
 { ROUTE BehaviorClock.fraction_changed TO vt11_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator980.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator980.EventSet_fraction);
 OrientationInterpolator982 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator982.X3DName := 'vt12_OI';
 OrientationInterpolator982.FieldOrEvent('key', True).IsClauseNamesAdd('vt12_key');
@@ -6348,7 +6348,7 @@ OrientationInterpolator982.FieldOrEvent('keyValue', True).IsClauseNamesAdd('vt12
 OrientationInterpolator982.FieldOrEvent('value_changed', True).IsClauseNamesAdd('vt12_changed');
 ProtoDeclare20.Node.AddChildren([OrientationInterpolator982]);
 { ROUTE BehaviorClock.fraction_changed TO vt12_OI.set_fraction }
-ProtoBody603.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator982.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor604.EventFraction_changed, OrientationInterpolator982.EventSet_fraction);
 X3D0.AddPrototype(ProtoDeclare20);
 ProtoDeclare984 := CreateEmptyPrototype('HAnimBodyBehaviorChooser');
 ProtoDeclare984.X3DName := 'HAnimBodyBehaviorChooser';
@@ -6498,8 +6498,10 @@ end;
 procedure InitHAnimBehaviorPrototypesPart115;
 begin
 HAnimHumanoid1022.Version := '2.0';
+(ProtoInstance1020.Field('HumanoidArray') as TMFNode).Clear;
 (ProtoInstance1020.Field('HumanoidArray') as TMFNode).Add(HAnimHumanoid1022);
 (ProtoInstance1020.Field('whichBody') as TSFInt32).Value := 0;
+(ProtoInstance1020.Field('hAnimBehaviorNodes') as TMFNode).Clear;
 (ProtoInstance1020.Field('hAnimBehaviorNodes') as TMFNode).Add(ProtoInstance1015);
 (ProtoInstance1020.Field('enabledBehaviorsArray') as TMFBool).Send([True]);
 Group18.FdChildren.Add(ProtoInstance1020.Instantiate);

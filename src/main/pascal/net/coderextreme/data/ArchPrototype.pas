@@ -275,11 +275,11 @@ Script37.FieldOrEvent('archHalfFilled', True).IsClauseNamesAdd('archHalfFilled')
 Script37.FieldOrEvent('lintel', True).IsClauseNamesAdd('lintel');
 ProtoDeclare14.Node.AddChildren([Script37]);
 { ROUTE ArchPrototypeScript.computedScale TO ArchTransform.scale }
-ProtoBody30.AddRoute(FieldVal50, Transform31.scale);
+ProtoDeclare14.Node.AddRoute(FieldVal50, Transform31.scale);
 { ROUTE ArchPrototypeScript.pointOut TO ArchChord.point }
-ProtoBody30.AddRoute(FieldVal51, Coordinate34.point);
+ProtoDeclare14.Node.AddRoute(FieldVal51, Coordinate34.point);
 { ROUTE ArchPrototypeScript.indexOut TO ArchIndex.set_coordIndex }
-ProtoBody30.AddRoute(FieldVal52, IndexedFaceSet33.EventSet_coordIndex);
+ProtoDeclare14.Node.AddRoute(FieldVal52, IndexedFaceSet33.EventSet_coordIndex);
 X3D0.AddPrototype(ProtoDeclare14);
 ProtoInstance56 := TX3DPrototypeNode.CreatePrototypeNode('', '', ProtoDeclare14);
 ProtoInstance56.X3DName := 'ArchInstance';

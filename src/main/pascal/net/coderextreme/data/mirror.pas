@@ -2,13 +2,58 @@ unit mirror;
 
 interface
 
-uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;
+uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported, CastleSceneCore;
 
 function Createmirror: TX3DRootNode;
+procedure RegistermirrorScripts(const Scene: TCastleSceneCore);
 
 implementation
 
-uses CastleVectors;
+uses SysUtils, CastleVectors, Math, X3DTime;
+
+type
+  TScript52Script = class
+  private
+    FfrontUrls: array of String;
+    FbackUrls: array of String;
+    FleftUrls: array of String;
+    FrightUrls: array of String;
+    FtopUrls: array of String;
+    FbottomUrls: array of String;
+    Ffront_changed: array of String;
+    FEvent_front_changed: TX3DEvent;
+    FBack_front_changed: TMFString;
+    FDirty_front_changed: Boolean;
+    Fback_changed: array of String;
+    FEvent_back_changed: TX3DEvent;
+    FBack_back_changed: TMFString;
+    FDirty_back_changed: Boolean;
+    Fleft_changed: array of String;
+    FEvent_left_changed: TX3DEvent;
+    FBack_left_changed: TMFString;
+    FDirty_left_changed: Boolean;
+    Fright_changed: array of String;
+    FEvent_right_changed: TX3DEvent;
+    FBack_right_changed: TMFString;
+    FDirty_right_changed: Boolean;
+    Ftop_changed: array of String;
+    FEvent_top_changed: TX3DEvent;
+    FBack_top_changed: TMFString;
+    FDirty_top_changed: Boolean;
+    Fbottom_changed: array of String;
+    FEvent_bottom_changed: TX3DEvent;
+    FBack_bottom_changed: TMFString;
+    FDirty_bottom_changed: Boolean;
+    Fold: Int32;
+    FField_old: TSFInt32;
+    FDirty_old: Boolean;
+    procedure FlushOutputs(const Time: TX3DTime);
+  public
+    constructor Create(const AField_frontUrls: TMFString; const AField_backUrls: TMFString; const AField_leftUrls: TMFString; const AField_rightUrls: TMFString; const AField_topUrls: TMFString; const AField_bottomUrls: TMFString; const AEvent_front_changed: TX3DEvent; const AEvent_back_changed: TX3DEvent; const AEvent_left_changed: TX3DEvent; const AEvent_right_changed: TX3DEvent; const AEvent_top_changed: TX3DEvent; const AEvent_bottom_changed: TX3DEvent; const AField_old: TSFInt32);
+    destructor Destroy; override;
+    procedure RegisterHandlers(const Scene: TCastleSceneCore);
+    procedure Set_fraction(Value: TX3DField; const Time: TX3DTime);
+  end;
 
 var
   X3D0: TX3DRootNode;
@@ -64,7 +109,163 @@ var
   FieldVal64: TX3DEvent;
   FieldVal65: TX3DEvent;
   FieldVal66: TSFInt32;
+  CompiledScript52: TScript52Script;
   TimeSensor67: TTimeSensorNode;
+
+constructor TScript52Script.Create(const AField_frontUrls: TMFString; const AField_backUrls: TMFString; const AField_leftUrls: TMFString; const AField_rightUrls: TMFString; const AField_topUrls: TMFString; const AField_bottomUrls: TMFString; const AEvent_front_changed: TX3DEvent; const AEvent_back_changed: TX3DEvent; const AEvent_left_changed: TX3DEvent; const AEvent_right_changed: TX3DEvent; const AEvent_top_changed: TX3DEvent; const AEvent_bottom_changed: TX3DEvent; const AField_old: TSFInt32);
+begin
+  inherited Create;
+  FfrontUrls := 0;
+  FbackUrls := 0;
+  FleftUrls := 0;
+  FrightUrls := 0;
+  FtopUrls := 0;
+  FbottomUrls := 0;
+  Ffront_changed := 0;
+  FEvent_front_changed := nil;
+  FBack_front_changed := TMFString.Create(nil, False, 'front_changed', 0);
+  FDirty_front_changed := False;
+  Fback_changed := 0;
+  FEvent_back_changed := nil;
+  FBack_back_changed := TMFString.Create(nil, False, 'back_changed', 0);
+  FDirty_back_changed := False;
+  Fleft_changed := 0;
+  FEvent_left_changed := nil;
+  FBack_left_changed := TMFString.Create(nil, False, 'left_changed', 0);
+  FDirty_left_changed := False;
+  Fright_changed := 0;
+  FEvent_right_changed := nil;
+  FBack_right_changed := TMFString.Create(nil, False, 'right_changed', 0);
+  FDirty_right_changed := False;
+  Ftop_changed := 0;
+  FEvent_top_changed := nil;
+  FBack_top_changed := TMFString.Create(nil, False, 'top_changed', 0);
+  FDirty_top_changed := False;
+  Fbottom_changed := 0;
+  FEvent_bottom_changed := nil;
+  FBack_bottom_changed := TMFString.Create(nil, False, 'bottom_changed', 0);
+  FDirty_bottom_changed := False;
+  Fold := 0;
+  FField_old := nil;
+  FDirty_old := False;
+  if AField_frontUrls <> nil then FfrontUrls := AField_frontUrls.Value;
+  if AField_backUrls <> nil then FbackUrls := AField_backUrls.Value;
+  if AField_leftUrls <> nil then FleftUrls := AField_leftUrls.Value;
+  if AField_rightUrls <> nil then FrightUrls := AField_rightUrls.Value;
+  if AField_topUrls <> nil then FtopUrls := AField_topUrls.Value;
+  if AField_bottomUrls <> nil then FbottomUrls := AField_bottomUrls.Value;
+  FEvent_front_changed := AEvent_front_changed;
+  FEvent_back_changed := AEvent_back_changed;
+  FEvent_left_changed := AEvent_left_changed;
+  FEvent_right_changed := AEvent_right_changed;
+  FEvent_top_changed := AEvent_top_changed;
+  FEvent_bottom_changed := AEvent_bottom_changed;
+  FField_old := AField_old;
+  if AField_old <> nil then Fold := AField_old.Value;
+end;
+
+destructor TScript52Script.Destroy;
+begin
+  FreeAndNil(FBack_front_changed);
+  FreeAndNil(FBack_back_changed);
+  FreeAndNil(FBack_left_changed);
+  FreeAndNil(FBack_right_changed);
+  FreeAndNil(FBack_top_changed);
+  FreeAndNil(FBack_bottom_changed);
+  inherited Destroy;
+end;
+
+procedure TScript52Script.FlushOutputs(const Time: TX3DTime);
+begin
+  if FDirty_front_changed then
+  begin
+    FDirty_front_changed := False;
+    if FEvent_front_changed <> nil then
+    begin
+      FBack_front_changed.Value := Ffront_changed;
+      FEvent_front_changed.Send(FBack_front_changed, Time);
+    end;
+  end;
+  if FDirty_back_changed then
+  begin
+    FDirty_back_changed := False;
+    if FEvent_back_changed <> nil then
+    begin
+      FBack_back_changed.Value := Fback_changed;
+      FEvent_back_changed.Send(FBack_back_changed, Time);
+    end;
+  end;
+  if FDirty_left_changed then
+  begin
+    FDirty_left_changed := False;
+    if FEvent_left_changed <> nil then
+    begin
+      FBack_left_changed.Value := Fleft_changed;
+      FEvent_left_changed.Send(FBack_left_changed, Time);
+    end;
+  end;
+  if FDirty_right_changed then
+  begin
+    FDirty_right_changed := False;
+    if FEvent_right_changed <> nil then
+    begin
+      FBack_right_changed.Value := Fright_changed;
+      FEvent_right_changed.Send(FBack_right_changed, Time);
+    end;
+  end;
+  if FDirty_top_changed then
+  begin
+    FDirty_top_changed := False;
+    if FEvent_top_changed <> nil then
+    begin
+      FBack_top_changed.Value := Ftop_changed;
+      FEvent_top_changed.Send(FBack_top_changed, Time);
+    end;
+  end;
+  if FDirty_bottom_changed then
+  begin
+    FDirty_bottom_changed := False;
+    if FEvent_bottom_changed <> nil then
+    begin
+      FBack_bottom_changed.Value := Fbottom_changed;
+      FEvent_bottom_changed.Send(FBack_bottom_changed, Time);
+    end;
+  end;
+  if FDirty_old then
+  begin
+    FDirty_old := False;
+    if FField_old <> nil then
+      FField_old.Send(Fold, Time);
+  end;
+end;
+
+procedure TScript52Script.RegisterHandlers(const Scene: TCastleSceneCore);
+begin
+  Scene.RegisterCompiledScript('Script52_set_fraction', {$ifdef FPC}@{$endif}Set_fraction);
+end;
+
+procedure TScript52Script.Set_fraction(Value: TX3DField; const Time: TX3DTime);
+var
+  side: Integer;
+begin
+  side := Floor((Value as TSFFloat).Value * Length(FfrontUrls));
+  if side > Length(FfrontUrls) - 1 then
+  begin
+    side := 0;
+  end;
+  if side <> Fold then
+  begin
+    WriteLn((Value as TSFFloat).Value + ' ' + side);
+    Fold := side; FDirty_old := True;
+    Ffront_changed[0] := FfrontUrls[side]; FDirty_front_changed := True;
+    Fback_changed[0] := FbackUrls[side]; FDirty_back_changed := True;
+    Fleft_changed[0] := FleftUrls[side]; FDirty_left_changed := True;
+    Fright_changed[0] := FrightUrls[side]; FDirty_right_changed := True;
+    Ftop_changed[0] := FtopUrls[side]; FDirty_top_changed := True;
+    Fbottom_changed[0] := FbottomUrls[side]; FDirty_bottom_changed := True;
+  end;
+  FlushOutputs(Time);
+end;
 
 procedure InitmirrorPart0;
 begin
@@ -132,23 +333,23 @@ ComposedCubeMapTexture28 := TComposedCubeMapTextureNode.Create;
 ImageTexture29 := TImageTextureNode.Create;
 ImageTexture29.X3DName := 'backShader';
 ImageTexture29.SetUrl(['../resources/images/all_probes/beach_cross/beach_back.png', 'https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png']);
-ComposedCubeMapTexture28.FdBackTexture.Set(ImageTexture29);
+ComposedCubeMapTexture28.BackTexture := ImageTexture29;
 ImageTexture30 := TImageTextureNode.Create;
 ImageTexture30.X3DName := 'bottomShader';
 ImageTexture30.SetUrl(['../resources/images/all_probes/beach_cross/beach_bottom.png', 'https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png']);
-ComposedCubeMapTexture28.FdBottomTexture.Set(ImageTexture30);
+ComposedCubeMapTexture28.BottomTexture := ImageTexture30;
 ImageTexture31 := TImageTextureNode.Create;
 ImageTexture31.X3DName := 'frontShader';
 ImageTexture31.SetUrl(['../resources/images/all_probes/beach_cross/beach_front.png', 'https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png']);
-ComposedCubeMapTexture28.FdFrontTexture.Set(ImageTexture31);
+ComposedCubeMapTexture28.FrontTexture := ImageTexture31;
 ImageTexture32 := TImageTextureNode.Create;
 ImageTexture32.X3DName := 'leftShader';
 ImageTexture32.SetUrl(['../resources/images/all_probes/beach_cross/beach_left.png', 'https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png']);
-ComposedCubeMapTexture28.FdLeftTexture.Set(ImageTexture32);
+ComposedCubeMapTexture28.LeftTexture := ImageTexture32;
 ImageTexture33 := TImageTextureNode.Create;
 ImageTexture33.X3DName := 'rightShader';
 ImageTexture33.SetUrl(['../resources/images/all_probes/beach_cross/beach_right.png', 'https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png']);
-ComposedCubeMapTexture28.FdRightTexture.Set(ImageTexture33);
+ComposedCubeMapTexture28.RightTexture := ImageTexture33;
 ImageTexture34 := TImageTextureNode.Create;
 ImageTexture34.X3DName := 'topShader';
 ImageTexture34.SetUrl(['../resources/images/all_probes/beach_cross/beach_top.png', 'https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png']);
@@ -156,11 +357,11 @@ end;
 
 procedure InitmirrorPart2;
 begin
-ComposedCubeMapTexture28.FdTopTexture.Set(ImageTexture34);
+ComposedCubeMapTexture28.TopTexture := ImageTexture34;
 Appearance26.Texture := ComposedCubeMapTexture28;
 ComposedShader35 := TComposedShaderNode.Create;
 ComposedShader35.X3DName := 'x3dom';
-ComposedShader35.Language := 'GLSL';
+ComposedShader35.Language := slGLSL;
 FieldVal36 := TSFVec3f.Create(ComposedShader35, True, 'chromaticDispertion', Vector3(0.98, 1, 1.033));
 ComposedShader35.AddCustomFieldOrEvent(FieldVal36);
 FieldVal37 := TSFInt32.Create(ComposedShader35, True, 'cube', 0);
@@ -173,16 +374,16 @@ FieldVal40 := TSFFloat.Create(ComposedShader35, True, 'power', 2);
 ComposedShader35.AddCustomFieldOrEvent(FieldVal40);
 ShaderPart41 := TShaderPartNode.Create;
 ShaderPart41.SetUrl(['../shaders/x3dom.vs', 'https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs']);
-ShaderPart41.FdType.Value := 'VERTEX';
-ComposedShader35.Parts := ShaderPart41;
+ShaderPart41.ShaderType := stVertex;
+ComposedShader35.FdParts.Add(ShaderPart41);
 ShaderPart42 := TShaderPartNode.Create;
 ShaderPart42.SetUrl(['../shaders/mix.fs', 'https://coderextreme.net/X3DJSONLD/src/main/shaders/mix.fs']);
-ShaderPart42.FdType.Value := 'FRAGMENT';
-ComposedShader35.Parts := ShaderPart42;
-Appearance26.AddChildren([ComposedShader35]);
+ShaderPart42.ShaderType := stFragment;
+ComposedShader35.FdParts.Add(ShaderPart42);
+Appearance26.FdShaders.Add(ComposedShader35);
 ComposedShader43 := TComposedShaderNode.Create;
 ComposedShader43.X3DName := 'x_ite';
-ComposedShader43.Language := 'GLSL';
+ComposedShader43.Language := slGLSL;
 { http://hypertextbook.com/facts/2005/JustinChe.shtml }
 FieldVal44 := TSFVec3f.Create(ComposedShader43, True, 'chromaticDispertion', Vector3(0.98, 1, 1.033));
 ComposedShader43.AddCustomFieldOrEvent(FieldVal44);
@@ -200,13 +401,13 @@ end;
 
 procedure InitmirrorPart3;
 begin
-ShaderPart49.FdType.Value := 'VERTEX';
-ComposedShader43.Parts := ShaderPart49;
+ShaderPart49.ShaderType := stVertex;
+ComposedShader43.FdParts.Add(ShaderPart49);
 ShaderPart50 := TShaderPartNode.Create;
 ShaderPart50.SetUrl(['../shaders/x_itemix.fs', 'https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itemix.fs']);
-ShaderPart50.FdType.Value := 'FRAGMENT';
-ComposedShader43.Parts := ShaderPart50;
-Appearance26.AddChildren([ComposedShader43]);
+ShaderPart50.ShaderType := stFragment;
+ComposedShader43.FdParts.Add(ShaderPart50);
+Appearance26.FdShaders.Add(ComposedShader43);
 Shape25.Appearance := Appearance26;
 Sphere51 := TSphereNode.Create;
 Sphere51.Radius := 30;
@@ -215,17 +416,17 @@ Transform24.FdChildren.Add(Shape25);
 Script52 := TScriptNode.Create;
 Script52.X3DName := 'UrlSelector';
 Script52.DirectOutput := True;
-FieldVal53 := TMFString.Create(Script52, False, 'frontUrls', (['../resources/images/all_probes/beach_cross/beach_front.png', '../resources/images/all_probes/building_cross/building_front.png', '../resources/images/all_probes/campus_cross/campus_front.png', '../resources/images/all_probes/galileo_cross/galileo_front.png', '../resources/images/all_probes/grace_cross/grace_front.png', '../resources/images/all_probes/kitchen_cross/kitchen_front.png', '../resources/images/all_probes/rnl_cross/rnl_front.png', '../resources/images/all_probes/stpeters_cross/stpeters_front.png', '../resources/images/all_probes/uffizi_cross/uffizi_front.png']));
+FieldVal53 := TMFString.Create(Script52, False, 'frontUrls', ['../resources/images/all_probes/beach_cross/beach_front.png', '../resources/images/all_probes/building_cross/building_front.png', '../resources/images/all_probes/campus_cross/campus_front.png', '../resources/images/all_probes/galileo_cross/galileo_front.png', '../resources/images/all_probes/grace_cross/grace_front.png', '../resources/images/all_probes/kitchen_cross/kitchen_front.png', '../resources/images/all_probes/rnl_cross/rnl_front.png', '../resources/images/all_probes/stpeters_cross/stpeters_front.png', '../resources/images/all_probes/uffizi_cross/uffizi_front.png']);
 Script52.AddCustomFieldOrEvent(FieldVal53);
-FieldVal54 := TMFString.Create(Script52, False, 'backUrls', (['../resources/images/all_probes/beach_cross/beach_back.png', '../resources/images/all_probes/building_cross/building_back.png', '../resources/images/all_probes/campus_cross/campus_back.png', '../resources/images/all_probes/galileo_cross/galileo_back.png', '../resources/images/all_probes/grace_cross/grace_back.png', '../resources/images/all_probes/kitchen_cross/kitchen_back.png', '../resources/images/all_probes/rnl_cross/rnl_back.png', '../resources/images/all_probes/stpeters_cross/stpeters_back.png', '../resources/images/all_probes/uffizi_cross/uffizi_back.png']));
+FieldVal54 := TMFString.Create(Script52, False, 'backUrls', ['../resources/images/all_probes/beach_cross/beach_back.png', '../resources/images/all_probes/building_cross/building_back.png', '../resources/images/all_probes/campus_cross/campus_back.png', '../resources/images/all_probes/galileo_cross/galileo_back.png', '../resources/images/all_probes/grace_cross/grace_back.png', '../resources/images/all_probes/kitchen_cross/kitchen_back.png', '../resources/images/all_probes/rnl_cross/rnl_back.png', '../resources/images/all_probes/stpeters_cross/stpeters_back.png', '../resources/images/all_probes/uffizi_cross/uffizi_back.png']);
 Script52.AddCustomFieldOrEvent(FieldVal54);
-FieldVal55 := TMFString.Create(Script52, False, 'leftUrls', (['../resources/images/all_probes/beach_cross/beach_left.png', '../resources/images/all_probes/building_cross/building_left.png', '../resources/images/all_probes/campus_cross/campus_left.png', '../resources/images/all_probes/galileo_cross/galileo_left.png', '../resources/images/all_probes/grace_cross/grace_left.png', '../resources/images/all_probes/kitchen_cross/kitchen_left.png', '../resources/images/all_probes/rnl_cross/rnl_left.png', '../resources/images/all_probes/stpeters_cross/stpeters_left.png', '../resources/images/all_probes/uffizi_cross/uffizi_left.png']));
+FieldVal55 := TMFString.Create(Script52, False, 'leftUrls', ['../resources/images/all_probes/beach_cross/beach_left.png', '../resources/images/all_probes/building_cross/building_left.png', '../resources/images/all_probes/campus_cross/campus_left.png', '../resources/images/all_probes/galileo_cross/galileo_left.png', '../resources/images/all_probes/grace_cross/grace_left.png', '../resources/images/all_probes/kitchen_cross/kitchen_left.png', '../resources/images/all_probes/rnl_cross/rnl_left.png', '../resources/images/all_probes/stpeters_cross/stpeters_left.png', '../resources/images/all_probes/uffizi_cross/uffizi_left.png']);
 Script52.AddCustomFieldOrEvent(FieldVal55);
-FieldVal56 := TMFString.Create(Script52, False, 'rightUrls', (['../resources/images/all_probes/beach_cross/beach_right.png', '../resources/images/all_probes/building_cross/building_right.png', '../resources/images/all_probes/campus_cross/campus_right.png', '../resources/images/all_probes/galileo_cross/galileo_right.png', '../resources/images/all_probes/grace_cross/grace_right.png', '../resources/images/all_probes/kitchen_cross/kitchen_right.png', '../resources/images/all_probes/rnl_cross/rnl_right.png', '../resources/images/all_probes/stpeters_cross/stpeters_right.png', '../resources/images/all_probes/uffizi_cross/uffizi_right.png']));
+FieldVal56 := TMFString.Create(Script52, False, 'rightUrls', ['../resources/images/all_probes/beach_cross/beach_right.png', '../resources/images/all_probes/building_cross/building_right.png', '../resources/images/all_probes/campus_cross/campus_right.png', '../resources/images/all_probes/galileo_cross/galileo_right.png', '../resources/images/all_probes/grace_cross/grace_right.png', '../resources/images/all_probes/kitchen_cross/kitchen_right.png', '../resources/images/all_probes/rnl_cross/rnl_right.png', '../resources/images/all_probes/stpeters_cross/stpeters_right.png', '../resources/images/all_probes/uffizi_cross/uffizi_right.png']);
 Script52.AddCustomFieldOrEvent(FieldVal56);
-FieldVal57 := TMFString.Create(Script52, False, 'topUrls', (['../resources/images/all_probes/beach_cross/beach_top.png', '../resources/images/all_probes/building_cross/building_top.png', '../resources/images/all_probes/campus_cross/campus_top.png', '../resources/images/all_probes/galileo_cross/galileo_top.png', '../resources/images/all_probes/grace_cross/grace_top.png', '../resources/images/all_probes/kitchen_cross/kitchen_top.png', '../resources/images/all_probes/rnl_cross/rnl_top.png', '../resources/images/all_probes/stpeters_cross/stpeters_top.png', '../resources/images/all_probes/uffizi_cross/uffizi_top.png']));
+FieldVal57 := TMFString.Create(Script52, False, 'topUrls', ['../resources/images/all_probes/beach_cross/beach_top.png', '../resources/images/all_probes/building_cross/building_top.png', '../resources/images/all_probes/campus_cross/campus_top.png', '../resources/images/all_probes/galileo_cross/galileo_top.png', '../resources/images/all_probes/grace_cross/grace_top.png', '../resources/images/all_probes/kitchen_cross/kitchen_top.png', '../resources/images/all_probes/rnl_cross/rnl_top.png', '../resources/images/all_probes/stpeters_cross/stpeters_top.png', '../resources/images/all_probes/uffizi_cross/uffizi_top.png']);
 Script52.AddCustomFieldOrEvent(FieldVal57);
-FieldVal58 := TMFString.Create(Script52, False, 'bottomUrls', (['../resources/images/all_probes/beach_cross/beach_bottom.png', '../resources/images/all_probes/building_cross/building_bottom.png', '../resources/images/all_probes/campus_cross/campus_bottom.png', '../resources/images/all_probes/galileo_cross/galileo_bottom.png', '../resources/images/all_probes/grace_cross/grace_bottom.png', '../resources/images/all_probes/kitchen_cross/kitchen_bottom.png', '../resources/images/all_probes/rnl_cross/rnl_bottom.png', '../resources/images/all_probes/stpeters_cross/stpeters_bottom.png', '../resources/images/all_probes/uffizi_cross/uffizi_bottom.png']));
+FieldVal58 := TMFString.Create(Script52, False, 'bottomUrls', ['../resources/images/all_probes/beach_cross/beach_bottom.png', '../resources/images/all_probes/building_cross/building_bottom.png', '../resources/images/all_probes/campus_cross/campus_bottom.png', '../resources/images/all_probes/galileo_cross/galileo_bottom.png', '../resources/images/all_probes/grace_cross/grace_bottom.png', '../resources/images/all_probes/kitchen_cross/kitchen_bottom.png', '../resources/images/all_probes/rnl_cross/rnl_bottom.png', '../resources/images/all_probes/stpeters_cross/stpeters_bottom.png', '../resources/images/all_probes/uffizi_cross/uffizi_bottom.png']);
 Script52.AddCustomFieldOrEvent(FieldVal58);
 FieldVal59 := TMFString.CreateEvent(Script52, 'front_changed', False);
 Script52.AddCustomFieldOrEvent(FieldVal59);
@@ -247,23 +448,10 @@ begin
 Script52.AddCustomFieldOrEvent(FieldVal65);
 FieldVal66 := TSFInt32.Create(Script52, True, 'old', -1);
 Script52.AddCustomFieldOrEvent(FieldVal66);
-Script52.SetSourceCode('ecmascript:' + LineEnding +
-  '        function set_fraction( f, tm ) {' + LineEnding +
-  '	    var side = Math.floor(f*frontUrls.length);' + LineEnding +
-  '	    if (side > frontUrls.length-1) {' + LineEnding +
-  '	    	side = 0;' + LineEnding +
-  '	    }' + LineEnding +
-  '	    if (side != old) {' + LineEnding +
-  '	    	    Browser.print(f+" "+side);' + LineEnding +
-  '	    	    old = side;' + LineEnding +
-  '		    front_changed[0] = frontUrls[side];' + LineEnding +
-  '		    back_changed[0] = backUrls[side];' + LineEnding +
-  '		    left_changed[0] = leftUrls[side];' + LineEnding +
-  '		    right_changed[0] = rightUrls[side];' + LineEnding +
-  '		    top_changed[0] = topUrls[side];' + LineEnding +
-  '		    bottom_changed[0] = bottomUrls[side];' + LineEnding +
-  '            }' + LineEnding +
-  '        }');
+FreeAndNil(CompiledScript52);
+CompiledScript52 := TScript52Script.Create(FieldVal53, FieldVal54, FieldVal55, FieldVal56, FieldVal57, FieldVal58, FieldVal59, FieldVal60, FieldVal61, FieldVal62, FieldVal63, FieldVal64, FieldVal66);
+Script52.SetUrl(['compiled:' + LineEnding +
+  'set_fraction=Script52_set_fraction']);
 Transform24.FdChildren.Add(Script52);
 TimeSensor67 := TTimeSensorNode.Create;
 TimeSensor67.X3DName := 'Clock';
@@ -310,5 +498,12 @@ begin
   Result := X3D0;
 end;
 
+procedure RegistermirrorScripts(const Scene: TCastleSceneCore);
 begin
+  if CompiledScript52 <> nil then
+    CompiledScript52.RegisterHandlers(Scene);
+end;
+
+finalization
+  FreeAndNil(CompiledScript52);
 end.

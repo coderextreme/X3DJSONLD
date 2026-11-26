@@ -432,43 +432,43 @@ begin
 Group49.FdChildren.Add(OrientationInterpolator69);
 ProtoDeclare20.Node.AddChildren([Group49]);
 { ROUTE TIMER.fraction_changed TO HUMANOIDROOT_POSITION_ANIMATOR.set_fraction }
-ProtoBody48.AddRoute(TimeSensor50.EventFraction_changed, PositionInterpolator51.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor50.EventFraction_changed, PositionInterpolator51.EventSet_fraction);
 { ROUTE TIMER.fraction_changed TO HUMANOIDROOT_ANIMATOR.set_fraction }
-ProtoBody48.AddRoute(TimeSensor50.EventFraction_changed, OrientationInterpolator52.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor50.EventFraction_changed, OrientationInterpolator52.EventSet_fraction);
 { ROUTE TIMER.fraction_changed TO SACROILIAC_ANIMATOR.set_fraction }
-ProtoBody48.AddRoute(TimeSensor50.EventFraction_changed, OrientationInterpolator53.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor50.EventFraction_changed, OrientationInterpolator53.EventSet_fraction);
 { ROUTE TIMER.fraction_changed TO L_HIP_ANIMATOR.set_fraction }
-ProtoBody48.AddRoute(TimeSensor50.EventFraction_changed, OrientationInterpolator54.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor50.EventFraction_changed, OrientationInterpolator54.EventSet_fraction);
 { ROUTE TIMER.fraction_changed TO L_KNEE_ANIMATOR.set_fraction }
-ProtoBody48.AddRoute(TimeSensor50.EventFraction_changed, OrientationInterpolator55.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor50.EventFraction_changed, OrientationInterpolator55.EventSet_fraction);
 { ROUTE TIMER.fraction_changed TO L_ANKLE_ANIMATOR.set_fraction }
-ProtoBody48.AddRoute(TimeSensor50.EventFraction_changed, OrientationInterpolator56.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor50.EventFraction_changed, OrientationInterpolator56.EventSet_fraction);
 { ROUTE TIMER.fraction_changed TO L_MIDTARSAL_ANIMATOR.set_fraction }
-ProtoBody48.AddRoute(TimeSensor50.EventFraction_changed, OrientationInterpolator57.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor50.EventFraction_changed, OrientationInterpolator57.EventSet_fraction);
 { ROUTE TIMER.fraction_changed TO R_HIP_ANIMATOR.set_fraction }
-ProtoBody48.AddRoute(TimeSensor50.EventFraction_changed, OrientationInterpolator58.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor50.EventFraction_changed, OrientationInterpolator58.EventSet_fraction);
 { ROUTE TIMER.fraction_changed TO R_KNEE_ANIMATOR.set_fraction }
-ProtoBody48.AddRoute(TimeSensor50.EventFraction_changed, OrientationInterpolator59.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor50.EventFraction_changed, OrientationInterpolator59.EventSet_fraction);
 { ROUTE TIMER.fraction_changed TO R_ANKLE_ANIMATOR.set_fraction }
-ProtoBody48.AddRoute(TimeSensor50.EventFraction_changed, OrientationInterpolator60.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor50.EventFraction_changed, OrientationInterpolator60.EventSet_fraction);
 { ROUTE TIMER.fraction_changed TO R_MIDTARSAL_ANIMATOR.set_fraction }
-ProtoBody48.AddRoute(TimeSensor50.EventFraction_changed, OrientationInterpolator61.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor50.EventFraction_changed, OrientationInterpolator61.EventSet_fraction);
 { ROUTE TIMER.fraction_changed TO VL5_ANIMATOR.set_fraction }
-ProtoBody48.AddRoute(TimeSensor50.EventFraction_changed, OrientationInterpolator62.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor50.EventFraction_changed, OrientationInterpolator62.EventSet_fraction);
 { ROUTE TIMER.fraction_changed TO SKULLBASE_ANIMATOR.set_fraction }
-ProtoBody48.AddRoute(TimeSensor50.EventFraction_changed, OrientationInterpolator63.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor50.EventFraction_changed, OrientationInterpolator63.EventSet_fraction);
 { ROUTE TIMER.fraction_changed TO L_SHOULDER_ANIMATOR.set_fraction }
-ProtoBody48.AddRoute(TimeSensor50.EventFraction_changed, OrientationInterpolator64.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor50.EventFraction_changed, OrientationInterpolator64.EventSet_fraction);
 { ROUTE TIMER.fraction_changed TO L_ELBOW_ANIMATOR.set_fraction }
-ProtoBody48.AddRoute(TimeSensor50.EventFraction_changed, OrientationInterpolator65.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor50.EventFraction_changed, OrientationInterpolator65.EventSet_fraction);
 { ROUTE TIMER.fraction_changed TO L_WRIST_ANIMATOR.set_fraction }
-ProtoBody48.AddRoute(TimeSensor50.EventFraction_changed, OrientationInterpolator66.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor50.EventFraction_changed, OrientationInterpolator66.EventSet_fraction);
 { ROUTE TIMER.fraction_changed TO R_SHOULDER_ANIMATOR.set_fraction }
-ProtoBody48.AddRoute(TimeSensor50.EventFraction_changed, OrientationInterpolator67.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor50.EventFraction_changed, OrientationInterpolator67.EventSet_fraction);
 { ROUTE TIMER.fraction_changed TO R_ELBOW_ANIMATOR.set_fraction }
-ProtoBody48.AddRoute(TimeSensor50.EventFraction_changed, OrientationInterpolator68.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor50.EventFraction_changed, OrientationInterpolator68.EventSet_fraction);
 { ROUTE TIMER.fraction_changed TO R_WRIST_ANIMATOR.set_fraction }
-ProtoBody48.AddRoute(TimeSensor50.EventFraction_changed, OrientationInterpolator69.EventSet_fraction);
+ProtoDeclare20.Node.AddRoute(TimeSensor50.EventFraction_changed, OrientationInterpolator69.EventSet_fraction);
 end;
 
 procedure InitLOA1_StandAnimationPart8;

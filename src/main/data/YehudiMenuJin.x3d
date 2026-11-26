@@ -19005,8 +19005,7 @@
     <Script DEF="Choice0">
       <field name="touchTime" type="SFTime" accessType="inputOnly"/>
       <field name="choice" type="SFInt32" accessType="outputOnly"/>
-      <![CDATA[
-      ecmascript:
+      <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 0;
       }
@@ -19043,8 +19042,7 @@
     <Script DEF="Choice1">
       <field name="touchTime" type="SFTime" accessType="inputOnly"/>
       <field name="choice" type="SFInt32" accessType="outputOnly"/>
-      <![CDATA[
-      ecmascript:
+      <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 1;
       }
@@ -19081,8 +19079,7 @@
     <Script DEF="Choice2">
       <field name="touchTime" type="SFTime" accessType="inputOnly"/>
       <field name="choice" type="SFInt32" accessType="outputOnly"/>
-      <![CDATA[
-      ecmascript:
+      <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 2;
       }
@@ -19119,8 +19116,7 @@
     <Script DEF="Choice3">
       <field name="touchTime" type="SFTime" accessType="inputOnly"/>
       <field name="choice" type="SFInt32" accessType="outputOnly"/>
-      <![CDATA[
-      ecmascript:
+      <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 3;
       }
@@ -19157,8 +19153,7 @@
     <Script DEF="Choice4">
       <field name="touchTime" type="SFTime" accessType="inputOnly"/>
       <field name="choice" type="SFInt32" accessType="outputOnly"/>
-      <![CDATA[
-      ecmascript:
+      <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 4;
       }
@@ -19195,8 +19190,7 @@
     <Script DEF="Choice5">
       <field name="touchTime" type="SFTime" accessType="inputOnly"/>
       <field name="choice" type="SFInt32" accessType="outputOnly"/>
-      <![CDATA[
-      ecmascript:
+      <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 5;
       }
@@ -19233,8 +19227,7 @@
     <Script DEF="Choice6">
       <field name="touchTime" type="SFTime" accessType="inputOnly"/>
       <field name="choice" type="SFInt32" accessType="outputOnly"/>
-      <![CDATA[
-      ecmascript:
+      <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 6;
       }
@@ -19271,8 +19264,7 @@
     <Script DEF="Choice7">
       <field name="touchTime" type="SFTime" accessType="inputOnly"/>
       <field name="choice" type="SFInt32" accessType="outputOnly"/>
-      <![CDATA[
-      ecmascript:
+      <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 7;
       }
@@ -19309,8 +19301,7 @@
     <Script DEF="Choice8">
       <field name="touchTime" type="SFTime" accessType="inputOnly"/>
       <field name="choice" type="SFInt32" accessType="outputOnly"/>
-      <![CDATA[
-      ecmascript:
+      <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 8;
       }
@@ -19347,8 +19338,7 @@
     <Script DEF="Choice9">
       <field name="touchTime" type="SFTime" accessType="inputOnly"/>
       <field name="choice" type="SFInt32" accessType="outputOnly"/>
-      <![CDATA[
-      ecmascript:
+      <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 9;
       }
@@ -19385,8 +19375,7 @@
     <Script DEF="Choice10">
       <field name="touchTime" type="SFTime" accessType="inputOnly"/>
       <field name="choice" type="SFInt32" accessType="outputOnly"/>
-      <![CDATA[
-      ecmascript:
+      <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 10;
       }
@@ -19423,8 +19412,7 @@
     <Script DEF="Choice11">
       <field name="touchTime" type="SFTime" accessType="inputOnly"/>
       <field name="choice" type="SFInt32" accessType="outputOnly"/>
-      <![CDATA[
-      ecmascript:
+      <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 11;
       }
@@ -19461,8 +19449,7 @@
     <Script DEF="Choice12">
       <field name="touchTime" type="SFTime" accessType="inputOnly"/>
       <field name="choice" type="SFInt32" accessType="outputOnly"/>
-      <![CDATA[
-      ecmascript:
+      <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 12;
       }
@@ -19499,8 +19486,7 @@
     <Script DEF="Choice13">
       <field name="touchTime" type="SFTime" accessType="inputOnly"/>
       <field name="choice" type="SFInt32" accessType="outputOnly"/>
-      <![CDATA[
-      ecmascript:
+      <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 13;
       }
@@ -19537,8 +19523,7 @@
     <Script DEF="Choice14">
       <field name="touchTime" type="SFTime" accessType="inputOnly"/>
       <field name="choice" type="SFInt32" accessType="outputOnly"/>
-      <![CDATA[
-      ecmascript:
+      <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 14;
       }
@@ -19575,8 +19560,7 @@
     <Script DEF="Choice15">
       <field name="touchTime" type="SFTime" accessType="inputOnly"/>
       <field name="choice" type="SFInt32" accessType="outputOnly"/>
-      <![CDATA[
-      ecmascript:
+      <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 15;
       }
@@ -19613,8 +19597,7 @@
     <Script DEF="Choice16">
       <field name="touchTime" type="SFTime" accessType="inputOnly"/>
       <field name="choice" type="SFInt32" accessType="outputOnly"/>
-      <![CDATA[
-      ecmascript:
+      <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 16;
       }
@@ -19651,8 +19634,7 @@
     <Script DEF="Choice17">
       <field name="touchTime" type="SFTime" accessType="inputOnly"/>
       <field name="choice" type="SFInt32" accessType="outputOnly"/>
-      <![CDATA[
-      ecmascript:
+      <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 17;
       }
@@ -19689,8 +19671,7 @@
     <Script DEF="Choice18">
       <field name="touchTime" type="SFTime" accessType="inputOnly"/>
       <field name="choice" type="SFInt32" accessType="outputOnly"/>
-      <![CDATA[
-      ecmascript:
+      <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 18;
       }
@@ -19727,8 +19708,7 @@
     <Script DEF="Choice19">
       <field name="touchTime" type="SFTime" accessType="inputOnly"/>
       <field name="choice" type="SFInt32" accessType="outputOnly"/>
-      <![CDATA[
-      ecmascript:
+      <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 19;
       }
@@ -19765,8 +19745,7 @@
     <Script DEF="Choice20">
       <field name="touchTime" type="SFTime" accessType="inputOnly"/>
       <field name="choice" type="SFInt32" accessType="outputOnly"/>
-      <![CDATA[
-      ecmascript:
+      <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 20;
       }
@@ -19803,8 +19782,7 @@
     <Script DEF="Choice21">
       <field name="touchTime" type="SFTime" accessType="inputOnly"/>
       <field name="choice" type="SFInt32" accessType="outputOnly"/>
-      <![CDATA[
-      ecmascript:
+      <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 21;
       }
@@ -19841,8 +19819,7 @@
     <Script DEF="Choice22">
       <field name="touchTime" type="SFTime" accessType="inputOnly"/>
       <field name="choice" type="SFInt32" accessType="outputOnly"/>
-      <![CDATA[
-      ecmascript:
+      <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 22;
       }
@@ -19879,8 +19856,7 @@
     <Script DEF="Choice23">
       <field name="touchTime" type="SFTime" accessType="inputOnly"/>
       <field name="choice" type="SFInt32" accessType="outputOnly"/>
-      <![CDATA[
-      ecmascript:
+      <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 23;
       }
@@ -19917,8 +19893,7 @@
     <Script DEF="Choice24">
       <field name="touchTime" type="SFTime" accessType="inputOnly"/>
       <field name="choice" type="SFInt32" accessType="outputOnly"/>
-      <![CDATA[
-      ecmascript:
+      <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 24;
       }
@@ -19955,8 +19930,7 @@
     <Script DEF="Choice25">
       <field name="touchTime" type="SFTime" accessType="inputOnly"/>
       <field name="choice" type="SFInt32" accessType="outputOnly"/>
-      <![CDATA[
-      ecmascript:
+      <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 25;
       }
@@ -19993,8 +19967,7 @@
     <Script DEF="Choice26">
       <field name="touchTime" type="SFTime" accessType="inputOnly"/>
       <field name="choice" type="SFInt32" accessType="outputOnly"/>
-      <![CDATA[
-      ecmascript:
+      <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 26;
       }
@@ -20031,8 +20004,7 @@
     <Script DEF="Choice27">
       <field name="touchTime" type="SFTime" accessType="inputOnly"/>
       <field name="choice" type="SFInt32" accessType="outputOnly"/>
-      <![CDATA[
-      ecmascript:
+      <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 27;
       }
@@ -20069,8 +20041,7 @@
     <Script DEF="Choice28">
       <field name="touchTime" type="SFTime" accessType="inputOnly"/>
       <field name="choice" type="SFInt32" accessType="outputOnly"/>
-      <![CDATA[
-      ecmascript:
+      <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 28;
       }
@@ -20107,8 +20078,7 @@
     <Script DEF="Choice29">
       <field name="touchTime" type="SFTime" accessType="inputOnly"/>
       <field name="choice" type="SFInt32" accessType="outputOnly"/>
-      <![CDATA[
-      ecmascript:
+      <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 29;
       }

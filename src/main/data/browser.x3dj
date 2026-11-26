@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"14 November 2026"
+            "@content":"26 November 2026"
           },
           {
             "@name":"generator",
@@ -61,8 +61,7 @@
               "@DEF":"Clouds",
               "#sourceCode":[
 "",
-"",
-"ecmascript:",
+"        ecmascript:",
 "",
 "",
 "function cumulustranslation() // These values designate the boundary location of the cloud",
