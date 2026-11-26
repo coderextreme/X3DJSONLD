@@ -1,5 +1,7 @@
 "use strict";
 
+import { convertECMAScriptToPascal } from "./JS2Pas.js";
+
 const DOUBLE_SUFFIX = "";
 const FLOAT_SUFFIX = "";
 
@@ -12,8 +14,10 @@ export default function PascalSerializer() {
 	this.protos = {};
 	this.nodeMeta = new WeakMap();
 	this.statements = [];
+	this.compiledScripts = [];
 	this.rootVarName = "X3D0";
 	this.usesPrototypes = false;
+	this.enableCompiledECMAScript = true;
 	this.debug = false;
 	// Limits for each generated Init procedure. Lower them if FPC still runs out of
 	// registers / memory; raise them for fewer, larger procedures.
@@ -303,6 +307,7 @@ PascalSerializer.prototype = {
 		this.protos = {};
 		this.nodeMeta = new WeakMap();
 		this.statements = [];
+		this.compiledScripts = [];
 		this.usesPrototypes = false;
 
 		const unitName = sanitizeIdentifier(clazz);
@@ -328,16 +333,35 @@ PascalSerializer.prototype = {
 			this.maxCharsPerProc
 		);
 		const procName = (k) => "Init" + unitName + "Part" + k;
+		const hasCompiledScripts = this.compiledScripts.length > 0;
+		const binderClassName = "T" + unitName + "ScriptBinder";
 
 		let str = "";
 		str += "unit " + unitName + ";\n\n";
 		str += "interface\n\n";
-		str += "uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;\n\n";
-		str += "function Create" + unitName + ": " + rootType + ";\n\n";
+		if (hasCompiledScripts) {
+			str += "uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported, CastleSceneCore;\n\n";
+			str += "function Create" + unitName + ": " + rootType + ";\n";
+			str += "procedure Register" + unitName + "Scripts(const Scene: TCastleSceneCore);\n\n";
+		} else {
+			str += "uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;\n\n";
+			str += "function Create" + unitName + ": " + rootType + ";\n\n";
+		}
 		str += "implementation\n\n";
 
+		const implUses = [];
 		if (this.usesPrototypes) {
-			str += "uses Classes, SysUtils, X3DLoad, CastleVectors;\n\n";
+			implUses.push("Classes", "SysUtils", "X3DLoad", "CastleVectors");
+		} else {
+			if (hasCompiledScripts) implUses.push("SysUtils");
+			implUses.push("CastleVectors");
+		}
+		if (hasCompiledScripts) {
+			implUses.push("Math", "X3DTime");
+		}
+		str += "uses " + implUses.join(", ") + ";\n\n";
+
+		if (this.usesPrototypes) {
 			str += [
 				"function CreateEmptyPrototype(const AName: String): TX3DPrototype;",
 				"var",
@@ -364,13 +388,60 @@ PascalSerializer.prototype = {
 				"end;",
 				""
 			].join("\n") + "\n";
-		} else {
-			str += "uses CastleVectors;\n\n";
+		}
+
+		if (hasCompiledScripts) {
+			str += "type\n";
+			for (const cs of this.compiledScripts) {
+				str +=
+					cs.classInterface
+						.split("\n")
+						.map((l) => "  " + l)
+						.join("\n") + "\n\n";
+			}
+			str += "  " + binderClassName + " = class\n";
+			str += "  public\n";
+			str += "    procedure BindNode(Node: TX3DNode);\n";
+			str += "  end;\n\n";
 		}
 
 		if (this.code.length > 0) {
 			str += "var\n";
 			str += "  " + this.code.join("\n  ") + "\n\n";
+		}
+
+		if (hasCompiledScripts) {
+			for (const cs of this.compiledScripts) {
+				str += cs.classImplementation + "\n";
+			}
+
+			str += "procedure " + binderClassName + ".BindNode(Node: TX3DNode);\n";
+			str += "var\n";
+			str += "  S: TScriptNode;\n";
+			str += "  UrlText, Prefix: String;\n";
+			str += "  Idx: Integer;\n";
+			str += "begin\n";
+			str += "  S := Node as TScriptNode;\n";
+			str += "  if S.FdUrl.Items.Count = 0 then Exit;\n";
+			str += "  UrlText := S.FdUrl.Items.Text;\n";
+			for (const cs of this.compiledScripts) {
+				if (cs.handlerFnNames.length === 0) continue;
+				const marker = "=" + cs.scriptName + "_";
+				str += "  if Pos(" + escapePascalString(marker) + ", UrlText) > 0 then\n";
+				str += "  begin\n";
+				str += "    Idx := Length(" + cs.listVar + ");\n";
+				str += "    Prefix := " + escapePascalString(cs.scriptName + "_") + " + IntToStr(Idx) + '_';\n";
+				const urlAssignments = cs.handlerFnNames.map(
+					(fn) => escapePascalString(fn + "=") + " + Prefix + " + escapePascalString(fn)
+				);
+				str += "    S.SetUrl(['compiled:' + LineEnding +\n";
+				str += "      " + urlAssignments.join(" + LineEnding +\n      ") + "]);\n";
+				str += "    SetLength(" + cs.listVar + ", Idx + 1);\n";
+				str += "    " + cs.listVar + "[Idx] := " + cs.className + ".CreateForNode(S, Prefix);\n";
+				str += "    Exit;\n";
+				str += "  end;\n";
+			}
+			str += "end;\n\n";
 		}
 
 		for (let k = 0; k < chunks.length; k++) {
@@ -384,14 +455,64 @@ PascalSerializer.prototype = {
 		}
 
 		str += "function Create" + unitName + ": " + rootType + ";\n";
+		if (hasCompiledScripts) {
+			str += "var\n";
+			str += "  Binder: " + binderClassName + ";\n";
+			str += "  _i: Integer;\n";
+		}
 		str += "begin\n";
+		if (hasCompiledScripts) {
+			for (const cs of this.compiledScripts) {
+				str += "  for _i := 0 to High(" + cs.listVar + ") do\n";
+				str += "    FreeAndNil(" + cs.listVar + "[_i]);\n";
+				str += "  SetLength(" + cs.listVar + ", 0);\n";
+			}
+		}
 		for (let k = 0; k < chunks.length; k++) {
 			str += "  " + procName(k) + ";\n";
 		}
+		if (hasCompiledScripts) {
+			str += "  Binder := " + binderClassName + ".Create;\n";
+			str += "  try\n";
+			str += "    " + this.rootVarName + ".EnumerateNodes(TScriptNode, {$ifdef FPC}@{$endif}Binder.BindNode, False);\n";
+			str += "  finally\n";
+			str += "    FreeAndNil(Binder);\n";
+			str += "  end;\n";
+		}
 		str += "  Result := " + this.rootVarName + ";\n";
 		str += "end;\n\n";
-		str += "begin\n";
-		str += "end.\n";
+
+		if (hasCompiledScripts) {
+			str += "procedure Register" + unitName + "Scripts(const Scene: TCastleSceneCore);\n";
+			str += "var\n";
+			str += "  _i: Integer;\n";
+			str += "begin\n";
+			str += "  Randomize;\n";
+			for (const cs of this.compiledScripts) {
+				str += "  for _i := 0 to High(" + cs.listVar + ") do\n";
+				str += "  begin\n";
+				str += "    " + cs.listVar + "[_i].RegisterHandlers(Scene);\n";
+				if (cs.hasInitialize) {
+					str += "    if (Scene.RootNode <> nil) and Scene.ProcessEvents and (not " + cs.listVar + "[_i].Initialized) then\n";
+					str += "      " + cs.listVar + "[_i].Initialize(nil, Scene.NextEventTime);\n";
+				}
+				str += "  end;\n";
+			}
+			str += "end;\n\n";
+
+			str += "finalization\n";
+			for (const cs of this.compiledScripts) {
+				str += "  while Length(" + cs.listVar + ") > 0 do\n";
+				str += "  begin\n";
+				str += "    FreeAndNil(" + cs.listVar + "[High(" + cs.listVar + ")]);\n";
+				str += "    SetLength(" + cs.listVar + ", Length(" + cs.listVar + ") - 1);\n";
+				str += "  end;\n";
+			}
+			str += "end.\n";
+		} else {
+			str += "begin\n";
+			str += "end.\n";
+		}
 
 		return str;
 	},
@@ -1219,6 +1340,8 @@ PascalSerializer.prototype = {
 			);
 		}
 
+		const deferredCdata = [];
+
 		for (const node of Array.from(element.childNodes || [])) {
 			if (node.nodeType === 1) {
 				const oldNodeName = node.nodeName;
@@ -1336,10 +1459,6 @@ PascalSerializer.prototype = {
 							this.instantiateChildElement(node, fvChild, mapToMethod, fieldTypes, n, stack);
 							if (fvName && fvType) {
 								const instVar = this.stackname(element);
-								// A <fieldValue> containing nodes REPLACES the field's default
-								// value (X3D spec). TMFNode.Add only appends, so the PROTO's
-								// default nodes (e.g. a default Sphere) would stay alongside
-								// the supplied ones. Clear the default first, once per field.
 								if (fvType !== "SFNode" && !fvCleared) {
 									this.statements.push(
 										"(" + instVar + ".Field(" + escapePascalString(fvName) + ") as TMFNode).Clear;\n"
@@ -1408,7 +1527,52 @@ PascalSerializer.prototype = {
 					this.statements.push("// " + comment.replace(/[\r\n]+/g, " ") + "\n");
 				}
 			} else if (node.nodeType === 4) {
-				const cdataLit = toPascalStringLiteral(node.nodeValue || "");
+				// Defer CDATA until all <field> children of this <Script> have been processed
+				deferredCdata.push(node.nodeValue || "");
+			}
+		}
+
+		for (const rawCdata of deferredCdata) {
+			if (
+				this.enableCompiledECMAScript &&
+				elName === "Script" &&
+				/^\s*(ecmascript|javascript|vrmlscript):/i.test(rawCdata)
+			) {
+				const scriptFields = [];
+				for (const ch of Array.from(element.childNodes || [])) {
+					if (ch.nodeType === 1 && ch.nodeName === "field") {
+						scriptFields.push({
+							name: getAttribute(ch, "name"),
+							type: getAttribute(ch, "type") || "SFFloat",
+							accessType: getAttribute(ch, "accessType") || "inputOutput",
+							varName: this.getMeta(ch).fieldVarName || null
+						});
+					}
+				}
+				const converted = convertECMAScriptToPascal(rawCdata, {
+					scriptName: elVar,
+					scriptDef: getAttribute(element, "DEF"),
+					fields: scriptFields
+				});
+				const listVar = "Compiled" + elVar + "List";
+				this.code.push(listVar + ": array of " + converted.className + ";");
+				this.compiledScripts.push({
+					listVar,
+					scriptName: converted.scriptName,
+					hasInitialize: converted.hasInitialize,
+					handlerFnNames: converted.handlerFnNames,
+					className: converted.className,
+					classInterface: converted.classInterface,
+					classImplementation: converted.classImplementation
+				});
+				const compiledLit = toPascalStringLiteral(converted.compiledUrl);
+				if (getAttribute(element, "url") !== null) {
+					this.statements.push(elVar + ".FdUrl.Items.Add(" + compiledLit + ");\n");
+				} else {
+					this.statements.push(elVar + ".SetUrl([" + compiledLit + "]);\n");
+				}
+			} else {
+				const cdataLit = toPascalStringLiteral(rawCdata);
 				if (elName === "ShaderPart" || elName === "EffectPart") {
 					this.statements.push(elVar + ".Contents := " + cdataLit + ";\n");
 				} else if (getAttribute(element, "url") !== null) {
@@ -1522,9 +1686,12 @@ PascalSerializer.prototype = {
 				"stopTime", "cycleTime", "triggerTime", "touchTime"
 			]);
 			if (FromField.endsWith("_changed") || eventOutFields.has(FromField)) {
-				FromField = "Event" + upperCaseFirst(FromField);
+				fromExpr = FromDEF + ".Event" + upperCaseFirst(FromField);
+			} else if (FromField.startsWith("Fd") || FromField.startsWith("Event")) {
+				fromExpr = FromDEF + "." + FromField;
+			} else {
+				fromExpr = FromDEF + ".Fd" + upperCaseFirst(FromField) + ".EventOut";
 			}
-			fromExpr = FromDEF + "." + FromField;
 		}
 
 		let toExpr = null;
@@ -1532,16 +1699,29 @@ PascalSerializer.prototype = {
 			toExpr = resolveCustomFieldExpr(ToNode, rawToField, false);
 		}
 		if (!toExpr) {
-			if (ToField === "set_rotation") ToField = "FdRotation.EventIn";
-			else if (ToField === "set_translation") ToField = "FdTranslation.EventIn";
-			else if (ToField === "set_scale") ToField = "scale";
-			else if (ToField === "stopTime" || ToField === "set_stopTime") ToField = "FdStopTime.EventIn";
-			else if (ToField === "startTime" || ToField === "set_startTime") ToField = "FdStartTime.EventIn";
-			else if (ToField === "weight") ToField = "FWeight";
-			else if (ToField.startsWith("set_") || ToField.startsWith("Set")) {
-				ToField = "Event" + upperCaseFirst(ToField);
+			const inputOnlyEvents = new Set([
+				"set_fraction", "set_bind", "set_coordIndex", "set_colorIndex",
+				"set_normalIndex", "set_texCoordIndex", "next", "previous",
+				"addChildren", "removeChildren"
+			]);
+			const isExtrusionInputOnly =
+				toTarget &&
+				toTarget.nodeName === "Extrusion" &&
+				["set_crossSection", "set_spine", "set_orientation", "set_scale"].includes(ToField);
+
+			if (ToField === "weight") {
+				toExpr = ToDEF + ".FWeight";
+			} else if (inputOnlyEvents.has(ToField) || isExtrusionInputOnly) {
+				toExpr = ToDEF + ".Event" + upperCaseFirst(ToField);
+			} else if (ToField.startsWith("set_")) {
+				toExpr = ToDEF + ".Fd" + upperCaseFirst(ToField.slice(4)) + ".EventIn";
+			} else if (ToField.startsWith("Set")) {
+				toExpr = ToDEF + ".Event" + ToField;
+			} else if (ToField.startsWith("Fd") || ToField.startsWith("Event")) {
+				toExpr = ToDEF + "." + ToField;
+			} else {
+				toExpr = ToDEF + ".Fd" + upperCaseFirst(ToField) + ".EventIn";
 			}
-			toExpr = ToDEF + "." + ToField;
 		}
 
 		this.statements.push("{ ROUTE " + FromNode + "." + rawFromField + " TO " + ToNode + "." + rawToField + " }\n");

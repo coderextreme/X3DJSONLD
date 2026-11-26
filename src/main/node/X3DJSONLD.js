@@ -329,7 +329,7 @@ CDATACreateFunction : function(xmlDoc, element, str) {
 		.replace(/&amp;/g, "&");
 	do {
 		str = y;
-		y = str.replace(/'([^'\r\n]*)\n([^']*)'/g, "'$1\\n$2'");
+		y = str.replace(/'\n'/g, "'\\n'");
 		if (str !== y) {
 			// console.error("CDATA Replacing",str,"with",y);
 		}
