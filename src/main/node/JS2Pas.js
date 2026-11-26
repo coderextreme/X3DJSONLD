@@ -859,6 +859,33 @@ function getRootIdent(expr) {
 	return null;
 }
 
+function isUnsupportedBrowserDomExpr(node) {
+	if (!node || typeof node !== "object") return false;
+	if (node.type === "ObjectLiteral" || node.type === "FunctionExpr") return true;
+	if (node.type === "Call" && node.callee && node.callee.type === "Member") {
+		const obj = node.callee.object;
+		const prop = node.callee.property;
+		if (
+			obj &&
+			obj.type === "Identifier" &&
+			obj.name === "Browser" &&
+			prop !== "print" &&
+			prop !== "println"
+		) {
+			return true;
+		}
+	}
+	for (const k of Object.keys(node)) {
+		const child = node[k];
+		if (Array.isArray(child)) {
+			if (child.some((c) => isUnsupportedBrowserDomExpr(c))) return true;
+		} else if (child && typeof child === "object") {
+			if (isUnsupportedBrowserDomExpr(child)) return true;
+		}
+	}
+	return false;
+}
+
 function inferExprType(expr) {
 	if (!expr) return "Single";
 	if (expr.type === "Literal") {
@@ -1079,7 +1106,7 @@ export function convertECMAScriptToPascal(source, options = {}) {
 	};
 
 	const emitExpr = (expr, localScope, curParamMap, fx) => {
-		if (!expr) return "0";
+		if (!expr || !expr.type) return "0";
 		switch (expr.type) {
 			case "Literal":
 				if (expr.kind === "number") return expr.value;
@@ -1097,7 +1124,7 @@ export function convertECMAScriptToPascal(source, options = {}) {
 			case "Member": {
 				const obj = expr.object;
 				const prop = expr.property;
-				if (obj.type === "Identifier" && obj.name === "Math") {
+				if (obj && obj.type === "Identifier" && obj.name === "Math") {
 					if (prop === "PI") return "Pi";
 					if (prop === "E") return "Exp(1.0)";
 					if (prop === "SQRT2") return "Sqrt(2.0)";
@@ -1212,41 +1239,47 @@ export function convertECMAScriptToPascal(source, options = {}) {
 			case "Call": {
 				const c = expr.callee;
 				const args = expr.args.map((a) => emitExpr(a, localScope, curParamMap, fx));
-				if (c.type === "Member" && c.object.type === "Identifier" && c.object.name === "Math") {
-					const mathMap = {
-						random: () => "Random",
-						floor: () => "Floor(" + args[0] + ")",
-						ceil: () => "Ceil(" + args[0] + ")",
-						round: () => "Round(" + args[0] + ")",
-						abs: () => "Abs(" + args[0] + ")",
-						sin: () => "Sin(" + args[0] + ")",
-						cos: () => "Cos(" + args[0] + ")",
-						tan: () => "Tan(" + args[0] + ")",
-						asin: () => "ArcSin(" + args[0] + ")",
-						acos: () => "ArcCos(" + args[0] + ")",
-						atan: () => "ArcTan(" + args[0] + ")",
-						atan2: () => "ArcTan2(" + args[0] + ", " + args[1] + ")",
-						sqrt: () => "Sqrt(" + args[0] + ")",
-						pow: () => "Power(" + args[0] + ", " + args[1] + ")",
-						exp: () => "Exp(" + args[0] + ")",
-						log: () => "Ln(" + args[0] + ")",
-						min: () => "Min(" + args[0] + ", " + args[1] + ")",
-						max: () => "Max(" + args[0] + ", " + args[1] + ")"
-					};
-					if (mathMap[c.property]) return mathMap[c.property]();
-				}
-				if (c.type === "Member") {
+				if (c && c.type === "Member") {
+					if (c.object && c.object.type === "Identifier" && c.object.name === "Math") {
+						const mathMap = {
+							random: () => "Random",
+							floor: () => "Floor(" + args[0] + ")",
+							ceil: () => "Ceil(" + args[0] + ")",
+							round: () => "Round(" + args[0] + ")",
+							abs: () => "Abs(" + args[0] + ")",
+							sin: () => "Sin(" + args[0] + ")",
+							cos: () => "Cos(" + args[0] + ")",
+							tan: () => "Tan(" + args[0] + ")",
+							asin: () => "ArcSin(" + args[0] + ")",
+							acos: () => "ArcCos(" + args[0] + ")",
+							atan: () => "ArcTan(" + args[0] + ")",
+							atan2: () => "ArcTan2(" + args[0] + ", " + args[1] + ")",
+							sqrt: () => "Sqrt(" + args[0] + ")",
+							pow: () => "Power(" + args[0] + ", " + args[1] + ")",
+							exp: () => "Exp(" + args[0] + ")",
+							log: () => "Ln(" + args[0] + ")",
+							min: () => "Min(" + args[0] + ", " + args[1] + ")",
+							max: () => "Max(" + args[0] + ", " + args[1] + ")"
+						};
+						if (mathMap[c.property]) return mathMap[c.property]();
+					}
+					if (
+						c.object &&
+						c.object.type === "Identifier" &&
+						((c.object.name === "Browser" && (c.property === "print" || c.property === "println")) ||
+							(c.object.name === "console" &&
+								["log", "info", "warn", "error"].includes(c.property)))
+					) {
+						return "WriteLn(" + args.join(", ") + ")";
+					}
 					const objCode = emitExpr(c.object, localScope, curParamMap, fx);
 					if (c.property === "normalize") return objCode + ".Normalize";
 					if (c.property === "length") return objCode + ".Length";
 					if (c.property === "dot") return "TVector3.DotProduct(" + objCode + ", " + args[0] + ")";
 					if (c.property === "cross") return "TVector3.CrossProduct(" + objCode + ", " + args[0] + ")";
-					if (c.object.type === "Identifier" && (c.object.name === "Browser" || c.object.name === "console")) {
-						return "WriteLn(" + args.join(", ") + ")";
-					}
 					return objCode + "." + c.property + "(" + args.join(", ") + ")";
 				}
-				if (c.type === "Identifier") {
+				if (c && c.type === "Identifier") {
 					if (c.name === "print") {
 						return "WriteLn(" + args.join(", ") + ")";
 					}
@@ -1268,7 +1301,7 @@ export function convertECMAScriptToPascal(source, options = {}) {
 
 			case "Assign": {
 				let lhs;
-				if (expr.left.type === "Index") {
+				if (expr.left && expr.left.type === "Index") {
 					const arrCode = emitExpr(expr.left.object, localScope, curParamMap, fx);
 					const idxCode = emitExpr(expr.left.index, localScope, curParamMap, fx);
 					fx.pre.push(
@@ -1330,15 +1363,21 @@ export function convertECMAScriptToPascal(source, options = {}) {
 			case "VarDecl":
 				for (const d of stmt.decls) {
 					if (d.init) {
-						const { code, post } = emitExprWithFx(d.init, localScope, curParamMap, pad, lines);
-						lines.push(pad + sanitizeId(d.name) + " := " + code + ";");
-						for (const p of post) lines.push(pad + p);
+						if (isUnsupportedBrowserDomExpr(d.init)) {
+							lines.push(pad + "{ Skipped unsupported JS Browser/DOM initializer for " + sanitizeId(d.name) + " }");
+						} else {
+							const { code, post } = emitExprWithFx(d.init, localScope, curParamMap, pad, lines);
+							lines.push(pad + sanitizeId(d.name) + " := " + code + ";");
+							for (const p of post) lines.push(pad + p);
+						}
 					}
 				}
 				break;
 
 			case "ExprStmt":
-				if (stmt.expr.type === "Update") {
+				if (isUnsupportedBrowserDomExpr(stmt.expr)) {
+					lines.push(pad + "{ Skipped unsupported JS Browser/DOM statement }");
+				} else if (stmt.expr && stmt.expr.type === "Update") {
 					const fx = { pre: [], post: [] };
 					const target = emitExpr(stmt.expr.arg, localScope, curParamMap, fx);
 					const deltaOp = stmt.expr.op === "++" ? "+" : "-";
@@ -1899,4 +1938,3 @@ export function convertECMAScriptToPascal(source, options = {}) {
 export default function JS2Pas() {
 	this.convert = convertECMAScriptToPascal;
 }
-

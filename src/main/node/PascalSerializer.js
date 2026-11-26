@@ -1672,7 +1672,9 @@ PascalSerializer.prototype = {
 		};
 
 		let fromExpr = null;
-		if (isCustomFieldOwner(fromTarget)) {
+		if (fromTarget && fromTarget.nodeName === "ProtoInstance") {
+			fromExpr = FromDEF + ".FieldOrEvent(" + escapePascalString(rawFromField) + ")";
+		} else if (isCustomFieldOwner(fromTarget)) {
 			fromExpr = resolveCustomFieldExpr(FromNode, rawFromField, true);
 		}
 		if (!fromExpr) {
@@ -1695,7 +1697,9 @@ PascalSerializer.prototype = {
 		}
 
 		let toExpr = null;
-		if (isCustomFieldOwner(toTarget)) {
+		if (toTarget && toTarget.nodeName === "ProtoInstance") {
+			toExpr = ToDEF + ".FieldOrEvent(" + escapePascalString(rawToField) + ")";
+		} else if (isCustomFieldOwner(toTarget)) {
 			toExpr = resolveCustomFieldExpr(ToNode, rawToField, false);
 		}
 		if (!toExpr) {
