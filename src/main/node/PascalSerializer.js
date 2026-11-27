@@ -350,11 +350,11 @@ PascalSerializer.prototype = {
 		str += "unit " + unitName + ";\n\n";
 		str += "interface\n\n";
 		if (hasCompiledScripts) {
-			str += "uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported, CastleSceneCore;\n\n";
+			str += "uses opensslsockets, X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported, CastleSceneCore;\n\n";
 			str += "function Create" + unitName + ": " + rootType + ";\n";
 			str += "procedure Register" + unitName + "Scripts(const Scene: TCastleSceneCore);\n\n";
 		} else {
-			str += "uses X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;\n\n";
+			str += "uses opensslsockets, X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;\n\n";
 			str += "function Create" + unitName + ": " + rootType + ";\n\n";
 		}
 		str += "implementation\n\n";
@@ -379,9 +379,28 @@ PascalSerializer.prototype = {
 		if (this.usesPrototypes) {
  			str += [
  				"function CreateEmptyPrototype(const AName: String): TX3DPrototype;",
-				"  Result := TX3DPrototype.Create;",
-				"  Result.PrototypeName := AName;",
- 				"end;",
+				"var",                                                               
+	                        "  Stream: TStringStream;",                                          
+	                        "  TempRoot: TX3DRootNode;",                                         
+	                        "  CopyState: TX3DNodeDeepCopyState;",                               
+	                        "begin",                                                             
+	                        "  Stream := TStringStream.Create('#X3D V4.0 utf8' + LineEnding + 'PROFILE Full' + LineEnding + 'PROTO ' + AName + ' [] {}');",                                                      
+	                        "  try",                                                             
+	                        "    TempRoot := LoadNode(Stream, '', 'model/x3d+vrml');",           
+	                        "    try",                                                           
+	                        "      CopyState := TX3DNodeDeepCopyState.Create;",                  
+	                        "      try",                                                         
+	                        "        Result := TempRoot.Prototypes[0].DeepCopy(CopyState) as TX3DPrototype;",                                                                     
+	                        "      finally",                                                     
+	                        "        FreeAndNil(CopyState);",                                    
+	                        "      end;",                                                        
+	                        "    finally",                                                       
+	                        "      FreeAndNil(TempRoot);",                                       
+	                        "    end;",                                                          
+	                        "  finally",                                                         
+	                        "    FreeAndNil(Stream);",                                           
+	                        "  end;",                                                            
+	                        "end;",
  				""
  			].join("\n") + "\n";
  		}
