@@ -1934,6 +1934,7 @@ export function convertECMAScriptToPascal(source, options = {}) {
 		"FInitialized := False;"
 	];
 	const dtorLines = [];
+	const detachLines = [];
 	const flushLines = [];
 	const methodDecls = [];
 	const methodImpls = [];
@@ -2205,10 +2206,19 @@ export function convertECMAScriptToPascal(source, options = {}) {
 					"  if FField_" + fInfo.name + " <> nil then",
 					"    FField_" + fInfo.name + ".EventIn.AddNotification({$ifdef FPC}@{$endif}" + notifName + ");"
 				);
+				detachLines.push(
+				  "if FField_" + fInfo.name + " <> nil then",
+				  "begin",
+				  "  FField_" + fInfo.name + ".EventIn.RemoveNotification({$ifdef FPC}@{$endif}" + notifName + ");",
+				  "  FField_" + fInfo.name + " := nil;",
+				  "end;"
+				);
+				/** Causes  crash the second time around
 				dtorLines.unshift(
 					"if FField_" + fInfo.name + " <> nil then",
 					"  FField_" + fInfo.name + ".EventIn.RemoveNotification({$ifdef FPC}@{$endif}" + notifName + ");"
 				);
+				*/
 				methodDecls.push(
 					"procedure " + notifName + "(const Event: TX3DEvent; const Value: TX3DField; const Time: TX3DTime);"
 				);
