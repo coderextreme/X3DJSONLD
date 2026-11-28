@@ -796,8 +796,11 @@ Parser.prototype = {
 			this.consume();
 			if (t.value === "true") return { type: "Literal", kind: "boolean", value: true };
 			if (t.value === "false") return { type: "Literal", kind: "boolean", value: false };
-			if (t.value === "null" || t.value === "undefined") {
+			if (t.value === "null") {
 				return { type: "Literal", kind: "null", value: null };
+			}
+			if (t.value === "undefined") {
+				return { type: "Literal", kind: "undefined", value: null };
 			}
 			return { type: "Identifier", name: t.value };
 		}
@@ -1166,7 +1169,7 @@ export function convertECMAScriptToPascal(source, options = {}) {
 		if (expr.type === "Literal") {
 			if (expr.kind === "boolean") return "Boolean";
 			if (expr.kind === "string") return "String";
-			if (expr.kind === "null") return "TX3DNode";
+			if (expr.kind === "null" || expr.kind === "undefined") return "TX3DNode";
 			if (expr.kind === "number") return /[eE.]/.test(expr.value) ? "Single" : "Integer";
 		}
 		if (expr.type === "Identifier") {
@@ -1200,6 +1203,7 @@ export function convertECMAScriptToPascal(source, options = {}) {
 		}
 		if (expr.type === "Unary") {
 			if (expr.op === "!") return "Boolean";
+			if (expr.op === "typeof") return "String";
 			return inferPascalType(expr.arg, localScope, curParamTypeMap);
 		}
 		if (expr.type === "Binary") {
@@ -1221,6 +1225,36 @@ export function convertECMAScriptToPascal(source, options = {}) {
 			if (t) return t;
 		}
 		return inferExprType(expr);
+	};
+
+	const getTypeofString = (arg, localScope, curParamTypeMap) => {
+		if (!arg) return "'undefined'";
+		if (arg.type === "Literal") {
+			if (arg.kind === "boolean") return "'boolean'";
+			if (arg.kind === "number") return "'number'";
+			if (arg.kind === "string") return "'string'";
+			if (arg.kind === "undefined") return "'undefined'";
+			if (arg.kind === "null") return "'object'";
+		}
+		if (arg.type === "Identifier") {
+			if (arg.name === "Math" || arg.name === "Browser" || arg.name === "console") {
+				return "'object'";
+			}
+			const isDeclared =
+				(curParamTypeMap && curParamTypeMap.has(arg.name)) ||
+				(localScope && localScope.has(arg.name)) ||
+				fieldMap.has(arg.name);
+			if (!isDeclared || skippedBrowserVars.has(arg.name)) {
+				return "'undefined'";
+			}
+		}
+		const pt = inferPascalType(arg, localScope, curParamTypeMap);
+		if (pt === "Boolean") return "'boolean'";
+		if (pt === "Integer" || pt === "Int32" || pt === "Single" || pt === "Double") {
+			return "'number'";
+		}
+		if (pt === "String") return "'string'";
+		return "'object'";
 	};
 
 	const toBoolCode = (expr, code, localScope, curParamTypeMap) => {
@@ -1285,7 +1319,7 @@ export function convertECMAScriptToPascal(source, options = {}) {
 				if (expr.kind === "number") return expr.value;
 				if (expr.kind === "string") return escapePascalString(expr.value);
 				if (expr.kind === "boolean") return expr.value ? "True" : "False";
-				if (expr.kind === "null") return "nil";
+				if (expr.kind === "null" || expr.kind === "undefined") return "nil";
 				return "0";
 
 			case "Identifier":
@@ -1362,6 +1396,9 @@ export function convertECMAScriptToPascal(source, options = {}) {
 			}
 
 			case "Unary": {
+				if (expr.op === "typeof") {
+					return getTypeofString(expr.arg, localScope, curParamTypeMap);
+				}
 				const argCode = emitExpr(expr.arg, localScope, curParamMap, curParamTypeMap, fx);
 				const needsParens = expr.arg && expr.arg.type === "Binary";
 				const wrapped = needsParens ? "(" + argCode + ")" : argCode;
@@ -1375,6 +1412,25 @@ export function convertECMAScriptToPascal(source, options = {}) {
 			}
 
 			case "Binary": {
+				if (["==", "!=", "===", "!=="].includes(expr.op)) {
+					const isEq = expr.op === "==" || expr.op === "===";
+					const lt = inferPascalType(expr.left, localScope, curParamTypeMap);
+					const rt = inferPascalType(expr.right, localScope, curParamTypeMap);
+					const isNullOrUndef = (n) =>
+						n && n.type === "Literal" && (n.kind === "null" || n.kind === "undefined");
+					const isUndefStr = (n) =>
+						n && n.type === "Literal" && n.kind === "string" && n.value === "undefined";
+					const canCompareNil = (t) => t === "TX3DNode" || t.startsWith("array of ");
+
+					if (
+						(isNullOrUndef(expr.right) && !canCompareNil(lt)) ||
+						(isNullOrUndef(expr.left) && !canCompareNil(rt)) ||
+						(isUndefStr(expr.right) && lt !== "String") ||
+						(isUndefStr(expr.left) && rt !== "String")
+					) {
+						return isEq ? "False" : "True";
+					}
+				}
 				const pPrec = JS_BIN_PREC[expr.op] || 0;
 				let l = emitExpr(expr.left, localScope, curParamMap, curParamTypeMap, fx);
 				let r = emitExpr(expr.right, localScope, curParamMap, curParamTypeMap, fx);
@@ -1934,6 +1990,8 @@ export function convertECMAScriptToPascal(source, options = {}) {
 		"FInitialized := False;"
 	];
 	const dtorLines = [];
+	// Lines run by Detach: unhook notifications from node fields while the scene is still alive.
+	// Destroy must NEVER touch FField_*/FEvent_* (the nodes may already be freed).
 	const detachLines = [];
 	const flushLines = [];
 	const methodDecls = [];
@@ -2207,18 +2265,12 @@ export function convertECMAScriptToPascal(source, options = {}) {
 					"    FField_" + fInfo.name + ".EventIn.AddNotification({$ifdef FPC}@{$endif}" + notifName + ");"
 				);
 				detachLines.push(
-				  "if FField_" + fInfo.name + " <> nil then",
-				  "begin",
-				  "  FField_" + fInfo.name + ".EventIn.RemoveNotification({$ifdef FPC}@{$endif}" + notifName + ");",
-				  "  FField_" + fInfo.name + " := nil;",
-				  "end;"
-				);
-				/** Causes  crash the second time around
-				dtorLines.unshift(
 					"if FField_" + fInfo.name + " <> nil then",
-					"  FField_" + fInfo.name + ".EventIn.RemoveNotification({$ifdef FPC}@{$endif}" + notifName + ");"
+					"begin",
+					"  FField_" + fInfo.name + ".EventIn.RemoveNotification({$ifdef FPC}@{$endif}" + notifName + ");",
+					"  FField_" + fInfo.name + " := nil;",
+					"end;"
 				);
-				*/
 				methodDecls.push(
 					"procedure " + notifName + "(const Event: TX3DEvent; const Value: TX3DField; const Time: TX3DTime);"
 				);
@@ -2509,6 +2561,7 @@ export function convertECMAScriptToPascal(source, options = {}) {
 		"  constructor Create(" + bindParams.join("; ") + ");",
 		"  class function CreateForNode(const AScriptNode: TScriptNode; const AHandlerPrefix: String): " + className + ";",
 		"  destructor Destroy; override;",
+		"  procedure Detach;",
 		"  procedure RegisterHandlers(const Scene: TCastleSceneCore);",
 		"  property Initialized: Boolean read FInitialized;",
 		...methodDecls.map((l) => "  " + l),
@@ -2533,6 +2586,11 @@ export function convertECMAScriptToPascal(source, options = {}) {
 		"begin",
 		...dtorLines.map((l) => "  " + l),
 		"  inherited Destroy;",
+		"end;",
+		"",
+		"procedure " + className + ".Detach;",
+		"begin",
+		...detachLines.map((l) => "  " + l),
 		"end;",
 		"",
 		"procedure " + className + ".FlushOutputs(const Time: TX3DTime);",

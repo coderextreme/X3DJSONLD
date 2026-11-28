@@ -352,7 +352,8 @@ PascalSerializer.prototype = {
 		if (hasCompiledScripts) {
 			str += "uses opensslsockets, X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported, CastleSceneCore;\n\n";
 			str += "function Create" + unitName + ": " + rootType + ";\n";
-			str += "procedure Register" + unitName + "Scripts(const Scene: TCastleSceneCore);\n\n";
+			str += "procedure Register" + unitName + "Scripts(const Scene: TCastleSceneCore);\n";
+			str += "procedure Detach" + unitName + "Scripts;\n\n";
 		} else {
 			str += "uses opensslsockets, X3DNodes, X3DFields, CastleColors, CastleInternalNodesUnsupported;\n\n";
 			str += "function Create" + unitName + ": " + rootType + ";\n\n";
@@ -545,6 +546,21 @@ PascalSerializer.prototype = {
 					str += "      " + cs.listVar + "[_i].Initialize(nil, Scene.NextEventTime);\n";
 				}
 				str += "  end;\n";
+			}
+			str += "end;\n\n";
+
+			// Call BEFORE the scene that owns the Script nodes is freed or replaced.
+			str += "procedure Detach" + unitName + "Scripts;\n";
+			str += "var\n";
+			str += "  _i: Integer;\n";
+			str += "begin\n";
+			for (const cs of this.compiledScripts) {
+				str += "  for _i := 0 to High(" + cs.listVar + ") do\n";
+				str += "  begin\n";
+				str += "    " + cs.listVar + "[_i].Detach;\n";
+				str += "    FreeAndNil(" + cs.listVar + "[_i]);\n";
+				str += "  end;\n";
+				str += "  SetLength(" + cs.listVar + ", 0);\n";
 			}
 			str += "end;\n\n";
 		}
