@@ -17,6 +17,7 @@ export default function PascalSerializer() {
 	this.statements = [];
 	this.compiledScripts = [];
 	this.usesExtrusionSpineRoute = false;
+	this.usesGeoViewpoint = false;
 	this.rootVarName = "X3D0";
 	this.usesPrototypes = false;
 	this.enableCompiledECMAScript = true;
@@ -311,6 +312,7 @@ PascalSerializer.prototype = {
 		this.statements = [];
 		this.compiledScripts = [];
 		this.usesExtrusionSpineRoute = false;
+		this.usesGeoViewpoint = false;
 		this.usesPrototypes = false;
 
 		const unitName = sanitizeIdentifier(clazz);
@@ -375,37 +377,40 @@ PascalSerializer.prototype = {
 		if (this.usesShaderParts) {
 			implUses.push("CastleRenderOptions");
 		}
+		if (this.usesGeoViewpoint) {
+			implUses.push("CastleProjection");
+		}
 		str += "uses " + implUses.join(", ") + ";\n\n";
 
 		if (this.usesPrototypes) {
- 			str += [
- 				"function CreateEmptyPrototype(const AName: String): TX3DPrototype;",
-				"var",                                                               
-	                        "  Stream: TStringStream;",                                          
-	                        "  TempRoot: TX3DRootNode;",                                         
-	                        "  CopyState: TX3DNodeDeepCopyState;",                               
-	                        "begin",                                                             
-	                        "  Stream := TStringStream.Create('#X3D V4.0 utf8' + LineEnding + 'PROFILE Full' + LineEnding + 'PROTO ' + AName + ' [] {}');",                                                      
-	                        "  try",                                                             
-	                        "    TempRoot := LoadNode(Stream, '', 'model/x3d+vrml');",           
-	                        "    try",                                                           
-	                        "      CopyState := TX3DNodeDeepCopyState.Create;",                  
-	                        "      try",                                                         
-	                        "        Result := TempRoot.Prototypes[0].DeepCopy(CopyState) as TX3DPrototype;",                                                                     
-	                        "      finally",                                                     
-	                        "        FreeAndNil(CopyState);",                                    
-	                        "      end;",                                                        
-	                        "    finally",                                                       
-	                        "      FreeAndNil(TempRoot);",                                       
-	                        "    end;",                                                          
-	                        "  finally",                                                         
-	                        "    FreeAndNil(Stream);",                                           
-	                        "  end;",                                                            
-	                        "end;",
- 				""
- 			].join("\n") + "\n";
- 		}
-		if (hasCompiledScripts || hasExtrusionHelper) {
+			str += [
+				"function CreateEmptyPrototype(const AName: String): TX3DPrototype;",
+				"var",
+				"  Stream: TStringStream;",
+				"  TempRoot: TX3DRootNode;",
+				"  CopyState: TX3DNodeDeepCopyState;",
+				"begin",
+				"  Stream := TStringStream.Create('#X3D V4.0 utf8' + LineEnding + 'PROFILE Full' + LineEnding + 'PROTO ' + AName + ' [] {}');",
+				"  try",
+				"    TempRoot := LoadNode(Stream, '', 'model/x3d+vrml');",
+				"    try",
+				"      CopyState := TX3DNodeDeepCopyState.Create;",
+				"      try",
+				"        Result := TempRoot.Prototypes[0].DeepCopy(CopyState) as TX3DPrototype;",
+				"      finally",
+				"        FreeAndNil(CopyState);",
+				"      end;",
+				"    finally",
+				"      FreeAndNil(TempRoot);",
+				"    end;",
+				"  finally",
+				"    FreeAndNil(Stream);",
+				"  end;",
+				"end;",
+				""
+			].join("\n") + "\n";
+		}
+		if (hasCompiledScripts || hasExtrusionHelper || this.usesGeoViewpoint) {
 			str += "type\n";
 			for (const cs of this.compiledScripts) {
 				str +=
@@ -427,11 +432,24 @@ PascalSerializer.prototype = {
 				str += "    procedure SpineReceive(const Event: TX3DEvent; const Value: TX3DField; const Time: TX3DTime);\n";
 				str += "  end;\n\n";
 			}
+			if (this.usesGeoViewpoint) {
+				str += "  TSafeGeoViewpointNode = class(TGeoViewpointNode)\n";
+				str += "  public\n";
+				str += "    class function ProjectionType: TProjectionType; override;\n";
+				str += "  end;\n\n";
+			}
 		}
 
 		if (this.code.length > 0) {
 			str += "var\n";
 			str += "  " + this.code.join("\n  ") + "\n\n";
+		}
+
+		if (this.usesGeoViewpoint) {
+			str += "class function TSafeGeoViewpointNode.ProjectionType: TProjectionType;\n";
+			str += "begin\n";
+			str += "  Result := ptPerspective;\n";
+			str += "end;\n\n";
 		}
 
 		if (hasCompiledScripts) {
@@ -1088,7 +1106,9 @@ PascalSerializer.prototype = {
 		const ownerName = this.effectiveNodeName(ownerElement);
 		const ownerVar = this.stackname(ownerElement);
 		const isPrototype =
-			ownerName === "ProtoDeclare" || ownerName === "ExternProtoDeclare";
+			ownerName === "ProtoDeclare" ||
+			ownerName === "ExternProtoDeclare" ||
+			ownerName === "X3DExternalPrototype";
 		// TX3DPrototypeBase is not a TX3DNode, so prototype interface fields use nil as ParentNode
 		const fieldParentArg = isPrototype ? "nil" : ownerVar;
 
@@ -1208,6 +1228,11 @@ PascalSerializer.prototype = {
 			case "Light":
 				params = ".Create(nil);";
 				break;
+			case "GeoViewpoint":
+				this.usesGeoViewpoint = true;
+				isNode = "Node";
+				params = ".Create;";
+				break;
 			case "ProtoDeclare":
 				this.usesPrototypes = true;
 				this.setProto(node);
@@ -1291,7 +1316,7 @@ PascalSerializer.prototype = {
 		const createExpr =
 			childEl.nodeName === "ProtoInstance" || childEl.nodeName === "ProtoDeclare"
 				? fcParams
-				: fcType + fcParams;
+				: (childEl.nodeName === "GeoViewpoint" ? "TSafeGeoViewpointNode" : fcType) + fcParams;
 		this.statements.push(fcVar + " := " + createExpr + "\n");
 
 		this.subSerializeToString(
@@ -1306,7 +1331,7 @@ PascalSerializer.prototype = {
 		return childEl;
 	},
 
-	subSerializeToString: function (element, mapToMethod, fieldTypes, n, stack, parentName) {
+subSerializeToString: function (element, mapToMethod, fieldTypes, n, stack, parentName) {
 		const elName = this.effectiveNodeName(element);
 		const elVar = this.stackname(element);
 
@@ -1333,6 +1358,8 @@ PascalSerializer.prototype = {
 				attr === "xsd:noNamespaceSchemaLocation" ||
 				attr === "containerField" ||
 				attr === "id" ||
+				attr === "appinfo" ||
+				attr === "documentation" ||
 				(elName === "Sphere" && attr === "subdivision") ||
 				(elName === "X3D" &&
 					(attr === "showStat" ||
@@ -1349,6 +1376,14 @@ PascalSerializer.prototype = {
 			let attrType = "SFString";
 			if (fieldTypes[elName] && fieldTypes[elName][attr]) {
 				attrType = fieldTypes[elName][attr];
+			} else if (fieldTypes[element.nodeName] && fieldTypes[element.nodeName][attr]) {
+				attrType = fieldTypes[element.nodeName][attr];
+			}
+			if (elName === "GeoViewpoint" && (attr === "position" || attr === "centerOfRotation")) {
+				attrType = "SFVec3f";
+			}
+			if (elName === "X3DExternalPrototype" && attr === "url") {
+				attrType = "MFString";
 			}
 
 			const strval = this.stringValue(rawVal, attr, attrType);
@@ -1377,6 +1412,12 @@ PascalSerializer.prototype = {
 				// Unit conversion declarations in <head> have no CGE node properties
 			} else if (elName === "ProtoInstance" && attr === "name") {
 				// 'name' on ProtoInstance selects the prototype, not the node DEF name
+			} else if (elName === "X3DExternalPrototype" && attr === "url") {
+				let urlArray = strval;
+				if (urlArray.startsWith("(") && urlArray.endsWith(")")) {
+					urlArray = urlArray.slice(1, -1);
+				}
+				this.statements.push(elVar + ".UrlList.Send(" + urlArray + ");\n");
 			} else if (attr === "DEF") {
 				const existing = this.DEFretrieve(rawVal);
 				if (existing) {
@@ -1618,7 +1659,8 @@ PascalSerializer.prototype = {
 					if (oldNodeName === "ProtoInstance" || oldNodeName === "ProtoDeclare") {
 						this.statements.push(childVar + " := " + params + "\n");
 					} else {
-						this.statements.push(childVar + " := " + pascalType + params + "\n");
+						const createType = oldNodeName === "GeoViewpoint" ? "TSafeGeoViewpointNode" : pascalType;
+						this.statements.push(childVar + " := " + createType + params + "\n");
 					}
 				}
 
@@ -1898,7 +1940,7 @@ PascalSerializer.prototype = {
 			nodeVar = nodeVar + ".Instantiate";
 		}
 
-		if (nodeName === "ProtoDeclare") {
+		if (nodeName === "ProtoDeclare" || nodeName === "ExternProtoDeclare") {
 			this.statements.push(this.rootVarName + ".AddPrototype(" + nodeVar + ");\n");
 		} else if (nodeName === "ProtoBody") {
 			// ProtoBody is a structural wrapper for ProtoDeclare.Node
