@@ -323,6 +323,32 @@ PascalSerializer.prototype = {
 		this.code.push(this.rootVarName + ": " + rootType + ";");
 		this.statements.push(this.rootVarName + " := " + rootType + ".Create;\n");
 
+		const collectAllProtoFieldTypes = (node, out = {}) => {
+			if (!node || node.nodeType !== 1) return out;
+			if (node.nodeName === "ProtoDeclare" || node.nodeName === "ExternProtoDeclare") {
+				const children = Array.from(node.childNodes || []);
+				const containers =
+					node.nodeName === "ProtoDeclare"
+						? children.filter((c) => c.nodeType === 1 && c.nodeName === "ProtoInterface")
+						: [node];
+				for (const cont of containers) {
+					for (const f of Array.from(cont.childNodes || [])) {
+						if (f.nodeType === 1 && f.nodeName === "field") {
+							const fname = getAttribute(f, "name");
+							const ftype = getAttribute(f, "type");
+							if (fname && ftype) {
+								out[fname] = ftype;
+							}
+						}
+					}
+				}
+			}
+			for (const ch of Array.from(node.childNodes || [])) {
+				if (ch.nodeType === 1) collectAllProtoFieldTypes(ch, out);
+			}
+			return out;
+		};
+		this.allProtoFieldTypes = collectAllProtoFieldTypes(element);
 		this.subSerializeToString(
 			element,
 			mapToMethod || {},
@@ -1710,8 +1736,11 @@ subSerializeToString: function (element, mapToMethod, fieldTypes, n, stack, pare
 				const converted = convertECMAScriptToPascal(rawCdata, {
 					scriptName: elVar,
 					scriptDef: getAttribute(element, "DEF"),
-					fields: scriptFields
-				});
+					fields: scriptFields,
+					fieldTypes,
+					protoFieldTypes: this.allProtoFieldTypes || {}
+
+				}, );
 				const listVar = "Compiled" + elVar + "List";
 				this.code.push(listVar + ": array of " + converted.className + ";");
 				this.compiledScripts.push({
